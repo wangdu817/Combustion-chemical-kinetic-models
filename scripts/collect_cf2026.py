@@ -33,11 +33,15 @@ from typing import Iterable
 
 
 WORKSPACE = Path(r"E:\mech_collection")
-ROOT = WORKSPACE / "combustion_and_flame_2026_mechanisms"
+LEGACY_ROOT = WORKSPACE / "combustion_and_flame_2026_mechanisms"
+ROOT = WORKSPACE / "combustion_and_flame_mechanisms"
 RAW = ROOT / "_raw"
 DOWNLOADS = RAW / "downloads"
 EXTRACTED = RAW / "extracted"
 METADATA_JSON = RAW / "article_metadata.json"
+LEGACY_METADATA_JSON = LEGACY_ROOT / "_raw" / "article_metadata.json"
+LEGACY_DOWNLOADS = LEGACY_ROOT / "_raw" / "downloads"
+PROCESSING_ARCHIVE = ROOT / "_processing_archive"
 CKDIR = Path(r"D:\BaiduSyncdisk\soft\CoFlame_yang")
 CKEXE = CKDIR / "ckinterp.exe"
 CK_FILES = ["chem.inp", "therm.dat", "chem.out"]
@@ -201,14 +205,18 @@ def slugify(value: str, max_len: int = 80) -> str:
 
 
 def ensure_dirs() -> None:
-    for path in [ROOT, RAW, DOWNLOADS, EXTRACTED]:
+    for path in [ROOT, RAW, DOWNLOADS, EXTRACTED, PROCESSING_ARCHIVE]:
         path.mkdir(parents=True, exist_ok=True)
 
 
 def read_metadata() -> list[dict]:
-    if not METADATA_JSON.exists():
+    source = METADATA_JSON if METADATA_JSON.exists() else LEGACY_METADATA_JSON
+    if not source.exists():
         return []
-    return json.loads(METADATA_JSON.read_text(encoding="utf-8"))
+    records = json.loads(source.read_text(encoding="utf-8"))
+    if source == LEGACY_METADATA_JSON and not METADATA_JSON.exists():
+        write_metadata(records)
+    return records
 
 
 def write_metadata(records: list[dict]) -> None:
@@ -234,6 +242,17 @@ def article_id(record: dict) -> str:
         return match.group(1)
     pii = record.get("pii") or ""
     return pii[-8:] if pii else "article"
+
+
+def record_year(record: dict) -> str:
+    for key in ("year", "publicationYear", "coverYear"):
+        value = str(record.get(key, "") or "").strip()
+        if re.fullmatch(r"\d{4}", value):
+            return value
+    # DOI registration strings can contain the prior online year even when the
+    # article belongs to the 2026 journal volume, so do not derive folder years
+    # from DOI text.
+    return "2026"
 
 
 def detect_fuel(record: dict) -> str:
@@ -284,6 +303,7 @@ def is_reaction_kinetics_candidate(record: dict) -> bool:
 
 def record_folder(record: dict) -> Path:
     fuel = record.get("fuelType") or detect_fuel(record)
+    year = record_year(record)
     authors = record.get("authors") or []
     if isinstance(authors, str):
         first_author = authors.split(",")[0].strip()
@@ -291,9 +311,27 @@ def record_folder(record: dict) -> Path:
         first_author = str(authors[0]).strip()
     else:
         first_author = "unknown"
-    short = slugify(record.get("title", ""), 45)
-    name = f"{slugify(first_author, 20)}_2026_{article_id(record)}_{short}"
-    return ROOT / slugify(fuel, 60) / name
+    surname = first_author_surname(first_author)
+    fuel_slug = slugify(fuel, 60)
+    name = f"{slugify(surname, 24)}_{year}_{fuel_slug}_{article_id(record)}"
+    return ROOT / fuel_slug / year / name
+
+
+def processing_folder(record: dict) -> Path:
+    fuel = slugify(record.get("fuelType") or detect_fuel(record), 60)
+    year = record_year(record)
+    return PROCESSING_ARCHIVE / year / fuel / record_folder(record).name
+
+
+def first_author_surname(author: str) -> str:
+    author = re.sub(r"<[^>]+>", "", author or "").strip()
+    author = re.sub(r"\s+", " ", author)
+    if not author:
+        return "unknown"
+    if "," in author:
+        return author.split(",", 1)[0].strip() or "unknown"
+    tokens = [token for token in re.split(r"\s+", author) if token]
+    return tokens[-1] if tokens else "unknown"
 
 
 def looks_like_text(path: Path) -> bool:
@@ -774,8 +812,16 @@ def standardize_mechanism_files(mech: Path, thermo: Path | None, transport: Path
     return chem_target, thermo_out, transport_out
 
 
-def cantera_convert_once(mech: Path, thermo: Path | None, transport: Path | None, out_yaml: Path, log_path: Path) -> tuple[bool, str, str, str]:
-    result_path = out_yaml.with_suffix(".result.json")
+def cantera_convert_once(
+    mech: Path,
+    thermo: Path | None,
+    transport: Path | None,
+    out_yaml: Path,
+    log_path: Path,
+    result_path: Path | None = None,
+) -> tuple[bool, str, str, str]:
+    result_path = result_path or log_path.with_suffix(".result.json")
+    result_path.parent.mkdir(parents=True, exist_ok=True)
     if result_path.exists():
         result_path.unlink()
     code = r"""
@@ -844,10 +890,12 @@ finally:
     return bool(payload.get("ok")), str(payload.get("species", "")), str(payload.get("reactions", "")), str(payload.get("message", ""))
 
 
-def process_with_cantera(mech: Path, thermo: Path | None, transport: Path | None, dest: Path) -> CkResult:
+def process_with_cantera(mech: Path, thermo: Path | None, transport: Path | None, dest: Path, work_dest: Path | None = None) -> CkResult:
     chem_target, thermo_target, transport_target = standardize_mechanism_files(mech, thermo, transport, dest)
+    work_dest = work_dest or dest
+    work_dest.mkdir(parents=True, exist_ok=True)
     yaml_path = dest / "mechanism.yaml"
-    log_path = dest / "cantera_conversion.log"
+    log_path = work_dest / "cantera_conversion.log"
     if not ANALYSIS_PYTHON.exists():
         return CkResult(
             "cantera_failed",
@@ -873,10 +921,10 @@ def process_with_cantera(mech: Path, thermo: Path | None, transport: Path | None
             standardized_transport=transport_target,
         )
     if "Section starts with unrecognized keyword" in message:
-        cleaned = dest / "chem_cantera_clean.inp"
+        cleaned = work_dest / "chem_cantera_clean.inp"
         if write_trimmed_chemkin_input(chem_target, cleaned):
             clean_yaml = dest / "mechanism.cleaned.yaml"
-            clean_log = dest / "cantera_conversion.cleaned.log"
+            clean_log = work_dest / "cantera_conversion.cleaned.log"
             ok, species, reactions, clean_message = cantera_convert_once(cleaned, thermo_target, transport_target, clean_yaml, clean_log)
             if ok:
                 shutil.copy2(cleaned, chem_target)
@@ -896,10 +944,10 @@ def process_with_cantera(mech: Path, thermo: Path | None, transport: Path | None
         else:
             message = f"{message}; cleanup skipped because file is not a CHEMKIN input"
     if any(token in message for token in ["could not convert string to float", "list index out of range", "Unexpected token"]):
-        cleaned = dest / "chem_cantera_numeric_clean.inp"
+        cleaned = work_dest / "chem_cantera_numeric_clean.inp"
         if write_cantera_cleaned_chemkin_input(chem_target, cleaned):
             clean_yaml = dest / "mechanism.numeric_clean.yaml"
-            clean_log = dest / "cantera_conversion.numeric_clean.log"
+            clean_log = work_dest / "cantera_conversion.numeric_clean.log"
             ok, species, reactions, clean_message = cantera_convert_once(cleaned, thermo_target, transport_target, clean_yaml, clean_log)
             if ok:
                 shutil.copy2(cleaned, chem_target)
@@ -1017,17 +1065,22 @@ def copy_downloads_for_record(record: dict, dest: Path) -> list[Path]:
     dest.mkdir(parents=True, exist_ok=True)
     keys = {normalize_doi(record.get("doi", "")), str(record.get("pii", "")).lower(), article_id(record).lower()}
     copied: list[Path] = []
-    for file in DOWNLOADS.glob("*"):
-        if not file.is_file():
+    seen: set[Path] = set()
+    for source_dir in [DOWNLOADS, LEGACY_DOWNLOADS]:
+        if not source_dir.exists():
             continue
-        low = file.name.lower()
-        if any(key and key.replace("/", "_").replace(".", "_") in low for key in keys) or any(
-            key and key in low for key in keys
-        ):
-            target = dest / file.name
-            if not target.exists() or target.stat().st_size != file.stat().st_size:
-                shutil.copy2(file, target)
-            copied.append(target)
+        for file in source_dir.glob("*"):
+            if not file.is_file() or file.resolve() in seen:
+                continue
+            seen.add(file.resolve())
+            low = file.name.lower()
+            if any(key and key.replace("/", "_").replace(".", "_") in low for key in keys) or any(
+                key and key in low for key in keys
+            ):
+                target = dest / file.name
+                if not target.exists() or target.stat().st_size != file.stat().st_size:
+                    shutil.copy2(file, target)
+                copied.append(target)
     return copied
 
 
@@ -1036,20 +1089,37 @@ def cleanup_inactive_paper_folders(root: Path, active_folders: set[Path]) -> Non
     active = {path.resolve() for path in active_folders}
     if not root.exists():
         return
-    for fuel_dir in list(root.iterdir()):
-        if not fuel_dir.is_dir() or fuel_dir.name.startswith("_"):
+    candidate_dirs = sorted(
+        {path.parent.resolve() for path in root.rglob("mechanism_summary.md")}
+        | {path.parent.resolve() for path in root.rglob("chem.inp")}
+        | {path.parent.resolve() for path in root.rglob("raw_downloads") if path.is_dir()}
+        | {path.parent.resolve() for path in root.rglob("extracted") if path.is_dir()},
+        key=lambda p: len(p.parts),
+        reverse=True,
+    )
+    for paper_dir in candidate_dirs:
+        if paper_dir in active or root not in paper_dir.parents or any(part.startswith("_") for part in paper_dir.relative_to(root).parts):
             continue
-        for paper_dir in list(fuel_dir.iterdir()):
-            if not paper_dir.is_dir():
-                continue
-            resolved = paper_dir.resolve()
-            if root not in resolved.parents or resolved in active:
-                continue
-            shutil.rmtree(resolved)
+        if paper_dir.exists():
+            shutil.rmtree(paper_dir)
+    for directory in sorted((p for p in root.rglob("*") if p.is_dir()), key=lambda p: len(p.parts), reverse=True):
+        if any(part.startswith("_") for part in directory.relative_to(root).parts):
+            continue
         try:
-            next(fuel_dir.iterdir())
-        except StopIteration:
-            fuel_dir.rmdir()
+            directory.rmdir()
+        except OSError:
+            pass
+
+
+def cleanup_active_paper_folder(folder: Path) -> None:
+    allowed_files = {"mechanism_summary.md", "chem.inp", "therm.dat", "tran.dat", "mechanism.yaml"}
+    if not folder.exists():
+        return
+    for child in list(folder.iterdir()):
+        if child.is_dir():
+            shutil.rmtree(child)
+        elif child.name not in allowed_files:
+            child.unlink()
 
 
 def url_head(url: str) -> tuple[int, str, int]:
@@ -1473,6 +1543,7 @@ def process() -> None:
         candidate = is_reaction_kinetics_candidate(record)
         record["candidate"] = candidate
         folder = record_folder(record)
+        archive_folder = processing_folder(record)
         local_downloads: list[Path] = []
         extraction_notes: list[str] = []
         mechanisms: list[Path] = []
@@ -1480,10 +1551,10 @@ def process() -> None:
         transports: list[Path] = []
         cantera: list[Path] = []
         if candidate:
-            local_downloads = copy_downloads_for_record(record, folder / "raw_downloads")
-            extracted_dest = folder / "extracted"
+            local_downloads = copy_downloads_for_record(record, archive_folder / "raw_downloads")
+            extracted_dest = archive_folder / "extracted"
             extraction_notes = extract_archives(local_downloads, extracted_dest)
-            scan_roots = [folder / "raw_downloads", extracted_dest]
+            scan_roots = [archive_folder / "raw_downloads", extracted_dest]
             mechanisms, thermos, transports, cantera = scan_files(scan_roots)
         processing_results: list[CkResult] = []
         if mechanisms:
@@ -1492,7 +1563,7 @@ def process() -> None:
             for mech in sorted(mechanisms, key=mechanism_priority):
                 thermo = find_thermo_for(mech, thermos + mechanisms)
                 transport = find_transport_for(mech, transports)
-                result = process_with_cantera(mech, thermo, transport, folder)
+                result = process_with_cantera(mech, thermo, transport, folder, archive_folder)
                 processing_results.append(result)
                 if result.status in {"ok", "ok_after_cleanup"}:
                     break
@@ -1502,7 +1573,7 @@ def process() -> None:
             if not record.get("paperPdfStatus"):
                 record["paperPdfStatus"] = "pending manual download; ScienceDirect PDF access triggered CAPTCHA or was not exposed"
             for mech in sorted(cantera, key=mechanism_priority):
-                result = process_with_cantera(mech, None, None, folder)
+                result = process_with_cantera(mech, None, None, folder, archive_folder)
                 processing_results.append(result)
                 if result.status in {"ok", "ok_after_cleanup"}:
                     break
@@ -1611,8 +1682,12 @@ def process() -> None:
         "mechanism.numeric_clean.result.json",
     }
     for generated in ROOT.rglob("*"):
+        if any(part.startswith("_") for part in generated.relative_to(ROOT).parts):
+            continue
         if generated.is_file() and generated.name in generated_names and generated.parent.resolve() not in active_folders:
             generated.unlink()
+    for folder_path in active_folders:
+        cleanup_active_paper_folder(folder_path)
     cleanup_inactive_paper_folders(ROOT, active_folders)
     ROOT.joinpath("manual_download_handoff.md").write_text("\n".join(handoff) + "\n", encoding="utf-8")
     ROOT.joinpath("run_summary.json").write_text(

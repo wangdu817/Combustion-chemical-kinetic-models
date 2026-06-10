@@ -3,9 +3,14 @@ __pycache__/
 *.py[cod]
 .pytest_cache/
 
-# Large or copyrighted collection payloads
+# Large or copyrighted collection payloads.
+# Git tracks indexes and per-paper summaries only. Local mechanism files,
+# downloaded supplements, PDFs, and processing logs remain on disk.
 combustion_and_flame_2026_mechanisms/**
+combustion_and_flame_mechanisms/**
+
 !combustion_and_flame_2026_mechanisms/
+!combustion_and_flame_2026_mechanisms/**/
 !combustion_and_flame_2026_mechanisms/README.md
 !combustion_and_flame_2026_mechanisms/collection_index.csv
 !combustion_and_flame_2026_mechanisms/manual_download_handoff.md
@@ -13,11 +18,21 @@ combustion_and_flame_2026_mechanisms/**
 !combustion_and_flame_2026_mechanisms/_raw/
 combustion_and_flame_2026_mechanisms/_raw/**
 !combustion_and_flame_2026_mechanisms/_raw/article_metadata.json
-
-# Allow per-paper summaries, but keep downloaded/extracted mechanism payloads out of Git.
-!combustion_and_flame_2026_mechanisms/**/
 !combustion_and_flame_2026_mechanisms/**/mechanism_summary.md
-combustion_and_flame_2026_mechanisms/**/raw_downloads/**
-combustion_and_flame_2026_mechanisms/**/extracted/**
-combustion_and_flame_2026_mechanisms/**/ckinterp_chem.out
-combustion_and_flame_2026_mechanisms/**/ckinterp_restore_warnings.txt
+
+!combustion_and_flame_mechanisms/
+!combustion_and_flame_mechanisms/**/
+!combustion_and_flame_mechanisms/README.md
+!combustion_and_flame_mechanisms/collection_index.csv
+!combustion_and_flame_mechanisms/manual_download_handoff.md
+!combustion_and_flame_mechanisms/run_summary.json
+!combustion_and_flame_mechanisms/_raw/
+combustion_and_flame_mechanisms/_raw/**
+!combustion_and_flame_mechanisms/_raw/article_metadata.json
+!combustion_and_flame_mechanisms/**/mechanism_summary.md
+
+combustion_and_flame_mechanisms/_processing_archive/**
+combustion_and_flame_mechanisms/**/chem.inp
+combustion_and_flame_mechanisms/**/therm.dat
+combustion_and_flame_mechanisms/**/tran.dat
+combustion_and_flame_mechanisms/**/mechanism.yaml

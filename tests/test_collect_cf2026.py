@@ -7,14 +7,12 @@ from scripts import collect_cf2026 as cf
 
 
 REAL_MECH = Path(
-    r"E:\mech_collection\combustion_and_flame_2026_mechanisms\ammonia_dimethoxyethane"
-    r"\chunlan_qin_2026_114555_kinetic_study_of_high_temperature_co_oxidatio"
-    r"\extracted\s0010218025005929_mmc2\Liu-SMM3_12DME_mech.inp"
+    r"E:\mech_collection\combustion_and_flame_mechanisms\ammonia_dimethoxyethane"
+    r"\2026\qin_2026_ammonia_dimethoxyethane_114555\chem.inp"
 )
 REAL_THERMO = Path(
-    r"E:\mech_collection\combustion_and_flame_2026_mechanisms\ammonia_dimethoxyethane"
-    r"\chunlan_qin_2026_114555_kinetic_study_of_high_temperature_co_oxidatio"
-    r"\extracted\s0010218025005929_mmc3\Liu-SMM4_12DME_therm.dat"
+    r"E:\mech_collection\combustion_and_flame_mechanisms\ammonia_dimethoxyethane"
+    r"\2026\qin_2026_ammonia_dimethoxyethane_114555\therm.dat"
 )
 
 
@@ -118,8 +116,8 @@ phases:
     def test_cleanup_inactive_paper_folders_removes_ignored_payloads(self):
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
-            active = root / "fuel" / "active_paper"
-            inactive = root / "methane_ethane" / "inactive_paper"
+            active = root / "fuel" / "2026" / "active_paper"
+            inactive = root / "methane_ethane" / "2026" / "inactive_paper"
             inactive_extracted = inactive / "extracted"
             active.mkdir(parents=True)
             inactive_extracted.mkdir(parents=True)
@@ -132,6 +130,33 @@ phases:
             self.assertTrue(active.exists())
             self.assertFalse(inactive.exists())
             self.assertFalse((root / "methane_ethane").exists())
+
+    def test_record_folder_uses_fuel_year_surname_layout(self):
+        record = {
+            "authors": ["Chunlan Qin", "Second Author"],
+            "fuelType": "ammonia_dimethoxyethane",
+            "articleNumber": "114555",
+            "title": "Kinetic study",
+        }
+
+        folder = cf.record_folder(record)
+
+        self.assertEqual(folder.parts[-3:], ("ammonia_dimethoxyethane", "2026", "qin_2026_ammonia_dimethoxyethane_114555"))
+
+    def test_cleanup_active_paper_folder_keeps_only_summary_and_mechanisms(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            folder = Path(tmp)
+            for name in ["mechanism_summary.md", "chem.inp", "therm.dat", "tran.dat", "mechanism.yaml", "cantera_conversion.log"]:
+                (folder / name).write_text(name, encoding="utf-8")
+            (folder / "extracted").mkdir()
+            (folder / "extracted" / "old.txt").write_text("old", encoding="utf-8")
+
+            cf.cleanup_active_paper_folder(folder)
+
+            self.assertEqual(
+                sorted(path.name for path in folder.iterdir()),
+                ["chem.inp", "mechanism.yaml", "mechanism_summary.md", "therm.dat", "tran.dat"],
+            )
 
     def test_gb_t_7714_uses_ascii_et_al_for_many_authors(self):
         record = {
