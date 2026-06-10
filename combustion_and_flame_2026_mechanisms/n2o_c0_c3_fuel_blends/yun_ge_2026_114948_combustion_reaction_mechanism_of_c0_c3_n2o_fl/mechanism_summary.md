@@ -72,7 +72,7 @@ Reaction 400: NNH + O2 <=> H + N2 + O2
 
 ## Abstract
 
-not available
+Due to the special property of N2O decomposition with heat release, the fundamental flame structures and combustion characteristics of fuel/N2O flames are expected to be distinct from fuel/O2 and fuel/air flames. This study reports an experimental and kinetic modelling study of laminar burning velocities of C3H8/H2/N2O/Ar flames. Experiments were conducted using the spherical flame method under various equivalence ratios and H2 fractions at 1 atm and 298 K. Several relevant mechanisms from the literature were tested; none of them could accurately predict the laminar burning velocities for all the tested conditions. A new mechanism with 96 species and 626 elementary reactions for C0-C3/N2O flames was proposed and validated, where the mechanism update focused on the rate constants of dominant elementary reactions derived from sensitivity analyses based on the deviation between simulated and experimental results. The new model performed well in predicting the combustion parameters of C0-C3/N2O relevant flames (such as laminar burning velocities, ignition delay times, and species mole fraction profiles), and the performance was superior to the literature mechanisms. Kinetic analyses were performed using the present model to elucidate the main reaction paths and the dominant elementary reactions for C3H8/H2/N2O/Ar flames and C0-C3/N2O flames. Results show that the kinetics of N2O, as well as N chemistry, play a crucial role during the combustion process for C0-C3/N2O flames. The present model can be regarded as a significant advancement in combustion kinetics of fuel/N2O flames, as well as a foundation for developing kinetic mechanisms of heavy fuel/N2O flames.
 
 ## Processing Notes
 

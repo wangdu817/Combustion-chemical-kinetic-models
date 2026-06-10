@@ -41,7 +41,7 @@ Ke Ren, Xiaoping Chen, Jiliang Ma. Development and numerical analysis of a detai
 
 ## Abstract
 
-not available
+Ammonia (NH3)/coal co-combustion has attracted increasing interest as a viable route for ammonia utilization in existing coal-fired systems; however, the chemical interaction between NH3 and coal volatiles during devolatilization remains poorly resolved. In this work, a detailed kinetic mechanism for NH3/coal-volatile co-combustion comprising 173 species and 2036 elementary reactions is developed and validated against laminar flame speeds of NH3, CH4, H2, and representative mixed fuels over a wide range of conditions. Numerical simulations are conducted to analyze the flame characteristics of NH3/coal-volatiles. With increasing NH3 fraction, the laminar flame speed decreases while the flame thickness increases, accompanied by a downstream shift of the main reaction zone due to reduced reactivity and delayed radical formation. Analysis of nitrogen chemistry indicates that NO formation is primarily controlled by NHx oxidation pathways involving HNO intermediates, whereas NO reduction is governed by NHx-mediated reactions. Reaction pathway analysis further reveals that HCN acts as a key intermediate linking carbon- and nitrogen-containing reaction networks, enabling strong coupling between volatile oxidation and NH3 conversion. The present mechanism provides a mechanistic framework for interpreting flame structure evolution and nitrogen conversion in NH3/coal-volatile co-combustion and establishes a robust kinetic basis for predictive modeling of ammonia-based co-firing systems.
 
 ## Processing Notes
 

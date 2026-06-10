@@ -41,7 +41,7 @@ Wenchao Zhu, Taipeng Mao, Zechuan Cui, Xinyang Tian, ... Mingshu Bi. A combined 
 
 ## Abstract
 
-not available
+The proposal of carbon neutrality targets has accelerated the deployment of C0–C1 low- and zero-carbon fuels such as ammonia (NH3), hydrogen (H2), methane (CH4), and methanol (CH3OH) in energy conversion and power systems. Multi-component fuel blending is widely employed to tailor reactivity and improve emission performance. In this work, laminar burning velocities (LBVs) of NH3/H2/air, NH3/H2/CH4/air, and NH3/H2/CH3OH/air blends were measured in a constant-volume combustion chamber at 473 K and 2–8 atm. Based on a previously developed NH3/CH4/H2/CO kinetic mechanism, three key CN cross reactions were incorporated and the rate constants of fifteen CH and HN reactions were updated. This yielded a comprehensive C0–C1 kinetic mechanism that comprises 53 species and 354 reactions and accurately reproduces the measured LBVs. To further assess broader applicability, this mechanism was evaluated against C0–C1 single and multi-component fuel datasets, including 2035 LBV data points (298–750 K, 1–15 atm, equivalence ratios ϕ = 0.4–5.0), 1618 ignition delay time data points (817–2517 K, 1–50 atm, ϕ = 0.1–2.0), and 6172 species data points measured in jet-stirred reactors (500–1400 K, 1–100 atm, ϕ = 0.1–4.35). Five performance metrics with normalized weights were applied for quantitative evaluation. The results indicated that this mechanism significantly improves overall predictive accuracy relative to previous mechanisms and also shows the closest agreement with experimental data among six recently published representative mechanisms.
 
 ## Processing Notes
 

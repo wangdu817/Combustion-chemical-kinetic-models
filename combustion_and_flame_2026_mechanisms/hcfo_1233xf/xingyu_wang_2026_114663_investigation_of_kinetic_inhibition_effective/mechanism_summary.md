@@ -41,7 +41,7 @@ Xingyu Wang, Xiao Zhang, Peiyao Chen. Investigation of kinetic inhibition effect
 
 ## Abstract
 
-not available
+not available; ScienceDirect browser extraction failed: sciencedirect_error_page
 
 ## Processing Notes
 

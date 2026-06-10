@@ -2781,7 +2781,7 @@
       }
     ],
     "crossrefScore": 1,
-    "abstractStatus": "ScienceDirect browser extraction failed: abstract_not_found"
+    "abstractStatus": "ScienceDirect browser extraction failed: sciencedirect_error_page"
   },
   {
     "articleNumber": "114661",
@@ -2968,7 +2968,7 @@
       }
     ],
     "crossrefScore": 1,
-    "abstractStatus": "ScienceDirect browser extraction failed: abstract_not_found"
+    "abstractStatus": "ScienceDirect browser extraction failed: sciencedirect_error_page"
   },
   {
     "articleNumber": "114668",
@@ -3058,7 +3058,7 @@
       }
     ],
     "crossrefScore": 1,
-    "abstractStatus": "ScienceDirect browser extraction failed: abstract_not_found"
+    "abstractStatus": "ScienceDirect browser extraction failed: sciencedirect_error_page"
   },
   {
     "articleNumber": "114657",
@@ -3368,7 +3368,7 @@
       }
     ],
     "crossrefScore": 1,
-    "abstractStatus": "ScienceDirect browser extraction failed: abstract_not_found"
+    "abstractStatus": "ScienceDirect browser extraction failed: sciencedirect_error_page"
   },
   {
     "articleNumber": "114697",
@@ -3414,7 +3414,7 @@
       }
     ],
     "crossrefScore": 1,
-    "abstractStatus": "ScienceDirect browser extraction failed: abstract_not_found"
+    "abstractStatus": "ScienceDirect browser extraction failed: sciencedirect_error_page"
   },
   {
     "articleNumber": "114699",
@@ -3521,7 +3521,7 @@
       }
     ],
     "crossrefScore": 1,
-    "abstractStatus": "ScienceDirect browser extraction failed: abstract_not_found"
+    "abstractStatus": "ScienceDirect browser extraction failed: sciencedirect_error_page"
   },
   {
     "articleNumber": "114689",
@@ -3700,7 +3700,8 @@
     ],
     "crossrefScore": 1,
     "issuePdfLink": "https://www.sciencedirect.com/science/article/pii/S0010218026001033/pdfft?md5=e31f686f77b544afbb1fd44dfbd6f2c9&pid=1-s2.0-S0010218026001033-main.pdf",
-    "abstractStatus": "ScienceDirect browser extraction failed: abstract_not_found"
+    "abstract": "The proposal of carbon neutrality targets has accelerated the deployment of C0–C1 low- and zero-carbon fuels such as ammonia (NH3), hydrogen (H2), methane (CH4), and methanol (CH3OH) in energy conversion and power systems. Multi-component fuel blending is widely employed to tailor reactivity and improve emission performance. In this work, laminar burning velocities (LBVs) of NH3/H2/air, NH3/H2/CH4/air, and NH3/H2/CH3OH/air blends were measured in a constant-volume combustion chamber at 473 K and 2–8 atm. Based on a previously developed NH3/CH4/H2/CO kinetic mechanism, three key CN cross reactions were incorporated and the rate constants of fifteen CH and HN reactions were updated. This yielded a comprehensive C0–C1 kinetic mechanism that comprises 53 species and 354 reactions and accurately reproduces the measured LBVs. To further assess broader applicability, this mechanism was evaluated against C0–C1 single and multi-component fuel datasets, including 2035 LBV data points (298–750 K, 1–15 atm, equivalence ratios ϕ = 0.4–5.0), 1618 ignition delay time data points (817–2517 K, 1–50 atm, ϕ = 0.1–2.0), and 6172 species data points measured in jet-stirred reactors (500–1400 K, 1–100 atm, ϕ = 0.1–4.35). Five performance metrics with normalized weights were applied for quantitative evaluation. The results indicated that this mechanism significantly improves overall predictive accuracy relative to previous mechanisms and also shows the closest agreement with experimental data among six recently published representative mechanisms.",
+    "abstractSource": "sciencedirect_dom:#abss0001"
   },
   {
     "articleNumber": "114867",
@@ -3862,7 +3863,8 @@
       }
     ],
     "crossrefScore": 1,
-    "abstractStatus": "ScienceDirect browser extraction failed: abstract_not_found"
+    "abstract": "Carbon dioxide is the primary constituent of exhaust gas recirculation (EGR) and strongly influences ignition chemistry in advanced engines. This work investigates the roles of CO2 addition in plasma assisted methanol ignition. Gas chromatograph is employed to quantify the species concentrations and a detailed kinetic mechanism incorporating the electron impact reactions of CH3OH, CO2 and air is developed and validated against the measurements, showing good predictive performance. A nonlinear dependence ignition delay time on reduced electric field (E/N) is observed at low temperatures: the IDT initially decreases and then increases with increasing E/N, while at high temperatures a linear relationship is obtained. Electron impact dissociation reactions of CO2, the dominant consumption pathways, absorb the discharge energy and weaken the ignition by reducing the electron energy available to excite N2, O2 and CH3OH. Conversely, CO2 forming reaction such as CO + OH = CO2 + H enlarges the radical pool through H + O2 = OH + O, thereby accelerating chain reactions and promoting ignition. The effects of CO2 are further decoupled into dilution, thermal and chemical effects on plasma assisted ignition. The electron energy distribution function remains the same. Among them, the thermal effect proves most beneficial, whereas the chemical effect inhibited ignition. Finally, ignition Damköhler number with CO2 addition for plasma assisted methanol ignition is smaller than that without CO2 at low temperature, reducing thermal diffusivity, forming a more uniform temperature distribution and decreasing the probability of preignition. This work provides mechanistic insight into CO2 effects on plasma assisted methanol ignition with implication for advanced engines.",
+    "abstractSource": "sciencedirect_dom:#abss0001"
   },
   {
     "articleNumber": "114890",
@@ -4696,7 +4698,8 @@
       }
     ],
     "crossrefScore": 0.995,
-    "abstractStatus": "ScienceDirect browser extraction failed: abstract_not_found"
+    "abstract": "Nitrogen oxides (NOx) are important pollutants in gas turbines, and their presence substantially influences fuel oxidation processes. Syngas is a promising clean alternative fuel. A systematic understanding of the interactions between syngas and NOx is crucial for controlling syngas combustion in gas turbines and for developing accurate kinetic models for high-carbon fuels. In this study, oxidation experiments of coal-derived syngas with 0-1850 ppm NOx added were conducted in a high-pressure flow reactor under conditions of 1.9-18.0 atm and 623-1273 K. A kinetic model for H2/CO/NOx mixtures applicable to high-pressure conditions was developed and extensively validated against species concentrations, laminar burning velocities, and ignition delay times. The present model accurately reproduces both newly measured and literature data. This validation covers a wide range of temperatures (298-2200 K), pressures (1.0-100.0 atm), and equivalence ratios (0.03-2.0). Experimental results show that increasing pressure markedly lowers the onset temperature of syngas oxidation but suppresses its intermediate-temperature oxidation rate, with maximum differences of 211.1 K and 37.1%, respectively. At 18.0 atm, the addition of NOx promotes low-temperature oxidation while inhibiting intermediate-temperature oxidation, whereas at 1.9 atm, it suppresses oxidation across the entire temperature range. Kinetic analysis reveals that both pressure and NOx addition regulate syngas oxidation primarily by affecting the formation and consumption of OH radicals. Under high-pressure and low-temperature conditions, the reactions H2 + NO2 = H + HONO, H2 + NO2 = H + HNO2, and CO + NO2 = CO2 + NO make significant contributions to syngas oxidation. In contrast, the NO–HNO cycles play key roles in radical consumption within the intermediate-temperature regime. These high-pressure experimental data and the kinetic model provide valuable guidance for high-pressure combustion control in syngas-fueled gas turbines. Novelty and significance statement The novelty of this work lies in the systematic investigation of syngas oxidation characteristics over a wide range of temperatures, pressures, and NOx addition levels. To ensure industrial relevance, experiments were conducted using a representative coal-derived syngas composition. In parallel, a detailed kinetic model was developed to describe syngas combustion as well as NOx formation and consumption. The model accurately captures the trends in species concentrations during the conversion processes of NOx and their interactions with syngas across the entire temperature range examined. It successfully reproduces both the new experimental measurements and data reported in the literature, including species concentration profiles, laminar burning velocities, and ignition delay times under a wide variety of conditions. Overall, this study provides essential data for elucidating the syngas-NOx interactions. It also provides a validated kinetic framework that supports high-carbon fuel combustion modeling and the development of practical syngas-fueled gas turbines.",
+    "abstractSource": "sciencedirect_dom:#abs0001"
   },
   {
     "articleNumber": "114922",
@@ -4809,7 +4812,8 @@
       }
     ],
     "crossrefScore": 1,
-    "abstractStatus": "ScienceDirect browser extraction failed: abstract_not_found"
+    "abstract": "Due to the special property of N2O decomposition with heat release, the fundamental flame structures and combustion characteristics of fuel/N2O flames are expected to be distinct from fuel/O2 and fuel/air flames. This study reports an experimental and kinetic modelling study of laminar burning velocities of C3H8/H2/N2O/Ar flames. Experiments were conducted using the spherical flame method under various equivalence ratios and H2 fractions at 1 atm and 298 K. Several relevant mechanisms from the literature were tested; none of them could accurately predict the laminar burning velocities for all the tested conditions. A new mechanism with 96 species and 626 elementary reactions for C0-C3/N2O flames was proposed and validated, where the mechanism update focused on the rate constants of dominant elementary reactions derived from sensitivity analyses based on the deviation between simulated and experimental results. The new model performed well in predicting the combustion parameters of C0-C3/N2O relevant flames (such as laminar burning velocities, ignition delay times, and species mole fraction profiles), and the performance was superior to the literature mechanisms. Kinetic analyses were performed using the present model to elucidate the main reaction paths and the dominant elementary reactions for C3H8/H2/N2O/Ar flames and C0-C3/N2O flames. Results show that the kinetics of N2O, as well as N chemistry, play a crucial role during the combustion process for C0-C3/N2O flames. The present model can be regarded as a significant advancement in combustion kinetics of fuel/N2O flames, as well as a foundation for developing kinetic mechanisms of heavy fuel/N2O flames.",
+    "abstractSource": "sciencedirect_dom:#abss0001"
   },
   {
     "articleNumber": "114937",
@@ -5076,7 +5080,8 @@
       }
     ],
     "crossrefScore": 1,
-    "abstractStatus": "ScienceDirect browser extraction failed: abstract_not_found"
+    "abstract": "Laminar burning velocities (SL) of 2-butanone + air mixtures were measured using the heat flux method at atmospheric pressure over unburnt temperatures of 298–343 K and equivalence ratios of 0.7–1.4. The consistency among the present measurements, literature data, and model predictions was evaluated by means of the temperature and pressure dependences of SL. It was found that the present measurements accurately follow the empirical formula across all equivalence ratios, while notable inconsistencies were observed between the present measurements and the literature data on the fuel-rich side. Furthermore, the latest 2-butanone combustion kinetic model, PCFC_butanone V3, underpredicts SL, as well as the ignition delay times (IDTs) under low-temperature conditions. Accordingly, a new 2-butanone combustion kinetic model (Present model) was developed, which is based on the 2-butanone sub-mechanism of PCFC_butanone V3 with updates to six key low-temperature reaction classes (including H-abstraction reactions of 2-butanone and O2-addition reactions of butanoyl radicals) and adopts NUIG 1.3 as the C0-C4 base mechanism. Comprehensive model evaluation results demonstrate that the Present model well predicts the new measurements of SL, as well as the low-to-high temperature IDTs, SL, and species profiles data reported in the literature. Sensitivity and reaction flux analyses reveal that the accurate prediction of SL by the Present model is primarily attributed to the revised rate constants for the reaction CH2+O2=>CO2+2H and the incorporation of the CH2→CH2O→CO pathway in the NUIG 1.3. The updates to the rate constants of the four reaction classes (the HȮ2+HȮ2 reactions, 2-butanone H-abstraction reactions by CH3Ȯ and HȮ2 radicals, concerted HȮ2-elimination of alkylperoxy reactions, and CH3Ȯ+O2 reactions) are the primary reasons for the Present model's good prediction of low-temperature IDTs and species profiles.",
+    "abstractSource": "sciencedirect_dom:#abss0001"
   },
   {
     "articleNumber": "114969",
@@ -5420,7 +5425,8 @@
       }
     ],
     "crossrefScore": 1,
-    "abstractStatus": "ScienceDirect browser extraction failed: abstract_not_found"
+    "abstract": "Ammonia (NH3)/coal co-combustion has attracted increasing interest as a viable route for ammonia utilization in existing coal-fired systems; however, the chemical interaction between NH3 and coal volatiles during devolatilization remains poorly resolved. In this work, a detailed kinetic mechanism for NH3/coal-volatile co-combustion comprising 173 species and 2036 elementary reactions is developed and validated against laminar flame speeds of NH3, CH4, H2, and representative mixed fuels over a wide range of conditions. Numerical simulations are conducted to analyze the flame characteristics of NH3/coal-volatiles. With increasing NH3 fraction, the laminar flame speed decreases while the flame thickness increases, accompanied by a downstream shift of the main reaction zone due to reduced reactivity and delayed radical formation. Analysis of nitrogen chemistry indicates that NO formation is primarily controlled by NHx oxidation pathways involving HNO intermediates, whereas NO reduction is governed by NHx-mediated reactions. Reaction pathway analysis further reveals that HCN acts as a key intermediate linking carbon- and nitrogen-containing reaction networks, enabling strong coupling between volatile oxidation and NH3 conversion. The present mechanism provides a mechanistic framework for interpreting flame structure evolution and nitrogen conversion in NH3/coal-volatile co-combustion and establishes a robust kinetic basis for predictive modeling of ammonia-based co-firing systems.",
+    "abstractSource": "sciencedirect_dom:#abss0001"
   },
   {
     "articleNumber": "114980",
@@ -5974,7 +5980,8 @@
     ],
     "crossrefScore": 1,
     "issuePdfLink": "https://www.sciencedirect.com/science/article/pii/S0010218026002257/pdfft?md5=80d86537e038b12ab4d941fba60ebf9b&pid=1-s2.0-S0010218026002257-main.pdf",
-    "abstractStatus": "ScienceDirect browser extraction failed: abstract_not_found"
+    "abstract": "Soot formation still remains a contemporary challenge for the combustion community. Over the years, various theories have focused on pathways involving polycyclic aromatic hydrocarbons (PAHs). Recently, interest has shifted towards the gas-phase mechanisms of polyyne growth, which, alongside the PAHs, are believed to contribute to particle nucleation and growth through fast polymerization processes. This work proposes a new chemical kinetic model that incorporates these mechanisms to predict soot formation from shock tube experiments on acetylene pyrolysis. Acetylene was chosen as a reference intermediate for high-temperature combustion and as a key precursor for polyyne growth. The model, generated by the Soot Mechanism Automated Generator (SMAuG) framework recently built at ICARE, is composed of: i) the comprehensive PAH chemistry from ICARE gas-phase model; ii) an updated gas-phase C2H2 sub-mechanism including pyrolytic kinetic pathways of C2nH2 polyacetylene species; iii) a new aromatic formation chemistry from acetylene and polyyne precursors; iv) implementation of activated soot precursors from the polyyne routes; v) complete chemistry of particle nucleation and growth. The model was validated against pyrolytic shock tube data, covering temperatures T5 1603–1980 K, pressures P5 16.7–18.2 bar, and C2H2 mole fractions of 0.245% and 0.35%. The model accurately predicts the time-history profiles of soot volume fractions within a factor 2.2, and also kinetic parameters such as induction delay times and soot growth rates. Additional extensive validations were performed against literature data over a wide range of conditions. Kinetic analyses clarify the mechanisms behind acetylene soot formation, highlighting the conventional role of PAH pathways versus the newly proposed pathways under different conditions, as well as the influence of polyyne chemistry on particle growth.",
+    "abstractSource": "sciencedirect_dom:#abss0001"
   },
   {
     "articleNumber": "114999",
@@ -6414,7 +6421,8 @@
     ],
     "crossrefScore": 1,
     "issuePdfLink": "https://www.sciencedirect.com/science/article/pii/S0010218026002397/pdfft?md5=7539303f5f5f268c8a23396f046536f3&pid=1-s2.0-S0010218026002397-main.pdf",
-    "abstractStatus": "ScienceDirect browser extraction failed: abstract_not_found"
+    "abstract": "Species measurements of the gaseous products during oxidation were conducted using a jet-stirred reactor (JSR) and flow reactors to get insight into the combustion chemistry of 1,2,4-trimethylbenzene. The JSR oxidation experiments were performed at pressures of 1 and 10 atm, temperatures of 900–1400 K, equivalence ratios of 0.25–1.5, and residence times of 0.1 and 0.5 s. Key products, such as CO, CO2, and fuel, as well as small hydrocarbons and monocyclic aromatics, were quantified using gas chromatography. Fuel-rich oxidation was studied using atmospheric-pressure flow reactors at gas temperatures from 1000 to 1350 K, equivalence ratio of 9.0, and residence time of 1.0 s or 1.2 s. The mole fractions of small hydrocarbons from C1 to C7 were quantified by gas chromatograph with a flame ionization detector, while those of polycyclic aromatic hydrocarbons (PAHs) were measured using gas chromatograph mass spectroscopy combined with electron ionization. A detailed kinetic model for 1,2,4-trimethylbenzene oxidation was developed by refining our recently reported mechanism in terms of fuel-specific reactions and validated against not only the present data but also the several literature data. Kinetic analysis in the JSR oxidation demonstrated that dimethyl phenyl was an important intermediate species, while benzene and toluene were important stable aromatic species. Conversely, it was also revealed that several aromatics, such as benzene, toluene, indene, and methyl naphthalene played a significant role in PAH growth reactions in the fuel-rich oxidation in a flow reactor. Also, several small species, such as acetylene, propargyl, and cyclopentadienyl, were identified as important building blocks in mass growth reactions.",
+    "abstractSource": "sciencedirect_dom:#abss0001"
   },
   {
     "articleNumber": "115011",
@@ -6513,7 +6521,8 @@
     ],
     "crossrefScore": 1,
     "issuePdfLink": "https://www.sciencedirect.com/science/article/pii/S0010218026002518/pdfft?md5=63d641dc599d8d7125fae187205917a6&pid=1-s2.0-S0010218026002518-main.pdf",
-    "abstractStatus": "ScienceDirect browser extraction failed: abstract_not_found"
+    "abstract": "Ignition delay time measurements of 70/30, 50/50, and 30/70 (mol%) NH3/CH4 mixtures diluted with 70% Ar were conducted in a high-pressure shock tube at temperatures in the range 1135–1610 K, at pressures of 20 and 40 bar, and at equivalence ratios (φ) of 0.5–2.0. Concentration time histories of NH3, NO and CO during the ignition of stoichiometric 80/20, 50/50, and 20/80 (mol%) NH3/CH4 mixtures with 95% (Ar + He) dilution were also measured in a shock tube at temperatures 1692–2130 K and pressures of ∼1.8 bar. Species concentration profiles as a function of temperature, during the oxidation of a fuel-lean (φ = 0.5) ∼50/50 (mol%) NH3/CH4 mixture diluted with 96.2% N2, were measured in a jet-stirred reactor at 40 atm in the temperature range 423–1002 K. A new chemical kinetic model was developed and validated to describe NH3/CH4 mixtures combustion, incorporating updates to the important carbon–nitrogen (C–N) interaction reactions. The model predictions show good agreement with the new measurements, as well as with available fundamental combustion experimental data from the literature, at most conditions. Sensitivity and reaction pathway flux analyses were performed to determine the important C–N interaction reactions controlling the reactivity of the NH3/CH4 blends.",
+    "abstractSource": "sciencedirect_dom:#abss0001"
   },
   {
     "articleNumber": "115029",
@@ -6588,7 +6597,8 @@
       }
     ],
     "crossrefScore": 1,
-    "abstractStatus": "ScienceDirect browser extraction failed: abstract_not_found"
+    "abstract": "The experimental and kinetic studies of furan derivatives are essential for advancing the reliable utilization of bioenergy. This study reports laser-based diagnostics of furan and 2-methylfuran oxidation behind reflected shock waves at temperatures ranging from 1235 to 1680 K and pressures of approximately 2 bar. Time-resolved temperature, H₂O, CO, and CO₂ were simultaneously quantified using mid-infrared laser absorption spectroscopy, with H₂O measured via a newly developed calibration-free method. CO₂ onset times were extracted from measured profiles to characterize system reactivity and were compared against predictions from several kinetic mechanisms. Detailed comparisons were made between the experimental and the mechanism-simulated profiles. Under fuel-rich conditions, the Tran mechanism significantly overpredicted early CO₂ formation for both fuels. Rate-of-production and pathway analyses revealed that this discrepancy arises from excessive HCCO formation, which rapidly converts to CO₂ through the reaction HCCO + O₂ = CO + CO₂ + H. For furan, the overprediction originates from an overly strong ring-opening pathway (furan = C₂H₂ + CH₂CO), producing acetylene and ketene that promote HCCO formation. For 2-methylfuran, the dominant reaction of early HCCO formation is C₃H₂ + O₂ = HCCO + CO + H, reflecting deficiencies in the C₃H₂ and C₃H₃ sub-mechanisms of the Tran model. By updating the furan initiation chemistry and replacing the C₃H₂ and C₃H₃ sub-models, a revised mechanism was developed, yielding improved predictive performance, particularly under fuel-rich conditions.",
+    "abstractSource": "sciencedirect_dom:#abss0001"
   },
   {
     "articleNumber": "115038",
@@ -6753,7 +6763,8 @@
     ],
     "crossrefScore": 1,
     "issuePdfLink": "https://www.sciencedirect.com/science/article/pii/S0010218026002737/pdfft?md5=638154072b1c72a6b273ac919ce4e087&pid=1-s2.0-S0010218026002737-main.pdf",
-    "abstractStatus": "ScienceDirect browser extraction failed: abstract_not_found"
+    "abstract": "Previous experimental studies of pyrrole pyrolysis reported numerous hydrocarbon and nitrogen-containing products from HCN up to pyridine and dinitriles. To develop a consistent detailed kinetic mechanism for pyrrole, the rate constants of H atom abstraction from C4H5N by NH2, and CH2CN radicals have been calculated at the DLPNO-CCSD(T)-F12/cc-pVDZ-F12//M06–2X/def2-TZVP level of theory while H atom abstraction by CN was at DLPNO-NEVPT2(11e,11o)/cc-pVTZ//M06–2X/def2-TZVP level of theory from 300 to 2000 K. Model analysis revealed the key role of cyanomethyl radicals in product formation, therefore the theoretical calculations were extended to reactions of CH2CN with pyrrolenine, allyl cyanide, crotonitrile, propionitrile and pyridine. The new rate constants were found to be significantly different from the previous estimates implemented in the literature models. Moreover, thermodynamic data of several intermediates important in pyrolytic reactions of pyrrole were calculated at the G4 theoretical level or updated using recent studies. A kinetic model of pyrrole pyrolysis was developed relying on the new rate constants and thermodynamic data, together with the rate constants from the literature. Experimental data on the formation of major and minor products previously obtained in a single pulse shock tube and jet-stirred reactors were compared with the predictions of this mechanism and two recent models by Chen et al. (Comb. Flame 276 (2025) 114136) and Wu et al. (Comb. Flame 277 (2025) 114211). The pathways of each nitrogen-containing product formation were discussed together with sensitivity analysis elucidating reactions controlling their yields.",
+    "abstractSource": "sciencedirect_dom:#abss0001"
   },
   {
     "articleNumber": "115041",
@@ -6857,7 +6868,8 @@
       }
     ],
     "crossrefScore": 1,
-    "abstractStatus": "ScienceDirect browser extraction failed: abstract_not_found"
+    "abstract": "N-methyl aniline (NMA) is a promising octane booster that enhances gasoline performance by influencing ignition and flame characteristics. However, its combustion chemistry remains insufficiently understood, owing to the absence of a detailed kinetic mechanism. The present study introduces the first detailed gas-phase reaction mechanism for NMA, focusing on decomposition and OH-initiated oxidation pathways. Bond dissociation energies (CH, NH, and CN) are computed for NMA, along with rate parameters for all elementary reaction pathways. The decomposition kinetics reveal methyl elimination and anilino radical formation as the dominant pathway. Pathways leading to nitrogenated polycyclic aromatic hydrocarbons via ring growth were identified, alongside alternative ring contraction routes forming cyclopentadienyl and other five-membered species. OH-initiated oxidation of RSR species proceeds via ring-opening pathways to form aliphatic nitriles like 4-pentenenitrile. The associated potential energy surfaces reveal lower-energy intermediates and transition states, indicating increased stability due to resonant structures. Subsequent reaction channels form vinylic and smaller nitrile species that significantly affect the PAH chemistry. These pathways were incorporated into a detailed gas-phase reaction mechanism for N-methylaniline (NMA), comprising 72 species and 59 elementary reactions, and were merged with the CRECK base mechanism (2003). The final merged mechanism is validated against laminar burning velocity (LBV) measurements conducted in an externally heated diverging channel at atmospheric pressure, over a temperature range of 400–650 K and equivalence ratios (φ) of 0.9, 1.0, and 1.1. Results indicate strong agreement with experimental data, with errors within 10 %. Laminar burning velocity simulations predict that the temperature-dependent species profiles indicate early formation and sustained stability of these five-membered aromatic RSRs (C₅H₄CN) across a wide temperature range. The proposed mechanism captures key combustion features of NMA, offering new insights into its decomposition, oxidation, and the behavior of nitrogenated intermediates. It also provides critical elementary reactions that can enhance the accuracy of models studying ignition, flame propagation, and emissions in ammonia-assisted and biofuel combustion systems.",
+    "abstractSource": "sciencedirect_dom:#abss0001"
   },
   {
     "articleNumber": "115033",
@@ -6917,7 +6929,8 @@
     ],
     "crossrefScore": 1,
     "issuePdfLink": "https://www.sciencedirect.com/science/article/pii/S0010218026002695/pdfft?md5=d968daa86def0a0de6cac5abd30f07b4&pid=1-s2.0-S0010218026002695-main.pdf",
-    "abstractStatus": "ScienceDirect browser extraction failed: abstract_not_found"
+    "abstract": "The pyrolysis and oxidation of propan-1-ol were investigated in this work, providing new experimental data that highlight the limitations of the most recent detailed kinetic mechanisms available in the literature. The new data, obtained near atmospheric pressure, consist of shock-tube CO time-history profiles measured behind reflected shock waves using laser absorption diagnostics near 4.6 μm. Pyrolysis experiments were conducted with mixtures of propan-1-ol highly diluted in He/Ar (20/79.75%) within a temperature range of 1217 to 1592 K. Oxidation was studied at three different equivalence ratios, φ = 0.5, 1, and 2, using highly diluted mixtures of propan-1-ol/O2/ He/Ar (20/79.5% He/Ar) over a temperature range of 1284 to 1696 K. Under these high-temperature conditions, accounting for the pressure dependency of the rate constants of unimolecular initiation reactions (including dehydration) is of paramount importance. Channel-specific rate constants were therefore theoretically determined using variable reaction coordinate transition state theory in the temperature and pressure ranges of interest for propan-1-ol pyrolysis and combustion. These theoretical results, together with a recent work on H-abstraction reactions by H and OH, and the reactions of the successive C3H7O radicals, were incorporated into a detailed kinetic mechanism able to predict CO formation. This mechanism was also successfully tested against experimental data obtained under various conditions in the literature. Rate-of-production analyses were performed and showed that CO formation is positively sensitive to the decomposition of propan-1-ol into ethyl and hydroxymethyl radicals during the early stages of the reaction, while the formation of the β-radical by H-abstraction inhibits CO formation.",
+    "abstractSource": "sciencedirect_dom:#abss0001"
   },
   {
     "articleNumber": "115049",
@@ -7449,7 +7462,8 @@
       }
     ],
     "crossrefScore": 1,
-    "abstractStatus": "ScienceDirect browser extraction failed: abstract_not_found"
+    "abstract": "Pyrolysis is a practical route for biomass conversion, and its co-pyrolysis with organic solid waste (OSW) can further enhance bio-oil quality. Both processes generate polycyclic aromatic hydrocarbons (PAHs), and nitrogen-containing PAHs (NPAHs) for nitrogenous feedstocks, posing environmental and health risks. In this work, pyrrole serves as a model nitrogenous biomass compound to probe (N)PAH formation during neat pyrolysis and co-pyrolysis with ethylene, a surrogate for the hydrogen-rich OSW environment. Species detection was performed using time-of-flight mass spectrometry (ToF-MS) and atmospheric pressure photoionization high-resolution mass spectrometry (APPI-HRMS), each coupled to a flow reactor. ToF-MS results reveal the formation of (N)PAHs with up to five rings, where single-nitrogen NPAHs representing the dominant NPAHs. Ethylene blending introduces no new m/z signals but enhances the formation of larger (N)PAHs, particularly above 1100 K. Furthermore, APPI-HRMS indicates that under experimental conditions, the growth rate of aromatic carbon rings is faster than that of nitrogen-containing heterocyclic aromatic hydrocarbons. To provide mechanistic interpretation of these observations, the formation pathways and rate constants of the bicyclic 2-quinolinyl radical (C9H6N) from pyrrole pyrolysis products were investigated theoretically. The results validate a novel nitrogen ring expansion mechanism involving the addition of cyanoacetylene (C3HN) to phenyl radicals. Kinetic analysis demonstrates that this N-expansion pathway outperforms the HAVA carbon-ring growth mechanism of C6H5 + C4H4 in terms of both species concentration and rate constants. Moreover, an alternative N-expansion between benzonitrile and C2H2 (also leading to C9H6N) exhibits even higher rate constants, further refining the growth network of nitrogenous aromatics. This combined experimental and theoretical study provides new mechanistic insight into (N)PAH formation, offering valuable guidance for mitigating hazardous emissions mitigation in biomass (co-)pyrolysis.",
+    "abstractSource": "sciencedirect_dom:#abss0001"
   },
   {
     "articleNumber": "115091",
@@ -7531,7 +7545,8 @@
       }
     ],
     "crossrefScore": 1,
-    "abstractStatus": "ScienceDirect browser extraction failed: abstract_not_found"
+    "abstract": "Methyl formate (MF, CH3OCHO), the simplest ester, is a representative oxygenated fuel with high oxygen content, and low sooting tendency. However, its oxidation behavior under high-pressure and intermediate-temperature conditions remains insufficiently understood, especially where low-temperature peroxy radical chemistry, methanol chemistry, and pressure-dependent reaction pathways play a critical role. In this study, MF oxidation experiments were conducted in the Princeton supercritical-pressure jet-stirred reactor (SP-JSR) at 20 and 100 atm over the temperature range of 400–950 K under both fuel-lean and fuel-rich conditions. Based on the experimental results, an updated HP-Mech was developed by incorporating previous MF sub-mechanisms, expanded low-temperature peroxy pathways, and evaluated pressure-dependent decomposition kinetics. The newly updated HP-Mech shows greatly improved performance in predicting the onset temperature, the key intermediate species fractions, methanol formation, and the progression of MF oxidation across all the experimental conditions. Path flux analysis indicates that MF consumption at the onset stage is dominated by H-abstraction at the methyl site, forming CH2OCHO radicals that lead to the formation and isomerization of O2CH2OCHO, driving low-temperature chain propagation. Moreover, H-abstraction at the formate site forms CH3OCO radicals that preferentially decompose to CH3, initiating the methanol formation pathway linked to CH3O2 and HO2 chemistry. At the same time, HO2 formation is strongly coupled to MF oxidation through multiple MF-derived radical pathways. HCO originates from MF oxidation and acts as a key coupling species linking fuel consumption to HO2 buildup, especially under high-pressure and intermediate-temperature conditions. In addition to this dominant channel, supplementary HO2 formation pathways involving CH3, CH3O, CH2OH, and CH3O2 reacting with O2 further connect methanol chemistry and oxygenated radical chemistry to the HO2 pool, indicating the central role of HO2 in governing MF oxidation. Sensitivity analysis identifies MF with OH/HO2/CH3O2 reactions and the HO2/H2O2/OH sequence as the key factors controlling reactivity in the high-pressure and intermediate-temperature regime. MF directly reacts with OH/HO2/CH3O2 to consume the fuel and produce reactive radicals like CH2OCHO and CH3OCO that undergo subsequent oxidation pathways. Moreover, HO2 recombination suppresses oxidation at lower temperatures, while thermal decomposition of H2O2 accelerates OH production and promotes fuel consumption as temperature increases. The direct formation of active OH from HO2 radicals further completes the mechanism, improving its prediction especially during the oxidation onset stage.",
+    "abstractSource": "sciencedirect_dom:#abss0001"
   },
   {
     "articleNumber": "115085",
@@ -7980,7 +7995,8 @@
       }
     ],
     "crossrefScore": 1,
-    "abstractStatus": "ScienceDirect browser extraction failed: abstract_not_found"
+    "abstract": "Low-temperature oxidation chemistry plays a key role in controlling ignition and emissions in advanced low-temperature combustion (LTC) engines. While pentanol isomers have attracted increasing attention as promising biofuel candidates, the low-temperature oxidation mechanisms of secondary pentanols remain poorly constrained due to their intrinsically weak reactivity under atmospheric conditions. In this work, ozone-assisted oxidation is employed as a controlled chemical probe to activate low-temperature reaction pathways and elucidate the structure-dependent oxidation chemistry of 2-pentanol and 3-pentanol. Experiments were performed in a jet-stirred reactor at atmospheric pressure over a temperature range of 380–800 K. Synchrotron vacuum ultraviolet photoionization mass spectrometry (SVUV-PIMS) was used to detect a wide range of reaction intermediates and final products. The addition of trace ozone dramatically enhances low-temperature oxidation reactivity. As a result, more than twenty species were identified for each fuel, including ketones, cyclic ethers, acids, and C5 keto-hydroperoxides. Distinct intermediate formation reveals strong structure dependence between 2- and 3-pentanol, particularly in the competition between α-site ketone formation and low-temperature chain-branching pathways. The updated kinetic model based on the Chatterjee model captures most major species distributions. However, it fails to predict the experimentally observed C5H8O2, C5H10O2, and C5H10O3 intermediates, suggesting that RO2-derived chemistry is missing or incompletely described. These results demonstrate that ozone-assisted oxidation provides a powerful framework for exploring low-temperature fuel chemistry and highlights critical gaps in current kinetic descriptions of secondary pentanol oxidation.",
+    "abstractSource": "sciencedirect_dom:#abss0001"
   },
   {
     "articleNumber": "115093",
@@ -8569,7 +8585,8 @@
     ],
     "crossrefScore": 1,
     "issuePdfLink": "https://www.sciencedirect.com/science/article/pii/S0010218025007497/pdfft?md5=458f4982b7e1b849dd602a39c7cbf75c&pid=1-s2.0-S0010218025007497-main.pdf",
-    "abstractStatus": "ScienceDirect browser extraction failed: abstract_not_found"
+    "abstract": "This study presents a numerical investigation of conditional source-term estimation (CSE) with direct integration of chemical kinetics, applied to one turbulent DME jet flame. This new CSE framework eliminates the need for pre-tabulated chemistry, therefore greater flexibility and accuracy are added when more complex fuels are considered. Two chemical mechanisms are considered: a detailed mechanism with 42 species and a tailored 21-species reduced mechanism. Both simulations are evaluated against a comprehensive experimental dataset including temperature and species concentration fields. Results show that simulations using both mechanisms yield nearly identical predictions for major scalars, with only minor differences observed in the conditional and Favre-averaged profiles. Discrepancies in peak temperature and species concentrations correlate with local deviations in predicted mixing statistics. While the detailed mechanism increases computational cost by nearly tenfold, the reduced mechanism retains accuracy at a fraction of the expense. These findings confirm that direct chemistry integration CSE, when combined with an optimized skeletal mechanism, offers an accurate and computationally efficient approach for modeling DME combustion in turbulent flows. Novelty and significance statement This study includes two novel components. One is focused on the assessment of a recent conditional source-term estimation (CSE) formulation with direct chemistry integration, in principle, capable of dealing with any chemical kinetics, without pre-tabulated chemistry. For the first time, this method is applied to the simulation of a turbulent flame burning DME with two different chemical mechanisms including over 20 species. A suitable stiff solver is added. A rigorous analysis is performed using experimental data. The second novelty is the derivation of a new reduced mechanism for DME, consisting of only 21 species, thoroughly validated over a range of combustion conditions for laminar flame speeds, species concentrations and ignition delays, and included in the CSE turbulent flame simulations, with excellent performance. This study, including direct chemistry integration CSE and optimized skeletal DME kinetics, provides significant contributions towards the advancement of accurate and efficient combustion simulation tools for industry-relevant conditions.",
+    "abstractSource": "sciencedirect_dom:.abstract.author"
   },
   {
     "articleNumber": "114719",
@@ -8938,7 +8955,8 @@
       }
     ],
     "crossrefScore": 1,
-    "abstractStatus": "ScienceDirect browser extraction failed: abstract_not_found"
+    "abstract": "2-Ethylhexyl nitrate (EHN) has attracted attention for its high reactivity, making it a promising candidate for use in propellants and as a combustion-enhancing fuel additive. To gain a fundamental understanding of its combustion behavior and support its practical application in advanced propulsion systems, it is essential to develop an accurate and reliable chemical kinetic model. In this study, ignition delay times (IDTs) of EHN/O₂/N₂ mixtures were systematically measured using a high-pressure shock tube. Experiments were conducted over a temperature range of 900–2000 K, at pressures of 5 and 10 bar, and under equivalence ratios of 0.5 and 1.0. The results clearly demonstrate the characteristic two-stage ignition behavior of EHN. Moreover, the IDTs were found to be highly sensitive to changes in both equivalence ratio and pressure. In the theoretical investigation, the initial decomposition pathways of EHN were systematically explored using high-level quantum chemical calculations at the QCISD(T)/CBS//M06–2X/6–311++G (d,p) level. The results indicate that cleavage of the O–N bond is the dominant reaction channel. A detailed kinetic model for EHN was developed based on the C3MechV3.3 reaction mechanism. The model predictions show good agreement with experimentally measured IDT. Furthermore, based on the current kinetic model, sensitivity, flux, and OH radical rate of production analyses were performed to identify key controlling steps and characterize radical-driven kinetics. The results show that in the first stage of ignition, over 90% of EHN is consumed via O–N bond cleavage, producing the 2-ethylhexoxy radical (EHO) and NO₂, which spontaneously initiate the NO₂–NO catalytic cycle and significantly enhance the system’s initial reactivity. In contrast, during the second stage, the chain-branching reaction H + O₂ → O + OH becomes dominant and serves as the primary driving force behind the rapid acceleration of system reactivity.",
+    "abstractSource": "sciencedirect_dom:#abss0001"
   },
   {
     "articleNumber": "114744",
@@ -9539,7 +9557,8 @@
     ],
     "crossrefScore": 1,
     "issuePdfLink": "https://www.sciencedirect.com/science/article/pii/S0010218025007771/pdfft?md5=27adaf192e97203ba4c70054cfc1449f&pid=1-s2.0-S0010218025007771-main.pdf",
-    "abstractStatus": "ScienceDirect browser extraction failed: abstract_not_found"
+    "abstract": "The pyrolysis of pyridine, a model compound for fuel-nitrogen in coal, biomass, and tar, was investigated in a flow reactor at a pressure of 30 Torr and a temperature range from 773 to 1473 K. Twenty-seven species, including three radicals, three sets of isomers, nine hydrocarbons and nine nitrogenous species, were identified and quantified by synchrotron vacuum ultraviolet photoionization mass spectrometry. Several intermediates were newly detected compared with previous pyridine pyrolysis studies based on the photoionization efficiency spectra including cyanides, a benzene isomer, and resonance-stabilized radicals (propargyl and benzyl radicals). A new kinetic model for pyridine pyrolysis was developed and validated against the measured data. Kinetic modeling, rate-of-production and sensitivity analysis were performed to reveal the pyrolysis kinetics of pyridine and the formation of the key products. The results indicate that the decomposition of pyridine is dominated by the H-abstraction reactions. Hydrocarbon radicals, alkenes and alkynes are mainly produced by the elimination of HCN from nitrogenous intermediates. The formation of nitrogenous products relates to the removal of acetylene from pyridine. A new growth route from C3HN to C5HN and C7HN was observed and analyzed, which has not been reported previously regarding the pyrolysis studies of fuel-N. By comparing the pyridine pyrolysis with pyrrole pyrolysis experiments, the influence of different C-N bond structures on reaction mechanisms and product distributions was revealed. Results of this work are helpful in deepening the understanding of pyridine conversion behaviors related to coal and biomass combustion and conversion processes.",
+    "abstractSource": "sciencedirect_dom:.abstract.author"
   },
   {
     "articleNumber": "114770",
@@ -9744,7 +9763,8 @@
       }
     ],
     "crossrefScore": 1,
-    "abstractStatus": "ScienceDirect browser extraction failed: abstract_not_found"
+    "abstract": "3-Ethyltoluene (ET) and 3-n-propyltoluene (PT) are key aromatic constituents of Virent’s synthetic aromatic kerosene (SAK), necessitating detailed understanding of their oxidation chemistry for surrogate fuel development. This study investigates the high-pressure oxidation behavior of n-heptane/ET (HET) and n-heptane/PT (HPT) blends through single-pulse shock tube experiments conducted at 50 atm, with a residence time range of 12-14 ms, and temperatures ranging from 800–1400 K. Experiments were performed across equivalence ratios φ = 0.5, 1.0, and 2.0 to capture lean, stoichiometric, and rich combustion regimes. Post-shock gases were analyzed using gas chromatography, providing speciation data for ∼30 products, including H₂, CO, CO₂, CH₄, C₂H₄, C₃H₆, CH₂O, benzene, toluene, and methylstyrene. The CRECK_ET_Theory mechanism (incorporating literature ET submodel) and CRECK_PT_Theory mechanism (developed by integrating PT decomposition chemistry) were used for kinetic modeling with Cantera, showing good agreement with experimental trends across all φ. Both mechanisms include ab initio rate calculations for key hydrogen abstraction reactions, improving the fidelity of fuel-specific pathways. Rate-of-production and sensitivity analyses revealed distinct oxidation behaviors driven by alkyl side-chain structure. ET oxidation was dominated by OH abstraction at the α-CH₂ site, especially under lean conditions, whereas PT exhibited enhanced reactivity under rich conditions due to faster unimolecular decomposition and a lower activation barrier for H-abstraction by H atoms, particularly at the benzylic and β-CH₂ positions. Neither ET nor PT suppressed n-heptane oxidation, in contrast to the radical-scavenging effects previously observed for 1,2,4-trimethylbenzene (TMB124). This study provides the first detailed oxidation dataset for ET and PT under engine-relevant conditions and delivers validated kinetic mechanisms essential for constructing accurate multi-component surrogates for SAK. The insights into structure–reactivity relationships offer a mechanistic foundation for predictive combustion modeling of synthetic fuels in propulsion applications.",
+    "abstractSource": "sciencedirect_dom:#abss0001"
   },
   {
     "articleNumber": "114771",

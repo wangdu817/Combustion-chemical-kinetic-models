@@ -41,7 +41,7 @@ Yuxiang Zhu, Khaiyom Hakimov, Jiabiao Zou, Nafi Farzana, ... Chong-Wen Zhou. An 
 
 ## Abstract
 
-not available
+Ignition delay time measurements of 70/30, 50/50, and 30/70 (mol%) NH3/CH4 mixtures diluted with 70% Ar were conducted in a high-pressure shock tube at temperatures in the range 1135–1610 K, at pressures of 20 and 40 bar, and at equivalence ratios (φ) of 0.5–2.0. Concentration time histories of NH3, NO and CO during the ignition of stoichiometric 80/20, 50/50, and 20/80 (mol%) NH3/CH4 mixtures with 95% (Ar + He) dilution were also measured in a shock tube at temperatures 1692–2130 K and pressures of ∼1.8 bar. Species concentration profiles as a function of temperature, during the oxidation of a fuel-lean (φ = 0.5) ∼50/50 (mol%) NH3/CH4 mixture diluted with 96.2% N2, were measured in a jet-stirred reactor at 40 atm in the temperature range 423–1002 K. A new chemical kinetic model was developed and validated to describe NH3/CH4 mixtures combustion, incorporating updates to the important carbon–nitrogen (C–N) interaction reactions. The model predictions show good agreement with the new measurements, as well as with available fundamental combustion experimental data from the literature, at most conditions. Sensitivity and reaction pathway flux analyses were performed to determine the important C–N interaction reactions controlling the reactivity of the NH3/CH4 blends.
 
 ## Processing Notes
 
