@@ -30,8 +30,8 @@ Jiaxin Xie, Mengmeng Jia, Frederick Nii Ofei Bruce, Chong-Wen Zhou, ... Yang Li.
 ### Mechanism 1
 
 - Status: cantera_failed
-- Species count: not parsed
-- Reaction count: not parsed
+- Species count: 3189
+- Reaction count: 13797
 - Message: CanteraError: 
 *******************************************************************************
 CanteraError thrown by addReactions:

@@ -14,6 +14,7 @@ import concurrent.futures
 import csv
 import datetime as dt
 import difflib
+import html
 import json
 import os
 import re
@@ -135,14 +136,22 @@ REACTOR_TERMS = [
 ]
 
 FUEL_PATTERNS = [
-    (r"NH\s*3|ammonia", "ammonia"),
-    (r"H\s*2|hydrogen", "hydrogen"),
+    (r"\bNH\s*3\b|ammonia", "ammonia"),
     (r"n\s*-?\s*decane|decane", "n_decane"),
     (r"n\s*-?\s*heptane|heptane", "n_heptane"),
-    (r"methane|CH\s*4", "methane"),
     (r"methanol", "methanol"),
+    (r"1,?2-?dimethoxyethane", "dimethoxyethane"),
+    (r"dimethoxymethane|\bDMM\b", "dimethoxymethane"),
+    (r"dimethyl[ -]?ether|\bDME\b", "dimethyl_ether"),
+    (r"N-?methyl aniline|N-?methylaniline", "n_methyl_aniline"),
+    (r"2-?ethylhexyl nitrate|\bEHN\b", "2_ethylhexyl_nitrate"),
+    (r"ethyl acetate", "ethyl_acetate"),
+    (r"methyl formate", "methyl_formate"),
+    (r"methylamine", "methylamine"),
+    (r"\bmethane\b|\bCH\s*4\b", "methane"),
+    (r"\bH\s*2\b|hydrogen", "hydrogen"),
     (r"ethylene|C\s*2\s*H\s*4", "ethylene"),
-    (r"ethane|C\s*2\s*H\s*6", "ethane"),
+    (r"\bethane\b|\bC\s*2\s*H\s*6\b", "ethane"),
     (r"acetone", "acetone"),
     (r"2-?butanone|butanone|methyl ethyl ketone", "2_butanone"),
     (r"cyclopentanone", "cyclopentanone"),
@@ -151,8 +160,6 @@ FUEL_PATTERNS = [
     (r"2-?methylfuran", "2_methylfuran"),
     (r"pyrrole", "pyrrole"),
     (r"pyridine", "pyridine"),
-    (r"methylamine", "methylamine"),
-    (r"N-?methyl aniline|N-?methylaniline", "n_methyl_aniline"),
     (r"pentane", "pentane"),
     (r"pentanol|secondary pentanols|2- and 3-pentanol|2-pentanol|3-pentanol", "pentanol"),
     (r"RP-?3", "rp3"),
@@ -164,12 +171,7 @@ FUEL_PATTERNS = [
     (r"\bNO removal\b|direct\s+NO\s+removal|nitric oxide", "nitric_oxide"),
     (r"N\s*2\s*O|nitrous oxide", "n2o"),
     (r"nitromethane", "nitromethane"),
-    (r"ethyl acetate", "ethyl_acetate"),
     (r"dimethyl carbonate", "dimethyl_carbonate"),
-    (r"dimethoxymethane|\bDMM\b", "dimethoxymethane"),
-    (r"dimethyl[ -]?ether|\bDME\b", "dimethyl_ether"),
-    (r"1,?2-?dimethoxyethane", "dimethoxyethane"),
-    (r"methyl formate", "methyl_formate"),
     (r"1,?2,?4-?trimethylbenzene", "trimethylbenzene_124"),
     (r"3-?ethyltoluene", "3_ethyltoluene"),
     (r"3-?n-?propyltoluene", "3_n_propyltoluene"),
@@ -235,18 +237,21 @@ def article_id(record: dict) -> str:
 
 
 def detect_fuel(record: dict) -> str:
-    text = " ".join(
-        [
-            str(record.get("title", "")),
-            str(record.get("abstract", "")),
-            str(record.get("keywords", "")),
-        ]
-    )
-    found: list[str] = []
-    for pattern, label in FUEL_PATTERNS:
-        if re.search(pattern, text, flags=re.I):
-            if label not in found:
-                found.append(label)
+    def scan(text: str) -> list[str]:
+        found_labels: list[str] = []
+        for pattern, label in FUEL_PATTERNS:
+            if re.search(pattern, text, flags=re.I):
+                if label not in found_labels:
+                    found_labels.append(label)
+        return found_labels
+
+    found = scan(str(record.get("title", "")))
+    if not found:
+        found = scan(str(record.get("keywords", "")))
+    if not found:
+        abstract = str(record.get("abstract", ""))
+        if re.search(r"\b(fuel|surrogate|oxidation of|pyrolysis of|combustion of)\b", abstract, flags=re.I):
+            found = scan(abstract[:800])
     if not found:
         return "unknown_fuel"
     return "_".join(found[:4])
@@ -360,23 +365,104 @@ def safe_extract_tar(path: Path, dest: Path) -> None:
                 tf.extract(member, dest)
 
 
-def extract_archives(files: Iterable[Path], dest: Path) -> list[str]:
+def archive_kind(path: Path) -> str:
+    try:
+        header = path.read_bytes()[:8]
+    except OSError:
+        return ""
+    suffix = path.suffix.lower()
+    if header.startswith((b"PK\x03\x04", b"PK\x05\x06", b"PK\x07\x08")):
+        return "zip"
+    if header.startswith(b"\x1f\x8b"):
+        return "gzip"
+    if header.startswith(b"7z\xbc\xaf\x27\x1c"):
+        return "7z"
+    if header.startswith((b"Rar!\x1a\x07\x00", b"Rar!\x1a\x07\x01\x00")):
+        return "rar"
+    if suffix in {".zip", ".docx"}:
+        return "zip"
+    if suffix in {".tar", ".tgz", ".tar.gz", ".tbz2", ".tar.bz2", ".txz", ".tar.xz"} or tarfile.is_tarfile(path):
+        return "tar"
+    if suffix == ".gz":
+        return "gzip"
+    if suffix == ".7z":
+        return "7z"
+    if suffix == ".rar":
+        return "rar"
+    return ""
+
+
+def safe_extract_gzip(path: Path, dest: Path) -> Path:
+    import gzip
+
+    target_name = path.stem or (path.name + ".out")
+    target = (dest / target_name).resolve()
+    if not str(target).startswith(str(dest.resolve())):
+        raise ValueError(f"unsafe gzip output path: {target_name}")
+    target.parent.mkdir(parents=True, exist_ok=True)
+    with gzip.open(path, "rb") as src, target.open("wb") as out:
+        shutil.copyfileobj(src, out)
+    return target
+
+
+def safe_extract_with_7z(path: Path, dest: Path) -> bool:
+    exe = shutil.which("7z") or shutil.which("7za") or shutil.which("7zr")
+    if not exe:
+        return False
+    completed = subprocess.run(
+        [exe, "x", "-y", f"-o{dest}", str(path)],
+        text=True,
+        capture_output=True,
+        timeout=120,
+    )
+    if completed.returncode != 0:
+        raise RuntimeError(completed.stderr.strip() or completed.stdout.strip())
+    return True
+
+
+def extract_archives(files: Iterable[Path], dest: Path, max_depth: int = 5) -> list[str]:
     notes: list[str] = []
     dest.mkdir(parents=True, exist_ok=True)
-    for path in files:
-        suffix = path.suffix.lower()
+    queue: list[tuple[Path, int]] = [(path, 0) for path in files]
+    seen: set[Path] = set()
+    while queue:
+        path, depth = queue.pop(0)
+        if depth > max_depth:
+            notes.append(f"skip nested archive beyond depth {max_depth}: {path.name}")
+            continue
+        resolved = path.resolve()
+        if resolved in seen or not path.exists() or not path.is_file():
+            continue
+        seen.add(resolved)
+        kind = archive_kind(path)
+        if not kind:
+            continue
         out = dest / slugify(path.stem, 80)
         try:
-            if suffix in {".zip", ".docx"}:
+            before = {p.resolve() for p in out.rglob("*")} if out.exists() else set()
+            if kind == "zip":
                 out.mkdir(parents=True, exist_ok=True)
                 safe_extract_zip(path, out)
                 notes.append(f"extracted {path.name}")
-            elif suffix in {".tar", ".gz", ".tgz", ".bz2", ".xz"}:
+            elif kind == "tar":
                 out.mkdir(parents=True, exist_ok=True)
                 safe_extract_tar(path, out)
                 notes.append(f"extracted {path.name}")
-            elif suffix in {".rar", ".7z"}:
-                notes.append(f"unsupported archive without 7z: {path.name}")
+            elif kind == "gzip":
+                out.mkdir(parents=True, exist_ok=True)
+                safe_extract_gzip(path, out)
+                notes.append(f"extracted {path.name}")
+            elif kind in {"rar", "7z"}:
+                out.mkdir(parents=True, exist_ok=True)
+                if safe_extract_with_7z(path, out):
+                    notes.append(f"extracted {path.name}")
+                else:
+                    notes.append(f"unsupported archive without 7z: {path.name}")
+                    continue
+            after = {p.resolve() for p in out.rglob("*")} if out.exists() else set()
+            for nested in sorted(after - before):
+                if nested.is_file() and archive_kind(nested):
+                    queue.append((nested, depth + 1))
         except Exception as exc:  # noqa: BLE001 - keep batch processing alive
             notes.append(f"extract failed {path.name}: {exc}")
     return notes
@@ -565,6 +651,65 @@ def parse_chemkin_source_counts(path: Path) -> tuple[str, str]:
         if "=" in line or "<=>" in line or "=>" in line:
             reaction_count += 1
     return (str(len(species_tokens)) if species_tokens else "", str(reaction_count) if reaction_count else "")
+
+
+def parse_cantera_yaml_counts(path: Path) -> tuple[str, str]:
+    if not path.exists():
+        return "", ""
+    try:
+        import yaml  # type: ignore
+
+        data = yaml.safe_load(path.read_text(encoding="utf-8", errors="ignore")) or {}
+        species = data.get("species") or []
+        reactions = data.get("reactions") or []
+        species_count = str(len(species)) if isinstance(species, list) and species else ""
+        reaction_count = str(len(reactions)) if isinstance(reactions, list) and reactions else ""
+        if species_count or reaction_count:
+            return species_count, reaction_count
+    except Exception:
+        pass
+
+    text = path.read_text(encoding="utf-8", errors="ignore").splitlines()
+    counts = {"species": 0, "reactions": 0}
+    section: str | None = None
+    phase_species_tokens: list[str] = []
+    collecting_phase_species = False
+    phase_species_text = ""
+    for line in text:
+        if re.match(r"^[A-Za-z0-9_-]+:", line):
+            section = None
+        stripped = line.strip()
+        if collecting_phase_species:
+            phase_species_text += " " + stripped
+            if "]" in stripped:
+                inside = phase_species_text.split("[", 1)[1].split("]", 1)[0]
+                phase_species_tokens.extend(item.strip() for item in inside.split(",") if item.strip())
+                collecting_phase_species = False
+                phase_species_text = ""
+            continue
+        if stripped.startswith("species:") and line.startswith(" "):
+            if "[" in stripped:
+                phase_species_text = stripped
+                if "]" in stripped:
+                    inside = stripped.split("[", 1)[1].split("]", 1)[0]
+                    phase_species_tokens.extend(item.strip() for item in inside.split(",") if item.strip())
+                    phase_species_text = ""
+                else:
+                    collecting_phase_species = True
+            continue
+        if line.startswith("species:"):
+            section = "species"
+            if "[" in line and "]" in line:
+                inside = line.split("[", 1)[1].split("]", 1)[0]
+                counts["species"] += len([item for item in inside.split(",") if item.strip()])
+            continue
+        if line.startswith("reactions:"):
+            section = "reactions"
+            continue
+        if section in counts and re.match(r"^\s*-\s+", line):
+            counts[section] += 1
+    species_count = counts["species"] or len(dict.fromkeys(phase_species_tokens))
+    return (str(species_count) if species_count else "", str(counts["reactions"]) if counts["reactions"] else "")
 
 
 def first_chemkin_header_line(path: Path) -> int | None:
@@ -771,8 +916,11 @@ def process_with_cantera(mech: Path, thermo: Path | None, transport: Path | None
                     standardized_transport=transport_target,
                 )
             message = f"{message}; numeric cleanup retry failed: {clean_message}"
+    yaml_counts = parse_cantera_yaml_counts(yaml_path) if yaml_path.exists() else ("", "")
     return CkResult(
         "cantera_failed",
+        species=yaml_counts[0],
+        reactions=yaml_counts[1],
         message=message,
         cantera_yaml=yaml_path if yaml_path.exists() else None,
         method="cantera",
@@ -846,7 +994,7 @@ def gb_t_7714(record: dict) -> str:
     if isinstance(authors, list):
         author_text = ", ".join(str(a) for a in authors[:6])
         if len(authors) > 6:
-            author_text += ", 等"
+            author_text += ", et al."
     else:
         author_text = str(authors)
     title = record.get("title", "").rstrip(".")
@@ -881,6 +1029,27 @@ def copy_downloads_for_record(record: dict, dest: Path) -> list[Path]:
                 shutil.copy2(file, target)
             copied.append(target)
     return copied
+
+
+def cleanup_inactive_paper_folders(root: Path, active_folders: set[Path]) -> None:
+    root = root.resolve()
+    active = {path.resolve() for path in active_folders}
+    if not root.exists():
+        return
+    for fuel_dir in list(root.iterdir()):
+        if not fuel_dir.is_dir() or fuel_dir.name.startswith("_"):
+            continue
+        for paper_dir in list(fuel_dir.iterdir()):
+            if not paper_dir.is_dir():
+                continue
+            resolved = paper_dir.resolve()
+            if root not in resolved.parents or resolved in active:
+                continue
+            shutil.rmtree(resolved)
+        try:
+            next(fuel_dir.iterdir())
+        except StopIteration:
+            fuel_dir.rmdir()
 
 
 def url_head(url: str) -> tuple[int, str, int]:
@@ -984,6 +1153,140 @@ def crossref_json(url: str) -> dict:
     )
     with urllib.request.urlopen(req, timeout=12) as response:
         return json.loads(response.read().decode("utf-8", errors="replace"))
+
+
+def fetch_json(url: str, timeout: int = 20) -> dict:
+    req = urllib.request.Request(
+        url,
+        headers={"User-Agent": "Codex combustion mechanism collection (mailto:none@example.com)", "Accept": "application/json"},
+    )
+    with urllib.request.urlopen(req, timeout=timeout) as response:
+        return json.loads(response.read().decode("utf-8", errors="replace"))
+
+
+def normalize_abstract(value: str) -> str:
+    value = html.unescape(value or "")
+    value = re.sub(r"<[^>]+>", " ", value)
+    value = re.sub(r"^\s*abstract\s*", "", value, flags=re.I)
+    value = re.sub(r"\s+", " ", value).strip()
+    return value
+
+
+def restore_openalex_abstract(inverted_index: dict) -> str:
+    positions: dict[int, str] = {}
+    for word, indexes in (inverted_index or {}).items():
+        if not isinstance(indexes, list):
+            continue
+        for index in indexes:
+            if isinstance(index, int):
+                positions[index] = str(word)
+    return " ".join(positions[index] for index in sorted(positions))
+
+
+def fetch_crossref_abstract(doi: str) -> str:
+    if not doi:
+        return ""
+    try:
+        data = fetch_json("https://api.crossref.org/works/" + urllib.parse.quote(doi))
+    except Exception:
+        return ""
+    return normalize_abstract(data.get("message", {}).get("abstract", ""))
+
+
+def fetch_openalex_abstract(doi: str) -> str:
+    if not doi:
+        return ""
+    try:
+        data = fetch_json("https://api.openalex.org/works/https://doi.org/" + urllib.parse.quote(doi))
+    except Exception:
+        return ""
+    return normalize_abstract(restore_openalex_abstract(data.get("abstract_inverted_index") or {}))
+
+
+def fetch_semantic_scholar_abstract(doi: str) -> str:
+    if not doi:
+        return ""
+    url = "https://api.semanticscholar.org/graph/v1/paper/DOI:" + urllib.parse.quote(doi) + "?fields=title,abstract"
+    try:
+        data = fetch_json(url)
+    except Exception:
+        return ""
+    return normalize_abstract(data.get("abstract") or "")
+
+
+def extract_abstract_from_pdf(pdf_path: Path) -> str:
+    pdftotext = shutil.which("pdftotext")
+    if not pdftotext or not pdf_path.exists():
+        return ""
+    try:
+        completed = subprocess.run(
+            [pdftotext, "-f", "1", "-l", "3", "-layout", str(pdf_path), "-"],
+            capture_output=True,
+            timeout=30,
+        )
+    except Exception:
+        return ""
+    text = completed.stdout.decode("utf-8", errors="replace") if isinstance(completed.stdout, bytes) else completed.stdout
+    text = re.sub(r"\s+", " ", text)
+    match = re.search(r"\bAbstract\b(.{80,4000}?)(?:\bKeywords?\b|\b1\s*\.?\s*Introduction\b|\bIntroduction\b)", text, flags=re.I)
+    if not match:
+        return ""
+    return normalize_abstract(match.group(1))
+
+
+def find_local_pdf(folder: Path) -> Path | None:
+    if not folder.exists():
+        return None
+    pdfs = sorted(path for path in folder.rglob("*.pdf") if path.is_file())
+    return pdfs[0] if pdfs else None
+
+
+def active_folders_from_index() -> dict[str, Path]:
+    index = ROOT / "collection_index.csv"
+    if not index.exists():
+        return {}
+    with index.open("r", newline="", encoding="utf-8-sig") as fh:
+        rows = list(csv.DictReader(fh))
+    return {
+        row.get("article_number", ""): Path(row["folder"])
+        for row in rows
+        if row.get("folder") and row.get("status") in {"included", "conversion_failed"}
+    }
+
+
+def enrich_abstracts() -> None:
+    ensure_dirs()
+    records = read_metadata()
+    active_folders = active_folders_from_index()
+    changed = False
+    for record in records:
+        article = article_id(record)
+        if active_folders and article not in active_folders:
+            continue
+        existing = normalize_abstract(record.get("abstract", ""))
+        if existing:
+            continue
+        folder = active_folders.get(article) or record_folder(record)
+        local_pdf = find_local_pdf(folder)
+        sources = [
+            ("local_pdf", lambda: extract_abstract_from_pdf(local_pdf) if local_pdf else ""),
+            ("crossref", lambda: fetch_crossref_abstract(normalize_doi(record.get("doi", "")))),
+            ("openalex", lambda: fetch_openalex_abstract(normalize_doi(record.get("doi", "")))),
+            ("semantic_scholar", lambda: fetch_semantic_scholar_abstract(normalize_doi(record.get("doi", "")))),
+        ]
+        for source, getter in sources:
+            abstract = getter()
+            if abstract:
+                record["abstract"] = abstract
+                record["abstractSource"] = source
+                changed = True
+                break
+        if not record.get("abstract"):
+            record["abstractStatus"] = "not available from local PDF/Crossref/OpenAlex/Semantic Scholar"
+            changed = True
+        time.sleep(0.1)
+    if changed:
+        write_metadata(records)
 
 
 def clean_title(value: str) -> str:
@@ -1170,11 +1473,18 @@ def process() -> None:
         candidate = is_reaction_kinetics_candidate(record)
         record["candidate"] = candidate
         folder = record_folder(record)
-        local_downloads = copy_downloads_for_record(record, folder / "raw_downloads")
-        extracted_dest = folder / "extracted"
-        extraction_notes = extract_archives(local_downloads, extracted_dest)
-        scan_roots = [folder / "raw_downloads", extracted_dest]
-        mechanisms, thermos, transports, cantera = scan_files(scan_roots)
+        local_downloads: list[Path] = []
+        extraction_notes: list[str] = []
+        mechanisms: list[Path] = []
+        thermos: list[Path] = []
+        transports: list[Path] = []
+        cantera: list[Path] = []
+        if candidate:
+            local_downloads = copy_downloads_for_record(record, folder / "raw_downloads")
+            extracted_dest = folder / "extracted"
+            extraction_notes = extract_archives(local_downloads, extracted_dest)
+            scan_roots = [folder / "raw_downloads", extracted_dest]
+            mechanisms, thermos, transports, cantera = scan_files(scan_roots)
         processing_results: list[CkResult] = []
         if mechanisms:
             if not record.get("paperPdfStatus"):
@@ -1303,6 +1613,7 @@ def process() -> None:
     for generated in ROOT.rglob("*"):
         if generated.is_file() and generated.name in generated_names and generated.parent.resolve() not in active_folders:
             generated.unlink()
+    cleanup_inactive_paper_folders(ROOT, active_folders)
     ROOT.joinpath("manual_download_handoff.md").write_text("\n".join(handoff) + "\n", encoding="utf-8")
     ROOT.joinpath("run_summary.json").write_text(
         json.dumps(
@@ -1353,13 +1664,15 @@ def init() -> None:
 
 def main() -> None:
     parser = argparse.ArgumentParser()
-    parser.add_argument("command", choices=["init", "enrich-crossref", "probe-supplements", "process"])
+    parser.add_argument("command", choices=["init", "enrich-crossref", "enrich-abstracts", "probe-supplements", "process"])
     parser.add_argument("--max-mmc", type=int, default=8)
     args = parser.parse_args()
     if args.command == "init":
         init()
     elif args.command == "enrich-crossref":
         enrich_crossref()
+    elif args.command == "enrich-abstracts":
+        enrich_abstracts()
     elif args.command == "probe-supplements":
         probe_supplements(max_mmc=args.max_mmc)
     elif args.command == "process":

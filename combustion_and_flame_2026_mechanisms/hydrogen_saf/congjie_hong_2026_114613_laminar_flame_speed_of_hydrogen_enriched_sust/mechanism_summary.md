@@ -30,8 +30,8 @@ Congjie Hong, Janardhanraj Subburaj, Jiabiao Zou, Ayman M. Elbaz, ... Aamir Faro
 ### Mechanism 1
 
 - Status: cantera_failed
-- Species count: not parsed
-- Reaction count: not parsed
+- Species count: 206
+- Reaction count: 1451
 - Message: ValueError: could not convert string to float: '6.808+03'; numeric cleanup retry failed: InputError: No thermo data found for species 'HOCO'
 Please check https://cantera.org/tutorials/ck2yaml-tutorial.html#debugging-common-errors-in-ck-files
 for the correct Chemkin syntax.
@@ -55,7 +55,7 @@ for the correct Chemkin syntax.
 
 ## Abstract
 
-not available
+The development of sustainable aviation fuels (SAFs) is essential for reducing carbon emissions in the aviation industry. Fischer-Tropsch Synthetic Paraffinic Kerosene (FT-SPK) has emerged as a promising SAF candidate, and hydrogen enrichment offers a viable strategy to enhance its combustion performance. This study systematically investigates the laminar flame characteristics of FT-SPK blended with hydrogen under varying conditions, including hydrogen blending ratios from 0 % to 95 % (mole fraction), pressures of 1 to 2 bar, and equivalence ratios ranging from 0.7 to 1.2. Experimental measurements and chemical kinetic modeling were performed to assess the effects of hydrogen addition on combustion stability, flame propagation, and the underlying mechanisms governing flame speed enhancement. Results show that hydrogen enrichment significantly increases the laminar flame speed of FT-SPK/air mixtures, with the stronger effect observed under fuel-rich conditions. Furthermore, the global activation energy of FT-SPK/H2/air flames shows distinct trends concerning equivalence ratio: hydrogen increases the activation energy under lean conditions by enhancing chain-branching reactions, while it decreases the activation energy under rich conditions by facilitating low-activation-energy reaction pathways. The developed chemical kinetic model accurately predicts experimental flame speeds across all tested conditions, providing a valuable tool for future studies on hydrogen-enriched SAFs. These findings provide critical insights into the role of hydrogen in enhancing the combustion performance of FT-SPK and support the development of low-carbon aviation fuel technologies. Novelty and significance statement This study presents a comprehensive and first-of-its-kind investigation into the laminar flame speed of hydrogen-enriched FT-SPK/air mixtures, which is a novel sustainable aviation fuel. By integrating detailed experimental measurements with validated chemical kinetic modelling, it reveals the dominant role of hydrogen in enhancing flame speed through chemical and thermal effects. The work also quantifies the impact of hydrogen on global activation energy across lean and rich conditions, offering novel insights into reactivity trends and radical chemistry. These findings provide a critical foundation for advancing hydrogen-enriched SAF technologies in low-carbon aviation.
 
 ## Processing Notes
 

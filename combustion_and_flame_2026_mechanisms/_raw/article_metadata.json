@@ -421,7 +421,7 @@
     "url": "https://www.sciencedirect.com/science/article/pii/S0010218025005929",
     "volume": "283",
     "month": "January",
-    "abstract": "",
+    "abstract": "Ammonia (NH3) is a promising carbon-free green fuel, but faces challenges such as low reactivity and difficulty in ignition. Adding active additives to enhance the combustion reactivity of NH3 is an ideal solution and has practical significance for improving the combustion performance of NH3. In this work, the high-temperature co-oxidation of 1,2-dimethoxyethane (1,2-DME) and NH3 in a jet-stirred reactor was conducted under atmospheric pressure and within a temperature range of 740–1070 K. The reactants, products, and intermediates were measured and identified using synchrotron vacuum ultraviolet photoionization mass spectrometry (SVUV-PIMS), and their mole fraction distributions were finally quantified. A series of key products were determined during the 1,2-DME/NH3 co-oxidation, especially nitrogen oxides and carbon–nitrogen intermediates such as NO, NO2, N2O, CH2NH, HCNO, HONO, CH3NO2, and HCN. These key intermediates are crucial for clarifying the reaction pathways of 1,2-DME/NH3 co-oxidation. Based on the experimental measurements and theoretical calculations, a detailed high-temperature co-oxidation model of NH3/1,2-DME was developed by coupling the 1,2-DME mechanism, NH3 mechanism, and C–N interaction pathways. The model demonstrates good predictive capability for the species distributions obtained in this work. Sensitivity and reaction pathway analyses revealed that NH3 consumption below 850 K is primarily controlled by 1,2-DME sub-chemistry, such as the C–C bond dissociation of 1,2-DME-derived radicals; at 850–1000 K, NH3 consumption is further influenced by the OH radical formation pathways involving C0–C1 core species; at temperatures above 1000 K, NH3 consumption is dominated by the spontaneous oxidation of NH3 and the reaction pathways of O2 + H = O + OH and H + O2 (+M) = HO2 (+M).",
     "pdfLinks": [],
     "supplementLinks": [],
     "articlePageSignals": "Are you a robot?\nPlease confirm you are a human by completing the captcha challenge below.\n\nReference number: a08f8652bdab1e0f\nIP Address: 64.32.13.248\nUser Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36\nTimestamp: 2026-06-09 10:41:34 UTC\nAbout ScienceDirect\nRemote access\nContact and support\nTerms and conditions\nPrivacy policy\nCookie settings\n\nAll content on this site: Copyright © 2026 Elsevier B.V., its licensors, and contributors. All rights are reserved, including those for text and data mining, AI training, and similar technologies. For all open access content, the relevant licensing terms apply.",
@@ -446,7 +446,8 @@
         "content_length": 77843
       }
     ],
-    "crossrefScore": 1
+    "crossrefScore": 1,
+    "abstractSource": "sciencedirect_dom:#abs0001"
   },
   {
     "articleNumber": "114548",
@@ -579,7 +580,7 @@
     "url": "https://www.sciencedirect.com/science/article/pii/S0010218025006121",
     "volume": "283",
     "month": "January",
-    "abstract": "",
+    "abstract": "The carbon-neutral potential of ammonia is constrained by fundamental combustion barriers, driving the development of advanced bio-fuel blends as kinetic enhancement strategies. In this research, co-oxidation experiments of NH3 and dimethoxymethane (DMM, CH3OCH2OCH3) were executed in a jet-stirred reactor (JSR) under 1 atm and 730–1060 K. Through the use of state-of-the-art synchrotron radiation vacuum ultraviolet photoionization mass spectrometry (SVUV-PIMS) for online diagnostics, we achieved the first quantification of the species pool in the reaction system, covering C/H/O compounds and various key nitrogen-containing intermediates. The experimentally derived species profiles served as the foundation for refining a kinetic model to describe NH3 and DMM co-oxidation. The model was updated based on experimental and literature data, with key modifications to the rate constants for H-atom abstraction (DMM, NH3, intermediates) and the primary N2O consumption pathway. Ultimately, the improved model substantially improves the prediction of NH3/DMM co-oxidation species distribution (especially for DMM, NH3, CH3OCHO, CH2O, N2O, etc.), and it can also accurately reproduce ignition delay times and laminar flame speeds from previous studies. Additionally, the kinetic analysis further clarified the co-oxidation reaction pathways of NH3/DMM, especially highlighting the non-negligible influence of some key reaction pathways on their co-oxidation behaviour, such as CH3OCH2OCH3 + NH2 = CH3OCH2OCH2 (CH3OCHOCH3) + NH3, CO + N2O = N2 + CO2, etc. This research provides critical experimental data and a more reliable kinetic model, advancing our understanding of the chemical kinetics underlying NH3/DMM co-combustion.",
     "pdfLinks": [],
     "supplementLinks": [],
     "articlePageSignals": "There was a problem providing the content you requested\n\nPlease contact our support team for more information and provide the details below.\n\nReference number: a08f8672a8b41e0f\nIP Address: 64.32.13.248\nUser Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36\nTimestamp: 2026-06-09 10:41:39 UTC\nAbout ScienceDirect\nRemote access\nContact and support\nTerms and conditions\nPrivacy policy\nCookie settings\n\nAll content on this site: Copyright © 2026 Elsevier B.V., its licensors, and contributors. All rights are reserved, including those for text and data mining, AI training, and similar technologies. For all open access content, the relevant licensing terms apply.",
@@ -616,7 +617,8 @@
         "content_length": 2040
       }
     ],
-    "crossrefScore": 1
+    "crossrefScore": 1,
+    "abstractSource": "sciencedirect_dom:#abs0001"
   },
   {
     "articleNumber": "114557",
@@ -830,7 +832,7 @@
     "url": "https://www.sciencedirect.com/science/article/pii/S0010218025006091",
     "volume": "283",
     "month": "January",
-    "abstract": "",
+    "abstract": "Propane is a major component of liquefied petroleum gas. Ignition delay times of NH3/C3H8 mixtures were measured in a rapid compression machine over 750–1100 K and 20–100 bar, with propane blending ratios from 10 % to 100 %. A new kinetic model, SJTU-2025, was developed based on POLIMI-2023 and Aramco 3.0 model. The model shows good agreement with IDTs, particularly at high dilution ratios. The model also improves speciation predictions for O2, H2, CO2, C2H2, C3H6, and C3H8. A plateau in simulated mole fractions of O2, NH3, and N2 is observed within 900–1000 K, partially consistent with experimental trends. The NTC trend of oxygen should result from the competition between NC3H7/IC3H7+O2HO2+C3H6 and NC3H7/IC3H7+O2NC3H7O2/IC3H7O2. The effect of propane addition is pronounced at high ammonia proportions, and small propane fraction is suggested because HCN is prone to being produced at high propane content. A new parameter, the O2-IDT ratio, reveals the oxygen effect on IDTs over wide conditions. The reason for the pronounced oxygen effect at low temperature is that oxygen participates actively in the R·→RO2· and C3H7O2=C3H6+HO2 pathways, which are dominant at low temperatures. An important chain-terminating reaction, 2HO2H2O2+O2, gains importance at reduced oxygen concentration, further decreasing the reactivity of the fuel mixtures. The model considers reactions between peroxy radicals C3H7O2 and NH3/NH2, which improve the model predictive ability in IDTs at NTC region and oxygen concentration profile. The source of these kinds of reactions comes from analogy to CH3OCH2O2+NH3/NH2 reactions, and large uncertainty exists in the determination of the rate constants. More accurate kinetic parameters are imperative to improve model performance in the low-temperature region.",
     "pdfLinks": [],
     "supplementLinks": [],
     "articlePageSignals": "There was a problem providing the content you requested\n\nPlease contact our support team for more information and provide the details below.\n\nReference number: a08f868ee99f1e0f\nIP Address: 64.32.13.248\nUser Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36\nTimestamp: 2026-06-09 10:41:44 UTC\nAbout ScienceDirect\nRemote access\nContact and support\nTerms and conditions\nPrivacy policy\nCookie settings\n\nAll content on this site: Copyright © 2026 Elsevier B.V., its licensors, and contributors. All rights are reserved, including those for text and data mining, AI training, and similar technologies. For all open access content, the relevant licensing terms apply.",
@@ -855,7 +857,8 @@
         "content_length": 151071
       }
     ],
-    "crossrefScore": 1
+    "crossrefScore": 1,
+    "abstractSource": "sciencedirect_dom:#abs0001"
   },
   {
     "articleNumber": "114581",
@@ -875,7 +878,7 @@
     "url": "https://www.sciencedirect.com/science/article/pii/S0010218025006182",
     "volume": "283",
     "month": "January",
-    "abstract": "",
+    "abstract": "Acetone (CH3COCH3) is a key intermediate and a representative oxygenated volatile organic compound (OVOC) relevant to biofuels, atmospheric chemistry, and advanced propulsion systems. In the current study, shock tube pyrolysis experiments for acetone/Ar mixtures were performed over the temperature range of 1300–1952 K at atmospheric pressure, utilizing laser absorption diagnostics at 4854 nm and 3175 nm to monitor the temporal evolution of carbon monoxide (CO) and methane (CH4), respectively. In addition, ignition delay time (IDT) measurements were conducted in a shock tube for CH3COCH3/Ar/O₂ mixtures at three equivalence ratios (φ = 0.5, 1.0, and 2.0) over the temperature range of 1274–1601 K and 1.0 atm. The CO time-history data provided direct constraints on the unimolecular decomposition reaction R1 (CH3COCH3 (+M)=>CH3CO + CH3 (+M)), yielding a rate constant of kR1 (1304–1952 K, 1.0 atm) = 9.0 × 1013 exp (−66,500 cal/mol/RT) s⁻¹, with an uncertainty of +28.7 %/−28.2 %. Additionally, CH4 time-histories and IDTs measurements combined with sensitivity analysis were employed to refine the H-abstraction reactions R2 (CH3COCH3 + CH3<=>CH3COCH2 + CH4) and R3 (CH3COCH3 + H<=>CH3COCH2 + H2), respectively. A detailed kinetic model of acetone consisting of 41 species and 284 reactions was developed based on the FFCM-1 framework and optimized skeletal sub-model of acetone with updated rate constants of R1, R2 and R3. Validation against a wide range of literature data, including IDTs, laminar flame speeds and speciation data from literature, demonstrates the robustness and accuracy of the optimized kinetic model. This work highlights the critical role of laser-based diagnostics in resolving key elementary reactions and illustrates the advantages of compact, well-calibrated kinetic models for high-temperature acetone combustion research.",
     "pdfLinks": [],
     "supplementLinks": [],
     "articlePageSignals": "There was a problem providing the content you requested\n\nPlease contact our support team for more information and provide the details below.\n\nReference number: a08f8698fbf81e0f\nIP Address: 64.32.13.248\nUser Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36\nTimestamp: 2026-06-09 10:41:45 UTC\nAbout ScienceDirect\nRemote access\nContact and support\nTerms and conditions\nPrivacy policy\nCookie settings\n\nAll content on this site: Copyright © 2026 Elsevier B.V., its licensors, and contributors. All rights are reserved, including those for text and data mining, AI training, and similar technologies. For all open access content, the relevant licensing terms apply.",
@@ -912,7 +915,8 @@
         "content_length": 2988
       }
     ],
-    "crossrefScore": 1
+    "crossrefScore": 1,
+    "abstractSource": "sciencedirect_dom:#abs0001"
   },
   {
     "articleNumber": "114585",
@@ -1234,7 +1238,7 @@
     "url": "https://www.sciencedirect.com/science/article/pii/S0010218025006133",
     "volume": "283",
     "month": "January",
-    "abstract": "",
+    "abstract": "Ethyl acetate (EA) is not only a promising biofuel that offers new pathways for sustainable energy applications, but also widely used as an organic solvent in explosives. Given its flammability and potential explosion hazards, understanding its combustion characteristics is crucial. This study systematically investigated EA combustion using a shock tube combined with a laser absorption diagnostic system. Ignition delay times (IDTs) were measured at 1160–1446 K, atmospheric pressure, and equivalence ratios (Φ) from 0.25–2.0. The results indicate that fuel-lean conditions yield nearly identical IDTs due to sufficient oxygen promoting rapid oxidation, whereas stoichiometric and fuel-rich mixtures show reduced reactivity. The diagnostic system simultaneously tracked CO and CH4 time histories during EA pyrolysis at 1446–1815 K for 0.6% and 1.0% concentrations, showing the temperature-dependent temporal evolution of these key products. A detailed kinetic model was constructed based on previous studies by updating the reaction rate constants for five key reactions involving CH3COOH, CH2CO, and C2H4. The current model was validated against the extensive experimental data from this work and the literature. Rate of production and sensitivity analyses identified that EA rapidly decomposes via six-membered elimination to CH3COOH and C2H4, and subsequent CH3COOH decomposition significantly influences the temporal profiles of key products. At fixed dilution, as Φ increases and the availability of O2 becomes scarcer, H consumption shifts toward the pathway of C2H4 + H <=> C2H3 + H2, further suppressing the chain-branching reaction of O2 + H <=> OH+O and lengthening the IDT. This investigation provides a foundation for optimizing kinetic models of more complex ester fuels and offers a basis for improved safety assessment. Novelty and significance statement This study provides comprehensive ignition delay time (IDT) data for ethyl acetate (EA) oxidation over a wide range of equivalence ratios, together with simultaneous high-resolution laser diagnostics of CO and CH4 during EA pyrolysis. Notably, this study provides the first direct online detection of CH4 under pyrolytic conditions, combined with CO measurements, which serves as a critical benchmark for evaluating the CH3COOH sub-mechanisms and improving the accuracy of EA kinetic models. A detailed kinetic model for EA combustion was developed by updating five key reaction rate constants based on published literature and was extensively validated against IDTs, major species profiles, and laminar flame speeds. Overall, this study advances the understanding of EA combustion chemistry and establishes a robust framework for modeling oxygenated esters, providing a foundation for developing pathway inhibitors and for post-accident analysis of explosion mechanisms, thereby supporting safety evaluation and risk assessment.",
     "pdfLinks": [],
     "supplementLinks": [],
     "articlePageSignals": "There was a problem providing the content you requested\n\nPlease contact our support team for more information and provide the details below.\n\nReference number: a08f86c8adc01e0f\nIP Address: 64.32.13.248\nUser Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36\nTimestamp: 2026-06-09 10:41:53 UTC\nAbout ScienceDirect\nRemote access\nContact and support\nTerms and conditions\nPrivacy policy\nCookie settings\n\nAll content on this site: Copyright © 2026 Elsevier B.V., its licensors, and contributors. All rights are reserved, including those for text and data mining, AI training, and similar technologies. For all open access content, the relevant licensing terms apply.",
@@ -1271,7 +1275,8 @@
         "content_length": 146811
       }
     ],
-    "crossrefScore": 1
+    "crossrefScore": 1,
+    "abstractSource": "sciencedirect_dom:#abs0001"
   },
   {
     "articleNumber": "114604",
@@ -1456,7 +1461,7 @@
     "url": "https://www.sciencedirect.com/science/article/pii/S0010218025006376",
     "volume": "283",
     "month": "January",
-    "abstract": "",
+    "abstract": "An experimental and kinetic modeling study was conducted to investigate the polycyclic aromatic hydrocarbon formation characteristics in naphtha pyrolysis. Experiments of a three-component naphtha model fuel and its individual components, n-hexane, isopentane, and methylcyclopentane (MCP), were performed using a jet-stirred reactor (JSR) across the temperature range of 950–1250 K, with mole fractions of key aromatic species measured. Based on the experimental data, a new sub-mechanism for aromatic species formation for naphtha fuel was developed. The new mechanism demonstrated significantly enhanced predictive capability for the formation of aromatic hydrocarbons, including toluene, ethylbenzene, styrene, indene, acenaphthylene, and fluorene in naphtha pyrolysis. Pathway analysis revealed the important role of cyclopentadiene and cyclopentadienyl in aromatic formation kinetics in naphtha pyrolysis, and highlighted the fuel compositional influences on the dominant aromatic formation pathways.",
     "pdfLinks": [],
     "supplementLinks": [],
     "articlePageSignals": "There was a problem providing the content you requested\n\nPlease contact our support team for more information and provide the details below.\n\nReference number: a08f86e5395e1e0f\nIP Address: 64.32.13.248\nUser Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36\nTimestamp: 2026-06-09 10:41:57 UTC\nAbout ScienceDirect\nRemote access\nContact and support\nTerms and conditions\nPrivacy policy\nCookie settings\n\nAll content on this site: Copyright © 2026 Elsevier B.V., its licensors, and contributors. All rights are reserved, including those for text and data mining, AI training, and similar technologies. For all open access content, the relevant licensing terms apply.",
@@ -1475,7 +1480,8 @@
         "content_length": 663626
       }
     ],
-    "crossrefScore": 1
+    "crossrefScore": 1,
+    "abstractSource": "sciencedirect_dom:#abs0001"
   },
   {
     "articleNumber": "114613",
@@ -1495,7 +1501,7 @@
     "url": "https://www.sciencedirect.com/science/article/pii/S0010218025006509",
     "volume": "283",
     "month": "January",
-    "abstract": "",
+    "abstract": "The development of sustainable aviation fuels (SAFs) is essential for reducing carbon emissions in the aviation industry. Fischer-Tropsch Synthetic Paraffinic Kerosene (FT-SPK) has emerged as a promising SAF candidate, and hydrogen enrichment offers a viable strategy to enhance its combustion performance. This study systematically investigates the laminar flame characteristics of FT-SPK blended with hydrogen under varying conditions, including hydrogen blending ratios from 0 % to 95 % (mole fraction), pressures of 1 to 2 bar, and equivalence ratios ranging from 0.7 to 1.2. Experimental measurements and chemical kinetic modeling were performed to assess the effects of hydrogen addition on combustion stability, flame propagation, and the underlying mechanisms governing flame speed enhancement. Results show that hydrogen enrichment significantly increases the laminar flame speed of FT-SPK/air mixtures, with the stronger effect observed under fuel-rich conditions. Furthermore, the global activation energy of FT-SPK/H2/air flames shows distinct trends concerning equivalence ratio: hydrogen increases the activation energy under lean conditions by enhancing chain-branching reactions, while it decreases the activation energy under rich conditions by facilitating low-activation-energy reaction pathways. The developed chemical kinetic model accurately predicts experimental flame speeds across all tested conditions, providing a valuable tool for future studies on hydrogen-enriched SAFs. These findings provide critical insights into the role of hydrogen in enhancing the combustion performance of FT-SPK and support the development of low-carbon aviation fuel technologies. Novelty and significance statement This study presents a comprehensive and first-of-its-kind investigation into the laminar flame speed of hydrogen-enriched FT-SPK/air mixtures, which is a novel sustainable aviation fuel. By integrating detailed experimental measurements with validated chemical kinetic modelling, it reveals the dominant role of hydrogen in enhancing flame speed through chemical and thermal effects. The work also quantifies the impact of hydrogen on global activation energy across lean and rich conditions, offering novel insights into reactivity trends and radical chemistry. These findings provide a critical foundation for advancing hydrogen-enriched SAF technologies in low-carbon aviation.",
     "pdfLinks": [],
     "supplementLinks": [],
     "articlePageSignals": "Are you a robot?\nPlease confirm you are a human by completing the captcha challenge below.\n\nReference number: a08f86ee7c883efd\nIP Address: 64.32.13.248\nUser Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36\nTimestamp: 2026-06-09 10:41:59 UTC\nAbout ScienceDirect\nRemote access\nContact and support\nTerms and conditions\nPrivacy policy\nCookie settings\n\nAll content on this site: Copyright © 2026 Elsevier B.V., its licensors, and contributors. All rights are reserved, including those for text and data mining, AI training, and similar technologies. For all open access content, the relevant licensing terms apply.",
@@ -1538,7 +1544,8 @@
         "content_length": 110671148
       }
     ],
-    "crossrefScore": 1
+    "crossrefScore": 1,
+    "abstractSource": "sciencedirect_dom:#abs0001"
   },
   {
     "articleNumber": "114621",
@@ -1679,7 +1686,9 @@
       }
     ],
     "crossrefScore": 1,
-    "issuePdfLink": "https://www.sciencedirect.com/science/article/pii/S0010218025006388/pdfft?md5=36c58244e76bfe0438e917950f12b9b2&pid=1-s2.0-S0010218025006388-main.pdf"
+    "issuePdfLink": "https://www.sciencedirect.com/science/article/pii/S0010218025006388/pdfft?md5=36c58244e76bfe0438e917950f12b9b2&pid=1-s2.0-S0010218025006388-main.pdf",
+    "abstract": "The contamination of ammonium nitrate (AN) with chlorides is known to significantly decrease the thermal stability of this compound. Although the thermal characteristics and reaction kinetics of AN/chloride mixtures have been thoroughly investigated, the mechanism associated with the condensed phase pyrolysis of such mixtures remains unclear. The present study employed quantum chemistry calculations at the G4//ωB97X-D/SMD level of theory to analyze the condensed phase pyrolysis of AN/ammonium chloride (NH4Cl) mixtures. A detailed kinetic model incorporating 72 chemical species and 134 elementary reactions and based on first principles was constructed for this purpose. Using this model, reaction simulations were performed to predict the heat flow profile and variations in reactants and products during AN/NH4Cl pyrolysis. The heat flow profile was then compared with experimental data obtained using differential scanning calorimetry. The predicted reaction onset temperature, heat release rate and total heat of pyrolysis were in good agreement with the experimental results. The pyrolysis pathways for this system were determined and HCl was found to act as a catalyst. This process is evidently initiated by the reaction of HCl with HNO3 to form NO2Cl, leading to the formation and subsequent decomposition of NO2ClNH3 to generate HONO and NH2Cl. This NH2Cl decomposes to produce trans-N2H2 and regenerate HCl, establishing the catalytic cycle AN → 0.5 trans-N2H2 + HONO + H2O. The HONO further accelerates AN decomposition as AN + HONO → N2 + 2H2O + HNO3.",
+    "abstractSource": "sciencedirect_dom:#abs0001"
   },
   {
     "articleNumber": "114479",
@@ -2403,7 +2412,9 @@
         "content_length": 699
       }
     ],
-    "crossrefScore": 1
+    "crossrefScore": 1,
+    "abstract": "Informative experimental data are critical for developing predictive combustion kinetic models. Bayesian Sequential Experimental Design (BSED) provides a principled framework to identify experimental conditions that maximize the Expected Information Gain (EIG). However, its application to kinetic model optimization is often limited by high computational cost and potential model misspecification which leads to suboptimal designs. To address these challenges, this study introduces the Surrogate Accelerated BSED (SABSED) framework and demonstrates its implementation on a semi-automated Jet-Stirred Reactor (JSR) platform. SABSED is a surrogate-assisted nonlinear design framework that avoids input–output linearization approximations and improves experimental efficiency through enhanced information gain. The framework integrates multiple strategies to enhance both efficiency and robustness. For efficiency, it employs Artificial Neural Networks (ANNs) trained on multi-scenario datasets to accelerate simulations, utilizes reverse Kullback–Leibler divergence for rapid EIG evaluation, and applies ANN-based Hamiltonian Monte Carlo for efficient Bayesian inference. For robustness, it introduces a heteroscedastic Gaussian Process Regression (GPR) surrogate model to define a modified EIG criterion (EIG_GPR) that accounts for prediction–measurement difference, improving real-world design reliability. Validation using ammonia combustion data, including ignition delay times (IDT), laminar burning velocities (LBV), and species profiles from JSR experiments, demonstrates that both EIG and EIG_GPR substantially reduce predictive errors and uncertainties within 20 iterations. In the LBV case, EIG_GPR achieved the target error threshold with five times fewer iterations than EIG. For newly designed JSR experiments, EIG_GPR accelerated the design and optimization process by 15 times, completing the design within 30 s on a single-core CPU. Overall, the SABSED framework significantly enhances the efficiency of developing combustion reaction kinetic models, paving the way for autonomous experimentation and automatic model optimization.",
+    "abstractSource": "sciencedirect_dom:#abs0001"
   },
   {
     "articleNumber": "114666",
@@ -2532,7 +2543,9 @@
         "content_length": 42762
       }
     ],
-    "crossrefScore": 1
+    "crossrefScore": 1,
+    "abstract": "The co-firing of ammonia (NH3) with hydrocarbon fuels represents an important application solution for low-carbon operation in various combustion devices. This approach enables enhanced NH3 combustion without requiring extensive modifications to the devices. However, the underlying kinetic interactions between NH3 and hydrocarbons remain poorly understood, impeding the advancement of tailored combustion technologies. In this study, co-oxidation of NH3 with ethylene (C2H4) and acetylene (C2H2), key intermediates in the combustion of larger hydrocarbons, was experimentally and modeling investigated. The experiments were conducted in a jet-stirred reactor (JSR) at atmospheric pressure over a temperature range of 600–1200 K. Stable products were quantified at different equivalence ratios, including hydrocarbons, aldehydes, NOx, and CN cross-reaction species such as HCN. A detailed kinetic model was developed based on Glarborg et al. (2018), with substantial updates implemented to both the N/H/O sub-mechanism and the CN interaction sub-mechanism. The updated model satisfactorily predicts both mid-to-low temperature experimental data from this work and high-temperature results reported in the literature. The results reveal that NH3 consumption in both NH3C2H4 and NH3C2H2 co-oxidation systems displays distinct two-stage characteristics, including pronounced negative temperature coefficient (NTC) behavior. This is attributed to the synergistic effects of intensified chain-termination and competitive fuel chemistry. Specifically, the dominant chain-terminating reaction NH2 + HO2 → NH3 + O2, coupled with the effective OH-scavenging by NH3 which suppresses C2H4/C2H2 oxidation, collectively quench the system's reactivity within the intermediate temperature range. Significant HCN formation was observed in both systems, particularly under fuel-rich conditions. Kinetic analysis demonstrates that HCN formation strongly correlates with amine intermediates in the reaction pathways. In NH3C2H4 systems, HCN is produced through sequential dehydrogenation of methylamine (CH3NH2), formed via CH3 + NH2 recombination. In NH3C2H2 systems, the consumption pathways of 1-ethyleneimine (CH2CNH), formed via NH₂ + C₂H₂ addition, predominantly determine the distribution of nitrogen-containing products (e.g., HCN, HNCO, CH₃CN). Further experimental and theoretical investigations are required to fully elucidate the reaction networks involving these amine intermediates.",
+    "abstractSource": "sciencedirect_dom:#abs0001"
   },
   {
     "articleNumber": "114652",
@@ -2661,7 +2674,9 @@
         "content_length": 15164
       }
     ],
-    "crossrefScore": 1
+    "crossrefScore": 1,
+    "abstract": "Highlights • High-pressure oxidation of a RP-3 surrogate fuel with three C9H12 isomers as the aromatic component was experimentally investigated. • A detailed kinetic model with 1596 species and 8376 reactions was developed and validated. • n-Propylbenzene is consumed more slowly than 1,3,5-trimethylbenzene and 1,2,4-trimethylbenzene in the surrogate oxidation. • Crossing reactions strongly affect fuel consumption and aromatic product formation. • Aromatic components significantly influence the generation of aromatic species, with implications for soot formation. Abstract This study aims to guide the optimization of surrogate fuels and reduce development time and experimental costs by investigating the effect of three C9H12 isomers as aromatic components on the high-pressure oxidation of a surrogate fuel for RP-3 kerosene. Consistent with Part I, the surrogate fuel consists of 66.2 % n-dodecane, 18.0 % 1,3,5-trimethylcyclohexane, and 15.8 % aromatic compounds (in mole fraction). The three C9H12 isomers are n-propylbenzene (A1C3H7), 1,3,5-trimethylbenzene (T135MB), and 1,2,4-trimethylbenzene (T124MB). The oxidation experiments were conducted in a jet-stirred reactor at an equivalence ratio of 0.4, temperatures ranging from 500 to 1020 K, and a pressure of 12.0 atm. A comprehensive kinetic model comprising 1596 species and 8376 reactions was developed to elucidate the influence of aromatic components. As observed in Part I, the surrogate fuel exhibits a three-stage oxidation phenomenon, regardless of the aromatic component. Aromatic components minimally affect the mole fraction profiles of n-dodecane and 1,3,5-trimethylcyclohexane due to their low concentration and reactivity. Interestingly, A1C3H7, the most reactive aromatic component, is consumed slower than T135MB and T124MB during the oxidation of the surrogate fuel in Stages II and III. This behavior is attributed to A1C3H7 being more readily regenerated via reactions of fuel radicals with HȮ2, and radicals such as HȮ2 in the surrogate fuel oxidation depending on n-dodecane. The impact of aromatic components on products is primarily seen in aromatic products, with minimal effects on CO, CO2, and light hydrocarbons. A1C3H7 predominantly produces unsaturated mono-substituted benzene, T135MB primarily forms m-xylene, and T124MB produces o-/m-/p-xylene. The fuel consumption pathways align closely with ȮH radical generation. A1C3H7 and T124MB exhibit pronounced low-temperature chain-branching oxidation, whereas T135MB does not. Considering the molecular structure of aromatic components is essential for more accurate prediction of aromatic consumption, product formation, and ignition behavior of real RP-3 kerosene.",
+    "abstractSource": "sciencedirect_dom:.u-font-serif.abstracts"
   },
   {
     "articleNumber": "114656",
@@ -2719,7 +2734,9 @@
         "content_length": 23760
       }
     ],
-    "crossrefScore": 1
+    "crossrefScore": 1,
+    "abstract": "Norbornane (C7H12), a typical polycyclic alkane, is currently of interest as a backbone for next-staged aviation fuels in fuel design and as a potential additive in commercial fuel to improve combustion performance. The polycyclic geometry of norbornane poses challenges in the characterization of its kinetics, thus hindering future applications. In this work, a combined experimental and kinetic modeling approach was employed to study the auto-ignition behavior of norbornane. A set of norbornane auto-ignition experiments was conducted in a rapid compression machine, covering the equivalence ratios of 0.5 and 1.0 across the temperature range of 623 K to 923 K and pressures of 10, 15, and 20 bar. The auto-ignition process of norbornane exhibits the two-stage ignition behavior. Ignition delay times were recorded, showing the negative temperature coefficient (NTC) phenomenon. With the assistance of gas chromatography, several oxidation products were identified and their concentration profiles through the whole ignition process were obtained under a typical condition, also demonstrating obvious two-stage ignition behavior. The first detailed oxidation kinetic model of norbornane was built with 939 species and 4364 reactions. Simulation results exhibit consistent agreement with experimental data. Throughout the modeling analyses, the critical reactions governing the ignition process are uncovered to elucidate the 2-staged ignition behavior. The increase of the effective temperature (Teff) shifts the branching ratio of low-temperature oxidation pathways, accounting for the disappearance of first-stage ignition and inducing the emergence of the NTC phenomenon of global ignition. Also, the different pressure dependencies of the first-stage and the global ignition contribute to the pressure effect on the shift of the temperature region showing the NTC.",
+    "abstractSource": "sciencedirect_dom:#abs0001"
   },
   {
     "articleNumber": "114663",
@@ -2763,7 +2780,8 @@
         "content_length": 33714
       }
     ],
-    "crossrefScore": 1
+    "crossrefScore": 1,
+    "abstractStatus": "ScienceDirect browser extraction failed: abstract_not_found"
   },
   {
     "articleNumber": "114661",
@@ -2949,7 +2967,8 @@
         "content_length": 2715
       }
     ],
-    "crossrefScore": 1
+    "crossrefScore": 1,
+    "abstractStatus": "ScienceDirect browser extraction failed: abstract_not_found"
   },
   {
     "articleNumber": "114668",
@@ -3038,7 +3057,8 @@
         "content_length": 7204
       }
     ],
-    "crossrefScore": 1
+    "crossrefScore": 1,
+    "abstractStatus": "ScienceDirect browser extraction failed: abstract_not_found"
   },
   {
     "articleNumber": "114657",
@@ -3347,7 +3367,8 @@
         "content_length": 3976778
       }
     ],
-    "crossrefScore": 1
+    "crossrefScore": 1,
+    "abstractStatus": "ScienceDirect browser extraction failed: abstract_not_found"
   },
   {
     "articleNumber": "114697",
@@ -3392,7 +3413,8 @@
         "content_length": 1799
       }
     ],
-    "crossrefScore": 1
+    "crossrefScore": 1,
+    "abstractStatus": "ScienceDirect browser extraction failed: abstract_not_found"
   },
   {
     "articleNumber": "114699",
@@ -3498,7 +3520,8 @@
         "content_length": 64717
       }
     ],
-    "crossrefScore": 1
+    "crossrefScore": 1,
+    "abstractStatus": "ScienceDirect browser extraction failed: abstract_not_found"
   },
   {
     "articleNumber": "114689",
@@ -3676,7 +3699,8 @@
       }
     ],
     "crossrefScore": 1,
-    "issuePdfLink": "https://www.sciencedirect.com/science/article/pii/S0010218026001033/pdfft?md5=e31f686f77b544afbb1fd44dfbd6f2c9&pid=1-s2.0-S0010218026001033-main.pdf"
+    "issuePdfLink": "https://www.sciencedirect.com/science/article/pii/S0010218026001033/pdfft?md5=e31f686f77b544afbb1fd44dfbd6f2c9&pid=1-s2.0-S0010218026001033-main.pdf",
+    "abstractStatus": "ScienceDirect browser extraction failed: abstract_not_found"
   },
   {
     "articleNumber": "114867",
@@ -3837,7 +3861,8 @@
         "content_length": 218445
       }
     ],
-    "crossrefScore": 1
+    "crossrefScore": 1,
+    "abstractStatus": "ScienceDirect browser extraction failed: abstract_not_found"
   },
   {
     "articleNumber": "114890",
@@ -4670,7 +4695,8 @@
         "content_length": 772
       }
     ],
-    "crossrefScore": 0.995
+    "crossrefScore": 0.995,
+    "abstractStatus": "ScienceDirect browser extraction failed: abstract_not_found"
   },
   {
     "articleNumber": "114922",
@@ -4782,7 +4808,8 @@
         "content_length": 14454
       }
     ],
-    "crossrefScore": 1
+    "crossrefScore": 1,
+    "abstractStatus": "ScienceDirect browser extraction failed: abstract_not_found"
   },
   {
     "articleNumber": "114937",
@@ -5048,7 +5075,8 @@
         "content_length": 8373
       }
     ],
-    "crossrefScore": 1
+    "crossrefScore": 1,
+    "abstractStatus": "ScienceDirect browser extraction failed: abstract_not_found"
   },
   {
     "articleNumber": "114969",
@@ -5391,7 +5419,8 @@
         "content_length": 53129
       }
     ],
-    "crossrefScore": 1
+    "crossrefScore": 1,
+    "abstractStatus": "ScienceDirect browser extraction failed: abstract_not_found"
   },
   {
     "articleNumber": "114980",
@@ -5944,7 +5973,8 @@
       }
     ],
     "crossrefScore": 1,
-    "issuePdfLink": "https://www.sciencedirect.com/science/article/pii/S0010218026002257/pdfft?md5=80d86537e038b12ab4d941fba60ebf9b&pid=1-s2.0-S0010218026002257-main.pdf"
+    "issuePdfLink": "https://www.sciencedirect.com/science/article/pii/S0010218026002257/pdfft?md5=80d86537e038b12ab4d941fba60ebf9b&pid=1-s2.0-S0010218026002257-main.pdf",
+    "abstractStatus": "ScienceDirect browser extraction failed: abstract_not_found"
   },
   {
     "articleNumber": "114999",
@@ -6383,7 +6413,8 @@
       }
     ],
     "crossrefScore": 1,
-    "issuePdfLink": "https://www.sciencedirect.com/science/article/pii/S0010218026002397/pdfft?md5=7539303f5f5f268c8a23396f046536f3&pid=1-s2.0-S0010218026002397-main.pdf"
+    "issuePdfLink": "https://www.sciencedirect.com/science/article/pii/S0010218026002397/pdfft?md5=7539303f5f5f268c8a23396f046536f3&pid=1-s2.0-S0010218026002397-main.pdf",
+    "abstractStatus": "ScienceDirect browser extraction failed: abstract_not_found"
   },
   {
     "articleNumber": "115011",
@@ -6481,7 +6512,8 @@
       }
     ],
     "crossrefScore": 1,
-    "issuePdfLink": "https://www.sciencedirect.com/science/article/pii/S0010218026002518/pdfft?md5=63d641dc599d8d7125fae187205917a6&pid=1-s2.0-S0010218026002518-main.pdf"
+    "issuePdfLink": "https://www.sciencedirect.com/science/article/pii/S0010218026002518/pdfft?md5=63d641dc599d8d7125fae187205917a6&pid=1-s2.0-S0010218026002518-main.pdf",
+    "abstractStatus": "ScienceDirect browser extraction failed: abstract_not_found"
   },
   {
     "articleNumber": "115029",
@@ -6555,7 +6587,8 @@
         "content_length": 39078
       }
     ],
-    "crossrefScore": 1
+    "crossrefScore": 1,
+    "abstractStatus": "ScienceDirect browser extraction failed: abstract_not_found"
   },
   {
     "articleNumber": "115038",
@@ -6719,7 +6752,8 @@
       }
     ],
     "crossrefScore": 1,
-    "issuePdfLink": "https://www.sciencedirect.com/science/article/pii/S0010218026002737/pdfft?md5=638154072b1c72a6b273ac919ce4e087&pid=1-s2.0-S0010218026002737-main.pdf"
+    "issuePdfLink": "https://www.sciencedirect.com/science/article/pii/S0010218026002737/pdfft?md5=638154072b1c72a6b273ac919ce4e087&pid=1-s2.0-S0010218026002737-main.pdf",
+    "abstractStatus": "ScienceDirect browser extraction failed: abstract_not_found"
   },
   {
     "articleNumber": "115041",
@@ -6822,7 +6856,8 @@
         "content_length": 719882
       }
     ],
-    "crossrefScore": 1
+    "crossrefScore": 1,
+    "abstractStatus": "ScienceDirect browser extraction failed: abstract_not_found"
   },
   {
     "articleNumber": "115033",
@@ -6881,7 +6916,8 @@
       }
     ],
     "crossrefScore": 1,
-    "issuePdfLink": "https://www.sciencedirect.com/science/article/pii/S0010218026002695/pdfft?md5=d968daa86def0a0de6cac5abd30f07b4&pid=1-s2.0-S0010218026002695-main.pdf"
+    "issuePdfLink": "https://www.sciencedirect.com/science/article/pii/S0010218026002695/pdfft?md5=d968daa86def0a0de6cac5abd30f07b4&pid=1-s2.0-S0010218026002695-main.pdf",
+    "abstractStatus": "ScienceDirect browser extraction failed: abstract_not_found"
   },
   {
     "articleNumber": "115049",
@@ -7412,7 +7448,8 @@
         "content_length": 24664
       }
     ],
-    "crossrefScore": 1
+    "crossrefScore": 1,
+    "abstractStatus": "ScienceDirect browser extraction failed: abstract_not_found"
   },
   {
     "articleNumber": "115091",
@@ -7493,7 +7530,8 @@
         "content_length": 37490
       }
     ],
-    "crossrefScore": 1
+    "crossrefScore": 1,
+    "abstractStatus": "ScienceDirect browser extraction failed: abstract_not_found"
   },
   {
     "articleNumber": "115085",
@@ -7941,7 +7979,8 @@
         "content_length": 328858
       }
     ],
-    "crossrefScore": 1
+    "crossrefScore": 1,
+    "abstractStatus": "ScienceDirect browser extraction failed: abstract_not_found"
   },
   {
     "articleNumber": "115093",
@@ -8529,7 +8568,8 @@
       }
     ],
     "crossrefScore": 1,
-    "issuePdfLink": "https://www.sciencedirect.com/science/article/pii/S0010218025007497/pdfft?md5=458f4982b7e1b849dd602a39c7cbf75c&pid=1-s2.0-S0010218025007497-main.pdf"
+    "issuePdfLink": "https://www.sciencedirect.com/science/article/pii/S0010218025007497/pdfft?md5=458f4982b7e1b849dd602a39c7cbf75c&pid=1-s2.0-S0010218025007497-main.pdf",
+    "abstractStatus": "ScienceDirect browser extraction failed: abstract_not_found"
   },
   {
     "articleNumber": "114719",
@@ -8897,7 +8937,8 @@
         "content_length": 862985
       }
     ],
-    "crossrefScore": 1
+    "crossrefScore": 1,
+    "abstractStatus": "ScienceDirect browser extraction failed: abstract_not_found"
   },
   {
     "articleNumber": "114744",
@@ -9497,7 +9538,8 @@
       }
     ],
     "crossrefScore": 1,
-    "issuePdfLink": "https://www.sciencedirect.com/science/article/pii/S0010218025007771/pdfft?md5=27adaf192e97203ba4c70054cfc1449f&pid=1-s2.0-S0010218025007771-main.pdf"
+    "issuePdfLink": "https://www.sciencedirect.com/science/article/pii/S0010218025007771/pdfft?md5=27adaf192e97203ba4c70054cfc1449f&pid=1-s2.0-S0010218025007771-main.pdf",
+    "abstractStatus": "ScienceDirect browser extraction failed: abstract_not_found"
   },
   {
     "articleNumber": "114770",
@@ -9604,7 +9646,9 @@
         "content_length": 6711
       }
     ],
-    "crossrefScore": 1
+    "crossrefScore": 1,
+    "abstract": "A detailed experimental and modeling study was conducted to investigate the high-temperature decomposition and ignition behavior of nitromethane (CH3NO2) and its relevance to the development of a comprehensive C–N–O kinetic model. Shock tube experiments coupled with high temporal resolution and low detection limit laser absorption diagnostics were employed to measure time-resolved species profiles of NO, CO, and CH4 during CH3NO2 pyrolysis under argon-diluted conditions (1.0 % and 1.3 % CH3NO2 in Ar). In addition, ignition delay times (IDTs) of CH3NO2/O2/Ar mixtures were measured over a wide range of equivalence ratios (φ = 0.5, 1.0, and 2.0) at near-atmospheric pressure. To further constrain the kinetics, the rate constant for the unimolecular decomposition reaction R1 (CH3NO2 (+M)=> CH3 + NO2 (+M)) was experimentally determined at high temperatures, the resulting rate constant data can be represented by the Arrhenius equation kR1(1043–1350 K, 1.5 atm) = 4.98 × 1012 exp(-44,990 cal/mol/RT)s-1. A refined kinetic model for CH3NO2 combustion was developed by integrating the newly obtained rate constant data of R1 and updating the CH3NO2 sub-mechanism within a previously established NH3–syngas model. Rate of production and sensitivity analyses were performed to identify the dominant reaction pathways governing species formation, with particular emphasis on the role of R1 and its competition with secondary reactions. This work advances the understanding of nitroalkane combustion, offering a robust and transferable kinetic framework for future simulations of energetic materials in propulsion and energy systems.",
+    "abstractSource": "sciencedirect_dom:#abs0001"
   },
   {
     "articleNumber": "114785",
@@ -9699,7 +9743,8 @@
         "content_length": 7088408
       }
     ],
-    "crossrefScore": 1
+    "crossrefScore": 1,
+    "abstractStatus": "ScienceDirect browser extraction failed: abstract_not_found"
   },
   {
     "articleNumber": "114771",
@@ -10026,7 +10071,9 @@
         "content_length": 6222
       }
     ],
-    "crossrefScore": 1
+    "crossrefScore": 1,
+    "abstract": "Mitigating nitrogen oxide (NOx) pollution remains a formidable challenge amid the continued utilization of fossil fuels and the emergence of zero-carbon ammonia energy. Unlike the selective non-catalytic reduction (SNCR) and selective catalytic reduction (SCR), which require additional additives to remove NO, this study integrates experimental measurements and kinetic simulations to investigate the direct removal of NO driven by dielectric barrier discharge (DBD). A two-zone DBD platform is designed, and experimental studies are conducted for the NO/Ar system. The experimental results demonstrate that, in the absence of additives (e.g., NH3, O2), the system achieves 98 % NO removal efficiency, and an N2/O2 selectivity greater than 90 %. Furthermore, it is found that increasing the voltage is more effective in enhancing the removal of NO than increasing the number of plasma-reaction-zones. The rate constants of electron collision reactions are calculated by Bolsig+ solver, while those for the excited-state species are derived from the semi-empirical models such as the Fridman-Macheret 𝛼 -model and the Schwartz-Slawsky Herzfeld (SSH) model. Ultimately, a kinetic model for the removal of NO by plasma is developed to reveal the reaction kinetics of NO removal under various conditions. Kinetic analysis show that electron collisions drive the Ar/NO to generate excited-state species (e.g., NO (ele), NO (vib), and NO+). Through plasma-related reactions, such as dissociative quenching reaction (Ar⁎ + NO = Ar + N + O) and dissociative recombination reaction (e + NO+ = N + O), N and O atoms are generated thereby converted into N2 and O2 through ground-state chemical reactions.",
+    "abstractSource": "sciencedirect_dom:#abs0001"
   },
   {
     "articleNumber": "114808",
@@ -10388,7 +10435,9 @@
         "content_length": 398377
       }
     ],
-    "crossrefScore": 1
+    "crossrefScore": 1,
+    "abstract": "An experimental study of the pyrolysis of cumene was performed at atmospheric pressure, in a jet-stirred reactor (JSR) with 2% fuel diluted in helium, a residence time of 1 s, and for temperatures ranging from 863 to 1023 K. Fifty-four species were identified from light compounds to C20, by gas chromatography coupled with mass spectrometry (GC–MS) and quantified by GC-FID (flame ionization detector) and GC-PDHID (pulsed discharged helium ionization detector). Among these products, several aromatic species (C₉+) were detected for the first time. In addition, a comprehensive kinetic model, including a growth sub-mechanism to bicycle compounds with sizes up to C14, has been developed, based on electronic structure calculations, performed at the QCISD(T)/CBS//B2PLYP-D3/6–311+G(d,p) level of theory. Calculations were used to derive kinetic parameters and thermodynamic data. Comparisons between experiments and simulations showed good agreement for thirty-six species, including the most important products and a marked improvement from previous modeling studies reported in the literature. The allylic H-atom and tertiary carbon atom allows cumene to readily decompose to form styrene, benzene and α-methylstyrene, the main primary aromatic compounds. These species are less reactive than cumene, and our study clearly shows the importance of addition reactions on their side chain or aromatic ring, leading to the formation of bicyclic structures that are key intermediates in the formation of heavier PAHs. In particular, our mechanism models the formation of mono- and bi-aromatic products that had not previously been reported during cumene pyrolysis, such as trimethylbenzene, butenylbenzene, an important precursor of 3-methylindene, as well as diphenylethylene and diphenylstyrene, which are PAH precursors. In addition, a detailed investigation of the potential energy surfaces has clarified the elementary steps involved in the formation pathways of all modeled species, including various isomers, such as methylnaphthalene and methylindene. In particular, the involvement of sigmatropic rearrangements accounts for the formation of 2-methylindene and 2-methylnaphthalene.",
+    "abstractSource": "sciencedirect_dom:#abs0001"
   },
   {
     "articleNumber": "114824",
@@ -11139,7 +11188,9 @@
         "content_length": 2582
       }
     ],
-    "crossrefScore": 1
+    "crossrefScore": 1,
+    "abstract": "Developing advanced low-temperature combustion engines with ammonia-biofuel blends requires a comprehensive understanding of low-temperature flame dynamics and kinetic interactions between ammonia and oxygenated fuels at elevated pressures. This work aims to study the dynamics and kinetics of non-premixed Dimethyl Ether (DME)/Ammonia (NH3) cool and warm flames, and their reignition to hot flames. A counterflow burner is employed to establish DME/NH3 cool/warm flames at pressures up to 5 atm. The extinction limits of cool flame and the reignition limits of warm flame to hot flame are measured by varying NH3 concentrations and compared to simulations to quantitatively examine the effects on DME/NH3 flames. It is found that NH3 inhibits low-temperature DME oxidation and results in lower cool flame extinction limits. Warm flames in the presence of NH3 are observed for the first time, revealing a non-monotonic effect of NH3 addition: a small amount of NH3 presence enhances warm flame chemistry and promotes reignition to hot flames, while a high NH3 concentration weakens the warm flame. This trend is further explained by 0-D PSR kinetic simulations and 1-D S-curve flame dynamic calculations. Three flame transition regimes between cool flames (CF), warm flames (WF), and hot flames (HF) by different levels of NH3 additions at a specific strain rate are identified, namely WF-HF reignition, WF-CF transition, and WF extinction. Reaction sensitivity analyses of OH at low temperatures show that NH3 inhibits DME oxidation through OH consumption via H-abstraction and the kinetic couplings of RO2/NH2, RO2/NOx, R/NOx, and O2QOOH/NOx further suppress the low-temperature branching. At intermediate-temperatures, NH2/NOx/HO2 coupling promotes warm flames via the pathway NH2 → H2NO → HNO → NO by converting O2 → HO2 → OH. At even higher NH₃ concentrations, radical termination reactions of NH2 + NO/NO2 and excessive OH consumption via H-abstraction inhibit the flame. The insights into the kinetic coupling between NH3 and low-temperature chemistry at elevated pressure and its impact on the dynamics of cool-warm-hot flame transitions will contribute to advancing combustion technologies with reduced emissions and improved energy-efficiency.",
+    "abstractSource": "sciencedirect_dom:#abs0001"
   },
   {
     "articleNumber": "114868",

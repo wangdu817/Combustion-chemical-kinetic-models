@@ -30,8 +30,8 @@ Guangda Luo, Hairong Ren, Mo Yang, Mengqi Wu, ... Feng Zhang. Formation of (N-co
 ### Mechanism 1
 
 - Status: cantera_failed
-- Species count: not parsed
-- Reaction count: not parsed
+- Species count: 218
+- Reaction count: 3665
 - Message: CanteraError: 
 *******************************************************************************
 CanteraError thrown by addReactions:

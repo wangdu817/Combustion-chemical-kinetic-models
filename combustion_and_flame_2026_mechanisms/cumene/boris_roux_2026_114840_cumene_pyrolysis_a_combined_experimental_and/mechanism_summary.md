@@ -14,7 +14,7 @@ Boris Roux, Yves Simon, Sandra Poeuf, Marc Bouchez, ... René Fournet. Cumene py
 - Paper PDF: pending manual download; ScienceDirect PDF access triggered CAPTCHA or was not exposed
 - Paper PDF link: 
 - Fuel type: cumene
-- Validation reactor/type from abstract: not clear from abstract
+- Validation reactor/type from abstract: jet-stirred reactor, stirred reactor
 
 ## Mechanism Files
 
@@ -41,7 +41,7 @@ Boris Roux, Yves Simon, Sandra Poeuf, Marc Bouchez, ... René Fournet. Cumene py
 
 ## Abstract
 
-not available
+An experimental study of the pyrolysis of cumene was performed at atmospheric pressure, in a jet-stirred reactor (JSR) with 2% fuel diluted in helium, a residence time of 1 s, and for temperatures ranging from 863 to 1023 K. Fifty-four species were identified from light compounds to C20, by gas chromatography coupled with mass spectrometry (GC–MS) and quantified by GC-FID (flame ionization detector) and GC-PDHID (pulsed discharged helium ionization detector). Among these products, several aromatic species (C₉+) were detected for the first time. In addition, a comprehensive kinetic model, including a growth sub-mechanism to bicycle compounds with sizes up to C14, has been developed, based on electronic structure calculations, performed at the QCISD(T)/CBS//B2PLYP-D3/6–311+G(d,p) level of theory. Calculations were used to derive kinetic parameters and thermodynamic data. Comparisons between experiments and simulations showed good agreement for thirty-six species, including the most important products and a marked improvement from previous modeling studies reported in the literature. The allylic H-atom and tertiary carbon atom allows cumene to readily decompose to form styrene, benzene and α-methylstyrene, the main primary aromatic compounds. These species are less reactive than cumene, and our study clearly shows the importance of addition reactions on their side chain or aromatic ring, leading to the formation of bicyclic structures that are key intermediates in the formation of heavier PAHs. In particular, our mechanism models the formation of mono- and bi-aromatic products that had not previously been reported during cumene pyrolysis, such as trimethylbenzene, butenylbenzene, an important precursor of 3-methylindene, as well as diphenylethylene and diphenylstyrene, which are PAH precursors. In addition, a detailed investigation of the potential energy surfaces has clarified the elementary steps involved in the formation pathways of all modeled species, including various isomers, such as methylnaphthalene and methylindene. In particular, the involvement of sigmatropic rearrangements accounts for the formation of 2-methylindene and 2-methylnaphthalene.
 
 ## Processing Notes
 

@@ -30,7 +30,7 @@ Jiaqi Zhang, Florian vom Lehn, Sascha Jacobs, Raik Hesse, ... Liming Cai. Igniti
 ### Mechanism 1
 
 - Status: cantera_failed
-- Species count: not parsed
+- Species count: 573
 - Reaction count: not parsed
 - Message: InputError: No thermo data found for species 'A1-C6H6'
 Please check https://cantera.org/tutorials/ck2yaml-tutorial.html#debugging-common-errors-in-ck-files

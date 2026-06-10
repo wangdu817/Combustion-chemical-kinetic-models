@@ -30,8 +30,8 @@ Amir H. Mahdipour, Fekadu Mosisa Wako, Cécile Devaud, W. Kendal Bushe. Assessme
 ### Mechanism 1
 
 - Status: cantera_failed
-- Species count: not parsed
-- Reaction count: not parsed
+- Species count: 21
+- Reaction count: 126
 - Message: CanteraError: 
 *******************************************************************************
 InputFileError thrown by Kinetics::checkDuplicates:

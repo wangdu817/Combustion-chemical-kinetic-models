@@ -30,8 +30,8 @@ Yun Ge, Hong-Hao Ma, Yue Jiao, Shuo Yang, ... Lu-Qing Wang. Combustion reaction 
 ### Mechanism 1
 
 - Status: cantera_failed
-- Species count: not parsed
-- Reaction count: not parsed
+- Species count: 96
+- Reaction count: 626
 - Message: CanteraError: 
 *******************************************************************************
 InputFileError thrown by Kinetics::checkDuplicates:

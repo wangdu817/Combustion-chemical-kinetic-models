@@ -30,8 +30,8 @@ Ashenafi Emiru Teka, Qingbo Zhu, Long Zhu, Bin Dong, ... Zhandong Wang. Low-temp
 ### Mechanism 1
 
 - Status: cantera_failed
-- Species count: not parsed
-- Reaction count: not parsed
+- Species count: 627
+- Reaction count: 3724
 - Message: CanteraError: 
 *******************************************************************************
 CanteraError thrown by addReactions:
@@ -70,5 +70,6 @@ not available
 
 ## Processing Notes
 
+- extracted S0010218026003469_mmc2.xlsx
 - extracted S0010218026003469_mmc3.zip
 - extracted S0010218026003469_mmc4.zip

@@ -13,7 +13,7 @@ Yuxiang Zhu, Khaiyom Hakimov, Jiabiao Zou, Nafi Farzana, ... Chong-Wen Zhou. An 
 - ScienceDirect URL: https://www.sciencedirect.com/science/article/pii/S0010218026002518
 - Paper PDF: pending manual download; ScienceDirect PDF access triggered CAPTCHA or was not exposed
 - Paper PDF link: https://www.sciencedirect.com/science/article/pii/S0010218026002518/pdfft?md5=63d641dc599d8d7125fae187205917a6&pid=1-s2.0-S0010218026002518-main.pdf
-- Fuel type: ammonia_methane_ethane
+- Fuel type: ammonia_methane
 - Validation reactor/type from abstract: not clear from abstract
 
 ## Mechanism Files
@@ -46,5 +46,8 @@ not available
 ## Processing Notes
 
 - extracted S0010218026002518_mmc1.docx
+- extracted S0010218026002518_mmc2.xlsx
+- extracted S0010218026002518_mmc3.xlsx
+- extracted S0010218026002518_mmc4.xlsx
 - extracted S0010218026002518_mmc5.zip
 - extracted S0010218026002518_mmc6.zip

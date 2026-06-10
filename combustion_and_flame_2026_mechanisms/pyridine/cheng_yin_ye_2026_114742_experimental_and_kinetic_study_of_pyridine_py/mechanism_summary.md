@@ -30,8 +30,8 @@ Cheng-Yin Ye, Ling-Nan Wu, Dong-Xu Tian, Jiu-Zhong Yang, ... Zhen-Yu Tian. Exper
 ### Mechanism 1
 
 - Status: cantera_failed
-- Species count: not parsed
-- Reaction count: not parsed
+- Species count: 323
+- Reaction count: 2041
 - Message: CanteraError: 
 *******************************************************************************
 InputFileError thrown by Kinetics::checkDuplicates:
@@ -76,4 +76,4 @@ not available
 
 ## Processing Notes
 
-- none
+- extracted S0010218025007771_mmc1.xlsx

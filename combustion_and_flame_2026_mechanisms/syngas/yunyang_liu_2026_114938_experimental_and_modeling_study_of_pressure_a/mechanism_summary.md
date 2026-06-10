@@ -30,8 +30,8 @@ Yunyang Liu, Erjiang Hu, Jiajun You, Xiaoyang Guo, ... Zuohua Huang. Experimenta
 ### Mechanism 1
 
 - Status: cantera_failed
-- Species count: not parsed
-- Reaction count: not parsed
+- Species count: 39
+- Reaction count: 203
 - Message: CanteraError: 
 *******************************************************************************
 InputFileError thrown by Kinetics::checkDuplicates:

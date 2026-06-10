@@ -8,19 +8,19 @@ Items below need user-side ScienceDirect/Elsevier download or review.
 - URL: https://www.sciencedirect.com/science/article/pii/S0010218025005929
 - PDF link from issue page: 
 - Reason: automated Chrome PDF access reached ScienceDirect CAPTCHA or no exact PDF link was exposed
-- Target folder: E:\mech_collection\combustion_and_flame_2026_mechanisms\ammonia_ethane_dimethoxyethane\chunlan_qin_2026_114555_kinetic_study_of_high_temperature_co_oxidatio
+- Target folder: E:\mech_collection\combustion_and_flame_2026_mechanisms\ammonia_dimethoxyethane\chunlan_qin_2026_114555_kinetic_study_of_high_temperature_co_oxidatio
 
 ## Cantera conversion failed: A kinetic and experimental analysis of the co-oxidation of ammonia and dimethoxymethane employing SVUV-PIMS
 
 - DOI: 10.1016/j.combustflame.2025.114575
 - URL: https://www.sciencedirect.com/science/article/pii/S0010218025006121
-- Mechanism candidates: E:\mech_collection\combustion_and_flame_2026_mechanisms\ammonia_methane_ethane_dimethoxymethane\chunlan_qin_2026_114575_a_kinetic_and_experimental_analysis_of_the_co\extracted\s0010218025006121_mmc4\USTC-NH3_DMM.inp
-- Thermodynamic candidates: E:\mech_collection\combustion_and_flame_2026_mechanisms\ammonia_methane_ethane_dimethoxymethane\chunlan_qin_2026_114575_a_kinetic_and_experimental_analysis_of_the_co\extracted\s0010218025006121_mmc3\USTC-NH3_DMM.dat
+- Mechanism candidates: E:\mech_collection\combustion_and_flame_2026_mechanisms\ammonia_dimethoxymethane\chunlan_qin_2026_114575_a_kinetic_and_experimental_analysis_of_the_co\extracted\s0010218025006121_mmc4\USTC-NH3_DMM.inp
+- Thermodynamic candidates: E:\mech_collection\combustion_and_flame_2026_mechanisms\ammonia_dimethoxymethane\chunlan_qin_2026_114575_a_kinetic_and_experimental_analysis_of_the_co\extracted\s0010218025006121_mmc3\USTC-NH3_DMM.dat
 - Last status: cantera_failed
 - Last message: CanteraError: 
 *******************************************************************************
 InputFileError thrown by Kinetics::checkDuplicates:
-Error on lines 4127 and 4136 of E:\mech_collection\combustion_and_flame_2026_mechanisms\ammonia_methane_ethane_dimethoxymethane\chunlan_qin_2026_114575_a_kinetic_and_experimental_analysis_of_the_co\mechanism.yaml:
+Error on lines 4127 and 4136 of E:\mech_collection\combustion_and_flame_2026_mechanisms\ammonia_dimethoxymethane\chunlan_qin_2026_114575_a_kinetic_and_experimental_analysis_of_the_co\mechanism.yaml:
 Undeclared duplicate reactions detected:
 Reaction 36: H + OH + M <=> H2O + M
 Reaction 35: H2O + H2O <=> H + OH + H2O
@@ -48,7 +48,7 @@ Reaction 35: H2O + H2O <=> H + OH + H2O
 |  4139 |   rate-constant: {A: 4.38e+13, b: 0.0, Ea: 6990.0}
 *******************************************************************************
 
-- Target folder: E:\mech_collection\combustion_and_flame_2026_mechanisms\ammonia_methane_ethane_dimethoxymethane\chunlan_qin_2026_114575_a_kinetic_and_experimental_analysis_of_the_co
+- Target folder: E:\mech_collection\combustion_and_flame_2026_mechanisms\ammonia_dimethoxymethane\chunlan_qin_2026_114575_a_kinetic_and_experimental_analysis_of_the_co
 
 ## Cantera conversion failed: Experimental and kinetic insight on auto-ignition process of ammonia/propane mixture: Focus on oxygen effect
 
@@ -440,7 +440,7 @@ Reaction 400: NNH + O2 <=> H + N2 + O2
 - URL: https://www.sciencedirect.com/science/article/pii/S0010218026002518
 - PDF link from issue page: https://www.sciencedirect.com/science/article/pii/S0010218026002518/pdfft?md5=63d641dc599d8d7125fae187205917a6&pid=1-s2.0-S0010218026002518-main.pdf
 - Reason: automated Chrome PDF access reached ScienceDirect CAPTCHA or no exact PDF link was exposed
-- Target folder: E:\mech_collection\combustion_and_flame_2026_mechanisms\ammonia_methane_ethane\yuxiang_zhu_2026_115015_an_experimental_and_modeling_study_of_ammonia
+- Target folder: E:\mech_collection\combustion_and_flame_2026_mechanisms\ammonia_methane\yuxiang_zhu_2026_115015_an_experimental_and_modeling_study_of_ammonia
 
 ## Cantera conversion failed: Mid-infrared multicomponent laser diagnostic and kinetic modelling studies of furan and 2-methylfuran combustion in a shock tube
 
@@ -700,8 +700,8 @@ Reaction 1800: 2 H + O2 <=> H2 + O2
 
 - DOI: 10.1016/j.combustflame.2026.114782
 - URL: https://www.sciencedirect.com/science/article/pii/S0010218026000192
-- Mechanism candidates: E:\mech_collection\combustion_and_flame_2026_mechanisms\methane_ethane_nitromethane\shubao_song_2026_114782_high_temperature_pyrolysis_and_oxidation_of_n\extracted\s0010218026000192_mmc3\BIT_NM model_mech.inp
-- Thermodynamic candidates: E:\mech_collection\combustion_and_flame_2026_mechanisms\methane_ethane_nitromethane\shubao_song_2026_114782_high_temperature_pyrolysis_and_oxidation_of_n\extracted\s0010218026000192_mmc4\BIT_NM model_thermo.dat
+- Mechanism candidates: E:\mech_collection\combustion_and_flame_2026_mechanisms\nitromethane\shubao_song_2026_114782_high_temperature_pyrolysis_and_oxidation_of_n\extracted\s0010218026000192_mmc3\BIT_NM model_mech.inp
+- Thermodynamic candidates: E:\mech_collection\combustion_and_flame_2026_mechanisms\nitromethane\shubao_song_2026_114782_high_temperature_pyrolysis_and_oxidation_of_n\extracted\s0010218026000192_mmc4\BIT_NM model_thermo.dat
 - Last status: cantera_failed
 - Last message: InputError: Error parsing elemental composition for species thermo entry:
  6.32493839E+00 1.76575862E-02-6.17090139E-06 9.77516780E-10-5.77372896E-14    2
@@ -711,7 +711,7 @@ Reaction 1800: 2 H + O2 <=> H2 + O2
 Element amounts can have no more than 3 digits.
 Please check https://cantera.org/tutorials/ck2yaml-tutorial.html#debugging-common-errors-in-ck-files
 for the correct Chemkin syntax.
-- Target folder: E:\mech_collection\combustion_and_flame_2026_mechanisms\methane_ethane_nitromethane\shubao_song_2026_114782_high_temperature_pyrolysis_and_oxidation_of_n
+- Target folder: E:\mech_collection\combustion_and_flame_2026_mechanisms\nitromethane\shubao_song_2026_114782_high_temperature_pyrolysis_and_oxidation_of_n
 
 ## Paper PDF pending: Understanding the moderate-temperature oxidation of 3-ethyltoluene and 3-n-propyltoluene in presence of n-heptane
 
