@@ -3,9 +3,6 @@
 This repository contains the automation script and lightweight metadata for the
 Combustion and Flame 2026 reaction-mechanism supplement collection.
 
-Large downloaded supplements, extracted mechanism payloads, and `ckinterp`
-outputs are intentionally ignored by Git. They remain in the local workspace
-under `combustion_and_flame_2026_mechanisms/`.
 
 Main entry points:
 
