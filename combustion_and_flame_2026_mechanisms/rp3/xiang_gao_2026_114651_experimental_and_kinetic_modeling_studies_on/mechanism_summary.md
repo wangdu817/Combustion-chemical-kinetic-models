@@ -18,19 +18,26 @@ Xiang Gao, Du Wang, Hong-Qing Shi, Xu-Peng Yu, ... Zhen-Yu Tian. Experimental an
 
 ## Mechanism Files
 
-- Mechanism files: extracted\s001021802500687x_mmc2\mmc2.inp
-- Thermodynamic files: extracted\s001021802500687x_mmc3\mmc3.txt
-- Transport files: not found
+- Standard mechanism file: chem.inp
+- Standard thermodynamic file: therm.dat
+- Standard transport file: not available
+- Original mechanism source files: extracted\s001021802500687x_mmc2\mmc2.inp
+- Original thermodynamic source files: extracted\s001021802500687x_mmc3\mmc3.txt
+- Original transport source files: not found
 
-## ckinterp Results
+## Cantera Preprocessing Results
 
 ### Mechanism 1
 
-- Status: ok_with_ck_warnings
-- Species count: 1612
-- Reaction count: 2100
-- Message: returncode=0
-- chem.out copy: ckinterp_chem.out
+- Status: cantera_failed
+- Species count: not parsed
+- Reaction count: not parsed
+- Message: IndexError: list index out of range; numeric cleanup retry failed: IndexError: list index out of range
+- Method: cantera
+- Cantera YAML: not available
+- Standard chem.inp: chem.inp
+- Standard therm.dat: therm.dat
+- Standard tran.dat: not available
 
 ## Abstract
 

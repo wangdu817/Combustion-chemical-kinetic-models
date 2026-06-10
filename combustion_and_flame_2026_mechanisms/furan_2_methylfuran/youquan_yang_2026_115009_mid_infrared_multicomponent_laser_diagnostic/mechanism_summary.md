@@ -18,19 +18,32 @@ Youquan Yang, Zhimin Peng, Haodong Chen, Dao Zheng, ... Yanjun Du. Mid-infrared 
 
 ## Mechanism Files
 
-- Mechanism files: raw_downloads\S0010218026002452_mmc2.txt
-- Thermodynamic files: raw_downloads\S0010218026002452_mmc3.txt
-- Transport files: not found
+- Standard mechanism file: chem.inp
+- Standard thermodynamic file: therm.dat
+- Standard transport file: not available
+- Original mechanism source files: raw_downloads\S0010218026002452_mmc2.txt
+- Original thermodynamic source files: raw_downloads\S0010218026002452_mmc3.txt
+- Original transport source files: not found
 
-## ckinterp Results
+## Cantera Preprocessing Results
 
 ### Mechanism 1
 
-- Status: ok_with_ck_warnings
-- Species count: 529
-- Reaction count: 2100
-- Message: returncode=0
-- chem.out copy: ckinterp_chem.out
+- Status: cantera_failed
+- Species count: not parsed
+- Reaction count: not parsed
+- Message: InputError: Unexpected token "+Hv" in reaction expression "OH*<=>R2OH+Hv
+".
+Please check https://cantera.org/tutorials/ck2yaml-tutorial.html#debugging-common-errors-in-ck-files
+for the correct Chemkin syntax.; numeric cleanup retry failed: InputError: Unexpected token "+Hv" in reaction expression "OH*<=>R2OH+Hv
+".
+Please check https://cantera.org/tutorials/ck2yaml-tutorial.html#debugging-common-errors-in-ck-files
+for the correct Chemkin syntax.
+- Method: cantera
+- Cantera YAML: not available
+- Standard chem.inp: chem.inp
+- Standard therm.dat: therm.dat
+- Standard tran.dat: not available
 
 ## Abstract
 

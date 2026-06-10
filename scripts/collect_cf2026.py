@@ -26,7 +26,7 @@ import urllib.error
 import urllib.parse
 import urllib.request
 import zipfile
-from dataclasses import dataclass, field
+from dataclasses import dataclass
 from pathlib import Path
 from typing import Iterable
 
@@ -40,6 +40,7 @@ METADATA_JSON = RAW / "article_metadata.json"
 CKDIR = Path(r"D:\BaiduSyncdisk\soft\CoFlame_yang")
 CKEXE = CKDIR / "ckinterp.exe"
 CK_FILES = ["chem.inp", "therm.dat", "chem.out"]
+ANALYSIS_PYTHON = Path(r"C:\Users\17915\anaconda3\envs\analysis-env\python.exe")
 MMC_EXTENSIONS = [
     "zip",
     "txt",
@@ -73,6 +74,55 @@ KINETIC_TERMS = [
     "laminar flame speed",
 ]
 
+REACTION_KINETICS_INCLUDE_PATTERNS = [
+    r"chemical kinetic",
+    r"\bkinetic (model|modeling|modelling|study|analysis|mechanism|insight|investigation|simulation)",
+    r"\bkinetics of\b",
+    r"\bkinetic inhibition\b",
+    r"\bkinetic coupling\b",
+    r"\boxidation kinetics\b",
+    r"\bpyrolysis kinetics\b",
+    r"\bcombustion kinetics\b",
+    r"\breaction mechanism\b",
+    r"\bdetailed kinetic\b",
+    r"\bmechanism development\b",
+    r"\bexperimental and modeling study\b",
+    r"\bdetailed and reduced kinetics\b",
+    r"\bcarbon.?nitrogen interaction reactions\b",
+    r"\bmodel development and validation\b",
+    r"\bauto-?ignition\b",
+    r"\bignition delay\b",
+    r"\blaminar burning velocit",
+    r"\blaminar flame speed\b",
+    r"\bjet-?stirred reactor\b",
+    r"\bshock tube\b",
+    r"\brapid compression machine\b",
+    r"\bflow reactor\b",
+    r"\bflame speed measurements\b",
+]
+
+REACTION_KINETICS_EXCLUDE_PATTERNS = [
+    r"thermoacoustic",
+    r"instability mechanism",
+    r"feedback mechanism",
+    r"heat transfer mechanism",
+    r"flame spread",
+    r"flame quenching",
+    r"suppression",
+    r"dust explosion",
+    r"porous medium",
+    r"scramjet",
+    r"combustion transition mechanisms",
+    r"turbulence characteristics",
+    r"spray flame",
+    r"genetic programming control",
+    r"nanoparticle synthesis",
+    r"aluminum combustion",
+    r"single al\b",
+    r"al-li alloy particle",
+    r"burning rate constant of pmma",
+]
+
 REACTOR_TERMS = [
     ("shock tube", ["shock tube", "behind shock waves"]),
     ("rapid compression machine", ["rapid compression machine", "rcm"]),
@@ -88,21 +138,51 @@ FUEL_PATTERNS = [
     (r"NH\s*3|ammonia", "ammonia"),
     (r"H\s*2|hydrogen", "hydrogen"),
     (r"n\s*-?\s*decane|decane", "n_decane"),
+    (r"n\s*-?\s*heptane|heptane", "n_heptane"),
     (r"methane|CH\s*4", "methane"),
+    (r"methanol", "methanol"),
     (r"ethylene|C\s*2\s*H\s*4", "ethylene"),
+    (r"ethane|C\s*2\s*H\s*6", "ethane"),
     (r"acetone", "acetone"),
+    (r"2-?butanone|butanone|methyl ethyl ketone", "2_butanone"),
+    (r"cyclopentanone", "cyclopentanone"),
     (r"furan", "furan"),
     (r"tetrahydrofuran", "tetrahydrofuran"),
     (r"2-?methylfuran", "2_methylfuran"),
+    (r"pyrrole", "pyrrole"),
     (r"pyridine", "pyridine"),
     (r"methylamine", "methylamine"),
+    (r"N-?methyl aniline|N-?methylaniline", "n_methyl_aniline"),
     (r"pentane", "pentane"),
+    (r"pentanol|secondary pentanols|2- and 3-pentanol|2-pentanol|3-pentanol", "pentanol"),
     (r"RP-?3", "rp3"),
     (r"norbornane", "norbornane"),
     (r"propane", "propane"),
+    (r"propan-?1-?ol|1-?propanol|propanol", "propanol"),
     (r"acetylene", "acetylene"),
+    (r"syngas", "syngas"),
+    (r"\bNO removal\b|direct\s+NO\s+removal|nitric oxide", "nitric_oxide"),
+    (r"N\s*2\s*O|nitrous oxide", "n2o"),
+    (r"nitromethane", "nitromethane"),
+    (r"ethyl acetate", "ethyl_acetate"),
     (r"dimethyl carbonate", "dimethyl_carbonate"),
+    (r"dimethoxymethane|\bDMM\b", "dimethoxymethane"),
+    (r"dimethyl[ -]?ether|\bDME\b", "dimethyl_ether"),
     (r"1,?2-?dimethoxyethane", "dimethoxyethane"),
+    (r"methyl formate", "methyl_formate"),
+    (r"1,?2,?4-?trimethylbenzene", "trimethylbenzene_124"),
+    (r"3-?ethyltoluene", "3_ethyltoluene"),
+    (r"3-?n-?propyltoluene", "3_n_propyltoluene"),
+    (r"cumene", "cumene"),
+    (r"triptane|2,?2,?3-?trimethylbutane", "triptane"),
+    (r"2-?ethylhexyl nitrate|\bEHN\b", "2_ethylhexyl_nitrate"),
+    (r"HCFO-?1233xf", "hcfo_1233xf"),
+    (r"ammonium nitrate", "ammonium_nitrate"),
+    (r"ammonium chloride", "ammonium_chloride"),
+    (r"magnesium", "magnesium"),
+    (r"C0[–-]C1 multi-component fuel blends|C0[–-]C1", "c0_c1_fuel_blends"),
+    (r"C0[–-]C3/N\s*2\s*O|C0[–-]C3", "c0_c3_fuel_blends"),
+    (r"gasoline", "gasoline"),
     (r"coal", "coal"),
     (r"sustainable aviation fuel|SAF", "saf"),
     (r"naphtha", "naphtha"),
@@ -177,6 +257,26 @@ def is_candidate(record: dict) -> bool:
     return any(term in text for term in KINETIC_TERMS)
 
 
+def is_reaction_kinetics_candidate(record: dict) -> bool:
+    text = (str(record.get("title", "")) + " " + str(record.get("abstract", ""))).lower()
+    text = re.sub(r"<[^>]+>", " ", text)
+    text = re.sub(r"\s+", " ", text)
+    if any(re.search(pattern, text) for pattern in REACTION_KINETICS_EXCLUDE_PATTERNS):
+        if not any(re.search(pattern, text) for pattern in [r"chemical kinetic", r"\bkinetic (model|modeling|modelling)", r"\breaction mechanism\b"]):
+            return False
+    if any(re.search(pattern, text) for pattern in REACTION_KINETICS_INCLUDE_PATTERNS):
+        return True
+    fuel = detect_fuel(record)
+    if fuel != "unknown_fuel" and any(term in text for term in ["pyrolysis", "oxidation", "autoignition", "combustion kinetics"]):
+        return True
+    if fuel != "unknown_fuel" and "formation" in text and any(term in text for term in ["products", "pah", "polycyclic", "nitrogen-containing"]):
+        return True
+    chemistry_context = any(term in text for term in ["oxidation", "pyrolysis", "combustion", "autoignition", "flame speed"])
+    modeling_context = any(term in text for term in ["kinetic", "kinetics", "modeling", "modelling", "mechanism"])
+    reactor_context = any(term in text for term in ["shock tube", "jet-stirred", "jet stirred", "flow reactor", "rapid compression", "rcm"])
+    return chemistry_context and modeling_context and reactor_context
+
+
 def record_folder(record: dict) -> Path:
     fuel = record.get("fuelType") or detect_fuel(record)
     authors = record.get("authors") or []
@@ -220,9 +320,11 @@ def classify_file(path: Path) -> set[str]:
     text = read_text_limited(path)
     upper = text.upper()
     labels: set[str] = set()
+    if "SPECIES CONSIDERED" in upper or "REACTIONS CONSIDERED" in upper:
+        return labels
     if re.search(r"(^|\n)\s*ELEMENTS\b", upper) and re.search(r"(^|\n)\s*SPECIES\b", upper):
         labels.add("chemkin_mechanism")
-    if re.search(r"(^|\n)\s*REACTIONS\b", upper):
+    if re.search(r"(^|\n)\s*REACTIONS(?!\s+CONSIDERED)\b", upper):
         labels.add("reactions")
         labels.add("chemkin_mechanism")
     if re.search(r"(^|\n)\s*THERMO\b", upper):
@@ -300,6 +402,35 @@ def find_thermo_for(mech: Path, candidates: list[Path]) -> Path | None:
     return sorted(scored, reverse=True)[0][1]
 
 
+def find_transport_for(mech: Path, candidates: list[Path]) -> Path | None:
+    scored: list[tuple[int, Path]] = []
+    for path in candidates:
+        cls = classify_file(path)
+        if "transport" in cls:
+            score = 10
+            name = path.name.lower()
+            if "tran" in name or "transport" in name:
+                score += 5
+            if path.parent == mech.parent:
+                score += 3
+            scored.append((score, path))
+    return sorted(scored, reverse=True)[0][1] if scored else None
+
+
+def mechanism_priority(path: Path) -> tuple[int, str]:
+    name = path.name.lower()
+    score = 0
+    if path.suffix.lower() in {".inp", ".dat", ".txt", ".yaml", ".yml", ".cti"}:
+        score -= 20
+    if "mech" in name or "mechanism" in name or "model" in name:
+        score -= 10
+    if "therm" in name or "tran" in name or "transport" in name:
+        score += 20
+    if "document.xml" in name or path.suffix.lower() == ".xml":
+        score += 50
+    return score, str(path)
+
+
 @dataclass
 class CkResult:
     status: str
@@ -307,6 +438,11 @@ class CkResult:
     reactions: str = ""
     message: str = ""
     chem_out: Path | None = None
+    cantera_yaml: Path | None = None
+    method: str = ""
+    standardized_mech: Path | None = None
+    standardized_thermo: Path | None = None
+    standardized_transport: Path | None = None
 
 
 def backup_ck_files() -> dict[str, Path | None]:
@@ -429,6 +565,221 @@ def parse_chemkin_source_counts(path: Path) -> tuple[str, str]:
         if "=" in line or "<=>" in line or "=>" in line:
             reaction_count += 1
     return (str(len(species_tokens)) if species_tokens else "", str(reaction_count) if reaction_count else "")
+
+
+def first_chemkin_header_line(path: Path) -> int | None:
+    lines = read_text_limited(path, 5_000_000).splitlines()
+    for idx, line in enumerate(lines):
+        stripped = line.strip().upper()
+        if stripped.startswith(("ELEMENTS", "SPECIES", "THERMO", "REACTIONS")):
+            return idx
+    return None
+
+
+def write_trimmed_chemkin_input(source: Path, target: Path) -> bool:
+    text = read_text_limited(source, 20_000_000)
+    lines = text.splitlines()
+    start = first_chemkin_header_line(source)
+    if start is None:
+        return False
+    trimmed = "\n".join(lines[start:]).lstrip() + "\n"
+    if "SPECIES CONSIDERED" in trimmed.upper() or "REACTIONS CONSIDERED" in trimmed.upper():
+        return False
+    target.write_text(trimmed, encoding="utf-8")
+    return True
+
+
+def write_cantera_cleaned_chemkin_input(source: Path, target: Path) -> bool:
+    text = read_text_limited(source, 50_000_000)
+    if "SPECIES CONSIDERED" in text.upper() or "REACTIONS CONSIDERED" in text.upper():
+        return False
+    lines = text.splitlines()
+    start = first_chemkin_header_line(source)
+    if start is not None:
+        lines = lines[start:]
+    cleaned_lines: list[str] = []
+    exponent_pattern = re.compile(r"(?<![A-Za-z0-9_])([+-]?(?:\d+\.\d*|\.\d+|\d+))([+-]\d{1,3})(?![A-Za-z0-9_.])")
+    for raw in lines:
+        line = raw.replace("\ufeff", "")
+        line = re.sub(r"(?<=\d),(?=\s|$)", "", line)
+        line = exponent_pattern.sub(r"\1E\2", line)
+        cleaned_lines.append(line)
+    target.write_text("\n".join(cleaned_lines).lstrip() + "\n", encoding="utf-8")
+    return True
+
+
+def standardize_mechanism_files(mech: Path, thermo: Path | None, transport: Path | None, dest: Path) -> tuple[Path, Path | None, Path | None]:
+    dest.mkdir(parents=True, exist_ok=True)
+    chem_target = dest / "chem.inp"
+    thermo_target = dest / "therm.dat"
+    transport_target = dest / "tran.dat"
+    shutil.copy2(mech, chem_target)
+    thermo_out = None
+    transport_out = None
+    if thermo is not None and thermo.exists():
+        shutil.copy2(thermo, thermo_target)
+        thermo_out = thermo_target
+    elif thermo_target.exists():
+        thermo_target.unlink()
+    if transport is not None and transport.exists():
+        shutil.copy2(transport, transport_target)
+        transport_out = transport_target
+    elif transport_target.exists():
+        transport_target.unlink()
+    return chem_target, thermo_out, transport_out
+
+
+def cantera_convert_once(mech: Path, thermo: Path | None, transport: Path | None, out_yaml: Path, log_path: Path) -> tuple[bool, str, str, str]:
+    result_path = out_yaml.with_suffix(".result.json")
+    if result_path.exists():
+        result_path.unlink()
+    code = r"""
+import json
+import sys
+import traceback
+from pathlib import Path
+
+import cantera as ct
+import cantera.ck2yaml as ck2yaml
+
+mech = Path(sys.argv[1])
+thermo = Path(sys.argv[2]) if sys.argv[2] else None
+transport = Path(sys.argv[3]) if sys.argv[3] else None
+out_yaml = Path(sys.argv[4])
+result_path = Path(sys.argv[5])
+
+payload = {"ok": False, "species": "", "reactions": "", "message": ""}
+try:
+    suffix = mech.suffix.lower()
+    if suffix in {".yaml", ".yml", ".cti"} and thermo is None:
+        if suffix in {".yaml", ".yml"}:
+            if mech.resolve() != out_yaml.resolve():
+                out_yaml.write_text(mech.read_text(encoding="utf-8", errors="ignore"), encoding="utf-8")
+            gas = ct.Solution(str(out_yaml))
+        else:
+            gas = ct.Solution(str(mech))
+    else:
+        ck2yaml.convert_mech(
+            str(mech),
+            thermo_file=str(thermo) if thermo else None,
+            transport_file=str(transport) if transport else None,
+            out_name=str(out_yaml),
+            quiet=False,
+            permissive=True,
+        )
+        gas = ct.Solution(str(out_yaml))
+    payload.update({"ok": True, "species": str(gas.n_species), "reactions": str(gas.n_reactions), "message": "cantera conversion ok"})
+except Exception as exc:
+    payload["message"] = f"{type(exc).__name__}: {exc}"
+    payload["traceback"] = traceback.format_exc()
+finally:
+    result_path.write_text(json.dumps(payload, ensure_ascii=False), encoding="utf-8")
+"""
+    try:
+        completed = subprocess.run(
+            [str(ANALYSIS_PYTHON), "-c", code, str(mech), str(thermo or ""), str(transport or ""), str(out_yaml), str(result_path)],
+            text=True,
+            capture_output=True,
+            timeout=900,
+        )
+    except subprocess.TimeoutExpired as exc:
+        log_path.write_text(
+            f"Cantera conversion timed out after {exc.timeout} seconds.\nCOMMAND: {exc.cmd}\n",
+            encoding="utf-8",
+        )
+        return False, "", "", f"TimeoutExpired: Cantera conversion exceeded {exc.timeout} seconds"
+    log_path.write_text(
+        "PERMISSIVE: True\nSTDOUT:\n" + completed.stdout + "\nSTDERR:\n" + completed.stderr + f"\nRETURN_CODE: {completed.returncode}\n",
+        encoding="utf-8",
+    )
+    if result_path.exists():
+        payload = json.loads(result_path.read_text(encoding="utf-8"))
+    else:
+        payload = {"ok": False, "species": "", "reactions": "", "message": "missing cantera result json"}
+    return bool(payload.get("ok")), str(payload.get("species", "")), str(payload.get("reactions", "")), str(payload.get("message", ""))
+
+
+def process_with_cantera(mech: Path, thermo: Path | None, transport: Path | None, dest: Path) -> CkResult:
+    chem_target, thermo_target, transport_target = standardize_mechanism_files(mech, thermo, transport, dest)
+    yaml_path = dest / "mechanism.yaml"
+    log_path = dest / "cantera_conversion.log"
+    if not ANALYSIS_PYTHON.exists():
+        return CkResult(
+            "cantera_failed",
+            message=f"missing analysis python: {ANALYSIS_PYTHON}",
+            standardized_mech=chem_target,
+            standardized_thermo=thermo_target,
+            standardized_transport=transport_target,
+            method="cantera",
+        )
+    original_suffix = mech.suffix.lower()
+    conversion_input = mech if original_suffix in {".yaml", ".yml", ".cti"} else chem_target
+    ok, species, reactions, message = cantera_convert_once(conversion_input, None if original_suffix in {".yaml", ".yml", ".cti"} else thermo_target, transport_target, yaml_path, log_path)
+    if ok:
+        return CkResult(
+            "ok",
+            species=species,
+            reactions=reactions,
+            message=message,
+            cantera_yaml=yaml_path,
+            method="cantera",
+            standardized_mech=chem_target,
+            standardized_thermo=thermo_target,
+            standardized_transport=transport_target,
+        )
+    if "Section starts with unrecognized keyword" in message:
+        cleaned = dest / "chem_cantera_clean.inp"
+        if write_trimmed_chemkin_input(chem_target, cleaned):
+            clean_yaml = dest / "mechanism.cleaned.yaml"
+            clean_log = dest / "cantera_conversion.cleaned.log"
+            ok, species, reactions, clean_message = cantera_convert_once(cleaned, thermo_target, transport_target, clean_yaml, clean_log)
+            if ok:
+                shutil.copy2(cleaned, chem_target)
+                shutil.copy2(clean_yaml, yaml_path)
+                return CkResult(
+                    "ok_after_cleanup",
+                    species=species,
+                    reactions=reactions,
+                    message=f"cleaned leading non-CHEMKIN content; {clean_message}",
+                    cantera_yaml=yaml_path,
+                    method="cantera",
+                    standardized_mech=chem_target,
+                    standardized_thermo=thermo_target,
+                    standardized_transport=transport_target,
+                )
+            message = f"{message}; cleanup retry failed: {clean_message}"
+        else:
+            message = f"{message}; cleanup skipped because file is not a CHEMKIN input"
+    if any(token in message for token in ["could not convert string to float", "list index out of range", "Unexpected token"]):
+        cleaned = dest / "chem_cantera_numeric_clean.inp"
+        if write_cantera_cleaned_chemkin_input(chem_target, cleaned):
+            clean_yaml = dest / "mechanism.numeric_clean.yaml"
+            clean_log = dest / "cantera_conversion.numeric_clean.log"
+            ok, species, reactions, clean_message = cantera_convert_once(cleaned, thermo_target, transport_target, clean_yaml, clean_log)
+            if ok:
+                shutil.copy2(cleaned, chem_target)
+                shutil.copy2(clean_yaml, yaml_path)
+                return CkResult(
+                    "ok_after_cleanup",
+                    species=species,
+                    reactions=reactions,
+                    message=f"normalized legacy numeric/reaction syntax; {clean_message}",
+                    cantera_yaml=yaml_path,
+                    method="cantera",
+                    standardized_mech=chem_target,
+                    standardized_thermo=thermo_target,
+                    standardized_transport=transport_target,
+                )
+            message = f"{message}; numeric cleanup retry failed: {clean_message}"
+    return CkResult(
+        "cantera_failed",
+        message=message,
+        cantera_yaml=yaml_path if yaml_path.exists() else None,
+        method="cantera",
+        standardized_mech=chem_target,
+        standardized_thermo=thermo_target,
+        standardized_transport=transport_target,
+    )
 
 
 def run_ckinterp(mech: Path, thermo: Path | None, dest: Path) -> CkResult:
@@ -727,7 +1078,7 @@ def write_summary(
     mechanism_files: list[Path],
     thermo_files: list[Path],
     transport_files: list[Path],
-    ck_results: list[CkResult],
+    processing_results: list[CkResult],
     extraction_notes: list[str],
 ) -> None:
     rel = lambda p: str(p.relative_to(dest)) if p and str(p).startswith(str(dest)) else str(p)
@@ -752,15 +1103,18 @@ def write_summary(
         "",
         "## Mechanism Files",
         "",
-        f"- Mechanism files: {', '.join(rel(p) for p in mechanism_files) if mechanism_files else 'not found'}",
-        f"- Thermodynamic files: {', '.join(rel(p) for p in thermo_files) if thermo_files else 'not found'}",
-        f"- Transport files: {', '.join(rel(p) for p in transport_files) if transport_files else 'not found'}",
+        f"- Standard mechanism file: chem.inp" if any(r.standardized_mech for r in processing_results) else "- Standard mechanism file: not available",
+        f"- Standard thermodynamic file: therm.dat" if any(r.standardized_thermo for r in processing_results) else "- Standard thermodynamic file: not available",
+        f"- Standard transport file: tran.dat" if any(r.standardized_transport for r in processing_results) else "- Standard transport file: not available",
+        f"- Original mechanism source files: {', '.join(rel(p) for p in mechanism_files) if mechanism_files else 'not found'}",
+        f"- Original thermodynamic source files: {', '.join(rel(p) for p in thermo_files) if thermo_files else 'not found'}",
+        f"- Original transport source files: {', '.join(rel(p) for p in transport_files) if transport_files else 'not found'}",
         "",
-        "## ckinterp Results",
+        "## Cantera Preprocessing Results",
         "",
     ]
-    if ck_results:
-        for idx, result in enumerate(ck_results, 1):
+    if processing_results:
+        for idx, result in enumerate(processing_results, 1):
             lines.extend(
                 [
                     f"### Mechanism {idx}",
@@ -769,7 +1123,11 @@ def write_summary(
                     f"- Species count: {result.species or 'not parsed'}",
                     f"- Reaction count: {result.reactions or 'not parsed'}",
                     f"- Message: {result.message}",
-                    f"- chem.out copy: {rel(result.chem_out) if result.chem_out else 'not available'}",
+                    f"- Method: {result.method or 'not available'}",
+                    f"- Cantera YAML: {rel(result.cantera_yaml) if result.cantera_yaml else 'not available'}",
+                    f"- Standard chem.inp: {rel(result.standardized_mech) if result.standardized_mech else 'not available'}",
+                    f"- Standard therm.dat: {rel(result.standardized_thermo) if result.standardized_thermo else 'not available'}",
+                    f"- Standard tran.dat: {rel(result.standardized_transport) if result.standardized_transport else 'not available'}",
                     "",
                 ]
             )
@@ -808,42 +1166,54 @@ def process() -> None:
         if doi_key in seen_dois:
             continue
         seen_dois.add(doi_key)
-        record["fuelType"] = record.get("fuelType") or detect_fuel(record)
-        candidate = record.get("candidate")
-        if candidate is None:
-            candidate = is_candidate(record)
+        record["fuelType"] = detect_fuel(record)
+        candidate = is_reaction_kinetics_candidate(record)
+        record["candidate"] = candidate
         folder = record_folder(record)
         local_downloads = copy_downloads_for_record(record, folder / "raw_downloads")
         extracted_dest = folder / "extracted"
         extraction_notes = extract_archives(local_downloads, extracted_dest)
         scan_roots = [folder / "raw_downloads", extracted_dest]
         mechanisms, thermos, transports, cantera = scan_files(scan_roots)
-        ck_results: list[CkResult] = []
+        processing_results: list[CkResult] = []
         if mechanisms:
             if not record.get("paperPdfStatus"):
                 record["paperPdfStatus"] = "pending manual download; ScienceDirect PDF access triggered CAPTCHA or was not exposed"
-            for mech in mechanisms:
+            for mech in sorted(mechanisms, key=mechanism_priority):
                 thermo = find_thermo_for(mech, thermos + mechanisms)
-                ck_results.append(run_ckinterp(mech, thermo, folder))
-            write_summary(record, folder, mechanisms, thermos, transports, ck_results, extraction_notes)
+                transport = find_transport_for(mech, transports)
+                result = process_with_cantera(mech, thermo, transport, folder)
+                processing_results.append(result)
+                if result.status in {"ok", "ok_after_cleanup"}:
+                    break
+            write_summary(record, folder, mechanisms, thermos, transports, processing_results, extraction_notes)
         elif cantera:
             folder.mkdir(parents=True, exist_ok=True)
             if not record.get("paperPdfStatus"):
                 record["paperPdfStatus"] = "pending manual download; ScienceDirect PDF access triggered CAPTCHA or was not exposed"
-            write_summary(record, folder, cantera, thermos, transports, [], extraction_notes + ["Cantera file detected; ckinterp skipped"])
+            for mech in sorted(cantera, key=mechanism_priority):
+                result = process_with_cantera(mech, None, None, folder)
+                processing_results.append(result)
+                if result.status in {"ok", "ok_after_cleanup"}:
+                    break
+            write_summary(record, folder, cantera, thermos, transports, processing_results, extraction_notes + ["Cantera file detected"])
         elif candidate:
-            handoff.extend(
-                [
-                    f"## {record.get('title', 'Untitled')}",
-                    "",
-                    f"- DOI: {record.get('doi', '')}",
-                    f"- URL: {record.get('url', '')}",
-                    f"- Reason: no local downloadable mechanism supplement detected yet",
-                    f"- Suggested folder: {folder}",
-                    "",
-                ]
-            )
-        status = "included" if mechanisms or cantera else ("pending_download" if candidate else "excluded_no_mechanism_signal")
+            pass
+        has_success = any(result.status in {"ok", "ok_after_cleanup"} for result in processing_results)
+        has_mechanism_candidate = bool(mechanisms or cantera)
+        has_supplement_probe = bool(local_downloads or record.get("probedSupplementLinks") or record.get("supplementLinks"))
+        if has_mechanism_candidate and not candidate:
+            status = "excluded_non_kinetics_mechanism_attachment"
+        elif has_success:
+            status = "included"
+        elif has_mechanism_candidate:
+            status = "conversion_failed"
+        elif candidate and has_supplement_probe:
+            status = "excluded_no_mechanism_attachment"
+        elif candidate:
+            status = "excluded_no_supplement_found"
+        else:
+            status = "excluded_no_mechanism_signal"
         if status == "included" and not record.get("paperPdfLocal"):
             handoff.extend(
                 [
@@ -853,6 +1223,22 @@ def process() -> None:
                     f"- URL: {record.get('url', '')}",
                     f"- PDF link from issue page: {record.get('issuePdfLink', '')}",
                     "- Reason: automated Chrome PDF access reached ScienceDirect CAPTCHA or no exact PDF link was exposed",
+                    f"- Target folder: {folder}",
+                    "",
+                ]
+            )
+        if status == "conversion_failed":
+            last = processing_results[-1] if processing_results else CkResult("conversion_failed")
+            handoff.extend(
+                [
+                    f"## Cantera conversion failed: {record.get('title', 'Untitled')}",
+                    "",
+                    f"- DOI: {record.get('doi', '')}",
+                    f"- URL: {record.get('url', '')}",
+                    f"- Mechanism candidates: {'; '.join(str(p) for p in mechanisms + cantera)}",
+                    f"- Thermodynamic candidates: {'; '.join(str(p) for p in thermos)}",
+                    f"- Last status: {last.status}",
+                    f"- Last message: {last.message}",
                     f"- Target folder: {folder}",
                     "",
                 ]
@@ -872,19 +1258,51 @@ def process() -> None:
                 "paper_pdf_status": record.get("paperPdfStatus", ""),
                 "candidate": str(bool(candidate)),
                 "status": status,
-                "folder": str(folder if (mechanisms or cantera) else ""),
+                "folder": str(folder if (has_success or has_mechanism_candidate) else ""),
                 "mechanism_files": "; ".join(str(p) for p in mechanisms + cantera),
                 "thermo_files": "; ".join(str(p) for p in thermos),
                 "transport_files": "; ".join(str(p) for p in transports),
-                "species": ck_results[0].species if ck_results else "",
-                "reactions": ck_results[0].reactions if ck_results else "",
-                "ck_status": ck_results[0].status if ck_results else "",
+                "standard_mechanism": str(processing_results[-1].standardized_mech) if processing_results and processing_results[-1].standardized_mech else "",
+                "standard_thermo": str(processing_results[-1].standardized_thermo) if processing_results and processing_results[-1].standardized_thermo else "",
+                "standard_transport": str(processing_results[-1].standardized_transport) if processing_results and processing_results[-1].standardized_transport else "",
+                "cantera_yaml": str(processing_results[-1].cantera_yaml) if processing_results and processing_results[-1].cantera_yaml else "",
+                "species": processing_results[-1].species if processing_results else "",
+                "reactions": processing_results[-1].reactions if processing_results else "",
+                "preprocess_status": processing_results[-1].status if processing_results else "",
             }
         )
     with ROOT.joinpath("collection_index.csv").open("w", newline="", encoding="utf-8-sig") as fh:
         writer = csv.DictWriter(fh, fieldnames=list(rows[0].keys()) if rows else ["title"])
         writer.writeheader()
         writer.writerows(rows)
+    active_summary_paths = {
+        (Path(row["folder"]) / "mechanism_summary.md").resolve()
+        for row in rows
+        if row.get("folder") and row["status"] in {"included", "conversion_failed"}
+    }
+    for summary in ROOT.rglob("mechanism_summary.md"):
+        if summary.resolve() not in active_summary_paths:
+            summary.unlink()
+    active_folders = {path.parent for path in active_summary_paths}
+    generated_names = {
+        "chem.inp",
+        "therm.dat",
+        "tran.dat",
+        "mechanism.yaml",
+        "mechanism.cleaned.yaml",
+        "mechanism.numeric_clean.yaml",
+        "chem_cantera_clean.inp",
+        "chem_cantera_numeric_clean.inp",
+        "cantera_conversion.log",
+        "cantera_conversion.cleaned.log",
+        "cantera_conversion.numeric_clean.log",
+        "mechanism.result.json",
+        "mechanism.cleaned.result.json",
+        "mechanism.numeric_clean.result.json",
+    }
+    for generated in ROOT.rglob("*"):
+        if generated.is_file() and generated.name in generated_names and generated.parent.resolve() not in active_folders:
+            generated.unlink()
     ROOT.joinpath("manual_download_handoff.md").write_text("\n".join(handoff) + "\n", encoding="utf-8")
     ROOT.joinpath("run_summary.json").write_text(
         json.dumps(
@@ -893,6 +1311,13 @@ def process() -> None:
                 "metadata_records": len(records),
                 "index_rows": len(rows),
                 "included": sum(1 for r in rows if r["status"] == "included"),
+                "conversion_failed": sum(1 for r in rows if r["status"] == "conversion_failed"),
+                "excluded_non_kinetics_mechanism_attachment": sum(
+                    1 for r in rows if r["status"] == "excluded_non_kinetics_mechanism_attachment"
+                ),
+                "excluded_no_mechanism_attachment": sum(1 for r in rows if r["status"] == "excluded_no_mechanism_attachment"),
+                "excluded_no_mechanism_signal": sum(1 for r in rows if r["status"] == "excluded_no_mechanism_signal"),
+                "excluded_no_supplement_found": sum(1 for r in rows if r["status"] == "excluded_no_supplement_found"),
                 "pending_download": sum(1 for r in rows if r["status"] == "pending_download"),
                 "root": str(ROOT),
             },

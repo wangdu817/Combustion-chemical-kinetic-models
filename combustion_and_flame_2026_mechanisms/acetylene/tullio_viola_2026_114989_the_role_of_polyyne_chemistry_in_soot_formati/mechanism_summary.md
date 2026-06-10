@@ -18,19 +18,26 @@ Tullio Viola, Nabiha Chaumeix, Andrea Comandini. The role of polyyne chemistry i
 
 ## Mechanism Files
 
-- Mechanism files: extracted\s0010218026002257_mmc1\ICARE_SMAuG_model_kinetics_2025.dat
-- Thermodynamic files: extracted\s0010218026002257_mmc2\ICARE_SMAuG_model_thermo_2025.dat
-- Transport files: not found
+- Standard mechanism file: chem.inp
+- Standard thermodynamic file: therm.dat
+- Standard transport file: not available
+- Original mechanism source files: extracted\s0010218026002257_mmc1\ICARE_SMAuG_model_kinetics_2025.dat
+- Original thermodynamic source files: extracted\s0010218026002257_mmc2\ICARE_SMAuG_model_thermo_2025.dat
+- Original transport source files: not found
 
-## ckinterp Results
+## Cantera Preprocessing Results
 
 ### Mechanism 1
 
-- Status: ok_with_ck_warnings
-- Species count: 959
-- Reaction count: not parsed
-- Message: returncode=64
-- chem.out copy: ckinterp_chem.out
+- Status: ok
+- Species count: 951
+- Reaction count: 36552
+- Message: cantera conversion ok
+- Method: cantera
+- Cantera YAML: mechanism.yaml
+- Standard chem.inp: chem.inp
+- Standard therm.dat: therm.dat
+- Standard tran.dat: not available
 
 ## Abstract
 

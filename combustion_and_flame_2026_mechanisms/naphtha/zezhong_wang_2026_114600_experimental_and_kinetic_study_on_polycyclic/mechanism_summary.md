@@ -18,19 +18,26 @@ Zezhong Wang, Anhao Zhong, Chao Zhou, Wenhao Yuan, Dong Han. Experimental and ki
 
 ## Mechanism Files
 
-- Mechanism files: extracted\s0010218025006376_mmc2\naphtha mechanism -FINAL.inp
-- Thermodynamic files: extracted\s0010218025006376_mmc2\naphtha mechanism -FINAL.inp
-- Transport files: not found
+- Standard mechanism file: chem.inp
+- Standard thermodynamic file: therm.dat
+- Standard transport file: not available
+- Original mechanism source files: extracted\s0010218025006376_mmc2\naphtha mechanism -FINAL.inp
+- Original thermodynamic source files: extracted\s0010218025006376_mmc2\naphtha mechanism -FINAL.inp
+- Original transport source files: not found
 
-## ckinterp Results
+## Cantera Preprocessing Results
 
 ### Mechanism 1
 
-- Status: ok_with_ck_warnings
-- Species count: 2800
-- Reaction count: 2100
-- Message: returncode=0
-- chem.out copy: ckinterp_chem.out
+- Status: cantera_failed
+- Species count: not parsed
+- Reaction count: not parsed
+- Message: RuntimeError: bad allocation
+- Method: cantera
+- Cantera YAML: mechanism.yaml
+- Standard chem.inp: chem.inp
+- Standard therm.dat: therm.dat
+- Standard tran.dat: not available
 
 ## Abstract
 

@@ -18,27 +18,40 @@ Congjie Hong, Janardhanraj Subburaj, Jiabiao Zou, Ayman M. Elbaz, ... Aamir Faro
 
 ## Mechanism Files
 
-- Mechanism files: extracted\s0010218025006509_mmc1\mm1-detail mech.inp, extracted\s0010218025006509_mmc3\mm3-reduced mech.inp
-- Thermodynamic files: extracted\s0010218025006509_mmc2\mm2-detail thermo.dat, extracted\s0010218025006509_mmc4\mm4-reduced thermo.dat
-- Transport files: not found
+- Standard mechanism file: chem.inp
+- Standard thermodynamic file: therm.dat
+- Standard transport file: not available
+- Original mechanism source files: extracted\s0010218025006509_mmc1\mm1-detail mech.inp, extracted\s0010218025006509_mmc3\mm3-reduced mech.inp
+- Original thermodynamic source files: extracted\s0010218025006509_mmc2\mm2-detail thermo.dat, extracted\s0010218025006509_mmc4\mm4-reduced thermo.dat
+- Original transport source files: not found
 
-## ckinterp Results
+## Cantera Preprocessing Results
 
 ### Mechanism 1
 
-- Status: ok_with_ck_warnings
-- Species count: 3343
-- Reaction count: 1122
-- Message: returncode=0
-- chem.out copy: ckinterp_chem.out
+- Status: cantera_failed
+- Species count: not parsed
+- Reaction count: not parsed
+- Message: ValueError: could not convert string to float: '6.808+03'; numeric cleanup retry failed: InputError: No thermo data found for species 'HOCO'
+Please check https://cantera.org/tutorials/ck2yaml-tutorial.html#debugging-common-errors-in-ck-files
+for the correct Chemkin syntax.
+- Method: cantera
+- Cantera YAML: mechanism.yaml
+- Standard chem.inp: chem.inp
+- Standard therm.dat: therm.dat
+- Standard tran.dat: not available
 
 ### Mechanism 2
 
-- Status: ok_with_ck_warnings
+- Status: ok
 - Species count: 206
-- Reaction count: 1328
-- Message: returncode=0
-- chem.out copy: ckinterp_chem.out
+- Reaction count: 1451
+- Message: cantera conversion ok
+- Method: cantera
+- Cantera YAML: mechanism.yaml
+- Standard chem.inp: chem.inp
+- Standard therm.dat: therm.dat
+- Standard tran.dat: not available
 
 ## Abstract
 

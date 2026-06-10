@@ -18,19 +18,26 @@ Ke Ren, Xiaoping Chen, Jiliang Ma. Development and numerical analysis of a detai
 
 ## Mechanism Files
 
-- Mechanism files: extracted\s0010218026002129_mmc2\Mechanism.yaml
-- Thermodynamic files: extracted\s0010218026002129_mmc2\Mechanism.yaml
-- Transport files: extracted\s0010218026002129_mmc2\Mechanism.yaml
+- Standard mechanism file: chem.inp
+- Standard thermodynamic file: therm.dat
+- Standard transport file: tran.dat
+- Original mechanism source files: extracted\s0010218026002129_mmc2\Mechanism.yaml
+- Original thermodynamic source files: extracted\s0010218026002129_mmc2\Mechanism.yaml
+- Original transport source files: extracted\s0010218026002129_mmc2\Mechanism.yaml
 
-## ckinterp Results
+## Cantera Preprocessing Results
 
 ### Mechanism 1
 
-- Status: ok_with_ck_warnings
-- Species count: not parsed
-- Reaction count: 2100
-- Message: returncode=0
-- chem.out copy: ckinterp_chem.out
+- Status: ok
+- Species count: 157
+- Reaction count: 2036
+- Message: cantera conversion ok
+- Method: cantera
+- Cantera YAML: mechanism.yaml
+- Standard chem.inp: chem.inp
+- Standard therm.dat: therm.dat
+- Standard tran.dat: tran.dat
 
 ## Abstract
 

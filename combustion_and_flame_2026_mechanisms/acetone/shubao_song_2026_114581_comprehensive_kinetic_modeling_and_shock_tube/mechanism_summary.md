@@ -18,19 +18,26 @@ Shubao Song, Jiankun Shao, Lin Zhang, Jiachen Sun, ... Jianli Feng. Comprehensiv
 
 ## Mechanism Files
 
-- Mechanism files: extracted\s0010218025006182_mmc3\CH3COCH3_mech data.inp
-- Thermodynamic files: extracted\s0010218025006182_mmc4\CH3COCH3_thermo data.dat
-- Transport files: not found
+- Standard mechanism file: chem.inp
+- Standard thermodynamic file: therm.dat
+- Standard transport file: not available
+- Original mechanism source files: extracted\s0010218025006182_mmc3\CH3COCH3_mech data.inp
+- Original thermodynamic source files: extracted\s0010218025006182_mmc4\CH3COCH3_thermo data.dat
+- Original transport source files: not found
 
-## ckinterp Results
+## Cantera Preprocessing Results
 
 ### Mechanism 1
 
-- Status: ok_with_ck_warnings
+- Status: ok
 - Species count: 41
 - Reaction count: 284
-- Message: returncode=0
-- chem.out copy: ckinterp_chem.out
+- Message: cantera conversion ok
+- Method: cantera
+- Cantera YAML: mechanism.yaml
+- Standard chem.inp: chem.inp
+- Standard therm.dat: therm.dat
+- Standard tran.dat: not available
 
 ## Abstract
 

@@ -18,19 +18,28 @@ Qiao Wang, Peng Zhang, Chengcheng Liu, Bin Yang. Co-oxidation of ammonia with et
 
 ## Mechanism Files
 
-- Mechanism files: raw_downloads\S0010218025006674_mmc3.txt
-- Thermodynamic files: raw_downloads\S0010218025006674_mmc3.txt, raw_downloads\S0010218025006674_mmc4.txt
-- Transport files: not found
+- Standard mechanism file: chem.inp
+- Standard thermodynamic file: therm.dat
+- Standard transport file: not available
+- Original mechanism source files: raw_downloads\S0010218025006674_mmc3.txt
+- Original thermodynamic source files: raw_downloads\S0010218025006674_mmc3.txt, raw_downloads\S0010218025006674_mmc4.txt
+- Original transport source files: not found
 
-## ckinterp Results
+## Cantera Preprocessing Results
 
 ### Mechanism 1
 
-- Status: ok_with_ck_warnings
-- Species count: 159
-- Reaction count: 1507
-- Message: returncode=64
-- chem.out copy: ckinterp_chem.out
+- Status: cantera_failed
+- Species count: not parsed
+- Reaction count: not parsed
+- Message: InputError: No thermo data found for species 'H2'
+Please check https://cantera.org/tutorials/ck2yaml-tutorial.html#debugging-common-errors-in-ck-files
+for the correct Chemkin syntax.
+- Method: cantera
+- Cantera YAML: mechanism.yaml
+- Standard chem.inp: chem.inp
+- Standard therm.dat: therm.dat
+- Standard tran.dat: not available
 
 ## Abstract
 

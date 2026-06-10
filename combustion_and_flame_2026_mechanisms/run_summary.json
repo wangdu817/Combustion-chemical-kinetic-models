@@ -1,8 +1,13 @@
 {
-  "updated_at": "2026-06-09T21:02:31",
+  "updated_at": "2026-06-10T10:55:01",
   "metadata_records": 485,
   "index_rows": 485,
-  "included": 45,
-  "pending_download": 151,
+  "included": 13,
+  "conversion_failed": 29,
+  "excluded_non_kinetics_mechanism_attachment": 1,
+  "excluded_no_mechanism_attachment": 40,
+  "excluded_no_mechanism_signal": 388,
+  "excluded_no_supplement_found": 14,
+  "pending_download": 0,
   "root": "E:\\mech_collection\\combustion_and_flame_2026_mechanisms"
 }

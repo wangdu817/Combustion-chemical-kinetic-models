@@ -18,19 +18,26 @@ Chengcheng Liu, Chenyue Tao, Chenxuan Li, Peng Zhang, ... Bin Yang. Bayesian seq
 
 ## Mechanism Files
 
-- Mechanism files: extracted\s0010218025006479_mmc2\mmc2.yaml
-- Thermodynamic files: extracted\s0010218025006479_mmc2\mmc2.yaml
-- Transport files: extracted\s0010218025006479_mmc2\mmc2.yaml
+- Standard mechanism file: chem.inp
+- Standard thermodynamic file: therm.dat
+- Standard transport file: tran.dat
+- Original mechanism source files: extracted\s0010218025006479_mmc2\mmc2.yaml
+- Original thermodynamic source files: extracted\s0010218025006479_mmc2\mmc2.yaml
+- Original transport source files: extracted\s0010218025006479_mmc2\mmc2.yaml
 
-## ckinterp Results
+## Cantera Preprocessing Results
 
 ### Mechanism 1
 
-- Status: ok_with_ck_warnings
-- Species count: not parsed
-- Reaction count: 4
-- Message: returncode=64
-- chem.out copy: ckinterp_chem.out
+- Status: ok
+- Species count: 38
+- Reaction count: 262
+- Message: cantera conversion ok
+- Method: cantera
+- Cantera YAML: mechanism.yaml
+- Standard chem.inp: chem.inp
+- Standard therm.dat: therm.dat
+- Standard tran.dat: tran.dat
 
 ## Abstract
 

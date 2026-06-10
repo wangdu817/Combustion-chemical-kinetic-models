@@ -18,19 +18,26 @@ Ke Ren, Xiaoping Chen, Jiliang Ma, Suyang Pan. A detailed kinetic mechanism for 
 
 ## Mechanism Files
 
-- Mechanism files: extracted\s0010218025007321_mmc2\chem.inp
-- Thermodynamic files: extracted\s0010218025007321_mmc3\therm.dat
-- Transport files: not found
+- Standard mechanism file: chem.inp
+- Standard thermodynamic file: therm.dat
+- Standard transport file: not available
+- Original mechanism source files: extracted\s0010218025007321_mmc2\chem.inp
+- Original thermodynamic source files: extracted\s0010218025007321_mmc3\therm.dat
+- Original transport source files: not found
 
-## ckinterp Results
+## Cantera Preprocessing Results
 
 ### Mechanism 1
 
-- Status: ok_with_ck_warnings
+- Status: ok
 - Species count: 33
 - Reaction count: 223
-- Message: returncode=0
-- chem.out copy: ckinterp_chem.out
+- Message: cantera conversion ok
+- Method: cantera
+- Cantera YAML: mechanism.yaml
+- Standard chem.inp: chem.inp
+- Standard therm.dat: therm.dat
+- Standard tran.dat: not available
 
 ## Abstract
 
