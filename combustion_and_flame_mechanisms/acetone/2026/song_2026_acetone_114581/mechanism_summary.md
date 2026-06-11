@@ -14,16 +14,17 @@ Shubao Song, Jiankun Shao, Lin Zhang, Jiachen Sun, ... Jianli Feng. Comprehensiv
 - Paper PDF: pending manual download; ScienceDirect PDF access triggered CAPTCHA or was not exposed
 - Paper PDF link: 
 - Fuel type: acetone
+- Plasma-related mechanism: no
 - Validation reactor/type from abstract: shock tube, laminar flame speed
 
 ## Mechanism Files
 
 - Standard mechanism file: chem.inp
 - Standard thermodynamic file: therm.dat
-- Standard transport file: not available
-- Original mechanism source files: E:\mech_collection\combustion_and_flame_mechanisms\_processing_archive\2026\acetone\song_2026_acetone_114581\extracted\s0010218025006182_mmc3\CH3COCH3_mech data.inp
-- Original thermodynamic source files: E:\mech_collection\combustion_and_flame_mechanisms\_processing_archive\2026\acetone\song_2026_acetone_114581\extracted\s0010218025006182_mmc4\CH3COCH3_thermo data.dat
-- Original transport source files: not found
+- Standard transport file: tran.dat
+- Original mechanism source files: _processing\extracted\s0010218025006182_mmc3\CH3COCH3_mech data.inp
+- Original thermodynamic source files: _processing\extracted\s0010218025006182_mmc4\CH3COCH3_thermo data.dat
+- Original transport source files: _processing\raw_downloads\S0010218025006182_mmc5.txt
 
 ## Cantera Preprocessing Results
 
@@ -37,7 +38,7 @@ Shubao Song, Jiankun Shao, Lin Zhang, Jiachen Sun, ... Jianli Feng. Comprehensiv
 - Cantera YAML: mechanism.yaml
 - Standard chem.inp: chem.inp
 - Standard therm.dat: therm.dat
-- Standard tran.dat: not available
+- Standard tran.dat: tran.dat
 
 ## Abstract
 
@@ -45,6 +46,4 @@ Acetone (CH3COCH3) is a key intermediate and a representative oxygenated volatil
 
 ## Processing Notes
 
-- extracted S0010218025006182_mmc2.xlsx
-- extracted S0010218025006182_mmc3.zip
-- extracted S0010218025006182_mmc4.zip
+- none

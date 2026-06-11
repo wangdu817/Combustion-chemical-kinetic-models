@@ -14,16 +14,17 @@ Xingyu Wang, Xiao Zhang, Peiyao Chen. Investigation of kinetic inhibition effect
 - Paper PDF: pending manual download; ScienceDirect PDF access triggered CAPTCHA or was not exposed
 - Paper PDF link: 
 - Fuel type: hcfo_1233xf
+- Plasma-related mechanism: no
 - Validation reactor/type from abstract: not clear from abstract
 
 ## Mechanism Files
 
 - Standard mechanism file: chem.inp
-- Standard thermodynamic file: not available
-- Standard transport file: not available
-- Original mechanism source files: E:\mech_collection\combustion_and_flame_mechanisms\_processing_archive\2026\hcfo_1233xf\wang_2026_hcfo_1233xf_114663\raw_downloads\S0010218025006984_mmc1.txt
-- Original thermodynamic source files: not found
-- Original transport source files: not found
+- Standard thermodynamic file: therm.dat
+- Standard transport file: tran.dat
+- Original mechanism source files: _processing\raw_downloads\S0010218025006984_mmc1.txt
+- Original thermodynamic source files: _processing\raw_downloads\S0010218025006984_mmc3.txt
+- Original transport source files: _processing\raw_downloads\S0010218025006984_mmc4.txt
 
 ## Cantera Preprocessing Results
 
@@ -36,8 +37,8 @@ Xingyu Wang, Xiao Zhang, Peiyao Chen. Investigation of kinetic inhibition effect
 - Method: cantera
 - Cantera YAML: not available
 - Standard chem.inp: chem.inp
-- Standard therm.dat: not available
-- Standard tran.dat: not available
+- Standard therm.dat: therm.dat
+- Standard tran.dat: tran.dat
 
 ## Abstract
 
@@ -45,4 +46,4 @@ not available
 
 ## Processing Notes
 
-- extracted S0010218025006984_mmc2.docx
+- none

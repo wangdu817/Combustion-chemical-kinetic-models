@@ -14,6 +14,7 @@ Wenchao Zhu, Taipeng Mao, Zechuan Cui, Xinyang Tian, ... Mingshu Bi. A combined 
 - Paper PDF: pending manual download; ScienceDirect PDF access triggered CAPTCHA or was not exposed
 - Paper PDF link: https://www.sciencedirect.com/science/article/pii/S0010218026001033/pdfft?md5=e31f686f77b544afbb1fd44dfbd6f2c9&pid=1-s2.0-S0010218026001033-main.pdf
 - Fuel type: c0_c1_fuel_blends
+- Plasma-related mechanism: no
 - Validation reactor/type from abstract: jet-stirred reactor, stirred reactor
 
 ## Mechanism Files
@@ -21,9 +22,9 @@ Wenchao Zhu, Taipeng Mao, Zechuan Cui, Xinyang Tian, ... Mingshu Bi. A combined 
 - Standard mechanism file: chem.inp
 - Standard thermodynamic file: therm.dat
 - Standard transport file: tran.dat
-- Original mechanism source files: E:\mech_collection\combustion_and_flame_mechanisms\_processing_archive\2026\c0_c1_fuel_blends\zhu_2026_c0_c1_fuel_blends_114881\extracted\s0010218026001173_mmc1\C0-C1 reaction.inp, E:\mech_collection\combustion_and_flame_mechanisms\_processing_archive\2026\c0_c1_fuel_blends\zhu_2026_c0_c1_fuel_blends_114881\extracted\s0010218026001173_mmc2\Mechanism.yaml
-- Original thermodynamic source files: E:\mech_collection\combustion_and_flame_mechanisms\_processing_archive\2026\c0_c1_fuel_blends\zhu_2026_c0_c1_fuel_blends_114881\extracted\s0010218026001173_mmc2\Mechanism.yaml, E:\mech_collection\combustion_and_flame_mechanisms\_processing_archive\2026\c0_c1_fuel_blends\zhu_2026_c0_c1_fuel_blends_114881\extracted\s0010218026001173_mmc6\Thermodynamic.dat
-- Original transport source files: E:\mech_collection\combustion_and_flame_mechanisms\_processing_archive\2026\c0_c1_fuel_blends\zhu_2026_c0_c1_fuel_blends_114881\extracted\s0010218026001173_mmc2\Mechanism.yaml
+- Original mechanism source files: _processing\extracted\s0010218026001173_mmc1\C0-C1 reaction.inp, _processing\extracted\s0010218026001173_mmc2\Mechanism.yaml
+- Original thermodynamic source files: _processing\extracted\s0010218026001173_mmc2\Mechanism.yaml, _processing\extracted\s0010218026001173_mmc6\Thermodynamic.dat
+- Original transport source files: _processing\extracted\s0010218026001173_mmc2\Mechanism.yaml
 
 ## Cantera Preprocessing Results
 
@@ -45,7 +46,4 @@ The proposal of carbon neutrality targets has accelerated the deployment of C0â€
 
 ## Processing Notes
 
-- extracted S0010218026001173_mmc1.zip
-- extracted S0010218026001173_mmc2.zip
-- extracted S0010218026001173_mmc3.xlsx
-- extracted S0010218026001173_mmc6.zip
+- none

@@ -14,6 +14,7 @@ Yueying Liang, Zimu Wang, Liang Yu, Xingcai Lu. Experimental and kinetic insight
 - Paper PDF: pending manual download; ScienceDirect PDF access triggered CAPTCHA or was not exposed
 - Paper PDF link: 
 - Fuel type: ammonia_propane
+- Plasma-related mechanism: no
 - Validation reactor/type from abstract: rapid compression machine
 
 ## Mechanism Files
@@ -21,8 +22,8 @@ Yueying Liang, Zimu Wang, Liang Yu, Xingcai Lu. Experimental and kinetic insight
 - Standard mechanism file: chem.inp
 - Standard thermodynamic file: therm.dat
 - Standard transport file: not available
-- Original mechanism source files: E:\mech_collection\combustion_and_flame_mechanisms\_processing_archive\2026\ammonia_propane\liang_2026_ammonia_propane_114572\extracted\s0010218025006091_mmc3\Mech.inp
-- Original thermodynamic source files: E:\mech_collection\combustion_and_flame_mechanisms\_processing_archive\2026\ammonia_propane\liang_2026_ammonia_propane_114572\extracted\s0010218025006091_mmc3\Mech.inp
+- Original mechanism source files: _processing\extracted\s0010218025006091_mmc3\Mech.inp
+- Original thermodynamic source files: _processing\extracted\s0010218025006091_mmc3\Mech.inp
 - Original transport source files: not found
 
 ## Cantera Preprocessing Results
@@ -91,6 +92,4 @@ Propane is a major component of liquefied petroleum gas. Ignition delay times of
 
 ## Processing Notes
 
-- extracted S0010218025006091_mmc1.docx
-- extracted S0010218025006091_mmc2.xlsx
-- extracted S0010218025006091_mmc3.zip
+- none

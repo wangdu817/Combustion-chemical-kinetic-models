@@ -14,6 +14,7 @@ Yu-ichiro Izato, Yuta Nakamura, Kota Watanabe, Atsumi Miyake. Detailed pyrolysis
 - Paper PDF: pending manual download; ScienceDirect PDF access triggered CAPTCHA or was not exposed
 - Paper PDF link: https://www.sciencedirect.com/science/article/pii/S0010218025006388/pdfft?md5=36c58244e76bfe0438e917950f12b9b2&pid=1-s2.0-S0010218025006388-main.pdf
 - Fuel type: ammonium_nitrate_ammonium_chloride
+- Plasma-related mechanism: no
 - Validation reactor/type from abstract: not clear from abstract
 
 ## Mechanism Files
@@ -21,8 +22,8 @@ Yu-ichiro Izato, Yuta Nakamura, Kota Watanabe, Atsumi Miyake. Detailed pyrolysis
 - Standard mechanism file: chem.inp
 - Standard thermodynamic file: therm.dat
 - Standard transport file: not available
-- Original mechanism source files: E:\mech_collection\combustion_and_flame_mechanisms\_processing_archive\2026\ammonium_nitrate_ammonium_chloride\izato_2026_ammonium_nitrate_ammonium_chloride_114601\extracted\s0010218025006388_mmc1\kinetics.inp
-- Original thermodynamic source files: E:\mech_collection\combustion_and_flame_mechanisms\_processing_archive\2026\ammonium_nitrate_ammonium_chloride\izato_2026_ammonium_nitrate_ammonium_chloride_114601\extracted\s0010218025006388_mmc1\thermo.dat
+- Original mechanism source files: _processing\extracted\s0010218025006388_mmc1\kinetics.inp
+- Original thermodynamic source files: _processing\extracted\s0010218025006388_mmc1\thermo.dat
 - Original transport source files: not found
 
 ## Cantera Preprocessing Results
@@ -45,4 +46,4 @@ The contamination of ammonium nitrate (AN) with chlorides is known to significan
 
 ## Processing Notes
 
-- extracted S0010218025006388_mmc1.zip
+- none

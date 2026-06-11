@@ -14,6 +14,7 @@ Jibiao Xie, Jundie Chen, Alexander A. Konnov. Understanding the formation of nit
 - Paper PDF: pending manual download; ScienceDirect PDF access triggered CAPTCHA or was not exposed
 - Paper PDF link: https://www.sciencedirect.com/science/article/pii/S0010218026002737/pdfft?md5=638154072b1c72a6b273ac919ce4e087&pid=1-s2.0-S0010218026002737-main.pdf
 - Fuel type: pyrrole
+- Plasma-related mechanism: no
 - Validation reactor/type from abstract: shock tube, jet-stirred reactor, stirred reactor
 
 ## Mechanism Files
@@ -21,8 +22,8 @@ Jibiao Xie, Jundie Chen, Alexander A. Konnov. Understanding the formation of nit
 - Standard mechanism file: chem.inp
 - Standard thermodynamic file: therm.dat
 - Standard transport file: not available
-- Original mechanism source files: E:\mech_collection\combustion_and_flame_mechanisms\_processing_archive\2026\pyrrole\xie_2026_pyrrole_115037\raw_downloads\S0010218026002737_mmc2.txt
-- Original thermodynamic source files: E:\mech_collection\combustion_and_flame_mechanisms\_processing_archive\2026\pyrrole\xie_2026_pyrrole_115037\raw_downloads\S0010218026002737_mmc3.txt
+- Original mechanism source files: _processing\raw_downloads\S0010218026002737_mmc2.txt
+- Original thermodynamic source files: _processing\raw_downloads\S0010218026002737_mmc3.txt
 - Original transport source files: not found
 
 ## Cantera Preprocessing Results

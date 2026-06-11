@@ -14,6 +14,7 @@ S. Hossain, M. Abdulrahman, P.T. Lynch, Eric K. Mayhew, K. Brezinsky. Understand
 - Paper PDF: pending manual download; ScienceDirect PDF access triggered CAPTCHA or was not exposed
 - Paper PDF link: 
 - Fuel type: n_heptane_3_ethyltoluene_3_n_propyltoluene
+- Plasma-related mechanism: no
 - Validation reactor/type from abstract: shock tube
 
 ## Mechanism Files
@@ -21,8 +22,8 @@ S. Hossain, M. Abdulrahman, P.T. Lynch, Eric K. Mayhew, K. Brezinsky. Understand
 - Standard mechanism file: chem.inp
 - Standard thermodynamic file: therm.dat
 - Standard transport file: not available
-- Original mechanism source files: E:\mech_collection\combustion_and_flame_mechanisms\_processing_archive\2026\n_heptane_3_ethyltoluene_3_n_propyltoluene\hossain_2026_n_heptane_3_ethyltoluene_3_n_propyltoluene_114776\extracted\s0010218026000131_mmc1\mmc1.yaml, E:\mech_collection\combustion_and_flame_mechanisms\_processing_archive\2026\n_heptane_3_ethyltoluene_3_n_propyltoluene\hossain_2026_n_heptane_3_ethyltoluene_3_n_propyltoluene_114776\extracted\s0010218026000131_mmc2\mmc2.yaml
-- Original thermodynamic source files: E:\mech_collection\combustion_and_flame_mechanisms\_processing_archive\2026\n_heptane_3_ethyltoluene_3_n_propyltoluene\hossain_2026_n_heptane_3_ethyltoluene_3_n_propyltoluene_114776\extracted\s0010218026000131_mmc1\mmc1.yaml, E:\mech_collection\combustion_and_flame_mechanisms\_processing_archive\2026\n_heptane_3_ethyltoluene_3_n_propyltoluene\hossain_2026_n_heptane_3_ethyltoluene_3_n_propyltoluene_114776\extracted\s0010218026000131_mmc2\mmc2.yaml
+- Original mechanism source files: _processing\extracted\s0010218026000131_mmc1\mmc1.yaml, _processing\extracted\s0010218026000131_mmc2\mmc2.yaml
+- Original thermodynamic source files: _processing\extracted\s0010218026000131_mmc1\mmc1.yaml, _processing\extracted\s0010218026000131_mmc2\mmc2.yaml
 - Original transport source files: not found
 
 ## Cantera Preprocessing Results
@@ -45,6 +46,4 @@ S. Hossain, M. Abdulrahman, P.T. Lynch, Eric K. Mayhew, K. Brezinsky. Understand
 
 ## Processing Notes
 
-- extracted S0010218026000131_mmc1.zip
-- extracted S0010218026000131_mmc2.zip
-- extracted S0010218026000131_mmc3.docx
+- none

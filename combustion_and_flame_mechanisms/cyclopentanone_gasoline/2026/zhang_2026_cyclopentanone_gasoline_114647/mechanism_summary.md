@@ -14,16 +14,17 @@ Jiaqi Zhang, Florian vom Lehn, Sascha Jacobs, Raik Hesse, ... Liming Cai. Igniti
 - Paper PDF: pending manual download; ScienceDirect PDF access triggered CAPTCHA or was not exposed
 - Paper PDF link: 
 - Fuel type: cyclopentanone_gasoline
+- Plasma-related mechanism: no
 - Validation reactor/type from abstract: not clear from abstract
 
 ## Mechanism Files
 
 - Standard mechanism file: chem.inp
 - Standard thermodynamic file: therm.dat
-- Standard transport file: not available
-- Original mechanism source files: E:\mech_collection\combustion_and_flame_mechanisms\_processing_archive\2026\cyclopentanone_gasoline\zhang_2026_cyclopentanone_gasoline_114647\extracted\s0010218025006844_mmc1\Base_Gasoline_PAH_CPN.chmech
-- Original thermodynamic source files: E:\mech_collection\combustion_and_flame_mechanisms\_processing_archive\2026\cyclopentanone_gasoline\zhang_2026_cyclopentanone_gasoline_114647\extracted\s0010218025006844_mmc2\Base_Gasoline_PAH_CPN.chthermo, E:\mech_collection\combustion_and_flame_mechanisms\_processing_archive\2026\cyclopentanone_gasoline\zhang_2026_cyclopentanone_gasoline_114647\extracted\s0010218025006844_mmc5\Base_Gasoline_PAH_CPN.thermo
-- Original transport source files: not found
+- Standard transport file: tran.dat
+- Original mechanism source files: _processing\extracted\s0010218025006844_mmc1\Base_Gasoline_PAH_CPN.chmech
+- Original thermodynamic source files: _processing\extracted\s0010218025006844_mmc2\Base_Gasoline_PAH_CPN.chthermo, _processing\extracted\s0010218025006844_mmc5\Base_Gasoline_PAH_CPN.thermo
+- Original transport source files: _processing\extracted\s0010218025006844_mmc3\Base_Gasoline_PAH_CPN.chtrans, _processing\extracted\s0010218025006844_mmc6\Base_Gasoline_PAH_CPN.trans
 
 ## Cantera Preprocessing Results
 
@@ -32,14 +33,14 @@ Jiaqi Zhang, Florian vom Lehn, Sascha Jacobs, Raik Hesse, ... Liming Cai. Igniti
 - Status: cantera_failed
 - Species count: 573
 - Reaction count: not parsed
-- Message: InputError: No thermo data found for species 'A1-C6H6'
+- Message: InputError: No transport data for species 'I-CO'.
 Please check https://cantera.org/tutorials/ck2yaml-tutorial.html#debugging-common-errors-in-ck-files
 for the correct Chemkin syntax.
 - Method: cantera
 - Cantera YAML: mechanism.yaml
 - Standard chem.inp: chem.inp
 - Standard therm.dat: therm.dat
-- Standard tran.dat: not available
+- Standard tran.dat: tran.dat
 
 ## Abstract
 
@@ -47,9 +48,4 @@ not available
 
 ## Processing Notes
 
-- extracted S0010218025006844_mmc1.zip
-- extracted S0010218025006844_mmc2.zip
-- extracted S0010218025006844_mmc3.zip
-- extracted S0010218025006844_mmc4.zip
-- extracted S0010218025006844_mmc5.zip
-- extracted S0010218025006844_mmc6.zip
+- none

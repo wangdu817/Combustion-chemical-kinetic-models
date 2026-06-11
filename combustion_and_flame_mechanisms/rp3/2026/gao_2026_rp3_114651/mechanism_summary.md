@@ -14,6 +14,7 @@ Xiang Gao, Du Wang, Hong-Qing Shi, Xu-Peng Yu, ... Zhen-Yu Tian. Experimental an
 - Paper PDF: pending manual download; ScienceDirect PDF access triggered CAPTCHA or was not exposed
 - Paper PDF link: 
 - Fuel type: rp3
+- Plasma-related mechanism: no
 - Validation reactor/type from abstract: jet-stirred reactor, stirred reactor
 
 ## Mechanism Files
@@ -21,8 +22,8 @@ Xiang Gao, Du Wang, Hong-Qing Shi, Xu-Peng Yu, ... Zhen-Yu Tian. Experimental an
 - Standard mechanism file: chem.inp
 - Standard thermodynamic file: therm.dat
 - Standard transport file: not available
-- Original mechanism source files: E:\mech_collection\combustion_and_flame_mechanisms\_processing_archive\2026\rp3\gao_2026_rp3_114651\extracted\s001021802500687x_mmc2\mmc2.inp
-- Original thermodynamic source files: E:\mech_collection\combustion_and_flame_mechanisms\_processing_archive\2026\rp3\gao_2026_rp3_114651\extracted\s001021802500687x_mmc3\mmc3.txt
+- Original mechanism source files: _processing\extracted\s001021802500687x_mmc2\mmc2.inp
+- Original thermodynamic source files: _processing\extracted\s001021802500687x_mmc3\mmc3.txt
 - Original transport source files: not found
 
 ## Cantera Preprocessing Results
@@ -45,6 +46,4 @@ Highlights • High-pressure oxidation of a RP-3 surrogate fuel with three C9H12
 
 ## Processing Notes
 
-- extracted S001021802500687X_mmc2.zip
-- extracted S001021802500687X_mmc3.zip
-- extracted S001021802500687X_mmc4.xlsx
+- none

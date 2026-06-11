@@ -14,8 +14,8 @@ Items below need user-side ScienceDirect/Elsevier download or review.
 
 - DOI: 10.1016/j.combustflame.2025.114575
 - URL: https://www.sciencedirect.com/science/article/pii/S0010218025006121
-- Mechanism candidates: E:\mech_collection\combustion_and_flame_mechanisms\_processing_archive\2026\ammonia_dimethoxymethane\qin_2026_ammonia_dimethoxymethane_114575\extracted\s0010218025006121_mmc4\USTC-NH3_DMM.inp
-- Thermodynamic candidates: E:\mech_collection\combustion_and_flame_mechanisms\_processing_archive\2026\ammonia_dimethoxymethane\qin_2026_ammonia_dimethoxymethane_114575\extracted\s0010218025006121_mmc3\USTC-NH3_DMM.dat
+- Mechanism candidates: E:\mech_collection\combustion_and_flame_mechanisms\ammonia_dimethoxymethane\2026\qin_2026_ammonia_dimethoxymethane_114575\_processing\extracted\s0010218025006121_mmc4\USTC-NH3_DMM.inp
+- Thermodynamic candidates: E:\mech_collection\combustion_and_flame_mechanisms\ammonia_dimethoxymethane\2026\qin_2026_ammonia_dimethoxymethane_114575\_processing\extracted\s0010218025006121_mmc3\USTC-NH3_DMM.dat
 - Last status: cantera_failed
 - Last message: CanteraError: 
 *******************************************************************************
@@ -54,8 +54,8 @@ Reaction 35: H2O + H2O <=> H + OH + H2O
 
 - DOI: 10.1016/j.combustflame.2025.114572
 - URL: https://www.sciencedirect.com/science/article/pii/S0010218025006091
-- Mechanism candidates: E:\mech_collection\combustion_and_flame_mechanisms\_processing_archive\2026\ammonia_propane\liang_2026_ammonia_propane_114572\extracted\s0010218025006091_mmc3\Mech.inp
-- Thermodynamic candidates: E:\mech_collection\combustion_and_flame_mechanisms\_processing_archive\2026\ammonia_propane\liang_2026_ammonia_propane_114572\extracted\s0010218025006091_mmc3\Mech.inp
+- Mechanism candidates: E:\mech_collection\combustion_and_flame_mechanisms\ammonia_propane\2026\liang_2026_ammonia_propane_114572\_processing\extracted\s0010218025006091_mmc3\Mech.inp
+- Thermodynamic candidates: E:\mech_collection\combustion_and_flame_mechanisms\ammonia_propane\2026\liang_2026_ammonia_propane_114572\_processing\extracted\s0010218025006091_mmc3\Mech.inp
 - Last status: cantera_failed
 - Last message: CanteraError: 
 *******************************************************************************
@@ -118,8 +118,8 @@ at P = 31997, T = 200.0
 
 - DOI: 10.1016/j.combustflame.2025.114576
 - URL: https://www.sciencedirect.com/science/article/pii/S0010218025006133
-- Mechanism candidates: E:\mech_collection\combustion_and_flame_mechanisms\_processing_archive\2026\ethyl_acetate\yang_2026_ethyl_acetate_114576\extracted\s0010218025006133_mmc5\Current mech.inp
-- Thermodynamic candidates: E:\mech_collection\combustion_and_flame_mechanisms\_processing_archive\2026\ethyl_acetate\yang_2026_ethyl_acetate_114576\extracted\s0010218025006133_mmc4\Current thermo.dat
+- Mechanism candidates: E:\mech_collection\combustion_and_flame_mechanisms\ethyl_acetate\2026\yang_2026_ethyl_acetate_114576\_processing\extracted\s0010218025006133_mmc5\Current mech.inp
+- Thermodynamic candidates: E:\mech_collection\combustion_and_flame_mechanisms\ethyl_acetate\2026\yang_2026_ethyl_acetate_114576\_processing\extracted\s0010218025006133_mmc4\Current thermo.dat
 - Last status: cantera_failed
 - Last message: ValueError: could not convert string to float: 'c2h5oco    2/ 9'; numeric cleanup retry failed: ValueError: could not convert string to float: 'c2h5oco    2/ 9'
 - Target folder: E:\mech_collection\combustion_and_flame_mechanisms\ethyl_acetate\2026\yang_2026_ethyl_acetate_114576
@@ -128,18 +128,25 @@ at P = 31997, T = 200.0
 
 - DOI: 10.1016/j.combustflame.2025.114600
 - URL: https://www.sciencedirect.com/science/article/pii/S0010218025006376
-- Mechanism candidates: E:\mech_collection\combustion_and_flame_mechanisms\_processing_archive\2026\naphtha\wang_2026_naphtha_114600\extracted\s0010218025006376_mmc2\naphtha mechanism -FINAL.inp
-- Thermodynamic candidates: E:\mech_collection\combustion_and_flame_mechanisms\_processing_archive\2026\naphtha\wang_2026_naphtha_114600\extracted\s0010218025006376_mmc2\naphtha mechanism -FINAL.inp
+- Mechanism candidates: E:\mech_collection\combustion_and_flame_mechanisms\naphtha\2026\wang_2026_naphtha_114600\_processing\extracted\s0010218025006376_mmc2\naphtha mechanism -FINAL.inp
+- Thermodynamic candidates: E:\mech_collection\combustion_and_flame_mechanisms\naphtha\2026\wang_2026_naphtha_114600\_processing\extracted\s0010218025006376_mmc2\naphtha mechanism -FINAL.inp
 - Last status: cantera_failed
 - Last message: RuntimeError: bad allocation
 - Target folder: E:\mech_collection\combustion_and_flame_mechanisms\naphtha\2026\wang_2026_naphtha_114600
 
-## Paper PDF pending: Laminar flame speed of hydrogen-enriched sustainable aviation fuel: Experiments and chemical kinetic modeling
+## Cantera conversion failed: Laminar flame speed of hydrogen-enriched sustainable aviation fuel: Experiments and chemical kinetic modeling
 
 - DOI: 10.1016/j.combustflame.2025.114613
 - URL: https://www.sciencedirect.com/science/article/pii/S0010218025006509
-- PDF link from issue page: 
-- Reason: automated Chrome PDF access reached ScienceDirect CAPTCHA or no exact PDF link was exposed
+- Mechanism candidates: E:\mech_collection\combustion_and_flame_mechanisms\hydrogen_saf\2026\hong_2026_hydrogen_saf_114613\_processing\extracted\s0010218025006509_mmc1\mm1-detail mech.inp; E:\mech_collection\combustion_and_flame_mechanisms\hydrogen_saf\2026\hong_2026_hydrogen_saf_114613\_processing\extracted\s0010218025006509_mmc3\mm3-reduced mech.inp
+- Thermodynamic candidates: E:\mech_collection\combustion_and_flame_mechanisms\hydrogen_saf\2026\hong_2026_hydrogen_saf_114613\_processing\extracted\s0010218025006509_mmc2\mm2-detail thermo.dat; E:\mech_collection\combustion_and_flame_mechanisms\hydrogen_saf\2026\hong_2026_hydrogen_saf_114613\_processing\extracted\s0010218025006509_mmc4\mm4-reduced thermo.dat
+- Last status: cantera_failed
+- Last message: CanteraError: 
+*******************************************************************************
+CanteraError thrown by GasTransportData::validate:
+invalid geometry for species 'NC12H26'. 'atom' specified, but species contains multiple atoms.
+*******************************************************************************
+
 - Target folder: E:\mech_collection\combustion_and_flame_mechanisms\hydrogen_saf\2026\hong_2026_hydrogen_saf_114613
 
 ## Paper PDF pending: Detailed pyrolysis mechanism for ammonium nitrate and ammonium chloride mixtures
@@ -162,8 +169,8 @@ at P = 31997, T = 200.0
 
 - DOI: 10.1016/j.combustflame.2025.114630
 - URL: https://www.sciencedirect.com/science/article/pii/S0010218025006674
-- Mechanism candidates: E:\mech_collection\combustion_and_flame_mechanisms\_processing_archive\2026\ammonia_ethylene_acetylene\wang_2026_ammonia_ethylene_acetylene_114630\raw_downloads\S0010218025006674_mmc3.txt
-- Thermodynamic candidates: E:\mech_collection\combustion_and_flame_mechanisms\_processing_archive\2026\ammonia_ethylene_acetylene\wang_2026_ammonia_ethylene_acetylene_114630\raw_downloads\S0010218025006674_mmc3.txt; E:\mech_collection\combustion_and_flame_mechanisms\_processing_archive\2026\ammonia_ethylene_acetylene\wang_2026_ammonia_ethylene_acetylene_114630\raw_downloads\S0010218025006674_mmc4.txt
+- Mechanism candidates: E:\mech_collection\combustion_and_flame_mechanisms\ammonia_ethylene_acetylene\2026\wang_2026_ammonia_ethylene_acetylene_114630\_processing\raw_downloads\S0010218025006674_mmc3.txt
+- Thermodynamic candidates: E:\mech_collection\combustion_and_flame_mechanisms\ammonia_ethylene_acetylene\2026\wang_2026_ammonia_ethylene_acetylene_114630\_processing\raw_downloads\S0010218025006674_mmc3.txt; E:\mech_collection\combustion_and_flame_mechanisms\ammonia_ethylene_acetylene\2026\wang_2026_ammonia_ethylene_acetylene_114630\_processing\raw_downloads\S0010218025006674_mmc4.txt
 - Last status: cantera_failed
 - Last message: InputError: No thermo data found for species 'H2'
 Please check https://cantera.org/tutorials/ck2yaml-tutorial.html#debugging-common-errors-in-ck-files
@@ -174,8 +181,8 @@ for the correct Chemkin syntax.
 
 - DOI: 10.1016/j.combustflame.2025.114651
 - URL: https://www.sciencedirect.com/science/article/pii/S001021802500687X
-- Mechanism candidates: E:\mech_collection\combustion_and_flame_mechanisms\_processing_archive\2026\rp3\gao_2026_rp3_114651\extracted\s001021802500687x_mmc2\mmc2.inp
-- Thermodynamic candidates: E:\mech_collection\combustion_and_flame_mechanisms\_processing_archive\2026\rp3\gao_2026_rp3_114651\extracted\s001021802500687x_mmc3\mmc3.txt
+- Mechanism candidates: E:\mech_collection\combustion_and_flame_mechanisms\rp3\2026\gao_2026_rp3_114651\_processing\extracted\s001021802500687x_mmc2\mmc2.inp
+- Thermodynamic candidates: E:\mech_collection\combustion_and_flame_mechanisms\rp3\2026\gao_2026_rp3_114651\_processing\extracted\s001021802500687x_mmc3\mmc3.txt
 - Last status: cantera_failed
 - Last message: IndexError: list index out of range; numeric cleanup retry failed: IndexError: list index out of range
 - Target folder: E:\mech_collection\combustion_and_flame_mechanisms\rp3\2026\gao_2026_rp3_114651
@@ -184,39 +191,39 @@ for the correct Chemkin syntax.
 
 - DOI: 10.1016/j.combustflame.2025.114656
 - URL: https://www.sciencedirect.com/science/article/pii/S0010218025006911
-- Mechanism candidates: E:\mech_collection\combustion_and_flame_mechanisms\_processing_archive\2026\norbornane\xiao_2026_norbornane_114656\extracted\s0010218025006911_mmc4\Nor_O2-Xiao25-Mech.inp
-- Thermodynamic candidates: E:\mech_collection\combustion_and_flame_mechanisms\_processing_archive\2026\norbornane\xiao_2026_norbornane_114656\extracted\s0010218025006911_mmc5\Nor_O2-Xiao25-thermo.dat
+- Mechanism candidates: E:\mech_collection\combustion_and_flame_mechanisms\norbornane\2026\xiao_2026_norbornane_114656\_processing\extracted\s0010218025006911_mmc4\Nor_O2-Xiao25-Mech.inp
+- Thermodynamic candidates: E:\mech_collection\combustion_and_flame_mechanisms\norbornane\2026\xiao_2026_norbornane_114656\_processing\extracted\s0010218025006911_mmc5\Nor_O2-Xiao25-thermo.dat
 - Last status: cantera_failed
 - Last message: CanteraError: 
 *******************************************************************************
 InputFileError thrown by Kinetics::checkDuplicates:
-Error on lines 16067 and 16094 of E:\mech_collection\combustion_and_flame_mechanisms\norbornane\2026\xiao_2026_norbornane_114656\mechanism.yaml:
+Error on lines 22618 and 22645 of E:\mech_collection\combustion_and_flame_mechanisms\norbornane\2026\xiao_2026_norbornane_114656\mechanism.yaml:
 Undeclared duplicate reactions detected:
 Reaction 989: H2 + M <=> 2 H + M
 Reaction 985: 2 H + O2 <=> H2 + O2
 
 |  Line |
-|  16062 |   note: Added in v6
-|  16063 | - equation: cCHC6H10-7-OO + cCHC6H10-7-OO <=> cCHC6H10-7-O + cCHC6H10-7-O
-|  16064 |     + O2  # Reaction 984
-|  16065 |   rate-constant: {A: 1.4e+16, b: -1.61, Ea: 1860.0}
-|  16066 |   note: Added in v6
->  16067 > - equation: H2 + M <=> H + H + M  # Reaction 985
+|  22613 |   note: Added in v6
+|  22614 | - equation: cCHC6H10-7-OO + cCHC6H10-7-OO <=> cCHC6H10-7-O + cCHC6H10-7-O
+|  22615 |     + O2  # Reaction 984
+|  22616 |   rate-constant: {A: 1.4e+16, b: -1.61, Ea: 1860.0}
+|  22617 |   note: Added in v6
+>  22618 > - equation: H2 + M <=> H + H + M  # Reaction 985
             ^
-|  16068 |   type: three-body
-|  16069 |   rate-constant: {A: 4.577e+19, b: -1.4, Ea: 1.044e+05}
-|  16070 |   efficiencies: {HE: 0.83, CO: 1.9, CH4: 2.0, H2: 2.5, C2H6: 3.0, CO2: 3.8,
+|  22619 |   type: three-body
+|  22620 |   rate-constant: {A: 4.577e+19, b: -1.4, Ea: 1.044e+05}
+|  22621 |   efficiencies: {HE: 0.83, CO: 1.9, CH4: 2.0, H2: 2.5, C2H6: 3.0, CO2: 3.8,
 ...
-|  16089 |     CHEM REF DATA 2005, 34, 757-1397. !\Comment: WARNING'
-|  16090 | - equation: H2 + OH <=> H + H2O  # Reaction 988
-|  16091 |   rate-constant: {A: 2.2e+08, b: 1.51, Ea: 3430.0}
-|  16092 |   note: '\Author: UB !\Ref: J.V.MICHAEL SUTHERLAND, J.PHYS.CHEM. 92(1988)
-|  16093 |     3853 !\Comment: WARNING'
->  16094 > - equation: H + O2 + H <=> H2 + O2  # Reaction 989
+|  22640 |     CHEM REF DATA 2005, 34, 757-1397. !\Comment: WARNING'
+|  22641 | - equation: H2 + OH <=> H + H2O  # Reaction 988
+|  22642 |   rate-constant: {A: 2.2e+08, b: 1.51, Ea: 3430.0}
+|  22643 |   note: '\Author: UB !\Ref: J.V.MICHAEL SUTHERLAND, J.PHYS.CHEM. 92(1988)
+|  22644 |     3853 !\Comment: WARNING'
+>  22645 > - equation: H + O2 + H <=> H2 + O2  # Reaction 989
             ^
-|  16095 |   rate-constant: {A: 8.8e+22, b: -1.835, Ea: 800.0}
-|  16096 |   note: '\Author: WARNING !\Ref: WARNING !\Comment: WARNING'
-|  16097 | - equation: H + O2 + H <=> OH + OH  # Reaction 990
+|  22646 |   rate-constant: {A: 8.8e+22, b: -1.835, Ea: 800.0}
+|  22647 |   note: '\Author: WARNING !\Ref: WARNING !\Comment: WARNING'
+|  22648 | - equation: H + O2 + H <=> OH + OH  # Reaction 990
 *******************************************************************************
 
 - Target folder: E:\mech_collection\combustion_and_flame_mechanisms\norbornane\2026\xiao_2026_norbornane_114656
@@ -225,8 +232,8 @@ Reaction 985: 2 H + O2 <=> H2 + O2
 
 - DOI: 10.1016/j.combustflame.2025.114663
 - URL: https://www.sciencedirect.com/science/article/pii/S0010218025006984
-- Mechanism candidates: E:\mech_collection\combustion_and_flame_mechanisms\_processing_archive\2026\hcfo_1233xf\wang_2026_hcfo_1233xf_114663\raw_downloads\S0010218025006984_mmc1.txt
-- Thermodynamic candidates: 
+- Mechanism candidates: E:\mech_collection\combustion_and_flame_mechanisms\hcfo_1233xf\2026\wang_2026_hcfo_1233xf_114663\_processing\raw_downloads\S0010218025006984_mmc1.txt
+- Thermodynamic candidates: E:\mech_collection\combustion_and_flame_mechanisms\hcfo_1233xf\2026\wang_2026_hcfo_1233xf_114663\_processing\raw_downloads\S0010218025006984_mmc3.txt
 - Last status: cantera_failed
 - Last message: ValueError: could not convert string to float: '0.902,'; numeric cleanup retry failed: ValueError: could not convert string to float: '696.,'
 - Target folder: E:\mech_collection\combustion_and_flame_mechanisms\hcfo_1233xf\2026\wang_2026_hcfo_1233xf_114663
@@ -235,10 +242,10 @@ Reaction 985: 2 H + O2 <=> H2 + O2
 
 - DOI: 10.1016/j.combustflame.2025.114647
 - URL: https://www.sciencedirect.com/science/article/pii/S0010218025006844
-- Mechanism candidates: E:\mech_collection\combustion_and_flame_mechanisms\_processing_archive\2026\cyclopentanone_gasoline\zhang_2026_cyclopentanone_gasoline_114647\extracted\s0010218025006844_mmc1\Base_Gasoline_PAH_CPN.chmech
-- Thermodynamic candidates: E:\mech_collection\combustion_and_flame_mechanisms\_processing_archive\2026\cyclopentanone_gasoline\zhang_2026_cyclopentanone_gasoline_114647\extracted\s0010218025006844_mmc2\Base_Gasoline_PAH_CPN.chthermo; E:\mech_collection\combustion_and_flame_mechanisms\_processing_archive\2026\cyclopentanone_gasoline\zhang_2026_cyclopentanone_gasoline_114647\extracted\s0010218025006844_mmc5\Base_Gasoline_PAH_CPN.thermo
+- Mechanism candidates: E:\mech_collection\combustion_and_flame_mechanisms\cyclopentanone_gasoline\2026\zhang_2026_cyclopentanone_gasoline_114647\_processing\extracted\s0010218025006844_mmc1\Base_Gasoline_PAH_CPN.chmech
+- Thermodynamic candidates: E:\mech_collection\combustion_and_flame_mechanisms\cyclopentanone_gasoline\2026\zhang_2026_cyclopentanone_gasoline_114647\_processing\extracted\s0010218025006844_mmc2\Base_Gasoline_PAH_CPN.chthermo; E:\mech_collection\combustion_and_flame_mechanisms\cyclopentanone_gasoline\2026\zhang_2026_cyclopentanone_gasoline_114647\_processing\extracted\s0010218025006844_mmc5\Base_Gasoline_PAH_CPN.thermo
 - Last status: cantera_failed
-- Last message: InputError: No thermo data found for species 'A1-C6H6'
+- Last message: InputError: No transport data for species 'I-CO'.
 Please check https://cantera.org/tutorials/ck2yaml-tutorial.html#debugging-common-errors-in-ck-files
 for the correct Chemkin syntax.
 - Target folder: E:\mech_collection\combustion_and_flame_mechanisms\cyclopentanone_gasoline\2026\zhang_2026_cyclopentanone_gasoline_114647
@@ -255,8 +262,8 @@ for the correct Chemkin syntax.
 
 - DOI: 10.1016/j.combustflame.2025.114696
 - URL: https://www.sciencedirect.com/science/article/pii/S001021802500731X
-- Mechanism candidates: E:\mech_collection\combustion_and_flame_mechanisms\_processing_archive\2026\triptane_gasoline\aljohani_2026_triptane_gasoline_114696\extracted\s001021802500731x_mmc2\SM_for_TMB_MTG\SM_for_TMB_MTG\Kinetic_model\mech_TMB.inp
-- Thermodynamic candidates: E:\mech_collection\combustion_and_flame_mechanisms\_processing_archive\2026\triptane_gasoline\aljohani_2026_triptane_gasoline_114696\extracted\s001021802500731x_mmc2\SM_for_TMB_MTG\SM_for_TMB_MTG\Kinetic_model\thermo_TMB.dat
+- Mechanism candidates: E:\mech_collection\combustion_and_flame_mechanisms\triptane_gasoline\2026\aljohani_2026_triptane_gasoline_114696\_processing\extracted\s001021802500731x_mmc2\SM_for_TMB_MTG\SM_for_TMB_MTG\Kinetic_model\mech_TMB.inp
+- Thermodynamic candidates: E:\mech_collection\combustion_and_flame_mechanisms\triptane_gasoline\2026\aljohani_2026_triptane_gasoline_114696\_processing\extracted\s001021802500731x_mmc2\SM_for_TMB_MTG\SM_for_TMB_MTG\Kinetic_model\thermo_TMB.dat
 - Last status: cantera_failed
 - Last message: InputError: Error parsing elemental composition for species thermo entry:
  2.42791871e+01 2.51543795e-02-8.59067806e-06 1.33406642e-09-7.74653905e-14    2
@@ -280,7 +287,7 @@ for the correct Chemkin syntax.
 
 - DOI: 10.1016/j.combustflame.2025.114705
 - URL: https://www.sciencedirect.com/science/article/pii/S0010218025007400
-- Mechanism candidates: E:\mech_collection\combustion_and_flame_mechanisms\_processing_archive\2026\propanol\li_2026_propanol_114705\extracted\s0010218025007400_mmc2\SMM2.inp; E:\mech_collection\combustion_and_flame_mechanisms\_processing_archive\2026\propanol\li_2026_propanol_114705\extracted\s0010218025007400_mmc3\SMM3.inp
+- Mechanism candidates: E:\mech_collection\combustion_and_flame_mechanisms\propanol\2026\li_2026_propanol_114705\_processing\extracted\s0010218025007400_mmc2\SMM2.inp; E:\mech_collection\combustion_and_flame_mechanisms\propanol\2026\li_2026_propanol_114705\_processing\extracted\s0010218025007400_mmc3\SMM3.inp
 - Thermodynamic candidates: 
 - Last status: cantera_failed
 - Last message: ValueError: could not convert string to float: '+4.214+14'; numeric cleanup retry failed: InputError: No thermo data found for species 'E'
@@ -300,8 +307,8 @@ for the correct Chemkin syntax.
 
 - DOI: 10.1016/j.combustflame.2026.114882
 - URL: https://www.sciencedirect.com/science/article/pii/S0010218026001185
-- Mechanism candidates: E:\mech_collection\combustion_and_flame_mechanisms\_processing_archive\2026\methanol\liu_2026_methanol_114882\extracted\s0010218026001185_mmc2\mmc2\SMM\Chem.inp; E:\mech_collection\combustion_and_flame_mechanisms\_processing_archive\2026\methanol\liu_2026_methanol_114882\extracted\s0010218026001185_mmc2\mmc2\SMM\plasma kinetics.inp
-- Thermodynamic candidates: E:\mech_collection\combustion_and_flame_mechanisms\_processing_archive\2026\methanol\liu_2026_methanol_114882\extracted\s0010218026001185_mmc2\mmc2\SMM\Therm.dat
+- Mechanism candidates: E:\mech_collection\combustion_and_flame_mechanisms\methanol\2026\liu_2026_methanol_114882\_processing\extracted\s0010218026001185_mmc2\mmc2\SMM\Chem.inp; E:\mech_collection\combustion_and_flame_mechanisms\methanol\2026\liu_2026_methanol_114882\_processing\extracted\s0010218026001185_mmc2\mmc2\SMM\plasma kinetics.inp
+- Thermodynamic candidates: E:\mech_collection\combustion_and_flame_mechanisms\methanol\2026\liu_2026_methanol_114882\_processing\extracted\s0010218026001185_mmc2\mmc2\SMM\Therm.dat
 - Last status: cantera_failed
 - Last message: InputError: Section starts with unrecognized keyword
 """
@@ -320,39 +327,39 @@ for the correct Chemkin syntax.
 
 - DOI: 10.1016/j.combustflame.2026.114938
 - URL: https://www.sciencedirect.com/science/article/pii/S0010218026001744
-- Mechanism candidates: E:\mech_collection\combustion_and_flame_mechanisms\_processing_archive\2026\syngas\liu_2026_syngas_114938\extracted\s0010218026001744_mmc2\Supplementary Material 2_chem.inp
-- Thermodynamic candidates: E:\mech_collection\combustion_and_flame_mechanisms\_processing_archive\2026\syngas\liu_2026_syngas_114938\extracted\s0010218026001744_mmc3\Supplementary Material 3_thermo.dat
+- Mechanism candidates: E:\mech_collection\combustion_and_flame_mechanisms\syngas\2026\liu_2026_syngas_114938\_processing\extracted\s0010218026001744_mmc2\Supplementary Material 2_chem.inp
+- Thermodynamic candidates: E:\mech_collection\combustion_and_flame_mechanisms\syngas\2026\liu_2026_syngas_114938\_processing\extracted\s0010218026001744_mmc3\Supplementary Material 3_thermo.dat
 - Last status: cantera_failed
 - Last message: CanteraError: 
 *******************************************************************************
 InputFileError thrown by Kinetics::checkDuplicates:
-Error on lines 451 and 676 of E:\mech_collection\combustion_and_flame_mechanisms\syngas\2026\liu_2026_syngas_114938\mechanism.yaml:
+Error on lines 689 and 914 of E:\mech_collection\combustion_and_flame_mechanisms\syngas\2026\liu_2026_syngas_114938\mechanism.yaml:
 Undeclared duplicate reactions detected:
 Reaction 41: H2 + M <=> 2 H + M
 Reaction 1: 2 H + O2 <=> H2 + O2
 
 |  Line |
-|   446 |     - [4.04483566, 7.31130186e-03, -2.47625799e-06, 3.83733021e-10, -2.23107573e-14,
-|   447 |       2.5324142e+04, 2.88423392]
-|   448 |     note: T 7/11
-|   449 | 
-|   450 | reactions:
->   451 > - equation: H2 + M <=> H + H + M  # Reaction 1
+|   684 |     well-depth: 200.0
+|   685 |     diameter: 3.9
+|   686 |     rotational-relaxation: 1.0
+|   687 | 
+|   688 | reactions:
+>   689 > - equation: H2 + M <=> H + H + M  # Reaction 1
             ^
-|   452 |   type: three-body
-|   453 |   rate-constant: {A: 4.577e+19, b: -1.4, Ea: 1.044e+05}
-|   454 |   efficiencies: {H2: 2.5, H2O: 12.0, CO: 1.9, CO2: 3.8, HE: 0.83, CH4: 2.0,
+|   690 |   type: three-body
+|   691 |   rate-constant: {A: 4.577e+19, b: -1.4, Ea: 1.044e+05}
+|   692 |   efficiencies: {H2: 2.5, H2O: 12.0, CO: 1.9, CO2: 3.8, HE: 0.83, CH4: 2.0,
 ...
-|   671 |   rate-constant: {A: 3.93e+13, b: 0.0, Ea: 0.0}
-|   672 |   note: '\Author: SP !\Ref: YU ET AL., JCP, 2008, 129(21) !\Comment: WARNING'
-|   673 | - equation: CO + H2O <=> CO2 + H2  # Reaction 40
-|   674 |   rate-constant: {A: 2.0e+11, b: 0.0, Ea: 3.8e+04}
-|   675 |   note: POLIMI Mech
->   676 > - equation: H + O2 + H <=> H2 + O2  # Reaction 41
+|   909 |   rate-constant: {A: 3.93e+13, b: 0.0, Ea: 0.0}
+|   910 |   note: '\Author: SP !\Ref: YU ET AL., JCP, 2008, 129(21) !\Comment: WARNING'
+|   911 | - equation: CO + H2O <=> CO2 + H2  # Reaction 40
+|   912 |   rate-constant: {A: 2.0e+11, b: 0.0, Ea: 3.8e+04}
+|   913 |   note: POLIMI Mech
+>   914 > - equation: H + O2 + H <=> H2 + O2  # Reaction 41
             ^
-|   677 |   rate-constant: {A: 8.8e+22, b: -1.835, Ea: 800.0}
-|   678 |   note: |-
-|   679 |     +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+|   915 |   rate-constant: {A: 8.8e+22, b: -1.835, Ea: 800.0}
+|   916 |   note: |-
+|   917 |     +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 *******************************************************************************
 
 - Target folder: E:\mech_collection\combustion_and_flame_mechanisms\syngas\2026\liu_2026_syngas_114938
@@ -361,39 +368,39 @@ Reaction 1: 2 H + O2 <=> H2 + O2
 
 - DOI: 10.1016/j.combustflame.2026.114948
 - URL: https://www.sciencedirect.com/science/article/pii/S0010218026001847
-- Mechanism candidates: E:\mech_collection\combustion_and_flame_mechanisms\_processing_archive\2026\n2o_c0_c3_fuel_blends\ge_2026_n2o_c0_c3_fuel_blends_114948\extracted\s0010218026001847_mmc2\Chem.txt
-- Thermodynamic candidates: E:\mech_collection\combustion_and_flame_mechanisms\_processing_archive\2026\n2o_c0_c3_fuel_blends\ge_2026_n2o_c0_c3_fuel_blends_114948\extracted\s0010218026001847_mmc3\Thermo.txt
+- Mechanism candidates: E:\mech_collection\combustion_and_flame_mechanisms\n2o_c0_c3_fuel_blends\2026\ge_2026_n2o_c0_c3_fuel_blends_114948\_processing\extracted\s0010218026001847_mmc2\Chem.txt
+- Thermodynamic candidates: E:\mech_collection\combustion_and_flame_mechanisms\n2o_c0_c3_fuel_blends\2026\ge_2026_n2o_c0_c3_fuel_blends_114948\_processing\extracted\s0010218026001847_mmc3\Thermo.txt
 - Last status: cantera_failed
 - Last message: CanteraError: 
 *******************************************************************************
 InputFileError thrown by Kinetics::checkDuplicates:
-Error on lines 2565 and 2751 of E:\mech_collection\combustion_and_flame_mechanisms\n2o_c0_c3_fuel_blends\2026\ge_2026_n2o_c0_c3_fuel_blends_114948\mechanism.yaml:
+Error on lines 3196 and 3382 of E:\mech_collection\combustion_and_flame_mechanisms\n2o_c0_c3_fuel_blends\2026\ge_2026_n2o_c0_c3_fuel_blends_114948\mechanism.yaml:
 Undeclared duplicate reactions detected:
 Reaction 448: NNH + M <=> H + N2 + M
 Reaction 400: NNH + O2 <=> H + N2 + O2
 
 |  Line |
-|  2560 |   note: GRI Mech 3.0
-|  2561 | - equation: NH2 + H <=> NH + H2  # Reaction 399
-|  2562 |   duplicate: true
-|  2563 |   rate-constant: {A: 4.0e+13, b: 0.0, Ea: 3650.0}
-|  2564 |   note: GRI Mech 3.0
->  2565 > - equation: NNH + M <=> N2 + H + M  # Reaction 400
+|  3191 |   note: GRI Mech 3.0
+|  3192 | - equation: NH2 + H <=> NH + H2  # Reaction 399
+|  3193 |   duplicate: true
+|  3194 |   rate-constant: {A: 4.0e+13, b: 0.0, Ea: 3650.0}
+|  3195 |   note: GRI Mech 3.0
+>  3196 > - equation: NNH + M <=> N2 + H + M  # Reaction 400
             ^
-|  2566 |   type: three-body
-|  2567 |   rate-constant: {A: 1.3e+14, b: -0.11, Ea: 4980.0}
-|  2568 |   efficiencies: {H2: 2.0, H2O: 6.0, CH4: 2.0, CO: 1.5, CO2: 2.0, C2H6: 3.0,
+|  3197 |   type: three-body
+|  3198 |   rate-constant: {A: 1.3e+14, b: -0.11, Ea: 4980.0}
+|  3199 |   efficiencies: {H2: 2.0, H2O: 6.0, CH4: 2.0, CO: 1.5, CO2: 2.0, C2H6: 3.0,
 ...
-|  2746 |   note: J.W. Bozzelli, et al., International journal of chemical kinetics
-|  2747 |     27 (1995) 1097-1109
-|  2748 | - equation: NNH + O2 <=> N2 + HO2  # Reaction 447
-|  2749 |   rate-constant: {A: 5.6e+14, b: -0.385, Ea: -13.0}
-|  2750 |   note: S.J. Klippenstein, et al., Combustion and Flame 158 (2011) 774-789
->  2751 > - equation: NNH + O2 <=> N2 + H + O2  # Reaction 448
+|  3377 |   note: J.W. Bozzelli, et al., International journal of chemical kinetics
+|  3378 |     27 (1995) 1097-1109
+|  3379 | - equation: NNH + O2 <=> N2 + HO2  # Reaction 447
+|  3380 |   rate-constant: {A: 5.6e+14, b: -0.385, Ea: -13.0}
+|  3381 |   note: S.J. Klippenstein, et al., Combustion and Flame 158 (2011) 774-789
+>  3382 > - equation: NNH + O2 <=> N2 + H + O2  # Reaction 448
             ^
-|  2752 |   rate-constant: {A: 5.0e+13, b: 0.0, Ea: 0.0}
-|  2753 |   note: P. Glarborg, et al., Combustion and Flame 115 (1998) 1-27.
-|  2754 | - equation: NNH + NO <=> N2 + HNO  # Reaction 449
+|  3383 |   rate-constant: {A: 5.0e+13, b: 0.0, Ea: 0.0}
+|  3384 |   note: P. Glarborg, et al., Combustion and Flame 115 (1998) 1-27.
+|  3385 | - equation: NNH + NO <=> N2 + HNO  # Reaction 449
 *******************************************************************************
 
 - Target folder: E:\mech_collection\combustion_and_flame_mechanisms\n2o_c0_c3_fuel_blends\2026\ge_2026_n2o_c0_c3_fuel_blends_114948
@@ -402,8 +409,8 @@ Reaction 400: NNH + O2 <=> H + N2 + O2
 
 - DOI: 10.1016/j.combustflame.2026.114947
 - URL: https://www.sciencedirect.com/science/article/pii/S0010218026001835
-- Mechanism candidates: E:\mech_collection\combustion_and_flame_mechanisms\_processing_archive\2026\2_butanone\guo_2026_2_butanone_114947\extracted\s0010218026001835_mmc3\Butanone_V4MECH.inp
-- Thermodynamic candidates: E:\mech_collection\combustion_and_flame_mechanisms\_processing_archive\2026\2_butanone\guo_2026_2_butanone_114947\extracted\s0010218026001835_mmc4\Butanone_V4THER.dat
+- Mechanism candidates: E:\mech_collection\combustion_and_flame_mechanisms\2_butanone\2026\guo_2026_2_butanone_114947\_processing\extracted\s0010218026001835_mmc3\Butanone_V4MECH.inp
+- Thermodynamic candidates: E:\mech_collection\combustion_and_flame_mechanisms\2_butanone\2026\guo_2026_2_butanone_114947\_processing\extracted\s0010218026001835_mmc4\Butanone_V4THER.dat
 - Last status: cantera_failed
 - Last message: ValueError: could not convert string to float: 'N2'; numeric cleanup retry failed: ValueError: could not convert string to float: 'N2'
 - Target folder: E:\mech_collection\combustion_and_flame_mechanisms\2_butanone\2026\guo_2026_2_butanone_114947
@@ -428,8 +435,8 @@ Reaction 400: NNH + O2 <=> H + N2 + O2
 
 - DOI: 10.1016/j.combustflame.2026.115003
 - URL: https://www.sciencedirect.com/science/article/pii/S0010218026002397
-- Mechanism candidates: E:\mech_collection\combustion_and_flame_mechanisms\_processing_archive\2026\trimethylbenzene_124\suzuki_2026_trimethylbenzene_124_115003\raw_downloads\S0010218026002397_mmc4.txt
-- Thermodynamic candidates: E:\mech_collection\combustion_and_flame_mechanisms\_processing_archive\2026\trimethylbenzene_124\suzuki_2026_trimethylbenzene_124_115003\raw_downloads\S0010218026002397_mmc5.txt
+- Mechanism candidates: E:\mech_collection\combustion_and_flame_mechanisms\trimethylbenzene_124\2026\suzuki_2026_trimethylbenzene_124_115003\_processing\raw_downloads\S0010218026002397_mmc4.txt
+- Thermodynamic candidates: E:\mech_collection\combustion_and_flame_mechanisms\trimethylbenzene_124\2026\suzuki_2026_trimethylbenzene_124_115003\_processing\raw_downloads\S0010218026002397_mmc5.txt
 - Last status: cantera_failed
 - Last message: IndexError: list index out of range; numeric cleanup retry failed: IndexError: list index out of range
 - Target folder: E:\mech_collection\combustion_and_flame_mechanisms\trimethylbenzene_124\2026\suzuki_2026_trimethylbenzene_124_115003
@@ -446,8 +453,8 @@ Reaction 400: NNH + O2 <=> H + N2 + O2
 
 - DOI: 10.1016/j.combustflame.2026.115009
 - URL: https://www.sciencedirect.com/science/article/pii/S0010218026002452
-- Mechanism candidates: E:\mech_collection\combustion_and_flame_mechanisms\_processing_archive\2026\furan_2_methylfuran\yang_2026_furan_2_methylfuran_115009\raw_downloads\S0010218026002452_mmc2.txt
-- Thermodynamic candidates: E:\mech_collection\combustion_and_flame_mechanisms\_processing_archive\2026\furan_2_methylfuran\yang_2026_furan_2_methylfuran_115009\raw_downloads\S0010218026002452_mmc3.txt
+- Mechanism candidates: E:\mech_collection\combustion_and_flame_mechanisms\furan_2_methylfuran\2026\yang_2026_furan_2_methylfuran_115009\_processing\raw_downloads\S0010218026002452_mmc2.txt
+- Thermodynamic candidates: E:\mech_collection\combustion_and_flame_mechanisms\furan_2_methylfuran\2026\yang_2026_furan_2_methylfuran_115009\_processing\raw_downloads\S0010218026002452_mmc3.txt
 - Last status: cantera_failed
 - Last message: InputError: Unexpected token "+Hv" in reaction expression "OH*<=>R2OH+Hv
 ".
@@ -462,8 +469,8 @@ for the correct Chemkin syntax.
 
 - DOI: 10.1016/j.combustflame.2026.115037
 - URL: https://www.sciencedirect.com/science/article/pii/S0010218026002737
-- Mechanism candidates: E:\mech_collection\combustion_and_flame_mechanisms\_processing_archive\2026\pyrrole\xie_2026_pyrrole_115037\raw_downloads\S0010218026002737_mmc2.txt
-- Thermodynamic candidates: E:\mech_collection\combustion_and_flame_mechanisms\_processing_archive\2026\pyrrole\xie_2026_pyrrole_115037\raw_downloads\S0010218026002737_mmc3.txt
+- Mechanism candidates: E:\mech_collection\combustion_and_flame_mechanisms\pyrrole\2026\xie_2026_pyrrole_115037\_processing\raw_downloads\S0010218026002737_mmc2.txt
+- Thermodynamic candidates: E:\mech_collection\combustion_and_flame_mechanisms\pyrrole\2026\xie_2026_pyrrole_115037\_processing\raw_downloads\S0010218026002737_mmc3.txt
 - Last status: cantera_failed
 - Last message: InputError: Unexpected token "C2H5CN+CH2CN" in reaction expression "C2H5CN+CH2CN=NCCH2CN+C2H5
 ".
@@ -474,27 +481,19 @@ Please check https://cantera.org/tutorials/ck2yaml-tutorial.html#debugging-commo
 for the correct Chemkin syntax.
 - Target folder: E:\mech_collection\combustion_and_flame_mechanisms\pyrrole\2026\xie_2026_pyrrole_115037
 
-## Cantera conversion failed: Unravelling the combustion kinetics of N-methyl aniline: decomposition and OH-addition pathways from quantum chemistry and flame speed measurements
+## Paper PDF pending: Unravelling the combustion kinetics of N-methyl aniline: decomposition and OH-addition pathways from quantum chemistry and flame speed measurements
 
 - DOI: 10.1016/j.combustflame.2026.115050
 - URL: https://www.sciencedirect.com/science/article/pii/S0010218026002865
-- Mechanism candidates: E:\mech_collection\combustion_and_flame_mechanisms\_processing_archive\2026\n_methyl_aniline\pingle_2026_n_methyl_aniline_115050\extracted\s0010218026002865_mmc4\mech.dat; E:\mech_collection\combustion_and_flame_mechanisms\_processing_archive\2026\n_methyl_aniline\pingle_2026_n_methyl_aniline_115050\extracted\s0010218026002865_mmc4\Nma_correctedrates_benzene_gas.inp; E:\mech_collection\combustion_and_flame_mechanisms\_processing_archive\2026\n_methyl_aniline\pingle_2026_n_methyl_aniline_115050\extracted\s0010218026002865_mmc4\NMA_decomp_oh_reactions.dat; E:\mech_collection\combustion_and_flame_mechanisms\_processing_archive\2026\n_methyl_aniline\pingle_2026_n_methyl_aniline_115050\extracted\s0010218026002865_mmc4\Updated barrierless reactions_rotor_hindered.txt
-- Thermodynamic candidates: E:\mech_collection\combustion_and_flame_mechanisms\_processing_archive\2026\n_methyl_aniline\pingle_2026_n_methyl_aniline_115050\extracted\s0010218026002865_mmc4\Nma_correctedrates_benzene_gas.inp; E:\mech_collection\combustion_and_flame_mechanisms\_processing_archive\2026\n_methyl_aniline\pingle_2026_n_methyl_aniline_115050\extracted\s0010218026002865_mmc4\therm.dat; E:\mech_collection\combustion_and_flame_mechanisms\_processing_archive\2026\n_methyl_aniline\pingle_2026_n_methyl_aniline_115050\extracted\s0010218026002865_mmc4\therm_decomp_oh_reactions.dat
-- Last status: cantera_failed
-- Last message: InputError: Unexpected token "C6H5NHCH3" in reaction expression "C6H5NHCH3=C6H5NCH3+H
-".
-Please check https://cantera.org/tutorials/ck2yaml-tutorial.html#debugging-common-errors-in-ck-files
-for the correct Chemkin syntax.; numeric cleanup retry failed: InputError: Unexpected token "C6H5NHCH3" in reaction expression "C6H5NHCH3=C6H5NCH3+H
-".
-Please check https://cantera.org/tutorials/ck2yaml-tutorial.html#debugging-common-errors-in-ck-files
-for the correct Chemkin syntax.
+- PDF link from issue page: 
+- Reason: automated Chrome PDF access reached ScienceDirect CAPTCHA or no exact PDF link was exposed
 - Target folder: E:\mech_collection\combustion_and_flame_mechanisms\n_methyl_aniline\2026\pingle_2026_n_methyl_aniline_115050
 
 ## Cantera conversion failed: An experimental, theoretical and modeling study of the pyrolysis and oxidation of propan-1-ol using CO time-history measurements behind reflected shock waves
 
 - DOI: 10.1016/j.combustflame.2026.115033
 - URL: https://www.sciencedirect.com/science/article/pii/S0010218026002695
-- Mechanism candidates: E:\mech_collection\combustion_and_flame_mechanisms\_processing_archive\2026\propanol\gr_goire_2026_propanol_115033\extracted\s0010218026002695_mmc1\chem_pro1oh.inp
+- Mechanism candidates: E:\mech_collection\combustion_and_flame_mechanisms\propanol\2026\gr_goire_2026_propanol_115033\_processing\extracted\s0010218026002695_mmc1\chem_pro1oh.inp
 - Thermodynamic candidates: 
 - Last status: cantera_failed
 - Last message: ValueError: could not convert string to float: '2.400+07'; numeric cleanup retry failed: InputError: No thermo data found for species 'co'
@@ -506,8 +505,8 @@ for the correct Chemkin syntax.
 
 - DOI: 10.1016/j.combustflame.2026.115096
 - URL: https://www.sciencedirect.com/science/article/pii/S0010218026003329
-- Mechanism candidates: E:\mech_collection\combustion_and_flame_mechanisms\_processing_archive\2026\ethylene_pyrrole\luo_2026_ethylene_pyrrole_115096\extracted\s0010218026003329_mmc1\mmc1.inp
-- Thermodynamic candidates: E:\mech_collection\combustion_and_flame_mechanisms\_processing_archive\2026\ethylene_pyrrole\luo_2026_ethylene_pyrrole_115096\extracted\s0010218026003329_mmc3\mmc3.dat
+- Mechanism candidates: E:\mech_collection\combustion_and_flame_mechanisms\ethylene_pyrrole\2026\luo_2026_ethylene_pyrrole_115096\_processing\extracted\s0010218026003329_mmc1\mmc1.inp
+- Thermodynamic candidates: E:\mech_collection\combustion_and_flame_mechanisms\ethylene_pyrrole\2026\luo_2026_ethylene_pyrrole_115096\_processing\extracted\s0010218026003329_mmc3\mmc3.dat
 - Last status: cantera_failed
 - Last message: CanteraError: 
 *******************************************************************************
@@ -548,8 +547,8 @@ at P = 6666.2, T = 200.0
 
 - DOI: 10.1016/j.combustflame.2026.115110
 - URL: https://www.sciencedirect.com/science/article/pii/S0010218026003469
-- Mechanism candidates: E:\mech_collection\combustion_and_flame_mechanisms\_processing_archive\2026\pentanol\teka_2026_pentanol_115110\extracted\s0010218026003469_mmc3\MECH.inp
-- Thermodynamic candidates: E:\mech_collection\combustion_and_flame_mechanisms\_processing_archive\2026\pentanol\teka_2026_pentanol_115110\extracted\s0010218026003469_mmc4\THERM.dat
+- Mechanism candidates: E:\mech_collection\combustion_and_flame_mechanisms\pentanol\2026\teka_2026_pentanol_115110\_processing\extracted\s0010218026003469_mmc3\MECH.inp
+- Thermodynamic candidates: E:\mech_collection\combustion_and_flame_mechanisms\pentanol\2026\teka_2026_pentanol_115110\_processing\extracted\s0010218026003469_mmc4\THERM.dat
 - Last status: cantera_failed
 - Last message: CanteraError: 
 *******************************************************************************
@@ -583,8 +582,8 @@ at P = 32019, T = 200.0
 
 - DOI: 10.1016/j.combustflame.2025.114714
 - URL: https://www.sciencedirect.com/science/article/pii/S0010218025007497
-- Mechanism candidates: E:\mech_collection\combustion_and_flame_mechanisms\_processing_archive\2026\dimethyl_ether\mahdipour_2026_dimethyl_ether_114714\extracted\s0010218025007497_mmc1\DME_reduced_CK_input
-- Thermodynamic candidates: E:\mech_collection\combustion_and_flame_mechanisms\_processing_archive\2026\dimethyl_ether\mahdipour_2026_dimethyl_ether_114714\extracted\s0010218025007497_mmc1\DME_reduced_CK_input
+- Mechanism candidates: E:\mech_collection\combustion_and_flame_mechanisms\dimethyl_ether\2026\mahdipour_2026_dimethyl_ether_114714\_processing\extracted\s0010218025007497_mmc1\DME_reduced_CK_input
+- Thermodynamic candidates: E:\mech_collection\combustion_and_flame_mechanisms\dimethyl_ether\2026\mahdipour_2026_dimethyl_ether_114714\_processing\extracted\s0010218025007497_mmc1\DME_reduced_CK_input
 - Last status: cantera_failed
 - Last message: CanteraError: 
 *******************************************************************************
@@ -624,43 +623,20 @@ Reaction 1: H + O2 <=> O + OH
 
 - DOI: 10.1016/j.combustflame.2025.114743
 - URL: https://www.sciencedirect.com/science/article/pii/S0010218025007783
-- Mechanism candidates: E:\mech_collection\combustion_and_flame_mechanisms\_processing_archive\2026\2_ethylhexyl_nitrate\xie_2026_2_ethylhexyl_nitrate_114743\extracted\s0010218025007783_mmc1\EHN.inp
-- Thermodynamic candidates: E:\mech_collection\combustion_and_flame_mechanisms\_processing_archive\2026\2_ethylhexyl_nitrate\xie_2026_2_ethylhexyl_nitrate_114743\extracted\s0010218025007783_mmc1\EHN.dat
+- Mechanism candidates: E:\mech_collection\combustion_and_flame_mechanisms\2_ethylhexyl_nitrate\2026\xie_2026_2_ethylhexyl_nitrate_114743\_processing\extracted\s0010218025007783_mmc1\EHN.inp
+- Thermodynamic candidates: E:\mech_collection\combustion_and_flame_mechanisms\2_ethylhexyl_nitrate\2026\xie_2026_2_ethylhexyl_nitrate_114743\_processing\extracted\s0010218025007783_mmc1\EHN.dat
 - Last status: cantera_failed
-- Last message: CanteraError: 
-*******************************************************************************
-CanteraError thrown by addReactions:
-
-*******************************************************************************
-InputFileError thrown by PlogRate::validate:
-Error on line 43696 of E:\mech_collection\combustion_and_flame_mechanisms\2_ethylhexyl_nitrate\2026\xie_2026_2_ethylhexyl_nitrate_114743\mechanism.yaml:
-
-Invalid rate coefficient for reaction 'C4H6 <=> C3H3 + CH3'
-at P = 15999, T = 200.0
-at P = 31997, T = 200.0
-
-|  Line |
-|  43691 |   rate-constants:
-|  43692 |   - {P: 0.0394737 atm, A: 2.34423e+73, b: -17.49, Ea: 1.085e+05}
-|  43693 |   - {P: 0.0789474 atm, A: 4.57088e+71, b: -16.91, Ea: 1.087e+05}
-|  43694 |   - {P: 0.157895 atm, A: 9.54993e+69, b: -16.33, Ea: 1.09e+05}
-|  43695 |   - {P: 0.315789 atm, A: 2.04174e+67, b: -15.48, Ea: 1.085e+05}
->  43696 > - equation: C4H6 <=> CH3 + C3H3  # Reaction 2743
-            ^
-|  43697 |   type: pressure-dependent-Arrhenius
-|  43698 |   rate-constants:
-|  43699 |   - {P: 0.0394737 atm, A: 1.5849e+148, b: -37.24, Ea: 1.885e+05}
-*******************************************************************************
-*******************************************************************************
-
+- Last message: InputError: No transport data for species 'EHN'.
+Please check https://cantera.org/tutorials/ck2yaml-tutorial.html#debugging-common-errors-in-ck-files
+for the correct Chemkin syntax.
 - Target folder: E:\mech_collection\combustion_and_flame_mechanisms\2_ethylhexyl_nitrate\2026\xie_2026_2_ethylhexyl_nitrate_114743
 
 ## Cantera conversion failed: Experimental and kinetic study of pyridine pyrolysis with tunable synchrotron VUV photoionization and molecular beam mass spectrometry
 
 - DOI: 10.1016/j.combustflame.2025.114742
 - URL: https://www.sciencedirect.com/science/article/pii/S0010218025007771
-- Mechanism candidates: E:\mech_collection\combustion_and_flame_mechanisms\_processing_archive\2026\pyridine\ye_2026_pyridine_114742\raw_downloads\S0010218025007771_mmc2.txt
-- Thermodynamic candidates: E:\mech_collection\combustion_and_flame_mechanisms\_processing_archive\2026\pyridine\ye_2026_pyridine_114742\raw_downloads\S0010218025007771_mmc3.txt
+- Mechanism candidates: E:\mech_collection\combustion_and_flame_mechanisms\pyridine\2026\ye_2026_pyridine_114742\_processing\raw_downloads\S0010218025007771_mmc2.txt
+- Thermodynamic candidates: E:\mech_collection\combustion_and_flame_mechanisms\pyridine\2026\ye_2026_pyridine_114742\_processing\raw_downloads\S0010218025007771_mmc3.txt
 - Last status: cantera_failed
 - Last message: CanteraError: 
 *******************************************************************************
@@ -700,8 +676,8 @@ Reaction 1800: 2 H + O2 <=> H2 + O2
 
 - DOI: 10.1016/j.combustflame.2026.114782
 - URL: https://www.sciencedirect.com/science/article/pii/S0010218026000192
-- Mechanism candidates: E:\mech_collection\combustion_and_flame_mechanisms\_processing_archive\2026\nitromethane\song_2026_nitromethane_114782\extracted\s0010218026000192_mmc3\BIT_NM model_mech.inp
-- Thermodynamic candidates: E:\mech_collection\combustion_and_flame_mechanisms\_processing_archive\2026\nitromethane\song_2026_nitromethane_114782\extracted\s0010218026000192_mmc4\BIT_NM model_thermo.dat
+- Mechanism candidates: E:\mech_collection\combustion_and_flame_mechanisms\nitromethane\2026\song_2026_nitromethane_114782\_processing\extracted\s0010218026000192_mmc3\BIT_NM model_mech.inp
+- Thermodynamic candidates: E:\mech_collection\combustion_and_flame_mechanisms\nitromethane\2026\song_2026_nitromethane_114782\_processing\extracted\s0010218026000192_mmc4\BIT_NM model_thermo.dat
 - Last status: cantera_failed
 - Last message: InputError: Error parsing elemental composition for species thermo entry:
  6.32493839E+00 1.76575862E-02-6.17090139E-06 9.77516780E-10-5.77372896E-14    2
@@ -725,8 +701,8 @@ for the correct Chemkin syntax.
 
 - DOI: 10.1016/j.combustflame.2026.114790
 - URL: https://www.sciencedirect.com/science/article/pii/S0010218026000271
-- Mechanism candidates: E:\mech_collection\combustion_and_flame_mechanisms\_processing_archive\2026\nitric_oxide\zheng_2026_nitric_oxide_114790\extracted\s0010218026000271_mmc3\kinetic.inp
-- Thermodynamic candidates: E:\mech_collection\combustion_and_flame_mechanisms\_processing_archive\2026\nitric_oxide\zheng_2026_nitric_oxide_114790\extracted\s0010218026000271_mmc4\therm.dat
+- Mechanism candidates: E:\mech_collection\combustion_and_flame_mechanisms\nitric_oxide\2026\zheng_2026_nitric_oxide_114790\_processing\extracted\s0010218026000271_mmc3\kinetic.inp
+- Thermodynamic candidates: E:\mech_collection\combustion_and_flame_mechanisms\nitric_oxide\2026\zheng_2026_nitric_oxide_114790\_processing\extracted\s0010218026000271_mmc4\therm.dat
 - Last status: cantera_failed
 - Last message: ValueError: could not convert string to float: 'E+'; numeric cleanup retry failed: ValueError: could not convert string to float: 'E+'
 - Target folder: E:\mech_collection\combustion_and_flame_mechanisms\nitric_oxide\2026\zheng_2026_nitric_oxide_114790
@@ -735,8 +711,8 @@ for the correct Chemkin syntax.
 
 - DOI: 10.1016/j.combustflame.2026.114840
 - URL: https://www.sciencedirect.com/science/article/pii/S0010218026000763
-- Mechanism candidates: E:\mech_collection\combustion_and_flame_mechanisms\_processing_archive\2026\cumene\roux_2026_cumene_114840\extracted\s0010218026000763_mmc2\SM1_Mechanism_R.inp
-- Thermodynamic candidates: E:\mech_collection\combustion_and_flame_mechanisms\_processing_archive\2026\cumene\roux_2026_cumene_114840\extracted\s0010218026000763_mmc3\SM2_NASA_polynomial_R.dat
+- Mechanism candidates: E:\mech_collection\combustion_and_flame_mechanisms\cumene\2026\roux_2026_cumene_114840\_processing\extracted\s0010218026000763_mmc2\SM1_Mechanism_R.inp
+- Thermodynamic candidates: E:\mech_collection\combustion_and_flame_mechanisms\cumene\2026\roux_2026_cumene_114840\_processing\extracted\s0010218026000763_mmc3\SM2_NASA_polynomial_R.dat
 - Last status: cantera_failed
 - Last message: ValueError: could not convert string to float: '5.00+11'; numeric cleanup retry failed: ValueError: could not convert string to float: 'r-cis-stilbene'
 - Target folder: E:\mech_collection\combustion_and_flame_mechanisms\cumene\2026\roux_2026_cumene_114840
@@ -745,8 +721,8 @@ for the correct Chemkin syntax.
 
 - DOI: 10.1016/j.combustflame.2026.114865
 - URL: https://www.sciencedirect.com/science/article/pii/S001021802600101X
-- Mechanism candidates: E:\mech_collection\combustion_and_flame_mechanisms\_processing_archive\2026\ammonia_dimethyl_ether\xu_2026_ammonia_dimethyl_ether_114865\extracted\s001021802600101x_mmc2\chem.inp
-- Thermodynamic candidates: E:\mech_collection\combustion_and_flame_mechanisms\_processing_archive\2026\ammonia_dimethyl_ether\xu_2026_ammonia_dimethyl_ether_114865\extracted\s001021802600101x_mmc3\therm.dat
+- Mechanism candidates: E:\mech_collection\combustion_and_flame_mechanisms\ammonia_dimethyl_ether\2026\xu_2026_ammonia_dimethyl_ether_114865\_processing\extracted\s001021802600101x_mmc2\chem.inp
+- Thermodynamic candidates: E:\mech_collection\combustion_and_flame_mechanisms\ammonia_dimethyl_ether\2026\xu_2026_ammonia_dimethyl_ether_114865\_processing\extracted\s001021802600101x_mmc3\therm.dat
 - Last status: cantera_failed
 - Last message: ValueError: could not convert string to float: '0.902,'; numeric cleanup retry failed: ValueError: could not convert string to float: '696.,'
 - Target folder: E:\mech_collection\combustion_and_flame_mechanisms\ammonia_dimethyl_ether\2026\xu_2026_ammonia_dimethyl_ether_114865

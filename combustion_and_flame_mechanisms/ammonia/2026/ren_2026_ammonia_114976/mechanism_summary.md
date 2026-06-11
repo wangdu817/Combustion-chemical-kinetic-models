@@ -14,6 +14,7 @@ Ke Ren, Xiaoping Chen, Jiliang Ma. Development and numerical analysis of a detai
 - Paper PDF: pending manual download; ScienceDirect PDF access triggered CAPTCHA or was not exposed
 - Paper PDF link: 
 - Fuel type: ammonia
+- Plasma-related mechanism: no
 - Validation reactor/type from abstract: laminar flame speed, burner/flame structure
 
 ## Mechanism Files
@@ -21,9 +22,9 @@ Ke Ren, Xiaoping Chen, Jiliang Ma. Development and numerical analysis of a detai
 - Standard mechanism file: chem.inp
 - Standard thermodynamic file: therm.dat
 - Standard transport file: tran.dat
-- Original mechanism source files: E:\mech_collection\combustion_and_flame_mechanisms\_processing_archive\2026\ammonia\ren_2026_ammonia_114976\extracted\s0010218026002129_mmc2\Mechanism.yaml
-- Original thermodynamic source files: E:\mech_collection\combustion_and_flame_mechanisms\_processing_archive\2026\ammonia\ren_2026_ammonia_114976\extracted\s0010218026002129_mmc2\Mechanism.yaml
-- Original transport source files: E:\mech_collection\combustion_and_flame_mechanisms\_processing_archive\2026\ammonia\ren_2026_ammonia_114976\extracted\s0010218026002129_mmc2\Mechanism.yaml
+- Original mechanism source files: _processing\extracted\s0010218026002129_mmc2\Mechanism.yaml
+- Original thermodynamic source files: _processing\extracted\s0010218026002129_mmc2\Mechanism.yaml
+- Original transport source files: _processing\extracted\s0010218026002129_mmc2\Mechanism.yaml
 
 ## Cantera Preprocessing Results
 
@@ -45,5 +46,4 @@ Ammonia (NH3)/coal co-combustion has attracted increasing interest as a viable r
 
 ## Processing Notes
 
-- extracted S0010218026002129_mmc1.docx
-- extracted S0010218026002129_mmc2.zip
+- none

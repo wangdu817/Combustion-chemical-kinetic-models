@@ -14,44 +14,50 @@ Congjie Hong, Janardhanraj Subburaj, Jiabiao Zou, Ayman M. Elbaz, ... Aamir Faro
 - Paper PDF: pending manual download; ScienceDirect PDF access triggered CAPTCHA or was not exposed
 - Paper PDF link: 
 - Fuel type: hydrogen_saf
+- Plasma-related mechanism: no
 - Validation reactor/type from abstract: laminar flame speed
 
 ## Mechanism Files
 
 - Standard mechanism file: chem.inp
 - Standard thermodynamic file: therm.dat
-- Standard transport file: not available
-- Original mechanism source files: E:\mech_collection\combustion_and_flame_mechanisms\_processing_archive\2026\hydrogen_saf\hong_2026_hydrogen_saf_114613\extracted\s0010218025006509_mmc1\mm1-detail mech.inp, E:\mech_collection\combustion_and_flame_mechanisms\_processing_archive\2026\hydrogen_saf\hong_2026_hydrogen_saf_114613\extracted\s0010218025006509_mmc3\mm3-reduced mech.inp
-- Original thermodynamic source files: E:\mech_collection\combustion_and_flame_mechanisms\_processing_archive\2026\hydrogen_saf\hong_2026_hydrogen_saf_114613\extracted\s0010218025006509_mmc2\mm2-detail thermo.dat, E:\mech_collection\combustion_and_flame_mechanisms\_processing_archive\2026\hydrogen_saf\hong_2026_hydrogen_saf_114613\extracted\s0010218025006509_mmc4\mm4-reduced thermo.dat
-- Original transport source files: not found
+- Standard transport file: tran.dat
+- Original mechanism source files: _processing\extracted\s0010218025006509_mmc1\mm1-detail mech.inp, _processing\extracted\s0010218025006509_mmc3\mm3-reduced mech.inp
+- Original thermodynamic source files: _processing\extracted\s0010218025006509_mmc2\mm2-detail thermo.dat, _processing\extracted\s0010218025006509_mmc4\mm4-reduced thermo.dat
+- Original transport source files: _processing\extracted\s0010218025006509_mmc5\mm5-reduced tran.dat
 
 ## Cantera Preprocessing Results
 
 ### Mechanism 1
 
 - Status: cantera_failed
-- Species count: not parsed
-- Reaction count: not parsed
-- Message: ValueError: could not convert string to float: '6.808+03'; numeric cleanup retry failed: InputError: No thermo data found for species 'HOCO'
-Please check https://cantera.org/tutorials/ck2yaml-tutorial.html#debugging-common-errors-in-ck-files
-for the correct Chemkin syntax.
-- Method: cantera
-- Cantera YAML: not available
-- Standard chem.inp: chem.inp
-- Standard therm.dat: therm.dat
-- Standard tran.dat: not available
-
-### Mechanism 2
-
-- Status: ok
 - Species count: 206
 - Reaction count: 1451
-- Message: cantera conversion ok
+- Message: ValueError: could not convert string to float: '6.808+03'; numeric cleanup retry failed: InputError: No transport data for species 'HOCO'.
+Please check https://cantera.org/tutorials/ck2yaml-tutorial.html#debugging-common-errors-in-ck-files
+for the correct Chemkin syntax.
 - Method: cantera
 - Cantera YAML: mechanism.yaml
 - Standard chem.inp: chem.inp
 - Standard therm.dat: therm.dat
-- Standard tran.dat: not available
+- Standard tran.dat: tran.dat
+
+### Mechanism 2
+
+- Status: cantera_failed
+- Species count: 206
+- Reaction count: 1451
+- Message: CanteraError: 
+*******************************************************************************
+CanteraError thrown by GasTransportData::validate:
+invalid geometry for species 'NC12H26'. 'atom' specified, but species contains multiple atoms.
+*******************************************************************************
+
+- Method: cantera
+- Cantera YAML: mechanism.yaml
+- Standard chem.inp: chem.inp
+- Standard therm.dat: therm.dat
+- Standard tran.dat: tran.dat
 
 ## Abstract
 
@@ -59,9 +65,4 @@ The development of sustainable aviation fuels (SAFs) is essential for reducing c
 
 ## Processing Notes
 
-- extracted S0010218025006509_mmc1.zip
-- extracted S0010218025006509_mmc2.zip
-- extracted S0010218025006509_mmc3.zip
-- extracted S0010218025006509_mmc4.zip
-- extracted S0010218025006509_mmc5.zip
-- extracted S0010218025006509_mmc6.docx
+- none

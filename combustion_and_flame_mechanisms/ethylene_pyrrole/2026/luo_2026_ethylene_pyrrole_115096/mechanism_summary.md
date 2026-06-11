@@ -14,6 +14,7 @@ Guangda Luo, Hairong Ren, Mo Yang, Mengqi Wu, ... Feng Zhang. Formation of (N-co
 - Paper PDF: pending manual download; ScienceDirect PDF access triggered CAPTCHA or was not exposed
 - Paper PDF link: 
 - Fuel type: ethylene_pyrrole
+- Plasma-related mechanism: no
 - Validation reactor/type from abstract: flow reactor
 
 ## Mechanism Files
@@ -21,8 +22,8 @@ Guangda Luo, Hairong Ren, Mo Yang, Mengqi Wu, ... Feng Zhang. Formation of (N-co
 - Standard mechanism file: chem.inp
 - Standard thermodynamic file: therm.dat
 - Standard transport file: not available
-- Original mechanism source files: E:\mech_collection\combustion_and_flame_mechanisms\_processing_archive\2026\ethylene_pyrrole\luo_2026_ethylene_pyrrole_115096\extracted\s0010218026003329_mmc1\mmc1.inp
-- Original thermodynamic source files: E:\mech_collection\combustion_and_flame_mechanisms\_processing_archive\2026\ethylene_pyrrole\luo_2026_ethylene_pyrrole_115096\extracted\s0010218026003329_mmc3\mmc3.dat
+- Original mechanism source files: _processing\extracted\s0010218026003329_mmc1\mmc1.inp
+- Original thermodynamic source files: _processing\extracted\s0010218026003329_mmc3\mmc3.dat
 - Original transport source files: not found
 
 ## Cantera Preprocessing Results
@@ -69,6 +70,4 @@ Pyrolysis is a practical route for biomass conversion, and its co-pyrolysis with
 
 ## Processing Notes
 
-- extracted S0010218026003329_mmc1.zip
-- extracted S0010218026003329_mmc2.docx
-- extracted S0010218026003329_mmc3.zip
+- none

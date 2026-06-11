@@ -14,6 +14,7 @@ Chunlan Qin, Shuyao Chen, Qingbo Zhu, Weijie Xu, ... Lidong Zhang. Kinetic study
 - Paper PDF: pending manual download; ScienceDirect PDF access triggered CAPTCHA or was not exposed
 - Paper PDF link: 
 - Fuel type: ammonia_dimethoxyethane
+- Plasma-related mechanism: no
 - Validation reactor/type from abstract: jet-stirred reactor, stirred reactor
 
 ## Mechanism Files
@@ -21,8 +22,8 @@ Chunlan Qin, Shuyao Chen, Qingbo Zhu, Weijie Xu, ... Lidong Zhang. Kinetic study
 - Standard mechanism file: chem.inp
 - Standard thermodynamic file: therm.dat
 - Standard transport file: not available
-- Original mechanism source files: E:\mech_collection\combustion_and_flame_mechanisms\_processing_archive\2026\ammonia_dimethoxyethane\qin_2026_ammonia_dimethoxyethane_114555\extracted\s0010218025005929_mmc2\Liu-SMM3_12DME_mech.inp
-- Original thermodynamic source files: E:\mech_collection\combustion_and_flame_mechanisms\_processing_archive\2026\ammonia_dimethoxyethane\qin_2026_ammonia_dimethoxyethane_114555\extracted\s0010218025005929_mmc3\Liu-SMM4_12DME_therm.dat
+- Original mechanism source files: _processing\extracted\s0010218025005929_mmc2\Liu-SMM3_12DME_mech.inp
+- Original thermodynamic source files: _processing\extracted\s0010218025005929_mmc3\Liu-SMM4_12DME_therm.dat
 - Original transport source files: not found
 
 ## Cantera Preprocessing Results
@@ -45,6 +46,4 @@ Ammonia (NH3) is a promising carbon-free green fuel, but faces challenges such a
 
 ## Processing Notes
 
-- extracted S0010218025005929_mmc1.docx
-- extracted S0010218025005929_mmc2.zip
-- extracted S0010218025005929_mmc3.zip
+- none

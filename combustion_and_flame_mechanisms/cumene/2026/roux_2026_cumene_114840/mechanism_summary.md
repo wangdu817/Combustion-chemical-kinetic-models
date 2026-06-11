@@ -14,6 +14,7 @@ Boris Roux, Yves Simon, Sandra Poeuf, Marc Bouchez, ... René Fournet. Cumene py
 - Paper PDF: pending manual download; ScienceDirect PDF access triggered CAPTCHA or was not exposed
 - Paper PDF link: 
 - Fuel type: cumene
+- Plasma-related mechanism: no
 - Validation reactor/type from abstract: jet-stirred reactor, stirred reactor
 
 ## Mechanism Files
@@ -21,8 +22,8 @@ Boris Roux, Yves Simon, Sandra Poeuf, Marc Bouchez, ... René Fournet. Cumene py
 - Standard mechanism file: chem.inp
 - Standard thermodynamic file: therm.dat
 - Standard transport file: not available
-- Original mechanism source files: E:\mech_collection\combustion_and_flame_mechanisms\_processing_archive\2026\cumene\roux_2026_cumene_114840\extracted\s0010218026000763_mmc2\SM1_Mechanism_R.inp
-- Original thermodynamic source files: E:\mech_collection\combustion_and_flame_mechanisms\_processing_archive\2026\cumene\roux_2026_cumene_114840\extracted\s0010218026000763_mmc3\SM2_NASA_polynomial_R.dat
+- Original mechanism source files: _processing\extracted\s0010218026000763_mmc2\SM1_Mechanism_R.inp
+- Original thermodynamic source files: _processing\extracted\s0010218026000763_mmc3\SM2_NASA_polynomial_R.dat
 - Original transport source files: not found
 
 ## Cantera Preprocessing Results
@@ -45,7 +46,4 @@ An experimental study of the pyrolysis of cumene was performed at atmospheric pr
 
 ## Processing Notes
 
-- extracted S0010218026000763_mmc1.docx
-- extracted S0010218026000763_mmc2.zip
-- extracted S0010218026000763_mmc3.zip
-- extracted S0010218026000763_mmc4.zip
+- none

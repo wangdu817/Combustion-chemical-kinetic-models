@@ -14,6 +14,7 @@ Khalid Aljohani, Aamir Farooq. Triptane (2,2,3-trimethylbutane) as an Anti-Knock
 - Paper PDF: pending manual download; ScienceDirect PDF access triggered CAPTCHA or was not exposed
 - Paper PDF link: 
 - Fuel type: triptane_gasoline
+- Plasma-related mechanism: no
 - Validation reactor/type from abstract: not clear from abstract
 
 ## Mechanism Files
@@ -21,8 +22,8 @@ Khalid Aljohani, Aamir Farooq. Triptane (2,2,3-trimethylbutane) as an Anti-Knock
 - Standard mechanism file: chem.inp
 - Standard thermodynamic file: therm.dat
 - Standard transport file: not available
-- Original mechanism source files: E:\mech_collection\combustion_and_flame_mechanisms\_processing_archive\2026\triptane_gasoline\aljohani_2026_triptane_gasoline_114696\extracted\s001021802500731x_mmc2\SM_for_TMB_MTG\SM_for_TMB_MTG\Kinetic_model\mech_TMB.inp
-- Original thermodynamic source files: E:\mech_collection\combustion_and_flame_mechanisms\_processing_archive\2026\triptane_gasoline\aljohani_2026_triptane_gasoline_114696\extracted\s001021802500731x_mmc2\SM_for_TMB_MTG\SM_for_TMB_MTG\Kinetic_model\thermo_TMB.dat
+- Original mechanism source files: _processing\extracted\s001021802500731x_mmc2\SM_for_TMB_MTG\SM_for_TMB_MTG\Kinetic_model\mech_TMB.inp
+- Original thermodynamic source files: _processing\extracted\s001021802500731x_mmc2\SM_for_TMB_MTG\SM_for_TMB_MTG\Kinetic_model\thermo_TMB.dat
 - Original transport source files: not found
 
 ## Cantera Preprocessing Results
@@ -52,5 +53,4 @@ not available
 
 ## Processing Notes
 
-- extracted S001021802500731X_mmc1.docx
-- extract failed S001021802500731X_mmc2.zip: [WinError 206] 文件名或扩展名太长。: 'E:\\mech_collection\\combustion_and_flame_mechanisms\\_processing_archive\\2026\\triptane_gasoline\\aljohani_2026_triptane_gasoline_114696\\extracted\\s001021802500731x_mmc2\\SM_for_TMB_MTG\\SM_for_TMB_MTG\\MTG 35A + 20% TMB\\VPRO phi 0.5\\60 % AR\\TPRF-triptane'
+- none

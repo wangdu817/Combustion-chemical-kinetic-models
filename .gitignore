@@ -32,6 +32,7 @@ combustion_and_flame_mechanisms/_raw/**
 !combustion_and_flame_mechanisms/**/mechanism_summary.md
 
 combustion_and_flame_mechanisms/_processing_archive/**
+combustion_and_flame_mechanisms/**/_processing/**
 combustion_and_flame_mechanisms/**/chem.inp
 combustion_and_flame_mechanisms/**/therm.dat
 combustion_and_flame_mechanisms/**/tran.dat

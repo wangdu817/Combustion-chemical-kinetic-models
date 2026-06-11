@@ -14,16 +14,17 @@ Wenbin Xu, Bowen Mei, Andy Thawko, Ziyu Wang, ... Yiguang Ju. Flame dynamics and
 - Paper PDF: pending manual download; ScienceDirect PDF access triggered CAPTCHA or was not exposed
 - Paper PDF link: 
 - Fuel type: ammonia_dimethyl_ether
+- Plasma-related mechanism: no
 - Validation reactor/type from abstract: burner/flame structure, counterflow flame
 
 ## Mechanism Files
 
 - Standard mechanism file: chem.inp
 - Standard thermodynamic file: therm.dat
-- Standard transport file: not available
-- Original mechanism source files: E:\mech_collection\combustion_and_flame_mechanisms\_processing_archive\2026\ammonia_dimethyl_ether\xu_2026_ammonia_dimethyl_ether_114865\extracted\s001021802600101x_mmc2\chem.inp
-- Original thermodynamic source files: E:\mech_collection\combustion_and_flame_mechanisms\_processing_archive\2026\ammonia_dimethyl_ether\xu_2026_ammonia_dimethyl_ether_114865\extracted\s001021802600101x_mmc3\therm.dat
-- Original transport source files: not found
+- Standard transport file: tran.dat
+- Original mechanism source files: _processing\extracted\s001021802600101x_mmc2\chem.inp
+- Original thermodynamic source files: _processing\extracted\s001021802600101x_mmc3\therm.dat
+- Original transport source files: _processing\extracted\s001021802600101x_mmc4\tran.dat
 
 ## Cantera Preprocessing Results
 
@@ -37,7 +38,7 @@ Wenbin Xu, Bowen Mei, Andy Thawko, Ziyu Wang, ... Yiguang Ju. Flame dynamics and
 - Cantera YAML: not available
 - Standard chem.inp: chem.inp
 - Standard therm.dat: therm.dat
-- Standard tran.dat: not available
+- Standard tran.dat: tran.dat
 
 ## Abstract
 
@@ -45,7 +46,4 @@ Developing advanced low-temperature combustion engines with ammonia-biofuel blen
 
 ## Processing Notes
 
-- extracted S001021802600101X_mmc1.docx
-- extracted S001021802600101X_mmc2.zip
-- extracted S001021802600101X_mmc3.zip
-- extracted S001021802600101X_mmc4.zip
+- none

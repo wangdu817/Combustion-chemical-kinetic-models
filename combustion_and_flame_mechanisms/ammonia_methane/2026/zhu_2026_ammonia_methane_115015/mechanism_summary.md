@@ -14,6 +14,7 @@ Yuxiang Zhu, Khaiyom Hakimov, Jiabiao Zou, Nafi Farzana, ... Chong-Wen Zhou. An 
 - Paper PDF: pending manual download; ScienceDirect PDF access triggered CAPTCHA or was not exposed
 - Paper PDF link: https://www.sciencedirect.com/science/article/pii/S0010218026002518/pdfft?md5=63d641dc599d8d7125fae187205917a6&pid=1-s2.0-S0010218026002518-main.pdf
 - Fuel type: ammonia_methane
+- Plasma-related mechanism: no
 - Validation reactor/type from abstract: shock tube, jet-stirred reactor, stirred reactor
 
 ## Mechanism Files
@@ -21,8 +22,8 @@ Yuxiang Zhu, Khaiyom Hakimov, Jiabiao Zou, Nafi Farzana, ... Chong-Wen Zhou. An 
 - Standard mechanism file: chem.inp
 - Standard thermodynamic file: therm.dat
 - Standard transport file: not available
-- Original mechanism source files: E:\mech_collection\combustion_and_flame_mechanisms\_processing_archive\2026\ammonia_methane\zhu_2026_ammonia_methane_115015\extracted\s0010218026002518_mmc5\Mech25_47_v1_NH3_CH4_260324.MECH
-- Original thermodynamic source files: E:\mech_collection\combustion_and_flame_mechanisms\_processing_archive\2026\ammonia_methane\zhu_2026_ammonia_methane_115015\extracted\s0010218026002518_mmc6\Mech25_47_v1_NH3_CH4_260324.THERM
+- Original mechanism source files: _processing\extracted\s0010218026002518_mmc5\Mech25_47_v1_NH3_CH4_260324.MECH
+- Original thermodynamic source files: _processing\extracted\s0010218026002518_mmc6\Mech25_47_v1_NH3_CH4_260324.THERM
 - Original transport source files: not found
 
 ## Cantera Preprocessing Results
@@ -45,9 +46,4 @@ Ignition delay time measurements of 70/30, 50/50, and 30/70 (mol%) NH3/CH4 mixtu
 
 ## Processing Notes
 
-- extracted S0010218026002518_mmc1.docx
-- extracted S0010218026002518_mmc2.xlsx
-- extracted S0010218026002518_mmc3.xlsx
-- extracted S0010218026002518_mmc4.xlsx
-- extracted S0010218026002518_mmc5.zip
-- extracted S0010218026002518_mmc6.zip
+- none

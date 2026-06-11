@@ -14,6 +14,7 @@ Zhaoying Li, Haodong Chen, Chengcheng Liu, Chengyin Tu, ... Bin Yang. A synchrot
 - Paper PDF: pending manual download; ScienceDirect PDF access triggered CAPTCHA or was not exposed
 - Paper PDF link: 
 - Fuel type: propanol
+- Plasma-related mechanism: yes
 - Validation reactor/type from abstract: not clear from abstract
 
 ## Mechanism Files
@@ -21,7 +22,7 @@ Zhaoying Li, Haodong Chen, Chengcheng Liu, Chengyin Tu, ... Bin Yang. A synchrot
 - Standard mechanism file: chem.inp
 - Standard thermodynamic file: not available
 - Standard transport file: not available
-- Original mechanism source files: E:\mech_collection\combustion_and_flame_mechanisms\_processing_archive\2026\propanol\li_2026_propanol_114705\extracted\s0010218025007400_mmc2\SMM2.inp, E:\mech_collection\combustion_and_flame_mechanisms\_processing_archive\2026\propanol\li_2026_propanol_114705\extracted\s0010218025007400_mmc3\SMM3.inp
+- Original mechanism source files: _processing\extracted\s0010218025007400_mmc2\SMM2.inp, _processing\extracted\s0010218025007400_mmc3\SMM3.inp
 - Original thermodynamic source files: not found
 - Original transport source files: not found
 
@@ -69,6 +70,4 @@ not available
 
 ## Processing Notes
 
-- extracted S0010218025007400_mmc1.zip
-- extracted S0010218025007400_mmc2.zip
-- extracted S0010218025007400_mmc3.zip
+- none

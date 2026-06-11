@@ -14,16 +14,17 @@ Youquan Yang, Zhimin Peng, Haodong Chen, Dao Zheng, ... Yanjun Du. Mid-infrared 
 - Paper PDF: pending manual download; ScienceDirect PDF access triggered CAPTCHA or was not exposed
 - Paper PDF link: 
 - Fuel type: furan_2_methylfuran
+- Plasma-related mechanism: no
 - Validation reactor/type from abstract: shock tube
 
 ## Mechanism Files
 
 - Standard mechanism file: chem.inp
 - Standard thermodynamic file: therm.dat
-- Standard transport file: not available
-- Original mechanism source files: E:\mech_collection\combustion_and_flame_mechanisms\_processing_archive\2026\furan_2_methylfuran\yang_2026_furan_2_methylfuran_115009\raw_downloads\S0010218026002452_mmc2.txt
-- Original thermodynamic source files: E:\mech_collection\combustion_and_flame_mechanisms\_processing_archive\2026\furan_2_methylfuran\yang_2026_furan_2_methylfuran_115009\raw_downloads\S0010218026002452_mmc3.txt
-- Original transport source files: not found
+- Standard transport file: tran.dat
+- Original mechanism source files: _processing\raw_downloads\S0010218026002452_mmc2.txt
+- Original thermodynamic source files: _processing\raw_downloads\S0010218026002452_mmc3.txt
+- Original transport source files: _processing\raw_downloads\S0010218026002452_mmc4.txt
 
 ## Cantera Preprocessing Results
 
@@ -43,7 +44,7 @@ for the correct Chemkin syntax.
 - Cantera YAML: not available
 - Standard chem.inp: chem.inp
 - Standard therm.dat: therm.dat
-- Standard tran.dat: not available
+- Standard tran.dat: tran.dat
 
 ## Abstract
 
@@ -51,4 +52,4 @@ The experimental and kinetic studies of furan derivatives are essential for adva
 
 ## Processing Notes
 
-- extracted S0010218026002452_mmc1.docx
+- none

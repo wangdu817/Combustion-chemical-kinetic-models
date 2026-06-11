@@ -14,6 +14,7 @@ Dongyang Qiu, Mohammad Zaid Kamil, Mohammad Alauddin, Lijuan Liu, ... Paul Amyot
 - Paper PDF: pending manual download; ScienceDirect PDF access triggered CAPTCHA or was not exposed
 - Paper PDF link: 
 - Fuel type: magnesium
+- Plasma-related mechanism: no
 - Validation reactor/type from abstract: not clear from abstract
 
 ## Mechanism Files
@@ -21,8 +22,8 @@ Dongyang Qiu, Mohammad Zaid Kamil, Mohammad Alauddin, Lijuan Liu, ... Paul Amyot
 - Standard mechanism file: chem.inp
 - Standard thermodynamic file: therm.dat
 - Standard transport file: not available
-- Original mechanism source files: E:\mech_collection\combustion_and_flame_mechanisms\_processing_archive\2026\magnesium\qiu_2026_magnesium_114667\extracted\s0010218025007023_mmc1\S1_Mechanism_CHEMKIN.inp
-- Original thermodynamic source files: E:\mech_collection\combustion_and_flame_mechanisms\_processing_archive\2026\magnesium\qiu_2026_magnesium_114667\extracted\s0010218025007023_mmc2\S2_Thermo_CHEMKIN.dat
+- Original mechanism source files: _processing\extracted\s0010218025007023_mmc1\S1_Mechanism_CHEMKIN.inp
+- Original thermodynamic source files: _processing\extracted\s0010218025007023_mmc2\S2_Thermo_CHEMKIN.dat
 - Original transport source files: not found
 
 ## Cantera Preprocessing Results
@@ -45,5 +46,4 @@ not available
 
 ## Processing Notes
 
-- extracted S0010218025007023_mmc1.zip
-- extracted S0010218025007023_mmc2.zip
+- none

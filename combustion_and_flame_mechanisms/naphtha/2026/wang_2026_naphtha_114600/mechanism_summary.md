@@ -14,6 +14,7 @@ Zezhong Wang, Anhao Zhong, Chao Zhou, Wenhao Yuan, Dong Han. Experimental and ki
 - Paper PDF: pending manual download; ScienceDirect PDF access triggered CAPTCHA or was not exposed
 - Paper PDF link: 
 - Fuel type: naphtha
+- Plasma-related mechanism: no
 - Validation reactor/type from abstract: jet-stirred reactor, stirred reactor
 
 ## Mechanism Files
@@ -21,8 +22,8 @@ Zezhong Wang, Anhao Zhong, Chao Zhou, Wenhao Yuan, Dong Han. Experimental and ki
 - Standard mechanism file: chem.inp
 - Standard thermodynamic file: therm.dat
 - Standard transport file: not available
-- Original mechanism source files: E:\mech_collection\combustion_and_flame_mechanisms\_processing_archive\2026\naphtha\wang_2026_naphtha_114600\extracted\s0010218025006376_mmc2\naphtha mechanism -FINAL.inp
-- Original thermodynamic source files: E:\mech_collection\combustion_and_flame_mechanisms\_processing_archive\2026\naphtha\wang_2026_naphtha_114600\extracted\s0010218025006376_mmc2\naphtha mechanism -FINAL.inp
+- Original mechanism source files: _processing\extracted\s0010218025006376_mmc2\naphtha mechanism -FINAL.inp
+- Original thermodynamic source files: _processing\extracted\s0010218025006376_mmc2\naphtha mechanism -FINAL.inp
 - Original transport source files: not found
 
 ## Cantera Preprocessing Results
@@ -45,5 +46,4 @@ An experimental and kinetic modeling study was conducted to investigate the poly
 
 ## Processing Notes
 
-- extracted S0010218025006376_mmc1.docx
-- extracted S0010218025006376_mmc2.zip
+- none

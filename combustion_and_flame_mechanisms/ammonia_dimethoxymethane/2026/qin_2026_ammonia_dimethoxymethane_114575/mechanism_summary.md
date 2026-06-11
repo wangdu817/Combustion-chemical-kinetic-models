@@ -14,6 +14,7 @@ Chunlan Qin, Bingzhi Liu, Weijie Xu, Canbin Lin, ... Lidong Zhang. A kinetic and
 - Paper PDF: pending manual download; ScienceDirect PDF access triggered CAPTCHA or was not exposed
 - Paper PDF link: 
 - Fuel type: ammonia_dimethoxymethane
+- Plasma-related mechanism: no
 - Validation reactor/type from abstract: jet-stirred reactor, laminar flame speed, stirred reactor
 
 ## Mechanism Files
@@ -21,9 +22,9 @@ Chunlan Qin, Bingzhi Liu, Weijie Xu, Canbin Lin, ... Lidong Zhang. A kinetic and
 - Standard mechanism file: chem.inp
 - Standard thermodynamic file: therm.dat
 - Standard transport file: tran.dat
-- Original mechanism source files: E:\mech_collection\combustion_and_flame_mechanisms\_processing_archive\2026\ammonia_dimethoxymethane\qin_2026_ammonia_dimethoxymethane_114575\extracted\s0010218025006121_mmc4\USTC-NH3_DMM.inp
-- Original thermodynamic source files: E:\mech_collection\combustion_and_flame_mechanisms\_processing_archive\2026\ammonia_dimethoxymethane\qin_2026_ammonia_dimethoxymethane_114575\extracted\s0010218025006121_mmc3\USTC-NH3_DMM.dat
-- Original transport source files: E:\mech_collection\combustion_and_flame_mechanisms\_processing_archive\2026\ammonia_dimethoxymethane\qin_2026_ammonia_dimethoxymethane_114575\extracted\s0010218025006121_mmc5\USTC-NH3_DMM_trans.dat
+- Original mechanism source files: _processing\extracted\s0010218025006121_mmc4\USTC-NH3_DMM.inp
+- Original thermodynamic source files: _processing\extracted\s0010218025006121_mmc3\USTC-NH3_DMM.dat
+- Original transport source files: _processing\extracted\s0010218025006121_mmc5\USTC-NH3_DMM_trans.dat
 
 ## Cantera Preprocessing Results
 
@@ -75,7 +76,4 @@ The carbon-neutral potential of ammonia is constrained by fundamental combustion
 
 ## Processing Notes
 
-- extracted S0010218025006121_mmc1.xlsx
-- extracted S0010218025006121_mmc3.zip
-- extracted S0010218025006121_mmc4.zip
-- extracted S0010218025006121_mmc5.zip
+- none

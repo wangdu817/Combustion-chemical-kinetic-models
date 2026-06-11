@@ -205,7 +205,7 @@ def slugify(value: str, max_len: int = 80) -> str:
 
 
 def ensure_dirs() -> None:
-    for path in [ROOT, RAW, DOWNLOADS, EXTRACTED, PROCESSING_ARCHIVE]:
+    for path in [ROOT, RAW, DOWNLOADS, EXTRACTED]:
         path.mkdir(parents=True, exist_ok=True)
 
 
@@ -213,7 +213,7 @@ def read_metadata() -> list[dict]:
     source = METADATA_JSON if METADATA_JSON.exists() else LEGACY_METADATA_JSON
     if not source.exists():
         return []
-    records = json.loads(source.read_text(encoding="utf-8"))
+    records = json.loads(source.read_text(encoding="utf-8-sig"))
     if source == LEGACY_METADATA_JSON and not METADATA_JSON.exists():
         write_metadata(records)
     return records
@@ -317,10 +317,14 @@ def record_folder(record: dict) -> Path:
     return ROOT / fuel_slug / year / name
 
 
-def processing_folder(record: dict) -> Path:
+def legacy_processing_folder(record: dict) -> Path:
     fuel = slugify(record.get("fuelType") or detect_fuel(record), 60)
     year = record_year(record)
     return PROCESSING_ARCHIVE / year / fuel / record_folder(record).name
+
+
+def processing_folder(record: dict) -> Path:
+    return record_folder(record) / "_processing"
 
 
 def first_author_surname(author: str) -> str:
@@ -351,10 +355,26 @@ def read_text_limited(path: Path, limit: int = 2_000_000) -> str:
         return ""
     for enc in ("utf-8", "latin-1", "cp1252"):
         try:
-            return data.decode(enc, errors="ignore")
+            return data.decode(enc, errors="ignore").lstrip("\ufeff")
         except UnicodeDecodeError:
             continue
-    return data.decode("latin-1", errors="ignore")
+    return data.decode("latin-1", errors="ignore").lstrip("\ufeff")
+
+
+def looks_like_transport_table(text: str) -> bool:
+    upper = text.upper()
+    if "ENDDIFF" in upper:
+        return True
+    table_lines = 0
+    for line in text.splitlines():
+        stripped = line.strip()
+        if not stripped or stripped.startswith(("!", "#")):
+            continue
+        if re.match(r"^[A-Za-z0-9_()+,\-*.]+\s+[0-2]\s+[-+0-9.Ee]+\s+[-+0-9.Ee]+\s+[-+0-9.Ee]+", stripped):
+            table_lines += 1
+            if table_lines >= 5:
+                return True
+    return False
 
 
 def classify_file(path: Path) -> set[str]:
@@ -372,7 +392,7 @@ def classify_file(path: Path) -> set[str]:
         labels.add("chemkin_mechanism")
     if re.search(r"(^|\n)\s*THERMO\b", upper):
         labels.add("thermo")
-    if re.search(r"(^|\n)\s*TRANSPORT\b", upper):
+    if re.search(r"(^|\n)\s*TRANSPORT\b", upper) or looks_like_transport_table(text):
         labels.add("transport")
     if "UNITS:" in upper and "PHASES:" in upper and ("REACTIONS:" in upper or "SPECIES:" in upper):
         labels.add("cantera")
@@ -539,6 +559,26 @@ def find_transport_for(mech: Path, candidates: list[Path]) -> Path | None:
                 score += 3
             scored.append((score, path))
     return sorted(scored, reverse=True)[0][1] if scored else None
+
+
+def detect_plasma_case(record: dict, files: Iterable[Path] = ()) -> str:
+    text_parts = [
+        str(record.get("title", "")),
+        str(record.get("abstract", "")),
+        str(record.get("keywords", "")),
+    ]
+    file_text_parts: list[str] = []
+    for path in files:
+        if path.is_file() and looks_like_text(path):
+            file_text_parts.append(read_text_limited(path, 300_000))
+    text_parts.extend(file_text_parts)
+    text = "\n".join(text_parts)
+    if re.search(r"\b(plasma|dielectric barrier|dbd|nanosecond discharge|glow discharge|electron[-\s]?impact)\b", text, re.I):
+        return "yes"
+    file_text = "\n".join(file_text_parts)
+    if re.search(r"(?m)^\s*(E|E-|e-)\s", file_text) and re.search(r"(?m)^\s*[A-Za-z0-9_()+\-]+\+\s", file_text):
+        return "possible"
+    return "no"
 
 
 def mechanism_priority(path: Path) -> tuple[int, str]:
@@ -1066,7 +1106,8 @@ def copy_downloads_for_record(record: dict, dest: Path) -> list[Path]:
     keys = {normalize_doi(record.get("doi", "")), str(record.get("pii", "")).lower(), article_id(record).lower()}
     copied: list[Path] = []
     seen: set[Path] = set()
-    for source_dir in [DOWNLOADS, LEGACY_DOWNLOADS]:
+    legacy_raw = legacy_processing_folder(record) / "raw_downloads"
+    for source_dir in [DOWNLOADS, LEGACY_DOWNLOADS, legacy_raw]:
         if not source_dir.exists():
             continue
         for file in source_dir.glob("*"):
@@ -1089,14 +1130,14 @@ def cleanup_inactive_paper_folders(root: Path, active_folders: set[Path]) -> Non
     active = {path.resolve() for path in active_folders}
     if not root.exists():
         return
-    candidate_dirs = sorted(
-        {path.parent.resolve() for path in root.rglob("mechanism_summary.md")}
-        | {path.parent.resolve() for path in root.rglob("chem.inp")}
-        | {path.parent.resolve() for path in root.rglob("raw_downloads") if path.is_dir()}
-        | {path.parent.resolve() for path in root.rglob("extracted") if path.is_dir()},
-        key=lambda p: len(p.parts),
-        reverse=True,
-    )
+    candidate_dirs = {path.parent.resolve() for path in root.rglob("mechanism_summary.md")}
+    candidate_dirs |= {path.parent.resolve() for path in root.rglob("chem.inp")}
+    for path in list(root.rglob("raw_downloads")) + list(root.rglob("extracted")):
+        if not path.is_dir():
+            continue
+        parent = path.parent
+        candidate_dirs.add((parent.parent if parent.name == "_processing" else parent).resolve())
+    candidate_dirs = sorted(candidate_dirs, key=lambda p: len(p.parts), reverse=True)
     for paper_dir in candidate_dirs:
         if paper_dir in active or root not in paper_dir.parents or any(part.startswith("_") for part in paper_dir.relative_to(root).parts):
             continue
@@ -1113,12 +1154,15 @@ def cleanup_inactive_paper_folders(root: Path, active_folders: set[Path]) -> Non
 
 def cleanup_active_paper_folder(folder: Path) -> None:
     allowed_files = {"mechanism_summary.md", "chem.inp", "therm.dat", "tran.dat", "mechanism.yaml"}
+    allowed_dirs = {"_processing"}
     if not folder.exists():
         return
     for child in list(folder.iterdir()):
         if child.is_dir():
-            shutil.rmtree(child)
-        elif child.name not in allowed_files:
+            if child.name not in allowed_dirs:
+                shutil.rmtree(child)
+            continue
+        if child.name not in allowed_files:
             child.unlink()
 
 
@@ -1455,6 +1499,7 @@ def write_summary(
     extraction_notes: list[str],
 ) -> None:
     rel = lambda p: str(p.relative_to(dest)) if p and str(p).startswith(str(dest)) else str(p)
+    plasma_flag = detect_plasma_case(record, [*mechanism_files, *thermo_files, *transport_files])
     lines = [
         f"# {record.get('title', 'Untitled')}",
         "",
@@ -1472,6 +1517,7 @@ def write_summary(
         f"- Paper PDF: {record.get('paperPdfStatus', 'pending manual download')}",
         f"- Paper PDF link: {record.get('issuePdfLink', '')}",
         f"- Fuel type: {record.get('fuelType') or detect_fuel(record)}",
+        f"- Plasma-related mechanism: {plasma_flag}",
         f"- Validation reactor/type from abstract: {detect_reactors(record)}",
         "",
         "## Mechanism Files",
@@ -1580,6 +1626,7 @@ def process() -> None:
             write_summary(record, folder, cantera, thermos, transports, processing_results, extraction_notes + ["Cantera file detected"])
         elif candidate:
             pass
+        plasma_flag = detect_plasma_case(record, [*mechanisms, *thermos, *transports, *cantera])
         has_success = any(result.status in {"ok", "ok_after_cleanup"} for result in processing_results)
         has_mechanism_candidate = bool(mechanisms or cantera)
         has_supplement_probe = bool(local_downloads or record.get("probedSupplementLinks") or record.get("supplementLinks"))
@@ -1634,6 +1681,7 @@ def process() -> None:
                 "month": record.get("month", ""),
                 "article_number": article_id(record),
                 "fuel_type": record.get("fuelType", ""),
+                "plasma_related": plasma_flag,
                 "url": record.get("url", ""),
                 "paper_pdf_link": record.get("issuePdfLink", ""),
                 "paper_pdf_status": record.get("paperPdfStatus", ""),
@@ -1689,6 +1737,8 @@ def process() -> None:
     for folder_path in active_folders:
         cleanup_active_paper_folder(folder_path)
     cleanup_inactive_paper_folders(ROOT, active_folders)
+    if PROCESSING_ARCHIVE.exists():
+        shutil.rmtree(PROCESSING_ARCHIVE)
     ROOT.joinpath("manual_download_handoff.md").write_text("\n".join(handoff) + "\n", encoding="utf-8")
     ROOT.joinpath("run_summary.json").write_text(
         json.dumps(

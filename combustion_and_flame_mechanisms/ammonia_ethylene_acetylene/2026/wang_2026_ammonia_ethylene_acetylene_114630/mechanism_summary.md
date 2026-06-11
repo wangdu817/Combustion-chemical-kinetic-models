@@ -14,16 +14,17 @@ Qiao Wang, Peng Zhang, Chengcheng Liu, Bin Yang. Co-oxidation of ammonia with et
 - Paper PDF: pending manual download; ScienceDirect PDF access triggered CAPTCHA or was not exposed
 - Paper PDF link: 
 - Fuel type: ammonia_ethylene_acetylene
+- Plasma-related mechanism: possible
 - Validation reactor/type from abstract: jet-stirred reactor, stirred reactor
 
 ## Mechanism Files
 
 - Standard mechanism file: chem.inp
 - Standard thermodynamic file: therm.dat
-- Standard transport file: not available
-- Original mechanism source files: E:\mech_collection\combustion_and_flame_mechanisms\_processing_archive\2026\ammonia_ethylene_acetylene\wang_2026_ammonia_ethylene_acetylene_114630\raw_downloads\S0010218025006674_mmc3.txt
-- Original thermodynamic source files: E:\mech_collection\combustion_and_flame_mechanisms\_processing_archive\2026\ammonia_ethylene_acetylene\wang_2026_ammonia_ethylene_acetylene_114630\raw_downloads\S0010218025006674_mmc3.txt, E:\mech_collection\combustion_and_flame_mechanisms\_processing_archive\2026\ammonia_ethylene_acetylene\wang_2026_ammonia_ethylene_acetylene_114630\raw_downloads\S0010218025006674_mmc4.txt
-- Original transport source files: not found
+- Standard transport file: tran.dat
+- Original mechanism source files: _processing\raw_downloads\S0010218025006674_mmc3.txt
+- Original thermodynamic source files: _processing\raw_downloads\S0010218025006674_mmc3.txt, _processing\raw_downloads\S0010218025006674_mmc4.txt
+- Original transport source files: _processing\raw_downloads\S0010218025006674_mmc5.txt
 
 ## Cantera Preprocessing Results
 
@@ -39,7 +40,7 @@ for the correct Chemkin syntax.
 - Cantera YAML: mechanism.yaml
 - Standard chem.inp: chem.inp
 - Standard therm.dat: therm.dat
-- Standard tran.dat: not available
+- Standard tran.dat: tran.dat
 
 ## Abstract
 
@@ -47,5 +48,4 @@ The co-firing of ammonia (NH3) with hydrocarbon fuels represents an important ap
 
 ## Processing Notes
 
-- extracted S0010218025006674_mmc1.docx
-- extracted S0010218025006674_mmc2.xlsx
+- none

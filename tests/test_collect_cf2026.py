@@ -148,6 +148,8 @@ phases:
             folder = Path(tmp)
             for name in ["mechanism_summary.md", "chem.inp", "therm.dat", "tran.dat", "mechanism.yaml", "cantera_conversion.log"]:
                 (folder / name).write_text(name, encoding="utf-8")
+            (folder / "_processing").mkdir()
+            (folder / "_processing" / "cantera_conversion.log").write_text("log", encoding="utf-8")
             (folder / "extracted").mkdir()
             (folder / "extracted" / "old.txt").write_text("old", encoding="utf-8")
 
@@ -155,8 +157,48 @@ phases:
 
             self.assertEqual(
                 sorted(path.name for path in folder.iterdir()),
-                ["chem.inp", "mechanism.yaml", "mechanism_summary.md", "therm.dat", "tran.dat"],
+                ["_processing", "chem.inp", "mechanism.yaml", "mechanism_summary.md", "therm.dat", "tran.dat"],
             )
+            self.assertTrue((folder / "_processing" / "cantera_conversion.log").exists())
+
+    def test_classify_thermo_file_with_utf_bom(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            path = Path(tmp) / "thermo.txt"
+            path.write_text("\ufeffTHERMO\n   298.000 1000.000 5000.000\nH2 G 300.0 5000.0 1000.0 1\nEND\n", encoding="utf-8")
+
+            self.assertIn("thermo", cf.classify_file(path))
+
+    def test_classify_transport_table_without_header(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            path = Path(tmp) / "tran.txt"
+            path.write_text(
+                "\n".join(
+                    [
+                        "AR                 0   136.500     3.330     0.000     0.000     0.000",
+                        "H2                 1    38.000     2.920     0.000     0.790   280.000",
+                        "O2                 1   107.400     3.458     0.000     1.600     3.800",
+                        "H2O                2   572.400     2.605     1.844     0.000     4.000",
+                        "CO2                1   244.000     3.763     0.000     2.650     2.100",
+                        "ENDDIFF",
+                    ]
+                ),
+                encoding="utf-8",
+            )
+
+            self.assertIn("transport", cf.classify_file(path))
+
+    def test_detect_plasma_case_from_title_or_mechanism_text(self):
+        record = {"title": "Direct NO removal driven by dielectric barrier discharge", "abstract": ""}
+
+        self.assertEqual(cf.detect_plasma_case(record), "yes")
+
+    def test_detect_plasma_case_ignores_analytical_electron_ionization(self):
+        record = {
+            "title": "Oxidation chemistry in a jet-stirred reactor",
+            "abstract": "Products were measured by gas chromatography mass spectroscopy combined with electron ionization.",
+        }
+
+        self.assertEqual(cf.detect_plasma_case(record), "no")
 
     def test_gb_t_7714_uses_ascii_et_al_for_many_authors(self):
         record = {

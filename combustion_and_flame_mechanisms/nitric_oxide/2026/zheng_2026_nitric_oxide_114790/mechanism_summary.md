@@ -14,6 +14,7 @@ Menglei Zheng, Yong Bao, Xianhui Chen, Xiaoyuan Zhang. Direct NO removal driven 
 - Paper PDF: pending manual download; ScienceDirect PDF access triggered CAPTCHA or was not exposed
 - Paper PDF link: 
 - Fuel type: nitric_oxide
+- Plasma-related mechanism: yes
 - Validation reactor/type from abstract: not clear from abstract
 
 ## Mechanism Files
@@ -21,8 +22,8 @@ Menglei Zheng, Yong Bao, Xianhui Chen, Xiaoyuan Zhang. Direct NO removal driven 
 - Standard mechanism file: chem.inp
 - Standard thermodynamic file: therm.dat
 - Standard transport file: not available
-- Original mechanism source files: E:\mech_collection\combustion_and_flame_mechanisms\_processing_archive\2026\nitric_oxide\zheng_2026_nitric_oxide_114790\extracted\s0010218026000271_mmc3\kinetic.inp
-- Original thermodynamic source files: E:\mech_collection\combustion_and_flame_mechanisms\_processing_archive\2026\nitric_oxide\zheng_2026_nitric_oxide_114790\extracted\s0010218026000271_mmc4\therm.dat
+- Original mechanism source files: _processing\extracted\s0010218026000271_mmc3\kinetic.inp
+- Original thermodynamic source files: _processing\extracted\s0010218026000271_mmc4\therm.dat
 - Original transport source files: not found
 
 ## Cantera Preprocessing Results
@@ -45,7 +46,4 @@ Mitigating nitrogen oxide (NOx) pollution remains a formidable challenge amid th
 
 ## Processing Notes
 
-- extracted S0010218026000271_mmc1.docx
-- extracted S0010218026000271_mmc2.zip
-- extracted S0010218026000271_mmc3.zip
-- extracted S0010218026000271_mmc4.zip
+- none

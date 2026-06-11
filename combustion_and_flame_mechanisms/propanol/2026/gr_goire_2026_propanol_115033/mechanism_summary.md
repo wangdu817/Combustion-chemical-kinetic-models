@@ -14,6 +14,7 @@ Claire M. Grégoire, Océane Clément, Olivier Mathieu, Eric L. Petersen, ... Gu
 - Paper PDF: pending manual download; ScienceDirect PDF access triggered CAPTCHA or was not exposed
 - Paper PDF link: https://www.sciencedirect.com/science/article/pii/S0010218026002695/pdfft?md5=d968daa86def0a0de6cac5abd30f07b4&pid=1-s2.0-S0010218026002695-main.pdf
 - Fuel type: propanol
+- Plasma-related mechanism: no
 - Validation reactor/type from abstract: not clear from abstract
 
 ## Mechanism Files
@@ -21,7 +22,7 @@ Claire M. Grégoire, Océane Clément, Olivier Mathieu, Eric L. Petersen, ... Gu
 - Standard mechanism file: chem.inp
 - Standard thermodynamic file: not available
 - Standard transport file: not available
-- Original mechanism source files: E:\mech_collection\combustion_and_flame_mechanisms\_processing_archive\2026\propanol\gr_goire_2026_propanol_115033\extracted\s0010218026002695_mmc1\chem_pro1oh.inp
+- Original mechanism source files: _processing\extracted\s0010218026002695_mmc1\chem_pro1oh.inp
 - Original thermodynamic source files: not found
 - Original transport source files: not found
 
@@ -47,9 +48,4 @@ The pyrolysis and oxidation of propan-1-ol were investigated in this work, provi
 
 ## Processing Notes
 
-- extracted S0010218026002695_mmc1.zip
-- extracted S0010218026002695_mmc2.xlsx
-- extracted S0010218026002695_mmc3.zip
-- extracted S0010218026002695_mmc4.zip
-- extracted S0010218026002695_mmc5.zip
-- extracted S0010218026002695_mmc6.zip
+- none

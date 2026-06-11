@@ -12,9 +12,10 @@ combustion_and_flame_mechanisms/
         therm.dat
         tran.dat
         mechanism.yaml
+        _processing/
 ```
 
-Visible paper folders are kept intentionally small. They contain the summary and standardized mechanism files only. Raw downloads, recursive extraction outputs, conversion logs, and other processing artifacts are stored under `_processing_archive/`.
+Visible paper folders keep the summary and standardized mechanism files at the top level. Raw downloads, recursive extraction outputs, conversion logs, and other processing artifacts are stored in each paper folder's `_processing/` subfolder.
 
 Machine-readable collection-level files:
 

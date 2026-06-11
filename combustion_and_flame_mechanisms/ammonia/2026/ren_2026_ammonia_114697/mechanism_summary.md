@@ -14,16 +14,17 @@ Ke Ren, Xiaoping Chen, Jiliang Ma, Suyang Pan. A detailed kinetic mechanism for 
 - Paper PDF: pending manual download; ScienceDirect PDF access triggered CAPTCHA or was not exposed
 - Paper PDF link: 
 - Fuel type: ammonia
+- Plasma-related mechanism: no
 - Validation reactor/type from abstract: not clear from abstract
 
 ## Mechanism Files
 
 - Standard mechanism file: chem.inp
 - Standard thermodynamic file: therm.dat
-- Standard transport file: not available
-- Original mechanism source files: E:\mech_collection\combustion_and_flame_mechanisms\_processing_archive\2026\ammonia\ren_2026_ammonia_114697\extracted\s0010218025007321_mmc2\chem.inp
-- Original thermodynamic source files: E:\mech_collection\combustion_and_flame_mechanisms\_processing_archive\2026\ammonia\ren_2026_ammonia_114697\extracted\s0010218025007321_mmc3\therm.dat
-- Original transport source files: not found
+- Standard transport file: tran.dat
+- Original mechanism source files: _processing\extracted\s0010218025007321_mmc2\chem.inp
+- Original thermodynamic source files: _processing\extracted\s0010218025007321_mmc3\therm.dat
+- Original transport source files: _processing\extracted\s0010218025007321_mmc4\trans.dat
 
 ## Cantera Preprocessing Results
 
@@ -37,7 +38,7 @@ Ke Ren, Xiaoping Chen, Jiliang Ma, Suyang Pan. A detailed kinetic mechanism for 
 - Cantera YAML: mechanism.yaml
 - Standard chem.inp: chem.inp
 - Standard therm.dat: therm.dat
-- Standard tran.dat: not available
+- Standard tran.dat: tran.dat
 
 ## Abstract
 
@@ -45,7 +46,4 @@ not available
 
 ## Processing Notes
 
-- extracted S0010218025007321_mmc1.docx
-- extracted S0010218025007321_mmc2.zip
-- extracted S0010218025007321_mmc3.zip
-- extracted S0010218025007321_mmc4.zip
+- none

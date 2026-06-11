@@ -14,6 +14,7 @@ Nan Liu, Bolin Li, Qi Chen. Carbon dioxide-driven dual effects on ignition delay
 - Paper PDF: pending manual download; ScienceDirect PDF access triggered CAPTCHA or was not exposed
 - Paper PDF link: 
 - Fuel type: methanol
+- Plasma-related mechanism: yes
 - Validation reactor/type from abstract: not clear from abstract
 
 ## Mechanism Files
@@ -21,8 +22,8 @@ Nan Liu, Bolin Li, Qi Chen. Carbon dioxide-driven dual effects on ignition delay
 - Standard mechanism file: chem.inp
 - Standard thermodynamic file: therm.dat
 - Standard transport file: not available
-- Original mechanism source files: E:\mech_collection\combustion_and_flame_mechanisms\_processing_archive\2026\methanol\liu_2026_methanol_114882\extracted\s0010218026001185_mmc2\mmc2\SMM\Chem.inp, E:\mech_collection\combustion_and_flame_mechanisms\_processing_archive\2026\methanol\liu_2026_methanol_114882\extracted\s0010218026001185_mmc2\mmc2\SMM\plasma kinetics.inp
-- Original thermodynamic source files: E:\mech_collection\combustion_and_flame_mechanisms\_processing_archive\2026\methanol\liu_2026_methanol_114882\extracted\s0010218026001185_mmc2\mmc2\SMM\Therm.dat
+- Original mechanism source files: _processing\extracted\s0010218026001185_mmc2\mmc2\SMM\Chem.inp, _processing\extracted\s0010218026001185_mmc2\mmc2\SMM\plasma kinetics.inp
+- Original thermodynamic source files: _processing\extracted\s0010218026001185_mmc2\mmc2\SMM\Therm.dat
 - Original transport source files: not found
 
 ## Cantera Preprocessing Results
@@ -67,5 +68,4 @@ Carbon dioxide is the primary constituent of exhaust gas recirculation (EGR) and
 
 ## Processing Notes
 
-- extracted S0010218026001185_mmc1.docx
-- extracted S0010218026001185_mmc2.zip
+- none

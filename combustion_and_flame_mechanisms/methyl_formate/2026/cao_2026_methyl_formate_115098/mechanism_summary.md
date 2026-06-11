@@ -14,6 +14,7 @@ Yuanxinxin Cao, Bowen Mei, Wenbin Xu, Mohammad Adil, ... Yiguang Ju. Methyl form
 - Paper PDF: pending manual download; ScienceDirect PDF access triggered CAPTCHA or was not exposed
 - Paper PDF link: 
 - Fuel type: methyl_formate
+- Plasma-related mechanism: no
 - Validation reactor/type from abstract: jet-stirred reactor, stirred reactor
 
 ## Mechanism Files
@@ -21,8 +22,8 @@ Yuanxinxin Cao, Bowen Mei, Wenbin Xu, Mohammad Adil, ... Yiguang Ju. Methyl form
 - Standard mechanism file: chem.inp
 - Standard thermodynamic file: therm.dat
 - Standard transport file: not available
-- Original mechanism source files: E:\mech_collection\combustion_and_flame_mechanisms\_processing_archive\2026\methyl_formate\cao_2026_methyl_formate_115098\extracted\s0010218026003342_mmc3\UpdatedHP.inp
-- Original thermodynamic source files: E:\mech_collection\combustion_and_flame_mechanisms\_processing_archive\2026\methyl_formate\cao_2026_methyl_formate_115098\extracted\s0010218026003342_mmc2\UpdatedHP.dat
+- Original mechanism source files: _processing\extracted\s0010218026003342_mmc3\UpdatedHP.inp
+- Original thermodynamic source files: _processing\extracted\s0010218026003342_mmc2\UpdatedHP.dat
 - Original transport source files: not found
 
 ## Cantera Preprocessing Results
@@ -45,6 +46,4 @@ Methyl formate (MF, CH3OCHO), the simplest ester, is a representative oxygenated
 
 ## Processing Notes
 
-- extracted S0010218026003342_mmc1.docx
-- extracted S0010218026003342_mmc2.zip
-- extracted S0010218026003342_mmc3.zip
+- none

@@ -14,6 +14,7 @@ Cheng-Yin Ye, Ling-Nan Wu, Dong-Xu Tian, Jiu-Zhong Yang, ... Zhen-Yu Tian. Exper
 - Paper PDF: pending manual download; ScienceDirect PDF access triggered CAPTCHA or was not exposed
 - Paper PDF link: https://www.sciencedirect.com/science/article/pii/S0010218025007771/pdfft?md5=27adaf192e97203ba4c70054cfc1449f&pid=1-s2.0-S0010218025007771-main.pdf
 - Fuel type: pyridine
+- Plasma-related mechanism: no
 - Validation reactor/type from abstract: flow reactor
 
 ## Mechanism Files
@@ -21,8 +22,8 @@ Cheng-Yin Ye, Ling-Nan Wu, Dong-Xu Tian, Jiu-Zhong Yang, ... Zhen-Yu Tian. Exper
 - Standard mechanism file: chem.inp
 - Standard thermodynamic file: therm.dat
 - Standard transport file: not available
-- Original mechanism source files: E:\mech_collection\combustion_and_flame_mechanisms\_processing_archive\2026\pyridine\ye_2026_pyridine_114742\raw_downloads\S0010218025007771_mmc2.txt
-- Original thermodynamic source files: E:\mech_collection\combustion_and_flame_mechanisms\_processing_archive\2026\pyridine\ye_2026_pyridine_114742\raw_downloads\S0010218025007771_mmc3.txt
+- Original mechanism source files: _processing\raw_downloads\S0010218025007771_mmc2.txt
+- Original thermodynamic source files: _processing\raw_downloads\S0010218025007771_mmc3.txt
 - Original transport source files: not found
 
 ## Cantera Preprocessing Results
@@ -76,4 +77,4 @@ The pyrolysis of pyridine, a model compound for fuel-nitrogen in coal, biomass, 
 
 ## Processing Notes
 
-- extracted S0010218025007771_mmc1.xlsx
+- none

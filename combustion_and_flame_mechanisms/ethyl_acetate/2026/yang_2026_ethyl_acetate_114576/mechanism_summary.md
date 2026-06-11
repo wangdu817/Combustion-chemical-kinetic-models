@@ -14,16 +14,17 @@ Jie Yang, Shubao Song, Lin Zhang, Hengrui Liu, ... Jiankun Shao. Experimental an
 - Paper PDF: pending manual download; ScienceDirect PDF access triggered CAPTCHA or was not exposed
 - Paper PDF link: 
 - Fuel type: ethyl_acetate
+- Plasma-related mechanism: no
 - Validation reactor/type from abstract: shock tube, laminar flame speed
 
 ## Mechanism Files
 
 - Standard mechanism file: chem.inp
 - Standard thermodynamic file: therm.dat
-- Standard transport file: not available
-- Original mechanism source files: E:\mech_collection\combustion_and_flame_mechanisms\_processing_archive\2026\ethyl_acetate\yang_2026_ethyl_acetate_114576\extracted\s0010218025006133_mmc5\Current mech.inp
-- Original thermodynamic source files: E:\mech_collection\combustion_and_flame_mechanisms\_processing_archive\2026\ethyl_acetate\yang_2026_ethyl_acetate_114576\extracted\s0010218025006133_mmc4\Current thermo.dat
-- Original transport source files: not found
+- Standard transport file: tran.dat
+- Original mechanism source files: _processing\extracted\s0010218025006133_mmc5\Current mech.inp
+- Original thermodynamic source files: _processing\extracted\s0010218025006133_mmc4\Current thermo.dat
+- Original transport source files: _processing\extracted\s0010218025006133_mmc3\Current.TRAN
 
 ## Cantera Preprocessing Results
 
@@ -37,7 +38,7 @@ Jie Yang, Shubao Song, Lin Zhang, Hengrui Liu, ... Jiankun Shao. Experimental an
 - Cantera YAML: not available
 - Standard chem.inp: chem.inp
 - Standard therm.dat: therm.dat
-- Standard tran.dat: not available
+- Standard tran.dat: tran.dat
 
 ## Abstract
 
@@ -45,8 +46,4 @@ Ethyl acetate (EA) is not only a promising biofuel that offers new pathways for 
 
 ## Processing Notes
 
-- extracted S0010218025006133_mmc1.xlsx
-- extracted S0010218025006133_mmc2.docx
-- extracted S0010218025006133_mmc3.zip
-- extracted S0010218025006133_mmc4.zip
-- extracted S0010218025006133_mmc5.zip
+- none

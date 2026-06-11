@@ -14,16 +14,17 @@ Hang Xiao, Zhaohan Chu, Chenyue Tao, Xiao Liu, Bin Yang. Elucidating norbornane 
 - Paper PDF: pending manual download; ScienceDirect PDF access triggered CAPTCHA or was not exposed
 - Paper PDF link: 
 - Fuel type: norbornane
+- Plasma-related mechanism: no
 - Validation reactor/type from abstract: rapid compression machine
 
 ## Mechanism Files
 
 - Standard mechanism file: chem.inp
 - Standard thermodynamic file: therm.dat
-- Standard transport file: not available
-- Original mechanism source files: E:\mech_collection\combustion_and_flame_mechanisms\_processing_archive\2026\norbornane\xiao_2026_norbornane_114656\extracted\s0010218025006911_mmc4\Nor_O2-Xiao25-Mech.inp
-- Original thermodynamic source files: E:\mech_collection\combustion_and_flame_mechanisms\_processing_archive\2026\norbornane\xiao_2026_norbornane_114656\extracted\s0010218025006911_mmc5\Nor_O2-Xiao25-thermo.dat
-- Original transport source files: not found
+- Standard transport file: tran.dat
+- Original mechanism source files: _processing\extracted\s0010218025006911_mmc4\Nor_O2-Xiao25-Mech.inp
+- Original thermodynamic source files: _processing\extracted\s0010218025006911_mmc5\Nor_O2-Xiao25-thermo.dat
+- Original transport source files: _processing\extracted\s0010218025006911_mmc6\Nor_O2-Xiao25-transport.dat
 
 ## Cantera Preprocessing Results
 
@@ -35,40 +36,40 @@ Hang Xiao, Zhaohan Chu, Chenyue Tao, Xiao Liu, Bin Yang. Elucidating norbornane 
 - Message: CanteraError: 
 *******************************************************************************
 InputFileError thrown by Kinetics::checkDuplicates:
-Error on lines 16067 and 16094 of E:\mech_collection\combustion_and_flame_mechanisms\norbornane\2026\xiao_2026_norbornane_114656\mechanism.yaml:
+Error on lines 22618 and 22645 of E:\mech_collection\combustion_and_flame_mechanisms\norbornane\2026\xiao_2026_norbornane_114656\mechanism.yaml:
 Undeclared duplicate reactions detected:
 Reaction 989: H2 + M <=> 2 H + M
 Reaction 985: 2 H + O2 <=> H2 + O2
 
 |  Line |
-|  16062 |   note: Added in v6
-|  16063 | - equation: cCHC6H10-7-OO + cCHC6H10-7-OO <=> cCHC6H10-7-O + cCHC6H10-7-O
-|  16064 |     + O2  # Reaction 984
-|  16065 |   rate-constant: {A: 1.4e+16, b: -1.61, Ea: 1860.0}
-|  16066 |   note: Added in v6
->  16067 > - equation: H2 + M <=> H + H + M  # Reaction 985
+|  22613 |   note: Added in v6
+|  22614 | - equation: cCHC6H10-7-OO + cCHC6H10-7-OO <=> cCHC6H10-7-O + cCHC6H10-7-O
+|  22615 |     + O2  # Reaction 984
+|  22616 |   rate-constant: {A: 1.4e+16, b: -1.61, Ea: 1860.0}
+|  22617 |   note: Added in v6
+>  22618 > - equation: H2 + M <=> H + H + M  # Reaction 985
             ^
-|  16068 |   type: three-body
-|  16069 |   rate-constant: {A: 4.577e+19, b: -1.4, Ea: 1.044e+05}
-|  16070 |   efficiencies: {HE: 0.83, CO: 1.9, CH4: 2.0, H2: 2.5, C2H6: 3.0, CO2: 3.8,
+|  22619 |   type: three-body
+|  22620 |   rate-constant: {A: 4.577e+19, b: -1.4, Ea: 1.044e+05}
+|  22621 |   efficiencies: {HE: 0.83, CO: 1.9, CH4: 2.0, H2: 2.5, C2H6: 3.0, CO2: 3.8,
 ...
-|  16089 |     CHEM REF DATA 2005, 34, 757-1397. !\Comment: WARNING'
-|  16090 | - equation: H2 + OH <=> H + H2O  # Reaction 988
-|  16091 |   rate-constant: {A: 2.2e+08, b: 1.51, Ea: 3430.0}
-|  16092 |   note: '\Author: UB !\Ref: J.V.MICHAEL SUTHERLAND, J.PHYS.CHEM. 92(1988)
-|  16093 |     3853 !\Comment: WARNING'
->  16094 > - equation: H + O2 + H <=> H2 + O2  # Reaction 989
+|  22640 |     CHEM REF DATA 2005, 34, 757-1397. !\Comment: WARNING'
+|  22641 | - equation: H2 + OH <=> H + H2O  # Reaction 988
+|  22642 |   rate-constant: {A: 2.2e+08, b: 1.51, Ea: 3430.0}
+|  22643 |   note: '\Author: UB !\Ref: J.V.MICHAEL SUTHERLAND, J.PHYS.CHEM. 92(1988)
+|  22644 |     3853 !\Comment: WARNING'
+>  22645 > - equation: H + O2 + H <=> H2 + O2  # Reaction 989
             ^
-|  16095 |   rate-constant: {A: 8.8e+22, b: -1.835, Ea: 800.0}
-|  16096 |   note: '\Author: WARNING !\Ref: WARNING !\Comment: WARNING'
-|  16097 | - equation: H + O2 + H <=> OH + OH  # Reaction 990
+|  22646 |   rate-constant: {A: 8.8e+22, b: -1.835, Ea: 800.0}
+|  22647 |   note: '\Author: WARNING !\Ref: WARNING !\Comment: WARNING'
+|  22648 | - equation: H + O2 + H <=> OH + OH  # Reaction 990
 *******************************************************************************
 
 - Method: cantera
 - Cantera YAML: mechanism.yaml
 - Standard chem.inp: chem.inp
 - Standard therm.dat: therm.dat
-- Standard tran.dat: not available
+- Standard tran.dat: tran.dat
 
 ## Abstract
 
@@ -76,11 +77,4 @@ Norbornane (C7H12), a typical polycyclic alkane, is currently of interest as a b
 
 ## Processing Notes
 
-- extracted S0010218025006911_mmc1.docx
-- extracted S0010218025006911_mmc2.docx
-- extracted S0010218025006911_mmc3.zip
-- extracted S0010218025006911_mmc4.zip
-- extracted S0010218025006911_mmc5.zip
-- extracted S0010218025006911_mmc6.zip
-- extracted Ignition results for Norbornane.xlsx
-- extracted Sampling results for Norbornane.xlsx
+- none

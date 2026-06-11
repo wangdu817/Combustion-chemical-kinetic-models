@@ -14,6 +14,7 @@ Shusuke Suzuki, Akira Matsugi, Philippe Dagaut. An experimental and modeling inv
 - Paper PDF: pending manual download; ScienceDirect PDF access triggered CAPTCHA or was not exposed
 - Paper PDF link: https://www.sciencedirect.com/science/article/pii/S0010218026002397/pdfft?md5=7539303f5f5f268c8a23396f046536f3&pid=1-s2.0-S0010218026002397-main.pdf
 - Fuel type: trimethylbenzene_124
+- Plasma-related mechanism: no
 - Validation reactor/type from abstract: jet-stirred reactor, flow reactor, stirred reactor
 
 ## Mechanism Files
@@ -21,8 +22,8 @@ Shusuke Suzuki, Akira Matsugi, Philippe Dagaut. An experimental and modeling inv
 - Standard mechanism file: chem.inp
 - Standard thermodynamic file: therm.dat
 - Standard transport file: not available
-- Original mechanism source files: E:\mech_collection\combustion_and_flame_mechanisms\_processing_archive\2026\trimethylbenzene_124\suzuki_2026_trimethylbenzene_124_115003\raw_downloads\S0010218026002397_mmc4.txt
-- Original thermodynamic source files: E:\mech_collection\combustion_and_flame_mechanisms\_processing_archive\2026\trimethylbenzene_124\suzuki_2026_trimethylbenzene_124_115003\raw_downloads\S0010218026002397_mmc5.txt
+- Original mechanism source files: _processing\raw_downloads\S0010218026002397_mmc4.txt
+- Original thermodynamic source files: _processing\raw_downloads\S0010218026002397_mmc5.txt
 - Original transport source files: not found
 
 ## Cantera Preprocessing Results
@@ -45,6 +46,4 @@ Species measurements of the gaseous products during oxidation were conducted usi
 
 ## Processing Notes
 
-- extracted S0010218026002397_mmc1.docx
-- extracted S0010218026002397_mmc2.xlsx
-- extracted S0010218026002397_mmc3.xlsx
+- none

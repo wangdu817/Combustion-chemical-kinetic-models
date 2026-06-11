@@ -14,6 +14,7 @@ Chengcheng Liu, Chenyue Tao, Chenxuan Li, Peng Zhang, ... Bin Yang. Bayesian seq
 - Paper PDF: pending manual download; ScienceDirect PDF access triggered CAPTCHA or was not exposed
 - Paper PDF link: 
 - Fuel type: unknown_fuel
+- Plasma-related mechanism: no
 - Validation reactor/type from abstract: jet-stirred reactor, stirred reactor
 
 ## Mechanism Files
@@ -21,9 +22,9 @@ Chengcheng Liu, Chenyue Tao, Chenxuan Li, Peng Zhang, ... Bin Yang. Bayesian seq
 - Standard mechanism file: chem.inp
 - Standard thermodynamic file: therm.dat
 - Standard transport file: tran.dat
-- Original mechanism source files: E:\mech_collection\combustion_and_flame_mechanisms\_processing_archive\2026\unknown_fuel\liu_2026_unknown_fuel_114610\extracted\s0010218025006479_mmc2\mmc2.yaml
-- Original thermodynamic source files: E:\mech_collection\combustion_and_flame_mechanisms\_processing_archive\2026\unknown_fuel\liu_2026_unknown_fuel_114610\extracted\s0010218025006479_mmc2\mmc2.yaml
-- Original transport source files: E:\mech_collection\combustion_and_flame_mechanisms\_processing_archive\2026\unknown_fuel\liu_2026_unknown_fuel_114610\extracted\s0010218025006479_mmc2\mmc2.yaml
+- Original mechanism source files: _processing\extracted\s0010218025006479_mmc2\mmc2.yaml
+- Original thermodynamic source files: _processing\extracted\s0010218025006479_mmc2\mmc2.yaml
+- Original transport source files: _processing\extracted\s0010218025006479_mmc2\mmc2.yaml
 
 ## Cantera Preprocessing Results
 
@@ -45,9 +46,4 @@ Informative experimental data are critical for developing predictive combustion 
 
 ## Processing Notes
 
-- extracted S0010218025006479_mmc1.docx
-- extracted S0010218025006479_mmc2.zip
-- extracted S0010218025006479_mmc3.xlsx
-- extracted S0010218025006479_mmc4.xlsx
-- extracted S0010218025006479_mmc5.xlsx
-- extracted S0010218025006479_mmc6.zip
+- none

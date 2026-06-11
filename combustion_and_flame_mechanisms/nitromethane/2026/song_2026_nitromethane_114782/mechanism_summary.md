@@ -14,16 +14,17 @@ Shubao Song, Lin Zhang, Jinghua Wu, Meishuai Zou, Jiankun Shao. High-temperature
 - Paper PDF: pending manual download; ScienceDirect PDF access triggered CAPTCHA or was not exposed
 - Paper PDF link: 
 - Fuel type: nitromethane
+- Plasma-related mechanism: possible
 - Validation reactor/type from abstract: shock tube
 
 ## Mechanism Files
 
 - Standard mechanism file: chem.inp
 - Standard thermodynamic file: therm.dat
-- Standard transport file: not available
-- Original mechanism source files: E:\mech_collection\combustion_and_flame_mechanisms\_processing_archive\2026\nitromethane\song_2026_nitromethane_114782\extracted\s0010218026000192_mmc3\BIT_NM model_mech.inp
-- Original thermodynamic source files: E:\mech_collection\combustion_and_flame_mechanisms\_processing_archive\2026\nitromethane\song_2026_nitromethane_114782\extracted\s0010218026000192_mmc4\BIT_NM model_thermo.dat
-- Original transport source files: not found
+- Standard transport file: tran.dat
+- Original mechanism source files: _processing\extracted\s0010218026000192_mmc3\BIT_NM model_mech.inp
+- Original thermodynamic source files: _processing\extracted\s0010218026000192_mmc4\BIT_NM model_thermo.dat
+- Original transport source files: _processing\extracted\s0010218026000192_mmc5\BIT_NM model_tran.dat
 
 ## Cantera Preprocessing Results
 
@@ -44,7 +45,7 @@ for the correct Chemkin syntax.
 - Cantera YAML: not available
 - Standard chem.inp: chem.inp
 - Standard therm.dat: therm.dat
-- Standard tran.dat: not available
+- Standard tran.dat: tran.dat
 
 ## Abstract
 
@@ -52,8 +53,4 @@ A detailed experimental and modeling study was conducted to investigate the high
 
 ## Processing Notes
 
-- extracted S0010218026000192_mmc1.docx
-- extracted S0010218026000192_mmc2.xlsx
-- extracted S0010218026000192_mmc3.zip
-- extracted S0010218026000192_mmc4.zip
-- extracted S0010218026000192_mmc5.zip
+- none

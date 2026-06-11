@@ -14,6 +14,7 @@ Tullio Viola, Nabiha Chaumeix, Andrea Comandini. The role of polyyne chemistry i
 - Paper PDF: pending manual download; ScienceDirect PDF access triggered CAPTCHA or was not exposed
 - Paper PDF link: https://www.sciencedirect.com/science/article/pii/S0010218026002257/pdfft?md5=80d86537e038b12ab4d941fba60ebf9b&pid=1-s2.0-S0010218026002257-main.pdf
 - Fuel type: acetylene
+- Plasma-related mechanism: no
 - Validation reactor/type from abstract: shock tube
 
 ## Mechanism Files
@@ -21,8 +22,8 @@ Tullio Viola, Nabiha Chaumeix, Andrea Comandini. The role of polyyne chemistry i
 - Standard mechanism file: chem.inp
 - Standard thermodynamic file: therm.dat
 - Standard transport file: not available
-- Original mechanism source files: E:\mech_collection\combustion_and_flame_mechanisms\_processing_archive\2026\acetylene\viola_2026_acetylene_114989\extracted\s0010218026002257_mmc1\ICARE_SMAuG_model_kinetics_2025.dat
-- Original thermodynamic source files: E:\mech_collection\combustion_and_flame_mechanisms\_processing_archive\2026\acetylene\viola_2026_acetylene_114989\extracted\s0010218026002257_mmc2\ICARE_SMAuG_model_thermo_2025.dat
+- Original mechanism source files: _processing\extracted\s0010218026002257_mmc1\ICARE_SMAuG_model_kinetics_2025.dat
+- Original thermodynamic source files: _processing\extracted\s0010218026002257_mmc2\ICARE_SMAuG_model_thermo_2025.dat
 - Original transport source files: not found
 
 ## Cantera Preprocessing Results
@@ -45,7 +46,4 @@ Soot formation still remains a contemporary challenge for the combustion communi
 
 ## Processing Notes
 
-- extracted S0010218026002257_mmc1.zip
-- extracted S0010218026002257_mmc2.zip
-- extracted S0010218026002257_mmc3.docx
-- extracted S0010218026002257_mmc4.xlsx
+- none
