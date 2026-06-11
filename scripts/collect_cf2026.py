@@ -141,7 +141,8 @@ REACTOR_TERMS = [
 
 FUEL_PATTERNS = [
     (r"\bNH\s*3\b|ammonia", "ammonia"),
-    (r"n\s*-?\s*decane|decane", "n_decane"),
+    (r"n\s*-?\s*dodecane|dodecane", "n_dodecane"),
+    (r"n\s*-?\s*decane|\bdecane\b", "n_decane"),
     (r"n\s*-?\s*heptane|heptane", "n_heptane"),
     (r"methanol", "methanol"),
     (r"1,?2-?dimethoxyethane", "dimethoxyethane"),
@@ -158,6 +159,12 @@ FUEL_PATTERNS = [
     (r"\bethane\b|\bC\s*2\s*H\s*6\b", "ethane"),
     (r"acetone", "acetone"),
     (r"2-?butanone|butanone|methyl ethyl ketone", "2_butanone"),
+    (r"1-?butene", "1_butene"),
+    (r"n-?butane|\bbutane\b", "n_butane"),
+    (r"ethylcyclohexane", "ethylcyclohexane"),
+    (r"n-?butylbenzene|butylbenzene", "n_butylbenzene"),
+    (r"quadricyclane", "quadricyclane"),
+    (r"cyclopentene", "cyclopentene"),
     (r"cyclopentanone", "cyclopentanone"),
     (r"furan", "furan"),
     (r"tetrahydrofuran", "tetrahydrofuran"),
@@ -167,6 +174,7 @@ FUEL_PATTERNS = [
     (r"pentane", "pentane"),
     (r"pentanol|secondary pentanols|2- and 3-pentanol|2-pentanol|3-pentanol", "pentanol"),
     (r"RP-?3", "rp3"),
+    (r"gas to liquid jet fuel|gas-to-liquid jet fuel|\bGTL\b", "gtl_jet_fuel"),
     (r"norbornane", "norbornane"),
     (r"propane", "propane"),
     (r"propan-?1-?ol|1-?propanol|propanol", "propanol"),
@@ -253,6 +261,15 @@ def record_year(record: dict) -> str:
     # article belongs to the 2026 journal volume, so do not derive folder years
     # from DOI text.
     return "2026"
+
+
+def normalize_record_years(records: list[dict], default_year: str = "2026") -> bool:
+    changed = False
+    for record in records:
+        if not record.get("year"):
+            record["year"] = default_year
+            changed = True
+    return changed
 
 
 def detect_fuel(record: dict) -> str:
@@ -581,6 +598,13 @@ def detect_plasma_case(record: dict, files: Iterable[Path] = ()) -> str:
     return "no"
 
 
+def short_message(value: str, limit: int = 800) -> str:
+    value = re.sub(r"\s+", " ", value or "").strip()
+    if len(value) <= limit:
+        return value
+    return value[:limit].rstrip() + " ... [truncated; see _processing logs]"
+
+
 def mechanism_priority(path: Path) -> tuple[int, str]:
     name = path.name.lower()
     score = 0
@@ -890,14 +914,24 @@ try:
         else:
             gas = ct.Solution(str(mech))
     else:
-        ck2yaml.convert_mech(
-            str(mech),
-            thermo_file=str(thermo) if thermo else None,
-            transport_file=str(transport) if transport else None,
-            out_name=str(out_yaml),
-            quiet=False,
-            permissive=True,
-        )
+        if hasattr(ck2yaml, "convert_mech"):
+            ck2yaml.convert_mech(
+                str(mech),
+                thermo_file=str(thermo) if thermo else None,
+                transport_file=str(transport) if transport else None,
+                out_name=str(out_yaml),
+                quiet=False,
+                permissive=True,
+            )
+        else:
+            ck2yaml.convert(
+                str(mech),
+                thermo_file=str(thermo) if thermo else None,
+                transport_file=str(transport) if transport else None,
+                out_name=str(out_yaml),
+                quiet=False,
+                permissive=True,
+            )
         gas = ct.Solution(str(out_yaml))
     payload.update({"ok": True, "species": str(gas.n_species), "reactions": str(gas.n_reactions), "message": "cantera conversion ok"})
 except Exception as exc:
@@ -1090,7 +1124,7 @@ def gb_t_7714(record: dict) -> str:
     month = record.get("month", "")
     article = article_id(record)
     doi = normalize_doi(record.get("doi", ""))
-    year = "2026"
+    year = record_year(record)
     tail = f"Combustion and Flame, {year}"
     if volume:
         tail += f", {volume}"
@@ -1172,22 +1206,44 @@ def url_head(url: str) -> tuple[int, str, int]:
         method="HEAD",
         headers={"User-Agent": "Mozilla/5.0"},
     )
-    with urllib.request.urlopen(req, timeout=25) as response:
+    with urllib.request.urlopen(req, timeout=8) as response:
         length = response.headers.get("content-length") or "0"
         return response.status, response.headers.get("content-type") or "", int(length)
 
 
 def url_download(url: str, dest: Path) -> None:
     req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
-    with urllib.request.urlopen(req, timeout=90) as response, dest.open("wb") as out:
-        shutil.copyfileobj(response, out)
+    tmp = dest.with_suffix(dest.suffix + ".part")
+    try:
+        with urllib.request.urlopen(req, timeout=30) as response, tmp.open("wb") as out:
+            shutil.copyfileobj(response, out)
+        tmp.replace(dest)
+    except Exception:
+        if tmp.exists():
+            tmp.unlink()
+        curl = shutil.which("curl.exe") or shutil.which("curl")
+        if not curl:
+            raise
+        completed = subprocess.run(
+            [curl, "-L", "--fail", "--max-time", "90", "-A", "Mozilla/5.0", "-o", str(tmp), url],
+            capture_output=True,
+            text=True,
+            timeout=100,
+        )
+        if completed.returncode != 0:
+            if tmp.exists():
+                tmp.unlink()
+            raise RuntimeError((completed.stderr or completed.stdout or f"curl failed {completed.returncode}").strip())
+        tmp.replace(dest)
 
 
-def probe_supplements(max_mmc: int = 8) -> None:
+def probe_supplements(max_mmc: int = 8, year: str | None = None) -> None:
     ensure_dirs()
     records = read_metadata()
     for record in records:
         if not record.get("candidate"):
+            continue
+        if year and record_year(record) != year:
             continue
         pii = record.get("pii") or ""
         if not pii:
@@ -1225,9 +1281,11 @@ def probe_supplements(max_mmc: int = 8) -> None:
                     except urllib.error.HTTPError as exc:
                         if exc.code != 404:
                             record.setdefault("probeErrors", []).append({"url": url, "error": f"HTTP {exc.code}"})
+                            changed = True
                         continue
                     except Exception as exc:  # noqa: BLE001
                         record.setdefault("probeErrors", []).append({"url": url, "error": str(exc)})
+                        changed = True
                         continue
                     if status == 200:
                         head_results.append((ext, url, length, content_type))
@@ -1238,7 +1296,12 @@ def probe_supplements(max_mmc: int = 8) -> None:
                 url = f"https://ars.els-cdn.com/content/image/1-s2.0-{pii}-mmc{idx}.{ext}"
                 target = DOWNLOADS / f"{pii}_mmc{idx}.{ext}"
                 if not target.exists() or target.stat().st_size != length:
-                    url_download(url, target)
+                    try:
+                        url_download(url, target)
+                    except Exception as exc:  # noqa: BLE001 - network failures should not stop the batch
+                        record.setdefault("probeErrors", []).append({"url": url, "error": str(exc)})
+                        changed = True
+                        continue
                 found.append(
                     {
                         "url": url,
@@ -1465,6 +1528,123 @@ def enrich_crossref() -> None:
         time.sleep(0.1)
 
 
+def import_sciencedirect_volume_metadata(source_dir: Path, default_year: str) -> None:
+    ensure_dirs()
+    records = read_metadata()
+    changed = normalize_record_years(records)
+    by_pii = {str(record.get("pii", "")).lower(): record for record in records if record.get("pii")}
+    for file in sorted(source_dir.glob("volume_*.json")):
+        volume_records = json.loads(file.read_text(encoding="utf-8-sig"))
+        for incoming in volume_records:
+            if not incoming.get("pii"):
+                continue
+            incoming["year"] = str(incoming.get("year") or default_year)
+            key = str(incoming["pii"]).lower()
+            existing = by_pii.get(key)
+            if existing:
+                for field in [
+                    "year",
+                    "volume",
+                    "month",
+                    "issueUrl",
+                    "issueText",
+                    "title",
+                    "authors",
+                    "doi",
+                    "articleNumber",
+                    "url",
+                    "issuePdfLink",
+                    "articleType",
+                    "access",
+                ]:
+                    if incoming.get(field) and not existing.get(field):
+                        existing[field] = incoming[field]
+                        changed = True
+                continue
+            records.append(incoming)
+            by_pii[key] = incoming
+            changed = True
+    if changed:
+        write_metadata(records)
+
+
+def import_page_supplement_links(source_dir: Path) -> None:
+    ensure_dirs()
+    records = read_metadata()
+    by_pii = {str(record.get("pii", "")).lower(): record for record in records if record.get("pii")}
+    changed = False
+    for file in sorted(source_dir.glob("chunk_*.json")):
+        chunk = json.loads(file.read_text(encoding="utf-8-sig"))
+        for item in chunk:
+            record = by_pii.get(str(item.get("pii", "")).lower())
+            if not record:
+                continue
+            links = []
+            for link in item.get("links", []):
+                href = link.get("href") or ""
+                if re.search(r"-mmc\d+\.", href, re.I):
+                    links.append(
+                        {
+                            "url": href,
+                            "text": link.get("text", ""),
+                            "source": "ScienceDirect article page",
+                        }
+                    )
+            if not links:
+                if item.get("captcha"):
+                    record["articlePageSupplementStatus"] = "captcha"
+                    changed = True
+                continue
+            existing_urls = {
+                link.get("url")
+                for link in (record.get("probedSupplementLinks") or [])
+                if isinstance(link, dict)
+            }
+            supplement_links = record.setdefault("probedSupplementLinks", [])
+            for link in links:
+                if link["url"] not in existing_urls:
+                    supplement_links.append(link)
+                    existing_urls.add(link["url"])
+                    changed = True
+            record["articlePageSupplementStatus"] = "links imported"
+    if changed:
+        write_metadata(records)
+
+
+def download_recorded_supplements(year: str | None = None) -> None:
+    ensure_dirs()
+    records = read_metadata()
+    changed = False
+    for record in records:
+        if year and record_year(record) != year:
+            continue
+        links = record.get("probedSupplementLinks") or record.get("supplementLinks") or []
+        for idx, link in enumerate(links, 1):
+            if not isinstance(link, dict):
+                continue
+            url = link.get("url") or ""
+            if not url:
+                continue
+            suffix = Path(urllib.parse.urlparse(url).path).suffix or ".dat"
+            match = re.search(r"-mmc(\d+)", url, re.I)
+            mmc = match.group(1) if match else str(idx)
+            pii = record.get("pii") or "unknown"
+            target = DOWNLOADS / f"{pii}_mmc{mmc}{suffix}"
+            if target.exists() and target.stat().st_size:
+                link["file"] = str(target)
+                continue
+            try:
+                url_download(url, target)
+                link["file"] = str(target)
+                link["content_length"] = target.stat().st_size
+                changed = True
+            except Exception as exc:  # noqa: BLE001
+                record.setdefault("supplementDownloadErrors", []).append({"url": url, "error": str(exc)})
+                changed = True
+    if changed:
+        write_metadata(records)
+
+
 def scan_files(paths: list[Path]) -> tuple[list[Path], list[Path], list[Path], list[Path]]:
     all_files: list[Path] = []
     for base in paths:
@@ -1541,7 +1721,7 @@ def write_summary(
                     f"- Status: {result.status}",
                     f"- Species count: {result.species or 'not parsed'}",
                     f"- Reaction count: {result.reactions or 'not parsed'}",
-                    f"- Message: {result.message}",
+                    f"- Message: {short_message(result.message)}",
                     f"- Method: {result.method or 'not available'}",
                     f"- Cantera YAML: {rel(result.cantera_yaml) if result.cantera_yaml else 'not available'}",
                     f"- Standard chem.inp: {rel(result.standardized_mech) if result.standardized_mech else 'not available'}",
@@ -1666,8 +1846,24 @@ def process() -> None:
                     f"- Mechanism candidates: {'; '.join(str(p) for p in mechanisms + cantera)}",
                     f"- Thermodynamic candidates: {'; '.join(str(p) for p in thermos)}",
                     f"- Last status: {last.status}",
-                    f"- Last message: {last.message}",
+                    f"- Last message: {short_message(last.message)}",
                     f"- Target folder: {folder}",
+                    "",
+                ]
+            )
+        if record_year(record) == "2025" and status in {"excluded_no_supplement_found", "excluded_no_mechanism_attachment"}:
+            probe_errors = record.get("probeErrors") or []
+            handoff.extend(
+                [
+                    f"## 2025 supplement review needed: {record.get('title', 'Untitled')}",
+                    "",
+                    f"- DOI: {record.get('doi', '')}",
+                    f"- URL: {record.get('url', '')}",
+                    f"- Article number: {article_id(record)}",
+                    f"- Status: {status}",
+                    f"- Supplement links found: {len(record.get('probedSupplementLinks') or record.get('supplementLinks') or [])}",
+                    f"- Probe errors: {len(probe_errors)}",
+                    "- Reason: automated direct supplement probing did not yield a processable mechanism; ScienceDirect article-page access is currently gated by CAPTCHA",
                     "",
                 ]
             )
@@ -1762,6 +1958,7 @@ def process() -> None:
         ),
         encoding="utf-8",
     )
+    write_metadata(records)
 
 
 def init() -> None:
@@ -1773,7 +1970,7 @@ def init() -> None:
         README.write_text(
             textwrap.dedent(
                 f"""\
-                # Combustion and Flame 2026 Mechanism Collection
+                # Combustion and Flame Mechanism Collection
 
                 This directory stores the automated collection output.
 
@@ -1789,17 +1986,37 @@ def init() -> None:
 
 def main() -> None:
     parser = argparse.ArgumentParser()
-    parser.add_argument("command", choices=["init", "enrich-crossref", "enrich-abstracts", "probe-supplements", "process"])
+    parser.add_argument(
+        "command",
+        choices=[
+            "init",
+            "import-sciencedirect-metadata",
+            "import-page-supplements",
+            "download-supplements",
+            "enrich-crossref",
+            "enrich-abstracts",
+            "probe-supplements",
+            "process",
+        ],
+    )
     parser.add_argument("--max-mmc", type=int, default=8)
+    parser.add_argument("--source-dir", type=Path, default=RAW / "2025_volumes")
+    parser.add_argument("--year")
     args = parser.parse_args()
     if args.command == "init":
         init()
+    elif args.command == "import-sciencedirect-metadata":
+        import_sciencedirect_volume_metadata(args.source_dir, args.year or "2025")
+    elif args.command == "import-page-supplements":
+        import_page_supplement_links(args.source_dir)
+    elif args.command == "download-supplements":
+        download_recorded_supplements(year=args.year)
     elif args.command == "enrich-crossref":
         enrich_crossref()
     elif args.command == "enrich-abstracts":
         enrich_abstracts()
     elif args.command == "probe-supplements":
-        probe_supplements(max_mmc=args.max_mmc)
+        probe_supplements(max_mmc=args.max_mmc, year=args.year)
     elif args.command == "process":
         process()
 

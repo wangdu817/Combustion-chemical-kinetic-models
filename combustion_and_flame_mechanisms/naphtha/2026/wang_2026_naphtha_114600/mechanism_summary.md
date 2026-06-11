@@ -31,8 +31,8 @@ Zezhong Wang, Anhao Zhong, Chao Zhou, Wenhao Yuan, Dong Han. Experimental and ki
 ### Mechanism 1
 
 - Status: cantera_failed
-- Species count: 2800
-- Reaction count: 27228
+- Species count: 8400
+- Reaction count: 53648
 - Message: RuntimeError: bad allocation
 - Method: cantera
 - Cantera YAML: mechanism.yaml

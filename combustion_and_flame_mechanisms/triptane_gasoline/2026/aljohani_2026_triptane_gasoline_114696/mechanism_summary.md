@@ -30,19 +30,12 @@ Khalid Aljohani, Aamir Farooq. Triptane (2,2,3-trimethylbutane) as an Anti-Knock
 
 ### Mechanism 1
 
-- Status: cantera_failed
-- Species count: not parsed
-- Reaction count: not parsed
-- Message: InputError: Error parsing elemental composition for species thermo entry:
- 2.42791871e+01 2.51543795e-02-8.59067806e-06 1.33406642e-09-7.74653905e-14    2
--5.10801725e+03-1.01377558e+02-1.30412122e+00 8.49858457e-02-6.36219850e-05    3
- 2.57814973e-08-4.60828679e-12 3.80331867e+03 3.61105145e+01                   4
-
-Element amounts can have no more than 3 digits.
-Please check https://cantera.org/tutorials/ck2yaml-tutorial.html#debugging-common-errors-in-ck-files
-for the correct Chemkin syntax.
+- Status: ok
+- Species count: 3601
+- Reaction count: 15456
+- Message: cantera conversion ok
 - Method: cantera
-- Cantera YAML: not available
+- Cantera YAML: mechanism.yaml
 - Standard chem.inp: chem.inp
 - Standard therm.dat: therm.dat
 - Standard tran.dat: not available

@@ -31,11 +31,9 @@ Aboli Pingle, Sudarshan Kumar, Neeraj Kumbhakarna. Unravelling the combustion ki
 ### Mechanism 1
 
 - Status: cantera_failed
-- Species count: 102
+- Species count: 304
 - Reaction count: 118
-- Message: InputError: No transport data for species 'HCOOH'.
-Please check https://cantera.org/tutorials/ck2yaml-tutorial.html#debugging-common-errors-in-ck-files
-for the correct Chemkin syntax.
+- Message: InputError: No thermo data found for species 'C2H5O2H' No thermo data found for species 'NC3H7O2' No thermo data found for species 'IC3H7O2' No thermo data found for species 'C3H7OOH' No thermo data found for species 'C3-OQOOH' No thermo data found for species 'CHOCH2CHO' No thermo data found for species 'CH2OHCH2CHO' No thermo data found for species 'CH3CO2H' No thermo data found for species 'HCO3' No thermo data found for species 'HCO3H' No thermo data found for species 'CH2OHCOCH3' No thermo data found for species 'NC3-QOOH' No thermo data found for species 'IC3-QOOH' No thermo data found for species 'NC3-OOQOOH' No thermo data found for species 'IC3-OOQOOH' No thermo data found for species 'CH2COOH' No thermo data found for species 'IC4-OQOOH' No thermo data found for species 'NC4-OQOO ... [truncated; see _processing logs]
 - Method: cantera
 - Cantera YAML: mechanism.yaml
 - Standard chem.inp: chem.inp

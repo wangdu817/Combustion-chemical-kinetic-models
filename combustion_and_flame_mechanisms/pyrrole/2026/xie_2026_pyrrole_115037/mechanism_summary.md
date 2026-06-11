@@ -33,13 +33,7 @@ Jibiao Xie, Jundie Chen, Alexander A. Konnov. Understanding the formation of nit
 - Status: cantera_failed
 - Species count: not parsed
 - Reaction count: not parsed
-- Message: InputError: Unexpected token "C2H5CN+CH2CN" in reaction expression "C2H5CN+CH2CN=NCCH2CN+C2H5
-".
-Please check https://cantera.org/tutorials/ck2yaml-tutorial.html#debugging-common-errors-in-ck-files
-for the correct Chemkin syntax.; numeric cleanup retry failed: InputError: Unexpected token "C2H5CN+CH2CN" in reaction expression "C2H5CN+CH2CN=NCCH2CN+C2H5
-".
-Please check https://cantera.org/tutorials/ck2yaml-tutorial.html#debugging-common-errors-in-ck-files
-for the correct Chemkin syntax.
+- Message: InputError: Error while reading reaction in chem.inp starting on line 2: """ C2H5CN+CH2CN=NCCH2CN+C2H5 1.77E+09 0.805 24190.95 PLOG / 1.31E-04 2.35E+04 2.197 21164.95 / PLOG / 1.31E-03 3.31E+04 2.154 21245.83 / PLOG / 1.00E+00 1.77E+09 0.805 24190.95 / PLOG / 1.00E+01 1.94E+11 0.277 26551.64 / PLOG / 1.00E+02 1.14E+07 1.612 26774.06 / """ Unexpected token 'C2H5CN+CH2CN' in reaction expression 'C2H5CN+CH2CN=NCCH2CN+C2H5'. May be due to undeclared species 'C2H5CNCH2CN'. Error while reading reaction in chem.inp starting on line 9: """ C2H5CN+CH2CN=CH3CN+CH2CH2CN 1.34E-04 4.915 13067.54 """ Unexpected token 'C2H5CN+CH2CN' in reaction expression 'C2H5CN+CH2CN=CH3CN+CH2CH2CN'. May be due to undeclared species 'C2H5CNCH2CN'. Error while reading reaction in chem.inp starting on line 10: """ C2H5CN ... [truncated; see _processing logs]
 - Method: cantera
 - Cantera YAML: not available
 - Standard chem.inp: chem.inp

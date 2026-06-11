@@ -33,9 +33,7 @@ Jiaqi Zhang, Florian vom Lehn, Sascha Jacobs, Raik Hesse, ... Liming Cai. Igniti
 - Status: cantera_failed
 - Species count: 573
 - Reaction count: not parsed
-- Message: InputError: No transport data for species 'I-CO'.
-Please check https://cantera.org/tutorials/ck2yaml-tutorial.html#debugging-common-errors-in-ck-files
-for the correct Chemkin syntax.
+- Message: InputError: Ignoring redundant thermo data for species 'P-C4H9' starting on line 871 of therm.dat. Ignoring redundant thermo data for species 'C4H8-1' starting on line 875 of therm.dat. Ignoring redundant thermo data for species 'C2H5CHO' starting on line 1095 of therm.dat. Ignoring redundant thermo data for species 'CH3COCH2' starting on line 1239 of therm.dat. Ignoring redundant thermo data for species 'C2H5CO' starting on line 1279 of therm.dat. Suppressed 14 additional warnings about redundant thermo data. Run ck2yaml again with the '--verbose' option to see all warnings. No thermo data found for species 'A1-C6H6' No thermo data found for species '--C7H14' No thermo data found for species '-C8OOHA' No thermo data found for species 'A1--C6H5' No thermo data found for species 'A1C2HY' No ... [truncated; see _processing logs]
 - Method: cantera
 - Cantera YAML: mechanism.yaml
 - Standard chem.inp: chem.inp
@@ -48,4 +46,4 @@ not available
 
 ## Processing Notes
 
-- none
+- extracted S0010218025006844_mmc7.xlsx

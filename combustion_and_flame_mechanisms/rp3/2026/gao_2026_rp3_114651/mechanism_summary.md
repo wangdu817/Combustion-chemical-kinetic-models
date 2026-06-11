@@ -33,7 +33,7 @@ Xiang Gao, Du Wang, Hong-Qing Shi, Xu-Peng Yu, ... Zhen-Yu Tian. Experimental an
 - Status: cantera_failed
 - Species count: not parsed
 - Reaction count: not parsed
-- Message: IndexError: list index out of range; numeric cleanup retry failed: IndexError: list index out of range
+- Message: InputError: Ignoring redundant declaration for species 'CH2OCH2O2H' Ignoring redundant declaration for species 'CH3CHCHCHO' Ignoring redundant declaration for species 'CH3CHOOCOCH3' Ignoring redundant declaration for species 'TC4H9O' Ignoring redundant declaration for species 'IC3H5O2HCHO' Suppressed 11 additional warnings about redundant species declarations. Run ck2yaml again with the '--verbose' option to see all warnings. Error while reading reaction in chem.inp starting on line 1010: """ H+O2<=>O+OH 3.547E+15 -0.406 16599.0 """ list index out of range Ignoring redundant thermo data for species 'HO2CHO' starting on line 100 of therm.dat. Ignoring redundant thermo data for species 'O2CHO' starting on line 104 of therm.dat. Ignoring redundant thermo data for species 'HOCH2O2H' starting o ... [truncated; see _processing logs]
 - Method: cantera
 - Cantera YAML: not available
 - Standard chem.inp: chem.inp

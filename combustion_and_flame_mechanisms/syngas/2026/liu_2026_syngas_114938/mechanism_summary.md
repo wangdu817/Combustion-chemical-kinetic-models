@@ -30,41 +30,10 @@ Yunyang Liu, Erjiang Hu, Jiajun You, Xiaoyang Guo, ... Zuohua Huang. Experimenta
 
 ### Mechanism 1
 
-- Status: cantera_failed
+- Status: ok
 - Species count: 39
 - Reaction count: 203
-- Message: CanteraError: 
-*******************************************************************************
-InputFileError thrown by Kinetics::checkDuplicates:
-Error on lines 689 and 914 of E:\mech_collection\combustion_and_flame_mechanisms\syngas\2026\liu_2026_syngas_114938\mechanism.yaml:
-Undeclared duplicate reactions detected:
-Reaction 41: H2 + M <=> 2 H + M
-Reaction 1: 2 H + O2 <=> H2 + O2
-
-|  Line |
-|   684 |     well-depth: 200.0
-|   685 |     diameter: 3.9
-|   686 |     rotational-relaxation: 1.0
-|   687 | 
-|   688 | reactions:
->   689 > - equation: H2 + M <=> H + H + M  # Reaction 1
-            ^
-|   690 |   type: three-body
-|   691 |   rate-constant: {A: 4.577e+19, b: -1.4, Ea: 1.044e+05}
-|   692 |   efficiencies: {H2: 2.5, H2O: 12.0, CO: 1.9, CO2: 3.8, HE: 0.83, CH4: 2.0,
-...
-|   909 |   rate-constant: {A: 3.93e+13, b: 0.0, Ea: 0.0}
-|   910 |   note: '\Author: SP !\Ref: YU ET AL., JCP, 2008, 129(21) !\Comment: WARNING'
-|   911 | - equation: CO + H2O <=> CO2 + H2  # Reaction 40
-|   912 |   rate-constant: {A: 2.0e+11, b: 0.0, Ea: 3.8e+04}
-|   913 |   note: POLIMI Mech
->   914 > - equation: H + O2 + H <=> H2 + O2  # Reaction 41
-            ^
-|   915 |   rate-constant: {A: 8.8e+22, b: -1.835, Ea: 800.0}
-|   916 |   note: |-
-|   917 |     +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-*******************************************************************************
-
+- Message: cantera conversion ok
 - Method: cantera
 - Cantera YAML: mechanism.yaml
 - Standard chem.inp: chem.inp

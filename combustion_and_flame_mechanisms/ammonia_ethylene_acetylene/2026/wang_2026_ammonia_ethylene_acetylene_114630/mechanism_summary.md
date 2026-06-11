@@ -33,9 +33,7 @@ Qiao Wang, Peng Zhang, Chengcheng Liu, Bin Yang. Co-oxidation of ammonia with et
 - Status: cantera_failed
 - Species count: 157
 - Reaction count: not parsed
-- Message: InputError: No thermo data found for species 'H2'
-Please check https://cantera.org/tutorials/ck2yaml-tutorial.html#debugging-common-errors-in-ck-files
-for the correct Chemkin syntax.
+- Message: IndexError: list index out of range; numeric cleanup retry failed: IndexError: list index out of range
 - Method: cantera
 - Cantera YAML: mechanism.yaml
 - Standard chem.inp: chem.inp

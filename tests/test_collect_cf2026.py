@@ -1,6 +1,7 @@
 import tempfile
 import unittest
 import zipfile
+import json
 from pathlib import Path
 
 from scripts import collect_cf2026 as cf
@@ -66,6 +67,26 @@ class CollectCf2026Tests(unittest.TestCase):
         }
 
         self.assertEqual(cf.detect_fuel(record), "ammonia_dimethoxyethane")
+
+    def test_detect_fuel_distinguishes_dodecane_from_decane(self):
+        record = {
+            "title": "Revealing the oxidation kinetics of n-dodecane, ethylcyclohexane and n-butylbenzene blended fuels",
+            "abstract": "",
+        }
+
+        self.assertEqual(cf.detect_fuel(record), "n_dodecane_ethylcyclohexane_n_butylbenzene")
+
+    def test_detect_fuel_adds_2025_specific_fuels(self):
+        cases = {
+            "An experimental and kinetic study of quadricyclane autoignition at high temperatures": "quadricyclane",
+            "Part A: 1-Butene": "1_butene",
+            "Part B: n-Butane": "n_butane",
+            "cyclopentene autoignition mechanism": "cyclopentene",
+            "alternative gas to liquid jet fuel": "gtl_jet_fuel",
+        }
+        for title, expected in cases.items():
+            with self.subTest(title=title):
+                self.assertEqual(cf.detect_fuel({"title": title, "abstract": ""}), expected)
 
     def test_detect_fuel_does_not_infer_method_paper_fuel_from_abstract_side_terms(self):
         record = {
@@ -143,6 +164,18 @@ phases:
 
         self.assertEqual(folder.parts[-3:], ("ammonia_dimethoxyethane", "2026", "qin_2026_ammonia_dimethoxyethane_114555"))
 
+    def test_record_folder_uses_explicit_year(self):
+        record = {
+            "authors": ["Xuan Ren"],
+            "fuelType": "methylhydrazine",
+            "articleNumber": "114478",
+            "year": "2025",
+        }
+
+        folder = cf.record_folder(record)
+
+        self.assertEqual(folder.parts[-3:], ("methylhydrazine", "2025", "ren_2025_methylhydrazine_114478"))
+
     def test_cleanup_active_paper_folder_keeps_only_summary_and_mechanisms(self):
         with tempfile.TemporaryDirectory() as tmp:
             folder = Path(tmp)
@@ -213,6 +246,68 @@ phases:
 
         self.assertIn("A, B, C, D, E, F, et al.", citation)
         self.assertNotIn("绛", citation)
+
+    def test_gb_t_7714_uses_record_year(self):
+        record = {
+            "authors": ["A"],
+            "title": "Test title",
+            "volume": "271",
+            "year": "2025",
+            "doi": "10.1/example",
+            "articleNumber": "113870",
+        }
+
+        self.assertIn("Combustion and Flame, 2025, 271: 113870", cf.gb_t_7714(record))
+
+    def test_import_sciencedirect_volume_metadata_adds_years(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            source = root / "volumes"
+            source.mkdir()
+            (source / "volume_271.json").write_text(
+                json.dumps(
+                    [
+                        {
+                            "year": "2025",
+                            "volume": "271",
+                            "month": "January",
+                            "title": "Shock tube kinetic modeling study",
+                            "pii": "S0010218024000012",
+                            "articleNumber": "113900",
+                        }
+                    ]
+                ),
+                encoding="utf-8",
+            )
+            old_root, old_raw, old_downloads, old_extracted, old_metadata = (
+                cf.ROOT,
+                cf.RAW,
+                cf.DOWNLOADS,
+                cf.EXTRACTED,
+                cf.METADATA_JSON,
+            )
+            try:
+                cf.ROOT = root / "collection"
+                cf.RAW = cf.ROOT / "_raw"
+                cf.DOWNLOADS = cf.RAW / "downloads"
+                cf.EXTRACTED = cf.RAW / "extracted"
+                cf.METADATA_JSON = cf.RAW / "article_metadata.json"
+                cf.write_metadata([{"pii": "S0010218025000001", "title": "Existing 2026"}])
+
+                cf.import_sciencedirect_volume_metadata(source, "2025")
+                records = cf.read_metadata()
+            finally:
+                cf.ROOT, cf.RAW, cf.DOWNLOADS, cf.EXTRACTED, cf.METADATA_JSON = (
+                    old_root,
+                    old_raw,
+                    old_downloads,
+                    old_extracted,
+                    old_metadata,
+                )
+
+            years = {record["pii"]: record["year"] for record in records}
+            self.assertEqual(years["S0010218025000001"], "2026")
+            self.assertEqual(years["S0010218024000012"], "2025")
 
     def test_restore_openalex_abstract_inverted_index(self):
         inverted = {"Combustion": [0], "and": [1], "Flame": [2], "abstract.": [3]}

@@ -1,13 +1,13 @@
 {
-  "updated_at": "2026-06-11T09:24:10",
-  "metadata_records": 485,
-  "index_rows": 485,
-  "included": 13,
-  "conversion_failed": 29,
+  "updated_at": "2026-06-11T15:25:48",
+  "metadata_records": 1116,
+  "index_rows": 1116,
+  "included": 24,
+  "conversion_failed": 28,
   "excluded_non_kinetics_mechanism_attachment": 0,
-  "excluded_no_mechanism_attachment": 39,
-  "excluded_no_mechanism_signal": 390,
-  "excluded_no_supplement_found": 14,
+  "excluded_no_mechanism_attachment": 49,
+  "excluded_no_mechanism_signal": 895,
+  "excluded_no_supplement_found": 120,
   "pending_download": 0,
   "root": "E:\\mech_collection\\combustion_and_flame_mechanisms"
 }

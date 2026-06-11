@@ -33,7 +33,7 @@ Xingyu Wang, Xiao Zhang, Peiyao Chen. Investigation of kinetic inhibition effect
 - Status: cantera_failed
 - Species count: not parsed
 - Reaction count: not parsed
-- Message: ValueError: could not convert string to float: '0.902,'; numeric cleanup retry failed: ValueError: could not convert string to float: '696.,'
+- Message: InputError: Error while reading entry in chem.inp starting on line 3170: """ References and Notes: """ Section starts with unrecognized keyword ' References and Notes:' Ignoring redundant declaration for species 'CH3CHOH' Ignoring redundant declaration for species 'CH3CL' Ignoring redundant declaration for species 'CF3CHCH2' Error while reading reaction in chem.inp starting on line 1659: """ C6H5 (+M) = o-C6H4 + H (+M) 4.300E+12 0.616 77313. ! RRKM 00-HAI-FRE LOW/ 1.000E+84 -18.866 90064 / TROE/ 0.902, 696., 358., 3856. / H2/2.0/ H2O/6.0/ CH4/2.0/ CO/1.5/ CO2/2.0/ """ could not convert string to float: '0.902,' No thermo data found for species 'AR' No thermo data found for species 'N2' No thermo data found for species 'H' No thermo data found for species 'O' No thermo data found for specie ... [truncated; see _processing logs]
 - Method: cantera
 - Cantera YAML: not available
 - Standard chem.inp: chem.inp

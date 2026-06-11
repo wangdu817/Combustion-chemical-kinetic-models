@@ -33,7 +33,7 @@ Jie Yang, Shubao Song, Lin Zhang, Hengrui Liu, ... Jiankun Shao. Experimental an
 - Status: cantera_failed
 - Species count: not parsed
 - Reaction count: not parsed
-- Message: ValueError: could not convert string to float: 'c2h5oco    2/ 9'; numeric cleanup retry failed: ValueError: could not convert string to float: 'c2h5oco    2/ 9'
+- Message: InputError: Ignoring redundant declaration for species 'CH3O2H' Ignoring redundant declaration for species 'C2O' Ignoring redundant declaration for species 'C2H5O' Ignoring redundant declaration for species 'CH2CO' Ignoring redundant declaration for species 'HCCO' Suppressed 5 additional warnings about redundant species declarations. Run ck2yaml again with the '--verbose' option to see all warnings. Ignoring redundant thermo data for species 'C2H2' starting on line 3473 of therm.dat. Ignoring redundant thermo data for species 'C2H3' starting on line 3477 of therm.dat. Ignoring redundant thermo data for species 'C2H4' starting on line 3481 of therm.dat. Ignoring redundant thermo data for species 'C3H3' starting on line 3485 of therm.dat. Ignoring redundant thermo data for species 'C3H4-P' s ... [truncated; see _processing logs]
 - Method: cantera
 - Cantera YAML: not available
 - Standard chem.inp: chem.inp
