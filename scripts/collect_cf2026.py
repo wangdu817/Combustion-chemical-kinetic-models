@@ -19,6 +19,7 @@ import json
 import os
 import re
 import shutil
+import sys
 import subprocess
 import tarfile
 import textwrap
@@ -32,9 +33,9 @@ from pathlib import Path
 from typing import Iterable
 
 
-WORKSPACE = Path(r"E:\mech_collection")
+WORKSPACE = Path(os.environ.get("MECH_COLLECTION_WORKSPACE", Path(__file__).resolve().parents[1])).resolve()
 LEGACY_ROOT = WORKSPACE / "combustion_and_flame_2026_mechanisms"
-ROOT = WORKSPACE / "combustion_and_flame_mechanisms"
+ROOT = Path(os.environ.get("MECH_COLLECTION_ROOT", WORKSPACE / "combustion_and_flame_mechanisms")).resolve()
 RAW = ROOT / "_raw"
 DOWNLOADS = RAW / "downloads"
 EXTRACTED = RAW / "extracted"
@@ -45,7 +46,7 @@ PROCESSING_ARCHIVE = ROOT / "_processing_archive"
 CKDIR = Path(r"D:\BaiduSyncdisk\soft\CoFlame_yang")
 CKEXE = CKDIR / "ckinterp.exe"
 CK_FILES = ["chem.inp", "therm.dat", "chem.out"]
-ANALYSIS_PYTHON = Path(r"C:\Users\17915\anaconda3\envs\analysis-env\python.exe")
+ANALYSIS_PYTHON = Path(os.environ.get("MECH_COLLECTION_PYTHON", sys.executable)).resolve()
 MMC_EXTENSIONS = [
     "zip",
     "txt",

@@ -1,10 +1,29 @@
-# Combustion and Flame 机理收集复现与续接流程
+# Reproducing The Mechanism Collection Workflow
 
-本文档说明如何复现当前项目的论文机理附件收集、整理、总结和断点续接流程。默认目标是减少重复网页访问和重复下载：已经完成探测、下载或处理的文章不会再次执行对应步骤，除非显式使用 `--force`。
+This guide is for users who clone this repository on another computer and want to collect, download, and summarize Combustion and Flame chemical kinetic mechanism supplements. Codex is not required. An agent can help with browser automation, but the same workflow can be run manually with Python and a normal browser.
 
-## 1. 输出结构
+The workflow is resumable by design. Do not repeatedly visit article pages or re-download files that already have terminal status records in `combustion_and_flame_mechanisms/_raw/article_metadata.json`.
 
-项目根目录为 `E:\mech_collection`，主要输出目录为：
+## 1. What The Repository Does
+
+The script `scripts/collect_cf2026.py` handles the local and reproducible parts:
+
+- Import article metadata harvested from ScienceDirect issue pages.
+- Identify reaction-kinetics candidates from titles and abstracts.
+- Record supplementary-material links and download attachments when direct links are available.
+- Recursively extract archives, including nested archives.
+- Detect CHEMKIN, Cantera, thermodynamic, and transport files by content markers.
+- Standardize files as `chem.inp`, `therm.dat`, and `tran.dat`.
+- Convert CHEMKIN mechanisms with Cantera `ck2yaml --permissive`.
+- Count species and reactions from Cantera output or generated YAML.
+- Write `mechanism_summary.md` for each mechanism folder.
+- Maintain `collection_index.csv`, `manual_download_handoff.md`, `run_summary.json`, and per-article resume state.
+
+It does not bypass ScienceDirect access controls. If login, institutional SSO, CAPTCHA, or license confirmation is required, a human must complete that step in the browser.
+
+## 2. Directory Layout
+
+After processing, the collection is organized by fuel first, year second:
 
 ```text
 combustion_and_flame_mechanisms/
@@ -25,146 +44,183 @@ combustion_and_flame_mechanisms/
     downloads/
 ```
 
-顶层论文文件夹只保留总结文件和标准化机理文件。原始附件、递归解压结果、Cantera 转换日志和中间文件保存在对应论文文件夹的 `_processing/` 子目录。Git 默认不跟踪 PDF、附件、机理大文件和 `_processing/` 目录，只跟踪脚本、索引、元数据和总结。
+The top level of each paper folder keeps only the summary and standardized mechanism files. Raw downloads, extracted attachments, conversion logs, and intermediate files stay under that paper's `_processing/` folder.
 
-## 2. 环境要求
+## 3. Required Software
 
-- Windows + PowerShell。
-- 当前仓库：`E:\mech_collection`。
-- Python：`C:\Users\17915\anaconda3\envs\analysis-env\python.exe`。
-- Python 环境需要可导入 Cantera 和 PyYAML。
-- Chrome 已登录 ScienceDirect/Elsevier。流程不读取、不导出密码、cookie、localStorage 或浏览器 session 文件。
-- 可选：`7z` 用于解压 `.rar` 和 `.7z`；`curl.exe` 用于部分 Elsevier CDN 下载 fallback。
+Required:
 
-快速检查：
+- Git.
+- Python 3.10 or newer.
+- Cantera 3.x.
+- PyYAML.
+- A normal browser, preferably Chrome or Edge, for ScienceDirect login and manual supplement access.
 
-```powershell
-cd E:\mech_collection
-& 'C:\Users\17915\anaconda3\envs\analysis-env\python.exe' -c "import cantera, yaml; print(cantera.__version__)"
-git status --short --branch
+Optional but recommended:
+
+- `7z` / `7za` / `7zr` on `PATH` for `.rar` and `.7z` supplements.
+- `curl` on `PATH` for fallback Elsevier CDN downloads.
+- `pdftotext` on `PATH` if you want abstracts extracted from local PDFs before online metadata APIs.
+
+Create the recommended Conda environment:
+
+```bash
+git clone https://github.com/wangdu817/Combustion-chemical-kinetic-models.git
+cd Combustion-chemical-kinetic-models
+conda env create -f environment.yml
+conda activate mechanism-collection
+python -c "import cantera, yaml; print(cantera.__version__)"
 ```
 
-## 3. 状态记录和断点续接规则
+If you do not use Conda, install equivalent packages in your own Python environment:
 
-每篇文章的状态记录保存在 `combustion_and_flame_mechanisms/_raw/article_metadata.json`，汇总表保存在 `collection_index.csv`。
+```bash
+python -m pip install -r requirements.txt
+```
 
-关键字段：
+## 4. Paths And Environment Variables
 
-- `supplementProbeStatus`: `complete`、`no_links`、`captcha`、`error`、`partial`。
-- `supplementProbeCheckedAt`: 最近一次附件链接探测时间。
-- `supplementDownloadStatus`: `complete`、`partial`、`failed`、`none`。
-- `downloadStatus`: 每个附件链接的下载状态，常见值为 `downloaded`、`existing`、`failed`。
-- `processingStatus`: `included`、`conversion_failed`、`excluded_no_mechanism_attachment`、`excluded_no_supplement_found`、`excluded_no_mechanism_signal` 等。
-- `processedAt`: 最近一次实际处理附件和 Cantera 转换的时间。
-- `processingFolder`: 该文章对应的输出文件夹。
+By default, the script uses the cloned repository root as the workspace and writes to:
 
-默认规则：
+```text
+combustion_and_flame_mechanisms/
+```
 
-- `probe-supplements` 会跳过已经有终态 `supplementProbeStatus` 的文章。
-- `download-supplements` 会跳过已经完整下载、已经失败或部分失败的文章；失败链接不会反复重试。
-- `process` 会优先复用已有 `collection_index.csv` 和现有论文文件夹，默认不再重复复制附件、递归解压或执行 Cantera。
-- 只有确认需要重新跑某一步时才加 `--force`。
+You can override paths without editing the script:
 
-## 4. 年份元数据导入
+```bash
+export MECH_COLLECTION_WORKSPACE=/path/to/repo
+export MECH_COLLECTION_ROOT=/path/to/output/combustion_and_flame_mechanisms
+export MECH_COLLECTION_PYTHON=/path/to/python
+```
 
-ScienceDirect 卷期页面采集结果应保存为 JSON 文件，例如：
+On PowerShell:
+
+```powershell
+$env:MECH_COLLECTION_WORKSPACE = "D:\work\Combustion-chemical-kinetic-models"
+$env:MECH_COLLECTION_ROOT = "D:\work\combustion_and_flame_mechanisms"
+$env:MECH_COLLECTION_PYTHON = "C:\Users\you\miniconda3\envs\mechanism-collection\python.exe"
+```
+
+`MECH_COLLECTION_PYTHON` matters because Cantera conversion is executed in a subprocess. If it is unset, the current Python interpreter is used.
+
+## 5. Resume State
+
+Per-article state is stored in `combustion_and_flame_mechanisms/_raw/article_metadata.json`.
+
+Important fields:
+
+- `supplementProbeStatus`: `complete`, `no_links`, `captcha`, `error`, or `partial`.
+- `supplementProbeCheckedAt`: last supplement-link probe time.
+- `supplementDownloadStatus`: `complete`, `partial`, `failed`, or `none`.
+- `downloadStatus`: per-link status such as `downloaded`, `existing`, or `failed`.
+- `processingStatus`: `included`, `conversion_failed`, `excluded_no_mechanism_attachment`, `excluded_no_supplement_found`, `excluded_no_mechanism_signal`, etc.
+- `processedAt`: last real processing time.
+- `processingFolder`: output folder for that article.
+
+Default behavior:
+
+- `probe-supplements` skips records with a terminal `supplementProbeStatus`.
+- `download-supplements` skips already complete, failed, or partial records.
+- `process` reuses existing terminal `processingStatus` and existing output folders.
+- Use `--force` only when you intentionally want to rerun that step.
+
+## 6. Human Work vs Agent Work
+
+Human-only or human-supervised work:
+
+- Log in to ScienceDirect or institutional SSO.
+- Complete CAPTCHA or robot verification.
+- Confirm license/access prompts.
+- Manually download attachments or PDFs when automated direct links fail.
+- Decide whether a failed conversion should be manually corrected.
+- Review ambiguous fuel classification or unclear abstract evidence.
+
+Work that a Python script can do without an agent:
+
+- Import JSON metadata.
+- Probe predictable Elsevier `mmc` links.
+- Download already recorded direct supplement URLs.
+- Extract archives and nested archives.
+- Detect mechanism, thermo, and transport files.
+- Run Cantera conversion and write summaries.
+- Maintain index, handoff, and resume state.
+
+Work that an agent can help automate, if available:
+
+- Open ScienceDirect issue pages and collect article metadata into JSON.
+- Open article pages and collect supplementary-material links into JSON.
+- Pause when CAPTCHA or SSO appears, then continue after the user completes it.
+- Inspect failed conversions and adjust parser-cleanup rules.
+- Run quality checks, commit, and push.
+
+If no agent is available, replace those browser-automation steps with manual browser work and save the same JSON files described below.
+
+## 7. Metadata From ScienceDirect Issues
+
+For each year, collect ScienceDirect issue-page metadata into files like:
 
 ```text
 combustion_and_flame_mechanisms/_raw/2025_volumes/volume_*.json
 ```
 
-每条记录至少应包含：
+Each article record should contain as many of these fields as possible:
 
-- `year`
-- `volume`
-- `month`
-- `title`
-- `authors`
-- `doi`
-- `pii`
-- `articleNumber`
-- `url`
-- `issuePdfLink`
-
-导入命令：
-
-```powershell
-& 'C:\Users\17915\anaconda3\envs\analysis-env\python.exe' scripts\collect_cf2026.py import-sciencedirect-metadata --year 2025 --source-dir combustion_and_flame_mechanisms\_raw\2025_volumes
+```json
+{
+  "year": "2025",
+  "volume": "280",
+  "month": "June 2025",
+  "title": "Article title",
+  "authors": ["First Author", "Second Author"],
+  "doi": "10.1016/j.combustflame....",
+  "pii": "S00102180...",
+  "articleNumber": "114000",
+  "url": "https://www.sciencedirect.com/science/article/pii/S00102180...",
+  "issuePdfLink": "https://www.sciencedirect.com/science/article/pii/.../pdfft"
+}
 ```
 
-如果需要导入 2026：
+Import the metadata:
 
-```powershell
-& 'C:\Users\17915\anaconda3\envs\analysis-env\python.exe' scripts\collect_cf2026.py import-sciencedirect-metadata --year 2026 --source-dir combustion_and_flame_mechanisms\_raw\2026_volumes
+```bash
+python scripts/collect_cf2026.py import-sciencedirect-metadata --year 2025 --source-dir combustion_and_flame_mechanisms/_raw/2025_volumes
 ```
 
-## 5. 候选筛选和本地处理
+Run local candidate screening and processing:
 
-先运行一次处理命令，让脚本根据题名和摘要标记反应动力学候选，并从已有下载中识别机理：
-
-```powershell
-& 'C:\Users\17915\anaconda3\envs\analysis-env\python.exe' scripts\collect_cf2026.py process
+```bash
+python scripts/collect_cf2026.py process
 ```
 
-该命令会：
+## 8. Supplement Link Discovery And Download
 
-- 检测燃料类型。
-- 判断是否属于反应动力学候选。
-- 复制已有附件到文章 `_processing/raw_downloads/`。
-- 对附件递归解压，最大深度为 5 层。
-- 按文件内容识别 CHEMKIN、Cantera、热力学和输运文件。
-- 将标准机理命名为 `chem.inp`，热力学文件命名为 `therm.dat`，输运文件命名为 `tran.dat`。
-- 调用 Cantera 的 `ck2yaml`，使用 `--permissive`，并生成 `mechanism.yaml`。
-- 从 Cantera 或 YAML 结果读取物种数和反应数。
-- 写入每篇文章的 `mechanism_summary.md`，其中包含摘要、燃料类型、验证反应器类型、GB/T 7714 格式参考文献、物种数和反应数。
+First try predictable Elsevier `mmc` supplement links:
 
-默认运行时会跳过已完成处理的文章。确实需要全量重跑时：
-
-```powershell
-& 'C:\Users\17915\anaconda3\envs\analysis-env\python.exe' scripts\collect_cf2026.py process --force
+```bash
+python scripts/collect_cf2026.py probe-supplements --year 2025 --max-mmc 12
+python scripts/collect_cf2026.py download-supplements --year 2025
+python scripts/collect_cf2026.py process
 ```
 
-## 6. 附件链接探测和下载
+If the network, login, or CDN state has changed and you intentionally need to retry:
 
-先使用 Elsevier CDN 的可预测 `mmc` 链接探测附件：
-
-```powershell
-& 'C:\Users\17915\anaconda3\envs\analysis-env\python.exe' scripts\collect_cf2026.py probe-supplements --year 2025 --max-mmc 12
+```bash
+python scripts/collect_cf2026.py probe-supplements --year 2025 --max-mmc 12 --force
+python scripts/collect_cf2026.py download-supplements --year 2025 --force
 ```
 
-默认会跳过已经标记为 `complete`、`no_links`、`captcha`、`error` 或 `partial` 的文章。需要重新探测时：
+Do not use `--force` as a normal habit. It is for deliberate retry or reprocessing.
 
-```powershell
-& 'C:\Users\17915\anaconda3\envs\analysis-env\python.exe' scripts\collect_cf2026.py probe-supplements --year 2025 --max-mmc 12 --force
-```
+## 9. Article-Page Supplement Links
 
-下载已经记录的附件链接：
-
-```powershell
-& 'C:\Users\17915\anaconda3\envs\analysis-env\python.exe' scripts\collect_cf2026.py download-supplements --year 2025
-```
-
-如果某些链接失败，后续默认不会反复重试。确认 ScienceDirect 登录、网络或 CAPTCHA 状态已解决后再使用：
-
-```powershell
-& 'C:\Users\17915\anaconda3\envs\analysis-env\python.exe' scripts\collect_cf2026.py download-supplements --year 2025 --force
-```
-
-下载完成后重新运行：
-
-```powershell
-& 'C:\Users\17915\anaconda3\envs\analysis-env\python.exe' scripts\collect_cf2026.py process
-```
-
-## 7. 文章页附件链接导入
-
-当直接 `mmc` 探测无法确认附件时，可用已登录 Chrome 打开 ScienceDirect 文章页并采集页面中的 supplementary material 链接。采集结果保存为：
+Some supplements cannot be found by predictable `mmc` probing. In that case, open the ScienceDirect article page in a logged-in browser and collect supplementary-material links into:
 
 ```text
 combustion_and_flame_mechanisms/_raw/2025_supplement_links/chunk_*.json
 ```
 
-每条记录格式：
+The JSON format is:
 
 ```json
 {
@@ -180,72 +236,141 @@ combustion_and_flame_mechanisms/_raw/2025_supplement_links/chunk_*.json
 }
 ```
 
-导入页面采集结果：
+If the page shows CAPTCHA or SSO instead of the article:
 
-```powershell
-& 'C:\Users\17915\anaconda3\envs\analysis-env\python.exe' scripts\collect_cf2026.py import-page-supplements --source-dir combustion_and_flame_mechanisms\_raw\2025_supplement_links
+```json
+{
+  "pii": "S0010218025000000",
+  "url": "https://www.sciencedirect.com/science/article/pii/S0010218025000000",
+  "captcha": true,
+  "links": []
+}
 ```
 
-若遇到 CAPTCHA、机构 SSO 或权限不足，不要绕过验证。让用户在 Chrome 中完成验证，然后继续采集。无法自动完成的项目会保留在 `manual_download_handoff.md`。
+Import page-harvested links:
 
-## 8. 摘要补充
-
-摘要优先来自本地 PDF，其次来自 Crossref、OpenAlex 和 Semantic Scholar。补充命令：
-
-```powershell
-& 'C:\Users\17915\anaconda3\envs\analysis-env\python.exe' scripts\collect_cf2026.py enrich-abstracts
-& 'C:\Users\17915\anaconda3\envs\analysis-env\python.exe' scripts\collect_cf2026.py process
+```bash
+python scripts/collect_cf2026.py import-page-supplements --source-dir combustion_and_flame_mechanisms/_raw/2025_supplement_links
+python scripts/collect_cf2026.py download-supplements --year 2025
+python scripts/collect_cf2026.py process
 ```
 
-摘要无法确认验证反应器类型时，`mechanism_summary.md` 中应写 `not clear from abstract`，不要从全文或常识推断。
+## 10. Manual Downloads
 
-## 9. 质量检查
+When direct download fails, use `manual_download_handoff.md` to continue manually. For each item:
 
-每轮实际新增或重处理后运行：
+1. Open the DOI or ScienceDirect URL in a logged-in browser.
+2. Download the PDF and supplementary files if access is available.
+3. Put files into `combustion_and_flame_mechanisms/_raw/downloads/`.
+4. Use a filename containing one of DOI-normalized text, PII, or article number. PII-based names are best, for example `S0010218025000000_mmc1.zip`.
+5. Run:
 
-```powershell
-& 'C:\Users\17915\anaconda3\envs\analysis-env\python.exe' -m unittest discover -s tests
+```bash
+python scripts/collect_cf2026.py process
 ```
 
-再检查索引和未完成项：
+The script matches downloads by DOI, PII, or article number, then copies them into the paper's `_processing/raw_downloads/` folder.
 
-```powershell
-Import-Csv combustion_and_flame_mechanisms\collection_index.csv | Group-Object status | Select-Object Name,Count
-Get-Content combustion_and_flame_mechanisms\manual_download_handoff.md | Select-Object -First 80
+## 11. Abstracts
+
+Summaries should include abstracts. The script tries local PDFs first, then Crossref, OpenAlex, and Semantic Scholar:
+
+```bash
+python scripts/collect_cf2026.py enrich-abstracts
+python scripts/collect_cf2026.py process
 ```
 
-确认无重复 DOI：
+Use title/abstract evidence for fuel type and validation reactor type. If the abstract does not make the reactor type clear, write `not clear from abstract` instead of guessing from the full paper.
 
-```powershell
-Import-Csv combustion_and_flame_mechanisms\collection_index.csv |
-  Where-Object doi |
-  Group-Object doi |
-  Where-Object Count -gt 1
+## 12. Quality Checks
+
+Run tests after changing code or processing rules:
+
+```bash
+python -m unittest discover -s tests
 ```
 
-## 10. 提交和推送
+Check current status counts:
 
-提交前确认没有把 PDF、压缩包、原始附件、日志或 `_processing/` 内容加入 Git：
+```bash
+python - <<'PY'
+import csv
+from collections import Counter
+with open('combustion_and_flame_mechanisms/collection_index.csv', encoding='utf-8-sig', newline='') as f:
+    print(Counter(row['status'] for row in csv.DictReader(f)))
+PY
+```
 
-```powershell
+Check duplicate DOI values:
+
+```bash
+python - <<'PY'
+import csv
+from collections import Counter
+with open('combustion_and_flame_mechanisms/collection_index.csv', encoding='utf-8-sig', newline='') as f:
+    dois = [row['doi'].strip().lower() for row in csv.DictReader(f) if row.get('doi')]
+for doi, count in Counter(dois).items():
+    if count > 1:
+        print(count, doi)
+PY
+```
+
+Inspect `manual_download_handoff.md` for articles still blocked by access, CAPTCHA, missing supplements, or conversion failures.
+
+## 13. Git Hygiene
+
+Before committing, make sure you do not stage payload files such as PDFs, archives, raw downloads, `_processing/`, `chem.inp`, `therm.dat`, `tran.dat`, or generated YAML/log files.
+
+Safe files to commit usually include:
+
+- `scripts/`
+- `tests/`
+- `docs/`
+- `README.md`
+- `environment.yml`
+- `combustion_and_flame_mechanisms/README.md`
+- `combustion_and_flame_mechanisms/collection_index.csv`
+- `combustion_and_flame_mechanisms/manual_download_handoff.md`
+- `combustion_and_flame_mechanisms/run_summary.json`
+- `combustion_and_flame_mechanisms/_raw/article_metadata.json`
+
+Example:
+
+```bash
 git status --short
-git add scripts README.md docs combustion_and_flame_mechanisms\README.md combustion_and_flame_mechanisms\collection_index.csv combustion_and_flame_mechanisms\manual_download_handoff.md combustion_and_flame_mechanisms\run_summary.json combustion_and_flame_mechanisms\_raw\article_metadata.json
+git add scripts tests docs README.md environment.yml combustion_and_flame_mechanisms/README.md combustion_and_flame_mechanisms/collection_index.csv combustion_and_flame_mechanisms/manual_download_handoff.md combustion_and_flame_mechanisms/run_summary.json combustion_and_flame_mechanisms/_raw/article_metadata.json
 git diff --cached --name-only
 ```
 
-如果 staged 文件中出现 `.pdf`、`.zip`、`.rar`、`.7z`、`.inp`、`.dat`、`.yaml`、`_processing` 或 `_raw/downloads`，需要先取消暂存这些文件。
+If staged files include `.pdf`, `.zip`, `.rar`, `.7z`, `.inp`, `.dat`, `.yaml`, `_processing`, or `_raw/downloads`, unstage those files before committing.
 
-提交和推送：
+## 14. Typical Continuation Cases
 
-```powershell
-git commit -m "Add resumable collection workflow"
-git push origin master
+Add a new year:
+
+```bash
+python scripts/collect_cf2026.py import-sciencedirect-metadata --year 2024 --source-dir combustion_and_flame_mechanisms/_raw/2024_volumes
+python scripts/collect_cf2026.py process
+python scripts/collect_cf2026.py probe-supplements --year 2024 --max-mmc 12
+python scripts/collect_cf2026.py download-supplements --year 2024
+python scripts/collect_cf2026.py process
 ```
 
-## 11. 常见续接场景
+Continue after CAPTCHA:
 
-- 新增年份：导入该年份卷期 JSON，运行 `process`，然后按需 `probe-supplements --year <year>`、`download-supplements --year <year>`、`process`。
-- CAPTCHA 后继续：用户在 Chrome 完成验证后，重新执行被中断的页面采集；已完成记录不会被重复访问。
-- 失败链接重试：只对确认需要重试的年份使用 `download-supplements --year <year> --force`。
-- 燃料识别错误：更新 `FUEL_PATTERNS` 后运行 `process --force`。不加 `--force` 时会优先复用旧索引。
-- Cantera 转换规则调整：修改转换或清理逻辑后运行 `process --force`，并抽查 `mechanism_summary.md`、`mechanism.yaml` 和 `_processing/*conversion*.log`。
+1. Complete CAPTCHA or SSO in the browser.
+2. Continue article-page link harvesting from the first unfinished item.
+3. Save the next `chunk_*.json`.
+4. Import links and run downloads again.
+
+Retry failed downloads:
+
+```bash
+python scripts/collect_cf2026.py download-supplements --year 2025 --force
+```
+
+Rerun after changing fuel detection or Cantera cleanup logic:
+
+```bash
+python scripts/collect_cf2026.py process --force
+```
