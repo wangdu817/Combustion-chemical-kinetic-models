@@ -63,6 +63,42 @@ MMC_EXTENSIONS = [
     "xml",
 ]
 
+INDEX_FIELDS = [
+    "title",
+    "authors",
+    "doi",
+    "pii",
+    "volume",
+    "month",
+    "article_number",
+    "fuel_type",
+    "plasma_related",
+    "url",
+    "paper_pdf_link",
+    "paper_pdf_status",
+    "candidate",
+    "status",
+    "folder",
+    "mechanism_files",
+    "thermo_files",
+    "transport_files",
+    "standard_mechanism",
+    "standard_thermo",
+    "standard_transport",
+    "cantera_yaml",
+    "species",
+    "reactions",
+    "preprocess_status",
+]
+
+ACTIVE_STATUSES = {"included", "conversion_failed"}
+TERMINAL_PROCESSING_STATUSES = ACTIVE_STATUSES | {
+    "excluded_non_kinetics_mechanism_attachment",
+    "excluded_no_mechanism_attachment",
+    "excluded_no_supplement_found",
+    "excluded_no_mechanism_signal",
+}
+
 KINETIC_TERMS = [
     "kinetic",
     "kinetics",
@@ -233,6 +269,53 @@ def write_metadata(records: list[dict]) -> None:
         json.dumps(records, ensure_ascii=False, indent=2),
         encoding="utf-8",
     )
+
+
+def now_iso() -> str:
+    return dt.datetime.now().isoformat(timespec="seconds")
+
+
+def supplement_links_for_record(record: dict) -> list[dict]:
+    links = record.get("probedSupplementLinks") or record.get("supplementLinks") or []
+    return [link for link in links if isinstance(link, dict)]
+
+
+def existing_index_rows() -> dict[str, dict[str, str]]:
+    index = ROOT / "collection_index.csv"
+    if not index.exists():
+        return {}
+    with index.open("r", newline="", encoding="utf-8-sig") as fh:
+        rows = list(csv.DictReader(fh))
+    return {row.get("article_number", ""): row for row in rows if row.get("article_number")}
+
+
+def clean_index_row(row: dict[str, str]) -> dict[str, str]:
+    return {field: str(row.get(field, "") or "") for field in INDEX_FIELDS}
+
+
+def seed_processing_state_from_index(record: dict, row: dict[str, str] | None) -> bool:
+    if not row:
+        return False
+    changed = False
+    mappings = {
+        "processingStatus": "status",
+        "processingFolder": "folder",
+        "processingSpecies": "species",
+        "processingReactions": "reactions",
+        "processingPreprocessStatus": "preprocess_status",
+        "processingMechanismFiles": "mechanism_files",
+        "processingThermoFiles": "thermo_files",
+        "processingTransportFiles": "transport_files",
+        "processingCanteraYaml": "cantera_yaml",
+        "processingStandardMechanism": "standard_mechanism",
+        "processingStandardThermo": "standard_thermo",
+        "processingStandardTransport": "standard_transport",
+    }
+    for record_key, row_key in mappings.items():
+        if not record.get(record_key) and row.get(row_key):
+            record[record_key] = row[row_key]
+            changed = True
+    return changed
 
 
 def normalize_doi(doi: str) -> str:
@@ -1237,7 +1320,7 @@ def url_download(url: str, dest: Path) -> None:
         tmp.replace(dest)
 
 
-def probe_supplements(max_mmc: int = 8, year: str | None = None) -> None:
+def probe_supplements(max_mmc: int = 8, year: str | None = None, force: bool = False) -> None:
     ensure_dirs()
     records = read_metadata()
     for record in records:
@@ -1245,11 +1328,19 @@ def probe_supplements(max_mmc: int = 8, year: str | None = None) -> None:
             continue
         if year and record_year(record) != year:
             continue
+        if not force and record.get("supplementProbeStatus") in {"complete", "no_links", "captcha", "error", "partial"}:
+            continue
         pii = record.get("pii") or ""
         if not pii:
             continue
         found = record.get("probedSupplementLinks") or []
         found_urls = {item.get("url") for item in found if isinstance(item, dict)}
+        if found and not force:
+            record["supplementProbeStatus"] = "complete"
+            record.setdefault("supplementProbeMethod", "recorded-links")
+            write_metadata(records)
+            continue
+        original_error_count = len(record.get("probeErrors") or [])
         changed = False
         for idx in range(1, max_mmc + 1):
             existing = sorted(DOWNLOADS.glob(f"{pii}_mmc{idx}.*"))
@@ -1319,6 +1410,19 @@ def probe_supplements(max_mmc: int = 8, year: str | None = None) -> None:
         if found:
             record["probedSupplementLinks"] = found
             changed = True
+        error_count = len(record.get("probeErrors") or [])
+        if found and error_count > original_error_count:
+            record["supplementProbeStatus"] = "partial"
+        elif found:
+            record["supplementProbeStatus"] = "complete"
+        elif error_count > original_error_count:
+            record["supplementProbeStatus"] = "error"
+        else:
+            record["supplementProbeStatus"] = "no_links"
+        record["supplementProbeCheckedAt"] = now_iso()
+        record["supplementProbeMaxMmc"] = max_mmc
+        record["supplementProbeMethod"] = "direct-ars"
+        changed = True
         if changed:
             write_metadata(records)
 
@@ -1593,6 +1697,9 @@ def import_page_supplement_links(source_dir: Path) -> None:
             if not links:
                 if item.get("captcha"):
                     record["articlePageSupplementStatus"] = "captcha"
+                    record["supplementProbeStatus"] = "captcha"
+                    record["supplementProbeMethod"] = "ScienceDirect article page"
+                    record["supplementProbeCheckedAt"] = now_iso()
                     changed = True
                 continue
             existing_urls = {
@@ -1607,23 +1714,46 @@ def import_page_supplement_links(source_dir: Path) -> None:
                     existing_urls.add(link["url"])
                     changed = True
             record["articlePageSupplementStatus"] = "links imported"
+            record["supplementProbeStatus"] = "complete"
+            record["supplementProbeMethod"] = "ScienceDirect article page"
+            record["supplementProbeCheckedAt"] = now_iso()
     if changed:
         write_metadata(records)
 
 
-def download_recorded_supplements(year: str | None = None) -> None:
+def download_recorded_supplements(year: str | None = None, force: bool = False) -> None:
     ensure_dirs()
     records = read_metadata()
     changed = False
     for record in records:
         if year and record_year(record) != year:
             continue
-        links = record.get("probedSupplementLinks") or record.get("supplementLinks") or []
-        for idx, link in enumerate(links, 1):
-            if not isinstance(link, dict):
+        links = supplement_links_for_record(record)
+        if not links:
+            if record.get("supplementDownloadStatus") != "none":
+                record["supplementDownloadStatus"] = "none"
+                changed = True
+            continue
+        if not force and record.get("supplementDownloadStatus") == "complete":
+            if all(link.get("file") and Path(str(link["file"])).exists() and Path(str(link["file"])).stat().st_size for link in links):
                 continue
+        if not force and record.get("supplementDownloadStatus") in {"failed", "partial"}:
+            continue
+        any_file = False
+        any_failure = False
+        for idx, link in enumerate(links, 1):
             url = link.get("url") or ""
             if not url:
+                continue
+            if not force and link.get("downloadStatus") == "failed":
+                any_failure = True
+                continue
+            existing_file = Path(str(link.get("file", ""))) if link.get("file") else None
+            if existing_file and existing_file.exists() and existing_file.stat().st_size:
+                any_file = True
+                if link.get("downloadStatus") != "existing":
+                    link["downloadStatus"] = "existing"
+                    changed = True
                 continue
             suffix = Path(urllib.parse.urlparse(url).path).suffix or ".dat"
             match = re.search(r"-mmc(\d+)", url, re.I)
@@ -1632,15 +1762,39 @@ def download_recorded_supplements(year: str | None = None) -> None:
             target = DOWNLOADS / f"{pii}_mmc{mmc}{suffix}"
             if target.exists() and target.stat().st_size:
                 link["file"] = str(target)
+                link["content_length"] = target.stat().st_size
+                link["downloadStatus"] = "existing"
+                any_file = True
+                changed = True
                 continue
             try:
                 url_download(url, target)
                 link["file"] = str(target)
                 link["content_length"] = target.stat().st_size
+                link["downloadStatus"] = "downloaded"
+                link["downloadedAt"] = now_iso()
+                any_file = True
                 changed = True
             except Exception as exc:  # noqa: BLE001
                 record.setdefault("supplementDownloadErrors", []).append({"url": url, "error": str(exc)})
+                link["downloadStatus"] = "failed"
+                link["downloadError"] = str(exc)
+                any_failure = True
                 changed = True
+        if all(link.get("file") and Path(str(link["file"])).exists() and Path(str(link["file"])).stat().st_size for link in links):
+            status = "complete"
+        elif any_file and any_failure:
+            status = "partial"
+        elif any_file:
+            status = "partial"
+        elif any_failure:
+            status = "failed"
+        else:
+            status = "none"
+        if record.get("supplementDownloadStatus") != status:
+            record["supplementDownloadStatus"] = status
+            changed = True
+        record["supplementDownloadCheckedAt"] = now_iso()
     if changed:
         write_metadata(records)
 
@@ -1749,9 +1903,193 @@ def write_summary(
     dest.joinpath("mechanism_summary.md").write_text("\n".join(lines) + "\n", encoding="utf-8")
 
 
-def process() -> None:
+def index_row(
+    record: dict,
+    candidate: bool,
+    status: str,
+    folder: Path | str | None = None,
+    mechanism_files: list[Path] | None = None,
+    thermo_files: list[Path] | None = None,
+    transport_files: list[Path] | None = None,
+    processing_results: list[CkResult] | None = None,
+    plasma_flag: bool | str = "",
+) -> dict[str, str]:
+    mechanism_files = mechanism_files or []
+    thermo_files = thermo_files or []
+    transport_files = transport_files or []
+    processing_results = processing_results or []
+    last = processing_results[-1] if processing_results else None
+    folder_text = str(folder or "")
+    return {
+        "title": str(record.get("title", "") or ""),
+        "authors": "; ".join(record.get("authors", [])) if isinstance(record.get("authors"), list) else str(record.get("authors", "") or ""),
+        "doi": str(record.get("doi", "") or ""),
+        "pii": str(record.get("pii", "") or ""),
+        "volume": str(record.get("volume", "") or ""),
+        "month": str(record.get("month", "") or ""),
+        "article_number": article_id(record),
+        "fuel_type": str(record.get("fuelType", "") or ""),
+        "plasma_related": str(plasma_flag),
+        "url": str(record.get("url", "") or ""),
+        "paper_pdf_link": str(record.get("issuePdfLink", "") or ""),
+        "paper_pdf_status": str(record.get("paperPdfStatus", "") or ""),
+        "candidate": str(bool(candidate)),
+        "status": status,
+        "folder": folder_text,
+        "mechanism_files": "; ".join(str(p) for p in mechanism_files),
+        "thermo_files": "; ".join(str(p) for p in thermo_files),
+        "transport_files": "; ".join(str(p) for p in transport_files),
+        "standard_mechanism": str(last.standardized_mech) if last and last.standardized_mech else "",
+        "standard_thermo": str(last.standardized_thermo) if last and last.standardized_thermo else "",
+        "standard_transport": str(last.standardized_transport) if last and last.standardized_transport else "",
+        "cantera_yaml": str(last.cantera_yaml) if last and last.cantera_yaml else "",
+        "species": str(last.species) if last and last.species else "",
+        "reactions": str(last.reactions) if last and last.reactions else "",
+        "preprocess_status": str(last.status) if last else "",
+    }
+
+
+def reusable_existing_row(record: dict, existing_row: dict[str, str] | None, folder: Path, force: bool) -> dict[str, str] | None:
+    if force or not existing_row:
+        return None
+    status = record.get("processingStatus") or existing_row.get("status", "")
+    if status not in TERMINAL_PROCESSING_STATUSES:
+        return None
+    if status in ACTIVE_STATUSES:
+        summary = folder / "mechanism_summary.md"
+        if not summary.exists():
+            return None
+        if status == "included" and not (folder / "chem.inp").exists() and not (folder / "mechanism.yaml").exists():
+            return None
+    row = clean_index_row(existing_row)
+    row["fuel_type"] = record.get("fuelType", row.get("fuel_type", ""))
+    row["candidate"] = str(bool(record.get("candidate")))
+    row["status"] = status
+    record["processingStatus"] = status
+    if not record.get("processingSkipReason"):
+        record["processingSkipReason"] = "reused existing terminal processing state from collection_index.csv"
+    return row
+
+
+def update_record_processing_state(
+    record: dict,
+    row: dict[str, str],
+    local_downloads: list[Path],
+    mechanism_files: list[Path],
+    thermo_files: list[Path],
+    transport_files: list[Path],
+) -> None:
+    record["processingStatus"] = row["status"]
+    record["processedAt"] = now_iso()
+    record["processingFolder"] = row["folder"]
+    record["processedSupplementLinkCount"] = len(supplement_links_for_record(record))
+    record["processedLocalDownloadCount"] = len(local_downloads)
+    record["processingMechanismFiles"] = row["mechanism_files"]
+    record["processingThermoFiles"] = row["thermo_files"]
+    record["processingTransportFiles"] = row["transport_files"]
+    record["processingStandardMechanism"] = row["standard_mechanism"]
+    record["processingStandardThermo"] = row["standard_thermo"]
+    record["processingStandardTransport"] = row["standard_transport"]
+    record["processingCanteraYaml"] = row["cantera_yaml"]
+    record["processingSpecies"] = row["species"]
+    record["processingReactions"] = row["reactions"]
+    record["processingPreprocessStatus"] = row["preprocess_status"]
+    record["processingMechanismFileCount"] = len(mechanism_files)
+    record["processingThermoFileCount"] = len(thermo_files)
+    record["processingTransportFileCount"] = len(transport_files)
+
+
+def summary_values(folder: Path, label: str) -> list[str]:
+    summary = folder / "mechanism_summary.md"
+    if not summary.exists():
+        return []
+    pattern = re.compile(rf"^-\s*{re.escape(label)}:\s*(.*)$", re.I)
+    values: list[str] = []
+    for line in summary.read_text(encoding="utf-8", errors="ignore").splitlines():
+        match = pattern.match(line.strip())
+        if match:
+            values.append(match.group(1).strip())
+    return values
+
+
+def last_summary_value(folder: Path, label: str) -> str:
+    values = [value for value in summary_values(folder, label) if value and value.lower() != "not available"]
+    return values[-1] if values else ""
+
+
+def append_handoff_items(
+    handoff: list[str],
+    record: dict,
+    status: str,
+    folder: Path,
+    mechanism_files: list[Path] | None = None,
+    cantera_files: list[Path] | None = None,
+    thermo_files: list[Path] | None = None,
+    processing_results: list[CkResult] | None = None,
+) -> None:
+    mechanism_files = mechanism_files or []
+    cantera_files = cantera_files or []
+    thermo_files = thermo_files or []
+    processing_results = processing_results or []
+    if status == "included" and not record.get("paperPdfLocal"):
+        handoff.extend(
+            [
+                f"## Paper PDF pending: {record.get('title', 'Untitled')}",
+                "",
+                f"- DOI: {record.get('doi', '')}",
+                f"- URL: {record.get('url', '')}",
+                f"- PDF link from issue page: {record.get('issuePdfLink', '')}",
+                "- Reason: automated Chrome PDF access reached ScienceDirect CAPTCHA or no exact PDF link was exposed",
+                f"- Target folder: {folder}",
+                "",
+            ]
+    )
+    if status == "conversion_failed":
+        if processing_results:
+            last = processing_results[-1]
+            last_message = short_message(last.message)
+        else:
+            last = CkResult(last_summary_value(folder, "Status") or str(record.get("processingPreprocessStatus") or "conversion_failed"))
+            last_message = last_summary_value(folder, "Message")
+        mechanism_text = "; ".join(str(p) for p in mechanism_files + cantera_files) or str(record.get("processingMechanismFiles", ""))
+        thermo_text = "; ".join(str(p) for p in thermo_files) or str(record.get("processingThermoFiles", ""))
+        handoff.extend(
+            [
+                f"## Cantera conversion failed: {record.get('title', 'Untitled')}",
+                "",
+                f"- DOI: {record.get('doi', '')}",
+                f"- URL: {record.get('url', '')}",
+                f"- Mechanism candidates: {mechanism_text}",
+                f"- Thermodynamic candidates: {thermo_text}",
+                f"- Last status: {last.status}",
+                f"- Last message: {last_message}",
+                f"- Target folder: {folder}",
+                "",
+            ]
+        )
+    if record_year(record) == "2025" and status in {"excluded_no_supplement_found", "excluded_no_mechanism_attachment"}:
+        probe_errors = record.get("probeErrors") or []
+        handoff.extend(
+            [
+                f"## 2025 supplement review needed: {record.get('title', 'Untitled')}",
+                "",
+                f"- DOI: {record.get('doi', '')}",
+                f"- URL: {record.get('url', '')}",
+                f"- Article number: {article_id(record)}",
+                f"- Status: {status}",
+                f"- Supplement links found: {len(supplement_links_for_record(record))}",
+                f"- Probe errors: {len(probe_errors)}",
+                "- Reason: automated direct supplement probing did not yield a processable mechanism; ScienceDirect article-page access is currently gated by CAPTCHA",
+                "",
+            ]
+        )
+
+
+def process(force: bool = False) -> None:
     ensure_dirs()
     records = read_metadata()
+    previous_rows = existing_index_rows()
+    metadata_changed = False
     rows: list[dict] = []
     handoff: list[str] = [
         "# Manual Download Handoff",
@@ -1760,6 +2098,7 @@ def process() -> None:
         "",
     ]
     seen_dois: set[str] = set()
+    skipped_processing = 0
     for record in records:
         doi_key = normalize_doi(record.get("doi", "")) or record.get("url", "")
         if doi_key in seen_dois:
@@ -1770,6 +2109,15 @@ def process() -> None:
         record["candidate"] = candidate
         folder = record_folder(record)
         archive_folder = processing_folder(record)
+        existing_row = previous_rows.get(article_id(record))
+        metadata_changed = seed_processing_state_from_index(record, existing_row) or metadata_changed
+        skipped_row = reusable_existing_row(record, existing_row, folder, force)
+        if skipped_row is not None:
+            skipped_processing += 1
+            rows.append(skipped_row)
+            append_handoff_items(handoff, record, skipped_row["status"], folder)
+            metadata_changed = True
+            continue
         local_downloads: list[Path] = []
         extraction_notes: list[str] = []
         mechanisms: list[Path] = []
@@ -1822,84 +2170,25 @@ def process() -> None:
             status = "excluded_no_supplement_found"
         else:
             status = "excluded_no_mechanism_signal"
-        if status == "included" and not record.get("paperPdfLocal"):
-            handoff.extend(
-                [
-                    f"## Paper PDF pending: {record.get('title', 'Untitled')}",
-                    "",
-                    f"- DOI: {record.get('doi', '')}",
-                    f"- URL: {record.get('url', '')}",
-                    f"- PDF link from issue page: {record.get('issuePdfLink', '')}",
-                    "- Reason: automated Chrome PDF access reached ScienceDirect CAPTCHA or no exact PDF link was exposed",
-                    f"- Target folder: {folder}",
-                    "",
-                ]
-            )
-        if status == "conversion_failed":
-            last = processing_results[-1] if processing_results else CkResult("conversion_failed")
-            handoff.extend(
-                [
-                    f"## Cantera conversion failed: {record.get('title', 'Untitled')}",
-                    "",
-                    f"- DOI: {record.get('doi', '')}",
-                    f"- URL: {record.get('url', '')}",
-                    f"- Mechanism candidates: {'; '.join(str(p) for p in mechanisms + cantera)}",
-                    f"- Thermodynamic candidates: {'; '.join(str(p) for p in thermos)}",
-                    f"- Last status: {last.status}",
-                    f"- Last message: {short_message(last.message)}",
-                    f"- Target folder: {folder}",
-                    "",
-                ]
-            )
-        if record_year(record) == "2025" and status in {"excluded_no_supplement_found", "excluded_no_mechanism_attachment"}:
-            probe_errors = record.get("probeErrors") or []
-            handoff.extend(
-                [
-                    f"## 2025 supplement review needed: {record.get('title', 'Untitled')}",
-                    "",
-                    f"- DOI: {record.get('doi', '')}",
-                    f"- URL: {record.get('url', '')}",
-                    f"- Article number: {article_id(record)}",
-                    f"- Status: {status}",
-                    f"- Supplement links found: {len(record.get('probedSupplementLinks') or record.get('supplementLinks') or [])}",
-                    f"- Probe errors: {len(probe_errors)}",
-                    "- Reason: automated direct supplement probing did not yield a processable mechanism; ScienceDirect article-page access is currently gated by CAPTCHA",
-                    "",
-                ]
-            )
-        rows.append(
-            {
-                "title": record.get("title", ""),
-                "authors": "; ".join(record.get("authors", [])) if isinstance(record.get("authors"), list) else record.get("authors", ""),
-                "doi": record.get("doi", ""),
-                "pii": record.get("pii", ""),
-                "volume": record.get("volume", ""),
-                "month": record.get("month", ""),
-                "article_number": article_id(record),
-                "fuel_type": record.get("fuelType", ""),
-                "plasma_related": plasma_flag,
-                "url": record.get("url", ""),
-                "paper_pdf_link": record.get("issuePdfLink", ""),
-                "paper_pdf_status": record.get("paperPdfStatus", ""),
-                "candidate": str(bool(candidate)),
-                "status": status,
-                "folder": str(folder if (has_success or has_mechanism_candidate) else ""),
-                "mechanism_files": "; ".join(str(p) for p in mechanisms + cantera),
-                "thermo_files": "; ".join(str(p) for p in thermos),
-                "transport_files": "; ".join(str(p) for p in transports),
-                "standard_mechanism": str(processing_results[-1].standardized_mech) if processing_results and processing_results[-1].standardized_mech else "",
-                "standard_thermo": str(processing_results[-1].standardized_thermo) if processing_results and processing_results[-1].standardized_thermo else "",
-                "standard_transport": str(processing_results[-1].standardized_transport) if processing_results and processing_results[-1].standardized_transport else "",
-                "cantera_yaml": str(processing_results[-1].cantera_yaml) if processing_results and processing_results[-1].cantera_yaml else "",
-                "species": processing_results[-1].species if processing_results else "",
-                "reactions": processing_results[-1].reactions if processing_results else "",
-                "preprocess_status": processing_results[-1].status if processing_results else "",
-            }
+        append_handoff_items(handoff, record, status, folder, mechanisms, cantera, thermos, processing_results)
+        row = index_row(
+            record,
+            candidate,
+            status,
+            folder if (has_success or has_mechanism_candidate) else "",
+            mechanisms + cantera,
+            thermos,
+            transports,
+            processing_results,
+            plasma_flag,
         )
+        rows.append(row)
+        update_record_processing_state(record, row, local_downloads, mechanisms + cantera, thermos, transports)
+        metadata_changed = True
     with ROOT.joinpath("collection_index.csv").open("w", newline="", encoding="utf-8-sig") as fh:
-        writer = csv.DictWriter(fh, fieldnames=list(rows[0].keys()) if rows else ["title"])
+        writer = csv.DictWriter(fh, fieldnames=INDEX_FIELDS)
         writer.writeheader()
-        writer.writerows(rows)
+        writer.writerows(clean_index_row(row) for row in rows)
     active_summary_paths = {
         (Path(row["folder"]) / "mechanism_summary.md").resolve()
         for row in rows
@@ -1951,6 +2240,7 @@ def process() -> None:
                 "excluded_no_mechanism_signal": sum(1 for r in rows if r["status"] == "excluded_no_mechanism_signal"),
                 "excluded_no_supplement_found": sum(1 for r in rows if r["status"] == "excluded_no_supplement_found"),
                 "pending_download": sum(1 for r in rows if r["status"] == "pending_download"),
+                "skipped_existing_processing": skipped_processing,
                 "root": str(ROOT),
             },
             ensure_ascii=False,
@@ -2002,6 +2292,7 @@ def main() -> None:
     parser.add_argument("--max-mmc", type=int, default=8)
     parser.add_argument("--source-dir", type=Path, default=RAW / "2025_volumes")
     parser.add_argument("--year")
+    parser.add_argument("--force", action="store_true", help="re-run terminal probe, download, or processing states")
     args = parser.parse_args()
     if args.command == "init":
         init()
@@ -2010,15 +2301,15 @@ def main() -> None:
     elif args.command == "import-page-supplements":
         import_page_supplement_links(args.source_dir)
     elif args.command == "download-supplements":
-        download_recorded_supplements(year=args.year)
+        download_recorded_supplements(year=args.year, force=args.force)
     elif args.command == "enrich-crossref":
         enrich_crossref()
     elif args.command == "enrich-abstracts":
         enrich_abstracts()
     elif args.command == "probe-supplements":
-        probe_supplements(max_mmc=args.max_mmc, year=args.year)
+        probe_supplements(max_mmc=args.max_mmc, year=args.year, force=args.force)
     elif args.command == "process":
-        process()
+        process(force=args.force)
 
 
 if __name__ == "__main__":

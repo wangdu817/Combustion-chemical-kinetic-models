@@ -21,4 +21,6 @@ Machine-readable collection-level files:
 
 - `collection_index.csv`: article-level index and mechanism processing status.
 - `manual_download_handoff.md`: items that still need manual PDF or attachment access.
-- `_raw/article_metadata.json`: harvested article metadata used by the processing script.
+- `_raw/article_metadata.json`: harvested article metadata plus resumable probe, download, and processing state.
+
+The processing script is designed for endpoint continuation. By default it reuses terminal per-article states and existing paper folders instead of repeating web access, downloads, recursive extraction, or Cantera preprocessing. Use `--force` only when a specific step needs to be rerun.

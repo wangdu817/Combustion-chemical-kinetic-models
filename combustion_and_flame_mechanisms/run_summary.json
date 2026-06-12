@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-06-11T15:25:48",
+  "updated_at": "2026-06-12T14:53:11",
   "metadata_records": 1116,
   "index_rows": 1116,
   "included": 24,
@@ -9,5 +9,6 @@
   "excluded_no_mechanism_signal": 895,
   "excluded_no_supplement_found": 120,
   "pending_download": 0,
+  "skipped_existing_processing": 1116,
   "root": "E:\\mech_collection\\combustion_and_flame_mechanisms"
 }
