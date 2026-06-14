@@ -1,0 +1,1133 @@
+! A 48-species reduced mechanism for NH3/DME/air
+!
+! Developed by:
+! LSS, OVGU, Magdeburg
+! https://www.lss.ovgu.de/
+!
+! Detailed mechanism: 
+! Issayev, G., Giri, B. R., Elbaz, A. M., Shrestha, K. P., Mauss, F., Roberts, W. L., & Farooq, A. (2022). Ignition delay time and laminar flame speed measurements of ammonia blended with dimethyl !ether: a promising low carbon fuel blend. Renewable Energy, 181, 1353-1370.
+!
+!
+ELEMENTS
+C H O N AR 
+HE 
+END
+SPECIES
+AR HE N2 H O
+OH H2 O2 HO2 H2O2 
+H2O CO CO2 HCO CH2O
+CH3 CH4 HOCHO CH3O C2H6 
+CH3OH CH3O2 CH3OCH3-DME CH3OCH2 CH3OCH2O2 
+CH3OCH2O2H CH3OCH2O CH3OCO CH2OCH2O2H O2CH2OCH2O2H 
+HO2CH2OCHO OCH2OCHO N NO N2O 
+NO2 NH NH2 NH3 HNO 
+HONO H2NO NNH N2H2 N2H4
+CH3NO2 CH2NH OCHO
+END
+
+
+
+
+REACTIONS MOLES CAL/MOLE
+!--------------------------H2-O2  MECHANISM------------------------------------!
+!R1                                                                            !
+! Baulch 2005 A/2.065E+14 error (+/-0.1-0.2) 800-3500 K
+O2+H=OH+O    1.8E14 -0.097 1.503E4
+!O2+H=OH+O    1.0E14 0 15286
+!CH3OCH2NH2-M06     2   531.325     7.107     0.00     0.000      0.00 !
+!CH2OCH2NH2-M06     2   531.325     7.107     0.00     0.000      0.00 !
+!CH3OCHNH2-M06      2   531.325     7.107     0.00     0.000      0.00 !
+!CH3OCH2NH-M06      2   531.325     7.107     0.00     0.000      0.00 !
+!CH3OCH2NH2-MP2     2   531.325     7.107     0.00     0.000      0.00 !
+!CH2OCH2NH2-MP2     2   531.325     7.107     0.00     0.000      0.00 !
+!CH3OCHNH2-MP2      2   531.325     7.107     0.00     0.000      0.00 !
+!CH3OCH2NH-MP2      2   531.325     7.107     0.00     0.000      0.00 !
+!R2                                                                            !
+! Baulch 2005 A/3.817E+12 error (+/-0.2)
+O+H2=H+OH    3.0E12 0.0 7.963E3
+    DUP
+! Baulch 2005 A/8.792E+14 error (+/-0.2)
+O+H2=H+OH    8.0E14 0.0 1.918E4
+    DUP
+!R3                                                                            !
+! Baulch 2005 A/2.167E+08 error (+/-0.1-0.3) 250-2500 K
+OH+H2=H+H2O    2.167E8 1.52 3.46E3
+!R4                                                                            !
+! Baulch 2005 A/3.3480E+4 error (+/-0.15) 250-2400 K
+2OH=H2O+O    4.0E4 2.42 -1.928E3
+!R5                                                                            !
+! Baulch 2005 M=N2 A/2.300E+18 error (+/-0.5) 200-2500K
+! Griffith _ Barnard
+2H+M=H2+M    2.3E18 -1.0 0.0E0
+    H2/1.0/H2O/6.40/CO2/1.50/O2/0.45/N2/0.40/AR/0.35/HE/0.35/CO/0.75/CH4/3.0/
+!R6                                                                            !
+! N. Peters 1992 M=N2
+! Griffith _ Barnard
+2O+M=O2+M    2.9E17 -1.0 0.0E0
+    H2/1.0/H2O/6.40/CO2/1.50/O2/0.45/N2/0.40/AR/0.35/HE/0.35/CO/0.75/CH4/3.0/
+!R7! This reaction is not included in Baulch et al. 2005 work.                 !
+! Li 2015 M=N2
+! Griffith _ Barnard
+O+H+M=OH+M    9.436E18 -1.0 0.0E0
+    H2/1.0/H2O/6.40/CO2/1.50/O2/0.45/N2/0.40/AR/0.35/HE/0.35/CO/0.75/CH4/3.0/
+!R8                                                                            !
+! Baulch 2005 M=N2 A/2.212E+22 error (+/-0.5) 300-3000 K
+! Griffith _ Barnard
+H+OH+M=H2O+M    4.0E22 -2.0 0.0E0
+    H2/1.0/H2O/6.40/CO2/1.50/O2/0.45/N2/0.40/AR/0.35/HE/0.35/CO/0.75/CH4/3.0/
+!R9                                                                            !
+! Hong 2010
+H+O2(+M)=HO2(+M)                     4.65084E12   0.440       0 
+ LOW/6.366E20 -1.72  5.248E02/
+ TROE/0.5  1E-30  1E30/
+ H2/2/ H2O/14/ O2/0.78/ CO/1.9/ CO2/3.8/ AR/0.67/   
+!R10                                                                           !
+! Hong 2010, J.V. Michael et al. 2000
+H+HO2=H2+O2    4.66E6 2.087 -1.45E3
+!R11                                                                           !
+! Burke 2012 cited Mueller et. al.Inc. IJCK 31: 113-125, 1999
+H+HO2=2OH    7.08E13 0.0 3.0E2
+!R12                                                                           !
+! Baulch 2005 error (+/-0.1;220K -+/-0.5; 1000K)
+O+HO2=OH+O2    1.63E13 0.0 -4.452E2
+!R12b                                                                          !
+! Sandiego 2014
+! Griffith _ Barnard
+O+OH+M=HO2+M    1.6E16 0.0 0.0E0
+    H2/1.0/H2O/6.40/CO2/1.50/O2/0.45/N2/0.40/AR/0.35/HE/0.35/CO/0.75/CH4/3.0/
+!R12c                                                                          !
+! Dayma 2006 cited Miller, J.A. and Kee, R.J. (1977)
+H2+O2=2OH    1.7E13 0.0 4.778E4
+!R13                                                                           !
+! Hong 2013
+HO2+OH=H2O+O2    7.0E12 0.0 -1.093E3
+    DUP
+! Hong 2013
+HO2+OH=H2O+O2    4.5E14 0.0 1.093E4
+    DUP
+!R14                                                                           !
+! Baulch 2005 cited Hippler 1990 error (+/-0.15; 550-800 K)-error (+/-0.4; 1250 K) 550-1250 K
+2HO2=H2O2+O2    4.22E14 0.0 1.198E4
+    DUP
+! Hong 2011
+2HO2=H2O2+O2    1.32E11 0.0 -1.63E3
+    DUP
+!R15                                                                           !
+! Troe, Combustion and Flame 158 (2011) 594-601.
+H2O2(+M)=2OH(+M)    2.0E12 0.9 4.877E4
+    H2O/5.1/H2O2/5.2/H2/2.5/O2/0.79/N2/1.0/AR/0.68/HE/0.44/CO2/1.06/CO/0.53/
+    LOW/3.66E24 -2.3E0 4.877E4/
+    TROE/4.3E-1 1.0E-30 1.0E30/
+!R16                                                                           !
+! Baulch 2005 A/1.020E+13 error(+/-0.3) 300-1000 K
+H2O2+H=H2O+OH    1.023E13 0.0 3.586E3
+!R17                                                                           !
+! Hong 2010
+H2O2+H=HO2+H2    1.21E7 2.0 5.2E3
+!R18                                                                           !
+! SanDiego 2014 cited TSA86 error(factor 3) 300-2500 K
+H2O2+O=OH+HO2    9.63E6 2.0 3.993E3
+!R19                                                                           !
+! Hong 2010; J.Phys.Chem. A 114(2010)5718-5727. (280(T(1640K)
+H2O2+OH=H2O+HO2    1.74E12 0.0 3.18E2
+    DUP
+H2O2+OH=H2O+HO2    7.59E13 0.0 7.269E3
+    DUP
+!R19b                                                                          !
+! Baulch 2005 283-500 K
+H2O2+O=H2O+O2    8.43E11 0.0 3.976E3
+!R19c                                                                          !
+! Burke 2012 cited Karkach 1999
+H2O+O=H2+O2    1.07E10 0.97 6.87E4
+!-----------------------CO/CO2 MECHANISM---------------------------------------!
+!R20
+! Davis 2005 cited Troe, J phys chem 1975, 83, 114
+! Davis 2005 cited Muller 1999 cited Westmoreland et al. AIChE J. 32(1986)1971-1979
+! Griffith _ Barnard ! this reaction taken from Davis and using our efficiency and calibrating it
+CO+O(+M)=CO2(+M)    1.8E10 0.0 2.384E3
+    H2/1.0/H2O/6.40/CO2/1.50/O2/0.45/N2/0.40/AR/0.35/HE/0.35/CO/0.75/ 
+    LOW/1.55E24 -2.79E0 4.185E3/
+!R21                                                                           !
+! Warnatz 2006
+CO+O2=CO2+O    2.5E12 0.0 4.782E4
+!R22                                                                           !
+! Baulch 2005 A/1.0E+13 error(+/-0.1)
+CO+OH=CO2+H    1.0E13 0.0 1.6E4
+    DUP
+! Baulch 2005 A/1.01E+11 error(+/-0.1)
+CO+OH=CO2+H    9.0E10 0.0 5.978E1
+    DUP
+! Baulch 2005 A/9.03E+11 error(+/-0.1)
+CO+OH=CO2+H    9.03E11 0.0 4.567E3
+    DUP
+!R23                                                                           !
+! Li 2015
+CO+HO2=CO2+OH    1.57E5 2.18 1.794E4
+!R24                                                                           !
+! Varga 2016
+HCO(+M)=H+CO(+M)    4.93E16 -0.93 1.973E4
+    H2/2.0/
+    O2/1.0/
+    AR/0.55/
+    HE/0.786/
+    H2O/12.0/
+    CO/1.5/
+    CO2/2.0/
+    LOW/4.942E10 9.59E-1 1.467E4/
+    TROE/8.52E-1 5.14E1 3.57E3 3.42E3/
+!R26                                                                           !
+! Baulch 2005 A/2.71E+10 error (+/-0.15-0.5)
+HCO+O2=CO+HO2    3.0E10 0.68 -4.691E2
+!R27                                                                           !
+! Baulch 2005 A/9.03E+13 error(+/-0.3) 298-2500K
+HCO+H=CO+H2     1.1E14 0.0 0.0E0
+!R28                                                                           !
+! Baulch 2005 A/3.01E+13 error (+/-0.3)300-2500 K
+HCO+O=CO+OH    3.01E13 0.0 0.0E0
+!R29                                                                           !
+! Baulch 2005 A/3.01E+13 error(+/-0.3) 300-2500 K
+HCO+O=CO2+H    3.01E13 0.0 0.0E0
+!R30                                                                           !
+! Baulch 2005 A/1.080E+14 error(+/-0.3) 296-2500 K
+HCO+OH=CO+H2O    1.08E14 0.0 0.0E0
+!R31                                                                           !
+! Vagra 2016 cited TSA86
+HCO+HO2=>CO2+H+OH    3.0E13 0.0 0.0E0
+!R32                                                                           !
+! Baulch 2005 also used by Konnov 2008/Sun 2007/Vagra 2016
+2HCO=>H2+2CO    3.0E12 0.0 0.0E0
+!R33                                                                           !
+! NIST (Squib: 2002FRI/HER5778-5788)
+2HCO=CH2O+CO    2.7E13 0.0 0.0E0
+!R36                                                                           !
+! Konnov 2008 cited TSA86
+HCO+HO2=H2O2+CO    3.0E12 0.0 0.0E0
+!------------------------------------------------------------------------------
+!---------------------------CH2O REACTIONS-------------------------------------
+!------------------------------------------------------------------------------
+! Baulch 2005 A/4.100E+08 error(+/-0.1-0.5) 290-2500 K
+CH2O+H=HCO+H2    4.1E8 1.47 2.44E3
+! Baulch 2005 A/1.738E+13 error(+/-0.1-0.3) 300-1500 K
+CH2O+OH=HCO+H2O    1.391E13 0.0 6.04E2
+! Baulch 2005 A/5.413E+11 error(+/-0.1)
+CH2O+O=HCO+OH    4.155E11 0.57 2.771E3
+! Baulch 2005 A/4.438E+05 error(+/-0.3-0.5)
+CH2O+O2=HCO+HO2    2.438E5 2.5 3.648E4
+! Baulch 2005 A/4.095E+04 error(+/-0.2-0.4)
+CH2O+HO2=H2O2+HCO    4.095E4 2.5 1.021E4
+! Baulch 2005 A/3.191E+01 error(+/-0.2) 300-2000 K
+CH2O+CH3=CH4+HCO    3.191E1 3.36 4.314E3
+! Friedrichs 2004; Int J Chem Kinet 36: 157   169, 2004A/3.300E+39
+CH2O+M=HCO+H+M    3.3E39 -6.3 9.99E4
+   AR/0.7/H2/2.0/CO/1.5/CH2O/3.0/ 
+! Friedrichs 2004; Int J Chem Kinet 36: 157   169, 2004A/3.100E+45
+CH2O+M=CO+H2+M    3.1E45 -8.0 9.75E4
+   AR/0.7/H2/2.0/CO/1.5/CH2O/3.0/
+!------------------------------------------------------------------------------
+!------------HOCHO REACTIONS Formic acid --------------------------------------!
+!------------------------------------------------------------------------------
+! Chang et al. JPCA 111 (2007) 6789-6797
+HOCHO(+M)=CO+H2O(+M)    7.5E14 0.0 6.871E4
+    LOW/4.1E15 0.0E0 5.298E4/
+! Chang et al. JPCA 111 (2007) 6789-6797
+HOCHO(+M)=CO2+H2(+M)    4.5E13 0.0 6.824E4
+    LOW/1.7E15 0.0E0 5.111E4/
+! Zhang 2017; Combustion and Flame 180 (2017) 20   31 cited Christensen, E_Fuels 2016,30,6709-6726
+CH2O+OH=HOCHO+H    7.17E5 1.83 -1.117E3
+! Leplat 2011; Combustion and Flame 158 (2011) 705   725 cited Marinov 1999
+HOCHO+OH=CO+H2O+OH    1.85E7 1.5 -9.62E2
+! Leplat 2011; Combustion and Flame 158 (2011) 705   725 cited Marinov 1999
+HOCHO+H=CO2+H2+H    4.24E6 2.1 4.868E3
+! Leplat 2011; Combustion and Flame 158 (2011) 705   725 cited Marinov 1999
+HOCHO+H=CO+H2+OH    6.06E13 -0.35 2.988E3
+! Leplat 2011; Combustion and Flame 158 (2011) 705   725 cited Marinov 1999
+HOCHO+CH3=CH4+CO+OH    3.9E-7 5.8 2.2E3
+! Leplat 2011; Combustion and Flame 158 (2011) 705   725 cited Marinov 1999
+HOCHO+O=CO+2OH    1.77E18 -1.9 2.975E3
+! Marinov 1999; Int J Chem Kinet 31: 183   220, 1999
+HOCHO+HO2=>H2O2+CO+OH    1.0E12 0.0 1.192E4
+!---------OCHO related to the HOCHO -------------------------------------------!
+OCHO+O2=CO2+HO2    5.0E13 0.0 0.0E0
+! Baulch 2005 A/6.74E+13  error(+/-0.1) 300-2500K
+CH3+O=CH2O+H    6.74E13 0.0 0.0E0
+! Baulch 2005 A/1.686E+13 error(+/-0.1)
+CH3+O=>H+CO+H2    2.686E13 0.0 0.0E0
+! Srinivasan et al. JPCA 109:7902-7914 2005
+CH3+O2=CH2O+OH    1.9E11 0.0 9.842E3
+! Srinivasan et al. JPCA 109:7902-7914 2005
+CH3+O2=CH3O+O    7.5E12 0.0 2.829E4
+! Baulch 2005 A/1.806E+13 error(+/-1.0) 600-1200K
+CH3+HO2=CH3O+OH    6.0E12 0.0 0.0E0
+! Bierkandt 2015; Harding et al; J. Phys. Chem. A 2005, 109, 4646-4656
+! Miller et al; J. Phys. Chem. A 2002, 106, 4904-4913
+! Griffith _ Barnard
+CH3+H(+M)=CH4(+M)    6.925E13 0.18 0.0E0
+    H2/1.0/H2O/6.40/CO2/1.50/O2/0.45/N2/0.40/AR/0.35/HE/0.35/CO/0.75/CH4/3.0/
+    LOW/3.8E39 -6.564E0 6.744E3/
+    TROE/7.0E-1 1.0063E4 4.561E2/
+! Sivaramakrishnan et al., J Phys Chem A 2015, 119, 7724-7733
+! also used by Hashemi 2017
+CH3+HCO=CH4+CO    1.8E20 -2.3 4.781E3
+    PLOG/5.0E-2 2.9E18 -1.84E0 2.134E3/
+    PLOG/1.0E-1 8.7E18 -1.97E0 2.684E3/
+    PLOG/1.0E0 1.8E20 -2.3E0 4.781E3/
+    PLOG/1.0E1 1.1E21 -2.45E0 7.417E3/
+! Baulch 2005 A/3.613E+13 error(+/-0.3)
+! A(Ar)1.269E+41 error(+/-0.3)
+! Fc 0.62 !error (+/-0.1)
+! Griffith _ Barnard
+2CH3(+M)=C2H6(+M)    3.613E13 0.0 0.0E0
+    H2/1.0/H2O/6.40/CO2/1.50/O2/0.45/N2/0.40/AR/0.35/HE/0.35/CO/0.75/CH4/3.0/ 
+    LOW/3.0E41 -7.0E0 2.762E3/
+    TROE/6.2E-1 7.3E1 1.18E3/
+! JASPER/KLIPP,J.PHYS.CHEM A, 2007, 111,19,3932-3950
+CH3+OH=CH2O+H2    1.65E7 0.973 -2.01E3
+    PLOG/1.0E-2 3.502E5 1.441E0 -3.244E3/
+    PLOG/1.0E-1 8.854E5 1.327E0 -2.975E3/
+    PLOG/1.0E0 1.65E7 9.73E-1 -2.01E3/
+    PLOG/1.0E1 5.374E9 2.87E-1 2.8E2/
+    PLOG/1.0E2 9.494E18 -2.199E0 9.769E3/
+! JASPER/KLIPP,J.PHYS.CHEM A, 2007, 111,19,3932-3950
+CH3+OH=CH3O+H    1.23E9 1.011 1.195E4
+    PLOG/1.0E-2 1.186E9 1.016E0 1.194E4/
+    PLOG/1.0E-1 1.188E9 1.016E0 1.194E4/
+    PLOG/1.0E0 1.23E9 1.011E0 1.195E4/
+    PLOG/1.0E1 1.798E9 9.65E-1 1.206E4/
+    PLOG/1.0E2 5.242E10 5.51E-1 1.307E4/
+!-------------------------------------------------------------------------------!
+!------------------------------CH3O REACTIONS-----------------------------------!
+!-------------------------------------------------------------------------------!
+! Baulch 2005 A/6.800E+13 error (+/-0.5) 500-1000K
+! A/1.866E+25 error (+/-0.3) 500-1000K
+! error (+/-0.1) TROE paramter from Aramco 2.0
+! Griffith _ Barnard
+CH3O(+M)=CH2O+H(+M)    9.8E13 0.0 2.618E4
+    H2/1.0/H2O/6.40/CO2/1.50/O2/0.45/N2/0.40/AR/0.35/HE/0.35/CO/0.75/CH4/3.0/
+    LOW/2.866E25 -3.0E0 2.431E4/
+    TROE/9.0E-1 2.5E3 1.3E3 1.0E99/
+! Baulch 2005 A/3.794E+13(70%) error(+/-0.1-0.3)
+CH3O+H=CH2O+H2    3.794E13 0.0 5.96E2
+! Baulch 2005 A/3.763E+12 error (-0.1 - +0.2)
+CH3O+O=CH2O+OH    3.763E12 0.0 0.0E0
+! TSA86
+CH3O+OH=CH2O+H2O    1.8E13 0.0 0.0E0
+! Aranda et al., IJCK 45 (2013) 283-294.
+CH3O+O2=CH2O+HO2    4.8E-1 3.567 -1.055E3
+! TSA86
+CH3O+HO2=CH2O+H2O2    3.0E11 0.0 0.0E0
+! Wang et al., J. Phys. Chem. A 1999, 103, 8021-8029 (1 bar,200-1000 K)
+CH3O+CO=CH3+CO2    9.5E25 -4.93 9.08E3
+! TSA86
+CH3O+CH3=CH2O+CH4    2.4E13 0.0 0.0E0
+! TSA86
+2CH3O=CH3OH+CH2O    6.0E13 0.0 0.0E0
+! TSA86
+CH3O+CH2O=CH3OH+HCO    1.0E11 0.0 2.981E3
+!-------------------------------------------------------------------------------!
+!-------------------------CH3O2 REACTIONS---------------------------------------!
+!-------------------------------------------------------------------------------!
+! Fernandes et al.,J Phys. Chem. A, (2006) 110:4442-4449./ Sarathy 2011
+! also used by Aramco 2.0
+! Griffith _ Barnard
+CH3+O2(+M)=CH3O2(+M)    7.812E9 0.9 0.0E0
+    H2/1.0/H2O/6.40/CO2/1.50/O2/0.45/N2/0.40/AR/0.35/HE/0.35/CO/0.75/CH4/3.0/
+    LOW/6.85E24 -3.0E0 0.0E0/
+    TROE/6.0E-1 1.0E3 7.0E1 1.7E3/
+! Hashemi et al. C_Flame 182 (2017) 150   166 cited TSA86
+CH3O2+H=CH3O+OH    9.6E13 0.0 0.0E0
+! Hashemi et al. C_Flame 182 (2017) 150   166
+CH3O2+O=CH3O+O2    2.85E10 1.0 -7.24E2
+! Hashemi et al. C_Flame 182 (2017) 150   166 cited Yan eta al. Phys. Chem. A 2016, 120, 6111   6121
+CH3O2+OH=CH3O+HO2    5.11E15 -0.81 0.0E0
+! Hashemi et al. C_Flame 182 (2017) 150   166 cited Keiffer et al.,J. Chem. soc. faraday trans. 2: 84, 505 (1988)
+CH3O2+CH3=2CH3O    5.08E12 0.0 -1.411E3
+! RASMUSSEN/GLARBORG; Int J Chem Kinet 40: 778   807, 2008
+CH3O2+CO=CH3O+CO2    1.6E5 2.18 1.794E4
+! RASMUSSEN/GLARBORG; Int J Chem Kinet 40: 778   807, 2008
+CH3O2+HCO=CH3O+H+CO2    3.0E13 0.0 0.0E0
+! RASMUSSEN/GLARBORG; Int J Chem Kinet 40: 778   807, 2008 cited CEC05 250-2000K
+2CH3O2=2CH3O+O2    1.1E18 -2.4 1.8E3
+    DUP
+! RASMUSSEN/GLARBORG; Int J Chem Kinet 40: 778   807, 2008 cited CEC05 250-2000K
+2CH3O2=2CH3O+O2    7.0E10 0.0 8.0E2
+    DUP
+! Baulch 2005
+2CH3O2=CH3OH+CH2O+O2    2.0E11 -0.55 -1.6E3
+!------------------------------------------------------------------------------!
+!------------------------------CH4 REACTIONS-----------------------------------!
+!------------------------------------------------------------------------------!
+! Baulch 2005 A/6.142E+05 error (+/-0.2-0.4) 350-2500K
+CH4+H=CH3+H2    4.078E5 2.5 9.587E3
+! Baulch 2005 A/4.396E+05 error (+/-0.3)
+CH4+O=CH3+OH    4.396E5 2.5 6.58E3
+! Baulch 2005 A/1.367E+06 error (+/-0.1-03)  250-2400K
+CH4+OH=CH3+H2O    1.0E6 2.18 2.683E3
+! Baulch 2005 A/4.877E+05 error (+/-0.5-0.7) 500-2000K
+CH4+O2=CH3+HO2    1.8E6 2.5 5.24E4
+! Baulch 2005 A/4.697E+04 error (+/-0.15-0.7)600-2000K
+CH4+HO2=CH3+H2O2    4.697E4 2.5 2.101E4
+!------------------------------------------------------------------------------!
+!------------------------CH3OH REACTIONS---------------------------------------!
+!------------------------------------------------------------------------------!
+! Li 2007; Int J Chem Kinet 39: 109   136, 2007
+! Griffith _ Barnard
+H+CH3O(+M)=CH3OH(+M)    2.43E12 0.5 5.0E1
+    H2/1.0/H2O/6.40/CO2/1.50/O2/0.45/N2/0.40/AR/0.35/HE/0.35/CO/0.75/CH4/3.0/
+    LOW/4.66E41 -7.44E0 1.41E4/
+    TROE/7.0E-1 1.0E2 9.0E4 1.0E4/
+! JASPER/KLIPP,J.PHYS.CHEM A 111,19,3932-3950 (2007)
+! Griffith _ Barnard
+CH3OH(+M)=CH3+OH(+M)    2.084E18 -0.615 9.254E4
+    H2/1.0/H2O/6.40/CO2/1.50/O2/0.45/N2/0.40/AR/0.35/HE/0.35/CO/0.75/CH4/3.0/
+    LOW/1.5E43 -6.995E0 9.799E4/
+    TROE/-4.748E-1 3.558E4 1.116E3 9.023E3/
+! Pa  eda, J. Chem. phys. 134, 094302 (2011)
+CH3OH+H=CH3O+H2    2.745E6 2.147 1.114E4
+! Baulch 2005 A/2.469E+13 error (+/-0.2)
+CH3OH+O=CH3O+OH    3.89E13 0.0 5.305E3
+! Xu PROC 31 2007 159-166 A/1.500E+02
+CH3OH+OH=CH3O+H2O    2.5E2 3.03 -7.63E2
+! Klippenstein, PCI, 33 (2011) 351-357
+CH3OH+O2=HO2+CH3O    2.5E12 0.0 5.5E4
+! Altarawneh, J. Comp. Chem. 32 (2011) 1725-1733
+CH3OH+HO2=CH3O+H2O2    1.22E12 0.0 2.007E4
+! Baulch 2005 k0(67%)error (+/-0.2-1.0)
+CH3OH+CH3=CH3O+CH4    2.017E1 3.45 7.987E3
+!-------------------------------------------------------------------------------!
+!-----------------------DME REACTIONS-------------------------------------------!
+!-------------------------------------------------------------------------------!
+! Sivaramakrishnan, et al.. C_Flame, 158 (2011) 618-632
+CH3OCH3-DME(+M)=CH3+CH3O(+M)    2.33E19 -0.66 8.413E4
+    H2/3.0/H2O/9.0/CH4/3.0/CO/2.25/CO2/3.0/C2H6/4.5/AR/1.0/HE/1.0/N2/1.50/CH3OCH3-DME/5.0/
+    LOW/1.72E59 -1.14E1 9.329E4/
+    TROE/1.0E0 1.0E-30 8.8E2/
+! Baulch 2005 error(+/-0.1-0.3) 250-1200 K
+CH3OCH3-DME+OH=CH3OCH2+H2O    4.938E7 1.73 3.5E2
+!CH3OCH3-DME+OH=CH3OCH2+H2O                      1.950E+07   1.89 -3.654E+02  ! 195   1423 K ! Hashemi 2019; Combustion and Flame 205 (2019) 80   92
+!Carr et al.  J. Phys. Chem. A 117 (2013) 11142-11154. Added on 2019-07-02
+!
+!CH3OCH3-DME+H=CH3OCH2+H2                        3.191E+07   1.90  3.697E+03  ! Baulch 2005 error(+/-0.3-0.5) 270-2000 K | 1st
+! 3.940E+00 | Hashemi 2019; Combustion and Flame 205 (2019) 80   92
+CH3OCH3-DME+H=CH3OCH2+H2    7.88E0 4.13 1.78E3
+! Sivaramakrishnan et al. Combust. Flame 158 (2011) 618-632. Added on 2019-07-02
+!
+!# CH3OCH3-DME+CH3=CH3OCH2+CH4                     6.022E+03   2.68  8.329E+03  ! Baulch 2005 error(+/-0.2-0.4) 300-1600 K
+! Hashemi 2019; Combustion and Flame 205 (2019) 80   92
+CH3OCH3-DME+CH3=CH3OCH2+CH4    1.019E1 3.78 9.687E3
+! Tranter et al., J. Phys. Chem. A 2012, 116, 7287-7292
+! CURRAN 08 NIST FIT
+CH3OCH3-DME+O=CH3OCH2+OH    7.75E8 1.36 2.25E3
+! Zhao 2008
+CH3OCH3-DME+HO2=CH3OCH2+H2O2    2.0E13 0.0 1.65E4
+!CH3OCH3-DME+HO2=CH3OCH2+H2O2                   3.170E-03   4.64  1.055E+04  ! Hashemi 2019; Combustion and Flame 205 (2019) 80   92
+! Mendes, Zhou, Curran, J. Phys. Chem. A 118 (2014) 1300-1308
+! The rate paramter of CH3OCH3-DME+HO2=CH3OCH2+H2O2 from Mendes 2014 used by Hashemi 2019 drastically
+! impacts the ignition delay time of DME at low temperature
+! Baulch 2005, 500-2000K!error(+/-0.5-0.7)
+CH3OCH3-DME+O2=CH3OCH2+HO2    7.286E5 2.5 4.421E4
+! H.J. Curran, IJCK, 32 (2000) 713-740
+CH3OCH3-DME+CH3O=CH3OCH2+CH3OH    6.02E11 0.0 4.074E3
+! Mendes, Zhou, Curran, J. Phys. Chem. A 118 (2014) 1300-1308
+! CH3OCH3-DME+CH3O2=CH3OCH2+CH3O2H               6.340E-04   4.64  1.0556E+04 ! Hashemi 2019; Combustion and Flame 205 (2019) 80   92
+! est 20% of CH3OCH3+HO2=CH3OCH2+H2O2
+! 20%: ~ the ratio between abstraction by CH3OO and HO2 from CH4 and C2H6 (Carstensen, Dean, Deutschmann, Proc. Combust. Inst. 31 (2007) 149   157)
+!
+!# CH3OCH3-DME+HCO=CH3OCH2+CH2O                    9.820E-14   7.37  9.730E+03  ! Hashemi 2019; Combustion and Flame 205 (2019) 80   92
+! Added on 2019-07-02
+!
+! H.J. Curran, IJCK, 32 (2000) 713-740
+CH3OCH3-DME+CH3OCH2O2=CH3OCH2+CH3OCH2O2H    5.0E12 0.0 1.769E4
+! Added on 2019-07-02
+! H.J. Curran, IJCK, 32 (2000) 713-740
+CH3OCH3-DME+OCHO=CH3OCH2+HOCHO    1.0E13 0.0 1.769E4
+!
+! Burke et al., C_Flame 162 (2015) 315   330
+CH3OCH2=CH3+CH2O    4.22E29 -5.61 2.889E4
+    PLOG/1.0E-2 7.49E23 -4.51E0 2.523E4/
+    PLOG/1.0E-1 6.92E28 -5.72E0 2.749E4/
+    PLOG/1.0E0 4.22E29 -5.61E0 2.889E4/
+    PLOG/1.0E1 6.6E27 -4.7E0 2.973E4/
+    PLOG/1.0E2 2.65E29 -4.93E0 3.178E4/
+!
+! Dagaut 1998
+CH3OCH2+CH3O=CH3OCH3-DME+CH2O    2.41E13 0.0 0.0E0
+!CH3OCH2+CH3O=CH3OCH3-DME+CH2O                   2.400E+12   0.00  0.000E+00  ! Hashemi 2019; Combustion and Flame 205 (2019) 80   92
+! estimated based on analogy to CH2OH+CH3O=CH3OH+CH2O
+! Hashemi 2019; Combustion and Flame 205 (2019) 80   92
+CH3OCH2+HCO=CH3OCH3-DME+CO    1.0E13 0.0 0.0E0
+! est CH2OH+HCO=CH3OH+CO (comparable to C2H5+HCO=C2H6+CO/  4.3E13/0/0)
+! Added on 2019-07-02
+! Dagaut 1998
+CH3OCH2+CH2O=CH3OCH3-DME+HCO    5.49E3 2.8 5.862E3
+! Zhao 2008
+CH3OCH2+HO2=CH3OCH2O+OH    9.0E12 0.0 0.0E0
+OCHO+M=CO2+H+M    2.443E15 -0.5 2.65E4
+CH2O+OCHO=HOCHO+HCO    5.6E12 0.0 1.36E4
+! First used
+! Burke et al., C_Flame 162 (2015) 315   330
+CH3OCO=CH3+CO2    1.25E16 -1.83 1.134E4
+    PLOG/5.0E-2 9.72E12 -1.31E0 9.41671E3/
+    PLOG/1.0E0 1.25E16 -1.83E0 1.134077E4/
+    PLOG/1.0E1 1.04E18 -2.1E0 1.282689E4/
+    PLOG/1.0E2 8.69E17 -1.81E0 1.365672E4/
+! Burke et al., C_Flame 162 (2015) 315   330
+CH3OCO=CH3O+CO    4.09E5 0.81 2.196912E4
+    PLOG/5.0E-2 1.03E3 1.29E0 2.540095E4/
+    PLOG/1.0E0 4.09E5 8.1E-1 2.196912E4/
+    PLOG/1.0E1 9.02E14 -1.72E0 2.176745E4/
+    PLOG/1.0E2 2.82E22 -3.44E0 2.359237E4/
+! E.E. Dames, A.S. Rosen, B.W. Weber, C.W. Gao, C.-J. Sung, W.H. Green, Combust. Flame 168 (2016) 310   330. ! Added on 2019-07-02
+!
+!Experimental and theoretical investigations of methyl formate oxidation including hot   -scission
+!Proc. Combust. Inst., 37 (2019) 307   314
+!Minwegen, H.; D  ntgen, M.; Hemken, C.; B  ttgen, R.; Leonhard, K. _ Heufer, K. A
+!AUTHOR: !REF: Minwegen, H.; D  ntgen, M.; Hemken, C.; B  ttgen, R.; Leonhard, K. _ Heufer, K. A.; Proc. Combust. Inst., 2019
+CH3OCO=CH2O+HCO    1.903E-9 2.842 2.3764E4
+    PLOG/1.0E0 1.903E-9 2.842E0 2.3764E4/
+    PLOG/1.0E1 3.245E-101 3.1649E1 -1.4023E3/
+    PLOG/1.0E2 8.375E-44 1.4827E1 2.09886E4/
+!Proc. Combust. Inst., 37 (2019) 307   314
+! CH2OCHO(=)CH2O+HCO               3.688E+30     -5.600    38220.9                       !AUTHOR: !REF: Minwegen, H.; D  ntgen, M.; Hemken, C.; B  ttgen, R.; Leonhard, K. _ Heufer, K. A. ;Proc. Combust. Inst., 2019
+! PLOG/     0.1000  6.072E+35     -7.444    39083.4/
+! PLOG/     1.0000  3.688E+30     -5.600    38220.9/
+! PLOG/    10.0000  4.042E+24     -3.598    36860.8/
+! PLOG/   100.0000  8.354E+18     -1.753    35303.8/
+!!Proc. Combust. Inst., 37 (2019) 307   314
+!------------ END of CH3OCHO sub-set------------------------------------------!
+!
+!-------------------- Low temperature sequence--------------------------------!
+! BURKE 2015 cited T. YAMADA, J.W. BOZZELLI, T.H. LAY, INTERNATIONAL JOURNAL OF CHEMICAL KINETICS, 32 (2000) 435-452
+CH3OCH2+O2=CH3OCH2O2    1.13E28 -5.24 4.088E3
+    PLOG/1.0E-3 1.12E18 -3.37E0 -4.294E3/
+    PLOG/1.0E-2 1.33E21 -3.95E0 -2.615E3/
+    PLOG/1.0E0 1.13E28 -5.24E0 4.088E3/
+    PLOG/2.0E0 3.91E27 -5.0E0 4.512E3/
+    PLOG/1.0E1 2.75E24 -3.87E0 4.29E3/
+    PLOG/2.0E1 2.97E22 -3.23E0 3.781E3/
+    PLOG/5.0E1 5.19E19 -2.35E0 2.908E3/
+    PLOG/1.0E2 5.43E17 -1.73E0 2.21E3/
+!# CH3OCH2+O2=CH3OCH2O2                       5.063E+45   -11.011   7978.4
+!# PLOG /  0.987     5.063E+45   -11.011   7978.4  / !Av. (max) fit. error: 9.5% (30.2%)
+!# PLOG /  2.961     2.335E+40   -9.174   6893.4   / !Av. (max) fit. error: 10.7% (31.1%)
+!# PLOG /  6.168     2.441E+36   -7.837   5956.3   / !Av. (max) fit. error: 10.9% (29.6%)
+!# PLOG /  12.337    3.241E+32   -6.552   4978.5   / !Av. (max) fit. error: 10.5% (26.7%)
+!# PLOG /  24.673    5.145E+28   -5.303   3977.4   / !Av. (max) fit. error: 9.5% (22.8%)
+!# PLOG /  49.346    1.563E+25   -4.153   3023.9   / !Av. (max) fit. error: 8.1% (19.3%)
+!# PLOG /  98.692    1.397E+22   -3.161   2182.5   / !Av. (max) fit. error: 6.5% (16.2%)
+!#    ! Eskola, Carr, Shannon, Wang, Blitz, Pilling, Seakins, J. Phys. Chem. A 2014, 118, 6773   6788
+!#    ! PLOG fitting for  2a) R+O2=RO2
+!                                                                             !
+! Burke 2015 cited  T. YAMADA, J.W. BOZZELLI, T.H. LAY, IJCK, 32 (2000) 435-452
+CH3OCH2+O2=>2CH2O+OH    2.04E31 -5.76 1.159E4
+    PLOG/1.0E-3 8.01E21 -3.18E0 3.067E3/
+    PLOG/1.0E-2 1.73E23 -3.55E0 4.05E3/
+    PLOG/1.0E0 2.04E31 -5.76E0 1.1594E4/
+    PLOG/2.0E0 5.99E31 -5.87E0 1.271E4/
+    PLOG/1.0E1 9.39E30 -5.59E0 1.4517E4/
+    PLOG/2.0E1 1.09E30 -5.3E0 1.5051E4/
+    PLOG/5.0E1 3.58E28 -4.88E0 1.5664E4/
+    PLOG/1.0E2 2.41E27 -4.55E0 1.6107E4/
+!                                                                             !
+! BURKE 2015 cited T. YAMADA, J.W. BOZZELLI, T.H. LAY, IJCK, 32 (2000) 435-452
+CH3OCH2+O2=CH2OCH2O2H    2.81E28 -5.63 7.848E3
+    PLOG/1.0E-3 5.08E20 -4.39E0 4.69E2/
+    PLOG/1.0E-2 5.47E23 -4.96E0 2.183E3/
+    PLOG/1.0E0 2.81E28 -5.63E0 7.848E3/
+    PLOG/2.0E0 5.19E27 -5.33E0 8.144E3/
+    PLOG/1.0E1 9.67E24 -4.36E0 8.417E3/
+    PLOG/2.0E1 4.08E23 -3.9E0 8.494E3/
+    PLOG/5.0E1 5.08E21 -3.28E0 8.585E3/
+    PLOG/1.0E2 1.62E20 -2.81E0 8.619E3/
+! Wang 2015 cited Suzaki et al, J. Phys. Chem. A 111 (2007) 3776-3788
+CH3OCH2+O2=>HCO+H2O+CH2O    6.67E10 0.0 7.73E2
+!-----------------------------------------------------------------------------!
+! Burke 2015
+CH3OCH2O2+CH2O=CH3OCH2O2H+HCO    1.0E12 0.0 1.167E4
+!
+! Rosado-Reyes et al., J. Phys. Chem. A 109 (2005) 10940-10953
+2CH3OCH2O2=2CH3OCH2O+O2    1.26E11 0.0 -1.39E3
+!# CH3OCH2O2+CH3OCH2O2=)CH3OCH2O+CH3OCH2O+O2    1.48289E+20   -3.51727   -698.022 !
+!# PLOG /    0.03289     8.7682E+20      -4.0206             -700.070/
+!# PLOG /    0.06579     9.1063E+20      -3.9813             -700.067/
+!# PLOG /    0.13158     5.67034E+23     -5.07465            -700.067/
+!# PLOG /    0.26316     5.36207E+22     -4.64244            -700.067/
+!# PLOG /    0.526316    1.25374E+21     -3.93198            -700.067/
+!# PLOG /    0.78947     4.37972E+19     -3.3345             -700.067/
+!# PLOG /    1.05263     1.48289E+20     -3.51727            -698.022/
+!# PLOG /    100         1.596E+23       -4.5            0/
+!#    ! E.E. Dames, A.S. Rosen, B.W. Weber, C.W. Gao, C.-J. Sung, W.H. Green, Combust. Flame 168 (2016) 310   330.
+!#! ------ ------ ------ !
+!# CH3OCH2O2+CH3OCH2O2=)CH3OCHO+CH3OCH2OH+O2        6.3552E+19   -3.51727      -698.022
+!# PLOG /      0.03289                    3.7578E+20   -4.0206       -700.070/
+!# PLOG /      0.06579                    3.9027E+20   -3.9813       -700.067/
+!# PLOG /      0.13158                    2.4301E+23   -5.07465      -700.067/
+!# PLOG /      0.26316                    2.2980E+22   -4.64244      -700.067/
+!# PLOG /      0.526316                   5.3732E+20   -3.93198      -700.067/
+!# PLOG /      0.78947                    1.8770E+19   -3.3345       -700.067/
+!# PLOG /      1.05263                    6.3552E+19   -3.51727      -698.022/
+!# PLOG /      100                        6.84E+22     -4.5            0/
+! E.E. Dames, A.S. Rosen, B.W. Weber, C.W. Gao, C.-J. Sung, W.H. Green, Combust. Flame 168 (2016) 310   330.
+!# CH3OCH2OH=HOCH2O+CH3                            1.475E+22   -1.770  84720 ! Hashemi 2019; Combustion and Flame 205 (2019) 80   92
+!# CH3OCH2OH=CH2OH+CH3O                            5.043E+23   -2.240  91601 ! Hashemi 2019; Combustion and Flame 205 (2019) 80   92
+!
+!CH3OCH2O2H=CH3OCH2O+OH                          2.106E+22  -2.12  4.383E+04  ! Zhao 2008  also used by Wang 2015
+! Zhao 2008  also used by Wang 2015
+CH3OCH2O=CH3O+CH2O    9.722E15 -1.1 2.064E4
+! BURKE 2015 cited J.W. BOZZELLI, T.H. LAY, IJCK, 32 (2000) 435-452
+CH3OCH2O2=CH2OCH2O2H    2.52E25 -4.76 2.269E4
+    PLOG/1.0E-3 1.94E29 -6.99E0 2.244E4/
+    PLOG/1.0E-2 4.07E27 -6.16E0 2.161E4/
+    PLOG/1.0E0 2.52E25 -4.76E0 2.269E4/
+    PLOG/2.0E0 5.97E24 -4.48E0 2.286E4/
+    PLOG/1.0E1 4.44E21 -3.38E0 2.238E4/
+    PLOG/2.0E1 4.52E19 -2.74E0 2.18E4/
+    PLOG/5.0E1 5.72E16 -1.82E0 2.082E4/
+    PLOG/1.0E2 3.7E14 -1.13E0 2.003E4/
+!                                                                             !
+! BURKE 2014 cited J.W. BOZZELLI, T.H. LAY, IJCK, 32 (2000) 435-452
+CH3OCH2O2=>2CH2O+OH    1.12E40 -8.42 3.983E4
+    PLOG/1.0E-3 2.06E36 -8.32E0 3.341E4/
+    PLOG/1.0E-2 2.07E39 -8.86E0 3.584E4/
+    PLOG/1.0E0 1.12E40 -8.42E0 3.983E4/
+    PLOG/2.0E0 9.72E38 -8.04E0 3.992E4/
+    PLOG/1.0E1 6.28E35 -6.97E0 3.99E4/
+    PLOG/2.0E1 1.6E34 -6.46E0 3.985E4/
+    PLOG/5.0E1 8.32E31 -5.75E0 3.971E4/
+    PLOG/1.0E2 1.22E30 -5.2E0 3.954E4/
+!
+! Burke et al., C_Flame 162 (2015) 315   330
+CH2OCH2O2H=>2CH2O+OH    7.81E22 -3.5 2.315E4
+    PLOG/1.0E-3 1.66E23 -4.53E0 2.2243E4/
+    PLOG/1.0E-2 5.3E25 -4.93E0 2.4158E4/
+    PLOG/1.0E0 7.81E22 -3.5E0 2.3156E4/
+    PLOG/2.0E0 4.98E22 -3.35E0 2.3062E4/
+    PLOG/1.0E1 8.46E22 -3.22E0 2.3559E4/
+    PLOG/2.0E1 9.09E22 -3.14E0 2.3899E4/
+    PLOG/5.0E1 4.59E22 -2.94E0 2.4262E4/
+    PLOG/1.0E2 1.4E22 -2.72E0 2.4407E4/
+!
+! Burke et al., C_Flame 162 (2015) 315   330
+CH2OCH2O2H+O2=O2CH2OCH2O2H    1.06E22 -3.3 3.389E3
+    PLOG/1.0E-3 9.42E12 -1.68E0 -4.998E3/
+    PLOG/1.0E-2 8.16E16 -2.5E0 -2.753E3/
+    PLOG/1.0E0 1.06E22 -3.3E0 3.389E3/
+    PLOG/2.0E0 3.48E20 -2.79E0 3.131E3/
+    PLOG/1.0E1 2.86E16 -1.48E0 1.873E3/
+    PLOG/2.0E1 8.55E14 -1.01E0 1.312E3/
+    PLOG/5.0E1 2.68E13 -5.4E-1 7.27E2/
+    PLOG/1.0E2 4.87E12 -3.2E-1 4.28E2/
+!
+! Burke et al., C_Flame 162 (2015) 315   330
+CH2OCH2O2H+O2=HO2CH2OCHO+OH    4.45E29 -5.29 1.279E4
+    PLOG/1.0E-3 5.9E20 -2.88E0 3.234E3/
+    PLOG/1.0E-2 2.06E23 -3.59E0 5.116E3/
+    PLOG/1.0E0 4.45E29 -5.29E0 1.279E4/
+    PLOG/2.0E0 2.44E28 -4.92E0 1.289E4/
+    PLOG/1.0E1 9.42E23 -3.68E0 1.204E4/
+    PLOG/2.0E1 1.04E22 -3.16E0 1.15E4/
+    PLOG/5.0E1 6.95E19 -2.6E0 1.086E4/
+    PLOG/1.0E2 3.96E18 -2.31E0 1.05E4/
+!
+! Isomerization II
+! Burke et al., C_Flame 162 (2015) 315   330
+O2CH2OCH2O2H=HO2CH2OCHO+OH    5.07E16 -1.81 2.117E4
+    PLOG/1.0E-3 9.05E23 -4.88E0 1.8805E4/
+    PLOG/1.0E-2 6.84E26 -5.32E0 2.2533E4/
+    PLOG/1.0E0 5.07E16 -1.81E0 2.1175E4/
+    PLOG/2.0E0 2.66E14 -1.11E0 2.031E4/
+    PLOG/1.0E1 1.69E10 1.8E-1 1.8604E4/
+    PLOG/2.0E1 1.11E9 5.4E-1 1.81E4/
+    PLOG/5.0E1 1.07E8 8.4E-1 1.7661E4/
+    PLOG/1.0E2 3.86E7 9.8E-1 1.7467E4/
+!
+HO2CH2OCHO=OCH2OCHO+OH    3.0E16 0.0 4.0E4
+! Zhao 2008
+OCH2OCHO=CH2O+OCHO    1.0E11 0.0 1.4E4
+! Wang 2015 : C_F 162 (2015) 1113   1125
+OCH2OCHO=>HOCHO+HCO    5.17E20 -3.78 1.139E4
+    PLOG/1.0E0 5.17E20 -3.78E0 1.139E4/
+    PLOG/1.0E1 3.18E25 -4.88E0 1.45E4/
+    PLOG/1.0E6 1.1E10 7.2E-1 1.32E4/
+!-------------------------------------------------------------------------------!
+!*******************************************************************************!
+!--------------------NOx Mechanism STARTS FROM HERE-----------------------------!
+!*******************************************************************************!
+! PLOG reactions were introduced in present scheme based on rates given in      !
+! the supplement of Lamoureux et al. 2016 but not used in there scheme          !
+!-----------------------N/N2 REACTIONS------------------------------------------!
+!-------------------------------------------------------------------------------!
+! Lamoureux 2016
+N2+M=2N+M    1.89E18 -0.85 2.25E5
+    H2O/16.25/
+    CO/1.875/
+    CO2/3.75/
+    CH4/16.25/
+    C2H6/16.25/
+! Lamoureux 2016
+N+O+M=NO+M    7.6E14 -0.1 -1.77E3
+    H2O/16.25/
+    CO/1.875/
+    CO2/3.75/
+    CH4/16.25/
+    C2H6/16.25/
+! Lamoureux 2016
+N+NO2=N2O+O    1.8E12 0.0 0.0E0
+! Baulch 2005 A/6.400E+09 error (+/-0.2-0.5) 280-1500 K also used by Lamoureux 2016/Vandooren 1994
+N+O2=NO+O    5.841E9 1.01 6.202E3
+! Baulch 2005 A/1.084E+14 error (+/-0.1-0.4) 100-2500 K
+N+OH=NO+H    1.084E14 -0.2 0.0E0
+! Baulch 2005 A/2.100E+13 error (+/-0.3) 210-3700 K also used by Tian 2009/KLIMIC2011
+N+NO=N2+O    3.2E13 0.0 0.0E0
+!------------------------------------------------------------------------------!
+!---------------NH REACTIONS---------------------------------------------------!
+!------------------------------------------------------------------------------!
+! Baulch 2005 A/(3.011E+13) error (+/-0.3)/1500-2500K also used by Klaus 1997/Vandooren 1994
+NH+H=N+H2    2.011E13 0.0 0.0E0
+! Klaus 1997 error (+/-0.3)
+NH+O=NO+H    5.0E13 0.0 0.0E0
+! Duynslaegher 2012 A/7.000E+12)
+NH+O=N+OH    3.0E12 0.0 0.0E0
+! Klaus 1997 also used by Duynslaegher 2012 /Dayma_Daguat 2006(A/2.000E+13)
+NH+OH=HNO+H    4.0E13 0.0 0.0E0
+! Klaus 1997
+NH+OH=NO+H2    2.4E13 0.0 0.0E0
+! Klaus 1997 also used by Duynslaegher 2012
+NH+OH=N+H2O    2.0E9 1.2 5.978E0
+! KLIMIC2011 cited Skreiberg 2004
+NH+O2=HNO+O    4.6E5 2.0 6.5E3
+! KLIMIC2011 cited Skreiberg 2004
+NH+O2=NO+OH    1.3E6 1.5 1.0E2
+! Allen 1997 cited Mertens et al.; Int. J. Chem. Kinet. 21:1049 (1989); A/5.100E+13
+2NH=N2+2H    2.5E13 0.0 0.0E0
+! KLIMIC2011 cited Skreiberg 2004
+NH+N=N2+H    3.0E13 0.0 0.0E0
+! Glarborg 1998; Combust. Flame 115 (1998) 1   27
+NH+NO=N2O+H    2.9E14 -0.4 0.0E0
+! KLIMIC2011 also used by  Lamoureux 2016
+NH+NO=N2+OH    2.69E12 -0.072 -5.13E2
+!
+! NH+NO=N2O+H                                    2.700E+15  -0.78      2.000E+01 !
+! Baulch DL Bowman CT Cobos CJ Cox RA Just Th Kerr JA Pilling MJ Stocker D Troe J Tsang W Walker RW Warnatz J JPCRD 34:757-1397 2005
+! P. Glarborg, J.A. Miller, B. Ruscic, S.J. Klippenstein, Prog. Energy Combust. Sci. 67 (2018) 31-68.
+!
+! NH+NO=N2+OH                                    6.800E+14  -0.78      2.000E+01 !
+! Baulch DL Bowman CT Cobos CJ Cox RA Just Th Kerr JA Pilling MJ Stocker D Troe J Tsang W Walker RW Warnatz J JPCRD 34:757-1397 2005
+! P. Glarborg, J.A. Miller, B. Ruscic, S.J. Klippenstein, Prog. Energy Combust. Sci. 67 (2018) 31-68.
+!
+! KLIMIC2011
+NH+NO2=N2O+OH    4.1E12 0.0 0.0E0
+! KLIMIC2011
+NH+NO2=HNO+NO    5.9E12 0.0 0.0E0
+! KLIMIC2011
+NH+HONO=NH2+NO2    1.0E13 0.0 0.0E0
+! Duynslaegher 2012
+NH+N2O=N2+HNO    2.0E12 0.0 6.0E3
+!------------------------------------------------------------------------------!
+!----------------------NH2 REACTIONS-------------------------------------------!
+!------------------------------------------------------------------------------!
+! Baulch 2005!A/8.300E+13, error (+/-0.2) 1100-3000
+NH2+H=NH+H2    7.3E13 0.0 5.0E3
+! Klaus 1997 A/7.500E+13, error (+/-0.3)
+NH2+O=HNO+H    4.5E13 0.0 0.0E0
+! Klaus 1997 error (+/-0.3)also used by KLIMIC2011/Zhang 2011/Lamoureux 2016
+NH2+O=NH+OH    7.0E12 0.0 0.0E0
+    DUP
+NH2+O=NH+OH    8.6E-1 4.0 1.673E3
+    DUP
+! Klaus 1997 error (+/-1.0)
+NH2+O=NO+H2    5.0E12 0.0 0.0E0
+! Klaus 1997 error (+/-1.0)
+NH2+OH=NH+H2O    2.0E8 1.5 -4.567E2
+!
+!NH2+HO2(=)H2NO+OH                               5.000E+13   0.00    0.000E+00 ! Skreiberg 2004 also used by KLIMIC2011
+!#NH2+HO2(=)NH3+O2                               9.200E+05   1.94   -1.152E+03 ! Skreiberg 2004 also used by KLIMIC2011 : comment: in NH3 sub-mech
+!!# NH2+HO2(=)H2NO+OH                            1.566E+13   0.000   0.000E+00 ! 1.566E+13 | Stagni 2020 | Baulch, D. L., Bowman, C. T., et al. J Phys Chem Ref Data, 34(3), 757-1397 (2005)
+! 2.500E+17 | ## Glarborg 2018
+NH2+HO2=H2NO+OH    2.188E17 -1.28 1.166E3
+!NH2+HO2=NH3+O2                                  1.700E+04   1.55    2.027E+03 ! ## Glarborg 2018 | Sumathi R, Peyerimhoff SD. Chem Phys Lett 1996;263:742-748 (1 atm).
+!Sumathi R, Peyerimhoff SD. Chem Phys Lett 1996;263:742-748, total rate
+!sensitive  to RCM IDT, decreases the reactivity (increase IDT) improves prediction
+!NH2+HO2=H2NO+OH reaction rate has high impact on NO prediction in JSR from Sabia 2020
+!
+! Skreiberg 2004 also used by KLIMIC2011
+NH2+HO2=NH3+O2    9.2E5 1.94 -1.152E3
+!NH2+HO2=NH3+O2    2.18E+06	2.08E+00	-4.76E+03
+!NH2+HO2=NH3+O2    4.5E+13	0	0
+!
+! Skreiberg 2004 also used by KLIMIC2011/Zhang 2011
+NH2+O2=H2NO+O    2.5E11 0.5 2.958E4
+! Skreiberg 2004 also used by Zhang 2011 /Lamoureux 2016
+NH2+O2=HNO+OH    6.2E7 1.2 3.51E4
+! KLIMIC2009 300-2500 K
+2NH2=NH3+NH    5.636E0 3.53 5.526E2
+! KLIMIC2009 200-2500 K
+NH2+NH=NH3+N    9.574E3 2.46 1.073E2
+! Klaus 1997 also used by KLIMIC2011/Mathieu 2015/Duynslaegher 2012
+NH2+N=N2+2H    5.0E13 0.0 0.0E0
+!
+!#NH2+NO=N2+H2O                                  2.800E+20  -2.70    1.258E+03 ! Miller and Glarborg 1999;  IJCK 31: 757-765 also used by Zhang 2011 /Tian 2009/Duynslaegher 2012/Lamoureux 2016
+!#NH2+NO=NNH+OH                                  3.800E+10   0.425  -8.140E+02 ! Miller and Glarborg 1999;  IJCK 31: 757-765 also used by Zhang 2011 /Duynslaegher 2012/Lamoureux 2016
+!#NH2+NO=N2O+H2                                  1.000E+13   0.00    3.370E+04 ! Duynslaegher 2012 | Comment: removed, not used by many
+! ## Glarborg 2018 | Song et al.; Int J Chem Kinet 33 715-721, 2001
+NH2+NO=N2+H2O    2.6E19 -2.369 8.7E2
+!NH2+NO=N2+H2O    2.7E17 -1.85 0
+!NH2+NO=N2+H2O                        1.3E16   -1.25       0
+! DUP
+!NH2+NO=N2+H2O                       -3.1E13   -0.48    1180
+! DUP
+! ## Glarborg 2018 | Song et al.; Int J Chem Kinet 33 715-721, 2001
+NH2+NO=NNH+OH    4.3E10 0.294 -8.66E2
+!NH2+NO=NNH+OH    1.43E7 1.4 -1777
+!NH2+NO=NNH+OH                        3.1E13   -0.48    1180 
+!NH3 and NH3/H2 Flame speed decreases with rate from Glarborg 2018
+!Ammonia oxidation better prediction in flow reactor and JSR
+!
+!#NH2+NO2(=)N2O+H2O                              1.600E+16  -1.40    2.680E+02 ! Park and Lin 1997; J. Phys. Chem. A 1997, 101, 2643-2647
+!#NH2+NO2(=)H2NO+NO                              6.500E+16  -1.40    2.680E+02 ! Park and Lin 1997; J. Phys. Chem. A 1997, 101, 2643-2647
+!  2.200E+11 | ## Glarborg 2018
+NH2+NO2=N2O+H2O    1.261E11 0.11 -1.186E3
+!  8.600E+11 | ## Glarborg 2018
+NH2+NO2=H2NO+NO    5.172E11 0.11 -1.186E3
+!
+! Mebel 1996; J. Phys. Chem. 1996, 100, 7517-7525 751
+NH2+HNO=NH3+NO    3.6E6 1.6 -1.25E3
+! Mebel 1996; J. Phys. Chem. 1996, 100, 7517-7525 751
+NH2+HONO=NH3+NO2    7.11E1 3.0 -4.941E3
+! KLIMIC2009, 300-2500 K
+2NH=NH2+N    5.7E-1 3.88 3.42E2
+!------------------------------------------------------------------------------!
+!---------------------N2H2 REACTIONS-------------------------------------------!
+!------------------------------------------------------------------------------!
+! SKR/GLA04 DEA/BOZ00 KLIMIC2011  M=N2
+N2H2+M=NNH+H+M    1.9E27 -3.05 6.61E4
+    H2O/7.0/
+! SKR/GLA04 LIN/PAG96 KLIMIC2011 Mathieu 2015 300-3000 K
+N2H2+H=NNH+H2    8.5E4 2.63 2.3E2
+! SKR/GLA04 JAM est   KLIMIC2011
+N2H2+O=NH2+NO    1.0E13 0.0 0.0E0
+! SKR/GLA04 DEA/BOZ00 KLIMIC2011
+N2H2+O=NNH+OH    3.3E8 1.5 4.97E2
+! SKR/GLA04 LIN/PAG96 KLIMIC2011
+N2H2+OH=NNH+H2O    5.9E1 3.4 1.36E3
+! SKR/GLA04 DEA/BOZ00 KLIMIC2011
+N2H2+NO=N2O+NH2    4.0E12 0.0 1.192E4
+! SKR/GLA04 DEA/BOZ00 KLIMIC2011
+N2H2+NH=NNH+NH2    2.4E6 2.0 -1.192E3
+! SKR/GLA04 LIN/PAG96 KLIMIC2011
+N2H2+NH2=NNH+NH3    8.8E-2 4.05 1.61E3
+! KLIMIC09 200-2500 K
+NH2+NH=N2H2+H    4.3E14 -0.272 -7.7E1
+! Klaus 1997 cited Miller 1989
+2NH2=N2H2+H2    4.0E13 0.0 1.184E4
+! Allen 1997 cited Hanson 1984
+N2H2+HO2=NNH+H2O2    1.0E13 0.0 1.987E3
+! Allen 1997 cited Hanson 1984
+N2H2+M=2NH+M    3.16E16 0.0 9.935E4
+!------------------------------------------------------------------------------!
+!--------------------------N2H4 REACTIONS--------------------------------------!
+!------------------------------------------------------------------------------!
+! KLIMIC09
+2NH2(+M)=N2H4(+M)    5.6E14 -0.414 6.6E1
+    LOW/1.6E34 -5.49E0 1.987E3/
+    TROE/3.1E-1 1.0E-30 1.0E30 1.0E30/
+! SKR/GLA04 VAG96 KLIMIC2011
+N2H4+O=N2H2+H2O    4.4E11 0.0 -1.27E3
+! Allen 1997
+N2H4+H=NH2+NH3    4.46E9 0.0 3.1E3
+!------------------------------------------------------------------------------!
+!-----------------------NH3 REACTIONS------------------------------------------!
+!------------------------------------------------------------------------------!
+! Baulch 2005 A/2.800E+17 error (+/-0.5) 2000- 3000 K
+! Baulch 2005 A/1.820E+16 error(+/-0.3) 2000-3000 K M=AR
+! Griffith _ Barnard
+NH3(+M)=NH2+H(+M)    9.0E16 -0.39 1.103E5
+    H2/1.0/H2O/6.40/CO2/1.50/O2/0.45/N2/0.40/AR/0.35/HE/0.35/CO/0.75/CH4/3.0/C2H6/3.0/
+    LOW/2.0E16 0.0E0 9.315E4/
+    TROE/4.2E-1 4.581E3 1.02E2 1.0E14/
+! Baulch 2005 error(+/-0.5) 2000-3000 K
+! Baulch 2005 error(+/-0.3) 2000-3000 K  M=AR
+! Griffith _ Barnard
+NH3(+M)=NH+H2(+M)    7.0E15 -0.39 1.103E5
+    H2/1.0/H2O/6.40/CO2/1.50/O2/0.45/N2/0.40/AR/0.35/HE/0.35/CO/0.75/CH4/3.0/C2H6/3.0/
+    LOW/4.665E14 0.0E0 9.315E4/
+    TROE/4.2E-1 4.581E3 1.02E2 1.0E14/
+!#NH3+H=NH2+H2                                   6.360E+05   2.39   1.017E+04  ! Klaus 1997 also used by KLIMIC2011/Lamoureux 2016
+! Bindo (KAUST) 2020 | k1(1200 K) = 3.328E+11
+NH3+H=H2+NH2    8.671E6 2.13195 1.088E4
+! Baulch 2005 error(+/-0.2-0.3) 300-2000 K
+NH3+O=NH2+OH    1.626E7 1.85 6.46E3
+! Klaus 1997 also used by KLIMIC2011/Lamoureux 2016/Zhang 2011
+NH3+OH=NH2+H2O    2.04E6 2.04 5.66E2
+! Skreiberg 2004 also used by Zhang 2011/Lamoureux 2016
+NH3+HO2=NH2+H2O2    3.0E11 0.0 2.2E4
+!------------------------------------------------------------------------------!
+!--------------------NNH REACTIONS---------------------------------------------!
+!------------------------------------------------------------------------------!
+! Miller and Glarborg 1999 also used by Tian 2009/Zhang 2011
+NNH=N2+H    6.5E7 0.0 0.0E0
+! KLIMIC2011 also used by Tian 2009/Zhang 2011/Lamoureux 2016
+NNH+H=N2+H2    1.0E14 0.0 0.0E0
+! KLIMIC2011 also used by Lamoureux 2016
+NNH+O=N2O+H    1.87E14 -0.274 -2.2E1
+! KLIMIC2011 also used by Lamoureux 2016
+NNH+O=NH+NO    5.18E11 0.388 -4.09E2
+! KLIMIC2011 also used by Lamoureux 2016
+NNH+O=N2+OH    1.2E13 0.145 -2.17E2
+! KLIMIC2011 also used by Lamoureux 2016
+NNH+OH=N2+H2O    5.0E13 0.0 0.0E0
+! Glarborg; CF 115:1   27 (1998) also used by Lamoureux 2016
+NNH+O2=N2+HO2    1.336E14 0.0 0.0E0
+!#NNH+O2=N2+H+O2                                 5.000E+13   0.00   0.000E+00  ! Glarborg; CF 115:1   27 (1998) also used by Lamoureux 2016/Tian 2009/Zhang 2011
+! KLIMIC2011 also used by Lamoureux 2016
+NNH+NO=N2+HNO    5.0E13 0.0 0.0E0
+! KLIMIC2011 also used by Lamoureux 2016
+NNH+NH=N2+NH2    5.0E13 0.0 0.0E0
+! KLIMIC2011 also used by Lamoureux 2016
+NNH+NH2=N2+NH3    5.0E13 0.0 0.0E0
+! Allen 1997 cited Hanson 1984
+2NNH=N2H2+N2    1.0E13 0.0 9.935E3
+!------------------------------------------------------------------------------!
+!-------------------------HNO REACTIONS ---------------------------------------!
+!------------------------------------------------------------------------------!
+! Rasmussen 2008;IJCK 40:454-480 also used by KLIMIC2011/Tian 2009/Zhang 2011
+NO+H(+M)=HNO(+M)    1.52E15 -0.41 0.0E0
+    N2/1.6/
+    LOW/2.4E14 2.06E-1 -1.55E3/
+    TROE/8.2E-1 1.0E-30 1.0E30 1.0E30/
+! Skreiberg 2004 also used by Tian 2009/KLIMIC2011/Lamoureux 2016
+HNO+O=NO+OH    2.3E13 0.0 0.0E0
+! Skreiberg 2004 also used by KLIMIC2011/Lamoureux 2016/Tian 2009/Zhang 2011/Mathieu 2015
+HNO+H=NO+H2    4.4E11 0.72 6.5E2
+! Skreiberg 2004 also used by KLIMIC2011/Dayma_Daguat 2006/Lamoureux 2016/Tian 2009/Zhang 2011/
+HNO+OH=NO+H2O    3.6E13 0.0 0.0E0
+! Skreiberg 2004 also used by KLIMIC2011/Lamoureux 2016/Tian 2009/Zhang 2011
+HNO+O2=NO+HO2    1.258E13 0.0 1.6E4
+! Klaus 1997 also used by Lamoureux 2016/Mathieu 2015
+HNO+N=NO+NH    1.0E13 0.0 1.99E3
+! Coppens 2007/Konnov 2009
+HNO+N=N2O+H    5.0E10 0.5 3.0E3
+! Klaus 1997 also used by Dayma_Daguat 2006/Mueller 1999/Lamoureux 2016
+HNO+NO=N2O+OH    2.0E12 0.0 2.6E4
+! Rasmussen 2008;IJCK 40:454-480 also used by KLIMIC2009/Tian 2009//Dayma_Daguat 2006/Mathieu 2015sssssssss
+HNO+NO2=HONO+NO    6.875E4 2.6 4.04E3
+! Glarborg 1998; CF 115,1-27 also used by Mueller 1999/KLIMIC2009/Tian 2009/Zhang 2011
+2HNO=N2O+H2O    9.0E8 0.0 3.1E3
+! Coppens 2007 also used by Konnov 2009
+HNO+NH=NH2+NO    5.0E11 0.5 0.0E0
+!------------------------------------------------------------------------------!
+!-------------------------NO REACTIONS-----------------------------------------!
+!------------------------------------------------------------------------------!
+! Rasmussen ;IJCK 40: 454   480,2008 cited FUL/TRO98 also used by KLIMIC2011/Mendiara 2009
+! FUL/TRO98
+! FUL/TRO98 [M=He,T=400K]
+NO+OH(+M)=HONO(+M)    1.1E14 -0.3 0.0E0
+    LOW/1.7E23 -2.51E0 0.0E0/
+    TROE/7.5E-1 1.0E-30 1.0E30 1.0E30/
+!NO+OH(+M)=HONO(+M)                            1.99E+12   -0.1     -721.0      !
+!Low / 0.50800E+24 -0.25100E+01 -0.68000E+02              /                    !
+!TROE / 0.38000E+00  0.90000E+04  0.10000E-14  0.10000E+16/                    !
+! Baulch 2005 A/2.100E+12s error (+/-0.15) 200-2000K also used by Mueller 1999/Dayma 2007/Mendiara 2009
+NO+HO2=NO2+OH    2.1E12 0.0 -4.8E2
+!------------------------------------------------------------------------------!
+!------------------------NO2 REACTIONS-----------------------------------------!
+!------------------------------------------------------------------------------!
+! Rasmussen ;IJCK 40: 454   480,2008 cited PAR/LIN98 also used by KLIMIC2011/Mendiara 2009
+NO2+H2=HONO+H    1.3E4 2.76 2.977E4
+! Baulch 2005 A/5.000E+14 error (+/-0.1-0.3) 230-800 K 2.500E+14
+NO2+H=NO+OH    2.5E14 0.0 6.76E2
+! Bemand 1974 also used by Mueller 1999/KLIMIC2011/Lamoureux 2016
+NO2+O=NO+O2    1.1E14 -0.5 0.0E0
+! Baulch 2005 error (+/-0.3) 200-2200
+! A/3.336E+20 error (+/-0.3) M=N2
+! Fc(+/-0.2)
+! Griffith _ Barnard
+NO+O(+M)=NO2(+M)    2.95E14 -0.4 0.0E0
+    H2/1.0/H2O/6.40/CO2/1.50/O2/0.45/N2/0.40/AR/0.35/HE/0.35/CO/0.75/CH4/3.0/C2H6/3.0/
+    LOW/3.336E20 -1.6E0 0.0E0/
+    TROE/8.0E-1 1.0E-30 1.0E30 1.0E30/
+! Rasmussen;IJCK 40: 454   480,2008 cited PAR/LIN98 also used by Lamoureux 2016
+2NO2=2NO+O2    4.5E12 0.0 2.76E4
+! Rasmussen;IJCK 40: 454   480,2008 (ab initio CBS-QB3) calculation also used by KLIMIC2011/Tian 2009/Zhang2011/Mendiara 2009
+NO2+HO2=HONO+O2    1.91E0 3.32 3.044E3
+!------------------------------------------------------------------------------!
+!-----------------------N2O REACTIONS------------------------------------------!
+!------------------------------------------------------------------------------!
+! R  hrig 1996 also used by Tian 2009/Zhang 2011/KLIMIC2011
+N2O(+M)=N2+O(+M)    1.3E12 0.0 6.257E4
+    N2/1.7/
+    O2/1.4/
+    CO2/3.0/
+    H2O/12.0/
+    LOW/4.0E14 0.0E0 5.66E4/
+! Powell 2010 modified the rate of Baulch 2005
+N2O+H=N2+OH    2.53E10 0.0 4.55E3
+    DUP
+N2O+H=N2+OH    5.0E14 0.0 1.81E4
+    DUP
+! Baulch 2005 A/9.200E+13 error(+/-0.2-0.4) 1000-4000K
+N2O+O=2NO    9.2E13 0.0 2.767E4
+! Baulch 2005 A/3.700E+12 error(+/-0.2-0.5) 1000-2500K
+N2O+O=N2+O2    3.7E12 0.0 1.593E4
+! Mebel et al.;IJCK 1996, 28, 693   703 also used by Tian 2009/KLIMIC2011/Zhang 2011
+N2O+OH=N2+HO2    1.3E-2 4.7 3.656E4
+! Mebel et al.;IJCK 1996, 28, 693   703 also used by Tian 2009/KLIMIC2011/Zhang 2011
+N2O+NO=NO2+N2    5.3E5 2.2 4.628E4
+! Mathieu 2015
+N2O+N=N2+NO    1.0E13 0.0 1.987E4
+!------------------------------------------------------------------------------!
+!----------------------H2NO REACTIONS------------------------------------------!
+!------------------------------------------------------------------------------!
+! Glarborg 2000 also used by Skreiberg 2004/Lamoureux 2016 /KLIMIC2011/Tian 2009/Zhang 2011
+H2NO+M=HNO+H+M    2.8E24 -2.8 6.491E4
+    H2O/10.0/
+! Glarborg 2000 also used by Skreiberg 2004/Lamoureux 2016
+H2NO+H=HNO+H2    3.0E7 2.0 2.0E3
+! Glarborg 2000 also used by Skreiberg 2004/Lamoureux 2016
+H2NO+H=NH2+OH    5.0E13 0.0 0.0E0
+! Glarborg 2000 also used by Skreiberg 2004/Lamoureux 2016
+H2NO+O=HNO+OH    3.0E7 2.0 2.0E3
+! Glarborg 2000 also used by Lamoureux 2016/Tian 2009
+H2NO+OH=HNO+H2O    1.0E14 0.0 0.0E0
+! Glarborg 2000 also used by Lamoureux 2016/Zhang 2011/Tian 2009/KLIMIC2011
+H2NO+NO=2HNO    2.0E4 2.0 1.3E4
+! Glarborg 2000 also used by Lamoureux 2016
+H2NO+NH2=HNO+NH3    3.0E12 0.0 1.0E3
+!H2NO+NH2=HNO+NH3    1.8E6 1.940 -580
+! Glarborg 2000 also used by Skreiberg 2004/Lamoureux 2016
+H2NO+HO2=HNO+H2O2    2.01E4 2.7 -1.6E3
+!#H2NO+O2(=)HNO+HO2                              3.000E+12   0.00    2.500E+04 ! Glarborg 2000 also used by Skreiberg 2004/Lamoureux 2016
+! Glarborg 2018 | Stagni 2020
+H2NO+O2=HNO+HO2    4.008E2 2.994 1.65E4
+! See P. Glarborg, J.A. Miller, B. Ruscic, S.J. Klippenstein, Prog. Energy Combust. Sci. 67 (2018) 31-68
+!##H2NO+O2=HNO+HO2                               1.800E+02   2.994   1.890E+04 ! 2.300E+02 (A) / in PROCI
+! Y. Song, H. Hashemi, J.M. Christensen, C. Zou, P. Marshall, P. Glarborg, Fuel 181 (2016) 358-365
+!Rate coefficient from Glarborg 2018 helps improve prediction during NH3 oxidation in flow reactor of experiment from Song 2016, Fuel 181 (2016) 358-365.
+!sensitive to RCM IDT, rate from Song increases the reactivity decresing the IDT value compared to our previous values
+!
+! Glarborg 2000 also used by Skreiberg 2004/Lamoureux 2016
+H2NO+NO2=HONO+HNO    3.833E11 0.0 2.0E3
+!------------------------------------------------------------------------------!
+!-------------------------HONO REACTIONS---------------------------------------!
+!------------------------------------------------------------------------------!
+! Rasmussen; IJCK 40, 454   480 cited GLA/MIL98also used by Lamoureux 2016
+HONO+O=NO2+OH    1.2E13 0.0 6.0E3
+! Skreiberg 2004 cited Hsu 1997 also used by KLIMIC2011/Lamoureux 2016
+HONO+H=HNO+OH    5.6E10 0.9 5.0E3
+! Skreiberg 2004 cited Hsu 1997 also used by KLIMIC2011/Lamoureux 2016
+HONO+H=NO+H2O    8.1E6 1.9 3.85E3
+! Rasmussen; IJCK 40, 454   480 cited BUR/RAV92 also used by KLIMIC2011 Lamoureux 2016
+HONO+OH=NO2+H2O    1.7E12 0.0 -5.2E2
+! Rasmussen; IJCK 40, 454   480 cited MEB/MEL98
+2HONO=NO+NO2+H2O    3.5E-1 3.64 1.214E4
+!-----------------------------CO/CO2/HCO REACTIONS-----------------------------!
+! Dindi 1991; C_FLAME 87: 13-20 (1991)
+CO+N2O=N2+CO2    1.25E12 0.0 1.729E4
+! Allen 1997
+CO+NO2=NO+CO2    9.03E13 0.0 3.38E4
+! Klaus 1997 error (+/-0.150) also used by Tian 2009/Zhang 2011/Glarborg 2018
+HCO+NO=HNO+CO    7.2E12 0.0 0.0E0
+! RAS/GLA2008 (15%)
+HCO+NO2=>NO+CO+OH    5.0E12 0.0 0.0E0
+! RAS/GLA2008 (70%)
+HCO+NO2=>NO+CO2+H    2.3E13 0.0 0.0E0
+! RAS/GLA2008 (15%)
+HCO+NO2=HONO+CO    5.0E12 0.0 0.0E0
+! Tian 2009 | Xu ZF Lin MC IJCK 36:205 2004
+HCO+HNO=CH2O+NO    5.8E-1 3.8 1.15E2
+! Klaus 1997 also used by Lamoureux 2016
+CO2+N=NO+CO    1.9E11 0.0 3.4E3
+!-------------------------CH2O REACTIONS---------------------------------------!
+! RASMUSSEN 2008 | Xu ZF Lin MC IJCK 35:184 2003
+CH2O+NO2=HONO+HCO    1.42E-7 5.64 9.22E3
+! Coppens 2007
+CH4+NH=CH3+NH2    9.0E13 0.0 2.008E4
+CH4+NH2=CH3+NH3    1.5E3 3.0 9.94E3
+! Glarborg 2018 cited J. Chai, CF Goldsmith Proc Combust Inst 36 2017 617-626
+! Added in this work
+CH4+NO2=CH3+HONO    1.1E-1 4.28 2.63E4
+    DUP
+CH4+NO2=CH3+HONO    7.4E1 3.42 3.31E4
+    DUP
+! 4.000E+13 / Alzueta 1999 also used by RASMUSSEN 2008/Tian 2009/Mathieu 2016 : GLA/BEN99
+CH3+NO2=CH3O+NO    4.0E13 -0.2 0.0E0
+! Glarborg 2018 cited YM Choi, MC Lin Int J Chem Kinet 2005 37 261-274 ! Added in this work
+CH3+HNO=CH4+NO    1.5E11 0.76 3.48E2
+! Daguat 2005 : C_F 140 (2005) 161   171 cited Alzueta 1999
+CH3O+NO=CH2O+HNO    1.3E14 -0.7 0.0E0
+! Daguat 2005; C_Flame 140 (2005) 161   171 also used by Alzueta 1999/Mendiara 2009
+CH3O+NO2=HONO+CH2O    6.0E12 0.0 2.285E3
+! RAS 2008/Coppens 2007 also used by /Konnov 2009/Dayma 2007
+CH3O+HNO=CH3OH+NO    3.16E13 0.0 0.0E0
+! Alzueta 1999, A/2.500E+12
+CH3O2+NO=CH3O+NO2    4.0E12 0.0 -3.58E2
+! Dagaut 1999; Combust. Sci. and Tech.1999,Vol 148, pp 27-57 !##
+CH3O+HONO=CH3OH+NO2    8.1E5 1.9 5.504E3
+!------------------------------------------------------------------------------!
+!--------------------REACTIONS related to DME----------------------------------!
+!------------------------------------------------------------------------------!
+! Dagaut 2001; Combustion. Sci. and Tech. 2001, Vol. 165. pp. 61-84
+CH3OCH3-DME+NO=CH3OCH2+HNO    2.426E14 0.0 4.34E4
+! 9.000E+12 | Dagaut 2001: Combustion. Sci. and Tech. 2001, Vol. 165. pp. 61-84
+CH3OCH3-DME+NO2=CH3OCH2+HONO    5.59E12 0.0 1.76E4
+!CH3OCH3-DME+NO2(=)CH3OCH2+HONO                  1.450E+02    3.32   2.003E+04 ! 1.450E+02 | Ye 2016; Energy Fuels 2016, 30, 10900   10908
+!CH3OCH3-DME+NO2(=)CH3OCH2+HNO2                  2.410E+03    2.90   2.747E+04 ! 2.410E+03 | Ye 2016; Energy Fuels 2016, 30, 10900   10908
+! Dagaut 2001; Combustion. Sci. and Tech. 2001, Vol. 165. pp. 61-84
+CH3OCH2+NO2=CH3OCH2O+NO    2.743E13 0.0 0.0E0
+!
+!CH3OCH2O2+NO(=)CH3OCH2O+NO2                     3.500E+12    0.00  -1.192E+03 ! Dagaut 2001: Combustion. Sci. and Tech. 2001, Vol. 165. pp. 61-84
+!CH3OCH2O2+NO(=)CH3OCH2O+NO2                     2.500E+12    0.00  -2.580E+02 ! Marrod  n et al.; Combustion and Flame 197 (2018) 1   10
+! 1.400E+12 | Glarborg 2018 rate of CH3OO+NO=CH3O+NO2
+CH3OCH2O2+NO=CH3OCH2O+NO2    2.571E12 0.0 -7.15E2
+!Atkinson R Baulch DL Cox RA Crowley JN Hampson RF Hynes RG Jenkin ME Rossi MJ Troe JACP 6:3625-4055 2006
+!
+! sens | Dagaut 2001: Combustion. Sci. and Tech. 2001, Vol. 165. pp. 61-84
+CH3OCH2O2+HONO=CH3OCH2O2H+NO2    1.622E17 0.0 1.997E4
+!
+!----------------Added reactions for DME/amines-------------------------------! 2020-09-04
+! sens
+CH3OCH3-DME+NH2=CH3OCH2+NH3    1.779E1 3.46 5.6E3
+! est ch3+nh2(+m) (JODGRO95)
+!CH3OCH2+NH2 = CH3OCH2NH2                        7.250E+12   0.21   0.000E+00 !
+! R_Recombination (RMG-Py group additivity) 300-1500 K
+!
+!!CH3OCH2+NO2=CH3OCH2O+NO                        1.100E+13   0.00   0.000E+00 ! already present
+! est as CH3+NO2=CH3O+NO
+CH3OCH2O2+NH3=CH3OCH2O2H+NH2    3.188E11 0.0 2.2E4
+! est nh3+ho2
+! sens | 3.000E+13 (opt 8.726E13)
+CH3OCH2O2+NH2=CH3OCH2O+H2NO    8.726E13 0.0 0.0E0
+! est
+! sens
+O2CH2OCH2O2H+NO=>2CH2O+HO2+NO2    3.694E12 0.0 -7.15E2
+! est CH3OO+NO=CH3O+NO2 (=) OCH2OCH2OOH+NO2 =) products)
+!
+CH3O+NH2=CH2O+NH3    3.0E13 0.0 0.0E0
+!
+HCO+NH2=CO+NH3    3.0E13 0.0 0.0E0
+!
+! Glarborg 1999
+CH3NO2(+M)=CH3+NO2(+M)    1.8E16 0.0 5.85E4
+    LOW/1.259E17 0.0E0 4.2E4/
+    TROE/1.83E-1 1.0E-30 1.0E30/
+!
+! 100 kPa, 600   2000 K Ar taking 3 % branching ratio
+CH3NO2=CH3O+NO    1.299E57 -13.41 7.356E4
+! Glarborg 1999
+CH3NO2+OH=CH3OH+NO2    2.0E10 0.0 -1.0E3
+!-----------------------------------------------------------------------------!
+!--------------------Amino Hydrocarbon sub-mechanisms-------------------------!
+!--------------------CH3NH2/CH3NH/CH2NH2/CH2NH/HCNH---------------------------!
+!-----------------------------------------------------------------------------!
+! Dean/Bozzelli 2000
+CH3+NH=CH4+N    8.2E5 1.87 5.852E3
+!
+! Dean/Bozzelli 2000
+CH3+NH2=CH2NH+H2    4.8E11 -0.2 1.9403E4
+    PLOG/1.0E-1 2.1E11 -1.0E-1 1.9095E4/
+    PLOG/1.0E0 4.8E11 -2.0E-1 1.9403E4/
+    PLOG/1.0E1 2.9E12 -4.0E-1 2.0506E4/
+! Dean/Bozzelli 2000 |
+CH2NH+O=CH2O+NH    1.7E6 2.08 0.0E0
+! Dean/Bozzelli 2000 |
+CH3+NH=CH2NH+H    4.0E13 0.0 0.0E0
+END

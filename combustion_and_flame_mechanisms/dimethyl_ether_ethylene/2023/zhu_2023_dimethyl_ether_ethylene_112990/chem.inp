@@ -1,0 +1,151 @@
+!Detailed kinetic mechanism of polyoxymethylene dimethyl ether 3 (PODE3). Part I: Ab initio thermochemistry and kinetic predictions for key reactions
+!Qiren Zhu, Jie-Yao Lyu, Ruining He, Xin Bai, Yang Li*, Wenming Yang*
+!a. Department of Mechanical Engineering, College of Design and Engineering, National University of Singapore, 9 Engineering Drive 1, Singapore, 117575, Singapore
+!b. Science and Technology on Combustion, Internal Flow and Thermo-structure Laboratory, Northwestern Polytechnical University, Xi’an 710072, China
+!c. Shenzhen Research Institute of Northwestern Polytechnical University, Shenzhen 518057, China
+
+ELEMENTS
+C
+H
+N
+O
+AR
+HE
+!KR
+END
+! Start of species list
+SPECIES
+
+
+PODE3
+PODE3_R_1
+PODE3_R_2
+PODE3_R_3
+H OH CH3 CH3O O2 HO2
+DME_R_1 COCOJ DMM_R_1 COCOCOJ PODE2_R_1 COCOCOCOJ
+END
+
+REACTIONS
+! H-abstraction reactions of PODE3 by H, OH, CH3, CH3O, O2, HO2
+PODE3+H<=>PODE3_R_1+H2   8.110E-05	5.261	3677.54   
+PODE3+H<=>PODE3_R_2+H2   4.630E+07	2.059	8409.25   
+PODE3+H<=>PODE3_R_3+H2   7.102E+07	1.944	10726.92  
+PODE3+OH<=>PODE3_R_1+H2O   1.136E+02	2.939	-3098.90	
+     DUPLICATE
+PODE3+OH<=>PODE3_R_1+H2O   1.009E+04	2.771	2458.90
+     DUPLICATE
+PODE3+OH<=>PODE3_R_2+H2O   6.428E+02	2.570	-3775.64		
+     DUPLICATE
+PODE3+OH<=>PODE3_R_2+H2O   9.606E+03	2.596	263.96
+     DUPLICATE
+PODE3+OH<=>PODE3_R_3+H2O   1.665E+03	2.473	-3654.09		
+     DUPLICATE
+PODE3+OH<=>PODE3_R_3+H2O   5.826E+03	2.557	445.24
+     DUPLICATE
+PODE3+CH3<=>PODE3_R_1+CH4   2.252E-01	4.081	8920.04 
+PODE3+CH3<=>PODE3_R_2+CH4   2.811E-01	3.861	8274.85 
+PODE3+CH3<=>PODE3_R_3+CH4   4.133E-02	4.203	8646.10 
+PODE3+CH3O<=>PODE3_R_1+CH3OH   6.441E+01	3.424	4169.29  
+PODE3+CH3O<=>PODE3_R_2+CH3OH   2.332E+09	1.112	5783.31  
+PODE3+CH3O<=>PODE3_R_3+CH3OH   5.705E+07	1.483	5937.37  
+PODE3+O2<=>PODE3_R_1+HO2   3.120E+04	2.971	44235.78		
+     DUPLICATE
+PODE3+O2<=>PODE3_R_1+HO2   1.676E+02	3.129	41803.03
+     DUPLICATE
+PODE3+O2<=>PODE3_R_2+HO2  2.492E+03	3.071	40868.82		
+     DUPLICATE
+PODE3+O2<=>PODE3_R_2+HO2   3.490E+02	-13.924	51144.05
+     DUPLICATE
+PODE3+O2<=>PODE3_R_3+HO2   2.718E+02	3.196	43942.99		
+     DUPLICATE
+PODE3+O2<=>PODE3_R_3+HO2   3.490E+02	-13.924	51144.05
+     DUPLICATE
+PODE3+HO2<=>PODE3_R_1+H2O2   4.540E-04	4.813	13716.66		
+     DUPLICATE
+PODE3+HO2<=>PODE3_R_1+H2O2   4.483E+00	2.585	9023.07
+     DUPLICATE
+PODE3+HO2<=>PODE3_R_2+H2O2   5.439E-05	4.874	14551.44		
+     DUPLICATE
+PODE3+HO2<=>PODE3_R_2+H2O2   3.655E-01	2.706	10115.88
+     DUPLICATE
+PODE3+HO2<=>PODE3_R_3+H2O2   3.491E-03	4.229	14332.65	
+     DUPLICATE
+PODE3+HO2<=>PODE3_R_3+H2O2   9.301E-05	3.774	7534.34	
+     DUPLICATE
+! Unimolecular decomposition of PODE3
+PODE3<=>CH3+COCOCOCOJ   2.933e+37  -7.059  87306.122
+PLOG / 0.01  2.933e+37  -7.059  87306.122/    ! R->P1(0.01 atm)  chi-square: 0.5600533818838077
+PLOG / 0.1   4.771e+30  -4.958  85013.383/    ! R->P1(0.1 atm)  chi-square: 0.0221621754383172
+PLOG / 1     3.995e+27  -4.013  83946.588/    ! R->P1(1 atm)  chi-square: 0.00016595608107537618
+PLOG / 10    6.542e+29  -4.680  84775.342/    ! R->P1(10 atm)  chi-square: 0.01360455757392997
+PLOG / 100   1.875e+28  -4.215  84201.246/    ! R->P1(100 atm)  chi-square: 0.0008769929780085549
+PODE3<=>CH3O+PODE2_R_1   9.443e+40  -7.984  94708.529
+PLOG / 0.01  9.443e+40  -7.984  94708.529/    ! R->P2(0.01 atm)  chi-square: 0.7308003233388307
+PLOG / 0.1   2.081e+33  -5.615  92124.669/    ! R->P2(0.1 atm)  chi-square: 0.022186382969062647
+PLOG / 1     9.464e+29  -4.588  90965.678/    ! R->P2(1 atm)  chi-square: 6.421493985397986e-05
+PLOG / 10    5.375e+31  -5.115  91629.071/    ! R->P2(10 atm)  chi-square: 0.006201676108340039
+PLOG / 100   1.242e+30  -4.622  91019.085/    ! R->P2(100 atm)  chi-square: 9.70728058220095e-05
+PODE3<=>DME_R_1+COCOCOJ   2.011e+41  -7.967  93332.455
+PLOG / 0.01  2.011e+41  -7.967  93332.455/    ! R->P3(0.01 atm)  chi-square: 0.6390690352143766
+PLOG / 0.1   7.434e+33  -5.668  90824.752/    ! R->P3(0.1 atm)  chi-square: 0.019545877639772183
+PLOG / 1     3.674e+30  -4.653  89677.873/    ! R->P3(1 atm)  chi-square: 5.2388741730574734e-05
+PLOG / 10    2.010e+32  -5.174  90336.031/    ! R->P3(10 atm)  chi-square: 0.005665469764544689
+PLOG / 100   4.777e+30  -4.685  89730.466/    ! R->P3(100 atm)  chi-square: 8.386365201586764e-05
+PODE3<=>COCOJ+DMM_R_1   2.521e+41  -8.017  93958.222
+PLOG / 0.01  2.521e+41  -8.017  93958.222/    ! R->P4(0.01 atm)  chi-square: 0.6622905878735434
+PLOG / 0.1   7.622e+33  -5.690  91421.208/    ! R->P4(0.1 atm)  chi-square: 0.019889503522808556
+PLOG / 1     3.570e+30  -4.667  90266.379/    ! R->P4(1 atm)  chi-square: 5.025925071052409e-05
+PLOG / 10    1.851e+32  -5.182  90916.067/    ! R->P4(10 atm)  chi-square: 0.005457201414578498
+PLOG / 100   4.313e+30  -4.690  90307.224/    ! R->P4(100 atm)  chi-square: 7.162616199816381e-05
+! beta scission and isomerization reactions
+PODE3_R_1<=>PODE3_R_2   6.386e+31  -8.817  17828.657
+PLOG / 0.01  6.386e+31  -8.817  17828.657/    ! R1->R2(0.01 atm)  chi-square: 1.950537895530889e-11
+PLOG / 0.1   3.814e+22  -5.492  16476.046/    ! R1->R2(0.1 atm)  chi-square: 3.338453168749791e-05
+PLOG / 1     2.680e+06  -0.005  12958.573/    ! R1->R2(1 atm)  chi-square: 4.586835017743111e-05
+PLOG / 10    2.380e+06  0.079   13199.269/    ! R1->R2(10 atm)  chi-square: 0.0007912715879242213
+PLOG / 100   3.496e+05  0.395   13149.136/    ! R1->R2(100 atm)  chi-square: 0.0022836261553275125
+     DUPLICATE
+PODE3_R_1<=>PODE3_R_2   1.799e-03  0.539   16147.141
+PLOG / 0.01  1.799e-03  0.539   16147.141/    ! R1->R2(0.01 atm)  chi-square: 2.0320795304017116e-10
+PLOG / 0.1   1.227e-08  3.277   18298.265/    ! R1->R2(0.1 atm)  chi-square: 0.017499936787231177
+PLOG / 1     1.196e-08  4.085   21009.725/    ! R1->R2(1 atm)  chi-square: 0.022702895771616393
+PLOG / 10    4.975e-09  4.900   23427.742/    ! R1->R2(10 atm)  chi-square: 0.7005695692829047
+PLOG / 100   5.645e-09  5.268   24914.729/    ! R1->R2(100 atm)  chi-square: 3.2828662921256466
+     DUPLICATE
+PODE3_R_1<=>PODE3_R_3   3.328e+20  -4.878  15860.890
+PLOG / 0.01  3.328e+20  -4.878  15860.890/    ! R1->R3(0.01 atm)  chi-square: 5.969069078352082e-14
+PLOG / 0.1   1.168e+11  -1.286  15028.326/    ! R1->R3(0.1 atm)  chi-square: 4.796970408354349e-10
+PLOG / 1     7.054e+02  1.690   13870.498/    ! R1->R3(1 atm)  chi-square: 5.9526457001806405e-05
+PLOG / 10    1.292e+02  2.034   14056.234/    ! R1->R3(10 atm)  chi-square: 0.0011776051490152044
+PLOG / 100   2.519e+04  1.342   14881.587/    ! R1->R3(100 atm)  chi-square: 0.0068076715254305
+PODE3_R_2<=>PODE3_R_3   3.483e+37  -11.706 24024.692
+PLOG / 0.01  3.483e+37  -11.706 24024.692/    ! R2->R3(0.01 atm)  chi-square: 1.1251538972816686e-12
+PLOG / 0.1   1.278e+37  -10.947 26841.853/    ! R2->R3(0.1 atm)  chi-square: 6.192835975399447e-10
+PLOG / 1     5.258e+16  -3.853  24126.805/    ! R2->R3(1 atm)  chi-square: 0.00016194497511743796
+PLOG / 10    1.179e-08  4.554   19786.824/    ! R2->R3(10 atm)  chi-square: 0.08208117970179984
+PLOG / 100   7.257e-09  5.023   21515.829/    ! R2->R3(100 atm)  chi-square: 1.8289168176671606
+PODE3_R_1<=>CH2O+PODE2_R_1   3.797e+44  -10.450 32947.087
+PLOG / 0.01  3.797e+44  -10.450 32947.087/    ! R1->P1(0.01 atm)  chi-square: 0.0033001534440507264
+PLOG / 0.1   7.686e+29  -5.533  29484.465/    ! R1->P1(0.1 atm)  chi-square: 0.0014026020328305575
+PLOG / 1     1.373e+25  -3.919  28466.190/    ! R1->P1(1 atm)  chi-square: 0.0034972567015289814
+PLOG / 10    2.718e+20  -2.350  27346.965/    ! R1->P1(10 atm)  chi-square: 0.0031987861634478845
+PLOG / 100   1.770e+17  -1.299  26544.425/    ! R1->P1(100 atm)  chi-square: 0.0030294386519742807
+PODE2_R_1<=>COCOCOC=O+CH3   4.081e+48  -12.651 21976.266
+PLOG / 0.01  4.081e+48  -12.651 21976.266/    ! R2->P2(0.01 atm)  chi-square: 1.133664942328667e-07
+PLOG / 0.1   1.302e+39  -9.157  20781.711/    ! R2->P2(0.1 atm)  chi-square: 2.167205983529274e-06
+PLOG / 1     1.602e+22  -3.377  17222.124/    ! R2->P2(1 atm)  chi-square: 8.657111277003349e-06
+PLOG / 10    8.740e+16  -1.558  16197.868/    ! R2->P2(10 atm)  chi-square: 0.00012660007547536406
+PLOG / 100   2.636e+13  -0.358  15455.840/    ! R2->P2(100 atm)  chi-square: 0.00036563938364174187
+PODE3_R_2<=>COCOC=O+DME_R_1   3.079e+46  -12.060 20590.795
+PLOG / 0.01  3.079e+46  -12.060 20590.795/    ! R2->P3(0.01 atm)  chi-square: 1.55971913730214e-08
+PLOG / 0.1   1.690e+36  -8.378  19005.091/    ! R2->P3(0.1 atm)  chi-square: 1.8940604923690728e-06
+PLOG / 1     8.285e+20  -3.166  15710.652/    ! R2->P3(1 atm)  chi-square: 4.2002248450557384e-06
+PLOG / 10    1.019e+16  -1.481  14712.477/    ! R2->P3(10 atm)  chi-square: 4.533512933592988e-05
+PLOG / 100   1.667e+12  -0.203  13865.758/    ! R2->P3(100 atm)  chi-square: 0.0001016552776476108
+PODE3_R_3<=>COC=O+DMM_R_1   2.102e+47  -12.382 18792.742
+PLOG / 0.01  2.102e+47  -12.382 18792.742/    ! R3->P4(0.01 atm)  chi-square: 5.910289226712461e-07
+PLOG / 0.1   1.317e+42  -10.307 18632.083/    ! R3->P4(0.1 atm)  chi-square: 5.6637881242855855e-12
+PLOG / 1     1.416e+28  -5.497  15802.156/    ! R3->P4(1 atm)  chi-square: 4.048543237842616e-08
+PLOG / 10    1.278e+19  -2.448  13753.438/    ! R3->P4(10 atm)  chi-square: 3.631572962122705e-09
+PLOG / 100   1.918e+13  -0.522  12294.320/    ! R3->P4(100 atm)  chi-square: 4.581371551556561e-06
+END
