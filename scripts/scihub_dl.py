@@ -1,125 +1,124 @@
 #!/usr/bin/env python3
+"""Sci-Hub PDF download via sci.bban.top CDN (no captcha needed).
+Only downloads articles from 2021 and earlier.
+PDFs are saved alongside mechanism files with matching naming.
 """
-Sci-Hub PDF download via VNC Chrome + xdotool.
-User solves ONE captcha, script handles the rest.
-
-Method:
-1. Open sci-hub.ren in VNC Chrome
-2. User solves captcha
-3. For each DOI: types DOI into sci-hub, clicks Open, waits for PDF, saves
-"""
-import json, re, os, subprocess, time, shutil
+import json, re, os, time, urllib.request, urllib.error
 from pathlib import Path
 
 REPO = Path(os.environ.get('MECH_COLLECTION_WORKSPACE', Path(__file__).resolve().parents[1]))
 META = REPO / 'combustion_and_flame_mechanisms' / '_raw' / 'article_metadata.json'
 ROOT = Path(os.environ.get('MECH_COLLECTION_ROOT', REPO / 'combustion_and_flame_mechanisms'))
-DISPLAY = ':99'
-SH = 'https://sci-hub.ren/'
 
-def xdo(cmd):
-    env = os.environ.copy(); env['DISPLAY'] = DISPLAY
-    return subprocess.run(cmd, capture_output=True, text=True, timeout=8, env=env)
+# Helpers matching collect_cf2026 naming convention
+def slugify(v, n=80):
+    v = re.sub(r'<[^>]+>', '', (v or '').lower())
+    v = re.sub(r'[^a-z0-9]+', '_', v); v = re.sub(r'_+', '_', v).strip('_')
+    return (v[:n].strip('_') or 'unknown')
+
+def surname(a):
+    a = re.sub(r'<[^>]+>', '', str(a or '')).strip(); a = re.sub(r'\s+', ' ', a)
+    if not a: return 'unknown'
+    if ',' in a: return a.split(',', 1)[0].strip() or 'unknown'
+    tokens = [t for t in re.split(r'\s+', a) if t]
+    return tokens[-1] if tokens else 'unknown'
+
+FUEL_P = [(r'NH\s*3|ammonia','ammonia'),(r'n-dodecane|dodecane','n_dodecane'),
+    (r'methane|CH\s*4','methane'),(r'hydrogen|H\s*2','hydrogen'),
+    (r'ethylene|C\s*2\s*H\s*4','ethylene'),(r'propane','propane'),
+    (r'n-heptane|heptane','n_heptane'),(r'methanol','methanol'),
+    (r'dimethyl ether|DME','dimethyl_ether'),(r'n-butane|butane','n_butane'),
+    (r'RP-?3','rp3'),(r'acetylene','acetylene')]
+
+def fuel(r):
+    t = str(r.get('title',''))+' '+str(r.get('abstract',''))
+    labels = []
+    for p,lb in FUEL_P:
+        if re.search(p,t,re.I) and lb not in labels: labels.append(lb)
+    return '_'.join(labels[:3]) or 'unknown_fuel'
+
+def ryear(r):
+    for k in ('year','publicationYear'):
+        v = str(r.get(k,'') or '').strip()
+        if re.fullmatch(r'\d{4}',v): return v
+    return 'unknown'
+
+def aid(r):
+    if r.get('articleNumber'): return str(r['articleNumber'])
+    m = re.search(r'(1\d{5})',(r.get('doi','') or '').strip().lower())
+    if m: return m.group(1)
+    p = r.get('pii',''); return p[-8:] if p else 'article'
+
+def pdf_name(r):
+    fu = r.get('fuelType') or fuel(r); y = ryear(r)
+    au = r.get('authors',[])
+    fa = au.split(',')[0].strip() if isinstance(au,str) else (str(au[0]).strip() if au else 'unknown')
+    return f'{slugify(surname(fa),24)}_{y}_{slugify(fu,60)}_{aid(r)}.pdf'
 
 def main():
     meta = json.loads(META.read_text('utf-8'))
     
-    # Collect: try bban.top first (fast, no captcha), then sci-hub.ren (needs captcha)
-    need = []
+    # Collect ≤2021 articles with mechanisms
+    todo = []
     for r in meta:
         if r.get('processingStatus') not in ('included','conversion_failed'): continue
-        doi = r['doi']; year = r.get('year','')
-        # Skip if already has PDF
-        # ... (check existing PDFs)
-        need.append(r)
+        y = ryear(r)
+        if not y.isdigit() or int(y) > 2021: continue
+        
+        nm = pdf_name(r)
+        folder = r.get('processingFolder','')
+        target = Path(folder) / nm if folder else ROOT / '_raw' / 'pdfs' / nm
+        
+        if target.exists() and target.stat().st_size > 5000:
+            continue  # Already have it
+        
+        todo.append((r, target))
     
-    print(f'{len(need)} PDFs needed.')
-    print('\nStep 1: try sci.bban.top (no captcha, pre-2022 only)')
+    print(f'≤2021 articles: {len(todo)} PDFs needed')
+    if not todo:
+        print("All done!"); return
     
-    dl_dir = Path.home() / 'Downloads'
-    ok_bban = 0
-    
-    for i, r in enumerate(need):
-        doi = r['doi']
+    ok = 0; fail = 0
+    for i, (r, target) in enumerate(todo):
+        doi = r['doi']; year = ryear(r)
+        title = (r.get('title','') or '')[:55]
         url = f'https://sci.bban.top/pdf/{doi}.pdf?download=true'
-        dest = Path(r.get('processingFolder','')) / f'scihub_{r["doi"].replace("/","_")}.pdf'
+        
+        print(f'[{i+1}/{len(todo)}] [{year}] {title}...', end=' ', flush=True)
         
         try:
-            import urllib.request
             req = urllib.request.Request(url, headers={
-                'User-Agent': 'Mozilla/5.0',
+                'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36',
                 'Referer': 'https://sci-hub.ren/'
             })
-            with urllib.request.urlopen(req, timeout=15) as resp:
+            with urllib.request.urlopen(req, timeout=20) as resp:
                 content = resp.read()
+            
             if content[:4] == b'%PDF' and len(content) > 5000:
-                dest.parent.mkdir(parents=True, exist_ok=True)
-                dest.write_bytes(content)
-                ok_bban += 1
-                print(f'  [{i+1}] OK (bban)')
-        except:
-            pass
-        time.sleep(0.5)
+                target.parent.mkdir(parents=True, exist_ok=True)
+                target.write_bytes(content)
+                r['paperPdfLocal'] = str(target)
+                r['paperPdfSource'] = 'sci-hub-bban'
+                ok += 1
+                print(f'OK ({len(content)/1024:.0f} KB)')
+            else:
+                fail += 1
+                print('NOT PDF')
+        except urllib.error.HTTPError as e:
+            fail += 1
+            print(f'HTTP {e.code}')
+        except Exception as e:
+            fail += 1
+            print(f'ERR: {str(e)[:40]}')
+        
+        # Save metadata every 10
+        if ok % 10 == 0 and ok > 0:
+            META.write_text(json.dumps(meta, ensure_ascii=False, indent=2), encoding='utf-8')
+        
+        time.sleep(0.5)  # rate limit
     
-    print(f'bban.top: {ok_bban}/{len(need)}')
-    
-    # Step 2: For remaining, use VNC + sci-hub.ren
-    remaining = [r for r in need if not Path(r.get('processingFolder','')) / f'scihub_{r["doi"].replace("/","_")}.pdf']
-    if not remaining:
-        print("All done!")
-        return
-    
-    print(f'\nStep 2: sci-hub.ren via VNC ({len(remaining)} articles)')
-    print('Opening sci-hub.ren in VNC Chrome...')
-    
-    subprocess.Popen(['google-chrome-stable','--no-sandbox','--disable-gpu',SH],
-                     env={**os.environ,'DISPLAY':DISPLAY},
-                     stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
-    time.sleep(3)
-    input('Solve the captcha in VNC Chrome, then press ENTER here... ')
-    
-    ok_sh = 0
-    for i, r in enumerate(remaining):
-        doi = r['doi']; title = (r.get('title','') or '')[:50]
-        print(f'\n[{i+1}/{len(remaining)}] {title}')
-        
-        # Focus Chrome, Ctrl+L to address bar
-        xdo(['xdotool','search','--class','Google-chrome','windowactivate'])
-        time.sleep(0.5)
-        xdo(['xdotool','key','ctrl+l'])
-        time.sleep(0.3)
-        
-        # Type sci-hub URL + DOI
-        xdo(['xdotool','type',SH + doi])
-        time.sleep(0.3)
-        xdo(['xdotool','key','Return'])
-        
-        # Wait for page load
-        time.sleep(4)
-        
-        # Try to find and click the download/save link
-        # Sci-hub.ren has an embed/iframe with the PDF
-        # We can directly try to download from the PDF URL
-        
-        # Check Downloads for new PDF
-        before = set(dl_dir.glob('*.pdf'))
-        time.sleep(2)
-        after = set(dl_dir.glob('*.pdf'))
-        new_pdfs = after - before
-        
-        if new_pdfs:
-            src = list(new_pdfs)[0]
-            dest = Path(r.get('processingFolder','')) / f'scihub_{doi.replace("/","_")}.pdf'
-            dest.parent.mkdir(parents=True, exist_ok=True)
-            shutil.move(str(src), str(dest))
-            ok_sh += 1
-            print(f'  OK')
-        else:
-            print(f'  SKIP (no download detected)')
-        
-        time.sleep(2)
-    
-    print(f'\nDone: bban={ok_bban}, sci-hub={ok_sh}, total={ok_bban+ok_sh}/{len(need)}')
+    META.write_text(json.dumps(meta, ensure_ascii=False, indent=2), encoding='utf-8')
+    print(f'\nDone: {ok} OK, {fail} failed, {ok+fail} total')
 
 if __name__ == '__main__':
     main()
