@@ -42,7 +42,7 @@ Lorena Marrodán, Teresa Pérez, María U. Alzueta. Conversion of methylamine in
 
 ## Abstract
 
-not available
+The conversion of methylamine (CH3NH2, 1000 ppm) has been studied in an atmospheric-pressure flow reactor from both experimental and modeling points of view. Several values of the oxygen excess ratio (λ), from pyrolysis to fuel-lean conditions, have been tested, and a large number of different species have been quantified experimentally by three different diagnostic techniques: gas chromatography, Fourier Transform Infra-red spectroscopy (FTIR) and an infra-red NO analyzer. For the first time, the influence of NO addition (500 and 1000 ppm) on the stoichiometric oxidation of methylamine has also been experimentally evaluated, and the main products of such interaction have been identified. Results indicate that, unlike the little influence of oxygen availability on methylamine conversion, the presence of different concentrations of NO promotes methylamine oxidation at lower temperatures. A literature mechanism has been validated against the present experimental data since previous experimental works under these conditions are scarce. The largest discrepancies have been found for the formation of NH3 and NO as oxidation products, which are under and overestimated by the model, respectively, and under pyrolysis conditions, where modification of the kinetic parameters for the reaction CH2NH2 ⇌ CH2NH + H from the original mechanism notably improves the agreement between experimental and simulated results.
 
 ## Processing Notes
 

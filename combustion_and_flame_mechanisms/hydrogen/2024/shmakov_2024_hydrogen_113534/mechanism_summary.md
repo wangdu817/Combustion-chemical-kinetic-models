@@ -15,7 +15,7 @@ A.G. Shmakov, I.E. Gerasimov, D.A. Knyazkov, K.N. Osipova, O.P. Korobeinichev, S
 - Paper PDF link: 
 - Fuel type: hydrogen
 - Plasma-related mechanism: no
-- Validation reactor/type from abstract: not clear from abstract
+- Validation reactor/type from abstract: burner/flame structure
 
 ## Mechanism Files
 
@@ -42,7 +42,7 @@ A.G. Shmakov, I.E. Gerasimov, D.A. Knyazkov, K.N. Osipova, O.P. Korobeinichev, S
 
 ## Abstract
 
-not available
+A possible method for a flammability reduction of the polymeric materials is the introduction of flame retardants into their composition. An effective search for optimal flame retardants and an understanding of their inhibition mechanisms requires the extensive information on the chemistry of their transformation in flames. A new data on chemical flame structure of a premixed H2/O2/Ar flame doped with 1000 ppm of triphenyl phosphate (TPP) at a pressure of 1 atm was obtained with a molecular-beam mass-spectrometry technique. Among intermediate products of the TPP decomposition were identified: several large phosphorus containing compounds, small phosphorus containing species (PO, PO2, HOPO, HOPO2), cyclic hydrocarbons (benzene, toluene, phenol), phenyl and phenoxy radicals. The detailed kinetic mechanism proposed earlier for the thermal degradation of TPP was updated with several new reactions including reactions with common flame radicals H/OH/CH3. Reaction rate constants were calculated using the Rice-Ramsberger-Kassel-Marcus theory and potential energy surfaces obtained by the DLPNO-CCSD(T)/cc-pVQZ//ωb97xd/6-31G(d) method. A comparison between experimental data and simulation results with the new model has shown a satisfactory qualitative and quantitative agreement, which confirmed that, the TPP decomposition occurs in flame according to the proposed scheme.
 
 ## Processing Notes
 

@@ -15,7 +15,7 @@ Du Wang, Zhen-Yu Tian, Zhi-Hao Zheng, Wang Li, Ling-Nan Wu, Jiu-Jie Kuang, et al
 - Paper PDF link: 
 - Fuel type: unknown_fuel
 - Plasma-related mechanism: possible
-- Validation reactor/type from abstract: not clear from abstract
+- Validation reactor/type from abstract: jet-stirred reactor, flow reactor, laminar flame speed, stirred reactor
 
 ## Mechanism Files
 
@@ -42,7 +42,7 @@ Du Wang, Zhen-Yu Tian, Zhi-Hao Zheng, Wang Li, Ling-Nan Wu, Jiu-Jie Kuang, et al
 
 ## Abstract
 
-not available
+As a polar solvent, N, N-Dimethylformamide (DMF) is a potential source of volatile organic compounds during industrial processing. The potential energy surface and pressure-dependent rate coefficients of DMF primary and secondary thermal decomposition were theoretically investigated by automatic ab initio calculations. A singlet aminohydroxycarbene route generating CO is found to be the most energetically favored channel among the unimolecular initiation reactions with a tight transition state. A kinetic model was proposed for DMF pyrolysis prediction and validated against the speciation data newly obtained from synchrotron vacuum ultraviolet photoionization mass spectrometry in a flow reactor within 773 K–1048 K and literature data in a jet stirred reactor within 450 K–900 K at atmospheric pressure. Satisfactory agreements were obtained for the major intermediates and products, but the model failed to capture the formation of some oxygenated compounds, possibly due to the missing reaction pathway for bimolecular addition. During pyrolysis, DMF is mainly consumed by the hydrogen abstraction reaction as the relatively high CN bond energy hinders the barrierless homolytic cleavage. Unlike aldehydes where the carbonyl site is favored, H-abstraction from DMF methyl sites is prevalent, although the acylamino group readily undergoes decarbonylation and β-scission forming oxygenated and nitrogenous parts. Consequently, CO and HCN are the major pyrolysis products. Besides, by incorporating essential high temperature kinetics, extended validation was conducted against the available intermediate temperature autoignition delay times (1000–1350 K, 2 bar) and laminar burning velocity data, and the reason for the discrepancy between the model prediction and experiments was inferred according to the sensitivity analyses.
 
 ## Processing Notes
 

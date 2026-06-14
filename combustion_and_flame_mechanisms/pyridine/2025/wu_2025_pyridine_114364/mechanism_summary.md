@@ -15,7 +15,7 @@ Ling-Nan Wu, Cheng-Yin Ye, Zhi-Min Wang, Du Wang, ... Zhen-Yu Tian. Experimental
 - Paper PDF link: https://www.sciencedirect.com/science/article/pii/S0010218025004018/pdfft?md5=7c85499a76a376799873072c39dcd8f6&pid=1-s2.0-S0010218025004018-main.pdf
 - Fuel type: pyridine
 - Plasma-related mechanism: no
-- Validation reactor/type from abstract: not clear from abstract
+- Validation reactor/type from abstract: jet-stirred reactor, stirred reactor
 
 ## Mechanism Files
 
@@ -42,7 +42,7 @@ Ling-Nan Wu, Cheng-Yin Ye, Zhi-Min Wang, Du Wang, ... Zhen-Yu Tian. Experimental
 
 ## Abstract
 
-not available
+As a branched nitrogen-containing aromatic heterocycle, 4-ethylpyridine (4EP) serves as a representative model compound for investigating fuel-nitrogen conversion and the nitrogen-containing polycyclic aromatic hydrocarbons (NPAHs) formation mechanism of nitrogen-containing fuels. The 4EP pyrolysis kinetics were studied in a jet-stirred reactor (JSR) coupled with a synchrotron vacuum ultraviolet molecular beam mass spectrometer over the temperature range of 820–1090 K at atmospheric pressure. Among the 4EP pyrolysis products, three kinds of branched pyridine compounds, six kinds of NPAHs, and three kinds of PAHs were identified by the photoionization efficiency analysis compared with previous pyridine kinetic studies. The major pyrolysis products are ethylene, methane, 4-methylpyridine, pyridine, 4-vinylpyridine, HCN, and acetylene. A new 4EP pyrolysis kinetic model comprising 296 species and 1222 reactions was proposed. 4EP and major branched pyridine compounds could be reasonably predicted using the model developed in this work. 4-Methylpyridyl (C5H4NCH2) and pyridyl (C5H4N) radicals are two important intermediates for NPAHs formation process. NPAHs formation during 4EP pyrolysis occurs through three pathways, including PyCH2 + C2H4, PyCH2 + PyCH2, and PyCHCH2 + Py via C5H4NCH2+C2H4→C5H3NC3H6→C5H3NC3H4, 2C5H4NCH2→C12H12N2, and C5HNCHCH2+C5H4N→C12H10N2. The ethyl chain on the para-site of pyridine promotes NPAHs formation at a lower temperature compared with pyridine. The effect of nitrogen atom doping of 4EP on the reactivity is analyzed in comparison with ethylbenzene (EB), and the existence of a nitrogen atom in the aromatic structure inhibits the tendency to produce products with polycyclic aromatic structures.
 
 ## Processing Notes
 

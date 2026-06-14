@@ -15,7 +15,7 @@ Congjie Hong, Wuchuan Sun, Zuohua Huang, Yingjia Zhang. In-depth exploration of 
 - Paper PDF link: 
 - Fuel type: unknown_fuel
 - Plasma-related mechanism: no
-- Validation reactor/type from abstract: not clear from abstract
+- Validation reactor/type from abstract: shock tube
 
 ## Mechanism Files
 
@@ -54,7 +54,7 @@ Congjie Hong, Wuchuan Sun, Zuohua Huang, Yingjia Zhang. In-depth exploration of 
 
 ## Abstract
 
-not available
+2,2,4,6,6-pentamethylheptane (PMH) stands out as a highly branched alkane with promising applications in sustainable aviation fuels, making it a notable candidate for ongoing efforts to replace conventional jet fuels. This study contributes significantly to our understanding of PMH combustion by providing a comprehensive dataset of new high-temperature experimental data and an optimized detailed high-temperature kinetic mechanism. The experimental results exhibit a strong agreement with the predictions of the refined model. The shock tube experiments covered a range of conditions, including equivalence ratios of 0.5 and 1.0, pressures from 1 to 20 atm, and temperatures from 850 to 1450 K. One noteworthy observation is the significant two-stage heat release phenomenon in the high-temperature region, particularly in highly branched alkanes like PMH. Although the heat release in the first stage is weak and its impact on the actual engine may be limited, it holds scientific significance in optimizing the chemical reaction kinetics model. The detailed kinetic analysis, incorporating sensitivity analysis and reaction path analysis based on the optimized model, offers a profound insight into the combustion characteristics of PMH. This analytical approach deepens our understanding of the observed first-stage heat release phenomenon from a kinetic perspective, shedding light on the intricate combustion behavior of PMH under high-temperature conditions. The findings contribute not only to the fundamental knowledge of PMH combustion but also hold practical relevance for the development and optimization of alternative fuels.
 
 ## Processing Notes
 

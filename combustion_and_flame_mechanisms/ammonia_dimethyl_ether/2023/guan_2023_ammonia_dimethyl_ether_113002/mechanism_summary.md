@@ -15,7 +15,7 @@ Wei Guan, Abouelmagd Abdelsamie, Cheng Chi, Zhixia He, Dominique Thévenin. A de
 - Paper PDF link: 
 - Fuel type: ammonia_dimethyl_ether
 - Plasma-related mechanism: no
-- Validation reactor/type from abstract: burner/flame structure
+- Validation reactor/type from abstract: laminar flame speed, burner/flame structure
 
 ## Mechanism Files
 
@@ -54,7 +54,7 @@ Wei Guan, Abouelmagd Abdelsamie, Cheng Chi, Zhixia He, Dominique Thévenin. A de
 
 ## Abstract
 
-not available
+Ammonia ( NH 3 ) as a promising energy vector receives growing interest to reduce carbon emissions in combustion applications. Co-firing with dimethyl ether (DME) is an outstanding route to enhance the combustion properties of ammonia. In this study, a reduced model for NH 3 /DME blend fuels made up of 48 species and 294 reactions was developed starting from a detailed kinetic mechanism. The overall agreement of the reduced model compared with both experimental data and predictions from the original one are good, in terms of ignition delay times, laminar flame speeds, species mole fraction profiles, and S-curves for a variety of NH 3 /DME mixtures. Additionally, the fidelity of the reduced model has been further evaluated by comparing with other detailed kinetic models from the literature. Using this reduced mechanism, a parametric analysis of one-dimensional flames reveals a trade-off in terms of emissions ( NO x vs. CO 2 ), equivalence ratios, and flame propagation characteristics. The ultimate objective of this study is to investigate ignition and turbulent flame dynamics. As a first step in this direction, a turbulent premixed flame of a rich NH 3 /DME mixture with 25% DME content is investigated by direct numerical simulation (DNS) using the reduced mechanism, and conditional averages are analyzed. This work paves the way for future systematic studies of turbulent NH 3 /DME flames by DNS.
 
 ## Processing Notes
 

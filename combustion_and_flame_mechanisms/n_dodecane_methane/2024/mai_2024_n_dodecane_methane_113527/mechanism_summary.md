@@ -15,7 +15,7 @@ Zhaoming Mai, Yingtao Wu, Chenglong Tang, Haibao Mu, Wei Wang, Zuohua Huang. Ign
 - Paper PDF link: 
 - Fuel type: n_dodecane_methane
 - Plasma-related mechanism: no
-- Validation reactor/type from abstract: not clear from abstract
+- Validation reactor/type from abstract: rapid compression machine, laminar flame speed
 
 ## Mechanism Files
 
@@ -42,7 +42,7 @@ Zhaoming Mai, Yingtao Wu, Chenglong Tang, Haibao Mu, Wei Wang, Zuohua Huang. Ign
 
 ## Abstract
 
-not available
+In this study, novel ignition delay times (IDTs) were experimentally measured for the n-dodecane/methane binary mixture with various n-dodecane content at the range of 5–20 bar and 600–1000 K, utilizing a heated rapid compression machine (RCM). Subsequently, a chemical kinetic model was developed for n-dodecane/methane binary mixture and widely validated by the experimental data including ignition delay times, laminar flame speeds, and speciation evolution in this study and the literature. The present model shows good predictive performance and was further applied in the kinetic analysis of the n-dodecane/methane binary mixture ignition characteristic. The results highlight a significant reactivity-promoting effect on the IDTs with the addition of n-dodecane through the low-temperature oxidation processes. This promoting effect is nonlinear and particularly notable in the NTC region. Additionally, the dilution gas component significantly influences the total IDTs at low-to-intermediate temperature conditions but shows less impact on the first-stage IDTs. The chemical effect of the dilution gas is minor at low-temperature conditions, while the thermodynamic effect plays a more important role in influencing the IDTs of the binary mixture.
 
 ## Processing Notes
 

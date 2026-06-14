@@ -15,7 +15,7 @@ Jinhu Liang, Ziwen Zhao, Ning Zhang, Xiaodong Li, Yang Cao, Yangyang Li, et al..
 - Paper PDF link: 
 - Fuel type: n2o_gasoline
 - Plasma-related mechanism: no
-- Validation reactor/type from abstract: not clear from abstract
+- Validation reactor/type from abstract: shock tube, rapid compression machine
 
 ## Mechanism Files
 
@@ -42,7 +42,7 @@ Jinhu Liang, Ziwen Zhao, Ning Zhang, Xiaodong Li, Yang Cao, Yangyang Li, et al..
 
 ## Abstract
 
-not available
+It is important to investigate the effects of NO2 and N2O additions on the auto-ignition behaviors of gasoline, as these species can affect the combustion of gasoline engines via exhaust gas recirculation (EGR). In this study, both a rapid compression machine and a high-pressure shock tube were used to measure the ignition delay times (IDTs) of China Stage-VI gasoline (Research Octane Number 95) in ‘air’ mixtures with NO2 and N2O additions, at equivalence ratios of 0.5, 1.0 and 2.0, at 10 bar, and over a temperature range of 600 ‒ 1400 K. The effects of NO2/N2O additions up to 1000 ppm were studied. The results show that the NO2 additions can obviously promote the oxidation of gasoline and decrease the IDTs at the studied conditions, and the promoting effects increase with NO2 concentrations. Meanwhile, NO2 additions show larger effects on IDTs at low temperatures than that at high temperatures. However, the N2O additions show little effects on the IDTs of gasoline. To further understand the chemistry, a multi-component gasoline surrogate model (n-heptane/isooctane/toluene) including the interaction chemistry between NOx and surrogates was proposed and employed to simulate these experimental IDTs. In general, the proposed kinetic model can simulate well these new IDTs over a wide temperature range. The flux analysis results show that the interaction chemistry between NO2 and toluene presents the largest effects on IDTs among the surrogates.
 
 ## Processing Notes
 

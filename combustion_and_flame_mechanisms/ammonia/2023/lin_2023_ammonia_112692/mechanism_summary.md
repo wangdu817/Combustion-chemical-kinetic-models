@@ -15,7 +15,7 @@ Qianjin Lin, Chun Zou, Lingfeng Dai. High temperature ignition of ammonia/di-iso
 - Paper PDF link: 
 - Fuel type: ammonia
 - Plasma-related mechanism: no
-- Validation reactor/type from abstract: shock tube
+- Validation reactor/type from abstract: shock tube, laminar flame speed
 
 ## Mechanism Files
 
@@ -42,7 +42,7 @@ Qianjin Lin, Chun Zou, Lingfeng Dai. High temperature ignition of ammonia/di-iso
 
 ## Abstract
 
-not available
+Ignition delay times (IDTs) of NH3/di-isopropyl ketone (DIPK) mixtures with DIPK fractions of 0%, 5%, 10%, and 50% were measured in a shock tube at pressures around 1.75 and 10bar, temperatures from 1300 to 2100 K, and an equivalence ratio of 0.5. A DIPK-NH3 model was proposed including the DIPK sub-model, NH3 sub-model, and reactions between nitrogen-containing species and hydrocarbon species. The proposed DIPK-NH3 model well predicts the IDTs measured in this study, and the IDT and laminar flame speed data of pure NH3 and pure DIPK reported in the literature. The reactions between nitrogen-containing species and hydrocarbon species consist of four reaction classes: (1) prompt NO and reburn mechanism; (2) recombination reactions and small amines mechanisms; (3) H-abstraction reactions; (4) disproportionation reactions. Reaction classes 1–4 were successively added into a combined NH3 and DIPK model. Comparison of the model predictions shows that the reaction class 1 and 2 have almost no influence on the ignition, while class 3 inhibits the ignition and class 4 significantly inhibits the ignition. The ignition inhibiting effects of class 3 mainly come from C3H6+NH2=C3H5-A+NH3 (R3032) at DIPK blending ratio of 5% and 10%, and C2H4+NO=C2H3+HNO (R3058) at DIPK blending ratio of 50% and 10 bar. The ignition inhibiting effects of class 4 mainly come from HCO+NH2=CO+NH3 (R3050), C2H3+NH2=C2H2+NH3 (R3047), and NH2+C3H5-A=C3H4-A+NH3 (R3065) at DIPK blending ratio of 5% and 10%, and C3H5-A+NO=C3H4-A+HNO (R3067) at DIPK blending ratio of 50% and 10 bar. The NH3/DIPK oxidation pathway and effects of DIPK blending ratio on the IDT of NH3 were also analyzed in detail.
 
 ## Processing Notes
 

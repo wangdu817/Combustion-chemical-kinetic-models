@@ -15,7 +15,7 @@ Keisuke Kanayama, Claire M. Grégoire, Sean P. Cooper, Yousef Almarzooq, Eric L.
 - Paper PDF link: 
 - Fuel type: ethylene
 - Plasma-related mechanism: no
-- Validation reactor/type from abstract: not clear from abstract
+- Validation reactor/type from abstract: shock tube, laminar flame speed
 
 ## Mechanism Files
 
@@ -42,7 +42,7 @@ Keisuke Kanayama, Claire M. Grégoire, Sean P. Cooper, Yousef Almarzooq, Eric L.
 
 ## Abstract
 
-not available
+Fire-risk assessment of lithium-ion batteries (LIBs) is an urgent task as the number and size of products using LIBs are both increasing. LIB electrolyte solvents consist of mixtures of flammable carbonate esters, such as ethylene carbonate (EC), dimethyl carbonate (DMC), ethyl methyl carbonate (EMC), and diethyl carbonate (DEC). This study aims to report the first EC combustion experiments (ignition delay time (IDT), CO laser absorption, and laminar flame speed measurements), and to provide a LIB electrolyte surrogate model that covers EC, DMC, EMC, and DEC pyrolysis and oxidation. The IDT and CO measurements were performed in a shock tube for EC/O2 mixtures, diluted with 95% Ar and 99.7% He/Ar, respectively, at equivalence ratios (ϕ) of 0.5, 1.0, and 2.0, a temperature range of 1228–1717 K, and at near-atmospheric pressures. Laminar flame speeds were measured in a closed vessel for H2/air mixtures seeded with 0.5% EC, at an initial temperature of 423 K and at atmospheric pressure. The LIB electrolyte surrogate model was constructed by implementing the EC oxidation sub-mechanism to our EC pyrolysis model with updates in the base mechanism. Experimental IDTs show little equivalence ratio dependence and are reasonably reproduced using the model proposed in this study. Measured CO time-history profiles show strong temperature dependence and a slight equivalence ratio effect. The model shows excellent agreement with the measured CO profiles at intermediate-to-high temperatures for ϕ = 0.5 and 1.0, while it underpredicts CO formation at low temperatures and at ϕ = 2.0. Based on numerical analyses, EC mostly undergoes decomposition to acetaldehyde, e.g., 90% at ϕ = 1.0 and 1499 K at CO onset, which drives the CO formation in our conditions. Oxidation as well as pyrolysis data of EC are still scarce, thus experimental studies with a wide range of methods, conditions, and properties are necessary for further model validation.
 
 ## Processing Notes
 

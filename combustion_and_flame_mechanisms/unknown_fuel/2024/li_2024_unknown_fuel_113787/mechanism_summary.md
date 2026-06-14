@@ -15,7 +15,7 @@ Tao Li, Siyu Chen, Juanqin Li, Quan Zhu, Zerong Li. Kinetic investigations on th
 - Paper PDF link: 
 - Fuel type: unknown_fuel
 - Plasma-related mechanism: no
-- Validation reactor/type from abstract: not clear from abstract
+- Validation reactor/type from abstract: jet-stirred reactor, stirred reactor
 
 ## Mechanism Files
 
@@ -42,7 +42,7 @@ Tao Li, Siyu Chen, Juanqin Li, Quan Zhu, Zerong Li. Kinetic investigations on th
 
 ## Abstract
 
-not available
+The β-scission reactions of hydroperoxy methyl-ester radicals (•QOOH radicals in methyl esters) and the concerted HO2• elimination reactions of methyl-ester peroxy radicals (ROO• in methyl esters) are two reaction classes that play a crucial role in terminating the chain reaction during the low-temperature combustion of methyl esters. These reactions are also key contributors to the negative temperature coefficient behavior and ignition inhibition observed in biodiesel. Although limited rate constants for these classes in small methyl esters have been calculated, those in larger methyl ester models are frequently approximated based on analogous alkyl reactions in alkanes. In this study, the isodesmic reaction method is utilized to correct the energy barriers and high-pressure-limit rate constants calculated at the low-level B3LYP method. The objective is to approximate the results obtained with the high-level G4 method. The β-scission class is further categorized into 6 subclasses based on the position of the newly formed CC bond in the olefin ester product and the location of the radical on the reactant and the concerted elimination class is divided into 4 subclasses based on the position of the newly formed CC bond in the olefin ester product and the carbon sites where the -OOH group and the eliminated H atom are situated. High-pressure-limit and pressure-dependent rate rules for subclasses are established by averaging rate constants within each subclass. Notably, substantial disparities are observed between our rate constants and those reported in models for large methyl esters, where rate constants are approximated from analogous alkyl reactions in alkanes. This underscores the significant uncertainty associated with the direct application of alkyl reaction rate constants in biodiesel models. Consequently, a low-temperature oxidation model of methyl octanoate/ethanol is developed through the incorporation of the rate rules derived in this study, resulting in a model that effectively reproduces experimental data within the conditions of a jet-stirred reactor.
 
 ## Processing Notes
 

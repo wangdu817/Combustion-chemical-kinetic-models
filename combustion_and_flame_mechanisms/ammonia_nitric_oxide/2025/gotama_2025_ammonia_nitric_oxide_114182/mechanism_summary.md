@@ -42,7 +42,7 @@ Gabriel J. Gotama, Yueying Liang, Liang Yu, Yongxiang Zhang, ... Xingcai Lu. Eff
 
 ## Abstract
 
-not available
+Nitric oxide (NO) is an important product and a major intermediate species in ammonia combustion. This paper investigates the impact of NO on ammonia oxidation in a rapid compression machine. Ignition delay times are measured under stoichiometric and lean (φ = 0.5) conditions with 0 to 2000 ppm NO addition at 25 - 40 bar and 1080 - 1200 K. Due to a small fraction of NO converted to nitrogen dioxide (NO2) during the reactant preparation, the investigation can be considered as simultaneous doping with NO and NO2 where the NO2 can be quantified using simulation. The addition of NO (and the converted NO2) consistently promotes ammonia autoignition where the ignition delay can be reduced by up to a factor of 6. This NO promotion behaviour was consistent across the pressures investigated. A kinetic model was developed using recent updates on elementary reactions, which improves the simulation compared to existing models. Analysis using the developed model indicated that NO addition enhances the HO2 production via reaction H2NO + O2 = HNO + HO2, and HNO + O2 = NO + HO2, which provide an abundant supply of HO2 for reaction NO + HO2 = NO2 + OH and keep high OH production all the way to autoignition. The impact of pure NO is also isolated using simulation. The results indicate that NH3 is unique in that higher NO invariably leads to shorter ignition delay which does not show the saturation effect as previously reported for hydrocarbon/NO and H2/NO cases.
 
 ## Processing Notes
 

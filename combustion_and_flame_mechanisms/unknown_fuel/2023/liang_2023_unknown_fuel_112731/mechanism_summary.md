@@ -15,7 +15,7 @@ Jinhu Liang, Ruining He, Shashank S. Nagaraja, A. Abd El-Sabor Mohamed, Haitao L
 - Paper PDF link: 
 - Fuel type: unknown_fuel
 - Plasma-related mechanism: no
-- Validation reactor/type from abstract: not clear from abstract
+- Validation reactor/type from abstract: shock tube, laminar flame speed
 
 ## Mechanism Files
 
@@ -45,7 +45,7 @@ Jinhu Liang, Ruining He, Shashank S. Nagaraja, A. Abd El-Sabor Mohamed, Haitao L
 - Status: cantera_failed
 - Species count: 869
 - Reaction count: 40907
-- Message: TimeoutExpired: Cantera conversion exceeded 900 seconds
+- Message: missing cantera result json
 - Method: cantera
 - Cantera YAML: mechanism.yaml
 - Standard chem.inp: chem.inp
@@ -54,7 +54,7 @@ Jinhu Liang, Ruining He, Shashank S. Nagaraja, A. Abd El-Sabor Mohamed, Haitao L
 
 ## Abstract
 
-not available
+2,3-Dimethyl-2-butene (TME) is a potential fuel additive with high research octane number (RON) and octane sensitivity (S), which can improve internal combustion engine performance and efficiency. However, the combustion characteristics of TME have not been comprehensively investigated. Thus, it is essential to study the combustion characteristics of TME and construct a detailed chemical kinetic model to describe its combustion. In this paper, two high-pressure shock tubes and a constant-volume reactor are used to measure ignition delay times and laminar flame speeds of TME oxidation. The ignition delay times were measured at equivalence ratios of 0.5, 1.0, and 2.0 in “air”, at pressures of 5 and 10 bar, in the temperature range of 950 – 1500 K. Flame speeds of the TME/ “air” mixtures were measured at atmospheric pressure, at a temperature of 325 K, for equivalence ratios ranging from 0.78 to 1.31. Two detailed kinetic mechanisms were constructed independently using different methodologies; the KAUST TME mechanism was constructed based on NUIGMech1.1, and the MIT TME mechanism was built using the Reaction Mechanism Generator (RMG). Both mechanisms were used to simulate the experimental results using Chemkin Pro. In the present work, reaction flux and sensitivity analyses were performed using the KAUST mechanism to determine the critical reactions controlling TME oxidation at the conditions studied.
 
 ## Processing Notes
 

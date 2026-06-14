@@ -15,7 +15,7 @@ Alexander A. Konnov, Jundie Chen, Marco Lubrano Lavadera. Measurements of the la
 - Paper PDF link: 
 - Fuel type: unknown_fuel
 - Plasma-related mechanism: no
-- Validation reactor/type from abstract: not clear from abstract
+- Validation reactor/type from abstract: laminar flame speed
 
 ## Mechanism Files
 
@@ -33,7 +33,7 @@ Alexander A. Konnov, Jundie Chen, Marco Lubrano Lavadera. Measurements of the la
 - Status: cantera_failed
 - Species count: 498
 - Reaction count: 5722
-- Message: TimeoutExpired: Cantera conversion exceeded 900 seconds
+- Message: missing cantera result json
 - Method: cantera
 - Cantera YAML: mechanism.yaml
 - Standard chem.inp: chem.inp
@@ -42,7 +42,7 @@ Alexander A. Konnov, Jundie Chen, Marco Lubrano Lavadera. Measurements of the la
 
 ## Abstract
 
-not available
+Consistent datasets of the laminar burning velocity, LBV, for homologous fuels are indispensable for the elucidation of the structure-reactivity trends and the development and validation of pertinent detailed kinetic models. In the present study, all available LBV measurements for small alkyl esters obtained using the heat flux method have been reviewed. New results of the LBV for methyl propionate + air flames employing this method have been acquired at atmospheric pressure and initial gas temperatures from 298 to 348 K over equivalence ratios, ɸ = 0.7–1.5. Earlier experimental data for alkyl esters scattered across non-archival reports were re-examined and corrected when necessary. To prove the validity of the correction, additional LBV measurements for methyl formate and methyl butanoate were performed as well, and successfully demonstrated the consistency of the data obtained using different installations over an extended period of time. Then, the LBV of different families, such as methyl esters of various acids, formates, and acetates, along with isomers, were compared and structure-reactivity trends were assessed. Furthermore, the detailed kinetic mechanism of the authors was expanded by the reactions of methyl propionate and successfully compared with the LBV measurements for methyl formate, methyl acetate, methyl propionate, and ethyl formate. Distinct reactions controlling their flame propagation were revealed using sensitivity analysis and the origin of their rate constants is briefly discussed.
 
 ## Processing Notes
 

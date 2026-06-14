@@ -15,7 +15,7 @@ Jundie Chen, Marco Lubrano Lavadera, Alexander A. Konnov. An experimental and mo
 - Paper PDF link: 
 - Fuel type: ammonia
 - Plasma-related mechanism: no
-- Validation reactor/type from abstract: not clear from abstract
+- Validation reactor/type from abstract: shock tube, jet-stirred reactor, laminar flame speed, stirred reactor
 
 ## Mechanism Files
 
@@ -42,7 +42,7 @@ Jundie Chen, Marco Lubrano Lavadera, Alexander A. Konnov. An experimental and mo
 
 ## Abstract
 
-not available
+Most often, the laminar burning velocity (SL) of ammonia was measured in mixtures diluted by nitrogen bearing in mind its potential use as an alternative carbon-free fuel. Replacing the diluent with argon can increase the flame temperature and thus provide additional targets for validating pertinent detailed kinetic models. The SL data for ammonia + oxygen + argon mixtures are scarce; therefore, in the present study, new measurements have been performed using the heat flux method at an initial temperature of 298 K and atmospheric pressure over an equivalence ratio range of 0.4–1.5. The argon mole percentage in the mixture has been changed from 30 to 60%. Nine recent ammonia kinetic models are selected and validated against these new experimental data, where it is found that the models by Han et al. (Combust. Flame 228 (2021):13), Shrestha et al. (Proc. Combust. Inst. 38 (2021):2163), and Okafor et al. (Combust. Flame 204 (2019):162) provide the best predictions. Further sensitivity analysis showed that the most crucial nitrogen-related reactions for SL in present flames found in the model of Shrestha et al. are different from the other two, and flux analysis elucidated that the main consumption fluxes of NH2 radical are different among the three models. The model of Han et al., which is from the authors’ group, was revisited, and the rate constants for three reactions NH2+H(+M)=NH3(+M), NNH+ONH+NO, and NH2+OHNO+H were modified. Available speciation data from shock tube and flame studies are used to select the most suitable rate constants among expressions recommended in the literature. The updated model performs well in reproducing a range of SL, ignition delay times, and speciation data from a jet-stirred reactor for ammonia + oxygen + argon mixtures.
 
 ## Processing Notes
 

@@ -15,7 +15,7 @@ Meirong Zeng, Peiqi Liu, Jigang Gao, Zaili Xiong, Zhongyue Zhou, Jiuzhong Yang, 
 - Paper PDF link: 
 - Fuel type: dimethyl_ether_trimethylbenzene_124
 - Plasma-related mechanism: no
-- Validation reactor/type from abstract: not clear from abstract
+- Validation reactor/type from abstract: jet-stirred reactor, stirred reactor
 
 ## Mechanism Files
 
@@ -42,7 +42,7 @@ Meirong Zeng, Peiqi Liu, Jigang Gao, Zaili Xiong, Zhongyue Zhou, Jiuzhong Yang, 
 
 ## Abstract
 
-not available
+Low to moderate temperature oxidation has been a vital topic in the combustion chemistry due to its critical role in controlling the combustion characteristics such as autoignition and pollutant emissions. Low temperature oxidation kinetics of alkanes and oxygenated biofuels have been widely explored, while that of branched aromatics is poorly understood. This work aims to investigate the low to moderate temperature oxidation kinetics of 1,2,4-trimethylbenzene (TMB, C9H12), which is a multi-branched alkylbenzene with weak low temperature oxidation reactivity. To enhance the low temperature oxidation reactivity of TMB, dimethyl ether (DME) was added to efficiently provide chain initiators. The oxidation experiment of TMB/DME mixture was performed with an atmospheric jet stirred reactor coupled with synchrotron vacuum ultraviolet radiation photoionization mass spectrometry. The negative temperature coefficient (NTC) behavior, as well as featured aromatic intermediates, especially phenyl hydroperoxides and unexpected highly oxygenated molecules (HOMs), were observed in the experiment. The detection of these fingerprint aromatic intermediates provide crucial evidence for revealing the low to moderate oxidation kinetics of TMB. In addition, a kinetic model was developed to provide in-depth kinetic analysis. The results demonstrate that the active chain initiators produced from DME oxidation trigger the low temperature chain-branching reactions of TMB. The chain recycling process is further sustained due to the regeneration of active intermediates such as phenyl hydroperoxides and •OH radicals. Aromatic intermediates with chemical compositions of C9H12Ox and C9H10Ox were measured and identified to be key indicators for the low temperature chemistry of TMB. In particular, the aromatic HOMs (C9H12O6 and C9H10O5) are fingerprint intermediates produced from the third O2 addition and subsequent reactions of TMB. Besides, the sensitivity analysis indicates that the interaction kinetics between TMB and DME by sharing the highly sensitive reactions of hydroperoxides and •OH radicals. The present work extends the conceptual reaction schemes proposed in alkanes towards branched aromatics, especially sequential O2 addition reactions that contributing to the formation of phenyl hydroperoxides and HOMs.
 
 ## Processing Notes
 

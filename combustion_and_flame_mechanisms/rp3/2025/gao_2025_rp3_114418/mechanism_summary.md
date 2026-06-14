@@ -15,7 +15,7 @@ Xiang Gao, Du Wang, Qian-Peng Wang, Xu-Peng Yu, ... Zhen-Yu Tian. Experimental a
 - Paper PDF link: https://www.sciencedirect.com/science/article/pii/S0010218025004559/pdfft?md5=e56ab208916ede4dfbf2d46e3a315201&pid=1-s2.0-S0010218025004559-main.pdf
 - Fuel type: rp3
 - Plasma-related mechanism: no
-- Validation reactor/type from abstract: not clear from abstract
+- Validation reactor/type from abstract: jet-stirred reactor, stirred reactor
 
 ## Mechanism Files
 
@@ -42,7 +42,7 @@ Xiang Gao, Du Wang, Qian-Peng Wang, Xu-Peng Yu, ... Zhen-Yu Tian. Experimental a
 
 ## Abstract
 
-not available
+Experimental and modeling studies were conducted on the oxidation of a three-component surrogate fuel for RP-3 kerosene in a jet-stirred reactor at pressure of 12.0 atm, temperatures of 525–1025 K, and equivalence ratios of 0.4 and 2.0. The surrogate fuel consists of 66.2 % n-dodecane, 18.0 % 1,3,5-trimethylcyclohexane, and 15.8 % n-propylbenzene (in mole fraction). A comprehensive kinetic model, incorporating 1527 species and 7781 reactions, was developed and validated against experimental data of high-pressure oxidation, atmospheric pressure oxidation, and ignition delay times. The model demonstrates a credible alignment with the experimental results. Unlike the strong NTC behavior observed at 1.0 atm, the three fuels exhibit a distinct three-stage oxidation phenomenon (weak NTC, WNTC) under high pressure. This process is characterized by an initial rapid decline in fuel concentration (Stage I), followed by a relatively stable phase (Stage II), and a final stage of gradual fuel consumption (Stage III). ROP analysis indicates that the dominant fuel consumption pathways involve H-abstraction by OH radicals, with the formation of aromatic products mainly originating from n-propylbenzene. In Stage I, fuel consumption is primarily driven by the rapid generation of OH via low-temperature chain-branching pathways. During Stage II, the competition for OH radicals among intermediates and fuels results in minimal changes in fuel concentration. In Stage III, the decomposition of H2O2 becomes the dominant source of OH radical, accelerating fuel oxidation. At Φ = 2.0, despite the overall reduction in OH radicals, the higher reactivity of NC12H26 enables it to compete more effectively for OH radicals, leading to a consumption profile similar to that at Φ = 0.4. In contrast, T135MCH and A1C3H7 exhibit lower consumption rates than those at Φ = 0.4. In comparing the kinetic results between 1.0 and 12.0 atm, it indicates that the differences in oxidation behaviors stem from pressure-dependent reactions, such as H2O2 decomposition and O2 addition. Sensitivity analysis reveals that reactions promoting fuel oxidation also enhance OH radical formation. The synergistic oxidation of the three fuels is reflected in sharing of radicals, with n-dodecane contributing most significantly to OH production.
 
 ## Processing Notes
 

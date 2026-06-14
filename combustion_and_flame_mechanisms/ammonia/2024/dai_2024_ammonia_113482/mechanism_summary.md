@@ -15,7 +15,7 @@ Lingfeng Dai, Jiacheng Liu, Chun Zou, Qianjin Lin, Tong Jiang, Chao Peng. Shock 
 - Paper PDF link: 
 - Fuel type: ammonia
 - Plasma-related mechanism: no
-- Validation reactor/type from abstract: shock tube
+- Validation reactor/type from abstract: shock tube, laminar flame speed
 
 ## Mechanism Files
 
@@ -42,7 +42,7 @@ Lingfeng Dai, Jiacheng Liu, Chun Zou, Qianjin Lin, Tong Jiang, Chao Peng. Shock 
 
 ## Abstract
 
-not available
+Ammonia (NH3) is a promising alternative clean fuel due to its carbon-free and high hydrogen content, along with the well-established infrastructure for storage and distribution. To overcome the issue of the low reactivity of NH3, a feasible strategy is co-burning ammonia with highly reactive fuels. Diethyl ether (DEE) is considered a promising alternative and biomass-oxygenated clean diesel substitute. Therefore, the NH3/DEE blend is also a promising carbon neutral alternative fuel. In this work, we measured the ignition delay times (IDTs) of NH3/DEE mixtures with DEE fractions (X DEE) of 0.05, 0.10, 0.30, and 1.00 at equivalence ratios of 0.5, 1.0, and 2.0, pressures of 1.75 and 10 bar, and temperature ranges from 1102 K to 1673 K in a shock tube. The DEE-NH3 model was proposed in this work, which included the DEE sub-model, NH3 sub-model, and some new cross-reactions between N-containing species and C-containing species. The DEE sub-model from Shrestha et al. (Fuel Communications, 2022) was modified in this work, NH3 sub-model was from our previous work (Reaction Chemistry & Engineering, 2023). The DEE-NH3 model was extensively validated by the IDTs, laminar flame speeds (LFSs), and species profiles (SPs) of NH3/DEE mixtures as well as pure DEE and NH3. The comparison of the prediction performance between the DEE-NH3 model and the Shrestha model was conducted for the ignition, flame propagation, and NH3 consumption. The effects of the cross-reactions on the NH3/DEE ignition and combustion were studied in detail.
 
 ## Processing Notes
 

@@ -15,7 +15,7 @@ Bingzhi Liu, Qingbo Zhu, Long Zhu, Zhihong Hu, Qiang Xu, Zhandong Wang. Ozone-in
 - Paper PDF link: 
 - Fuel type: propanol
 - Plasma-related mechanism: no
-- Validation reactor/type from abstract: not clear from abstract
+- Validation reactor/type from abstract: jet-stirred reactor, stirred reactor
 
 ## Mechanism Files
 
@@ -42,7 +42,7 @@ Bingzhi Liu, Qingbo Zhu, Long Zhu, Zhihong Hu, Qiang Xu, Zhandong Wang. Ozone-in
 
 ## Abstract
 
-not available
+The low-temperature oxidation of propanol isomers (n-propanol and iso-propanol) initiated by ozone addition was carried out in a jet-stirred reactor at an equivalence ratio of 0.5, in a temperature range of 400–800 K and at atmospheric pressure. Synchrotron vacuum ultraviolet photoionization mass spectrometry was used to follow the temperature dependence of key intermediates, including aldehydes, ketones, hydroperoxides, alcohols, alkanes, and alkenes, to explore their low-temperature oxidation reaction pathways. n-Propanol and iso-propanol presented different intermediate distributions during low-temperature oxidation, due to the different position of the hydroxyl group in the molecular structure. The elucidation of the distribution of these intermediate species contributed to the understanding of the low-temperature oxidation reaction network of n-propanol and iso-propanol. Furthermore, a detailed kinetic model of propanol isomers was tentatively developed by systematically updating the sub-mechanism of β-hydroxypropyl radical and by adding the four reaction channels for CO2 formation. These four reactions involve the reactions of the Ö/ȮH atom/radical with formaldehyde/acetaldehyde. The rate of production analysis reveals the crucial roles of Ö/ȮH atoms/radicals on the whole reaction process, highlighting the controlling effects of reactions directly related to Ö/ȮH atoms/radicals. Especially, the reaction between HȮ2 radicals and ozone dominates ȮH radical formation at lower temperatures of ca. 400–475 K, while Waddington reactions, the cyclization reactions of hydroperoxyl hydroxyalkyl radicals and the H-atom abstraction reactions of fuels/intermediates are dominantly responsible for the formation of ȮH radicals at elevated temperatures of ca. > 500 K.
 
 ## Processing Notes
 

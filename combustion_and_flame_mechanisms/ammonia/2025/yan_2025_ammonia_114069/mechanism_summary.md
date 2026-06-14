@@ -15,7 +15,7 @@ Tianci Yan, Chun Zou, Qianjin Lin, Yi Yuan, ... Jiacheng Liu. Experimental and m
 - Paper PDF link: https://www.sciencedirect.com/science/article/pii/S0010218025001075/pdfft?md5=d28b1d4e7ad37b38aa5dcff7851fb95d&pid=1-s2.0-S0010218025001075-main.pdf
 - Fuel type: ammonia
 - Plasma-related mechanism: no
-- Validation reactor/type from abstract: not clear from abstract
+- Validation reactor/type from abstract: shock tube
 
 ## Mechanism Files
 
@@ -42,7 +42,7 @@ Tianci Yan, Chun Zou, Qianjin Lin, Yi Yuan, ... Jiacheng Liu. Experimental and m
 
 ## Abstract
 
-not available
+The ignition delay times (IDTs) of NH3/diethyl ketone (DEK) mixtures at DEK blending ratios (X DEK) of 0.05, 0.1, and 0.5 were measured in a shock tube at equivalence ratios (φ) of 0.5, 1.0 and 2.0, pressures of 1.75 and 10 bar, and temperatures from 1200 to 1900 K. The addition of DEK with X DEK = 0.05 significantly improves the combustion performance of ammonia. A detailed DEK-NH3 model was proposed including the NH3 sub-model, the DEK sub-model, and the cross-reactions between hydrocarbon/oxygenated species and nitrogen-containing species. The model well predicts the IDTs of NH3/DEK mixtures measured in this study, and the IDTs of pure NH3 reported in the literature. The cross-reactions consist of the prompt NO and reburn reactions (reaction-class 1), the recombination reactions and the oxidation reactions of small amines (reaction-class 2), the H-atom abstraction reactions (reaction-class 3), and the disproportionation reactions (reaction-class 4). The comparison of the model predictions shows that the reaction-class 1 and 2 have negligible effects on the ignition. The reaction-class 3 slightly promotes the ignition and the reaction-class 4 significantly inhibits the ignition. The dependence of the effects of the cross-reactions on the blending ratio and pressure are discussed in detail. The NH3/DEK oxidation pathway is also analyzed.
 
 ## Processing Notes
 

@@ -15,7 +15,7 @@ Adrian Nolte, Malte Döntgen, Karl Alexander Heufer. Kinetic insights into doubl
 - Paper PDF link: 
 - Fuel type: propane
 - Plasma-related mechanism: no
-- Validation reactor/type from abstract: not clear from abstract
+- Validation reactor/type from abstract: shock tube, rapid compression machine
 
 ## Mechanism Files
 
@@ -54,7 +54,7 @@ Adrian Nolte, Malte Döntgen, Karl Alexander Heufer. Kinetic insights into doubl
 
 ## Abstract
 
-not available
+This study presents the first kinetic mechanism for methyl tert-butyl ether (MTBE) containing low-temperature chemistry, as well as the first mechanism for 2,2-dimethoxypropane (DMP). The mechanisms have been validated against ignition delay time experiments conducted in a high-pressure shock tube and rapid compression machine. The rapid compression machine conditions were set to 20 and 40 bar for MTBE, and 10 and 20 bar for DMP in a temperature range of 584 to 946 K. Shock tube experiments have been performed for DMP at 20 and 40 bar for stoichiometric and fuel-lean conditions in air at temperatures ranging from 913 to 1173 K. A pronounced negative temperature coefficient regime with two-stage ignition has been observed for both fuels. The developed mechanism consists of reaction rate constants that were primarily modeled in analogy to iso-octane and dimethoxymethane, and calculated thermodata on the G4//B3LYP-D3BJ/def2-TZVP level of theory. Simulations have been performed to analyze the fuel oxidation at different temperatures. Over the full temperature range, H-atom abstraction occurs mainly on the α -side for DMP and on the β -side for MTBE. At low temperatures, both fuels isomerize to the peroxy radical. The dominant MTBE radicals then tend to produce cyclic ether, while the DMP radicals react with O 2 , enabling significant chain branching and explaining the higher reactivity of DMP. With rising temperature, β -scission of the fuel radicals and unimolecular elimination reactions start to dominate the oxidation process. Novelty and Significance Statement The novelty of this research is the first observation of a two-stage ignition of methyl-tert butyl ether (MTBE) in an RCM and a discussion of its fundamental ignition chemistry, which is based on a developed detailed kinetic mechanism. In addition, 2,2-dimethoxypropane (DMP) has been investigated experimentally and theoretically to explain the difference in reactivity to MTBE despite their strong molecular similarity. The experiments include RCM and shock tube experiments. The kinetic model is based on rate constant analogies and newly calculated thermo data on the G4//B3LYP-D3BJ/def2-TZVP level of theory. This work is significant, as MTBE is still a widely used octane booster and the developed model could help to improve engine simulations. Furthermore, the findings of DMP provide insights into future fuel design.
 
 ## Processing Notes
 

@@ -42,7 +42,7 @@ Claire M. Grégoire, Sean P. Cooper, Maryam Khan-Ghauri, Sulaiman A. Alturaifi, 
 
 ## Abstract
 
-not available
+The pyrolysis of three linear carbonates - dimethyl carbonate (DMC), diethyl carbonate (DEC), and ethyl methyl carbonate (EMC) - was investigated behind reflected shock waves using a CO spectroscopic laser diagnostic. The experiments were carried out using 0.0025 carbonate/0.2 He/0.7975 Ar mixtures with temperatures ranging from 1230 to 2375 K, and near atmospheric pressure. This CO quantification extends the literature database for DEC and EMC and allowed for the development of a new detailed chemical kinetics pyrolysis mechanism encompassing all three linear carbonates. The new model was able to reproduce accurately the results for DMC and DEC, the latter being possible after some updates in the ethanol pyrolysis chemistry using recent literature. On the other hand, predicting CO formation for EMC is still problematic due to the poor methanol pyrolysis chemistry displayed by modern detailed kinetics mechanisms.
 
 ## Processing Notes
 

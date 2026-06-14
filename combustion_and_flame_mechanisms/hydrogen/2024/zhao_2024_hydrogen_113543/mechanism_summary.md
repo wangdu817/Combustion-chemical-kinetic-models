@@ -42,7 +42,7 @@ Hao Zhao, Chao Yan, Guohui Song, Ziyu Wang, Ahren W. Jasper, Stephen J. Klippens
 
 ## Abstract
 
-not available
+The oxidation of H2 diluted in N2 with and without 10 % H2O or 20 % CO2 additions are studied at fuel-lean conditions at 100 atm and 500–1000 K in a supercritical-pressure jet-stirred reactor. The mole fractions of H2 and O2 are quantified by using micro-gas chromatography (µ-GC). Experiment shows that H2 oxidation is inhibited at lower temperatures (850–950 K) while it is promoted at higher temperatures (950–1050 K) with 10 % H2O additions or 20 % CO2 additions. In addition, the effect of H2O is more significant than that of CO2. Five models are employed in simulations of the observables. Unfortunately, all of these models fail to capture the effect of H2O and CO2 additions on H2 oxidation. Pathway and sensitivity analyses of H2 show that the reactions of H + O2 + (M) = HO2 + (M) and H2O2 + (M) = 2OH + (M) dominate the radical production (HO2 and OH) and H2 oxidation at 100 atm. A further perturbation of pre-exponential coefficients and collisional factors of these reactions indicates that collisional factors of H2O and CO2 have small effect under the experimental conditions, while a smaller reaction rate for H2O2 + (M) = 2OH + (M) may explain the inhibiting effect of H2O and CO2 additions at lower temperatures. Real-fluid corrections on intermolecular interactions and mixing rules should be further investigated to explain the effect of H2O and CO2 additions.
 
 ## Processing Notes
 

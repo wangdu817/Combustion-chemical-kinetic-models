@@ -15,7 +15,7 @@ Peng Ma, Hendrik Nicolai, Qian Huang, Paulo Debiagi, Leon Loni Berkel, Alessandr
 - Paper PDF link: 
 - Fuel type: ammonia_coal
 - Plasma-related mechanism: no
-- Validation reactor/type from abstract: not clear from abstract
+- Validation reactor/type from abstract: burner/flame structure
 
 ## Mechanism Files
 
@@ -54,7 +54,7 @@ Peng Ma, Hendrik Nicolai, Qian Huang, Paulo Debiagi, Leon Loni Berkel, Alessandr
 
 ## Abstract
 
-not available
+Co-firing ammonia with coal is a promising and feasible technology for reducing coal-related carbon emissions. Pyrolysis and ignition of ammonia-coal blended fuels are the key steps for flame stability and boiler operation safety throughout the conversion process but remain unclear. In this work, an extended Euler–Lagrange framework coupled to detailed solid-phase pyrolysis kinetics and gas-phase reactions mechanism is introduced and validated against experimental results for ammonia-coal co-firing in a two-stage flat flame burner. First, the CRECK-S coal pyrolysis model was validated with TGA experiments and the CPD model at different heating rates to determine parameters for a competing two-step model for CFD simulations. Second, a detailed gas-phase mechanism with 116 species and 1513 elementary reactions was derived from the volatile and ammonia reaction mechanisms. Thirdly, the co-firing simulations were validated for the ignition delay time for various ammonia co-firing ratios. The results show that increasing the co-firing ratios from 0.0 to 1.0 results in gradually increasing ignition delay times in a low-oxygen atmosphere. Further analysis demonstrates that adding ammonia accelerates the coal particle heating rate due to the reduced coal particle number density and ammonia reaction induced gas-phase temperature increase, and thus the coal devolatilization rate is increased. The latter plays a dominant role. Hydrogen produced from ammonia pyrolysis is negligible, so ammonia predominantly participates in the ignition. Time scale analysis shows that homogeneous ignition is dominant during the ignition process. The presence of ammonia inhibits the inward oxygen diffusion and causes the reaction zone to move away from the pulverized coal particle flow. The oxygen diffusion inhibition and low reactivity of ammonia compared to volatiles lead to an increase in ignition delay time for ammonia co-firing, even though pulverized coal devolatilization is accelerated.
 
 ## Processing Notes
 

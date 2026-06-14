@@ -42,7 +42,7 @@ Jinglan Wang, Dandan Xu, Xuezhi Gao, Qiang Xu, Zhandong Wang, Jiuzhong Yang, et 
 
 ## Abstract
 
-not available
+N-methyl pyrrole (NMP) is an important nitrogenous heterocyclic compound in bio-oils produced from biomass conversion. NMP can be used as surrogate model compound to clarify the combustion chemistry of nitrogenous fuels and NOX formation mechanism. The low- to moderate-temperature oxidation experiments of NMP are carried out in atmospheric pressure jet-stirred reactor for 0.5% NMP/oxygen/Argon mixtures at different equivalence ratios (0.5, 1.0, and 2.0) over the temperature range of 760 – 1030 K. More than twenty species, including reactants, nitrogen-containing species, and oxygenated products, are measured using synchrotron vacuum ultraviolet photoionization mass spectrometry (SVUV-PIMS). A detailed and comprehensive kinetic model for NMP oxidation is developed for the first time based on the pyrrole oxidation model developed by Pelucchi et al. and Chen et al.. Simulated results show that the present model can reasonably reproduce the experimental results. Rate of production analysis indicates that the H-abstraction reactions on the methyl group dominate in NMP oxidation at all equivalence ratios. NMP oxidation produces C4 and C5 nitrogen-containing compounds including pyridine and pyrrole. These species are found to be products of the primary reactions of NMP, and their formation pathways can be explained satisfactorily by the present model. The present work provides a basis to further understand the oxidation characteristics of nitrogen-containing heterocyclic fuels.
 
 ## Processing Notes
 

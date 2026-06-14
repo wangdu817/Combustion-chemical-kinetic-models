@@ -15,7 +15,7 @@ Bakr Hoblos, Zeynep Serinyel, Guillaume Dayma, Philippe Dagaut. A chemical kinet
 - Paper PDF link: 
 - Fuel type: unknown_fuel
 - Plasma-related mechanism: no
-- Validation reactor/type from abstract: jet-stirred reactor, stirred reactor
+- Validation reactor/type from abstract: jet-stirred reactor, flow reactor, laminar flame speed, stirred reactor
 
 ## Mechanism Files
 
@@ -42,7 +42,7 @@ Bakr Hoblos, Zeynep Serinyel, Guillaume Dayma, Philippe Dagaut. A chemical kinet
 
 ## Abstract
 
-not available
+Cyclic ethers are commonly formed as intermediates during the low-temperature oxidation of hydrocarbons. Tetrahydropyran (THP) is one of the most important cyclic ethers, recently considered as an interesting and promising oxygenated molecule in the context of development of next-generation biofuels. This is essentially due to its substantial existence in the structural core of glucose and many other sugars, which play a crucial role in the oxidation and pyrolysis chemistry of lignocellulosic biomass. In the present work, the oxidation of THP was studied in a jet-stirred reactor. Fuel-lean (φ = 0.5), stoichiometric (φ = 1) and fuel-rich (φ = 2 and 4) mixtures were oxidized at an initial fuel mole fraction of 1000 ppm, a pressure of 10 atm, a residence time of 700 ms, and for temperatures ranging from 480 to 1260 K. Gas chromatography and Fourier transform infrared spectroscopy were used to determine the mole fraction profiles of the different reactant, product and intermediate species. Based on these profiles, a detailed kinetic mechanism for the oxidation of THP was developed in this work. THP exhibits a low-temperature reactivity which becomes less pronounced with the increase of equivalence ratio and almost disappears at φ = 4. This reactivity is explored for the first time in the present study. Reaction pathway analyses were performed with the developed model and the overall reactivity was found to be primarily driven by the chemistry of the fuel radical adjacent to the ether group. The proposed mechanism generally shows a good performance for representing the present experimental results, as well as other literature data (ignition delay times and plug flow reactor data). However, more data (e.g., atmospheric pressure speciation and laminar flame speeds) are still required for further validation of the present mechanism and to have a better understanding of the kinetic behavior of THP.
 
 ## Processing Notes
 

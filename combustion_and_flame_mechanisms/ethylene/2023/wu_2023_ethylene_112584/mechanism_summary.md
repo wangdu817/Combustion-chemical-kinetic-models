@@ -15,7 +15,7 @@ Yingtao Wu, Xiangdong Kong, Tao Yu, Zhaoming Mai, Shutong Cao, Qingwei Yu, et al
 - Paper PDF link: 
 - Fuel type: ethylene
 - Plasma-related mechanism: no
-- Validation reactor/type from abstract: not clear from abstract
+- Validation reactor/type from abstract: shock tube, rapid compression machine
 
 ## Mechanism Files
 
@@ -42,7 +42,7 @@ Yingtao Wu, Xiangdong Kong, Tao Yu, Zhaoming Mai, Shutong Cao, Qingwei Yu, et al
 
 ## Abstract
 
-not available
+Tetramethylethylenediamine (TMEDA) is a promising green propellant fuel and reactivity promoter. However, the reactions between TMEDA and O2 are usually overlooked under ignition conditions. In this study, significant low-temperature reactivity was observed for 2%TMEDA/O2 mixtures, and autoignition could occur even at 470 K. To probe the chemical kinetics of TMEDA/O2, ignition delay times were measured in a rapid compression machine and a high-pressure shock tube. TMEDA pyrolysis products were also obtained in a single pulse shock tube. The autoignition of TMEDA/O2 in rapid compression machine experiments showed multi-stage heat release, a characteristic which became more obvious at oxygen-lean conditions. During the oxidation experiments, a non-Arrhenius temperature dependence of ignition delay time was observed. A chemical kinetic model of TMEDA was developed hierarchically, based on current reaction kinetics knowledge about hydrocarbons, small amines and NOx. Ignition delay times and pyrolysis products measured in this study, along with experimental data on small amines from the literature, were used to validate the kinetic model, which generally produced good predictions across different temperature, pressure and equivalence ratio conditions.
 
 ## Processing Notes
 

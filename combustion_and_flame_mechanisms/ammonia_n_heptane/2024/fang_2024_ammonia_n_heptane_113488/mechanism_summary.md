@@ -15,7 +15,7 @@ Yuan Fang, Wenjing Qu, Liyan Feng. Experimental and kinetic modeling study on au
 - Paper PDF link: 
 - Fuel type: ammonia_n_heptane
 - Plasma-related mechanism: no
-- Validation reactor/type from abstract: not clear from abstract
+- Validation reactor/type from abstract: shock tube
 
 ## Mechanism Files
 
@@ -30,10 +30,10 @@ Yuan Fang, Wenjing Qu, Liyan Feng. Experimental and kinetic modeling study on au
 
 ### Mechanism 1
 
-- Status: cantera_failed
+- Status: ok
 - Species count: 2860
 - Reaction count: 11892
-- Message: TimeoutExpired: Cantera conversion exceeded 900 seconds
+- Message: cantera conversion ok
 - Method: cantera
 - Cantera YAML: mechanism.yaml
 - Standard chem.inp: chem.inp
@@ -42,7 +42,7 @@ Yuan Fang, Wenjing Qu, Liyan Feng. Experimental and kinetic modeling study on au
 
 ## Abstract
 
-not available
+Ignition delay times (IDTs) were measured in a shock tube facility for NH3/n-heptane mixtures with NH3 concentrations in the blending fuel ranging from 0.3 to 0.95 by molar fraction. The measurements were conducted under low pressure of 2 atm and intermediate temperatures of 1350–1500 K at equivalence ratios of 0.5, 1, and 2. With the increase of n-heptane content or equivalence ratio, there is a decrease in the IDTs of NH3/n-heptane mixtures at intermediate temperatures. A detailed mechanism was updated in this study based on the mechanism of Dong et al. Subsequently, the proposed mechanism was compared to existing blending mechanisms of ammonia and n-heptane in terms of laminar burning velocities (LBVs), IDTs, and species profiles reported in literature. The present model improved the predictions in reproducing the performed experimental measurements compared to previous mechanisms. Finally, rate of production (ROP), sensitivity analysis, and instantaneous and cumulative reaction path analysis were performed to interpret the experiment observations and deepen the understanding of auto-ignition kinetics of ammonia and n-heptane. The results indicate that intermediate species, such as C2H4 and C3H6, characterized by long lifespans and high concentrations during n-heptane decomposition, play a crucial role at elevated temperatures, while the significance of n-heptane dehydrogenation by NH2 diminishes with increasing temperature.
 
 ## Processing Notes
 

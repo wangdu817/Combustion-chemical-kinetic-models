@@ -15,7 +15,7 @@ Wenhao Yuan, Jijun Guo, Zaili Xiong, Yuwen Deng, Jigang Gao, Meirong Zeng, et al
 - Paper PDF link: 
 - Fuel type: n_decane_n_butylbenzene
 - Plasma-related mechanism: possible
-- Validation reactor/type from abstract: not clear from abstract
+- Validation reactor/type from abstract: jet-stirred reactor, stirred reactor
 
 ## Mechanism Files
 
@@ -42,7 +42,7 @@ Wenhao Yuan, Jijun Guo, Zaili Xiong, Yuwen Deng, Jigang Gao, Meirong Zeng, et al
 
 ## Abstract
 
-not available
+n-Alkanes and aromatics are two essential components in transportation fuels and have distinct oxidation reactivities. Due to products with different chemical functionalities generated in oxidation of n-alkanes and aromatics, the interaction kinetics may significantly affect the overall reactivity as well as product distributions. This work investigated the oxidation chemistry of the mixture of n-decane and n-butylbenzene, both of which are C10 hydrocarbons commonly used as jet fuel surrogate components. The experiments were conducted in a jet stirred reactor at pressure of 1 atm, the temperature range of 450–850 K, and the equivalence ratios of 0.5, 1.0 and 2.0. Key low temperature oxidation intermediates and radicals, including C10-cyclic ethers, C10-ketohydroperoxides, C10-ketodihydroperoxide, C10-diketohydroperoxide, benzyl hydroperoxide, methyl peroxy radical and methyl hydroperoxide, were detected by using synchrotron vacuum ultraviolet photoionization mass spectrometry. A detailed kinetic model was developed and validated against the speciation data in this work. Results reveal that the reactions of n-decane greatly enhance the low temperature oxidation reactivity of n-butylbenzene by efficiently producing reactive radicals, such as OH radicals. Besides, the reactions of n-butylbenzene play an inhibiting role in low temperature oxidation reactivity of n-decane. The measured intermediates, such as C10-cyclic ethers, C10-ketohydroperoxides and C10-ketodihydroperoxide, provide experimental evidence to validate the first, second and third O2-addition reactions, respectively. Due to the addition of n-decane, the evolution profiles of aromatic intermediates as a function of temperature are quite different from the cases of pure n-butylbenzene oxidation. For example, the formation of benzene, phenol and benzaldehyde at low temperatures is significantly enhanced, whose mole fractions present negative temperature coefficient behaviours. Finally, the reaction pathways of the binary fuel to produce C5 C1 alkenes, alkynes, aldehydes, alcohols, acids and peroxides were analysed.
 
 ## Processing Notes
 

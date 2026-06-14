@@ -42,7 +42,7 @@ Lili Ye, Zhihe Zhang, Fan Wang, Xiaodong Wang, Yiming Lu, Lei Zhang. Reaction me
 
 ## Abstract
 
-not available
+The combustion, detonation, and explosion chemistry of energetic materials is regulated by the formation and decay of critical intermediates that are generated during the process. In this study, the pyrolysis mechanism of a commonly used cyclic nitramine explosive called octahydro-1,3,5,7-tetranitro-1,3,5,7-tetrazocine, also known as HMX or octogen, has been investigated by performing ab initio based RRKM/master equation analysis coupled with kinetic modeling simulations. The potential energy profiles of reaction network were constructed at the DLPNO-CCSD(T)/cc-pV[T,Q]Z level based on B3LYPD3/6-311+G(d,p) optimized geometries. The master equation calculations and kinetic modeling simulations indicated that the N-NO2 bond fission, leading to the formation of HMXR (the radical formed after NO2 loss) and nitro radicals, is the most important channel during the initial decomposition of HMX. The C-N and C-H β-scissions play an important role in the subsequent decomposition of the HMXR radical, with the C-H β-scission to form INT249 being the more favored consumption channel. Furthermore, this study also provided a preliminary exploration into the contribution of bimolecular reactions between HMX and H/OH/NO/NO2 radicals. The kinetic simulation results demonstrated that decomposition through these bimolecular reactions is of negligible importance under the investigated conditions.
 
 ## Processing Notes
 

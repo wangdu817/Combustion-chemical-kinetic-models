@@ -15,7 +15,7 @@ Yilun Liang, Mo Yang, Chi Zhang, Juan Wang. Experimental and kinetic modeling st
 - Paper PDF link: 
 - Fuel type: rp3
 - Plasma-related mechanism: no
-- Validation reactor/type from abstract: not clear from abstract
+- Validation reactor/type from abstract: flow reactor
 
 ## Mechanism Files
 
@@ -42,7 +42,7 @@ Yilun Liang, Mo Yang, Chi Zhang, Juan Wang. Experimental and kinetic modeling st
 
 ## Abstract
 
-not available
+RP-3 kerosene is currently the primary jet fuel used in China. However, limited attention has been paid to development of surrogate models that can predict formations of aromatics during RP-3 oxidation in a detailed way, such as by species mole fraction profiles. The present study aims to enrich the experimental database by measuring species mole fraction profiles, particularly focusing on aromatic intermediates, and propose a new surrogate model with a detailed kinetic model to enhance predictive accuracy for these intermediates. Oxidation experiments of real RP-3 kerosene were conducted using an atmospheric flow reactor at temperatures ranging from 800 to 1150 K and equivalence ratios of 0.5 and 2.0. The mole fraction profiles of species including oxygen, major products, important small molecular intermediates and several primary aromatic intermediates were measured using online gas chromatography (GC) and gas chromatography-mass spectrometry (GC–MS). Based on the chemical composition and fundamental physical properties of RP-3 kerosene, a surrogate consisting of 55.0 % n-undecane, 18.7 % trans-decalin, 19.8 % p-xylene and 6.5 % tetralin (by weight) was formulated. A detailed kinetic model of the surrogate was developed and validated against the measured data. Compared to the surrogate models proposed in the previous studies, the current model demonstrates superior predictive capabilities in forecasting the generation of major aromatic intermediates. According to the rate of production (ROP) analysis for the model, benzene generation is associated with three components: decalin, p-xylene and n-undecane. Decalin exhibits the highest contribution to benzene formation under both lean and rich conditions. Toluene predominantly originates from p-xylene, while indene and naphthalene are primarily produced by tetralin. These findings emphasize the significance of decalin as a representative bicyclic cycloalkane component and tetralin as a representative indane/tetralin component in establishing a surrogate for RP-3 fuel to enhance prediction of aromatic intermediates. Furthermore, validation through experimental data from the literature including species mole fraction profiles and ignition delay times confirms the broad applicability of this model.
 
 ## Processing Notes
 

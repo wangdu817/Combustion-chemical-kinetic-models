@@ -15,7 +15,7 @@ Andrea Nobili, Niccolò Fanari, Timoteo Dinelli, Edoardo Cipriano, Alberto Cuoci
 - Paper PDF link: 
 - Fuel type: unknown_fuel
 - Plasma-related mechanism: no
-- Validation reactor/type from abstract: not clear from abstract
+- Validation reactor/type from abstract: burner/flame structure, counterflow flame
 
 ## Mechanism Files
 
@@ -42,7 +42,7 @@ Andrea Nobili, Niccolò Fanari, Timoteo Dinelli, Edoardo Cipriano, Alberto Cuoci
 
 ## Abstract
 
-not available
+Carbon nanoparticle (CNP) formation from hydrocarbons combustion is of high interest not only for the study of pollutant (soot) emissions, but, above all, in the area of advanced materials. CNP optical and electronical properties, relevant for practical applications, significantly change with their size, morphology, and nanostructure. This work extends a detailed soot kinetic model, based on the discrete sectional approach, to explicitly incorporate the description of CNP polydispersity, maintaining the CHEMKIN-like format. The model considers various nanosized primary particles, generated from liquid-like counterparts through the carbonization process, which successively grow or aggregate forming fractal structures. The model is validated against experimental measurements from the literature including CNP volume fraction, several morphological characteristics, number density and particle H/C ratio. Data are taken from 19 laminar flames, in different configurations (counterflow diffusion flames, premixed flat flames established on the McKenna-type burner and burner-stabilized stagnation flames) and over a wide range of operating conditions (P=1–10 atm, Tmax=1556-2264 K). The model captures the measured trends of all the analyzed CNP properties as a function of equivalence ratio, residence time and fuel type in premixed flames, and pressure and strain rate in counterflow flames. Model deviations from the experiments are discussed, also in comparison with other state-of-the-art soot models based on different approaches. Sensitivity analyses are performed on carbonization, coalescence, and aggregation rates, which have the largest impact on CNP morphology and are characterized by larger uncertainty compared to elementary chemical pathways.
 
 ## Processing Notes
 

@@ -15,7 +15,7 @@ Jiaxin Liu, Yichen Gao, Pengzhi Wang, Hossein S. Saraee, ... Henry J. Curran. An
 - Paper PDF link: https://www.sciencedirect.com/science/article/pii/S0010218025004468/pdfft?md5=ed32c4b117d72f373f1a5f98f0c28318&pid=1-s2.0-S0010218025004468-main.pdf
 - Fuel type: unknown_fuel
 - Plasma-related mechanism: no
-- Validation reactor/type from abstract: not clear from abstract
+- Validation reactor/type from abstract: shock tube, rapid compression machine
 
 ## Mechanism Files
 
@@ -42,7 +42,7 @@ Jiaxin Liu, Yichen Gao, Pengzhi Wang, Hossein S. Saraee, ... Henry J. Curran. An
 
 ## Abstract
 
-not available
+An experimental and kinetic modeling study of the ignition of 1-heptene (C7H14-1), trans-2-heptene (C7H14-2), and trans-3-heptene (C7H14-3) is performed. Ignition delay times (IDTs) of these three isomers are measured using both a high-pressure shock tube and a rapid compression machine over the temperature range of 613–1257 K, at pressures of 15 and 30 bar diluted in air. An automated kinetic model development procedure is utilized in this study. We extended the capabilities of the MAMOX++ program, originally designed for alkane mechanism generation, to generate alkene reaction mechanisms. Using this enhanced framework, we systematically construct a detailed kinetic model for C5–C7 linear alkenes involving 52 reaction classes based on the core C0–C4 GalwayMech1.0 chemistry. The rate constants of each reaction class of the initial model are systematically optimized within their predefined uncertainty limits by comparing simulations with the new IDT data including 1st-stage and total IDTs as well as existing experimental data in the literature. Sensitivity and flux analyses reveal that HȮ2 addition to alkenes, forming β-Q̇OOH radicals, significantly enhances reactivity at low and intermediate temperatures by converting HȮ2 radicals into more reactive ȮH radicals. Furthermore, by comparing the IDTs of the three heptene isomers with those of n-heptane, it is observed that reactivity is inhibited and is more pronounced as the CC bond shifts toward the center of the molecular structure. Notably, C7H14-1 and C7H14-2 display similar reactivities due to their comparable levels of γ-hydroperoxyl alkenyl radical formation. Additionally, by comparing the IDTs of C5–C7 1-alkenes and 2-alkenes, it is observed that, at low and intermediate temperatures, the reactivity increases with increasing chain length, whereas similar reactivities of all C5–C7 alkenes are observed at high temperatures.
 
 ## Processing Notes
 

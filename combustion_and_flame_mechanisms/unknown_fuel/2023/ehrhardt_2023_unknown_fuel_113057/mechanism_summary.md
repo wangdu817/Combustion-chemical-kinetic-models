@@ -42,7 +42,7 @@ Jordan Ehrhardt, Julien Glorian, Léo Courty, Barbara Baschung, Philippe Gillard
 
 ## Abstract
 
-not available
+In the current investigation a detailed kinetic scheme of nitrocellulose (NC) is developed. Despite being studied for decades, NC did not have a detailed model yet. Thanks to Reaction Mechanism Generator open-source software a NC decomposition scheme has been generated. Optimizations of that model have been performed including intermediates thermodynamic properties calculations with Gaussian 16 at the B3LYP 6-31G(d,p) level of theory. Model reduction and decomposition computations were achieved with Chemkin-Pro. NC detailed mechanism has been optimized thanks to experimental data available in the literature, by slightly adjusting some rate constants of relevant chemical reactions. For instance, mean deviation of NO molar fraction is about 5.64% showing that the model follows the general trend of measured results. The final NC model consists in 62 species and 803 gas phase reactions. Eventually, NC and hexogen (RDX) models have been merged to predict overpressures obtained experimentally on a RDX-NC propellant. Numerical and experimental results have been confronted regarding the ignition temperature, initial pressure and surrounding gas nature. Computed results have been congruent when compared to experimental data, especially under argon atmosphere with an ignition temperature of 1173 K. Evidences from global trends indicate that the developed model can provide encouraging computations results for future research and investigations.
 
 ## Processing Notes
 

@@ -15,7 +15,7 @@ Mingxia Liu, Mengyuan Wang, Chih-Jen Sung, Khalid Aljohani, Aamir Farooq, Nathan
 - Paper PDF link: 
 - Fuel type: unknown_fuel
 - Plasma-related mechanism: no
-- Validation reactor/type from abstract: not clear from abstract
+- Validation reactor/type from abstract: shock tube, rapid compression machine, laminar flame speed
 
 ## Mechanism Files
 
@@ -42,7 +42,7 @@ Mingxia Liu, Mengyuan Wang, Chih-Jen Sung, Khalid Aljohani, Aamir Farooq, Nathan
 
 ## Abstract
 
-not available
+p-Cymene is a renewable terpenoid bio-aromatic species that is a promising aromatic substitute for conventional transportation fuel. A comprehensive experimental and kinetic investigation of p-cymene pyrolysis and oxidation is undertaken in this study over a wide range of engine-relevant conditions. Ignition delay times are measured in a rapid compression machine at pressures of 20, 30, and 40 atm, at temperatures in the range of 776–1000 K, for equivalence ratios in the range of 0.5 ‒ 2.0. Higher-temperature ignition delay times are also measured in a high-pressure shock tube at three equivalence ratios of 0.5, 1.0, and 2.0, at pressures of 20 atm and 40 atm, and at temperatures in the range 900–1350 K. Furthermore, to better understand the high-temperature chemistry of p-cymene, CO time-history profiles, are measured behind reflected shock waves with a spectroscopic laser diagnostic. The measurements are performed near 1 atm and include equivalence ratios ranging from 0.5 to 2.0, at temperatures in the range 1363–1815 K. Laminar flame speeds are measured at T 0 = 403 K with p 0 = 1 atm, and at T 0 = 424 K with p 0 = 3 atm at equivalence ratios ranging from 0.7 to 1.4. A detailed kinetic model adding 32 low-to-high temperature reaction classes is developed to describe p-cymene combustion chemistry based on NUIGMech1.3 as the core mechanism. Sensitivity and flux analyses are performed to highlight important reaction classes at different temperatures and their rate constants are discussed in detail. The model is used to simulate the wide range of experimental data performed in this work and those already available in the literature and shows good agreement with the experimental measurements.
 
 ## Processing Notes
 

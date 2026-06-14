@@ -42,7 +42,7 @@ Wenxiang Xia, Chun Zou, Zuan Lu, Kexiang Guo, Yanping Qu, Qianjin Lin, et al.. S
 
 ## Abstract
 
-not available
+Ultra-lean combustion (usually Φ < 0.3) has attracted much attention for its low emission and high efficiency. Propane is a key fuel to characterize the chemical kinetics from small to large hydrocarbons as well as the main content of liquefied petroleum gas. In this study, the ignition delay times of propane with nearly 90%Ar dilution were measured for the equivalence ratios of 0.3, 0.1, and 0.05 at the pressures of 1 atm and 10 atm in a shock tube. The OXYMECH 2.0 model, which was developed for the oxy-fuel combustion and conventional combustion of C1‒C3 alkanes, was modified and evaluated by the ignition delay times of propane in ultra-lean conditions. The modified model was used to analyze the effects of the equivalence ratio on the ignition of propane with different diluents (CO2 and Ar) at different pressures. The ignition can be increasingly improved by decreasing the equivalence ratio to 0.05 under atmospheric pressure and the inhibiting effects of CO2 are very weak at the equivalence ratio below 0.05. The ignition improvement by reducing the equivalence ratio at high pressure is weaker than that at atmospheric pressure and the inhibiting effects of CO2 on the ignition are evident in either super-lean or ultra-lean mixtures at high pressure. The effects of superabundant air in ultra-lean combustion on the ignition of propane consist of the dilution and oxidation effects and are analyzed in detail.
 
 ## Processing Notes
 

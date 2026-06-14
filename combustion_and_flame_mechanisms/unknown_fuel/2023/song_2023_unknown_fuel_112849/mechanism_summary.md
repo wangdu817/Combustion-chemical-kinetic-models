@@ -15,7 +15,7 @@ Hwasup Song, Dongil Kang, Gina Fioroni, Goutham Kukkadapu, Yann Fenard, Nimal Na
 - Paper PDF link: 
 - Fuel type: unknown_fuel
 - Plasma-related mechanism: no
-- Validation reactor/type from abstract: not clear from abstract
+- Validation reactor/type from abstract: rapid compression machine, flow reactor
 
 ## Mechanism Files
 
@@ -42,7 +42,7 @@ Hwasup Song, Dongil Kang, Gina Fioroni, Goutham Kukkadapu, Yann Fenard, Nimal Na
 
 ## Abstract
 
-not available
+A detailed experimental study of the low-to-intermediate temperature combustion of methylbutene isomers, i.e., branched C5 alkenes, has been undertaken with multiple experimental facilities. Ignition delay times were measured at equivalence ratios 0.5–2.0, 685–1020 K and up to 45 bar condition from two rapid compression machines and showed slight deviation from an Arrhenius behavior for all three isomers, while their reactivity order differs as temperature changes. Sampled intermediates formed during the oxidation process of mixtures at 900–1150 K and 0.82 bar from a flow reactor and at 730 K and 20 bar from a rapid compression machine were analyzed using gas chromatography techniques. Trends in the formation and consumption of sampled intermediates were modeled using a kinetic model developed in this work for all three isomers. Rate of production and sensitivity analyses emphasize the role of double bond-specific reactions governing the global reactivity of these fuels. Additional studies of the addition reactions of HO2 radicals to the double bond and to allylic radicals may improve the model performance.
 
 ## Processing Notes
 

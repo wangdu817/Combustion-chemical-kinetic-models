@@ -15,7 +15,7 @@ Haodong Chen, Zhongkai Liu, Zhaoying Li, Ruzheng Zhang, ... Bin Yang. Kinetic in
 - Paper PDF link: https://www.sciencedirect.com/science/article/pii/S0010218025005516/pdfft?md5=61870eca20898f4d0b78ebff12d9df67&pid=1-s2.0-S0010218025005516-main.pdf
 - Fuel type: dimethyl_ether
 - Plasma-related mechanism: yes
-- Validation reactor/type from abstract: not clear from abstract
+- Validation reactor/type from abstract: flow reactor
 
 ## Mechanism Files
 
@@ -42,7 +42,7 @@ Haodong Chen, Zhongkai Liu, Zhaoying Li, Ruzheng Zhang, ... Bin Yang. Kinetic in
 
 ## Abstract
 
-not available
+The chemical kinetics of plasma-assisted CO2 reforming of dimethyl ether (DME) was investigated through combined experimental and numerical approaches. Experiments were conducted in a flow reactor (DME/CO2/Ar, 340 K, 30 Torr) with a nanosecond repetitively pulsed dielectric barrier discharge (DBD). Synchrotron vacuum ultraviolet photoionization mass spectrometry (SVUV-PIMS) was utilized to enable comprehensive species identification and quantification. Nine ions were detected: CH3 +, O+, Ar2+, CO+, CHO+, Ar+, CO2 +, CH3OCH2 +, and CH3OCH3 +. Key neutral intermediates and products identified based on the mass spectra and photoionization efficiency (PIE) spectra included methane (CH4), water (H2O), acetylene (C2H2), carbon dioxide (CO), ethylene (C2H4), formaldehyde (CH2O), ethane (C2H6), methanol (CH3OH), oxygen (O2), ketene (CH2CO), methyl hydroperoxide (CH3O2H), ethyl methyl ether (CH3OC2H5), methyl formate (CH3OCHO), and dimethoxymethane (CH3OCH2OCH3). Mole fraction profiles were measured as a function of inlet CO2 concentration (3 % to 18 %, nDME = 3 %). The consumption of DME and formation of CH3OCHO were promoted with the addition of CO2, and the mole fractions of some products such as H2O, CO, CH3OH, and CH3OCH2OCH3 exhibited a rise-and-fall pattern, while other species showed a monotonic decrease. A kinetic mechanism integrating plasma and combustion reactions was developed and validated against the experimental data, showing good predictive capability. Rate of production (ROP) analysis identified three primary DME consumption pathways: H-atom abstraction by O/H/OH radicals, dissociation induced by plasma-activated species such as electrons, Ar+, and Ar*, and protonation by ions. H-atom abstraction pathways were enhanced, while the dissociation channels were suppressed with increasing CO2. Under the conditions investigated, more than 60 % of the CO2 consumption can be attributed to the electron/Ar* induced dissociation, forming CO and O, and the O radicals can promote DME low-temperature oxidation reactions.
 
 ## Processing Notes
 

@@ -42,7 +42,7 @@ Claire M. Grégoire, Eric L. Petersen, Olivier Mathieu. Shock-tube CO measuremen
 
 ## Abstract
 
-not available
+Ethylene carbonate (EC) is a key component of the flammable electrolyte in lithium-ion batteries. In this study, the pyrolysis of ethylene carbonate was investigated by measuring CO time histories near atmospheric pressure and in highly diluted conditions (0.999 He/Ar). The performance of a recent detailed chemical kinetics mechanism from Kanayama et al., 2022, was evaluated, and noticeable discrepancies were found, possibly indicating missing reaction pathways. A tentative model was proposed by merging the EC sub-mechanism from the Kanayama study with a recent model for linear carbonate pyrolysis from the authors (Grégoire et al., 2023). This tentative model includes the addition of several missing reactions for oxirane pyrolysis, and a couple of reactions for acetaldehyde and EC thermal decomposition were modified within their error uncertainties. The resulting model presents better predictions overall, but room for improvement remains. This study highlights the need to further study the pyrolysis chemistry of EC as well as acetaldehyde, which is a major intermediate component from EC pyrolysis under our conditions.
 
 ## Processing Notes
 

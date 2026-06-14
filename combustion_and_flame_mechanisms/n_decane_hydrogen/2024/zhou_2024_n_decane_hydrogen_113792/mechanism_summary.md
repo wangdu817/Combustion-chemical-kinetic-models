@@ -15,7 +15,7 @@ Shangkun Zhou, A. Abd El-Sabor Mohamed, Shashank S. Nagaraja, Pengzhi Wang, Yuki
 - Paper PDF link: 
 - Fuel type: n_decane_hydrogen
 - Plasma-related mechanism: yes
-- Validation reactor/type from abstract: not clear from abstract
+- Validation reactor/type from abstract: shock tube, rapid compression machine
 
 ## Mechanism Files
 
@@ -42,7 +42,7 @@ Shangkun Zhou, A. Abd El-Sabor Mohamed, Shashank S. Nagaraja, Pengzhi Wang, Yuki
 
 ## Abstract
 
-not available
+In this study, a new mechanism is developed to simulate hydrogen/n-decane blends. It is validated in the temperature range 650–1500 K, at p = 30 bar, for equivalence ratios of 0.5, 1.0, and 2.0 in ‘air’ for 99/1, 95/5 and 80/20 (mol%) blends of hydrogen/n-decane using ignition delay time (IDT) data recorded in both an RCM and in a shock tube. Additionally, the mechanism's performance is assessed against existing literature data for both pure hydrogen and pure n-decane, demonstrating overall satisfactory agreement compared to the experimental measurements. This study also explores the effects of n-decane addition to hydrogen at different temperatures (600 K, 900 K, and 1500 K) at p = 30 bar pressure for a stoichiometric mixture (φ = 1.0). At 600 K, where pure hydrogen fails to ignite, the introduction of 1% n-decane initiates ignition, albeit with considerably extended IDTs. At 900 K, the addition of 1% n-decane enhances reactivity, while at 1500 K, it diminishes reactivity and extends the IDT. The underlying reasons for these observed effects are reported. We provide valuable insights into the reactivity of dual fuel mixtures of hydrogen and n-decane encompassing low (600–800 K), intermediate (800–1200 K), and high (> 1200 K) temperature ranges. At low and intermediate temperatures, the inclusion of n-decane enhances reactivity. Consequently, for application in practical road transport combustion systems, the use of n-decane or extended-chain n-alkanes is recommended as suitable pilot fuels. Conversely, at high-temperature combustion conditions, the utilization of pilot fuels composed of linear alkanes is observed to impede reactivity.
 
 ## Processing Notes
 

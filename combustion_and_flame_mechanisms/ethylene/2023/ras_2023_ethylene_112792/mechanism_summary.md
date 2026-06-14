@@ -15,7 +15,7 @@ Kevin De Ras, Thomas Panaget, Yann Fenard, Jeroen Aerssens, Laure Pillier, Joris
 - Paper PDF link: 
 - Fuel type: ethylene
 - Plasma-related mechanism: no
-- Validation reactor/type from abstract: not clear from abstract
+- Validation reactor/type from abstract: burner/flame structure
 
 ## Mechanism Files
 
@@ -42,7 +42,7 @@ Kevin De Ras, Thomas Panaget, Yann Fenard, Jeroen Aerssens, Laure Pillier, Joris
 
 ## Abstract
 
-not available
+Oxymethylene ethers have received much attention in recent years as a high-potential alternative for fossil-based fuels. These alternative fuels produced via carbon capture and utilization technologies driven by renewable energy can contribute to the solution of environmental issues in the short term. In this study, the low-temperature oxidation chemistry of oxymethylene ether-2 was investigated by combining experimental and kinetic modeling work. New experimental data were acquired from stabilized, ozone-seeded oxymethylene ether-2/dimethyl ether/oxygen premixed cool flames in a heated stagnation plate burner. Two fuel-lean equivalence ratios were investigated, i.e., ϕ = 0.3 and ϕ = 0.5. The observed and quantified reaction products were methoxymethyl formate, methyl formate, methanol, formaldehyde, CO and CO2. A new detailed kinetic model based on first principles was constructed for the pyrolysis and oxidation of oxymethylene ether-2 with the in-house developed automatic kinetic model generation code Genesys. Compared to an earlier study by De Ras et al. (Combustion and Flame, 2022), additional species and reactions were added to describe the low-temperature oxidation chemistry with more detail, in addition to an update of several thermodynamic and kinetic parameters based on new quantum chemical calculations. The newly developed kinetic model is able to predict the experimental observations of the stabilized cool flames satisfactorily and can reproduce ignition delay times from the literature on average within the experimental uncertainty margin. Rate of production and sensitivity analyses were performed for different reaction conditions to unravel the important decomposition pathways during low-temperature oxidation. It is concluded that oxymethylene ether-2 is a highly reactive fuel, and this without fuel-specific chain branching reactions significantly contributing to the low-temperature oxidation chemistry.
 
 ## Processing Notes
 

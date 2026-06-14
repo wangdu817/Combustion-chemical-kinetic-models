@@ -15,7 +15,7 @@ Lauge S. Thorsen, Malene S.T. Jensen, Mille S. Pullich, Jakob M. Christensen, Ha
 - Paper PDF link: 
 - Fuel type: n_heptane
 - Plasma-related mechanism: no
-- Validation reactor/type from abstract: not clear from abstract
+- Validation reactor/type from abstract: rapid compression machine, jet-stirred reactor, flow reactor, stirred reactor
 
 ## Mechanism Files
 
@@ -42,7 +42,7 @@ Lauge S. Thorsen, Malene S.T. Jensen, Mille S. Pullich, Jakob M. Christensen, Ha
 
 ## Abstract
 
-not available
+Oxidation of NH 3 / n -heptane mixtures at pressures up to 100 atm and temperatures of 400–900 K was characterized experimentally in a laminar flow reactor and a jet-stirred reactor. A detailed chemical kinetic model was developed, updating the hydrogen and amine subsets and introducing a subset for the chemical coupling with emphasis on the NH 2 + n -heptane reaction. The kinetic model provided a good prediction of the ignition delay times measured in a rapid compression machine by Yu et al. (Combust. Flame 217 (2020) 2–11) as well as the high pressure experimental data obtained in the present work. The results show that it is important to include updated rate constants for NH 2 + HO 2 and NH 2 + n -C 7 H 16 to obtain reliable predictions for ignition and oxidation of NH 3 / n -heptane mixtures at high pressure. The effectiveness of implementing analogy rules for determining the rate constant of the key reaction NH 2 + n -C 7 H 16 was confirmed by the observed results.
 
 ## Processing Notes
 

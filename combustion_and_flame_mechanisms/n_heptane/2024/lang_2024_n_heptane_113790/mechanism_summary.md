@@ -15,7 +15,7 @@ Haikun Lang, Fangping Bin, Shuyao Chen, Xiaoli Zhang, Jiuzheng Yin, Jinzeng Pan,
 - Paper PDF link: 
 - Fuel type: n_heptane
 - Plasma-related mechanism: no
-- Validation reactor/type from abstract: not clear from abstract
+- Validation reactor/type from abstract: jet-stirred reactor, stirred reactor
 
 ## Mechanism Files
 
@@ -42,7 +42,7 @@ Haikun Lang, Fangping Bin, Shuyao Chen, Xiaoli Zhang, Jiuzheng Yin, Jinzeng Pan,
 
 ## Abstract
 
-not available
+Fischer–Tropsch synthesis is an important route for the productions of cleaner fuels from non-petroleum materials. Monomethylated alkanes are present in large quantities in Fischer–Tropsch synthetic fuels. However, side-chain position may make a difference in the combustion of the fuels. In this work, the 4-methylheptane (MH4) pyrolysis was investigated experimentally by using a jet-stirred reactor at 800–1125 K and at 760 Torr. Major pyrolysis products, including small molecules and aromatic products, were identified and measured by using the synchrotron ultra-violet photoionization method. Several species were detected and measured, including CH4, C2H2, C2H4, C2H6, C3H4, C3H6, C3H8, C4H6, IC4H8, C5H6, C5H81-3, C5H10-2, benzene, naphthalene, indene and C6H5C2H, etc. A detailed kinetic model of MH4 pyrolysis was developed and validated against the experimental results in this work. Rate of production analysis of MH4 indicates that the most significant consumption pathways are H-abstractions. The unimolecular decomposition reactions by the breakages of CC bonds are also important pathways in MH4 consumption. The pyrolysis product distributions of 4-methylheptane, 3-methylheptane and 2-methylheptane were compared to demonstrate the effect of the methyl side chain position on the pyrolysis of those fuels. It is noted that the mole fraction distributions of the smaller species, including CH4, C2H2 and C2H6, are not sensitive to the position of the methyl side-chain, while those of C3-C5 products, including PC3H4, C3H6, C4H6, IC4H8, C5H81-3 and C5H10-2, are strongly affected. Novelty and significance statement The products of 4-methylheptane pyrolysis were identified and measured by using the synchrotron ultra-violet photoionization method. A detailed kinetic model of 4-methylheptane pyrolysis at atmospheric was constructed for the first time. The consumption pathways of 4-methylheptane pyrolysis were clarified. The effect of methyl side chain position on fuel pyrolysis was analysed. 4-Methylheptane is one of the important branched alkanes in Fischer–Tropsch synthetic diesel fuel. The present work extends the understanding of pyrolysis of long branched alkanes. The results of the study provide guidance in exploring ideal compositions for diesel alternative fuels.
 
 ## Processing Notes
 

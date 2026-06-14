@@ -42,7 +42,7 @@ Jonathan Honorien, Baptiste Sirjean, Pierre-Alexandre Glaude, René Fournet. A c
 
 ## Abstract
 
-not available
+A detailed mechanism for the combustion of methyl isocyanate is proposed for the first time. Electronic structures were calculated at the CCSD(T)/cc-VTQ∞Z//B2PLYP-D3/6-311++G(3df,2pd) level of theory to investigate potential energy profiles and used in reaction rate theories to compute rate coefficients. The mechanism contains 130 reactions and was merged with the reaction base proposed by Glarborg et al.[1] for light hydrocarbons and nitrogen-containing species. Experimental data related to the pyrolysis of methyl isocyanate were simulated in a closed reactor and a good agreement was observed for all the species profiles reported. Similarly, the auto-ignition temperature (Tign) of methyl isocyanate was calculated based on the standard ASTME659-78 test, and led to a value close to the experimental value. Flow rate and sensitivity analysis were performed under pyrolysis and combustion conditions in order to highlight the main reaction pathways.
 
 ## Processing Notes
 

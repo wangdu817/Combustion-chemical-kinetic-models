@@ -15,7 +15,7 @@ T. Hazenberg, J. van Dijk, J.A. van Oijen. Chemical flux analysis of low-tempera
 - Paper PDF link: 
 - Fuel type: methane_hydrogen
 - Plasma-related mechanism: yes
-- Validation reactor/type from abstract: not clear from abstract
+- Validation reactor/type from abstract: flow reactor
 
 ## Mechanism Files
 
@@ -66,7 +66,7 @@ T. Hazenberg, J. van Dijk, J.A. van Oijen. Chemical flux analysis of low-tempera
 
 ## Abstract
 
-not available
+Plasma can be used to enhance the reactivity of combustible mixtures at low temperatures. In this article, the chemical pathways predicted by three different reaction mechanisms are investigated for the low-temperature oxidation of hydrogen and methane. To validate our model and the reaction mechanisms, the numerical results are compared against experimental results in a diluted flow reactor. Our model with all three reaction mechanisms predicts trends similar to those observed in the experiments. Moreover, all predicted quantities show reasonable quantitative agreement with the experiments. Flux analysis is used to identify the main pathways of oxidation at different temperatures. Three different modes, each active in a different temperature range, are identified in the oxidation of hydrogen. When the temperature is increased, these modes become increasingly self-sustained. Similarly, three different pathways are identified in the oxidation of methane. Below 1000K, methane quickly removes hydroxyl radicals from the radical pool, inhibiting self-sustained oxidation. From our analysis, we conclude that plasma provides activation of the low-temperature chemistry by the generation of radicals.
 
 ## Processing Notes
 

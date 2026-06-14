@@ -15,7 +15,7 @@ Xiang Gao, Yu-Feng Xu, Du Wang, Hong-Qing Shi, Ya-Ning Zhang, Zhen-Yu Tian. The 
 - Paper PDF link: 
 - Fuel type: trimethylbenzene_124
 - Plasma-related mechanism: no
-- Validation reactor/type from abstract: not clear from abstract
+- Validation reactor/type from abstract: jet-stirred reactor, stirred reactor
 
 ## Mechanism Files
 
@@ -42,7 +42,7 @@ Xiang Gao, Yu-Feng Xu, Du Wang, Hong-Qing Shi, Ya-Ning Zhang, Zhen-Yu Tian. The 
 
 ## Abstract
 
-not available
+This study presents experimental and modeling results of the 1,2,4-trimethylbenzene (T124MBZ) oxidation in a jet-stirred reactor at equivalence ratios of 0.4 and 2.0, temperature range of 450–1000 K, and pressure of 12.0 atm. Compared with the oxidation at atmospheric pressure, a pronounced negative temperature coefficient (NTC) behavior of T124MBZ was observed between 622 K and 773 K under fuel-lean condition. A detailed chemical kinetic model involving 865 species and 5092 reactions was developed. In addition, the model was validated against experimental results of laminar burning velocities and ignition delay times. The present model reasonably reproduces these experimental data. The dominant consumption channels for T124MBZ are H-abstraction reactions on methyl groups by OH radicals. The H-abstraction reactions on the 1- and 2- methyl sites by OH radicals are the most promoting in pre- and mid- NTC phases, and H2O2(+M) = 2OH(+M) is the most promoting in the post-NTC phase, while the reaction on the 4-methyl site is the most inhibiting across pre-, mid-, and post-NTC phases. This difference arises from the fact that the dominant consumption pathway for 2,4-dimethylbenzyl and 2,5-dimethylbenzyl involves H-transfer, while the 4-methyl site cannot undergo an H-transfer reaction due to the absence of adjacent methyl groups. The competition between the two consumption channels of ·QOOH radicals (decomposition and second O2 addition), resulting in the reduction of OH radicals as temperature increases, leads to diminished OH production. This causes the emergence of pronounced NTC behavior at high pressure.
 
 ## Processing Notes
 

@@ -15,7 +15,7 @@ Lingfeng Dai, Yi Yuan, Qianjin Lin, Wenyu Li, Chun Zou, Jiacheng Liu, et al.. Sh
 - Paper PDF link: 
 - Fuel type: ammonia_dimethoxymethane
 - Plasma-related mechanism: no
-- Validation reactor/type from abstract: shock tube
+- Validation reactor/type from abstract: shock tube, laminar flame speed
 
 ## Mechanism Files
 
@@ -42,7 +42,7 @@ Lingfeng Dai, Yi Yuan, Qianjin Lin, Wenyu Li, Chun Zou, Jiacheng Liu, et al.. Sh
 
 ## Abstract
 
-not available
+The ignition delay times (IDTs) of ammonia/dimethoxymethane (DMM) mixtures at DMM blending ratios of 5%, 10%, 15%, and 50% are measured behind reflected shock waves under the following conditions: pressures of 1 and 10 bar; equivalence ratio (ϕ) of 0.5; temperatures between 1193 and 1852 K. The DMM-NH3 model is proposed including the DMM subset, the NH3 subset, and the cross-reactions between DMM and NH3. The cross-reactions consist of the prompt NO and reburn reactions, recombination reactions, H-abstraction reactions, and disproportionation reactions. The DMM-NH3 model well predicts the IDTs and laminar flame speeds (LFSs) of NH3/DMM mixtures measured in this study and those from the literature. And the DMM-NH3 model is also validated by the IDTs, LFSs, and species profiles of pure NH3 and pure DMM reported in the literature. The effects of the prompt NO and reburn reactions, recombination reactions, H-abstraction reactions, and disproportionation reactions are discussed in detail. The NH3/DMM oxidation pathway is also analyzed. Novelty and Significance Statement ➢ The IDTs of NH3/DMM mixtures at high temperature are measured. ➢ The detailed DMM-NH3 model is proposed with the addition of the cross-reactions between DMM and NH3. ➢ The DMM-NH3 model well predicts the IDTs and LFSs of NH3/DMM mixtures. ➢ The prompt NO and reburn reactions and the recombination reactions have negligible influence on the ignition. ➢ The H-abstraction reactions slightly inhibit ignition and the inhibiting effects come from CH3OCH2OCH3 + NH2 = CH3OCH2OCH2 + NH3 (R1591). ➢ The disproportionation reactions significantly inhibit ignition and flame propagation, and the inhibiting effects come from HCO + NH2 = CO + NH3 (R1629).
 
 ## Processing Notes
 

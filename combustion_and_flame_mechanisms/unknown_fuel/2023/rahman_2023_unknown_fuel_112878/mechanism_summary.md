@@ -15,7 +15,7 @@ Ramees K. Rahman, Chun-Hung Wang, Artëm E. Masunov, Subith Vasu. Experimental a
 - Paper PDF link: 
 - Fuel type: unknown_fuel
 - Plasma-related mechanism: no
-- Validation reactor/type from abstract: not clear from abstract
+- Validation reactor/type from abstract: shock tube
 
 ## Mechanism Files
 
@@ -42,7 +42,7 @@ Ramees K. Rahman, Chun-Hung Wang, Artëm E. Masunov, Subith Vasu. Experimental a
 
 ## Abstract
 
-not available
+Chemical warfare (CW) agent simulants are used in laboratory experiments to study the combustion characteristics of CW agents due to their high toxicity. A crucial CW agent simulant with a chemical structure similar to the deadly nerve agent Sarin (GB) is diisopropyl methylphosphonate (DIMP), an organophosphate compound (OPC). In this study, the high-temperature oxidation of DIMP is investigated in a shock tube at temperatures between 1440 K and 1710 K and a pressure of 1–2 atm. The carbon monoxide mole fraction time histories near 4.9 µm were obtained using laser absorption spectroscopy. The rate parameters for DIMP's H-abstraction reactions with O, and OH radicals were determined using molecular simulations. The rates of reactions involving smaller phosphorous species were also calculated at the CBS-QB3 level. These reactions along with the isopropanol sub-mechanism from the literature were added to the LLNL model to obtain an improved chemical kinetic mechanism for DIMP. Since isopropanol was a major intermediate in DIMP decomposition, validations were conducted with CO time histories during the oxidation of isopropanol. The new model predicted CO during isopropanol oxidation reasonably well. Both the LLNL model and the model developed in this work could predict CO time histories during DIMP oxidation satisfactorily. To comprehend the CO formation pathways and sensitive reactions during DIMP oxidation, reaction path analysis and sensitivity analysis were also carried out. The reaction mechanism developed here will help in the design, development, and optimization of efficient, effective and secure CW destruction techniques.
 
 ## Processing Notes
 

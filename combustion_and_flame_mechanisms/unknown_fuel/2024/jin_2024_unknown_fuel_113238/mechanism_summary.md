@@ -15,7 +15,7 @@ Zhi-Hao Jin, Ding-Hua Xu, Chen-Zhe Hang, Guan-Fu Pan, Hai-Yun Zhang, Zhen-Yu Tia
 - Paper PDF link: 
 - Fuel type: unknown_fuel
 - Plasma-related mechanism: no
-- Validation reactor/type from abstract: not clear from abstract
+- Validation reactor/type from abstract: jet-stirred reactor, stirred reactor
 
 ## Mechanism Files
 
@@ -42,7 +42,7 @@ Zhi-Hao Jin, Ding-Hua Xu, Chen-Zhe Hang, Guan-Fu Pan, Hai-Yun Zhang, Zhen-Yu Tia
 
 ## Abstract
 
-not available
+Glycol ethers have been widely recognized as an alternative biofuels. 2-Methoxyethanol (ME2, HOCH2CH2OCH3) is the simplest and most representative glycol ether. Hence, the combustion chemistry of ME2 has aroused extensive interest. The ME2 pyrolysis has been investigated experimentally in a jet-stirred reactor (JSR) at atmospheric pressure within the temperature range of 650–1075 K for the first time. FTIR, GC–MS, and GC-FID were used to identify and quantify species profiles in ME2 pyrolysis. Sixteen intermediates were newly detected by the present work including acetaldehyde, hydroxyacetaldehyde, and methyl vinyl ether which are essential for mechanism development. The H abstraction reactions of ME2 by H, CH3, HO2, OH, O2, and the unimolecular reactions of four fuel-related radicals were first studied via high level ab initio calculations. The geometries optimization, vibrational frequencies, and intrinsic reaction coordinate (IRC) calculations were carried out at the M06–2X/6–311++G(d,p) level of theory. Conventional transition state theory (TST) and Rice-Ramsperger-Kassel-Marcus/Master Equation (RRKM/ME) were used to calculate the temperature- and pressure-dependent rate constants from 300 to 2000 K and 0.01 to 100 atm for the first time. It is found that the H abstraction reactions at the two middle carbon atoms are the most favored pathways, and b-scissions for fuel-related radicals have the lowest energy barriers. The thermochemical properties of ME2 and its derived radicals have been obtained via the combination of composite methods. A mechanism involving 596 species and 3123 reactions was developed for the first time to predict the ME2 pyrolysis characteristics based on experimental and calculated results obtained by the present work. Good agreements were achieved between the measured and simulated results. Rate of production (ROP), as well as sensitivity analysis, were performed to get a deeper insight into the ME2 pyrolysis. It has been revealed that the major ME2 decomposition channels are the H abstractions by H, CH3, and OH radicals, and unimolecular reactions have scarce contributions to fuel decay. The results, in terms of the measured data and of the calculated results, and the newly developed kinetic model as well as findings obtained within this study will assist and contribute to a better understanding of combustion characteristics of ME2 and of glycol ethers as well.
 
 ## Processing Notes
 

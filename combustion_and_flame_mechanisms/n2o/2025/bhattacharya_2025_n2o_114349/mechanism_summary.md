@@ -15,7 +15,7 @@ Atmadeep Bhattacharya, Mohsin Raza, Shangkun Zhou, Claire M. Grégoire, ... Henr
 - Paper PDF link: https://www.sciencedirect.com/science/article/pii/S0010218025003864/pdfft?md5=c033fc4280189e8472408a8a58a6fbc1&pid=1-s2.0-S0010218025003864-main.pdf
 - Fuel type: n2o
 - Plasma-related mechanism: no
-- Validation reactor/type from abstract: not clear from abstract
+- Validation reactor/type from abstract: shock tube
 
 ## Mechanism Files
 
@@ -42,7 +42,7 @@ Atmadeep Bhattacharya, Mohsin Raza, Shangkun Zhou, Claire M. Grégoire, ... Henr
 
 ## Abstract
 
-not available
+The oxidation of toluene in the presence of nitrous oxide (N2O) is investigated experimentally using shock tubes, and the results are simulated using an improved chemical kinetic model. The improved model is based on GalwayMech1.0 with updated rate constants for the reactions Ċ6H5 + H ˙ (+M) ↔ C6H6 (+M), N2O (+M) ↔ N2 + Ö (+M), N2O + H ˙ ↔ N2 + O ˙ H, N2O + Ö ↔ NO + NO, and N2O + Ö ↔ N2 + O2. Additionally, the current model includes HNNO and NHNO intermediate chemistry. The proposed mechanism is validated over a wide range of temperatures and equivalence ratios, with validation targets including experimental data for toluene, H2/N2O, and newly generated toluene/N2O blend data from shock tubes. High-pressure shock tube experiments reveal that the toluene/N2O mixture is highly susceptible to pre-ignition at low temperatures. The chemical kinetic analysis indicates that the ignition of the toluene/N2O mixtures is highly sensitive to the N2O (+M) ↔ N2 + Ö (+M) reaction. The heat released, along with the Ö atoms generated during the decomposition of N2O, causes the rapid depletion of toluene at a substantially faster rate than N2O. Similarly, H ˙ atoms, mostly produced from toluene chemistry, e.g., through benzyl radical breakup C6H5ĊH2 ↔ Ċ7H6 + H ˙ , help the decomposition of N2O molecules via N2O + H ˙ ↔ NO + N ¨ H. Moreover, other major nitric oxide (NO) producing reactions are identified, including N2O + Ö ↔ NO + NO and N ¨ H + Ö ↔ NO + H ˙ . Due to the rapid depletion of toluene, direct chemical interactions between N2O and the aromatic ring have little influence on overall combustion chemistry. However, the enthalpy of formation of toluene and benzyl radical do influence N2O decomposition significantly.
 
 ## Processing Notes
 

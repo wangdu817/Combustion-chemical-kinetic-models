@@ -42,7 +42,7 @@ Weihao Zeng, Chun Zou, Tianci Yan, Qianjin Lin, ... Yu Song. High-temperature ig
 
 ## Abstract
 
-not available
+The ignition delay times (IDTs) of NH3/methyl isopropyl ketone (MIPK) mixtures with MIPK blending ratios of 5 %, 10 %, and 30 % were measured at pressures of 1.75 and 10 bar, temperatures ranging from 1100 to 2000 K, under stoichiometric condition. The IDTs were found to exhibit a sharp decrease at 5 % MIPK blending ratio and then reduced slowly with further MIPK addition. Increasing pressure could enhance the ignition-promoting effects of MIPK. A detailed MIPK-NH3 model was constructed including the MIPK sub-model, the NH3 sub-model, and the cross-reactions between C-containing species and N-containing species which consisted of the prompt NO formation reactions and reburn type reactions, the recombination and oxidation reactions of small amines, H-abstraction reactions, and disproportionation reactions. The predictions calculated by the MIPK-NH3 model are in good agreement with the measured IDTs. The analysis showed that the cross-reactions evidently inhibit the ignition of NH3/MIPK, which is mainly attributed to the disproportionation reactions; and the ignition-inhibiting effects decrease with the increasing pressure or MIPK blending ratio. The effects of the MIPK blending ratio and cross-reactions on the ignition of NH3/MIPK were analyzed in detail. The oxidation pathways of NH3/MIPK were also discussed.
 
 ## Processing Notes
 

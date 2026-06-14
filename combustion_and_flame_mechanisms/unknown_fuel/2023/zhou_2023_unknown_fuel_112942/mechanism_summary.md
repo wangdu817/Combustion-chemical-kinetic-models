@@ -15,7 +15,7 @@ Wei Zhou, Yueying Liang, Yongxiang Zhang, Zimu Wang, Liang Yu, Xingcai Lu. Exper
 - Paper PDF link: 
 - Fuel type: unknown_fuel
 - Plasma-related mechanism: no
-- Validation reactor/type from abstract: rapid compression machine
+- Validation reactor/type from abstract: shock tube, rapid compression machine, jet-stirred reactor, stirred reactor
 
 ## Mechanism Files
 
@@ -42,7 +42,7 @@ Wei Zhou, Yueying Liang, Yongxiang Zhang, Zimu Wang, Liang Yu, Xingcai Lu. Exper
 
 ## Abstract
 
-not available
+With the extensive exploration of advanced combustion modes and the increasing demand for engines with extremely high efficiency and low emissions, biodiesel has garnered significant attention and research as a renewable fuel source that boasts a wide range of raw materials. The ignition delay times (IDT) of methyl stearate, one of the main components in biodiesel, were measured in a new heated rapid compression machine (RCM). The data were obtained for the equivalence ratio of 0.3–0.8 and the compressed temperatures ranging from 820 K to 1000 K under three different pressures of 8, 10, and 12 bar. The influence of compressed temperature, compressed pressure, equivalence ratio, and oxygen mole fraction on ignition delay times was systematically discussed under experimental conditions, revealing the autoignition characteristics of methyl stearate in intermediate temperatures. Besides, the CRECK model and a skeletal model were verified against the experimental results, revealing that the model obtained by analogy significantly overestimates the low-temperature reactivity of methyl stearate. Furthermore, appropriate adjustments were made to the pre-exponential factors for the low-temperature elementary reactions in the CRECK model based on sensitivity analysis. The results indicate that the present model with optimization can well capture the dependence of the IDTs on the operating parameters under the investigated conditions, and the simulation results are in satisfactory agreement with the experimental data. Finally, the optimized model was verified against the experimental data from both the shock tube and jet-stirred reactor. To the authors' knowledge, this study represents the first gas-phase RCM experiment conducted on pure methyl stearate, which is a waxy solid at room temperature.
 
 ## Processing Notes
 

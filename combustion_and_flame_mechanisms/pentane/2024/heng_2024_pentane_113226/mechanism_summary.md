@@ -42,7 +42,7 @@ Yijun Heng, Gavin Kenny, Pengzhi Wang, Shijun Dong, Manik Kumer Ghosh, Gesheng L
 
 ## Abstract
 
-not available
+2,3,4-trimethyl pentane (234-TMP) is an isomer of octane with the same number of methyl branching groups as 2,2,4-trimethyl pentane (iso-octane). However, there are very few studies of this fuel available in the literature. In this work, a detailed chemical kinetic model is developed to describe the oxidation of 234-TMP using NUIGMech1.3 as the core mechanism. The rate constants for some important reaction classes are updated following a review of literature rate constants. Additionally, the impact of each rate constant on simulated ignition delay times for 234-TMP compared to 2,2,3-trimethyl pentane and 2,2,4-trimethyl pentane (iso-octane) is discussed. The thermodynamic data of the alkanes (RH), alkyl (Ṙ), alkyl peroxy (RȮ2), hydroperoxy-alkyl Q ˙ OOH, and peroxy hydroperoxyalkyl (Ȯ2QOOH) radicals are newly estimated based on recently updated group values in the literature. Moreover, this study presents the first set of data available for the oxidation of 234-TMP at higher pressures (15 and 30 atm), in the temperature range 600–1600 K, and at fuel/‘air’ equivalence ratios (φ) of 0.5, 1.0 and 2.0. The chemical kinetic model shows general good agreement with the experimental measurements. In addition, flux and sensitivity analyses are conducted to identify the important pathways and reactions controlling fuel oxidation at different temperatures. Furthermore, the reactivity of 234-TMP is compared to that of iso-octane, indicating that 234-TMP is slower to react as it has more tertiary carbon sites compared to iso-octane.
 
 ## Processing Notes
 

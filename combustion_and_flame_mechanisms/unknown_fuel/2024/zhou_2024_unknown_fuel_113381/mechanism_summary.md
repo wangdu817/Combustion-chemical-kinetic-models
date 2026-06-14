@@ -15,7 +15,7 @@ Wei Zhou, Zimu Wang, Yueying Liang, Xiaoqin Zhang, Liang Yu, Xingcai Lu. The eff
 - Paper PDF link: 
 - Fuel type: unknown_fuel
 - Plasma-related mechanism: no
-- Validation reactor/type from abstract: not clear from abstract
+- Validation reactor/type from abstract: rapid compression machine
 
 ## Mechanism Files
 
@@ -42,7 +42,7 @@ Wei Zhou, Zimu Wang, Yueying Liang, Xiaoqin Zhang, Liang Yu, Xingcai Lu. The eff
 
 ## Abstract
 
-not available
+As the product of transesterification between various oils and alcohols, biodiesel exhibits characteristics of renewability and a wide range of raw materials. The ignition delay times (IDTs) of methyl oleate (MEOLE) and methyl linoleate (MLINO), the primary constituents of biodiesels, were measured in a heated rapid compression machine (RCM) to investigate the impact of CC double bond on the reactivity and autoignition characteristics. The experiment was conducted under two pressures of 8 bar and 10 bar at an equivalence ratio of 0.3–0.8 and a temperature range of 800–1000 K. The qualitative investigation unveiled the influence of compressed pressure, equivalence ratio, and oxygen mole fraction on the IDT of MEOLE and MLINO under varying compressed temperatures. Besides, a comparison of the IDTs for two fuels with different unsaturation degrees under identical conditions revealed that MEOLE exhibited greater reactivity at low temperatures compared to MLINO, while the increase in unsaturation degree can moderate and enhance reactivity at high temperatures. Moreover, three kinetic models in the literature were validated against the newly measured IDTs. The results indicate that the detailed lumped kinetic model exhibits better predictive capacity compared to other models, but it still underestimates the reactivity of MEOLE and MLINO within the investigated temperature range. Subsequently, the detailed kinetic model was optimized based on sensitivity analysis, resulting in excellent agreement between the predicted values of the optimized model and experimental data. Furthermore, accurate predictions were made regarding the relative reactivity changes of MEOLE and MLINO with temperature. Finally, different types of experimental data in the literature were employed to validate the optimized model, yielding satisfactory results.
 
 ## Processing Notes
 

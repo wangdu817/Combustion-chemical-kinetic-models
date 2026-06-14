@@ -15,7 +15,7 @@ Yilun Liang, Cong Wang, Fanggang Zhang, Mo Yang, Song Guo, Juan Wang. Experiment
 - Paper PDF link: 
 - Fuel type: n_decane_trimethylbenzene_124
 - Plasma-related mechanism: no
-- Validation reactor/type from abstract: not clear from abstract
+- Validation reactor/type from abstract: flow reactor
 
 ## Mechanism Files
 
@@ -42,7 +42,7 @@ Yilun Liang, Cong Wang, Fanggang Zhang, Mo Yang, Song Guo, Juan Wang. Experiment
 
 ## Abstract
 
-not available
+Paraffins and aromatics are the two most important components of surrogate, both for conventional jet fuel and alternative fuel. To investigate the interaction between paraffins and aromatics, oxidation experiments were carried out in this work for three fuel groups including neat n-decane, 90 % n-decane/10 % 1,2,4-trimethylbenzene (124TMB) mixture and 80 % n-decane/20 % 124TMB mixture by mole. An atmospheric pressure flow reactor (FR) combined with a gas chromatographic (GC) was used to study the fuels oxidation in a wide temperature range (550–1100 K) and equivalence ratios of 0.5 and 1.0. A detailed kinetic model of n-decane/124TMB was established to investigate the interaction between the reaction pathways of the two fuels. The model was well validated by the measured experimental data, and to some extent the existence of the peroxy-radical (RO2) pathways of 124TMB was proved. The interaction between the reaction pathways of the two fuels were investigated using rate of production (ROP) and sensitivity analyses. N-decane controls the consumption of the fuel mixtures at low and medium temperatures through OH radical pool formed by the low temperature reaction channels such as oxygen addition, keto-hydroperoxide (KHP) and cyclic ether (CE) channel. Negative temperature coefficient (NTC) behavior can be observed for both n-decane and 124TMB. The presence of 124TMB reduces the reaction rate of the low temperature pathways of n-decane, resulting in weaker reactivity and reduced conversion of n-decane. Generation of major intermediates, such as alkenes, alkanes, aldehydes and ketones, is controlled by reactions of n-decane. Aromatic intermediates generation and 124TMB are strongly correlated.
 
 ## Processing Notes
 

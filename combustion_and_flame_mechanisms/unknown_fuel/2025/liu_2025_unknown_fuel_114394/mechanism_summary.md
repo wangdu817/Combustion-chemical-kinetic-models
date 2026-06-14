@@ -15,7 +15,7 @@ Jiaxin Liu, Jin-Tao Chen, Maryam Khan-Ghauri, Joseph E. Jacobs, ... Henry J. Cur
 - Paper PDF link: https://www.sciencedirect.com/science/article/pii/S0010218025004316/pdfft?md5=27a2bcf33a9350c8db685b80e3c3969a&pid=1-s2.0-S0010218025004316-main.pdf
 - Fuel type: unknown_fuel
 - Plasma-related mechanism: no
-- Validation reactor/type from abstract: not clear from abstract
+- Validation reactor/type from abstract: laminar flame speed
 
 ## Mechanism Files
 
@@ -54,7 +54,7 @@ Jiaxin Liu, Jin-Tao Chen, Maryam Khan-Ghauri, Joseph E. Jacobs, ... Henry J. Cur
 
 ## Abstract
 
-not available
+A comprehensive experimental and kinetic modeling study of the combustion of ethyl tert-butyl ether (ETBE) is conducted over a wide range of engine-relevant conditions. Part I focuses exclusively on the high-temperature chemistry including relevant experimental pyrolysis and high-temperature oxidative validation targets. Part II focuses on the low- to intermediate temperature chemistry of ETBE and uses ignition delay times to validate the mechanism. CO time-history profiles from highly-diluted ETBE pyrolysis are measured behind reflected shock waves with a spectroscopic laser diagnostic in the 1235–1528 K temperature range near atmospheric pressure. Laminar flame speed (LFS) measurements of ETBE oxidation in air are conducted at 1 and 3 atm in the equivalence ratio range of 0.7–1.6. Reaction classes involving unimolecular decomposition, hydrogen atom abstraction, fuel radical β-scission and isomerization reactions are included to describe the high-temperature chemistry using the GalwayMech1.0 core C0–C4 chemistry. Sensitivity analyses reveal that the rate constant of the elimination reaction ETBE ⇌ IC4H8 + C2H5OH is very important to species profile predictions, followed by the two C–O bond breaking channels. Hence, pressure- and temperature-dependent rate constants for the two alcohol elimination channels: (a) ETBE ⇌ IC4H8 + C2H5OH and (b) ETBE ⇌ TC4H9OH + C2H4 were calculated using quantum chemistry. Similarly, the C–O bond β-scission reaction of ETBE radical, ETBE-S ⇌ TĊ4H9 + CH3CHO was also calculated in this study. The LFS predictions are dominated by the C0–C2 core chemistry with the fuel chemistry not appearing to be sensitive.
 
 ## Processing Notes
 

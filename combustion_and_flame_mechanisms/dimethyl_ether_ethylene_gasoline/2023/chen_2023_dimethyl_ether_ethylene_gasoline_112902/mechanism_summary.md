@@ -15,7 +15,7 @@ Yong Chen, Xin Zhong, Hu Wang, Bing Li, Zhifeng Yao, Mengnan Zhang, et al.. An e
 - Paper PDF link: 
 - Fuel type: dimethyl_ether_ethylene_gasoline
 - Plasma-related mechanism: no
-- Validation reactor/type from abstract: not clear from abstract
+- Validation reactor/type from abstract: jet-stirred reactor, stirred reactor
 
 ## Mechanism Files
 
@@ -54,7 +54,7 @@ Yong Chen, Xin Zhong, Hu Wang, Bing Li, Zhifeng Yao, Mengnan Zhang, et al.. An e
 
 ## Abstract
 
-not available
+In this work, the low-temperature oxidation of polyoxymethylene dimethyl ether (OME3) with multi-component surrogates for diesel (DS:60%n-heptane/20%cyclohexane/20%toluene) and gasoline (GS:20%n-heptane/60%iso-octane/20%toluene) blends was investigated respectively using a jet-stirred reactor (JSR) with a temperature range of 500–950 K, constant fuel fraction of 0.008, residence time (τ) of 2 s and near atmospheric pressure. Two detailed multi-component kinetic mechanisms were established to describe the low-temperature oxidation characteristics and the interaction of blended fuels. Generally, the oxidation process of highly-reactive OME3 and n-heptane is inhibited, while that of inactive fuels, including iso-octane, cyclohexane and toluene, are triggered and enhanced in various degrees in the blends. The OH radical acts as a bridge between high and low reactivity components. It is of interest that n-heptane reveals a quite different low-temperature oxidation behavior in diesel (DS) and gasoline (GS) surrogate respectively. In GS, the low-temperature oxidation of n-heptane is significantly inhibited, while in DS, the inhibition is mild, mainly due to the much different low-temperature oxidation characteristics of iso-octane and cyclohexane. As for OME3, it mainly improves the reactivity of the blends in the negative temperature coefficient (NTC) process. As for low-reactivity fuels of iso-octane and toluene, their low-temperature oxidations are completely triggered and dominated by highly-reactive fuels due to their weak OH build-up ability. On the contrary, when the low-temperature oxidation of cyclohexane is triggered, its self-enhancement also plays a crucial role in addition to the promoting effect from highly-reactive fuels. Therefore, cyclohexane reveals a promoting-ignition effect on the blended fuels, while iso-octane and toluene act as an inhibiting-ignition factor in blends.
 
 ## Processing Notes
 

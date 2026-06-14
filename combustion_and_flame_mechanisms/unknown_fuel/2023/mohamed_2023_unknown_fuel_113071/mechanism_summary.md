@@ -15,7 +15,7 @@ Samah Y. Mohamed, Nimal Naser, Gina Fioroni, Jon Luecke, Yeonjoon Kim, Peter C. 
 - Paper PDF link: 
 - Fuel type: unknown_fuel
 - Plasma-related mechanism: no
-- Validation reactor/type from abstract: not clear from abstract
+- Validation reactor/type from abstract: flow reactor
 
 ## Mechanism Files
 
@@ -33,7 +33,7 @@ Samah Y. Mohamed, Nimal Naser, Gina Fioroni, Jon Luecke, Yeonjoon Kim, Peter C. 
 - Status: cantera_failed
 - Species count: 815
 - Reaction count: 7438
-- Message: TimeoutExpired: Cantera conversion exceeded 900 seconds
+- Message: missing cantera result json
 - Method: cantera
 - Cantera YAML: mechanism.yaml
 - Standard chem.inp: chem.inp
@@ -54,7 +54,7 @@ Samah Y. Mohamed, Nimal Naser, Gina Fioroni, Jon Luecke, Yeonjoon Kim, Peter C. 
 
 ## Abstract
 
-not available
+One of the major biofuels used today is biodiesel, composed of fatty acid methyl esters. The fats and oils feedstocks used to make biodiesel are in relatively short supply. To meet increasing global demand, engineered microorganisms have been developed to catalyze conversion of sugar to fatty acid esters that contain unique β‑hydroxy-esters. This study investigated the effect of a hydroxyl group on the combustion characteristics of methyl esters by comparing the chemical behavior of methyl hexanoate (MHx) and methyl 3-hydroxyhexanoate (M3OHHx)—used as surrogates for diesel-boiling-range esters with longer fatty acid chains. The oxidation of these esters was studied experimentally in a flow reactor at 0.84 and 10 bar, 600 to 1,100 K, and stoichiometric conditions; and in a constant volume combustion chamber at 5 and 10 bar, 600 to 900 K, and equivalence ratios of 0.3 and 0.6. MHx was more reactive in the constant volume chamber at temperatures below 800 K at 10 bar and equivalence ratio of 0.6. MHx also exhibited a higher indicated cetane number (16.4) than M3OHHx (8.1). We investigated this reactivity trend using an updated MHx kinetic model and M3OHHx model developed as part of this work. The kinetic models predicted that radicals formed from MHx were consumed by low-temperature chemistry reactions, whereas the M3OHHx reactivity was significantly governed by the β-radical (on the same carbon as the OH group) chemistry which mainly terminated via the less reactive chain propagation pathway to methyl-3-oxohexanoate + HO2. This study extends our understanding of structural effects on ester reactivity, which will allow for accurate surrogate formulation and performance simulations.
 
 ## Processing Notes
 

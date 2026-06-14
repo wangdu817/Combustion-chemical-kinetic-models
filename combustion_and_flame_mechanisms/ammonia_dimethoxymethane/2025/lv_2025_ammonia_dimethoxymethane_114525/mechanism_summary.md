@@ -42,7 +42,7 @@ Tenglong Lv, Yifeng Wang, Xin Zhong, Qiang Xu, ... Hu Wang. Experimental and kin
 
 ## Abstract
 
-not available
+This study investigates the oxidation characteristics of NH₃/DMM₁ (dimethoxymethane, CH3OCH2OCH3) blended fuels at ND-75(1.5 % NH₃: 0.5 % DMM₁) and ND-50 (1 % NH₃: 1 % DMM₁ (balance O₂/Ar, φ =1)) mixing ratios across a temperature range of 550–1100 K, employing experimental and numerical approaches to elucidate their interaction mechanisms. Experiments were conducted in a jet-stirred reactor (JSR) coupled with synchrotron vacuum ultraviolet photoionization mass spectrometry (SVUV-PIMS), enabling the online detection and quantification of 17 products, including C₀–C₃ small molecules, NH₃, nitrogen oxides, and four rarely reported carbon-nitrogen (C–N) intermediates: HCN, HNCO, CH₃CN, and CH₃NO₂. A detailed kinetic model, comprising 210 species and 1595 elementary reactions, was developed based on experimental data and validated against measured species profiles, demonstrating good predictive accuracy for ignition delay times and intermediate evolution. The results reveal that DMM₁ oxidation generates reactive radicals (e.g., OH, HO₂, CH₃) that enhance NH₃ reactivity, with temperature-dependent shifts in C–N bond formation pathways—favoring CH₃+NO₂=CH₃NO₂ at 870 K and CH₃+NH₂=CH₃NH₂ at 1010 K. These intermediates play a crucial role in shaping the reaction network, providing new insights into the coupled nitrogen-carbon chemistry relevant to low-emission combustion technologies.
 
 ## Processing Notes
 

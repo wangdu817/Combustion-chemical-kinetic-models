@@ -15,7 +15,7 @@ Sirio Brunialti, Xiaoyuan Zhang, Qi Wang, Tiziano Faravelli, S. Mani Sarathy. Au
 - Paper PDF link: https://www.sciencedirect.com/science/article/pii/S001021802500392X/pdfft?md5=12af70667313d2c393421dcd0f00bc9e&pid=1-s2.0-S001021802500392X-main.pdf
 - Fuel type: unknown_fuel
 - Plasma-related mechanism: no
-- Validation reactor/type from abstract: not clear from abstract
+- Validation reactor/type from abstract: shock tube, rapid compression machine, jet-stirred reactor, stirred reactor
 
 ## Mechanism Files
 
@@ -31,8 +31,8 @@ Sirio Brunialti, Xiaoyuan Zhang, Qi Wang, Tiziano Faravelli, S. Mani Sarathy. Au
 ### Mechanism 1
 
 - Status: cantera_failed
-- Species count: 850
-- Reaction count: 3007
+- Species count: 343
+- Reaction count: 1879
 - Message: IndexError: index 1 is out of bounds for axis 0 with size 1
 - Method: cantera
 - Cantera YAML: mechanism.yaml
@@ -42,33 +42,9 @@ Sirio Brunialti, Xiaoyuan Zhang, Qi Wang, Tiziano Faravelli, S. Mani Sarathy. Au
 
 ### Mechanism 2
 
-- Status: cantera_failed
-- Species count: 850
-- Reaction count: 3007
-- Message: TimeoutExpired: Cantera conversion exceeded 900 seconds
-- Method: cantera
-- Cantera YAML: mechanism.yaml
-- Standard chem.inp: chem.inp
-- Standard therm.dat: therm.dat
-- Standard tran.dat: tran.dat
-
-### Mechanism 3
-
-- Status: cantera_failed
-- Species count: 850
-- Reaction count: 3007
-- Message: IndexError: index 1 is out of bounds for axis 0 with size 1
-- Method: cantera
-- Cantera YAML: mechanism.yaml
-- Standard chem.inp: chem.inp
-- Standard therm.dat: therm.dat
-- Standard tran.dat: tran.dat
-
-### Mechanism 4
-
 - Status: ok
-- Species count: 343
-- Reaction count: 1879
+- Species count: 850
+- Reaction count: 3007
 - Message: cantera conversion ok
 - Method: cantera
 - Cantera YAML: mechanism.yaml
@@ -78,7 +54,7 @@ Sirio Brunialti, Xiaoyuan Zhang, Qi Wang, Tiziano Faravelli, S. Mani Sarathy. Au
 
 ## Abstract
 
-not available
+Large alkanes are principal chemical components in many petroleum and alternative renewable fuels. The development of oxidation models for large alkanes is often complex and time-consuming. A methodology for the automatic generation of detailed and lumped kinetic models of oxidation of large alkanes is presented herein. This procedure is built upon the authors’ previous work (Brunialti et al., 2023), wherein an automatic procedure for generating oxidation models of alkanes based on MAMOX++ software was developed. The procedure is based on a rate rule approach, and it can generate detailed and lumped reaction mechanisms. A new set of rate rules was developed to better describe the reactivity of large alkanes at high and low temperatures. The procedure also includes automatic thermochemical-property computation. The reaction mechanism generation procedure was reviewed to minimize the reaction mechanism size and required user inputs. Detailed reaction mechanism and lumped reaction mechanisms were generated for 40 alkanes with a carbon number of 5–16. The model predictions were compared with experimental data obtained from jet-stirred reactors, shock tubes, rapid compression machines, and laminar burning velocities. Validations were performed for 30 alkanes under a broad range of temperatures, pressures, and equivalence ratios. The predicted and measured values exhibited good agreement under all conditions for all fuels except for large, highly branched alkanes. The lumped models can reproduce the predictions of the detailed models with high fidelity under all explored conditions while considerably reducing the number of species and reactions involved in the reaction mechanism. Software capabilities for modeling the reactivity of extremely large alkanes were assessed in a comparative study for linear alkanes with up to 30 carbon atoms. Detailed and lumped models for gasoline primary reference fuel mixtures were generated and validated to demonstrate the procedure capabilities for generating compact, task-tailored models.
 
 ## Processing Notes
 
