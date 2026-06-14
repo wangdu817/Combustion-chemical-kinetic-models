@@ -20,7 +20,7 @@ description: |-
 generator: ck2yaml
 input-files: [chem.inp, therm.dat]
 cantera-version: 3.2.0
-date: Sat, 13 Jun 2026 22:13:05 +0800
+date: Sun, 14 Jun 2026 13:32:41 +0800
 
 units: {length: cm, time: s, quantity: mol, activation-energy: cal/mol}
 

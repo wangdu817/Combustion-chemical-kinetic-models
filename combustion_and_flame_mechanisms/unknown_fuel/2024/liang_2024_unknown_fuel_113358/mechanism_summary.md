@@ -31,11 +31,11 @@ Jinhu Liang, Xinhui Wang, Chen Zhao, Ziwen Zhao, Yang Zhang, Qian Yao, et al.. T
 ### Mechanism 1
 
 - Status: cantera_failed
-- Species count: not parsed
-- Reaction count: not parsed
+- Species count: 787
+- Reaction count: 4952
 - Message: CanteraError: ******************************************************************************* CanteraError thrown by newSolution: The CTI and XML formats are no longer supported. *******************************************************************************
 - Method: cantera
-- Cantera YAML: not available
+- Cantera YAML: mechanism.yaml
 - Standard chem.inp: chem.inp
 - Standard therm.dat: therm.dat
 - Standard tran.dat: not available

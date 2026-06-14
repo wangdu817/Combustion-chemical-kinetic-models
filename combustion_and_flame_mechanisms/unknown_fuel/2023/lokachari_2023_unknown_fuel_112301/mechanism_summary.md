@@ -49,6 +49,3 @@ not available
 - extracted S0010218022003169_mmc2.zip
 - extracted S0010218022003169_mmc3.zip
 - extracted S0010218022003169_mmc1.zip
-- extracted Initial conditions_DIB isomers.xlsx
-- extracted DIB_Experimental Data.xlsx
-- extracted DIB_part1_SPECIES-dictionary.xlsx

@@ -30,10 +30,10 @@ Yuan Fang, Wenjing Qu, Liyan Feng. Experimental and kinetic modeling study on au
 
 ### Mechanism 1
 
-- Status: ok
+- Status: cantera_failed
 - Species count: 2860
 - Reaction count: 11892
-- Message: cantera conversion ok
+- Message: TimeoutExpired: Cantera conversion exceeded 900 seconds
 - Method: cantera
 - Cantera YAML: mechanism.yaml
 - Standard chem.inp: chem.inp
