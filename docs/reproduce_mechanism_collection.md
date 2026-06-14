@@ -273,16 +273,29 @@ The script matches downloads by DOI, PII, or article number, then copies them in
 
 ## 11. Abstracts
 
-Summaries should include abstracts. The script tries local PDFs first, then Crossref, OpenAlex, and Semantic Scholar:
+Public APIs (Crossref, OpenAlex, Semantic Scholar) rarely have abstracts for paywalled Combustion and Flame articles. Use the dedicated enrichment script with an Elsevier API key:
 
 ```bash
-python scripts/collect_cf2026.py enrich-abstracts
-python scripts/collect_cf2026.py process
+# Set up (one-time)
+cp api_keys.example.json api_keys.json
+# Edit api_keys.json with your Elsevier API key from https://dev.elsevier.com/
+
+# Fetch abstracts
+python scripts/enrich_abstracts.py
+python scripts/collect_cf2026.py process --force
 ```
 
-Use title/abstract evidence for fuel type and validation reactor type. If the abstract does not make the reactor type clear, write `not clear from abstract` instead of guessing from the full paper.
+## 12. PDF Downloads
 
-## 12. Quality Checks
+Download article PDFs for mechanism folders using Unpaywall (OA) and Sci-Hub:
+
+```bash
+python scripts/download_pdfs.py
+```
+
+PDFs are saved alongside mechanism files with matching naming conventions. Articles that can't be automatically downloaded are listed in `manual_download_handoff.md`.
+
+## 13. Quality Checks
 
 Run tests after changing code or processing rules:
 

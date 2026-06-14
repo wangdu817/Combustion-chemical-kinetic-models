@@ -1,0 +1,7 @@
+{
+  "_comment": "Rename this file to api_keys.json and fill in your API keys. Get keys at:",
+  "_elsevier": "https://dev.elsevier.com/",
+  "_semantic_scholar": "https://api.semanticscholar.org/",
+  "elsevier": "YOUR_ELSEVIER_API_KEY",
+  "semantic": "YOUR_SEMANTIC_SCHOLAR_API_KEY"
+}

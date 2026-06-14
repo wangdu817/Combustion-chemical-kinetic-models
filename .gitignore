@@ -37,3 +37,6 @@ combustion_and_flame_mechanisms/**/chem.inp
 combustion_and_flame_mechanisms/**/therm.dat
 combustion_and_flame_mechanisms/**/tran.dat
 combustion_and_flame_mechanisms/**/mechanism.yaml
+
+# API keys (never commit real keys)
+api_keys.json
