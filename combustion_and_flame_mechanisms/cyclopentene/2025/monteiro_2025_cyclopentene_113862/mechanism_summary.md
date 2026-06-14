@@ -22,8 +22,8 @@ João G.S. Monteiro, Arthur C.P.G. Ventura, Eric B. Lindgren, Felipe P. Fleming,
 - Standard mechanism file: chem.inp
 - Standard thermodynamic file: therm.dat
 - Standard transport file: not available
-- Original mechanism source files: _processing\extracted\s0010218024005716_mmc1\supp_chemkin.inp
-- Original thermodynamic source files: _processing\extracted\s0010218024005716_mmc3\supp_thermo.dat
+- Original mechanism source files: _processing/extracted/s0010218024005716_mmc1/supp_chemkin.inp
+- Original thermodynamic source files: _processing/extracted/s0010218024005716_mmc3/supp_thermo.dat
 - Original transport source files: not found
 
 ## Cantera Preprocessing Results
@@ -42,10 +42,10 @@ João G.S. Monteiro, Arthur C.P.G. Ventura, Eric B. Lindgren, Felipe P. Fleming,
 
 ## Abstract
 
-not available
+Cyclopentene, a prototype for studying the combustion chemistry of cyclic olefins, appears in the oxidation of cyclic hydrocarbons and can provide key information in the understanding of the formation of polycyclic aromatic hydrocarbons. The addition to the double-bond is one of the main steps in low-temperature oxidation mechanisms of unsaturated organic compounds. In the case of cyclopentene, addition of yields a hydroxycyclopentyl radical, that can further react with O2. In this work, we studied the potential energy surface and reaction rates for the subsequent reactions of O2 with the hydroxycyclopentyl radical. The temperature and pressure dependence of the rate constants were determined using master equation simulations, with microcanonical rate coefficients calculated by RRKM theory. The potential energy surface was extracted from high-level electronic structure theory, based on geometries and frequencies obtained using density functional theory. Our results indicate that a Waddington-type mechanism, which produces glutaraldehyde and regenerates , is the dominant reaction pathway. However, at low-temperatures, a secondary pathway leading to the formation of epoxycyclopentanol and becomes equally significant. The thermochemistry of all radicals involved were also evaluated. The kinetic and thermodynamic data were incorporated into a comprehensive mechanism of cyclopentene autoignition, in order to simulate the associated ignition delays. The updated reaction mechanism resulted in shorter ignition delays compared to the non-updated mechanism. Sensitivity analysis was performed to identify the primary contributors. Novelty and Significance Statement Cyclopentene is an important intermediate in the oxidation of cyclic olefins and serves as a precursor in the formation of polycyclic aromatic hydrocarbons. Kinetic modeling studies require detailed information on elementary reactions, much of which is typically unavailable from experiments. The novelty and significance of this study lie in the theoretical calculations of rate constants for key reactions in the oxidation of cyclopentene and their evaluation within the comprehensive mechanism proposed by Lokachari et al. The results demonstrate that the studied reactions significantly influence the ignition delays of cyclopentene at low temperatures. Furthermore, the data presented here can be applied in future studies focusing on the oxidation of cyclic olefins.
 
 ## Processing Notes
 
-- extracted S0010218024005716_mmc1.zip
 - extracted S0010218024005716_mmc2.zip
 - extracted S0010218024005716_mmc3.zip
+- extracted S0010218024005716_mmc1.zip

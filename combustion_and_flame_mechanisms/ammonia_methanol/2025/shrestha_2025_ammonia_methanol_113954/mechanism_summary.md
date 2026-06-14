@@ -15,7 +15,7 @@ Krishna Prasad Shrestha, Binod Raj Giri, Ronan Pelé, Khalid Aljohani, ... Chris
 - Paper PDF link: https://www.sciencedirect.com/science/article/pii/S0010218024006631/pdfft?md5=c239e4fded776c774652c8afe0d7a0b1&pid=1-s2.0-S0010218024006631-main.pdf
 - Fuel type: ammonia_methanol
 - Plasma-related mechanism: no
-- Validation reactor/type from abstract: not clear from abstract
+- Validation reactor/type from abstract: shock tube, rapid compression machine, laminar flame speed
 
 ## Mechanism Files
 
@@ -42,7 +42,7 @@ Krishna Prasad Shrestha, Binod Raj Giri, Ronan Pelé, Khalid Aljohani, ... Chris
 
 ## Abstract
 
-not available
+Ammonia is gaining attention as a green fuel with the potential to reduce carbon emissions. Its versatility allows it to be used directly in combustion engines, fuel cells, and as a hydrogen carrier, making it a key candidate for sustainable energy applications. This study provides a comprehensive analysis of the oxidation kinetics of ammonia (NH3) blends with methanol (CH3OH) and ethanol (C2H5OH) under diverse conditions. We measured laminar flame speeds of different NH3-alcohol blends — varying CH3OH/C2H5OH ratios (0–100 %) — using a constant volume combustion chamber across temperatures from 503 to 645 K and pressures of 2–11.3 bar. We also obtained the ignition delay times for NH3/C2H5OH blends with 10 % and 30 % (by mole) C2H5OH using a shock tube at pressures of 1, 10, and 20 bar and temperatures of 1100–1500 K. Our results show that incorporating CH3OH and C2H5OH into NH3 increases the laminar flame speed, with C2H5OH being a more effective promoter than CH3OH due to its higher contribution to the formation of reactive radicals (OH, H, and O). Our model suggests that at high temperatures, both CH3OH and C2H5OH contribute to increased NO formation, with C2H5OH being more effective in reducing N2O emissions than CH3OH. In shock tube experiments, adding C2H5OH significantly shortens ignition delay times of NH3. At low temperatures (in the rapid compression machine case), the sensitivity to ignition delay times decreases when the CH3OH/C2H5OH content exceeds 5 % in NH3-alcohol blends. C2H5OH is a more effective combustion promoter, enhancing NH3 reactivity and reducing NOx emission more efficiently than CH3OH. We developed a detailed kinetic model, building on our previous work, and validated it against new experimental and literature data. Our model accurately predicts the combustion behavior of neat NH3 and NH3 fuel blends and serves as a base for future research on NH3 blended with higher hydrocarbons and/or oxygenated blends.
 
 ## Processing Notes
 

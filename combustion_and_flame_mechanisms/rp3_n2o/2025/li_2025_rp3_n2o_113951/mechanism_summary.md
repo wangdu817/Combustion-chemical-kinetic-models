@@ -15,7 +15,7 @@ Shuhao Li, Xianggeng Wei, Da Yao, Ning Zhang, ... Jinhu Liang. The influence of 
 - Paper PDF link: https://www.sciencedirect.com/science/article/pii/S0010218024006606/pdfft?md5=0ab5818f2ba20fb82645ac6194dc37a6&pid=1-s2.0-S0010218024006606-main.pdf
 - Fuel type: rp3_n2o
 - Plasma-related mechanism: no
-- Validation reactor/type from abstract: not clear from abstract
+- Validation reactor/type from abstract: shock tube
 
 ## Mechanism Files
 
@@ -54,7 +54,7 @@ Shuhao Li, Xianggeng Wei, Da Yao, Ning Zhang, ... Jinhu Liang. The influence of 
 
 ## Abstract
 
-not available
+The auto-ignition and flame propagation behaviors of RP-3 kerosene/nitrous oxide (N2O) is crucial for developing chemical kinetic models and evaluating their compatibility in current liquid rocket engines. Herein, this study employs a high-pressure shock tube (HPST) to measure the ignition delay times (IDTs) of Chinese RP-3 kerosene in N2O/N2 under a wide range of combustion conditions: equivalence ratios of 0.5, 1.0, and 2.0; pressures of 5, 10, and 20 bar; temperatures ranging from 1300 to 1950 K. The effects of temperature, pressure, and equivalence ratio on IDTs are examined. Additionally, laminar burning velocities (LBVs) are measured in a spherical vessel for an unburned RP-3 kerosene/N2O/N2 mixture with initial temperature of 423 K and initial pressure of 1 bar To enhance understanding the underlying chemistry, a multi-component RP-3 kerosene surrogate model (65 % n-dodecane / 20 % 1,3,5-trimethylcyclohexane / 15 % n-propylbenzene in mass fraction) is proposed and used to simulate the experimental data. A detailed chemical kinetic mechanism is constructed and further reduced through the revised-direct relation graph (Revised-DRG) method with a multi-stage reduction strategy to derive a compact skeletal mechanism comprising 79 species and 451 reactions. Comparisons between the predictions via the skeletal mechanism and experimental data demonstrate acceptable performance in reproducing the measured IDTs and LBVs. Sensitivity analysis is conducted to identify key reactions controlling ignition and flame propagation characteristics. This comprehensive experimental dataset and the developed kinetic models significantly enhance our understanding of RP-3 kerosene/nitrous oxide combustion characteristics, contributing valuable insights to the field of rocket propulsion.
 
 ## Processing Notes
 

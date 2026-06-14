@@ -15,16 +15,16 @@ Jiaxin Liu, Shangkun Zhou, Pengzhi Wang, Yuki Murakami, ... Henry J. Curran. An 
 - Paper PDF link: https://www.sciencedirect.com/science/article/pii/S0010218024005935/pdfft?md5=88012a6e58e36ac46b8c61fb31046931&pid=1-s2.0-S0010218024005935-main.pdf
 - Fuel type: n_decane_methane
 - Plasma-related mechanism: yes
-- Validation reactor/type from abstract: not clear from abstract
+- Validation reactor/type from abstract: shock tube, rapid compression machine
 
 ## Mechanism Files
 
 - Standard mechanism file: chem.inp
 - Standard thermodynamic file: therm.dat
 - Standard transport file: tran.dat
-- Original mechanism source files: _processing\extracted\s0010218024005935_mmc6\GalwayMech1.0.MECH
-- Original thermodynamic source files: _processing\extracted\s0010218024005935_mmc7\GalwayMech1.0.THERM
-- Original transport source files: _processing\extracted\s0010218024005935_mmc8\GalwayMech1.0.TRAN
+- Original mechanism source files: _processing/extracted/s0010218024005935_mmc6/GalwayMech1.0.MECH
+- Original thermodynamic source files: _processing/extracted/s0010218024005935_mmc7/GalwayMech1.0.THERM
+- Original transport source files: _processing/extracted/s0010218024005935_mmc8/GalwayMech1.0.TRAN
 
 ## Cantera Preprocessing Results
 
@@ -42,16 +42,16 @@ Jiaxin Liu, Shangkun Zhou, Pengzhi Wang, Yuki Murakami, ... Henry J. Curran. An 
 
 ## Abstract
 
-not available
+An experimental and kinetic modeling study of the combustion of methane/n-decane blends is performed. Ignition delay times (IDTs) of the pure fuels in addition to their blends are measured using both a shock tube and a rapid compression machine at three different methane/n-decane (mol%) compositions of 99/1 (M99D1), 95/5 (M95D5), and 80/20 (M80D20) in ‘air’, over the temperature range of 610–1495 K, at a pressure of 30 bar. A new chemical kinetic mechanism, GalwayMech1.0, is proposed to describe the combustion of these blends and is validated against the new IDT data including 1st-stage and total IDTs as well as existing experimental n-decane data available in the literature. Sensitivity analyses reveal that H-atom abstraction from n-decane by methyl peroxy radicals (CH3Ȯ2) play an important role in promoting blend reactivity at intermediate temperatures, which is not observed for pure n-decane. By investigating the effect of the n-decane concentration on the ignition characteristics, we found that the low ignition temperature limit is extended with increasing n-decane content with a non-linear reactivity-promoting effect. Flux analyses reveal that CH4 oxidation in the blends is initiated via CH4 + ȮH = ĊH3 + H2O, driven by the ȮH radicals produced from the early oxidation of n-decane and the CH3Ȯ2 radicals formed from CH4 oxidation which subsequently accelerates nC10H22 consumption via H-atom abstraction. Comparisons of CH4/nC10H22 and H2/nC10H22 blends from a previous study demonstrate consistently higher reactivity for hydrogen blending compared to methane and that the magnitude of this increase diminishes with increasing n-decane content. Finally, we also compare our current model predictions of our new data with other n-decane models available in the literature.
 
 ## Processing Notes
 
-- extracted S0010218024005935_mmc1.xlsx
-- extracted S0010218024005935_mmc2.xlsx
-- extracted S0010218024005935_mmc3.docx
 - extracted S0010218024005935_mmc4.xlsx
-- extracted S0010218024005935_mmc5.zip
+- extracted S0010218024005935_mmc9.zip
+- extracted S0010218024005935_mmc3.docx
+- extracted S0010218024005935_mmc2.xlsx
 - extracted S0010218024005935_mmc6.zip
 - extracted S0010218024005935_mmc7.zip
+- extracted S0010218024005935_mmc1.xlsx
 - extracted S0010218024005935_mmc8.zip
-- extracted S0010218024005935_mmc9.zip
+- extracted S0010218024005935_mmc5.zip

@@ -15,7 +15,7 @@ Nicolas Delort, Olivier Herbinet, Roda Bounaceur, Frédérique Battin-Leclerc. E
 - Paper PDF link: https://www.sciencedirect.com/science/article/pii/S0010218024006242/pdfft?md5=11063a2cbd2dcd68bd2f360c464ac151&pid=1-s2.0-S0010218024006242-main.pdf
 - Fuel type: unknown_fuel
 - Plasma-related mechanism: no
-- Validation reactor/type from abstract: laminar flame speed
+- Validation reactor/type from abstract: laminar flame speed, burner/flame structure
 
 ## Mechanism Files
 
@@ -42,7 +42,7 @@ Nicolas Delort, Olivier Herbinet, Roda Bounaceur, Frédérique Battin-Leclerc. E
 
 ## Abstract
 
-not available
+The combustion of lignin-derived biofuels was investigated through the study of the laminar burning velocity (LBV) of arenes and oxygenated aromatic as typical surrogate compounds. For this purpose, the laminar burning velocity of ten aromatic hydrocarbons, in which the benzene ring is connected to at least a C-atom, toluene, styrene, the three xylene isomers, two of the trimethylbenzene isomers, and of three oxygenated aromatics, benzaldehyde, benzylalcohol, 2-phenylethanol, was measured using a flat flame burner coupled to the heat flux method under atmospheric pressure. Experiments were performed for three fresh gas temperatures, 298 K (ambient temperature), 358 K and 398 K, as far as the volatility of the investigated compounds allows it. The obtained results confirm the reliability of the flat flame burner, which has been rarely used to measure the LBV of such compounds. The dataset extends the covered conditions of available experimental results and constitutes the first flame experiments for benzaldehyde, benzylalcohol, and 2-phenylethanol. A detailed kinetic model was also developed as part of this work. It gathers all the compounds of interest and is validated against the obtained LBVs and all available experimental literature data for these fuels. Analyses of the combustion process were performed and allowed to explain the observed tendencies of LBV values. The key role of benzyl-like radicals, which are resonance stabilized, is highlighted, as well as that of C5 oxygenated species.
 
 ## Processing Notes
 

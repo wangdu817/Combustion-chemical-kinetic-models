@@ -15,15 +15,15 @@ Meirong Zeng, Jigang Gao, Yuwen Deng, Peiqi Liu, ... Fei Qi. Revealing the oxida
 - Paper PDF link: https://www.sciencedirect.com/science/article/pii/S0010218024005157/pdfft?md5=0bd8d005ea45b9f7393b4ba549e58b29&pid=1-s2.0-S0010218024005157-main.pdf
 - Fuel type: n_dodecane_ethylcyclohexane_n_butylbenzene
 - Plasma-related mechanism: no
-- Validation reactor/type from abstract: not clear from abstract
+- Validation reactor/type from abstract: jet-stirred reactor, stirred reactor
 
 ## Mechanism Files
 
 - Standard mechanism file: chem.inp
 - Standard thermodynamic file: therm.dat
 - Standard transport file: not available
-- Original mechanism source files: _processing\raw_downloads\S0010218024005157_mmc2.txt
-- Original thermodynamic source files: _processing\raw_downloads\S0010218024005157_mmc3.txt
+- Original mechanism source files: _processing/raw_downloads/S0010218024005157_mmc2.txt
+- Original thermodynamic source files: _processing/raw_downloads/S0010218024005157_mmc3.txt
 - Original transport source files: not found
 
 ## Cantera Preprocessing Results
@@ -42,7 +42,7 @@ Meirong Zeng, Jigang Gao, Yuwen Deng, Peiqi Liu, ... Fei Qi. Revealing the oxida
 
 ## Abstract
 
-not available
+The oxidation chemistry of single component has been widely explored, which motivates us to investigate the oxidation chemistry of blended fuels. Here, n-dodecane, ethylcyclohexane and n-butylbenzene have been selected as fuel components for representing n-alkane, cyclic alkane and aromatic, respectively. The oxidation experiments of blended n-dodecane, ethylcyclohexane and n-butylbenzene fuels were performed in an atmospheric jet stirred reactor, temperatures ranging from 450 to 850 K, equivalence ratios of 0.5 and 1.0. The synchrotron vacuum ultraviolet radiation photoionization mass spectrometry was applied to measure the featured intermediates, such as hydroperoxides and highly oxygenated molecules (HOMs) with characteristic functional groups. Subsequently, a kinetic model for the blended fuels was developed and validated, which was used to reveal the crucial coupled oxidation chemistry that drives the global oxidation reactivity and products distribution. It is revealed that the active chain initiators, such as OH radicals, produced by the oxidation reactions of n-dodecane and ethylcyclohexane, significantly enhance the oxidation reactivity of n-butylbenzene. Furthermore, the hydroperoxides and ketohydroperoxides, acting as key experimental evidence for the existence of first O2 addition and second O2 addition, contribute to the formation of active chain initiators, such as OH radicals. This work extends the existing conceptual reaction schemes proposed for the oxidation of single fuel towards the coupled oxidation chemistry of blended fuels. This, in turn, improves our understanding towards the complicated oxidation chemistry of real fuels.
 
 ## Processing Notes
 

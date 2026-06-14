@@ -15,7 +15,7 @@ Ashenafi Emiru Teka, Bingzhi Liu, Yushen Yu, Shuyao Chen, ... Zhandong Wang. Elu
 - Paper PDF link: https://www.sciencedirect.com/science/article/pii/S0010218025001361/pdfft?md5=5dd77d485d73826d2836053a4c103c31&pid=1-s2.0-S0010218025001361-main.pdf
 - Fuel type: pentanol
 - Plasma-related mechanism: no
-- Validation reactor/type from abstract: not clear from abstract
+- Validation reactor/type from abstract: jet-stirred reactor, stirred reactor
 
 ## Mechanism Files
 
@@ -42,7 +42,7 @@ Ashenafi Emiru Teka, Bingzhi Liu, Yushen Yu, Shuyao Chen, ... Zhandong Wang. Elu
 
 ## Abstract
 
-not available
+n-Pentanol (C5H11OH) is a versatile biofuel and fuel additive used to enhance combustion efficiency and reduce emissions when blended with gasoline. Ongoing research in alternative fuels explores the potential applications of n-pentanol. Understanding the low-temperature oxidation of n-pentanol is essential for developing combustion kinetic models to optimize engine performance and minimize pollutants when using this biofuel. Herein, we investigated the low-temperature oxidation of n-pentanol with ozone (O3) in an atmospheric jet-stirred reactor. Ozone addition enhanced reactivity, leading to the formation of various products. High-mass-resolution mass spectra and photoionization curves identified reaction intermediates and products, particularly C5 hydroxy keto-hydroperoxide was identified for the first time. Quantification of the measured intermediates and products allowed for updating the kinetic model of n-pentanol oxidation, improving predictions and validating ignition delay times. However, discrepancies existed for elusive intermediates like C5H8O2 and C5H12O2, prompting further exploration of their formation pathways. The findings provide insights into the chain-branching reaction pathways of n-pentanol at low temperatures and contribute to refining kinetic models for alcohol oxidation.
 
 ## Processing Notes
 

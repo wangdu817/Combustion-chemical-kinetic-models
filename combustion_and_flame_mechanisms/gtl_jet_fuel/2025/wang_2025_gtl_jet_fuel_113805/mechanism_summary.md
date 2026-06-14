@@ -15,15 +15,15 @@ Quan-De Wang, Bi-Yao Wang, Qian Yao, Jinhu Liang, ... Zu-Xi Xia. An experimental
 - Paper PDF link: https://www.sciencedirect.com/science/article/pii/S0010218024005145/pdfft?md5=2cd541bd8932bc7761f7a0157db6e3ef&pid=1-s2.0-S0010218024005145-main.pdf
 - Fuel type: gtl_jet_fuel
 - Plasma-related mechanism: no
-- Validation reactor/type from abstract: not clear from abstract
+- Validation reactor/type from abstract: shock tube
 
 ## Mechanism Files
 
 - Standard mechanism file: chem.inp
 - Standard thermodynamic file: therm.dat
 - Standard transport file: not available
-- Original mechanism source files: _processing\extracted\s0010218024005145_mmc2\C0_C4_skeletal_mech.MECH.inp, _processing\extracted\s0010218024005145_mmc4\Lv-RP3.MECH.inp, _processing\extracted\s0010218024005145_mmc6\RMG_nC11_IC12.MECH.inp
-- Original thermodynamic source files: _processing\extracted\s0010218024005145_mmc3\C0_C4_skeletal_mech.THERM.dat, _processing\extracted\s0010218024005145_mmc5\Lv-RP3.THERM.dat
+- Original mechanism source files: _processing/extracted/s0010218024005145_mmc2/C0_C4_skeletal_mech.MECH.inp, _processing/extracted/s0010218024005145_mmc6/RMG_nC11_IC12.MECH.inp, _processing/extracted/s0010218024005145_mmc4/Lv-RP3.MECH.inp
+- Original thermodynamic source files: _processing/extracted/s0010218024005145_mmc5/Lv-RP3.THERM.dat, _processing/extracted/s0010218024005145_mmc3/C0_C4_skeletal_mech.THERM.dat
 - Original transport source files: not found
 
 ## Cantera Preprocessing Results
@@ -66,16 +66,16 @@ Quan-De Wang, Bi-Yao Wang, Qian Yao, Jinhu Liang, ... Zu-Xi Xia. An experimental
 
 ## Abstract
 
-not available
+Alternative jet fuel from Fischer-Tropsch (FT) synthesis represents an important kind of aviation fuel in the near future. However, the combustion properties of FT jet fuel have not been fully explored yet. Herein, this work reports an experimental and kinetic modeling study on the ignition characteristics of a coal-derived FT jet fuel. To facilitate its usage as a “drop-in” fuel in current aircraft and infrastructure, a blended fuel of the present FT fuel with a traditional RP-3 jet fuel with relatively high aromatic hydrocarbons is also prepared and studied. Specifically, a shock tube facility is employed to measure the ignition delay times (IDTs) of the FT, RP-3, and the blended jet fuels under the combustion conditions, i.e., temperature ranging from 1000–1800 K, pressure at 3 and 10 bar, equivalence ratio at 0.5, 1.0, and 2.0. Two-dimensional gas chromatography (GC × GC) analysis is adopted to determine the chemical compositions of the FT and RP-3 jet fuels, which is then used to aid the development of surrogate models. Most importantly, the contemporary combustion chemical kinetic mechanism via detailed generation, automatic generation, lumping, decoupling and HyChem methods are employed to model the IDTs, and the mechanism reproducibility of these mechanisms are systematically compared. The present work should be valuable to understand the chemical structure effect on alternative jet fuels and also provides important information for the development of different kinds of combustion kinetic mechanisms.
 
 ## Processing Notes
 
 - extracted S0010218024005145_mmc1.docx
+- extracted S0010218024005145_mmc7.zip
+- extracted S0010218024005145_mmc6.zip
+- extracted S0010218024005145_mmc8.zip
+- extracted S0010218024005145_mmc5.zip
 - extracted S0010218024005145_mmc2.zip
 - extracted S0010218024005145_mmc3.zip
-- extracted S0010218024005145_mmc4.zip
-- extracted S0010218024005145_mmc5.zip
-- extracted S0010218024005145_mmc6.zip
-- extracted S0010218024005145_mmc7.zip
-- extracted S0010218024005145_mmc8.zip
 - extracted S0010218024005145_mmc9.zip
+- extracted S0010218024005145_mmc4.zip

@@ -22,9 +22,9 @@ Peter Glarborg, Eva Fabricius-Bjerre, Tor K. Joensen, Hamid Hashemi, Stephen J. 
 - Standard mechanism file: chem.inp
 - Standard thermodynamic file: therm.dat
 - Standard transport file: tran.dat
-- Original mechanism source files: _processing\extracted\cnf_d_24_00862_supplementary_files\N_mechanism_n2o_240606.txt
-- Original thermodynamic source files: _processing\extracted\cnf_d_24_00862_supplementary_files\N_mechanism_n2o_240606.txt, _processing\extracted\cnf_d_24_00862_supplementary_files\N_thermo.txt
-- Original transport source files: _processing\extracted\cnf_d_24_00862_supplementary_files\eval.out, _processing\extracted\cnf_d_24_00862_supplementary_files\me.aux, _processing\extracted\cnf_d_24_00862_supplementary_files\me.log, _processing\extracted\cnf_d_24_00862_supplementary_files\N_tran.txt
+- Original mechanism source files: _processing/extracted/cnf_d_24_00862_supplementary_files/N_mechanism_n2o_240606.txt
+- Original thermodynamic source files: _processing/extracted/cnf_d_24_00862_supplementary_files/N_thermo.txt, _processing/extracted/cnf_d_24_00862_supplementary_files/N_mechanism_n2o_240606.txt
+- Original transport source files: _processing/extracted/cnf_d_24_00862_supplementary_files/me.log, _processing/extracted/cnf_d_24_00862_supplementary_files/N_tran.txt, _processing/extracted/cnf_d_24_00862_supplementary_files/me.aux, _processing/extracted/cnf_d_24_00862_supplementary_files/eval.out
 
 ## Cantera Preprocessing Results
 

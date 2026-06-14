@@ -42,7 +42,7 @@ Yanyan Gao, Ying Guo, Yongqian Xie, Huanhuan Qin, Yulei Guan. Kinetic mechanism 
 
 ## Abstract
 
-not available
+Renewable alcohol fuels have higher energy density and lower emissions of combustion pollutant, and their co-combustion with ammonia (NH3) can reduce carbon footprint and alleviate energy pressure, which is an effective way to achieve “ammonia economy”. The purpose of this work is to investigate the reaction mechanism of ammonia and alcohol-based fuel co-combustion, focusing on the effect of pyrolysis and oxidation of different alcohols on the combustion behavior of NH3 at various temperatures, and the formation and reduction characteristics of nitric oxide (NO). The ReaxFF molecular dynamics (RMD) simulations show that the C–OH bond dissociation in alcohol molecules can proceed at relatively lower temperatures compared to N–H bond cleavage of NH3 to provide a rich pool of reactive radicals to promote NH3 decomposition and oxidation, and that the addition of ethanol (C2H5OH) enhances the NH3 combustion more significantly than methanol (CH3OH). In addition, the rate for NO formation is lower than that for NO reduction at high temperatures, leading to the decrease of NO emissions. Based on our RMD simulation results and previous work, a chemical kinetic model of C2H5OH/NH3 co-combustion is constructed. The C2H5OH/NH3 co-combustion kinetic numerical simulations at different equivalence ratios and different C2H5OH concentrations show that mixing a small amount of C2H5OH is beneficial to controlling NOx emission in oxygen-rich environment and under different concentrations of C2H5OH mixing, lowering the oxygen content will result in the NH3 not being completely consumed and decreasing the NOx emissions.
 
 ## Processing Notes
 

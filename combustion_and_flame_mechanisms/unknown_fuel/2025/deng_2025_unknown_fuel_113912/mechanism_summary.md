@@ -15,7 +15,7 @@ Yuwen Deng, Zaili Xiong, Jijun Guo, Chen Huang, ... Fei Qi. An experimental and 
 - Paper PDF link: https://www.sciencedirect.com/science/article/pii/S0010218024006217/pdfft?md5=ebf6d7fddb6dbf1df0965e04403a79d7&pid=1-s2.0-S0010218024006217-main.pdf
 - Fuel type: unknown_fuel
 - Plasma-related mechanism: no
-- Validation reactor/type from abstract: not clear from abstract
+- Validation reactor/type from abstract: flow reactor
 
 ## Mechanism Files
 
@@ -42,7 +42,7 @@ Yuwen Deng, Zaili Xiong, Jijun Guo, Chen Huang, ... Fei Qi. An experimental and 
 
 ## Abstract
 
-not available
+Fundamental knowledge about the production and oxidation chemistry of polycyclic aromatic hydrocarbons (PAHs) is essential for developing predictive soot models. In contrast to the significant progress in understanding the formation/growth kinetics of PAHs, the detailed oxidation kinetics of PAHs remains to be fully established. This study investigates the oxidation kinetics of indene, the simplest PAH, as a foundational step for examining larger PAHs. Experiments were conducted in a flow reactor at temperatures from 850 to 1350 K, under a pressure of 0.04 atm and an equivalence ratio of 0.5. Characteristic products were quantified using synchrotron vacuum ultraviolet photoionization mass spectrometry, including large resonance-stabilized PAH radicals with 3–4 aromatic rings. Results indicate that even under highly oxidative conditions, the mass growth pathways of indene remain competitive, leading to the production of various large PAHs. This phenomenon is unique to indene oxidation and has not been observed in other bicyclic aromatics. A detailed kinetic model was developed to interpret these findings, revealing that PAH formation is predominantly driven by the indenyl radical. This study further calculates the rate coefficients for the dominant mass growth pathway of indenyl, specifically its self-recombination reaction, to enhance predictions of indenyl and bi-indene. Notably, while spiran and bridging mechanisms are comparably important in cyclopentadienyl mass growth, the spiran mechanism is favored for indenyl, suggesting that the addition of a benzenoid ring significantly alters the reactivity of cyclopenta-like radicals. Comparative analysis with indene pyrolysis experiments reveals that under oxidative conditions, the indenyl radical preferentially decomposes into smaller species, e.g., cyclopentadienyl or cyclopentadiene, thereby enhancing the yields of PAHs that depend on C5 species as precursors. In the early reaction stage ( 1220 K), enhanced oxidation reactions of indenyl lead to its decomposition, outcompeting mass growth reactions and sharply reducing the proportion of mass growth products.
 
 ## Processing Notes
 

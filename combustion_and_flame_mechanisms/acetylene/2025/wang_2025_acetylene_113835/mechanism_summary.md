@@ -22,8 +22,8 @@ Qian-Peng Wang, Jing Yang, Yu-Feng Xu, Zi-Qiang Zhu, ... Zhen-Yu Tian. Elucidati
 - Standard mechanism file: chem.inp
 - Standard thermodynamic file: therm.dat
 - Standard transport file: not available
-- Original mechanism source files: _processing\raw_downloads\S0010218024005443_mmc1.txt
-- Original thermodynamic source files: _processing\raw_downloads\S0010218024005443_mmc2.txt
+- Original mechanism source files: _processing/raw_downloads/S0010218024005443_mmc1.txt
+- Original thermodynamic source files: _processing/raw_downloads/S0010218024005443_mmc2.txt
 - Original transport source files: not found
 
 ## Cantera Preprocessing Results
@@ -42,7 +42,7 @@ Qian-Peng Wang, Jing Yang, Yu-Feng Xu, Zi-Qiang Zhu, ... Zhen-Yu Tian. Elucidati
 
 ## Abstract
 
-not available
+Acetylene plays a crucial role as an intermediate in the combustion of complex hydrocarbons, such as, e.g., jet fuels. In this study, high-pressure acetylene oxidation has been investigated by a combination of kinetic and experimental methods using a jet-stirred reactor (JSR) in the range of 497–910 K at p = 24 atm. The study covered three fuel-equivalence ratios: φ = 0.5 (fuel-lean), φ = 1.0 (stoichiometric), and φ = 3.0 (fuel-rich). Mole fraction profiles of 10 species, including CO, CO2, CH4, C2H4, C2H6, C3H6, C3H8, CH3OH, CH3CHO, and C3H4O, were identified and quantified using gas chromatography (GC) and gas chromatography-mass spectrometry (GC–MS). A kinetic model for describing the high-pressure chemistry of acetylene oxidation is proposed, which well characterizes important experimental findings, such as the fuel oxidation reactivity and the speciation of crucial products. At high pressures (p = 24 atm), acetylene exhibits a higher fuel consumption than at lower pressures (p = 1 and 12 atm) because of the increased sensitivity of dehydrogenation reactions by OH radicals accelerating the oxidation of the fuel at low temperatures. Furthermore, fuel-specific intermediates are observed, including acetaldehyde, propanal, small alkanes, and alkenes. These species mainly result from H-abstraction reactions by OH following O2-addition reactions from triple carbon bond moieties in acetylene. The formation of further products, such as carbon monoxide and carbon dioxide, is closely related to the consumption of these fuel-specific species. In particular, the formation of aromatics, such as e.g., benzene and toluene, are detected at trace levels in the current experiments due to the rapid formation and decomposition process occurring at high pressures. By analyzing the distinct kinetic behavior, it was found that acetylene was almost completely depleted at higher system pressure (p = 24 atm). Some intermediates are rather active and can react with O2 and peroxides. Consequently, the high-pressure oxidation of acetylene mainly proceeds along the pathway of CC → CHCHOH → HOCHO/OCHCHO → CO → CO2 at the high-pressure chemistry (p = 24 atm). Overall, this study provides valuable insights into the pressure-dependent combustion behavior of acetylene and its implications for optimizing jet fuel combustion processes.
 
 ## Processing Notes
 

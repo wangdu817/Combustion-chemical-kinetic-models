@@ -22,8 +22,8 @@ Jesus Caravaca-Vilchez, Jiaxin Liu, Pengzhi Wang, Yuki Murakami, ... Karl Alexan
 - Standard mechanism file: chem.inp
 - Standard thermodynamic file: therm.dat
 - Standard transport file: not available
-- Original mechanism source files: _processing\extracted\s001021802400542x_mmc4\NUIGMech1.3_C4_mod__Commented.cti, _processing\extracted\s001021802400542x_mmc6\NUIGMech1.3_C4_mod.inp
-- Original thermodynamic source files: _processing\extracted\s001021802400542x_mmc4\NUIGMech1.3_C4_mod__Commented.cti, _processing\extracted\s001021802400542x_mmc5\NUIGMech1.3_C4_mod.dat
+- Original mechanism source files: _processing/extracted/s001021802400542x_mmc4/NUIGMech1.3_C4_mod__Commented.cti, _processing/extracted/s001021802400542x_mmc6/NUIGMech1.3_C4_mod.inp
+- Original thermodynamic source files: _processing/extracted/s001021802400542x_mmc5/NUIGMech1.3_C4_mod.dat, _processing/extracted/s001021802400542x_mmc4/NUIGMech1.3_C4_mod__Commented.cti
 - Original transport source files: not found
 
 ## Cantera Preprocessing Results
@@ -31,8 +31,8 @@ Jesus Caravaca-Vilchez, Jiaxin Liu, Pengzhi Wang, Yuki Murakami, ... Karl Alexan
 ### Mechanism 1
 
 - Status: cantera_failed
-- Species count: 2243
-- Reaction count: 11445
+- Species count: 749
+- Reaction count: 4094
 - Message: CanteraError: ******************************************************************************* CanteraError thrown by newSolution: The CTI and XML formats are no longer supported. *******************************************************************************
 - Method: cantera
 - Cantera YAML: mechanism.yaml
@@ -58,9 +58,9 @@ Alkene chemistry plays a crucial role in the autoignition and oxidation of large
 
 ## Processing Notes
 
-- extracted S001021802400542X_mmc1.zip
+- extracted S001021802400542X_mmc6.zip
+- extracted S001021802400542X_mmc5.zip
+- extracted S001021802400542X_mmc4.zip
 - extracted S001021802400542X_mmc2.xlsx
 - extracted S001021802400542X_mmc3.docx
-- extracted S001021802400542X_mmc4.zip
-- extracted S001021802400542X_mmc5.zip
-- extracted S001021802400542X_mmc6.zip
+- extracted S001021802400542X_mmc1.zip
