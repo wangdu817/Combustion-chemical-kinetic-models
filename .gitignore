@@ -34,6 +34,7 @@ combustion_and_flame_mechanisms/_raw/**
 !combustion_and_flame_mechanisms/**/therm.dat
 !combustion_and_flame_mechanisms/**/tran.dat
 !combustion_and_flame_mechanisms/**/mechanism.yaml
+!combustion_and_flame_mechanisms/**/*.pdf
 
 combustion_and_flame_mechanisms/_processing_archive/**
 combustion_and_flame_mechanisms/**/_processing/**
