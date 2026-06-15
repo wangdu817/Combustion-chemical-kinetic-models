@@ -31,8 +31,8 @@ Sirio Brunialti, Xiaoyuan Zhang, Qi Wang, Tiziano Faravelli, S. Mani Sarathy. Au
 ### Mechanism 1
 
 - Status: cantera_failed
-- Species count: 343
-- Reaction count: 1879
+- Species count: 850
+- Reaction count: 3007
 - Message: IndexError: index 1 is out of bounds for axis 0 with size 1
 - Method: cantera
 - Cantera YAML: mechanism.yaml

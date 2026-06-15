@@ -63,4 +63,3 @@ In recent years, there has been a notable surge in experimental and kinetic mode
 - extracted S0010218025001476_mmc1.zip
 - extracted S0010218025001476_mmc6.zip
 - extracted S0010218025001476_mmc5.zip
-- extracted Surrogate_properties.ods

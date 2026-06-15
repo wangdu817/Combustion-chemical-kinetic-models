@@ -33,7 +33,7 @@ Samah Y. Mohamed, Nimal Naser, Gina Fioroni, Jon Luecke, Yeonjoon Kim, Peter C. 
 - Status: cantera_failed
 - Species count: 815
 - Reaction count: 7438
-- Message: missing cantera result json
+- Message: TimeoutExpired: Cantera conversion exceeded 900 seconds
 - Method: cantera
 - Cantera YAML: mechanism.yaml
 - Standard chem.inp: chem.inp

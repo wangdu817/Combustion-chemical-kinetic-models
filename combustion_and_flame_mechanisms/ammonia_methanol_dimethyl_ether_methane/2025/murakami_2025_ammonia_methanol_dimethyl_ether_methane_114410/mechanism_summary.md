@@ -47,4 +47,3 @@ Based on our latest detailed chemical reaction mechanism, C3MechV4.0, we have de
 ## Processing Notes
 
 - extracted S001021802500447X_mmc3.zip
-- extracted SubMechExtraction.xlsx

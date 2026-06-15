@@ -33,7 +33,7 @@ Alexander A. Konnov, Jundie Chen, Marco Lubrano Lavadera. Measurements of the la
 - Status: cantera_failed
 - Species count: 498
 - Reaction count: 5722
-- Message: missing cantera result json
+- Message: TimeoutExpired: Cantera conversion exceeded 900 seconds
 - Method: cantera
 - Cantera YAML: mechanism.yaml
 - Standard chem.inp: chem.inp

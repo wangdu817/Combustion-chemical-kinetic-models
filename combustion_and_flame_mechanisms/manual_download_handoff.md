@@ -72,14 +72,6 @@ Items below need user-side ScienceDirect/Elsevier download or review.
 - Probe errors: 2
 - Reason: automated direct supplement probing did not yield a processable mechanism; ScienceDirect article-page access is currently gated by CAPTCHA
 
-## Paper PDF pending: LT-HyChem - A physics-based chemical kinetic modeling approach for low-temperature oxidation of real fuels I: Rationale, methodology, and application to a simple fuel mixture
-
-- DOI: 10.1016/j.combustflame.2024.113852
-- URL: https://www.sciencedirect.com/science/article/pii/S0010218024005613
-- PDF link from issue page: https://www.sciencedirect.com/science/article/pii/S0010218024005613/pdfft?md5=d3003ea1184e715c12b097c1029471b4&pid=1-s2.0-S0010218024005613-main.pdf
-- Reason: automated Chrome PDF access reached ScienceDirect CAPTCHA or no exact PDF link was exposed
-- Target folder: /home/ubuntu/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/unknown_fuel/2025/choudhary_2025_unknown_fuel_113852
-
 ## Cantera conversion failed: Elucidating high-pressure chemistry in acetylene oxidation: Jet-stirred reactor experiments, pressure effects, and kinetic interpretation
 
 - DOI: 10.1016/j.combustflame.2024.113835
@@ -109,22 +101,6 @@ Items below need user-side ScienceDirect/Elsevier download or review.
 - Supplement links found: 1
 - Probe errors: 1
 - Reason: automated direct supplement probing did not yield a processable mechanism; ScienceDirect article-page access is currently gated by CAPTCHA
-
-## Paper PDF pending: Advancing the C4 low-temperature oxidation chemistry through species measurements in a rapid compression machine, Part A: 1-Butene
-
-- DOI: 10.1016/j.combustflame.2024.113833
-- URL: https://www.sciencedirect.com/science/article/pii/S001021802400542X
-- PDF link from issue page: https://www.sciencedirect.com/science/article/pii/S001021802400542X/pdfft?md5=895ba6f38c268ebe066a19fffbcb8c26&pid=1-s2.0-S001021802400542X-main.pdf
-- Reason: automated Chrome PDF access reached ScienceDirect CAPTCHA or no exact PDF link was exposed
-- Target folder: /home/ubuntu/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/1_butene/2025/caravaca_vilchez_2025_1_butene_113833
-
-## Paper PDF pending: Advancing the C4 low-temperature oxidation chemistry through species measurements in a rapid compression machine. Part B: n-Butane
-
-- DOI: 10.1016/j.combustflame.2024.113861
-- URL: https://www.sciencedirect.com/science/article/pii/S0010218024005704
-- PDF link from issue page: https://www.sciencedirect.com/science/article/pii/S0010218024005704/pdfft?md5=085c928befd99d7835ea6ca32cb787d3&pid=1-s2.0-S0010218024005704-main.pdf
-- Reason: automated Chrome PDF access reached ScienceDirect CAPTCHA or no exact PDF link was exposed
-- Target folder: /home/ubuntu/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/n_butane/2025/caravaca_vilchez_2025_n_butane_113861
 
 ## 2025 supplement review needed: Oxidation of magnesium particles in a fluidized bed reactor
 
@@ -170,11 +146,11 @@ Items below need user-side ScienceDirect/Elsevier download or review.
 
 - DOI: 10.1016/j.combustflame.2024.113865
 - URL: https://www.sciencedirect.com/science/article/pii/S0010218024005741
-- Mechanism candidates: /home/ubuntu/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/unknown_fuel/2025/loukhovitski_2025_unknown_fuel_113865/_processing/extracted/s0010218024005741_mmc3/JIHT-OHex(CxHy).yaml; /home/ubuntu/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/unknown_fuel/2025/loukhovitski_2025_unknown_fuel_113865/_processing/extracted/s0010218024005741_mmc2/JIHT-OHex(CxHy)_kin.dat
-- Thermodynamic candidates: /home/ubuntu/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/unknown_fuel/2025/loukhovitski_2025_unknown_fuel_113865/_processing/extracted/s0010218024005741_mmc3/JIHT-OHex(CxHy).yaml; /home/ubuntu/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/unknown_fuel/2025/loukhovitski_2025_unknown_fuel_113865/_processing/extracted/s0010218024005741_mmc2/JIHT-OHex(CxHy)_therm.dat
+- Mechanism candidates: /home/ubuntu/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/hydrogen/2025/loukhovitski_2025_hydrogen_113865/_processing/extracted/s0010218024005741_mmc3/JIHT-OHex(CxHy).yaml; /home/ubuntu/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/hydrogen/2025/loukhovitski_2025_hydrogen_113865/_processing/extracted/s0010218024005741_mmc2/JIHT-OHex(CxHy)_kin.dat
+- Thermodynamic candidates: /home/ubuntu/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/hydrogen/2025/loukhovitski_2025_hydrogen_113865/_processing/extracted/s0010218024005741_mmc3/JIHT-OHex(CxHy).yaml; /home/ubuntu/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/hydrogen/2025/loukhovitski_2025_hydrogen_113865/_processing/extracted/s0010218024005741_mmc2/JIHT-OHex(CxHy)_therm.dat
 - Last status: cantera_failed
-- Last message: CanteraError: ******************************************************************************* InputFileError thrown by addSpecies: Error on lines 65 and 74 of /home/ubuntu/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/unknown_fuel/2025/loukhovitski_2025_unknown_fuel_113865/mechanism.yaml: Could not find a species named 'H'. | Line | | 60 | - name: "JIHT-OHex(CxHy)" | 61 | transport: multicomponent | 62 | kinetics: gas | 63 | thermo: ideal-gas | 64 | elements: [H, O, N, Ar, He, Kr, C] > 65 > species: [H, H2, O, O2, OH, H2O, N2, HO2, H2O2, AR, HE, KR, OHEX, NO, N2O, NO2, ^ | 66 | HNO, HNO2, NH3, NH, NNH, CO, CO2, CH4, CH3, CH2, C, CH, CH3OH, CH2OH, | 67 | CH2O, HCO, C2H6, C2H4, C2H2, C2H, CH3CO, CH2CO, C3H6, C3H5, C3H4, | 68 | C3H3, C3H2, C2H3CHO, C4H10, C4H6, C4H2, CH2C ... [truncated; see _processing logs]
-- Target folder: /home/ubuntu/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/unknown_fuel/2025/loukhovitski_2025_unknown_fuel_113865
+- Last message: CanteraError: ******************************************************************************* InputFileError thrown by addSpecies: Error on lines 65 and 74 of /home/ubuntu/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/hydrogen/2025/loukhovitski_2025_hydrogen_113865/mechanism.yaml: Could not find a species named 'H'. | Line | | 60 | - name: "JIHT-OHex(CxHy)" | 61 | transport: multicomponent | 62 | kinetics: gas | 63 | thermo: ideal-gas | 64 | elements: [H, O, N, Ar, He, Kr, C] > 65 > species: [H, H2, O, O2, OH, H2O, N2, HO2, H2O2, AR, HE, KR, OHEX, NO, N2O, NO2, ^ | 66 | HNO, HNO2, NH3, NH, NNH, CO, CO2, CH4, CH3, CH2, C, CH, CH3OH, CH2OH, | 67 | CH2O, HCO, C2H6, C2H4, C2H2, C2H, CH3CO, CH2CO, C3H6, C3H5, C3H4, | 68 | C3H3, C3H2, C2H3CHO, C4H10, C4H6, C4H2, CH2COOH, C5H ... [truncated; see _processing logs]
+- Target folder: /home/ubuntu/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/hydrogen/2025/loukhovitski_2025_hydrogen_113865
 
 ## Cantera conversion failed: A detailed analysis of the key steps of the cyclopentene autoignition mechanism from calculated RRKM rate constants associated with ignition delay time simulations
 
@@ -356,14 +332,6 @@ Items below need user-side ScienceDirect/Elsevier download or review.
 - Probe errors: 0
 - Reason: automated direct supplement probing did not yield a processable mechanism; ScienceDirect article-page access is currently gated by CAPTCHA
 
-## Paper PDF pending: A comprehensive chemical kinetic modeling and experimental study of NH3−methanol/ethanol combustion towards net-zero CO2 emissions
-
-- DOI: 10.1016/j.combustflame.2024.113954
-- URL: https://www.sciencedirect.com/science/article/pii/S0010218024006631
-- PDF link from issue page: https://www.sciencedirect.com/science/article/pii/S0010218024006631/pdfft?md5=c239e4fded776c774652c8afe0d7a0b1&pid=1-s2.0-S0010218024006631-main.pdf
-- Reason: automated Chrome PDF access reached ScienceDirect CAPTCHA or no exact PDF link was exposed
-- Target folder: /home/ubuntu/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/ammonia_methanol/2025/shrestha_2025_ammonia_methanol_113954
-
 ## 2025 supplement review needed: Sensitizing effect of acetylene and 1,3-butadiene on toluene oxidation in laminar flames
 
 - DOI: 10.1016/j.combustflame.2025.113978
@@ -444,22 +412,6 @@ Items below need user-side ScienceDirect/Elsevier download or review.
 - Probe errors: 0
 - Reason: automated direct supplement probing did not yield a processable mechanism; ScienceDirect article-page access is currently gated by CAPTCHA
 
-## Paper PDF pending: Exploring the two-stage ignition of n-butylcyclohexane: A comprehensive experimental and modeling study
-
-- DOI: 10.1016/j.combustflame.2025.114047
-- URL: https://www.sciencedirect.com/science/article/pii/S0010218025000859
-- PDF link from issue page: https://www.sciencedirect.com/science/article/pii/S0010218025000859/pdfft?md5=b89086591b8842b8d3000a4987a250ec&pid=1-s2.0-S0010218025000859-main.pdf
-- Reason: automated Chrome PDF access reached ScienceDirect CAPTCHA or no exact PDF link was exposed
-- Target folder: /home/ubuntu/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/unknown_fuel/2025/hong_2025_unknown_fuel_114047
-
-## Paper PDF pending: Validation and improvement of dimethyl ether kinetic models: Insights from ȮH laser-absorption measurements across a wide pressure range
-
-- DOI: 10.1016/j.combustflame.2025.114048
-- URL: https://www.sciencedirect.com/science/article/pii/S0010218025000860
-- PDF link from issue page: https://www.sciencedirect.com/science/article/pii/S0010218025000860/pdfft?md5=a8ba06d053cbe901932869c537b00bc2&pid=1-s2.0-S0010218025000860-main.pdf
-- Reason: automated Chrome PDF access reached ScienceDirect CAPTCHA or no exact PDF link was exposed
-- Target folder: /home/ubuntu/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/dimethyl_ether/2025/zhang_2025_dimethyl_ether_114048
-
 ## Cantera conversion failed: Comparing the low-temperature oxidation chemistry of butane isomers with ozone addition: An experimental and modeling study
 
 - DOI: 10.1016/j.combustflame.2025.114056
@@ -499,14 +451,6 @@ Items below need user-side ScienceDirect/Elsevier download or review.
 - Last status: cantera_failed
 - Last message: InputError: Ignoring redundant declaration for species 'CH2O' Error while reading reaction in chem.inp starting on line 4007: """ H+O2(+M)=HO2(+M) +4.66000000E+012 +4.40000000E-001 +0.00000000E+000 !\AUTHOR: SP !\REF: TROE _ 2000 / PCCP FERNANDES 2008 LOWMX / +1.22500000E+019 -1.20000000E+000 +0.00000000E+000/!\AUTHOR: SP !\REF:SHAO ET AL. PROC. COMB. INST. 37,(2019):145-152. TROEMX / +5.00E-01 1.00E+00 1.00E+10 1.00E+30 / LOWSP / N2 +4.50E+20 -1.73E+00 0.00E+00/ !\AUTHOR: SP !\REF: LU, Z. 2020. HYDROGEN OXIDATION NEAR THE SECOND EXPLOSION LIMIT IN A FLOW REACTOR TROESP / N2 +5.00E-01 1.00E+00 1.00E+10 1.00E+30 / N2 / +1.0 / HE / +0.5700 / AR / +0.65 / O2 / 1.0 / H2 / +2.00 / CH4 / +2.0000 / CO2 / +3.2500 / H2O / +17.6000 / CO / 4.0/ """ could not convert string to float: 'N2' Please check ... [truncated; see _processing logs]
 - Target folder: /home/ubuntu/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/dimethyl_ether_n2o/2025/he_2025_dimethyl_ether_n2o_114071
-
-## Paper PDF pending: Elucidating reaction pathways and kinetic modeling in ozone-assisted low-temperature oxidation of n-pentanol
-
-- DOI: 10.1016/j.combustflame.2025.114098
-- URL: https://www.sciencedirect.com/science/article/pii/S0010218025001361
-- PDF link from issue page: https://www.sciencedirect.com/science/article/pii/S0010218025001361/pdfft?md5=5dd77d485d73826d2836053a4c103c31&pid=1-s2.0-S0010218025001361-main.pdf
-- Reason: automated Chrome PDF access reached ScienceDirect CAPTCHA or no exact PDF link was exposed
-- Target folder: /home/ubuntu/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/pentanol/2025/teka_2025_pentanol_114098
 
 ## 2025 supplement review needed: Enforcing physical conservation in neural network surrogate models for complex chemical kinetics
 
@@ -558,14 +502,6 @@ Items below need user-side ScienceDirect/Elsevier download or review.
 - Probe errors: 0
 - Reason: automated direct supplement probing did not yield a processable mechanism; ScienceDirect article-page access is currently gated by CAPTCHA
 
-## Paper PDF pending: Experimental study and kinetic modeling of NH3/DME blends oxidation in a jet stirred reactor
-
-- DOI: 10.1016/j.combustflame.2025.114125
-- URL: https://www.sciencedirect.com/science/article/pii/S0010218025001634
-- PDF link from issue page: https://www.sciencedirect.com/science/article/pii/S0010218025001634/pdfft?md5=8fccbb3131fd99aa90072a3e6ee4f55b&pid=1-s2.0-S0010218025001634-main.pdf
-- Reason: automated Chrome PDF access reached ScienceDirect CAPTCHA or no exact PDF link was exposed
-- Target folder: /home/ubuntu/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/ammonia_dimethyl_ether/2025/yu_2025_ammonia_dimethyl_ether_114125
-
 ## Cantera conversion failed: A comparative study on the effects of NO2 addition on the auto-ignition behavior of n-heptane, iso-octane and toluene at engine relevant conditions
 
 - DOI: 10.1016/j.combustflame.2025.114118
@@ -580,11 +516,11 @@ Items below need user-side ScienceDirect/Elsevier download or review.
 
 - DOI: 10.1016/j.combustflame.2025.114109
 - URL: https://www.sciencedirect.com/science/article/pii/S0010218025001476
-- Mechanism candidates: /home/ubuntu/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/unknown_fuel/2025/attarde_2025_unknown_fuel_114109/_processing/extracted/s0010218025001476_mmc1/Biodiesel_surrogates.inp; /home/ubuntu/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/unknown_fuel/2025/attarde_2025_unknown_fuel_114109/_processing/extracted/s0010218025001476_mmc2/dodecane.inp
-- Thermodynamic candidates: /home/ubuntu/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/unknown_fuel/2025/attarde_2025_unknown_fuel_114109/_processing/extracted/s0010218025001476_mmc5/surrogate_therm.dat
+- Mechanism candidates: /home/ubuntu/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/n_dodecane/2025/attarde_2025_n_dodecane_114109/_processing/extracted/s0010218025001476_mmc1/Biodiesel_surrogates.inp; /home/ubuntu/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/n_dodecane/2025/attarde_2025_n_dodecane_114109/_processing/extracted/s0010218025001476_mmc2/dodecane.inp
+- Thermodynamic candidates: /home/ubuntu/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/n_dodecane/2025/attarde_2025_n_dodecane_114109/_processing/extracted/s0010218025001476_mmc5/surrogate_therm.dat
 - Last status: cantera_failed
 - Last message: InputError: Error while reading reaction in chem.inp starting on line 378: """ H+O2(+M)=HO2(+M) 4.66E12 0.44 0.0E0 HE/0.57/ N2/1.0/ AR/0.65/ O2/1.0/ H2/2.0/ CH4/2.0/ CO2/3.25/ H2O/17.6/ CO/4.0/ LOWMX/1.225E19 -1.2E0 0.0E0/ TROEMX/5.0E-1 1.0E0 1.0E10 1.0E30/ LOWSP/N2 4.5E20 -1.73E0 0.0E0/ TROESP/N2 5.0E-1 1.0E0 1.0E10 1.0E30/ """ could not convert string to float: 'N2' Error while reading reaction in chem.inp starting on line 26428: """ C12H25-1+O2=C12H24-1+HO2 3.29E-13 7.45E+00 6.82E+03 ! Duan 2020 HR1+O2 PS13 PLOG/1.0E-2 4.95E+20 -2.09E+00 1.42E+04/ PLOG/1.0E-1 4.17E+07 1.93E+00 1.13E+04/ PLOG/1.0E 2.90E-05 5.55E+00 8.28E+03/ PLOG/1.0E1 3.17E-10 6.83E+00 7.34E+03/ PLOG/1.0E2 3.29E-13 7.45E+00 6.82E+03/ """ could not convert string to float: '1.0E' Error while reading reaction in chem.inp ... [truncated; see _processing logs]
-- Target folder: /home/ubuntu/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/unknown_fuel/2025/attarde_2025_unknown_fuel_114109
+- Target folder: /home/ubuntu/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/n_dodecane/2025/attarde_2025_n_dodecane_114109
 
 ## 2025 supplement review needed: Interaction of ammonia with nitric oxide and nitrous oxide: Multi-species time-history measurements and comprehensive kinetic modeling
 
@@ -605,14 +541,6 @@ Items below need user-side ScienceDirect/Elsevier download or review.
 - Last status: cantera_failed
 - Last message: CanteraError: ******************************************************************************* CanteraError thrown by GasTransportData::validate: invalid geometry for species 'C8H2'. 'atom' specified, but species contains multiple atoms. *******************************************************************************
 - Target folder: /home/ubuntu/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/methyl_formate_dimethyl_carbonate/2025/yang_2025_methyl_formate_dimethyl_carbonate_114112
-
-## Paper PDF pending: Experimental and modeling study on the high-temperature ignition of ammonia/diethyl ketone
-
-- DOI: 10.1016/j.combustflame.2025.114069
-- URL: https://www.sciencedirect.com/science/article/pii/S0010218025001075
-- PDF link from issue page: https://www.sciencedirect.com/science/article/pii/S0010218025001075/pdfft?md5=d28b1d4e7ad37b38aa5dcff7851fb95d&pid=1-s2.0-S0010218025001075-main.pdf
-- Reason: automated Chrome PDF access reached ScienceDirect CAPTCHA or no exact PDF link was exposed
-- Target folder: /home/ubuntu/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/ammonia/2025/yan_2025_ammonia_114069
 
 ## Cantera conversion failed: High-temperature ignition of ammonia/methyl isopropyl ketone: A shock tube experiment and a kinetic model
 
@@ -653,14 +581,6 @@ Items below need user-side ScienceDirect/Elsevier download or review.
 - Supplement links found: 0
 - Probe errors: 0
 - Reason: automated direct supplement probing did not yield a processable mechanism; ScienceDirect article-page access is currently gated by CAPTCHA
-
-## Paper PDF pending: On the two-stage auto-ignition of butyl nitrite isomers
-
-- DOI: 10.1016/j.combustflame.2025.114185
-- URL: https://www.sciencedirect.com/science/article/pii/S0010218025002238
-- PDF link from issue page: https://www.sciencedirect.com/science/article/pii/S0010218025002238/pdfft?md5=984ebcad62bb1a2ef495b164d7ff8cf9&pid=1-s2.0-S0010218025002238-main.pdf
-- Reason: automated Chrome PDF access reached ScienceDirect CAPTCHA or no exact PDF link was exposed
-- Target folder: /home/ubuntu/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/unknown_fuel/2025/chu_2025_unknown_fuel_114185
 
 ## Cantera conversion failed: Performance prediction of high-energy-density material CL-20 based on FP-CL20 chemical kinetics model
 
@@ -716,11 +636,11 @@ Items below need user-side ScienceDirect/Elsevier download or review.
 
 - DOI: 10.1016/j.combustflame.2025.114134
 - URL: https://www.sciencedirect.com/science/article/pii/S0010218025001725
-- Mechanism candidates: /home/ubuntu/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/unknown_fuel/2025/goldsborough_2025_unknown_fuel_114134/_processing/raw_downloads/S0010218025001725_mmc3.txt
-- Thermodynamic candidates: /home/ubuntu/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/unknown_fuel/2025/goldsborough_2025_unknown_fuel_114134/_processing/extracted/s0010218025001725_mmc4/SM5 - thermo.CYC5H10_C4H9N_CHEMKIN_2025.CKT
+- Mechanism candidates: /home/ubuntu/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/ammonia_pyrrole/2025/goldsborough_2025_ammonia_pyrrole_114134/_processing/raw_downloads/S0010218025001725_mmc3.txt
+- Thermodynamic candidates: /home/ubuntu/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/ammonia_pyrrole/2025/goldsborough_2025_ammonia_pyrrole_114134/_processing/extracted/s0010218025001725_mmc4/SM5 - thermo.CYC5H10_C4H9N_CHEMKIN_2025.CKT
 - Last status: cantera_failed
-- Last message: CanteraError: ******************************************************************************* InputFileError thrown by Kinetics::checkDuplicates: Error on line 3814 of /home/ubuntu/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/unknown_fuel/2025/goldsborough_2025_unknown_fuel_114134/mechanism.yaml: No duplicate found for declared duplicate reaction number 661 (C5H5O + OH => C4H4 + CO + H2O) | Line | | 3809 | type: pressure-dependent-Arrhenius | 3810 | rate-constants: | 3811 | - {P: 0.1 atm, A: 4.91e+25, b: -3.12, Ea: 1.772673e+04} | 3812 | - {P: 1.0 atm, A: 3.06e+29, b: -4.07, Ea: 2.37896e+04} | 3813 | - {P: 10.0 atm, A: 8.13e+24, b: -2.67, Ea: 2.502564e+04} > 3814 > - equation: OH + C5H5O => H2O + CO + C4H4 # Reaction 662 ^ | 3815 | duplicate: true | 3816 | rate-consta ... [truncated; see _processing logs]
-- Target folder: /home/ubuntu/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/unknown_fuel/2025/goldsborough_2025_unknown_fuel_114134
+- Last message: CanteraError: ******************************************************************************* InputFileError thrown by Kinetics::checkDuplicates: Error on line 3814 of /home/ubuntu/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/ammonia_pyrrole/2025/goldsborough_2025_ammonia_pyrrole_114134/mechanism.yaml: No duplicate found for declared duplicate reaction number 661 (C5H5O + OH => C4H4 + CO + H2O) | Line | | 3809 | type: pressure-dependent-Arrhenius | 3810 | rate-constants: | 3811 | - {P: 0.1 atm, A: 4.91e+25, b: -3.12, Ea: 1.772673e+04} | 3812 | - {P: 1.0 atm, A: 3.06e+29, b: -4.07, Ea: 2.37896e+04} | 3813 | - {P: 10.0 atm, A: 8.13e+24, b: -2.67, Ea: 2.502564e+04} > 3814 > - equation: OH + C5H5O => H2O + CO + C4H4 # Reaction 662 ^ | 3815 | duplicate: true | 3816 | rate- ... [truncated; see _processing logs]
+- Target folder: /home/ubuntu/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/ammonia_pyrrole/2025/goldsborough_2025_ammonia_pyrrole_114134
 
 ## Cantera conversion failed: Experimental and kinetic study on the co-oxidation of pyridine and ammonia as a model compound of coal-ammonia co-firing
 
@@ -731,14 +651,6 @@ Items below need user-side ScienceDirect/Elsevier download or review.
 - Last status: cantera_failed
 - Last message: CanteraError: ******************************************************************************* CanteraError thrown by Kinetics::checkDuplicates: Error on lines 2732 and 9703 of /home/ubuntu/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/ammonia_pyridine_coal/2025/wu_2025_ammonia_pyridine_coal_114211/mechanism.yaml: Undeclared duplicate reactions detected: Reaction 1: C5H5N + NH2 <=> C5H4N + NH3 Reaction 1576: C5H5N + NH2 <=> C5H4N + NH3 | Line | | 2727 | note: |- | 2728 | T.8.03 | 2729 | Burcat/Goos 2017 | 2730 | | 2731 | reactions: > 2732 > - equation: C5H5N + NH2 <=> C5H4N + NH3 # Reaction 1 ^ | 2733 | rate-constant: {A: 0.0488, b: 4.3749, Ea: 5503.5} | 2734 | note: | | 2735 | ********* PYRIDINE SUBSET ************ ... | 9698 | T.Kathrotia 2011 | 9699 | - equation: OH* ... [truncated; see _processing logs]
 - Target folder: /home/ubuntu/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/ammonia_pyridine_coal/2025/wu_2025_ammonia_pyridine_coal_114211
-
-## Paper PDF pending: Experimental and fuel-surrogates modeling study of the high-pressure pyrolysis of specialty cetane number fuels: implications for fall-off in ethylene unimolecular dissociation
-
-- DOI: 10.1016/j.combustflame.2025.114222
-- URL: https://www.sciencedirect.com/science/article/pii/S0010218025002603
-- PDF link from issue page: https://www.sciencedirect.com/science/article/pii/S0010218025002603/pdfft?md5=3c50af32a4527ce7b96061a32eaafb56&pid=1-s2.0-S0010218025002603-main.pdf
-- Reason: automated Chrome PDF access reached ScienceDirect CAPTCHA or no exact PDF link was exposed
-- Target folder: /home/ubuntu/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/ethylene/2025/abdulrahman_2025_ethylene_114222
 
 ## 2025 supplement review needed: Study of low-to-moderate temperature oxidation of 1,2,4-trimethylbenzene/n-heptane blends
 
@@ -779,22 +691,6 @@ Items below need user-side ScienceDirect/Elsevier download or review.
 - Supplement links found: 0
 - Probe errors: 0
 - Reason: automated direct supplement probing did not yield a processable mechanism; ScienceDirect article-page access is currently gated by CAPTCHA
-
-## Paper PDF pending: Impact of ethanol addition on the autoignition characteristics of a certification gasoline
-
-- DOI: 10.1016/j.combustflame.2025.114252
-- URL: https://www.sciencedirect.com/science/article/pii/S0010218025002901
-- PDF link from issue page: https://www.sciencedirect.com/science/article/pii/S0010218025002901/pdfft?md5=05f39f7bde8e4444742e0af0d5b605d3&pid=1-s2.0-S0010218025002901-main.pdf
-- Reason: automated Chrome PDF access reached ScienceDirect CAPTCHA or no exact PDF link was exposed
-- Target folder: /home/ubuntu/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/gasoline/2025/aljohani_2025_gasoline_114252
-
-## Paper PDF pending: Kinetic modeling and experimental study of laminar burning velocities of CH4/NH3/N2O/Ar premixed flames
-
-- DOI: 10.1016/j.combustflame.2025.114253
-- URL: https://www.sciencedirect.com/science/article/pii/S0010218025002913
-- PDF link from issue page: https://www.sciencedirect.com/science/article/pii/S0010218025002913/pdfft?md5=526078331ff476bbb8c59dbc6680fb81&pid=1-s2.0-S0010218025002913-main.pdf
-- Reason: automated Chrome PDF access reached ScienceDirect CAPTCHA or no exact PDF link was exposed
-- Target folder: /home/ubuntu/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/ammonia_methane_n2o/2025/ge_2025_ammonia_methane_n2o_114253
 
 ## 2025 supplement review needed: ȮH insights into the interaction of hydrogen-rich methane and water: Laser absorption experiments and chemical kinetics
 
@@ -880,11 +776,11 @@ Items below need user-side ScienceDirect/Elsevier download or review.
 
 - DOI: 10.1016/j.combustflame.2025.114342
 - URL: https://www.sciencedirect.com/science/article/pii/S0010218025003797
-- Mechanism candidates: /home/ubuntu/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/unknown_fuel/2025/chen_2025_unknown_fuel_114342/_processing/extracted/s0010218025003797_mmc5/SM_5_Kinetic.mech
-- Thermodynamic candidates: /home/ubuntu/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/unknown_fuel/2025/chen_2025_unknown_fuel_114342/_processing/extracted/s0010218025003797_mmc6/SM_6_Therm.dat
+- Mechanism candidates: /home/ubuntu/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/gasoline/2025/chen_2025_gasoline_114342/_processing/extracted/s0010218025003797_mmc5/SM_5_Kinetic.mech
+- Thermodynamic candidates: /home/ubuntu/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/gasoline/2025/chen_2025_gasoline_114342/_processing/extracted/s0010218025003797_mmc6/SM_6_Therm.dat
 - Last status: cantera_failed
 - Last message: InputError: Ignoring redundant declaration for species 'O2CHO' Ignoring redundant declaration for species 'C2H5O2' Ignoring redundant declaration for species 'C2H4O2H' Ignoring redundant declaration for species 'C2H3O1-2' Ignoring redundant declaration for species 'CH2OCHO' Suppressed 92 additional warnings about redundant species declarations. Run ck2yaml again with the '--verbose' option to see all warnings. Error while reading reaction in chem.inp starting on line 7618: """ H+O2(+M)=HO2(+M) 4.66E12 0.44 0.0E0 !\Author: SP !\Ref: TROE, PROCI Volume 28, Issue 2, 2000, 1463-1469 / PCCP FERNANDES 2008 HE/1.0/ AR/0.0/ N2/1.0/ O2/1.0/ H2/2.0/ CH4/2.0/ CO2/3.25/ H2O/17.6/ CO/4.0/ LOWMX / 4.0662E19 -1.4E0 -1.80537E2 / TROEMX / 5.0E-1 1.0E0 1.0E10 1.0E30 / LOWSP / N2 1.91E+20 -1.5568 253.86 / !Y ... [truncated; see _processing logs]
-- Target folder: /home/ubuntu/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/unknown_fuel/2025/chen_2025_unknown_fuel_114342
+- Target folder: /home/ubuntu/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/gasoline/2025/chen_2025_gasoline_114342
 
 ## 2025 supplement review needed: Laminar flames and chemical kinetics analysis of NH3/NO and NH3/N2O mixtures in the absence of oxygen
 
@@ -936,40 +832,6 @@ Items below need user-side ScienceDirect/Elsevier download or review.
 - Last message: InputError: Error while reading entry in chem.inp starting on line 3014: """ GRI M. Frenklach, H. Wang, M. Goldenberg, G.P. Smith, D.M. Golden, C.T. Bowman, R.K. Hanson, W.C. Gardiner, """ Section starts with unrecognized keyword 'GRI M. Frenklach, H. Wang, M. Goldenberg, G.P. Smith, D.M. Golden, C.T. Bowman, R.K. Hanson, W.C. Gardiner,' Unparsable lines while reading thermo data in therm.dat starting on line 13: """ !############### From JetSurF 2.0 except for specific description ############### """ Lines could not be parsed as a NASA7 entry. Unparsable lines while reading thermo data in therm.dat starting on line 303: """ -5.72714455E-08 2.36641011E-11 2.58014506E+04 9.11906641E+00 2.78022108E+04 4 """ Lines could not be parsed as a NASA7 entry. Unparsable lines while reading thermo dat ... [truncated; see _processing logs]
 - Target folder: /home/ubuntu/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/ethylcyclohexane/2025/hossain_2025_ethylcyclohexane_114345
 
-## Paper PDF pending: Automatic generation of compact kinetic models for large alkane oxidation
-
-- DOI: 10.1016/j.combustflame.2025.114355
-- URL: https://www.sciencedirect.com/science/article/pii/S001021802500392X
-- PDF link from issue page: https://www.sciencedirect.com/science/article/pii/S001021802500392X/pdfft?md5=12af70667313d2c393421dcd0f00bc9e&pid=1-s2.0-S001021802500392X-main.pdf
-- Reason: automated Chrome PDF access reached ScienceDirect CAPTCHA or no exact PDF link was exposed
-- Target folder: /home/ubuntu/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/unknown_fuel/2025/brunialti_2025_unknown_fuel_114355
-
-## Paper PDF pending: Laminar burning velocities of ultra-lean iso-octane flames at atmospheric pressure: A comparative study with n-heptane flames
-
-- DOI: 10.1016/j.combustflame.2025.114358
-- URL: https://www.sciencedirect.com/science/article/pii/S0010218025003955
-- PDF link from issue page: https://www.sciencedirect.com/science/article/pii/S0010218025003955/pdfft?md5=6c08e04902f8596123d444ba540ed980&pid=1-s2.0-S0010218025003955-main.pdf
-- Reason: automated Chrome PDF access reached ScienceDirect CAPTCHA or no exact PDF link was exposed
-- Target folder: /home/ubuntu/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/n_heptane/2025/han_2025_n_heptane_114358
-
-## Cantera conversion failed: Investigation of Di-tert-butyl peroxide combustion: time-resolved speciation, laminar flame speed, and model evaluation
-
-- DOI: 10.1016/j.combustflame.2025.114350
-- URL: https://www.sciencedirect.com/science/article/pii/S0010218025003876
-- Mechanism candidates: /home/ubuntu/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/unknown_fuel/2025/hong_2025_unknown_fuel_114350/_processing/raw_downloads/S0010218025003876_mmc3.txt
-- Thermodynamic candidates: /home/ubuntu/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/unknown_fuel/2025/hong_2025_unknown_fuel_114350/_processing/raw_downloads/S0010218025003876_mmc2.txt
-- Last status: cantera_failed
-- Last message: TimeoutExpired: Cantera conversion exceeded 900 seconds
-- Target folder: /home/ubuntu/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/unknown_fuel/2025/hong_2025_unknown_fuel_114350
-
-## Paper PDF pending: Surrogate formulation for HEFA sustainable aviation fuels: a new approach based on pyrolysis experiments
-
-- DOI: 10.1016/j.combustflame.2025.114366
-- URL: https://www.sciencedirect.com/science/article/pii/S0010218025004031
-- PDF link from issue page: https://www.sciencedirect.com/science/article/pii/S0010218025004031/pdfft?md5=39c195d7792e1fb6733582504772779b&pid=1-s2.0-S0010218025004031-main.pdf
-- Reason: automated Chrome PDF access reached ScienceDirect CAPTCHA or no exact PDF link was exposed
-- Target folder: /home/ubuntu/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/saf/2025/liang_2025_saf_114366
-
 ## Cantera conversion failed: Experimental and kinetic study on nitrogen conversion mechanism and nitrogen-containing polycyclic aromatic hydrocarbon formation of 4-ethylpyridine pyrolysis
 
 - DOI: 10.1016/j.combustflame.2025.114364
@@ -1000,31 +862,15 @@ Items below need user-side ScienceDirect/Elsevier download or review.
 - Last message: InputError: Ignoring redundant declaration for species 'NC5KET21' Ignoring redundant declaration for species 'C6KET21' Ignoring redundant declaration for species 'NC5KET21O' Ignoring redundant declaration for species 'NC5KET23' Ignoring redundant declaration for species 'NC5KET32' Suppressed 22 additional warnings about redundant species declarations. Run ck2yaml again with the '--verbose' option to see all warnings. Error while reading reaction in chem.inp starting on line 1848: """ H+O2(+M)=HO2(+M) 4.66E12 0.44 0.0E0 !\Author: SP !\Ref: TROE, PROCI Volume 28, Issue 2, 2000, 1463-1469 / PCCP FERNANDES 2008 HE/1.0/ AR/0.0/ N2/1.0/ O2/1.0/ H2/2.0/ CH4/2.0/ CO2/3.25/ H2O/17.6/ CO/4.0/ LOWMX / 4.0662E19 -1.4E0 -1.80537E2 / TROEMX / 5.0E-1 1.0E0 1.0E10 1.0E30 / LOWSP / N2 1.91E+20 -1.5568 253. ... [truncated; see _processing logs]
 - Target folder: /home/ubuntu/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/unknown_fuel/2025/liu_2025_unknown_fuel_114409
 
-## Paper PDF pending: An experimental and chemical kinetic modelling study of toluene oxidation with nitrous oxide
-
-- DOI: 10.1016/j.combustflame.2025.114349
-- URL: https://www.sciencedirect.com/science/article/pii/S0010218025003864
-- PDF link from issue page: https://www.sciencedirect.com/science/article/pii/S0010218025003864/pdfft?md5=c033fc4280189e8472408a8a58a6fbc1&pid=1-s2.0-S0010218025003864-main.pdf
-- Reason: automated Chrome PDF access reached ScienceDirect CAPTCHA or no exact PDF link was exposed
-- Target folder: /home/ubuntu/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/n2o/2025/bhattacharya_2025_n2o_114349
-
-## Paper PDF pending: Measurements and modeling of laminar burning velocities and chemical kinetics analysis of CH3OH blended with NH3 and H2, with and without CO2 addition
-
-- DOI: 10.1016/j.combustflame.2025.114414
-- URL: https://www.sciencedirect.com/science/article/pii/S0010218025004511
-- PDF link from issue page: https://www.sciencedirect.com/science/article/pii/S0010218025004511/pdfft?md5=1a3023c418bdc5ceb3152aac7a991383&pid=1-s2.0-S0010218025004511-main.pdf
-- Reason: automated Chrome PDF access reached ScienceDirect CAPTCHA or no exact PDF link was exposed
-- Target folder: /home/ubuntu/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/ammonia_hydrogen/2025/meng_2025_ammonia_hydrogen_114414
-
 ## Cantera conversion failed: Unraveling the low-temperature chemistry of nitrogenous compounds by informatively kinetic modeling of N,N-dimethylformamide
 
 - DOI: 10.1016/j.combustflame.2025.114390
 - URL: https://www.sciencedirect.com/science/article/pii/S0010218025004274
-- Mechanism candidates: /home/ubuntu/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/unknown_fuel/2025/wang_2025_unknown_fuel_114390/_processing/extracted/s0010218025004274_mmc2/mech.inp
-- Thermodynamic candidates: /home/ubuntu/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/unknown_fuel/2025/wang_2025_unknown_fuel_114390/_processing/extracted/s0010218025004274_mmc2/thermo.dat
+- Mechanism candidates: /home/ubuntu/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/hydrogen/2025/wang_2025_hydrogen_114390/_processing/extracted/s0010218025004274_mmc2/mech.inp
+- Thermodynamic candidates: /home/ubuntu/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/hydrogen/2025/wang_2025_hydrogen_114390/_processing/extracted/s0010218025004274_mmc2/thermo.dat
 - Last status: cantera_failed
 - Last message: InputError: Ignoring redundant declaration for species 'CH3NCO' Ignoring redundant declaration for species 'OCNCHO' Error while reading section in chem.inp starting on line 141: """ REACTIONS MOLES CAL/MOLE MAXSP=8 """ Unrecognized token 'MAXSP=8' on REACTIONS line Error while reading reaction in chem.inp starting on line 880: """ H+CH3N(CO)CHO=(CHO)2NCH3 1E14 0.00E 0.00 """ could not convert string to float: '0.00E' Error while reading reaction in chem.inp starting on line 882: """ H+(CHO)2NCH2=(CHO)2NCH3 1E14 0.00E 0.00 """ could not convert string to float: '0.00E' Error while reading reaction in chem.inp starting on line 3984: """ CH2NCH2OOH=CH2NCHO+H2O +1.48E+016 -1.12E+000 +4.59493E+004 ! PLOG / +1.00E-2 +1.990+50 -1.270+01 +5.35319E+4 / PLOG / +1.00E-1 +4.720+47 -1.150+01 +5.43609E+ ... [truncated; see _processing logs]
-- Target folder: /home/ubuntu/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/unknown_fuel/2025/wang_2025_unknown_fuel_114390
+- Target folder: /home/ubuntu/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/hydrogen/2025/wang_2025_hydrogen_114390
 
 ## Cantera conversion failed: An experimental and kinetic modeling study of ethyl tert-butyl ether. Part I: High-temperature pyrolysis and oxidation chemistry
 
@@ -1035,14 +881,6 @@ Items below need user-side ScienceDirect/Elsevier download or review.
 - Last status: cantera_failed
 - Last message: InputError: Error while reading reaction in chem.inp starting on line 308: """ H+O2(+M)=HO2(+M) 4.66E12 0.44 0.0E0 !\Author: SP !\Ref: TROE, PROCI Volume 28, Issue 2, 2000, 1463-1469 / PCCP FERNANDES 2008 HE/1.0/ AR/0.0/ N2/1.0/ O2/1.0/ H2/2.0/ CH4/2.0/ CO2/3.25/ H2O/17.6/ CO/4.0/ LOWMX / 4.0662E19 -1.4E0 -1.80537E2 / TROEMX / 5.0E-1 1.0E0 1.0E10 1.0E30 / LOWSP / N2 1.91E+20 -1.5568 253.86 / !Yuki Murakami 28 July 2023 H2 project recommended TROESP / N2 5.0E-1 1.0E0 1.0E10 1.0E30 / LOWSP / HE 1.216E+19 -1.23 +0.00 / !Yuki Murakami 17 May 2024, From AramcoMech3.0 He 0.64 -> 0.70 TROESP / HE 6.70E-1 1.0E-30 1.0E30 1.0E30 / """ could not convert string to float: 'N2' Please check https://cantera.org/stable/userguide/ck2yaml-tutorial.html#debugging-common-errors-in-ck-files for the correct Che ... [truncated; see _processing logs]
 - Target folder: /home/ubuntu/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/unknown_fuel/2025/liu_2025_unknown_fuel_114394
-
-## Paper PDF pending: Study on ammonia and dimethyl ether oxidation and kinetic interaction up to 100 atm
-
-- DOI: 10.1016/j.combustflame.2025.114428
-- URL: https://www.sciencedirect.com/science/article/pii/S0010218025004651
-- PDF link from issue page: https://www.sciencedirect.com/science/article/pii/S0010218025004651/pdfft?md5=20a216385c3850d438ebbcc71a536113&pid=1-s2.0-S0010218025004651-main.pdf
-- Reason: automated Chrome PDF access reached ScienceDirect CAPTCHA or no exact PDF link was exposed
-- Target folder: /home/ubuntu/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/ammonia_dimethyl_ether/2025/mei_2025_ammonia_dimethyl_ether_114428
 
 ## 2025 supplement review needed: Thermal decomposition kinetics of furfural and furfuryl alcohol
 
@@ -1083,14 +921,6 @@ Items below need user-side ScienceDirect/Elsevier download or review.
 - Last status: cantera_failed
 - Last message: InputError: Ignoring redundant declaration for species 'CH2OCH2O2H' Ignoring redundant declaration for species 'CH3CHCHCHO' Ignoring redundant declaration for species 'CH3CHOOCOCH3' Ignoring redundant declaration for species 'TC4H9O' Ignoring redundant declaration for species 'IC3H5O2HCHO' Suppressed 11 additional warnings about redundant species declarations. Run ck2yaml again with the '--verbose' option to see all warnings. Error while reading reaction in chem.inp starting on line 991: """ H+O2<=>O+OH 3.547E+15 -0.406 16599.0 """ list index out of range Ignoring redundant thermo data for species 'HO2CHO' starting on line 100 of therm.dat. Ignoring redundant thermo data for species 'O2CHO' starting on line 104 of therm.dat. Ignoring redundant thermo data for species 'HOCH2O2H' starting on ... [truncated; see _processing logs]
 - Target folder: /home/ubuntu/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/rp3/2025/gao_2025_rp3_114418
-
-## Paper PDF pending: C3MechLite: An integrated component library of compact kinetic mechanisms for low-carbon, carbon neutral and zero-carbon fuels
-
-- DOI: 10.1016/j.combustflame.2025.114410
-- URL: https://www.sciencedirect.com/science/article/pii/S001021802500447X
-- PDF link from issue page: https://www.sciencedirect.com/science/article/pii/S001021802500447X/pdfft?md5=c93d77f85201cb1a7f2c7d7550d7f39e&pid=1-s2.0-S001021802500447X-main.pdf
-- Reason: automated Chrome PDF access reached ScienceDirect CAPTCHA or no exact PDF link was exposed
-- Target folder: /home/ubuntu/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/unknown_fuel/2025/murakami_2025_unknown_fuel_114410
 
 ## 2025 supplement review needed: Shock tube experiment on ignition delay times and kinetic modeling study of MMH/O2/N2 mixtures
 
@@ -1162,14 +992,6 @@ Items below need user-side ScienceDirect/Elsevier download or review.
 - Last message: InputError: Ignoring redundant declaration for species 'H' Ignoring redundant declaration for species 'H2' Ignoring redundant declaration for species 'CH2' Ignoring redundant declaration for species 'CH3' Ignoring redundant declaration for species 'O' Suppressed 65 additional warnings about redundant species declarations. Run ck2yaml again with the '--verbose' option to see all warnings. No thermo data found for species 'E' No thermo data found for species 'AR' No thermo data found for species 'O2' No thermo data found for species 'CH3OCH3' No thermo data found for species 'CO' No thermo data found for species 'CO2' No thermo data found for species 'CH4' No thermo data found for species 'CH3OCH2' No thermo data found for species 'CH3OCH3+' No thermo data found for species 'CH3OCH2+' No the ... [truncated; see _processing logs]
 - Target folder: /home/ubuntu/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/dimethyl_ether/2025/chen_2025_dimethyl_ether_114514
 
-## Paper PDF pending: Experimental and kinetic modeling study of ammonia/dimethoxymethane oxidation in a jet-stirred reactor using SVUV-PIMS
-
-- DOI: 10.1016/j.combustflame.2025.114525
-- URL: https://www.sciencedirect.com/science/article/pii/S0010218025005620
-- PDF link from issue page: https://www.sciencedirect.com/science/article/pii/S0010218025005620/pdfft?md5=3a552e95deb74b4208ba421595943963&pid=1-s2.0-S0010218025005620-main.pdf
-- Reason: automated Chrome PDF access reached ScienceDirect CAPTCHA or no exact PDF link was exposed
-- Target folder: /home/ubuntu/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/ammonia_dimethoxymethane/2025/lv_2025_ammonia_dimethoxymethane_114525
-
 ## 2025 supplement review needed: Effects of O2/H2O on RP-3 kerosene ignition and flame propagation: A combined experimental and kinetic modeling study
 
 - DOI: 10.1016/j.combustflame.2025.114531
@@ -1230,30 +1052,6 @@ Items below need user-side ScienceDirect/Elsevier download or review.
 - Last message: InputError: Ignoring redundant declaration for species 'C4H6' Ignoring redundant declaration for species 'TRIPH' No thermo data found for species 'O2' No thermo data found for species 'O' No thermo data found for species 'H' No thermo data found for species 'H2' No thermo data found for species 'OH' No thermo data found for species 'H2O' No thermo data found for species 'N2' No thermo data found for species 'HO2' No thermo data found for species 'H2O2' No thermo data found for species 'AR' No thermo data found for species 'HE' No thermo data found for species 'C(S)' No thermo data found for species 'NE' No thermo data found for species 'Kr' No thermo data found for species 'C' No thermo data found for species 'CH' No thermo data found for species 'CH*' No thermo data found for species 'CH2 ... [truncated; see _processing logs]
 - Target folder: /home/ubuntu/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/unknown_fuel/2023/lv_2023_unknown_fuel_112548
 
-## Paper PDF pending: Experimental and kinetic modeling study of tetramethylethylenediamine: A promising green propellant fuel
-
-- DOI: 10.1016/j.combustflame.2022.112584
-- URL: https://www.sciencedirect.com/science/article/pii/S0010218022005922
-- PDF link from issue page: 
-- Reason: automated Chrome PDF access reached ScienceDirect CAPTCHA or no exact PDF link was exposed
-- Target folder: /home/ubuntu/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/ethylene/2023/wu_2023_ethylene_112584
-
-## Paper PDF pending: An experimental and kinetic modeling study on the low and intermediate temperatures oxidation of NH3/O2/Ar, NH3/H2/O2/Ar, NH3/CO/O2/Ar, and NH3/CH4/O2/Ar mixtures in a jet-stirred reactor
-
-- DOI: 10.1016/j.combustflame.2022.112529
-- URL: https://www.sciencedirect.com/science/article/pii/S0010218022005387
-- PDF link from issue page: 
-- Reason: automated Chrome PDF access reached ScienceDirect CAPTCHA or no exact PDF link was exposed
-- Target folder: /home/ubuntu/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/ammonia_methane_hydrogen/2023/zhou_2023_ammonia_methane_hydrogen_112529
-
-## Paper PDF pending: An experimental and kinetic modeling study on NH3/air, NH3/H2/air, NH3/CO/air, and NH3/CH4/air premixed laminar flames at elevated temperature
-
-- DOI: 10.1016/j.combustflame.2022.112536
-- URL: https://www.sciencedirect.com/science/article/pii/S0010218022005454
-- PDF link from issue page: 
-- Reason: automated Chrome PDF access reached ScienceDirect CAPTCHA or no exact PDF link was exposed
-- Target folder: /home/ubuntu/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/ammonia_methane_hydrogen/2023/zhou_2023_ammonia_methane_hydrogen_112536
-
 ## Cantera conversion failed: Pyrolysis study of dimethyl carbonate, diethyl carbonate, and ethyl methyl carbonate using shock-tube spectroscopic CO measurements and chemical kinetics investigation
 
 - DOI: 10.1016/j.combustflame.2022.112594
@@ -1278,43 +1076,11 @@ Items below need user-side ScienceDirect/Elsevier download or review.
 
 - DOI: 10.1016/j.combustflame.2022.112614
 - URL: https://www.sciencedirect.com/science/article/pii/S0010218022006228
-- Mechanism candidates: /home/ubuntu/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/unknown_fuel/2023/shmakov_2023_unknown_fuel_112614/_processing/raw_downloads/S0010218022006228_mmc3.txt
-- Thermodynamic candidates: /home/ubuntu/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/unknown_fuel/2023/shmakov_2023_unknown_fuel_112614/_processing/raw_downloads/S0010218022006228_mmc4.txt
+- Mechanism candidates: /home/ubuntu/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/iron/2023/shmakov_2023_iron_112614/_processing/raw_downloads/S0010218022006228_mmc3.txt
+- Thermodynamic candidates: /home/ubuntu/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/iron/2023/shmakov_2023_iron_112614/_processing/raw_downloads/S0010218022006228_mmc4.txt
 - Last status: cantera_failed
 - Last message: InputError: Ignoring redundant thermo data for species 'A1OCH3' starting on line 589 of therm.dat. Ignoring redundant thermo data for species 'A1OCH2' starting on line 593 of therm.dat. Ignoring redundant thermo data for species 'A1CH2O' starting on line 597 of therm.dat. Ignoring redundant thermo data for species 'P-C6H4O2' starting on line 624 of therm.dat. Ignoring redundant thermo data for species 'O-C6H4O2' starting on line 632 of therm.dat. Error while reading thermo entry in therm.dat starting on line 1667: """ A1(C2H3)2 C 10H 10 G 300.000 5000.000 5000.00 1 5.60848905E+01 0.00000000E+00 0.00000000E+00 0.00000000E+00 0.00000000E+00 2 -1.44640324E+04-3.08906342E+02 3.54769133E+00 6.32681160E-02-2.97482733E-05 3 6.21023998E-09-4.74202473E-13 2.29084499E+04 9.41010680E+00 4 """ Only on ... [truncated; see _processing logs]
-- Target folder: /home/ubuntu/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/unknown_fuel/2023/shmakov_2023_unknown_fuel_112614
-
-## Paper PDF pending: A comparative study of oxidation of pure ammonia and ammonia/dimethyl ether mixtures in a jet-stirred reactor using SVUV-PIMS
-
-- DOI: 10.1016/j.combustflame.2023.112643
-- URL: https://www.sciencedirect.com/science/article/pii/S0010218023000287
-- PDF link from issue page: 
-- Reason: automated Chrome PDF access reached ScienceDirect CAPTCHA or no exact PDF link was exposed
-- Target folder: /home/ubuntu/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/ammonia_dimethyl_ether/2023/zhu_2023_ammonia_dimethyl_ether_112643
-
-## Paper PDF pending: Kinetic study of plasma assisted oxidation of H2 for an undiluted rich mixture
-
-- DOI: 10.1016/j.combustflame.2023.112638
-- URL: https://www.sciencedirect.com/science/article/pii/S0010218023000238
-- PDF link from issue page: 
-- Reason: automated Chrome PDF access reached ScienceDirect CAPTCHA or no exact PDF link was exposed
-- Target folder: /home/ubuntu/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/hydrogen/2023/snoeckx_2023_hydrogen_112638
-
-## Paper PDF pending: Probing the low temperature oxidation chemistry of RP-3 kerosene: Experimental and kinetic modeling investigation
-
-- DOI: 10.1016/j.combustflame.2023.112709
-- URL: https://www.sciencedirect.com/science/article/pii/S0010218023000949
-- PDF link from issue page: 
-- Reason: automated Chrome PDF access reached ScienceDirect CAPTCHA or no exact PDF link was exposed
-- Target folder: /home/ubuntu/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/rp3/2023/zeng_2023_rp3_112709
-
-## Paper PDF pending: A novel object-oriented directed path screening method for reduction of detailed chemical kinetic mechanism
-
-- DOI: 10.1016/j.combustflame.2023.112727
-- URL: https://www.sciencedirect.com/science/article/pii/S0010218023001128
-- PDF link from issue page: 
-- Reason: automated Chrome PDF access reached ScienceDirect CAPTCHA or no exact PDF link was exposed
-- Target folder: /home/ubuntu/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/unknown_fuel/2023/li_2023_unknown_fuel_112727
+- Target folder: /home/ubuntu/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/iron/2023/shmakov_2023_iron_112614
 
 ## Cantera conversion failed: A wide range experimental and kinetic modeling study of the oxidation of 2,3-dimethyl-2-butene: Part 1
 
@@ -1346,23 +1112,15 @@ Items below need user-side ScienceDirect/Elsevier download or review.
 - Last message: InputError: Ignoring redundant declaration for species 'HON' Ignoring redundant thermo data for species 'CHOCHO' starting on line 453 of therm.dat. Ignoring redundant thermo data for species 'HNO' starting on line 2390 of therm.dat. Ignoring redundant thermo data for species 'HONO' starting on line 2402 of therm.dat. Ignoring redundant thermo data for species 'N' starting on line 2418 of therm.dat. Ignoring redundant thermo data for species 'H2NO' starting on line 2422 of therm.dat. Suppressed 20 additional warnings about redundant thermo data. Run ck2yaml again with the '--verbose' option to see all warnings. Unparsable lines while reading thermo data in therm.dat starting on line 2366: """ """ Lines could not be parsed as a NASA7 entry. Ignoring duplicate transport data for species "N" o ... [truncated; see _processing logs]
 - Target folder: /home/ubuntu/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/ammonia/2023/lin_2023_ammonia_112692
 
-## Paper PDF pending: An experimental and detailed kinetic modeling study of the auto-ignition of NH3/diesel mixtures: Part 1- NH3 substitution ratio from 20% to 90%
-
-- DOI: 10.1016/j.combustflame.2022.112391
-- URL: https://www.sciencedirect.com/science/article/pii/S0010218022004060
-- PDF link from issue page: 
-- Reason: automated Chrome PDF access reached ScienceDirect CAPTCHA or no exact PDF link was exposed
-- Target folder: /home/ubuntu/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/ammonia/2023/zhang_2023_ammonia_112391
-
 ## Cantera conversion failed: A comprehensive experimental and kinetic modeling study of di-isobutylene isomers: Part 1
 
 - DOI: 10.1016/j.combustflame.2022.112301
 - URL: https://www.sciencedirect.com/science/article/pii/S0010218022003169
-- Mechanism candidates: /home/ubuntu/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/unknown_fuel/2023/lokachari_2023_unknown_fuel_112301/_processing/extracted/s0010218022003169_mmc1/DIB_NUIG1.2_05_2021.inp
-- Thermodynamic candidates: /home/ubuntu/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/unknown_fuel/2023/lokachari_2023_unknown_fuel_112301/_processing/extracted/s0010218022003169_mmc1/DIB_NUIG1.2.dat
+- Mechanism candidates: /home/ubuntu/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/gasoline/2023/lokachari_2023_gasoline_112301/_processing/extracted/s0010218022003169_mmc1/DIB_NUIG1.2_05_2021.inp
+- Thermodynamic candidates: /home/ubuntu/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/gasoline/2023/lokachari_2023_gasoline_112301/_processing/extracted/s0010218022003169_mmc1/DIB_NUIG1.2.dat
 - Last status: cantera_failed
 - Last message: InputError: Error while reading entry in chem.inp starting on line 33462: """ 1 """ Section starts with unrecognized keyword '1' Ignoring redundant declaration for species 'CH2CCO' Ignoring redundant declaration for species 'C3H6OH1-2' Ignoring redundant declaration for species 'NC3H7O' Ignoring redundant declaration for species 'C3H5OH' Ignoring redundant declaration for species 'SC3H5OH' Suppressed 97 additional warnings about redundant species declarations. Run ck2yaml again with the '--verbose' option to see all warnings. Ignoring redundant thermo data for species 'DIBD34-DIMER' starting on line 48 of therm.dat. Ignoring redundant thermo data for species 'CVCCVCCJ' starting on line 910 of therm.dat. Ignoring redundant thermo data for species 'C5H91-1' starting on line 4762 of therm.dat ... [truncated; see _processing logs]
-- Target folder: /home/ubuntu/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/unknown_fuel/2023/lokachari_2023_unknown_fuel_112301
+- Target folder: /home/ubuntu/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/gasoline/2023/lokachari_2023_gasoline_112301
 
 ## Cantera conversion failed: Oxidation study of small hydrocarbons at elevated pressure part II: A two-fuel compound mixture of acetylene and 1,3-butadiene
 
@@ -1374,32 +1132,6 @@ Items below need user-side ScienceDirect/Elsevier download or review.
 - Last message: InputError: Ignoring redundant declaration for species 'H' Ignoring redundant declaration for species 'C6H5CH2' Ignoring redundant thermo data for species 'C3H6OH1-1' starting on line 568 of therm.dat. Ignoring redundant thermo data for species 'C3H6OH1-1' starting on line 572 of therm.dat. Ignoring redundant thermo data for species 'C3H6OH1-1' starting on line 576 of therm.dat. Ignoring redundant thermo data for species 'C3H6OH1-1' starting on line 580 of therm.dat. Ignoring redundant thermo data for species 'C3H6OH1-1' starting on line 584 of therm.dat. Error while reading thermo entry in therm.dat starting on line 6389: """ C6H4(C2H3)2 C 10H 10 G 300.000 5000.000 5000.00 1 5.60848905E+01 0.00000000E+00 0.00000000E+00 0.00000000E+00 0.00000000E+00 2 -1.44640324E+04-3.08906342E+02 3.54769 ... [truncated; see _processing logs]
 - Target folder: /home/ubuntu/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/acetylene/2023/xu_2023_acetylene_112693
 
-## Cantera conversion failed: C7 reaction mechanism and its self-imitation in the kinetic modeling of PAH formation
-
-- DOI: 10.1016/j.combustflame.2023.112816
-- URL: https://www.sciencedirect.com/science/article/pii/S0010218023001979
-- Mechanism candidates: /home/ubuntu/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/unknown_fuel/2023/jin_2023_unknown_fuel_112816/_processing/extracted/s0010218023001979_mmc1/SMM2.HAS.0.90.inp
-- Thermodynamic candidates: /home/ubuntu/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/unknown_fuel/2023/jin_2023_unknown_fuel_112816/_processing/extracted/s0010218023001979_mmc1/SMM3.Thermo.dat
-- Last status: cantera_failed
-- Last message: TimeoutExpired: Cantera conversion exceeded 900 seconds
-- Target folder: /home/ubuntu/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/unknown_fuel/2023/jin_2023_unknown_fuel_112816
-
-## Paper PDF pending: Reduced chemical kinetic model for CH4-air non-premixed flames including excited and charged species
-
-- DOI: 10.1016/j.combustflame.2023.112822
-- URL: https://www.sciencedirect.com/science/article/pii/S0010218023002031
-- PDF link from issue page: 
-- Reason: automated Chrome PDF access reached ScienceDirect CAPTCHA or no exact PDF link was exposed
-- Target folder: /home/ubuntu/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/methane/2023/l_pez_c_mara_2023_methane_112822
-
-## Paper PDF pending: Machine learned compact kinetic models for methane combustion
-
-- DOI: 10.1016/j.combustflame.2023.112755
-- URL: https://www.sciencedirect.com/science/article/pii/S0010218023001396
-- PDF link from issue page: 
-- Reason: automated Chrome PDF access reached ScienceDirect CAPTCHA or no exact PDF link was exposed
-- Target folder: /home/ubuntu/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/methane/2023/kelly_2023_methane_112755
-
 ## Cantera conversion failed: An experimental and kinetic modeling study on the low-temperature oxidation of oxymethylene ether-2 (OME-2) by means of stabilized cool flames
 
 - DOI: 10.1016/j.combustflame.2023.112792
@@ -1409,30 +1141,6 @@ Items below need user-side ScienceDirect/Elsevier download or review.
 - Last status: cantera_failed
 - Last message: TimeoutExpired: Cantera conversion exceeded 900 seconds
 - Target folder: /home/ubuntu/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/ethylene/2023/ras_2023_ethylene_112792
-
-## Paper PDF pending: Impacts of NO on low-temperature oxidation of n-heptane in a jet-stirred reactor
-
-- DOI: 10.1016/j.combustflame.2023.112824
-- URL: https://www.sciencedirect.com/science/article/pii/S0010218023002055
-- PDF link from issue page: 
-- Reason: automated Chrome PDF access reached ScienceDirect CAPTCHA or no exact PDF link was exposed
-- Target folder: /home/ubuntu/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/n_heptane/2023/zhai_2023_n_heptane_112824
-
-## Paper PDF pending: High pressure oxidation of NH<mml:math xmlns:mml="http://www.w3.org/1998/Math/MathML" altimg="si3.svg"><mml:msub><mml:mrow/><mml:mn>3</mml:mn></mml:msub></mml:math>/<mml:math xmlns:mml="http://www.w3.org/1998/Math/MathML" altimg="si9.svg"><mml:mi>n</mml:mi></mml:math>-heptane mixtures
-
-- DOI: 10.1016/j.combustflame.2023.112785
-- URL: https://www.sciencedirect.com/science/article/pii/S0010218023001694
-- PDF link from issue page: 
-- Reason: automated Chrome PDF access reached ScienceDirect CAPTCHA or no exact PDF link was exposed
-- Target folder: /home/ubuntu/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/n_heptane/2023/thorsen_2023_n_heptane_112785
-
-## Paper PDF pending: Shock tube and modeling study of ignition delay times of propane mixtures in ultra-lean conditions
-
-- DOI: 10.1016/j.combustflame.2023.112826
-- URL: https://www.sciencedirect.com/science/article/pii/S0010218023002079
-- PDF link from issue page: 
-- Reason: automated Chrome PDF access reached ScienceDirect CAPTCHA or no exact PDF link was exposed
-- Target folder: /home/ubuntu/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/propane/2023/xia_2023_propane_112826
 
 ## Cantera conversion failed: Isomeric effects on the reactivity of branched alkenes: An experimental and kinetic modeling study of methylbutenes
 
@@ -1484,14 +1192,6 @@ Items below need user-side ScienceDirect/Elsevier download or review.
 - Last message: InputError: Error while reading section in chem.inp starting on line 208: """ REACTIONS MAXSP=8 """ Unrecognized token 'MAXSP=8' on REACTIONS line Ignoring duplicate transport data for species "AR" on line 500 of "tran.dat". Ignoring duplicate transport data for species "N2" on line 501 of "tran.dat". Ignoring duplicate transport data for species "HE" on line 502 of "tran.dat". Ignoring duplicate transport data for species "H2" on line 503 of "tran.dat". Ignoring duplicate transport data for species "H" on line 504 of "tran.dat". Suppressed 187 additional warnings about duplicate transport data. Run ck2yaml again with the '--verbose' option to see all warnings. Please check https://cantera.org/stable/userguide/ck2yaml-tutorial.html#debugging-common-errors-in-ck-files for the correct Chemki ... [truncated; see _processing logs]
 - Target folder: /home/ubuntu/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/unknown_fuel/2023/zhou_2023_unknown_fuel_112942
 
-## Paper PDF pending: An experimental and modeling study on the laminar burning velocities of ammonia + oxygen + argon mixtures
-
-- DOI: 10.1016/j.combustflame.2023.112930
-- URL: https://www.sciencedirect.com/science/article/pii/S0010218023003115
-- PDF link from issue page: 
-- Reason: automated Chrome PDF access reached ScienceDirect CAPTCHA or no exact PDF link was exposed
-- Target folder: /home/ubuntu/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/ammonia/2023/chen_2023_ammonia_112930
-
 ## Cantera conversion failed: A comprehensive kinetic study of the combustion mechanismof methyl isocyanate
 
 - DOI: 10.1016/j.combustflame.2023.112913
@@ -1522,14 +1222,6 @@ Items below need user-side ScienceDirect/Elsevier download or review.
 - Last message: IndexError: list index out of range; numeric cleanup retry failed: IndexError: list index out of range
 - Target folder: /home/ubuntu/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/furan_2_methylfuran/2023/suzuki_2023_furan_2_methylfuran_112921
 
-## Paper PDF pending: Experimental and chemical kinetic modeling study of high-temperature oxidation of diisopropyl methylphosphonate (DIMP) - A sarin simulant
-
-- DOI: 10.1016/j.combustflame.2023.112878
-- URL: https://www.sciencedirect.com/science/article/pii/S0010218023002596
-- PDF link from issue page: 
-- Reason: automated Chrome PDF access reached ScienceDirect CAPTCHA or no exact PDF link was exposed
-- Target folder: /home/ubuntu/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/unknown_fuel/2023/rahman_2023_unknown_fuel_112878
-
 ## Cantera conversion failed: An experimental and modeling study on the ozone-assisted low-temperature ignition of methylcyclohexane in an RCM
 
 - DOI: 10.1016/j.combustflame.2023.112926
@@ -1550,14 +1242,6 @@ Items below need user-side ScienceDirect/Elsevier download or review.
 - Last message: InputError: Error while reading thermo entry in therm.dat starting on line 6183: """ C9H8CH3 H 11C 10 G 300.0 5000.0 5000.0 1 5.89344512E1 0.0E0 0.0E0 0.0E0 0.0E0 2 -2.21709548E4 -3.29232464E2 1.57041459E0 6.95644403E-2 -3.28229474E-5 3 6.86333912E-9-5.24482994E-13 1.81216645E4 1.77907635E1 4 """ Only one temperature range defined but two distinct sets of coefficients given in species thermo entry. Error while reading thermo entry in therm.dat starting on line 6199: """ A1(C2H3)2 H 10C 10 G 300.0 5000.0 5000.0 1 5.60848905E1 0.0E0 0.0E0 0.0E0 0.0E0 2 -1.44640324E4 -3.08906342E2 3.54769133E0 6.3268116E-2 -2.97482733E-5 3 6.21023998E-9-4.74202473E-13 2.29084499E4 9.4101068E0 4 """ Only one temperature range defined but two distinct sets of coefficients given in species thermo entry. Please c ... [truncated; see _processing logs]
 - Target folder: /home/ubuntu/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/dimethyl_ether_ethylene_gasoline/2023/chen_2023_dimethyl_ether_ethylene_gasoline_112902
 
-## Paper PDF pending: Shock tube and modeling study on the ignition delay times of ammonia/dimethoxymethane at high temperature
-
-- DOI: 10.1016/j.combustflame.2023.112967
-- URL: https://www.sciencedirect.com/science/article/pii/S0010218023003437
-- PDF link from issue page: 
-- Reason: automated Chrome PDF access reached ScienceDirect CAPTCHA or no exact PDF link was exposed
-- Target folder: /home/ubuntu/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/ammonia_dimethoxymethane/2023/dai_2023_ammonia_dimethoxymethane_112967
-
 ## Cantera conversion failed: Ozone-initiated low-temperature oxidation of two propanol isomers: revealing the effects of Ö/ȮH atoms/radicals
 
 - DOI: 10.1016/j.combustflame.2023.112956
@@ -1568,14 +1252,6 @@ Items below need user-side ScienceDirect/Elsevier download or review.
 - Last message: InputError: No thermo data found for species 'AR' No thermo data found for species 'N2' No thermo data found for species 'HE' No thermo data found for species 'H2' No thermo data found for species 'H' No thermo data found for species 'O2' No thermo data found for species 'O' No thermo data found for species 'H2O' No thermo data found for species 'OH' No thermo data found for species 'OHV' No thermo data found for species 'H2O2' No thermo data found for species 'HO2' No thermo data found for species 'HOCO' No thermo data found for species 'CO' No thermo data found for species 'CO2' No thermo data found for species 'CH3O2H' No thermo data found for species 'CH3O2' No thermo data found for species 'CH2O2H' No thermo data found for species 'CH4' No thermo data found for species 'CH3' No thermo ... [truncated; see _processing logs]
 - Target folder: /home/ubuntu/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/propanol/2023/liu_2023_propanol_112956
 
-## Paper PDF pending: Experimental and kinetic modeling study of the autoignition and oxidation of ammonia/ethane mixtures in a rapid compression machine and a jet-stirred reactor
-
-- DOI: 10.1016/j.combustflame.2023.112931
-- URL: https://www.sciencedirect.com/science/article/pii/S0010218023003127
-- PDF link from issue page: 
-- Reason: automated Chrome PDF access reached ScienceDirect CAPTCHA or no exact PDF link was exposed
-- Target folder: /home/ubuntu/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/ammonia_ethane/2023/li_2023_ammonia_ethane_112931
-
 ## Cantera conversion failed: Detailed kinetic mechanism of polyoxymethylene dimethyl ether 3 (PODE3). Part I: Ab initio thermochemistry and kinetic predictions for key reactions
 
 - DOI: 10.1016/j.combustflame.2023.112990
@@ -1585,30 +1261,6 @@ Items below need user-side ScienceDirect/Elsevier download or review.
 - Last status: cantera_failed
 - Last message: InputError: Error while reading reaction in chem.inp starting on line 30: """ PODE3+H<=>PODE3_R_1+H2 8.110E-05 5.261 3677.54 """ Unexpected token '+H2' in reaction expression 'PODE3+H<=>PODE3_R_1+H2'. May be due to undeclared species 'H2'. Error while reading reaction in chem.inp starting on line 31: """ PODE3+H<=>PODE3_R_2+H2 4.630E+07 2.059 8409.25 """ Unexpected token '+H2' in reaction expression 'PODE3+H<=>PODE3_R_2+H2'. May be due to undeclared species 'H2'. Error while reading reaction in chem.inp starting on line 32: """ PODE3+H<=>PODE3_R_3+H2 7.102E+07 1.944 10726.92 """ Unexpected token '+H2' in reaction expression 'PODE3+H<=>PODE3_R_3+H2'. May be due to undeclared species 'H2'. Error while reading reaction in chem.inp starting on line 33: """ PODE3+OH<=>PODE3_R_1+H2O 1.136E+02 2. ... [truncated; see _processing logs]
 - Target folder: /home/ubuntu/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/dimethyl_ether_ethylene/2023/zhu_2023_dimethyl_ether_ethylene_112990
-
-## Paper PDF pending: Experimental and modeling study of acetone combustion
-
-- DOI: 10.1016/j.combustflame.2022.112416
-- URL: https://www.sciencedirect.com/science/article/pii/S0010218022004333
-- PDF link from issue page: 
-- Reason: automated Chrome PDF access reached ScienceDirect CAPTCHA or no exact PDF link was exposed
-- Target folder: /home/ubuntu/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/acetone/2023/meziane_2023_acetone_112416
-
-## Paper PDF pending: A dedicated reduced kinetic model for ammonia/dimethyl-ether turbulent premixed flames
-
-- DOI: 10.1016/j.combustflame.2023.113002
-- URL: https://www.sciencedirect.com/science/article/pii/S0010218023003735
-- PDF link from issue page: 
-- Reason: automated Chrome PDF access reached ScienceDirect CAPTCHA or no exact PDF link was exposed
-- Target folder: /home/ubuntu/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/ammonia_dimethyl_ether/2023/guan_2023_ammonia_dimethyl_ether_113002
-
-## Paper PDF pending: Shock-tube CO measurements during the pyrolysis of ethylene carbonate
-
-- DOI: 10.1016/j.combustflame.2023.113019
-- URL: https://www.sciencedirect.com/science/article/pii/S0010218023003942
-- PDF link from issue page: 
-- Reason: automated Chrome PDF access reached ScienceDirect CAPTCHA or no exact PDF link was exposed
-- Target folder: /home/ubuntu/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/ethylene/2023/gr_goire_2023_ethylene_113019
 
 ## Cantera conversion failed: Chemical flux analysis of low-temperature plasma-enhanced oxidation of methane and hydrogen in argon
 
@@ -1630,14 +1282,6 @@ Items below need user-side ScienceDirect/Elsevier download or review.
 - Last message: CanteraError: ******************************************************************************* CanteraError thrown by Kinetics::checkDuplicates: Error on lines 1430 and 3481 of /home/ubuntu/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/ammonia_dimethyl_ether_hydrogen/2023/li_2023_ammonia_dimethyl_ether_hydrogen_113000/mechanism.yaml: Undeclared duplicate reactions detected: Reaction 1: H + O2 <=> O + OH Reaction 451: H + O2 <=> O + OH | Line | | 1425 | diameter: 3.63 | 1426 | rotational-relaxation: 1.0 | 1427 | note: OIS | 1428 | | 1429 | reactions: > 1430 > - equation: H + O2 <=> O + OH # Reaction 1 ^ | 1431 | rate-constant: {A: 3.547e+15, b: -0.406, Ea: 1.6599e+04} | 1432 | note: |2 | 1433 | H2/O2 mechanism of Li et al. IJCK 36:565 (2004) ... | 3476 | 1 atm | 3477 | - ... [truncated; see _processing logs]
 - Target folder: /home/ubuntu/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/ammonia_dimethyl_ether_hydrogen/2023/li_2023_ammonia_dimethyl_ether_hydrogen_113000
 
-## Paper PDF pending: Measurements of laminar burning velocities and an improved kinetic model of methyl isopropyl ketone
-
-- DOI: 10.1016/j.combustflame.2023.113041
-- URL: https://www.sciencedirect.com/science/article/pii/S0010218023004169
-- PDF link from issue page: 
-- Reason: automated Chrome PDF access reached ScienceDirect CAPTCHA or no exact PDF link was exposed
-- Target folder: /home/ubuntu/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/unknown_fuel/2023/lin_2023_unknown_fuel_113041
-
 ## Cantera conversion failed: Experimental and kinetic modeling studies on oxidation of methanol and di-tert-butyl peroxide in a jet-stirred reactor
 
 - DOI: 10.1016/j.combustflame.2023.113093
@@ -1647,22 +1291,6 @@ Items below need user-side ScienceDirect/Elsevier download or review.
 - Last status: cantera_failed
 - Last message: InputError: No thermo data found for species 'N2' Ignoring duplicate transport data for species "C2H5OH" on line 56 of "tran.dat". Please check https://cantera.org/stable/userguide/ck2yaml-tutorial.html#debugging-common-errors-in-ck-files for the correct Chemkin syntax.
 - Target folder: /home/ubuntu/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/methanol/2023/wang_2023_methanol_113093
-
-## Paper PDF pending: Effect of the β-hydroxy group on ester reactivity: Combustion kinetics of methyl hexanoate and methyl 3-hydroxyhexanoate
-
-- DOI: 10.1016/j.combustflame.2023.113071
-- URL: https://www.sciencedirect.com/science/article/pii/S0010218023004467
-- PDF link from issue page: 
-- Reason: automated Chrome PDF access reached ScienceDirect CAPTCHA or no exact PDF link was exposed
-- Target folder: /home/ubuntu/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/unknown_fuel/2023/mohamed_2023_unknown_fuel_113071
-
-## Paper PDF pending: Detailed kinetic mechanism for nitrocellulose low temperature decomposition
-
-- DOI: 10.1016/j.combustflame.2023.113057
-- URL: https://www.sciencedirect.com/science/article/pii/S0010218023004327
-- PDF link from issue page: 
-- Reason: automated Chrome PDF access reached ScienceDirect CAPTCHA or no exact PDF link was exposed
-- Target folder: /home/ubuntu/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/unknown_fuel/2023/ehrhardt_2023_unknown_fuel_113057
 
 ## Cantera conversion failed: Conversion of methylamine in a flow reactor and its interaction with NO
 
@@ -1674,40 +1302,6 @@ Items below need user-side ScienceDirect/Elsevier download or review.
 - Last message: IndexError: list index out of range; numeric cleanup retry failed: IndexError: list index out of range
 - Target folder: /home/ubuntu/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/methylamine/2024/marrod_n_2024_methylamine_113130
 
-## Paper PDF pending: Role of O2 on nitrous oxide fuel blend ethylene auto-ignition sensitivity
-
-- DOI: 10.1016/j.combustflame.2023.113167
-- URL: https://www.sciencedirect.com/science/article/pii/S0010218023005424
-- PDF link from issue page: 
-- Reason: automated Chrome PDF access reached ScienceDirect CAPTCHA or no exact PDF link was exposed
-- Target folder: /home/ubuntu/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/ethylene_n2o/2024/yang_2024_ethylene_n2o_113167
-
-## Cantera conversion failed: Autoignition of cyclohexane at low-to-intermediate temperatures: Rapid compression machine experiments and improved comprehensive chemical kinetic model
-
-- DOI: 10.1016/j.combustflame.2023.113187
-- URL: https://www.sciencedirect.com/science/article/pii/S001021802300562X
-- Mechanism candidates: /home/ubuntu/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/unknown_fuel/2024/chatterjee_2024_unknown_fuel_113187/_processing/extracted/s001021802300562x_mmc6/mmc6.inp
-- Thermodynamic candidates: /home/ubuntu/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/unknown_fuel/2024/chatterjee_2024_unknown_fuel_113187/_processing/extracted/s001021802300562x_mmc4/mmc4.dat
-- Last status: cantera_failed
-- Last message: TimeoutExpired: Cantera conversion exceeded 900 seconds
-- Target folder: /home/ubuntu/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/unknown_fuel/2024/chatterjee_2024_unknown_fuel_113187
-
-## Paper PDF pending: Probing the effects of NO2 and N2O additions on the auto-ignition behaviors of gasoline at engine relevant conditions
-
-- DOI: 10.1016/j.combustflame.2023.113188
-- URL: https://www.sciencedirect.com/science/article/pii/S0010218023005631
-- PDF link from issue page: 
-- Reason: automated Chrome PDF access reached ScienceDirect CAPTCHA or no exact PDF link was exposed
-- Target folder: /home/ubuntu/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/n2o_gasoline/2024/liang_2024_n2o_gasoline_113188
-
-## Paper PDF pending: An experimental and detailed kinetic modeling study of the auto-ignition of NH3/diesel mixtures: Part 2- Wide pressures up to 120bar
-
-- DOI: 10.1016/j.combustflame.2023.113131
-- URL: https://www.sciencedirect.com/science/article/pii/S0010218023005060
-- PDF link from issue page: 
-- Reason: automated Chrome PDF access reached ScienceDirect CAPTCHA or no exact PDF link was exposed
-- Target folder: /home/ubuntu/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/ammonia/2024/zhang_2024_ammonia_113131
-
 ## Cantera conversion failed: Reaction mechanism and kinetic modeling of gas-phase thermal decomposition of prototype nitramine compound HMX
 
 - DOI: 10.1016/j.combustflame.2023.113181
@@ -1717,38 +1311,6 @@ Items below need user-side ScienceDirect/Elsevier download or review.
 - Last status: cantera_failed
 - Last message: CanteraError: ******************************************************************************* CanteraError thrown by addReactions: ******************************************************************************* InputFileError thrown by PlogRate::validate: Error on line 14123 of /home/ubuntu/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/unknown_fuel/2024/ye_2024_unknown_fuel_113181/mechanism.yaml: Invalid rate coefficient for reaction 'RDX <=> NO2 + RDXR' at P = 1013.3, T = 300.0 at P = 1013.3, T = 500.0 To fix this error, remove this reaction or contact the author of the reaction/mechanism in question, because the rate expression is mathematically unsound at the temperatures and pressures noted above. | Line | | 14118 | - {P: 100.0 atm, A: 8.2459e+118, b: -30.943, Ea: ... [truncated; see _processing logs]
 - Target folder: /home/ubuntu/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/unknown_fuel/2024/ye_2024_unknown_fuel_113181
-
-## Paper PDF pending: Roles of NH2 reactions in ammonia oxidation at intermediate temperatures: Experiments and chemical kinetic modeling
-
-- DOI: 10.1016/j.combustflame.2023.113177
-- URL: https://www.sciencedirect.com/science/article/pii/S0010218023005527
-- PDF link from issue page: 
-- Reason: automated Chrome PDF access reached ScienceDirect CAPTCHA or no exact PDF link was exposed
-- Target folder: /home/ubuntu/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/ammonia/2024/tamaoki_2024_ammonia_113177
-
-## Paper PDF pending: A theoretical kinetic study of 1-butyne, 2-butyne, and 3-methyl-1-butyne combustion
-
-- DOI: 10.1016/j.combustflame.2023.113178
-- URL: https://www.sciencedirect.com/science/article/pii/S0010218023005539
-- PDF link from issue page: 
-- Reason: automated Chrome PDF access reached ScienceDirect CAPTCHA or no exact PDF link was exposed
-- Target folder: /home/ubuntu/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/unknown_fuel/2024/bai_2024_unknown_fuel_113178
-
-## Paper PDF pending: Probing the effect of fuel components on the auto-ignition behavior of ammonia/natural gas blends: A case study of ethane addition
-
-- DOI: 10.1016/j.combustflame.2023.113186
-- URL: https://www.sciencedirect.com/science/article/pii/S0010218023005618
-- PDF link from issue page: 
-- Reason: automated Chrome PDF access reached ScienceDirect CAPTCHA or no exact PDF link was exposed
-- Target folder: /home/ubuntu/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/ammonia_ethane/2024/jiang_2024_ammonia_ethane_113186
-
-## Paper PDF pending: A wide ranging experimental and kinetic modeling study of TMEDA pyrolysis and oxidation
-
-- DOI: 10.1016/j.combustflame.2023.113222
-- URL: https://www.sciencedirect.com/science/article/pii/S0010218023005965
-- PDF link from issue page: 
-- Reason: automated Chrome PDF access reached ScienceDirect CAPTCHA or no exact PDF link was exposed
-- Target folder: /home/ubuntu/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/unknown_fuel/2024/liang_2024_unknown_fuel_113222
 
 ## Cantera conversion failed: A novel machine learning based lumping approach for the reduction of large kinetic mechanisms for plasma-assisted combustion applications
 
@@ -1760,14 +1322,6 @@ Items below need user-side ScienceDirect/Elsevier download or review.
 - Last message: InputError: Error while reading reaction in chem.inp starting on line 432: """ E+N2=>E+N2 2.716000e-07 0.000000e+00 0.000000e+00 JAN/ -1.06590518e+0 7.10758952e-1 -4.03960537e-1 -5.12716486e-3 2.31501531e-1 -7.61748241e-2 -3.93507278e-2 2.47686721e-2 -3.50930457e-3/ TDEP/ E/ MOME DUP """ could not convert string to float: '-1.06590518e+0 7.10758952e-1 -4.03960537e-1 -5.12716486e-3 2.31501531e-1 -7.61748241e-2 -3.93507278e-2 2.47686721e-2 -3.50930457e-3' Error while reading reaction in chem.inp starting on line 436: """ E+N2=>N2(v1)+E 8.499000e-10 0.000000e+00 0.0 JAN/ -1.50263611e+0 2.92964327e-1 -5.42914759e-1 9.12856443e-1 -4.22917418e-2 -2.40028395e-1 3.75264393e-2 2.25394517e-2 -5.20697208e-3/ TDEP/ E/ EXCI/ 0.29/ DUP """ could not convert string to float: '-1.50263611e+0 2.92964327e-1 ... [truncated; see _processing logs]
 - Target folder: /home/ubuntu/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/unknown_fuel/2024/rekkas_ventiris_2024_unknown_fuel_113252
 
-## Paper PDF pending: An experimental and kinetic study of OH(A2Σ+) formation and quenching in ammonia-hydrogen-air flames
-
-- DOI: 10.1016/j.combustflame.2023.113258
-- URL: https://www.sciencedirect.com/science/article/pii/S0010218023006326
-- PDF link from issue page: 
-- Reason: automated Chrome PDF access reached ScienceDirect CAPTCHA or no exact PDF link was exposed
-- Target folder: /home/ubuntu/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/ammonia_hydrogen/2024/capriolo_2024_ammonia_hydrogen_113258
-
 ## Cantera conversion failed: Coupling chemical lumping to data-driven optimization for the kinetic modeling of dimethoxymethane (DMM) combustion
 
 - DOI: 10.1016/j.combustflame.2023.113202
@@ -1777,30 +1331,6 @@ Items below need user-side ScienceDirect/Elsevier download or review.
 - Last status: cantera_failed
 - Last message: InputError: Error while reading thermo entry in therm.dat starting on line 122: """ CHOHCO2H2 C 2H 3O 3 G 200.00 6000.00 1000.00 1 !Burcat - taken from another isomer; if = reactions present: TO BE REVISED 1.27662941E+01 1.02143437E-02-3.63547001E-06 5.83491588E-10-3.47179974E-14 2 -7.53528536E+04-3.96511752E+01 2.80443702E+00 2.10851644E-02 3.35863233E-05 3 -7.02669107E-08 3.26849274E-11-7.20649998E+04 1.51180675E+01-7.01183834E+04 4 """ Error parsing elemental composition for species 'CHOHCO2H2'. Error while reading thermo entry in therm.dat starting on line 126: """ CHOHCO C 2H 4O 3 G 200.00 6000.00 1000.00 1 ! Burcat 7.25265886E+00 7.09713194E-03-2.49703662E-06 3.97702132E-10-2.35907799E-14 2 -2.14840657E+04-9.51330315E+00 3.35107651E+00 1.55375306E-02-4.45397177E-06 3 -6.25820983E-09 ... [truncated; see _processing logs]
 - Target folder: /home/ubuntu/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/dimethoxymethane/2024/pegurri_2024_dimethoxymethane_113202
-
-## Paper PDF pending: Experimental and kinetic study on 2-methoxyethanol part I: Molecular chemistry and pyrolysis investigation
-
-- DOI: 10.1016/j.combustflame.2023.113238
-- URL: https://www.sciencedirect.com/science/article/pii/S0010218023006120
-- PDF link from issue page: 
-- Reason: automated Chrome PDF access reached ScienceDirect CAPTCHA or no exact PDF link was exposed
-- Target folder: /home/ubuntu/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/unknown_fuel/2024/jin_2024_unknown_fuel_113238
-
-## Paper PDF pending: Enhanced C2-CN sub-mechanism: Impact on NO/N2O and soot precursor yields during C2H2/HCN oxidation
-
-- DOI: 10.1016/j.combustflame.2023.113267
-- URL: https://www.sciencedirect.com/science/article/pii/S0010218023006417
-- PDF link from issue page: 
-- Reason: automated Chrome PDF access reached ScienceDirect CAPTCHA or no exact PDF link was exposed
-- Target folder: /home/ubuntu/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/n2o/2024/yang_2024_n2o_113267
-
-## Paper PDF pending: The combustion chemistry of ammonia and ammonia/hydrogen mixtures: A comprehensive chemical kinetic modeling study
-
-- DOI: 10.1016/j.combustflame.2023.113239
-- URL: https://www.sciencedirect.com/science/article/pii/S0010218023006132
-- PDF link from issue page: 
-- Reason: automated Chrome PDF access reached ScienceDirect CAPTCHA or no exact PDF link was exposed
-- Target folder: /home/ubuntu/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/ammonia_hydrogen/2024/zhu_2024_ammonia_hydrogen_113239
 
 ## Cantera conversion failed: A kinetic study of the inhibition mechanism of HFC-227ea on hydrogen combustion
 
@@ -1812,23 +1342,15 @@ Items below need user-side ScienceDirect/Elsevier download or review.
 - Last message: InputError: Issue while reading reaction in chem.inp starting on line 436: """ OHX=OH+hv 1.400E+06 0.0 0.0 """ Found a reversible reaction containing a product photon. Converting to an irreversible reaction with the photon removed. No thermo data found for species 'AR' No thermo data found for species 'N2' No thermo data found for species 'HE' No thermo data found for species 'H' No thermo data found for species 'O' No thermo data found for species 'OH' No thermo data found for species 'HO2' No thermo data found for species 'H2' No thermo data found for species 'H2O' No thermo data found for species 'H2O2' No thermo data found for species 'O2' No thermo data found for species 'O3' No thermo data found for species 'O2X' No thermo data found for species 'OX' No thermo data found for species ... [truncated; see _processing logs]
 - Target folder: /home/ubuntu/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/hydrogen/2024/wang_2024_hydrogen_113262
 
-## Paper PDF pending: An experimental and kinetic modeling study of the impact of nitric oxide and hydrogen on iso-Octane combustion
-
-- DOI: 10.1016/j.combustflame.2023.113196
-- URL: https://www.sciencedirect.com/science/article/pii/S0010218023005709
-- PDF link from issue page: 
-- Reason: automated Chrome PDF access reached ScienceDirect CAPTCHA or no exact PDF link was exposed
-- Target folder: /home/ubuntu/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/hydrogen_nitric_oxide/2024/tang_2024_hydrogen_nitric_oxide_113196
-
 ## Cantera conversion failed: Development and validation of a comprehensive combustion kinetic model for the oxidation of 3-hexene
 
 - DOI: 10.1016/j.combustflame.2023.113213
 - URL: https://www.sciencedirect.com/science/article/pii/S0010218023005874
-- Mechanism candidates: /home/ubuntu/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/unknown_fuel/2024/attarde_2024_unknown_fuel_113213/_processing/extracted/s0010218023005874_mmc1/3-hexene.inp
-- Thermodynamic candidates: /home/ubuntu/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/unknown_fuel/2024/attarde_2024_unknown_fuel_113213/_processing/extracted/s0010218023005874_mmc3/therm.dat
+- Mechanism candidates: /home/ubuntu/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/gasoline/2024/attarde_2024_gasoline_113213/_processing/extracted/s0010218023005874_mmc1/3-hexene.inp
+- Thermodynamic candidates: /home/ubuntu/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/gasoline/2024/attarde_2024_gasoline_113213/_processing/extracted/s0010218023005874_mmc3/therm.dat
 - Last status: cantera_failed
-- Last message: CanteraError: ******************************************************************************* CanteraError thrown by addReactions: ******************************************************************************* InputFileError thrown by PlogRate::validate: Error on line 31198 of /home/ubuntu/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/unknown_fuel/2024/attarde_2024_unknown_fuel_113213/mechanism.yaml: Invalid rate coefficient for reaction 'C6H101-3 + H <=> C6H113-3' at P = 1013.3, T = 300.0 at P = 1.0132e+07, T = 300.0 To fix this error, remove this reaction or contact the author of the reaction/mechanism in question, because the rate expression is mathematically unsound at the temperatures and pressures noted above. | Line | | 31193 | - {P: 10.0 atm, A: 2.03e+26, b: - ... [truncated; see _processing logs]
-- Target folder: /home/ubuntu/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/unknown_fuel/2024/attarde_2024_unknown_fuel_113213
+- Last message: CanteraError: ******************************************************************************* CanteraError thrown by addReactions: ******************************************************************************* InputFileError thrown by PlogRate::validate: Error on line 31198 of /home/ubuntu/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/gasoline/2024/attarde_2024_gasoline_113213/mechanism.yaml: Invalid rate coefficient for reaction 'C6H101-3 + H <=> C6H113-3' at P = 1013.3, T = 300.0 at P = 1.0132e+07, T = 300.0 To fix this error, remove this reaction or contact the author of the reaction/mechanism in question, because the rate expression is mathematically unsound at the temperatures and pressures noted above. | Line | | 31193 | - {P: 10.0 atm, A: 2.03e+26, b: -4.2, Ea: ... [truncated; see _processing logs]
+- Target folder: /home/ubuntu/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/gasoline/2024/attarde_2024_gasoline_113213
 
 ## Cantera conversion failed: Experimental and modeling study of the N, N-dimethylformamide pyrolysis at atmospheric pressure
 
@@ -1839,14 +1361,6 @@ Items below need user-side ScienceDirect/Elsevier download or review.
 - Last status: cantera_failed
 - Last message: InputError: Error while reading section in chem.inp starting on line 119: """ REACTIONS MOLES CAL/MOLE MAXSP=8 """ Unrecognized token 'MAXSP=8' on REACTIONS line Unparsable lines while reading thermo data in therm.dat starting on line 1291: """ ! ! ******************************************************************************** ! ******************************************************************************** ! ***** H(0 K)=AVERAGE(G3,G4,CBS-APNO) Q(T) from M062X/ATZ with 1D ROTOR ! ******************************************************************************** ! ******************************************************************************** ! """ Lines could not be parsed as a NASA7 entry. Ignoring duplicate transport data for species "NCNOH" on line 523 of "tran.dat". Please check http ... [truncated; see _processing logs]
 - Target folder: /home/ubuntu/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/unknown_fuel/2024/wang_2024_unknown_fuel_113240
-
-## Paper PDF pending: Investigating auto-ignition characteristics and kinetic modeling of NH3/CH4 mixtures using an RCM
-
-- DOI: 10.1016/j.combustflame.2023.113257
-- URL: https://www.sciencedirect.com/science/article/pii/S0010218023006314
-- PDF link from issue page: 
-- Reason: automated Chrome PDF access reached ScienceDirect CAPTCHA or no exact PDF link was exposed
-- Target folder: /home/ubuntu/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/ammonia_methane/2024/liao_2024_ammonia_methane_113257
 
 ## Cantera conversion failed: Revealing the low to moderate temperature oxidation kinetics of 1,2,4-trimethylbenzene sensitized by dimethyl ether
 
@@ -1878,14 +1392,6 @@ Items below need user-side ScienceDirect/Elsevier download or review.
 - Last message: IndexError: list index out of range; numeric cleanup retry failed: IndexError: list index out of range
 - Target folder: /home/ubuntu/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/dimethyl_carbonate_gasoline/2024/suzuki_2024_dimethyl_carbonate_gasoline_113332
 
-## Paper PDF pending: Numerical investigation on pyrolysis and ignition of ammonia/coal blends during co-firing
-
-- DOI: 10.1016/j.combustflame.2023.113268
-- URL: https://www.sciencedirect.com/science/article/pii/S0010218023006429
-- PDF link from issue page: 
-- Reason: automated Chrome PDF access reached ScienceDirect CAPTCHA or no exact PDF link was exposed
-- Target folder: /home/ubuntu/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/ammonia_coal/2024/ma_2024_ammonia_coal_113268
-
 ## Cantera conversion failed: Low-temperature oxidation of n-butanol in a jet-stirred reactor: Detailed species measurements and modeling studies
 
 - DOI: 10.1016/j.combustflame.2023.113290
@@ -1896,22 +1402,6 @@ Items below need user-side ScienceDirect/Elsevier download or review.
 - Last message: InputError: Ignoring redundant declaration for species 'c2h5co3' Error while reading reaction in chem.inp starting on line 6761: """ sc4h7oh-1ooh-3o2<=>sc4ohket2-3+oh 4.680+09 0.000 2.295e+04 !7p, +1 kcal, alt route from primary, not real products """ could not convert string to float: '4.680+09' Error while reading reaction in chem.inp starting on line 8476: """ c5h10-2(+m)<=>ch3+c4h71-3(+m) 6.486e+19 -1.367 7.632e+04 !rev/ 8.000e+12 0.000 -5.960e+02 / low / 1.5270+104 -2.4826e+01 9.4800e+04 / """ could not convert string to float: '1.5270+104' No thermo data found for species 'h' No thermo data found for species 'h2' No thermo data found for species 'o' No thermo data found for species 'o2' No thermo data found for species 'oh' No thermo data found for species 'oh*' No thermo data found ... [truncated; see _processing logs]
 - Target folder: /home/ubuntu/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/unknown_fuel/2024/liu_2024_unknown_fuel_113290
 
-## Paper PDF pending: Experimental and chemical kinetic modeling study of ethylene carbonate oxidation: A lithium-ion battery electrolyte surrogate model
-
-- DOI: 10.1016/j.combustflame.2024.113333
-- URL: https://www.sciencedirect.com/science/article/pii/S0010218024000439
-- PDF link from issue page: 
-- Reason: automated Chrome PDF access reached ScienceDirect CAPTCHA or no exact PDF link was exposed
-- Target folder: /home/ubuntu/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/ethylene/2024/kanayama_2024_ethylene_113333
-
-## Paper PDF pending: The high-temperature ignition kinetics of nitroethane: A shock-tube experimental and kinetic modeling study
-
-- DOI: 10.1016/j.combustflame.2024.113358
-- URL: https://www.sciencedirect.com/science/article/pii/S0010218024000683
-- PDF link from issue page: 
-- Reason: automated Chrome PDF access reached ScienceDirect CAPTCHA or no exact PDF link was exposed
-- Target folder: /home/ubuntu/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/unknown_fuel/2024/liang_2024_unknown_fuel_113358
-
 ## Cantera conversion failed: Experimental and modeling study on oxidation of n-decane and its mixtures with 1,2,4-trimethylbenzene
 
 - DOI: 10.1016/j.combustflame.2024.113345
@@ -1921,14 +1411,6 @@ Items below need user-side ScienceDirect/Elsevier download or review.
 - Last status: cantera_failed
 - Last message: InputError: Ignoring redundant declaration for species 'A1CH2OOH' Ignoring redundant declaration for species 'PCHOTOLCH2' Ignoring redundant declaration for species 'C6H101-4' Ignoring redundant declaration for species 'C5H81-4' Ignoring redundant declaration for species 'NC3H7COOH' Suppressed 7 additional warnings about redundant species declarations. Run ck2yaml again with the '--verbose' option to see all warnings. Error while reading reaction in chem.inp starting on line 1589: """ U3C10H21O2=P3J6C10H21O2 3.718+6 1.20 16600 """ could not convert string to float: '3.718+6' Error while reading reaction in chem.inp starting on line 7909: """ C7KET24H=C7KET24F 0.7035+11 0.2000 18500.0 !C7H15-4O2<=>C7H14OOH4-2 /2 """ could not convert string to float: '0.7035+11' Ignoring redundant thermo da ... [truncated; see _processing logs]
 - Target folder: /home/ubuntu/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/n_decane_trimethylbenzene_124/2024/liang_2024_n_decane_trimethylbenzene_124_113345
-
-## Paper PDF pending: A comprehensive experimental and kinetic modeling study of p-cymene oxidation
-
-- DOI: 10.1016/j.combustflame.2024.113337
-- URL: https://www.sciencedirect.com/science/article/pii/S0010218024000476
-- PDF link from issue page: 
-- Reason: automated Chrome PDF access reached ScienceDirect CAPTCHA or no exact PDF link was exposed
-- Target folder: /home/ubuntu/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/unknown_fuel/2024/liu_2024_unknown_fuel_113337
 
 ## Cantera conversion failed: The effect of the unsaturation degree on the gas-phase autoignition of methyl oleate and methyl linoleate: Experimental and modeling study
 
@@ -1960,14 +1442,6 @@ Items below need user-side ScienceDirect/Elsevier download or review.
 - Last message: CanteraError: ******************************************************************************* CanteraError thrown by newSolution: The CTI and XML formats are no longer supported. *******************************************************************************
 - Target folder: /home/ubuntu/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/methane/2024/xu_2024_methane_113380
 
-## Paper PDF pending: Experimental and kinetic study of ammonia oxidation and NOx emissions at elevated pressures
-
-- DOI: 10.1016/j.combustflame.2023.113129
-- URL: https://www.sciencedirect.com/science/article/pii/S0010218023005047
-- PDF link from issue page: 
-- Reason: automated Chrome PDF access reached ScienceDirect CAPTCHA or no exact PDF link was exposed
-- Target folder: /home/ubuntu/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/ammonia/2024/zhan_2024_ammonia_113129
-
 ## Cantera conversion failed: An experimental and chemical kinetic modeling study of octane isomer oxidation. Part 1: 2,3,4-trimethyl pentane
 
 - DOI: 10.1016/j.combustflame.2023.113226
@@ -1977,22 +1451,6 @@ Items below need user-side ScienceDirect/Elsevier download or review.
 - Last status: cantera_failed
 - Last message: InputError: Error while reading reaction in chem.inp starting on line 38479: """ CH3C6H3CH3+O2=>O2CH3C6H3CH3 1.950E+11 0.420 -631.1 !WAGNON1@LLNL.GOV! AS P-C6H4CH3+O2=>P-O2C6H4CH3 DA SILVA JPCA 117 (2007) 8663-8676 PLOG/ 1.00E-01 6.51+107 -32.05 12220 / PLOG/ 1.00E+00 3.21+132 -38.08 33960 / PLOG/ 1.00E+01 2.35+160 -45.03 60240 / PLOG/ 1.00E+02 6.57+179 -49.68 81660 / """ could not convert string to float: '6.51+107' Ignoring redundant thermo data for species 'XC6OOH1-3O2' starting on line 9366 of therm.dat. Ignoring redundant thermo data for species 'XC6D13-1Q' starting on line 12410 of therm.dat. Ignoring redundant thermo data for species 'XC6D13-1OJ' starting on line 12414 of therm.dat. Ignoring redundant thermo data for species 'XC6D13-Y1' starting on line 12418 of therm.dat. Ignoring ... [truncated; see _processing logs]
 - Target folder: /home/ubuntu/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/pentane/2024/heng_2024_pentane_113226
-
-## Paper PDF pending: A detailed kinetic submechanism for OH<mml:math xmlns:mml="http://www.w3.org/1998/Math/MathML" altimg="si202.svg" display="inline" id="d1e2298"><mml:msup><mml:mrow/><mml:mrow><mml:mo>∗</mml:mo></mml:mrow></mml:msup></mml:math> chemiluminescence in hydrogen combustion revisited. Part 1
-
-- DOI: 10.1016/j.combustflame.2024.113407
-- URL: https://www.sciencedirect.com/science/article/pii/S0010218024001160
-- PDF link from issue page: 
-- Reason: automated Chrome PDF access reached ScienceDirect CAPTCHA or no exact PDF link was exposed
-- Target folder: /home/ubuntu/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/hydrogen/2024/sharipov_2024_hydrogen_113407
-
-## Paper PDF pending: A detailed kinetic submechanism for OH<mml:math xmlns:mml="http://www.w3.org/1998/Math/MathML" altimg="si249.svg" display="inline" id="d1e3579"><mml:msup><mml:mrow/><mml:mrow><mml:mo>∗</mml:mo></mml:mrow></mml:msup></mml:math> chemiluminescence in hydrogen combustion revisited. Part 2
-
-- DOI: 10.1016/j.combustflame.2024.113417
-- URL: https://www.sciencedirect.com/science/article/pii/S0010218024001263
-- PDF link from issue page: 
-- Reason: automated Chrome PDF access reached ScienceDirect CAPTCHA or no exact PDF link was exposed
-- Target folder: /home/ubuntu/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/hydrogen/2024/sharipov_2024_hydrogen_113417
 
 ## Cantera conversion failed: Low temperature oxidation chemistry of n-butylbenzene in n-decane/n-butylbenzene mixture: Product characterization and kinetic modeling study
 
@@ -2004,41 +1462,15 @@ Items below need user-side ScienceDirect/Elsevier download or review.
 - Last message: InputError: Ignoring redundant declaration for species 'A1CH2CHCH2' Ignoring redundant declaration for species 'A1' Ignoring redundant declaration for species 'A1-' Ignoring redundant declaration for species 'A1O' Ignoring redundant declaration for species 'A1OH' Suppressed 18 additional warnings about redundant species declarations. Run ck2yaml again with the '--verbose' option to see all warnings. Error while reading thermo entry in therm.dat starting on line 247: """ BEH2O2(A) 81392BE 1H 2O 2 S 0300.00 1000.00 1000.00 1 0.01357669E+03 0.00000000E+00 0.00000000E+00 0.00000000E+00 0.00000000E+00 2 -0.01138925E+07-0.07369071E+03-0.07121292E+02 0.08378375E+00-0.01435144E-02 3 0.01164084E-05-0.03597983E-09-0.01091544E+07 0.02745148E+03 4 """ Only one temperature range defined but two distinc ... [truncated; see _processing logs]
 - Target folder: /home/ubuntu/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/n_decane_n_butylbenzene/2024/yuan_2024_n_decane_n_butylbenzene_113440
 
-## Cantera conversion failed: Experimental and kinetic modeling study on auto-ignition of ammonia/n-heptane mixtures at intermediate temperatures
-
-- DOI: 10.1016/j.combustflame.2024.113488
-- URL: https://www.sciencedirect.com/science/article/pii/S0010218024001974
-- Mechanism candidates: /home/ubuntu/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/ammonia_n_heptane/2024/fang_2024_ammonia_n_heptane_113488/_processing/raw_downloads/S0010218024001974_mmc2.txt
-- Thermodynamic candidates: /home/ubuntu/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/ammonia_n_heptane/2024/fang_2024_ammonia_n_heptane_113488/_processing/raw_downloads/S0010218024001974_mmc3.txt
-- Last status: cantera_failed
-- Last message: TimeoutExpired: Cantera conversion exceeded 900 seconds
-- Target folder: /home/ubuntu/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/ammonia_n_heptane/2024/fang_2024_ammonia_n_heptane_113488
-
 ## Cantera conversion failed: Experimental and kinetic modeling study of iso-propylamine oxidation with SVUV-time of flight mass spectrometry
 
 - DOI: 10.1016/j.combustflame.2024.113483
 - URL: https://www.sciencedirect.com/science/article/pii/S0010218024001925
-- Mechanism candidates: /home/ubuntu/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/unknown_fuel/2024/zheng_2024_unknown_fuel_113483/_processing/raw_downloads/S0010218024001925_mmc1.docx
-- Thermodynamic candidates: /home/ubuntu/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/unknown_fuel/2024/zheng_2024_unknown_fuel_113483/_processing/raw_downloads/S0010218024001925_mmc1.docx
+- Mechanism candidates: /home/ubuntu/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/methylamine_propane_n2o/2024/zheng_2024_methylamine_propane_n2o_113483/_processing/raw_downloads/S0010218024001925_mmc1.docx
+- Thermodynamic candidates: /home/ubuntu/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/methylamine_propane_n2o/2024/zheng_2024_methylamine_propane_n2o_113483/_processing/raw_downloads/S0010218024001925_mmc1.docx
 - Last status: cantera_failed
 - Last message: TimeoutExpired: Cantera conversion exceeded 900 seconds
-- Target folder: /home/ubuntu/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/unknown_fuel/2024/zheng_2024_unknown_fuel_113483
-
-## Paper PDF pending: Experimental and kinetic modeling study of 1,3,5-trimethylbenzene oxidation at elevated pressure
-
-- DOI: 10.1016/j.combustflame.2024.113503
-- URL: https://www.sciencedirect.com/science/article/pii/S0010218024002116
-- PDF link from issue page: 
-- Reason: automated Chrome PDF access reached ScienceDirect CAPTCHA or no exact PDF link was exposed
-- Target folder: /home/ubuntu/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/unknown_fuel/2024/gao_2024_unknown_fuel_113503
-
-## Paper PDF pending: Shock tube and comprehensive kinetic modeling study of ammonia/diethyl ether (DEE) mixtures
-
-- DOI: 10.1016/j.combustflame.2024.113482
-- URL: https://www.sciencedirect.com/science/article/pii/S0010218024001913
-- PDF link from issue page: 
-- Reason: automated Chrome PDF access reached ScienceDirect CAPTCHA or no exact PDF link was exposed
-- Target folder: /home/ubuntu/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/ammonia/2024/dai_2024_ammonia_113482
+- Target folder: /home/ubuntu/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/methylamine_propane_n2o/2024/zheng_2024_methylamine_propane_n2o_113483
 
 ## Cantera conversion failed: High-pressure oxidation of hydrogen diluted in N2 with added H2O or CO2 at 100 atm in a supercritical-pressure jet-stirred reactor
 
@@ -2079,22 +1511,6 @@ Items below need user-side ScienceDirect/Elsevier download or review.
 - Last status: cantera_failed
 - Last message: CanteraError: ******************************************************************************* CanteraError thrown by GasTransportData::validate: invalid geometry for species 'NC12H26'. 'atom' specified, but species contains multiple atoms. *******************************************************************************
 - Target folder: /home/ubuntu/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/n_dodecane_methane/2024/mai_2024_n_dodecane_methane_113527
-
-## Paper PDF pending: Experimental and kinetic studies of the mutual oxidation of ammonia and n-dodecane at low to high temperatures
-
-- DOI: 10.1016/j.combustflame.2024.113557
-- URL: https://www.sciencedirect.com/science/article/pii/S0010218024002669
-- PDF link from issue page: 
-- Reason: automated Chrome PDF access reached ScienceDirect CAPTCHA or no exact PDF link was exposed
-- Target folder: /home/ubuntu/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/ammonia_n_dodecane/2024/xu_2024_ammonia_n_dodecane_113557
-
-## Paper PDF pending: Measurements of laminar burning velocities and kinetic modelling of two symmetrical ketones: di-ethyl ketone and di-isopropyl ketone
-
-- DOI: 10.1016/j.combustflame.2024.113614
-- URL: https://www.sciencedirect.com/science/article/pii/S0010218024003237
-- PDF link from issue page: 
-- Reason: automated Chrome PDF access reached ScienceDirect CAPTCHA or no exact PDF link was exposed
-- Target folder: /home/ubuntu/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/unknown_fuel/2024/lin_2024_unknown_fuel_113614
 
 ## Cantera conversion failed: A chemical kinetic study of tetrahydropyran high-pressure oxidation in a jet-stirred reactor
 
@@ -2146,14 +1562,6 @@ Items below need user-side ScienceDirect/Elsevier download or review.
 - Last message: InputError: Ignoring redundant declaration for species 'C5H10-2' Ignoring redundant declaration for species 'C5H91-3' Ignoring redundant declaration for species 'C5H91-4' Ignoring redundant declaration for species 'C5H91-5' Ignoring redundant declaration for species 'C5H92-4' Suppressed 7 additional warnings about redundant species declarations. Run ck2yaml again with the '--verbose' option to see all warnings. Error while reading reaction in chem.inp starting on line 8867: """ PMH + CH3 = PMH-R5 + CH4 7.35E-02 3.87 6.808+03! """ could not convert string to float: '6.808+03' Ignoring redundant thermo data for species 'C3H6OH1-1' starting on line 1312 of therm.dat. Ignoring redundant thermo data for species 'C3H6OH1-1' starting on line 1316 of therm.dat. Ignoring redundant thermo data for s ... [truncated; see _processing logs]
 - Target folder: /home/ubuntu/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/unknown_fuel/2024/hong_2024_unknown_fuel_113715
 
-## Paper PDF pending: A shock tube and modeling study of NH3/C2H6 combustion: Effects of C/N cross-reactions
-
-- DOI: 10.1016/j.combustflame.2024.113652
-- URL: https://www.sciencedirect.com/science/article/pii/S0010218024003614
-- PDF link from issue page: 
-- Reason: automated Chrome PDF access reached ScienceDirect CAPTCHA or no exact PDF link was exposed
-- Target folder: /home/ubuntu/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/ammonia_ethane/2024/liu_2024_ammonia_ethane_113652
-
 ## Cantera conversion failed: Kinetic modeling of carbonaceous particle morphology, polydispersity and nanostructure through the discrete sectional approach
 
 - DOI: 10.1016/j.combustflame.2024.113697
@@ -2163,14 +1571,6 @@ Items below need user-side ScienceDirect/Elsevier download or review.
 - Last status: cantera_failed
 - Last message: InputError: Error while reading thermo entry in therm.dat starting on line 1059: """ BIN4AJ G 300.00 3500.00 1330.00 1& C 160.00 H 115.00 3.13388326e+02 4.53632950e-01-1.61287498e-04 2.52639660e-08-1.42054928e-12 2 6.43001833e+04-1.63197350e+03-1.27820190e+02 1.78057585e+00-1.65783965e-03 3 7.75415418e-07-1.42426461e-10 1.81661648e+05 6.22425921e+02 4 """ invalid literal for int() with base 10: '160.00' Error while reading thermo entry in therm.dat starting on line 1064: """ BIN4BJ G 300.00 3500.00 1390.00 1& C 160.00 H 31.00 2.72480905e+02 2.70088841e-01-7.56449720e-05 6.37621195e-09 2.02304742e-13 2 -2.88261298e+04-1.45963715e+03-1.38632883e+02 1.45315010e+00-1.35232978e-03 3 6.18695067e-07-1.09926986e-10 8.54635032e+04 6.59130542e+02 4 """ invalid literal for int() with base 10: '160.00 ... [truncated; see _processing logs]
 - Target folder: /home/ubuntu/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/unknown_fuel/2024/nobili_2024_unknown_fuel_113697
-
-## Paper PDF pending: Ab initio chemical kinetics and shock-tube experimental study on nitrocyclohexane pyrolysis and combustion
-
-- DOI: 10.1016/j.combustflame.2024.113693
-- URL: https://www.sciencedirect.com/science/article/pii/S0010218024004024
-- PDF link from issue page: 
-- Reason: automated Chrome PDF access reached ScienceDirect CAPTCHA or no exact PDF link was exposed
-- Target folder: /home/ubuntu/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/unknown_fuel/2024/wang_2024_unknown_fuel_113693
 
 ## Cantera conversion failed: Experimental and modeling study of the oxidation of NH3/C2H4 mixtures in a shock tube
 
@@ -2182,31 +1582,15 @@ Items below need user-side ScienceDirect/Elsevier download or review.
 - Last message: InputError: Ignoring redundant declaration for species 'CH2(S)' Ignoring redundant declaration for species 'C' Ignoring redundant declaration for species 'CH3OH' Ignoring redundant declaration for species 'CH2OH' Ignoring redundant declaration for species 'CH3OOH' Suppressed 7 additional warnings about redundant species declarations. Run ck2yaml again with the '--verbose' option to see all warnings. No thermo data found for species 'HE' No thermo data found for species 'AR' No thermo data found for species 'N2' No thermo data found for species 'H' No thermo data found for species 'H2' No thermo data found for species 'O' No thermo data found for species 'O2' No thermo data found for species 'OH' No thermo data found for species 'OH*' No thermo data found for species 'H2O' No thermo data fo ... [truncated; see _processing logs]
 - Target folder: /home/ubuntu/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/ammonia_ethylene/2024/song_2024_ammonia_ethylene_113777
 
-## Paper PDF pending: Shock tube experiments and numerical study on ignition delay times of ammonia/oxymethylene ether-2 (OME2) mixtures
-
-- DOI: 10.1016/j.combustflame.2024.113783
-- URL: https://www.sciencedirect.com/science/article/pii/S0010218024004929
-- PDF link from issue page: 
-- Reason: automated Chrome PDF access reached ScienceDirect CAPTCHA or no exact PDF link was exposed
-- Target folder: /home/ubuntu/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/ammonia_ethylene/2024/dai_2024_ammonia_ethylene_113783
-
-## Paper PDF pending: Experimental and kinetic modeling study of cyclopentanone pyrolysis in a jet-stirred reactor
-
-- DOI: 10.1016/j.combustflame.2024.113796
-- URL: https://www.sciencedirect.com/science/article/pii/S0010218024005054
-- PDF link from issue page: 
-- Reason: automated Chrome PDF access reached ScienceDirect CAPTCHA or no exact PDF link was exposed
-- Target folder: /home/ubuntu/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/cyclopentanone/2024/wang_2024_cyclopentanone_113796
-
 ## Cantera conversion failed: Experimental and kinetic model studies of 2,3-dimethylhexane pyrolysis at atmospheric pressure
 
 - DOI: 10.1016/j.combustflame.2024.113781
 - URL: https://www.sciencedirect.com/science/article/pii/S0010218024004905
-- Mechanism candidates: /home/ubuntu/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/unknown_fuel/2024/pan_2024_unknown_fuel_113781/_processing/extracted/s0010218024004905_mmc1/mmc1.inp
-- Thermodynamic candidates: /home/ubuntu/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/unknown_fuel/2024/pan_2024_unknown_fuel_113781/_processing/raw_downloads/S0010218024004905_mmc2.txt
+- Mechanism candidates: /home/ubuntu/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/ethylene_acetylene_naphtha/2024/pan_2024_ethylene_acetylene_naphtha_113781/_processing/extracted/s0010218024004905_mmc1/mmc1.inp
+- Thermodynamic candidates: /home/ubuntu/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/ethylene_acetylene_naphtha/2024/pan_2024_ethylene_acetylene_naphtha_113781/_processing/raw_downloads/S0010218024004905_mmc2.txt
 - Last status: cantera_failed
 - Last message: InputError: Error while reading reaction in chem.inp starting on line 3036: """ h2cc+c2h2(+m)=c4h4(+m) 3.50e+05 2.055 -2400. !usc mech ii (99las/wan) low /1.40e+60 -12.599 7417. / troe /0.98 560. 580. 4164. / h2/2.0/ch4/2.0//c2h2/3.0/c2h4/3.0/c2h6/3.0/ """ could not convert string to float: 'c2h2' Error while reading reaction in chem.inp starting on line 8138: """ nc6h12-1 + oh<=>c6h12oh-1 1.000e+13 0.00 0.0000+03 !!!!!!!!!!!!!!!!waddington """ could not convert string to float: '0.0000+03' Ignoring redundant thermo data for species 'hoch2o2h' starting on line 139 of therm.dat. Ignoring redundant thermo data for species 'hoch2o2' starting on line 143 of therm.dat. Ignoring redundant thermo data for species 'och2o2h' starting on line 147 of therm.dat. Ignoring redundant thermo data for spec ... [truncated; see _processing logs]
-- Target folder: /home/ubuntu/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/unknown_fuel/2024/pan_2024_unknown_fuel_113781
+- Target folder: /home/ubuntu/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/ethylene_acetylene_naphtha/2024/pan_2024_ethylene_acetylene_naphtha_113781
 
 ## Cantera conversion failed: Kinetic investigations on the β-scission reactions of hydroperoxy methyl-ester radicals and the concerted HO2 elimination reactions of methyl-ester peroxy radicals: Implication for low-temperature combustion modeling of methyl esters
 
@@ -2242,11 +1626,11 @@ Items below need user-side ScienceDirect/Elsevier download or review.
 
 - DOI: 10.1016/j.combustflame.2024.113720
 - URL: https://www.sciencedirect.com/science/article/pii/S0010218024004292
-- Mechanism candidates: /home/ubuntu/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/unknown_fuel/2024/yin_2024_unknown_fuel_113720/_processing/extracted/s0010218024004292_mmc2/Mech 1-decene.inp
-- Thermodynamic candidates: /home/ubuntu/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/unknown_fuel/2024/yin_2024_unknown_fuel_113720/_processing/extracted/s0010218024004292_mmc1/chemkindata.dat
+- Mechanism candidates: /home/ubuntu/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/ethylene_ethane_1_butene_gasoline/2024/yin_2024_ethylene_ethane_1_butene_gasoline_113720/_processing/extracted/s0010218024004292_mmc2/Mech 1-decene.inp
+- Thermodynamic candidates: /home/ubuntu/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/ethylene_ethane_1_butene_gasoline/2024/yin_2024_ethylene_ethane_1_butene_gasoline_113720/_processing/extracted/s0010218024004292_mmc1/chemkindata.dat
 - Last status: cantera_failed
 - Last message: InputError: Ignoring redundant declaration for species 'C10H18OH-1-1-3' Ignoring redundant declaration for species 'C10H20OH-1-2' Ignoring redundant declaration for species 'C10H19OOH12OH3' Ignoring redundant declaration for species 'C8H17-1' Ignoring redundant declaration for species 'C8H17-1' Suppressed 1051 additional warnings about redundant species declarations. Run ck2yaml again with the '--verbose' option to see all warnings. Ignoring redundant thermo data for species 'C8H7O' starting on line 59410 of therm.dat. Ignoring redundant thermo data for species 'C9H18-1' starting on line 59635 of therm.dat. Ignoring redundant thermo data for species 'C9H19-1' starting on line 59639 of therm.dat. Ignoring redundant thermo data for species 'C8H17-1' starting on line 59643 of therm.dat. Ignor ... [truncated; see _processing logs]
-- Target folder: /home/ubuntu/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/unknown_fuel/2024/yin_2024_unknown_fuel_113720
+- Target folder: /home/ubuntu/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/ethylene_ethane_1_butene_gasoline/2024/yin_2024_ethylene_ethane_1_butene_gasoline_113720
 
 ## Cantera conversion failed: Experimental and kinetic modeling study of RP-3 kerosene: Development of a four-component surrogate for enhanced prediction of aromatic intermediates
 
@@ -2272,9 +1656,249 @@ Items below need user-side ScienceDirect/Elsevier download or review.
 
 - DOI: 10.1016/j.combustflame.2024.113778
 - URL: https://www.sciencedirect.com/science/article/pii/S0010218024004875
-- Mechanism candidates: /home/ubuntu/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/unknown_fuel/2024/liang_2024_unknown_fuel_113778/_processing/raw_downloads/S0010218024004875_mmc3.txt
-- Thermodynamic candidates: /home/ubuntu/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/unknown_fuel/2024/liang_2024_unknown_fuel_113778/_processing/raw_downloads/S0010218024004875_mmc4.txt
+- Mechanism candidates: /home/ubuntu/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/saf/2024/liang_2024_saf_113778/_processing/raw_downloads/S0010218024004875_mmc3.txt
+- Thermodynamic candidates: /home/ubuntu/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/saf/2024/liang_2024_saf_113778/_processing/raw_downloads/S0010218024004875_mmc4.txt
 - Last status: cantera_failed
 - Last message: InputError: Ignoring redundant declaration for species 'C7H131-7' Ignoring redundant declaration for species 'C6H111-6' Ignoring redundant declaration for species 'C5H10-1' Ignoring redundant declaration for species 'C5H6' Ignoring redundant declaration for species 'C5H5' Suppressed 39 additional warnings about redundant species declarations. Run ck2yaml again with the '--verbose' option to see all warnings. Error while reading reaction in chem.inp starting on line 15700: """ C5H10-1+OH<=>C5H10OH-1 1.000E+13 0.00 0.0000+03 """ could not convert string to float: '0.0000+03' Error while reading reaction in chem.inp starting on line 15703: """ C5H10-2+OH<=>C5H10OH-2 1.000E+13 0.00 0.0000+03 """ could not convert string to float: '0.0000+03' Error while reading reaction in chem.inp starting on ... [truncated; see _processing logs]
-- Target folder: /home/ubuntu/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/unknown_fuel/2024/liang_2024_unknown_fuel_113778
+- Target folder: /home/ubuntu/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/saf/2024/liang_2024_saf_113778
+
+## Paper PDF pending: Experimental and modeling study of benzaldehyde oxidation
+
+- DOI: 10.1016/j.combustflame.2019.09.024
+- URL: https://www.sciencedirect.com/science/article/pii/S0010218019304389
+- PDF link from issue page: 
+- Reason: automated Chrome PDF access reached ScienceDirect CAPTCHA or no exact PDF link was exposed
+- Target folder: /home/ubuntu/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/unknown_fuel/2020/namysl_2020_unknown_fuel_124-132
+
+## Cantera conversion failed: An experimental study of n-dodecane and the development of an improved kinetic model
+
+- DOI: 10.1016/j.combustflame.2019.11.014
+- URL: https://www.sciencedirect.com/science/article/pii/S001021801930519X
+- Mechanism candidates: /home/ubuntu/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/n_dodecane/2020/mao_2020_n_dodecane_388-402/_processing/extracted/s001021801930519x_mmc5/mmc6.inp
+- Thermodynamic candidates: /home/ubuntu/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/n_dodecane/2020/mao_2020_n_dodecane_388-402/_processing/extracted/s001021801930519x_mmc5/mmc5.dat
+- Last status: cantera_failed
+- Last message: CanteraError: ******************************************************************************* CanteraError thrown by GasTransportData::validate: invalid geometry for species 'NC12H26'. 'atom' specified, but species contains multiple atoms. *******************************************************************************
+- Target folder: /home/ubuntu/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/n_dodecane/2020/mao_2020_n_dodecane_388-402
+
+## Cantera conversion failed: Experimental and kinetic modeling study on 1,3-cyclopentadiene oxidation and pyrolysis
+
+- DOI: 10.1016/j.combustflame.2019.10.032
+- URL: https://www.sciencedirect.com/science/article/pii/S0010218019304894
+- Mechanism candidates: /home/ubuntu/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/unknown_fuel/2020/wang_2020_unknown_fuel_189-204/_processing/raw_downloads/S0010218019304894_mmc2.txt
+- Thermodynamic candidates: /home/ubuntu/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/unknown_fuel/2020/wang_2020_unknown_fuel_189-204/_processing/raw_downloads/S0010218019304894_mmc3.txt
+- Last status: cantera_failed
+- Last message: InputError: Ignoring redundant declaration for species 'C4H6' Ignoring redundant thermo data for species 'HOCO' starting on line 583 of therm.dat. Error while reading thermo entry in therm.dat starting on line 1405: """ A1(C2H3)2 C 10H 10 G 300.000 5000.000 5000.00 1 5.60848905E+01 0.00000000E+00 0.00000000E+00 0.00000000E+00 0.00000000E+00 2 -1.44640324E+04-3.08906342E+02 3.54769133E+00 6.32681160E-02-2.97482733E-05 3 6.21023998E-09-4.74202473E-13 2.29084499E+04 9.41010680E+00 4 """ Only one temperature range defined but two distinct sets of coefficients given in species thermo entry. Error while reading thermo entry in therm.dat starting on line 1413: """ C9H8CH3 C 10H 11 G 300.000 5000.000 5000.00 1 5.89344512E+01 0.00000000E+00 0.00000000E+00 0.00000000E+00 0.00000000E+00 2 -2.21709548 ... [truncated; see _processing logs]
+- Target folder: /home/ubuntu/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/unknown_fuel/2020/wang_2020_unknown_fuel_189-204
+
+## Paper PDF pending: Comprehensive kinetic study of combustion technologies for low environmental impact: MILD and OXY-fuel combustion of methane
+
+- DOI: 10.1016/j.combustflame.2019.10.014
+- URL: https://www.sciencedirect.com/science/article/pii/S0010218019304705
+- PDF link from issue page: 
+- Reason: automated Chrome PDF access reached ScienceDirect CAPTCHA or no exact PDF link was exposed
+- Target folder: /home/ubuntu/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/methane_iron/2020/bagheri_2020_methane_iron_142-155
+
+## Cantera conversion failed: A reduced reaction mechanism of biodiesel surrogates with low temperature chemistry for multidimensional engine simulation
+
+- DOI: 10.1016/j.combustflame.2019.11.002
+- URL: https://www.sciencedirect.com/science/article/pii/S0010218019304997
+- Mechanism candidates: /home/ubuntu/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/n_heptane/2020/zhang_2020_n_heptane_377-387/_processing/extracted/s0010218019304997_mmc1/chem.inp
+- Thermodynamic candidates: /home/ubuntu/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/n_heptane/2020/zhang_2020_n_heptane_377-387/_processing/extracted/s0010218019304997_mmc1/therm.dat
+- Last status: cantera_failed
+- Last message: InputError: Error while reading reaction in chem.inp starting on line 62: """ h+o2(+M)<=>ho2(+M) 1.475E+12 0.60 0.0 low/ 0.34820E+17 -0.41100E+00 -0.11222E+04 / troe/ 0.50000E+00 0.10000E-29 0.10000E+31 0.10000+101 / h2 / 1.30/ h2o /14.00/ co / 1.90/ co2 / 3.80/ ch4 / 2.00/ c2h6/ 3.00/ """ could not convert string to float: '0.10000+101' Error while reading reaction in chem.inp starting on line 80: """ h2o2(+M)<=>oh+oh(+M) 2.951E+14 0.00 48430.0 low/ 0.12020E+18 0.00000E+00 0.45793E+05 / troe/ 0.50000E+00 0.10000E-29 0.10000E+31 0.10000+101 / h2 / 2.50/ h2o /12.00/ co / 1.90/ co2 / 3.80/ ch4 / 2.00/ c2h6/ 3.00/ """ could not convert string to float: '0.10000+101' Error while reading reaction in chem.inp starting on line 148: """ ch3o(+M)<=>ch2o+h(+M) 6.800E+13 0.00 26170.0 low/ 0.18670E+26 ... [truncated; see _processing logs]
+- Target folder: /home/ubuntu/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/n_heptane/2020/zhang_2020_n_heptane_377-387
+
+## Paper PDF pending: An experimental and modeling study on the reactivity of extremely fuel-rich methane/dimethyl ether mixtures
+
+- DOI: 10.1016/j.combustflame.2019.09.036
+- URL: https://www.sciencedirect.com/science/article/pii/S0010218019304560
+- PDF link from issue page: 
+- Reason: automated Chrome PDF access reached ScienceDirect CAPTCHA or no exact PDF link was exposed
+- Target folder: /home/ubuntu/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/dimethyl_ether_methane/2020/porras_2020_dimethyl_ether_methane_107-122
+
+## Paper PDF pending: Investigating the impacts of thermochemical group additivity values on kinetic model predictions through sensitivity and uncertainty analyses
+
+- DOI: 10.1016/j.combustflame.2019.12.011
+- URL: https://www.sciencedirect.com/science/article/pii/S0010218019305632
+- PDF link from issue page: 
+- Reason: automated Chrome PDF access reached ScienceDirect CAPTCHA or no exact PDF link was exposed
+- Target folder: /home/ubuntu/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/unknown_fuel/2020/lehn_2020_unknown_fuel_394-408
+
+## Paper PDF pending: Experimental and kinetic modeling study of laminar burning velocities of NH3/syngas/air premixed flames
+
+- DOI: 10.1016/j.combustflame.2019.11.032
+- URL: https://www.sciencedirect.com/science/article/pii/S0010218019305371
+- PDF link from issue page: 
+- Reason: automated Chrome PDF access reached ScienceDirect CAPTCHA or no exact PDF link was exposed
+- Target folder: /home/ubuntu/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/ammonia_syngas/2020/han_2020_ammonia_syngas_1-13
+
+## Paper PDF pending: Ignition delay time measurement and kinetic modeling of furan, and comparative studies of 2,3-dihydrofuran and tetrahydrofuran at low to intermediate temperatures by using a rapid compression machine
+
+- DOI: 10.1016/j.combustflame.2019.12.010
+- URL: https://www.sciencedirect.com/science/article/pii/S0010218019305620
+- PDF link from issue page: 
+- Reason: automated Chrome PDF access reached ScienceDirect CAPTCHA or no exact PDF link was exposed
+- Target folder: /home/ubuntu/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/furan_tetrahydrofuran/2020/wu_2020_furan_tetrahydrofuran_226-236
+
+## Paper PDF pending: Fuel molecular structure effect on autoignition of highly branched iso-alkanes at low-to-intermediate temperatures: Iso-octane versus iso-dodecane
+
+- DOI: 10.1016/j.combustflame.2019.12.037
+- URL: https://www.sciencedirect.com/science/article/pii/S0010218019305954
+- PDF link from issue page: 
+- Reason: automated Chrome PDF access reached ScienceDirect CAPTCHA or no exact PDF link was exposed
+- Target folder: /home/ubuntu/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/n_dodecane/2020/fang_2020_n_dodecane_152-166
+
+## Cantera conversion failed: Experimental and kinetic modeling investigation on ethylcyclohexane low-temperature oxidation in a jet-stirred reactor
+
+- DOI: 10.1016/j.combustflame.2019.12.038
+- URL: https://www.sciencedirect.com/science/article/pii/S0010218019305966
+- Mechanism candidates: /home/ubuntu/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/ethylcyclohexane/2020/zou_2020_ethylcyclohexane_211-223/_processing/extracted/s0010218019305966_mmc2/SMM2-Reaction mechanism.inp
+- Thermodynamic candidates: /home/ubuntu/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/ethylcyclohexane/2020/zou_2020_ethylcyclohexane_211-223/_processing/extracted/s0010218019305966_mmc3/SMM3-Thermodynamic data.dat
+- Last status: cantera_failed
+- Last message: InputError: Ignoring redundant declaration for species 'CHX1*O2J' Ignoring redundant declaration for species 'HX1N36AL' Ignoring redundant declaration for species 'BT14AL1J' Ignoring redundant declaration for species 'HX1N4OJ6Al' Ignoring redundant declaration for species 'CYCHXDCHCH3' Suppressed 15 additional warnings about redundant species declarations. Run ck2yaml again with the '--verbose' option to see all warnings. Error while reading reaction in chem.inp starting on line 11251: """ ECH1QJ2 = ECH1ENE+HO2 1.0 0.0 0.0 ! MCH1QJ2 = MCH1ENE+HO2 PLOG/ 0.01 4.54E+08 1.05529 2.67E+04/ PLOG/ 0.1 1.46E+08 0.87848 2.53E+04/ PLOG/ 1 1.7144-119 41.2791 -1.49E+04/ PLOG/ 10 1.32E-58 21.54802 2.70E+03/ """ could not convert string to float: '1.7144-119' Error while reading reaction in chem.inp star ... [truncated; see _processing logs]
+- Target folder: /home/ubuntu/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/ethylcyclohexane/2020/zou_2020_ethylcyclohexane_211-223
+
+## Paper PDF pending: Revealing the critical role of radical-involved pathways in high temperature cyclopentanone pyrolysis
+
+- DOI: 10.1016/j.combustflame.2020.03.001
+- URL: https://www.sciencedirect.com/science/article/pii/S0010218020300961
+- PDF link from issue page: 
+- Reason: automated Chrome PDF access reached ScienceDirect CAPTCHA or no exact PDF link was exposed
+- Target folder: /home/ubuntu/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/cyclopentanone/2020/dong_2020_cyclopentanone_280-292
+
+## Cantera conversion failed: Comment on “Simultaneous lateral and endwall high-speed visualization of ignition in a circular shock tube” [Combustion and Flame 214 (2020) 263–265]
+
+- DOI: 10.1016/j.combustflame.2020.02.009
+- URL: https://www.sciencedirect.com/science/article/pii/S0010218020300663
+- Mechanism candidates: /home/ubuntu/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/unknown_fuel/2020/ninnemann_2020_unknown_fuel_37/_processing/raw_downloads/S0010218024003237_mmc4.txt; /home/ubuntu/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/unknown_fuel/2020/ninnemann_2020_unknown_fuel_37/_processing/extracted/s0010218019305371_mmc3/mmc3.inp; /home/ubuntu/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/unknown_fuel/2020/ninnemann_2020_unknown_fuel_37/_processing/extracted/s0010218025003797_mmc5/SM_5_Kinetic.mech; /home/ubuntu/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/unknown_fuel/2020/ninnemann_2020_unknown_fuel_37/_processing/extracted/s0010218023003735_mmc1/mmc1.cti; /home/ubuntu/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/unknown_fuel/2020/ninnemann_2020_unknown_fuel_37/_processing/extracted/s0010218023003437_mmc2/HUST-DMM_2.inp; /home/ubuntu/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/unknown_fuel/2020/ninnemann_2020_unknown_fuel_37/_processing/extracted/s0010218023003760_mmc1/chem.inp; /home/ubuntu/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/unknown_fuel/2020/ninnemann_2020_unknown_fuel_37/_processing/extracted/s0010218023003735_mmc2/mmc2.mech
+- Thermodynamic candidates: /home/ubuntu/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/unknown_fuel/2020/ninnemann_2020_unknown_fuel_37/_processing/raw_downloads/S0010218024003237_mmc5.txt; /home/ubuntu/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/unknown_fuel/2020/ninnemann_2020_unknown_fuel_37/_processing/extracted/s0010218023003437_mmc3/HUST-DMM_therm.dat; /home/ubuntu/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/unknown_fuel/2020/ninnemann_2020_unknown_fuel_37/_processing/extracted/s0010218023003735_mmc1/mmc1.cti; /home/ubuntu/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/unknown_fuel/2020/ninnemann_2020_unknown_fuel_37/_processing/extracted/s0010218023003760_mmc1/therm.dat; /home/ubuntu/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/unknown_fuel/2020/ninnemann_2020_unknown_fuel_37/_processing/extracted/s0010218023003760_mmc1/chem.inp; /home/ubuntu/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/unknown_fuel/2020/ninnemann_2020_unknown_fuel_37/_processing/extracted/s0010218025003797_mmc6/SM_6_Therm.dat; /home/ubuntu/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/unknown_fuel/2020/ninnemann_2020_unknown_fuel_37/_processing/extracted/s0010218023003735_mmc3/mmc3.therm; /home/ubuntu/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/unknown_fuel/2020/ninnemann_2020_unknown_fuel_37/_processing/extracted/s0010218019305371_mmc4/mmc4.dat
+- Last status: cantera_failed
+- Last message: InputError: Ignoring redundant declaration for species 'O2CHO' Ignoring redundant declaration for species 'C2H5O2' Ignoring redundant declaration for species 'C2H4O2H' Ignoring redundant declaration for species 'C2H3O1-2' Ignoring redundant declaration for species 'CH2OCHO' Suppressed 92 additional warnings about redundant species declarations. Run ck2yaml again with the '--verbose' option to see all warnings. Error while reading reaction in chem.inp starting on line 7618: """ H+O2(+M)=HO2(+M) 4.66E12 0.44 0.0E0 !\Author: SP !\Ref: TROE, PROCI Volume 28, Issue 2, 2000, 1463-1469 / PCCP FERNANDES 2008 HE/1.0/ AR/0.0/ N2/1.0/ O2/1.0/ H2/2.0/ CH4/2.0/ CO2/3.25/ H2O/17.6/ CO/4.0/ LOWMX / 4.0662E19 -1.4E0 -1.80537E2 / TROEMX / 5.0E-1 1.0E0 1.0E10 1.0E30 / LOWSP / N2 1.91E+20 -1.5568 253.86 / !Y ... [truncated; see _processing logs]
+- Target folder: /home/ubuntu/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/unknown_fuel/2020/ninnemann_2020_unknown_fuel_37
+
+## Cantera conversion failed: The effect of ammonia addition on the low-temperature autoignition of n-heptane: An experimental and modeling study
+
+- DOI: 10.1016/j.combustflame.2020.03.019
+- URL: https://www.sciencedirect.com/science/article/pii/S0010218020301206
+- Mechanism candidates: /home/ubuntu/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/ammonia_n_heptane/2020/yu_2020_ammonia_n_heptane_4-11/_processing/extracted/s0010218020301206_mmc1/C7H16+NH3.inp
+- Thermodynamic candidates: /home/ubuntu/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/ammonia_n_heptane/2020/yu_2020_ammonia_n_heptane_4-11/_processing/extracted/s0010218020301206_mmc1/C7H16+NH3.inp
+- Last status: cantera_failed
+- Last message: TimeoutExpired: Cantera conversion exceeded 900 seconds
+- Target folder: /home/ubuntu/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/ammonia_n_heptane/2020/yu_2020_ammonia_n_heptane_4-11
+
+## Paper PDF pending: A comprehensive kinetic model for dimethyl ether and dimethoxymethane oxidation and NO  interaction utilizing experimental laminar flame speed measurements at elevated pressure and temperature
+
+- DOI: 10.1016/j.combustflame.2020.04.016
+- URL: https://www.sciencedirect.com/science/article/pii/S0010218020301607
+- PDF link from issue page: 
+- Reason: automated Chrome PDF access reached ScienceDirect CAPTCHA or no exact PDF link was exposed
+- Target folder: /home/ubuntu/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/dimethoxymethane_dimethyl_ether/2020/shrestha_2020_dimethoxymethane_dimethyl_ether_57-74
+
+## Paper PDF pending: Corrigendum to ``Detailed kinetic modeling of dimethoxymethane. Part I: Ab initio thermochemistry and kinetics predictions for key reactions'' [Combust. Flame (189) 433-442]
+
+- DOI: 10.1016/j.combustflame.2020.03.020
+- URL: https://www.sciencedirect.com/science/article/pii/S0010218020301231
+- PDF link from issue page: 
+- Reason: automated Chrome PDF access reached ScienceDirect CAPTCHA or no exact PDF link was exposed
+- Target folder: /home/ubuntu/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/dimethoxymethane/2020/kopp_2020_dimethoxymethane_27
+
+## Cantera conversion failed: Autoignition studies of NH3/CH4 mixtures at high pressure
+
+- DOI: 10.1016/j.combustflame.2020.04.020
+- URL: https://www.sciencedirect.com/science/article/pii/S0010218020301644
+- Mechanism candidates: /home/ubuntu/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/ammonia_methane/2020/dai_2020_ammonia_methane_19-26/_processing/extracted/s0010218020301644_mmc4/chem.inp
+- Thermodynamic candidates: 
+- Last status: cantera_failed
+- Last message: InputError: No thermo data found for species 'H2' No thermo data found for species 'O2' No thermo data found for species 'O3' No thermo data found for species 'H' No thermo data found for species 'O' No thermo data found for species 'OH' No thermo data found for species 'HO2' No thermo data found for species 'H2O' No thermo data found for species 'H2O2' No thermo data found for species 'CO' No thermo data found for species 'CO2' No thermo data found for species 'CH4' No thermo data found for species 'CH3' No thermo data found for species 'CH2' No thermo data found for species 'CH2(S)' No thermo data found for species 'CH' No thermo data found for species 'C' No thermo data found for species 'CH3OH' No thermo data found for species 'CH3O' No thermo data found for species 'CH2OH' No thermo d ... [truncated; see _processing logs]
+- Target folder: /home/ubuntu/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/ammonia_methane/2020/dai_2020_ammonia_methane_19-26
+
+## Cantera conversion failed: PAH formation from jet stirred reactor pyrolysis of gasoline surrogates
+
+- DOI: 10.1016/j.combustflame.2020.06.001
+- URL: https://www.sciencedirect.com/science/article/pii/S0010218020302066
+- Mechanism candidates: /home/ubuntu/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/gasoline/2020/shao_2020_gasoline_312-326/_processing/extracted/s0010218020302066_mmc2/mmc2/PAH_mechanism_file.inp
+- Thermodynamic candidates: /home/ubuntu/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/gasoline/2020/shao_2020_gasoline_312-326/_processing/extracted/s0010218020302066_mmc3/mmc3/PAH_thermal_file.dat
+- Last status: cantera_failed
+- Last message: InputError: Error while reading entry in chem.inp starting on line 42198: """ C15H8O-A !! InChI=1S/C15H8O/C16-13-8-11-5-4-9-2-1-3-10-6-7-12(13)15(11)14(9)10/H1-8H """ Section starts with unrecognized keyword 'C15H8O-A ' Ignoring redundant declaration for species 'XC12H24-3' Ignoring redundant declaration for species 'XC12H24-4' Ignoring redundant declaration for species 'IC6D1-4' Ignoring redundant declaration for species 'IC6D3-2' Ignoring redundant declaration for species 'NEC7D3-4R' Suppressed 1024 additional warnings about redundant species declarations. Run ck2yaml again with the '--verbose' option to see all warnings. Ignoring duplicate transport data for species "IC6D3" on line 2383 of "tran.dat". Ignoring duplicate transport data for species "IC6D4" on line 2385 of "tran.dat". Igno ... [truncated; see _processing logs]
+- Target folder: /home/ubuntu/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/gasoline/2020/shao_2020_gasoline_312-326
+
+## Paper PDF pending: A hierarchical single-pulse shock tube pyrolysis study of C2–C6 1-alkenes
+
+- DOI: 10.1016/j.combustflame.2020.06.021
+- URL: https://www.sciencedirect.com/science/article/pii/S001021802030239X
+- PDF link from issue page: 
+- Reason: automated Chrome PDF access reached ScienceDirect CAPTCHA or no exact PDF link was exposed
+- Target folder: /home/ubuntu/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/unknown_fuel/2020/nagaraja_2020_unknown_fuel_456-466
+
+## Cantera conversion failed: Pyrolysis study of 1,2,4-trimethylcyclohexane with SVUV-photoionization molecular-beam mass spectrometry
+
+- DOI: 10.1016/j.combustflame.2020.06.020
+- URL: https://www.sciencedirect.com/science/article/pii/S0010218020302388
+- Mechanism candidates: /home/ubuntu/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/ethylcyclohexane/2020/liu_2020_ethylcyclohexane_449-455/_processing/raw_downloads/S0010218020302388_mmc2.txt
+- Thermodynamic candidates: /home/ubuntu/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/ethylcyclohexane/2020/liu_2020_ethylcyclohexane_449-455/_processing/raw_downloads/S0010218020302388_mmc3.txt
+- Last status: cantera_failed
+- Last message: InputError: Ignoring redundant declaration for species 'C4H6' Ignoring redundant thermo data for species 'HOCO' starting on line 599 of therm.dat. Error while reading thermo entry in therm.dat starting on line 1433: """ A1(C2H3)2 C 10H 10 G 300.000 5000.000 5000.00 1 5.60848905E+01 0.00000000E+00 0.00000000E+00 0.00000000E+00 0.00000000E+00 2 -1.44640324E+04-3.08906342E+02 3.54769133E+00 6.32681160E-02-2.97482733E-05 3 6.21023998E-09-4.74202473E-13 2.29084499E+04 9.41010680E+00 4 """ Only one temperature range defined but two distinct sets of coefficients given in species thermo entry. Error while reading thermo entry in therm.dat starting on line 1441: """ C9H8CH3 C 10H 11 G 300.000 5000.000 5000.00 1 5.89344512E+01 0.00000000E+00 0.00000000E+00 0.00000000E+00 0.00000000E+00 2 -2.21709548 ... [truncated; see _processing logs]
+- Target folder: /home/ubuntu/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/ethylcyclohexane/2020/liu_2020_ethylcyclohexane_449-455
+
+## Cantera conversion failed: Autoignition of CRC diesel surrogates at low temperature combustion conditions: Rapid compression machine experiments and modeling
+
+- DOI: 10.1016/j.combustflame.2020.05.017
+- URL: https://www.sciencedirect.com/science/article/pii/S0010218020302005
+- Mechanism candidates: /home/ubuntu/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/unknown_fuel/2020/wang_2020_unknown_fuel_178-197/_processing/extracted/s0010218020302005_mmc3/Diesel_mechanism.inp.txt
+- Thermodynamic candidates: /home/ubuntu/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/unknown_fuel/2020/wang_2020_unknown_fuel_178-197/_processing/extracted/s0010218020302005_mmc3/Diesel _thermal.dat.txt
+- Last status: cantera_failed
+- Last message: InputError: Error while reading entry in chem.inp starting on line 53629: """ DUP """ Section starts with unrecognized keyword 'DUP' Ignoring redundant declaration for species 'PC3H4OH-3' Ignoring redundant declaration for species 'C4H7CHO-4' Ignoring redundant declaration for species 'PC4H8CHO-4' Ignoring redundant declaration for species 'PC4H9CO' Ignoring redundant declaration for species 'C5H8D14' Suppressed 1570 additional warnings about redundant species declarations. Run ck2yaml again with the '--verbose' option to see all warnings. Ignoring redundant thermo data for species 'C6H5C3H4' starting on line 221 of therm.dat. Ignoring redundant thermo data for species 'CH2INDANE-1' starting on line 241 of therm.dat. Ignoring redundant thermo data for species 'CH2VIND-1' starting on line 2 ... [truncated; see _processing logs]
+- Target folder: /home/ubuntu/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/unknown_fuel/2020/wang_2020_unknown_fuel_178-197
+
+## Paper PDF pending: Shock tube and modeling study of ignition delay times of propane under O2/CO2/Ar atmosphere
+
+- DOI: 10.1016/j.combustflame.2020.06.024
+- URL: https://www.sciencedirect.com/science/article/pii/S001021802030242X
+- PDF link from issue page: 
+- Reason: automated Chrome PDF access reached ScienceDirect CAPTCHA or no exact PDF link was exposed
+- Target folder: /home/ubuntu/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/propane/2020/xia_2020_propane_34-48
+
+## Paper PDF pending: An experimental and kinetic modeling study of phenylacetylene decomposition and the reactions with acetylene/ethylene under shock tube pyrolysis conditions
+
+- DOI: 10.1016/j.combustflame.2020.06.044
+- URL: https://www.sciencedirect.com/science/article/pii/S0010218020302625
+- PDF link from issue page: 
+- Reason: automated Chrome PDF access reached ScienceDirect CAPTCHA or no exact PDF link was exposed
+- Target folder: /home/ubuntu/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/ethylene_acetylene/2020/sun_2020_ethylene_acetylene_257-271
+
+## Cantera conversion failed: Chemical kinetics study of 1,3-butadiene + HȮ2; implications for combustion modeling and simulation
+
+- DOI: 10.1016/j.combustflame.2020.07.033
+- URL: https://www.sciencedirect.com/science/article/pii/S0010218020303035
+- Mechanism candidates: /home/ubuntu/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/unknown_fuel/2020/zhu_2020_unknown_fuel_241-255/_processing/extracted/s0010218020303035_mmc2/Kinetics.dat
+- Thermodynamic candidates: 
+- Last status: cantera_failed
+- Last message: InputError: No thermo data found for species 'C4H6' No thermo data found for species 'C4H71-OO3' No thermo data found for species 'C4H71-OO4' No thermo data found for species 'C4H61-4OOH3' No thermo data found for species 'C4H61-3OOH4' No thermo data found for species '(CYOC)C=C' No thermo data found for species 'C4H71-3' No thermo data found for species 'C4H71-4' No thermo data found for species 'C4H5-I' No thermo data found for species 'C4H5-N' No thermo data found for species 'HO2' No thermo data found for species 'OH' No thermo data found for species 'O2' No thermo data found for species 'H2O2' Please check https://cantera.org/stable/userguide/ck2yaml-tutorial.html#debugging-common-errors-in-ck-files for the correct Chemkin syntax.
+- Target folder: /home/ubuntu/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/unknown_fuel/2020/zhu_2020_unknown_fuel_241-255
+
+## Cantera conversion failed: A comparative kinetic study of C8–C10 linear alkylbenzenes pyrolysis in a single-pulse shock tube
+
+- DOI: 10.1016/j.combustflame.2020.07.031
+- URL: https://www.sciencedirect.com/science/article/pii/S0010218020303011
+- Mechanism candidates: /home/ubuntu/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/n_butylbenzene/2020/sun_2020_n_butylbenzene_136-149/_processing/raw_downloads/S0010218020303011_mmc3.txt; /home/ubuntu/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/n_butylbenzene/2020/sun_2020_n_butylbenzene_136-149/_processing/extracted/s0010218020303011_mmc4/SMM3.inp
+- Thermodynamic candidates: 
+- Last status: cantera_failed
+- Last message: InputError: Ignoring redundant declaration for species 'c-C6H3' Ignoring redundant declaration for species 'C10H6(C2H)2' No thermo data found for species 'AR' No thermo data found for species 'N2' No thermo data found for species 'HE' No thermo data found for species 'H2' No thermo data found for species 'H' No thermo data found for species 'H2O' No thermo data found for species 'CO2' No thermo data found for species 'CO' No thermo data found for species 'CH4' No thermo data found for species 'CH3' No thermo data found for species 'CH2' No thermo data found for species 'CH2(S)' No thermo data found for species 'C' No thermo data found for species 'CH' No thermo data found for species 'C2H6' No thermo data found for species 'C2H5' No thermo data found for species 'C2H4' No thermo data found ... [truncated; see _processing logs]
+- Target folder: /home/ubuntu/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/n_butylbenzene/2020/sun_2020_n_butylbenzene_136-149
+
+## Paper PDF pending: An experimental and modeling study of ethylene–air combustion over a wide temperature range
+
+- DOI: 10.1016/j.combustflame.2020.07.017
+- URL: https://www.sciencedirect.com/science/article/pii/S001021802030287X
+- PDF link from issue page: 
+- Reason: automated Chrome PDF access reached ScienceDirect CAPTCHA or no exact PDF link was exposed
+- Target folder: /home/ubuntu/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/ethylene/2020/yang_2020_ethylene_20-40
+
+## Paper PDF pending: Experimental and numerical investigation of the promoting effect of a cetane booster in a low-octane gasoline fuel in a rapid compression machine: A study of 2-ethylhexyl nitrate
+
+- DOI: 10.1016/j.combustflame.2020.08.024
+- URL: https://www.sciencedirect.com/science/article/pii/S0010218020303473
+- PDF link from issue page: 
+- Reason: automated Chrome PDF access reached ScienceDirect CAPTCHA or no exact PDF link was exposed
+- Target folder: /home/ubuntu/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/2_ethylhexyl_nitrate_gasoline/2020/le_2020_2_ethylhexyl_nitrate_gasoline_36-47
 

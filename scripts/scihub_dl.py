@@ -92,16 +92,30 @@ def main():
                 'Referer': 'https://sci-hub.ren/'
             })
             with urllib.request.urlopen(req, timeout=20) as resp:
-                content = resp.read()
+                # Stream to temp file to avoid loading entire PDF into memory
+                import tempfile, shutil
+                tmp = tempfile.NamedTemporaryFile(suffix='.pdf', delete=False)
+                shutil.copyfileobj(resp, tmp)
+                tmp.close()
             
-            if content[:4] == b'%PDF' and len(content) > 5000:
-                target.parent.mkdir(parents=True, exist_ok=True)
-                target.write_bytes(content)
-                r['paperPdfLocal'] = str(target)
-                r['paperPdfSource'] = 'sci-hub-bban'
-                ok += 1
-                print(f'OK ({len(content)/1024:.0f} KB)')
+            # Verify PDF header and move
+            with open(tmp.name, 'rb') as f:
+                header = f.read(5)
+            if header == b'%PDF-':
+                sz = Path(tmp.name).stat().st_size
+                if sz > 5000:
+                    target.parent.mkdir(parents=True, exist_ok=True)
+                    shutil.move(tmp.name, str(target))
+                    r['paperPdfLocal'] = str(target)
+                    r['paperPdfSource'] = 'sci-hub-bban'
+                    ok += 1
+                    print(f'OK ({sz/1024:.0f} KB)')
+                else:
+                    Path(tmp.name).unlink()
+                    fail += 1
+                    print('TOO SMALL')
             else:
+                Path(tmp.name).unlink()
                 fail += 1
                 print('NOT PDF')
         except urllib.error.HTTPError as e:
@@ -111,13 +125,11 @@ def main():
             fail += 1
             print(f'ERR: {str(e)[:40]}')
         
-        # Save metadata every 10
-        if ok % 10 == 0 and ok > 0:
-            META.write_text(json.dumps(meta, ensure_ascii=False, indent=2), encoding='utf-8')
-        
-        time.sleep(0.5)  # rate limit
+        # Save metadata at end only to reduce memory churn
+        time.sleep(0.5)
     
-    META.write_text(json.dumps(meta, ensure_ascii=False, indent=2), encoding='utf-8')
+    if ok > 0:
+        META.write_text(json.dumps(meta, ensure_ascii=False, indent=2), encoding='utf-8')
     print(f'\nDone: {ok} OK, {fail} failed, {ok+fail} total')
 
 if __name__ == '__main__':

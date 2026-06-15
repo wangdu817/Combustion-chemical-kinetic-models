@@ -47,5 +47,3 @@ n-Butylcyclohexane (NBCH) serves as a representative surrogate fuel in investiga
 ## Processing Notes
 
 - extracted S0010218025000859_mmc1.zip
-- extracted Supplementary Materials-mm1.docx
-- extracted Supplementary material-mm2.xlsx

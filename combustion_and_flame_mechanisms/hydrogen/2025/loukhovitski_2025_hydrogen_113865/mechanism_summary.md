@@ -31,11 +31,11 @@ Boris I. Loukhovitski, Alexander S. Sharipov. A detailed kinetic submechanism fo
 ### Mechanism 1
 
 - Status: cantera_failed
-- Species count: not parsed
-- Reaction count: not parsed
+- Species count: 1
+- Reaction count: 77
 - Message: InputError: No thermo data found for species 'H' No thermo data found for species 'H2' No thermo data found for species 'O' No thermo data found for species 'O2' No thermo data found for species 'OH' No thermo data found for species 'H2O' No thermo data found for species 'N2' No thermo data found for species 'HO2' No thermo data found for species 'H2O2' No thermo data found for species 'AR' No thermo data found for species 'HE' No thermo data found for species 'KR' No thermo data found for species 'NO' No thermo data found for species 'N2O' No thermo data found for species 'NO2' No thermo data found for species 'HNO' No thermo data found for species 'HNO2' No thermo data found for species 'NH3' No thermo data found for species 'NH' No thermo data found for species 'NNH' No thermo data foun ... [truncated; see _processing logs]
 - Method: cantera
-- Cantera YAML: not available
+- Cantera YAML: mechanism.yaml
 - Standard chem.inp: chem.inp
 - Standard therm.dat: therm.dat
 - Standard tran.dat: tran.dat
