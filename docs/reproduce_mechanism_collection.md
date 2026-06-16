@@ -100,6 +100,9 @@ The volume JSON files should contain `doi`, `pii`, `title`, `authors`, `volume`,
 
 ```bash
 .venv/bin/python scripts/collect_cf2026.py probe-supplements --year 20XX --max-mmc 12
+
+# On low-memory servers (≤4GB RAM), use --serial to avoid OOM:
+.venv/bin/python scripts/collect_cf2026.py probe-supplements --year 20XX --max-mmc 12 --serial
 .venv/bin/python scripts/collect_cf2026.py download-supplements --year 20XX
 .venv/bin/python scripts/collect_cf2026.py process --force
 ```
