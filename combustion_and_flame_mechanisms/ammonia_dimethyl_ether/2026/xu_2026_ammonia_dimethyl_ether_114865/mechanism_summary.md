@@ -33,7 +33,7 @@ Wenbin Xu, Bowen Mei, Andy Thawko, Ziyu Wang, ... Yiguang Ju. Flame dynamics and
 - Status: cantera_failed
 - Species count: not parsed
 - Reaction count: not parsed
-- Message: InputError: Error while reading reaction in chem.inp starting on line 1261: """ C6H5(+M)=o-C6H4+H(+M) 4.30E+12 0.62 77313. LOW/ 1.00E+84 -18.87 90064 / TROE/ 0.902, 696., 358., 3856. / H2/2.0/ H2O/6.0/ CH4/2.0/ CO/1.5/ CO2/2.0/ """ could not convert string to float: '0.902,' Ignoring redundant thermo data for species 'OCH2O2H' starting on line 1188 of therm.dat. Ignoring redundant thermo data for species 'HOCH2O2' starting on line 1194 of therm.dat. Ignoring redundant thermo data for species 'NH3' starting on line 1216 of therm.dat. Ignoring redundant thermo data for species 'NH2' starting on line 1222 of therm.dat. Ignoring redundant thermo data for species 'NH' starting on line 1228 of therm.dat. Suppressed 20 additional warnings about redundant thermo data. Run ck2yaml again with the '- ... [truncated; see _processing logs]
+- Message: ValueError: could not convert string to float: '0.902,'; numeric cleanup retry failed: ValueError: could not convert string to float: '696.,'
 - Method: cantera
 - Cantera YAML: not available
 - Standard chem.inp: chem.inp

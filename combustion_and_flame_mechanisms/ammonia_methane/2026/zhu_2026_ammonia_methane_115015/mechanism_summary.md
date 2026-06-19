@@ -21,10 +21,10 @@ Yuxiang Zhu, Khaiyom Hakimov, Jiabiao Zou, Nafi Farzana, ... Chong-Wen Zhou. An 
 
 - Standard mechanism file: chem.inp
 - Standard thermodynamic file: therm.dat
-- Standard transport file: tran.dat
-- Original mechanism source files: _processing\extracted\s0010218026002518_mmc5\Mech25_47_v1_NH3_CH4_260324.MECH, _processing\extracted\s0010218026002518_mmc8\Mech25_47_v1_NH3_CH4_260324_HT.MECH
+- Standard transport file: not available
+- Original mechanism source files: _processing\extracted\s0010218026002518_mmc5\Mech25_47_v1_NH3_CH4_260324.MECH
 - Original thermodynamic source files: _processing\extracted\s0010218026002518_mmc6\Mech25_47_v1_NH3_CH4_260324.THERM
-- Original transport source files: _processing\extracted\s0010218026002518_mmc7\Mech25_47_v1_NH3_CH4_260324.TRAN
+- Original transport source files: not found
 
 ## Cantera Preprocessing Results
 
@@ -38,7 +38,7 @@ Yuxiang Zhu, Khaiyom Hakimov, Jiabiao Zou, Nafi Farzana, ... Chong-Wen Zhou. An 
 - Cantera YAML: mechanism.yaml
 - Standard chem.inp: chem.inp
 - Standard therm.dat: therm.dat
-- Standard tran.dat: tran.dat
+- Standard tran.dat: not available
 
 ## Abstract
 
@@ -46,5 +46,4 @@ Ignition delay time measurements of 70/30, 50/50, and 30/70 (mol%) NH3/CH4 mixtu
 
 ## Processing Notes
 
-- extracted S0010218026002518_mmc7.zip
-- extracted S0010218026002518_mmc8.zip
+- none

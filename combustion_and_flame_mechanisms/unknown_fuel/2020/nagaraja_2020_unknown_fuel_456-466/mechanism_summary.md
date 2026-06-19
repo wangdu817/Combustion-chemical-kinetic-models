@@ -30,10 +30,10 @@ Shashank S. Nagaraja, Jinhu Liang, Shijun Dong, Snehasish Panigrahy, Amrit Sahu,
 
 ### Mechanism 1
 
-- Status: ok
-- Species count: 2746
-- Reaction count: 11279
-- Message: cantera conversion ok
+- Status: cantera_failed
+- Species count: 7986
+- Reaction count: not parsed
+- Message: TimeoutExpired: Cantera conversion exceeded 900 seconds
 - Method: cantera
 - Cantera YAML: mechanism.yaml
 - Standard chem.inp: chem.inp

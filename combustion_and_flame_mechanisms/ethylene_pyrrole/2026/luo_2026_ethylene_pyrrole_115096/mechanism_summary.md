@@ -31,9 +31,33 @@ Guangda Luo, Hairong Ren, Mo Yang, Mengqi Wu, ... Feng Zhang. Formation of (N-co
 ### Mechanism 1
 
 - Status: cantera_failed
-- Species count: 654
-- Reaction count: 5299
-- Message: CanteraError: ******************************************************************************* CanteraError thrown by addReactions: ******************************************************************************* InputFileError thrown by PlogRate::validate: Error on line 2323 of E:\mech_collection\combustion_and_flame_mechanisms\ethylene_pyrrole\2026\luo_2026_ethylene_pyrrole_115096\mechanism.yaml: Invalid rate coefficient for reaction 'C2H2 + C7H4N <=> C9H6N' at P = 6666.2, T = 300.0 To fix this error, remove this reaction or contact the author of the reaction/mechanism in question, because the rate expression is mathematically unsound at the temperatures and pressures noted above. | Line | | 2318 | rate-constants: | 2319 | - {P: 0.06579 atm, A: 4.26e+23, b: -3.6, Ea: 9212.0} | 2320 | - {P: ... [truncated; see _processing logs]
+- Species count: 218
+- Reaction count: 3665
+- Message: CanteraError: 
+*******************************************************************************
+CanteraError thrown by addReactions:
+
+*******************************************************************************
+InputFileError thrown by PlogRate::validate:
+Error on line 2317 of E:\mech_collection\combustion_and_flame_mechanisms\ethylene_pyrrole\2026\luo_2026_ethylene_pyrrole_115096\mechanism.yaml:
+
+Invalid rate coefficient for reaction 'C2H2 + C7H4N <=> C9H6N'
+at P = 6666.2, T = 200.0
+
+|  Line |
+|  2312 |   rate-constants:
+|  2313 |   - {P: 0.06579 atm, A: 4.26e+23, b: -3.6, Ea: 9212.0}
+|  2314 |   - {P: 1.0 atm, A: 4.19e+68, b: -16.41, Ea: 3.995e+04}
+|  2315 |   - {P: 10.0 atm, A: 2.55e+37, b: -8.03, Ea: 1.678e+04}
+|  2316 |   - {P: 100.0 atm, A: 7.93e+40, b: -7.87, Ea: 3.37e+04}
+>  2317 > - equation: C7H4N + C2H2 <=> C9H6N  # Reaction 20
+            ^
+|  2318 |   duplicate: true
+|  2319 |   type: pressure-dependent-Arrhenius
+|  2320 |   rate-constants:
+*******************************************************************************
+*******************************************************************************
+
 - Method: cantera
 - Cantera YAML: mechanism.yaml
 - Standard chem.inp: chem.inp

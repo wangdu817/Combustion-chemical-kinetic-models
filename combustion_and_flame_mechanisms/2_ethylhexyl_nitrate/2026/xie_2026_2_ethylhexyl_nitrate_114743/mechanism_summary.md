@@ -31,9 +31,11 @@ Jiaxin Xie, Mengmeng Jia, Frederick Nii Ofei Bruce, Chong-Wen Zhou, ... Yang Li.
 ### Mechanism 1
 
 - Status: cantera_failed
-- Species count: 9564
-- Reaction count: 24748
-- Message: InputError: Error while reading transport data in tran.dat starting on line 32: """ C 1.500780000000 0.069052000000 0.294433000000 """ 6 transport parameters were expected, but found 3. Error while reading transport data in tran.dat starting on line 33: """ H 1.449105000000 1.097383000000 -0.080709000000 """ 6 transport parameters were expected, but found 3. Error while reading transport data in tran.dat starting on line 34: """ H 1.661088000000 0.135413000000 1.378696000000 """ 6 transport parameters were expected, but found 3. Error while reading transport data in tran.dat starting on line 35: """ C 2.699908000000 -0.624625000000 -0.349110000000 """ 6 transport parameters were expected, but found 3. Error while reading transport data in tran.dat starting on line 36: """ H 2.527055000000 ... [truncated; see _processing logs]
+- Species count: 3189
+- Reaction count: 13797
+- Message: InputError: No transport data for species 'EHN'.
+Please check https://cantera.org/tutorials/ck2yaml-tutorial.html#debugging-common-errors-in-ck-files
+for the correct Chemkin syntax.
 - Method: cantera
 - Cantera YAML: mechanism.yaml
 - Standard chem.inp: chem.inp

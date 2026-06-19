@@ -30,10 +30,35 @@ Ashenafi Emiru Teka, Qingbo Zhu, Long Zhu, Bin Dong, ... Zhandong Wang. Low-temp
 
 ### Mechanism 1
 
-- Status: ok
+- Status: cantera_failed
 - Species count: 627
 - Reaction count: 3724
-- Message: cantera conversion ok
+- Message: CanteraError: 
+*******************************************************************************
+CanteraError thrown by addReactions:
+
+*******************************************************************************
+InputFileError thrown by PlogRate::validate:
+Error on line 12864 of E:\mech_collection\combustion_and_flame_mechanisms\pentanol\2026\teka_2026_pentanol_115110\mechanism.yaml:
+
+Invalid rate coefficient for reaction 'C4H6 <=> C3H3 + CH3'
+at P = 16009, T = 200.0
+at P = 32019, T = 200.0
+
+|  Line |
+|  12859 |   rate-constants:
+|  12860 |   - {P: 0.0395 atm, A: 2.34e+73, b: -17.49, Ea: 1.085e+05}
+|  12861 |   - {P: 0.0789 atm, A: 4.57e+71, b: -16.91, Ea: 1.087e+05}
+|  12862 |   - {P: 0.158 atm, A: 9.55e+69, b: -16.33, Ea: 1.09e+05}
+|  12863 |   - {P: 0.316 atm, A: 2.04e+67, b: -15.48, Ea: 1.085e+05}
+>  12864 > - equation: C4H6 <=> CH3 + C3H3  # Reaction 1362
+            ^
+|  12865 |   type: pressure-dependent-Arrhenius
+|  12866 |   rate-constants:
+|  12867 |   - {P: 0.0395 atm, A: 1.58e+148, b: -37.24, Ea: 1.885e+05}
+*******************************************************************************
+*******************************************************************************
+
 - Method: cantera
 - Cantera YAML: mechanism.yaml
 - Standard chem.inp: chem.inp

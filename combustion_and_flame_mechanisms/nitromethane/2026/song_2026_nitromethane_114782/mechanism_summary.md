@@ -30,12 +30,19 @@ Shubao Song, Lin Zhang, Jinghua Wu, Meishuai Zou, Jiankun Shao. High-temperature
 
 ### Mechanism 1
 
-- Status: ok
-- Species count: 128
-- Reaction count: 1024
-- Message: cantera conversion ok
+- Status: cantera_failed
+- Species count: not parsed
+- Reaction count: not parsed
+- Message: InputError: Error parsing elemental composition for species thermo entry:
+ 6.32493839E+00 1.76575862E-02-6.17090139E-06 9.77516780E-10-5.77372896E-14    2
+-9.00803453E+03-9.89967541E+00 3.89535332E+00 5.25551488E-03 5.18067952E-05    3
+-7.09274284E-08 2.87011677E-11-7.47885738E+03 7.07511548E+00-5.75277292E+03    4
+
+Element amounts can have no more than 3 digits.
+Please check https://cantera.org/tutorials/ck2yaml-tutorial.html#debugging-common-errors-in-ck-files
+for the correct Chemkin syntax.
 - Method: cantera
-- Cantera YAML: mechanism.yaml
+- Cantera YAML: not available
 - Standard chem.inp: chem.inp
 - Standard therm.dat: therm.dat
 - Standard tran.dat: tran.dat

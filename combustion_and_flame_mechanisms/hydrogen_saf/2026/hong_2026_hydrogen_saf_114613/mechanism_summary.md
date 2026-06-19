@@ -31,9 +31,11 @@ Congjie Hong, Janardhanraj Subburaj, Jiabiao Zou, Ayman M. Elbaz, ... Aamir Faro
 ### Mechanism 1
 
 - Status: cantera_failed
-- Species count: 615
-- Reaction count: 2470
-- Message: InputError: Ignoring redundant declaration for species 'C7H15-1' Ignoring redundant declaration for species 'C6H13-1' Ignoring redundant declaration for species 'C5H11-1' Ignoring redundant declaration for species 'C5H10-1' Ignoring redundant declaration for species 'C6H12-1' Suppressed 24 additional warnings about redundant species declarations. Run ck2yaml again with the '--verbose' option to see all warnings. Error while reading reaction in chem.inp starting on line 34544: """ PMH + CH3 = PMH-R5 + CH4 7.35E-02 3.87 6.808+03! """ could not convert string to float: '6.808+03' No thermo data found for species 'HOCO' No thermo data found for species 'CH2O2H' No thermo data found for species 'C' No thermo data found for species 'CHV' No thermo data found for species 'HOCH2O2H' No thermo data ... [truncated; see _processing logs]
+- Species count: 206
+- Reaction count: 1451
+- Message: ValueError: could not convert string to float: '6.808+03'; numeric cleanup retry failed: InputError: No transport data for species 'HOCO'.
+Please check https://cantera.org/tutorials/ck2yaml-tutorial.html#debugging-common-errors-in-ck-files
+for the correct Chemkin syntax.
 - Method: cantera
 - Cantera YAML: mechanism.yaml
 - Standard chem.inp: chem.inp
@@ -43,9 +45,14 @@ Congjie Hong, Janardhanraj Subburaj, Jiabiao Zou, Ayman M. Elbaz, ... Aamir Faro
 ### Mechanism 2
 
 - Status: cantera_failed
-- Species count: 615
-- Reaction count: 2470
-- Message: CanteraError: ******************************************************************************* CanteraError thrown by GasTransportData::validate: invalid geometry for species 'NC12H26'. 'atom' specified, but species contains multiple atoms. *******************************************************************************
+- Species count: 206
+- Reaction count: 1451
+- Message: CanteraError: 
+*******************************************************************************
+CanteraError thrown by GasTransportData::validate:
+invalid geometry for species 'NC12H26'. 'atom' specified, but species contains multiple atoms.
+*******************************************************************************
+
 - Method: cantera
 - Cantera YAML: mechanism.yaml
 - Standard chem.inp: chem.inp
@@ -58,5 +65,4 @@ The development of sustainable aviation fuels (SAFs) is essential for reducing c
 
 ## Processing Notes
 
-- extracted S0010218025006509_mmc7.xlsx
-- extracted S0010218025006509_mmc8.xlsx
+- none

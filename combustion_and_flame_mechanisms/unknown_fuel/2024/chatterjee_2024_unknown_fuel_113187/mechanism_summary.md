@@ -30,10 +30,10 @@ Tanusree Chatterjee, Mengyuan Wang, Scott W. Wagnon, Goutham Kukkadapu, Chih-Jen
 
 ### Mechanism 1
 
-- Status: ok
+- Status: cantera_failed
 - Species count: 1536
-- Reaction count: 7252
-- Message: cantera conversion ok
+- Reaction count: 6146
+- Message: TimeoutExpired: Cantera conversion exceeded 900 seconds
 - Method: cantera
 - Cantera YAML: mechanism.yaml
 - Standard chem.inp: chem.inp

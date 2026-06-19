@@ -32,7 +32,7 @@ Jinhu Liang, Xinhui Wang, Chen Zhao, Ziwen Zhao, Yang Zhang, Qian Yao, et al.. T
 
 - Status: cantera_failed
 - Species count: 787
-- Reaction count: 4952
+- Reaction count: 3587
 - Message: CanteraError: ******************************************************************************* CanteraError thrown by newSolution: The CTI and XML formats are no longer supported. *******************************************************************************
 - Method: cantera
 - Cantera YAML: mechanism.yaml

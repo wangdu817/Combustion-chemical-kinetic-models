@@ -45,7 +45,7 @@ Jinhu Liang, Ruining He, Shashank S. Nagaraja, A. Abd El-Sabor Mohamed, Haitao L
 - Status: cantera_failed
 - Species count: 869
 - Reaction count: 40907
-- Message: TimeoutExpired: Cantera conversion exceeded 900 seconds
+- Message: missing cantera result json
 - Method: cantera
 - Cantera YAML: mechanism.yaml
 - Standard chem.inp: chem.inp
