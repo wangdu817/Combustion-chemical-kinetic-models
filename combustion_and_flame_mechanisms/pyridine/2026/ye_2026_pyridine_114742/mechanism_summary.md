@@ -30,41 +30,10 @@ Cheng-Yin Ye, Ling-Nan Wu, Dong-Xu Tian, Jiu-Zhong Yang, ... Zhen-Yu Tian. Exper
 
 ### Mechanism 1
 
-- Status: cantera_failed
+- Status: ok
 - Species count: 323
 - Reaction count: 2041
-- Message: CanteraError: 
-*******************************************************************************
-InputFileError thrown by Kinetics::checkDuplicates:
-Error on lines 11031 and 11098 of E:\mech_collection\combustion_and_flame_mechanisms\pyridine\2026\ye_2026_pyridine_114742\mechanism.yaml:
-Undeclared duplicate reactions detected:
-Reaction 1812: H2 + M <=> 2 H + M
-Reaction 1800: 2 H + O2 <=> H2 + O2
-
-|  Line |
-|  11026 |   note: M. Sangwan, L. N. Krasnoperov, The Journal of Physical Chemistry
-|  11027 |     A 116 (2012) 11817?1822.
-|  11028 | - equation: OH + OH <=> O + H2O  # Reaction 1799
-|  11029 |   duplicate: true
-|  11030 |   rate-constant: {A: 2.6e+11, b: -0.057, Ea: -827.0}
->  11031 > - equation: H2 + M <=> H + H + M  # Reaction 1800
-            ^
-|  11032 |   type: three-body
-|  11033 |   rate-constant: {A: 4.6e+19, b: -1.4, Ea: 1.0438e+05}
-|  11034 |   efficiencies: {H2: 2.5, H2O: 12.0, CO: 1.9, CO2: 3.8, AR: 0.0, HE: 0.0}
-...
-|  11093 |   note: M. P. Burke, S. J. Klippenstein, L. B. Harding, Proceedings of the
-|  11094 |     Combustion Institute 34 (2013) 547?55.
-|  11095 | - equation: HO2 + OH <=> H2O + O2  # Reaction 1811
-|  11096 |   duplicate: true
-|  11097 |   rate-constant: {A: 1.2e+09, b: 1.24, Ea: -1310.0}
->  11098 > - equation: H + O2 + H <=> H2 + O2  # Reaction 1812
-            ^
-|  11099 |   rate-constant: {A: 8.8e+22, b: -1.835, Ea: 800.0}
-|  11100 |   note: M. Burke, S. Klippenstein, Nature Chemistry, 9, 1078 C1082 (2017)
-|  11101 | - equation: H + O2 + H <=> OH + OH  # Reaction 1813
-*******************************************************************************
-
+- Message: cantera conversion ok
 - Method: cantera
 - Cantera YAML: mechanism.yaml
 - Standard chem.inp: chem.inp

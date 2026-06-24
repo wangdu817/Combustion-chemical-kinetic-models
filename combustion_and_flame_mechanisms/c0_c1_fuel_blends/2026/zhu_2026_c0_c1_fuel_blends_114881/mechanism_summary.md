@@ -24,7 +24,7 @@ Wenchao Zhu, Taipeng Mao, Zechuan Cui, Xinyang Tian, ... Mingshu Bi. A combined 
 - Standard transport file: tran.dat
 - Original mechanism source files: _processing\extracted\s0010218026001173_mmc1\C0-C1 reaction.inp, _processing\extracted\s0010218026001173_mmc2\Mechanism.yaml
 - Original thermodynamic source files: _processing\extracted\s0010218026001173_mmc2\Mechanism.yaml, _processing\extracted\s0010218026001173_mmc6\Thermodynamic.dat
-- Original transport source files: _processing\extracted\s0010218026001173_mmc2\Mechanism.yaml
+- Original transport source files: _processing\extracted\s0010218026001173_mmc2\Mechanism.yaml, _processing\extracted\s0010218026001173_mmc7\Transport.dat
 
 ## Cantera Preprocessing Results
 
@@ -46,4 +46,4 @@ The proposal of carbon neutrality targets has accelerated the deployment of C0â€
 
 ## Processing Notes
 
-- none
+- extracted S0010218026001173_mmc7.zip

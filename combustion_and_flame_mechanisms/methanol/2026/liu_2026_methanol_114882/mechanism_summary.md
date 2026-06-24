@@ -33,7 +33,7 @@ Nan Liu, Bolin Li, Qi Chen. Carbon dioxide-driven dual effects on ignition delay
 - Status: cantera_failed
 - Species count: not parsed
 - Reaction count: not parsed
-- Message: ValueError: could not convert string to float: '338.0d0'; numeric cleanup retry failed: ValueError: could not convert string to float: '338.0d0'
+- Message: InputError: Error while reading reaction in chem.inp starting on line 6646: """ tHNNO + OH = H2O + N2O 9.2E13 -0.550 338.0d0 """ could not convert string to float: '338.0d0' Error while reading reaction in chem.inp starting on line 6647: """ tHNNO + OH = NH2 + NO2 2.2E16 -1.440 1238.0d0 """ could not convert string to float: '1238.0d0' Error while reading reaction in chem.inp starting on line 6649: """ cHNNO + OH = H2O + N2O 5.9E14 -0.910 668.0d0 """ could not convert string to float: '668.0d0' Error while reading reaction in chem.inp starting on line 6650: """ cHNNO + OH = NH2 + NO2 1.5E14 -0.650 626.0d0 """ could not convert string to float: '626.0d0' Error while reading reaction in chem.inp starting on line 6651: """ cHNNO + OH = tHNNO + OH 8.2E12 -0.300 1159.0d0 """ could not convert s ... [truncated; see _processing logs]
 - Method: cantera
 - Cantera YAML: not available
 - Standard chem.inp: chem.inp
@@ -45,17 +45,7 @@ Nan Liu, Bolin Li, Qi Chen. Carbon dioxide-driven dual effects on ignition delay
 - Status: cantera_failed
 - Species count: not parsed
 - Reaction count: not parsed
-- Message: InputError: Section starts with unrecognized keyword
-"""
-BOLSIG
-"""
-Please check https://cantera.org/tutorials/ck2yaml-tutorial.html#debugging-common-errors-in-ck-files
-for the correct Chemkin syntax.; cleanup retry failed: InputError: Section starts with unrecognized keyword
-"""
-BOLSIG
-"""
-Please check https://cantera.org/tutorials/ck2yaml-tutorial.html#debugging-common-errors-in-ck-files
-for the correct Chemkin syntax.
+- Message: InputError: Error while reading entry in chem.inp starting on line 60: """ BOLSIG """ Section starts with unrecognized keyword 'BOLSIG' Ignoring redundant declaration for species '#' Error while reading thermo entry in therm.dat starting on line 1148: """ C2H4O2 C 2H 4O 2 0G 300.000 5000.000 1391.000 01 1.00941573E+01 1.23879015E-02-3.73811683E-06 5.46874551E-10-3.09943951E-14 2 -2.37710522E+04-2.00956526E+01 4.44209543E+00 2.52880383E-02-1.51605275E-05 3 5.24921198E-09-7.91470852E-13-2.17507126E+04 1.04122371E+01 4 """ Error parsing elemental composition for species 'C2H4O2'. Ignoring redundant thermo data for species 'NH3' starting on line 1207 of therm.dat. Ignoring redundant thermo data for species 'NH2' starting on line 1213 of therm.dat. Ignoring redundant thermo data for species 'N2 ... [truncated; see _processing logs]
 - Method: cantera
 - Cantera YAML: not available
 - Standard chem.inp: chem.inp

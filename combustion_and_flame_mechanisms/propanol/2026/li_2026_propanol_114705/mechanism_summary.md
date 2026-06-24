@@ -33,17 +33,7 @@ Zhaoying Li, Haodong Chen, Chengcheng Liu, Chengyin Tu, ... Bin Yang. A synchrot
 - Status: cantera_failed
 - Species count: not parsed
 - Reaction count: not parsed
-- Message: InputError: Section starts with unrecognized keyword
-"""
-# Nanocond Repetitive Pulse (NRP) discharge CASE
-"""
-Please check https://cantera.org/tutorials/ck2yaml-tutorial.html#debugging-common-errors-in-ck-files
-for the correct Chemkin syntax.; cleanup retry failed: InputError: Section starts with unrecognized keyword
-"""
-BOLSIG
-"""
-Please check https://cantera.org/tutorials/ck2yaml-tutorial.html#debugging-common-errors-in-ck-files
-for the correct Chemkin syntax.
+- Message: InputError: Error while reading entry in chem.inp starting on line 193: """ BOLSIG """ Section starts with unrecognized keyword 'BOLSIG' Ignoring redundant declaration for species '#\SUBMECH:' Ignoring redundant declaration for species '#\SUBMECH:' Ignoring redundant declaration for species '#\SUBMECH:' Ignoring redundant declaration for species '#\SUBMECH:' Ignoring redundant declaration for species '#\SUBMECH:' Suppressed 6 additional warnings about redundant species declarations. Run ck2yaml again with the '--verbose' option to see all warnings. No thermo data found for species 'E' No thermo data found for species 'Ar' No thermo data found for species 'O2' No thermo data found for species 'CH3OH' No thermo data found for species 'C2H5OH' No thermo data found for species 'C3H7OH(1)' No t ... [truncated; see _processing logs]
 - Method: cantera
 - Cantera YAML: not available
 - Standard chem.inp: chem.inp
@@ -55,9 +45,7 @@ for the correct Chemkin syntax.
 - Status: cantera_failed
 - Species count: not parsed
 - Reaction count: not parsed
-- Message: ValueError: could not convert string to float: '+4.214+14'; numeric cleanup retry failed: InputError: No thermo data found for species 'E'
-Please check https://cantera.org/tutorials/ck2yaml-tutorial.html#debugging-common-errors-in-ck-files
-for the correct Chemkin syntax.
+- Message: InputError: Error while reading reaction in chem.inp starting on line 4567: """ Ar* + C2H5OH => Ar + C2H5O + H +4.214+14 +0.0000000E+000 +0.0000000E+000 """ could not convert string to float: '+4.214+14' No thermo data found for species 'E' No thermo data found for species 'Ar' No thermo data found for species 'O2' No thermo data found for species 'CH3OH' No thermo data found for species 'C2H5OH' No thermo data found for species 'NC3H7OH' No thermo data found for species 'IC3H7OH' No thermo data found for species 'H2' No thermo data found for species 'H' No thermo data found for species 'O2(a1)' No thermo data found for species 'O2(b1)' No thermo data found for species 'O2+' No thermo data found for species 'O' No thermo data found for species 'O(1D)' No thermo data found for species 'O3' ... [truncated; see _processing logs]
 - Method: cantera
 - Cantera YAML: not available
 - Standard chem.inp: chem.inp

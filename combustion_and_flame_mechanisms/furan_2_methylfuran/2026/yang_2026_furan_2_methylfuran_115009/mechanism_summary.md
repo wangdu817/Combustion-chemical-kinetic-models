@@ -33,13 +33,7 @@ Youquan Yang, Zhimin Peng, Haodong Chen, Dao Zheng, ... Yanjun Du. Mid-infrared 
 - Status: cantera_failed
 - Species count: not parsed
 - Reaction count: not parsed
-- Message: InputError: Unexpected token "+Hv" in reaction expression "OH*<=>R2OH+Hv
-".
-Please check https://cantera.org/tutorials/ck2yaml-tutorial.html#debugging-common-errors-in-ck-files
-for the correct Chemkin syntax.; numeric cleanup retry failed: InputError: Unexpected token "+Hv" in reaction expression "OH*<=>R2OH+Hv
-".
-Please check https://cantera.org/tutorials/ck2yaml-tutorial.html#debugging-common-errors-in-ck-files
-for the correct Chemkin syntax.
+- Message: InputError: Error while reading reaction in chem.inp starting on line 3189: """ OH*<=>R2OH+Hv 1.400e+06 0.0 0.0 """ Unexpected token '+Hv' in reaction expression 'OH*<=>R2OH+Hv'. May be due to undeclared species 'Hv'. Error while reading reaction in chem.inp starting on line 3204: """ CH*<=>B4CH+Hv 1.860e+06 0.0 0.0 """ Unexpected token '+Hv' in reaction expression 'CH*<=>B4CH+Hv'. May be due to undeclared species 'Hv'. Ignoring redundant thermo data for species 'RC3H5O' starting on line 986 of therm.dat. Ignoring redundant thermo data for species 'CH3CHCO' starting on line 1078 of therm.dat. Ignoring redundant thermo data for species 'C3H2' starting on line 2032 of therm.dat. Ignoring redundant thermo data for species 'pC3H4' starting on line 2036 of therm.dat. Ignoring redundant thermo d ... [truncated; see _processing logs]
 - Method: cantera
 - Cantera YAML: not available
 - Standard chem.inp: chem.inp

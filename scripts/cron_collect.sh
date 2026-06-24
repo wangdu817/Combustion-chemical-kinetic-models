@@ -25,40 +25,26 @@ fi
 
 echo "=== Current target year: $CURRENT ==="
 
-# Check if $CURRENT is complete
+# Check if $CURRENT is complete (all candidates probed + downloaded)
 "$MECH_COLLECTION_PYTHON" -c "
 import json; from pathlib import Path; import sys
 meta = json.loads(Path('combustion_and_flame_mechanisms/_raw/article_metadata.json').read_text('utf-8'))
 
 candidates = 0
 pending = 0
-has_mechanism = False
 
 for r in meta:
     if r.get('year') != '$CURRENT':
         continue
     if r.get('candidate'):
         candidates += 1
-        status = r.get('processingStatus', 'NOT_PROCESSED')
-        if status in ('included', 'conversion_failed'):
-            has_mechanism = True
-        if status == 'NOT_PROCESSED' or (not r.get('candidate')):
-            continue
-        # Articles with downloads but not yet processed
-        if status not in ('included', 'conversion_failed',
-                          'excluded_no_mechanism_attachment',
-                          'excluded_no_supplement_found',
-                          'excluded_no_mechanism_signal'):
+        probe = r.get('supplementProbeStatus', 'NOT_PROBED')
+        dl = r.get('supplementDownloadStatus', 'none')
+        if probe not in ('complete', 'no_links') or (probe == 'complete' and dl not in ('complete',)):
             pending += 1
 
-# Also check for articles that need abstract enrichment
-need_abstract = sum(1 for r in meta
-    if r.get('year') == '$CURRENT'
-    and r.get('processingStatus') in ('included', 'conversion_failed')
-    and not r.get('abstract', '').strip())
-
-complete = has_mechanism and pending == 0 and need_abstract == 0
-print(f'Year=$CURRENT candidates={candidates} mechanism={has_mechanism} pending={pending} missing_abstracts={need_abstract} complete={complete}')
+complete = candidates > 0 and pending == 0
+print(f'Year=$CURRENT candidates={candidates} pending_downloads={pending} complete={complete}')
 sys.exit(0 if complete else 1)
 "
 
@@ -101,13 +87,14 @@ else:
 
     # Cleanup non-mechanism downloads
     "$MECH_COLLECTION_PYTHON" -c "
-import json; from pathlib import Path
+# Clean downloads: keep files for candidate articles (mechanism + non-mechanism).
+# This preserves downloads for future re-processing without re-downloading.
 m=json.loads(Path('combustion_and_flame_mechanisms/_raw/article_metadata.json').read_text('utf-8'))
-mech_piis={r.get('pii','') for r in m if r.get('processingStatus') in ('included','conversion_failed')}
+candidate_piis={r.get('pii','') for r in m if r.get('candidate') and r.get('pii')}
 dl=Path('combustion_and_flame_mechanisms/_raw/downloads')
 k=d=0
 for f in dl.iterdir():
-    if any(f.name.startswith(p) for p in mech_piis): k+=1
+    if any(f.name.startswith(p) for p in candidate_piis): k+=1
     else: f.unlink(); d+=1
 print(f'Downloads: {k} kept, {d} deleted')
 

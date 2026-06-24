@@ -30,40 +30,10 @@ Chunlan Qin, Bingzhi Liu, Weijie Xu, Canbin Lin, ... Lidong Zhang. A kinetic and
 
 ### Mechanism 1
 
-- Status: cantera_failed
+- Status: ok
 - Species count: 227
 - Reaction count: 1632
-- Message: CanteraError: 
-*******************************************************************************
-InputFileError thrown by Kinetics::checkDuplicates:
-Error on lines 4127 and 4136 of E:\mech_collection\combustion_and_flame_mechanisms\ammonia_dimethoxymethane\2026\qin_2026_ammonia_dimethoxymethane_114575\mechanism.yaml:
-Undeclared duplicate reactions detected:
-Reaction 36: H + OH + M <=> H2O + M
-Reaction 35: H2O + H2O <=> H + OH + H2O
-
-|  Line |
-|  4122 |   note: RAS/GLA08a HIP/TRO95
-|  4123 | - equation: H2O2 + OH <=> H2O + HO2  # Reaction 34
-|  4124 |   duplicate: true
-|  4125 |   rate-constant: {A: 1.6e+18, b: 0.0, Ea: 2.941e+04}
-|  4126 |   note: RAS/GLA08a HIP/TRO95
->  4127 > - equation: H + OH + M <=> H2O + M  # Reaction 35
-            ^
-|  4128 |   type: three-body
-|  4129 |   rate-constant: {A: 8.62e+21, b: -2.0, Ea: 0.0}
-|  4130 |   efficiencies: {H2O: 16.25, CO: 1.875, CO2: 3.75}
-|  4131 |   note: |-
-|  4132 |     r28
-|  4133 |     OH+H+M=H2O+M                         4.5E22  -2.000       0 ! RAS/GLA08a CON/WES04
-|  4134 |      AR/0.38/ H2/0.73/ H2O/12/ !HE/0.38/
-|  4135 |     	BAULCH	76
->  4136 > - equation: 2 H2O <=> OH + H + H2O  # Reaction 36
-            ^
-|  4137 |   rate-constant: {A: 1.0e+26, b: -2.44, Ea: 1.2016e+05}
-|  4138 | - equation: OH + H2 <=> H + H2O  # Reaction 37
-|  4139 |   rate-constant: {A: 4.38e+13, b: 0.0, Ea: 6990.0}
-*******************************************************************************
-
+- Message: cantera conversion ok
 - Method: cantera
 - Cantera YAML: mechanism.yaml
 - Standard chem.inp: chem.inp

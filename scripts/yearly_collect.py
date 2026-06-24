@@ -70,27 +70,19 @@ def main():
     print(f'[2/7] Importing metadata...')
     rc = run('import-sciencedirect-metadata', '--year', year, '--source-dir', str(OUT))
     
-    # Step 3: Probe + download + process
-    print(f'[3/7] Probing supplements (serial mode)...')
+    # Step 3: Probe + download only (process runs once at end for all years)
+    print(f'[3/5] Probing supplements (serial mode)...')
     rc = run('probe-supplements', '--year', year, '--max-mmc', '12', '--serial')
     
-    print(f'[4/7] Downloading supplements...')
+    print(f'[4/5] Downloading supplements...')
     rc = run('download-supplements', '--year', year)
     
-    print(f'[5/7] Processing (extracting mechanisms)...')
-    rc = run('process')
-    
-    # Step 4: Abstracts
-    print(f'[6/7] Enriching abstracts...')
-    rc = run_script('enrich_abstracts.py')
-    rc = run('process')
-    
-    # Step 5: PDFs (only if ≤2021)
+    # Step 4: PDFs (only if ≤2021)
+    print(f'[5/5] Downloading PDFs...')
     if int(year) <= 2021:
-        print(f'[7/7] Downloading PDFs via Sci-Hub...')
         rc = run_script('scihub_dl.py')
     else:
-        print(f'[7/7] Skipped PDFs (year > 2021)')
+        print('  Skipped PDFs (year > 2021)')
     
     # Clean non-mechanism downloads
     print(f'Cleaning downloads...')
