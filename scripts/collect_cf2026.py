@@ -23,6 +23,18 @@ from pathlib import Path
 from typing import Any, Optional, Iterable
 from urllib.parse import urlparse, urljoin, quote
 
+WORKSPACE = Path(os.environ.get("MECH_COLLECTION_WORKSPACE", Path.cwd())).resolve()
+LEGACY_ROOT = WORKSPACE / "combustion_and_flame_2026_mechanisms"
+ROOT = Path(os.environ.get("MECH_COLLECTION_ROOT", WORKSPACE / "combustion_and_flame_mechanisms")).resolve()
+RAW = ROOT / "_raw"
+DOWNLOADS = RAW / "downloads"
+EXTRACTED = RAW / "extracted"
+METADATA_JSON = RAW / "article_metadata.json"
+LEGACY_METADATA_JSON = LEGACY_ROOT / "_raw" / "article_metadata.json"
+LEGACY_DOWNLOADS = LEGACY_ROOT / "_raw" / "downloads"
+PROCESSING_ARCHIVE = ROOT / "_processing_archive"
+ANALYSIS_PYTHON = Path(os.environ.get("MECH_COLLECTION_PYTHON", sys.executable)).resolve()
+
 def slugify(value: str, max_len: int = 80) -> str:
     value = re.sub(r"<[^>]+>", "", value or "")
     value = value.lower()
