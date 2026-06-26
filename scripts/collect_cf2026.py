@@ -2158,9 +2158,11 @@ def append_handoff_items(
         )
 
 
-def process(force: bool = False) -> None:
+def process(force: bool = False, year: str | None = None) -> None:
     ensure_dirs()
     records = read_metadata()
+    if year is not None:
+        records = [r for r in records if r.get('year') == year]
     previous_rows = existing_index_rows()
     metadata_changed = False
     rows: list[dict] = []
@@ -2291,10 +2293,14 @@ def process(force: bool = False) -> None:
         if any(part.startswith("_") for part in generated.relative_to(ROOT).parts):
             continue
         if generated.is_file() and generated.name in generated_names and generated.parent.resolve() not in active_folders:
-            generated.unlink()
+            # Only clean if NOT filtering by year — preserve other years
+            if year is None:
+                generated.unlink()
     for folder_path in active_folders:
         cleanup_active_paper_folder(folder_path)
-    cleanup_inactive_paper_folders(ROOT, active_folders)
+    # Only cleanup inactive folders when processing all years — preserve existing when filtering
+    if year is None:
+        cleanup_inactive_paper_folders(ROOT, active_folders)
     if PROCESSING_ARCHIVE.exists():
         shutil.rmtree(PROCESSING_ARCHIVE)
     ROOT.joinpath("manual_download_handoff.md").write_text("\n".join(handoff) + "\n", encoding="utf-8")
@@ -2364,7 +2370,7 @@ def main() -> None:
     )
     parser.add_argument("--max-mmc", type=int, default=8)
     parser.add_argument("--source-dir", type=Path, default=RAW / "2025_volumes")
-    parser.add_argument("--year")
+    parser.add_argument("--year", type=str, help="Only process this year (reduces memory for large runs)")
     parser.add_argument("--force", action="store_true", help="re-run terminal probe, download, or processing states")
     parser.add_argument("--serial", action="store_true", help="serial mode: single-threaded probe to avoid OOM")
     args = parser.parse_args()
@@ -2383,7 +2389,7 @@ def main() -> None:
     elif args.command == "probe-supplements":
         probe_supplements(max_mmc=args.max_mmc, year=args.year, force=args.force, serial=args.serial)
     elif args.command == "process":
-        process(force=args.force)
+        process(force=args.force, year=args.year)
 
 
 if __name__ == "__main__":

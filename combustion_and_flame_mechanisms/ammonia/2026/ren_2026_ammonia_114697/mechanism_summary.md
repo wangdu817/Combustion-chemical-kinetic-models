@@ -22,9 +22,9 @@ Ke Ren, Xiaoping Chen, Jiliang Ma, Suyang Pan. A detailed kinetic mechanism for 
 - Standard mechanism file: chem.inp
 - Standard thermodynamic file: therm.dat
 - Standard transport file: tran.dat
-- Original mechanism source files: _processing\extracted\s0010218025007321_mmc2\chem.inp
-- Original thermodynamic source files: _processing\extracted\s0010218025007321_mmc3\therm.dat
-- Original transport source files: _processing\extracted\s0010218025007321_mmc4\trans.dat
+- Original mechanism source files: _processing/extracted/s0010218025007321_mmc2/chem.inp
+- Original thermodynamic source files: _processing/extracted/s0010218025007321_mmc3/therm.dat
+- Original transport source files: _processing/extracted/s0010218025007321_mmc4/trans.dat
 
 ## Cantera Preprocessing Results
 
@@ -46,4 +46,7 @@ not available
 
 ## Processing Notes
 
-- none
+- extracted S0010218025007321_mmc3.zip
+- extracted S0010218025007321_mmc1.docx
+- extracted S0010218025007321_mmc4.zip
+- extracted S0010218025007321_mmc2.zip

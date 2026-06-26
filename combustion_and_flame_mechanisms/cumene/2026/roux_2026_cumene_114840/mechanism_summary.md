@@ -22,8 +22,8 @@ Boris Roux, Yves Simon, Sandra Poeuf, Marc Bouchez, ... René Fournet. Cumene py
 - Standard mechanism file: chem.inp
 - Standard thermodynamic file: therm.dat
 - Standard transport file: not available
-- Original mechanism source files: _processing\extracted\s0010218026000763_mmc2\SM1_Mechanism_R.inp
-- Original thermodynamic source files: _processing\extracted\s0010218026000763_mmc3\SM2_NASA_polynomial_R.dat
+- Original mechanism source files: _processing/extracted/s0010218026000763_mmc2/SM1_Mechanism_R.inp
+- Original thermodynamic source files: _processing/extracted/s0010218026000763_mmc3/SM2_NASA_polynomial_R.dat
 - Original transport source files: not found
 
 ## Cantera Preprocessing Results
@@ -46,4 +46,7 @@ An experimental study of the pyrolysis of cumene was performed at atmospheric pr
 
 ## Processing Notes
 
-- none
+- extracted S0010218026000763_mmc4.zip
+- extracted S0010218026000763_mmc2.zip
+- extracted S0010218026000763_mmc3.zip
+- extracted S0010218026000763_mmc1.docx

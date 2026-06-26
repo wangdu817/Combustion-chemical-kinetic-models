@@ -22,8 +22,8 @@ Jibiao Xie, Jundie Chen, Alexander A. Konnov. Understanding the formation of nit
 - Standard mechanism file: chem.inp
 - Standard thermodynamic file: therm.dat
 - Standard transport file: not available
-- Original mechanism source files: _processing\raw_downloads\S0010218026002737_mmc2.txt
-- Original thermodynamic source files: _processing\raw_downloads\S0010218026002737_mmc3.txt
+- Original mechanism source files: _processing/raw_downloads/S0010218026002737_mmc2.txt
+- Original thermodynamic source files: _processing/raw_downloads/S0010218026002737_mmc3.txt
 - Original transport source files: not found
 
 ## Cantera Preprocessing Results

@@ -22,7 +22,7 @@ Zhaoying Li, Haodong Chen, Chengcheng Liu, Chengyin Tu, ... Bin Yang. A synchrot
 - Standard mechanism file: chem.inp
 - Standard thermodynamic file: not available
 - Standard transport file: not available
-- Original mechanism source files: _processing\extracted\s0010218025007400_mmc2\SMM2.inp, _processing\extracted\s0010218025007400_mmc3\SMM3.inp
+- Original mechanism source files: _processing/extracted/s0010218025007400_mmc3/SMM3.inp, _processing/extracted/s0010218025007400_mmc2/SMM2.inp
 - Original thermodynamic source files: not found
 - Original transport source files: not found
 
@@ -58,4 +58,6 @@ not available
 
 ## Processing Notes
 
-- none
+- extracted S0010218025007400_mmc1.zip
+- extracted S0010218025007400_mmc2.zip
+- extracted S0010218025007400_mmc3.zip

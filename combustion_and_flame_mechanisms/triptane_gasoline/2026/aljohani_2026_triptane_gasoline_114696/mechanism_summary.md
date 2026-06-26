@@ -22,8 +22,8 @@ Khalid Aljohani, Aamir Farooq. Triptane (2,2,3-trimethylbutane) as an Anti-Knock
 - Standard mechanism file: chem.inp
 - Standard thermodynamic file: therm.dat
 - Standard transport file: not available
-- Original mechanism source files: _processing\extracted\s001021802500731x_mmc2\SM_for_TMB_MTG\SM_for_TMB_MTG\Kinetic_model\mech_TMB.inp
-- Original thermodynamic source files: _processing\extracted\s001021802500731x_mmc2\SM_for_TMB_MTG\SM_for_TMB_MTG\Kinetic_model\thermo_TMB.dat
+- Original mechanism source files: _processing/extracted/s001021802500731x_mmc2/SM_for_TMB_MTG/SM_for_TMB_MTG/Kinetic_model/mech_TMB.inp
+- Original thermodynamic source files: _processing/extracted/s001021802500731x_mmc2/SM_for_TMB_MTG/SM_for_TMB_MTG/Kinetic_model/thermo_TMB.dat
 - Original transport source files: not found
 
 ## Cantera Preprocessing Results
@@ -46,4 +46,6 @@ not available
 
 ## Processing Notes
 
-- none
+- extracted S001021802500731X_mmc1.docx
+- extracted S001021802500731X_mmc2.zip
+- extracted IDTS.xlsx

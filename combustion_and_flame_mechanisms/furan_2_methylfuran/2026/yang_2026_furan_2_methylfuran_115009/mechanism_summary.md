@@ -22,9 +22,9 @@ Youquan Yang, Zhimin Peng, Haodong Chen, Dao Zheng, ... Yanjun Du. Mid-infrared 
 - Standard mechanism file: chem.inp
 - Standard thermodynamic file: therm.dat
 - Standard transport file: tran.dat
-- Original mechanism source files: _processing\raw_downloads\S0010218026002452_mmc2.txt
-- Original thermodynamic source files: _processing\raw_downloads\S0010218026002452_mmc3.txt
-- Original transport source files: _processing\raw_downloads\S0010218026002452_mmc4.txt
+- Original mechanism source files: _processing/raw_downloads/S0010218026002452_mmc2.txt
+- Original thermodynamic source files: _processing/raw_downloads/S0010218026002452_mmc3.txt
+- Original transport source files: _processing/raw_downloads/S0010218026002452_mmc4.txt
 
 ## Cantera Preprocessing Results
 
@@ -46,4 +46,7 @@ The experimental and kinetic studies of furan derivatives are essential for adva
 
 ## Processing Notes
 
-- none
+- extracted S0010218026002452_mmc1.docx
+- extracted Microsoft_Visio_Drawing.vsdx
+- extracted Microsoft_Visio_Drawing1.vsdx
+- extracted Microsoft_Visio_Drawing2.vsdx

@@ -22,8 +22,8 @@ Ashenafi Emiru Teka, Qingbo Zhu, Long Zhu, Bin Dong, ... Zhandong Wang. Low-temp
 - Standard mechanism file: chem.inp
 - Standard thermodynamic file: therm.dat
 - Standard transport file: not available
-- Original mechanism source files: _processing\extracted\s0010218026003469_mmc3\MECH.inp
-- Original thermodynamic source files: _processing\extracted\s0010218026003469_mmc4\THERM.dat
+- Original mechanism source files: _processing/extracted/s0010218026003469_mmc3/MECH.inp
+- Original thermodynamic source files: _processing/extracted/s0010218026003469_mmc4/THERM.dat
 - Original transport source files: not found
 
 ## Cantera Preprocessing Results
@@ -46,4 +46,6 @@ Low-temperature oxidation chemistry plays a key role in controlling ignition and
 
 ## Processing Notes
 
-- none
+- extracted S0010218026003469_mmc2.xlsx
+- extracted S0010218026003469_mmc3.zip
+- extracted S0010218026003469_mmc4.zip

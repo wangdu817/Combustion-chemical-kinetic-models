@@ -22,20 +22,20 @@ Aboli Pingle, Sudarshan Kumar, Neeraj Kumbhakarna. Unravelling the combustion ki
 - Standard mechanism file: chem.inp
 - Standard thermodynamic file: therm.dat
 - Standard transport file: tran.dat
-- Original mechanism source files: _processing\extracted\s0010218026002865_mmc4\mech.dat, _processing\extracted\s0010218026002865_mmc4\Nma_correctedrates_benzene_gas.inp, _processing\extracted\s0010218026002865_mmc4\NMA_decomp_oh_reactions.dat, _processing\extracted\s0010218026002865_mmc4\Updated barrierless reactions_rotor_hindered.txt
-- Original thermodynamic source files: _processing\extracted\s0010218026002865_mmc4\Nma_correctedrates_benzene_gas.inp, _processing\extracted\s0010218026002865_mmc4\therm.dat, _processing\extracted\s0010218026002865_mmc4\therm_decomp_oh_reactions.dat
-- Original transport source files: _processing\extracted\s0010218026002865_mmc4\Nma_correctedrates_benzene_gas.inp, _processing\extracted\s0010218026002865_mmc4\trans.dat, _processing\extracted\s0010218026002865_mmc4\transport_decomp_oh_reactions.dat
+- Original mechanism source files: _processing/extracted/s0010218026002865_mmc4/NMA_decomp_oh_reactions.dat, _processing/extracted/s0010218026002865_mmc4/Updated barrierless reactions_rotor_hindered.txt, _processing/extracted/s0010218026002865_mmc4/Nma_correctedrates_benzene_gas.inp, _processing/extracted/s0010218026002865_mmc4/mech.dat
+- Original thermodynamic source files: _processing/extracted/s0010218026002865_mmc4/Nma_correctedrates_benzene_gas.inp, _processing/extracted/s0010218026002865_mmc4/therm.dat, _processing/extracted/s0010218026002865_mmc4/therm_decomp_oh_reactions.dat
+- Original transport source files: _processing/extracted/s0010218026002865_mmc4/Nma_correctedrates_benzene_gas.inp, _processing/extracted/s0010218026002865_mmc4/transport_decomp_oh_reactions.dat, _processing/extracted/s0010218026002865_mmc4/trans.dat
 
 ## Cantera Preprocessing Results
 
 ### Mechanism 1
 
 - Status: cantera_failed
-- Species count: 304
-- Reaction count: 118
+- Species count: not parsed
+- Reaction count: not parsed
 - Message: InputError: No thermo data found for species 'C2H5O2H' No thermo data found for species 'NC3H7O2' No thermo data found for species 'IC3H7O2' No thermo data found for species 'C3H7OOH' No thermo data found for species 'C3-OQOOH' No thermo data found for species 'CHOCH2CHO' No thermo data found for species 'CH2OHCH2CHO' No thermo data found for species 'CH3CO2H' No thermo data found for species 'HCO3' No thermo data found for species 'HCO3H' No thermo data found for species 'CH2OHCOCH3' No thermo data found for species 'NC3-QOOH' No thermo data found for species 'IC3-QOOH' No thermo data found for species 'NC3-OOQOOH' No thermo data found for species 'IC3-OOQOOH' No thermo data found for species 'CH2COOH' No thermo data found for species 'IC4-OQOOH' No thermo data found for species 'NC4-OQOO ... [truncated; see _processing logs]
 - Method: cantera
-- Cantera YAML: mechanism.yaml
+- Cantera YAML: not available
 - Standard chem.inp: chem.inp
 - Standard therm.dat: therm.dat
 - Standard tran.dat: tran.dat
@@ -58,4 +58,7 @@ N-methyl aniline (NMA) is a promising octane booster that enhances gasoline perf
 
 ## Processing Notes
 
-- none
+- extracted S0010218026002865_mmc1.docx
+- extracted S0010218026002865_mmc3.xlsx
+- extracted S0010218026002865_mmc4.zip
+- extracted S0010218026002865_mmc2.docx

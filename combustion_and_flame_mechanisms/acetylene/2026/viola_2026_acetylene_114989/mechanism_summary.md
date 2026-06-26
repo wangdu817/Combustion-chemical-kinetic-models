@@ -22,8 +22,8 @@ Tullio Viola, Nabiha Chaumeix, Andrea Comandini. The role of polyyne chemistry i
 - Standard mechanism file: chem.inp
 - Standard thermodynamic file: therm.dat
 - Standard transport file: not available
-- Original mechanism source files: _processing\extracted\s0010218026002257_mmc1\ICARE_SMAuG_model_kinetics_2025.dat
-- Original thermodynamic source files: _processing\extracted\s0010218026002257_mmc2\ICARE_SMAuG_model_thermo_2025.dat
+- Original mechanism source files: _processing/extracted/s0010218026002257_mmc1/ICARE_SMAuG_model_kinetics_2025.dat
+- Original thermodynamic source files: _processing/extracted/s0010218026002257_mmc2/ICARE_SMAuG_model_thermo_2025.dat
 - Original transport source files: not found
 
 ## Cantera Preprocessing Results
@@ -46,4 +46,7 @@ Soot formation still remains a contemporary challenge for the combustion communi
 
 ## Processing Notes
 
-- none
+- extracted S0010218026002257_mmc3.docx
+- extracted S0010218026002257_mmc1.zip
+- extracted S0010218026002257_mmc2.zip
+- extracted S0010218026002257_mmc4.xlsx

@@ -22,9 +22,9 @@ Wenbin Xu, Bowen Mei, Andy Thawko, Ziyu Wang, ... Yiguang Ju. Flame dynamics and
 - Standard mechanism file: chem.inp
 - Standard thermodynamic file: therm.dat
 - Standard transport file: tran.dat
-- Original mechanism source files: _processing\extracted\s001021802600101x_mmc2\chem.inp
-- Original thermodynamic source files: _processing\extracted\s001021802600101x_mmc3\therm.dat
-- Original transport source files: _processing\extracted\s001021802600101x_mmc4\tran.dat
+- Original mechanism source files: _processing/extracted/s001021802600101x_mmc2/chem.inp
+- Original thermodynamic source files: _processing/extracted/s001021802600101x_mmc3/therm.dat
+- Original transport source files: _processing/extracted/s001021802600101x_mmc4/tran.dat
 
 ## Cantera Preprocessing Results
 
@@ -46,4 +46,7 @@ Developing advanced low-temperature combustion engines with ammonia-biofuel blen
 
 ## Processing Notes
 
-- none
+- extracted S001021802600101X_mmc2.zip
+- extracted S001021802600101X_mmc4.zip
+- extracted S001021802600101X_mmc1.docx
+- extracted S001021802600101X_mmc3.zip
