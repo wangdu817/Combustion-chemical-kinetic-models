@@ -97,13 +97,8 @@ for f in dl.iterdir():
     if any(f.name.startswith(p) for p in candidate_piis): k+=1
     else: f.unlink(); d+=1
 print(f'Downloads: {k} kept, {d} deleted')
+# _processing/raw_downloads preserved for recovery — never auto-delete
 
-# Also clean _processing/raw_downloads (duplicates of downloads/)
-import shutil
-for rdp in Path('combustion_and_flame_mechanisms').glob('*/20*/*/_processing/raw_downloads'):
-    if rdp.is_dir():
-        shutil.rmtree(rdp, ignore_errors=True)
-print('Cleaned _processing/raw_downloads')
 "
 else
     echo "Collection of $NEXT failed with exit code $RC."
