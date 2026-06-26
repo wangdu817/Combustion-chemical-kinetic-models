@@ -421,8 +421,6 @@ def record_year(record: dict) -> str:
 def normalize_record_years(records: list[dict], default_year: str = "2026") -> bool:
     changed = False
     for record in records:
-    print(f"[{{idx+1}}/{{total}}] probing {{record.get("pii")}}")
-    print(f"[{{idx+1}}/{{total}}] {{record.get("pii")}}")
         if not record.get("year"):
             record["year"] = default_year
             changed = True
@@ -1395,16 +1393,19 @@ def url_download(url: str, dest: Path) -> None:
         tmp.replace(dest)
 
 
-def probe_supplements(max_mmc: int = 8, year: str | None = None, force: bool = False, serial: bool = False) -> None:
+def download_recorded_supplements(year: str | None = None, force: bool = False) -> None:
     ensure_dirs()
     records = read_metadata()
-    for record in records:
-    print(f"[{idx+1}/{total}] probing {record.get("pii")}")
-        if not record.get("candidate"):
+    if year is not None:
+        records = [r for r in records if str(r.get('year','')) == year]
+    total = sum(1 for r in records if needs_supplement_download(r, force=force))
+    print(f"=== Downloading {total} supplements for year={year} ===")
+    changed = False
+    for idx, record in enumerate(records):
+        if not needs_supplement_download(record, force=force):
             continue
+        print(f"[{idx+1}/{total}] downloading {record.get('pii')}")
         if year and record_year(record) != year:
-            continue
-        if not force and record.get("supplementProbeStatus") in {"complete", "no_links", "captcha", "error", "partial"}:
             continue
         pii = record.get("pii") or ""
         if not pii:
