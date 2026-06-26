@@ -30,10 +30,10 @@ Cheng-Yin Ye, Ling-Nan Wu, Dong-Xu Tian, Jiu-Zhong Yang, ... Zhen-Yu Tian. Exper
 
 ### Mechanism 1
 
-- Status: ok
+- Status: cantera_failed
 - Species count: 323
 - Reaction count: 2041
-- Message: cantera conversion ok
+- Message: missing cantera result json
 - Method: cantera
 - Cantera YAML: mechanism.yaml
 - Standard chem.inp: chem.inp

@@ -33,7 +33,7 @@ Shusuke Suzuki, Akira Matsugi, Philippe Dagaut. An experimental and modeling inv
 - Status: cantera_failed
 - Species count: not parsed
 - Reaction count: not parsed
-- Message: IndexError: list index out of range; numeric cleanup retry failed: IndexError: list index out of range
+- Message: missing cantera result json
 - Method: cantera
 - Cantera YAML: not available
 - Standard chem.inp: chem.inp
@@ -46,6 +46,6 @@ Species measurements of the gaseous products during oxidation were conducted usi
 
 ## Processing Notes
 
-- extracted S0010218026002397_mmc1.docx
 - extracted S0010218026002397_mmc3.xlsx
+- extracted S0010218026002397_mmc1.docx
 - extracted S0010218026002397_mmc2.xlsx

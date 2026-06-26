@@ -30,10 +30,10 @@ Ke Ren, Xiaoping Chen, Jiliang Ma, Suyang Pan. A detailed kinetic mechanism for 
 
 ### Mechanism 1
 
-- Status: ok
+- Status: cantera_failed
 - Species count: 33
 - Reaction count: 223
-- Message: cantera conversion ok
+- Message: missing cantera result json
 - Method: cantera
 - Cantera YAML: mechanism.yaml
 - Standard chem.inp: chem.inp
@@ -47,6 +47,6 @@ not available
 ## Processing Notes
 
 - extracted S0010218025007321_mmc3.zip
+- extracted S0010218025007321_mmc2.zip
 - extracted S0010218025007321_mmc1.docx
 - extracted S0010218025007321_mmc4.zip
-- extracted S0010218025007321_mmc2.zip

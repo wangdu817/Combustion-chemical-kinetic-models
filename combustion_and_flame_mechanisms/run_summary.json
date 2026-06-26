@@ -1,14 +1,14 @@
 {
-  "updated_at": "2026-06-25T19:25:58",
+  "updated_at": "2026-06-26T20:06:57",
   "metadata_records": 485,
   "index_rows": 485,
-  "included": 21,
-  "conversion_failed": 22,
+  "included": 0,
+  "conversion_failed": 43,
   "excluded_non_kinetics_mechanism_attachment": 0,
   "excluded_no_mechanism_attachment": 45,
   "excluded_no_mechanism_signal": 387,
   "excluded_no_supplement_found": 10,
   "pending_download": 0,
   "skipped_existing_processing": 0,
-  "root": "/home/ubuntu/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms"
+  "root": "/home/icaurs/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms"
 }

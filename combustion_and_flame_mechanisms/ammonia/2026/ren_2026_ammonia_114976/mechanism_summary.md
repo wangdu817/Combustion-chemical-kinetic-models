@@ -30,10 +30,10 @@ Ke Ren, Xiaoping Chen, Jiliang Ma. Development and numerical analysis of a detai
 
 ### Mechanism 1
 
-- Status: ok
-- Species count: 157
-- Reaction count: 2036
-- Message: cantera conversion ok
+- Status: cantera_failed
+- Species count: 471
+- Reaction count: 2191
+- Message: missing cantera result json
 - Method: cantera
 - Cantera YAML: mechanism.yaml
 - Standard chem.inp: chem.inp
@@ -46,5 +46,5 @@ Ammonia (NH3)/coal co-combustion has attracted increasing interest as a viable r
 
 ## Processing Notes
 
-- extracted S0010218026002129_mmc1.docx
 - extracted S0010218026002129_mmc2.zip
+- extracted S0010218026002129_mmc1.docx

@@ -30,10 +30,10 @@ Yunyang Liu, Erjiang Hu, Jiajun You, Xiaoyang Guo, ... Zuohua Huang. Experimenta
 
 ### Mechanism 1
 
-- Status: ok
+- Status: cantera_failed
 - Species count: 39
 - Reaction count: 203
-- Message: cantera conversion ok
+- Message: missing cantera result json
 - Method: cantera
 - Cantera YAML: mechanism.yaml
 - Standard chem.inp: chem.inp
@@ -46,7 +46,7 @@ Nitrogen oxides (NOx) are important pollutants in gas turbines, and their presen
 
 ## Processing Notes
 
-- extracted S0010218026001744_mmc2.zip
+- extracted S0010218026001744_mmc1.docx
 - extracted S0010218026001744_mmc4.zip
 - extracted S0010218026001744_mmc3.zip
-- extracted S0010218026001744_mmc1.docx
+- extracted S0010218026001744_mmc2.zip

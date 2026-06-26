@@ -33,7 +33,7 @@ Claire M. Grégoire, Océane Clément, Olivier Mathieu, Eric L. Petersen, ... Gu
 - Status: cantera_failed
 - Species count: not parsed
 - Reaction count: not parsed
-- Message: InputError: Error while reading reaction in chem.inp starting on line 8725: """ cypentoh+h=cyc5h8oh-1+h2 2.400+07 1.88 2460.0 ! Carstensen rate rule """ could not convert string to float: '2.400+07' No thermo data found for species 'co' No thermo data found for species 'o2' No thermo data found for species 'co2' No thermo data found for species 'h2o' No thermo data found for species 'ch4' No thermo data found for species 'h2' No thermo data found for species 'c2h2' No thermo data found for species 'ch2o' No thermo data found for species 'ch3cho' No thermo data found for species 'c2h5cho' No thermo data found for species 'nc3h7cho' No thermo data found for species 'c2h3cho' No thermo data found for species 'c2h4' No thermo data found for species 'c3h6' No thermo data found for species 'c4h8 ... [truncated; see _processing logs]
+- Message: missing cantera result json
 - Method: cantera
 - Cantera YAML: not available
 - Standard chem.inp: chem.inp
@@ -46,15 +46,15 @@ The pyrolysis and oxidation of propan-1-ol were investigated in this work, provi
 
 ## Processing Notes
 
+- extracted S0010218026002695_mmc8.zip
+- extracted S0010218026002695_mmc12.docx
+- extracted S0010218026002695_mmc7.zip
+- extracted S0010218026002695_mmc2.xlsx
 - extracted S0010218026002695_mmc4.zip
+- extracted S0010218026002695_mmc11.zip
+- extracted S0010218026002695_mmc10.docx
+- extracted S0010218026002695_mmc5.zip
+- extracted S0010218026002695_mmc6.zip
 - extracted S0010218026002695_mmc9.zip
 - extracted S0010218026002695_mmc1.zip
-- extracted S0010218026002695_mmc6.zip
-- extracted S0010218026002695_mmc2.xlsx
-- extracted S0010218026002695_mmc12.docx
-- extracted S0010218026002695_mmc8.zip
-- extracted S0010218026002695_mmc5.zip
-- extracted S0010218026002695_mmc10.docx
-- extracted S0010218026002695_mmc11.zip
 - extracted S0010218026002695_mmc3.zip
-- extracted S0010218026002695_mmc7.zip

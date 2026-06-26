@@ -33,7 +33,7 @@ Huajie Lyu, Peng Liu, Zhenrun Wu, Hong Wang, ... Bingjie Chen. Formation chemist
 - Status: cantera_failed
 - Species count: not parsed
 - Reaction count: not parsed
-- Message: InputError: Unparsable lines while reading thermo data in therm.dat starting on line 929: """ ******************************************************************************** ! ***** quinoline formation-np********** !C5H4NCHCH C5H3NCHCH2 C5H4NCCH C5H3NCCH !! CS5 CS9 CS12 CS13 !C9H7N C9H6N C5H4NCHCHCCH C5H3N(CHCH2)CCH C5H3N(CCH)2 !! CS8 CS15 CS48 CS49 CS50 ! ******************************************************************************** ! ******************************************************************************** """ Lines could not be parsed as a NASA7 entry. Unparsable lines while reading thermo data in therm.dat starting on line 972: """ **************************************** !C5H4N-2 C5H4NCHCH-2 C5H3NCHCH2-2 C5H4NCCH-2 C5H3NCCH-2 !!CS3 CS16 CS19 CS22 CS23 !C9H6N-2 C5H4NCHCHCCH-2 ... [truncated; see _processing logs]
+- Message: missing cantera result json
 - Method: cantera
 - Cantera YAML: not available
 - Standard chem.inp: chem.inp
@@ -46,9 +46,8 @@ not available
 
 ## Processing Notes
 
-- extracted S0010218026000283_mmc5.zip
-- extracted S0010218026000283_mmc4.zip
-- extracted S0010218026000283_mmc3.zip
-- extracted S0010218026000283_mmc1.docx
 - extracted S0010218026000283_mmc2.zip
-- extracted SM-2.xlsm
+- extracted S0010218026000283_mmc4.zip
+- extracted S0010218026000283_mmc5.zip
+- extracted S0010218026000283_mmc1.docx
+- extracted S0010218026000283_mmc3.zip

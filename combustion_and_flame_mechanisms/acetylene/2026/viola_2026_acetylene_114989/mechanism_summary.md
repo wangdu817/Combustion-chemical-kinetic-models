@@ -30,10 +30,10 @@ Tullio Viola, Nabiha Chaumeix, Andrea Comandini. The role of polyyne chemistry i
 
 ### Mechanism 1
 
-- Status: ok
+- Status: cantera_failed
 - Species count: 951
 - Reaction count: 36552
-- Message: cantera conversion ok
+- Message: missing cantera result json
 - Method: cantera
 - Cantera YAML: mechanism.yaml
 - Standard chem.inp: chem.inp
@@ -47,6 +47,6 @@ Soot formation still remains a contemporary challenge for the combustion communi
 ## Processing Notes
 
 - extracted S0010218026002257_mmc3.docx
-- extracted S0010218026002257_mmc1.zip
 - extracted S0010218026002257_mmc2.zip
+- extracted S0010218026002257_mmc1.zip
 - extracted S0010218026002257_mmc4.xlsx

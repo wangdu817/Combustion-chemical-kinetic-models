@@ -33,7 +33,7 @@ Boris Roux, Yves Simon, Sandra Poeuf, Marc Bouchez, ... René Fournet. Cumene py
 - Status: cantera_failed
 - Species count: not parsed
 - Reaction count: not parsed
-- Message: InputError: Error while reading reaction in chem.inp starting on line 1028: """ styrene+C2H5 = A1CHCH+C2H6 5.00+11 0.000 19700.0 ! [3] """ could not convert string to float: '5.00+11' Unparsable lines while reading thermo data in therm.dat starting on line 957: """ R-stilbene C 14H 11 G 0290.00 5000.00 1500.00 1 !QCISD(T) 0.35587210E+02 0.30044893E-01-0.10132261E-04 0.15657523E-08-0.91359710E-13 2 0.40303762E+05-0.16725841E+03-0.10510095E+02 0.14963773E+00-0.13388848E-03 3 0.61497180E-07-0.11372155E-10 0.55415521E+05 0.76552245E+02 """ Lines could not be parsed as a NASA7 entry. No thermo data found for species 'R-stilbene' Please check https://cantera.org/stable/userguide/ck2yaml-tutorial.html#debugging-common-errors-in-ck-files for the correct Chemkin syntax.; numeric cleanup retry faile ... [truncated; see _processing logs]
+- Message: missing cantera result json
 - Method: cantera
 - Cantera YAML: not available
 - Standard chem.inp: chem.inp
@@ -46,7 +46,7 @@ An experimental study of the pyrolysis of cumene was performed at atmospheric pr
 
 ## Processing Notes
 
-- extracted S0010218026000763_mmc4.zip
+- extracted S0010218026000763_mmc1.docx
 - extracted S0010218026000763_mmc2.zip
 - extracted S0010218026000763_mmc3.zip
-- extracted S0010218026000763_mmc1.docx
+- extracted S0010218026000763_mmc4.zip

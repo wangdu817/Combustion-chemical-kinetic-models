@@ -33,7 +33,7 @@ Liqing Guo, Shusen Wang, Qianjin Lin, Bo Wei, ... Alexander A. Konnov. Measureme
 - Status: cantera_failed
 - Species count: not parsed
 - Reaction count: not parsed
-- Message: InputError: Error while reading reaction in chem.inp starting on line 417: """ H+O2(+M)=HO2(+M) 4.66E12 0.44 0.0E0 N2/1.0/ HE/0.57/ AR/0.65/ O2/1.0/ H2/2.0/ CH4/2.0/ CO2/3.25/ H2O/17.6/ CO/4.0/ LOWMX/1.225E19 -1.2E0 0.0E0/ TROEMX/5.0E-1 1.0E0 1.0E10 1.0E30/ LOWSP/N2 4.5E20 -1.73E0 0.0E0/ TROESP/N2 5.0E-1 1.0E0 1.0E10 1.0E30/ """ could not convert string to float: 'N2' Please check https://cantera.org/stable/userguide/ck2yaml-tutorial.html#debugging-common-errors-in-ck-files for the correct Chemkin syntax.; numeric cleanup retry failed: InputError: Error while reading reaction in chem_cantera_numeric_clean.inp starting on line 413: """ H+O2(+M)=HO2(+M) 4.66E12 0.44 0.0E0 N2/1.0/ HE/0.57/ AR/0.65/ O2/1.0/ H2/2.0/ CH4/2.0/ CO2/3.25/ H2O/17.6/ CO/4.0/ LOWMX/1.225E19 -1.2E0 0.0E0/ TROEMX/5.0E-1 ... [truncated; see _processing logs]
+- Message: missing cantera result json
 - Method: cantera
 - Cantera YAML: not available
 - Standard chem.inp: chem.inp
@@ -46,6 +46,6 @@ Laminar burning velocities (SL) of 2-butanone + air mixtures were measured using
 
 ## Processing Notes
 
-- extracted S0010218026001835_mmc5.zip
-- extracted S0010218026001835_mmc3.zip
 - extracted S0010218026001835_mmc4.zip
+- extracted S0010218026001835_mmc3.zip
+- extracted S0010218026001835_mmc5.zip

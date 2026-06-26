@@ -33,7 +33,7 @@ Jiaxin Xie, Mengmeng Jia, Frederick Nii Ofei Bruce, Chong-Wen Zhou, ... Yang Li.
 - Status: cantera_failed
 - Species count: not parsed
 - Reaction count: not parsed
-- Message: InputError: Error while reading transport data in tran.dat starting on line 32: """ C 1.500780000000 0.069052000000 0.294433000000 """ 6 transport parameters were expected, but found 3. Error while reading transport data in tran.dat starting on line 33: """ H 1.449105000000 1.097383000000 -0.080709000000 """ 6 transport parameters were expected, but found 3. Error while reading transport data in tran.dat starting on line 34: """ H 1.661088000000 0.135413000000 1.378696000000 """ 6 transport parameters were expected, but found 3. Error while reading transport data in tran.dat starting on line 35: """ C 2.699908000000 -0.624625000000 -0.349110000000 """ 6 transport parameters were expected, but found 3. Error while reading transport data in tran.dat starting on line 36: """ H 2.527055000000 ... [truncated; see _processing logs]
+- Message: missing cantera result json
 - Method: cantera
 - Cantera YAML: not available
 - Standard chem.inp: chem.inp
@@ -47,5 +47,3 @@ Jiaxin Xie, Mengmeng Jia, Frederick Nii Ofei Bruce, Chong-Wen Zhou, ... Yang Li.
 ## Processing Notes
 
 - extracted S0010218025007783_mmc1.zip
-- extracted S1.docx
-- extracted S4_Sensitivity Analysis.xlsx

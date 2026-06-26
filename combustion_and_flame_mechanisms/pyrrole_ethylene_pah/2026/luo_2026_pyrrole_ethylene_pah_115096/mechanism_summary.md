@@ -33,7 +33,7 @@ Guangda Luo, Hairong Ren, Mo Yang, Mengqi Wu, ... Feng Zhang. Formation of (N-co
 - Status: cantera_failed
 - Species count: 218
 - Reaction count: 3665
-- Message: CanteraError: ******************************************************************************* CanteraError thrown by addReactions: ******************************************************************************* InputFileError thrown by PlogRate::validate: Error on line 2323 of /home/ubuntu/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/pyrrole_ethylene_pah/2026/luo_2026_pyrrole_ethylene_pah_115096/mechanism.yaml: Invalid rate coefficient for reaction 'C2H2 + C7H4N <=> C9H6N' at P = 6666.2, T = 300.0 To fix this error, remove this reaction or contact the author of the reaction/mechanism in question, because the rate expression is mathematically unsound at the temperatures and pressures noted above. | Line | | 2318 | rate-constants: | 2319 | - {P: 0.06579 atm, A: 4.26e+23 ... [truncated; see _processing logs]
+- Message: missing cantera result json
 - Method: cantera
 - Cantera YAML: mechanism.yaml
 - Standard chem.inp: chem.inp
@@ -46,6 +46,6 @@ Pyrolysis is a practical route for biomass conversion, and its co-pyrolysis with
 
 ## Processing Notes
 
-- extracted S0010218026003329_mmc2.docx
 - extracted S0010218026003329_mmc1.zip
+- extracted S0010218026003329_mmc2.docx
 - extracted S0010218026003329_mmc3.zip

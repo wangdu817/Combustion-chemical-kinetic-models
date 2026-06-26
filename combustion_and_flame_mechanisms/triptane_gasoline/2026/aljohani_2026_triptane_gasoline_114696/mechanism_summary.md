@@ -30,10 +30,10 @@ Khalid Aljohani, Aamir Farooq. Triptane (2,2,3-trimethylbutane) as an Anti-Knock
 
 ### Mechanism 1
 
-- Status: ok
+- Status: cantera_failed
 - Species count: 3601
 - Reaction count: 15456
-- Message: cantera conversion ok
+- Message: missing cantera result json
 - Method: cantera
 - Cantera YAML: mechanism.yaml
 - Standard chem.inp: chem.inp
@@ -46,6 +46,5 @@ not available
 
 ## Processing Notes
 
-- extracted S001021802500731X_mmc1.docx
 - extracted S001021802500731X_mmc2.zip
-- extracted IDTS.xlsx
+- extracted S001021802500731X_mmc1.docx

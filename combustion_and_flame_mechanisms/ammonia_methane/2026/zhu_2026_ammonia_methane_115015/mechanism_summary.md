@@ -30,10 +30,22 @@ Yuxiang Zhu, Khaiyom Hakimov, Jiabiao Zou, Nafi Farzana, ... Chong-Wen Zhou. An 
 
 ### Mechanism 1
 
-- Status: ok
+- Status: cantera_failed
 - Species count: 194
 - Reaction count: 1595
-- Message: cantera conversion ok
+- Message: missing cantera result json
+- Method: cantera
+- Cantera YAML: mechanism.yaml
+- Standard chem.inp: chem.inp
+- Standard therm.dat: therm.dat
+- Standard tran.dat: tran.dat
+
+### Mechanism 2
+
+- Status: cantera_failed
+- Species count: 194
+- Reaction count: 1595
+- Message: missing cantera result json
 - Method: cantera
 - Cantera YAML: mechanism.yaml
 - Standard chem.inp: chem.inp
@@ -47,10 +59,10 @@ Ignition delay time measurements of 70/30, 50/50, and 30/70 (mol%) NH3/CH4 mixtu
 ## Processing Notes
 
 - extracted S0010218026002518_mmc5.zip
+- extracted S0010218026002518_mmc1.docx
 - extracted S0010218026002518_mmc8.zip
+- extracted S0010218026002518_mmc7.zip
 - extracted S0010218026002518_mmc3.xlsx
+- extracted S0010218026002518_mmc6.zip
 - extracted S0010218026002518_mmc2.xlsx
 - extracted S0010218026002518_mmc4.xlsx
-- extracted S0010218026002518_mmc6.zip
-- extracted S0010218026002518_mmc1.docx
-- extracted S0010218026002518_mmc7.zip

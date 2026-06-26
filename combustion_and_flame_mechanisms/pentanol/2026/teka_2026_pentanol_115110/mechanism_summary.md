@@ -30,10 +30,10 @@ Ashenafi Emiru Teka, Qingbo Zhu, Long Zhu, Bin Dong, ... Zhandong Wang. Low-temp
 
 ### Mechanism 1
 
-- Status: ok
+- Status: cantera_failed
 - Species count: 627
 - Reaction count: 3724
-- Message: cantera conversion ok
+- Message: missing cantera result json
 - Method: cantera
 - Cantera YAML: mechanism.yaml
 - Standard chem.inp: chem.inp
@@ -46,6 +46,6 @@ Low-temperature oxidation chemistry plays a key role in controlling ignition and
 
 ## Processing Notes
 
-- extracted S0010218026003469_mmc2.xlsx
 - extracted S0010218026003469_mmc3.zip
+- extracted S0010218026003469_mmc2.xlsx
 - extracted S0010218026003469_mmc4.zip

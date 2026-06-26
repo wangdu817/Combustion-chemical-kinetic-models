@@ -30,10 +30,10 @@ Shubao Song, Lin Zhang, Jinghua Wu, Meishuai Zou, Jiankun Shao. High-temperature
 
 ### Mechanism 1
 
-- Status: ok
-- Species count: 128
-- Reaction count: 1024
-- Message: cantera conversion ok
+- Status: cantera_failed
+- Species count: 382
+- Reaction count: 1137
+- Message: missing cantera result json
 - Method: cantera
 - Cantera YAML: mechanism.yaml
 - Standard chem.inp: chem.inp
@@ -46,8 +46,8 @@ A detailed experimental and modeling study was conducted to investigate the high
 
 ## Processing Notes
 
-- extracted S0010218026000192_mmc1.docx
 - extracted S0010218026000192_mmc4.zip
 - extracted S0010218026000192_mmc3.zip
 - extracted S0010218026000192_mmc2.xlsx
 - extracted S0010218026000192_mmc5.zip
+- extracted S0010218026000192_mmc1.docx

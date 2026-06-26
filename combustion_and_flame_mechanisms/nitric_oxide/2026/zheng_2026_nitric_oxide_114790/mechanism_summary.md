@@ -33,7 +33,7 @@ Menglei Zheng, Yong Bao, Xianhui Chen, Xiaoyuan Zhang. Direct NO removal driven 
 - Status: cantera_failed
 - Species count: not parsed
 - Reaction count: not parsed
-- Message: InputError: Error while reading reaction in chem.inp starting on line 50: """ E + AR => E+ AR* f(E/N) ! BOLSIG AR -> AR* """ could not convert string to float: 'E+' Error while reading reaction in chem.inp starting on line 51: """ E + AR => E + E + AR^+ f(E/N) ! BOLSIG AR -> AR^+ """ could not convert string to float: '+' Error while reading reaction in chem.inp starting on line 54: """ E + NO => E + NO(V1) f(E/N) ! BOLSIG NO -> NO(V1) """ could not convert string to float: '+' Error while reading reaction in chem.inp starting on line 55: """ E + NO => E + NO(V2) f(E/N) ! BOLSIG NO -> NO(V2) """ could not convert string to float: '+' Error while reading reaction in chem.inp starting on line 56: """ E + NO => E + NO(V3) f(E/N) ! BOLSIG NO -> NO(V3) """ could not convert string to float: '+' ... [truncated; see _processing logs]
+- Message: missing cantera result json
 - Method: cantera
 - Cantera YAML: not available
 - Standard chem.inp: chem.inp
@@ -46,7 +46,7 @@ Mitigating nitrogen oxide (NOx) pollution remains a formidable challenge amid th
 
 ## Processing Notes
 
-- extracted S0010218026000271_mmc1.docx
 - extracted S0010218026000271_mmc2.zip
 - extracted S0010218026000271_mmc4.zip
+- extracted S0010218026000271_mmc1.docx
 - extracted S0010218026000271_mmc3.zip

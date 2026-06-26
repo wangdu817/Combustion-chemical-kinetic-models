@@ -30,10 +30,10 @@ Yun Ge, Hong-Hao Ma, Yue Jiao, Shuo Yang, ... Lu-Qing Wang. Combustion reaction 
 
 ### Mechanism 1
 
-- Status: ok
+- Status: cantera_failed
 - Species count: 96
 - Reaction count: 626
-- Message: cantera conversion ok
+- Message: missing cantera result json
 - Method: cantera
 - Cantera YAML: mechanism.yaml
 - Standard chem.inp: chem.inp
@@ -46,10 +46,8 @@ Due to the special property of N2O decomposition with heat release, the fundamen
 
 ## Processing Notes
 
-- extracted S0010218026001847_mmc4.zip
-- extracted S0010218026001847_mmc2.zip
 - extracted S0010218026001847_mmc3.zip
-- extracted S0010218026001847_mmc5.zip
 - extracted S0010218026001847_mmc1.zip
-- extracted Experimental data.xlsx
-- extracted Supplementary Materials.docx
+- extracted S0010218026001847_mmc2.zip
+- extracted S0010218026001847_mmc4.zip
+- extracted S0010218026001847_mmc5.zip

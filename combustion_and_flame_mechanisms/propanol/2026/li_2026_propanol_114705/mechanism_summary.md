@@ -22,7 +22,7 @@ Zhaoying Li, Haodong Chen, Chengcheng Liu, Chengyin Tu, ... Bin Yang. A synchrot
 - Standard mechanism file: chem.inp
 - Standard thermodynamic file: not available
 - Standard transport file: not available
-- Original mechanism source files: _processing/extracted/s0010218025007400_mmc3/SMM3.inp, _processing/extracted/s0010218025007400_mmc2/SMM2.inp
+- Original mechanism source files: _processing/extracted/s0010218025007400_mmc2/SMM2.inp, _processing/extracted/s0010218025007400_mmc3/SMM3.inp
 - Original thermodynamic source files: not found
 - Original transport source files: not found
 
@@ -33,7 +33,7 @@ Zhaoying Li, Haodong Chen, Chengcheng Liu, Chengyin Tu, ... Bin Yang. A synchrot
 - Status: cantera_failed
 - Species count: not parsed
 - Reaction count: not parsed
-- Message: InputError: Error while reading entry in chem.inp starting on line 193: """ BOLSIG """ Section starts with unrecognized keyword 'BOLSIG' Ignoring redundant declaration for species '#\SUBMECH:' Ignoring redundant declaration for species '#\SUBMECH:' Ignoring redundant declaration for species '#\SUBMECH:' Ignoring redundant declaration for species '#\SUBMECH:' Ignoring redundant declaration for species '#\SUBMECH:' Suppressed 6 additional warnings about redundant species declarations. Run ck2yaml again with the '--verbose' option to see all warnings. No thermo data found for species 'E' No thermo data found for species 'Ar' No thermo data found for species 'O2' No thermo data found for species 'CH3OH' No thermo data found for species 'C2H5OH' No thermo data found for species 'C3H7OH(1)' No t ... [truncated; see _processing logs]
+- Message: missing cantera result json
 - Method: cantera
 - Cantera YAML: not available
 - Standard chem.inp: chem.inp
@@ -45,7 +45,7 @@ Zhaoying Li, Haodong Chen, Chengcheng Liu, Chengyin Tu, ... Bin Yang. A synchrot
 - Status: cantera_failed
 - Species count: not parsed
 - Reaction count: not parsed
-- Message: InputError: Error while reading reaction in chem.inp starting on line 4567: """ Ar* + C2H5OH => Ar + C2H5O + H +4.214+14 +0.0000000E+000 +0.0000000E+000 """ could not convert string to float: '+4.214+14' No thermo data found for species 'E' No thermo data found for species 'Ar' No thermo data found for species 'O2' No thermo data found for species 'CH3OH' No thermo data found for species 'C2H5OH' No thermo data found for species 'NC3H7OH' No thermo data found for species 'IC3H7OH' No thermo data found for species 'H2' No thermo data found for species 'H' No thermo data found for species 'O2(a1)' No thermo data found for species 'O2(b1)' No thermo data found for species 'O2+' No thermo data found for species 'O' No thermo data found for species 'O(1D)' No thermo data found for species 'O3' ... [truncated; see _processing logs]
+- Message: missing cantera result json
 - Method: cantera
 - Cantera YAML: not available
 - Standard chem.inp: chem.inp
@@ -58,6 +58,6 @@ not available
 
 ## Processing Notes
 
+- extracted S0010218025007400_mmc3.zip
 - extracted S0010218025007400_mmc1.zip
 - extracted S0010218025007400_mmc2.zip
-- extracted S0010218025007400_mmc3.zip

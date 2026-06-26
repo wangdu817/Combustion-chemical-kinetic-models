@@ -22,18 +22,30 @@ Wenchao Zhu, Taipeng Mao, Zechuan Cui, Xinyang Tian, ... Mingshu Bi. A combined 
 - Standard mechanism file: chem.inp
 - Standard thermodynamic file: therm.dat
 - Standard transport file: tran.dat
-- Original mechanism source files: _processing/extracted/s0010218026001173_mmc2/Mechanism.yaml, _processing/extracted/s0010218026001173_mmc1/C0-C1 reaction.inp
-- Original thermodynamic source files: _processing/extracted/s0010218026001173_mmc6/Thermodynamic.dat, _processing/extracted/s0010218026001173_mmc2/Mechanism.yaml
+- Original mechanism source files: _processing/extracted/s0010218026001173_mmc1/C0-C1 reaction.inp, _processing/extracted/s0010218026001173_mmc2/Mechanism.yaml
+- Original thermodynamic source files: _processing/extracted/s0010218026001173_mmc2/Mechanism.yaml, _processing/extracted/s0010218026001173_mmc6/Thermodynamic.dat
 - Original transport source files: _processing/extracted/s0010218026001173_mmc7/Transport.dat, _processing/extracted/s0010218026001173_mmc2/Mechanism.yaml
 
 ## Cantera Preprocessing Results
 
 ### Mechanism 1
 
-- Status: ok
+- Status: cantera_failed
 - Species count: 53
 - Reaction count: 354
-- Message: cantera conversion ok
+- Message: missing cantera result json
+- Method: cantera
+- Cantera YAML: mechanism.yaml
+- Standard chem.inp: chem.inp
+- Standard therm.dat: therm.dat
+- Standard tran.dat: tran.dat
+
+### Mechanism 2
+
+- Status: cantera_failed
+- Species count: 53
+- Reaction count: 354
+- Message: missing cantera result json
 - Method: cantera
 - Cantera YAML: mechanism.yaml
 - Standard chem.inp: chem.inp
@@ -46,8 +58,8 @@ The proposal of carbon neutrality targets has accelerated the deployment of C0â€
 
 ## Processing Notes
 
-- extracted S0010218026001173_mmc2.zip
 - extracted S0010218026001173_mmc3.xlsx
-- extracted S0010218026001173_mmc7.zip
-- extracted S0010218026001173_mmc6.zip
 - extracted S0010218026001173_mmc1.zip
+- extracted S0010218026001173_mmc6.zip
+- extracted S0010218026001173_mmc2.zip
+- extracted S0010218026001173_mmc7.zip

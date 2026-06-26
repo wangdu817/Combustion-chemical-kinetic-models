@@ -33,7 +33,7 @@ Amir H. Mahdipour, Fekadu Mosisa Wako, Cécile Devaud, W. Kendal Bushe. Assessme
 - Status: cantera_failed
 - Species count: 21
 - Reaction count: 126
-- Message: CanteraError: ******************************************************************************* CanteraError thrown by Kinetics::checkDuplicates: Error on lines 241 and 405 of /home/ubuntu/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/dimethyl_ether/2026/mahdipour_2026_dimethyl_ether_114714/mechanism.yaml: Undeclared duplicate reactions detected: Reaction 1: H + O2 <=> O + OH Reaction 64: H + O2 <=> O + OH | Line | | 236 | -1.123918e+04, 14.43229] | 237 | - [4.825938, 0.01384043, -4.557259e-06, 6.724967e-10, | 238 | -3.598161e-14, -1.271779e+04, -5.239507] | 239 | | 240 | reactions: > 241 > - equation: H + O2 <=> O + OH # Reaction 1 ^ | 242 | rate-constant: {A: 3.5470000000000005e+15, b: -0.406, Ea: 1.6599e+04} | 243 | - equation: H2 + O <=> H + OH # Reaction 2 | 244 | r ... [truncated; see _processing logs]
+- Message: missing cantera result json
 - Method: cantera
 - Cantera YAML: mechanism.yaml
 - Standard chem.inp: chem.inp

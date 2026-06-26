@@ -22,18 +22,30 @@ S. Hossain, M. Abdulrahman, P.T. Lynch, Eric K. Mayhew, K. Brezinsky. Understand
 - Standard mechanism file: chem.inp
 - Standard thermodynamic file: therm.dat
 - Standard transport file: not available
-- Original mechanism source files: _processing/extracted/s0010218026000131_mmc1/mmc1.yaml, _processing/extracted/s0010218026000131_mmc2/mmc2.yaml
-- Original thermodynamic source files: _processing/extracted/s0010218026000131_mmc1/mmc1.yaml, _processing/extracted/s0010218026000131_mmc2/mmc2.yaml
+- Original mechanism source files: _processing/extracted/s0010218026000131_mmc2/mmc2.yaml, _processing/extracted/s0010218026000131_mmc1/mmc1.yaml
+- Original thermodynamic source files: _processing/extracted/s0010218026000131_mmc2/mmc2.yaml, _processing/extracted/s0010218026000131_mmc1/mmc1.yaml
 - Original transport source files: not found
 
 ## Cantera Preprocessing Results
 
 ### Mechanism 1
 
-- Status: ok
+- Status: cantera_failed
 - Species count: 647
 - Reaction count: 18629
-- Message: cantera conversion ok
+- Message: missing cantera result json
+- Method: cantera
+- Cantera YAML: mechanism.yaml
+- Standard chem.inp: chem.inp
+- Standard therm.dat: therm.dat
+- Standard tran.dat: not available
+
+### Mechanism 2
+
+- Status: cantera_failed
+- Species count: 647
+- Reaction count: 18629
+- Message: missing cantera result json
 - Method: cantera
 - Cantera YAML: mechanism.yaml
 - Standard chem.inp: chem.inp
@@ -46,6 +58,6 @@ S. Hossain, M. Abdulrahman, P.T. Lynch, Eric K. Mayhew, K. Brezinsky. Understand
 
 ## Processing Notes
 
-- extracted S0010218026000131_mmc1.zip
-- extracted S0010218026000131_mmc2.zip
 - extracted S0010218026000131_mmc3.docx
+- extracted S0010218026000131_mmc2.zip
+- extracted S0010218026000131_mmc1.zip

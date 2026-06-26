@@ -30,10 +30,10 @@ Yuanxinxin Cao, Bowen Mei, Wenbin Xu, Mohammad Adil, ... Yiguang Ju. Methyl form
 
 ### Mechanism 1
 
-- Status: ok
+- Status: cantera_failed
 - Species count: 156
 - Reaction count: 1051
-- Message: cantera conversion ok
+- Message: missing cantera result json
 - Method: cantera
 - Cantera YAML: mechanism.yaml
 - Standard chem.inp: chem.inp
@@ -46,6 +46,6 @@ Methyl formate (MF, CH3OCHO), the simplest ester, is a representative oxygenated
 
 ## Processing Notes
 
+- extracted S0010218026003342_mmc2.zip
 - extracted S0010218026003342_mmc3.zip
 - extracted S0010218026003342_mmc1.docx
-- extracted S0010218026003342_mmc2.zip
