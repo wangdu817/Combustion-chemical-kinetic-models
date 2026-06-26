@@ -421,6 +421,8 @@ def record_year(record: dict) -> str:
 def normalize_record_years(records: list[dict], default_year: str = "2026") -> bool:
     changed = False
     for record in records:
+    print(f"[{{idx+1}}/{{total}}] probing {{record.get("pii")}}")
+    print(f"[{{idx+1}}/{{total}}] {{record.get("pii")}}")
         if not record.get("year"):
             record["year"] = default_year
             changed = True
@@ -2158,13 +2160,8 @@ def append_handoff_items(
         )
 
 
-def process(force: bool = False, year: str | None = None) -> None:
-    ensure_dirs()
-    records = read_metadata()
-    if year is not None:
-        records = [r for r in records if r.get('year') == year]
-    previous_rows = existing_index_rows()
-    metadata_changed = False
+def download_recorded_supplements(year: str | None = None, force: bool = False) -> None:
+    ...[truncated]
     rows: list[dict] = []
     handoff: list[str] = [
         "# Manual Download Handoff",
