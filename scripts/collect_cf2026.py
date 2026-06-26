@@ -1801,9 +1801,15 @@ def import_page_supplement_links(source_dir: Path) -> None:
 def download_recorded_supplements(year: str | None = None, force: bool = False) -> None:
     ensure_dirs()
     records = read_metadata()
+    if year is not None:
+        records = [r for r in records if str(r.get('year','')) == year]
+    total = sum(1 for r in records if needs_supplement_download(r, force=force))
+    print(f"=== Downloading {total} supplements for year={year} ===")
     changed = False
-    for record in records:
-    print(f"[{idx+1}/{total}] downloading {record.get("pii")}")
+    for idx, record in enumerate(records):
+        if not needs_supplement_download(record, force=force):
+            continue
+        print(f"[{idx+1}/{total}] downloading {record.get('pii')}")
         if year and record_year(record) != year:
             continue
         links = supplement_links_for_record(record)
