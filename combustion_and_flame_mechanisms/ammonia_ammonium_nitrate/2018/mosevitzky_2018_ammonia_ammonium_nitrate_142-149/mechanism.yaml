@@ -1,0 +1,941 @@
+description: |-
+  Kinetic Database!
+  Effect of equivalence ratio on the thermal autoignition of aqueous ammonia ammonium nitrate monofuel!
+  Bar Mosevitzky, Gennady E. Shter, Gideon S. Grader!
+  Thermodynamic Database!
+  Effect of equivalence ratio on the thermal autoignition of aqueous ammonia ammonium nitrate monofuel!
+  Bar Mosevitzky, Gennady E. Shter, Gideon S. Grader!
+
+generator: ck2yaml
+input-files: [chem.inp, therm.dat]
+cantera-version: 3.2.0
+date: Fri, 26 Jun 2026 22:53:44 +0800
+
+units: {length: cm, time: s, quantity: mol, activation-energy: cal/mol}
+
+phases:
+- name: gas
+  thermo: ideal-gas
+  elements: [H, O, N]
+  species: [H, H2, H2NO, H2O, H2O2, HNNO, HNO, HNOH, HNO3, HONO, HO2, 
+      N, NH, NH2, NH3, NH2OH, N2, NNH, N2H2, N2H3, N2H4, N2O, N2O3, 
+      N2O4, NO, NO2, NO3, O, OH, O2]
+  kinetics: gas
+  state: {T: 300.0, P: 1 atm}
+
+species:
+- name: H
+  composition: {H: 1}
+  thermo:
+    model: NASA7
+    temperature-ranges: [300.0, 5000.0]
+    data:
+    - [2.5, 0.0, 0.0, 0.0, 0.0, 2.547162e+04, -0.4601176]
+    note: '120186'
+- name: H2
+  composition: {H: 2}
+  thermo:
+    model: NASA7
+    temperature-ranges: [300.0, 1000.0, 5000.0]
+    data:
+    - [3.298124, 8.249441e-04, -8.143015e-07, -9.475434e-11, 
+        4.134872e-13, -1012.5209, -3.294094]
+    - [2.991423, 7.000644e-04, -5.633828e-08, -9.231578e-12, 
+        1.5827519e-15, -835.034, -1.3551101]
+    note: '121286'
+- name: H2NO
+  composition: {H: 2, N: 1, O: 1}
+  thermo:
+    model: NASA7
+    temperature-ranges: [300.0, 1500.0, 4000.0]
+    data:
+    - [2.530589, 8.596035e-03, -5.47103e-06, 2.276249e-09, 
+        -4.648073e-13, 6868.03, 11.266506]
+    - [5.673346, 2.298836e-03, -1.774445e-07, -1.1034818e-10, 
+        1.859762e-14, 5569.325, -6.15354]
+    note: '102290'
+- name: H2O
+  composition: {H: 2, O: 1}
+  thermo:
+    model: NASA7
+    temperature-ranges: [300.0, 1000.0, 5000.0]
+    data:
+    - [3.386842, 3.474982e-03, -6.354696e-06, 6.968581e-09, 
+        -2.506588e-12, -3.020811e+04, 2.590232]
+    - [2.672145, 3.056293e-03, -8.73026e-07, 1.2009964e-10, 
+        -6.391618e-15, -2.989921e+04, 6.862817]
+    note: '20387'
+- name: H2O2
+  composition: {H: 2, O: 2}
+  thermo:
+    model: NASA7
+    temperature-ranges: [300.0, 1000.0, 5000.0]
+    data:
+    - [3.388753, 6.569226e-03, -1.4850125e-07, -4.625805e-09, 
+        2.471514e-12, -1.766314e+04, 6.785363]
+    - [4.573167, 4.336136e-03, -1.4746888e-06, 2.348903e-10, 
+        -1.4316536e-14, -1.800696e+04, 0.5011369]
+    note: '120186'
+- name: HNNO
+  composition: {H: 1, N: 2, O: 1}
+  thermo:
+    model: NASA7
+    temperature-ranges: [300.0, 1500.0, 4000.0]
+    data:
+    - [2.238298, 0.013591997, -1.1798728e-05, 5.39297e-09, 
+        -1.0108589e-12, 2.660258e+04, 14.136789]
+    - [6.991217, 1.87597e-03, -2.124584e-07, -6.710472e-11, 
+        1.230508e-14, 2.497566e+04, -11.235229]
+    note: '103190'
+- name: HNO
+  composition: {H: 1, N: 1, O: 1}
+  thermo:
+    model: NASA7
+    temperature-ranges: [300.0, 1000.0, 5000.0]
+    data:
+    - [2.784402, 6.609646e-03, -9.300223e-06, 9.43798e-09, 
+        -3.753146e-12, 1.0918779e+04, 9.035629]
+    - [3.615144, 3.212485e-03, -1.260337e-06, 2.267297e-10, 
+        -1.5362358e-14, 1.0661911e+04, 4.810263]
+    note: '121286'
+- name: HNOH
+  composition: {H: 2, N: 1, O: 1}
+  thermo:
+    model: NASA7
+    temperature-ranges: [300.0, 1500.0, 4000.0]
+    data:
+    - [2.125274, 0.010662818, -7.602588e-06, 3.081641e-09, 
+        -5.726498e-13, 9553.544, 13.096718]
+    - [6.396134, 1.821067e-03, -1.870891e-07, -7.844471e-11, 
+        1.4448555e-14, 7859.615, -10.404785]
+    note: '102290'
+- name: HNO3
+  composition: {H: 1, N: 1, O: 3}
+  thermo:
+    model: NASA7
+    temperature-ranges: [300.0, 1000.0, 5000.0]
+    data:
+    - [1.353185, 0.02220024, -1.978811e-05, 8.773908e-09, 
+        -1.6583844e-12, -1.738562e+04, 18.51868]
+    - [7.003844, 5.811493e-03, -2.333788e-06, 4.288814e-10, 
+        -2.959385e-14, -1.889952e+04, -10.478628]
+    note: '121286'
+- name: HONO
+  composition: {H: 1, N: 1, O: 2}
+  thermo:
+    model: NASA7
+    temperature-ranges: [300.0, 1000.0, 5000.0]
+    data:
+    - [2.290413, 0.014099223, -1.3678717e-05, 7.49878e-09, 
+        -1.876905e-12, -1.0431945e+04, 13.280769]
+    - [5.486892, 4.218064e-03, -1.6491426e-06, 2.971876e-10, 
+        -2.021148e-14, -1.1268646e+04, -2.997002]
+    note: '31787'
+- name: HO2
+  composition: {H: 1, O: 2}
+  thermo:
+    model: NASA7
+    temperature-ranges: [300.0, 1000.0, 5000.0]
+    data:
+    - [2.979963, 4.996697e-03, -3.790997e-06, 2.354192e-09, 
+        -8.089024e-13, 176.2273, 9.222724]
+    - [4.072191, 2.131296e-03, -5.308145e-07, 6.112269e-11, 
+        -2.841164e-15, -157.9727, 3.476029]
+    note: '20387'
+- name: N
+  composition: {N: 1}
+  thermo:
+    model: NASA7
+    temperature-ranges: [300.0, 1000.0, 5000.0]
+    data:
+    - [2.503071, -2.180018e-05, 5.420529e-08, -5.64756e-11, 
+        2.099904e-14, 5.60989e+04, 4.167566]
+    - [2.450268, 1.0661458e-04, -7.465337e-08, 1.879652e-11, 
+        -1.0259839e-15, 5.611604e+04, 4.448758]
+    note: '120186'
+- name: NH
+  composition: {H: 1, N: 1}
+  thermo:
+    model: NASA7
+    temperature-ranges: [300.0, 1000.0, 5000.0]
+    data:
+    - [3.339758, 1.2530086e-03, -3.491645e-06, 4.218812e-09, 
+        -1.5576179e-12, 4.185047e+04, 2.50718]
+    - [2.760249, 1.3753463e-03, -4.451914e-07, 7.692791e-11, 
+        -5.017592e-15, 4.207828e+04, 5.857199]
+    note: '31387'
+- name: NH2
+  composition: {N: 1, H: 2}
+  thermo:
+    model: NASA7
+    temperature-ranges: [300.0, 1000.0, 5000.0]
+    data:
+    - [3.432493, 3.29954e-03, -6.6136e-06, 8.590947e-09, -3.572046e-12,
+      2.177227e+04, 3.09011]
+    - [2.961311, 2.932699e-03, -9.0636e-07, 1.6172575e-10, 
+        -1.2042003e-14, 2.191976e+04, 5.777878]
+    note: '121686'
+- name: NH3
+  composition: {N: 1, H: 3}
+  thermo:
+    model: NASA7
+    temperature-ranges: [300.0, 1000.0, 5000.0]
+    data:
+    - [2.204351, 0.010114765, -1.4652648e-05, 1.447235e-08, 
+        -5.328509e-12, -6525.488, 8.127138]
+    - [2.461904, 6.059166e-03, -2.004976e-06, 3.136003e-10, 
+        -1.938317e-14, -6493.269, 7.472097]
+    note: '121386'
+- name: NH2OH
+  composition: {N: 1, H: 3, O: 1}
+  thermo:
+    model: NASA7
+    temperature-ranges: [200.0, 1000.0, 6000.0]
+    data:
+    - [3.2101336, 6.1970334e-03, 1.1058271e-05, -1.966501e-08, 
+        8.8242437e-12, -7309.1267, 7.9330377]
+    - [3.8808544, 8.1574618e-03, -2.8263348e-06, 4.3796511e-10, 
+        -2.5274751e-14, -7587.6998, 3.793125]
+    note: RUS 78
+- name: N2
+  composition: {N: 2}
+  thermo:
+    model: NASA7
+    temperature-ranges: [300.0, 1000.0, 5000.0]
+    data:
+    - [3.298677, 1.4082404e-03, -3.963222e-06, 5.641515e-09, 
+        -2.444854e-12, -1020.8999, 3.950372]
+    - [2.92664, 1.4879768e-03, -5.68476e-07, 1.0097038e-10, 
+        -6.753351e-15, -922.7977, 5.980528]
+    note: '121286'
+- name: NNH
+  composition: {N: 2, H: 1}
+  thermo:
+    model: NASA7
+    temperature-ranges: [250.0, 1000.0, 4000.0]
+    data:
+    - [3.501344, 2.053586e-03, 7.170409e-07, 4.921348e-10, 
+        -9.67117e-13, 2.833347e+04, 6.391837]
+    - [4.415342, 1.6143879e-03, -1.6328943e-07, -8.559846e-11, 
+        1.6147909e-14, 2.788029e+04, 0.9042888]
+    note: '120186'
+- name: N2H2
+  composition: {N: 2, H: 2}
+  thermo:
+    model: NASA7
+    temperature-ranges: [300.0, 1000.0, 5000.0]
+    data:
+    - [1.6179994, 0.013063122, -1.715711e-05, 1.6056079e-08, 
+        -6.093638e-12, 2.467526e+04, 13.79467]
+    - [3.371185, 6.039968e-03, -2.303853e-06, 4.062789e-10, 
+        -2.713144e-14, 2.418172e+04, 4.980585]
+    note: '121286'
+- name: N2H3
+  composition: {N: 2, H: 3}
+  thermo:
+    model: NASA7
+    temperature-ranges: [300.0, 1000.0, 5000.0]
+    data:
+    - [3.174203, 4.715907e-03, 1.3348671e-05, -1.919684e-08, 
+        7.487563e-12, 1.727269e+04, 7.557224]
+    - [4.441846, 7.21427e-03, -2.495684e-06, 3.920564e-10, 
+        -2.298949e-14, 1.6642211e+04, -0.4275204]
+    note: '120186'
+- name: N2H4
+  composition: {N: 2, H: 4}
+  thermo:
+    model: NASA7
+    temperature-ranges: [300.0, 1000.0, 5000.0]
+    data:
+    - [0.06442605, 0.02749729, -2.899451e-05, 1.745239e-08, 
+        -4.422282e-12, 1.0451917e+04, 21.27789]
+    - [4.977317, 9.595519e-03, -3.547639e-06, 6.124299e-10, 
+        -4.029795e-14, 9341.219, -2.962989]
+    note: '121286'
+- name: N2O
+  composition: {N: 2, O: 1}
+  thermo:
+    model: NASA7
+    temperature-ranges: [300.0, 1000.0, 5000.0]
+    data:
+    - [2.543057, 9.492193e-03, -9.792775e-06, 6.263844e-09, 
+        -1.901825e-12, 8765.1, 9.511222]
+    - [4.718977, 2.873713e-03, -1.1974958e-06, 2.250551e-10, 
+        -1.575337e-14, 8165.811, -1.6572504]
+    note: '121286'
+- name: N2O3
+  composition: {N: 2, O: 3}
+  thermo:
+    model: NASA7
+    temperature-ranges: [200.0, 1000.0, 6000.0]
+    data:
+    - [5.8108396, 0.014333096, -1.9620859e-05, 1.7306073e-08, 
+        -6.4655395e-12, 8191.8445, 1.2046132]
+    - [9.0858384, 3.3775633e-03, -1.3158389e-06, 2.3076232e-10, 
+        -1.4715126e-14, 7271.6014, -15.53619]
+    note: L 4/90
+- name: N2O4
+  composition: {N: 2, O: 4}
+  thermo:
+    model: NASA7
+    temperature-ranges: [300.0, 1000.0, 5000.0]
+    data:
+    - [3.624592, 0.02474708, -2.172874e-05, 9.927103e-09, 
+        -2.222817e-12, -912.8241, 9.457174]
+    - [10.482201, 5.972272e-03, -2.564043e-06, 4.916885e-10, 
+        -3.490969e-14, -2849.988, -26.12289]
+    note: '121286'
+- name: NO
+  composition: {N: 1, O: 1}
+  thermo:
+    model: NASA7
+    temperature-ranges: [300.0, 1000.0, 5000.0]
+    data:
+    - [3.376541, 1.2530634e-03, -3.30275e-06, 5.21781e-09, 
+        -2.446262e-12, 9817.961, 5.82959]
+    - [3.245435, 1.2691383e-03, -5.01589e-07, 9.169283e-11, 
+        -6.275419e-15, 9800.84, 6.417293]
+    note: '121286'
+- name: NO2
+  composition: {N: 1, O: 2}
+  thermo:
+    model: NASA7
+    temperature-ranges: [300.0, 1000.0, 5000.0]
+    data:
+    - [2.6706, 7.8385e-03, -8.063864e-06, 6.161714e-09, -2.32015e-12, 
+        2896.29, 11.612071]
+    - [4.682859, 2.462429e-03, -1.0422585e-06, 1.976902e-10, 
+        -1.3917168e-14, 2261.292, 0.9885985]
+    note: '121286'
+- name: NO3
+  composition: {N: 1, O: 3}
+  thermo:
+    model: NASA7
+    temperature-ranges: [300.0, 1000.0, 5000.0]
+    data:
+    - [1.2210763, 0.01878797, -1.3443212e-05, 1.2746013e-09, 
+        1.3540601e-12, 7473.144, 18.40202]
+    - [7.120307, 3.246228e-03, -1.4316134e-06, 2.797053e-10, 
+        -2.013007e-14, 5864.479, -12.137301]
+    note: '121286'
+- name: O
+  composition: {O: 1}
+  thermo:
+    model: NASA7
+    temperature-ranges: [300.0, 1000.0, 5000.0]
+    data:
+    - [2.946428, -1.6381665e-03, 2.421031e-06, -1.6028431e-09, 
+        3.890696e-13, 2.914764e+04, 2.963995]
+    - [2.542059, -2.755061e-05, -3.102803e-09, 4.551067e-12, 
+        -4.368051e-16, 2.92308e+04, 4.920308]
+    note: '120186'
+- name: OH
+  composition: {O: 1, H: 1}
+  thermo:
+    model: NASA7
+    temperature-ranges: [300.0, 1000.0, 5000.0]
+    data:
+    - [3.637266, 1.85091e-04, -1.6761646e-06, 2.387202e-09, 
+        -8.431442e-13, 3606.781, 1.3588605]
+    - [2.88273, 1.0139743e-03, -2.276877e-07, 2.174683e-11, 
+        -5.126305e-16, 3886.888, 5.595712]
+    note: '121286'
+- name: O2
+  composition: {O: 2}
+  thermo:
+    model: NASA7
+    temperature-ranges: [300.0, 1000.0, 5000.0]
+    data:
+    - [3.212936, 1.1274864e-03, -5.75615e-07, 1.3138773e-09, 
+        -8.768554e-13, -1005.249, 6.034737]
+    - [3.697578, 6.135197e-04, -1.258842e-07, 1.775281e-11, 
+        -1.1364354e-15, -1233.9301, 3.189165]
+    note: '121386'
+
+reactions:
+- equation: H + H + M <=> H2 + M  # Reaction 1
+  type: three-body
+  rate-constant: {A: 7.0e+17, b: -1.0, Ea: 0.0}
+  efficiencies: {H2: 0.0, N2: 0.0, H: 0.0, H2O: 14.3}
+- equation: H + H + H2 <=> H2 + H2  # Reaction 2
+  rate-constant: {A: 1.0e+17, b: -0.6, Ea: 0.0}
+- equation: H + H + N2 <=> H2 + N2  # Reaction 3
+  rate-constant: {A: 5.4e+18, b: -1.3, Ea: 0.0}
+- equation: H + H + H <=> H + H2  # Reaction 4
+  rate-constant: {A: 3.2e+15, b: 0.0, Ea: 0.0}
+- equation: H + O + M <=> OH + M  # Reaction 5
+  type: three-body
+  rate-constant: {A: 6.75e+18, b: -1.0, Ea: 0.0}
+  efficiencies: {H2O: 5.0}
+- equation: H2O + M <=> H + OH + M  # Reaction 6
+  type: three-body
+  rate-constant: {A: 6.06e+27, b: -3.312, Ea: 1.2077e+05}
+  efficiencies: {H2: 3.0, N2: 2.0, O2: 1.5, H2O: 0.0}
+- equation: H2O + H2O <=> H + H2O + OH  # Reaction 7
+  rate-constant: {A: 1.0e+26, b: -2.44, Ea: 1.2016e+05}
+- equation: H + O2 (+M) <=> HO2 (+M)  # Reaction 8
+  type: falloff
+  low-P-rate-constant: {A: 5.7e+19, b: -1.4, Ea: 0.0}
+  high-P-rate-constant: {A: 4.66e+12, b: 0.44, Ea: 0.0}
+  Troe: {A: 0.5, T3: 1.0e-30, T1: 1.0e+30}
+  efficiencies: {H2: 1.5, N2: 1.0, O2: 0.0, H2O: 0.0}
+- equation: H + O2 (+O2) <=> HO2 (+O2)  # Reaction 9
+  type: falloff
+  low-P-rate-constant: {A: 5.69e+18, b: -1.094, Ea: 0.0}
+  high-P-rate-constant: {A: 4.66e+12, b: 0.44, Ea: 0.0}
+  Troe: {A: 0.5, T3: 1.0e-30, T1: 1.0e+30}
+- equation: H + O2 (+H2O) <=> HO2 (+H2O)  # Reaction 10
+  type: falloff
+  low-P-rate-constant: {A: 3.67e+12, b: -1.0, Ea: 0.0}
+  high-P-rate-constant: {A: 9.06e+12, b: 0.2, Ea: 0.0}
+  Troe: {A: 0.8, T3: 1.0e-30, T1: 1.0e+30}
+- equation: OH + OH (+M) <=> H2O2 (+M)  # Reaction 11
+  type: falloff
+  low-P-rate-constant: {A: 2.38e+19, b: -0.8, Ea: 0.0}
+  high-P-rate-constant: {A: 1.0e+14, b: -0.37, Ea: 0.0}
+  Troe: {A: 0.5, T3: 1.0e-30, T1: 1.0e+30}
+  efficiencies: {H2O: 0.0}
+- equation: OH + OH (+H2O) <=> H2O2 (+H2O)  # Reaction 12
+  type: falloff
+  low-P-rate-constant: {A: 1.45e+18, b: 0.0, Ea: 0.0}
+  high-P-rate-constant: {A: 1.0e+14, b: -0.37, Ea: 0.0}
+  Troe: {A: 0.5, T3: 1.0e-30, T1: 1.0e+30}
+- equation: H2 + O <=> H + OH  # Reaction 13
+  rate-constant: {A: 3.82e+12, b: 0.0, Ea: 7948.0}
+- equation: H + O2 <=> O + OH  # Reaction 14
+  rate-constant: {A: 6.73e+15, b: -0.5, Ea: 1.667e+04}
+  note: |
+    H2+O=H+OH				8.790E+14	0.000	    19170!
+- equation: H2 + OH <=> H + H2O  # Reaction 15
+  rate-constant: {A: 2.14e+08, b: 1.52, Ea: 3450.0}
+- equation: OH + OH <=> H2O + O  # Reaction 16
+  rate-constant: {A: 3.34e+04, b: 2.42, Ea: -1930.0}
+- equation: HO2 + O <=> OH + O2  # Reaction 17
+  rate-constant: {A: 1.63e+13, b: 0.0, Ea: -445.0}
+- equation: H + HO2 <=> OH + OH  # Reaction 18
+  rate-constant: {A: 7.08e+13, b: 0.0, Ea: 295.0}
+- equation: H + HO2 <=> H2O + O  # Reaction 19
+  rate-constant: {A: 1.45e+12, b: 0.0, Ea: 0.0}
+- equation: H + HO2 <=> H2 + O2  # Reaction 20
+  rate-constant: {A: 1.66e+13, b: 0.0, Ea: 823.0}
+- equation: H2 + O2 <=> OH + OH  # Reaction 21
+  rate-constant: {A: 2.04e+12, b: 0.44, Ea: 6.9155e+04}
+- equation: HO2 + OH <=> H2O + O2  # Reaction 22
+  rate-constant: {A: 2.89e+13, b: 0.0, Ea: -500.0}
+- equation: HO2 + HO2 <=> H2O2 + O2  # Reaction 23
+  rate-constant: {A: 1.03e+14, b: 0.0, Ea: 1.104e+04}
+  note: |
+    HO2+OH=H2O+O2				9.270E+15	0.000	    17500!
+- equation: HO2 + HO2 + M <=> H2O2 + O2 + M  # Reaction 24
+  type: three-body
+  rate-constant: {A: 6.84e+14, b: 0.0, Ea: -1950.0}
+  note: |
+    HO2+HO2=H2O2+O2				1.940E+11	0.000	    -1409!
+- equation: H + H2O2 <=> H2 + HO2  # Reaction 25
+  rate-constant: {A: 1.7e+12, b: 0.0, Ea: 3755.0}
+- equation: H + H2O2 <=> H2O + OH  # Reaction 26
+  rate-constant: {A: 1.0e+13, b: 0.0, Ea: 3575.0}
+- equation: H2O2 + O <=> HO2 + OH  # Reaction 27
+  rate-constant: {A: 9.55e+06, b: 2.0, Ea: 3970.0}
+- equation: H2O2 + OH <=> H2O + HO2  # Reaction 28
+  rate-constant: {A: 2.0e+12, b: 0.0, Ea: 427.0}
+- equation: O + O + M <=> O2 + M  # Reaction 29
+  type: three-body
+  rate-constant: {A: 1.0e+17, b: -1.0, Ea: 0.0}
+  efficiencies: {N2O: 4.38, N: 2.0, N2: 2.0, NO: 2.0, O2: 8.0, O: 28.8}
+- equation: N2 + M <=> N + N + M  # Reaction 30
+  type: three-body
+  rate-constant: {A: 1.0e+28, b: -3.33, Ea: 2.25e+05}
+  efficiencies: {O: 6.6, N: 6.6, N2: 2.96, NO: 2.96, O2: 2.96}
+- equation: N2 + O <=> N + NO  # Reaction 31
+  rate-constant: {A: 1.8e+14, b: 0.0, Ea: 7.63e+04}
+- equation: N + O2 <=> NO + O  # Reaction 32
+  rate-constant: {A: 5.85e+09, b: 1.01, Ea: 6200.0}
+- equation: NO + M <=> N + O + M  # Reaction 33
+  type: three-body
+  rate-constant: {A: 7.71e+19, b: -1.31, Ea: 1.5e+05}
+  efficiencies: {NO: 3.0, N2: 1.5}
+- equation: NO + NO <=> N2 + O2  # Reaction 34
+  rate-constant: {A: 3.0e+11, b: 0.0, Ea: 6.5e+04}
+- equation: N2O (+M) <=> N2 + O (+M)  # Reaction 35
+  type: falloff
+  low-P-rate-constant: {A: 6.0e+14, b: 0.0, Ea: 5.744e+04}
+  high-P-rate-constant: {A: 9.9e+10, b: 0.0, Ea: 5.79e+04}
+  Troe: {A: 1.167, T3: 1.0e-30, T1: 1.0e+30}
+  efficiencies: {O2: 1.4, N2: 1.7, N2O: 3.5, NO: 3.0}
+- equation: N2O + O <=> N2 + O2  # Reaction 36
+  rate-constant: {A: 3.69e+12, b: 0.0, Ea: 1.594e+04}
+- equation: N2O + O <=> NO + NO  # Reaction 37
+  rate-constant: {A: 9.15e+13, b: 0.0, Ea: 2.768e+04}
+- equation: N + N2O <=> N2 + NO  # Reaction 38
+  rate-constant: {A: 2.5e+12, b: 0.0, Ea: 2.0e+04}
+- equation: N2O + NO <=> N2 + NO2  # Reaction 39
+  rate-constant: {A: 2.75e+14, b: 0.0, Ea: 5.0e+04}
+- equation: NO + O (+M) <=> NO2 (+M)  # Reaction 40
+  type: falloff
+  low-P-rate-constant: {A: 2.3e+20, b: -1.6, Ea: 0.0}
+  high-P-rate-constant: {A: 2.9e+14, b: -0.4, Ea: 0.0}
+  Troe: {A: 0.8, T3: 1.0e-30, T1: 1.0e+30}
+  efficiencies: {N2: 1.46, O2: 1.3, NO: 2.8, NO2: 10.0, N2O: 7.0}
+- equation: NO2 + O <=> NO + O2  # Reaction 41
+  rate-constant: {A: 3.3e+12, b: 0.0, Ea: -374.0}
+- equation: N + NO2 <=> NO + NO  # Reaction 42
+  rate-constant: {A: 8.0e+11, b: 0.0, Ea: -437.0}
+- equation: N + NO2 <=> N2O + O  # Reaction 43
+  rate-constant: {A: 1.0e+12, b: 0.0, Ea: -437.0}
+- equation: NO + NO2 <=> N2O + O2  # Reaction 44
+  rate-constant: {A: 1.0e+12, b: 0.0, Ea: 6.0e+04}
+- equation: NO2 + NO2 <=> NO + NO + O2  # Reaction 45
+  rate-constant: {A: 3.95e+12, b: 0.0, Ea: 2.759e+04}
+- equation: NO2 + NO2 <=> NO + NO3  # Reaction 46
+  rate-constant: {A: 1.13e+04, b: 2.58, Ea: 2.272e+04}
+- equation: NO2 + O (+M) <=> NO3 (+M)  # Reaction 47
+  type: falloff
+  low-P-rate-constant: {A: 2.4e+20, b: -1.5, Ea: 0.0}
+  high-P-rate-constant: {A: 3.5e+12, b: 0.24, Ea: 0.0}
+  Troe: {A: 0.71, T3: 1.0e-30, T1: 1700.0}
+- equation: NO3 <=> NO + O2  # Reaction 48
+  rate-constant: {A: 2.5e+06, b: 0.0, Ea: 1.212e+04}
+- equation: NO3 + O <=> NO2 + O2  # Reaction 49
+  rate-constant: {A: 1.0e+13, b: 0.0, Ea: 0.0}
+- equation: NO2 + NO3 <=> NO + NO2 + O2  # Reaction 50
+  rate-constant: {A: 1.51e+10, b: 0.0, Ea: 2440.0}
+- equation: NO3 + NO3 <=> NO2 + NO2 + O2  # Reaction 51
+  rate-constant: {A: 5.1e+11, b: 0.0, Ea: 4870.0}
+- equation: N2O4 (+M) <=> NO2 + NO2 (+M)  # Reaction 52
+  type: falloff
+  low-P-rate-constant: {A: 2.0e+28, b: -3.8, Ea: 1.272e+04}
+  high-P-rate-constant: {A: 1.15e+16, b: 0.0, Ea: 1.284e+04}
+  Troe: {A: 0.4, T3: 1.0e-30, T1: 1700.0}
+  efficiencies: {N2O4: 2.0, NO2: 2.0}
+- equation: N2O4 + O <=> N2O3 + O2  # Reaction 53
+  rate-constant: {A: 1.21e+12, b: 0.0, Ea: 0.0}
+- equation: NO + NO2 (+M) <=> N2O3 (+M)  # Reaction 54
+  type: falloff
+  low-P-rate-constant: {A: 1.0e+33, b: -7.7, Ea: 0.0}
+  high-P-rate-constant: {A: 1.6e+09, b: 1.4, Ea: 0.0}
+  Troe: {A: 0.6, T3: 1.0e-30, T1: 1700.0}
+  efficiencies: {N2: 1.36}
+- equation: N2O3 + O <=> NO2 + NO2  # Reaction 55
+  rate-constant: {A: 2.71e+11, b: 0.0, Ea: 0.0}
+- equation: N + NO2 <=> N2 + O2  # Reaction 56
+  rate-constant: {A: 2.4e+11, b: 0.0, Ea: -437.0}
+- equation: NO + NO + NO <=> N2O + NO2  # Reaction 57
+  rate-constant: {A: 1.07e+10, b: 0.0, Ea: 2.68e+04}
+- equation: NH + M <=> H + N + M  # Reaction 58
+  type: three-body
+  rate-constant: {A: 2.65e+14, b: 0.0, Ea: 7.55e+04}
+- equation: H + NH <=> H2 + N  # Reaction 59
+  rate-constant: {A: 3.2e+13, b: 0.0, Ea: 325.0}
+- equation: N + NH <=> H + N2  # Reaction 60
+  rate-constant: {A: 9.0e+11, b: 0.5, Ea: 0.0}
+- equation: NH + NH <=> H + NNH  # Reaction 61
+  rate-constant: {A: 5.1e+13, b: 0.0, Ea: 0.0}
+- equation: NH + NH <=> N + NH2  # Reaction 62
+  rate-constant: {A: 595.0, b: 2.89, Ea: -2030.0}
+- equation: NH + NH <=> H2 + N2  # Reaction 63
+  rate-constant: {A: 1.0e+08, b: 1.0, Ea: 0.0}
+- equation: NH2 + M <=> H + NH + M  # Reaction 64
+  type: three-body
+  rate-constant: {A: 3.16e+23, b: -2.0, Ea: 9.14e+04}
+- equation: H2 + NH <=> H + NH2  # Reaction 65
+  rate-constant: {A: 1.0e+14, b: 0.0, Ea: 2.007e+04}
+- equation: N + NH2 <=> H + H + N2  # Reaction 66
+  rate-constant: {A: 6.9e+13, b: 0.0, Ea: 0.0}
+- equation: NH + NH2 <=> H + N2H2  # Reaction 67
+  rate-constant: {A: 1.5e+15, b: -0.5, Ea: 0.0}
+- equation: NH + NH2 <=> N + NH3  # Reaction 68
+  rate-constant: {A: 1.0e+13, b: 0.0, Ea: 2000.0}
+- equation: NH + NH3 <=> NH2 + NH2  # Reaction 69
+  rate-constant: {A: 3.16e+14, b: 0.0, Ea: 2.677e+04}
+- equation: NH2 + NH2 <=> H2 + N2H2  # Reaction 70
+  rate-constant: {A: 1.0e+13, b: 0.0, Ea: 1500.0}
+- equation: H + N2H3 <=> NH2 + NH2  # Reaction 71
+  rate-constant: {A: 5.0e+13, b: 0.0, Ea: 2000.0}
+- equation: NH3 + M <=> H + NH2 + M  # Reaction 72
+  type: three-body
+  rate-constant: {A: 2.2e+16, b: 0.0, Ea: 9.347e+04}
+- equation: NH3 + M <=> H2 + NH + M  # Reaction 73
+  type: three-body
+  rate-constant: {A: 6.3e+14, b: 0.0, Ea: 9.339e+04}
+- equation: H + NH3 <=> H2 + NH2  # Reaction 74
+  rate-constant: {A: 5.42e+05, b: 2.4, Ea: 9920.0}
+- equation: NH2 + NH3 <=> H2 + N2H3  # Reaction 75
+  rate-constant: {A: 1.0e+11, b: 0.5, Ea: 2.16e+04}
+- equation: NNH <=> H + N2  # Reaction 76
+  rate-constant: {A: 3.0e+08, b: 0.0, Ea: 0.0}
+- equation: NNH + M <=> H + N2 + M  # Reaction 77
+  type: three-body
+  rate-constant: {A: 1.0e+13, b: 0.5, Ea: 3060.0}
+- equation: H + NNH <=> H2 + N2  # Reaction 78
+  rate-constant: {A: 1.0e+14, b: 0.0, Ea: 0.0}
+- equation: N + NNH <=> NH + N2  # Reaction 79
+  rate-constant: {A: 3.0e+13, b: 0.0, Ea: 2000.0}
+- equation: NH + NNH <=> NH2 + N2  # Reaction 80
+  rate-constant: {A: 2.0e+11, b: 0.5, Ea: 2000.0}
+- equation: NH2 + NNH <=> NH3 + N2  # Reaction 81
+  rate-constant: {A: 1.0e+13, b: 0.0, Ea: 0.0}
+- equation: NNH + NNH <=> N2 + N2H2  # Reaction 82
+  rate-constant: {A: 1.0e+13, b: 0.0, Ea: 4000.0}
+- equation: N2H2 + M <=> H + NNH + M  # Reaction 83
+  type: three-body
+  rate-constant: {A: 5.0e+16, b: 0.0, Ea: 5.0e+04}
+  efficiencies: {N2: 2.0, H2O: 15.0, O2: 2.0}
+- equation: N2H2 + M <=> NH + NH + M  # Reaction 84
+  type: three-body
+  rate-constant: {A: 3.16e+16, b: 0.0, Ea: 9.94e+04}
+  efficiencies: {N2: 2.0, H2O: 15.0, O2: 2.0}
+- equation: H + N2H2 <=> H2 + NNH  # Reaction 85
+  rate-constant: {A: 8.5e+04, b: 2.63, Ea: -230.0}
+- equation: N + N2H2 <=> NH + NNH  # Reaction 86
+  rate-constant: {A: 1.0e+06, b: 2.0, Ea: 0.0}
+- equation: NH + N2H2 <=> NH2 + NNH  # Reaction 87
+  rate-constant: {A: 1.0e+13, b: 0.0, Ea: 6000.0}
+- equation: NH2 + N2H2 <=> NH3 + NNH  # Reaction 88
+  rate-constant: {A: 0.088, b: 4.05, Ea: -1610.0}
+- equation: NH + N2H3 <=> NH2 + N2H2  # Reaction 89
+  rate-constant: {A: 2.0e+13, b: 0.0, Ea: 0.0}
+- equation: NNH + N2H3 <=> N2H2 + N2H2  # Reaction 90
+  rate-constant: {A: 1.0e+13, b: 0.0, Ea: 4000.0}
+- equation: N2H3 + M <=> NH + NH2 + M  # Reaction 91
+  type: three-body
+  rate-constant: {A: 5.0e+16, b: 0.0, Ea: 6.0e+04}
+- equation: N2H3 + M <=> H + N2H2 + M  # Reaction 92
+  type: three-body
+  rate-constant: {A: 1.0e+16, b: 0.0, Ea: 3.7e+04}
+- equation: H + N2H3 <=> H2 + N2H2  # Reaction 93
+  rate-constant: {A: 1.0e+13, b: 0.0, Ea: 0.0}
+- equation: H + N2H3 <=> NH + NH3  # Reaction 94
+  rate-constant: {A: 1.0e+11, b: 0.0, Ea: 0.0}
+- equation: N + N2H3 <=> NH + N2H2  # Reaction 95
+  rate-constant: {A: 1.0e+06, b: 2.0, Ea: 0.0}
+- equation: NH2 + N2H3 <=> NH3 + N2H2  # Reaction 96
+  rate-constant: {A: 1.0e+11, b: 0.5, Ea: 0.0}
+- equation: N2H2 + N2H3 <=> NNH + N2H4  # Reaction 97
+  rate-constant: {A: 1.0e+13, b: 0.0, Ea: 6000.0}
+- equation: N2H3 + N2H3 <=> NH3 + NH3 + N2  # Reaction 98
+  rate-constant: {A: 3.0e+12, b: 0.0, Ea: 0.0}
+- equation: N2H3 + N2H3 <=> N2H2 + N2H4  # Reaction 99
+  rate-constant: {A: 1.2e+13, b: 0.0, Ea: 0.0}
+- equation: N2H4 (+M) <=> NH2 + NH2 (+M)  # Reaction 100
+  type: falloff
+  low-P-rate-constant: {A: 1.5e+15, b: 0.0, Ea: 3.9e+04}
+  high-P-rate-constant: {A: 5.0e+14, b: 0.0, Ea: 6.0e+04}
+  efficiencies: {N2: 2.4, NH3: 3.0, N2H4: 4.0}
+- equation: N2H4 + M <=> H + N2H3 + M  # Reaction 101
+  type: three-body
+  rate-constant: {A: 1.0e+15, b: 0.0, Ea: 6.36e+04}
+- equation: H + N2H4 <=> H2 + N2H3  # Reaction 102
+  rate-constant: {A: 7.0e+12, b: 0.0, Ea: 2500.0}
+- equation: H + N2H4 <=> NH2 + NH3  # Reaction 103
+  rate-constant: {A: 2.4e+09, b: 0.0, Ea: 3100.0}
+- equation: N + N2H4 <=> NH + N2H3  # Reaction 104
+  rate-constant: {A: 1.0e+10, b: 1.0, Ea: 2000.0}
+- equation: NH + N2H4 <=> NH2 + N2H3  # Reaction 105
+  rate-constant: {A: 1.0e+09, b: 1.5, Ea: 2000.0}
+- equation: NH2 + N2H4 <=> NH3 + N2H3  # Reaction 106
+  rate-constant: {A: 1.8e+06, b: 1.71, Ea: -1380.0}
+- equation: N + OH <=> H + NO  # Reaction 107
+  rate-constant: {A: 2.8e+13, b: 0.0, Ea: 0.0}
+- equation: H + N2O <=> N2 + OH  # Reaction 108
+  rate-constant: {A: 2.2e+14, b: 0.0, Ea: 1.675e+04}
+- equation: H + N2O <=> NH + NO  # Reaction 109
+  rate-constant: {A: 6.7e+22, b: -2.16, Ea: 3.7155e+04}
+- equation: H + N2O <=> NNH + O  # Reaction 110
+  rate-constant: {A: 5.5e+18, b: -1.06, Ea: 4.729e+04}
+- equation: H + N2O <=> HNNO  # Reaction 111
+  rate-constant: {A: 8.0e+24, b: -4.39, Ea: 1.053e+04}
+- equation: N2O + OH <=> HO2 + N2  # Reaction 112
+  rate-constant: {A: 1.0e+14, b: 0.0, Ea: 3.0e+04}
+- equation: HNO + NO <=> N2O + OH  # Reaction 113
+  rate-constant: {A: 8.5e+12, b: 0.0, Ea: 2.958e+04}
+- equation: HNO + NO + NO <=> HNNO + NO2  # Reaction 114
+  rate-constant: {A: 1.6e+11, b: 0.0, Ea: 2090.0}
+- equation: NH + NO + M <=> HNNO + M  # Reaction 115
+  type: three-body
+  rate-constant: {A: 1.63e+23, b: -2.6, Ea: 1820.0}
+- equation: H + HNNO <=> H2 + N2O  # Reaction 116
+  rate-constant: {A: 2.0e+13, b: 0.0, Ea: 0.0}
+- equation: H + HNNO <=> NH2 + NO  # Reaction 117
+  rate-constant: {A: 1.0e+12, b: 0.0, Ea: 0.0}
+- equation: HNNO + O <=> N2O + OH  # Reaction 118
+  rate-constant: {A: 2.0e+13, b: 0.0, Ea: 0.0}
+- equation: HNNO + OH <=> H2O + N2O  # Reaction 119
+  rate-constant: {A: 2.0e+13, b: 0.0, Ea: 0.0}
+- equation: HNNO + OH <=> HNOH + NO  # Reaction 120
+  rate-constant: {A: 1.0e+12, b: 0.0, Ea: 0.0}
+- equation: HNNO + NO <=> HONO + N2  # Reaction 121
+  rate-constant: {A: 2.6e+11, b: 0.0, Ea: 1610.0}
+- equation: HNNO + NO <=> NNH + NO2  # Reaction 122
+  rate-constant: {A: 3.2e+12, b: 0.0, Ea: 540.0}
+- equation: HNNO + NO <=> HNO + N2O  # Reaction 123
+  rate-constant: {A: 1.0e+12, b: 0.0, Ea: 0.0}
+- equation: HNNO + NO2 <=> HONO + N2O  # Reaction 124
+  rate-constant: {A: 1.0e+12, b: 0.0, Ea: 0.0}
+- equation: HNNO + NO2 <=> NNH + NO3  # Reaction 125
+  rate-constant: {A: 1.0e+13, b: 0.0, Ea: 1.7e+04}
+- equation: H + NO2 <=> NO + OH  # Reaction 126
+  rate-constant: {A: 1.32e+14, b: 0.0, Ea: 362.0}
+- equation: NO2 + OH <=> HO2 + NO  # Reaction 127
+  rate-constant: {A: 1.81e+13, b: 0.0, Ea: 6676.0}
+- equation: HO2 + NO2 <=> HONO + O2  # Reaction 128
+  rate-constant: {A: 4.64e+11, b: 0.0, Ea: -479.0}
+- equation: H2 + NO2 <=> HONO + H  # Reaction 129
+  rate-constant: {A: 8430.0, b: 2.635, Ea: 3.255e+04}
+- equation: NH + NO2 <=> N2O + OH  # Reaction 130
+  rate-constant: {A: 8.65e+10, b: 0.0, Ea: -2270.0}
+- equation: NH + NO2 <=> HNO + NO  # Reaction 131
+  rate-constant: {A: 1.25e+11, b: 0.0, Ea: -2270.0}
+- equation: H + NO3 <=> NO2 + OH  # Reaction 132
+  rate-constant: {A: 6.62e+13, b: 0.0, Ea: 0.0}
+- equation: NO3 + OH <=> HO2 + NO2  # Reaction 133
+  rate-constant: {A: 1.21e+13, b: 0.0, Ea: 0.0}
+- equation: HO2 + NO3 <=> HNO3 + O2  # Reaction 134
+  rate-constant: {A: 5.55e+11, b: 0.0, Ea: 0.0}
+- equation: HO2 + NO3 <=> NO2 + OH + O2  # Reaction 135
+  rate-constant: {A: 1.51e+12, b: 0.0, Ea: 0.0}
+- equation: H2O + N2O4 <=> HNO3 + HONO  # Reaction 136
+  rate-constant: {A: 2.52e+14, b: 0.0, Ea: 1.159e+04}
+- equation: H2O + N2O3 <=> HONO + HONO  # Reaction 137
+  rate-constant: {A: 3.79e+13, b: 0.0, Ea: 8880.0}
+- equation: H + NO + M <=> HNO + M  # Reaction 138
+  type: three-body
+  rate-constant: {A: 1.52e+15, b: -0.41, Ea: 0.0}
+- equation: H + HNO <=> H2 + NO  # Reaction 139
+  rate-constant: {A: 4.46e+11, b: 0.72, Ea: 655.0}
+- equation: HNO + OH <=> H2O + NO  # Reaction 140
+  rate-constant: {A: 1.3e+07, b: 1.88, Ea: -956.0}
+- equation: HNO + O <=> NO + OH  # Reaction 141
+  rate-constant: {A: 5.0e+11, b: 0.5, Ea: 2000.0}
+- equation: HNO + O <=> H + NO2  # Reaction 142
+  rate-constant: {A: 5.0e+10, b: 0.0, Ea: 2000.0}
+- equation: HNO + O2 <=> HO2 + NO  # Reaction 143
+  rate-constant: {A: 2.2e+10, b: 0.0, Ea: 9140.0}
+- equation: HNO + N <=> NH + NO  # Reaction 144
+  rate-constant: {A: 1.0e+11, b: 0.5, Ea: 2000.0}
+- equation: HNO + N <=> H + N2O  # Reaction 145
+  rate-constant: {A: 5.0e+10, b: 0.5, Ea: 3000.0}
+- equation: HNO + NH <=> NH2 + NO  # Reaction 146
+  rate-constant: {A: 5.0e+11, b: 0.5, Ea: 0.0}
+- equation: HNO + NH2 <=> NH3 + NO  # Reaction 147
+  rate-constant: {A: 2.31e+04, b: 2.47, Ea: -2880.0}
+- equation: HNO + HNO <=> H2O + N2O  # Reaction 148
+  rate-constant: {A: 3.63e-03, b: 3.98, Ea: 1190.0}
+  note: |
+    HNO+NH2=NH3+NO				1.550E+02	3.150	    -3640!
+- equation: HNO + HNO <=> HNOH + NO  # Reaction 149
+  rate-constant: {A: 2.0e+08, b: 0.0, Ea: 4170.0}
+- equation: HNO + NO2 <=> HONO + NO  # Reaction 150
+  rate-constant: {A: 6.02e+11, b: 0.0, Ea: 2000.0}
+- equation: NO + OH + M <=> HONO + M  # Reaction 151
+  type: three-body
+  rate-constant: {A: 2.0e+12, b: -0.05, Ea: -721.0}
+- equation: H + NO2 + M <=> HONO + M  # Reaction 152
+  type: three-body
+  rate-constant: {A: 1.4e+18, b: -1.5, Ea: 900.0}
+- equation: H + HONO <=> HNO + OH  # Reaction 153
+  rate-constant: {A: 5.64e+10, b: 0.86, Ea: 4970.0}
+- equation: H + HONO <=> H2O + NO  # Reaction 154
+  rate-constant: {A: 8.12e+06, b: 1.89, Ea: 3840.0}
+- equation: HONO + O <=> NO2 + OH  # Reaction 155
+  rate-constant: {A: 1.2e+13, b: 0.0, Ea: 5960.0}
+- equation: HONO + OH <=> H2O + NO2  # Reaction 156
+  rate-constant: {A: 1.69e+12, b: 0.0, Ea: -517.0}
+- equation: HONO + NH <=> NH2 + NO2  # Reaction 157
+  rate-constant: {A: 1.0e+13, b: 0.0, Ea: 0.0}
+- equation: HONO + HONO <=> H2O + NO + NO2  # Reaction 158
+  rate-constant: {A: 1.0e+13, b: 0.0, Ea: 8540.0}
+- equation: HONO + NH2 <=> NH3 + NO2  # Reaction 159
+  rate-constant: {A: 1.02e+04, b: 2.34, Ea: -3202.0}
+- equation: NO2 + OH + M <=> HNO3 + M  # Reaction 160
+  type: three-body
+  rate-constant: {A: 2.41e+13, b: 0.0, Ea: 0.0}
+  note: |
+    HONO+NH2=NH3+NO2			4.840E+02	3.360	    -4575!
+- equation: HO2 + NO + M <=> HNO3 + M  # Reaction 161
+  type: three-body
+  rate-constant: {A: 1.5e+24, b: -3.5, Ea: 2200.0}
+- equation: H + HNO3 <=> H2 + NO3  # Reaction 162
+  rate-constant: {A: 5.56e+08, b: 1.53, Ea: 1.64e+04}
+- equation: H + HNO3 <=> H2O + NO2  # Reaction 163
+  rate-constant: {A: 60.8, b: 3.29, Ea: 6290.0}
+- equation: H + HNO3 <=> HONO + OH  # Reaction 164
+  rate-constant: {A: 3.82e+05, b: 2.3, Ea: 6980.0}
+- equation: HNO3 + OH <=> H2O + NO3  # Reaction 165
+  rate-constant: {A: 1.03e+10, b: 0.0, Ea: -1240.0}
+- equation: HNO3 + NH2 <=> NH3 + NO3  # Reaction 166
+  rate-constant: {A: 30.8, b: 3.22, Ea: -139.0}
+  note: |
+    HNO3+NH2=NH3+NO3			1.030E+21      -3.850	      191!
+- equation: NH3 + O <=> NH2 + OH  # Reaction 167
+  rate-constant: {A: 1.1e+06, b: 2.1, Ea: 5210.0}
+- equation: NH3 + OH <=> H2O + NH2  # Reaction 168
+  rate-constant: {A: 5.0e+07, b: 1.6, Ea: 950.0}
+- equation: HO2 + NH3 <=> H2O2 + NH2  # Reaction 169
+  rate-constant: {A: 3.0e+11, b: 0.0, Ea: 2.2e+04}
+- equation: HO2 + NH2 <=> NH3 + O2  # Reaction 170
+  rate-constant: {A: 1.65e+04, b: 1.55, Ea: 2027.0}
+- equation: NH2 + O <=> H2 + NO  # Reaction 171
+  rate-constant: {A: 5.0e+12, b: 0.0, Ea: 0.0}
+- equation: NH2 + O <=> H + HNO  # Reaction 172
+  rate-constant: {A: 4.5e+13, b: 0.0, Ea: 0.0}
+- equation: NH2 + O <=> NH + OH  # Reaction 173
+  rate-constant: {A: 7.0e+12, b: 0.0, Ea: 0.0}
+- equation: NH2 + OH <=> H2O + NH  # Reaction 174
+  rate-constant: {A: 9.0e+07, b: 1.5, Ea: -460.0}
+- equation: NH2 + OH <=> NH2OH  # Reaction 175
+  rate-constant: {A: 1.79e+13, b: 0.2, Ea: 0.0}
+- equation: HO2 + NH2 <=> H2O + HNO  # Reaction 176
+  rate-constant: {A: 5.68e+15, b: -1.12, Ea: 707.0}
+- equation: HO2 + NH2 <=> H2NO + OH  # Reaction 177
+  rate-constant: {A: 2.91e+17, b: -1.32, Ea: 1248.0}
+- equation: NH2 + O2 <=> HNO + OH  # Reaction 178
+  rate-constant: {A: 1.0e+13, b: 0.0, Ea: 2.629e+04}
+- equation: NH2 + O2 <=> H2NO + O  # Reaction 179
+  rate-constant: {A: 6.0e+13, b: 0.0, Ea: 2.988e+04}
+- equation: NH2 + NO <=> NNH + OH  # Reaction 180
+  rate-constant: {A: 2.29e+10, b: 0.425, Ea: -814.0}
+- equation: NH2 + NO <=> H2O + N2  # Reaction 181
+  rate-constant: {A: 2.27e+20, b: -2.65, Ea: 1258.0}
+- equation: NH2 + NO <=> H2 + N2O  # Reaction 182
+  rate-constant: {A: 1.0e+13, b: 0.0, Ea: 3.37e+04}
+- equation: NH2 + NO2 <=> H2O + N2O  # Reaction 183
+  rate-constant: {A: 1.62e+16, b: -1.44, Ea: 270.0}
+- equation: NH2 + NO2 <=> H2NO + NO  # Reaction 184
+  rate-constant: {A: 6.48e+16, b: -1.44, Ea: 270.0}
+- equation: NH + O <=> H + NO  # Reaction 185
+  rate-constant: {A: 7.0e+13, b: 0.0, Ea: 0.0}
+- equation: NH + O <=> N + OH  # Reaction 186
+  rate-constant: {A: 7.0e+12, b: 0.0, Ea: 0.0}
+- equation: NH + OH <=> H + HNO  # Reaction 187
+  rate-constant: {A: 2.0e+13, b: 0.0, Ea: 0.0}
+- equation: NH + OH <=> H2O + N  # Reaction 188
+  rate-constant: {A: 2.0e+09, b: 1.2, Ea: 0.0}
+- equation: NH + OH <=> H2 + NO  # Reaction 189
+  rate-constant: {A: 2.0e+13, b: 0.0, Ea: 0.0}
+- equation: HO2 + NH <=> HNO + OH  # Reaction 190
+  rate-constant: {A: 1.0e+13, b: 0.0, Ea: 2000.0}
+- equation: NH + O2 <=> HNO + O  # Reaction 191
+  rate-constant: {A: 4.0e+13, b: 0.0, Ea: 1.788e+04}
+- equation: NH + O2 <=> NO + OH  # Reaction 192
+  rate-constant: {A: 4.5e+08, b: 0.79, Ea: 1190.0}
+- equation: H2O + NH <=> NH2OH  # Reaction 193
+  rate-constant: {A: 2.0e+13, b: 0.0, Ea: 1.385e+04}
+- equation: NH + N2O <=> HNO + N2  # Reaction 194
+  rate-constant: {A: 2.0e+12, b: 0.0, Ea: 6000.0}
+- equation: NNH + O <=> NH + NO  # Reaction 195
+  rate-constant: {A: 1.0e+14, b: 0.0, Ea: 4000.0}
+- equation: NH + NO <=> N2 + OH  # Reaction 196
+  rate-constant: {A: 6.1e+13, b: -0.5, Ea: 120.0}
+- equation: N2H4 + O <=> H2O + N2H2  # Reaction 197
+  rate-constant: {A: 8.5e+13, b: 0.0, Ea: 1200.0}
+- equation: N2H4 + O <=> N2H3 + OH  # Reaction 198
+  rate-constant: {A: 2.5e+12, b: 0.0, Ea: 1200.0}
+- equation: N2H4 + OH <=> H2O + N2H3  # Reaction 199
+  rate-constant: {A: 3.0e+10, b: 0.68, Ea: 1290.0}
+- equation: N2H4 + OH <=> H2NO + NH3  # Reaction 200
+  rate-constant: {A: 3.67e+13, b: 0.0, Ea: 0.0}
+- equation: HO2 + N2H4 <=> H2O2 + N2H3  # Reaction 201
+  rate-constant: {A: 4.0e+13, b: 0.0, Ea: 2000.0}
+- equation: N2H3 + O <=> N2H2 + OH  # Reaction 202
+  rate-constant: {A: 2.0e+13, b: 0.0, Ea: 1000.0}
+- equation: N2H3 + O <=> H2O + NNH  # Reaction 203
+  rate-constant: {A: 3.16e+11, b: 0.5, Ea: 0.0}
+- equation: N2H3 + O <=> HNO + NH2  # Reaction 204
+  rate-constant: {A: 1.0e+13, b: 0.0, Ea: 0.0}
+- equation: N2H3 + OH <=> H2O + N2H2  # Reaction 205
+  rate-constant: {A: 3.0e+10, b: 0.68, Ea: 1290.0}
+- equation: N2H3 + OH <=> HNO + NH3  # Reaction 206
+  rate-constant: {A: 1.0e+12, b: 0.0, Ea: 1.5e+04}
+- equation: N2H3 + O2 <=> HO2 + N2H2  # Reaction 207
+  rate-constant: {A: 3.0e+12, b: 0.0, Ea: 0.0}
+- equation: HO2 + N2H3 <=> H2O2 + N2H2  # Reaction 208
+  rate-constant: {A: 1.0e+13, b: 0.0, Ea: 2000.0}
+- equation: HO2 + N2H3 <=> N2H4 + O2  # Reaction 209
+  rate-constant: {A: 8.0e+12, b: 0.0, Ea: 0.0}
+- equation: N2H3 + NO <=> HNO + N2H2  # Reaction 210
+  rate-constant: {A: 1.0e+12, b: 0.0, Ea: 0.0}
+- equation: N2H2 + O <=> NH2 + NO  # Reaction 211
+  rate-constant: {A: 1.0e+13, b: 0.0, Ea: 0.0}
+- equation: N2H2 + O <=> NNH + OH  # Reaction 212
+  rate-constant: {A: 2.0e+13, b: 0.0, Ea: 1000.0}
+- equation: N2H2 + OH <=> H2O + NNH  # Reaction 213
+  rate-constant: {A: 59.2, b: 3.4, Ea: -1360.0}
+- equation: HO2 + N2H2 <=> H2O2 + NNH  # Reaction 214
+  rate-constant: {A: 1.0e+13, b: 0.0, Ea: 2000.0}
+- equation: N2H2 + NO <=> NH2 + N2O  # Reaction 215
+  rate-constant: {A: 3.0e+10, b: 0.0, Ea: 0.0}
+- equation: NNH + O <=> N2 + OH  # Reaction 216
+  rate-constant: {A: 1.7e+16, b: -1.23, Ea: 500.0}
+- equation: NNH + OH <=> H2O + N2  # Reaction 217
+  rate-constant: {A: 2.4e+22, b: -2.88, Ea: 2444.0}
+- equation: NNH + O2 <=> HO2 + N2  # Reaction 218
+  rate-constant: {A: 1.2e+12, b: -0.34, Ea: 150.0}
+- equation: NNH + O2 <=> N2O + OH  # Reaction 219
+  rate-constant: {A: 2.9e+11, b: -0.34, Ea: 150.0}
+- equation: HO2 + NNH <=> H2O2 + N2  # Reaction 220
+  rate-constant: {A: 1.0e+13, b: 0.0, Ea: 2000.0}
+- equation: NNH + NO <=> HNO + N2  # Reaction 221
+  rate-constant: {A: 5.0e+13, b: 0.0, Ea: 0.0}
+- equation: NH2OH + OH <=> H2O + HNOH  # Reaction 222
+  rate-constant: {A: 2.5e+13, b: 0.0, Ea: 4250.0}
+- equation: H2NO + M <=> H2 + NO + M  # Reaction 223
+  type: three-body
+  rate-constant: {A: 7.83e+27, b: -4.29, Ea: 6.03e+04}
+  efficiencies: {H2O: 10.0}
+- equation: H2NO + M <=> H + HNO + M  # Reaction 224
+  type: three-body
+  rate-constant: {A: 2.8e+24, b: -2.83, Ea: 6.4915e+04}
+  efficiencies: {H2O: 10.0}
+- equation: H2NO + M <=> HNOH + M  # Reaction 225
+  type: three-body
+  rate-constant: {A: 1.1e+29, b: -3.99, Ea: 4.398e+04}
+  efficiencies: {H2O: 10.0}
+- equation: H + H2NO <=> H2 + HNO  # Reaction 226
+  rate-constant: {A: 3.0e+07, b: 2.0, Ea: 2000.0}
+- equation: H + H2NO <=> NH2 + OH  # Reaction 227
+  rate-constant: {A: 5.0e+13, b: 0.0, Ea: 0.0}
+- equation: H2NO + O <=> HNO + OH  # Reaction 228
+  rate-constant: {A: 3.0e+07, b: 2.0, Ea: 2000.0}
+- equation: H2NO + OH <=> H2O + HNO  # Reaction 229
+  rate-constant: {A: 2.0e+07, b: 2.0, Ea: 1000.0}
+- equation: HO2 + H2NO <=> H2O2 + HNO  # Reaction 230
+  rate-constant: {A: 2.9e+04, b: 2.69, Ea: -1600.0}
+- equation: H2NO + NH2 <=> HNO + NH3  # Reaction 231
+  rate-constant: {A: 3.0e+12, b: 0.0, Ea: 2.5e+04}
+- equation: H2NO + O2 <=> HNO + HO2  # Reaction 232
+  rate-constant: {A: 3.0e+12, b: 0.0, Ea: 2.5e+04}
+- equation: H2NO + NO <=> HNO + HNO  # Reaction 233
+  rate-constant: {A: 2.0e+07, b: 2.0, Ea: 1.3e+04}
+- equation: H2NO + NO2 <=> HNO + HONO  # Reaction 234
+  rate-constant: {A: 6.0e+11, b: 0.0, Ea: 2000.0}
+- equation: HNOH + M <=> H + HNO + M  # Reaction 235
+  type: three-body
+  rate-constant: {A: 2.0e+24, b: -2.84, Ea: 5.8935e+04}
+  efficiencies: {H2O: 10.0}
+- equation: H + HNOH <=> H2 + HNO  # Reaction 236
+  rate-constant: {A: 4.8e+08, b: 1.5, Ea: 380.0}
+- equation: H + HNOH <=> NH2 + OH  # Reaction 237
+  rate-constant: {A: 4.0e+13, b: 0.0, Ea: 0.0}
+- equation: HNOH + O <=> HNO + OH  # Reaction 238
+  rate-constant: {A: 7.0e+13, b: 0.0, Ea: 0.0}
+- equation: HNOH + OH <=> H2O + HNO  # Reaction 239
+  rate-constant: {A: 2.4e+06, b: 2.0, Ea: -1190.0}
+  note: |
+    HNOH+O=HNO+OH				3.30E+08	1.500	     -360!
+- equation: HNOH + HO2 <=> H2O2 + HNO  # Reaction 240
+  rate-constant: {A: 2.9e+04, b: 2.69, Ea: -1600.0}
+- equation: HNOH + NH2 <=> HNO + NH3  # Reaction 241
+  rate-constant: {A: 1.8e+06, b: 1.94, Ea: -1150.0}
+- equation: HNOH + NO2 <=> HNO + HONO  # Reaction 242
+  rate-constant: {A: 6.0e+11, b: 0.0, Ea: 2000.0}
+- equation: HNOH + O2 <=> HNO + HO2  # Reaction 243
+  rate-constant: {A: 3.0e+12, b: 0.0, Ea: 2.5e+04}
+- equation: HNO + HNOH <=> NH2OH + NO  # Reaction 244
+  rate-constant: {A: 1.0e+12, b: 0.0, Ea: 3000.0}
+- equation: H + H + H2O <=> H2 + H2O  # Reaction 245
+  rate-constant: {A: 6.0e+19, b: -1.25, Ea: 0.0}
+- equation: H + O2 + N2 <=> HO2 + N2  # Reaction 246
+  rate-constant: {A: 6.7e+19, b: -1.42, Ea: 0.0}
+- equation: NH + NH <=> N2 + 2 H  # Reaction 247
+  rate-constant: {A: 2.5e+13, b: 0.0, Ea: 0.0}

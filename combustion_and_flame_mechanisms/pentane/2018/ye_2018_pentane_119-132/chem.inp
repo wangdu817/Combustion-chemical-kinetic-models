@@ -1,0 +1,801 @@
+ELEMENTS
+C H O AR
+END
+SPECIES
+AR
+
+O2 
+OH HO2
+!C5H10
+!3-methyl-1-butene
+!2-methyl-1-butene
+!2-methyl-2-butene
+!C5H11 (2MB  3MB  12DMP  11DMP)
+2-methylbutyl  3-methylbutyl
+1,2-dimethylpropyl  1,1-dimethylpropyl 
+!C5H11O2 (RO2-pa  RO2-pb  RO2-s  RO2-t)
+2-methylbutyloo  3-methylbutyloo
+1,2-dimethylpropyloo  1,1-dimethylpropyloo
+
+!----------------------------------------------------------------
+!----- the species for O2 + 2MB -----
+    
+ 	QOOH-pa1        ! 2-ethyl-3-hydroperoxyl-1-propyl
+ 	QOOH-pa2        ! 1-hydroperoxyl-2-methyl-2-butyl 
+ 	QOOH-pa3        ! 3-methyl-4-hydroperoxyl-2-butyl 
+ 	QOOH-pa4        ! 3-methyl-4-hydroperoxyl-1-butyl 
+
+	Ppa2_frag       ! 3-ethyl-oxetane
+	Ppa3_frag       ! formaldehyde + 1-butene
+	Ppa6_frag       ! 2-methyl-2-ethyl-oxirane
+	Ppa7_frag       ! 2-methyl-1-butene
+	Ppa9_frag       ! 2,3-dimethyl-oxetane 
+	Ppa10_frag      ! formaldehyde + 2-butene
+	Ppa13_frag      ! 3-methyl-tetrahydrofuran
+	Ppa15_frag      ! 2-methylbutanal
+	
+!----- the species for O2 + 3MB -----	
+
+ 	QOOH-pb1         ! 1-hydroperoxyl-3-methyl-2-butyl
+ 	QOOH-pb2         ! 2-methyl-4-hydroperoxyl-2-butyl 
+ 	QOOH-pb3         ! 2-methyl-4-hydroperoxyl-1-butyl 
+                 
+	Ppb2_frag        ! i-propyl-oxirane 
+	Ppb3_frag        ! 3-methyl-1-butene
+	Ppb5_frag        ! 2,2-dimethyl-oxetane
+	Ppb6_frag        ! i-butene + formaldehyde
+	Ppb9_frag        ! 3-methyl-tetrahydrofuran
+	Ppb14_frag       ! 3-methyl-butanal
+	
+!----- the species for O2 + 12DMP -----	
+
+ 	QOOH-s1         ! 2-hydroperoxyl-3-methyl-1-butyl 
+ 	QOOH-s2         ! 2-methyl-3-hydroperoxyl-2-butyl
+ 	QOOH-s3         ! 2-methyl-3-hydroperoxyl-1-butyl 
+                 
+	Ps2_frag        ! i-propyl-oxirane 
+	Ps3_frag        ! 3-methyl-1-butene 
+	Ps5_frag        ! 2,2,3-trimethyl-oxirane 
+	Ps6_frag        ! 2-methyl-2-butene 
+	Ps8_frag        ! 2,3-dimethyl-oxetane
+	Ps9_frag        ! acetaldehyde + propene 
+	Ps15_frag       ! methyl i-propyl ketone
+	
+!----- the species for O2 + 11DMP -----	
+
+ 	QOOH-t1         ! 2-methyl-2-hydroperoxyl-1-butyl
+ 	QOOH-t2         ! 3-methyl-3-hydroperoxyl-1-butyl
+ 	QOOH-t3         ! 3-methyl-3-hydroperoxyl-2-butyl 
+                 
+	Pt2_frag        ! 2-methyl-2-ethyl-oxirane
+	Pt3_frag        ! 2-methyl-1-butene  
+	Pt5_frag        ! 2,2-dimethyl-oxetane 
+	Pt6_frag        ! ethene + acetone 
+	Pt9_frag        ! 2,2,3-trimethyl-oxirane 
+	Pt10_frag       ! 2-methyl-2-butene 
+
+END
+
+REACTIONS	CAL/MOL	MOLES
+
+
+!-----------------------------------------------------------
+!------------- LLYe:  O2 + C5H11 MECHANISM   -----------------
+!-----------------------------------------------------------
+
+!-------------------------------------
+! o2 + 2-methylbutyl rates (O2 + 2MB)
+!-------------------------------------
+
+O2 + 2-methylbutyl = 2-methylbutyloo     1.0E11  0.0  0.0 
+PLOG/ 0.01 3.96E+38 -16.20 15285/
+PLOG/ 0.1 3.23E+28 -12.75 13320/
+PLOG/ 1 4.03E+14 -8.22 9439/
+PLOG/ 10 3.61E+15 -8.26 11642/
+PLOG/ 100 1.93E-01 -3.27 5003/
+ 
+O2 + 2-methylbutyl = QOOH-pa1     1.0E11  0.0  0.0  
+PLOG/ 10 4.89E-57 14.06 -6899/
+PLOG/ 100 3.23E-29 5.15 3287/
+
+O2 + 2-methylbutyl = QOOH-pa2     1.0E11  0.0  0.0  
+PLOG/ 10 2.30E-30 4.52 -417/
+PLOG/ 100 3.91E-30 4.82 2400/
+
+O2 + 2-methylbutyl = QOOH-pa3     1.0E11  0.0  0.0  
+PLOG/ 10 6.27E-17 1.40 5318/
+PLOG/ 100 1.35E-12 -0.05 8330/
+
+O2 + 2-methylbutyl = QOOH-pa4     1.0E11  0.0  0.0  
+PLOG/ 1 8.08E-40 8.37 -2963/
+PLOG/ 10 1.36E-18 1.70 6011/
+PLOG/ 100 1.68E-19 1.88 7181/
+
+O2 + 2-methylbutyl = OH + Ppa6_frag     1.0E11  0.0  0.0  
+PLOG/ 0.01 6.79E+18 -9.67 14670/
+PLOG/ 0.1 1.03E+17 -8.88 17232/
+PLOG/ 1 4.55E+34 -13.91 30094/
+PLOG/ 10 7.59E+36 -14.30 36608/
+PLOG/ 100 1.53E+28 -11.50 38021/
+DUPLICATE
+O2 + 2-methylbutyl = OH + Ppa6_frag     1.0E11  0.0  0.0  
+PLOG/ 0.01 2.72E+07 -5.69 21712/
+PLOG/ 0.1 1.17E+00 -10.35 -20460/
+PLOG/ 1 4.55E-07 -1.98 8787/
+PLOG/ 10 8.28E-12 -0.46 9392/
+PLOG/ 100 1.19E-10 -0.84 12567/
+DUPLICATE
+
+O2 + 2-methylbutyl = HO2 + Ppa7_frag     1.0E11  0.0  0.0  
+PLOG/ 0.01 1.96E+13 -7.73 13933/
+PLOG/ 0.1 6.83E+51 -19.27 34126/
+PLOG/ 1 1.26E+35 -13.79 31552/
+PLOG/ 10 1.21E+32 -12.59 35392/
+PLOG/ 100 6.64E+22 -9.66 35863/
+DUPLICATE
+O2 + 2-methylbutyl = HO2 + Ppa7_frag     1.0E11  0.0  0.0  
+PLOG/ 0.01 9.88E+21 -9.48 34220/
+PLOG/ 0.1 6.59E-01 -3.49 11099/
+PLOG/ 1 4.07E-09 -1.03 9580/
+PLOG/ 10 9.64E-14 0.35 9617/
+PLOG/ 100 6.26E-18 1.51 9556/
+DUPLICATE
+
+O2 + 2-methylbutyl = OH + Ppa9_frag     1.0E11  0.0  0.0  
+PLOG/ 0.01 2.25E+16 -8.69 14968/
+PLOG/ 0.1 2.54E+25 -11.23 21709/
+PLOG/ 1 2.29E+20 -9.57 22548/
+PLOG/ 10 1.20E+06 -5.12 20954/
+PLOG/ 100 5.28E-13 0.29 16840/
+
+O2 + 2-methylbutyl = OH + Ppa13_frag     1.0E11  0.0  0.0  
+PLOG/ 0.01 7.32E+13 -8.15 12945/
+PLOG/ 0.1 5.50E+18 -9.46 17643/
+PLOG/ 1 3.08E+15 -8.28 20160/
+PLOG/ 10 1.67E+07 -5.58 22316/
+PLOG/ 100 5.91E-17 1.20 14500/
+
+2-methylbutyloo = O2 + 2-methylbutyl      1.0E11  0.0  0.0
+PLOG/ 0.01 8.14E+65 -16.64 48794/
+PLOG/ 0.1 3.24E+55 -13.10 46673/
+PLOG/ 1 1.37E+42 -8.74 42958/
+PLOG/ 10 3.51E+31 -5.33 39810/
+PLOG/ 100 3.26E+26 -3.70 38364/
+
+2-methylbutyloo = QOOH-pa1      1.0E11  0.0  0.0
+PLOG/ 10 5.02E+03 2.23 18996/
+PLOG/ 100 9.67E+07 0.95 20753/
+
+2-methylbutyloo = QOOH-pa2      1.0E11  0.0  0.0
+PLOG/ 10 1.20E+31 -6.7656 30793/
+PLOG/ 100 5.44E+21 -3.49 29225/
+
+2-methylbutyloo = QOOH-pa3      1.0E11  0.0  0.0
+PLOG/ 10 1.69E+10 0.07 18605/
+PLOG/ 100 2.92E+10 0.04 18963/
+
+2-methylbutyloo = QOOH-pa4      1.0E11  0.0  0.0
+PLOG/ 1 3.30E+08 0.37 20366/
+PLOG/ 10 4.18E+09 0.11 21131/
+PLOG/ 100 1.10E+09 0.33 21197/
+
+2-methylbutyloo = OH + Ppa6_frag      1.0E11  0.0  0.0
+PLOG/ 0.01 6.17E+67 -17.86 46314/
+PLOG/ 0.1 2.03E+71 -18.515 51511/
+PLOG/ 1 2.59E+64 -16.11 51287/
+PLOG/ 10 1.59E+139 -38.03 93939/
+PLOG/ 100 3.55E+61 -14.459 59448/
+DUPLICATE
+2-methylbutyloo = OH + Ppa6_frag      1.0E11  0.0  0.0
+PLOG/ 0.01 1.04E+46 -17.42 542/
+PLOG/ 0.1 6.32E+44 -11.11 35461/
+PLOG/ 1 4.21E+40 -9.60 35337/
+PLOG/ 10 3.23E+32 -6.47 36706/
+PLOG/ 100 4.15E+59 -14.81 48772/
+DUPLICATE
+
+2-methylbutyloo = HO2 + Ppa7_frag      1.0E11  0.0  0.0
+PLOG/ 0.01 5.93E+81 -21.89 54843/
+PLOG/ 0.1 1.25E+78 -20.338 56529/
+PLOG/ 1 3.01E+76 -19.39 60018/
+PLOG/ 10 6.72E+60 -14.39 55973/
+PLOG/ 100 1.34E+49 -10.696 52358/
+DUPLICATE
+2-methylbutyloo = HO2 + Ppa7_frag      1.0E11  0.0  0.0
+PLOG/ 0.01 2.18E+51 -13.22 38660/
+PLOG/ 0.1 4.61E+47 -11.78 38802/
+PLOG/ 1 3.47E+46 -11.10 40188/
+PLOG/ 10 3.93E+39 -8.69 39648/
+PLOG/ 100 2.26E+24 -3.86 34675/
+DUPLICATE
+
+2-methylbutyloo = OH + Ppa9_frag      1.0E11  0.0  0.0
+PLOG/ 0.01 1.58E+57 -14.42 44048/
+PLOG/ 0.1 2.24E+48 -11.41 42317/
+PLOG/ 1 5.53E+37 -7.85 40679/
+PLOG/ 10 4.03E+21 -2.82 36667/
+PLOG/ 100 3.99E+24 -3.88 39037/
+
+2-methylbutyloo = OH + Ppa13_frag      1.0E11  0.0  0.0
+PLOG/ 0.01 2.26E+53 -13.42 40821/
+PLOG/ 0.1 8.07E+74 -12.46 41902/
+PLOG/ 1 6.09E+12 -0.32 30770/
+PLOG/ 10 2.33E+06 1.57 29772/
+PLOG/ 100 6.27E+13 -0.94 33366/
+
+QOOH-pa1 = 2-methylbutyloo         1.0E11  0.0  0.0
+PLOG/ 10 3.32E+07 0.78 3181/
+PLOG/ 100 8.54E+07 0.70 3560/
+
+QOOH-pa1 = O2 + 2-methylbutyl      1.0E11  0.0  0.0
+PLOG/ 10 2.67E-36 15.49 7608/
+PLOG/ 100 7.68E+08 1.41 24207/
+
+QOOH-pa1 = OH + Ppa2_frag         1.0E11  0.0  0.0
+PLOG/ 10 5.54E+15 -1.42 19188/
+PLOG/ 100 5.95E+15 -1.18 20189/
+
+QOOH-pa1 = QOOH-pa3         1.0E11  0.0  0.0
+PLOG/ 10 2.25E-35 14.21 -912/
+PLOG/ 100 3.56E+08 0.56 15801/
+
+QOOH-pa2 = 2-methylbutyloo         1.0E11  0.0  0.0
+PLOG/ 10 2.08E+31 -7.13 20422/
+PLOG/ 100 4.34E+26 -5.27 20866/ 
+
+QOOH-pa2 = Ppa6_frag         1.0E11  0.0  0.0
+PLOG/ 10 2.72E+34 -7.12 18513/
+PLOG/ 100 3.83E+25 -4.09 16719/ 
+
+QOOH-pa2 = Ppa7_frag         1.0E11  0.0  0.0
+PLOG/ 10 9.20E+39 -8.82 22581/
+PLOG/ 100 1.60E+30 -5.42 20838/ 
+
+QOOH-pa3 = 2-methylbutyloo         1.0E11  0.0  0.0
+PLOG/ 1 1.91E+09 0.01 5052/
+PLOG/ 10 2.26E+11 -0.54 6222/
+PLOG/ 100 3.58E+10 -0.24 6232/ 
+
+QOOH-pa3 = O2 + 2-methylbutyl      1.0E11  0.0  0.0
+PLOG/ 1 1.59E-32 14.35 11041/
+PLOG/ 10 1.84E+11 0.65 26109/
+PLOG/ 100 2.48E+15 -0.75 28932/
+
+QOOH-pa3 = Ppa9_frag         1.0E11  0.0  0.0
+PLOG/ 1 4.61E+15 -1.56 18000/
+PLOG/ 10 3.72E+17 -1.90 19643/
+PLOG/ 100 1.31E+15 -1.04 19240/ 
+
+QOOH-pa4 = 2-methylbutyloo         1.0E11  0.0  0.0
+PLOG/ 1 1.91E+10 -0.45 5087/
+PLOG/ 10 8.68E+11 -0.89 6032/
+PLOG/ 100 1.15E+11 -0.57 6007/
+
+QOOH-pa4 = O2 + 2-methylbutyl      1.0E11  0.0  0.0
+PLOG/ 1 4.92E-07 5.98 16865/
+PLOG/ 10 1.41E+11 0.45 24193/
+PLOG/ 100 3.48E+10 0.52 25375/
+
+QOOH-pa4 = Ppa13_frag         1.0E11  0.0  0.0
+PLOG/ 1 1.19E+20 -3.03 14784/
+PLOG/ 10 4.83E+14 -1.18 13664/
+PLOG/ 100 6.86E+10 0.07 12561/ 
+
+!-------------------------------------
+! o2 + 3-methylbutyl rates (O2 + 3MB)
+!-------------------------------------
+
+O2 + 3-methylbutyl = 3-methylbutyloo     1.0E11  0.0  0.0 
+PLOG/ 0.01 2.36E+44 -18.33 16401/
+PLOG/ 0.1 8.68E+34 -14.97 15110/
+PLOG/ 1 1.15E+17 -9.17 9942/
+PLOG/ 10 8.03E+10 -7.10 8601/
+PLOG/ 100 8.76E+02 -4.52 6341/
+ 
+O2 + 3-methylbutyl = QOOH-pb1     1.0E11  0.0  0.0  
+PLOG/ 10 2.55E-42 8.13 -4170/
+PLOG/ 100 4.59E-19 1.20 7067/
+
+O2 + 3-methylbutyl = QOOH-pb2     1.0E11  0.0  0.0  
+PLOG/ 1 7.08E-09 -1.06 5471/
+PLOG/ 10 1.15E+03 -4.51 11329/
+PLOG/ 100 9.32E-10 -0.85 8545/
+
+O2 + 3-methylbutyl = QOOH-pb3     1.0E11  0.0  0.0  
+PLOG/ 10 5.62E-26 3.94 3227/
+PLOG/ 100 7.73E-14 0.11 9176/
+
+O2 + 3-methylbutyl = OH + Ppb2_frag     1.0E11  0.0  0.0  
+PLOG/ 0.01 5.59E+01 -4.73 9125/
+PLOG/ 0.1 1.16E+08 -6.50 13789/
+PLOG/ 1 4.29E+14 -8.29 19688/
+PLOG/ 10 3.15E+04 -5.15 17811/
+PLOG/ 100 1.70E-04 -2.54 17947/
+
+O2 + 3-methylbutyl = HO2 + Ppb3_frag     1.0E11  0.0  0.0  
+PLOG/ 0.01 1.41E-03 -2.49 8265/
+PLOG/ 0.1 1.40E+04 -4.47 13042/
+PLOG/ 1 2.36E+11 -6.47 18994/
+PLOG/ 10 1.40E+01 -3.31 16793/
+PLOG/ 100 6.14E-14 1.06 13205/
+
+O2 + 3-methylbutyl = OH + Ppb5_frag     1.0E11  0.0  0.0  
+PLOG/ 0.01 1.81E+15 -8.41 12273/
+PLOG/ 0.1 8.37E+21 -10.27 17478/
+PLOG/ 1 1.18E+23 -10.41 21778/
+PLOG/ 10 3.77E+06 -5.28 19525/
+PLOG/ 100 1.58E-13 0.42 14892/
+
+O2 + 3-methylbutyl = OH + Ppb9_frag     1.0E11  0.0  0.0  
+PLOG/ 0.01 9.96E+08 -6.83 11124/
+PLOG/ 0.1 1.75E+15 -8.58 15855/
+PLOG/ 1 1.69E+23 -10.76 22911/
+PLOG/ 10 6.10E+02 -4.42 18321/
+PLOG/ 100 4.03E-09 -1.16 17111/
+
+3-methylbutyloo = O2 + 3-methylbutyl     1.0E11  0.0  0.0
+PLOG/ 0.01 1.60E+72 -18.782 49920/
+PLOG/ 0.1 2.35E+63 -15.626 48775/
+PLOG/ 1 4.47E+47 -10.51 44351/
+PLOG/ 10 2.28E+39 -7.75 42312/
+PLOG/ 100 1.17E+37 -6.84 43012/
+
+3-methylbutyloo = QOOH-pb1      1.0E11  0.0  0.0
+PLOG/ 10 1.75E+35 -7.91 35260/
+PLOG/ 100 2.29E+24 -4.16 33147/
+
+3-methylbutyloo = QOOH-pb2      1.0E11  0.0  0.0
+PLOG/ 1 1.98E+12 -0.47 17548/
+PLOG/ 10 1.21E+15 -1.26 18939/
+PLOG/ 100 2.93E+15 -1.27 19894/
+
+3-methylbutyloo = QOOH-pb3      1.0E11  0.0  0.0
+PLOG/ 10 4.10E+09 0.26 21788/
+PLOG/ 100 6.46E+12 -0.67 23268/
+
+3-methylbutyloo = OH + Ppb2_frag      1.0E11  0.0  0.0
+PLOG/ 0.01 6.55E+60 -16.04 43641/
+PLOG/ 0.1 9.88E+47 -11.66 41922/
+PLOG/ 1 4.00E+46 -11.01 42524/
+PLOG/ 10 6.53E+45 -10.45 44890/
+PLOG/ 100 7.85E+43 -9.54 47813/
+
+3-methylbutyloo = HO2 + Ppb3_frag      1.0E11  0.0  0.0
+PLOG/ 0.01 8.91E+64 -16.64 46077/
+PLOG/ 0.1 5.30E+62 -15.45 48309/
+PLOG/ 1 1.56E+39 -8.02 39994/
+PLOG/ 10 3.19E+30 -5.14 37839/
+PLOG/ 100 3.47E+21 -2.25 35211/
+
+3-methylbutyloo = OH + Ppb5_frag      1.0E11  0.0  0.0
+PLOG/ 0.01 4.28E+60 -15.37 41941/
+PLOG/ 0.1 3.06E+56 -13.747 42556/
+PLOG/ 1 3.58E+23 -3.41 32307/
+PLOG/ 10 3.54E+38 -8.02 40122/
+PLOG/ 100 6.02E+22 -3.28 35659/
+
+3-methylbutyloo = OH + Ppb9_frag      1.0E11  0.0  0.0
+PLOG/ 0.01 1.22E+63 -16.51 44438/
+PLOG/ 0.1 1.73E+56 -14.068 43677/
+PLOG/ 1 1.27E+61 -15.13 49244/
+PLOG/ 10 1.05E+67 -16.22 60268/
+PLOG/ 100 1.40E+37 -7.91 42471/
+
+QOOH-pb1 = 3-methylbutyloo        1.0E11  0.0  0.0
+PLOG/ 10 3.98E+36 -8.57 21221/
+PLOG/ 100 3.56E+32 -6.92 21800/
+
+QOOH-pb1 = O2 + 3-methylbutyl         1.0E11  0.0  0.0
+PLOG/ 10 2.39E+03 2.16 21518/
+PLOG/ 100 2.22E+09 0.57 26102/
+
+QOOH-pb1 = OH + Ppb2_frag         1.0E11  0.0  0.0
+PLOG/ 10 2.92E+40 -8.99 21182/
+PLOG/ 100 2.90E+30 -5.56 19146/
+
+QOOH-pb1 = HO2 + Ppb3_frag         1.0E11  0.0  0.0
+PLOG/ 10 1.34E+46 -10.64 24806/
+PLOG/ 100 7.13E+35 -7.05 23008/
+
+QOOH-pb1 = QOOH-pb2           1.0E11  0.0  0.0
+PLOG/ 10 1.49E+14 -1.56 19166/
+PLOG/ 100 1.29E+07 0.83 19251/
+
+QOOH-pb2 = 3-methylbutyloo        1.0E11  0.0  0.0
+PLOG/ 1 6.42E+15 -2.11 8083/
+PLOG/ 10 6.54E+12 -1.12 7187/
+PLOG/ 100 2.13E+07 0.63 5443/
+
+QOOH-pb2 = O2 + 3-methylbutyl     1.0E11  0.0  0.0
+PLOG/ 1 3.36E+12 0.18 25694/
+PLOG/ 10 8.27E+28 -4.92 33195/
+PLOG/ 100 4.42E+15 -0.90 29890/
+
+QOOH-pb2 = QOOH-pb3           1.0E11  0.0  0.0
+PLOG/ 10 6.67E-04 3.94 14660/
+PLOG/ 100 1.79E+07 0.58 19741/
+
+QOOH-pb2 = OH + Ppb5_frag         1.0E11  0.0  0.0
+PLOG/ 1 1.93E+14 -1.09 16815/
+PLOG/ 10 3.07E+14 -1.02 17470/
+PLOG/ 100 5.43E+10 0.19 16380/ 
+
+QOOH-pb2 = OH + Ppb3_frag         1.0E11  0.0  0.0
+PLOG/ 1 2.75E+07 1.66 23085/
+PLOG/ 10 1.87E+37 -7.40 37412/
+PLOG/ 100 1.08E+09 1.10 27018/
+
+QOOH-pb3 = 3-methylbutyloo        1.0E11  0.0  0.0
+PLOG/ 10 2.99E+11 -0.61 5358/
+PLOG/ 100 1.09E+13 -1.04 6245/
+
+QOOH-pb3 = O2 + 3-methylbutyl     1.0E11  0.0  0.0
+PLOG/ 10 2.37E+03 2.95 20004/
+PLOG/ 100 9.90E+15 -1.05 26004/
+
+QOOH-pb3 = QOOH-pb2        1.0E11  0.0  0.0
+PLOG/ 10 7.88E-06 4.87 8140/
+PLOG/ 100 4.46E+10 -0.20 14878/
+
+QOOH-pb3 = OH + Ppb9_frag         1.0E11  0.0  0.0
+PLOG/ 10 6.08E+16 -1.76 14213/
+PLOG/ 100 7.34E+12 -0.44 13305/ 
+
+QOOH-pb3 = HO2 + Ppb3_frag         1.0E11  0.0  0.0
+PLOG/ 10 2.50E-04 5.06 17063/
+PLOG/ 100 4.28E+09 0.88 23374/
+
+!-------------------------------------
+! o2 + 1,2-dimethylpropyl rates (O2 + 12DMP)
+!-------------------------------------
+
+O2 + 1,2-dimethylpropyl = 1,2-dimethylpropyloo     1.0E11  0.0  0.0 
+PLOG/ 0.01 6.43E+41 -17.75 13532/
+PLOG/ 0.1 3.26E+32 -14.51 11956/
+PLOG/ 1 3.23E+31 -13.82 14062/
+PLOG/ 10 6.32E+06 -6.13 4784/
+PLOG/ 100 5.50E+01 -4.48 3413/
+ 
+O2 + 1,2-dimethylpropyl = QOOH-s1     1.0E11  0.0  0.0  
+PLOG/ 1 3.60E-09 -2.19 5883/
+PLOG/ 10 2.05E-13 -0.51 7488/
+PLOG/ 100 3.77E-26 3.62 5664/
+
+O2 + 1,2-dimethylpropyl = QOOH-s2     1.0E11  0.0  0.0  
+PLOG/ 100 1.78E-61 13.81 -12260/
+
+O2 + 1,2-dimethylpropyl = QOOH-s3     1.0E11  0.0  0.0  
+PLOG/ 10 4.55E-55 13.07 -8471/
+PLOG/ 100 2.62E-26 3.88 2088/
+
+O2 + 1,2-dimethylpropyl = OH + Ps2_frag     1.0E11  0.0  0.0  
+PLOG/ 0.01 1.24E+09 -7.19 10550/
+PLOG/ 0.1 2.75E+09 -7.07 13435/
+PLOG/ 1 7.29E+12 -7.86 18515/
+PLOG/ 10 1.76E+33 -13.60 34654/
+PLOG/ 100 2.88E+26 -11.29 37789/
+DUPLICATE
+O2 + 1,2-dimethylpropyl = OH + Ps2_frag     1.0E11  0.0  0.0  
+PLOG/ 0.01 2.77E+15 -8.34 26531/
+PLOG/ 0.1 5.74E+90 -29.11 92647/
+PLOG/ 1 3.58E-03 -8.68 -13031/
+PLOG/ 10 5.94E-01 -3.96 15709/
+PLOG/ 100 1.54E-05 -2.73 16671/
+DUPLICATE
+
+O2 + 1,2-dimethylpropyl = HO2 + Ps3_frag     1.0E11  0.0  0.0  
+PLOG/ 0.01 1.88E+11 -7.38 10333/
+PLOG/ 0.1 1.14E+10 -6.79 12481/
+PLOG/ 1 3.95E+105 -35.30 62640/
+PLOG/ 10 2.99E+23 -10.29 27551/
+PLOG/ 100 1.70E+24 -10.31 33277/
+DUPLICATE
+O2 + 1,2-dimethylpropyl = HO2 + Ps3_frag     1.0E11  0.0  0.0  
+PLOG/ 0.01 5.20E+20 -9.39 29040/
+PLOG/ 0.1 9.57E+97 -30.59 99635/
+PLOG/ 1 1.18E+08 -6.01 14752/
+PLOG/ 10 1.13E-05 -2.52 8918/
+PLOG/ 100 1.70E-17 1.16 6637/
+DUPLICATE
+
+O2 + 1,2-dimethylpropyl = OH + Ps5_frag     1.0E11  0.0  0.0  
+PLOG/ 0.01 1.69E+15 -9.02 10860/
+PLOG/ 0.1 3.88E+31 -13.80 20936/
+PLOG/ 1 4.71E+72 -25.82 46052/
+PLOG/ 10 5.78E+23 -10.84 26702/
+PLOG/ 100 3.51E+24 -10.88 32491/
+DUPLICATE
+O2 + 1,2-dimethylpropyl = OH + Ps5_frag     1.0E11  0.0  0.0  
+PLOG/ 0.01 1.10E+17 -8.83 25489/
+PLOG/ 0.1 1.48E-08 -1.95 4132/
+PLOG/ 1 4.90E+07 -6.39 13468/
+PLOG/ 10 5.21E-02 -4.17 8983/
+PLOG/ 100 1.44E-11 -1.10 8315/
+DUPLICATE
+
+O2 + 1,2-dimethylpropyl = HO2 + Ps6_frag     1.0E11  0.0  0.0  
+PLOG/ 0.01 8.25E+10 -7.39 10523/
+PLOG/ 0.1 1.37E+10 -6.94 12803/
+PLOG/ 1 2.90E+14 -8.02 18134/
+PLOG/ 10 4.20E+23 -10.46 27854/
+PLOG/ 100 4.77E+24 -10.58 33724/
+DUPLICATE
+O2 + 1,2-dimethylpropyl = HO2 + Ps6_frag     1.0E11  0.0  0.0  
+PLOG/ 0.01 8.62E+20 -9.59 29477/
+PLOG/ 0.1 5.92E+99 -31.22 101460/
+PLOG/ 1 1.69E-03 -6.94 -8747/
+PLOG/ 10 1.27E-04 -2.98 9565/
+PLOG/ 100 1.03E-16 0.80 7290/
+DUPLICATE
+
+O2 + 1,2-dimethylpropyl = OH + Ps8_frag     1.0E11  0.0  0.0  
+PLOG/ 0.01 6.60E-01 -4.03 8701/
+PLOG/ 0.1 7.38E+06 -6.03 13544/
+PLOG/ 1 2.99E+15 -8.42 20437/
+PLOG/ 10 1.42E+05 -5.18 19236/
+PLOG/ 100 1.02E-13 0.26 15359/
+
+1,2-dimethylpropyloo = O2 + 1,2-dimethylpropyl      1.0E11  0.0  0.0
+PLOG/ 0.01 2.34E+71 -18.41 49377/
+PLOG/ 0.1 4.87E+61 -15.06 47617/
+PLOG/ 1 1.29E+46 -9.97 43334/
+PLOG/ 10 5.34E+37 -7.24 41029/
+PLOG/ 100 3.95E+31 -5.27 39208/
+
+1,2-dimethylpropyloo = QOOH-s1      1.0E11  0.0  0.0
+PLOG/ 1 1.97E+35 -7.77 37491/
+PLOG/ 10 4.17E+24 -4.10 35382/
+PLOG/ 100 8.47E+16 -1.51 33675/
+
+1,2-dimethylpropyloo = QOOH-s3      1.0E11  0.0  0.0
+PLOG/ 10 9.84E+06 1.38 21153/
+PLOG/ 100 1.05E+12 -0.13 23219/
+
+1,2-dimethylpropyloo = HO2 + Ps3_frag      1.0E11  0.0  0.0
+PLOG/ 0.01 5.70E+62 -16.02 44969/
+PLOG/ 0.1 6.17E+52 -12.62 42944/
+PLOG/ 1 3.63E+40 -8.60 39738/
+PLOG/ 10 9.78E+27 -4.56 35945/
+PLOG/ 100 1.05E+22 -2.64 34200/
+
+1,2-dimethylpropyloo = OH + Ps5_frag      1.0E11  0.0  0.0
+PLOG/ 0.01 5.48E+52 -13.31 39484/
+PLOG/ 0.1 9.35E+43 -10.36 37569/
+PLOG/ 1 5.58E+34 -7.30 35330/
+PLOG/ 10 3.20E+28 -5.19 34372/
+PLOG/ 100 3.96E+29 -5.32 36890/
+
+1,2-dimethylpropyloo = HO2 + Ps6_frag      1.0E11  0.0  0.0
+PLOG/ 0.01 3.08E+64 -16.67 46179/
+PLOG/ 0.1 3.98E+54 -13.29 44229/
+PLOG/ 1 2.54E+42 -9.27 41073/
+PLOG/ 10 1.15E+30 -5.29 37423/
+PLOG/ 100 1.40E+24 -3.38 35790/
+
+1,2-dimethylpropyloo = OH + Ps8_frag      1.0E11  0.0  0.0
+PLOG/ 0.01 9.14E+70 -18.87 51189/
+PLOG/ 0.1 3.63E+61 -15.53 49851/
+PLOG/ 1 2.72E+49 -11.44 47277/
+PLOG/ 10 7.86E+64 -15.53 59361/
+PLOG/ 100 5.10E+20 -2.33 40519/
+
+QOOH-s1 = 1,2-dimethylpropyloo         1.0E11  0.0  0.0
+PLOG/ 1 2.08E+17 -2.12 23343/
+PLOG/ 10 8.48E+24 -4.71 18152/
+PLOG/ 100 1.34E+17 -2.08 16409/
+
+QOOH-s1 = OH + Ps2_frag         1.0E11  0.0  0.0
+PLOG/ 1 1.85E+38 -8.57 20522/
+PLOG/ 10 2.92E+28 -5.21 18573/
+PLOG/ 100 2.56E+24 -3.73 18389/
+
+QOOH-s1 = HO2 + Ps3_frag         1.0E11  0.0  0.0
+PLOG/ 1 3.12E+45 -10.81 25589/
+PLOG/ 10 7.25E+35 -7.38 24172/
+PLOG/ 100 2.76E+25 -3.88 21760/
+
+QOOH-s1 = HO2 + Ps6_frag         1.0E11  0.0  0.0
+PLOG/ 1 2.44E+14 -1.57 22281/
+PLOG/ 10 5.42E+11 -0.43 24311/
+PLOG/ 100 1.59E-01 3.63 22565/
+
+QOOH-s2 = 1,2-dimethylpropyloo         1.0E11  0.0  0.0
+PLOG/ 100 1.23E+25 -4.98 17867/
+
+QOOH-s2 = HO2 + Ps3_frag         1.0E11  0.0  0.0
+PLOG/ 100 1.69E-18 8.43 16041/
+
+QOOH-s2 = OH + Ps5_frag         1.0E11  0.0  0.0
+PLOG/ 100 6.94E+27 -4.84 14434/ 
+
+QOOH-s2 = HO2 + Ps6_frag         1.0E11  0.0  0.0
+PLOG/ 100 9.22E+35 -7.34 21085/
+
+QOOH-s3 = 1,2-dimethylpropyloo         1.0E11  0.0  0.0
+PLOG/ 10 8.63E+07 0.66 3442.3/
+PLOG/ 100 8.57E+11 -0.52 5149/
+
+QOOH-s3 = O2 + 1,2-dimethylpropyl      1.0E11  0.0  0.0
+PLOG/ 10 2.15E-35 15.16 6366/
+PLOG/ 100 1.05E+12 0.39 23759/
+
+QOOH-s3 = OH + Ps8_frag         1.0E11  0.0  0.0
+PLOG/ 10 6.47E+15 -1.41 17521/
+PLOG/ 100 6.99E+15 -1.18 18534/
+
+QOOH-s3 = HO2 + Ps3_frag         1.0E11  0.0  0.0
+PLOG/ 10 1.43E-43 17.44 2801/
+PLOG/ 100 1.38E+05 2.28 20833/ 
+
+QOOH-s3 = HO2 + Ps6_frag         1.0E11  0.0  0.0
+PLOG/ 10 1.04E-41 16.75 3895/
+PLOG/ 100 1.31E-06 5.47 16185/
+
+!-------------------------------------
+! o2 + 1,1-dimethylpropyl rates (O2 + 11DMP)
+!-------------------------------------
+
+O2 + 1,1-dimethylpropyl = 1,1-dimethylpropyloo     1.0E11  0.0  0.0 
+PLOG/ 0.01 1.06E+43 -18.10 13374/
+PLOG/ 0.1 1.05E+33 -14.62 11584/
+PLOG/ 1 1.90E+15 -8.85 6599.4/
+PLOG/ 10 1.80E+18 -9.52 9532/
+PLOG/ 100 3.40E+01 -4.37 2849/
+ 
+O2 + 1,1-dimethylpropyl = QOOH-t1     1.0E11  0.0  0.0  
+PLOG/ 10 4.42E-22 1.83 2773/
+PLOG/ 100 1.72E-29 4.39 3019/
+
+O2 + 1,1-dimethylpropyl = QOOH-t2     1.0E11  0.0  0.0  
+PLOG/ 10 2.74E-53 12.47 -8809/
+PLOG/ 100 6.58E-26 3.69 1215/
+
+O2 + 1,1-dimethylpropyl = QOOH-t3     1.0E11  0.0  0.0  
+PLOG/ 10 5.43E-67 15.55 -15608/
+PLOG/ 100 4.34E-25 2.72 1722/
+
+O2 + 1,1-dimethylpropyl = OH + Pt2_frag     1.0E11  0.0  0.0  
+PLOG/ 0.01 1.98E-04 -3.27 5513/
+PLOG/ 0.1 8.87E+02 -5.14 10336/
+PLOG/ 1 1.70E+10 -7.14 16690/
+PLOG/ 10 2.93E+01 -4.38 15970/
+PLOG/ 100 1.10E-09 -1.13 15680/
+
+O2 + 1,1-dimethylpropyl = HO2 + Pt3_frag     1.0E11  0.0  0.0  
+PLOG/ 0.01 2.44E+02 -4.59 5724/
+PLOG/ 0.1 6.89E+07 -6.10 10158/
+PLOG/ 1 4.17E+02 -4.27 12410/
+PLOG/ 10 1.25E-03 -2.63 10859/
+PLOG/ 100 2.39E-19 2.08 6335/
+
+O2 + 1,1-dimethylpropyl = OH + Pt5_frag     1.0E11  0.0  0.0  
+PLOG/ 0.01 1.07E+01 -4.53 8784/
+PLOG/ 0.1 9.08E+07 -6.50 13524/
+PLOG/ 1 1.78E+11 -7.33 17580/
+PLOG/ 10 1.21E+06 -5.61 19153/
+PLOG/ 100 6.31E-16 0.78 13981/
+
+O2 + 1,1-dimethylpropyl = OH + Pt9_frag     1.0E11  0.0  0.0  
+PLOG/ 0.01 1.74E+03 -5.48 6181/
+PLOG/ 0.1 3.36E+08 -6.94 10594/
+PLOG/ 1 6.56E+13 -8.33 16202/
+PLOG/ 10 3.23E-02 -3.67 11941/
+PLOG/ 100 7.02E-12 -0.70 11244/
+
+O2 + 1,1-dimethylpropyl = HO2 + Pt10_frag     1.0E11  0.0  0.0  
+PLOG/ 0.01 1.21E+02 -4.60 5883/
+PLOG/ 0.1 4.13E+07 -6.14 10335/
+PLOG/ 1 4.34E+13 -7.76 16174/
+PLOG/ 10 1.22E-03 -2.73 11122/
+PLOG/ 100 2.43E-19 1.97 6614/
+
+1,1-dimethylpropyloo = O2 + 1,1-dimethylpropyl     1.0E11  0.0  0.0
+PLOG/ 0.01 9.69E+71 -18.69 48918/
+PLOG/ 0.1 2.51E+62 -15.35 47260/
+PLOG/ 1 7.89E+49 -11.21 44077/
+PLOG/ 10 4.25E+44 -9.36 43723/
+PLOG/ 100 1.90E+30 -4.92 38145/
+
+1,1-dimethylpropyloo = QOOH-t1      1.0E11  0.0  0.0
+PLOG/ 10 6.91E+25 -4.83 34193/
+PLOG/ 100 5.19E+19 -2.61 33700/
+
+1,1-dimethylpropyloo = QOOH-t2      1.0E11  0.0  0.0
+PLOG/ 10 90368 1.83 18691/
+PLOG/ 100 4.47E+09 0.42 20596/
+
+1,1-dimethylpropyloo = QOOH-t3      1.0E11  0.0  0.0
+PLOG/ 10 3.49E+26 -5.34 30407/
+PLOG/ 100 7.38E+19 -2.94 29579/
+
+1,1-dimethylpropyloo = OH + Pt2_frag      1.0E11  0.0  0.0
+PLOG/ 0.01 4.60E+62 -16.67 45381/
+PLOG/ 0.1 1.75E+57 -14.59 45709/
+PLOG/ 1 2.58E+51 -12.41 46255/
+PLOG/ 10 3.85E+58 -14.09 53969/
+PLOG/ 100 4.78E+33 -6.38 45668/
+
+1,1-dimethylpropyloo = HO2 + Pt3_frag      1.0E11  0.0  0.0
+PLOG/ 0.01 1.69E+58 -14.69 41155/
+PLOG/ 0.1 1.06E+48 -11.24 38946/
+PLOG/ 1 2.50E+46 -10.43 40422/
+PLOG/ 10 1.00E+34 -6.47 36531/
+PLOG/ 100 1.91E+19-1.94 30637/
+
+1,1-dimethylpropyloo = OH + Pt5_frag      1.0E11  0.0  0.0
+PLOG/ 0.01 1.77E+68 -18.29 49404/
+PLOG/ 0.1 4.13E+58 -14.85 48106/
+PLOG/ 1 1.59E+46 -10.66 45462/
+PLOG/ 10 1.91E+37 -7.59 44724/
+PLOG/ 100 3.78E+25 -4.07 41666/
+
+1,1-dimethylpropyloo = OH + Pt9_frag      1.0E11  0.0  0.0
+PLOG/ 0.01 1.41E+54 -14.02 39618/
+PLOG/ 0.1 1.50E+57 -14.60 43079/
+PLOG/ 1 3.86E+40 -9.28 38016/
+PLOG/ 10 7.18E+44 -10.27 42543/
+PLOG/ 100 1.81E+36 -7.39 42247/
+
+1,1-dimethylpropyloo = HO2 + Pt10_frag      1.0E11  0.0  0.0
+PLOG/ 0.01 3.55E+59 -15.19 42119/
+PLOG/ 0.1 2.10E+49 -11.73 39937/
+PLOG/ 1 3.84E+37 -7.88 36806/
+PLOG/ 10 7.97E+34 -6.83 37412/
+PLOG/ 100 1.19E+20 -2.27 31491/
+
+QOOH-t1 = 1,1-dimethylpropyloo         1.0E11  0.0  0.0
+PLOG/ 10 3.11E+29 -6.24 18787/
+PLOG/ 100 9.29E+24 -4.51 18943/
+
+QOOH-t1 = OH + Pt2_frag         1.0E11  0.0  0.0
+PLOG/ 10 2.68E+32 -6.45 18407/
+PLOG/ 100 3.96E+23 -3.47 16440/
+
+QOOH-t1 = HO2 + Pt3_frag         1.0E11  0.0  0.0
+PLOG/ 10 2.62E+39 -8.61 23806/
+PLOG/ 100 2.81E+28 -4.85 21620/
+
+QOOH-t1 = HO2 + Pt10_frag         1.0E11  0.0  0.0
+PLOG/ 10 4.98E+03 1.91 19684/
+PLOG/ 100 1.42E-03 4.15 20024/
+
+QOOH-t2 = 1,1-dimethylpropyloo         1.0E11  0.0  0.0
+PLOG/ 10 4.63E+06 1.05 2971/
+PLOG/ 100 1.73E+18 -2.43 7988/
+
+QOOH-t2 = O2 + 1,1-dimethylpropyl     1.0E11  0.0  0.0
+PLOG/ 10 3.76E-21 10.65 11565/
+PLOG/ 100 1.30E+13 0.04 24677/
+
+QOOH-t2 = HO2 + Pt3_frag         1.0E11  0.0  0.0
+PLOG/ 10 3.11E-32 13.80 5658/
+PLOG/ 100 1.20E+06 1.92 20287/
+
+QOOH-t2 = OH + Pt5_frag         1.0E11  0.0  0.0
+PLOG/ 10 4.20E+15 -1.42 18454/
+PLOG/ 100 2.59E+17 -1.72 20223/ 
+
+QOOH-t2 = OH + Pt6_frag         1.0E11  0.0  0.0
+PLOG/ 10 5.16E+15 -1.07 24949/
+PLOG/ 100 5.28E+18 -1.67 27166/
+
+QOOH-t2 = HO2 + Pt10_frag         1.0E11  0.0  0.0
+PLOG/ 10 1.55E-31 13.49 6291/
+PLOG/ 100 5.48E+05 1.92 20489/
+
+QOOH-t3 = 1,1-dimethylpropyloo         1.0E11  0.0  0.0
+PLOG/ 10 1.54E+30 -6.77 18889/
+PLOG/ 100 3.57E+20 -3.39 17249/
+
+QOOH-t3 = HO2 + Pt3_frag         1.0E11  0.0  0.0
+PLOG/ 10 1.44E-13 6.90 15089/
+PLOG/ 100 1.72E-01 3.31 21455/
+
+QOOH-t3 = OH + Pt9_frag         1.0E11  0.0  0.0
+PLOG/ 10 2.76E+32 -6.56 16705/
+PLOG/ 100 1.91E+24 -3.75 15094/
+
+QOOH-t3 = HO2 + Pt10_frag         1.0E11  0.0  0.0
+PLOG/ 10 3.86E+42 -9.60 23940/
+PLOG/ 100 2.46E+34 -6.63 22925/ 
+

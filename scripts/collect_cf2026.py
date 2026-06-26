@@ -47,7 +47,11 @@ PROCESSING_ARCHIVE = ROOT / "_processing_archive"
 CKDIR = Path(r"D:\BaiduSyncdisk\soft\CoFlame_yang")
 CKEXE = CKDIR / "ckinterp.exe"
 CK_FILES = ["chem.inp", "therm.dat", "chem.out"]
-ANALYSIS_PYTHON = Path(os.environ.get("MECH_COLLECTION_PYTHON", sys.executable)).resolve()
+_venv_python = Path(__file__).resolve().parents[1] / ".venv" / "bin" / "python"
+if not _venv_python.exists():
+    _venv_python = WORKSPACE / ".venv" / "bin" / "python"
+_default_py = str(_venv_python) if _venv_python.exists() else sys.executable
+ANALYSIS_PYTHON = Path(os.environ.get("MECH_COLLECTION_PYTHON", _default_py))  # no .resolve() — keep venv symlink
 MMC_EXTENSIONS = [
     "zip",
     "txt",
@@ -2325,7 +2329,17 @@ def process(force: bool = False, year: str | None = None) -> None:
         ),
         encoding="utf-8",
     )
-    write_metadata(records)
+    # Save ALL metadata, not just filtered records (preserve other years)
+    all_records = read_metadata()
+    if year is not None:
+        filtered_ids = {article_id(r) for r in records}
+        all_records = [r if article_id(r) in filtered_ids else r for r in all_records]
+        # Update filtered records in all_records
+        rec_map = {article_id(r): r for r in records}
+        all_records = [rec_map.get(article_id(r), r) for r in all_records]
+    else:
+        all_records = records
+    write_metadata(all_records)
 
 
 def init() -> None:

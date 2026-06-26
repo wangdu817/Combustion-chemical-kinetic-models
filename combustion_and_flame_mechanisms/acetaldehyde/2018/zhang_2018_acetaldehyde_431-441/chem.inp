@@ -1,0 +1,2430 @@
+!     PRIOR TO ITS USE IN THE CALCULATIONS, THIS FILE HAS TO BE MODIFIED.
+!     DEPENDING ON WHAT BATH GAS (DILUTANT) IS MOST ABUNDANT IN YOUR SYSTEM
+!     (THE PRESENT CHOICES ARE N2, AR, OR HE),  YOU  SHOULD UNCOMMENT THE
+!     CORRESPONDING BLOCK FOR THE REACTION H+O2(+M)=HO2(+M), AND COMMENT THE
+!     BLOCK FOR OTHER DILUTANT(S).  AS GIVEN, THE MAIN DILUTANT IS SET TO BE N2.
+!     SHIELD THE LOW-TEMPERATURE SPECIES AND THEIR RELATED REACTIONS WHEN PERFORM A FLAME SIMULATION.
+
+ELEMENTS
+C H N AR HE O
+END
+
+SPECIES
+
+!
+!C0
+ AR        N2          H          H2         HE
+ O         OH          H2O        HO2        H2O2       O2                                    
+
+!C1                                                     
+ C         CH          CH2        CH2*       CH3        CH4       
+ CO        CO2         CH2O       HCO        CH2OH      CH3O     
+ CH3OH     HOCHO       HOCH2O     HCOH
+ HOCO      OCHO        !HCOO
+
+!C2                                                     
+ C2H       C2H2        H2CC       C2H3       C2H4       C2H5      C2H6        
+ C2O       HCCO        CH2CO      CH3CO      CH3CHO     C2H3OH    C2H5O     
+ CH2OCH    CH2OCH2     CH2CHO     HCCOH      C2H4OH     HCCHOH    CH2COH    
+ SC2H4OH   C2H5OH      O2CH2CHO   HO2CH2CO   CH3CO2 
+ CH2CHOO   
+ 
+
+!C3                                                     
+ C3H3     C2H3CHO    C2H5CHO    CH3CHCO     C2H5CO     C2H3CO                 
+
+!#####LT SPECIES######!
+
+!ADD species for CH4
+CH3O2     CH3O2H    CH2O2H
+
+!ADD species for CH3CHO
+CH3CO3     CH3CO3H      OCOCHO    KHO2COCHO   O2QCH2CO3H    QCH2CO3H
+H2COCO#    CH2CO2
+CH2CO2H    CH3CO2H
+
+END
+
+
+REACTIONS
+
+!************************ H2/CO mechanism of Hamid Hashemi et al. PCI (2015)/Li 2007 IJCK**************************************
+
+!======================                                                                                                                                                      
+!H2-O2 Chain Reactions                                                                                                                                                       
+!======================                                                                                                                                                      
+                                                                                                                                                                             
+! Hong et al., Proc. Comb. Inst. 33:309-316 (2011)                                                                                                                           
+H+O2 = O+OH                                 	1.04E+14   0.00  1.5286E+04                                                                                                    
+                                                                                                                                                                             
+! Baulch et al., J. Phys. Chem. Ref. Data, 21:411 (1992)                                                                                                                     
+O+H2 = H+OH						3.818E+12  0.00  7.948E+03                                                                                                                             
+   DUPLICATE                                                                                                                                                                 
+O+H2 = H+OH						8.792E+14  0.00  1.917E+04                                                                                                                             
+   DUPLICATE                                                                                                                                                                 
+                                                                                                                                                                             
+! Michael and Sutherland, J. Phys. Chem. 92:3853 (1988)                                                                                                                      
+H2+OH = H2O+H						0.216E+09  1.51  0.343E+04                                                                                                                           
+                                                                                                                                                                                                                                                                                                                                                         
+! M. Sangwan, L. N. Krasnoperov, The Journal of Physical Chemistry A 116 (2012) 11817?1822.                                                                                  
+OH+OH = O+H2O						1.35E+07   1.689  -1166.8                                                                                                                            
+    DUPLICATE                                                                                                                                                                
+OH+OH = O+H2O					      -2.697E+10   0.567  0.0                                                                                                                          
+    DUPLICATE                                                                                                                                                                
+                                                                                                                                                                             
+!============================                                                                                                                                                
+!H2-O2 Dissociation Reactions                                                                                                                                                
+!============================                                                                                                                                                
+                                                                                                                                                                             
+! Tsang and Hampson, J. Phys. Chem. Ref. Data, 15:1087 (1986)                                                                                                                
+H2+M = H+H+M						4.577E+19 -1.40  1.0438E+05                                                                                                                          
+   H2/2.5/ H2O/12/                                                                                                                                                           
+   CO/1.9/ CO2/3.8/                                                                                                                                                          
+   AR/0.0/ HE/0.0/                                                                                                                                                           
+                                                                                                                                                                             
+! Tsang and Hampson, J. Phys. Chem. Ref. Data, 15:1087 (1986)                                                                                                                
+H2+AR = H+H+AR                              	5.840E+18 -1.10  1.0438E+05                                                                                                    
+H2+HE = H+H+HE                              	5.840E+18 -1.10  1.0438E+05                                                                                                    
+                                                                                                                                                                             
+! Tsang and Hampson, J. Phys. Chem. Ref. Data, 15:1087 (1986)                                                                                                                
+O+O+M = O2+M                                	6.165E+15 -0.50  0.000E+00                                                                                                     
+   H2/2.5/ H2O/12/                                                                                                                                                           
+   AR/0.0/ HE/0.0/                                                                                                                                                           
+   CO/1.9/ CO2/3.8/                                                                                                                                                          
+                                                                                                                                                                             
+! Tsang and Hampson, J. Phys. Chem. Ref. Data, 15:1087 (1986)                                                                                                                
+O+O+AR = O2+AR                              	1.886E+13  0.00 -1.788E+03                                                                                                     
+O+O+HE = O2+HE                              	1.886E+13  0.00 -1.788E+03                                                                                                     
+                                                                                                                                                                             
+! Tsang and Hampson, J. Phys. Chem. Ref. Data, 15:1087 (1986)                                                                                                                
+O+H+M = OH+M                                	4.714E+18 -1.00  0.000E+00                                                                                                     
+   H2/2.5/  H2O/12/                                                                                                                                                          
+   AR/0.75/ HE/0.75/                                                                                                                                                         
+   CO/1.9/  CO2/3.8/                                                                                                                                                         
+                                                                                                                                                                             
+! Srinivasan and Michael, Int. J. Chem. Kinetic. 38 (2006)                                                                                                                   
+! Rate constant is for Ar with efficiencies from Michael et al., J. Phys. Chem. A, 106 (2002)                                                                                
+H2O+M = H+OH+M                              	6.064E+27 -3.322 1.2079E+05                                                                                                    
+   H2/3.0/  H2O/0.0/                                                                                                                                                         
+   HE/1.10/ N2/2.00/                                                                                                                                                         
+   O2/1.5/                                                                                                                                                                   
+! Efficiencies for CO and CO2 taken from Li et al., Int. J. Chem. Kinet. 36:566-575 (2004)                                                                                   
+   CO/1.9/ CO2/3.8/                                                                                                                                                          
+                                                                                                                                                                             
+! Srinivasan and Michael, Int. J. Chem. Kinetic. 38 (2006)                                                                                                                   
+H2O+H2O = H+OH+H2O                          	1.006E+26 -2.44  1.2018E+05                                                                                                    
+                                                                                                                                                                             
+!=================================                                                                                                                                           
+! Formation and consumption of HO2                                                                                                                                           
+!=================================                                                                                                                                           
+                                                                                                                                                                             
+! High-pressure limit from Troe, Proc. Comb. Inst. 28:1463-1469 (2000)                                                                                                       
+! Low-pressure  limit from Michael et al., J. Phys. Chem. A 106:5297-5313                                                                                                    
+! Centering factors from Fernandes et al., Phys. Chem. Chem. Phys. 10:4313-4321 (2008)                                                                                       
+!=================================================================================                                                                                           
+! MAIN BATH GAS IS N2 (comment this reaction otherwise)                                                                                                                      
+!                                                                                                                                                                            
+H+O2(+M) = HO2(+M)                          	4.65084E+12  0.44  0.000E+00                                                                                                   
+   LOW/6.366E+20 -1.72  5.248E+02/                                                                                                                                          
+   TROE/0.5  1E-30  1E+30/                                                                                                                                                  
+   H2/2.0/ H2O/14/ O2/0.78/ CO/1.9/ CO2/3.8/ AR/0.67/ HE/0.8/                                                                                                               
+!=================================================================================                                                                                           
+! MAIN BATH GAS IS AR OR HE (comment this reaction otherwise)                                                                                                                
+!                                                                                                                                                                            
+!H+O2(+M) = HO2(+M)                         	4.65084E+12  0.44  0.000E+00                                                                                                     
+!   LOW/9.042E+19 -1.50  4.922E+02/                                                                                                                                           
+!   TROE/0.5 1E-30  1E+30/                                                                                                                                                    
+!   H2/3.0/ H2O/21/ O2/1.1/ CO/2.7/ CO2/5.4/ HE/1.2/ N2/1.5/                                                                                                                  
+!=================================================================================                                                                                           
+                                                                                                                                                                             
+! Michael et al., Proc. Comb. Inst. 28:1471 (2000)                                                                                                                           
+!HO2+H = H2+O2                                 	3.659E+06  2.09 -1.451E+03                                                                                                   
+!Scaled by 0.75                                                                                                                                                              
+HO2+H = H2+O2                                 	2.750E+06  2.09 -1.451E+03                                                                                                   
+                                                                                                                                                                             
+! Mueller et al., Int. J. Chem. Kinetic. 31:113 (1999)                                                                                                                       
+HO2+H = OH+OH                               	7.079E+13  0.00  2.950E+02                                                                                                     
+                                                                                                                                                                             
+! Fernandez-Ramos and Varandas, J. Phys. Chem. A 106:4077-4083 (2002)                                                                                                        
+!HO2+O = O2+OH                               	4.750E+10  1.00 -7.2393E+02                                                                                                    
+!Scaled by 0.60                                                                                                                                                              
+HO2+O = O2+OH                               	2.850E+10  1.00 -7.2393E+02                                                                                                    
+                                                                                                                                                                             
+! M. P. Burke, S. J. Klippenstein, L. B. Harding, Proceedings of the Combustion Institute 34 (2013) 547?55.                                                                  
+HO2+OH = H2O+O2 				1.93E20    -2.49  5.84E+02                                                                                                                           
+    DUPLICATE                                                                                                                                                                
+HO2+OH = H2O+O2 			       1.21E+09   1.24   -1.31E+03                                                                                                                     
+    DUPLICATE                                                                                                                                                                
+                                                                                                                                                                             
+!=====================================                                                                                                                                       
+!Formation and Consumption of H2O2                                                                                                                                           
+!=====================================                                                                                                                                       
+
+! D. D. Y. Zhou, K. Han, P. Zhang, L. B. Harding, M. J. Davis, R. T. Skodje, The Journal of Physical Chemistry A 116 (2012) 2089?100.                                        
+HO2+HO2 = H2O2+O2                           	1.179E+9   0.7712  -1825                                                                                                       
+   DUPLICATE                                                                                                                                                                 
+HO2+HO2 = H2O2+O2        			1.251E+12  0.295   7397                   	                                                                                                   
+   DUPLICATE                                                                                                                                                                 
+                                                                                                                                                                             
+! Troe, Combust. Flame,  158:594-601 (2011)                                                                                                                                  
+! Rate constant is for Ar                                                                                                                                                    
+H2O2(+M) = OH+OH(+M)            			2.00E+12   0.90  4.8749E+04                                                                                                            
+   LOW/2.49E+24 -2.30 4.8749E+04/                                                                                                                                            
+   TROE/0.43 1E-30 1E+30/                                                                                                                                                    
+   H2O/7.5/ CO2/1.6/                                                                                                                                                         
+   N2/1.5/  O2/1.2/                                                                                                                                                          
+   HE/0.65/ H2O2/7.7/                                                                                                                                                        
+! Efficiencies for H2 and CO taken from Li et al., Int. J. Chem. Kinet. 36:566-575 (2004)                                                                                    
+   H2/3.7/ CO/2.8/                                                                                                                                                           
+                                                                                                                                                                             
+! Tsang and Hampson, J. Phys. Chem. Ref. Data, 15:1087 (1986)                                                                                                                
+H2O2+H = H2O+OH                             	2.410E+13  0.00  3.970E+03                                                                                                     
+H2O2+H = HO2+H2                             	4.820E+13  0.00  7.950E+03                                                                                                     
+H2O2+O = OH+HO2                             	9.550E+06  2.00  3.970E+03                                                                                                     
+                                                                                                                                                                             
+! Hong et al., J. Phys. Chem. A  114 (2010) 5718?727                                                                                                                         
+H2O2+OH = HO2+H2O                           	1.740E+12  0.00  3.180E+02                                                                                                     
+   DUPLICATE                                                                                                                                                                 
+H2O2+OH = HO2+H2O                           	7.590E+13  0.00  7.270E+03                                                                                                     
+   DUPLICATE                                                                                                                                                                 
+
+!======================                                                                                                                                                      
+!CO-HCO Reactions                                                                                                                                                       
+!======================                                                                                                                                  
+! Troe, 15th Symposium
+CO+O(+M) = CO2(+M)                          1.800E+10  0.00  2.384E+03
+! Fit of Westmoreland, AiChe J., 1986, rel. to N2 - Tim adjusted from MTA's
+! rate constant, which was rel to Ar.
+   LOW/1.550E+24 -2.79  4.191E+03/
+   H2/2.5/ H2O/12/ CO/1.9/ CO2/3.8/ AR/0.87/
+
+! Tsang and Hampson, JPC Ref. Data, 15:1087 (1986)
+CO+O2 = CO2+O                               2.530E+12  0.00  4.770E+04
+
+! (This study) least squares fit to available experimental results
+CO+OH = CO2+H                               2.229E+05  1.89 -1.1587E+03	
+
+!REF:you et al. j. phys. chem. a 2007, 111, 4031-4042
+CO+HO2 = CO2+OH                                   1.570E+005     2.180   17940.0
+
+! Yang et al., 8th U. S. National Combustion Meeting, 2013, 070RK-0163.
+HCO(+M)=H+CO(+M)             4.93E16  -0.93  19724     					
+  LOW/ 7.43E21  -2.36  19383/								
+  TROE/ 0.103  139. 10900. 4550/								
+  N2/1.5/ HE/1.5/ O2/1.5/ CO/1.5/   H2/2.0/  CH4/5.0/ CO2/3./ H2O/15./
+
+! FassheberN Friedrichs G Marshall P Glarborg P J. Phys. Chem. A 119 (2015) 7305-7315.
+HCO+O2=CO+HO2                        6.9E06   1.900   -1369                           
+
+! Tsang W Hampson RF JPCRD 15:1087 1986
+HCO+HO2 = CO2+OH+H                             3.000E+13  0.00  0.000E+00	
+
+! Glarborg et al's paper (C&F, 132:629, 2003)
+HCO+HCO = CH2O+CO                              3.000E+13  0.00  0.000E+00
+
+! Friedrichs G Herbon JT Davidson DF Hanson RK CPPC 4:5778-5788 2002
+HCO+H=CO+H2                                 1.100E+14   0.000       0         
+
+! Baulch DL Cobos CJ Cox RA Esser C Frank P Just Th Kerr JA Pilling MJ Troe J Walker RW Warnatz J JPCRD 21:403 1992                                                                                                                                      
+HCO+O=CO+OH                                 3.000E+13   0.000       0                                                                          
+                 
+! Baulch DL Cobos CJ Cox RA Esser C Frank P Just Th Kerr JA Pilling MJ Troe J Walker RW Warnatz J JPCRD 21:403 1992                                                                                                                                       
+HCO+O=CO2+H                                 3.000E+13   0.000       0                                                                          
+                
+! Baulch DL Bowman CT Cobos CJ Cox RA Just Th Kerr JA Pilling MJ Stocker D Troe J Tsang W Walker RW Warnatz J JPCRD 34:757-1397 2005                                                                                                                                      
+HCO+OH=CO+H2O                               1.100E+14   0.000       0                                                                         
+					
+! Tsang W Hampson RF JPCRD 15:1087 1986
+!HCO+CH3 = CO+CH4                            1.200E+14  0.00  0.000E+00							
+
+!************************************END CO/H2******************************************************
+
+
+!@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@THE REACTIONS OF CH4@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+!--------------------------------------------PYROLYSIS MECH--------------------------------------------
+
+!GRI 2.11  1.270E+16   -0.630    383.00
+ CH3+H(+M) = CH4(+M)                               1.270E+16   -0.630    383.00                       
+                                             LOW  /   2.477E+33   -4.760   2440.00  /
+                                             TROE/  0.7830   74.00  2941.00  6964.0 /
+                                   H2/2.0/ H2O/6.0/ CH4/2.0/ CO/1.5/ CO2/2.0/ C2H6/3.0/ AR/0.7/
+                                                                                                                                                                                     
+!REF:Baulch, D.L.; et al.,J. Phys. Chem. Ref. Data (2005)
+ CH4+H = CH3+H2                                     6.140E+005       2.500     9587.0
+!GRI
+!CH4+H = CH3+H2                                     6.600E+08        1.620    10840.00                   
+!SCHATZ ET AL.1984
+!CH4+H = CH3+H2                                     5.470E+07        1.97     1.121E+04                  
+
+!REF:GRI 3.0
+CH4+CH2 = CH3+CH3                                   2.460E+006       2.000      8270.0                 
+
+!----------------------------------------HIGH-T OXIDATION MECH-----------------------------------------
+
+!GRI
+!HO2+CH3 = O2+CH4                                   1.000E+12        .000         .00
+!2009 Jasper & Klippenstein & Harding   ywh
+CH3+HO2 = CH4+O2                                    1.160e+05        2.230      -3022
+
+!GRI
+CH4+O = CH3+OH                                      1.020E+09        1.500      8600.00
+
+!REF:curran, fit to NIST database                                                                        
+!CH4+OH = CH3+H2O                                   5.830E+004       2.600      2190.0                    
+!GRI
+!CH4+OH = CH3+H2O                                    1.000E+08        1.600      3120.00
+
+!Srinivasan NK Su M-C Sutherland JW Michael JV JPCA 109:7902-7914 2005
+CH4+OH = CH3+H2O																		1.00E+06	       2.182	    2506
+
+!REF:J. Aguilera-Iparraguirre et al. J Phys Chem A (2008) 112(30): 7047-7054.                            
+CH4+HO2 = CH3+H2O2                                 1.13E+001        3.740      21010.0                    
+
+!######################REACTIONS OF CH3 CH2*,CH2,CH AND C########################
+
+! GRI
+CH2+H(+M) = CH3(+M)                                2.500E+16       -0.800        0.00                    
+                                            LOW  /  3.200E+27       -3.140     1230.00 /
+                                            TROE /  0.6800   78.00    1995.0    5590.0 /
+                      H2/2.0/ H2O/6.0/ CH4/2.0/ CO/1.5/ CO2/2.0/ C2H6/3.0/ AR/0.7/
+                      
+!REF:JHF METHANE
+CH+H2(+M) = CH3(+M)                                 1.970E+12        0.430       -370.00                    
+                                            LOW  /  4.820E+25        -2.80       590.0 /                     
+                                            TROE /  0.578    122.0    2535.0    9365.0 /                     
+               H2/2.00/ H2O/6.00/ CH4/2.00/ CO/1.50/ CO2/2.00/ C2H6/3.00/ AR/ .70/           
+
+!D.L. Baulch, C.T. Bowman, C.J. Cobos, R.A. Cox, T. Just, J.A. Kerr, M.J. Pilling,D. Stocker, J. Troe, W. Tsang, R.W. Walker, J. Warnatz, J. Phys. Chem. Ref. Data 34 (2005)757-1397.
+CH2+M = C+H2+M                                     3.000E+14        0.000     64779.99
+CH2+M = CH+H+M                                     9.400E+15        0.000     89179.99
+
+!K.W. Lu, H. Matsui, C.L. Huang, P. Raghunath, N.S. Wang, M.C. Lin, J. Phys. Chem. A 114 (2010) 5493-5502
+CH2+H2 = H+CH3                                      4.400E+05   2.3000    7350.00                 
+
+!K.L. Gannon, M.A. Blitz, M.J. Pilling, P.W. Seakins, S.J. Klippenstein, L.B. Harding, J. Phys. Chem. A 112 (2008) 9575每9583.
+CH2*+H2 = CH3+H                                       6.30E+13       0.0      0.0               
+
+
+
+!D.L. Baulch, C.T. Bowman, C.J. Cobos, R.A. Cox, T. Just, J.A. Kerr, M.J. Pilling,D. Stocker, J. Troe, W. Tsang, R.W. Walker, J. Warnatz, J. Phys. Chem. Ref. Data 34 (2005)757-1397.
+CH2*+O2 = CH2+O2                                     3.12E+13       0.0      0.0
+CH2*+H = CH2+H                                       2.00E+14       0.0      0.0
+CH2*+HE = CH2+HE                                     6.60E+12       0.0      755
+CH2*+AR = CH2+AR                                     1.80E+10       0.93     0.0
+CH2*+N2 = CH2+N2                                     1.20E+13       0.00     470
+CH2*+CH4 = CH2+CH4                                   1.86E+12       0.0     -497.0
+CH2*+C2H2 = CH2+C2H2                                 6.60E+15      -0.9      0.0
+CH2*+C2H4 = CH2+C2H4                                 1.14E+13       0.0     -556.0
+CH2*+H2 = CH2+H2                                     1.07E+12       0.5      781.0
+
+!W. Tsang, R.F. Hampson,J. Phys. Chem. Ref. Data 15 (1986) 1087-1279.
+CH2*+H = CH+H2                                      3.000E+013     0.000     0.0
+
+!D.L. Baulch, C.T. Bowman, C.J. Cobos, R.A. Cox, T. Just, J.A. Kerr, M.J. Pilling,D. Stocker, J. Troe, W. Tsang, R.W. Walker, J. Warnatz, J. Phys. Chem. Ref. Data 34 (2005)757-1397.
+CH2*+CH4 = CH3+CH3                                  1.700E+013     0.000     -500
+
+!D.L. Baulch, C.T. Bowman, C.J. Cobos, R.A. Cox, T. Just, J.A. Kerr, M.J. Pilling,D. Stocker, J. Troe, W. Tsang, R.W. Walker, J. Warnatz, J. Phys. Chem. Ref. Data 34 (2005)757-1397.
+CH+H2 = CH2+H                                      1.750E+14   0.0000    3320.00                                              
+
+!L.B. Harding, R. Guadagnini, G.C. Schatz, J. Phys. Chem. 97 (1993) 5472-5481
+CH+H = C+H2                                        7.900E+13   0.0000     160.00
+
+!A.J. Dean, R.K. Hanson,Int. J. Chem. Kinet. 24 (1992)517-532
+CH+M =  C+H+M                                      1.900E+14        0.0000    66969.99
+
+!A. Fomin, T. Zavlev, V.A. Alekseev, I. Rahinov, S. Cheskis, A.A. Konnov, Combust. Flame 171 (2016) 198-210.
+CH+CH = C2H+H                                      1.350E+14        0.0000       0.00
+CH+CH = C+CH2                                      5.000E+12        0.0000       0.00
+
+!------------------------------HIGH-T OXIDATION MECH-----------------------------
+
+!###########REACTIONS OF CH3OH#############
+                   
+!jasper/ Klipp,j.phys.chem a 111,19,3932-3950  2007
+!REF:neglecting hcoh channels as they are not important 
+CH3OH(+M) =  CH3+OH(+M)                            2.080E+18  -0.6148   92549.99
+    LOW /  4.915E+51  -9.39  104069.99 /
+    TROE /   7.6560E-01  5.9510E+01  1.9100E+03  9.3740E+03 /
+
+CH3OH(+M) =  CH2*+H2O(+M)                          3.120E+18  -1.0170   91721.99
+    LOW /  8.753E+47  -8.46   99807.99 /
+    TROE /   9.9220E-01  4.7310E+04  9.4300E+02  4.7110E+04 /
+
+CH3OH(+M) =  CH2OH+H(+M)                           7.900E-03   5.0380   84475.99
+    LOW /  2.039E+42  -7.18  105079.99 /
+    TROE /   6.8430E-01  4.1493E+04  3.7049E+04  3.9800E+03 /
+
+!Meana-Pa?eda et al. 2011 JPCA							      
+CH3OH+H = CH2OH+H2                                3.07E5  2.55  5440 					 	!       
+CH3OH+H = CH3O+H2                                 1.99E5  2.566  10300          !    
+
+! Tsang, JPC Ref. Data, 16:471 (1987)
+CH3OH+CH3 = CH2OH+CH4                             3.190E+01  3.17  7.172E+03
+
+!Klippenstein et al. 
+CH3OH+O2 = CH2OH+HO2                              3.584E5  2.27  42764.68
+
+! Tsang, JPC Ref. Data, 16:471 (1987)
+CH3OH+O = CH2OH+OH                                3.880E+05  2.50  3.080E+03
+
+! Srinivasan NK Su M-C Michael JV JPCA 111:3951-3958 2007                                
+! CL Rasmussen, KH Andersen, K Dam-Johansen, P Glarborg, IJCK 40, 423-441 (2008)      
+CH3OH+OH=CH2OH+H2O                   1.5E08   1.4434    113 !  (85%)                                                                                             
+CH3OH+OH=CH3O+H2O                    2.7E07   1.4434    113 !  (15%)     
+
+!Alecu, I . M .; Tr uhlar, D. G. J Phys Chem A 2011, 115, 14599-14611                                                                                       
+CH3OH+HO2 = CH2OH+H2O2                            3.5E-04 4.85 10346
+CH3OH+HO2 = CH3O+H2O2                             1.5E-03 4.61 15928   
+
+! Tsang, JPC Ref. Data, 16:471 (1987)
+!CH3OH+HCO = CH2OH+CH2O                      9.635E+03  2.90  1.311E+04
+! including prompt dissociation of HCO (following Labbe et al., PCI 2016): 
+CH3OH+HCO = CH2OH+CH2O                       9.635E+03  2.90  1.311E+04 
+     PLOG/     3.947E-02     9.635E+03   2.900   13110.0 /             
+     PLOG/     3.947E-02     -2.025E+13   0.541   31907.4 /            
+     PLOG/     1.000E+00     9.635E+03   2.900   13110.0 /             
+     PLOG/     1.000E+00     -5.768E+13   0.427   33023.8 /            
+     PLOG/     1.000E+01     9.635E+03   2.900   13110.0 /             
+     PLOG/     1.000E+01     -1.218E+14   0.348   33947.3 /            
+                                                                                             
+CH3OH+H+CO=CH2OH+CH2O          9.635E+03   2.900   13110.0             
+     PLOG/     3.947E-02     1.179E+13   0.648   16919.2 /             
+     PLOG/     1.000E+00     3.358E+13   0.534   18035.7 /             
+     PLOG/     1.000E+01     7.093E+13   0.455   18959.1 /    
+
+!REF:Fittschen, C., J. Chim. Phys. 95: 2129 (1998).
+!CH2O+CH3O=CH3OH+HCO                               6.620E+011     0.000    2294.0                  
+! including prompt dissociation of HCO (following Labbe et al., J. Phys. Chem. Lett. 2016):
+CH3O+CH2O = CH3OH+HCO                         6.620E+011     0.000    2294.0
+     PLOG/     3.947E-02     6.620E+011     0.000    2294.0 /              
+     PLOG/     3.947E-02     -1.39E+21	-2.36E+00	2.11E+04 /             
+     PLOG/     1.000E+00     6.620E+011     0.000    2294.0 /              
+     PLOG/     1.000E+00     -3.96E+21	-2.47E+00	2.22E+04 /             
+     PLOG/     1.000E+01     6.620E+011     0.000    2294.0 /              
+     PLOG/     1.000E+01     -8.37E+21	-2.55E+00	2.31E+04 /             
+                                                                       
+!TRAJECTORY: CONTINUED for CH2OH+CH2O = CH3OH+HCO                               
+CH3O+CH2O = CH3OH+H+CO          6.620E+011     0.000    2294.0                     
+     PLOG/     3.947E-02     1.39E+21	-2.36E+00	2.11E+04 /              
+     PLOG/     1.000E+00     3.96E+21	-2.47E+00	2.22E+04 /              
+     PLOG/     1.000E+01     8.37E+21	-2.55E+00	2.31E+04 /  
+
+
+! Tsang, JPC Ref. Data, 16:471 (1987)
+CH3O+CH3OH = CH3OH+CH2OH                          3.000E+11  0.00  4.060E+03
+! 
+!###########REACTIONS OF CH3O###############
+
+!2013 Dames																		                          
+CH3O(+M) = CH2O+H(+M)			                   1.13E+10		1.21	  24082.44		     ! 1.13E+10               
+LOW/                                         6.02E+16    -0.547   18022.1/         ! 6.02E+16                
+TROE/  0.341 28 1000 2339/                                                                        
+HE/ 0.67/ AR / 0.85/ H2/ 2.00/ H2O/ 6.00/ CO/ 1.50/ CO2/ 2.00/ CH4/ 2.00/ C2H6/ 3.00/ CH3OH/ 3.00/                               
+
+!GRI                
+CH3O+H = CH2O+H2                                   2.000E+13        0.000        0.00                     
+CH3O+H = CH2*+H2O                                  1.600E+13        0.000        0.00        
+
+!REF:                                                                                                        
+CH3O+CH3 = CH2O+CH4                                 1.200E+013       0.000        0.0                        
+
+!! Wantuck et al., JPC, 91:4653 (1987)                                  
+!CH3O+O2 = CH2O+HO2                                  9.033E+13  0.00  1.198E+04     !    9.033E+13
+!   DUPLICATE                                                                       !
+!CH3O+O2 = CH2O+HO2                                  2.200E+10  0.00  1.748E+03     !    2.200E+10
+!   DUPLICATE                                                                       !   
+   
+CH3O+O2 = CH2O+HO2                                 4.80E-01	3.57	-1055                 
+
+! Tsang and Hampson, JPC Ref. Data, 15:1087 (1986) 
+CH3O+O = CH2O+OH                                    6.000E+12        0.000        0.00                       
+CH3O+OH = CH2O+H2O                                  1.800E+13        0.000        0.00                      
+
+!REF:tsang and hampson, j. phys. chem. ref. data, 15:1087 (1986)
+CH3O+HO2 = CH2O+H2O2                                3.010E+011       0.000        0.0
+
+! Tsang and Hampson, JPC Ref. Data, 15:1087 (1986)                         
+CH3O+CO = CH3+CO2                                   1.600E+13  0.00  1.180E+04                                                                                                         
+CH3O+HCO = CH3OH+CO                                 9.000E+13  0.00  0.000E+00                                                                                                      
+2CH3O = CH3OH+CH2O                                  6.000E+13  0.00  0.000E+00    
+!
+!###########REACTIONS OF CH2OH#############
+
+!2013 Aranda IJCK												         
+CH2OH = CH2O+H                          4.2E07   1.86  36590  
+PLOG/      0.0100     3.3E32  -7.18  39740/                   
+PLOG/      0.1000     8.3E41  -9.58  45730/                   
+PLOG/      1.0000     2.3E36  -7.53  44880/                   
+PLOG/     20.0000     5.7E34  -6.64  46430/                   
+PLOG/     50.0000     3.4E31  -5.57  45610/                   
+PLOG/    100.0000     1.7E27  -4.21  44130/                
+
+! Tsang, JPC Ref. Data, 16:471 (1987)
+CH2OH+H=CH2O+H2                                    6.000E+12        0.000        0.00                      
+                 
+!GRI
+CH2OH+H = CH2*+H2O                                 6.000E+12        0.000        0.00                   
+
+!Sadiego 2014                               
+CH2OH+O2 = CH2O+HO2								   5.000e+12    0.000      0.00
+ 
+! Tsang, JPC Ref. Data, 16:471 (1987)
+CH2OH+O = CH2O+OH                                   4.200E+13        0.000        0.00        
+CH2OH+OH = CH2O+H2O                                 2.400E+13        0.000        0.00          
+
+!Mousavipour,J Phys. Chem. A 2011, 115, 3291
+CH2OH+HO2=CH2O+H2O2									6.300E+11      0.28        -813
+CH2OH+HO2=HOCHO+H2O 								3.600E+12      0.12        454                     
+                                                                                                            
+! (This study) by keeping the branching ratio if using Friedrichs et al. (2004) below
+CH2OH+HCO = CH3OH+CO                                1.000E+13  0.00  0.000E+0
+! Friedrichs et al. (IJCK, 2004, 36, 157)
+CH2OH+HCO = CH2O+CH2O                               1.500E+13  0.00  0.000E+00                       
+
+! 1987 Tsang                                                         
+CH2OH+CH2*=CH3CHO+H									1.81E+13	 0.00	 0.000E+0  
+CH2OH+CH2=C2H4+OH                                   2.41E+13   0.00	 0.000E+0
+CH2OH+CH2=CH3+CH2O                                  1.21E+12   0.00	 0.000E+0
+
+!###########REACTIONS OF CH3#############
+!Srinivasan et al. JPC 2005 p.7902
+CH3+O2 = O+CH3O                                     7.55E+12         0.000      28320.0
+!GRI
+!CH3+O2 = OH+CH2O                                   3.600E+10        0.000       8940.00
+!Personal communication with Klippenstein; Curran 2013, Sarathy 2012
+CH3+O2 = OH+CH2O                                    2.61E+00         3.283       8105.0
+
+!GRI
+!CH3+O = CH2O+H                                       8.430E+13        0.000        0.00
+!Ref: HAR/KLP 05 [5.540e+13] Branching ratio  0.82/0.18
+!Harding and Klippenstein 2004 add  4.543e+13        0.050       -1.360e+02
+CH3+O = CH2O+H                                       4.543e+13        0.050       -1.360e+02   
+!Harding and Klippenstein 2004 add
+CH3+O = HCO+H2                                       0.997e+13        0.050       -1.360e+02
+
+!GRI
+CH3+OH = CH2+H2O                                    5.600E+07        1.600     5420.00
+
+!REF:from jasper/ Klipp,j.phys.chem a 111,19,3932-3950
+ CH3+OH = CH2*+H2O                                  1.0 0. 0. ! reverse reaction fit to two arrenhius expressions: 8.407e9   0.8750 1428   3.915e19 -2.182   325.1        
+                             PLOG /    0.001316     0.1132E+15       -0.45845     -496.28352/   ! fitting MUE =       8.57% 300-3000 K
+                             PLOG /    0.013158     0.2234E+15       -0.53832     -220.35580/   ! fitting MUE =       8.93%
+                             PLOG /    0.131579     0.1160E+16       -0.72747      600.46175/   ! fitting MUE =       8.94%
+                             PLOG /    1.315789     0.4283E+16       -0.85972     1887.52759/   ! fitting MUE =       6.35%
+                             PLOG /   13.157895     0.4385E+15       -0.53864     2931.69892/   ! fitting MUE =       3.83%
+                             PLOG /  131.578947     0.6091E+11        0.59560     2922.77103/   ! fitting MUE =      14.98%
+
+               
+!refit from  jasper/Klipp,j.phys.chem a 111,19,3932-3950
+CH3+OH=H2+CH2O                                      1.376 0. 69704    ! < 2% of complexation products
+                             PLOG /    0.001316     0.3887E+10        0.25392    -1220.66461/   ! fitting MUE =       9.93% 300-3000 K
+                             PLOG /    0.013158     0.1988E+11        0.06025     -624.42912/   ! fitting MUE =       9.27%
+                             PLOG /    0.131579     0.2815E+12       -0.24957      498.30850/   ! fitting MUE =       8.34%
+                             PLOG /    1.315789     0.3555E+13       -0.53245     2042.26529/   ! fitting MUE =       8.90%
+                             PLOG /   13.157895     0.2192E+13       -0.43166     3415.37613/   ! fitting MUE =      15.99%
+                             PLOG /  131.578947     0.2360E+10        0.45344     3790.96644/   ! fitting MUE =      30.14%                                             
+
+!REF:from jasper/ Klipp,j.phys.chem a 111,19,3932-3950
+CH3+OH=H+CH2OH               1.371e14 0.04166 0.
+                             PLOG /    0.001316     0.8442E+10        0.96279     3230.39260/   ! fitting MUE =       1.54% 300-3000 K
+                             PLOG /    0.013158     0.8442E+10        0.96279     3230.39260/   ! fitting MUE =       1.54%
+                             PLOG /    0.131579     0.1006E+11        0.94201     3295.03597/   ! fitting MUE =       1.43%
+                             PLOG /    1.315789     0.5601E+11        0.73966     3970.98753/   ! fitting MUE =       0.90%
+                             PLOG /   13.157895     0.5531E+12        0.48620     5443.47750/   ! fitting MUE =       2.54%
+                             PLOG /  131.578947     0.2525E+11        0.90920     6402.10664/   ! fitting MUE =      13.15%
+
+!REF:from jasper/ Klipp,j.phys.chem a 111,19,3932-3950
+CH3+OH=H+CH3O               2.446e13 0.2397 -51.88    ! < 4% of complexation products
+                             PLOG /    0.001316     0.7893E+09        1.06509    11858.54118/   ! fitting MUE =       1.43% 300-3000 K
+                             PLOG /    0.013158     0.7893E+09        1.06509    11858.54118/   ! fitting MUE =       1.43%
+                             PLOG /    0.131579     0.7893E+09        1.06509    11858.54118/   ! fitting MUE =       1.43%
+                             PLOG /    1.315789     0.7926E+09        1.06457    11858.98728/   ! fitting MUE =       1.45%
+                             PLOG /   13.157895     0.1029E+10        1.03413    11969.76311/   ! fitting MUE =       1.40%
+                             PLOG /  131.578947     0.3073E+10        0.92189    12980.53944/   ! fitting MUE =       1.58%
+
+!2009 Jasper & Klippenstein & Harding ywh ignition and JSR CH4
+CH3+HO2 = CH3O+OH                                   1.000e+12        0.269    -6.875e+02
+
+!###########REACTIONS OF HOCHO#############
+!from Aramco 1.3
+HOCH2O = HOCHO+H                            1.000E+14  0.00  1.490E+04
+
+!Xu, Int. J. Chem. Kinet. 38(5), 322-326, (2006)
+CH2O+OH =  HOCH2O                           6.320E+06   1.6300    4284.00
+
+! J.-G. Chang, H.-T. Chen, S. Xu, M.C. Lin, J. Phys. Chem. A 111 (2007) 6789-6797.
+HOCHO(+M)=CO+H2O(+M)                 7.5E14   0.000   68710 !                                                                                                                                                                                                                                                                                                    
+                               LOW  /4.1E15 0 52980/                                                                                                                                                                                                                                                                                                                                         
+                                                                                                                                                                                                                                                                                                                                                                
+HOCHO(+M)=CO2+H2(+M)                 4.5E13   0.000   68240 !                                                                                                                                                                                                                                                                                                    
+                               LOW  /1.7E15 0 51110/                                                                                                                                                                                                                                                                                                                       
+
+! P. Marshall, P. Glarborg, Proc. Combust. Inst. 35 (2015) 153-160.                                                                                                                                                                                                                                                                                                                                                                
+HOCHO+H=HOCO+H2                        2.3E02   3.272    4858 !
+HOCHO+H=OCHO+H2                        4.2E05   2.255   14091 !
+HOCHO+O=HOCO+OH                        5.1E01   3.422    4216 !                                                                                                                                                                                                                                                                                                    
+HOCHO+O=OCHO+OH                        1.7E05   2.103    9880 !                                                                                                                                                                                                                                                                                                    
+HOCHO+HO2=HOCO+H2O2                    4.7E-1   3.975   16787 !
+HOCHO+HO2=OCHO+H2O2                    3.9E01   3.080   25206 !
+HOCHO+O2=OCHO+HO2                      3.0E13   0.000   63000 !
+
+! J.M. Anglada, J. Am. Chem. Soc. 126 (2004) 9809-9820.                                                                                                                                                                                                                                                                                                          
+! P. Marshall, P. Glarborg, Proc. Combust. Inst. 35 (2015) 153-160.
+HOCHO+OH = HOCO+H2O                    7.8E-6   5.570   -2365 !                                                                                                                                                                                                                                                                                                    
+HOCHO+OH = OCHO+H2O                    4.9E-5   4.910   -5067 !                                                                                                                                                                                                                                                                                                    
+
+! H.G. Yu, G. Poggi, J.S. Francisco, J.T. Muckerman, J. Chem. Phys. 129 (2008) 214307. 
+HOCO+HO2 = HOCHO+O2                    4.0E11   0.000       0 !                                                                                                                                                                                                                                                                                                    
+                                                                                                                                                                                                                                                                                                                                                                 
+! P. Marshall, P. Glarborg, Proc. Combust. Inst. 35 (2015) 153-160. 
+OCHO = CO2+H                           1.0E10   0.000       0 !                                                                                                                                                                                                                                                                                                    
+OCHO+O2 = CO2+HO2                      5.0E13   0.000       0 !                                                                                                                                                                                                                                                                                                    
+
+! DM Golden GP Smith AB McEwen C-L Yu B Eiteneer M Frenklach GL Vaghjiani AR Ravishankara FP Tully J Phys Chem. A 102 (1998) 8598-8606.
+HOCO(+M) = CO2+H(+M)                   8.2E11   0.413   35335 !
+ LOW  /                              6.0E26  -3.148   37116 /                               !
+ TROE / 0.39 1.0E-30 1.0E30 /                               ! Fc = 0.39
+
+CO+OH = HOCO                           2.0E20  -3.500    1309 !  1.0 atm interpolation - LPL (JPS,SJK,&JAM 30th Symp)
+  PLOG/ 0.013158                      1.7E15  -2.680     859/						  
+  PLOG/ 0.13158                       5.9E18  -3.350     887/					
+  PLOG/ 1.3158	                      2.6E20  -3.500    1309/						      
+  PLOG/ 13.158	                      7.1E20  -3.320    1763/					
+  PLOG/ 131.58                        1.1E20  -2.780    2056/	
+
+HOCO+H=CO2+H2                        3.1E17  -1.3475    555 ! YUFRA08 (300-1000 K, fit)
+ HOCO+H=CO+H2O                        6.0E15  -0.525    2125 ! YUFRA08 (300-1000 K, fit)
+ HOCO+O=CO2+OH                        9.0E12   0.000       0 ! YUFRA07
+ HOCO+OH=CO2+H2O                      4.6E12   0.000     -89 ! RASGLA08a YUFRA05
+   DUPLICATE                                                 !
+ HOCO+OH=CO2+H2O                      9.5E06   2.000     -89 ! 
+   DUPLICATE                                                 !
+ CO+H2O2=HOCO+OH                      3.6E04   2.500   28660 ! GLA/MAR09 
+ HOCO+HO2=CO2+H2O2                    4.0E13   0.000       0 ! YUMUC08
+ HOCO+O2=CO2+HO2                      4.0E09   1.000       0 ! YUMUC06  
+
+!###########REACTIONS OF CH2O#############
+!M. Koch, F. Temps, R. Wagener, H.G. Wagner,Ber. Bunsenges. Phys. Chem.94 (1990) 645每650.
+CH2*+CO2 = CH2O+CO                         6.600E+12        0.000        0.00      
+
+! Friedrichs et al., IJCK 2004, 36, 157                                          
+!CH2O+M = HCO+H+M                            3.300E+39 -6.30  9.990E+04           
+!   H2/2.5/ H2O/12.0/ CO/1.9/ CO2/3.8/ AR/0.7/                                                                                                                     
+! including prompt dissociation of HCO (following Labbe et al., PCI 2016): 1 atm
+ CH2O+M = HCO+H+M                            3.300E+39 -6.30  9.990E+04
+   H2/2.5/ H2O/12.0/ CO/1.9/ CO2/3.8/ AR/0.7/
+     DUPLICATE                               
+ CH2O+M = HCO+H+M                            -1.98E+49	-8.77E+00	1.20E+05
+   H2/2.5/ H2O/12.0/ CO/1.9/ CO2/3.8/ AR/0.7/  
+     DUPLICATE
+ CH2O+M = H+CO+H+M                            1.98E+49	-8.77E+00	1.20E+05 
+   H2/2.5/ H2O/12.0/ CO/1.9/ CO2/3.8/ AR/0.7/                                                                                          
+
+ CH2O+M = CO+H2+M                            3.100E+45 -8.00  9.751E+04           
+   H2/2.5/ H2O/12.0/ CO/1.9/ CO2/3.8/ AR/0.7/                                    
+
+! Irdam et al., IJCK 1993, 25, 285                                               
+!CH2O+H = HCO+H2                             5.740E+07  1.90  2.7486E+03          
+! including prompt dissociation of HCO (following Labbe et al., J. Phys. Chem. Lett. 2016):
+CH2O + H = HCO + H2                         5.740E+07  1.90  2.7486E+03
+     PLOG/     3.947E-02     5.740E+07   1.900   2748.6 /              
+     PLOG/     3.947E-02     -7.054E+12  0.623   12971.6 /             
+     PLOG/     1.000E+00     5.740E+07   1.900   2748.6 /              
+     PLOG/     1.000E+00     -5.004E+11  0.952   12762.6 /             
+     PLOG/     1.000E+01     5.740E+07   1.900   2748.6 /              
+     PLOG/     1.000E+01     -1.136E+13  0.582   14401.6 /             
+                                                                       
+!TRAJECTORY: CONTINUED for CH2O+H=HCO+H2                               
+CH2O+H=H+CO+H2          5.740E+07   1.900   2748.6                     
+     PLOG/     3.947E-02     7.054E+12  0.623   12971.6 /              
+     PLOG/     1.000E+00     5.004E+11  0.952   12762.6 /              
+     PLOG/     1.000E+01     1.136E+13  0.582   14401.6 /              
+
+                                                                                 
+! Tsang and Hampson, JPC Ref. Data, 15:1087 (1986)                               
+!CH2O+O = HCO+OH                             1.810E+13  0.00  3.080E+03           
+! including prompt dissociation of HCO (following Labbe et al., J. Phys. Chem. Lett. 2016):
+CH2O + O = HCO + OH                         1.810E+13  0.00  3.080E+03 
+     PLOG/     3.947E-02     1.810E+13   0.000   3080.0 /              
+     PLOG/     3.947E-02     -3.804E+22   -2.359   21877.4 /           
+     PLOG/     1.000E+00     1.810E+13   0.000   3080.0 /              
+     PLOG/     1.000E+00     -1.084E+23   -2.473   22993.8 /           
+     PLOG/     1.000E+01     1.810E+13   0.000   3080.0 /              
+     PLOG/     1.000E+01     -2.289E+23   -2.552   23917.3 /           
+                                                                       
+!FNEMECHGEN: CONTINUED for CH2O+O=HCO+OH                               
+CH2O+O=H+CO+OH          1.810E+13   0.000   3080.0                     
+     PLOG/     3.947E-02     3.804E+22   -2.359   21877.4 /            
+     PLOG/     1.000E+00     1.084E+23   -2.473   22993.8 /            
+     PLOG/     1.000E+01     2.289E+23   -2.552   23917.3 /            
+
+                                                                                 
+! Tsang and Hampson, JPC Ref. Data, 15:1087 (1986)                               
+!CH2O+OH = HCO+H2O                           3.430E+09  1.18 -4.470E+02 
+! including prompt dissociation of HCO (following Labbe et al., J. Phys. Chem. Lett. 2016):
+CH2O + OH = HCO + H2O                       3.430E+09  1.18 -4.470E+02
+     PLOG/     3.947E-02     3.430E+09   1.180   -447.0 /             
+     PLOG/     3.947E-02     -1.009E+13  0.261   9315.0 /             
+     PLOG/     1.000E+00     3.430E+09   1.180   -447.0 /             
+     PLOG/     1.000E+00     -1.135E+13  0.242   9979.0 /             
+     PLOG/     1.000E+01     3.430E+09   1.180   -447.0 /             
+     PLOG/     1.000E+01     -1.201E+13  0.229   10512.0 /            
+                                                                      
+!TRAJECTORY: CONTINUED for CH2O+OH=HCO+H2O                            
+CH2O+OH=H+CO+H2O          3.430E+09   1.180   -447.0                  
+     PLOG/     3.947E-02     1.009E+13  0.261   9315.0 /              
+     PLOG/     1.000E+00     1.135E+13  0.242   9979.0 /              
+     PLOG/     1.000E+01     1.201E+13  0.229   10512.0 /             
+
+        
+!2007 Venkatesh PCI												               
+!CH2O+O2 = HCO+HO2														5.08E+14	 0.00 	4.63E+04           
+! including prompt dissociation of HCO (following Labbe et al., J. Phys. Chem. Lett. 2016):
+CH2O+O2 = HCO+HO2                          5.08E+14	 0.00 	4.63E+04 
+     PLOG/     3.947E-02     5.08E+14	 0.00 	4.63E+04 /               
+     PLOG/     3.947E-02     -1.07E+24	-2.36E+00	6.51E+04 /            
+     PLOG/     1.000E+00     5.08E+14	 0.00 	4.63E+04 /               
+     PLOG/     1.000E+00     -3.04E+24	-2.47E+00	6.62E+04 /            
+     PLOG/     1.000E+01     5.08E+14	 0.00 	4.63E+04 /               
+     PLOG/     1.000E+01     -6.43E+24	-2.55E+00	6.71E+04 /            
+                                                                       
+!FNEMECHGEN: CONTINUED for CH2O+CH3=HCO+CH4                            
+CH2O+O2 = H+CO+HO2          5.08E+14	 0.00 	4.63E+04                   
+     PLOG/     3.947E-02     1.07E+24	-2.36E+00	6.51E+04 /             
+     PLOG/     1.000E+00     3.04E+24	-2.47E+00	6.62E+04 /             
+     PLOG/     1.000E+01     6.43E+24	-2.55E+00	6.71E+04 /             
+                                                                                                                                                                                                                       
+!2014 Jorge			JPCA													     
+!CH2O+HO2=HCO+H2O2                           1.55E-07	 5.80  	3870   ! 1.55E-07
+! including prompt dissociation of HCO (following Labbe et al., J. Phys. Chem. Lett. 2016):
+CH2O+HO2=HCO+H2O2                          1.55E-07	 5.80  	3870
+     PLOG/     3.947E-02     1.55E-07	 5.80  	3870 /            
+     PLOG/     3.947E-02     -3.26E+02	3.44E+00	2.27E+04 /        
+     PLOG/     1.000E+00     1.55E-07	 5.80  	3870 /            
+     PLOG/     1.000E+00     -9.28E+02	3.33E+00	2.38E+04 /        
+     PLOG/     1.000E+01     1.55E-07	 5.80  	3870 /            
+     PLOG/     1.000E+01     -1.96E+03	3.25E+00	2.47E+04 /        
+                                                                    
+!FNEMECHGEN: CONTINUED for CH2O+CH3=HCO+CH4                         
+CH2O+HO2 = H+CO+H2O2          1.55E-07	 5.80  	3870              
+     PLOG/     3.947E-02     3.26E+02	3.44E+00	2.27E+04 /          
+     PLOG/     1.000E+00     9.28E+02	3.33E+00	2.38E+04 /          
+     PLOG/     1.000E+01     1.96E+03	3.25E+00	2.47E+04 /          
+                                                                                  
+!Fischer et al. IJCK, 32:713 (2000)                                              
+!CH2O+CH3 = HCO+CH4                          3.636E-06  5.42   9.980E+02              
+! including prompt dissociation of HCO (following Labbe et al., J. Phys. Chem. Lett. 2016): 
+CH2O+CH3 = HCO+CH4                          3.636E-06  5.42  9.980E+02
+     PLOG/     3.947E-02     3.636E-06   5.420   998.0 /              
+     PLOG/     3.947E-02     -7.641E+03   3.061   19795.4 /           
+     PLOG/     1.000E+00     3.636E-06   5.420   998.0 /              
+     PLOG/     1.000E+00     -2.177E+04   2.947   20911.8 /           
+     PLOG/     1.000E+01     3.636E-06   5.420   998.0 /              
+     PLOG/     1.000E+01     -4.598E+04   2.868   21835.3 /           
+                                                                      
+!FNEMECHGEN: CONTINUED for CH2O+CH3=HCO+CH4                           
+CH2O+CH3=H+CO+CH4          3.636E-06   5.420   998.0                  
+     PLOG/     3.947E-02     7.641E+03   3.061   19795.4 /            
+     PLOG/     1.000E+00     2.177E+04   2.947   20911.8 /            
+     PLOG/     1.000E+01     4.598E+04   2.868   21835.3 /            
+
+!GRI
+CH2O+CH = CH2CO+H                                   9.460E+13        0.000     -515.00
+
+!Christensen, Energy Fuels 2016, 30, 6709 - 6726
+CH2O+OH=HOCHO+H															 3.580E+05   1.8300   -1117.00   ! 7.170E+05  ZXY_Modified_20170506 k/2
+
+!###########REACTIONS OF CH2&CH2*#############
+CH2+O2=CO2+H+H                       2.1E09   0.9929   -269 ! # 
+! SJK unpublished (2013)                                      
+! ------ ------ ------ !                                        
+CH2+O2=CH2O+O                        1.3E06   2.4202   1604 ! # 1.3E06   2.4202   1604
+	! SJK unpublished (2013)                                      
+
+!D.L. Baulch, C.T. Bowman, C.J. Cobos, R.A. Cox, T. Just, J.A. Kerr, M.J. Pilling,D. Stocker, J. Troe, W. Tsang, R.W. Walker, J. Warnatz,J. Phys. Chem. Ref. Data 34 (2005) 757-1397
+CH2+O = HCO+H                                       2.000E+13        0.0000     536.00
+CH2+O = CO+H+H                                      1.000E+14        0.0000     536.00
+CH2+O = CO+H2                                       8.000E+13        0.0000     536.00
+!P. Frank, Th. Just,Proc.Int. Symp. Shock Tubes Waves 14 (1984) 706.
+CH2+O = CH+OH                                       3.000E+14        0.0000   11920.00
+
+!A.W. Jasper, S.J. Klippenstein, L.B. Harding, J. Phys. Chem. A 111 (2007) 8699-8707.
+CH2+OH = CH2O+H                                     2.860E+13        0.1228    -162.00
+CH2+OH = CH+H2O                                     8.630E+05        2.0190    6776.00                                                                                
+
+!W. Tsang, R.F. Hampson,J. Phys. Chem. Ref. Data 15 (1986) 1087-1279.
+CH2+HO2 = CH2O+OH                                   1.800E+13        0.000        0.00                                                                              
+
+!GRI
+!CH2*+O2 = CO+H2O                                    1.200E+13        0.000        0.00
+!CH2*+O2 = H+OH+CO                                   2.800E+13        0.000        0.00
+
+
+!W. Tsang, R.F. Hampson, J. Phys. Chem. Ref. Data 15 (1986),1087-1279.
+CH2*+O = H2+CO                                         1.50E+13         0.0          0.0
+CH2*+O = H+H+CO                                        1.50E+13         0.0          0.0
+CH2*+OH = CH2O+H                                       3.00E+13         0.0          0.0
+CH2*+HO2 = CH2O+OH                                     3.00E+13         0.0          0.0
+CH2*+H2O2 = CH3O+OH                                    3.00E+13         0.0          0.0
+CH2*+HCO = CH3+CO                                      1.80E+13         0.0          0.0
+CH2*+CH3O = CH3+CH2O                                   1.80E+13         0.0          0.0
+
+!F. Hayes, W.D. Lawrance, W.S. Staker, K.D. King, J. Phys. Chem. 100 (1996) 11314-11318
+CH2*+CH2O = CH3+HCO                                    5.30E+13         0.0          -720
+
+!2015 Shen PCI C2H2 LFS
+!CH2*+CO = CH2+CO                                    1.10E+10         1.1          -280.0
+!D.L. Baulch, C.T. Bowman, C.J. Cobos, R.A. Cox, T. Just, J.A. Kerr, M.J. Pilling,D. Stocker, J. Troe, W. Tsang, R.W. Walker, J. Warnatz, J. Phys. Chem. Ref. Data 34 (2005)757-1397.
+!CH2*+CO2 = CH2+CO2                                  1.25E+13         0.0          0.0
+CH2*+H2O = CH2+H2O                                  1.50E+13         0.0          -430 
+
+CH2*+H2O=H2+CH2O                                    6.82E+10         0.2          -935.0
+
+!###########REACTIONS OF CH#############
+
+!A. Bergeat, T. Calvo, F. Caralp, J.H. Fillion, G. Dorthe, J.L. Loison,Discuss. Faraday Soc. 119 (2002) 67-77.
+!D.L. Baulch, C.T. Bowman, C.J. Cobos, R.A. Cox, T. Just, J.A. Kerr, M.J. Pilling,D. Stocker, J. Troe, W. Tsang, R.W. Walker, J. Warnatz,J. Phys. Chem. Ref. Data 34 (2005) 757-1397
+CH+O2 = HCO+O                                      4.800E+12         0.0000       0.00
+CH+O2 = CO+H+O                                     7.200E+12         0.0000       0.00
+CH+O2 = CO2+H                                      7.200E+12         0.0000       0.00
+CH+O2 = CO+OH                                      4.800E+12         0.0000       0.00
+
+!D.L. Baulch, C.T. Bowman, C.J. Cobos, R.A. Cox, T. Just, J.A. Kerr, M.J. Pilling,D. Stocker, J. Troe, W. Tsang, R.W. Walker, J. Warnatz,J. Phys. Chem. Ref. Data 34 (2005) 757-1397
+CH+O = CO+H                                        4.000E+13        0.0000       0.00
+
+!J.N. Murrell, J.A. Rodriguez, J. Mol. Struct. Theochem. 139 (1986) 267-276.
+CH+O = C+OH                                        1.520E+13        0.0000    4730.00
+
+!P. Glarborg, J.A. Miller, R.J. Kee,Combust. Flame 65 (1986) 177-202.
+!CH+OH = HCO+H                                      3.000E+13        0.000        0.00
+CH+OH = HCO+H                                      3.000E+13        0.000        0.00
+     PLOG/     3.947E-02     3.000E+13      0.000       0.00 / 
+     PLOG/     3.947E-02     -6.30E+22	-2.36E+00	1.88E+04 / 
+     PLOG/     1.000E+00     3.000E+13      0.000       0.00 / 
+     PLOG/     1.000E+00     -1.80E+23	-2.47E+00	1.99E+04 / 
+     PLOG/     1.000E+01     3.000E+13      0.000       0.00 / 
+     PLOG/     1.000E+01     -3.80E+23	-2.55E+00	2.08E+04 / 
+CH+OH = H+CO+H          3.400E+12   0.000   690.0 
+     PLOG/     3.947E-02     6.30E+22	-2.36E+00	1.88E+04 / 
+     PLOG/     1.000E+00     1.80E+23	-2.47E+00	1.99E+04 / 
+     PLOG/     1.000E+01     3.80E+23	-2.55E+00	2.08E+04 /   
+
+!A. Bergeat, S. Moisan, R. Mereau, J.L. Loison, Chem. Phys. Lett. 480 (2009) 21-25.
+CH+H2O = CH2O+H                                    1.770E+16        -1.2200      24.00
+
+CH+CO(+M) = HCCO(+M)                               5.000E+13        0.000        0.00 
+                                            LOW  /  2.690E+28       -3.740     1936.00 /
+                                            TROE /  0.5757   237.00   1652.0    5069.0 /
+                      H2/2.0/ H2O/6.0/ CH4/2.0/ CO/1.5/ CO2/2.0/ C2H6/3.0/ AR/0.7/
+
+!CH+CO2 = HCO+CO                                    3.400E+12        0.000      690.00      
+CH+CO2 = HCO+CO                                     3.400E+12    0.000    690.00  !GRI
+     PLOG/     3.947E-02     3.400E+12   0.000   690.0 / 
+     PLOG/     3.947E-02     -7.145E+21   -2.359   19487.4 / 
+     PLOG/     1.000E+00     3.400E+12   0.000   690.0 / 
+     PLOG/     1.000E+00     -2.035E+22   -2.473   20603.8 / 
+     PLOG/     1.000E+01     3.400E+12   0.000   690.0 / 
+     PLOG/     1.000E+01     -4.300E+22   -2.552   21527.3 / 
+CH+CO2=H+CO+CO          3.400E+12   0.000   690.0 
+     PLOG/     3.947E-02     7.145E+21   -2.359   19487.4 / 
+     PLOG/     1.000E+00     2.035E+22   -2.473   20603.8 / 
+     PLOG/     1.000E+01     4.300E+22   -2.552   21527.3 /   
+ 
+!###########REACTIONS OF C#############
+
+!D.L. Baulch, C.T. Bowman, C.J. Cobos, R.A. Cox, T. Just, J.A. Kerr, M.J. Pilling, D. Stocker, J. Troe, W. Tsang, R.W. Walker, J. Warnatz,J. Phys. Chem. Ref. Data 34 (2005) 757-1397
+C+O2 = CO+O                                        6.000E+13        0.0000       635.00 
+
+!A. Zanchet, P. Halvick, J.C. Rayez, B. Bussery-Honvault, P. Honvault,J. Chem. Phys. 126 (2007) 184308.
+C+OH = CO+H                                        3.600E+13        0.0000       0.00 
+
+!S.W. Mayer, L. Schieler, H.S. Johnston, Symp. (Int.) Combust. 11 (1967) 837-844.
+C+H2O = CH+OH																			 7.800E+11        0.6700     39300.00
+
+!A.R. Fairbairn, The dissociation of carbon monoxide, Proc. R. Soc. Lond. A 312 (1969) 207-227
+C+O+M = CO+M                                       7.260E+13        0.0000       0.00
+     
+!****************************************THE END OF CH4 REACTIONS****************************************
+
+!@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@THE REACTIONS OF C2H6@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+!GRI 2.1.1
+ CH3+CH3(+M) = C2H6(+M)                           2.120E+16   -0.970    620.00                  
+                                            LOW  /  1.770E+50   -9.670   6220.00  /
+                                   
+                                            TROE/  0.5325  151.0  1038.00  4970.0 /
+                                   
+                                        H2/2.0/ H2O/6.0/ CH4/2.0/ CO/1.5/ CO2/2.0/ C2H6/3.0/ AR/0.7/                                         
+!!2CH3(+M) = C2H6(+M)                      6.770E+16   -1.180     654.00   !GRI 3.0
+!!                                           LOW  /  3.400E+41   -7.030   2762.00/
+!!                                           TROE/   .6190  73.20  1180.00  9999.00 /
+!!                                       H2/2.00/ H2O/6.00/ CH4/2.00/ CO/1.50/ CO2/2.00/ C2H6/3.00/ AR/ .70/ 
+!USC Mech II (GRI)                                        
+ C2H5+H(+M) = C2H6(+M)                             5.21E+17      -0.99     1580.00               
+                                             LOW  /1.99E+41      -7.08     6685.00 /
+                                             TROE /0.8422 125.0  2219.00   6882.0  /
+                         H2/2.0/ H2O/6.0/ CH4/2.0/ CO/1.5/ CO2/2.0/ C2H6/3.0/ AR/0.7/
+!USC Mech II (GRI) 
+ C2H6+H = C2H5+H2                                  1.15E+08       1.900      7530.00               
+ 
+!REF:tsang and hampson, j. phys. chem. ref. data, 15:1087 (1986)
+C2H6+CH = C2H5+CH2                                1.100E+014     0.000    -260.0
+!
+!USC Mech II (GRI)  
+ C2H6+CH2* = C2H5+CH3                              4.00E+13       0.000     -550.00            
+!REF:miller, j.a. and bowman, c.t.,
+!REF:mechanism and modeling of nitrogen chemistry in combustion, wss/ ci, autumn 1988
+!CH2*+C2H6 = CH3+C2H5                            1.200E+014     0.000       0.0
+ 
+ C2H6+CH3 = C2H5+CH4                               6.14E+06       1.740    10450.00               
+!REF:tsang and hampson, j. phys. chem. ref. data, 15:1087 (1986)
+!C2H6+CH3 = C2H5+CH4                               5.480E-001     4.000    8280.0
+
+!!REF:tsang and hampson, j. phys. chem. ref. data, 15:1087 (1986) !ZXY ADDED 20141226   !cannot converge
+!C2H6+C2H = C2H5+C2H2                                3.61E+12	     0.0	    0.0
+!C2H6+C2H3 = C2H5+C2H4                               6.01E+02	     3.3	    10492.35182     
+
+!-----------------------------------HIGH-T OXIDATION MECH--------------------------
+
+!##########REACTIONS OF C2H6###########
+
+!ref:baulch et al., j. phys. chem. ref data, 21:411 (1992)
+!C2H6+O2 = C2H5+HO2                               6.030e+13      0.000    5.187e+04
+!86TSA/HAM
+C2H5+HO2 = C2H6+O2                                3.000E+11      0.000        0.00                
+
+!GRI
+C2H6+O = C2H5+OH                                  8.980E+07      1.920     5690.00   
+C2H6+OH = C2H5+H2O                                3.540E+06      2.120      870.00    
+
+!ref:J. Aguilera-Iparraguirre et al. J Phys Chem A (2008) 112(30): 7047-7054.
+C2H6+HO2 = C2H5+H2O2                              3.460e+01 3.610 1.692e+04
+
+!Aramcomech 2.0
+!REF:TSANG AND HAMPSON, J. PHYS. CHEM. REF. DATA, 15:1087 (1986)
+C2H6+CH3O = C2H5+CH3OH                            2.410E+011     0.000    7090.0
+ 
+!##########REACTIONS OF C2H5OH###########
+ 
+!REF:sivaramakrishnan J. Phys. Chem. A, Vol. 114, No. 35, 2010
+C2H5OH = C2H4+H2O                                 3.410E+059   -14.200     83672.6
+                           PLOG/      0.0010      3.410E+059   -14.200     83672.6/
+                           PLOG/      0.0100      2.620E+057   -13.300     85262.2/
+                           PLOG/      0.1000      1.650E+052   -11.500     84745.6/
+                           PLOG/      1.0000      5.230E+043    -8.900     81506.7/
+                           PLOG/     10.0000      4.590E+032    -5.600     76062.4/
+                           PLOG/    100.0000      3.840E+020    -2.060     69465.5/
+C2H5OH = CH3+CH2OH                                1.200E+054   -12.900    100005.7
+                           PLOG/      0.0010      1.200E+054   -12.900    100005.7/
+                           PLOG/      0.0100      5.180E+059   -14.000     99906.4/
+                           PLOG/      0.1000      1.620E+066   -15.300    105390.5/
+                           PLOG/      1.0000      5.550E+064   -14.500    106183.0/
+                           PLOG/     10.0000      1.550E+058   -12.300    105768.0/
+                           PLOG/    100.0000      1.780E+047    -8.960    101058.8/
+C2H5OH = C2H5+OH                                  8.100E+046   -11.300    111053.4
+                          PLOG/      0.0010       8.100E+046   -11.300    111053.4/
+                          PLOG/      0.0100       1.860E+056   -13.500    107238.4/
+                          PLOG/      0.1000       4.650E+063   -15.000    109622.8/
+                          PLOG/      1.0000       4.460E+065   -14.900    112345.0/
+                          PLOG/     10.0000       2.790E+061   -13.400    113080.2/
+                          PLOG/    100.0000       6.170E+051   -10.300    109940.7/
+C2H5OH+O2 = C2H4OH+HO2                            2.000E+013     0.000    52800.0
+C2H5OH+O2 = SC2H4OH+HO2                           1.500E+013     0.000    50150.0
+
+!REF:sivaramakrishnan J. Phys. Chem. A, Vol. 114, No. 35, 2010
+C2H5OH+H = SC2H4OH+H2                            8.790E+004     2.680    2910.0
+C2H5OH+H = C2H4OH+H2                             5.310E+004     2.810    7490.0
+C2H5OH+H = C2H5O+H2                              9.450E+002     3.140    8701.1
+C2H5OH+OH = SC2H4OH+H2O                          7.170E+004     2.540   -1534.0
+C2H5OH+OH = C2H4OH+H2O                           5.700E+000     3.380   -2394.3
+C2H5OH+OH = C2H5O+H2O                            5.810E-003     4.280   -3560.0
+
+!REF:Estimated from CW Zhou butanol+oh
+C2H5OH+HO2 = SC2H4OH+H2O2                        3.500E-005     5.260    7475.1
+C2H5OH+HO2 = C2H4OH+H2O2                         3.986E-002     4.300   15333.0
+C2H5OH+HO2 = C2H5O+H2O2                          6.470E-007     5.300   10533.1
+
+!REF:wu et al., J. Phys. Chem. A 2007, 111, 6693-6703
+C2H5OH+O = C2H4OH+OH                             9.690E+002     3.230    4658.0
+C2H5OH+O = SC2H4OH+OH                            1.450E+005     2.470     876.0
+C2H5OH+O = C2H5O+OH                              1.460E-003     4.730    1727.0
+
+!REF:Xu, Z.F. et al., J. Chem. Phys. 120,6593-6599, 2004
+C2H5OH+CH3 = C2H4OH+CH4                          3.300E+002     3.300   12290.0
+C2H5OH+CH3 = SC2H4OH+CH4                         1.993E+001     3.370    7634.0
+C2H5OH+CH3 = C2H5O+CH4                           2.035E+000     3.570    7721.0
+
+!REF:1/ 2 of c4h10+c2h5
+C2H5OH+C2H5 = C2H4OH+C2H6                        5.000E+010     0.000   13400.0
+!REF:estimate
+C2H5OH+C2H5 = SC2H4OH+C2H6                       5.000E+010     0.000   10400.0
+
+!###############################REACTIONS OF C2H5############################
+
+!04-MIL-KLI
+ C2H4+H(+M) = C2H5(+M)                          1.367E+09    1.463   1355.00                   
+                                              LOW  /  2.027E+39   -6.642   5769.00  /
+                                              TROE / -0.569  299.0  -9147.0  152.40 /
+                                              N2/1.2/ CO/1.5/ H2/2/ CO2/3/ H2O/10./
+
+!REF:stewart et al c&f 1989
+CH3+CH3 = H+C2H5                                  4.740E+012     0.105   10664.3
+PLOG/      0.0100     4.740E+012     0.105     10664.3/
+PLOG/      0.1000     2.570E+013    -0.096     11406.1/
+PLOG/      1.0000     3.100E+014    -0.362     13372.5/
+PLOG/     10.0000     2.150E+010     0.885     13532.5/
+PLOG/    100.0000     1.032E+002     3.230     11236.1/
+
+!!REF:Curran: fit to Pratt/ Wood 84 and Pratt/ Veldman 76
+!C2H5+H = C2H4+H2                                  2.000E+012     0.000       0.0
+!Baulch J. Phys. Chem. Ref. Data 34, 757 2005    Value[4.210E+12]
+C2H5+H = C2H4+H2                                  4.210E+12      0.000        0.00
+
+
+!REF:Zhu, R.S. et al.,J. Chem. Phys. 120:6566:6573 (2004)
+CH3+C2H5 = CH4+C2H4                               1.180E+004     2.450   -2921.0
+
+!REF:tsang and hampson, j. phys. chem. ref. data, 15:1087 (1986)
+C2H5+C2H = C2H4+C2H2                                1.81E+12	     0.000	 0.000 !ZXY ADDED 20141226
+!C2H4+C2H4 = C2H5+C2H3                             4.820E+014     0.000   71530.0   
+!1999 Hidaka CnF  ZXY_20150122_01
+C2H4+C2H4 = C2H5+C2H3                              5.01E+14       0.000   64700    
+
+C2H5+C2H5 = C2H4+C2H6                               1.39E+12	     0.000   0.000
+
+!------------------------------------HIGH-T OXIDATION MECH-------------------------
+
+!#############REACTIONS OF C2H5##############
+
+!90BOZ/DEA 
+!C2H5+O2 = C2H4+HO2                               2.000E+10      0.000      0.00                                                                                                                                     
+!2003 DeSain & Klippenstein & Miller & Taatjes
+C2H5+O2 = C2H4+HO2                                  2.094E+09      0.49       -391.4                
+ DUPLICATE      
+            PLOG / 0.0395                          2.094E+09      0.49       -391.4 /
+            PLOG / 1.0000                          1.843E+07      1.13       -720.6 /
+            PLOG / 10.000                          7.561E+14     -1.01         4749 /
+C2H5+O2 = C2H4+HO2                                  6.609E+00      3.51        14160                
+ DUPLICATE 
+!Marinov 1998
+!C2H5+O2 = CH3CHO+OH                                 4.90E+11       -0.48      8357.0                
+!P.S.Veloo 2012   ywh
+!C2H5+O2 = CH3CHO+OH                                 1.836E-15      7.74      -2782.0                
+!2003 DeSain & Klippenstein & Miller & Taatjes
+C2H5+O2 = CH3CHO+OH                                4.908E-06      4.76      2.543E+02              
+          PLOG / 0.04                              4.908E-06      4.76      2.543E+02 /
+          PLOG / 1.00                              6.803E-02      3.57      2.643E+03 /
+          PLOG / 10.00                             8.265E+02      2.41      5.285E+03 / 
+!Aramcomech 2.0
+!REF:CARSTENSEN AND DEAN PROC COMBUST INST 30 (2005) 995?003
+C2H5+O2 = CH2OCH2+OH                             1.303E+003     1.930    -502.7
+PLOG/      0.0400     1.303E+003     1.930      -502.7/
+PLOG/      1.0000     2.438E+002     2.180       -62.5/
+PLOG/     10.0000     4.621E+009     0.150      5409.0/
+         
+C2H5+O = CH3CHO+H                                   2.90E+12       0.032       -394.0 
+C2H5+O = CH3+CH2O                                   18.8E+12       0.032       -394.0 
+C2H5+O = C2H4+OH                                    3.80E+12       0.032       -394.0 
+
+!JHF METHANE
+!C2H5+HO2 = C2H5O+OH                                 3.200E+13       0.00   0.000E+00                                        
+!                                         rev /      3.075E+15      -0.32   2.749E+04 /
+
+!REF:Curran. Based on ch3+ho2<=>products                                        
+C2H5+HO2<=>C2H5O+OH                               1.100E+013     0.000       0.0
+
+!86TSA/HAM
+C2H5+HO2 = C2H4+H2O2                              3.000E+11      0.000        0.00                 
+!86TSA/HAM
+C2H5+HO2 = CH3+CH2O+OH                            2.400E+13      0.000        0.00                 
+
+! Estimated (JHF METHANEㄘ
+C2H4+HCO = C2H5+CO                                1.000E+07      2.000     8000.00                
+
+!#############REACTIONS OF C2H5O##############
+
+!JHF METHANE
+CH3CHO+H = C2H5O                                  4.610E+07      1.71      7090
+
+!Sivaramakrishnan, Michael, Harding, Klippenstein. J. Phys. Chem. A 2015, 119, 7724?7733
+C2H5O = CH3+CH2O                               4.7730E+21 -3.915 16890.0 
+                           PLOG/ 1.00E-02 4.7730E+21 -3.915 16890.0/
+                           PLOG/ 5.00E-02 5.4440E+22 -4.017 17386.0/
+                           PLOG/ 1.00E-01 5.0210E+23 -4.213 17883.0/
+                           PLOG/ 1.00E+00 9.6570E+25 -4.589 19274.0/
+                           PLOG/ 1.00E+01 6.8390E+27 -4.839 20864.0/
+                           PLOG/ 1.00E+02 4.0540E+26 -4.180 21460.0/
+
+!###########REACTIONS OF SC2H4OH#############
+ 
+!Sivaramakrishnan, Michael, Harding, Klippenstein. J. Phys. Chem. A 2015, 119, 7724?7733
+SC2H4OH = CH3CHO+H                             1.2090E+32 -6.915 36561.0
+                           PLOG/ 1.00E-02 1.2090E+32 -6.915 36561.0/
+                           PLOG/ 5.00E-02 4.4820E+34 -7.133 38747.0/
+                           PLOG/ 1.00E-01 1.6420E+36 -7.493 40201.0/
+                           PLOG/ 1.00E+00 4.7970E+34 -6.722 41727.0/
+                           PLOG/ 1.00E+01 2.2280E+31 -5.523 41727.0/
+                           PLOG/ 1.00E+02 4.6550E+18 -1.662 36263.0/
+						   
+!Sivaramakrishnan, Michael, Harding, Klippenstein. J. Phys. Chem. A 2015, 119, 7724?7733						   
+C2H3OH+H = SC2H4OH                               4.6710E+40 -9.339 8697.0                  
+                          PLOG/ 1.00E-02 4.6710E+40 -9.339 8697.0/
+                          PLOG/ 5.00E-02 6.4080E+34 -7.166 7916.0/
+                          PLOG/ 1.00E-01 1.6570E+34 -6.868 8175.0/
+                          PLOG/ 1.00E+00 7.1120E+31 -5.802 8928.0/
+                          PLOG/ 1.00E+01 1.9930E+21 -2.434 5365.0/
+                          PLOG/ 1.00E+02 9.0090E+14 -0.376 3577.0/
+           
+! S.M.Sarathy et al. 2012  
+SC2H4OH = C2H5O                                  5.48E+45     -11.63      44328                                
+        PLOG / 1.00E-03                          5.48E+45     -11.63      44328 /                              
+        PLOG / 1.00E-02                          2.54E+49     -12.37      46445 /                              
+        PLOG / 1.00E-01                          1.65E+54     -13.4       50330 /                              
+        PLOG / 1.00E+00                          1.81E+55     -13.31      53132 /                              
+        PLOG / 1.00E+01                          4.58E+49     -11.32      52714 /                              
+        PLOG / 2.00E+01                          4.11E+46     -10.33      51834 /                              
+        PLOG / 5.00E+01                          6.68E+41     -8.83       50202 /                              
+        PLOG / 1.00E+02                          6.54E+37     -7.58       48697 /                                                                                                                                             
+SC2H4OH = C2H4OH                                 2.65E+36     -8.86       51019                                  
+        PLOG / 1.00E-03                          2.65E+36     -8.86       51019 /                              
+        PLOG / 1.00E-02                          3.56E+37     -8.89       51114 /                               
+        PLOG / 1.00E-01                          4.14E+39     -9.19       51912 /                              
+        PLOG / 1.00E+00                          5.82E+44     -10.34      55296 /                              
+        PLOG / 1.00E+01                          4.26E+48     -11.06      59458 /                              
+        PLOG / 2.00E+01                          8.84E+47     -10.74      59901 /                              
+        PLOG / 5.00E+01                          2.23E+45     -9.84       59604 /                              
+        PLOG / 1.00E+02                          1.70E+42     -8.83       58737 /                              
+                                                                                                               
+! Gabriel da Silva et al. 2009 
+SC2H4OH+O2 = CH3CHO+HO2                          5.26E+17     -1.638      869                                  
+        PLOG /0.01                               5.26E+17     -1.637      838 /                                
+        PLOG /0.1                                5.26E+17     -1.637      838 /                                
+        PLOG /1.0                                5.28E+17     -1.638      839 /                                
+        PLOG /10.0                               1.54E+18     -1.771      1120 /                               
+        PLOG /100.0                              3.78E+20     -2.429      3090 /                                                                                                                                              
+SC2H4OH+O2 = C2H3OH+HO2                          5.12E+02      2.496      -414                                 
+        PLOG /0.01                               5.12E+02      2.496      -414 /                               
+        PLOG /0.1                                5.33E+02      2.496      -402 /                               
+        PLOG /1.0                                7.62E+02      2.446      -296 /                               
+        PLOG /10.0                               8.92E+03      2.146       470 /                               
+        PLOG /100.0                              4.38E+05      1.699      2330 /                               
+
+!R.Sivaramakrishnan et al. 2010
+CH3CHCO+OH = SC2H4OH+CO                          2.000e+12    0.000   -1.010e+03                                
+
+!****************************************THE END OF C2H6 REACTIONS****************************************
+
+!@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@THE REACTIONS OF C2H4@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+!REF:GRI 3.0
+C2H3+H(+M) = C2H4(+M)                             6.080E+012     0.270     280.0     ! 
+LOW/                                              1.400E+030    -3.860    3320.0/    ! 
+TROE/  7.820E-001  2.075E+002  2.663E+003  6.095E+003/
+H2/ 2.00/ H2O/ 6.00/ AR/ 0.70/ CO/ 1.50/ CO2/ 2.00/ CH4/ 2.00/ C2H6/ 3.00/ HE/ 0.70/      
+
+C2H4(+M)=H2+H2CC(+M)                       8.000E+12    0.440 88770.00   !GRI  3.0         
+                                     LOW  /  7.000E+50   -9.310 99860.00   /                                  
+                                     TROE / 0.7345  180.0  1035.00  5417.0 /                                  
+                H2/2.0/ H2O/6.0/ CH4/2.0/ CO/1.5/ CO2/2.0/ C2H6/3.0/ AR/0.7/                            
+
+
+!A.W. Jasper, S.J. Klippenstein, L.B. Harding, J. Phys. Chem. A 111 (2007) 8699每8707.
+CH3+CH2 = C2H4+H                                  1.20E+15       -0.3432         153              
+
+!W. Tsang, R.F. Hampson, J. Phys. Chem. Ref. Data 15 (1986) 1087-1279.
+CH2*+CH3 = C2H4+H                                 1.800E+13     0.000        0.00
+CH+CH4 = H+C2H4                                   6.000E+13      0.000        0.00
+
+!REF:Knyazev,V.D. et al.,J. Phys. Chem. 100, 11346-1135 (1996)
+C2H4+H = C2H3+H2                                  5.070E+007     1.930   12950.0         ! 5.070E+007     1.930   12950.0
+
+!Estimated
+C2H4+CH2* = H2CC+CH4                              5.000E+13      0.000        0.00         
+           
+!REF:tsang and hampson, j. phys. chem. ref. data, 15:1087 (1986)
+C2H4+CH3<=>C2H3+CH4                                 6.62E-01	      3.8	     12500  ! 6.620E+000     3.700    9500.0           ZXY_Modified_20150416_01
+!REF:Hidaka ZXY modified    20150122
+!C2H4+CH3 = C2H3+CH4                              4.20E+11	      0	       11100
+
+!ZXY estimated
+C2H4+C2H = C2H3+C2H2                              2.41E+12	     0.000	  10427.91857
+
+!----------------------------------------HIGH-T OXIDATION MECH-------------------------------
+
+!#############REACTIONS OF C2H4##############
+
+!USC Mech II  (86TSA/HAM)
+C2H4+O2 = C2H3+HO2                                4.220E+13      0.000    60800.00                   
+ 
+!Li, Jasper, Zador, Miller, Klippenstein, Proc. Combust. Inst. (2016)   
+! including prompt dissociation of HCO (following Labbe et al., J. Phys. Chem. Lett. 2016): 
+C2H4+O = CH3+HCO                         5.88E+17	-1.717  2893.072                   
+     PLOG/     3.947E-02     5.88E+17	-1.717  2893.072 /                                   
+     PLOG/     3.947E-02     -1.24E+27	-4.08E+00	1.88E+04 /                                
+     PLOG/     1.000E+00     5.88E+17	-1.717  2893.072 /                                   
+     PLOG/     1.000E+00     -3.52E+27	-4.19E+00	2.28E+04 /                                
+     PLOG/     1.000E+01     5.88E+17	-1.717  2893.072 /                                   
+     PLOG/     1.000E+01     -7.44E+27	-4.27E+00	2.37E+04 /                                
+                                                                                            
+! including prompt dissociation of HCO (following Labbe et al., J. Phys. Chem. Lett. 2016):                                            
+C2H4+O = CH3+H+CO            5.88E+17	-1.717  2893.072                                 
+     PLOG/     3.947E-02     1.24E+27	-4.08E+00	1.88E+04 /                                  
+     PLOG/     1.000E+00     3.52E+27	-4.19E+00	2.28E+04 /                                  
+     PLOG/     1.000E+01     7.44E+27	-4.27E+00	2.37E+04 /                                  
+  
+C2H4+O = CH3CO+H             8.66E+12	-0.4843	1957.7911
+C2H4+O = CH2CHO+H            9.15E+09	0.9475	1724.3186     
+C2H4+O = CH2+CH2O            5.77E+06	1.991	2859.293  
+C2H4+O=CH2CO+H2 		         1.12E+17	-1.831	3179.2  
+
+! Senosiain JP Klippenstein SJ Miller JA JPCA 110:6960-6970 2006
+C2H4+OH=C2H3+H2O                     1.3E-1   4.200    -860 ! GIM/GLA09 SEN/MIL06
+	
+C2H4+OH=CH3+CH2O                     1.8E05   1.68     2061 !
+PLOG /0.01                          5.4E00   2.92    -1733/
+PLOG /0.025                         3.2E01   2.71    -1172/
+PLOG /0.1                           5.6E02   2.36     -181/
+PLOG /1.                            1.8E05   1.68     2061/
+PLOG /10.                           2.4E09   0.56     6007/
+PLOG /100.                          2.8E13  -0.50    11455/
+
+C2H4+OH=CH3CHO+H                     2.4E-2   3.91     1723 !
+PLOG /0.01                          2.4E-7   5.30    -2051./
+PLOG /0.025                         8.7E-5   4.57     -618./
+PLOG /0.1                           4.0E-1   3.54     1882./
+PLOG /1.                            2.4E-2   3.91     1723./
+PLOG /10.                           8.3E08   1.01    10507./
+PLOG /100.                          6.8E09   0.81    13867./
+
+C2H4+OH=C2H3OH+H 	                3.2E05   2.19     5256 !
+PLOG /0.01                          1.0E04   2.60     4121./
+PLOG /0.025                         1.1E04   2.60     4129./
+PLOG /0.1                           1.5E04   2.56     4238./
+PLOG /1.                            3.2E05   2.19     5256./
+PLOG /10.                           1.9E08   1.43     7829./
+PLOG /100.                          8.6E10   0.75    11491./
+
+C2H4+OH=C2H4OH    5.91E+41    -10.43    4832.  	
+PLOG /0.01    2.76E+47    -11.64  11099./
+PLOG /0.025   6.02E+37    -9.76    1995./
+PLOG /0.1     6.02E+37    -9.65    2363./
+PLOG /1.      6.02E+37    -8.14    8043./
+PLOG /10.     6.02E+37    -7.77   10736./
+PLOG /100.    6.02E+37    -7.44   14269./
+	! inf    6.02E+37   -8.88     5170
+	! inf    4.46E+07    1.55    -1564
+DUPLICATE
+C2H4+OH=C2H4OH	1 	1 	1
+PLOG /0.025   4.96E+37    -8.68    5355./
+PLOG /0.1     2.56E+35    -7.79    5017./
+PLOG /1.      7.29E+31    -6.91    2855./
+PLOG /10.     3.02E+26    -4.87    2297./
+PLOG /100.    2.79E+19    -2.41    1011./
+DUPLICATE
+
+!USC Mech II  (92BAU/COB)
+C2H4+HO2 = CH2OCH2+OH                             2.820E+12      0.000    17100.00                  
+!USC Mech II  (86TSA/HAM)
+C2H3+H2O2 = C2H4+HO2                              1.210E+10      0.000     -596.00                   
+
+!USC Mech II  (86TSA/HAM)
+C2H3+HCO = C2H4+CO                                9.033E+13      0.000        0.00                   
+!Ref. C4H6+H = C2H4+C2H3 in USC Mech II
+C2H3CHO+H = C2H4+HCO                               1.46E+30     -4.34     21647.
+
+!USC Mech II  (Estimated)
+!CH3+HCCO = C2H4+CO                                5.000E+13      0.0          0.0   
+!Y. Hidaka , K. Kimura , H. Kawano , High-temperature pyrolysis of ketene in shock waves, Combust. Flame 99 (1994) 18–28 .
+CH3+HCCO = C2H4+CO                                2.000E+12      0.0          0.0 
+                 
+!REF:TSANG AND HAMPSON, J. PHYS. CHEM. REF. DATA, 15:1087 (1986)
+C2H4+CH3O = C2H3+CH3OH                            1.200E+011     0.000    6750.0
+
+!Aramcomech 2.0
+!REF: KINETICS FROM FRANKLIN C GOLDSMITH J. PHYS. CHEM. A, 2012, 116 (13), PP 3325?346
+C2H3+CH2O = C2H4+HCO                              1.000E+011     0.000       0.0
+PLOG/      0.0010     1.110E+007     1.090      1807.2/
+PLOG/      0.0100     2.470E+007     0.993      1994.9/
+PLOG/      0.1000     2.470E+008     0.704      2596.2/
+PLOG/      1.0000     1.420E+010     0.209      3934.2/
+PLOG/     10.0000     3.450E+013    -0.726      6944.3/
+PLOG/    100.0000     3.310E+014    -0.866     10965.7/
+PLOG/   1000.0000     1.650E+001     3.170      9399.8/
+
+
+!NetReaction from          JIN modified TCHEB  290->250  
+CH3+C2H3CHO(+M) = C2H4+CH2CHO(+M)       1.0E0 0.0 0.0                                                        
+                               ! LOW   /1.0 0.0 0.0 /
+                                 TCHEB / 270.0 3000.0 / 
+                                 PCHEB / 0.009869232667160128 98.69232667160128 /
+                                 CHEB / 5 3 /
+                                 CHEB / 5.5917000e+00 -1.5800000e+00 -2.5066000e-01 /
+                                 CHEB / 5.0107000e+00 1.6293000e+00 1.7383000e-01 /
+                                 CHEB / -1.2872000e-01 1.8690000e-01 1.0795000e-01 /
+                                 CHEB / -2.7007000e-01 -1.0932000e-01 2.1285000e-02 /
+                                 CHEB / -1.2413000e-01 -9.8274000e-02 -1.6581000e-02 /
+
+
+!#############REACTIONS OF C2H4O(C2H3OH&CH3CHO&CH2OCH2)##############
+
+!-----------------REACTIONS OF C2H3OH------------
+
+!Sivaramakrishnan, Michael, Harding, Klippenstein. J. Phys. Chem. A 2015, 119, 7724-7733
+C2H3OH+H = CH3CHO+H                                 1.0E0 0.0 0.0  	                                
+                                              PLOG/ 1.00E-02 1.6400E+12 0.506 3394.0/
+                                              PLOG/ 5.00E-02 5.8600E+13 0.078 4715.0/
+                                              PLOG/ 1.00E-01 3.8480E+14 -0.145 5464.0/
+                                              PLOG/ 1.00E+00 4.1840E+17 -0.957 8743.0/
+                                              PLOG/ 1.00E+01 1.6400E+20 -1.610 12916.0/
+                                              PLOG/ 1.00E+02 2.0850E+18 -1.010 15264.0/
+
+!2012 Sarathy & Vranckx & Yasunaga & Mehl & Osswald et al.
+C2H3OH+HOCHO = CH3CHO+HOCHO                        2.81E-02      3.286    -4509                      
+
+!J.X. Shao, C.M. Gong, X.Y. Li, J. Li, Theor. Chem. Acc. 128 (2011) 341-348.
+C2H3OH = CH2CHO+H                                  1.0            0.0      0.0
+                                             PLOG/ 1.00E-01 4.1600E+65 -17.67 93699.0/
+                                             PLOG/ 1.00E+00 7.7100E+66 -16.74 98013/
+                                             PLOG/ 1.00E+02 4.9200E+54 -11.75 99871/
+
+C2H3OH = C2H2+H2O                                  1.0            0.0      0.0
+                                             PLOG/ 1.00E-01 9.8500E+60 -16.89 90603/
+                                             PLOG/ 1.00E+00 1.2400E+63 -16.19 96099/
+                                             PLOG/ 1.00E+02 2.4000E+50 -11.09 97892/
+
+C2H3OH = H2CC+H2O                                  1.0            0.0      0.0
+                                             PLOG/ 1.00E-01 2.5700E+61 -16.70 90057/
+                                             PLOG/ 1.00E+00 3.2600E+63 -16.05 95573/
+                                             PLOG/ 1.00E+02 4.0700E+50 -10.95 97089/											 
+
+!Sivaramakrishnan, Michael, Harding, Klippenstein. J. Phys. Chem. A 2015, 119, 7724?7733
+C2H3OH+H = CH2CHO+H2                               1.17E-2      4.28     3279.0
+C2H3OH+H = CH2CO+H+H2                              5.22E+7      1.91     13114.0
+C2H3OH+H = HCCHOH+H2                               3.71E+7      2.016    14306.0 
+
+!Sivaramakrishnan, Michael, Harding, Klippenstein. J. Phys. Chem. A 2015, 119, 7724?7733
+C2H3OH+H = CH3+CH2O                                1.0  0   0
+                                                PLOG/ 1.00E-02 5.1550E+10 0.587 3475.0/
+                                                PLOG/ 5.00E-02 1.8160E+12 0.161 4783.0/
+                                                PLOG/ 1.00E-01 1.1710E+13 -0.060 5518.0/
+                                                PLOG/ 1.00E+00 1.2350E+16 -0.870 8745.0/
+                                                PLOG/ 1.00E+01 4.2120E+19 -1.789 13581.0/
+                                                PLOG/ 1.00E+02 1.1820E+17 -1.000 15302.0/                         
+
+!C2H3OH+CH3 = HCCHOH+CH4                            3.98E+11      0.00     9500       !shield this reaction in order to reduce the production of C2H2 at very begaining in JSR (Dagaut 1995)        ZXY_modified_20160502         
+C2H3OH+CH3 = CH2COH+CH4                            3.98E+11      0.00     9500                        
+C2H3OH+CH3 = CH2CHO+CH4                            3.98E+11      0.00     9500                        
+
+!REF:ETHENOL CHEMISTRY FROM CURRAN/ YASUNAGA
+C2H3OH+O2 = CH2CHO+HO2                            5.310E+011     0.210   39830.0
+
+!2010 Veloo & Wang & Egolfopoulos & Westbrook  
+C2H3OH+O = HCCHOH+OH                               2.81E+13      0.00     5200                        
+C2H3OH+O = CH2COH+OH                               2.81E+13      0.00     5200                        
+C2H3OH+O = CH2CHO+OH                               2.81E+13      0.00     5200                        
+C2H3OH+OH = HCCHOH+H2O                             2.11E+06      2.00     2778                        
+C2H3OH+OH = CH2COH+H2O                             1.11E+06      2.00     1451                        
+C2H3OH+OH = CH2CHO+H2O                             7.46E+11      0.30     1634                        
+C2H3OH+HO2 = HCCHOH+H2O2                           5.60E+12      0.00     17700                       
+C2H3OH+HO2 = CH2COH+H2O2                           5.60E+12      0.00     17700                       
+C2H3OH+HO2 = CH2CHO+H2O2                           5.60E+12      0.00     17700                       
+!2009 da Silva and Bozzelli C2H3OH+HO2 calculation // JIN
+!C2H3OH+HO2 = SC2H4OH+O2                            4.11E+06      1.62     15440                       
+!2009 da Silva and Bozzelli C2H3OH+HO2 calculation 
+C2H3OH+HO2 = CH3CHO+HO2                            1.49E+05      1.67     6810                        
+
+!-----------------REACTIONS OF CH3CHO------------
+
+!Harding, L.B.; Georgievskii, Y.; Klippenstein, S.J. J. Phys. Chem. A 2010, 114, 765-777  
+CH3CHO(+M) = CH3+HCO(+M)                          2.72E+22      -1.74       86355.02
+                                            LOW / 1.144E+59     -11.3       95912.49 /
+                                           TROE /1.8300E-01 4.6200E+02 1.6773E+05 1.5800E+06 /                         
+
+!Harding, L.B.; Georgievskii, Y.; Klippenstein, S.J. J. Phys. Chem. A 2010, 114, 765-777 										   
+CH3CHO = CH4+CO                                   2.72E+21      -1.74       86355.02                 
+                                            PLOG/ 5.00E-02 5.1240E+45 -9.850 89018.0/
+                                            PLOG/ 1.00E-01 1.4380E+45 -9.650 87925.0/
+                                            PLOG/ 1.00E+00 1.8670E+45 -9.430 89415.0/
+                                            PLOG/ 1.00E+01 1.6390E+45 -9.100 92793.0/
+
+!Harding, L.B.; Georgievskii, Y.; Klippenstein, S.J. J. Phys. Chem. A 2010, 114, 765-777											
+CH3CHO=CH2CO+H2		                              1   0     0									
+	                                          PLOG/ 5.00E-02 3.9790E+44 -10.070 87428.0/
+                                            PLOG/ 1.00E-01 7.3800E+44 -10.050 88422.0/
+                                            PLOG/ 1.00E+00 8.5440E+44 -9.770 90905.0/
+                                            PLOG/ 1.00E+01 2.2190E+45 -9.550 94879.0/										
+											
+!Sivaramakrishnan, Michael, Harding, Klippenstein. J. Phys. Chem. A 2015, 119, 7724?7733
+CH3CHO = C2H3OH                                    7.3060E+45 -10.040 78785.0             
+                                            PLOG/ 5.00E-02 7.3060E+45 -10.040 78785.0/
+                                            PLOG/ 1.00E-01 2.9320E+45 -9.860 78884.0/
+                                            PLOG/ 1.00E+00 1.1080E+46 -9.760 81964.0/
+                                            PLOG/ 1.00E+01 2.7820E+45 -9.350 84645.0/										
+
+!Sivaramakrishnan, Michael, Harding, Klippenstein. J. Phys. Chem. A 2015, 119, 7724?7733											
+CH3+HCO=CH4+CO                                     2.9170E+18 -1.840 2134.0
+                                            PLOG/ 5.00E-02 2.9170E+18 -1.840 2134.0/
+                                            PLOG/ 1.00E-01 8.7440E+18 -1.970 2684.0/
+                                            PLOG/ 1.00E+00 1.8490E+20 -2.300 4781.0/
+                                            PLOG/ 1.00E+01 1.1320E+21 -2.450 7417.0/
+
+!Sivaramakrishnan, Michael, Harding, Klippenstein. J. Phys. Chem. A 2015, 119, 7724?7733
+CH3+HCO=CH2CO+H2                                   6.1430E+06 1.240 -1733.0
+                                            PLOG/ 5.00E-02 6.1430E+06 1.240 -1733.0/
+                                            PLOG/ 1.00E-01 1.1440E+07 1.180 -1303.0/
+                                            PLOG/ 1.00E+00 4.9740E+08 0.750 842.0/
+                                            PLOG/ 1.00E+01 1.6350E+11 0.109 4387.0/
+																		
+!Sivaramakrishnan, R.; Michael, J. V.; Klippenstein, S. J. J. Phys. Chem. A, 2010, 114, 755-764  
+CH3CHO+H = CH2CHO+H2                              3.6440E+05     2.590     5523.0                   
+CH3CHO+H = CH3CO+H2                               2.8120E+10     0.900     2663.0       
+
+!J. Mendes, C.-W. Zhou, H.J. Curran, J. Phys. Chem. A, 118 (2014) 12089-12104. 
+CH3CHO+CH3 = CH3CO+CH4                            1.55E+00	     3.7	   4564
+CH3CHO+CH3 = CH2CHO+CH4                           1.44E+0        3.7       8857
+
+!92BAU/COB
+!CH3CHO+O2 = CH3CO+HO2                             3.000E+13      0.000    39100.00
+!D.L. Baulch, C.T. Bowman et al. J. Phys. Chem. Ref. Data 34 (3) (2005) 757-1397.
+CH3CHO+O2 = CH3CO+HO2                              1.20E+05	      2.5	   37560
+
+!D.L. Baulch, C.T. Bowman et al. J. Phys. Chem. Ref. Data 34 (3) (2005) 757-1397.
+CH3CHO+O = CH3CO+OH                               5.800E+12      0.000     1800.00                   
+
+!Taylor, P. H.; Yamada, T.; Marshall, P. Int. J. Chem. Kin. 2006, 38, 489-495.
+CH3CHO+OH = CH2CHO+H2O                            5.04E+13	     0.000  	4789
+CH3CHO+OH = CH3CO+H2O                             2.61E+12    	 0.000  	-733  !  2.61E+12
+!2014 2014 Mendes
+!CH3CHO+OH = CH2CHO+H2O                             1.12E+05	     2.6    	-3835
+!CH3CHO+OH = CH3CO+H2O                              6.06E-01	     3.9	    -1068
+
+!D.L. Baulch, C.T. Bowman et al. J. Phys. Chem. Ref. Data 34 (3) (2005) 757-1397.
+CH3CHO+HO2 = CH3CO+H2O2                           4.10E+04	     2.500  	10200            !     
+
+!Aramco 2.0
+!CH3CHO+CH3O = CH3CO+CH3OH                         1.000E+012     0.000    3300.0                
+!Fittschen 1998
+!CH3CHO+CH3O = CH3CO+CH3OH                        3.43E+11	     0.000   	1242.8     
+
+!Calculated in this work double-parameter fitting 
+CH3CHO+CH3O = CH3CO+CH3OH                         1.69E+05 	   2.0438	    2353.2    ! 1.69E+05   
+DUP                                                                                      
+CH3CHO+CH3O = CH3CO+CH3OH                         9.62E+03 	   2.5005	    158.95    ! 9.62E+03  
+DUP                                                                                      
+CH3CHO+CH3O = CH2CHO+CH3OH                        26.502	   3.4519	    5873.3    ! 26.502	 
+DUP                                                                                      
+CH3CHO+CH3O = CH2CHO+CH3OH                        5.64E-06 	   4.93	        627.69    ! 5.64E-06 
+DUP                                                                                                                                        
+ 
+!-----------------REACTIONS OF CH2OCH2------------
+
+!83LIF/BEN
+CH2OCH2 = CH3CHO                                  7.260E+13      0.000    57200.00                   
+CH2OCH2 = CH3+HCO                                 3.630E+13      0.000    57200.00
+CH2OCH2 = CH4+CO                                  1.210E+13      0.000    57200.00                   
+CH2OCH2+H = CH2OCH+H2                             2.000E+13      0.000     8300.00                   
+CH2OCH2+H = C2H3+H2O                              5.000E+09      0.000     5000.00                   
+CH2OCH2+H = C2H4+OH                               9.510E+10      0.000     5000.00                   
+!84BOL/KEE
+CH2OCH2+CH3 = CH2OCH+CH4                          1.070E+12      0.000    11830.00                   
+
+!78BOG/HAN
+CH2OCH2+O = CH2OCH+OH                             1.910E+12      0.000     5250.00                   
+!84BOL/KEE
+CH2OCH2+OH = CH2OCH+H2O                           1.780E+13      0.000     3610.00                   
+                
+!#######################################REACTIONS OF C2H3########################################
+
+! USC Mech II (96KNY/SLA)
+!C2H3 (+M) = C2H2+H (+M)                            3.86E+08      1.62       37048.2                    
+!                                              LOW  /2.56E+27     -3.40       35798.7/
+!                                              TROE /1.9816 5383.7  4.2932  -0.0795 /
+!                                           H2/2.0/ H2O/6.0/ CH4/2.0/ CO/1.5/ CO2/2.0/ C2H6/3.0/ AR/0.7/ C2H2/3.00/
+ 
+!! USC Mech II (96KNY/SLA)       ZXY_20150124_01     near 2-3 times lower than initial value                                                                             
+!C2H3 (+M) = C2H2+H (+M)                            3.86E+08      1.62       37048.2                                 
+!                                              LOW  /2.56E+27     -3.40       38798.7/                               
+!                                              TROE /1.9816 5383.7  4.2932  -0.0795 /                                
+!                                           H2/2.0/ H2O/6.0/ CH4/2.0/ CO/1.5/ CO2/2.0/ C2H6/3.0/ AR/0.7/ C2H2/3.00/  
+                                                                                                                                                                                                                         
+!REF:miller klippenstein pccp 2004, 6, 1192-1202
+C2H2+H(+M)<=>C2H3(+M)                             1.710E+010     1.266    2709.0
+LOW/                                              6.346E+031    -4.664    3780.0/
+TROE/  7.880E-001 -1.020E+004  1.000E-030/
+ H2/2/ CO/2/ CO2/3/ H2O/5/
+
+!J.A. Miller, C.T. Bowman, Prog. Energy Combust. Sci. 15 (1989) 287-338
+CH3+CH = C2H3+H                                     3.00E+13        0.00       0.00     
+
+!REF:86TSA/ HAM
+C2H3+H<=>C2H2+H2                                   9.000E+013     0.000       0.0
+
+! 2002 Knyaze
+C2H3+CH3 = C2H2+CH4                                3.00E+12        0.0      -730                     
+!!REF:
+!CH3+C2H3<=>CH4+C2H2                               3.920E+011     0.000       0.0
+
+!REF:tsang and hampson, j. phys. chem. ref. data, 15:1087 (1986)
+C2H3+C2H=C2H2+C2H2                                9.630E+11	     0.000	     0.0
+C2H3+C2H3<=>C2H2+C2H4                             9.600E+011     0.000       0.0
+
+!2015 Shen C2H2 LFS
+C2H3+CH2=CH3+C2H2                              2.00E+13    0.0        0.0
+
+!-------------------------------------HIGH-T OXIDATION MECH---------------------------
+
+!#############REACTIONS OF C2H3##############
+
+! C.F. Goldsmith, L.B. Harding, Y. Georgievskii, J.A. Miller, S.J. Klippenstein, J Phys Chem A 2015, 119, 7766-7779 (400-2200).
+!neglect the channels which contribute less than 10%
+C2H3+O2=CH2CHOO                                    4.07E+27       -4.67    5222.0
+PLOG/1.00E-02                       1.6E24  -5.450    9662/
+PLOG/1.00E-01                       3.5E56 -15.010   19160/
+PLOG/3.16E-01                       1.3E64 -16.970   21290/
+PLOG/1.00E+00                       3.3E61 -15.790   20150/
+PLOG/3.16E+00                       7.3E53 -13.110   17300/
+PLOG/1.00E+01                       4.2E48 -11.210   16000/
+PLOG/3.16E+01                       2.3E43  -9.380   14810/
+PLOG/1.00E+02                       3.4E39  -8.040   14360/
+DUPLICATE
+C2H3+O2=CH2CHOO                                    4.07E+27       -4.67    5222.0
+PLOG/1.00E-02                       1.8E-9   4.150   -4707/
+PLOG/1.00E-01                       2.4E22  -4.520    2839/
+PLOG/3.16E-01                       2.0E26  -5.430    2725/
+PLOG/1.00E+00                       6.1E28  -5.890    3154/
+PLOG/3.16E+00                       2.1E29  -5.800    3520/
+PLOG/1.00E+01                       3.5E28  -5.370    3636/
+PLOG/3.16E+01                       3.3E27  -4.950    3610/
+PLOG/1.00E+02                       1.0E27  -4.720    3680/
+DUPLICATE
+
+! C.F. Goldsmith, L.B. Harding, Y. Georgievskii, J.A. Miller, S.J. Klippenstein, J Phys Chem A 2015, 119, 7766-7779 (400-2200).
+! ------ ------ ------ !
+C2H3+O2=CH2CHO+O                                1.60E+12        0.15    4205.0
+PLOG/1.00E-02                       7.2E20  -2.670    6742/
+PLOG/1.00E-01                       7.0E20  -2.670    6713/
+PLOG/3.16E-01                       9.0E20  -2.700    6724/
+PLOG/1.00E+00                       6.5E20  -2.650    6489/
+PLOG/3.16E+00                       4.1E20  -2.530    6406/
+PLOG/1.00E+01                       1.6E23  -3.220    8697/
+PLOG/3.16E+01                       2.9E25  -3.770   11530/
+PLOG/1.00E+02                       9.3E25  -3.800   13910/
+DUPLICATE
+C2H3+O2=CH2CHO+O                                1.60E+12        0.15    4205.0
+PLOG/1.00E-02                       1.2E10   0.620    -278/
+PLOG/1.00E-01                       1.3E10   0.620    -248/
+PLOG/3.16E-01                       1.5E10   0.600    -163/
+PLOG/1.00E+00                       1.8E10   0.580      38/
+PLOG/3.16E+00                       8.9E09   0.670     248/
+PLOG/1.00E+01                       6.7E09   0.720     778/
+PLOG/3.16E+01                       1.4E09   0.920    1219/
+PLOG/1.00E+02                       7.1E07   1.280    1401/
+DUPLICATE
+
+
+! C.F. Goldsmith, L.B. Harding, Y. Georgievskii, J.A. Miller, S.J. Klippenstein, J Phys Chem A 2015, 119, 7766-7779 (400-2200).
+! ------ ------ ------ !
+	! 70% of HCO was replaced by H+CO
+C2H3+O2=CH2O+HCO                                   1.29E+16       -1.13    3791.0
+PLOG/1.00E-02                       2.8E36  -7.60   12610/
+PLOG/3.16E-01                       2.2E36  -7.57   12490/
+PLOG/1.00E+00                       3.0E35  -7.32   11820/
+PLOG/3.16E+00                       1.6E36  -7.47   12460/
+PLOG/1.00E+01                       5.8E35  -7.20   13430/
+PLOG/3.16E+01                       3.5E20  -2.57    5578/
+PLOG/1.00E+02                       3.0E33  -6.28   16000/
+DUPLICATE
+C2H3+O2=CH2O+HCO                                   1.29E+16       -1.13    3791.0
+PLOG/1.00E-01                       5.1E15  -1.28     513/
+PLOG/3.16E-01                       5.3E15  -1.29     521/
+PLOG/1.00E+00                       6.8E15  -1.31     646/
+PLOG/3.16E+00                       1.1E16  -1.36    1066/
+PLOG/1.00E+01                       2.8E15  -1.18    1429/
+PLOG/3.16E+01                       1.1E69 -19.23   14760/
+PLOG/1.00E+02                       4.7E10   0.19     831/
+DUPLICATE
+
+C2H3+O2=CH2O+H+CO                                   1.29E+16       -1.13    3791.0
+PLOG/1.00E-02                       6.5E36  -7.60   12640/
+PLOG/1.00E-01                       6.3E36  -7.60   12610/
+PLOG/3.16E-01                       5.1E36  -7.57   12490/
+PLOG/1.00E+00                       7.1E35  -7.32   11820/
+PLOG/3.16E+00                       3.7E36  -7.47   12460/
+PLOG/1.00E+01                       1.3E36  -7.20   13430/
+PLOG/3.16E+01                       8.3E20  -2.57    5578/
+PLOG/1.00E+02                       7.1E33  -6.28   16000/
+DUPLICATE
+C2H3+O2=CH2O+H+CO                                   1.29E+16       -1.13    3791.0
+PLOG/1.00E-02                       1.2E16  -1.28     515/
+PLOG/1.00E-01                       1.2E16  -1.28     513/
+PLOG/3.16E-01                       1.3E16  -1.29     521/
+PLOG/1.00E+00                       1.6E16  -1.31     646/
+PLOG/3.16E+00                       2.4E16  -1.36    1066/
+PLOG/1.00E+01                       6.6E15  -1.18    1429/
+PLOG/3.16E+01                       2.7E69 -19.23   14760/
+PLOG/1.00E+02                       1.1E11   0.19     831/
+DUPLICATE
+
+! Goldsmith et al., 2015, J. Phys. Chem. A 2015, 119, 7766-7779 (DOI: 10.1021/acs.jpca.5b01088)
+! ------ ------ ------ !
+CH2CHOO=CH2CHO+O                               1.22E+29       -4.71    42340.0
+PLOG/1.000E-02    2.70E+180      -48.19    169300.0/
+PLOG/1.000E-01    3.90E+38       -8.69    42770.0/
+PLOG/3.160E-01    4.57E+47      -11.21    47050.0/
+PLOG/1.000E+00    7.62E+81      -21.28    65080.0/
+PLOG/3.160E+00    1.86E+68      -16.83    60680.0/
+PLOG/1.000E+01    2.02E+55      -12.69    55840.0/
+PLOG/3.160E+01    1.11E+53      -11.79    56690.0/
+PLOG/1.000E+02    4.30E+48      -10.31    56090.0/
+DUPLICATE
+CH2CHOO=CH2CHO+O                               1.22E+29       -4.71    42340.0
+PLOG/1.000E-02    1.47E+30       -6.64    41110.0/
+PLOG/1.000E-01    9.65E-12        5.96    22890.0/
+PLOG/3.160E-01    3.95E+22       -3.71    36270.0/
+PLOG/1.000E+00    2.39E+33       -6.62    41280.0/
+PLOG/3.160E+00    6.37E+31       -5.96    41260.0/
+PLOG/1.000E+01    2.13E+29       -5.10    40710.0/
+PLOG/3.160E+01    4.66E+27       -4.50    40530.0/
+PLOG/1.000E+02    5.99E+25       -3.85    40120.0/
+DUPLICATE	
+
+! Goldsmith et al., 2015, J. Phys. Chem. A 2015, 119, 7766-7779 (DOI: 10.1021/acs.jpca.5b01088)
+CH2CHOO=CH2O+HCO                                  1.19E+20       -2.29    30170.0
+PLOG/1.000E-02    1.66E+174      -55.52    60320.0/
+PLOG/1.000E-01    9.03E+66      -17.25    48120.0/
+PLOG/3.160E-01    1.82E+43       -9.87    37960.0/
+PLOG/1.000E+00    8.64E+33       -6.88    34370.0/
+PLOG/3.160E+00    7.29E+171      -43.53    191900.0/
+PLOG/1.000E+01    1.03E+32       -6.06    35500.0/
+PLOG/3.160E+01    1.85E+34       -6.57    38510.0/
+PLOG/1.000E+02    5.70E+29       -5.19    36800.0/
+DUPLICATE
+CH2CHOO=CH2O+HCO                                  1.19E+20       -2.29    30170.0
+PLOG/1.000E-02    2.27E+35       -7.97    31280.0/
+PLOG/1.000E-01    2.08E+26       -4.96    28780.0/
+PLOG/3.160E-01    1.45E+20       -3.08    26630.0/
+PLOG/1.000E+00    1.06E+130      -39.38    54700.0/
+PLOG/3.160E+00    2.35E+34       -6.87    35700.0/
+PLOG/1.000E+01    2.18E+175      -53.78    68500.0/
+PLOG/3.160E+01    1.07E+185      -54.22    88990.0/
+PLOG/1.000E+02    4.68E+02        1.81    18100.0/
+DUPLICATE
+! Goldsmith et al., 2015, J. Phys. Chem. A 2015, 119, 7766-7779 (DOI: 10.1021/acs.jpca.5b01088)
+CH2CHOO=CH2O+H+CO                                  1.19E+20       -2.29    30170.0
+PLOG/1.000E-02    3.88E+174      -55.52    60320.0/
+PLOG/1.000E-01    2.11E+67      -17.25    48120.0/
+PLOG/3.160E-01    4.26E+43       -9.87    37960.0/
+PLOG/1.000E+00    2.02E+34       -6.88    34370.0/
+PLOG/3.160E+00    1.70E+172      -43.53    191900.0/
+PLOG/1.000E+01    2.40E+32       -6.06    35500.0/
+PLOG/3.160E+01    4.32E+34       -6.57    38510.0/
+PLOG/1.000E+02    1.33E+30       -5.19    36800.0/
+DUPLICATE
+CH2CHOO=CH2O+H+CO                                  1.19E+20       -2.29    30170.0
+PLOG/1.000E-02    5.29E+35       -7.97    31280.0/
+PLOG/1.000E-01    4.85E+26       -4.96    28780.0/
+PLOG/3.160E-01    3.37E+20       -3.08    26630.0/
+PLOG/1.000E+00    2.46E+130      -39.38    54700.0/
+PLOG/3.160E+00    5.49E+34       -6.87    35700.0/
+PLOG/1.000E+01    5.09E+175      -53.78    68500.0/
+PLOG/3.160E+01    2.49E+185      -54.22    88990.0/
+PLOG/1.000E+02    1.09E+03        1.81    18100.0/
+DUPLICATE
+
+!USC Mech II  (86TSA/HAM)
+C2H3+O = CH2CO+H                                   4.800E+13       0.000      0.00                    
+C2H3+O = CH3+CO                                    4.800E+13       0.000      0.00                    
+
+!JIN  13_10_31  2013_12_12 del for test sensitivity
+!C2H3+OH =>C2H3OH                                  2.13E+13        0.0     -397.4                     
+!USC Mech II  (86TSA/HAM)  JIN 2013_12_12  replaced by C2H3OH scheme
+!C2H3+OH = C2H2+H2O                                3.011E+13       0.000      0.00                    
+!jin  10.14  2013_12_12 del for test sensitivity
+!C2H3+OH = CH2CHO+H                                2.83E+12        0.16    -769.0052581               
+!C2H3+OH = CH3+HCO                                 3.37E+17       -1.37    1593.64914
+!C2H3+OH = H2CC+H2O                                4.03E+09        0.85    -254.3479924
+
+!REF:tsang and hampson, j. phys. chem. ref. data, 15:1087 (1986)
+C2H3+OH = C2H2+H2O                                3.011E+013     0.000       0.0
+
+!Estimated
+C2H3+HO2 = CH2CHO+OH                               1.00E+13      0.000        0.00                    
+
+!GRI
+HCCO+CH2 = C2H3+CO                                 3.000E+13       0.000      0.00                   
+C2H2+HCO = C2H3+CO                                 1.000E+07        2.000    6000.00                    
+
+
+!#############REACTIONS OF C2H3O(CH3CO&CH2CHO&CH2OCH)##############
+
+!-----------------REACTIONS OF CH3CO------------
+
+!Senosiain,J. Phys. Chem. A 2006, 110, 5772-5781 
+ CH3CO = CH3+CO                                  1.0            0             0
+                            PLOG/  1.00E-02      6.8800E+14     -1.970       14585.0/   
+                            PLOG/  2.50E-02      2.4000E+15     -2.000       14805.0/   
+                            PLOG/  1.00E-01      1.9600E+16     -2.090       15197.0/   
+                            PLOG/  1.00E+00      6.4500E+18     -2.520       16436.0/  
+                            PLOG/  1.00E+01      8.1800E+19     -2.550       17263.0/  
+                            PLOG/  1.00E+02      1.2600E+20     -2.320       18012.0/
+
+!86TSA/HAM
+!CH3CO+H = CH3+HCO                                 9.600E+13      0.000        0.00                    
+!Aramcomech 2.0                                                                 
+!REF:                                                                           
+!CH3CO+H = CH2CO+H2                                2.000E+013     0.000       0.0
+!M. Bartels, J. Edelb邦ttel-Einhaus, K. Hoyermann,Symp. (Int.) Combust. 23 (1991) 131-138)
+!K. Ohmori, A. Miyoshi, H. Matsui, N. Washida, J. Phys. Chem. 94 (1990) 3253-3255.
+CH3CO+H = CH2CO+H2                                 1.150E+013     0.000       0.000 
+CH3CO+H = CH3+HCO                                  2.150E+013     0.000       0.000
+
+!!92BAU/COB
+!CH3CO+O = CH2CO+OH                                3.900E+13      0.000        0.00                    
+!!86TSA/HAM; 92BAU/COB
+!CH3CO+O = CH3+CO2                                 1.500E+14      0.000        0.00                    
+!D.L.  Baulch et al.,J. Phys. Chem. Ref. Data 34 (3) (2005),757-1397   
+CH3CO+O = CH2CO+OH                                5.250E+13      0.000        0.00 
+CH3CO+O = CH3+CO2                                 1.580E+14      0.000        0.00
+
+!86TSA/HAM
+CH3CO+OH = CH2CO+H2O                              1.200E+13      0.000        0.00                    
+CH3CO+OH = CH3+CO+OH                              3.000E+13      0.000        0.00                    
+
+!86TSA/HAM
+CH3CO+HO2 = CH3+CO2+OH                            3.000E+13      0.000        0.00                    
+
+!Aramcomech 2.0
+!REF:
+!CH3CO+CH3 = CH2CO+CH4                             5.000E+013     0.000       0.0
+CH3CO+CH3 = CH2CO+CH4                              6.100E+012     0.000       0.0
+CH3CO+CH3 = C2H6+CO								   3.300E+013     0.000       0.0
+
+!-----------------REACTIONS OF CH2CHO------------
+
+!2006 Senosiain & Klippenstein & Miller
+CH2CHO = CH2CO+H                            1.430E+15      -0.15       45600                  
+                              PLOG/  1.00E-02      2.3900E+25      -4.800       43424.0/                    
+                              PLOG/  2.50E-02      2.4800E+27      -5.230       44304.0/                                                     
+                              PLOG/  1.00E-01      2.3700E+30      -5.860       46114.0/   
+                              PLOG/  1.00E+00      1.3200E+34      -6.570       49454.0/   
+                              PLOG/  1.00E+01      3.4600E+36      -6.920       52979.0/   
+                              PLOG/  1.00E+02      1.1800E+36      -6.480       55171.0/   
+
+!2006 Senosiain & Klippenstein & Miller
+CH2CHO = CH3+CO                             2.930E+12      0.29         40300                 
+                              PLOG/  1.00E-02      1.1600E+30      -6.070       41332.0/     
+                              PLOG/  2.50E-02      1.5400E+31      -6.270       42478.0/   
+                              PLOG/  1.00E-01      6.3700E+32      -6.570       44282.0/   
+                              PLOG/  1.00E+00      6.5100E+34      -6.870       47191.0/   
+                              PLOG/  1.00E+01      2.1500E+35      -6.760       49548.0/   
+                              PLOG/  1.00E+02      2.2300E+33      -5.970       50448.0/    
+ 
+!Labbe, N. J.; Sivaramakrishnan, R.; Klippenstein, S. J. Proc. Combust. Inst. 2015, 35, 447-455.   
+CH2CHO+H = CH3CO+H                                1.000E+00      0.000        0.00                    
+                              PLOG/   0.001   3.60192E+13   0.05139    4301.821927    /  
+                              PLOG/   0.01    4.63879E+13   0.02101    4392.212901    / 
+                              PLOG/   0.1     3.37344E+14   -0.21686   5113.19291    /  
+                              PLOG/   1       9.20824E+17   -1.15762   8192.539999    /   
+                              PLOG/   10      1.58439E+22   -2.27331   13260.71431    /  
+                              PLOG/   100     8.07038E+19   -1.50969   15533.9283    /
+                               
+!Labbe, N. J.; Sivaramakrishnan, R.; Klippenstein, S. J. Proc. Combust. Inst. 2015, 35, 447-455.   
+CH2CHO+H = CH3+HCO                                1.000E+00      0.000        0.00                    
+                              PLOG/   0.001    1.4865E+17   -0.903   3023.5    /      
+                              PLOG/   0.010    1.9331E+17   -0.935   3119.8    /    
+                              PLOG/   0.100    2.5358E+18   -1.243   4061.8    /    
+                              PLOG/   1.000    1.9282E+22   -2.300   7692.7    /    
+                              PLOG/   10.000   2.7876E+25   -3.100   12454.4   /  
+                              PLOG/   100.000  7.4673E+20   -1.693   13429.3   / 
+                             
+!82MIL/MIT  
+CH2CHO+H = CH2CO+H2                               2.000E+13      0.000     4000.00                    
+
+!REF:J. Lee, and J.W. Bozzelli. J. Phys. Chem. A, 2003, 107 (19), 3778-3791
+CH2CHO+O2<=>O2CH2CHO                              1.580E+077   -21.900   19350.0
+PLOG/      0.0100     1.580E+077   -21.900     19350.0/
+PLOG/      0.1000     3.880E+069   -18.840     19240.0/
+PLOG/      1.0000     7.800E+059   -15.400     17650.0/
+PLOG/     10.0000     3.050E+050   -12.200     15630.0/
+CH2CHO+O2<=>CH2CO+HO2                             1.880E+005     2.370   23730.0
+PLOG/      0.0100     1.880E+005     2.370     23730.0/
+PLOG/      0.1000     1.880E+005     2.370     27370.0/
+PLOG/      1.0000     2.510E+005     2.330     23800.0/
+PLOG/     10.0000     7.050E+007     1.630     25290.0/
+CH2CHO+O2=>CH2O+CO+OH                             2.680E+017    -1.840    6530.0
+PLOG/      0.0100     2.680E+017    -1.840      6530.0/
+PLOG/      0.1000     1.520E+020    -2.580      8980.0/
+PLOG/      1.0000     1.650E+019    -2.220     10340.0/
+PLOG/     10.0000     8.953E+013    -0.600     10120.0/
+!CH2CHO+O2=H2COCO#+OH                             2.680E+017    -1.840    6530.0  !ZXY_EST
+!PLOG/      0.0100     2.680E+016    -1.840      6530.0/    ! 2.680E+017                    
+!PLOG/      0.1000     1.520E+019    -2.580      8980.0/    ! 1.520E+020                    
+!PLOG/      1.0000     1.650E+018    -2.220     10340.0/    ! 1.650E+019                    
+!PLOG/     10.0000     8.953E+012    -0.600     10120.0/    ! 8.953E+013                    
+
+
+CH2CHO+O2<=>HO2CH2CO                              3.640E+065   -21.870   19020.0
+PLOG/      0.0100     3.640E+065   -21.870     19020.0/
+PLOG/      0.1000     3.640E+058   -19.000     19090.0/
+PLOG/      1.0000     6.650E+048   -15.550     17460.0/
+PLOG/     10.0000     4.800E+038   -12.140     14960.0/
+O2CH2CHO<=>HO2CH2CO                               8.270E+030    -6.650   24500.0
+PLOG/      0.0100     8.270E+030    -6.650     24500.0/
+PLOG/      0.1000     1.730E+026    -4.990     23760.0/
+PLOG/      1.0000     9.030E+019    -2.920     22170.0/
+PLOG/     10.0000     1.430E+016    -1.670     21210.0/
+O2CH2CHO<=>CH2CO+HO2                              2.050E+040   -13.310   52150.0
+PLOG/      0.0100     2.050E+040   -13.310     52150.0/
+PLOG/      0.1000     5.720E+045   -14.000     52200.0/
+PLOG/      1.0000     4.160E+055   -15.760     55080.0/
+PLOG/     10.0000     1.120E+061   -16.040     60010.0/
+HO2CH2CO=>CO+CH2O+OH                              2.360E+017    -2.950    8100.0
+PLOG/      0.0100     2.360E+017    -2.950      8100.0/
+PLOG/      0.1000     2.380E+018    -2.950      8100.0/
+PLOG/      1.0000     2.510E+019    -2.950      8110.0/
+PLOG/     10.0000     4.160E+020    -3.020      8240.0/        
+!HO2CH2CO=H2COCO#+OH                              2.360E+017    -2.950    8100.0  !ZXY_EST
+!PLOG/      0.0100     2.360E+016    -2.950      8100.0/       !2.360E+017                  
+!PLOG/      0.1000     2.380E+017    -2.950      8100.0/       !2.380E+018                  
+!PLOG/      1.0000     2.510E+018    -2.950      8110.0/       !2.510E+019                  
+!PLOG/     10.0000     4.160E+019    -3.020      8240.0/       !4.160E+020                  
+
+HO2CH2CO<=>CH2CO+HO2                              1.120E+007    -3.760   21680.0
+PLOG/      0.0100     1.120E+007    -3.760     21680.0/
+PLOG/      0.1000     1.100E+008    -3.760     21680.0/
+PLOG/      1.0000     9.200E+008    -3.730     21630.0/
+PLOG/     10.0000     2.090E+009    -3.550     21220.0/
+
+!2015 Shen PCI C2H2 LFS 
+CH2CHO+O = CH2CO+OH                               8.000E+13      0.000     4000.00                    
+CH2CHO+O=CH2O+HCO                                 2.000E+13      0.0        0.0
+
+!Pope, C. J.; Miller, J. A. Proc. Combust. Inst. 2000, 28, 1518-1529. 
+CH2CHO+OH = CH2CO+H2O                              2.0000E+13       0.000           0.0
+CH2CHO+OH=HCO+CH2OH                                1.0000E+13       0.000           0.0
+
+
+!2015 Shen PCI C2H2 LFS
+CH2CHO+HO2=CO+CH2O+H2O                            1.00E+13    0.0        0.0
+CH2CHO+HO2=>HCO+CH2O+OH                           1.00E+13    0.0        0.0
+
+!-----------------REACTIONS OF CH2COH------------
+
+!2010 Veloo & Wang & Egolfopoulos & Westbrook  
+CH2COH = H+CH2CO                                  1.00E+14      0.00       25000                       
+
+!-----------------REACTIONS OF CH2OCH------------
+
+!84BOL/KEE
+CH2OCH+M = CH3+CO+M                               3.160E+14      0.000    12000.00                   
+!96WUR/McG
+CH2OCH+M = CH2CHO+M                               5.000E+09      0.000        0.00                   
+
+!****************************************THE END OF C2H4 REACTIONS****************************************
+
+!@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@THE REACTIONS OF ACETYLENE@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+!USC Mech II (GRI)
+C2H+H (+M) = C2H2 (+M)                             1.00E+17        -1.00     0.00                    !   
+                                              LOW  /3.750E+33       -4.80     1900.00 /              !   
+                                              TROE /0.6464  132.00  1315.00 5566.0  /
+                                           H2/2.0/ H2O/6.0/ CH4/2.0/ CO/1.5/ CO2/2.0/ C2H6/3.0/ AR/0.7/
+!REF:99 Las/ Wan
+C2H2(+M)<=>H2CC(+M)                               8.000E+014    -0.520   50750.0
+LOW/                                              2.450E+015    -0.640   49700.0/
+H2/ 2.00/ H2O/ 6.00/ CH4/ 2.00/ CO/ 1.50/ CO2/ 2.00/ C2H6/ 3.00/ C2H2/ 2.50/ C2H4/ 2.50/
+
+!A. Fomin, T. Zavlev, V.A. Alekseev, I. Rahinov, S. Cheskis, A.A. Konnov,Combust. Flame 171 (2016) 198-210.
+CH2+CH = C2H2+H                                    3.000E+13      0.000      0.00                 
+
+!J.A. Miller, C.T. Bowman, Prog. Energy Combust. Sci. 15 (1989) 287-338.
+CH3+C = C2H2+H                                    5.000E+013     0.000      0.00
+
+! Harding LB Schatz GC Chiles RA JCP 76:5172-5173 1982
+C2H+H2=C2H2+H                                     4.1E05         2.390     864 ! 
+ 
+H2CC+H<=>C2H2+H                                   1.000E+014     0.000      0.0
+                                                                       
+!D.L. Baulch, C.T. Bowman, C.J. Cobos, R.A. Cox, T. Just, J.A. Kerr, M.J. Pilling, D. Stocker, J. Troe, W. Tsang, R.W. Walker, J. Warnatz,J. Phys. Chem. Ref. Data 34 (2005) 757-1397.
+C2H2+CH2*=C3H3+H                                   2.70E+16        -0.9       0.0
+C2H2+CH2=C3H3+H                                    1.20E+13        0.0     6620.0
+
+!USC Mech II (86TSA/HAM)
+C2H+CH4 = C2H2+CH3                                 1.81E+12         0.0      500.0               
+ 
+!A.W. Jasper, S.J. Klippenstein, L.B. Harding, J. Phys. Chem. A 111 (2007) 8699每8707.
+CH2+CH2 = H2+C2H2                                  1.77E+13         0.0022     9
+CH2+CH2 = C2H3+H                                   7.100E+13        0.0022     9.00
+!S. Bauerle, M. Klatt, H.Gg Wagner, Ber. Bunsenges. Phys. Chem 99 (1995) 870-879.
+CH2+CH2 = C2H2+H+H                                 2.000E+14        0.0000     11000.00
+!P. Frank, Th. Just, Proc.Int. Symp. Shock Tubes Waves 14 (1984) 706
+CH2+CH2 = CH3+CH                                   2.400E+14   0.0000    9940.00
+
+!-------------------------------HIGH-T OXIDATION MECH------------------------------
+
+!#############REACTIONS OF C2H2##############
+
+!-----------------REACTIONS OF C2H2------------
+
+!REF:Nguyen et al. j.phys.chem a 2006, 110, 6696-6706
+C2H2+O = CH2+CO                                    7.395E+008     1.280    2472.0
+C2H2+O = HCCO+H                                    2.958E+009     1.280    2472.0
+
+!REF:SJK j. phys. chem a 2005, 109, 6045-6055                                        
+C2H2+OH = C2H+H2O                                 2.632E+006     2.140   17060.0     
+C2H2+OH = HCCOH+H                                 2.800E+005     2.280   12420.0     
+PLOG/      0.0100     2.800E+005     2.280     12420.0/                              
+PLOG/      0.0250     7.467E+005     2.160     12550.0/                              
+PLOG/      0.1000     1.776E+006     2.040     12670.0/                              
+PLOG/      1.0000     2.415E+006     2.000     12710.0/                              
+PLOG/     10.0000     3.210E+006     1.970     12810.0/                              
+PLOG/    100.0000     7.347E+006     1.890     13600.0/                              
+C2H2+OH = CH2CO+H                                 1.578E+003     2.560    -844.5     
+PLOG/      0.0100     1.578E+003     2.560      -844.5/                              
+PLOG/      0.0250     1.518E+004     2.280      -292.1/                              
+PLOG/      0.1000     3.017E+005     1.920       598.1/                              
+PLOG/      1.0000     7.528E+006     1.550      2106.0/                              
+PLOG/     10.0000     5.101E+006     1.650      3400.0/                              
+PLOG/    100.0000     1.457E+004     2.450      4477.0/                              
+C2H2+OH = CH3+CO                                  4.757E+005     1.680    -329.8     
+PLOG/      0.0100     4.757E+005     1.680      -329.8/                              
+PLOG/      0.0250     4.372E+006     1.400       226.5/                              
+PLOG/      0.1000     7.648E+007     1.050      1115.0/                              
+PLOG/      1.0000     1.277E+009     0.730      2579.0/                              
+PLOG/     10.0000     4.312E+008     0.920      3736.0/                              
+PLOG/    100.0000     8.250E+005     1.770      4697.0/                              
+C2H2+OH = HCCHOH                                  3.913E+032    -7.126    5824.0     
+PLOG/      0.0100     3.913E+032    -7.126      5824.0/                              
+PLOG/      0.0250     1.067E+032    -6.847      5508.0/                              
+PLOG/      0.1000     1.646E+032    -6.717      5822.0/                              
+PLOG/      1.0000     1.387E+031    -6.087      6348.0/                              
+PLOG/     10.0000     2.892E+029    -5.288      7055.0/                              
+PLOG/    100.0000     1.367E+025    -3.754      6543.0/                              
+
+!Lopez et al., Experimental and Kinetic Modeling Study of C2H2 Oxidation at High Pressure, Int. J. Chem. Kinet., 2016
+C2H2+O2=HCO+HCO			  1.638E+19   -2.111   54942.1
+DUPLICATE
+C2H2+O2=HCO+HCO			  1.548E+30   -4.992   65906.5
+DUPLICATE
+! including prompt dissociation of HCO (following Labbe et al., J. Phys. Chem. Lett. 2016):
+C2H2+O2=HCO+H+CO      6.661E+33   -5.633   82336.1
+DUPLICATE
+C2H2+O2=HCO+H+CO      1.069E+26   -3.525   73959.1
+DUPLICATE
+C2H2+O2=H+CO+H+CO     1.218E+32   -4.869   93010.6
+
+! Lopez et al., Experimental and Kinetic Modeling Study of C2H2 Oxidation at High Pressure, Int. J. Chem. Kinet., 2016
+!CHCHO is replaced by CH2CO and ignore other channels.
+C2H2+HO2=CH2CO+OH                               3.24E+09        1.05    16950.0
+PLOG/1.000E-02    5.49E+09        0.91    18500.0/
+PLOG/1.000E-01    5.93E+09        0.90    18550.0/
+PLOG/3.160E-01    6.80E+09        0.88    18640.0/
+PLOG/1.000E+00    1.56E+10        0.77    19040.0/
+PLOG/3.160E+00    3.48E+09        0.99    18810.0/
+PLOG/1.000E+01    5.39E+10        0.61    20740.0/
+PLOG/3.160E+01    3.70E+08        1.23    15960.0/
+PLOG/1.000E+02    1.45E+11        0.48    17730.0/
+DUPLICATE
+C2H2+HO2=CH2CO+OH                               3.24E+09        1.05    16950.0
+PLOG/1.000E-02    2.41E+07        1.54    14690.0/
+PLOG/1.000E-01    2.48E+07        1.54    14700.0/
+PLOG/3.160E-01    2.63E+07        1.54    14730.0/
+PLOG/1.000E+00    2.50E+07        1.56    14790.0/
+PLOG/3.160E+00    1.47E+08        1.32    15090.0/
+PLOG/1.000E+01    1.61E+08        1.36    15420.0/
+PLOG/3.160E+01    1.67E+07        1.59    15910.0/
+PLOG/1.000E+02    7.21E+06        1.73    16020.0/
+DUPLICATE
+
+!-----------------REACTIONS OF H2CC------------
+!1999LAS/WAN
+H2CC+O2 = CH2+CO2                                 1.000E+13        0.000       0.00   
+
+!#############REACTIONS OF C2H2O(CH2CO)##############
+
+!GRI
+CH2+CO(+M) = CH2CO(+M)                            8.100E+11       0.500    4510.00                   
+                                            LOW  /  2.690E+33      -5.110    7095.00 /  
+                                            TROE /  0.5907   275.0   1226.00   5185.00 /  
+                      H2/2.0/ H2O/6.0/ CH4/2.0/ CO/1.5/ CO2/2.0/ C2H6/3.0/ AR/0.7/      
+                                                                                                                        
+!GRI
+!CH2CO+H = HCCO+H2                                  5.000E+13       0.000     8000.00                                                                                                                            
+!CH2CO+H = CH3+CO                                   1.130E+13       0.000     3428.00  
+!CH2CO+H = CH3+CO                                   1.500E+09       1.430     2690.00 !calculated RRKM  USC MECH   ZXY try_20160403
+
+! Senosiain JP Klippenstein SJ Miller JA JPCA 110:5772-5781 2006 !
+CH2CO+H=CH3+CO                       7.8E08   1.45     2780 !                     
+!M. Christensen, A .A . Konnov / Combustion and Flame 17 0 (2016) 12 - 2 9
+CH2CO+H =  HCCO+H2                                 1.000E+14   0.0000   12300.00
+
+!GRI
+CH2CO+O = CH2+CO2                                  1.750E+12       0.000     1350.00                   
+!Xiong et al. Combust.Flame 161 (2014) 885-897
+CH2CO+O = HCCO+OH                                  1.870E+14       0.000     16690.00
+
+!GRI
+!CH2CO+OH = HCCO+H2O                                7.500E+12       0.000     2000.00                  
+!M. Christensen, A .A . Konnov / Combustion and Flame 17 0 (2016) 12 - 2 9
+CH2CO+OH = HCCO+H2O                                 1.780E+13       0.000     5840.00
+
+!M. Christensen, A .A . Konnov / Combustion and Flame 17 0 (2016) 12 - 2 9
+CH2CO+OH =  CH2OH+CO                               2.640E+12      0.000   -550.00
+
+!M. Christensen, A .A . Konnov / Combustion and Flame 17 0 (2016) 12 - 2 9
+CH2CO+OH =  CH3+CO2                                3.000E+11   0.0000       0.00
+
+! F. Hayes, W.D. Lawrance, W.S. Staker, K.D. King,J. Phys. Chem. 100 (1996) 11314-11318.
+CH2*+CH2CO = C2H4+CO                               6.000E+13   0.0000    -526.00
+
+!K.W. Lu, H. Matsui, C.L. Huang, P. Raghunath, N.S. Wang,J. Phys. Chem. A 114 (2010) 5493-5502 
+CH2CO+CH2 =  C2H4+CO                               1.600E+04   2.8000    6210.00
+
+!Y. Hidaka, K. Kimura, H. Kawano,Combust. Flame 99 (1994) 18-28
+CH2CO+CH2 =  HCCO+CH3                              3.600E+13   0.0000   11000.00 
+
+!A.A. Borisov, V.M. Zamanskii, A.A. Konnov, G.I. Skachkov, Sov. J. Chem. Phys. 6 (1990) 748每755.
+CH2CO+CH3 =  C2H5+CO                               2.400E+12      0.000    8000.00
+
+!Y. Hidaka, K. Kimura, H. Kawano, Combust. Flame 99 (1994) 18-28.
+CH2CO+CH3 =  HCCO+CH4                              7.500E+12      0.000    13000.00
+
+!################################REACTIONS OF C2H########################################
+
+!J.A. Miller, C.T. Bowman, Prog. Energy Combust. Sci. 15 (1989) 287-338.
+CH2+C = C2H+H                                      5.000E+13        0.000        0.00                 
+
+!-----------------------------HIGH-T OXIDATION MECH------------------------------
+
+!#############REACTIONS OF C2H##############
+
+!GRI
+C2H+O2 = HCO+CO                                    5.000E+13        0.000     1500.00                  
+C2H+O = CH+CO                                      5.000E+13        0.000      0.00                  
+C2H+OH = H+HCCO                                    2.000E+13        0.000      0.00                  
+!2015 Shen C2H2 LFS
+C2H+HO2=HCCO+OH                                    1.81E+13         0.0        0.0
+
+!#############REACTIONS OF HCCO##############
+
+!MC Lin Combustion Science and Technology 188 (2016) 1095-1114.
+HCCO+H = CH2*+CO                                   5.19E+13	     1.60E-01	    3.97E+01                  
+HCCO+H = CH2+CO								 	   5.19E+08	     1.56E+00	    7.67E+02
+
+!S.J. Klippenstein, J.A. Miller, L.B. Harding, Resolving the mystery of prompt CO2: The HCCO+O2 reaction, Proceedings of the Combustion Institute 29 (2002) 1209-1217.
+HCCO+O2 = CO2+CO+H                                 4.780E+12       -0.142     1150.0                   
+HCCO+O2 = OH+2CO                                   1.910E+11       -0.02      1020                  
+! including prompt dissociation of HCO (following Labbe et al., J. Phys. Chem. Lett. 2016):
+!HCCO+O2 = O+CO+HCO                                 2.18E+02        2.7        3541.0
+HCCO+O2 = O+CO+HCO                         2.18E+02        2.7        3541.0                   
+     PLOG/     3.947E-02     2.18E+02        2.7        3541.0 /                                   
+     PLOG/     3.947E-02     -4.58E+11	3.41E-01	1.88E+04 /                                
+     PLOG/     1.000E+00     2.18E+02        2.7        3541.0 /                                   
+     PLOG/     1.000E+00     -1.30E+12	2.27E-01	2.35E+04 /                                
+     PLOG/     1.000E+01     2.18E+02        2.7        3541.0 /                                   
+     PLOG/     1.000E+01     -2.76E+12	1.48E-01	2.44E+04 /                                
+                                                                                            
+! including prompt dissociation of HCO (following Labbe et al., J. Phys. Chem. Lett. 2016):                                            
+HCCO+O2 = O+CO+H+CO            2.18E+02        2.7        3541.0                                 
+     PLOG/     3.947E-02     4.58E+11	3.41E-01	1.88E+04 /                                  
+     PLOG/     1.000E+00     1.30E+12	2.27E-01	2.35E+04 /                                  
+     PLOG/     1.000E+01     2.76E+12	1.48E-01	2.44E+04 /   
+
+!2005 Baulch
+HCCO+O = H+CO+CO                                   1.54E+14   0.0      0.0           
+HCCO+O=CH+CO2                                      3.00E+13    0.0     1113.0
+
+HCCO+OH=HCOH+CO		                 3.0E16  -0.935     659! 1 atm 
+!!PLOG / 1                             3.0E16  -0.935     659/ !refit to avoid convergence problems
+!!PLOG / 10                            1.1E18  -1.392    1395/
+!!PLOG / 100                           3.2E18   -1.523   1627/
+DUP
+!!
+HCCO+OH=HCOH+CO		                 8.7E19  -1.792    5994! 1 atm 
+!!PLOG / 1                             8.7E19  -1.792    5994/ !Average (max) fitting error: 0.7% (3.8%) over T of 250--3000 [K] 
+!!PLOG / 10                            3.5E22  -2.475    9163/ !Average (max) fitting error: 0.8% (3.2%) over T of 400--3000 [K] 
+!!PLOG / 100                           1.3E24   -2.902  10522/ !Average (max) fitting error: 0.9% (3.6%) over T of 400--3000 [K] 
+DUP
+!!
+!!! assuming 3-HCOH=1-HCOH=HCOH
+HCCO+OH=HCOH+CO	                     2.9E12   0.370     -24	   !  3-HCOH
+DUP
+
+! Xiong et al., Combust. Flame 161 (2014) 885?97
+HCOH=CH2O                            5.2E13   0.00    32109 ! kinf
+HCOH=CO+H2                           6.6E13   0.000   49465 ! kinf
+
+! est BY Glarborg 2016 CH4
+HCOH+H=CH2O+H                        1.0E14   0.000       0 ! #160409#
+HCOH+H=HCO+H2                        2.0E13   0.000       0 ! #160409#
+HCOH+H=H+CO+H2                       1.0E13   0.000       0 ! #160409#
+HCOH+O=CO2+2H                        3.0E13   0.000       0 ! #160409#
+HCOH+OH=HCO+H2O                      2.0E13   0.000       0 ! #160409#
+HCOH+OH=H+CO+H2O                     1.0E13   0.000       0 ! #160409#
+
+!J.A. Miller , C.F. Melius , A theoretical analysis of the reaction between hydroxyl and acetylene, 22 (1988), pp. 1031–1039 .                                                                                      
+HCCO+CH = C2H2+CO                                 5.000E+13       0.000        0.00      
+HCCO+HCCO = C2H2+CO+CO                            1.000E+13       0.000        0.00      
+                                                                                          
+!89MIL/BOW; 83HOM/WEL                                                                     
+C2H2+HCCO = C3H3+CO                               1.00E+11         0.000    3000.00       
+
+!#############REACTIONS OF C2O##############
+
+!92MIL/MEL
+C2O+H = CH+CO                                      5.000E+13        0.000        0.00                  
+C2O+O2 = CO+CO+O                                   2.000E+13        0.000        0.00                  
+C2O+O = CO+CO                                      5.000E+13        0.000        0.00                   
+C2O+OH = CO+CO+H                                   2.000E+13        0.000        0.00                  
+                 
+!********************************THE END OF ACETYLENE REACTIONS*********************************************
+
+!##################REACTIONS OF C2H5CHO #################
+C2H5CHO = CH3+CH2CHO				                        7.00e+15	    0.00     	81703 ! 1992bau/cob411-429
+!Zeng Decane
+!LLNL  
+C2H5CO = C2H5+CO                                    1.834E+15      -0.73      1.291E+04   
+C2H5CHO = C2H5+HCO                                  9.850E+18      -0.73      8.171E+04   
+C2H5CHO+H = C2H5CO+H2                               4.000E+13      0.00       4.200E+03   
+C2H5CHO+O = C2H5CO+OH                               5.000E+12      0.00       1.790E+03    
+C2H5CHO+O2 = C2H5CO+HO2                             1.005E+13      0.00       4.070E+04   
+C2H5CHO+OH = C2H5CO+H2O                             2.690E+10      0.76      -3.400E+02   
+C2H5CHO+CH3 = C2H5CO+CH4                            2.608E+06      1.78       5.911E+03   
+C2H5CHO+HO2 = C2H5CO+H2O2                           2.800E+12      0.00       1.360E+04   
+C2H5CHO+C2H5 = C2H5CO+C2H6                          1.000E+12      0.00       8.000E+03                      
+C2H5CHO+CH3O = C2H5CO+CH3OH                         1.000E+12      0.00       3.300E+03     
+
+!Aramcomech  2.0
+!REF:ACETALDEHYDE ANALOG
+C2H5CHO+C2H5O = C2H5CO+C2H5OH                          6.026E+011     0.000    3300.0
+!REF:!ANALOGY WITH ACETALDEHYDE
+C2H5CHO+C2H3 = C2H5CO+C2H4                             1.700E+012     0.000    8440.0
+
+!################REACTIONS OF CH3CHCO###############
+! K.Y. Lam & R.K. Hanson et al. 2012
+C2H4+CO(+M) = CH3CHCO(+M)                       8.100E+11       0          0                                
+                                              LOW/  2.690E+33     -5.11      7.095E+03 /                     
+                                              TROE/ 5.907E-01     275    1226      5185/                     
+! Z. Serinyel & H.J. Curran et al. 2010 
+CH3CHCO+H = C2H5+CO                                4.400E+12      0      1.459E+03                             
+! P.S. Veloo et al. propanol oxidation 2012
+CH3CHCO+O => CH3CHO+CO                           3.200e+12      0.00   -4.370e+02                            
+CH3CHCO+OH => C2H5+CO2                           1.730e+12      0.00   -1.010e+03                            
+!CH3CHCO+OH => SC2H4OH+CO                         2.000e+12      0.00   -1.010e+03                            
+
+!################REACTIONS OF C2H3CHO###############
+
+!JHF METHANE
+C2H3CHO+O = C2H3+OH+CO                             3.00E+13    0.0     3540.0
+C2H3CHO+O = CH2O+CH2CO                             1.90E+07    1.8      220.0
+C2H3CHO+OH = C2H3+H2O+CO                           3.43E+09    1.2     -447.0
+
+!Aramcomech 2.0
+!REF:ESTIMATE
+C2H3+HCO = C2H3CHO                                1.810E+013     0.000       0.0
+
+!Aramcomech 2.0
+!REF:BASED ON CH3CHO+H
+C2H3CHO+H = C2H3CO+H2                             1.340E+013     0.000    3300.0
+C2H3CHO+O = C2H3CO+OH                             5.940E+012     0.000    1868.0
+
+!Aramcomech 2.0
+!REF:TAYLOR ET AL. 1996
+C2H3CHO+OH = C2H3CO+H2O                           9.240E+006     1.500    -962.0
+C2H3CHO+O2 = C2H3CO+HO2                           1.005E+013     0.000   40700.0
+
+!Aramcomech 2.0
+!REF:BASED ON CH3CHO+HO2
+C2H3CHO+HO2 = C2H3CO+H2O2                         3.010E+012     0.000   11920.0
+C2H3CHO+CH3 = C2H3CO+CH4                          2.608E+006     1.780    5911.0
+
+!Aramcomech 2.0
+!REF:ANALOGY WITH ACETALDEHYDE.
+C2H3CHO+C2H3 = C2H3CO+C2H4                        1.740E+012     0.000    8440.0
+
+!Aramcomech 2.0
+!REF:ANALOGY WITH CH3CHO+CH3O
+C2H3CHO+CH3O = C2H3CO+CH3OH                       1.000E+012     0.000    3300.0
+
+   
+
+!################REACTIONS OF C2H3CO###############
+
+!Aramcomech 2.0
+!REF:TSANG AND HAMPSON, J. PHYS. CHEM. REF. DATA, 15:1087 (1986)
+C2H3+CO = C2H3CO                                  1.510E+011     0.000    4810.0
+
+!Low-temperature oxidation chemistry
+!************************************* reactions of CH4 **********************************
+
+!REF:R.X. FERNANDES ET AL.,J PHYS. CHEM. A, (2006) 110:4442-4449.
+CH3+O2(+M)<=>CH3O2(+M)                            7.812E+009     0.900       0.0     !ZXY_TRY_2016101101       7.812E+009     0.900       0.0
+LOW/                                              6.850E+024    -3.000       0.0/    !ZXY_TRY_2016101101       6.850E+024    -3.000       0.0
+TROE/  6.000E-001  1.000E+003  7.000E+001  1.700E+003/
+
+!!!!############ the reactions of CH3O2 ################
+
+! Baulch DL Bowman CT Cobos CJ Cox RA Just Th Kerr JA Pilling MJ Stocker D Troe J Tsang W Walker RW Warnatz J JPCRD 34:757-1397 2005
+! CL Rasmussen JG Jacobsen P Glarborg IJCK 40 (2008) 778-807
+CH3O2+CH3O2 = CH3O+CH3O+O2                         1.1E18        -2.400    1800 ! RAS/GLA08b CEC05 (RAS/GLA08d fit 250<T<2000K)
+DUPLICATE                                                  	
+CH3O2+CH3O2 = CH3O+CH3O+O2                         7.0E10        0.000     800  ! RAS/GLA08b CEC05 (RAS/GLA08d fit 250<T<2000K)
+DUPLICATE
+
+! Baulch DL Bowman CT Cobos CJ Cox RA Just Th Kerr JA Pilling MJ Stocker D Troe J Tsang W Walker RW Warnatz J JPCRD 34:757-1397 2005
+CH3O2+CH3O2 = CH3OH+CH2O+O2                        2.0E11        -0.550   -1600 !
+
+! est CO+HO2=CO2+OH
+CH3O2+CO=CH3O+CO2                                 1.6E05         2.180    17940 !
+
+! Hashemi et al., High-Pressure Oxidation of Natural Gas: Methane, Combust. Flame 2016
+CH3O2+CH4=CH3O2H+CH3				                       4.45E-3	       4.691	 19868	!T: 400-2000 K
+	           
+!CL Rasmussen JG Jacobsen P Glarborg IJCK 40 (2008) 778-807, est CH2O+HO2=HCO+H2O2                                     
+CH3O2+CH2O=CH3O2H+HCO 			                       1.981E+09      1.111   12499.5          
+!--- Average (max) fitting error: 3.7% (14.6%) over T of 500--3000 [K]
+CH3O2+CH2O=CH3O2H+H+CO                             2.454E+14      0.027   30133.3
+
+!CL Rasmussen JG Jacobsen P Glarborg IJCK 40 (2008) 778-807, est CH3OH+HO2=CH2OH+H2O2
+CH3OH+CH3O2 = CH2OH+CH3O2H                           4.0E13         0.000   19400          
+
+!Calculated in this work with double-parameter fitting               
+CH3CHO+CH3O2 = CH2CHO+CH3O2H                          8.23E-03	4.2759	16817    !8.23E-03
+DUP                                                                              
+CH3CHO+CH3O2 = CH2CHO+CH3O2H                          7.08E-09	5.6571	11699    !7.08E-09
+DUP                        
+
+CH3CHO+CH3O2 = CH3CO+CH3O2H                           0.32179   3.9447	9503.1   !0.32179       
+DUP                                                                                      
+CH3CHO+CH3O2 = CH3CO+CH3O2H                           4.99E-06	4.9756	5268.2   !4.99E-06    
+DUP                         
+
+ 
+!REF:LIGHTFOOT ET AL. J. CHEM. SOC. FARA TRANS. 1991, 87(19), 3213--3220.
+CH3O2+H = CH3O+OH                                 9.600E+013     0.000       0.0
+
+!REF:LIGHTFOOT ET AL. J. CHEM. SOC. FARA TRANS. 1991, 87(19), 3213--3220.
+CH3O2+O = CH3O+O2                                  2.850E+10      1.        -724 
+
+!C. Yan, S. Kocevska, L.N. Krasnoperov, J. Phys. Chem. A 2016, 120, 6111?6121
+CH3O2+OH = CH3O+HO2                              5.11E+15	      -0.8100		  0.0
+
+!REF: LIGHTFOOT,P.D. ETAL., ATMOS. ENVIRON. PART A: 26, 1805-1961 (1992)
+CH3O2+HO2<=>CH3O2H+O2                             2.470E+011     0.000   -1570.0      !  2.470E+011 
+
+!REF:KEIFFER, M. ET AL.,J. CHEM. SOC. FARADAY TRANS. 2: 84, 505 (1988) 
+CH3O2+CH3<=>CH3O+CH3O                             5.080E+012     0.000   -1411.0  !  5.080E+012  
+
+! est CH2OH+HO2=CH2O+H2O2
+CH3O2+CH2OH=CH2O+CH3O2H                           6.300E+11      0.28        -813 !
+	
+! est HCO+HO2=CO2+OH+H
+CH3O2+HCO=CH3O+H+CO2                              3.0E13         0.000       0 !
+
+!Tsang W Hampson RF JPCRD 15:1087 1986
+CH3O2+CH3O=CH2O+CH3O2H                            3.0E11         0.000       0
+                                      
+!Tsang W Hampson RF JPCRD 15:1087 1986
+CH3CO+CH3O2=CH3+CO2+CH3O                          2.4E13         0.000       0
+
+! Ing W-C Sheng CY Bozzelli JW FPT 83:111-145 2003
+! the reverse one: CH2O+OH<=>CH2OOH is disabled
+CH2O2H=CH2O+OH                      2.4E12  -0.925    1567 
+PLOG/ 0.04                          9.6E10  -0.925    1567/ 
+PLOG/ 1.0                           2.4E12  -0.925    1567/
+PLOG/ 10.                           2.5E13  -0.927    1579/
+PLOG/ 100.                          7.0E14  -1.064    1744/
+	
+!!!!############ reactions of CH3O2H ##################
+! A.W. Jasper, S.J. Klippenstein, L.B. Harding, Proc. Combust. Inst. 32 (2009) 279-286
+CH3O2H(+M)=CH3O+OH(+M)               4.1E19  -1.153   44226 !
+LOW /                               3.9E42  -7.502   46730/
+TROE /0.8375  36562  498.8  9990/
+
+!Slemr F Warneck P IJCK 9:267 1977
+CH3O2H+H=CH2O2H+H2                   5.4E10   0.000    1860 ! RAS/GLA08b SLE/WAR77 (45%)
+CH3O2H+H=CH3O2+H2                    5.4E10   0.000    1860 ! RAS/GLA08b SLE/WAR77 (45%)
+CH3O2H+H=CH3O+H2O                    1.2E10   0.000    1860 ! RAS/GLA08b SLE/WAR77 (10%)
+
+!Baulch DL Bowman CT Cobos CJ Cox RA Just Th Kerr JA Pilling MJ Stocker D Troe J Tsang W Walker RW Warnatz J JPCRD 34:757-1397 2005
+CH3O2H+O=CH2O2H+OH                   1.6E13   0.000    4750 ! RAS/GLA08b CEC05
+CH3O2H+O=CH3O2+OH                    8.7E12   0.000    4750 ! RAS/GLA08b CEC05
+
+!Baulch DL Bowman CT Cobos CJ Cox RA Just Th Kerr JA Pilling MJ Stocker D Troe J Tsang W Walker RW Warnatz J JPCRD 34:757-1397 2005
+CH3O2H+OH=CH3O2+H2O                  1.1E12   0.000    -437 ! RAS/GLA08b CEC05 (fit to VAG/RAV89)
+CH3O2H+OH=CH2O2H+H2O                 7.2E11   0.000    -258 ! RAS/GLA08b CEC05 (fit to VAG/RAV89)
+
+! CL Rasmussen JG Jacobsen P Glarborg IJCK 40 (2008) 778-807
+! est CH2O+HO2=HCO+H2O2
+CH3O2H+HO2=CH3O2+H2O2                4.1E04   2.500   10206
+
+!************************************* reactions of CH3CHO ********************************
+!############ the first O2 reactions ###############                                                                     
+!REF:Scott A. Carr, J. Phys. Chem. A 2011, 115,1069-1085   20170423
+CH3CO+O2=CH3CO3                     1.08E+95	-27.336	25141.00
+PLOG/ 0.1                           1.08E+95	-27.336	25141.00/
+PLOG/ 0.1                           1.21E+45	-11.733	5358.30/ 
+PLOG/ 1.0                           9.27E+68	-1.87E+01	1.67E+04/
+PLOG/ 1.0                           6.18E+43	-1.10E+01	5.69E+03/
+PLOG/ 10.                           3.15E+59	-1.53E+01	1.46E+04/
+PLOG/ 10.                           2.46E+45	-1.14E+01	6.41E+03/
+
+CH3CO+O2=CH2CO+HO2                  1.25E+05	1.6396	1912.40 
+PLOG/ 0.1                           1.25E+05	1.6396	1912.40/
+PLOG/ 0.1                           8.26E+03	2.1841	4883/ 
+PLOG/ 1.0                           1.99E+13	-1.10E+00	4.07E+03/
+PLOG/ 1.0                           2.27E+05	1.77E+00	4.39E+03/
+PLOG/ 10.                           1.54E+11	-1.27E-01	5.06E+03/
+PLOG/ 10.                           2.28E+28	-4.75E+00	2.26E+04/
+!
+CH3CO+O2=H2COCO#+OH                 7.25E+24	-4.6314	2519.30 
+PLOG/ 0.1                           7.25E+24	-4.6314	2519.30 /   
+PLOG/ 0.1                           6.75E+15	-1.4357	5327.6/      
+PLOG/ 1.0                           2.46E+25	-4.66E+00	4.00E+03/
+PLOG/ 1.0                           1.12E+13	-5.12E-01	6.26E+03/
+PLOG/ 10.                           3.58E+34	-7.39E+00	9.44E+03/
+PLOG/ 10.                           4.11E+11	-2.81E-01	1.73E+03/
+!
+CH3CO+O2=QCH2CO3H                   2.66E+45	-12.494	6557.50 
+PLOG/ 0.1                           2.66E+45	-12.494	6557.50/
+PLOG/ 0.1                           3.61E-16	6.1808	-12804/    
+PLOG/ 1.0                           1.62E+52	-1.42E+01	9.96E+03/
+PLOG/ 1.0                           3.64E+26	-6.34E+00	1.21E+03/
+PLOG/ 10.                           3.32E+75	-2.11E+01	2.14E+04/
+PLOG/ 10.                           1.67E+38	-9.47E+00	6.61E+03/
+!
+CH3CO3=QCH2CO3H                     5.96E+07	0.26111	19348.0
+PLOG/ 0.1                           -1.76E+34	-7.4364	34941.0/
+PLOG/ 0.1                           5.96E+07	0.26111	19348.0/    
+PLOG/ 1.0                           8.2148E+30	-7.04E+00	2.64E+04/
+PLOG/ 10.                           -1.22E+28	-6.27E+00	2.27E+04/
+PLOG/ 10.                           2.05E+17	-2.63E+00	2.03E+04/
+!
+CH3CO3=CH2CO+HO2                    1.30E+90	-26.391	57898.0
+PLOG/ 0.1                           1.30E+90	-26.391	57898.0/
+PLOG/ 0.1                           1.05E+52	-14.563	42301/    
+PLOG/ 1.0                           9.64E+64	-1.77E+01	4.90E+04/
+PLOG/ 1.0                           1.59E+54	-1.48E+01	4.30E+04/
+PLOG/ 10.                           3.74E+69	-1.84E+01	5.29E+04/
+PLOG/ 10.                           4.87E+55	-1.46E+01	4.49E+04/
+!
+QCH2CO3H=H2COCO#+OH                 1.50E+59	-15.477	33026
+PLOG/ 0.1                           1.50E+59	-15.477	33026/
+PLOG/ 0.1                           5.68E+17	-2.6999	19660/    
+PLOG/ 1.0                           4.75E+52	-1.30E+01	3.22E+04/
+PLOG/ 1.0                           1.44E+38	-1.29E+01	1.29E+04/
+PLOG/ 10.                           6.28E+75	-1.98E+01	4.34E+04/
+PLOG/ 10.                           4.68E+37	-8.12E+00	2.79E+04/
+!
+QCH2CO3H=CH2CO+HO2                  3.26E+49	-14.36	39228
+PLOG/ 0.1                           3.26E+49	-14.36	39228/
+PLOG/ 0.1                           6.32E+29	-9.3128	28456/    
+PLOG/ 1.0                           8.03E+53	-1.50E+01	4.18E+04/
+PLOG/ 1.0                           1.84E+36	-1.09E+01	3.08E+04/
+PLOG/ 10.                           2.76E+59	-1.60E+01	4.58E+04/
+PLOG/ 10.                           1.87E+40	-1.11E+01	3.54E+04/
+
+!############ the    C2H2O2 reactions ###############
+!For completeness
+!2002 Lee JPCA
+CH3CO+O2=CH2CO2+OH                  8.24E+022      -3.260   7480   
+CH2CO2=CH2*+CO2                     1.24E+011      -0.850   16563
+!2007 Hou J. Chem. Phys
+H2COCO# = CH2O+CO                   1.21E+12	   0.000	36000
+
+!############ reactions of CH3CO3 ##################   
+
+!est ch3oo+h
+CH3CO3+H = CH3CO2+OH                1.0E14         0.000       0
+
+!EST:A. Miyoshi, H. Matsui, N. Washida, J. Phys. Chem. 1989, 93, 5813-5818.
+CH3CO3+O = CH3+CO2+O2               5.0E12         0.000       0 	!                                                                                          
+CH3CO3+O = CH3O+CO+O2               1.5E13         0.000       0 	!                                                                                          
+
+!est ch3oo+oh                                                                                                                                
+CH3CO3+OH = CH3CO2+HO2              5.11E+15	     -0.8100		  0.0 	!                                                                                          
+                                                                                                                                         
+! C.B.M. Gross, T.J. Dillon, G. Schuster, J. Lelieveld, J. N. Crowley, J. Phys. Chem. A 2014, 118, 974-985.                                            
+! R. Atkinson, D.L. Baulch, R.A. Cox, J.N. Crowley, R.F. Hampson, R.G. Hynes, M.E. Jenkin, M.J. Rossi, J. Troe, Atmos. Chem. Phys., 6, 3625-4055, 2006                                                                                                                               
+CH3CO3+HO2 = CH3CO2+OH+O2          1.9E11   0.000   -1950 	!                                                                                                                                                                                                                      
+CH3CO3+HO2 = CH3CO3H+O2            1.2E11   0.000   -1950 	!                                                                                          
+
+!REF:Lee 2002 JPCA 1 Torr
+CH3CO3+CH3CO3=2CH3CO2+O2            8.510E+010     0.000   248.0             
+
+!Calculated in this work with double-parameter fitting                         
+CH3CHO+CH3CO3 = CH2CHO+CH3CO3H                       2.54E-03	4.3574	13426      !2.54E-03
+DUP                         
+CH3CHO+CH3CO3 = CH2CHO+CH3CO3H                       3.60E-11	6.2	7350.8         !3.60E-11
+DUP                         
+
+CH3CHO+CH3CO3 = CH3CO+CH3CO3H                        1.9158 	3.6426	5641.9     !1.9158
+DUP                           
+CH3CHO+CH3CO3 = CH3CO+CH3CO3H                        9.81E-04	4.3201	2636.1     !9.81E-04
+DUP                           
+   
+!refer to Aramco 2.0
+CH4+CH3CO3<=>CH3+CH3CO3H                          1.810E+011     0.000   18480.0
+!REF:TSANG AND HAMPSON, J. PHYS. CHEM. REF. DATA, 15:1087 (1986)
+!REF:ANALOGY TO CH3O2+CH2O
+CH2O+CH3CO3<=>HCO+CH3CO3H                         1.990E+011     0.000   11660.0            !ZXY Modified 2016100804     1.990E+012
+!REF: ANALOGY TO C2H6+HO2
+C2H6+CH3CO3<=>C2H5+CH3CO3H                        1.700E+013     0.000   20460.0
+!!!
+!############ reactions of CH3CO3H ################## 
+!Sahetchian, K.A.; Rigny, R.; Tardieu de Maleissye, J.; Batt, L.; Anwar Khan, M.; Mathews, S., Proc. Combust. Inst. 24, 637-643, 1992.
+CH3CO3H = CH3CO2+OH                               5.010E+014     0.000   40150.0
+
+! est ch3ooh+h
+CH3CO3H+H=CH3CO3+H2            5.4E10   0.000    1860 	!
+
+! est ch3ooh+o
+CH3CO3H+O=CH3CO3+OH            8.7E12   0.000    4750 	!
+	
+! est ch3ooh+o
+CH3CO3H+OH=CH3CO3+H2O          1.1E12   0.000    -437 	!
+	
+! est ch2o+ho2
+CH3CO3H+HO2=CH3CO3+H2O2        4.1E04   2.500   10206 	!
+	
+!!!!############ reactions of CH3CO2 ################## 
+!Aramco
+CH3CO2+M<=>CH3+CO2+M                             4.400E+015  0.0   10500.0
+!ref to CH3+HO2=CH3O+OH
+HO2+CH3CO=CH3CO2+OH                               1.000e+12      0.269   -6.875e+02      
+
+!############ the second O2 reactions ###############   
+!Polimi 2017 PCI, Analogy to 1st O2 addition reactions
+QCH2CO3H+O2=O2QCH2CO3H                            5.79E+061      -16.07   13400 
+!Polimi 2017 PCI ZA3B3=OH+KEA3B3 n-propanl             
+O2QCH2CO3H=KHO2COCHO+OH                           7.00E+011       0.000   24600.0                  
+!ANALOGY CH3CO3H<=>CH3CO2+OH
+KHO2COCHO=OCOCHO+OH                               5.01E+014       0.000   40150.0                                   
+!ANALOGY TO CH3CO<=>CH3+CO
+OCOCHO=HCO+CO2                                    4.40E+015       0.000   10500.0                                  
+
+!#############REACTIONS OF C2H4O2(CH3CO2H Acetic acid)##############
+!M. Christensen, A .A . Konnov / Combustion and Flame 17 0 (2016) 12 每 2 9
+CH3CO2H+H=CH2CO2H+H2                              1.68E+04        2.9     7376
+CH3CO2H+H=CH3CO2+H2                               1.79E+06        2.3     15215
+CH3CO2H+O=CH2CO2H+OH                              2.30E+04        2.93    7040
+CH3CO2H+O=CH3CO2+OH                               8.50E+05        2.1     9880
+CH3CO2H+OH=CH3CO2+H2O                             2.12E-04        4.8     -3949
+CH3CO2H+OH=CH2CO2H+H2O                            4.40E+00        3.8     -725
+CH3CO2H+HO2=CH2CO2H+H2O2                          4.02E-06        5.3     15153
+CH3CO2H+HO2=CH3CO2+H2O2                           1.41E-02        4.2     20862 
+CH3CO2H+CH3=CH3CO2+CH4                            9.300E+01       3.0     10773.0                                                                        
+CH3CO2H+CH3=CH2CO2H+CH4                           2.140E-01       4.0     8222.0
+CH3CO2H+O2=CH2CO2H+HO2                            1.260E+13       0.0     49042.99
+
+!Battin 2008 CST 343-370
+CH3CO+OH =  CH3CO2H                               1.000E+14   0.000        0.00 
+CH2CO+OH=CH2CO2H                                  4.000E+12   0.0          0.00
+CH2CO2H+H=CH2CO+H2O                               1.000E+14   0.0          0.00
+
+
+END
+
+
+
