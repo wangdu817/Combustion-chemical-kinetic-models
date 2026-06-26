@@ -1,0 +1,1525 @@
+description: |-
+  ------------------------------------------------------------------------------!
+   A Detailed Chemical Kinetic Mechanism of 1,1-Diamino-2,2-dinitroethylene (FOX-7) Initial Decomposition in the Gas Phase
+   Jie-Yao Lyu, Qiren Zhu, Xin Bai, Xuan Ren, Jing Li, Dongping Chen, Vitaly G. Kiselev, Yang Li*, Wenming Yang*.
+   * The first authors E-mail: jieyaolyu@u.nus.edu (Lyu Jie-Yao).
+   * Corresponding authors E-mail: mpeywm@nus.edu.sg (Yang Wenming); yang.li@nwpu.edu.cn (Li Yang).
+   Combustion and Flame
+   mechanism for FOX-7 initial decomposition in the gas phase
+   Kinetic data
+  ------------------------------------------------------------------------------!
+
+  ------------------------------------------------------------------------------!
+   A Detailed Chemical Kinetic Mechanism of 1,1-Diamino-2,2-dinitroethylene (FOX-7) Initial Decomposition in the Gas Phase
+   Jie-Yao Lyu, Qiren Zhu, Xin Bai, Xuan Ren, Jing Li, Dongping Chen, Vitaly G. Kiselev, Yang Li*, Wenming Yang*.
+   * The first authors E-mail: jieyaolyu@u.nus.edu (Lyu Jie-Yao).
+   * Corresponding authors E-mail: mpeywm@nus.edu.sg (Yang Wenming); yang.li@nwpu.edu.cn (Li Yang).
+   Combustion and Flame
+   mechanism for FOX-7 initial decomposition in the gas phase
+   Thermo data
+  ------------------------------------------------------------------------------!
+
+generator: ck2yaml
+input-files: [chem.inp, therm.dat]
+cantera-version: 3.2.0
+date: Wed, 17 Jun 2026 23:16:20 +0800
+
+units: {length: cm, time: s, quantity: mol, activation-energy: cal/mol}
+
+phases:
+- name: gas
+  thermo: ideal-gas
+  elements: [C, H, O, N, He, Ar]
+  species: [FOX-7, R1, R2, P3, R3a, P5d, R5a, R5b, R5d, R5e, R5f, 
+      CH2N2O4, NCNH2, urea, O2NCNO, C(NH)2, C(N(O)OH)2, C2H3N4O4, 
+      C2H4N4O3, R1H, R3aH, NO, HNO, NO2, NO3, HONO, OH, H2O, H, H2, CN,
+    HCN, NH2, NH3, O, AR, HE, N2]
+  kinetics: gas
+  state: {T: 300.0, P: 1 atm}
+
+species:
+- name: FOX-7
+  composition: {H: 4, C: 2, N: 4, O: 4}
+  thermo:
+    model: NASA7
+    temperature-ranges: [298.15, 1000.0, 2000.0]
+    data:
+    - [2.60770645, 0.0687310728, -6.2908821e-05, 2.82738622e-08, 
+        -4.78734338e-12, -3264.76934, 15.5250148]
+    - [11.8882244, 0.0370649455, -2.35935469e-05, 7.51962391e-09, 
+        -9.62769923e-13, -5393.67016, -30.6121057]
+    note: '------------------------------------------------------------------------------!'
+- name: R1
+  composition: {H: 4, C: 2, N: 3, O: 2}
+  thermo:
+    model: NASA7
+    temperature-ranges: [298.15, 1000.0, 2000.0]
+    data:
+    - [0.771142092, 0.058044708, -5.93539618e-05, 3.1357931e-08, 
+        -6.61157508e-12, 3.03146281e+04, 24.0519033]
+    - [9.27619842, 0.0265136864, -1.57912352e-05, 4.80531707e-09, 
+        -5.95722551e-13, 2.84891567e+04, -17.6023781]
+- name: R2
+  composition: {H: 4, C: 2, N: 3, O: 3}
+  thermo:
+    model: NASA7
+    temperature-ranges: [298.15, 1000.0, 2000.0]
+    data:
+    - [1.52011833, 0.0629412388, -6.34161813e-05, 3.34632555e-08, 
+        -7.2056314e-12, -1.40102219e+04, 19.8565199]
+    - [8.84033178, 0.0347632202, -2.28034061e-05, 7.49090717e-09, 
+        -9.88253109e-13, -1.55294063e+04, -15.7349873]
+- name: P3
+  composition: {H: 4, C: 2, N: 4, O: 4}
+  thermo:
+    model: NASA7
+    temperature-ranges: [298.15, 1000.0, 2000.0]
+    data:
+    - [1.88849985, 0.0641865182, -5.15965224e-05, 1.88001936e-08, 
+        -2.00100438e-12, -263.823394, 23.839139]
+    - [10.4047938, 0.0374193046, -2.23926454e-05, 6.62890453e-09, 
+        -7.82672684e-13, -2331.9803, -19.071547]
+- name: R3a
+  composition: {H: 4, C: 2, N: 3, O: 2}
+  thermo:
+    model: NASA7
+    temperature-ranges: [298.15, 1000.0, 2000.0]
+    data:
+    - [-0.246196553, 0.0616355314, -6.31195832e-05, 3.34066094e-08, 
+        -7.07582644e-12, 1.9024459e+04, 27.8258226]
+    - [8.61505069, 0.0286304338, -1.72717738e-05, 5.28129455e-09, 
+        -6.54470554e-13, 1.7130215e+04, -15.5345459]
+- name: P5d
+  composition: {H: 4, C: 2, N: 4, O: 4}
+  thermo:
+    model: NASA7
+    temperature-ranges: [298.15, 1000.0, 2000.0]
+    data:
+    - [-1.63952006, 0.0868439627, -9.06111539e-05, 4.79107013e-08, 
+        -1.00709642e-11, 1.83941785e+04, 34.3854359]
+    - [10.7927916, 0.0406196882, -2.65322003e-05, 8.69637104e-09, 
+        -1.14362461e-12, 1.57324676e+04, -26.4695242]
+- name: R5a
+  composition: {H: 3, C: 2, N: 4, O: 3}
+  thermo:
+    model: NASA7
+    temperature-ranges: [298.15, 1000.0, 2000.0]
+    data:
+    - [0.223386212, 0.0740933751, -8.39111793e-05, 4.82850818e-08, 
+        -1.11082171e-11, 2.60805078e+04, 27.7871681]
+    - [10.6474145, 0.0327609903, -2.24581951e-05, 7.68015422e-09, 
+        -1.04791734e-12, 2.39775157e+04, -22.5936751]
+- name: R5b
+  composition: {H: 1, C: 2, N: 3, O: 4}
+  thermo:
+    model: NASA7
+    temperature-ranges: [298.15, 1000.0, 2000.0]
+    data:
+    - [2.24150683, 0.0565337899, -5.61256131e-05, 2.56024811e-08, 
+        -4.20204355e-12, 1.9805375e+04, 17.1647101]
+    - [10.9637507, 0.0272054509, -2.04740596e-05, 7.39541548e-09, 
+        -1.0404363e-12, 1.77828944e+04, -26.305234]
+- name: R5d
+  composition: {H: 2, C: 2, N: 4, O: 3}
+  thermo:
+    model: NASA7
+    temperature-ranges: [298.15, 1000.0, 2000.0]
+    data:
+    - [0.368099155, 0.0604094963, -5.57775913e-05, 2.48850527e-08, 
+        -4.15245151e-12, 2.32545918e+04, 24.9226595]
+    - [8.29319058, 0.0334523416, -2.24566756e-05, 7.41431986e-09, 
+        -9.7057103e-13, 2.14324129e+04, -14.4971282]
+- name: R5e
+  composition: {H: 1, C: 2, N: 3, O: 4}
+  thermo:
+    model: NASA7
+    temperature-ranges: [298.15, 1000.0, 2000.0]
+    data:
+    - [2.35259878, 0.0562391163, -6.03298726e-05, 3.32961919e-08, 
+        -7.48608746e-12, 2.55455372e+04, 17.8822676]
+    - [8.46933062, 0.0315380603, -2.29270957e-05, 8.12687858e-09, 
+        -1.13522699e-12, 2.43338973e+04, -11.5688955]
+- name: R5f
+  composition: {H: 3, C: 2, N: 3, O: 2}
+  thermo:
+    model: NASA7
+    temperature-ranges: [298.15, 1000.0, 2000.0]
+    data:
+    - [15.2852197, -0.012102907, 5.76521407e-05, -5.60217475e-08, 
+        1.77427589e-11, 1017.17348, -42.4417263]
+    - [10.9866, 0.0186747687, -8.88916796e-06, 1.9223216e-09, 
+        -1.3905756e-13, 1197.7376, -25.0991699]
+- name: CH2N2O4
+  composition: {H: 2, C: 1, N: 2, O: 4}
+  thermo:
+    model: NASA7
+    temperature-ranges: [298.15, 1000.0, 2000.0]
+    data:
+    - [-0.0228793625, 0.0499289525, -4.78579723e-05, 2.31776887e-08, 
+        -4.48364069e-12, -2884.95647, 26.2955034]
+    - [5.62862604, 0.0294067372, -2.02003588e-05, 6.82308598e-09, 
+        -9.1594159e-13, -4119.44787, -1.49069481]
+- name: NCNH2
+  composition: {H: 2, C: 1, N: 2}
+  thermo:
+    model: NASA7
+    temperature-ranges: [298.15, 1000.0, 2000.0]
+    data:
+    - [2.48264969, 0.0166760653, -1.70500779e-05, 1.04234883e-08, 
+        -2.67366887e-12, 1.51806413e+04, 11.3495029]
+    - [4.10951179, 9.23861223e-03, -4.49889122e-06, 1.12602586e-09, 
+        -1.16802097e-13, 1.49017691e+04, 3.73333478]
+- name: urea
+  composition: {H: 4, C: 1, N: 2, O: 1}
+  thermo:
+    model: NASA7
+    temperature-ranges: [298.15, 1000.0, 2000.0]
+    data:
+    - [0.151468338, 0.0395161316, -4.18310516e-05, 2.4257964e-08, 
+        -5.73592138e-12, -2.94108672e+04, 21.8918617]
+    - [5.34405231, 0.0185663764, -1.01372897e-05, 2.94937006e-09, 
+        -3.63918072e-13, -3.0440413e+04, -3.11449957]
+- name: O2NCNO
+  composition: {C: 1, N: 2, O: 3}
+  thermo:
+    model: NASA7
+    temperature-ranges: [298.15, 1000.0, 2000.0]
+    data:
+    - [2.69489656, 0.0264252603, -2.61920079e-05, 1.34962178e-08, 
+        -2.88689581e-12, 2.8547034e+04, 16.006779]
+    - [4.83409996, 0.0177688743, -1.30580705e-05, 4.64068708e-09, 
+        -6.48120055e-13, 2.81241719e+04, 5.71125231]
+- name: C(NH)2
+  composition: {H: 2, C: 1, N: 2}
+  thermo:
+    model: NASA7
+    temperature-ranges: [298.15, 1000.0, 2000.0]
+    data:
+    - [0.746251787, 0.0267905178, -3.47955048e-05, 2.37567388e-08, 
+        -6.39052419e-12, 1.66239288e+04, 18.573325]
+    - [3.99382644, 0.0109895704, -6.87811047e-06, 2.33449373e-09, 
+        -3.32300725e-13, 1.61149463e+04, 3.60831672]
+- name: C(N(O)OH)2
+  composition: {H: 2, C: 1, N: 2, O: 4}
+  thermo:
+    model: NASA7
+    temperature-ranges: [298.15, 1000.0, 2000.0]
+    data:
+    - [0.0354602191, 0.0584935283, -6.77321085e-05, 3.93457725e-08, 
+        -9.1194197e-12, 2.10374428e+04, 23.6409249]
+    - [8.0032259, 0.0264526452, -1.94160532e-05, 6.9652486e-09, 
+        -9.81833628e-13, 1.94523807e+04, -14.7564836]
+- name: C2H3N4O4
+  composition: {H: 3, C: 2, N: 4, O: 4}
+  thermo:
+    model: NASA7
+    temperature-ranges: [298.15, 1000.0, 2000.0]
+    data:
+    - [-23.9726312, 0.231675818, -3.84930401e-04, 2.88993419e-07, 
+        -8.08941134e-11, 2.55986467e+04, 129.938005]
+    - [20.1047345, 0.0190793075, -1.1605065e-05, 3.82281355e-09, 
+        -5.29700248e-13, 1.85975259e+04, -73.6380431]
+- name: C2H4N4O3
+  composition: {H: 4, C: 2, N: 4, O: 3}
+  thermo:
+    model: NASA7
+    temperature-ranges: [298.15, 1000.0, 2000.0]
+    data:
+    - [1.12829685, 0.0694154346, -6.84595862e-05, 3.48179154e-08, 
+        -7.10392225e-12, 9974.92647, 21.8903944]
+    - [10.1597219, 0.036149337, -2.28498439e-05, 7.27102329e-09, 
+        -9.32099898e-13, 8025.66132, -22.3959116]
+- name: R1H
+  composition: {H: 5, C: 2, N: 3, O: 2}
+  thermo:
+    model: NASA7
+    temperature-ranges: [298.15, 1000.0, 2000.0]
+    data:
+    - [11.7282578, 1.21490532e-03, 5.43967996e-05, -6.26038207e-08, 
+        2.15132339e-11, -8439.43886, -28.3816225]
+    - [14.0009384, 0.0153239401, -1.5663884e-06, -2.09527155e-09, 
+        5.86157273e-13, -1.00539628e+04, -45.1459319]
+- name: R3aH
+  composition: {H: 5, C: 2, N: 3, O: 2}
+  thermo:
+    model: NASA7
+    temperature-ranges: [298.15, 1000.0, 2000.0]
+    data:
+    - [10.7158656, 1.26387368e-03, 5.72694519e-05, -6.5499127e-08, 
+        2.23692663e-11, -6232.89763, -21.0499916]
+    - [12.1080639, 0.0189894478, -4.26046049e-06, -1.18481788e-09, 
+        4.67097198e-13, -7676.05567, -33.5901357]
+- name: NO
+  composition: {N: 1, O: 1}
+  thermo:
+    model: NASA7
+    temperature-ranges: [298.15, 1000.0, 3000.0]
+    data:
+    - [4.15036687, -4.08890008e-03, 9.38071726e-06, -7.50908901e-09, 
+        2.11742798e-12, 9770.18679, 2.53971032]
+    - [2.79462839, 2.12260586e-03, -1.11936971e-06, 2.79521018e-10, 
+        -2.68625363e-14, 1.00019069e+04, 8.88322674]
+- name: HNO
+  composition: {H: 1, N: 1, O: 1}
+  thermo:
+    model: NASA7
+    temperature-ranges: [298.15, 1000.0, 3000.0]
+    data:
+    - [4.51988078, -5.42507623e-03, 1.70239636e-05, -1.48708172e-08, 
+        4.44763498e-12, 1.17637925e+04, 1.75618526]
+    - [2.58819802, 4.87708822e-03, -2.29243315e-06, 5.82214028e-10, 
+        -5.94811743e-14, 1.20213574e+04, 10.4315796]
+- name: NO2
+  composition: {N: 1, O: 2}
+  thermo:
+    model: NASA7
+    temperature-ranges: [298.15, 1000.0, 3000.0]
+    data:
+    - [3.39100918, 2.62448348e-03, 5.09790306e-06, -7.62120493e-09, 
+        2.79960135e-12, 2781.30679, 8.57220275]
+    - [3.65239279, 4.7163231e-03, -2.74591748e-06, 7.45382834e-10, 
+        -7.63891108e-14, 2572.16137, 6.5268344]
+- name: NO3
+  composition: {N: 1, O: 3}
+  thermo:
+    model: NASA7
+    temperature-ranges: [298.15, 1000.0, 3000.0]
+    data:
+    - [3.09446759, 0.0151014573, -1.26448498e-05, 3.67237581e-09, 
+        8.62184172e-14, 7186.26632, 10.4314685]
+    - [6.38293838, 5.42422503e-03, -3.3439778e-06, 9.48445417e-10, 
+        -1.01961714e-13, 6354.73962, -6.30266486]
+- name: HONO
+  composition: {H: 1, N: 1, O: 2}
+  thermo:
+    model: NASA7
+    temperature-ranges: [298.15, 1000.0, 3000.0]
+    data:
+    - [3.49106617, 6.81116875e-03, -1.3094312e-06, -2.34197204e-09, 
+        1.18931535e-12, -1.05722865e+04, 8.99803804]
+    - [4.19966671, 5.94217338e-03, -2.95404834e-06, 7.19846187e-10, 
+        -6.74909061e-14, -1.08122769e+04, 5.08809833]
+- name: OH
+  composition: {H: 1, O: 1}
+  thermo:
+    model: NASA7
+    temperature-ranges: [200.0, 1000.0, 6000.0]
+    data:
+    - [3.99198424, -2.40106655e-03, 4.61664033e-06, -3.87916306e-09, 
+        1.36319502e-12, 3368.89836, -0.103998477]
+    - [2.83853033, 1.10741289e-03, -2.94000209e-07, 4.20698729e-11, 
+        -2.4228989e-15, 3697.80808, 5.84494652]
+- name: H2O
+  composition: {H: 2, O: 1}
+  thermo:
+    model: NASA7
+    temperature-ranges: [200.0, 1000.0, 6000.0]
+    data:
+    - [4.1986352, -2.0364017e-03, 6.5203416e-06, -5.4879269e-09, 
+        1.771968e-12, -3.0293726e+04, -0.84900901]
+    - [2.6770389, 2.9731816e-03, -7.7376889e-07, 9.4433514e-11, 
+        -4.2689991e-15, -2.9885894e+04, 6.88255]
+- name: H
+  composition: {H: 1}
+  thermo:
+    model: NASA7
+    temperature-ranges: [200.0, 6000.0]
+    data:
+    - [2.5, 0.0, 0.0, 0.0, 0.0, 2.547366e+04, -0.44668285]
+- name: H2
+  composition: {H: 2}
+  thermo:
+    model: NASA7
+    temperature-ranges: [200.0, 1000.0, 6000.0]
+    data:
+    - [2.34433112, 7.98052075e-03, -1.9478151e-05, 2.01572094e-08, 
+        -7.37611761e-12, -917.935173, 0.683010238]
+    - [2.93286575, 8.26608026e-04, -1.46402364e-07, 1.54100414e-11, 
+        -6.888048e-16, -813.065581, -1.02432865]
+- name: CN
+  composition: {C: 1, N: 1}
+  thermo:
+    model: NASA7
+    temperature-ranges: [298.15, 1000.0, 3000.0]
+    data:
+    - [3.8348144, -2.57890681e-03, 6.22133293e-06, -4.76724184e-09, 
+        1.2761844e-12, 5.19101593e+04, 3.02396226]
+    - [2.54417327, 2.63413257e-03, -1.67393844e-06, 5.4674729e-10, 
+        -6.49315982e-14, 5.21657638e+04, 9.23794091]
+- name: HCN
+  composition: {C: 1, H: 1, N: 1}
+  thermo:
+    model: NASA7
+    temperature-ranges: [298.15, 1000.0, 3000.0]
+    data:
+    - [2.22381158, 8.91348548e-03, -1.13836313e-05, 8.3241306e-09, 
+        -2.41730729e-12, 1.4767077e+04, 9.23408445]
+    - [2.92308097, 4.44713874e-03, -2.18020741e-06, 5.19245486e-10, 
+        -4.87687163e-14, 1.47106866e+04, 6.27783116]
+- name: NH2
+  composition: {H: 2, N: 1}
+  thermo:
+    model: NASA7
+    temperature-ranges: [298.15, 1000.0, 3000.0]
+    data:
+    - [3.97883538, -5.13888088e-04, 2.68436156e-06, -9.188326e-10, 
+        -9.82251152e-14, 2.12486673e+04, 0.777619668]
+    - [2.6283961, 3.44379888e-03, -1.08606365e-06, 1.50714038e-10, 
+        -4.5942328e-15, 2.15909586e+04, 7.65372613]
+- name: NH3
+  composition: {H: 3, N: 1}
+  thermo:
+    model: NASA7
+    temperature-ranges: [298.15, 1000.0, 3000.0]
+    data:
+    - [3.2665051, 3.05892867e-03, 5.78755223e-07, 9.49077412e-10, 
+        -9.02221969e-13, -6365.11405, 3.58794921]
+    - [1.07096958, 8.75466951e-03, -3.33525419e-06, 4.72015791e-10, 
+        -1.13562571e-14, -5771.68689, 14.9517392]
+- name: O
+  composition: {O: 1}
+  thermo:
+    model: NASA7
+    temperature-ranges: [200.0, 1000.0, 6000.0]
+    data:
+    - [3.1682671, -3.27931884e-03, 6.64306396e-06, -6.12806624e-09, 
+        2.11265971e-12, 2.91222592e+04, 2.05193346]
+    - [2.54363697, -2.73162486e-05, -4.1902952e-09, 4.95481845e-12, 
+        -4.79553694e-16, 2.9226012e+04, 4.92229457]
+    note: L 1/90
+- name: AR
+  composition: {Ar: 1}
+  thermo:
+    model: NASA7
+    temperature-ranges: [200.0, 6000.0]
+    data:
+    - [2.5, 0.0, 0.0, 0.0, 0.0, -745.375, 4.37967491]
+    note: NUIG BASE
+- name: HE
+  composition: {He: 1}
+  thermo:
+    model: NASA7
+    temperature-ranges: [200.0, 6000.0]
+    data:
+    - [2.5, 0.0, 0.0, 0.0, 0.0, -745.375, 0.928723974]
+- name: N2
+  composition: {N: 2}
+  thermo:
+    model: NASA7
+    temperature-ranges: [200.0, 1000.0, 6000.0]
+    data:
+    - [3.53100528, -1.23660988e-04, -5.02999433e-07, 2.43530612e-09, 
+        -1.40881235e-12, -1046.97628, 2.96747038]
+    - [2.95257637, 1.3969004e-03, -4.92631603e-07, 7.86010195e-11, 
+        -4.60755204e-15, -923.948688, 5.87188762]
+
+reactions:
+- equation: FOX-7 <=> P3  # Reaction 1
+  type: pressure-dependent-Arrhenius
+  rate-constants:
+  - {P: 0.01 atm, A: 9.03e+87, b: -22.96, Ea: 7.494e+04}
+  - {P: 0.1 atm, A: 8.07e+75, b: -18.99, Ea: 7.208e+04}
+  - {P: 1.0 atm, A: 4.23e+63, b: -15.05, Ea: 6.852e+04}
+  - {P: 10.0 atm, A: 3.37e+47, b: -10.07, Ea: 6.233e+04}
+  - {P: 100.0 atm, A: 1.31e+38, b: -7.15, Ea: 5.882e+04}
+  - {P: 1000.0 atm, A: 2.87e+29, b: -4.52, Ea: 5.512e+04}
+  note: |
+    Unimolecular reactions !
+- equation: FOX-7 <=> P5d  # Reaction 2
+  type: pressure-dependent-Arrhenius
+  rate-constants:
+  - {P: 0.01 atm, A: 0.0, b: 0.0, Ea: 0.0}
+  - {P: 0.1 atm, A: 0.0, b: 0.0, Ea: 0.0}
+  - {P: 1.0 atm, A: 0.0, b: 0.0, Ea: 0.0}
+  - {P: 10.0 atm, A: 2.97e-08, b: 0.0, Ea: 0.0}
+  - {P: 100.0 atm, A: 4.21e+11, b: 0.0, Ea: 5.166e+04}
+  - {P: 1000.0 atm, A: 3.11e+21, b: -2.76, Ea: 5.743e+04}
+- equation: FOX-7 <=> R1 + NO2  # Reaction 3
+  type: pressure-dependent-Arrhenius
+  rate-constants:
+  - {P: 0.01 atm, A: 1.13e+90, b: -23.63, Ea: 9.577e+04}
+  - {P: 0.1 atm, A: 5.26e+90, b: -23.01, Ea: 1.005e+05}
+  - {P: 1.0 atm, A: 5.37e+84, b: -20.61, Ea: 1.019e+05}
+  - {P: 10.0 atm, A: 5.62e+71, b: -16.39, Ea: 9.856e+04}
+  - {P: 100.0 atm, A: 2.94e+57, b: -11.97, Ea: 9.304e+04}
+  - {P: 1000.0 atm, A: 1.54e+46, b: -8.57, Ea: 8.804e+04}
+- equation: FOX-7 <=> R2 + NO  # Reaction 4
+  type: pressure-dependent-Arrhenius
+  rate-constants:
+  - {P: 0.01 atm, A: 1.03e-08, b: 4.13, Ea: 2.583e+04}
+  - {P: 0.1 atm, A: 4.54e-86, b: 27.12, Ea: -1.357e+04}
+  - {P: 1.0 atm, A: 2.88e-06, b: 4.38, Ea: 3.585e+04}
+  - {P: 10.0 atm, A: 0.0141, b: 3.63, Ea: 4.12e+04}
+  - {P: 100.0 atm, A: 1.62e+29, b: -4.86, Ea: 6.6e+04}
+  - {P: 1000.0 atm, A: 4.14e+35, b: -6.42, Ea: 7.412e+04}
+- equation: FOX-7 <=> R3a + NO2  # Reaction 5
+  type: pressure-dependent-Arrhenius
+  rate-constants:
+  - {P: 0.01 atm, A: 6.27e+90, b: -23.06, Ea: 8.527e+04}
+  - {P: 0.1 atm, A: 3.09e+86, b: -21.33, Ea: 8.85e+04}
+  - {P: 1.0 atm, A: 4.23e+78, b: -18.63, Ea: 9.006e+04}
+  - {P: 10.0 atm, A: 6.67e+63, b: -13.99, Ea: 8.765e+04}
+  - {P: 100.0 atm, A: 1.93e+47, b: -9.02, Ea: 8.31e+04}
+  - {P: 1000.0 atm, A: 3.75e+30, b: -4.16, Ea: 7.718e+04}
+- equation: FOX-7 <=> CH2N2O4 + NCNH2  # Reaction 6
+  type: pressure-dependent-Arrhenius
+  rate-constants:
+  - {P: 0.01 atm, A: 1.04e+89, b: -22.99, Ea: 8.501e+04}
+  - {P: 0.1 atm, A: 4.48e+84, b: -21.25, Ea: 8.82e+04}
+  - {P: 1.0 atm, A: 5.78e+76, b: -18.54, Ea: 8.973e+04}
+  - {P: 10.0 atm, A: 8.41e+61, b: -13.9, Ea: 8.726e+04}
+  - {P: 100.0 atm, A: 3.02e+45, b: -8.96, Ea: 8.272e+04}
+  - {P: 1000.0 atm, A: 5.63e+28, b: -4.1, Ea: 7.677e+04}
+- equation: FOX-7 <=> CH2N2O4 + C(NH)2  # Reaction 7
+  type: pressure-dependent-Arrhenius
+  rate-constants:
+  - {P: 0.01 atm, A: 9.68e+89, b: -23.32, Ea: 8.637e+04}
+  - {P: 0.1 atm, A: 1.22e+86, b: -21.67, Ea: 8.989e+04}
+  - {P: 1.0 atm, A: 2.92e+78, b: -19.0, Ea: 9.174e+04}
+  - {P: 10.0 atm, A: 1.05e+64, b: -14.44, Ea: 8.972e+04}
+  - {P: 100.0 atm, A: 1.55e+47, b: -9.36, Ea: 8.521e+04}
+  - {P: 1000.0 atm, A: 5.22e+29, b: -4.26, Ea: 7.902e+04}
+- equation: FOX-7 <=> urea + O2NCNO  # Reaction 8
+  type: pressure-dependent-Arrhenius
+  rate-constants:
+  - {P: 0.01 atm, A: 2.77e+82, b: -21.09, Ea: 8.087e+04}
+  - {P: 0.1 atm, A: 7.23e+71, b: -17.54, Ea: 7.879e+04}
+  - {P: 1.0 atm, A: 1.37e+59, b: -13.48, Ea: 7.49e+04}
+  - {P: 10.0 atm, A: 1.57e+46, b: -9.47, Ea: 7.002e+04}
+  - {P: 100.0 atm, A: 1.82e+35, b: -6.15, Ea: 6.536e+04}
+  - {P: 1000.0 atm, A: 1.47e+28, b: -4.01, Ea: 6.217e+04}
+- equation: FOX-7 <=> R5a + OH  # Reaction 9
+  type: pressure-dependent-Arrhenius
+  rate-constants:
+  - {P: 0.01 atm, A: 1.32e+90, b: -23.71, Ea: 9.259e+04}
+  - {P: 0.1 atm, A: 4.83e+85, b: -21.72, Ea: 9.475e+04}
+  - {P: 1.0 atm, A: 3.84e+74, b: -17.9, Ea: 9.329e+04}
+  - {P: 10.0 atm, A: 7.47e+59, b: -13.19, Ea: 8.888e+04}
+  - {P: 100.0 atm, A: 8.49e+45, b: -8.89, Ea: 8.351e+04}
+  - {P: 1000.0 atm, A: 5.6e+36, b: -6.09, Ea: 7.966e+04}
+- equation: FOX-7 <=> C(NH)2 + C(N(O)OH)2  # Reaction 10
+  type: pressure-dependent-Arrhenius
+  rate-constants:
+  - {P: 0.01 atm, A: 9.33e+87, b: -23.59, Ea: 9.534e+04}
+  - {P: 0.1 atm, A: 2.32e+87, b: -22.61, Ea: 9.958e+04}
+  - {P: 1.0 atm, A: 5.52e+78, b: -19.39, Ea: 9.999e+04}
+  - {P: 10.0 atm, A: 3.69e+64, b: -14.75, Ea: 9.655e+04}
+  - {P: 100.0 atm, A: 8.36e+48, b: -9.88, Ea: 9.081e+04}
+  - {P: 1000.0 atm, A: 2.23e+37, b: -6.36, Ea: 8.599e+04}
+- equation: FOX-7 <=> R5e + NH3  # Reaction 11
+  type: pressure-dependent-Arrhenius
+  rate-constants:
+  - {P: 0.01 atm, A: 5.89e+73, b: -18.68, Ea: 7.301e+04}
+  - {P: 0.1 atm, A: 6.29e+61, b: -14.83, Ea: 6.957e+04}
+  - {P: 1.0 atm, A: 1.38e+51, b: -11.46, Ea: 6.609e+04}
+  - {P: 10.0 atm, A: 8.42e+44, b: -9.5, Ea: 6.405e+04}
+  - {P: 100.0 atm, A: 3.74e+42, b: -8.75, Ea: 6.338e+04}
+  - {P: 1000.0 atm, A: 1.45e+43, b: -8.89, Ea: 6.399e+04}
+- equation: FOX-7 <=> R5f + HONO  # Reaction 12
+  type: pressure-dependent-Arrhenius
+  rate-constants:
+  - {P: 0.01 atm, A: 2.23e+87, b: -23.33, Ea: 9.754e+04}
+  - {P: 0.1 atm, A: 7.31e+89, b: -23.18, Ea: 1.031e+05}
+  - {P: 1.0 atm, A: 3.04e+83, b: -20.54, Ea: 1.049e+05}
+  - {P: 10.0 atm, A: 2.28e+70, b: -16.14, Ea: 1.024e+05}
+  - {P: 100.0 atm, A: 2.38e+54, b: -11.14, Ea: 9.68e+04}
+  - {P: 1000.0 atm, A: 6.79e+41, b: -7.3, Ea: 9.163e+04}
+- equation: FOX-7 <=> R5b + NH3  # Reaction 13
+  type: pressure-dependent-Arrhenius
+  rate-constants:
+  - {P: 0.01 atm, A: 5.64e+80, b: -22.5, Ea: 9.703e+04}
+  - {P: 0.1 atm, A: 5.21e+85, b: -23.02, Ea: 1.039e+05}
+  - {P: 1.0 atm, A: 8.02e+80, b: -20.78, Ea: 1.068e+05}
+  - {P: 10.0 atm, A: 3.78e+68, b: -16.57, Ea: 1.05e+05}
+  - {P: 100.0 atm, A: 2.26e+52, b: -11.45, Ea: 9.961e+04}
+  - {P: 1000.0 atm, A: 1.15e+39, b: -7.39, Ea: 9.42e+04}
+- equation: FOX-7 <=> R5d + H2O  # Reaction 14
+  type: pressure-dependent-Arrhenius
+  rate-constants:
+  - {P: 0.01 atm, A: 6.91e+85, b: -23.31, Ea: 9.089e+04}
+  - {P: 0.1 atm, A: 5.1e+80, b: -21.14, Ea: 9.27e+04}
+  - {P: 1.0 atm, A: 1.78e+69, b: -17.24, Ea: 9.092e+04}
+  - {P: 10.0 atm, A: 4.68e+54, b: -12.59, Ea: 8.646e+04}
+  - {P: 100.0 atm, A: 3.91e+42, b: -8.81, Ea: 8.252e+04}
+  - {P: 1000.0 atm, A: 3.16e+38, b: -7.38, Ea: 8.364e+04}
+- equation: FOX-7 <=> C2H4N4O3 + O  # Reaction 15
+  type: pressure-dependent-Arrhenius
+  rate-constants:
+  - {P: 0.01 atm, A: 5.44e+86, b: -23.63, Ea: 9.76e+04}
+  - {P: 0.1 atm, A: 1.21e+88, b: -23.17, Ea: 1.025e+05}
+  - {P: 1.0 atm, A: 1.35e+81, b: -20.38, Ea: 1.039e+05}
+  - {P: 10.0 atm, A: 1.61e+68, b: -16.07, Ea: 1.014e+05}
+  - {P: 100.0 atm, A: 3.33e+52, b: -11.16, Ea: 9.584e+04}
+  - {P: 1000.0 atm, A: 1.47e+39, b: -7.11, Ea: 9.013e+04}
+- equation: P3 <=> P5d  # Reaction 16
+  type: pressure-dependent-Arrhenius
+  rate-constants:
+  - {P: 0.01 atm, A: 0.0, b: 0.0, Ea: 0.0}
+  - {P: 0.1 atm, A: 0.0, b: 0.0, Ea: 0.0}
+  - {P: 1.0 atm, A: 0.0, b: 0.0, Ea: 0.0}
+  - {P: 10.0 atm, A: 8.44e-12, b: 0.0, Ea: 0.0}
+  - {P: 100.0 atm, A: 2.13e+10, b: 0.0, Ea: 5.931e+04}
+  - {P: 1000.0 atm, A: 1.96e-13, b: 7.23, Ea: 5.305e+04}
+- equation: P3 <=> R1 + NO2  # Reaction 17
+  type: pressure-dependent-Arrhenius
+  rate-constants:
+  - {P: 0.01 atm, A: 4.1e+86, b: -23.03, Ea: 9.035e+04}
+  - {P: 0.1 atm, A: 3.96e+87, b: -22.48, Ea: 9.585e+04}
+  - {P: 1.0 atm, A: 8.57e+85, b: -21.28, Ea: 1.01e+05}
+  - {P: 10.0 atm, A: 2.06e+74, b: -17.32, Ea: 1.012e+05}
+  - {P: 100.0 atm, A: 1.88e+59, b: -12.6, Ea: 9.88e+04}
+  - {P: 1000.0 atm, A: 7.87e+39, b: -6.85, Ea: 9.236e+04}
+- equation: P3 <=> R2 + NO  # Reaction 18
+  type: pressure-dependent-Arrhenius
+  rate-constants:
+  - {P: 0.01 atm, A: 2.01e+175, b: -48.83, Ea: 1.399e+05}
+  - {P: 0.1 atm, A: 7.87e-73, b: 23.01, Ea: -8395.0}
+  - {P: 1.0 atm, A: 3.94e-09, b: 5.02, Ea: 3.45e+04}
+  - {P: 10.0 atm, A: 1.68e+08, b: 0.78, Ea: 5.299e+04}
+  - {P: 100.0 atm, A: 0.105, b: 3.49, Ea: 4.88e+04}
+  - {P: 1000.0 atm, A: 1.14e+65, b: -14.54, Ea: 1.09e+05}
+- equation: P3 <=> R3a + NO2  # Reaction 19
+  type: pressure-dependent-Arrhenius
+  rate-constants:
+  - {P: 0.01 atm, A: 1.61e+78, b: -19.85, Ea: 6.77e+04}
+  - {P: 0.1 atm, A: 2.42e+68, b: -16.57, Ea: 6.568e+04}
+  - {P: 1.0 atm, A: 1.62e+57, b: -12.97, Ea: 6.252e+04}
+  - {P: 10.0 atm, A: 8.62e+42, b: -8.54, Ea: 5.713e+04}
+  - {P: 100.0 atm, A: 4.46e+33, b: -5.67, Ea: 5.359e+04}
+  - {P: 1000.0 atm, A: 1.19e+25, b: -3.07, Ea: 4.986e+04}
+- equation: P3 <=> CH2N2O4 + NCNH2  # Reaction 20
+  type: pressure-dependent-Arrhenius
+  rate-constants:
+  - {P: 0.01 atm, A: 9.38e+74, b: -19.36, Ea: 6.647e+04}
+  - {P: 0.1 atm, A: 1.12e+65, b: -16.05, Ea: 6.436e+04}
+  - {P: 1.0 atm, A: 1.28e+54, b: -12.53, Ea: 6.125e+04}
+  - {P: 10.0 atm, A: 1.04e+40, b: -8.16, Ea: 5.591e+04}
+  - {P: 100.0 atm, A: 1.31e+31, b: -5.41, Ea: 5.254e+04}
+  - {P: 1000.0 atm, A: 6.93e+22, b: -2.9, Ea: 4.896e+04}
+- equation: P3 <=> CH2N2O4 + C(NH)2  # Reaction 21
+  type: pressure-dependent-Arrhenius
+  rate-constants:
+  - {P: 0.01 atm, A: 1.1e+79, b: -20.58, Ea: 7.021e+04}
+  - {P: 0.1 atm, A: 1.59e+70, b: -17.54, Ea: 6.894e+04}
+  - {P: 1.0 atm, A: 1.08e+59, b: -13.9, Ea: 6.607e+04}
+  - {P: 10.0 atm, A: 1.62e+44, b: -9.28, Ea: 6.066e+04}
+  - {P: 100.0 atm, A: 1.12e+34, b: -6.14, Ea: 5.685e+04}
+  - {P: 1000.0 atm, A: 3.98e+24, b: -3.27, Ea: 5.277e+04}
+- equation: P3 <=> urea + O2NCNO  # Reaction 22
+  type: pressure-dependent-Arrhenius
+  rate-constants:
+  - {P: 0.01 atm, A: 3.59e+88, b: -23.18, Ea: 8.274e+04}
+  - {P: 0.1 atm, A: 4.62e+83, b: -21.19, Ea: 8.587e+04}
+  - {P: 1.0 atm, A: 1.65e+75, b: -18.23, Ea: 8.751e+04}
+  - {P: 10.0 atm, A: 4.06e+57, b: -12.7, Ea: 8.403e+04}
+  - {P: 100.0 atm, A: 7.15e+42, b: -8.21, Ea: 8.074e+04}
+  - {P: 1000.0 atm, A: 9.22e+26, b: -3.56, Ea: 7.554e+04}
+- equation: P3 <=> R5a + OH  # Reaction 23
+  type: pressure-dependent-Arrhenius
+  rate-constants:
+  - {P: 0.01 atm, A: 3.48e+87, b: -23.35, Ea: 8.792e+04}
+  - {P: 0.1 atm, A: 3.45e+85, b: -22.02, Ea: 9.235e+04}
+  - {P: 1.0 atm, A: 8.36e+79, b: -19.7, Ea: 9.589e+04}
+  - {P: 10.0 atm, A: 1.25e+66, b: -15.11, Ea: 9.533e+04}
+  - {P: 100.0 atm, A: 6.53e+51, b: -10.6, Ea: 9.342e+04}
+  - {P: 1000.0 atm, A: 1.13e+35, b: -5.61, Ea: 8.875e+04}
+- equation: P3 <=> C(NH)2 + C(N(O)OH)2  # Reaction 24
+  type: pressure-dependent-Arrhenius
+  rate-constants:
+  - {P: 0.01 atm, A: 4.05e+84, b: -23.02, Ea: 8.998e+04}
+  - {P: 0.1 atm, A: 5.09e+84, b: -22.21, Ea: 9.518e+04}
+  - {P: 1.0 atm, A: 3.13e+80, b: -20.21, Ea: 9.945e+04}
+  - {P: 10.0 atm, A: 3.84e+68, b: -16.09, Ea: 1.002e+05}
+  - {P: 100.0 atm, A: 9.66e+53, b: -11.42, Ea: 9.866e+04}
+  - {P: 1000.0 atm, A: 9.76e+34, b: -5.71, Ea: 9.324e+04}
+- equation: P3 <=> R5e + NH3  # Reaction 25
+  type: pressure-dependent-Arrhenius
+  rate-constants:
+  - {P: 0.01 atm, A: 4.73e+87, b: -22.98, Ea: 8.069e+04}
+  - {P: 0.1 atm, A: 2.3e+81, b: -20.64, Ea: 8.301e+04}
+  - {P: 1.0 atm, A: 9.01e+72, b: -17.76, Ea: 8.431e+04}
+  - {P: 10.0 atm, A: 2.95e+59, b: -13.56, Ea: 8.214e+04}
+  - {P: 100.0 atm, A: 5.51e+52, b: -11.56, Ea: 8.196e+04}
+  - {P: 1000.0 atm, A: 1.23e+45, b: -9.41, Ea: 8.05e+04}
+- equation: P3 <=> R5f + HONO  # Reaction 26
+  type: pressure-dependent-Arrhenius
+  rate-constants:
+  - {P: 0.01 atm, A: 8.71e+83, b: -22.75, Ea: 9.204e+04}
+  - {P: 0.1 atm, A: 8.49e+85, b: -22.43, Ea: 9.765e+04}
+  - {P: 1.0 atm, A: 5.87e+82, b: -20.68, Ea: 1.023e+05}
+  - {P: 10.0 atm, A: 2.25e+72, b: -16.94, Ea: 1.039e+05}
+  - {P: 100.0 atm, A: 1.65e+58, b: -12.36, Ea: 1.029e+05}
+  - {P: 1000.0 atm, A: 2.99e+38, b: -6.41, Ea: 9.726e+04}
+- equation: P3 <=> R5b + NH3  # Reaction 27
+  type: pressure-dependent-Arrhenius
+  rate-constants:
+  - {P: 0.01 atm, A: 2.44e+77, b: -21.93, Ea: 9.156e+04}
+  - {P: 0.1 atm, A: 4.13e+81, b: -22.22, Ea: 9.836e+04}
+  - {P: 1.0 atm, A: 2.82e+79, b: -20.72, Ea: 1.035e+05}
+  - {P: 10.0 atm, A: 9.4e+69, b: -17.21, Ea: 1.057e+05}
+  - {P: 100.0 atm, A: 1.45e+56, b: -12.68, Ea: 1.052e+05}
+  - {P: 1000.0 atm, A: 5.0e+35, b: -6.5, Ea: 9.937e+04}
+- equation: P3 <=> R5d + H2O  # Reaction 28
+  type: pressure-dependent-Arrhenius
+  rate-constants:
+  - {P: 0.01 atm, A: 1.4e+84, b: -23.2, Ea: 8.688e+04}
+  - {P: 0.1 atm, A: 1.19e+82, b: -21.87, Ea: 9.142e+04}
+  - {P: 1.0 atm, A: 1.71e+76, b: -19.5, Ea: 9.486e+04}
+  - {P: 10.0 atm, A: 1.26e+62, b: -14.83, Ea: 9.412e+04}
+  - {P: 100.0 atm, A: 3.06e+48, b: -10.51, Ea: 9.283e+04}
+  - {P: 1000.0 atm, A: 4.6e+35, b: -6.58, Ea: 9.191e+04}
+- equation: P3 <=> C2H4N4O3 + O  # Reaction 29
+  type: pressure-dependent-Arrhenius
+  rate-constants:
+  - {P: 0.01 atm, A: 2.23e+83, b: -23.06, Ea: 9.211e+04}
+  - {P: 0.1 atm, A: 1.8e+84, b: -22.45, Ea: 9.72e+04}
+  - {P: 1.0 atm, A: 6.08e+80, b: -20.62, Ea: 1.017e+05}
+  - {P: 10.0 atm, A: 3.1e+70, b: -16.94, Ea: 1.033e+05}
+  - {P: 100.0 atm, A: 2.16e+56, b: -12.37, Ea: 1.02e+05}
+  - {P: 1000.0 atm, A: 1.26e+35, b: -6.01, Ea: 9.519e+04}
+- equation: P5d <=> R1 + NO2  # Reaction 30
+  type: pressure-dependent-Arrhenius
+  rate-constants:
+  - {P: 0.01 atm, A: 0.0, b: 0.0, Ea: 0.0}
+  - {P: 0.1 atm, A: 0.0, b: 0.0, Ea: 0.0}
+  - {P: 1.0 atm, A: 0.0, b: 0.0, Ea: 0.0}
+  - {P: 10.0 atm, A: 0.0182, b: 0.0, Ea: 0.0}
+  - {P: 100.0 atm, A: 1.65e+12, b: 0.0, Ea: 3.625e+04}
+  - {P: 1000.0 atm, A: 29.4, b: 3.66, Ea: 3.433e+04}
+- equation: P5d <=> R2 + NO  # Reaction 31
+  type: pressure-dependent-Arrhenius
+  rate-constants:
+  - {P: 0.01 atm, A: 0.0, b: 0.0, Ea: 0.0}
+  - {P: 0.1 atm, A: 0.0, b: 0.0, Ea: 0.0}
+  - {P: 1.0 atm, A: 0.0, b: 0.0, Ea: 0.0}
+  - {P: 10.0 atm, A: 1.86e+05, b: 0.0, Ea: 0.0}
+  - {P: 100.0 atm, A: 0.0, b: 0.0, Ea: 0.0}
+  - {P: 1000.0 atm, A: 41.8, b: 0.0, Ea: -8922.0}
+- equation: P5d <=> R3a + NO2  # Reaction 32
+  type: pressure-dependent-Arrhenius
+  rate-constants:
+  - {P: 0.01 atm, A: 0.0, b: 0.0, Ea: 0.0}
+  - {P: 0.1 atm, A: 0.0, b: 0.0, Ea: 0.0}
+  - {P: 1.0 atm, A: 0.0, b: 0.0, Ea: 0.0}
+  - {P: 10.0 atm, A: 6.95, b: 0.0, Ea: 0.0}
+  - {P: 100.0 atm, A: 2.29e+12, b: 0.0, Ea: 3.338e+04}
+  - {P: 1000.0 atm, A: 5.24e-39, b: 15.57, Ea: 1.642e+04}
+- equation: P5d <=> CH2N2O4 + NCNH2  # Reaction 33
+  type: pressure-dependent-Arrhenius
+  rate-constants:
+  - {P: 0.01 atm, A: 0.0, b: 0.0, Ea: 0.0}
+  - {P: 0.1 atm, A: 0.0, b: 0.0, Ea: 0.0}
+  - {P: 1.0 atm, A: 0.0, b: 0.0, Ea: 0.0}
+  - {P: 10.0 atm, A: 0.216, b: 0.0, Ea: 0.0}
+  - {P: 100.0 atm, A: 6.07e+10, b: 0.0, Ea: 3.321e+04}
+  - {P: 1000.0 atm, A: 1.53e-40, b: 15.56, Ea: 1.628e+04}
+- equation: P5d <=> CH2N2O4 + C(NH)2  # Reaction 34
+  type: pressure-dependent-Arrhenius
+  rate-constants:
+  - {P: 0.01 atm, A: 0.0, b: 0.0, Ea: 0.0}
+  - {P: 0.1 atm, A: 0.0, b: 0.0, Ea: 0.0}
+  - {P: 1.0 atm, A: 0.0, b: 0.0, Ea: 0.0}
+  - {P: 10.0 atm, A: 0.116, b: 0.0, Ea: 0.0}
+  - {P: 100.0 atm, A: 9.7e+10, b: 0.0, Ea: 3.436e+04}
+  - {P: 1000.0 atm, A: 1.02e-40, b: 15.69, Ea: 1.72e+04}
+- equation: P5d <=> urea + O2NCNO  # Reaction 35
+  type: pressure-dependent-Arrhenius
+  rate-constants:
+  - {P: 0.01 atm, A: 0.0, b: 0.0, Ea: 0.0}
+  - {P: 0.1 atm, A: 0.0, b: 0.0, Ea: 0.0}
+  - {P: 1.0 atm, A: 0.0, b: 0.0, Ea: 0.0}
+  - {P: 10.0 atm, A: 67.2, b: 0.0, Ea: 0.0}
+  - {P: 100.0 atm, A: 5.71e+10, b: 0.0, Ea: 2.431e+04}
+  - {P: 1000.0 atm, A: 2.77e-10, b: 6.57, Ea: 2.011e+04}
+- equation: P5d <=> R5a + OH  # Reaction 36
+  type: pressure-dependent-Arrhenius
+  rate-constants:
+  - {P: 0.01 atm, A: 0.0, b: 0.0, Ea: 0.0}
+  - {P: 0.1 atm, A: 0.0, b: 0.0, Ea: 0.0}
+  - {P: 1.0 atm, A: 0.0, b: 0.0, Ea: 0.0}
+  - {P: 10.0 atm, A: 0.0661, b: 0.0, Ea: 0.0}
+  - {P: 100.0 atm, A: 6.37e+09, b: 0.0, Ea: 2.677e+04}
+  - {P: 1000.0 atm, A: 2.0e+15, b: -0.97, Ea: 3.238e+04}
+- equation: P5d <=> C(NH)2 + C(N(O)OH)2  # Reaction 37
+  type: pressure-dependent-Arrhenius
+  rate-constants:
+  - {P: 0.01 atm, A: 0.0, b: 0.0, Ea: 0.0}
+  - {P: 0.1 atm, A: 0.0, b: 0.0, Ea: 0.0}
+  - {P: 1.0 atm, A: 0.0, b: 0.0, Ea: 0.0}
+  - {P: 10.0 atm, A: 2.42e-04, b: 0.0, Ea: 0.0}
+  - {P: 100.0 atm, A: 1.72e+09, b: 0.0, Ea: 3.182e+04}
+  - {P: 1000.0 atm, A: 1.72e+13, b: -0.57, Ea: 3.558e+04}
+- equation: P5d <=> R5e + NH3  # Reaction 38
+  type: pressure-dependent-Arrhenius
+  rate-constants:
+  - {P: 0.01 atm, A: 0.0, b: 0.0, Ea: 0.0}
+  - {P: 0.1 atm, A: 0.0, b: 0.0, Ea: 0.0}
+  - {P: 1.0 atm, A: 0.0, b: 0.0, Ea: 0.0}
+  - {P: 10.0 atm, A: 463.0, b: 0.0, Ea: 0.0}
+  - {P: 100.0 atm, A: 1.57e+09, b: 0.0, Ea: 1.632e+04}
+  - {P: 1000.0 atm, A: 6.02e+14, b: -1.21, Ea: 2.19e+04}
+- equation: P5d <=> R5f + HONO  # Reaction 39
+  type: pressure-dependent-Arrhenius
+  rate-constants:
+  - {P: 0.01 atm, A: 0.0, b: 0.0, Ea: 0.0}
+  - {P: 0.1 atm, A: 0.0, b: 0.0, Ea: 0.0}
+  - {P: 1.0 atm, A: 0.0, b: 0.0, Ea: 0.0}
+  - {P: 10.0 atm, A: 1.53e-04, b: 0.0, Ea: 0.0}
+  - {P: 100.0 atm, A: 4.48e+10, b: 0.0, Ea: 3.642e+04}
+  - {P: 1000.0 atm, A: 1.25e+14, b: -0.52, Ea: 3.837e+04}
+- equation: P5d <=> R5b + NH3  # Reaction 40
+  type: pressure-dependent-Arrhenius
+  rate-constants:
+  - {P: 0.01 atm, A: 0.0, b: 0.0, Ea: 0.0}
+  - {P: 0.1 atm, A: 0.0, b: 0.0, Ea: 0.0}
+  - {P: 1.0 atm, A: 0.0, b: 0.0, Ea: 0.0}
+  - {P: 10.0 atm, A: 1.88e-08, b: 0.0, Ea: 0.0}
+  - {P: 100.0 atm, A: 4.15e+07, b: 0.0, Ea: 3.896e+04}
+  - {P: 1000.0 atm, A: 1.12e+08, b: 0.33, Ea: 3.882e+04}
+- equation: P5d <=> R5d + H2O  # Reaction 41
+  type: pressure-dependent-Arrhenius
+  rate-constants:
+  - {P: 0.01 atm, A: 0.0, b: 0.0, Ea: 0.0}
+  - {P: 0.1 atm, A: 0.0, b: 0.0, Ea: 0.0}
+  - {P: 1.0 atm, A: 0.0, b: 0.0, Ea: 0.0}
+  - {P: 10.0 atm, A: 269.0, b: 0.0, Ea: 0.0}
+  - {P: 100.0 atm, A: 1.03e+10, b: 0.0, Ea: 1.772e+04}
+  - {P: 1000.0 atm, A: 7.3e+29, b: -5.46, Ea: 2.938e+04}
+- equation: P5d <=> C2H4N4O3 + O  # Reaction 42
+  type: pressure-dependent-Arrhenius
+  rate-constants:
+  - {P: 0.01 atm, A: 0.0, b: 0.0, Ea: 0.0}
+  - {P: 0.1 atm, A: 0.0, b: 0.0, Ea: 0.0}
+  - {P: 1.0 atm, A: 0.0, b: 0.0, Ea: 0.0}
+  - {P: 10.0 atm, A: 3.91e-06, b: 0.0, Ea: 0.0}
+  - {P: 100.0 atm, A: 4.42e+09, b: 0.0, Ea: 3.911e+04}
+  - {P: 1000.0 atm, A: 8.81e-13, b: 7.02, Ea: 3.239e+04}
+- equation: R1 + NO2 <=> R2 + NO  # Reaction 43
+  type: pressure-dependent-Arrhenius
+  rate-constants:
+  - {P: 0.01 atm, A: 2.53e+14, b: -1.22, Ea: 9900.0}
+  - {P: 0.1 atm, A: 3.53e+16, b: -1.8, Ea: 1.191e+04}
+  - {P: 1.0 atm, A: 4.13e+21, b: -3.16, Ea: 1.707e+04}
+  - {P: 10.0 atm, A: 4.53e+26, b: -4.47, Ea: 2.365e+04}
+  - {P: 100.0 atm, A: 2.85e+25, b: -4.03, Ea: 2.69e+04}
+  - {P: 1000.0 atm, A: 3.61e+14, b: -0.92, Ea: 2.366e+04}
+- equation: R1 + NO2 <=> R3a + NO2  # Reaction 44
+  type: pressure-dependent-Arrhenius
+  rate-constants:
+  - {P: 0.01 atm, A: 1.08e+24, b: -3.53, Ea: 9153.0}
+  - {P: 0.1 atm, A: 2.49e+27, b: -4.43, Ea: 1.229e+04}
+  - {P: 1.0 atm, A: 8.53e+34, b: -6.45, Ea: 2.0e+04}
+  - {P: 10.0 atm, A: 4.18e+43, b: -8.72, Ea: 3.094e+04}
+  - {P: 100.0 atm, A: 2.02e+45, b: -9.0, Ea: 3.932e+04}
+  - {P: 1000.0 atm, A: 3.82e+30, b: -4.74, Ea: 3.744e+04}
+- equation: R1 + NO2 <=> CH2N2O4 + NCNH2  # Reaction 45
+  type: pressure-dependent-Arrhenius
+  rate-constants:
+  - {P: 0.01 atm, A: 1.36e+22, b: -3.44, Ea: 8794.0}
+  - {P: 0.1 atm, A: 3.35e+25, b: -4.35, Ea: 1.196e+04}
+  - {P: 1.0 atm, A: 1.23e+33, b: -6.38, Ea: 1.971e+04}
+  - {P: 10.0 atm, A: 5.65e+41, b: -8.64, Ea: 3.064e+04}
+  - {P: 100.0 atm, A: 2.22e+43, b: -8.89, Ea: 3.897e+04}
+  - {P: 1000.0 atm, A: 3.75e+28, b: -4.62, Ea: 3.706e+04}
+- equation: R1 + NO2 <=> CH2N2O4 + C(NH)2  # Reaction 46
+  type: pressure-dependent-Arrhenius
+  rate-constants:
+  - {P: 0.01 atm, A: 5.88e+19, b: -2.67, Ea: 8559.0}
+  - {P: 0.1 atm, A: 9.07e+22, b: -3.53, Ea: 1.154e+04}
+  - {P: 1.0 atm, A: 2.03e+30, b: -5.5, Ea: 1.904e+04}
+  - {P: 10.0 atm, A: 1.41e+39, b: -7.81, Ea: 2.999e+04}
+  - {P: 100.0 atm, A: 2.47e+41, b: -8.25, Ea: 3.871e+04}
+  - {P: 1000.0 atm, A: 1.45e+27, b: -4.12, Ea: 3.719e+04}
+- equation: R1 + NO2 <=> urea + O2NCNO  # Reaction 47
+  type: pressure-dependent-Arrhenius
+  rate-constants:
+  - {P: 0.01 atm, A: 7.32e+20, b: -2.66, Ea: 1.014e+04}
+  - {P: 0.1 atm, A: 2.03e+23, b: -3.32, Ea: 1.243e+04}
+  - {P: 1.0 atm, A: 3.98e+28, b: -4.74, Ea: 1.789e+04}
+  - {P: 10.0 atm, A: 1.64e+33, b: -5.93, Ea: 2.429e+04}
+  - {P: 100.0 atm, A: 1.33e+31, b: -5.24, Ea: 2.698e+04}
+  - {P: 1000.0 atm, A: 4.2e+19, b: -1.97, Ea: 2.334e+04}
+- equation: R1 + NO2 <=> R5a + OH  # Reaction 48
+  type: pressure-dependent-Arrhenius
+  rate-constants:
+  - {P: 0.01 atm, A: 3.9e+26, b: -4.12, Ea: 1.978e+04}
+  - {P: 0.1 atm, A: 1.56e+28, b: -4.56, Ea: 2.128e+04}
+  - {P: 1.0 atm, A: 5.54e+32, b: -5.78, Ea: 2.581e+04}
+  - {P: 10.0 atm, A: 1.74e+38, b: -7.22, Ea: 3.249e+04}
+  - {P: 100.0 atm, A: 1.01e+38, b: -7.05, Ea: 3.637e+04}
+  - {P: 1000.0 atm, A: 5.01e+27, b: -4.09, Ea: 3.392e+04}
+- equation: R1 + NO2 <=> C(NH)2 + C(N(O)OH)2  # Reaction 49
+  type: pressure-dependent-Arrhenius
+  rate-constants:
+  - {P: 0.01 atm, A: 7.58e+21, b: -2.91, Ea: 2.117e+04}
+  - {P: 0.1 atm, A: 1.26e+23, b: -3.24, Ea: 2.231e+04}
+  - {P: 1.0 atm, A: 1.59e+27, b: -4.34, Ea: 2.633e+04}
+  - {P: 10.0 atm, A: 1.11e+33, b: -5.88, Ea: 3.307e+04}
+  - {P: 100.0 atm, A: 6.69e+33, b: -5.99, Ea: 3.761e+04}
+  - {P: 1000.0 atm, A: 1.93e+24, b: -3.24, Ea: 3.574e+04}
+- equation: R1 + NO2 <=> R5e + NH3  # Reaction 50
+  type: pressure-dependent-Arrhenius
+  rate-constants:
+  - {P: 0.01 atm, A: 3.5e+47, b: -10.97, Ea: 2.058e+04}
+  - {P: 0.1 atm, A: 2.04e+50, b: -11.71, Ea: 2.318e+04}
+  - {P: 1.0 atm, A: 4.22e+55, b: -13.13, Ea: 2.885e+04}
+  - {P: 10.0 atm, A: 2.4e+58, b: -13.8, Ea: 3.425e+04}
+  - {P: 100.0 atm, A: 2.16e+52, b: -12.01, Ea: 3.434e+04}
+  - {P: 1000.0 atm, A: 1.63e+38, b: -8.03, Ea: 2.881e+04}
+- equation: R1 + NO2 <=> R5f + HONO  # Reaction 51
+  type: pressure-dependent-Arrhenius
+  rate-constants:
+  - {P: 0.01 atm, A: 7.61e+22, b: -2.9, Ea: 2.353e+04}
+  - {P: 0.1 atm, A: 6.91e+23, b: -3.16, Ea: 2.442e+04}
+  - {P: 1.0 atm, A: 3.65e+27, b: -4.16, Ea: 2.804e+04}
+  - {P: 10.0 atm, A: 3.19e+33, b: -5.73, Ea: 3.474e+04}
+  - {P: 100.0 atm, A: 5.38e+34, b: -5.97, Ea: 3.955e+04}
+  - {P: 1000.0 atm, A: 3.18e+25, b: -3.3, Ea: 3.791e+04}
+- equation: R1 + NO2 <=> R5b + NH3  # Reaction 52
+  type: pressure-dependent-Arrhenius
+  rate-constants:
+  - {P: 0.01 atm, A: 2.7e+18, b: -2.5, Ea: 2.464e+04}
+  - {P: 0.1 atm, A: 1.79e+19, b: -2.73, Ea: 2.54e+04}
+  - {P: 1.0 atm, A: 5.6e+22, b: -3.67, Ea: 2.877e+04}
+  - {P: 10.0 atm, A: 6.15e+28, b: -5.27, Ea: 3.546e+04}
+  - {P: 100.0 atm, A: 2.47e+30, b: -5.61, Ea: 4.05e+04}
+  - {P: 1000.0 atm, A: 2.75e+21, b: -3.02, Ea: 3.908e+04}
+- equation: R1 + NO2 <=> R5d + H2O  # Reaction 53
+  type: pressure-dependent-Arrhenius
+  rate-constants:
+  - {P: 0.01 atm, A: 9.25e+21, b: -3.66, Ea: 1.836e+04}
+  - {P: 0.1 atm, A: 4.65e+23, b: -4.12, Ea: 1.995e+04}
+  - {P: 1.0 atm, A: 2.15e+28, b: -5.37, Ea: 2.461e+04}
+  - {P: 10.0 atm, A: 6.94e+33, b: -6.82, Ea: 3.134e+04}
+  - {P: 100.0 atm, A: 7.73e+33, b: -6.72, Ea: 3.553e+04}
+  - {P: 1000.0 atm, A: 5.31e+25, b: -4.34, Ea: 3.527e+04}
+- equation: R1 + NO2 <=> C2H4N4O3 + O  # Reaction 54
+  type: pressure-dependent-Arrhenius
+  rate-constants:
+  - {P: 0.01 atm, A: 3.14e+09, b: 0.41, Ea: 1.618e+04}
+  - {P: 0.1 atm, A: 3.26e+10, b: 0.13, Ea: 1.713e+04}
+  - {P: 1.0 atm, A: 2.06e+14, b: -0.89, Ea: 2.084e+04}
+  - {P: 10.0 atm, A: 1.46e+20, b: -2.44, Ea: 2.75e+04}
+  - {P: 100.0 atm, A: 1.55e+21, b: -2.62, Ea: 3.214e+04}
+  - {P: 1000.0 atm, A: 7.49e+11, b: 0.06, Ea: 3.004e+04}
+- equation: R2 + NO <=> R3a + NO2  # Reaction 55
+  type: pressure-dependent-Arrhenius
+  rate-constants:
+  - {P: 0.01 atm, A: 1.39e+17, b: -2.22, Ea: 6.886e+04}
+  - {P: 0.1 atm, A: 6.37e+24, b: -4.28, Ea: 7.644e+04}
+  - {P: 1.0 atm, A: 4.01e+34, b: -6.88, Ea: 8.719e+04}
+  - {P: 10.0 atm, A: 4.08e+42, b: -8.94, Ea: 9.864e+04}
+  - {P: 100.0 atm, A: 8.92e+41, b: -8.56, Ea: 1.058e+05}
+  - {P: 1000.0 atm, A: 4.63e+25, b: -3.87, Ea: 1.028e+05}
+- equation: R2 + NO <=> CH2N2O4 + NCNH2  # Reaction 56
+  type: pressure-dependent-Arrhenius
+  rate-constants:
+  - {P: 0.01 atm, A: 1.94e+15, b: -2.14, Ea: 6.846e+04}
+  - {P: 0.1 atm, A: 1.02e+23, b: -4.22, Ea: 7.612e+04}
+  - {P: 1.0 atm, A: 6.55e+32, b: -6.83, Ea: 8.69e+04}
+  - {P: 10.0 atm, A: 5.65e+40, b: -8.86, Ea: 9.832e+04}
+  - {P: 100.0 atm, A: 9.21e+39, b: -8.45, Ea: 1.054e+05}
+  - {P: 1000.0 atm, A: 4.07e+23, b: -3.74, Ea: 1.024e+05}
+- equation: R2 + NO <=> CH2N2O4 + C(NH)2  # Reaction 57
+  type: pressure-dependent-Arrhenius
+  rate-constants:
+  - {P: 0.01 atm, A: 3.53e+12, b: -1.26, Ea: 6.839e+04}
+  - {P: 0.1 atm, A: 7.29e+19, b: -3.23, Ea: 7.558e+04}
+  - {P: 1.0 atm, A: 4.0e+29, b: -5.82, Ea: 8.611e+04}
+  - {P: 10.0 atm, A: 9.93e+37, b: -7.99, Ea: 9.769e+04}
+  - {P: 100.0 atm, A: 1.23e+38, b: -7.82, Ea: 1.053e+05}
+  - {P: 1000.0 atm, A: 2.44e+22, b: -3.29, Ea: 1.028e+05}
+- equation: R2 + NO <=> urea + O2NCNO  # Reaction 58
+  type: pressure-dependent-Arrhenius
+  rate-constants:
+  - {P: 0.01 atm, A: 1.54e+13, b: -1.12, Ea: 7.012e+04}
+  - {P: 0.1 atm, A: 3.39e+18, b: -2.56, Ea: 7.535e+04}
+  - {P: 1.0 atm, A: 8.1e+24, b: -4.25, Ea: 8.242e+04}
+  - {P: 10.0 atm, A: 1.99e+28, b: -5.09, Ea: 8.842e+04}
+  - {P: 100.0 atm, A: 2.85e+24, b: -3.92, Ea: 9.002e+04}
+  - {P: 1000.0 atm, A: 1.04e+12, b: -0.39, Ea: 8.571e+04}
+- equation: R2 + NO <=> R5a + OH  # Reaction 59
+  type: pressure-dependent-Arrhenius
+  rate-constants:
+  - {P: 0.01 atm, A: 9.84e+20, b: -3.11, Ea: 8.328e+04}
+  - {P: 0.1 atm, A: 1.88e+24, b: -3.99, Ea: 8.637e+04}
+  - {P: 1.0 atm, A: 1.57e+30, b: -5.58, Ea: 9.239e+04}
+  - {P: 10.0 atm, A: 2.69e+35, b: -6.94, Ea: 9.922e+04}
+  - {P: 100.0 atm, A: 1.49e+34, b: -6.48, Ea: 1.025e+05}
+  - {P: 1000.0 atm, A: 1.58e+23, b: -3.35, Ea: 9.955e+04}
+- equation: R2 + NO <=> C(NH)2 + C(N(O)OH)2  # Reaction 60
+  type: pressure-dependent-Arrhenius
+  rate-constants:
+  - {P: 0.01 atm, A: 1.35e+17, b: -2.1, Ea: 8.61e+04}
+  - {P: 0.1 atm, A: 2.3e+19, b: -2.71, Ea: 8.817e+04}
+  - {P: 1.0 atm, A: 4.22e+24, b: -4.12, Ea: 9.338e+04}
+  - {P: 10.0 atm, A: 2.81e+30, b: -5.65, Ea: 1.004e+05}
+  - {P: 100.0 atm, A: 3.46e+30, b: -5.57, Ea: 1.045e+05}
+  - {P: 1000.0 atm, A: 3.07e+20, b: -2.68, Ea: 1.023e+05}
+- equation: R2 + NO <=> R5e + NH3  # Reaction 61
+  type: pressure-dependent-Arrhenius
+  rate-constants:
+  - {P: 0.01 atm, A: 2.94e+44, b: -10.7, Ea: 8.301e+04}
+  - {P: 0.1 atm, A: 1.72e+50, b: -12.24, Ea: 8.883e+04}
+  - {P: 1.0 atm, A: 4.43e+55, b: -13.66, Ea: 9.552e+04}
+  - {P: 10.0 atm, A: 4.79e+55, b: -13.56, Ea: 9.945e+04}
+  - {P: 100.0 atm, A: 1.15e+47, b: -11.08, Ea: 9.778e+04}
+  - {P: 1000.0 atm, A: 1.13e+32, b: -6.87, Ea: 9.152e+04}
+- equation: R2 + NO <=> R5f + HONO  # Reaction 62
+  type: pressure-dependent-Arrhenius
+  rate-constants:
+  - {P: 0.01 atm, A: 1.29e+19, b: -2.35, Ea: 8.967e+04}
+  - {P: 0.1 atm, A: 4.26e+20, b: -2.76, Ea: 9.107e+04}
+  - {P: 1.0 atm, A: 1.73e+25, b: -4.0, Ea: 9.558e+04}
+  - {P: 10.0 atm, A: 1.7e+31, b: -5.58, Ea: 1.025e+05}
+  - {P: 100.0 atm, A: 8.41e+31, b: -5.67, Ea: 1.07e+05}
+  - {P: 1000.0 atm, A: 1.79e+22, b: -2.88, Ea: 1.05e+05}
+- equation: R2 + NO <=> R5b + NH3  # Reaction 63
+  type: pressure-dependent-Arrhenius
+  rate-constants:
+  - {P: 0.01 atm, A: 7.85e+14, b: -2.01, Ea: 9.122e+04}
+  - {P: 0.1 atm, A: 1.27e+16, b: -2.34, Ea: 9.233e+04}
+  - {P: 1.0 atm, A: 2.18e+20, b: -3.48, Ea: 9.643e+04}
+  - {P: 10.0 atm, A: 2.99e+26, b: -5.11, Ea: 1.033e+05}
+  - {P: 100.0 atm, A: 4.72e+27, b: -5.33, Ea: 1.082e+05}
+  - {P: 1000.0 atm, A: 2.24e+18, b: -2.64, Ea: 1.064e+05}
+- equation: R2 + NO <=> R5d + H2O  # Reaction 64
+  type: pressure-dependent-Arrhenius
+  rate-constants:
+  - {P: 0.01 atm, A: 7.3e+15, b: -2.51, Ea: 8.128e+04}
+  - {P: 0.1 atm, A: 2.7e+19, b: -3.47, Ea: 8.464e+04}
+  - {P: 1.0 atm, A: 3.22e+25, b: -5.1, Ea: 9.086e+04}
+  - {P: 10.0 atm, A: 5.35e+30, b: -6.46, Ea: 9.775e+04}
+  - {P: 100.0 atm, A: 6.19e+28, b: -5.81, Ea: 1.005e+05}
+  - {P: 1000.0 atm, A: 1.08e+29, b: -5.72, Ea: 1.077e+05}
+- equation: R2 + NO <=> C2H4N4O3 + O  # Reaction 65
+  type: pressure-dependent-Arrhenius
+  rate-constants:
+  - {P: 0.01 atm, A: 8.86e+04, b: 1.17, Ea: 8.171e+04}
+  - {P: 0.1 atm, A: 4.1e+06, b: 0.72, Ea: 8.325e+04}
+  - {P: 1.0 atm, A: 2.3e+11, b: -0.56, Ea: 8.791e+04}
+  - {P: 10.0 atm, A: 1.68e+17, b: -2.1, Ea: 9.48e+04}
+  - {P: 100.0 atm, A: 4.56e+17, b: -2.11, Ea: 9.91e+04}
+  - {P: 1000.0 atm, A: 8.82e+07, b: 0.68, Ea: 9.673e+04}
+- equation: R3a + NO2 <=> CH2N2O4 + NCNH2  # Reaction 66
+  type: pressure-dependent-Arrhenius
+  rate-constants:
+  - {P: 0.01 atm, A: 1.04e+11, b: -0.23, Ea: 7246.0}
+  - {P: 0.1 atm, A: 7.88e+16, b: -1.8, Ea: 1.321e+04}
+  - {P: 1.0 atm, A: 1.4e+23, b: -3.46, Ea: 2.031e+04}
+  - {P: 10.0 atm, A: 1.82e+27, b: -4.5, Ea: 2.674e+04}
+  - {P: 100.0 atm, A: 4.95e+25, b: -3.96, Ea: 2.981e+04}
+  - {P: 1000.0 atm, A: 1.54e+16, b: -1.23, Ea: 2.755e+04}
+- equation: R3a + NO2 <=> CH2N2O4 + C(NH)2  # Reaction 67
+  type: pressure-dependent-Arrhenius
+  rate-constants:
+  - {P: 0.01 atm, A: 2.16e+08, b: 0.65, Ea: 7711.0}
+  - {P: 0.1 atm, A: 7.8e+13, b: -0.84, Ea: 1.324e+04}
+  - {P: 1.0 atm, A: 1.88e+20, b: -2.54, Ea: 2.025e+04}
+  - {P: 10.0 atm, A: 9.18e+24, b: -3.74, Ea: 2.696e+04}
+  - {P: 100.0 atm, A: 1.83e+24, b: -3.44, Ea: 3.059e+04}
+  - {P: 1000.0 atm, A: 3.05e+15, b: -0.91, Ea: 2.884e+04}
+- equation: R3a + NO2 <=> urea + O2NCNO  # Reaction 68
+  type: pressure-dependent-Arrhenius
+  rate-constants:
+  - {P: 0.01 atm, A: 5.95e+23, b: -3.79, Ea: 1.988e+04}
+  - {P: 0.1 atm, A: 1.74e+32, b: -6.05, Ea: 2.854e+04}
+  - {P: 1.0 atm, A: 7.39e+41, b: -8.6, Ea: 3.965e+04}
+  - {P: 10.0 atm, A: 3.48e+48, b: -10.28, Ea: 5.053e+04}
+  - {P: 100.0 atm, A: 6.59e+45, b: -9.33, Ea: 5.638e+04}
+  - {P: 1000.0 atm, A: 1.76e+28, b: -4.29, Ea: 5.25e+04}
+- equation: R3a + NO2 <=> R5a + OH  # Reaction 69
+  type: pressure-dependent-Arrhenius
+  rate-constants:
+  - {P: 0.01 atm, A: 3.1e+26, b: -4.33, Ea: 3.104e+04}
+  - {P: 0.1 atm, A: 8.04e+31, b: -5.79, Ea: 3.618e+04}
+  - {P: 1.0 atm, A: 9.95e+40, b: -8.22, Ea: 4.554e+04}
+  - {P: 10.0 atm, A: 2.18e+50, b: -10.66, Ea: 5.724e+04}
+  - {P: 100.0 atm, A: 1.16e+52, b: -10.95, Ea: 6.577e+04}
+  - {P: 1000.0 atm, A: 1.72e+37, b: -6.65, Ea: 6.414e+04}
+- equation: R3a + NO2 <=> C(NH)2 + C(N(O)OH)2  # Reaction 70
+  type: pressure-dependent-Arrhenius
+  rate-constants:
+  - {P: 0.01 atm, A: 2.94e+22, b: -3.28, Ea: 3.429e+04}
+  - {P: 0.1 atm, A: 1.09e+26, b: -4.24, Ea: 3.76e+04}
+  - {P: 1.0 atm, A: 1.06e+34, b: -6.39, Ea: 4.553e+04}
+  - {P: 10.0 atm, A: 1.08e+44, b: -9.03, Ea: 5.715e+04}
+  - {P: 100.0 atm, A: 1.04e+48, b: -9.94, Ea: 6.704e+04}
+  - {P: 1000.0 atm, A: 6.51e+34, b: -6.09, Ea: 6.664e+04}
+- equation: R3a + NO2 <=> R5e + NH3  # Reaction 71
+  type: pressure-dependent-Arrhenius
+  rate-constants:
+  - {P: 0.01 atm, A: 2.07e+55, b: -13.31, Ea: 3.372e+04}
+  - {P: 0.1 atm, A: 1.21e+64, b: -15.65, Ea: 4.314e+04}
+  - {P: 1.0 atm, A: 7.99e+71, b: -17.68, Ea: 5.351e+04}
+  - {P: 10.0 atm, A: 1.53e+73, b: -17.87, Ea: 6.102e+04}
+  - {P: 100.0 atm, A: 1.33e+63, b: -14.92, Ea: 6.177e+04}
+  - {P: 1000.0 atm, A: 1.17e+43, b: -9.3, Ea: 5.532e+04}
+- equation: R3a + NO2 <=> R5f + HONO  # Reaction 72
+  type: pressure-dependent-Arrhenius
+  rate-constants:
+  - {P: 0.01 atm, A: 5.97e+24, b: -3.61, Ea: 3.855e+04}
+  - {P: 0.1 atm, A: 1.03e+27, b: -4.22, Ea: 4.06e+04}
+  - {P: 1.0 atm, A: 7.25e+33, b: -6.06, Ea: 4.727e+04}
+  - {P: 10.0 atm, A: 8.24e+43, b: -8.72, Ea: 5.854e+04}
+  - {P: 100.0 atm, A: 8.09e+48, b: -9.92, Ea: 6.897e+04}
+  - {P: 1000.0 atm, A: 2.67e+36, b: -6.26, Ea: 6.91e+04}
+- equation: R3a + NO2 <=> R5b + NH3  # Reaction 73
+  type: pressure-dependent-Arrhenius
+  rate-constants:
+  - {P: 0.01 atm, A: 3.61e+20, b: -3.27, Ea: 4.03e+04}
+  - {P: 0.1 atm, A: 1.86e+22, b: -3.74, Ea: 4.186e+04}
+  - {P: 1.0 atm, A: 2.99e+28, b: -5.41, Ea: 4.782e+04}
+  - {P: 10.0 atm, A: 4.29e+38, b: -8.11, Ea: 5.892e+04}
+  - {P: 100.0 atm, A: 3.11e+44, b: -9.54, Ea: 6.985e+04}
+  - {P: 1000.0 atm, A: 4.6e+32, b: -6.06, Ea: 7.045e+04}
+- equation: R3a + NO2 <=> R5d + H2O  # Reaction 74
+  type: pressure-dependent-Arrhenius
+  rate-constants:
+  - {P: 0.01 atm, A: 2.42e+21, b: -3.74, Ea: 2.884e+04}
+  - {P: 0.1 atm, A: 1.99e+27, b: -5.34, Ea: 3.449e+04}
+  - {P: 1.0 atm, A: 4.33e+36, b: -7.84, Ea: 4.419e+04}
+  - {P: 10.0 atm, A: 8.64e+45, b: -10.26, Ea: 5.599e+04}
+  - {P: 100.0 atm, A: 8.45e+47, b: -10.62, Ea: 6.487e+04}
+  - {P: 1000.0 atm, A: 2.92e+35, b: -6.96, Ea: 6.567e+04}
+- equation: R3a + NO2 <=> C2H4N4O3 + O  # Reaction 75
+  type: pressure-dependent-Arrhenius
+  rate-constants:
+  - {P: 0.01 atm, A: 3.02e+12, b: -0.63, Ea: 3.152e+04}
+  - {P: 0.1 atm, A: 9.61e+14, b: -1.31, Ea: 3.382e+04}
+  - {P: 1.0 atm, A: 1.21e+22, b: -3.22, Ea: 4.077e+04}
+  - {P: 10.0 atm, A: 9.56e+31, b: -5.84, Ea: 5.204e+04}
+  - {P: 100.0 atm, A: 3.21e+36, b: -6.9, Ea: 6.215e+04}
+  - {P: 1000.0 atm, A: 8.23e+23, b: -3.22, Ea: 6.183e+04}
+- equation: CH2N2O4 + NCNH2 <=> CH2N2O4 + C(NH)2  # Reaction 76
+  type: pressure-dependent-Arrhenius
+  rate-constants:
+  - {P: 0.01 atm, A: 7.08e+06, b: 0.85, Ea: 2.651e+04}
+  - {P: 0.1 atm, A: 2.93e+12, b: -0.66, Ea: 3.211e+04}
+  - {P: 1.0 atm, A: 6.97e+18, b: -2.35, Ea: 3.914e+04}
+  - {P: 10.0 atm, A: 2.87e+23, b: -3.53, Ea: 4.582e+04}
+  - {P: 100.0 atm, A: 4.35e+22, b: -3.2, Ea: 4.937e+04}
+  - {P: 1000.0 atm, A: 5.89e+13, b: -0.64, Ea: 4.756e+04}
+- equation: CH2N2O4 + NCNH2 <=> urea + O2NCNO  # Reaction 77
+  type: pressure-dependent-Arrhenius
+  rate-constants:
+  - {P: 0.01 atm, A: 2.8e+22, b: -3.63, Ea: 3.883e+04}
+  - {P: 0.1 atm, A: 9.17e+30, b: -5.91, Ea: 4.756e+04}
+  - {P: 1.0 atm, A: 3.74e+40, b: -8.45, Ea: 5.869e+04}
+  - {P: 10.0 atm, A: 1.39e+47, b: -10.1, Ea: 6.952e+04}
+  - {P: 100.0 atm, A: 1.85e+44, b: -9.1, Ea: 7.527e+04}
+  - {P: 1000.0 atm, A: 4.01e+26, b: -4.04, Ea: 7.134e+04}
+- equation: CH2N2O4 + NCNH2 <=> R5a + OH  # Reaction 78
+  type: pressure-dependent-Arrhenius
+  rate-constants:
+  - {P: 0.01 atm, A: 9.94e+24, b: -4.12, Ea: 4.993e+04}
+  - {P: 0.1 atm, A: 2.92e+30, b: -5.6, Ea: 5.512e+04}
+  - {P: 1.0 atm, A: 3.91e+39, b: -8.04, Ea: 6.453e+04}
+  - {P: 10.0 atm, A: 7.97e+48, b: -10.47, Ea: 7.623e+04}
+  - {P: 100.0 atm, A: 3.43e+50, b: -10.73, Ea: 8.47e+04}
+  - {P: 1000.0 atm, A: 4.49e+35, b: -6.42, Ea: 8.304e+04}
+- equation: CH2N2O4 + NCNH2 <=> C(NH)2 + C(N(O)OH)2  # Reaction 79
+  type: pressure-dependent-Arrhenius
+  rate-constants:
+  - {P: 0.01 atm, A: 7.78e+20, b: -3.05, Ea: 5.316e+04}
+  - {P: 0.1 atm, A: 3.11e+24, b: -4.02, Ea: 5.65e+04}
+  - {P: 1.0 atm, A: 3.33e+32, b: -6.18, Ea: 6.447e+04}
+  - {P: 10.0 atm, A: 3.34e+42, b: -8.82, Ea: 7.611e+04}
+  - {P: 100.0 atm, A: 2.78e+46, b: -9.72, Ea: 8.596e+04}
+  - {P: 1000.0 atm, A: 1.64e+33, b: -5.85, Ea: 8.554e+04}
+- equation: CH2N2O4 + NCNH2 <=> R5e + NH3  # Reaction 80
+  type: pressure-dependent-Arrhenius
+  rate-constants:
+  - {P: 0.01 atm, A: 2.42e+54, b: -13.26, Ea: 5.292e+04}
+  - {P: 0.1 atm, A: 1.5e+63, b: -15.61, Ea: 6.24e+04}
+  - {P: 1.0 atm, A: 8.74e+70, b: -17.62, Ea: 7.277e+04}
+  - {P: 10.0 atm, A: 1.2e+72, b: -17.77, Ea: 8.02e+04}
+  - {P: 100.0 atm, A: 6.78e+61, b: -14.77, Ea: 8.081e+04}
+  - {P: 1000.0 atm, A: 4.0e+41, b: -9.1, Ea: 7.425e+04}
+- equation: CH2N2O4 + NCNH2 <=> R5f + HONO  # Reaction 81
+  type: pressure-dependent-Arrhenius
+  rate-constants:
+  - {P: 0.01 atm, A: 1.53e+23, b: -3.38, Ea: 5.743e+04}
+  - {P: 0.1 atm, A: 2.73e+25, b: -3.99, Ea: 5.949e+04}
+  - {P: 1.0 atm, A: 2.08e+32, b: -5.84, Ea: 6.62e+04}
+  - {P: 10.0 atm, A: 2.39e+42, b: -8.5, Ea: 7.748e+04}
+  - {P: 100.0 atm, A: 2.12e+47, b: -9.69, Ea: 8.789e+04}
+  - {P: 1000.0 atm, A: 6.73e+34, b: -6.02, Ea: 8.801e+04}
+- equation: CH2N2O4 + NCNH2 <=> R5b + NH3  # Reaction 82
+  type: pressure-dependent-Arrhenius
+  rate-constants:
+  - {P: 0.01 atm, A: 8.71e+18, b: -3.03, Ea: 5.918e+04}
+  - {P: 0.1 atm, A: 4.57e+20, b: -3.5, Ea: 6.074e+04}
+  - {P: 1.0 atm, A: 7.93e+26, b: -5.18, Ea: 6.673e+04}
+  - {P: 10.0 atm, A: 1.17e+37, b: -7.88, Ea: 7.784e+04}
+  - {P: 100.0 atm, A: 7.87e+42, b: -9.31, Ea: 8.876e+04}
+  - {P: 1000.0 atm, A: 1.14e+31, b: -5.82, Ea: 8.936e+04}
+- equation: CH2N2O4 + NCNH2 <=> R5d + H2O  # Reaction 83
+  type: pressure-dependent-Arrhenius
+  rate-constants:
+  - {P: 0.01 atm, A: 7.75e+19, b: -3.54, Ea: 4.773e+04}
+  - {P: 0.1 atm, A: 7.3e+25, b: -5.15, Ea: 5.344e+04}
+  - {P: 1.0 atm, A: 1.71e+35, b: -7.66, Ea: 6.318e+04}
+  - {P: 10.0 atm, A: 3.13e+44, b: -10.07, Ea: 7.498e+04}
+  - {P: 100.0 atm, A: 2.48e+46, b: -10.4, Ea: 8.38e+04}
+  - {P: 1000.0 atm, A: 7.76e+33, b: -6.73, Ea: 8.458e+04}
+- equation: CH2N2O4 + NCNH2 <=> C2H4N4O3 + O  # Reaction 84
+  type: pressure-dependent-Arrhenius
+  rate-constants:
+  - {P: 0.01 atm, A: 7.18e+10, b: -0.39, Ea: 5.038e+04}
+  - {P: 0.1 atm, A: 2.38e+13, b: -1.07, Ea: 5.27e+04}
+  - {P: 1.0 atm, A: 3.25e+20, b: -2.99, Ea: 5.969e+04}
+  - {P: 10.0 atm, A: 2.58e+30, b: -5.61, Ea: 7.096e+04}
+  - {P: 100.0 atm, A: 7.7e+34, b: -6.66, Ea: 8.105e+04}
+  - {P: 1000.0 atm, A: 1.87e+22, b: -2.97, Ea: 8.072e+04}
+- equation: CH2N2O4 + C(NH)2 <=> urea + O2NCNO  # Reaction 85
+  type: pressure-dependent-Arrhenius
+  rate-constants:
+  - {P: 0.01 atm, A: 9.6e+19, b: -2.83, Ea: 3.668e+04}
+  - {P: 0.1 atm, A: 1.46e+28, b: -5.03, Ea: 4.494e+04}
+  - {P: 1.0 atm, A: 7.64e+37, b: -7.6, Ea: 5.594e+04}
+  - {P: 10.0 atm, A: 1.29e+45, b: -9.44, Ea: 6.706e+04}
+  - {P: 100.0 atm, A: 1.81e+43, b: -8.73, Ea: 7.345e+04}
+  - {P: 1000.0 atm, A: 1.86e+26, b: -3.85, Ea: 7.004e+04}
+- equation: CH2N2O4 + C(NH)2 <=> R5a + OH  # Reaction 86
+  type: pressure-dependent-Arrhenius
+  rate-constants:
+  - {P: 0.01 atm, A: 1.07e+24, b: -3.75, Ea: 4.843e+04}
+  - {P: 0.1 atm, A: 1.39e+29, b: -5.13, Ea: 5.327e+04}
+  - {P: 1.0 atm, A: 1.05e+38, b: -7.51, Ea: 6.236e+04}
+  - {P: 10.0 atm, A: 3.27e+47, b: -9.99, Ea: 7.404e+04}
+  - {P: 100.0 atm, A: 6.29e+49, b: -10.43, Ea: 8.291e+04}
+  - {P: 1000.0 atm, A: 2.57e+35, b: -6.26, Ea: 8.162e+04}
+- equation: CH2N2O4 + C(NH)2 <=> C(NH)2 + C(N(O)OH)2  # Reaction 87
+  type: pressure-dependent-Arrhenius
+  rate-constants:
+  - {P: 0.01 atm, A: 9.37e+19, b: -2.69, Ea: 5.156e+04}
+  - {P: 0.1 atm, A: 2.23e+23, b: -3.6, Ea: 5.47e+04}
+  - {P: 1.0 atm, A: 1.25e+31, b: -5.68, Ea: 6.237e+04}
+  - {P: 10.0 atm, A: 1.34e+41, b: -8.33, Ea: 7.391e+04}
+  - {P: 100.0 atm, A: 3.22e+45, b: -9.36, Ea: 8.403e+04}
+  - {P: 1000.0 atm, A: 5.04e+32, b: -5.61, Ea: 8.392e+04}
+- equation: CH2N2O4 + C(NH)2 <=> R5e + NH3  # Reaction 88
+  type: pressure-dependent-Arrhenius
+  rate-constants:
+  - {P: 0.01 atm, A: 2.77e+52, b: -12.65, Ea: 5.087e+04}
+  - {P: 0.1 atm, A: 1.14e+61, b: -14.95, Ea: 5.996e+04}
+  - {P: 1.0 atm, A: 1.6e+69, b: -17.07, Ea: 7.036e+04}
+  - {P: 10.0 atm, A: 2.03e+71, b: -17.49, Ea: 7.836e+04}
+  - {P: 100.0 atm, A: 1.25e+62, b: -14.77, Ea: 7.971e+04}
+  - {P: 1000.0 atm, A: 6.94e+41, b: -9.07, Ea: 7.338e+04}
+- equation: CH2N2O4 + C(NH)2 <=> R5f + HONO  # Reaction 89
+  type: pressure-dependent-Arrhenius
+  rate-constants:
+  - {P: 0.01 atm, A: 1.6e+22, b: -3.0, Ea: 5.568e+04}
+  - {P: 0.1 atm, A: 2.26e+24, b: -3.58, Ea: 5.766e+04}
+  - {P: 1.0 atm, A: 9.71e+30, b: -5.37, Ea: 6.412e+04}
+  - {P: 10.0 atm, A: 1.03e+41, b: -8.03, Ea: 7.529e+04}
+  - {P: 100.0 atm, A: 2.07e+46, b: -9.31, Ea: 8.59e+04}
+  - {P: 1000.0 atm, A: 1.56e+34, b: -5.74, Ea: 8.628e+04}
+- equation: CH2N2O4 + C(NH)2 <=> R5b + NH3  # Reaction 90
+  type: pressure-dependent-Arrhenius
+  rate-constants:
+  - {P: 0.01 atm, A: 9.28e+17, b: -2.65, Ea: 5.739e+04}
+  - {P: 0.1 atm, A: 4.25e+19, b: -3.1, Ea: 5.89e+04}
+  - {P: 1.0 atm, A: 4.34e+25, b: -4.72, Ea: 6.468e+04}
+  - {P: 10.0 atm, A: 5.36e+35, b: -7.41, Ea: 7.567e+04}
+  - {P: 100.0 atm, A: 6.72e+41, b: -8.91, Ea: 8.673e+04}
+  - {P: 1000.0 atm, A: 2.09e+30, b: -5.51, Ea: 8.756e+04}
+- equation: CH2N2O4 + C(NH)2 <=> R5d + H2O  # Reaction 91
+  type: pressure-dependent-Arrhenius
+  rate-constants:
+  - {P: 0.01 atm, A: 7.8e+18, b: -3.16, Ea: 4.626e+04}
+  - {P: 0.1 atm, A: 3.01e+24, b: -4.66, Ea: 5.158e+04}
+  - {P: 1.0 atm, A: 4.16e+33, b: -7.11, Ea: 6.101e+04}
+  - {P: 10.0 atm, A: 1.26e+43, b: -9.59, Ea: 7.281e+04}
+  - {P: 100.0 atm, A: 4.5e+45, b: -10.1, Ea: 8.202e+04}
+  - {P: 1000.0 atm, A: 3.76e+33, b: -6.54, Ea: 8.31e+04}
+- equation: CH2N2O4 + C(NH)2 <=> C2H4N4O3 + O  # Reaction 92
+  type: pressure-dependent-Arrhenius
+  rate-constants:
+  - {P: 0.01 atm, A: 1.74e+09, b: 0.17, Ea: 4.83e+04}
+  - {P: 0.1 atm, A: 4.34e+11, b: -0.47, Ea: 5.051e+04}
+  - {P: 1.0 atm, A: 3.27e+18, b: -2.32, Ea: 5.724e+04}
+  - {P: 10.0 atm, A: 2.53e+28, b: -4.94, Ea: 6.841e+04}
+  - {P: 100.0 atm, A: 1.89e+33, b: -6.11, Ea: 7.872e+04}
+  - {P: 1000.0 atm, A: 1.18e+21, b: -2.52, Ea: 7.868e+04}
+- equation: urea + O2NCNO <=> R5a + OH  # Reaction 93
+  type: pressure-dependent-Arrhenius
+  rate-constants:
+  - {P: 0.01 atm, A: 8.12e+21, b: -2.96, Ea: 7.66e+04}
+  - {P: 0.1 atm, A: 5.22e+25, b: -3.99, Ea: 8.02e+04}
+  - {P: 1.0 atm, A: 7.89e+31, b: -5.64, Ea: 8.66e+04}
+  - {P: 10.0 atm, A: 4.63e+36, b: -6.87, Ea: 9.325e+04}
+  - {P: 100.0 atm, A: 3.18e+34, b: -6.16, Ea: 9.595e+04}
+  - {P: 1000.0 atm, A: 9.55e+22, b: -2.88, Ea: 9.261e+04}
+- equation: urea + O2NCNO <=> C(NH)2 + C(N(O)OH)2  # Reaction 94
+  type: pressure-dependent-Arrhenius
+  rate-constants:
+  - {P: 0.01 atm, A: 1.41e+18, b: -1.99, Ea: 7.972e+04}
+  - {P: 0.1 atm, A: 5.28e+20, b: -2.69, Ea: 8.211e+04}
+  - {P: 1.0 atm, A: 2.07e+26, b: -4.19, Ea: 8.77e+04}
+  - {P: 10.0 atm, A: 8.26e+31, b: -5.65, Ea: 9.466e+04}
+  - {P: 100.0 atm, A: 2.32e+31, b: -5.39, Ea: 9.84e+04}
+  - {P: 1000.0 atm, A: 7.08e+20, b: -2.38, Ea: 9.584e+04}
+- equation: urea + O2NCNO <=> R5e + NH3  # Reaction 95
+  type: pressure-dependent-Arrhenius
+  rate-constants:
+  - {P: 0.01 atm, A: 4.5e+46, b: -10.86, Ea: 7.676e+04}
+  - {P: 0.1 atm, A: 6.27e+52, b: -12.5, Ea: 8.321e+04}
+  - {P: 1.0 atm, A: 2.53e+57, b: -13.69, Ea: 8.961e+04}
+  - {P: 10.0 atm, A: 4.83e+55, b: -13.11, Ea: 9.242e+04}
+  - {P: 100.0 atm, A: 3.73e+45, b: -10.22, Ea: 8.964e+04}
+  - {P: 1000.0 atm, A: 3.34e+30, b: -6.03, Ea: 8.318e+04}
+- equation: urea + O2NCNO <=> R5f + HONO  # Reaction 96
+  type: pressure-dependent-Arrhenius
+  rate-constants:
+  - {P: 0.01 atm, A: 2.11e+20, b: -2.29, Ea: 8.363e+04}
+  - {P: 0.1 atm, A: 1.05e+22, b: -2.75, Ea: 8.52e+04}
+  - {P: 1.0 atm, A: 8.57e+26, b: -4.07, Ea: 9.002e+04}
+  - {P: 10.0 atm, A: 6.55e+32, b: -5.62, Ea: 9.697e+04}
+  - {P: 100.0 atm, A: 1.03e+33, b: -5.56, Ea: 1.012e+05}
+  - {P: 1000.0 atm, A: 8.52e+22, b: -2.66, Ea: 9.893e+04}
+- equation: urea + O2NCNO <=> R5b + NH3  # Reaction 97
+  type: pressure-dependent-Arrhenius
+  rate-constants:
+  - {P: 0.01 atm, A: 1.4e+16, b: -1.96, Ea: 8.529e+04}
+  - {P: 0.1 atm, A: 3.02e+17, b: -2.32, Ea: 8.652e+04}
+  - {P: 1.0 atm, A: 9.88e+21, b: -3.54, Ea: 9.089e+04}
+  - {P: 10.0 atm, A: 1.25e+28, b: -5.15, Ea: 9.787e+04}
+  - {P: 100.0 atm, A: 8.14e+28, b: -5.27, Ea: 1.025e+05}
+  - {P: 1000.0 atm, A: 1.72e+19, b: -2.48, Ea: 1.005e+05}
+- equation: urea + O2NCNO <=> R5d + H2O  # Reaction 98
+  type: pressure-dependent-Arrhenius
+  rate-constants:
+  - {P: 0.01 atm, A: 5.52e+16, b: -2.36, Ea: 7.446e+04}
+  - {P: 0.1 atm, A: 7.66e+20, b: -3.48, Ea: 7.84e+04}
+  - {P: 1.0 atm, A: 1.54e+27, b: -5.16, Ea: 8.499e+04}
+  - {P: 10.0 atm, A: 7.8e+31, b: -6.37, Ea: 9.167e+04}
+  - {P: 100.0 atm, A: 1.78e+30, b: -5.8, Ea: 9.491e+04}
+  - {P: 1000.0 atm, A: 6.03e+21, b: -3.33, Ea: 9.465e+04}
+- equation: urea + O2NCNO <=> C2H4N4O3 + O  # Reaction 99
+  type: pressure-dependent-Arrhenius
+  rate-constants:
+  - {P: 0.01 atm, A: 2.17e+07, b: 0.89, Ea: 7.628e+04}
+  - {P: 0.1 atm, A: 1.64e+09, b: 0.39, Ea: 7.801e+04}
+  - {P: 1.0 atm, A: 1.87e+14, b: -0.97, Ea: 8.3e+04}
+  - {P: 10.0 atm, A: 9.66e+19, b: -2.47, Ea: 8.989e+04}
+  - {P: 100.0 atm, A: 7.27e+19, b: -2.33, Ea: 9.385e+04}
+  - {P: 1000.0 atm, A: 5.06e+09, b: 0.58, Ea: 9.122e+04}
+- equation: R5a + OH <=> C(NH)2 + C(N(O)OH)2  # Reaction 100
+  type: pressure-dependent-Arrhenius
+  rate-constants:
+  - {P: 0.01 atm, A: 3.77e+10, b: 0.61, Ea: 1.859e+04}
+  - {P: 0.1 atm, A: 1.5e+12, b: 0.18, Ea: 2.006e+04}
+  - {P: 1.0 atm, A: 4.83e+16, b: -1.04, Ea: 2.445e+04}
+  - {P: 10.0 atm, A: 1.39e+22, b: -2.48, Ea: 3.076e+04}
+  - {P: 100.0 atm, A: 2.8e+20, b: -1.94, Ea: 3.229e+04}
+  - {P: 1000.0 atm, A: 4.0e+11, b: 0.54, Ea: 2.765e+04}
+- equation: R5a + OH <=> R5e + NH3  # Reaction 101
+  type: pressure-dependent-Arrhenius
+  rate-constants:
+  - {P: 0.01 atm, A: 5.09e+38, b: -8.29, Ea: 1.715e+04}
+  - {P: 0.1 atm, A: 9.6e+42, b: -9.44, Ea: 2.125e+04}
+  - {P: 1.0 atm, A: 7.77e+48, b: -11.01, Ea: 2.768e+04}
+  - {P: 10.0 atm, A: 5.65e+50, b: -11.43, Ea: 3.227e+04}
+  - {P: 100.0 atm, A: 4.24e+41, b: -8.84, Ea: 2.861e+04}
+  - {P: 1000.0 atm, A: 3.14e+28, b: -5.22, Ea: 2.039e+04}
+- equation: R5a + OH <=> R5f + HONO  # Reaction 102
+  type: pressure-dependent-Arrhenius
+  rate-constants:
+  - {P: 0.01 atm, A: 1.0e+12, b: 0.51, Ea: 2.146e+04}
+  - {P: 0.1 atm, A: 1.44e+13, b: 0.2, Ea: 2.252e+04}
+  - {P: 1.0 atm, A: 1.37e+17, b: -0.87, Ea: 2.637e+04}
+  - {P: 10.0 atm, A: 5.05e+22, b: -2.35, Ea: 3.263e+04}
+  - {P: 100.0 atm, A: 3.99e+21, b: -1.97, Ea: 3.459e+04}
+  - {P: 1000.0 atm, A: 1.17e+13, b: 0.43, Ea: 3.021e+04}
+- equation: R5a + OH <=> R5b + NH3  # Reaction 103
+  type: pressure-dependent-Arrhenius
+  rate-constants:
+  - {P: 0.01 atm, A: 3.32e+07, b: 0.93, Ea: 2.269e+04}
+  - {P: 0.1 atm, A: 2.97e+08, b: 0.67, Ea: 2.356e+04}
+  - {P: 1.0 atm, A: 1.41e+12, b: -0.32, Ea: 2.709e+04}
+  - {P: 10.0 atm, A: 6.42e+17, b: -1.83, Ea: 3.334e+04}
+  - {P: 100.0 atm, A: 1.39e+17, b: -1.57, Ea: 3.56e+04}
+  - {P: 1000.0 atm, A: 7.26e+08, b: 0.76, Ea: 3.143e+04}
+- equation: R5a + OH <=> R5d + H2O  # Reaction 104
+  type: pressure-dependent-Arrhenius
+  rate-constants:
+  - {P: 0.01 atm, A: 1.61e+10, b: -0.05, Ea: 1.493e+04}
+  - {P: 0.1 atm, A: 4.63e+12, b: -0.71, Ea: 1.722e+04}
+  - {P: 1.0 atm, A: 9.3e+17, b: -2.14, Ea: 2.248e+04}
+  - {P: 10.0 atm, A: 1.14e+23, b: -3.47, Ea: 2.875e+04}
+  - {P: 100.0 atm, A: 3.11e+20, b: -2.69, Ea: 2.977e+04}
+  - {P: 1000.0 atm, A: 4.02e+13, b: -0.73, Ea: 2.721e+04}
+- equation: R5a + OH <=> C2H4N4O3 + O  # Reaction 105
+  type: pressure-dependent-Arrhenius
+  rate-constants:
+  - {P: 0.01 atm, A: 7.14e+20, b: -2.68, Ea: 2.606e+04}
+  - {P: 0.1 atm, A: 1.3e+22, b: -3.03, Ea: 2.723e+04}
+  - {P: 1.0 atm, A: 1.86e+26, b: -4.14, Ea: 3.127e+04}
+  - {P: 10.0 atm, A: 1.75e+32, b: -5.72, Ea: 3.806e+04}
+  - {P: 100.0 atm, A: 1.72e+33, b: -5.89, Ea: 4.273e+04}
+  - {P: 1000.0 atm, A: 5.91e+23, b: -3.16, Ea: 4.093e+04}
+- equation: C(NH)2 + C(N(O)OH)2 <=> R5e + NH3  # Reaction 106
+  type: pressure-dependent-Arrhenius
+  rate-constants:
+  - {P: 0.01 atm, A: 7.81e+31, b: -6.35, Ea: 1.778e+04}
+  - {P: 0.1 atm, A: 6.63e+34, b: -7.14, Ea: 2.051e+04}
+  - {P: 1.0 atm, A: 3.99e+40, b: -8.69, Ea: 2.64e+04}
+  - {P: 10.0 atm, A: 2.93e+44, b: -9.67, Ea: 3.217e+04}
+  - {P: 100.0 atm, A: 1.77e+38, b: -7.87, Ea: 3.073e+04}
+  - {P: 1000.0 atm, A: 4.08e+25, b: -4.37, Ea: 2.316e+04}
+- equation: C(NH)2 + C(N(O)OH)2 <=> R5f + HONO  # Reaction 107
+  type: pressure-dependent-Arrhenius
+  rate-constants:
+  - {P: 0.01 atm, A: 9.63e+06, b: 1.98, Ea: 2.201e+04}
+  - {P: 0.1 atm, A: 7.68e+07, b: 1.73, Ea: 2.284e+04}
+  - {P: 1.0 atm, A: 2.77e+11, b: 0.77, Ea: 2.625e+04}
+  - {P: 10.0 atm, A: 1.28e+17, b: -0.73, Ea: 3.247e+04}
+  - {P: 100.0 atm, A: 4.14e+16, b: -0.52, Ea: 3.483e+04}
+  - {P: 1000.0 atm, A: 3.91e+08, b: 1.73, Ea: 3.085e+04}
+- equation: C(NH)2 + C(N(O)OH)2 <=> R5b + NH3  # Reaction 108
+  type: pressure-dependent-Arrhenius
+  rate-constants:
+  - {P: 0.01 atm, A: 287.0, b: 2.4, Ea: 2.31e+04}
+  - {P: 0.1 atm, A: 1670.0, b: 2.19, Ea: 2.38e+04}
+  - {P: 1.0 atm, A: 3.5e+06, b: 1.3, Ea: 2.697e+04}
+  - {P: 10.0 atm, A: 1.78e+12, b: -0.22, Ea: 3.316e+04}
+  - {P: 100.0 atm, A: 1.14e+12, b: -0.09, Ea: 3.572e+04}
+  - {P: 1000.0 atm, A: 1.69e+04, b: 2.11, Ea: 3.19e+04}
+- equation: C(NH)2 + C(N(O)OH)2 <=> R5d + H2O  # Reaction 109
+  type: pressure-dependent-Arrhenius
+  rate-constants:
+  - {P: 0.01 atm, A: 6.04e+05, b: 1.26, Ea: 1.652e+04}
+  - {P: 0.1 atm, A: 3.1e+07, b: 0.8, Ea: 1.81e+04}
+  - {P: 1.0 atm, A: 1.38e+12, b: -0.45, Ea: 2.263e+04}
+  - {P: 10.0 atm, A: 4.3e+17, b: -1.9, Ea: 2.901e+04}
+  - {P: 100.0 atm, A: 1.63e+16, b: -1.43, Ea: 3.082e+04}
+  - {P: 1000.0 atm, A: 4.12e+09, b: 0.44, Ea: 2.845e+04}
+- equation: C(NH)2 + C(N(O)OH)2 <=> C2H4N4O3 + O  # Reaction 110
+  type: pressure-dependent-Arrhenius
+  rate-constants:
+  - {P: 0.01 atm, A: 1.23e+16, b: -1.3, Ea: 2.673e+04}
+  - {P: 0.1 atm, A: 1.15e+17, b: -1.57, Ea: 2.763e+04}
+  - {P: 1.0 atm, A: 5.87e+20, b: -2.56, Ea: 3.12e+04}
+  - {P: 10.0 atm, A: 7.35e+26, b: -4.18, Ea: 3.795e+04}
+  - {P: 100.0 atm, A: 3.17e+28, b: -4.53, Ea: 4.302e+04}
+  - {P: 1000.0 atm, A: 3.97e+19, b: -1.95, Ea: 4.164e+04}
+- equation: R5e + NH3 <=> R5f + HONO  # Reaction 111
+  type: pressure-dependent-Arrhenius
+  rate-constants:
+  - {P: 0.01 atm, A: 5.93e+29, b: -5.54, Ea: 4.409e+04}
+  - {P: 0.1 atm, A: 4.86e+31, b: -6.05, Ea: 4.583e+04}
+  - {P: 1.0 atm, A: 1.0e+37, b: -7.48, Ea: 5.106e+04}
+  - {P: 10.0 atm, A: 7.54e+41, b: -8.75, Ea: 5.735e+04}
+  - {P: 100.0 atm, A: 2.21e+37, b: -7.41, Ea: 5.716e+04}
+  - {P: 1000.0 atm, A: 1.23e+25, b: -4.0, Ea: 5.002e+04}
+- equation: R5e + NH3 <=> R5b + NH3  # Reaction 112
+  type: pressure-dependent-Arrhenius
+  rate-constants:
+  - {P: 0.01 atm, A: 1.52e+24, b: -4.82, Ea: 4.49e+04}
+  - {P: 0.1 atm, A: 4.88e+25, b: -5.23, Ea: 4.626e+04}
+  - {P: 1.0 atm, A: 5.13e+30, b: -6.58, Ea: 5.109e+04}
+  - {P: 10.0 atm, A: 1.79e+36, b: -8.04, Ea: 5.769e+04}
+  - {P: 100.0 atm, A: 9.69e+32, b: -7.05, Ea: 5.842e+04}
+  - {P: 1000.0 atm, A: 1.31e+21, b: -3.74, Ea: 5.165e+04}
+- equation: R5e + NH3 <=> R5d + H2O  # Reaction 113
+  type: pressure-dependent-Arrhenius
+  rate-constants:
+  - {P: 0.01 atm, A: 2.79e+31, b: -7.05, Ea: 3.795e+04}
+  - {P: 0.1 atm, A: 1.21e+36, b: -8.3, Ea: 4.242e+04}
+  - {P: 1.0 atm, A: 9.62e+41, b: -9.86, Ea: 4.896e+04}
+  - {P: 10.0 atm, A: 3.16e+43, b: -10.19, Ea: 5.336e+04}
+  - {P: 100.0 atm, A: 7.44e+34, b: -7.73, Ea: 5.023e+04}
+  - {P: 1000.0 atm, A: 3.82e+25, b: -5.14, Ea: 4.585e+04}
+- equation: R5e + NH3 <=> C2H4N4O3 + O  # Reaction 114
+  type: pressure-dependent-Arrhenius
+  rate-constants:
+  - {P: 0.01 atm, A: 8.6e+36, b: -8.19, Ea: 4.802e+04}
+  - {P: 0.1 atm, A: 1.17e+39, b: -8.77, Ea: 4.998e+04}
+  - {P: 1.0 atm, A: 3.87e+44, b: -10.25, Ea: 5.547e+04}
+  - {P: 10.0 atm, A: 4.2e+49, b: -11.56, Ea: 6.215e+04}
+  - {P: 100.0 atm, A: 4.81e+46, b: -10.62, Ea: 6.439e+04}
+  - {P: 1000.0 atm, A: 3.08e+33, b: -6.87, Ea: 5.981e+04}
+- equation: R5f + HONO <=> R5b + NH3  # Reaction 115
+  type: pressure-dependent-Arrhenius
+  rate-constants:
+  - {P: 0.01 atm, A: 0.382, b: 2.94, Ea: 9.377e+04}
+  - {P: 0.1 atm, A: 1.67, b: 2.77, Ea: 9.436e+04}
+  - {P: 1.0 atm, A: 1960.0, b: 1.94, Ea: 9.728e+04}
+  - {P: 10.0 atm, A: 9.72e+08, b: 0.42, Ea: 1.034e+05}
+  - {P: 100.0 atm, A: 1.0e+09, b: 0.49, Ea: 1.061e+05}
+  - {P: 1000.0 atm, A: 23.5, b: 2.64, Ea: 1.024e+05}
+- equation: R5f + HONO <=> R5d + H2O  # Reaction 116
+  type: pressure-dependent-Arrhenius
+  rate-constants:
+  - {P: 0.01 atm, A: 5240.0, b: 1.59, Ea: 8.827e+04}
+  - {P: 0.1 atm, A: 8.71e+04, b: 1.26, Ea: 8.939e+04}
+  - {P: 1.0 atm, A: 1.07e+09, b: 0.15, Ea: 9.335e+04}
+  - {P: 10.0 atm, A: 4.34e+14, b: -1.33, Ea: 9.968e+04}
+  - {P: 100.0 atm, A: 5.94e+13, b: -1.02, Ea: 1.019e+05}
+  - {P: 1000.0 atm, A: 1.69e+07, b: 0.84, Ea: 9.953e+04}
+- equation: R5f + HONO <=> C2H4N4O3 + O  # Reaction 117
+  type: pressure-dependent-Arrhenius
+  rate-constants:
+  - {P: 0.01 atm, A: 2.38e+13, b: -0.81, Ea: 9.759e+04}
+  - {P: 0.1 atm, A: 1.42e+14, b: -1.02, Ea: 9.831e+04}
+  - {P: 1.0 atm, A: 3.37e+17, b: -1.93, Ea: 1.016e+05}
+  - {P: 10.0 atm, A: 4.3e+23, b: -3.55, Ea: 1.082e+05}
+  - {P: 100.0 atm, A: 3.47e+25, b: -3.98, Ea: 1.135e+05}
+  - {P: 1000.0 atm, A: 7.21e+16, b: -1.46, Ea: 1.122e+05}
+- equation: R5b + NH3 <=> R5d + H2O  # Reaction 118
+  type: pressure-dependent-Arrhenius
+  rate-constants:
+  - {P: 0.01 atm, A: 1.85, b: 2.27, Ea: 5.28e+04}
+  - {P: 0.1 atm, A: 18.3, b: 2.0, Ea: 5.372e+04}
+  - {P: 1.0 atm, A: 1.08e+05, b: 0.98, Ea: 5.734e+04}
+  - {P: 10.0 atm, A: 5.47e+10, b: -0.53, Ea: 6.365e+04}
+  - {P: 100.0 atm, A: 1.98e+10, b: -0.34, Ea: 6.614e+04}
+  - {P: 1000.0 atm, A: 7280.0, b: 1.5, Ea: 6.387e+04}
+- equation: R5b + NH3 <=> C2H4N4O3 + O  # Reaction 119
+  type: pressure-dependent-Arrhenius
+  rate-constants:
+  - {P: 0.01 atm, A: 6.12e+09, b: -0.1, Ea: 6.178e+04}
+  - {P: 0.1 atm, A: 2.91e+10, b: -0.28, Ea: 6.241e+04}
+  - {P: 1.0 atm, A: 4.41e+13, b: -1.14, Ea: 6.545e+04}
+  - {P: 10.0 atm, A: 6.08e+19, b: -2.77, Ea: 7.209e+04}
+  - {P: 100.0 atm, A: 8.41e+21, b: -3.26, Ea: 7.747e+04}
+  - {P: 1000.0 atm, A: 2.72e+13, b: -0.8, Ea: 7.64e+04}
+- equation: R5d + H2O <=> C2H4N4O3 + O  # Reaction 120
+  type: pressure-dependent-Arrhenius
+  rate-constants:
+  - {P: 0.01 atm, A: 3.83e+15, b: -1.54, Ea: 9.884e+04}
+  - {P: 0.1 atm, A: 8.29e+16, b: -1.9, Ea: 1.001e+05}
+  - {P: 1.0 atm, A: 1.55e+21, b: -3.05, Ea: 1.042e+05}
+  - {P: 10.0 atm, A: 1.62e+27, b: -4.65, Ea: 1.111e+05}
+  - {P: 100.0 atm, A: 2.87e+28, b: -4.88, Ea: 1.16e+05}
+  - {P: 1000.0 atm, A: 8.9e+20, b: -2.68, Ea: 1.162e+05}
+- equation: FOX-7 + H <=> C2H3N4O4 + H2  # Reaction 121
+  rate-constant: {A: 4.74e+06, b: 2.21, Ea: 1.29923e+04}
+  note: |
+    Unimolecular reactions !
+    Bimolecular reactions !
+- equation: FOX-7 + OH <=> C2H3N4O4 + H2O  # Reaction 122
+  rate-constant: {A: 367.0, b: 2.98, Ea: 920.1}
+- equation: FOX-7 + NO <=> C2H3N4O4 + HNO  # Reaction 123
+  rate-constant: {A: 7.89e+04, b: 2.57, Ea: 5.06836e+04}
+- equation: FOX-7 + NO2 <=> C2H3N4O4 + HONO  # Reaction 124
+  rate-constant: {A: 141.0, b: 3.26, Ea: 2.42975e+04}
+- equation: FOX-7 + CN <=> C2H3N4O4 + HCN  # Reaction 125
+  rate-constant: {A: 3190.0, b: 2.89, Ea: 512.7}
+- equation: FOX-7 + NH2 <=> C2H3N4O4 + NH3  # Reaction 126
+  rate-constant: {A: 0.0129, b: 4.14, Ea: 3157.7}
+- equation: FOX-7 + O <=> C2H3N4O4 + OH  # Reaction 127
+  rate-constant: {A: 47.4, b: 3.29, Ea: 1.5375e+04}
+- equation: FOX-7 + NO <=> C2H4N4O3 + NO2  # Reaction 128
+  rate-constant: {A: 3.776e+06, b: 1.38, Ea: 2.6783e+04}
+- equation: FOX-7 + NO2 <=> C2H4N4O3 + NO3  # Reaction 129
+  rate-constant: {A: 3.899e+06, b: 1.26, Ea: 2.4709e+04}
+- equation: FOX-7 + R1 <=> C2H3N4O4 + R1H  # Reaction 130
+  rate-constant: {A: 8.44e-06, b: 4.42, Ea: 6961.2}
+- equation: FOX-7 + R3a <=> C2H3N4O4 + R3aH  # Reaction 131
+  rate-constant: {A: 6.77e-07, b: 4.75, Ea: 1.75291e+04}
+  note: |
+    Bimolecular reactions !

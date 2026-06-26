@@ -1,0 +1,1144 @@
+description: |-
+  This file is part of the supplementary material for the following publication:
+  Measurement of the laminar burning velocity and kinetics study of the importance of the hydrogen recovery mechanism of ammonia/hydrogen/air premixed flames
+  Author: Gabriel J. Gotama, Akihiro Hayakawa, Ekenechukwu C. Okafor, Ryuhei Kanoshima, Masao Hayashi, Taku Kudo, and Hideaki Kobayashi
+  Combustion and Flame, Vol. 236, 111753
+  https://doi.org/10.1016/j.combustflame.2021.111753
+
+  Reduced Gas-Phase-Kinetics File
+
+  Base mechanism: X. Han, Z. Wang, Y. He, Y. Zhu, K. Cen, Experimental and kinetic modeling study of laminar burning velocities of NH3/syngas/air premixed flames. Combustion and Flame, 213, 1-13. https://doi.org/10.1016/j.combustflame.2019.11.032
+
+  This file is part of the supplementary material for the following publication:
+  Measurement of the laminar burning velocity and kinetics study of the importance of the hydrogen recovery mechanism of ammonia/hydrogen/air premixed flames
+  Author: Gabriel J. Gotama, Akihiro Hayakawa, Ekenechukwu C. Okafor, Ryuhei Kanoshima, Masao Hayashi, Taku Kudo, and Hideaki Kobayashi
+  Combustion and Flame, Vol. 236, 111753
+  https://doi.org/10.1016/j.combustflame.2021.111753
+
+  Reduced Thermodynamics File
+
+generator: ck2yaml
+input-files: [chem.inp, therm.dat, tran.dat]
+cantera-version: 3.2.0
+date: Thu, 18 Jun 2026 02:27:12 +0800
+
+units: {length: cm, time: s, quantity: mol, activation-energy: cal/mol}
+
+phases:
+- name: gas
+  thermo: ideal-gas
+  elements: [H, N, O, Ar, He]
+  species: [O, O2, HE, AR, OHEX, H, H2, OH, H2O, HO2, H2O2, HNO, H2NO, 
+      H2NN, N, N2, NO, NO2, N2O, NH3, NNH, NH2, NH, N2H2, N2H3, N2H4]
+  kinetics: gas
+  transport: mixture-averaged
+  state: {T: 300.0, P: 1 atm}
+
+species:
+- name: O
+  composition: {O: 1}
+  thermo:
+    model: NASA7
+    temperature-ranges: [200.0, 1000.0, 6000.0]
+    data:
+    - [3.15906526, -3.21509999e-03, 6.49255543e-06, -5.98755115e-09, 
+        2.06876117e-12, 2.91298453e+04, 2.09078344]
+    - [2.55160087, -3.83085457e-05, 8.43197478e-10, 4.01267136e-12, 
+        -4.17476574e-16, 2.92287628e+04, 4.87617014]
+    note: ATcT3E
+  transport:
+    model: gas
+    geometry: atom
+    well-depth: 80.0
+    diameter: 2.75
+- name: O2
+  composition: {O: 2}
+  thermo:
+    model: NASA7
+    temperature-ranges: [200.0, 1000.0, 6000.0]
+    data:
+    - [3.78498258, -3.02002233e-03, 9.92029171e-06, -9.77840434e-09, 
+        3.28877702e-12, -1064.13589, 3.64780709]
+    - [3.65980488, 6.59877372e-04, -1.44158172e-07, 2.14656037e-11, 
+        -1.36503784e-15, -1216.03048, 3.42074148]
+    note: ATcT3E
+  transport:
+    model: gas
+    geometry: linear
+    well-depth: 107.4
+    diameter: 3.458
+    polarizability: 1.6
+    rotational-relaxation: 3.8
+- name: HE
+  composition: {He: 1}
+  thermo:
+    model: NASA7
+    temperature-ranges: [200.0, 1000.0, 6000.0]
+    data:
+    - [2.49976293, 1.01013432e-06, -8.24578465e-10, -6.85983306e-13, 
+        7.24751856e-16, -745.340917, 0.929800315]
+    - [2.49985609, 2.19365392e-07, -1.07525085e-10, 2.07198041e-14, 
+        -1.39358612e-18, -745.309155, 0.929535014]
+    note: ATcT3E
+  transport:
+    model: gas
+    geometry: atom
+    well-depth: 10.2
+    diameter: 2.576
+- name: AR
+  composition: {Ar: 1}
+  thermo:
+    model: NASA7
+    temperature-ranges: [200.0, 1000.0, 6000.0]
+    data:
+    - [2.49988611, 2.1303796e-07, 8.97320772e-10, -2.31395752e-12, 
+        1.30201393e-15, -745.354481, 4.38024367]
+    - [2.49989176, 1.56134837e-07, -7.76108557e-11, 1.52928085e-14, 
+        -1.05304493e-18, -745.328403, 4.38029835]
+    note: ATcT3E
+  transport:
+    model: gas
+    geometry: atom
+    well-depth: 136.5
+    diameter: 3.33
+- name: OHEX
+  composition: {H: 1, O: 1}
+  thermo:
+    model: NASA7
+    temperature-ranges: [200.0, 1000.0, 6000.0]
+    data:
+    - [3.46084428, 5.01872172e-04, -2.00254474e-06, 3.18901984e-09, 
+        -1.35451838e-12, 5.07349466e+04, 1.73976415]
+    - [2.7558292, 1.39848756e-03, -4.19428493e-07, 6.33453282e-11, 
+        -3.56042218e-15, 5.09751756e+04, 5.62581429]
+    note: ATcT3E
+  transport:
+    model: gas
+    geometry: linear
+    well-depth: 80.0
+    diameter: 2.75
+- name: H
+  composition: {H: 1}
+  thermo:
+    model: NASA7
+    temperature-ranges: [200.0, 1000.0, 6000.0]
+    data:
+    - [2.49975925, 6.73824499e-07, 1.11807261e-09, -3.70192126e-12, 
+        2.14233822e-15, 2.54737665e+04, -0.445574009]
+    - [2.49985211, 2.34582548e-07, -1.16171641e-10, 2.25708298e-14, 
+        -1.52992005e-18, 2.54738024e+04, -0.445864645]
+    note: ATcT3E
+  transport:
+    model: gas
+    geometry: atom
+    well-depth: 145.0
+    diameter: 2.05
+- name: H2
+  composition: {H: 2}
+  thermo:
+    model: NASA7
+    temperature-ranges: [200.0, 1000.0, 6000.0]
+    data:
+    - [2.37694204, 7.73916922e-03, -1.88735073e-05, 1.95517114e-08, 
+        -7.17095663e-12, -921.173081, 0.547184736]
+    - [2.90207649, 8.68992581e-04, -1.6586443e-07, 1.90851899e-11, 
+        -9.31121789e-16, -797.948726, -0.84559132]
+    note: ATcT3E
+  transport:
+    model: gas
+    geometry: linear
+    well-depth: 38.0
+    diameter: 2.92
+    polarizability: 0.79
+    rotational-relaxation: 280.0
+- name: OH
+  composition: {H: 1, O: 1}
+  thermo:
+    model: NASA7
+    temperature-ranges: [200.0, 1000.0, 6000.0]
+    data:
+    - [3.97585165, -2.28555291e-03, 4.33442882e-06, -3.5992664e-09, 
+        1.2670693e-12, 3393.41137, -0.0355397262]
+    - [2.84581721, 1.09723818e-03, -2.89121101e-07, 4.0909991e-11, 
+        -2.31382258e-15, 3717.0661, 5.80339915]
+    note: ATcT3E
+  transport:
+    model: gas
+    geometry: linear
+    well-depth: 80.0
+    diameter: 2.75
+- name: H2O
+  composition: {H: 2, O: 1}
+  thermo:
+    model: NASA7
+    temperature-ranges: [200.0, 1000.0, 6000.0]
+    data:
+    - [4.20147551, -2.05583546e-03, 6.56547207e-06, -5.5290696e-09, 
+        1.78282605e-12, -3.02950066e+04, -0.860610906]
+    - [2.73117512, 2.95136995e-03, -8.35359785e-07, 1.26088593e-10, 
+        -8.40531676e-15, -2.99169082e+04, 6.55183]
+    note: ATcT3E
+  transport:
+    model: gas
+    geometry: nonlinear
+    well-depth: 572.4
+    diameter: 2.605
+    dipole: 1.844
+    rotational-relaxation: 4.0
+- name: HO2
+  composition: {H: 1, O: 2}
+  thermo:
+    model: NASA7
+    temperature-ranges: [200.0, 1000.0, 6000.0]
+    data:
+    - [4.2625125, -4.45642032e-03, 2.05164934e-05, -2.35794011e-08, 
+        9.05614257e-12, 262.442356, 3.88223684]
+    - [4.1056401, 2.04046836e-03, -3.65877562e-07, 1.85973044e-11, 
+        4.98818315e-16, 43.2898769, 3.30808126]
+    note: ATcT3E
+  transport:
+    model: gas
+    geometry: nonlinear
+    well-depth: 107.4
+    diameter: 3.458
+    rotational-relaxation: 1.0
+- name: H2O2
+  composition: {H: 2, O: 2}
+  thermo:
+    model: NASA7
+    temperature-ranges: [200.0, 1000.0, 6000.0]
+    data:
+    - [4.2385416, -2.49610911e-04, 1.59857901e-05, -2.06919945e-08, 
+        8.2976632e-12, -1.76486003e+04, 3.58850097]
+    - [4.5401748, 4.15970971e-03, -1.30876777e-06, 2.00823615e-10, 
+        -1.15509243e-14, -1.79514029e+04, 0.855881745]
+    note: ATcT3E
+  transport:
+    model: gas
+    geometry: nonlinear
+    well-depth: 107.4
+    diameter: 3.458
+    rotational-relaxation: 3.8
+- name: HNO
+  composition: {H: 1, N: 1, O: 1}
+  thermo:
+    model: NASA7
+    temperature-ranges: [200.0, 1000.0, 6000.0]
+    data:
+    - [4.5532616, -5.84531688e-03, 1.88853744e-05, -1.76039893e-08, 
+        5.72889621e-12, 1.16315603e+04, 1.66850841]
+    - [3.24129053, 2.72377193e-03, -1.60633296e-07, -9.79134982e-11, 
+        1.17103944e-14, 1.17745744e+04, 7.27913637]
+    note: ATcT3E
+  transport:
+    model: gas
+    geometry: nonlinear
+    well-depth: 116.7
+    diameter: 3.492
+    rotational-relaxation: 1.0
+- name: H2NO
+  composition: {N: 1, H: 2, O: 1}
+  thermo:
+    model: NASA7
+    temperature-ranges: [200.0, 1000.0, 6000.0]
+    data:
+    - [3.93201139, -1.64028165e-04, 1.39161409e-05, -1.62747853e-08, 
+        6.00352834e-12, 6711.78975, 4.58837038]
+    - [3.75555914, 5.16219354e-03, -1.76387387e-06, 2.75052692e-10, 
+        -1.60643143e-14, 6518.26177, 4.30933053]
+    note: RADICAL     T09/09
+  transport:
+    model: gas
+    geometry: nonlinear
+    well-depth: 116.7
+    diameter: 3.492
+    rotational-relaxation: 1.0
+- name: H2NN
+  composition: {N: 2, H: 2}
+  thermo:
+    model: NASA7
+    temperature-ranges: [200.0, 1000.0, 6000.0]
+    data:
+    - [4.53204001, -7.32418578e-03, 3.00803713e-05, -3.04000551e-08, 
+        1.04700639e-11, 3.49580003e+04, 1.51074195]
+    - [3.0590367, 6.18382347e-03, -2.22171165e-06, 3.58539206e-10, 
+        -2.14532905e-14, 3.48530149e+04, 6.69893515]
+    note: Isodiazene   T 9/11
+  transport:
+    model: gas
+    geometry: nonlinear
+    well-depth: 71.4
+    diameter: 3.798
+    rotational-relaxation: 1.0
+- name: N
+  composition: {N: 1}
+  thermo:
+    model: NASA7
+    temperature-ranges: [200.0, 1000.0, 6000.0]
+    data:
+    - [2.49976643, 5.02149594e-07, 1.93091211e-09, -4.94632629e-12, 
+        2.74089506e-15, 5.6076071e+04, 4.19499326]
+    - [2.41604245, 1.74663766e-04, -1.18864562e-07, 3.01850054e-11, 
+        -2.03260159e-15, 5.61051512e+04, 4.64905706]
+    note: ATcT3E
+  transport:
+    model: gas
+    geometry: atom
+    well-depth: 71.4
+    diameter: 3.298
+- name: N2
+  composition: {N: 2}
+  thermo:
+    model: NASA7
+    temperature-ranges: [200.0, 1000.0, 6000.0]
+    data:
+    - [3.53603521, -1.58270944e-04, -4.26984251e-07, 2.3754259e-09, 
+        -1.39708206e-12, -1047.49645, 2.94603724]
+    - [2.9380297, 1.4183803e-03, -5.03281045e-07, 8.07555464e-11, 
+        -4.76064275e-15, -917.18099, 5.95521985]
+    note: ATcT3E
+  transport:
+    model: gas
+    geometry: linear
+    well-depth: 97.53
+    diameter: 3.621
+    polarizability: 1.76
+    rotational-relaxation: 4.0
+- name: NO
+  composition: {N: 1, O: 1}
+  thermo:
+    model: NASA7
+    temperature-ranges: [200.0, 1000.0, 6000.0]
+    data:
+    - [4.0851799, -3.64693188e-03, 8.49607612e-06, -6.62405734e-09, 
+        1.77647373e-12, 9840.61267, 2.83578236]
+    - [3.25487317, 1.19869941e-03, -4.330285e-07, 7.02943336e-11, 
+        -4.09788575e-15, 9906.99836, 6.4039514]
+    note: ATcT3E
+  transport:
+    model: gas
+    geometry: linear
+    well-depth: 97.53
+    diameter: 3.621
+    polarizability: 1.76
+    rotational-relaxation: 4.0
+- name: NO2
+  composition: {N: 1, O: 2}
+  thermo:
+    model: NASA7
+    temperature-ranges: [200.0, 1000.0, 6000.0]
+    data:
+    - [3.78712696, -4.29576834e-04, 1.37383818e-05, -1.7426414e-08, 
+        6.71249644e-12, 2895.00124, 6.96592162]
+    - [4.90482285, 2.14474498e-03, -8.12654059e-07, 1.55511957e-10, 
+        -1.04113963e-14, 2289.58979, -0.233567018]
+    note: ATcT3E
+  transport:
+    model: gas
+    geometry: nonlinear
+    well-depth: 200.0
+    diameter: 3.5
+    rotational-relaxation: 1.0
+- name: N2O
+  composition: {N: 2, O: 1}
+  thermo:
+    model: NASA7
+    temperature-ranges: [200.0, 1000.0, 6000.0]
+    data:
+    - [2.1394229, 0.0121800874, -1.59189415e-05, 1.20920039e-08, 
+        -3.85125915e-12, 8870.08622, 11.2477534]
+    - [4.80641382, 2.65307443e-03, -9.70797397e-07, 1.6259015e-10, 
+        -9.96738154e-15, 8197.98219, -2.10607801]
+    note: ATcT3E
+  transport:
+    model: gas
+    geometry: linear
+    well-depth: 232.4
+    diameter: 3.828
+    rotational-relaxation: 1.0
+- name: NH3
+  composition: {H: 3, N: 1}
+  thermo:
+    model: NASA7
+    temperature-ranges: [200.0, 1000.0, 4000.0]
+    data:
+    - [4.14027871, -3.58489142e-03, 1.89475904e-05, -1.9883397e-08, 
+        7.15267961e-12, -6685.45158, -0.0166754883]
+    - [2.36074311, 6.31850146e-03, -2.28966806e-06, 4.11767411e-10, 
+        -2.90836787e-14, -6415.96473, 8.02154329]
+    note: ATcT3E
+  transport:
+    model: gas
+    geometry: nonlinear
+    well-depth: 481.0
+    diameter: 2.92
+    dipole: 1.47
+    rotational-relaxation: 10.0
+- name: NNH
+  composition: {N: 2, H: 1}
+  thermo:
+    model: NASA7
+    temperature-ranges: [200.0, 1000.0, 6000.0]
+    data:
+    - [4.25474632, -3.45098298e-03, 1.37788699e-05, -1.33263744e-08, 
+        4.41023397e-12, 2.88323793e+04, 3.28551762]
+    - [3.42744423, 3.23295234e-03, -1.17296299e-06, 1.90508356e-10, 
+        -1.14491506e-14, 2.8806774e+04, 6.39209233]
+    note: T 1/06
+  transport:
+    model: gas
+    geometry: nonlinear
+    well-depth: 71.4
+    diameter: 3.798
+    rotational-relaxation: 1.0
+- name: NH2
+  composition: {H: 2, N: 1}
+  thermo:
+    model: NASA7
+    temperature-ranges: [200.0, 1000.0, 3000.0]
+    data:
+    - [4.06463329, -1.10021454e-03, 4.25849068e-06, -2.68223583e-09, 
+        5.89267407e-13, 2.11768668e+04, 0.43985077]
+    - [2.62499312, 3.39841177e-03, -1.01630968e-06, 1.25510796e-10, 
+        -2.66500843e-15, 2.15419104e+04, 7.73537416]
+    note: ATcT3E
+  transport:
+    model: gas
+    geometry: nonlinear
+    well-depth: 80.0
+    diameter: 2.65
+    polarizability: 2.26
+    rotational-relaxation: 4.0
+- name: NH
+  composition: {H: 1, N: 1}
+  thermo:
+    model: NASA7
+    temperature-ranges: [200.0, 1000.0, 6000.0]
+    data:
+    - [3.45887003, 4.93904408e-04, -1.8786256e-06, 2.85542239e-09, 
+        -1.16864671e-12, 4.21088372e+04, 2.00373292]
+    - [2.79498941, 1.29259567e-03, -3.85559094e-07, 6.26027608e-11, 
+        -3.70421913e-15, 4.23408998e+04, 5.68413752]
+    note: ATcT3E
+  transport:
+    model: gas
+    geometry: linear
+    well-depth: 80.0
+    diameter: 2.65
+    rotational-relaxation: 4.0
+- name: N2H2
+  composition: {N: 2, H: 2}
+  thermo:
+    model: NASA7
+    temperature-ranges: [200.0, 1000.0, 6000.0]
+    data:
+    - [4.91066031, -0.010779188, 3.86516489e-05, -3.86501698e-08, 
+        1.34852134e-11, 2.28241901e+04, 0.0910273396]
+    - [1.31115117, 9.00187208e-03, -3.14911824e-06, 4.81449581e-10, 
+        -2.71897891e-14, 2.33863341e+04, 16.4091067]
+    note: equil & transT 9/11
+  transport:
+    model: gas
+    geometry: nonlinear
+    well-depth: 71.4
+    diameter: 3.798
+    rotational-relaxation: 1.0
+- name: N2H3
+  composition: {N: 2, H: 3}
+  thermo:
+    model: NASA7
+    temperature-ranges: [200.0, 1000.0, 6000.0]
+    data:
+    - [3.42125505, 1.3490159e-03, 2.23459071e-05, -2.99727732e-08, 
+        1.2097897e-11, 2.58198956e+04, 7.83176309]
+    - [4.04483566, 7.31130186e-03, -2.47625799e-06, 3.83733021e-10, 
+        -2.23107573e-14, 2.5324142e+04, 2.88423392]
+    note: Rad.       T 7/11
+  transport:
+    model: gas
+    geometry: nonlinear
+    well-depth: 200.0
+    diameter: 3.9
+    rotational-relaxation: 1.0
+- name: N2H4
+  composition: {N: 2, H: 4}
+  thermo:
+    model: NASA7
+    temperature-ranges: [200.0, 1000.0, 6000.0]
+    data:
+    - [3.83472149, -6.49129555e-04, 3.76848463e-05, -5.00709182e-08, 
+        2.03362064e-11, 1.00893925e+04, 5.7527203]
+    - [4.93957357, 8.75017187e-03, -2.99399058e-06, 4.67278418e-10, 
+        -2.73068599e-14, 9282.65548, -2.69439772]
+    note: HYDRAZINE    L 5/90
+  transport:
+    model: gas
+    geometry: nonlinear
+    well-depth: 205.0
+    diameter: 4.23
+    polarizability: 4.26
+    rotational-relaxation: 1.5
+
+reactions:
+- equation: H + O2 <=> O + OH  # Reaction 1
+  rate-constant: {A: 5.0712e+15, b: -0.48596, Ea: 1.61267e+04}
+  note: |
+    Note: Reactions with '*' have different rate constants from mechanism by Han et al. (2020)
+    ///////////////////////////////////////////////////////////////////////////////
+                                    H Submech
+    ///////////////////////////////////////////////////////////////////////////////
+    R1
+- equation: O + H2 <=> H + OH  # Reaction 2
+  rate-constant: {A: 1.2554e+06, b: 2.27039, Ea: 6956.9}
+  note: |
+    T. Varga et al., Development of a joint hydrogen and syngas combustion mechanism based on an optimization approach, Int. J. Chem. Kinet. 48 (2016) 407-422.
+    R2
+- equation: OH + H2 <=> H + H2O  # Reaction 3
+  rate-constant: {A: 4.38e+13, b: 0.0, Ea: 6991.0}
+  note: |
+    T. Varga et al., Development of a joint hydrogen and syngas combustion mechanism based on an optimization approach, Int. J. Chem. Kinet. 48 (2016) 407-422.
+    R3*
+- equation: 2 OH <=> O + H2O  # Reaction 4
+  rate-constant: {A: 8.4999e+04, b: 2.26419, Ea: -1784.8}
+  note: |
+    K. Lam, D.F. Davidson, R.K. Hanson, A shock tube study of H2 + OH -> H2O + H using OH laser absorption, Int. J. Chem. Kinet. 45 (2013) 363-373.
+    R4
+- equation: 2 H + M <=> H2 + M  # Reaction 5
+  type: three-body
+  rate-constant: {A: 4.9806e+18, b: -1.21273, Ea: 612.04}
+  efficiencies: {H2: 2.5, O2: 1.0, H2O: 12.0, HE: 0.83, AR: 1.0}
+  note: |
+    T. Varga et al., Development of a joint hydrogen and syngas combustion mechanism based on an optimization approach, Int. J. Chem. Kinet. 48 (2016) 407-422.
+    R5
+- equation: 2 O + M <=> O2 + M  # Reaction 6
+  type: three-body
+  rate-constant: {A: 6.165e+15, b: -0.5, Ea: 0.0}
+  efficiencies: {H2: 2.5, H2O: 12.0, AR: 0.83, HE: 0.83}
+  note: |
+    T. Varga et al., Development of a joint hydrogen and syngas combustion mechanism based on an optimization approach, Int. J. Chem. Kinet. 48 (2016) 407-422.
+    R6
+- equation: O + H + M <=> OH + M  # Reaction 7
+  type: three-body
+  rate-constant: {A: 4.714e+18, b: -1.0, Ea: 0.0}
+  efficiencies: {H2: 2.5, O2: 1.0, H2O: 12.0, AR: 0.75, HE: 0.75}
+  note: |
+    T. Varga et al., Development of a joint hydrogen and syngas combustion mechanism based on an optimization approach, Int. J. Chem. Kinet. 48 (2016) 407-422.
+    R7
+- equation: H + OH + M <=> H2O + M  # Reaction 8
+  type: three-body
+  rate-constant: {A: 1.4818e+24, b: -2.53792, Ea: 120.79}
+  efficiencies: {H2: 2.5, O2: 1.0, H2O: 12.0, AR: 0.38, HE: 0.44}
+  note: |
+    T. Varga et al., Development of a joint hydrogen and syngas combustion mechanism based on an optimization approach, Int. J. Chem. Kinet. 48 (2016) 407-422.
+    R8
+- equation: H + O2 (+M) <=> HO2 (+M)  # Reaction 9
+  type: falloff
+  low-P-rate-constant: {A: 6.366e+20, b: -1.72, Ea: 524.8}
+  high-P-rate-constant: {A: 4.65084e+12, b: 0.44, Ea: 0.0}
+  Troe: {A: 0.5, T3: 1.0e-30, T1: 1.0e+30}
+  efficiencies: {H2: 2.0, H2O: 14.0, O2: 0.78, AR: 0.67, HE: 0.8}
+  note: |
+    T. Varga et al., Development of a joint hydrogen and syngas combustion mechanism based on an optimization approach, Int. J. Chem. Kinet. 48 (2016) 407-422.
+    R9*
+- equation: H + HO2 <=> H2 + O2  # Reaction 10
+  rate-constant: {A: 1.86e+08, b: 1.72, Ea: -1157.0}
+  note: |
+    B. Mei, X. Zhang, S. Ma, M. Cui, H. Guo, Z. Cao, Y. Li, Experimental and kinetic modeling investigation on the laminar flame propagation of ammonia under oxygen enrichment and elevated pressure conditions, Combustion and Flame 210 (2019) 236-246.
+    R10*
+- equation: HO2 + H <=> 2 OH  # Reaction 11
+  rate-constant: {A: 5.7734e+13, b: 0.0, Ea: 171.02}
+  note: |
+    S.H. Mousavipour, V. Saheb, Theoretical study on the kinetic and mechanism of H + HO2 reaction, Bull. Chem. Soc. Jpn. 80 (2007) 1901-1913.
+    R11
+- equation: HO2 + O <=> OH + O2  # Reaction 12
+  rate-constant: {A: 3.25e+13, b: 0.0, Ea: 0.0}
+  note: |
+    T. Varga et al., Development of a joint hydrogen and syngas combustion mechanism based on an optimization approach, Int. J. Chem. Kinet. 48 (2016) 407-422.
+    R12
+- equation: HO2 + OH <=> H2O + O2  # Reaction 13
+  rate-constant: {A: 9.584e+11, b: 0.42008, Ea: -948.59}
+  note: |
+    T. Varga et al., Development of a joint hydrogen and syngas combustion mechanism based on an optimization approach, Int. J. Chem. Kinet. 48 (2016) 407-422.
+    R13
+- equation: 2 HO2 <=> H2O2 + O2  # Reaction 14
+  duplicate: true
+  rate-constant: {A: 1.3e+11, b: 0.0, Ea: -1630.0}
+  note: |
+    T. Varga et al., Development of a joint hydrogen and syngas combustion mechanism based on an optimization approach, Int. J. Chem. Kinet. 48 (2016) 407-422.
+    R14
+- equation: 2 HO2 <=> H2O2 + O2  # Reaction 15
+  duplicate: true
+  rate-constant: {A: 1.6048e+15, b: 0.0, Ea: 1.5549e+04}
+  note: |
+    T. Varga et al., Development of a joint hydrogen and syngas combustion mechanism based on an optimization approach, Int. J. Chem. Kinet. 48 (2016) 407-422.
+    R15
+- equation: 2 OH (+M) <=> H2O2 (+M)  # Reaction 16
+  type: falloff
+  low-P-rate-constant: {A: 1.9928e+18, b: -1.17797, Ea: -4272.7}
+  high-P-rate-constant: {A: 2.148e+05, b: 2.3219, Ea: -3402.4}
+  Troe: {A: 0.43, T3: 1.0e-30, T1: 1.0e+30, T2: 1.0e+30}
+  efficiencies: {H2O: 5.0, AR: 0.67, O2: 0.8, HE: 0.43, H2O2: 5.13, H2: 
+      2.47}
+  note: |
+    T. Varga et al., Development of a joint hydrogen and syngas combustion mechanism based on an optimization approach, Int. J. Chem. Kinet. 48 (2016) 407-422.
+    R16
+- equation: H2O2 + H <=> H2O + OH  # Reaction 17
+  rate-constant: {A: 2.41e+13, b: 0.0, Ea: 3970.0}
+  note: |
+    T. Varga et al., Development of a joint hydrogen and syngas combustion mechanism based on an optimization approach, Int. J. Chem. Kinet. 48 (2016) 407-422.
+    R17
+- equation: H2O2 + H <=> H2 + HO2  # Reaction 18
+  rate-constant: {A: 9.7543e+19, b: -1.92495, Ea: 9425.1}
+  note: |
+    T. Varga et al., Development of a joint hydrogen and syngas combustion mechanism based on an optimization approach, Int. J. Chem. Kinet. 48 (2016) 407-422.
+    R18
+- equation: H2O2 + O <=> OH + HO2  # Reaction 19
+  rate-constant: {A: 9.55e+06, b: 2.0, Ea: 3970.0}
+  note: |
+    T. Varga et al., Development of a joint hydrogen and syngas combustion mechanism based on an optimization approach, Int. J. Chem. Kinet. 48 (2016) 407-422.
+    R19
+- equation: H2O2 + OH <=> H2O + HO2  # Reaction 20
+  duplicate: true
+  rate-constant: {A: 1.74e+12, b: 0.0, Ea: 318.0}
+  note: |
+    T. Varga et al., Development of a joint hydrogen and syngas combustion mechanism based on an optimization approach, Int. J. Chem. Kinet. 48 (2016) 407-422.
+    R20
+- equation: H2O2 + OH <=> H2O + HO2  # Reaction 21
+  duplicate: true
+  rate-constant: {A: 7.59e+13, b: 0.0, Ea: 7269.0}
+  note: |
+    T. Varga et al., Development of a joint hydrogen and syngas combustion mechanism based on an optimization approach, Int. J. Chem. Kinet. 48 (2016) 407-422.
+    R21
+- equation: NH3 + O <=> NH2 + OH  # Reaction 22
+  rate-constant: {A: 1.63e+07, b: 1.85, Ea: 6457.0}
+  note: |
+    T. Varga et al., Development of a joint hydrogen and syngas combustion mechanism based on an optimization approach, Int. J. Chem. Kinet. 48 (2016) 407-422.
+    ///////////////////////////////////////////////////////////////////////////////
+                                    N Submech
+    ///////////////////////////////////////////////////////////////////////////////
+    R22
+- equation: NH3 + H <=> NH2 + H2  # Reaction 23
+  rate-constant: {A: 1.26e+14, b: 0.0, Ea: 2.15e+04}
+  note: |
+    D. Baulch, C.T. Bowman, C. Cobos, R. Cox, T. Just, J. Kerr, M. Pilling, D. Stocker, J. Troe, W.J.J.o.p. Tsang, c.r. data, Evaluated kinetic data for combustion modeling: supplement II, 34 (2005) 757-1397.
+    R23
+- equation: NH3 + OH <=> NH2 + H2O  # Reaction 24
+  rate-constant: {A: 1.56e+05, b: 2.372, Ea: 118.9}
+  note: |
+    R.K. Hanson, S. Salimian, Survey of rate constants in the N/H/O system, Combustion chemistry, Springer1984, pp. 361-421.
+    R24*
+- equation: NH3 + HO2 <=> NH2 + H2O2  # Reaction 25
+  rate-constant: {A: 3.0e+11, b: 0.0, Ea: 2.2e+04}
+  note: |
+    A. Stagni, C. Cavallotti, S. Arunthanayothin, Y. Song, O. Herbinet, F. Battin-Leclerc, T. Faravelli, An experimental, theoretical and kinetic-modeling study of the gas-phase oxidation of ammonia, React. Chem. Eng. (2020) 5 696-711.
+    R25
+- equation: NH3 + NO <=> NH2 + HNO  # Reaction 26
+  rate-constant: {A: 3.26e+07, b: 1.73, Ea: 5.66e+04}
+  note: |
+    J.A. Miller, C.T. Bowman, Kinetic modeling of the reduction of nitric oxide in combustion products by isocyanic acid, International Journal of Chemical Kinetics 23 (1991) 289-313
+    R26
+- equation: NH3 + NH + M <=> N2H4 + M  # Reaction 27
+  type: three-body
+  rate-constant: {A: 1.09e+15, b: 0.0, Ea: 0.0}
+  note: |
+    A.M. Mebel, E.W.G. Diau, M.C. Lin, K. Morokuma, Theoretical Rate Constants for the NH3 + NOx ? NH2 + HNOx (x = 1, 2) Reactions by ab Initio MO/VTST Calculations, The Journal of Physical Chemistry 100 (1996) 7517-7525.
+    R27
+- equation: NH2 + O <=> NH + OH  # Reaction 28
+  duplicate: true
+  rate-constant: {A: 7.0e+12, b: 0.0, Ea: 0.0}
+  note: |
+    C. Zetzsch, F. Stuhl, Formation and Fate of NH(X3S-) in the Pulsed Vacuum UV Photolysis of NH3, Berichte der Bunsengesellschaft f r physikalische Chemie 85 (1981) 564-568
+    R28
+- equation: NH2 + O <=> NH + OH  # Reaction 29
+  duplicate: true
+  rate-constant: {A: 0.86, b: 4.01, Ea: 1673.0}
+  note: |
+    P. Glarborg, J.A. Miller, B. Ruscic, S.J. Klippenstein, Modeling nitrogen chemistry in combustion, Progress in Energy and Combustion Science 67 (2018) 31-68
+    R29
+- equation: HNO + H <=> NH2 + O  # Reaction 30
+  rate-constant: {A: 3.5e+15, b: -0.3, Ea: 2.92e+04}
+  note: |
+    P. Glarborg, J.A. Miller, B. Ruscic, S.J. Klippenstein, Modeling nitrogen chemistry in combustion, Progress in Energy and Combustion Science 67 (2018) 31-68
+    R30
+- equation: NH + H2 <=> NH2 + H  # Reaction 31
+  rate-constant: {A: 2.1e+13, b: 0.0, Ea: 1.5417e+04}
+  note: |
+    N. Cohen, K.J.J.o.p. Westberg, c.r. data, Chemical Kinetic Data Sheets for High-Temperature Reactions. Part II, 20 (1991) 1211-1311
+    R31
+- equation: NH2 + OH <=> NH + H2O  # Reaction 32
+  rate-constant: {A: 9.6e+06, b: 1.97, Ea: 669.0}
+  note: |
+    A. Fontijn, S.M. Shamsuddin, D. Crammond, P. Marshall, W.R. Anderson, Kinetics of the NH reaction with H2 and reassessment of HNO formation from NH + CO2, H2O, Combustion and Flame 145 (2006) 543-551
+    R32
+- equation: NH2 + O2 <=> H2NO + O  # Reaction 33
+  rate-constant: {A: 2.6e+11, b: 0.4872, Ea: 2.905e+04}
+  note: |
+    S.H. Mousavipour, F. Pirhadi, A. HabibAgahi, A Theoretical Investigation on the Kinetics and Mechanism of the Reaction of Amidogen with Hydroxyl Radical, The Journal of Physical Chemistry A 113 (2009) 12961-12971.
+    R33
+- equation: NH2 + O2 <=> HNO + OH  # Reaction 34
+  rate-constant: {A: 0.029, b: 3.764, Ea: 1.8185e+04}
+  note: |
+    S.J. Klippenstein, L.B. Harding, P. Glarborg, J.A. Miller, The role of NNH in NO formation and control, Combustion and Flame 158 (2011) 774-789.
+    R34
+- equation: NH2 + H2NO <=> HNO + NH3  # Reaction 35
+  rate-constant: {A: 3.0e+12, b: 0.0, Ea: 1000.0}
+  note: |
+    S.J. Klippenstein, L.B. Harding, P. Glarborg, J.A. Miller, The role of NNH in NO formation and control, Combustion and Flame 158 (2011) 774-789.
+    R35
+- equation: NH2 + NO2 <=> N2O + H2O  # Reaction 36
+  rate-constant: {A: 1.6e+16, b: -1.44, Ea: 268.0}
+  note: |
+    P. Glarborg, M.U. Alzueta, K. Dam-Johansen, J.A. Miller, Kinetic Modeling of Hydrocarbon/Nitric Oxide Interactions in a Flow Reactor, Combustion and Flame 115 (1998) 1-27
+    R36
+- equation: NH2 + NO2 <=> H2NO + NO  # Reaction 37
+  rate-constant: {A: 6.5e+16, b: -1.44, Ea: 268.0}
+  note: |
+    J. Park, M.C. Lin, A Mass Spectrometric Study of the NH2 + NO2 Reaction, The Journal of Physical Chemistry A 101 (1997) 2643-2647
+    R37
+- equation: NH2 + NO <=> N2 + H2O  # Reaction 38
+  rate-constant: {A: 2.7e+17, b: -1.85, Ea: 0.0}
+  note: |
+    J. Park, M.C. Lin, A Mass Spectrometric Study of the NH2 + NO2 Reaction, The Journal of Physical Chemistry A 101 (1997) 2643-2647
+    R38*
+- equation: NH2 + NO <=> NNH + OH  # Reaction 39
+  rate-constant: {A: 1.43e+07, b: 1.4, Ea: -1777.0}
+  note: |
+    W. Hack, H. Schacke, M. Schr  ter, H.Gg. Wagner, Reaction rates of NH2-radicals with NO, NO2, C2H2, C2H4 and other hydrocarbons, Symposium (International) on Combustion 17 (1979) 505-513
+    R39*
+- equation: H2NO + H <=> NH2 + OH  # Reaction 40
+  rate-constant: {A: 5.0e+13, b: 0.0, Ea: 0.0}
+  note: |
+    J. Park, M.C. Lin, Product branching ratios in the NH2 + NO reaction: A re-evaluation, J. Phys. Chem. A 103 (1999) 8906-8907.
+    R40
+- equation: NH2 + HO2 <=> H2NO + OH  # Reaction 41
+  rate-constant: {A: 2.5e+17, b: -1.28, Ea: 1166.0}
+  note: |
+    P. Glarborg, M.U. Alzueta, K. Dam-Johansen, J.A. Miller, Kinetic Modeling of Hydrocarbon/Nitric Oxide Interactions in a Flow Reactor, Combustion and Flame 115 (1998) 1-27
+    R41
+- equation: NH2 + HO2 <=> NH3 + O2  # Reaction 42
+  rate-constant: {A: 4.5e+13, b: 0.0, Ea: 0.0}
+  note: |
+    R. Sumathi, S.D. Peyerimhoff, A quantum statistical analysis of the rate constant for the HO2 + NH2 reaction, Chemical Physics Letters 263 (1996) 742-748.
+    R42
+- equation: NH2 + NH <=> NH3 + N  # Reaction 43
+  rate-constant: {A: 9600.0, b: 2.46, Ea: 107.0}
+  note: |
+    O. Sarkisov, S. Cheskis, V. Nadtochenko, E. Sviridenkov, V. Vedeneev, Spectroscopic Study of Elementary Reactions Involving Oxomethyl, Amidogen, and Nitrosyl Hydride, Arch. Comb 4 (1984) 111-120.
+    R43
+- equation: NH2 + NH <=> N2H3  # Reaction 44
+  rate-constant: {A: 7.0e+13, b: 0.0, Ea: 0.0}
+  note: |
+    S.J. Klippenstein, L.B. Harding, B. Ruscic, R. Sivaramakrishnan, N.K. Srinivasan, M.C. Su, J.V. Michael, Thermal Decomposition of NH2OH and Subsequent Reactions: Ab Initio Transition State Theory and Reflected Shock Tube Experiments, The Journal of Physical Chemistry A 113 (2009) 10241-10259
+    R44
+- equation: NH2 + NH <=> N2H2 + H  # Reaction 45
+  rate-constant: {A: 4.3e+14, b: -0.272, Ea: -77.0}
+  note: |
+    P.B. Pagsberg, J. Eriksen, H. Christensen, Pulse radiolysis of gaseous ammonia-oxygen mixtures, Journal of Physical Chemistry 83 (1979) 582-590
+    R45
+- equation: NH2 + NH2 <=> NH3 + NH  # Reaction 46
+  rate-constant: {A: 5.6, b: 3.53, Ea: 552.0}
+  note: |
+    S.J. Klippenstein, L.B. Harding, B. Ruscic, R. Sivaramakrishnan, N.K. Srinivasan, M.C. Su, J.V. Michael, Thermal Decomposition of NH2OH and Subsequent Reactions: Ab Initio Transition State Theory and Reflected Shock Tube Experiments, The Journal of Physical Chemistry A 113 (2009) 10241-10259
+    R46
+- equation: NH2 + NH2 (+M) <=> N2H4 (+M)  # Reaction 47
+  type: falloff
+  low-P-rate-constant: {A: 1.6e+34, b: -5.49, Ea: 1987.0}
+  high-P-rate-constant: {A: 5.6e+14, b: -0.414, Ea: 66.0}
+  Troe: {A: 0.31, T3: 1.0e-30, T1: 1.0e+30, T2: 1.0e+30}
+  note: |
+    S.J. Klippenstein, L.B. Harding, B. Ruscic, R. Sivaramakrishnan, N.K. Srinivasan, M.C. Su, J.V. Michael, Thermal Decomposition of NH2OH and Subsequent Reactions: Ab Initio Transition State Theory and Reflected Shock Tube Experiments, The Journal of Physical Chemistry A 113 (2009) 10241-10259
+    R47
+- equation: NH2 + NH2 <=> N2H3 + H  # Reaction 48
+  rate-constant: {A: 1.2e+12, b: -0.03, Ea: 1.0084e+04}
+  note: |
+    S.J. Klippenstein, L.B. Harding, B. Ruscic, R. Sivaramakrishnan, N.K. Srinivasan, M.C. Su, J.V. Michael, Thermal Decomposition of NH2OH and Subsequent Reactions: Ab Initio Transition State Theory and Reflected Shock Tube Experiments, The Journal of Physical Chemistry A 113 (2009) 10241-10259
+    R48
+- equation: NH2 + NH2 <=> N2H2 + H2  # Reaction 49
+  rate-constant: {A: 7.83e+11, b: 0.0, Ea: 0.0}
+  note: |
+    A.M. Dean, J.W. Bozzelli, Combustion chemistry of nitrogen, Gas-phase combustion chemistry, Springer2000, pp. 125-341.
+    R49*
+- equation: NH2 + NH2 <=> H2NN + H2  # Reaction 50
+  rate-constant: {A: 7.2e+04, b: 1.88, Ea: 8802.0}
+  note: |
+    N. Stothard, R. Humpfer, H. Grotheer, The multichannel reaction NH2 + NH2 at ambient temperature and low pressures, Chem. Phys. Letters 240 (1995) 474-480.
+    R50
+- equation: NH2 + N <=> N2 + H + H  # Reaction 51
+  rate-constant: {A: 5.0e+13, b: 0.0, Ea: 0.0}
+  note: |
+    S.J. Klippenstein, L.B. Harding, B. Ruscic, R. Sivaramakrishnan, N.K. Srinivasan, M.C. Su, J.V. Michael, Thermal Decomposition of NH2OH and Subsequent Reactions: Ab Initio Transition State Theory and Reflected Shock Tube Experiments, The Journal of Physical Chemistry A 113 (2009) 10241-10259
+    R51*
+- equation: NH + H <=> N + H2  # Reaction 52
+  rate-constant: {A: 3.01e+13, b: 0.0, Ea: 0.0}
+  note: |
+    K.P. Shrestha, L. Seidel, T. Zeuch, F. Mauss, Detailed kinetic mechanism for the oxidation of ammonia including the formation and reduction of nitrogen oxides, Energy & Fuels 32 (2018) 10202-10217.
+    R52
+- equation: NH + N <=> N2 + H  # Reaction 53
+  rate-constant: {A: 9.0e+11, b: 0.5, Ea: 0.0}
+  note: |
+    C. Morley. The mechanism of NO formation from nitrogen compounds in hydrogen flames studied by laser fluorescence. In: editor^editors. Symposium (International) on Combustion; 1981: Elsevier. p. 23-32.
+    R53
+- equation: NH + OH <=> N + H2O  # Reaction 54
+  rate-constant: {A: 2.0e+09, b: 1.2, Ea: 0.0}
+  note: |
+    A.A. Konnov, Implementation of the NCN pathway of prompt-NO formation in the detailed reaction mechanism, Combustion and Flame 156 (2009) 2093-2105
+    R54
+- equation: NH + OH <=> HNO + H  # Reaction 55
+  rate-constant: {A: 3.2e+14, b: -0.376, Ea: -46.0}
+  note: |
+    N. Cohen, K.J.J.o.p. Westberg, c.r. data, Chemical Kinetic Data Sheets for High-Temperature Reactions. Part II, 20 (1991) 1211-1311
+    R55
+- equation: NH + O2 <=> HNO + O  # Reaction 56
+  rate-constant: {A: 3.92e+13, b: 0.0, Ea: 1.7885e+04}
+  note: |
+    S.J. Klippenstein, L.B. Harding, B. Ruscic, R. Sivaramakrishnan, N.K. Srinivasan, M.C. Su, J.V. Michael, Thermal Decomposition of NH2OH and Subsequent Reactions: Ab Initio Transition State Theory and Reflected Shock Tube Experiments, The Journal of Physical Chemistry A 113 (2009) 10241-10259.
+    R56*
+- equation: NH + O2 <=> NO + OH  # Reaction 57
+  rate-constant: {A: 2.014e+16, b: -1.38, Ea: 5672.0}
+  note: |
+    D.L. Baulch, C.J. Cobos, R.A Cox, P. Frank, G. Hayman, Th. Just, J.A. Kerr, T. Murrells, M.J. Pilling, J. Troe, R.W. Walker, J. Warnatz, Evaluated kinetic data for combustion modeling. Supplement I, J. Phys. Chem. Ref. Data 23 (1994) 847-1029.
+    R57
+- equation: NH + NO <=> N2O + H  # Reaction 58
+  rate-constant: {A: 1.8e+14, b: -0.351, Ea: -244.0}
+  note: |
+    M.R. Talipov, S.L. Khursan, R.L. Safiullin, RRKM and Ab Initio Investigation of the NH (X) Oxidation by Dioxygen, The Journal of Physical Chemistry A 113 (2009) 6468-6476
+    R58
+- equation: NH + NO <=> N2 + OH  # Reaction 59
+  rate-constant: {A: 2.7e+12, b: -0.0721, Ea: -512.0}
+  note: |
+    R59
+- equation: NH + NH <=> NH2 + N  # Reaction 60
+  rate-constant: {A: 0.57, b: 3.88, Ea: 342.0}
+  note: |
+    S.J. Klippenstein, L.B. Harding, P. Glarborg, J.A. Miller, The role of NNH in NO formation and control, Combustion and Flame 158 (2011) 774-789
+    R60
+- equation: NH + NH <=> N2H2  # Reaction 61
+  rate-constant: {A: 6.26e+13, b: -0.036, Ea: -161.0}
+  note: |
+    S.J. Klippenstein, L.B. Harding, B. Ruscic, R. Sivaramakrishnan, N.K. Srinivasan, M.C. Su, J.V. Michael, Thermal Decomposition of NH2OH and Subsequent Reactions: Ab Initio Transition State Theory and Reflected Shock Tube Experiments, The Journal of Physical Chemistry A 113 (2009) 10241-10259.
+    R61
+- equation: N + O + M <=> NO + M  # Reaction 62
+  type: three-body
+  rate-constant: {A: 7.6e+14, b: -0.1, Ea: -1770.0}
+  efficiencies: {H2O: 16.25}
+  note: |
+    S.J. Klippenstein, L.B. Harding, B. Ruscic, R. Sivaramakrishnan, N.K. Srinivasan, M.C. Su, J.V. Michael, Thermal Decomposition of NH2OH and Subsequent Reactions: Ab Initio Transition State Theory and Reflected Shock Tube Experiments, The Journal of Physical Chemistry A 113 (2009) 10241-10259.
+    R62
+- equation: N + NO <=> N2 + O  # Reaction 63
+  rate-constant: {A: 2.1e+13, b: 0.0, Ea: 0.0}
+  note: |
+    Y. Zhang, O. Mathieu, E.L. Petersen, G. Bourque, H.J. Curran, Assessing the predictions of a NOx kinetic mechanism on recent hydrogen and syngas experimental data, Combustion and Flame 182 (2017) 122-141
+    R63
+- equation: N + O2 <=> NO + O  # Reaction 64
+  rate-constant: {A: 5.9e+09, b: 1.0, Ea: 6199.0}
+  note: |
+    D. Baulch, C.T. Bowman, C. Cobos, R. Cox, T. Just, J. Kerr, M. Pilling, D. Stocker, J. Troe, W. Tsang, Evaluated kinetic data for combustion modeling: supplement II, Journal of physical and chemical reference data 34 (2005) 757-1397.
+    R64
+- equation: N2 + M <=> N + N + M  # Reaction 65
+  type: three-body
+  rate-constant: {A: 1.89e+18, b: -0.85, Ea: 2.2495e+05}
+  efficiencies: {H2O: 16.25}
+  note: |
+    D. Baulch, C.T. Bowman, C. Cobos, R. Cox, T. Just, J. Kerr, M. Pilling, D. Stocker, J. Troe, W. Tsang, Evaluated kinetic data for combustion modeling: supplement II, Journal of physical and chemical reference data 34 (2005) 757-1397.
+    R65
+- equation: NNH <=> N2 + H  # Reaction 66
+  rate-constant: {A: 1.0e+09, b: 0.0, Ea: 0.0}
+  note: |
+    Y. Zhang, O. Mathieu, E.L. Petersen, G. Bourque, H.J. Curran, Assessing the predictions of a NOx kinetic mechanism on recent hydrogen and syngas experimental data, Combustion and Flame 182 (2017) 122-141.
+    R66
+- equation: NNH + O <=> N2 + OH  # Reaction 67
+  rate-constant: {A: 1.2e+13, b: 0.145, Ea: -217.0}
+  note: |
+    S.J. Klippenstein, L.B. Harding, P. Glarborg, J.A. Miller, The role of NNH in NO formation and control, Combustion and Flame 158 (2011) 774-789
+    R67
+- equation: NNH + O <=> N2O + H  # Reaction 68
+  rate-constant: {A: 1.0e+14, b: 0.0, Ea: 0.0}
+  note: |
+    S.J. Klippenstein, L.B. Harding, P. Glarborg, J.A. Miller, The role of NNH in NO formation and control, Combustion and Flame 158 (2011) 774-789
+    R68
+- equation: NNH + O <=> NH + NO  # Reaction 69
+  rate-constant: {A: 3.3e+14, b: -0.23, Ea: -1013.0}
+  note: |
+    P. Glarborg, M.U. Alzueta, K. Dam-Johansen, J.A. Miller, Kinetic Modeling of Hydrocarbon/Nitric Oxide Interactions in a Flow Reactor, Combustion and Flame 115 (1998) 1-27.
+    R69
+- equation: NNH + OH <=> N2 + H2O  # Reaction 70
+  rate-constant: {A: 5.0e+13, b: 0.0, Ea: 0.0}
+  note: |
+    J.W. Bozzelli, A.M. Dean, O+ NNH: A possible new route for NOx formation in flames, International journal of chemical kinetics 27 (1995) 1097-1109
+    R70
+- equation: NNH + H <=> N2 + H2  # Reaction 71
+  rate-constant: {A: 1.0e+12, b: 0.0, Ea: 0.0}
+  note: |
+    P. Glarborg, M.U. Alzueta, K. Dam-Johansen, J.A. Miller, Kinetic Modeling of Hydrocarbon/Nitric Oxide Interactions in a Flow Reactor, Combustion and Flame 115 (1998) 1-27.
+    R71
+- equation: NNH + O2 <=> N2 + HO2  # Reaction 72
+  rate-constant: {A: 1.2e+12, b: -0.34, Ea: 149.0}
+  note: |
+    J.W. Bozzelli, A.M. Dean, O+ NNH: A possible new route for NOx formation in flames, International journal of chemical kinetics 27 (1995) 1097-1109
+    R72*
+- equation: NNH + O2 <=> N2 + H + O2  # Reaction 73
+  rate-constant: {A: 5.0e+13, b: 0.0, Ea: 0.0}
+  note: |
+    J.W. Bozzelli, A.M. Dean, O+ NNH: A possible new route for NOx formation in flames, International journal of chemical kinetics 27 (1995) 1097-1109
+    R73
+- equation: NNH + NO <=> N2 + HNO  # Reaction 74
+  rate-constant: {A: 5.0e+13, b: 0.0, Ea: 0.0}
+  note: |
+    P. Glarborg, M.U. Alzueta, K. Dam-Johansen, J.A. Miller, Kinetic Modeling of Hydrocarbon/Nitric Oxide Interactions in a Flow Reactor, Combustion and Flame 115 (1998) 1-27.
+    R74
+- equation: N2H2 + O <=> NNH + OH  # Reaction 75
+  rate-constant: {A: 3.3e+08, b: 1.5, Ea: 497.0}
+  note: |
+    P. Glarborg, M.U. Alzueta, K. Dam-Johansen, J.A. Miller, Kinetic Modeling of Hydrocarbon/Nitric Oxide Interactions in a Flow Reactor, Combustion and Flame 115 (1998) 1-27.
+    R75
+- equation: N2H2 + H <=> NNH + H2  # Reaction 76
+  rate-constant: {A: 1.1e+14, b: 0.0, Ea: 3128.0}
+  note: |
+    A.M. Dean, J.W. Bozzelli, Combustion chemistry of nitrogen, Gas-phase combustion chemistry, Springer2000, pp. 125-341
+    R76
+- equation: N2H2 + OH <=> NNH + H2O  # Reaction 77
+  rate-constant: {A: 59.0, b: 3.4, Ea: -1363.0}
+  note: |
+    P. Glarborg, J.A. Miller, B. Ruscic, S.J. Klippenstein, Modeling nitrogen chemistry in combustion, Progress in Energy and Combustion Science 67 (2018) 31-68
+    R77
+- equation: N2H2 + NH <=> NNH + NH2  # Reaction 78
+  rate-constant: {A: 2.4e+06, b: 2.0, Ea: -1192.0}
+  note: |
+    D.P. Linder, X. Duan, M. Page, Thermal rate constants for R+ N2H2? RH+ N2H (R= H, OH, NH2) determined from multireference configuration interaction and variational transition state theory calculations, The Journal of chemical physics 104 (1996) 6298-6307
+    R78
+- equation: N2H2 + NO <=> N2O + NH2  # Reaction 79
+  rate-constant: {A: 4.0e+12, b: 0.0, Ea: 1.1922e+04}
+  note: |
+    A.M. Dean, J.W. Bozzelli, Combustion chemistry of nitrogen, Gas-phase combustion chemistry, Springer2000, pp. 125-341
+    R79
+- equation: N2H2 + NH2 <=> NNH + NH3  # Reaction 80
+  rate-constant: {A: 0.088, b: 4.05, Ea: -1610.0}
+  note: |
+    A.M. Dean, J.W. Bozzelli, Combustion chemistry of nitrogen, Gas-phase combustion chemistry, Springer2000, pp. 125-341
+    R80
+- equation: H2NN + H <=> NNH + H2  # Reaction 81
+  rate-constant: {A: 4.8e+08, b: 1.5, Ea: -894.0}
+  note: |
+    D.P. Linder, X. Duan, M. Page, Thermal rate constants for R+ N2H2? RH+ N2H (R= H, OH, NH2) determined from multireference configuration interaction and variational transition state theory calculations, The Journal of chemical physics 104 (1996) 6298-6307
+    R81
+- equation: H2NN + H <=> N2H2 + H  # Reaction 82
+  rate-constant: {A: 7.0e+13, b: 0.0, Ea: 0.0}
+  note: |
+    A.M. Dean, J.W. Bozzelli, Combustion chemistry of nitrogen, Gas-phase combustion chemistry, Springer2000, pp. 125-341
+    R82
+- equation: H2NN + O <=> NNH + OH  # Reaction 83
+  rate-constant: {A: 3.3e+08, b: 1.5, Ea: -894.0}
+  note: |
+    A.M. Dean, J.W. Bozzelli, Combustion chemistry of nitrogen, Gas-phase combustion chemistry, Springer2000, pp. 125-341
+    R83
+- equation: H2NN + O <=> NH2 + NO  # Reaction 84
+  rate-constant: {A: 7.0e+13, b: 0.0, Ea: 0.0}
+  note: |
+    A.M. Dean, J.W. Bozzelli, Combustion chemistry of nitrogen, Gas-phase combustion chemistry, Springer2000, pp. 125-341
+    R84
+- equation: H2NN + OH <=> NNH + H2O  # Reaction 85
+  rate-constant: {A: 2.4e+06, b: 2.0, Ea: -1192.0}
+  note: |
+    A.M. Dean, J.W. Bozzelli, Combustion chemistry of nitrogen, Gas-phase combustion chemistry, Springer2000, pp. 125-341
+    R85
+- equation: H2NN + HO2 <=> NNH + H2O2  # Reaction 86
+  rate-constant: {A: 2.9e+04, b: 2.69, Ea: -1600.0}
+  note: |
+    A.M. Dean, J.W. Bozzelli, Combustion chemistry of nitrogen, Gas-phase combustion chemistry, Springer2000, pp. 125-341
+    R86
+- equation: H2NN + O2 <=> NH2 + NO2  # Reaction 87
+  rate-constant: {A: 1.5e+12, b: 0.0, Ea: 5961.0}
+  note: |
+    A.M. Dean, J.W. Bozzelli, Combustion chemistry of nitrogen, Gas-phase combustion chemistry, Springer2000, pp. 125-341
+    R87
+- equation: H2NN + NH2 <=> NNH + NH3  # Reaction 88
+  rate-constant: {A: 1.8e+06, b: 1.94, Ea: -1152.0}
+  note: |
+    A.M. Dean, J.W. Bozzelli, Combustion chemistry of nitrogen, Gas-phase combustion chemistry, Springer2000, pp. 125-341
+    R88
+- equation: N2H3 + O <=> N2H2 + OH  # Reaction 89
+  rate-constant: {A: 1.7e+08, b: 1.5, Ea: -646.0}
+  note: |
+    A.M. Dean, J.W. Bozzelli, Combustion chemistry of nitrogen, Gas-phase combustion chemistry, Springer2000, pp. 125-341
+    R89
+- equation: N2H3 + O <=> NH2 + HNO  # Reaction 90
+  rate-constant: {A: 3.0e+13, b: 0.0, Ea: 0.0}
+  note: |
+    A.M. Dean, J.W. Bozzelli, Combustion chemistry of nitrogen, Gas-phase combustion chemistry, Springer2000, pp. 125-341
+    R90
+- equation: N2H3 + H <=> N2H2 + H2  # Reaction 91
+  rate-constant: {A: 2.4e+08, b: 1.5, Ea: -10.0}
+  note: |
+    A.M. Dean, J.W. Bozzelli, Combustion chemistry of nitrogen, Gas-phase combustion chemistry, Springer2000, pp. 125-341
+    R91
+- equation: N2H3 + OH <=> N2H2 + H2O  # Reaction 92
+  rate-constant: {A: 1.2e+06, b: 2.0, Ea: -1192.0}
+  note: |
+    A.M. Dean, J.W. Bozzelli, Combustion chemistry of nitrogen, Gas-phase combustion chemistry, Springer2000, pp. 125-341
+    R92
+- equation: N2H3 + NH2 <=> N2H2 + NH3  # Reaction 93
+  rate-constant: {A: 9.2e+05, b: 1.94, Ea: -1152.0}
+  note: |
+    A.M. Dean, J.W. Bozzelli, Combustion chemistry of nitrogen, Gas-phase combustion chemistry, Springer2000, pp. 125-341
+    R93
+- equation: N2H4 + H <=> N2H3 + H2  # Reaction 94
+  rate-constant: {A: 4.5e+07, b: 1.8, Ea: 2613.0}
+  note: |
+    A.M. Dean, J.W. Bozzelli, Combustion chemistry of nitrogen, Gas-phase combustion chemistry, Springer2000, pp. 125-341
+    R94
+- equation: N2H4 + OH <=> N2H3 + H2O  # Reaction 95
+  rate-constant: {A: 4.0e+13, b: 0.0, Ea: 0.0}
+  note: |
+    D.-Y. Hwang, A.M. Mebel, Reaction mechanism of N2/H2 conversion to NH3: a theoretical study, The Journal of Physical Chemistry A 107 (2003) 2865-2874
+    R95
+- equation: HNO + O <=> NO + OH  # Reaction 96
+  rate-constant: {A: 3.61e+13, b: 0.0, Ea: 0.0}
+  note: |
+    P. Glarborg, K. Dam-Johansen, J.A. Miller, R.J. Kee, M.E. Coltrin, Modeling the thermal DENOx process in flow reactors. Surface effects and nitrous oxide formation, International Journal of Chemical Kinetics 26 (1994) 421-436.
+    R96
+- equation: HNO + H <=> NO + H2  # Reaction 97
+  rate-constant: {A: 4.47e+11, b: 0.72, Ea: 650.0}
+  note: |
+    W. Tsang, J.T. Herron, Chemical Kinetic Data Base for Propellant Combustion I. Reactions Involving NO, NO2, HNO, HNO2, HCN and N2O, Journal of Physical and Chemical Reference Data 20 (1991) 609-663.
+    R97
+- equation: HNO + OH <=> NO + H2O  # Reaction 98
+  rate-constant: {A: 1.2e+09, b: 1.189, Ea: 334.0}
+  note: |
+    M.R. Soto, M. Page, Ab initio variational transition-state-theory reaction-rate calculations for the gas-phase reaction H+ HNO? H2+ NO, The Journal of chemical physics 97 (1992) 7287-7296
+    R98*
+- equation: HNO + N <=> NO + NH  # Reaction 99
+  rate-constant: {A: 1.0e+13, b: 0.0, Ea: 1990.0}
+  note: |
+    H.M.T. Nguyen, S. Zhang, J. Peeters, T.N. Truong, M.T. Nguyen, Direct ab initio dynamics studies of the reactions of HNO with H and OH radicals, Chem. Phys. Letters 388 (2004) 94-99.
+    R99
+- equation: NO + O (+M) <=> NO2 (+M)  # Reaction 100
+  type: falloff
+  low-P-rate-constant: {A: 9.44e+24, b: -2.87, Ea: 1551.0}
+  high-P-rate-constant: {A: 1.3e+15, b: -0.75, Ea: 0.0}
+  Troe: {A: 0.962, T3: 10.0, T1: 7962.0}
+  efficiencies: {AR: 0.6, NO2: 6.2, NO: 1.8, O2: 0.8, N2O: 4.4, H2O: 
+      10.0}
+  note: |
+    R. Sivaramakrishnan, K. Brezinsky, G. Dayma, P. Dagaut, High pressure effects on the mutual sensitization of the oxidation of NO and CH4 C2H6 blends, Physical Chemistry Chemical Physics 9 (2007) 4230-4244
+    R100
+- equation: NO + H <=> N + OH  # Reaction 101
+  rate-constant: {A: 2.17e+14, b: 0.0, Ea: 4.95e+04}
+  note: |
+    Y. Zhang, O. Mathieu, E.L. Petersen, G. Bourque, H.J. Curran, Assessing the predictions of a NOx kinetic mechanism on recent hydrogen and syngas experimental data, Combustion and Flame 182 (2017) 122-141
+    R101
+- equation: NO + H <=> NH + O  # Reaction 102
+  rate-constant: {A: 9.9e+14, b: -0.1, Ea: 6.99e+04}
+  note: |
+    D. Baulch, C. Cobos, R. Cox, P. Frank, G. Hayman, T. Just, J. Kerr, T. Murrells, M. Pilling, J. Troe, Evaluated kinetic data for combustion modeling. Supplement I, Journal of Physical and Chemical Reference Data 23 (1994) 847-848
+    R102
+- equation: NO + H + M <=> HNO + M  # Reaction 103
+  type: three-body
+  rate-constant: {A: 3.0e+20, b: -1.75, Ea: 0.0}
+  efficiencies: {H2O: 4.1, H2: 1.25}
+  note: |
+    N. Cohen, K.J.J.o.p. Westberg, c.r. data, Chemical Kinetic Data Sheets for High-Temperature Reactions. Part II, 20 (1991) 1211-1311
+    R103
+- equation: NO + HO2 <=> NO2 + OH  # Reaction 104
+  rate-constant: {A: 2.1e+12, b: 0.0, Ea: -497.0}
+  note: |
+    R. Sivaramakrishnan, K. Brezinsky, G. Dayma, P. Dagaut, High pressure effects on the mutual sensitization of the oxidation of NO and CH4 C2H6 blends, Physical Chemistry Chemical Physics 9 (2007) 4230-4244
+    R104
+- equation: N2O + H <=> N2 + OH  # Reaction 105
+  rate-constant: {A: 6.4e+07, b: 1.835, Ea: 1.3492e+04}
+  note: |
+    D. Baulch, C.T. Bowman, C. Cobos, R. Cox, T. Just, J. Kerr, M. Pilling, D. Stocker, J. Troe, W.J.J.o.p. Tsang, c.r. data, Evaluated kinetic data for combustion modeling: supplement II, 34 (2005) 757-1397
+    R105
+- equation: N2O (+M) <=> N2 + O (+M)  # Reaction 106
+  type: falloff
+  low-P-rate-constant: {A: 7.2e+14, b: 0.0, Ea: 5.741e+04}
+  high-P-rate-constant: {A: 1.69e+11, b: 0.0, Ea: 5.7653e+04}
+  efficiencies: {O2: 1.4, N2: 1.7, H2O: 12.0, NO: 3.0, N2O: 3.5}
+  note: |
+    S.J. Klippenstein, L.B. Harding, P. Glarborg, J.A. Miller, The role of NNH in NO formation and control, Combustion and Flame 158 (2011) 774-789
+    R106
+    \AUTHOR: YJZ !\REF: Zuev and Starikovskii, Khim. Fiz, 1991, 10: 52-63 !\OMMENT:
+- equation: NO2 + H <=> NO + OH  # Reaction 107
+  rate-constant: {A: 1.507e+14, b: 0.0, Ea: 362.0}
+  note: |
+    \AUTHOR: YJZ !\REF:Javoy et al., IJCK, 2009, 41(5): 357-375 !\OMMENT:
+    Zhang
+    R107
+- equation: NO2 + O <=> NO + O2  # Reaction 108
+  rate-constant: {A: 5.86e+12, b: 0.0, Ea: -238.0}
+  note: |2
+     Y. Zhang, O. Mathieu, E.L. Petersen, G. Bourque, H.J. Curran, Assessing the predictions of a NOx kinetic mechanism on recent hydrogen and syngas experimental data, Combustion and Flame 182 (2017) 122-141
+    R108
+- equation: HNO + O2 <=> NO + HO2  # Reaction 109
+  rate-constant: {A: 2.0e+13, b: 0.0, Ea: 1.5898e+04}
+  note: |2
+     Y. Zhang, O. Mathieu, E.L. Petersen, G. Bourque, H.J. Curran, Assessing the predictions of a NOx kinetic mechanism on recent hydrogen and syngas experimental data, Combustion and Flame 182 (2017) 122-141
+    ///////////////////////////////////////////////////////////////////////////////
+                                    New Additions
+    ///////////////////////////////////////////////////////////////////////////////
+     The reactions below were added in the present study
+    R109
+- equation: NH2 + H (+M) <=> NH3 (+M)  # Reaction 110
+  type: falloff
+  low-P-rate-constant: {A: 3.6e+22, b: -1.76, Ea: 0.0}
+  high-P-rate-constant: {A: 1.6e+14, b: 0.0, Ea: 0.0}
+  Troe: {A: 0.5, T3: 1.0e-30, T1: 1.0e+30, T2: 1.0e+30}
+  note: |2
+     Dean AM Bozzelli JW (Gardiner WC) Gas Phase Combustion Chemistry, Springer 2000
+    R110
+- equation: H + O + M <=> OHEX + M  # Reaction 111
+  type: three-body
+  rate-constant: {A: 1.5e+13, b: 0.0, Ea: 5975.0}
+  efficiencies: {H2: 1.0, H2O: 6.5, O2: 0.4, N2: 0.4, AR: 0.35}
+  note: |
+    G. Altinay, R.G. Macdonald, Determination of the rate constant for the NH2(X2B1) + NH2 (X2B1) and Nh2(X2B1) + H recombination reactions in N2 as a function of temperature and pressure, J. Phys. Chem. A 119 (2015) 7593-7610.
+    ///////////////////////////////////////////////////////////////////////////////
+                                    OHEX Submech
+    ///////////////////////////////////////////////////////////////////////////////
+    R111
+- equation: OHEX + H2O <=> OH + H2O  # Reaction 112
+  rate-constant: {A: 5.93e+12, b: 0.5, Ea: -859.99}
+  note: |
+    T. Varga et al., Development of a joint hydrogen and syngas combustion mechanism based on an optimization approach, Int. J. Chem. Kinet. 48 (2016) 407-422.
+    R112
+- equation: OHEX + H2 <=> OH + H2  # Reaction 113
+  rate-constant: {A: 2.95e+12, b: 0.5, Ea: -444.0}
+  note: |
+    T. Varga et al., Development of a joint hydrogen and syngas combustion mechanism based on an optimization approach, Int. J. Chem. Kinet. 48 (2016) 407-422.
+    R113
+- equation: OHEX + N2 <=> OH + N2  # Reaction 114
+  rate-constant: {A: 1.08e+11, b: 0.5, Ea: -1242.0}
+  note: |
+    T. Varga et al., Development of a joint hydrogen and syngas combustion mechanism based on an optimization approach, Int. J. Chem. Kinet. 48 (2016) 407-422.
+    R114
+- equation: OHEX + OH <=> 2 OH  # Reaction 115
+  rate-constant: {A: 6.01e+12, b: 0.5, Ea: -764.0}
+  note: |
+    T. Varga et al., Development of a joint hydrogen and syngas combustion mechanism based on an optimization approach, Int. J. Chem. Kinet. 48 (2016) 407-422.
+    R115
+- equation: OHEX + H <=> OH + H  # Reaction 116
+  rate-constant: {A: 1.31e+12, b: 0.5, Ea: -167.01}
+  note: |
+    T. Varga et al., Development of a joint hydrogen and syngas combustion mechanism based on an optimization approach, Int. J. Chem. Kinet. 48 (2016) 407-422.
+    R116
+- equation: OHEX + AR <=> OH + AR  # Reaction 117
+  rate-constant: {A: 1.69e+12, b: 0.0, Ea: 4135.0}
+  note: |
+    T. Varga et al., Development of a joint hydrogen and syngas combustion mechanism based on an optimization approach, Int. J. Chem. Kinet. 48 (2016) 407-422.
+    R117
+- equation: OHEX => OH  # Reaction 118
+  rate-constant: {A: 1.45e+06, b: 0.0, Ea: 0.0}
+  note: |
+    T. Varga et al., Development of a joint hydrogen and syngas combustion mechanism based on an optimization approach, Int. J. Chem. Kinet. 48 (2016) 407-422.
+    R118
+- equation: OHEX + O2 <=> OH + O2  # Reaction 119
+  rate-constant: {A: 2.1e+12, b: 0.5, Ea: -477.99}
+  note: |
+    T. Varga et al., Development of a joint hydrogen and syngas combustion mechanism based on an optimization approach, Int. J. Chem. Kinet. 48 (2016) 407-422.
+    Comment from Han et al. (2020):
+    Chemkin can identify automatically the HV in photoactive reactions.
+    If other code has trouble identifying HV, e.g., the LOGOsoft,
+    please revise #41 (R118 in this study) as following:
+    OHEX<=>OH                   1.450E+06     0.0000        0.00
+    R119
+
+    T. Varga et al., Development of a joint hydrogen and syngas combustion mechanism based on an optimization approach, Int. J. Chem. Kinet. 48 (2016) 407-422.

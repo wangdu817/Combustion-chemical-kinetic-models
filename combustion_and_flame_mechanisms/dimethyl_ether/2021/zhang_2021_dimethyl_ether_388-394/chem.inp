@@ -1,0 +1,157 @@
+# Exploring chemical kinetics of plasma assisted oxidation of dimethyl ether (DME)
+# Zhang Ruzheng, Liao Handong, Yang Jiuzhong, Yang Bin*
+# Supplementary material for plasma reactions
+# Input of ZDPLASKIN solver for the DME/O2/Ar plasma
+
+ELEMENTS
+E C H O Ar
+END
+
+SPECIES
+E CH4 O2 Ar O2(a1) O2(b1) O2(4.5eV) O2^+ O O(1D) O3
+CH4^+ CH3^+ CH2^+ CH3 CH2 CH H2 H CH2OH CH2O OH HO2
+Ar^+ Ar* Ar2^+ 
+C2H4 C2H3 C2H2 C2H C2H4^+ C2H3^+ HCO
+CH3OCH3 CH3OCH2 CH3O
+CH3OCH3^+ CH3OCH2^+ 
+END
+
+BOLSIG
+O2 Ar CH4 C2H4 CH3OCH3
+set dbfile O2_Ar_DMEcross_section.dat
+END
+
+REACTIONS 
+#--------------------------------------------------------------------------------
+# Electron impact excitation/ionization/dissociation reactions
+#--------------------------------------------------------------------------------
+E + O2 => E + O2(a1)           ! BOLSIG O2 -> O2(A1)
+E + O2 => E + O2(b1)           ! BOLSIG O2 -> O2(b1)
+E + O2 => E + O2(4.5eV)        ! BOLSIG O2 -> O2(4.5eV)
+E + Ar => E + Ar*              ! BOLSIG Ar -> Ar(*)
+E + Ar => E + E + Ar^+         ! BOLSIG Ar -> Ar+
+E + O2 => E + O + O            ! BOLSIG O2 -> O2(6.0eV)
+E + O2 => E + O + O(1D)        ! BOLSIG O2 -> O2(8.4eV)
+E + O2 => E + E + O2^+         ! BOLSIG O2 -> O2(+)
+E + CH4 => E + CH3 + H         ! BOLSIG CH4 -> CH3 + H
+E + CH4 => E + CH2 + H2        ! BOLSIG CH4 -> CH2 + H
+E + CH4 => E + E + CH4^+       ! BOLSIG CH4 -> CH4+
+E + CH4 => E + E + CH3^+ + H   ! BOLSIG CH4 -> CH3+ +H
+E + C2H4 => E + C2H3 + H       ! BOLSIG C2H4 -> C2H4(3.8eV)
+E + C2H4 => E + C2H2 + H2      ! BOLSIG C2H4 -> C2H4(5eV)
+E + C2H4 => E + C2H + H2 + H   ! BOLSIG C2H4 -> C2H4(7eV)
+E + C2H4 => E + E + C2H4^+     ! BOLSIG C2H4 -> C2H4^+
+E + CH3OCH3 => E + CH3O + CH3  ! BOLSIG CH3OCH3 -> CH3OCH3(7.53eV)
+E + CH3OCH3 => E + CH3OCH2 + H ! BOLSIG CH3OCH3 -> CH3OCH3(10.12eV)
+E + CH3OCH3 => E + E + CH3OCH3^+   ! BOLSIG CH3OCH3 -> CH3OCH3^+
+#--------------------------------------------------------------------------------
+# Quenching reactions of excited species 
+#--------------------------------------------------------------------------------
+O2(a1) + CH4 => O2 + CH4             ! 1.40d-18
+O2(a1) + CH4 => CH3 + HO2            ! 6.14d-12*exp(-17900.d0/Tgas)
+
+O2(a1) + C2H4 => O2 + C2H4             ! 5.46d-10*exp(-5850.d0/Tgas)
+O2(a1) + C2H4 => C2H3 + HO2            ! 7.010d-11*exp(-17620.d0/Tgas)
+
+O2(a1) + CH3OCH3 => O2 + CH3OCH3             ! 5.46d-10*exp(-5850.d0/Tgas)
+O2(a1) + CH3OCH3 => CH3OCH2 + HO2            ! 7.010d-11*exp(-17620.d0/Tgas)
+
+O2(a1) + Ar => O2 + Ar               ! 8.00d-21*(Tgas/300.d0)**0.5
+O2(b1) + Ar => O2(a1) + Ar           ! 1.00d-17*(Tgas/300.d0)**0.5
+O2(4.5eV) + Ar => O2(a1) + Ar        ! 1.00d-13
+O2(4.5eV) + Ar => O2(b1) + Ar        ! 9.00d-13
+
+O2(b1) + CH4 => O2(a1) + CH4         ! 1.08d-13
+O2(4.5eV) + CH4 => O2(b1) + CH4      ! 1.08d-13
+O2(b1) + C2H4 => O2(a1) + C2H4        ! 1.08d-13
+O2(4.5eV) + C2H4 => O2(b1) + C2H4     ! 1.08d-13
+O2(b1) + CH3OCH3 => O2(a1) + CH3OCH3        ! 1.08d-13
+O2(4.5eV) + CH3OCH3 => O2(b1) + CH3OCH3     ! 1.08d-13
+
+O2(a1) + O => O2 + O                 ! 7.00d-16
+O2(a1) + O2 => O2 + O2               ! 3.80d-18*exp(-205.d0/Tgas)
+O2(a1) + O3 => O2 + O2 + O(1D)       ! 5.20d-11*exp(-2840.d0/Tgas)
+O2(a1) + O2(a1) => O2 + O2(b1)       ! 7.00d-28*Tgas**3.8*exp(700.d0/Tgas) 
+O2(b1) + O => O2(a1) + O             ! 8.10d-14
+O2(b1) + O => O2 + O(1D)             ! 3.40d-11*(300.d0/Tgas)**0.1*exp(-4200.d0/Tgas)
+O2(b1) + O2 => O2(a1) + O2           ! 4.30d-22*Tgas**2.4*exp(-281.d0/Tgas) 
+O2(b1) + O3 => O2 + O2 + O           ! 2.20d-11
+O2(4.5eV) + O2 => O2(b1) + O2(b1)    ! 3.00d-13 
+
+O(1D) + CH4 => CH3 + OH              ! 1.13d-10
+O(1D) + CH4 => CH2OH + H             ! 3.00d-11
+O(1D) + CH4 => CH2O + H2             ! 7.50d-12
+O(1D) + C2H4 => C2H3 + OH              ! 5.05d-11
+O(1D) + C2H4 => CH3 + HCO              ! 1.18d-10
+O(1D) + C2H4 => CH2 + CH2O             ! 5.05d-11
+O(1D) + CH3OCH3 => CH3OCH2 + OH        ! 2.20d-10
+
+O(1D) + Ar => O + Ar                 ! 1.00d-13
+O(1D) + O => O + O                   ! 8.00d-12
+O(1D) + O2 => O + O2                 ! 6.40d-12*exp(-67.d0/Tgas)
+O(1D) + O2 => O + O2(a1)             ! 1.00d-12
+O(1D) + O2 => O + O2(b1)             ! 2.60d-12*exp(-67.d0/Tgas)
+O(1D) + O3 => O2 + O + O             ! 1.20d-10
+O(1D) + O3 => O2 + O2                ! 1.20d-10
+
+Ar*	+ CH4 => Ar + CH2 + H + H		 ! 3.30d-10	
+Ar*	+ CH4 => Ar	+ CH + H2 +	H		 ! 5.80d-11		
+Ar*	+ CH4 => Ar	+ CH3 +	H		     ! 5.80d-11					
+Ar*	+ CH4 => Ar	+ CH2 +	H2			 ! 5.80d-11
+Ar*	+ C2H4 => Ar + C2H2 + H + H 	 ! 7.00d-10	
+Ar*	+ CH3OCH3 => Ar + CH3OCH2 + H 	 ! 7.00d-10
+Ar* + CH3OCH3 => Ar + CH3O + CH3     ! 7.00d-10
+Ar* + CH3OCH2 => Ar + CH2O + CH3     ! 7.00d-10	
+Ar*	+ O2 => Ar + O + O		         ! 2.00d-10
+#--------------------------------------------------------------------------------
+# Electron-ion reacombination reactions
+#--------------------------------------------------------------------------------
+E + O2^+ => O + O          ! 1.49d-7*(300.d0/Te)**0.7
+E + O2^+ => O + O(1D)      ! 1.08d-7*(300.d0/Te)**0.7
+E + Ar^+ => Ar             ! 2.49d-12*(300.d0/Te)**0.7
+E + CH4^+ => CH2 + H + H   ! 1.70d-7*(300.d0/Te)**0.5
+E + CH4^+ => CH3 + H       ! 1.70d-7*(300.d0/Te)**0.5
+E + CH3^+ => CH2 + H       ! 3.50d-7*(300.d0/Te)**0.5
+E + CH2^+ => CH + H        ! 2.50d-7*(300.d0/Te)**0.5
+E + C2H4^+ => C2H2 + H + H ! 3.80d-5*(1/Te)**0.76
+E + C2H4^+ => C2H3 + H     ! 0.50d-5*(1/Te)**0.76
+E + C2H4^+ => C2H + H2 + H ! 0.40d-5*(1/Te)**0.76
+E + C2H3^+ => C2H2 +  H    ! 7.80d-6*(1/Te)**0.50
+E + CH3OCH3^+ => CH3 + CH3O  ! 2.60d-6*(1/Te)**0.50
+E + CH3OCH2^+ => CH2O + CH3  ! 2.60d-6*(1/Te)**0.50
+E + CH3OCH2^+ => CH3O + CH2  ! 2.60d-6*(1/Te)**0.50
+#--------------------------------------------------------------------------------
+# Charge exchange reactions
+#--------------------------------------------------------------------------------
+CH4^+ + O2 => CH4 + O2^+      ! 5.0d-10
+Ar^+ + O2 => Ar + O2^+        ! 1.0d-10
+Ar^+ + CH4 => Ar + CH3^+ + H  ! 6.5d-10
+Ar^+ + CH4 => Ar + CH2^+ + H2 ! 1.4d-10
+Ar^+ + C2H4 => Ar + C2H3^+ + H !1.10d-9
+Ar^+ + CH3OCH3 => Ar + CH3OCH2^+ + H !1.10d-9
+#--------------------------------------------------------------------------------
+# Optical transitions
+#--------------------------------------------------------------------------------
+O2(a1)    => O2               ! 2.6d-4
+O2(b1)    => O2(a1)           ! 1.5d-3
+O2(b1)    => O2               ! 8.5d-2
+O2(4.5eV) => O2               ! 11.0d0
+#--------------------------------------------------------------------------------
+# O3 reactions
+#--------------------------------------------------------------------------------
+O3 + O2 => O2 + O + O2        ! 2.51d-10*exp(-11600.d0/Tgas)
+O3 + O => O2 + O + O          ! 4.15d-10*exp(-11430.d0/Tgas)
+O3 + O => O2 + O2(a1)         ! 1.0d-11*exp(-2300.d0/Tgas)
+O + O2 + O2 => O3 + O2        ! 7.6d-34*(300.d0/Tgas)**1.9
+O + O2 + O => O3 + O          ! 3.9d-33*(300.d0/Tgas)**1.9
+O + O2 + Ar => O3 + Ar        ! 3.4d-34*(300.d0/Tgas)**1.2
+
+Ar2^+ + E => Ar* + Ar          !   8.5d-7 * (Te/300.0d0)**(-0.67d0)
+Ar2^+ + Ar => Ar^+ + Ar + Ar   !   6.06d-6 / Tgas * exp(-15130.0d0/Tgas)
+Ar* + Ar* => Ar2^+ + E         !   6.0d-10
+Ar^+ + E + E => Ar  + E        !   8.75d-27 * (Te/11600.0d0)**(-4.5d0)
+Ar* + Ar + Ar  => Ar + Ar + Ar !   1.4d-32
+Ar^+ + Ar + Ar  => Ar2^+ + Ar  !   2.25d-31 * (Tgas/300.0d0)**(-0.4d0)
+
+END
+

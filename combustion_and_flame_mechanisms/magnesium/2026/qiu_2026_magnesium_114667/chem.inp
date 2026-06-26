@@ -1,0 +1,485 @@
+
+!-----------------------------------Supplementary Material------------------------------------------------------------------------------------!
+!Synergistic suppression of magnesium dust explosions by montmorillonite/ammonium polyphosphate composites: Experimental and kinetic modeling insights       !
+!Dongyang Qiu, Mohammad Zaid Kamil, Mohammad Alauddin, Lijuan Liu*, Xianfeng Chen*, Chuyuan Huang*, Paul Amyotte                                                      !
+!---------------------------------------------------------------------------------------------------------------------------------------------!
+!--------------------------------------------------------------------------------------------------------------------------
+!References that mainly refered:
+!X. Liu, M. Schoenitz, E.L. Dreizin, Combustion of Mg and composite Mg·S powders in different oxidizers, Combust Flame 195 (2018) 292-302.
+!W. Ji, Y. Wang, J. Yang, J. He, C. Lu, X. Wen, Y. Wang, Explosion overpressure behavior and flame propagation characteristics in hybrid explosions of hydrogen and magnesium dust, Fuel 332 (2023) 125801.
+!J. Otomo, M. Koshi, T. Mitsumori, H. Iwasaki, K. Yamada, Chemical kinetic modeling of ammonia oxidation with improved reaction mechanism for ammonia/air and ammonia/hydrogen/air combustion, Int J Hydrogen Energ 43 (2018) 3004-3014.
+!T.M. Jayaweera, C.F. Melius, W.J. Pitz, C.K. Westbrook, O.P. Korobeinichev, V.M. Shvartsberg, A.G. Shmakov, I.V. Rybitskaya, H.J. Curran, Flame inhibition by phosphorus-containing compounds over a range of equivalence ratios, Combust Flame 140 (2005) 103-115.
+!O.P. Korobeinichev, V.M. Shvartsberg, A.G. Shmakov, D.A. Knyazkov, I.V. Rybitskaya, Inhibition of atmospheric lean and rich CH4/O2/Ar flames by phosphorus-containing compound, P Combust Inst 31 (2007) 2741-2748.
+!--------------------------------------------------------------------------------------------------------------------------------------------!
+
+ELEMENTS
+Mg O H N P
+AR 
+END
+
+SPECIES
+!phosphorus-containing
+Mg MgO MgO(L) MgO(S) O 
+O2 H H2 H2O OH
+HO2 H2O2 N2 NO NO2 
+AR 
+
+!phosphorus-containing
+P PO PO2 HPO 
+HOPO HPO3 H3PO4 PO3 P2O3 
+P2O4 P2O5 HPO2 H2POH PO[OH]2 
+PO[H][OH] PO[OH]2O PH PH2 
+PH3 P2 HPOH 
+
+!NH3
+NH3 N NH2 NH H2NO 
+NNH N2O N2O3 NH2OH HNOH 
+HNO HONO HNO2 NO3 HNO3 
+N2H2 N2H3 N2H4 N2O4 HNNO 
+
+END
+
+REACTIONS MOLES CAL/MOLE
+
+!****** Mg/O2 MECHANISM  **************************
+Mg+O2=MgO+O    4.44E12 0.5 3.05E4
+Mg+O+M=MgO+M    1.9E14 0.5 0.0E0
+MgO=MgO(L)    6.11E11 -2.0 1.73E4
+MgO(L)=MgO(S)    1.0E15 0.0 0.0E0
+H+H+M=H2+M                     7.000E+17     -1.0         0.0
+ H2/0.0/ N2/0.0/ H/0.0/ H2O/14.3/
+H+H+H2=H2+H2                   1.000E+17     -0.6         0.0 
+H+H+N2=H2+N2                   5.400E+18     -1.3         0.0 
+H+H+H=H2+H                     3.200E+15      0.0         0.0 
+O+O+M=O2+M                     1.000E+17     -1.0         0.0 
+ O/71.0/ O2/20.0/ NO/5.0/ N2/5.0/ N/5.0/ H2O/5.0/
+O+H+M=OH+M                     6.200E+16     -0.6         0.0 
+ H2O/5.0/ 
+H2+O2=OH+OH                    2.500E+12      0.0     39000.0 
+O+H2=OH+H                      5.060E+04      2.67     6290.0 
+H+O2=OH+O                      9.750E+13      0.0     14850.0 
+H+O2(+M)=HO2(+M)               1.480E+12      0.6         0.0 
+    LOW /3.50E+16 -0.41 -1116.0/ 
+    TROE /0.5 100000 10/
+ AR/0.0/ H2O/10.6/ H2/1.5/
+H+O2(+AR)=HO2(+AR)             1.480E+12      0.6         0.0
+    LOW /7.00E+17 -0.8  0.0/
+    TROE /0.45 10 100000/ 
+H+OH+M=H2O+M                   2.200E+22     -2.0         0.0 
+ H2O/6.4/ AR/0.38/ 
+H2+OH=H2O+H                    1.000E+08      1.6      3300.0 
+OH+OH=H2O+O                    1.500E+09      1.14      100.0 
+HO2+OH=H2O+O2                  2.890E+13      0.0      -500.0 
+HO2+O=OH+O2                    1.630E+13      0.0      -445.0 
+H+HO2=H2+O2                    4.280E+13      0.0      1411.0 
+H+HO2=OH+OH                    1.700E+14      0.0       875.0 
+H+HO2=H2O+O                    3.000E+13      0.0      1720.0 
+HO2+HO2=H2O2+O2                4.200E+14      0.0     12000.0 
+    DUPLICATE
+HO2+HO2=H2O2+O2                1.300E+11      0.0     -1640.0 
+    DUPLICATE
+OH+OH(+M)=H2O2(+M)             7.200E+13     -0.37        0.0 
+    LOW /2.2E+19 -0.76 0.0/ 
+    TROE /0.5 100000 10/
+    H2O/0.0/
+OH+OH(+H2O)=H2O2(+H2O)         7.200E+13     -0.37        0.0 
+    LOW /1.45E+18 0.0 0.0/ 
+H2O2+OH=HO2+H2O                1.000E+12      0.0         0.0 
+    DUPLICATE
+H2O2+OH=HO2+H2O                5.800E+14      0.0      9560.0 
+    DUPLICATE 
+H2O2+H=HO2+H2                  1.700E+12      0.0      3755.0 
+H2O2+H=H2O+OH                  1.000E+13      0.0      3575.0 
+H2O2+O=HO2+OH                  2.800E+13      0.0      6400.0 
+2HO2=O2+H2O2    1.3E11 0.0 -1.63E3
+    DUP
+2HO2=H2O2+O2    4.2E14 0.0 1.2E4
+    DUP
+H2O2+OH=HO2+H2O    5.8E14 0.0 9.56E3
+    DUP
+H2O2+OH=HO2+H2O    2.67E41 -7.0 3.76E4
+    DUP
+
+!****** NH3/O2 MECHANISM  **************************
+N2+O=NO+N                      1.800E+14      0.0     76100.0
+N+O2=NO+O                      9.000E+09      1.0      6500.0
+NO+M=N+O+M                     9.640E+14      0.0    148300.0
+    N2 /1.5/ NO /3.0/
+NO+NO=N2+O2                    3.000E+11      0.0     65000.0
+N2O(+M)=N2+O(+M)               1.260E+12      0.0     62620.0
+    LOW / 4.000E+14 0.0 56640.0/ 
+   O2/1.4/ N2/1.7/ H2O/12.0/ NO/3.0/ N2O/3.5/
+N2O+O=N2+O2                    1.000E+14      0.0     28200.0
+N2O+O=NO+NO                    6.920E+13      0.0     26630.0
+N2O+N=N2+NO                    1.000E+13      0.0     20000.0
+N2O+NO=N2+NO2                  2.750E+14      0.0     50000.0
+NO+O(+M)=NO2(+M)               1.300E+15     -0.75        0.0 
+    LOW /4.72E+24 -2.87 1551.0/
+    TROE /0.962 10.0 7962.0 /
+    AR /0.6/ NO2 /6.2/ NO /1.8/ O2 /0.8/ N2O /4.4/ H2O/10.0/        
+NO2+O=NO+O2                    3.910E+12      0.0      -238.0 
+NO2+N=N2O+O                    8.400E+11      0.0         0.0
+NO2+N=NO+NO                    1.000E+12      0.0         0.0
+NO2+NO=N2O+O2                  1.000E+12      0.0     60000.0
+NO2+NO2=NO+NO+O2               3.950E+12      0.0     27590.0 
+NO2+NO2=NO3+NO                 1.130E+04      2.58    22720.0 
+NO2+O(+M)=NO3(+M)              1.330E+13      0.0         0.0
+    LOW / 1.49E+28 -4.08 2467.0 /
+    TROE /0.86 10.0 2800.0 /
+    H2O/10.0/ O2/0.8/ H2/2.0/ 
+NO3=NO+O2                      2.500E+06      0.0     12120.0
+NO3+NO2=NO+NO2+O2              1.200E+11      0.0      3200.0 
+NO3+O=NO2+O2                   1.020E+13      0.0         0.0
+NO3+NO3=NO2+NO2+O2             5.120E+11      0.0      4870.0
+N2O4(+M)=NO2+NO2(+M)           4.050E+18     -1.1     12840.0
+     LOW /1.96E+28  -3.8  12840./
+     AR/0.8/ N2O4/2.0/ NO2/2.0/
+N2O4+O=N2O3+O2                 1.210E+12      0.0         0.0
+NO2+NO(+M)=N2O3(+M)            1.600E+09      1.4         0.0
+     LOW /1.0E+33  -7.7  0.0/
+     N2/1.36/
+N2O3+O=NO2+NO2                 2.710E+11      0.0         0.0
+N2+M=N+N+M                     1.000E+28     -3.33   225000.0
+    N/5/ O/2.2/
+NH+M=N+H+M                     2.650E+14      0.0     75500.0
+NH+H=N+H2                      3.200E+13      0.0       325.0
+NH+N=N2+H                      9.000E+11      0.5         0.0
+NH+NH=NNH+H                    5.100E+13      0.0         0.0
+NH+NH=NH2+N                    5.950E+02      2.89    -2030.0
+NH+NH=N2+H2                    1.000E+08      1.0         0.0
+NH2+M=NH+H+M                   3.160E+23     -2.0     91400.0
+NH+H2=NH2+H                    1.000E+14      0.0     20070.0
+NH2+N=N2+H+H                   6.900E+13      0.0         0.0
+NH2+NH=N2H2+H                  1.500E+15     -0.5         0.0
+NH2+NH=NH3+N                   1.000E+13      0.0      2000.0
+NH3+NH=NH2+NH2                 3.160E+14      0.0     26770.0
+NH2+NH2=N2H2+H2                1.000E+13      0.0      1500.0
+N2H3+H=NH2+NH2                 5.000E+13      0.0      2000.0
+NH3+M=NH2+H+M                  2.200E+16      0.0     93470.0
+NH3+M=NH+H2+M                  6.300E+14      0.0     93390.0
+NH3+H=NH2+H2                   5.420E+05      2.4      9920.0
+NH3+NH2=N2H3+H2                1.000E+11      0.5     21600.0
+NNH=N2+H                       3.000E+08      0.0         0.0
+!     DUPLICATE
+NNH+M=N2+H+M                   1.000E+13      0.5      3060.0
+!     DUPLICATE
+NNH+H=N2+H2                    1.000E+14      0.0         0.0
+NNH+N=NH+N2                    3.000E+13      0.0      2000.0
+NNH+NH=N2+NH2                  2.000E+11      0.5      2000.0
+NNH+NH2=N2+NH3                 1.000E+13      0.0         0.0
+NNH+NNH=N2H2+N2                1.000E+13      0.0      4000.0
+N2H2+M=NNH+H+M                 5.000E+16      0.0     50000.0
+     H2O/15.0/ O2/2.0/ N2/2.0/ H2/2.0/
+N2H2+M=NH+NH+M                 3.160E+16      0.0     99400.0
+     H2O/15.0/ O2/2.0/ N2/2.0/ H2/2.0/
+N2H2+H=NNH+H2                  8.500E+04      2.63     -230.0
+N2H2+N=NNH+NH                  1.000E+06      2.0         0.0 
+N2H2+NH=NNH+NH2                1.000E+13      0.0      6000.0
+N2H2+NH2=NH3+NNH               8.800E-02      4.05    -1610.0
+N2H3+NH=N2H2+NH2               2.000E+13      0.0         0.0
+N2H3+NNH=N2H2+N2H2             1.000E+13      0.0      4000.0
+N2H3+M=NH2+NH+M                5.000E+16      0.0     60000.0
+N2H3+M=N2H2+H+M                1.000E+16      0.0     37000.0
+N2H3+H=N2H2+H2                 1.000E+13      0.0         0.0
+N2H3+H=NH+NH3                  1.000E+11      0.0         0.0
+N2H3+N=N2H2+NH                 1.000E+06      2.0         0.0
+HNO+O=NO2+H                    5.000E+10      0.0      2000.0
+HNO+O2=NO+HO2                  2.200E+10      0.0      9140.0
+HNO+N=NO+NH                    1.000E+11      0.5      2000.0 
+HNO+N=H+N2O                    5.000E+10      0.5      3000.0
+HNO+NH=NH2+NO                  5.000E+11      0.5         0.0
+HNO+NH2=NH3+NO                 2.000E+13      0.0      1000.0 
+HNO+HNO=N2O+H2O                3.630E-03      3.98     1190.0 
+HNO+HNO=HNOH+NO                2.000E+08      0.0      4170.0 
+HNO+NO2=HONO+NO                6.020E+11      0.0      2000.0
+NO+OH(+M)=HONO(+M)             2.000E+12     -0.05     -721.0 
+    LOW / 5.08E+23 -2.51 -67.6 /
+    TROE /0.62 10.0 100000.0 /
+    H2O/10.0/ O2/2.0/ AR/0.75/ H2/2.0/  
+NO2+H+M=HONO+M                 1.400E+18     -1.5       900.0
+HONO+H=HNO+OH                  5.640E+10      0.86     4970.0 
+HONO+H=NO+H2O                  8.120E+06      1.89     3840.0 
+HONO+O=OH+NO2                  1.200E+13      0.0      5960.0
+HONO+OH=H2O+NO2                1.690E+12      0.0      -517.0 
+HONO+NH=NH2+NO2                1.000E+13      0.0         0.0 
+HONO+HONO=H2O+NO2+NO           1.000E+13      0.0      8540.0
+HONO+NH2=NO2+NH3               5.000E+12      0.0         0.0
+NO2+OH(+M)=HNO3(+M)            2.410E+13      0.0         0.0
+    LOW / 6.42E+32 -5.49 2350.0 /
+    TROE /1.0 10.0 1168.0 /
+    H2O/10.0/ O2/2.0/ AR/0.75/ H2/2.0/
+NO+HO2+M=HNO3+M                1.500E+24     -3.5      2200.0
+HNO3+H=H2+NO3                  5.560E+08      1.53    16400.0 
+HNO3+H=H2O+NO2                 6.080E+01      3.29     6290.0 
+HNO3+H=OH+HONO                 3.820E+05      2.3      6980.0 
+HNO3+OH=NO3+H2O                1.030E+10      0.0     -1240.0
+NH3+O=NH2+OH                   9.400E+6       1.94     6460.0
+NH3+OH=NH2+H2O                 2.000E+6       2.04     566.0 
+NH3+HO2=NH2+H2O2               3.000E+11      0.0     22000.0
+NH2+HO2=NH3+O2                 1.650E+04      1.55     2027.0 
+NH2+O=H2+NO                    5.000E+12      0.0         0.0 
+NH2+O=HNO+H                    4.500E+13      0.0         0.0 
+NH2+O=NH+OH                    7.000E+12      0.0         0.0 
+NH2+OH=NH+H2O                  9.000E+07      1.5      -460.0 
+NH2+OH=NH2OH                   1.790E+13      0.2         0.0 
+NH2+HO2=HNO+H2O                5.680E+15     -1.12      707.0 
+NH2+HO2=H2NO+OH                2.910E+17     -1.32     1248.0 
+NH2+O2=HNO+OH                  1.000E+13      0.0     26290.0 
+NH2+O2=H2NO+O                  6.000E+13      0.0     29880.0 
+NH2+NO=NNH+OH                  2.290E+10      0.425    -814.0
+NH2+NO=N2+H2O                  2.770E+20     -2.65     1258.0 
+NH2+NO=H2+N2O                  1.000E+13      0.0     33700.0 
+NH2+NO2=N2O+H2O                1.620E+16     -1.44      270.0
+NH2+NO2=H2NO+NO                6.480E+16     -1.44      270.0 
+NH+O=NO+H                      7.000E+13      0.0         0.0 
+NH+O=N+OH                      7.000E+12      0.0         0.0 
+NH+OH=HNO+H                    2.000E+13      0.0         0.0 
+NH+OH=N+H2O                    2.000E+09      1.2         0.0 
+NH+OH=NO+H2                    2.000E+13      0.0         0.0 
+NH+HO2=HNO+OH                  1.000E+13      0.0      2000.0
+NH+O2=HNO+O                    4.000E+13      0.0     17880.0 
+NH+O2=NO+OH                    4.500E+08      0.79     1190.0 
+NH+H2O=HNO+H2                  2.000E+13      0.0     13850.0 
+NH+N2O=N2+HNO                  2.000E+12      0.0      6000.0
+NNH+O=NH+NO                    2.000E+14      0.0      4000.0 
+NH+NO=N2+OH                    6.100E+13     -0.50      120.0 
+N2H4+O=N2H2+H2O                8.500E+13      0.0      1200.0
+N2H4+O=N2H3+OH                 2.500E+12      0.0      1200.0 
+N2H4+OH=N2H3+H2O               3.000E+10      0.68     1290.0
+N2H4+OH=NH3+H2NO               3.670E+13      0.0         0.0 
+N2H4+HO2=N2H3+H2O2             4.000E+13      0.0      2000.0 
+N2H3+O=N2H2+OH                 2.000E+13      0.0      1000.0
+N2H3+O=NNH+H2O                 3.160E+11      0.5         0.0 
+N2H3+O=NH2+HNO                 1.000E+13      0.0         0.0
+N2H3+OH=N2H2+H2O               3.000E+10      0.68     1290.0
+N2H3+OH=NH3+HNO                1.000E+12      0.0     15000.0 
+N2H3+O2=N2H2+HO2               3.000E+12      0.0         0.0
+N2H3+HO2=N2H2+H2O2             1.000E+13      0.0      2000.0 
+N2H3+HO2=N2H4+O2               8.000E+12      0.0         0.0
+N2H3+NO=HNO+N2H2               1.000E+12      0.0         0.0 
+N2H2+O=NH2+NO                  1.000E+13      0.0         0.0 
+N2H2+O=NNH+OH                  2.000E+13      0.0      1000.0 
+N2H2+OH=NNH+H2O                5.920E+01      3.4     -1360.0 
+N2H2+HO2=NNH+H2O2              1.000E+13      0.0      2000.0 
+N2H2+NO=N2O+NH2                3.000E+10      0.0         0.0 
+NNH+O=N2+OH                    1.700E+16     -1.23      500.0
+NNH+OH=N2+H2O                  2.400E+22     -2.88     2444.0 
+NNH+O2=N2+HO2                  1.200E+12     -0.34      150.0
+NNH+O2=N2O+OH                  2.900E+11     -0.34      150.0
+NNH+HO2=N2+H2O2                1.000E+13      0.0      2000.0 
+NNH+NO=N2+HNO                  5.000E+13      0.0         0.0 
+NH2OH+OH=HNOH+H2O              2.500E+13      0.0      4250.0
+H2NO+M=H2+NO+M                 7.830E+27     -4.29    60300.0 
+  H2O/10.0/
+H2NO+M=HNO+H+M                 2.800E+24     -2.83    64915.0 
+  H2O/10.0/
+H2NO+M=HNOH+M                  1.100E+29     -3.99    43980.0
+  H2O/10.0/
+H2NO+H=HNO+H2                  3.000E+07      2.0      2000.0 
+H2NO+H=NH2+OH                  5.000E+13      0.0         0.0 
+H2NO+O=HNO+OH                  3.000E+07      2.0      2000.0 
+H2NO+OH=HNO+H2O                2.000E+07      2.0      1000.0 
+H2NO+HO2=HNO+H2O2              2.900E+04      2.69    -1600.0 
+H2NO+NH2=HNO+NH3               3.000E+12      0.0      1000.0 
+H2NO+O2=HNO+HO2                3.000E+12      0.0     25000.0
+H2NO+NO=HNO+HNO                2.000E+07      2.0     13000.0 
+H2NO+NO2=HONO+HNO              6.000E+11      0.0      2000.0 
+HNOH+M=HNO+H+M                 2.000E+24     -2.84    58935.0 
+   H2O/10.0/
+HNOH+H=HNO+H2                  4.800E+08      1.5       380.0 
+HNOH+H=NH2+OH                  4.000E+13      0.0         0.0 
+HNOH+O=HNO+OH                  7.000E+13      0.0         0.0 
+    DUPLICATE
+HNOH+O=HNO+OH                  3.300E+08      1.5      -360.0 
+    DUPLICATE
+HNOH+OH=HNO+H2O                2.400E+06      2.0     -1190.0
+HNOH+HO2=HNO+H2O2              2.900E+04      2.69    -1600.0
+HNOH+NH2=HNO+NH3               1.800E+06      1.94    -1150.0
+HNOH+NO2=HONO+HNO              6.000E+11      0.0      2000.0
+HNOH+O2=HNO+HO2                3.000E+12      0.0     25000.0
+HNOH+HNO=NH2OH+NO              1.000E+12      0.0      3000.0 
+
+!****** PHOSPHORUS MECHANISM  **************************
+P+NO2=NO+PO    9.64E12 0.0 0.0E0
+HPO3+H2O=H3PO4   5.92E17 -1.3481 8.47E3
+PO[OH]2+OH=H3PO4    1.0E13 0.0 0.0E0
+PO2+PO(+M)=P2O3(+M)    4.0E14 -1.0 0.0E0
+    LOW/1.0E20 -2.0E0 0.0E0/
+2PO2(+M)=P2O4(+M)    6.0E14 -1.0 0.0E0
+    LOW/2.0E20 -2.0E0 0.0E0/
+PO2+PO3(+M)=P2O5(+M)    6.0E14 -1.0 0.0E0
+    LOW/5.0E20 -2.0E0 0.0E0/
+PO2+OH+M=HPO3+M    1.6E24 -2.28 2.85E2
+    H2O/16.0/
+    H2/2.5/
+PO3+H+M=HPO3+M    4.8E24 -2.37 1.43E3
+    H2O/16.0/
+    H2/2.5/
+HOPO+O+M=HPO3+M    1.2E27 -2.99 2.04E3
+    H2O/16.0/
+    H2/2.5/
+PO+OH+M=HOPO+M    1.0E21 -2.09 1.59E3
+    H2O/16.0/
+    H2/2.5/
+PO2+H+M=HOPO+M    4.87E24 -2.04 6.45E2
+    H2O/16.0/
+    H2/2.5/
+    DUP
+PO+O+M=PO2+M    1.6E25 -2.63 1.72E3
+    H2O/16.0/
+    H2/2.5/
+PO2+O+M=PO3+M    1.3E27 -3.15 1.88E3
+    H2O/16.0/
+    H2/2.5/
+H+PO+M=HPO+M    1.8E22 -1.95 1.33E3
+    H2O/16.0/
+    H2/2.5/
+H+PO2+M=HPO2+M    4.87E21 -2.04 6.45E2
+    H2O/16.0/
+    H2/2.5/
+H+PO2+M=HOPO+M    4.87E23 -2.04 6.45E2
+    H2O/16.0/
+    H2/2.5/
+    DUP
+H2+PO3=HPO3+H    2.0E12 0.0 0.0E0
+HOPO+OH=PO2+H2O    3.72E13 -0.219 3.2E3
+    DUP
+HOPO+H=H2+PO2    1.0E13 0.0 1.1E4
+HOPO+H=H2O+PO    3.0E12 0.0 8.3E3
+HOPO+O=OH+PO2    1.0E13 0.0 0.0E0
+HOPO+O=H+PO3    1.0E12 0.0 1.5E4
+HOPO+OH=PO2+H2O    1.2E6 2.0 -1.5E3
+    DUP
+HOPO+HO2=H2O2+PO2    2.5E12 0.0 2.33E4
+HOPO+O2=HO2+PO2    7.0E12 0.0 4.53E4
+HO2+HOPO=HPO3+OH    1.5E14 0.0 2.36E4
+HPO3+O=OH+PO3    1.0E13 0.0 1.23E4
+HPO3+OH=H2O+PO3    1.2E6 2.0 2.0E3
+HPO3+HO2=H2O2+PO3    2.5E12 0.0 2.46E4
+HPO3+O2=HO2+PO3    7.0E12 0.0 6.6E4
+PO+OH=H+PO2    1.0E13 0.0 0.0E0
+PO+HO2=PO2+OH    2.1E12 0.0 -5.0E2
+PO+O2=PO2+O    1.0E12 0.0 0.0E0
+H+PO3=PO2+OH    3.16E13 0.0 4.0E1
+PO2+HO2=OH+PO3    5.0E11 0.0 0.0E0
+PO2+O2=O+PO3    1.0E12 0.0 3.0E4
+HOPO+PO3=PO2+HPO3    5.0E11 0.0 0.0E0
+PO3+PO=2PO2    5.0E11 0.0 0.0E0
+HPO+H=H2+PO    2.4E8 1.5 0.0E0
+HPO+O=OH+PO    1.7E8 1.5 0.0E0
+HPO+O=PO2+H    1.0E13 0.0 3.0E3
+HPO+O2=PO+HO2    7.0E12 0.0 2.0E4
+HPO+OH=PO+H2O    1.2E6 2.0 -2.0E3
+HPO+HO2=PO+H2O2    2.0E11 0.0 5.0E3
+HPO+PO2=PO+HOPO    2.0E11 0.0 0.0E0
+HPO+PO3=PO+HPO3    2.0E11 0.0 0.0E0
+P2O4+H2O=HOPO+HPO3    1.0E11 0.0 0.0E0
+P2O5+H2O=2HPO3    1.0E11 0.0 0.0E0
+HPO3+H=PO[OH]2    1.27E32 -6.1 8.702E3
+HPO3+OH=PO[OH]2O    1.0E19 -2.0 0.0E0
+PO[OH]2O+H=HPO3+H2O    2.0E13 0.0 0.0E0
+PO[OH]2+H=HPO2+H2O    4.0E19 -2.0 0.0E0
+PO[OH]2+OH=HPO3+H2O    2.0E13 0.0 0.0E0
+PO[OH]2+H=HPO3+H2    5.0E12 0.0 0.0E0
+PO[OH]2+O=HPO3+OH    5.0E13 0.0 0.0E0
+HPO2=HOPO    2.35E14 0.0 4.64E4
+HPO2+H=H2+PO2    2.4E8 1.5 5.0E3
+HPO2+H=PO[H][OH]    5.0E12 0.0 5.0E3
+HPO+OH=PO[H][OH]    1.4E12 0.0 0.0E0
+PO[H][OH]+H=HOPO+H2    5.0E13 0.0 0.0E0
+PO[H][OH]+OH=HOPO+H2O    1.0E13 0.0 0.0E0
+PO[H][OH]+O=HOPO+OH    5.0E13 0.0 0.0E0
+HPO2+O=OH+PO2    1.7E8 1.5 2.5E3
+HPO2+O2=PO2+HO2    7.0E12 0.0 3.44E4
+HPO2+OH=H2O+PO2    1.2E6 2.0 -2.0E3
+HPO2+OH=H+HPO3    1.0E12 0.0 2.0E3
+HPO2+HO2=H2O2+PO2    2.0E11 0.0 1.0E4
+HPO+PO2=HPO2+PO    1.0E11 0.0 0.0E0
+HPO2+PO2=HOPO+PO2    5.0E11 0.0 0.0E0
+HPO2+PO3=HPO3+PO2    5.0E11 0.0 0.0E0
+O2+P=O+PO    3.162E13 0.0 4.19684E3
+O2+PH=O+HPO    3.162E11 0.0 3.99847E3
+H+HPO3=H2O+PO2    6.32E11 0.0 1.195E4
+H+P2O3=PO+HOPO    3.162E13 0.0 1.195E4
+H+PH3=H2+PH2    3.162E13 0.0 4.18011E3
+H+PH2=H2+PH    3.162E13 0.0 5.1863E3
+H+PH=H2+P    3.162E13 0.0 4.99271E3
+H+H2POH=H2O+PH2    3.162E13 0.0 1.195E4
+H+H2POH=H2+HPOH    3.162E13 0.0 4.15143E3
+H+HPOH=H2O+PH    3.162E13 0.0 0.0E0
+H+HPOH=H2+HPO    3.162E13 0.0 5.69059E3
+O+HPO3=O2+HOPO    6.23E11 0.0 8.23E3
+O+P2O3=PO+PO3    3.162E13 0.0 1.195E4
+O+P2O3=2PO2    3.162E13 0.0 1.195E4
+O+P2=PO+P    3.162E13 0.0 4.54817E3
+O+PH3=OH+PH2    3.162E13 0.0 2.81781E3
+O+PH2=H+HPO    3.162E13 0.0 0.0E0
+O+PH2=OH+PH    3.162E13 0.0 3.7045E3
+O+PH=H+PO    3.162E13 0.0 2.38761E3
+O+PH=OH+P    3.162E13 0.0 3.72362E3
+O+H2POH=OH+HPOH    3.162E13 0.0 2.79869E3
+O+HPOH=H+HOPO    3.162E13 0.0 0.0E0
+O+HPOH=OH+HPO    3.162E13 0.0 4.59119E3
+OH+HOPO=H+HPO3    6.23E11 0.0 9.72E3
+OH+P2O3=PO+HPO3    3.162E11 0.0 1.195E4
+OH+P2O3=PO2+HOPO    3.162E11 0.0 1.195E4
+OH+HPO=H+HOPO    3.162E11 0.0 1.195E4
+OH+P=H+PO    3.162E13 0.0 4.65811E3
+OH+PH3=H2O+PH2    3.162E11 0.0 1.64671E3
+OH+PH3=H+H2POH    3.162E11 0.0 1.195E4
+OH+PH2=H2O+PH    3.162E11 0.0 2.23943E3
+OH+PH2=H+HPOH    3.162E11 0.0 0.0E0
+OH+PH=H2O+P    3.162E11 0.0 2.43063E3
+OH+PH=H+HPO    3.162E11 0.0 4.54578E3
+OH+H2POH=H2O+HPOH    3.162E11 0.0 1.63715E3
+OH+HPOH=H2O+HPO    3.162E11 0.0 3.27908E3
+HO2+PO=O+HOPO    3.162E11 0.0 0.0E0
+HO2+PO2=O+HPO3    3.162E11 0.0 0.0E0
+HO2+HPO=O2+HPOH    3.162E11 0.0 1.02053E4
+HO2+P=O2+PH    3.162E13 0.0 6.79716E3
+HO2+P=OH+PO    3.162E13 0.0 1.83313E3
+HO2+PH2=O2+PH3    3.162E11 0.0 5.24605E3
+HO2+PH2=O+H2POH    3.162E11 0.0 0.0E0
+HO2+PH=O2+PH2    3.162E11 0.0 5.22454E3
+HO2+PH=O+HPOH    3.162E11 0.0 0.0E0
+HO2+PH=OH+HPO    3.162E11 0.0 1.58218E3
+HO2+HPOH=O2+H2POH    3.162E11 0.0 5.2819E3
+PO+HPO3=PO2+HOPO    3.162E11 0.0 9.72E3
+PO+H2POH=HOPO+PH2    3.162E11 0.0 1.195E4
+PO+HPOH=HOPO+PH    3.162E11 0.0 0.0E0
+PO+HPOH=2HPO    3.162E11 0.0 1.010014E4
+PO2+HPO=H+P2O3    3.162E11 0.0 1.195E4
+PO2+P=2PO    3.162E13 0.0 4.91384E3
+PO2+PH3=HOPO+PH2    3.162E11 0.0 0.0E0
+PO2+PH2=HOPO+PH    3.162E11 0.0 0.0E0
+PO2+PH=PO+HPO    3.162E11 0.0 4.80629E3
+PO2+PH=HOPO+P    3.162E11 0.0 7.17E1
+PO2+H2POH=HOPO+HPOH    3.162E11 0.0 0.0E0
+PO2+H2POH=HPO3+PH2    3.162E11 0.0 1.195E4
+PO2+HPOH=HOPO+HPO    3.162E11 0.0 1.77816E3
+PO2+HPOH=HPO3+PH    3.162E11 0.0 0.0E0
+HPO3+P=PO+HOPO    3.162E13 0.0 6.84735E3
+HPO3+PH=HOPO+HPO    3.162E11 0.0 6.95968E3
+PO3+P=PO+PO2    3.162E13 0.0 3.585E1
+PO3+PH3=HPO3+PH2    3.162E11 0.0 0.0E0
+PO3+PH2=HPO3+PH    3.162E11 0.0 0.0E0
+PO3+PH=PO2+HPO    3.162E11 0.0 0.0E0
+PO3+PH=HPO3+P    3.162E11 0.0 0.0E0
+PO3+H2POH=HPO3+HPOH    3.162E11 0.0 0.0E0
+PO3+HPOH=HPO3+HPO    3.162E11 0.0 0.0E0
+HPO+P=PO+PH    3.162E13 0.0 6.90471E3
+HPO+PH2=PO+PH3    3.162E11 0.0 4.90189E3
+HPO+PH=PO+PH2    3.162E11 0.0 4.91862E3
+HPO+HPOH=PO+H2POH    3.162E11 0.0 4.9473E3
+P+PH=H+P2    3.162E13 0.0 4.00086E3
+P+HPOH=HPO+PH    3.162E13 0.0 9.68667E3
+PH3+PH=2PH2    3.162E11 0.0 5.48266E3
+PH3+HPOH=PH2+H2POH    3.162E11 0.0 5.62367E3
+PH2+PH=P+PH3    3.162E11 0.0 6.84018E3
+PH2+HPOH=HPO+PH3    3.162E11 0.0 7.60259E3
+2PH=P+PH2    3.162E11 0.0 6.59162E3
+PH+H2POH=PH2+HPOH    3.162E11 0.0 5.42769E3
+PH+HPOH=HPO+PH2    3.162E11 0.0 7.30384E3
+PH+HPOH=P+H2POH    3.162E11 0.0 6.91427E3
+2HPOH=HPO+H2POH    3.162E11 0.0 7.66712E3
+END
