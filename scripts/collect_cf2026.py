@@ -2275,9 +2275,10 @@ def process(force: bool = False, year: str | None = None) -> None:
         for row in rows
         if row.get("folder") and row["status"] in {"included", "conversion_failed"}
     }
-    for summary in ROOT.rglob("mechanism_summary.md"):
-        if summary.resolve() not in active_summary_paths:
-            summary.unlink()
+    if year is None:
+        for summary in ROOT.rglob("mechanism_summary.md"):
+            if summary.resolve() not in active_summary_paths:
+                summary.unlink()
     active_folders = {path.parent for path in active_summary_paths}
     generated_names = {
         "chem.inp",
@@ -2295,14 +2296,16 @@ def process(force: bool = False, year: str | None = None) -> None:
         "mechanism.cleaned.result.json",
         "mechanism.numeric_clean.result.json",
     }
-    for generated in ROOT.rglob("*"):
-        if any(part.startswith("_") for part in generated.relative_to(ROOT).parts):
-            continue
-        if generated.is_file() and generated.name in generated_names and generated.parent.resolve() not in active_folders:
-            generated.unlink()
+    if year is None:
+        for generated in ROOT.rglob("*"):
+            if any(part.startswith("_") for part in generated.relative_to(ROOT).parts):
+                continue
+            if generated.is_file() and generated.name in generated_names and generated.parent.resolve() not in active_folders:
+                generated.unlink()
     for folder_path in active_folders:
         cleanup_active_paper_folder(folder_path)
-    cleanup_inactive_paper_folders(ROOT, active_folders)
+    if year is None:
+        cleanup_inactive_paper_folders(ROOT, active_folders)
     if PROCESSING_ARCHIVE.exists():
         shutil.rmtree(PROCESSING_ARCHIVE)
     ROOT.joinpath("manual_download_handoff.md").write_text("\n".join(handoff) + "\n", encoding="utf-8")
