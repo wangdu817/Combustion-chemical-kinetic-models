@@ -1399,6 +1399,7 @@ def probe_supplements(max_mmc: int = 8, year: str | None = None, force: bool = F
     ensure_dirs()
     records = read_metadata()
     for record in records:
+    print(f"[{idx+1}/{total}] probing {record.get("pii")}")
         if not record.get("candidate"):
             continue
         if year and record_year(record) != year:
@@ -1801,6 +1802,7 @@ def download_recorded_supplements(year: str | None = None, force: bool = False) 
     records = read_metadata()
     changed = False
     for record in records:
+    print(f"[{idx+1}/{total}] downloading {record.get("pii")}")
         if year and record_year(record) != year:
             continue
         links = supplement_links_for_record(record)
