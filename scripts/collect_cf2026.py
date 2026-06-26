@@ -34,6 +34,134 @@ LEGACY_METADATA_JSON = LEGACY_ROOT / "_raw" / "article_metadata.json"
 LEGACY_DOWNLOADS = LEGACY_ROOT / "_raw" / "downloads"
 PROCESSING_ARCHIVE = ROOT / "_processing_archive"
 ANALYSIS_PYTHON = Path(os.environ.get("MECH_COLLECTION_PYTHON", sys.executable)).resolve()
+MMC_EXTENSIONS = [
+    "zip",
+    "txt",
+    "docx",
+    "pdf",
+    "xlsx",
+    "xls",
+    "rar",
+    "7z",
+    "dat",
+    "inp",
+    "yaml",
+    "yml",
+    "cti",
+    "xml",
+]
+
+INDEX_FIELDS = [
+    "title",
+    "authors",
+    "doi",
+    "pii",
+    "volume",
+    "month",
+    "article_number",
+    "fuel_type",
+    "plasma_related",
+    "url",
+    "paper_pdf_link",
+    "paper_pdf_status",
+    "candidate",
+    "status",
+    "folder",
+    "mechanism_files",
+    "thermo_files",
+    "transport_files",
+    "standard_mechanism",
+    "standard_thermo",
+    "standard_transport",
+    "cantera_yaml",
+    "species",
+    "reactions",
+    "preprocess_status",
+]
+
+ACTIVE_STATUSES = {"included", "conversion_failed"}
+TERMINAL_PROCESSING_STATUSES = ACTIVE_STATUSES | {
+    "excluded_non_kinetics_mechanism_attachment",
+    "excluded_no_mechanism_attachment",
+    "excluded_no_supplement_found",
+    "excluded_no_mechanism_signal",
+}
+
+KINETIC_TERMS = [
+    "kinetic",
+    "kinetics",
+    "mechanism",
+    "mechanisms",
+    "modeling",
+    "modelling",
+    "oxidation",
+    "pyrolysis",
+    "autoignition",
+    "auto-ignition",
+    "ignition delay",
+    "laminar burning velocity",
+    "laminar flame speed",
+]
+
+REACTION_KINETICS_INCLUDE_PATTERNS = [
+    r"chemical kinetic",
+    r"\bkinetic (model|modeling|modelling|study|analysis|mechanism|insight|investigation|simulation)",
+    r"\bkinetics of\b",
+    r"\bkinetic inhibition\b",
+    r"\bkinetic coupling\b",
+    r"\boxidation kinetics\b",
+    r"\bpyrolysis kinetics\b",
+    r"\bcombustion kinetics\b",
+    r"\breaction mechanism\b",
+    r"\bdetailed kinetic\b",
+    r"\bmechanism development\b",
+    r"\bexperimental and modeling study\b",
+    r"\bdetailed and reduced kinetics\b",
+    r"\bcarbon.?nitrogen interaction reactions\b",
+    r"\bmodel development and validation\b",
+    r"\bauto-?ignition\b",
+    r"\bignition delay\b",
+    r"\blaminar burning velocit",
+    r"\blaminar flame speed\b",
+    r"\bjet-?stirred reactor\b",
+    r"\bshock tube\b",
+    r"\brapid compression machine\b",
+    r"\bflow reactor\b",
+    r"\bflame speed measurements\b",
+]
+
+REACTION_KINETICS_EXCLUDE_PATTERNS = [
+    r"thermoacoustic",
+    r"instability mechanism",
+    r"feedback mechanism",
+    r"heat transfer mechanism",
+    r"flame spread",
+    r"flame quenching",
+    r"suppression",
+    r"dust explosion",
+    r"porous medium",
+    r"scramjet",
+    r"combustion transition mechanisms",
+    r"turbulence characteristics",
+    r"spray flame",
+    r"genetic programming control",
+    r"nanoparticle synthesis",
+    r"aluminum combustion",
+    r"single al\b",
+    r"al-li alloy particle",
+    r"burning rate constant of pmma",
+]
+
+REACTOR_TERMS = [
+    ("shock tube", ["shock tube", "behind shock waves"]),
+    ("rapid compression machine", ["rapid compression machine", "rcm"]),
+    ("jet-stirred reactor", ["jet-stirred reactor", "jet stirred reactor", "jsr"]),
+    ("flow reactor", ["flow reactor", "plug flow reactor"]),
+    ("laminar flame speed", ["laminar flame speed", "laminar burning velocity"]),
+    ("burner/flame structure", ["burner", "flame structure", "premixed flame", "diffusion flame"]),
+    ("counterflow flame", ["counterflow"]),
+    ("stirred reactor", ["stirred reactor"]),
+]
 
 FUEL_PATTERNS = [
     # Nitrogen-containing
