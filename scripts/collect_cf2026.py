@@ -1397,7 +1397,7 @@ def url_download(url: str, dest: Path) -> None:
         tmp.replace(dest)
 
 
-def probe_supplements(max_mmc: int = 8, year: str | None = None, force: bool = False, serial: bool = False) -> None:
+def probe_supplements(max_mmc: int = 12, year: str | None = None, force: bool = False) -> None:
     ensure_dirs()
     records = read_metadata()
     for record in records:
@@ -1441,7 +1441,7 @@ def probe_supplements(max_mmc: int = 8, year: str | None = None, force: bool = F
                 continue
             urls = [(ext, f"https://ars.els-cdn.com/content/image/1-s2.0-{pii}-mmc{idx}.{ext}") for ext in MMC_EXTENSIONS]
             head_results: list[tuple[str, str, int, str]] = []
-            with concurrent.futures.ThreadPoolExecutor(max_workers=1 if serial else 8) as executor:
+            with concurrent.futures.ThreadPoolExecutor() as executor:
                 future_map = {executor.submit(url_head, url): (ext, url) for ext, url in urls}
                 for future in concurrent.futures.as_completed(future_map):
                     ext, url = future_map[future]
@@ -2380,11 +2380,10 @@ def main() -> None:
             "process",
         ],
     )
-    parser.add_argument("--max-mmc", type=int, default=8)
+    parser.add_argument("--max-mmc", type=int, default=12)
     parser.add_argument("--source-dir", type=Path, default=RAW / "2025_volumes")
     parser.add_argument("--year", type=str, help="Only process this year")
     parser.add_argument("--force", action="store_true", help="re-run terminal probe, download, or processing states")
-    parser.add_argument("--serial", action="store_true", help="serial mode: single-threaded probe to avoid OOM")
     args = parser.parse_args()
     if args.command == "init":
         init()
@@ -2399,7 +2398,7 @@ def main() -> None:
     elif args.command == "enrich-abstracts":
         enrich_abstracts()
     elif args.command == "probe-supplements":
-        probe_supplements(max_mmc=args.max_mmc, year=args.year, force=args.force, serial=args.serial)
+        probe_supplements(max_mmc=args.max_mmc, year=args.year, force=args.force)
     elif args.command == "process":
         process(force=args.force, year=args.year)
 

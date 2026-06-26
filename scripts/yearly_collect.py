@@ -71,8 +71,8 @@ def main():
     rc = run('import-sciencedirect-metadata', '--year', year, '--source-dir', str(OUT))
     
     # Step 3: Probe + download only (process runs once at end for all years)
-    print(f'[3/5] Probing supplements (serial mode)...')
-    rc = run('probe-supplements', '--year', year, '--max-mmc', '12', '--serial')
+    print(f'[3/5] Probing supplements (parallel, all cores)...')
+    rc = run('probe-supplements', '--year', year, '--max-mmc', '12')
     
     print(f'[4/5] Downloading supplements...')
     rc = run('download-supplements', '--year', year)

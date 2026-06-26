@@ -99,15 +99,13 @@ The volume JSON files should contain `doi`, `pii`, `title`, `authors`, `volume`,
 ### 6.2 Probe and Download Supplements
 
 ```bash
+# Default: probes up to 12 mmc links per article with all available CPU cores
 .venv/bin/python scripts/collect_cf2026.py probe-supplements --year 20XX --max-mmc 12
-
-# On low-memory servers (≤4GB RAM), use --serial to avoid OOM:
-.venv/bin/python scripts/collect_cf2026.py probe-supplements --year 20XX --max-mmc 12 --serial
 .venv/bin/python scripts/collect_cf2026.py download-supplements --year 20XX
-.venv/bin/python scripts/collect_cf2026.py process --force
+.venv/bin/python scripts/collect_cf2026.py process --force --year 20XX
 ```
 
-The probe step checks `https://ars.els-cdn.com/content/image/1-s2.0-{PII}-mmc{N}.{ext}` for each candidate article. Found files are downloaded immediately.
+The probe step checks `https://ars.els-cdn.com/content/image/1-s2.0-{PII}-mmc{N}.{ext}` for each candidate article. Found files are downloaded immediately. `ThreadPoolExecutor` default workers = `os.cpu_count() + 4`.
 
 ### 6.3 Enrich Abstracts
 
@@ -142,14 +140,14 @@ cp api_keys.example.json api_keys.json  # edit with your Elsevier key
 .venv/bin/python scripts/collect_cf2026.py import-sciencedirect-metadata \
   --year 2020 --source-dir combustion_and_flame_mechanisms/_raw/2020_volumes
 
-# Supplement discovery
+# Supplement discovery (parallel, all cores)
 .venv/bin/python scripts/collect_cf2026.py probe-supplements --year 2020 --max-mmc 12
 .venv/bin/python scripts/collect_cf2026.py download-supplements --year 2020
-.venv/bin/python scripts/collect_cf2026.py process --force
+.venv/bin/python scripts/collect_cf2026.py process --force --year 2020
 
 # Abstracts
 .venv/bin/python scripts/enrich_abstracts.py
-.venv/bin/python scripts/collect_cf2026.py process --force
+.venv/bin/python scripts/collect_cf2026.py process --force --year 2020
 
 # PDFs (if year ≤ 2021)
 .venv/bin/python scripts/scihub_dl.py
@@ -190,7 +188,17 @@ PY
 
 | Year | Articles | Mechanisms | Cantera OK | Abstracts |
 |------|----------|------------|------------|-----------|
-| 2023 | 525 | 49 | 24 | 49/49 |
-| 2024 | 568 | 67 | 30 | 67/67 |
-| 2025 | 631 | 64 | 21 | 63/64 |
-| 2026 | 485 | 42 | — | — |
+| 2015 | 397 | 29 | 10 | 29 |
+| 2018 | 479 | 23 | 5 | — |
+| 2019 | 462 | 32 | — | — |
+| 2020 | 481 | 27 | 15 | 25 |
+| 2021 | 521 | 46 | 19 | 46 |
+| 2022 | 642 | 55 | 26 | 55 |
+| 2023 | 525 | 49 | 24 | 49 |
+| 2024 | 568 | 67 | 30 | 67 |
+| 2025 | 631 | 64 | 21 | 63 |
+| 2026 | 485 | 42 | 21 | — |
+
+**Parallel mode:** `ThreadPoolExecutor` default workers (`os.cpu_count()+4`), max 12 mmc links per article. 
+**Cantera:** Uses `.venv/bin/python` symlink to ensure cantera importable.
+**Push:** Only mechanism files, summaries, and PDFs via `scripts/safe_push.sh`.
