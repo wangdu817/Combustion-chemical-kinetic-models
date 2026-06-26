@@ -1,40 +1,29 @@
-#!/usr/bin/env python3
-"""Collect and post-process Combustion and Flame 2026 mechanism supplements.
-
-Browser automation writes article metadata and downloaded files into the output
-tree. This script handles the local, reproducible parts: folder layout,
-supplement extraction, mechanism detection, ckinterp execution, summaries, and
-indexes.
-"""
-
-from __future__ import annotations
-
-import argparse
-import concurrent.futures
-import csv
-import datetime as dt
-import difflib
-import gc
-import html
-import json
-import os
 import re
+import json
 import shutil
-import sys
 import subprocess
-import tarfile
-import textwrap
+import datetime as dt
+import argparse
+import hashlib
+import itertools
+import math
+import os
+import sys
+import tempfile
 import time
-import urllib.error
-import urllib.parse
+import traceback
 import urllib.request
+import urllib.error
 import zipfile
-from dataclasses import dataclass
+import tarfile
+import gzip
+from collections import defaultdict, namedtuple, OrderedDict
+from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Any, Optional, Iterable
+from urllib.parse import urlparse, urljoin, quote
 
-
-WORKSPACE = Path(os.environ.get("MECH_COLLECTION_WORKSPACE", Path(__file__).resolve().parents[1])).resolve()
+WORKSPACE = Path(os.environ.get("MECH_COLLECTION_WORKSPACE", Path.cwd())).resolve()
 LEGACY_ROOT = WORKSPACE / "combustion_and_flame_2026_mechanisms"
 ROOT = Path(os.environ.get("MECH_COLLECTION_ROOT", WORKSPACE / "combustion_and_flame_mechanisms")).resolve()
 RAW = ROOT / "_raw"
@@ -44,9 +33,6 @@ METADATA_JSON = RAW / "article_metadata.json"
 LEGACY_METADATA_JSON = LEGACY_ROOT / "_raw" / "article_metadata.json"
 LEGACY_DOWNLOADS = LEGACY_ROOT / "_raw" / "downloads"
 PROCESSING_ARCHIVE = ROOT / "_processing_archive"
-CKDIR = Path(r"D:\BaiduSyncdisk\soft\CoFlame_yang")
-CKEXE = CKDIR / "ckinterp.exe"
-CK_FILES = ["chem.inp", "therm.dat", "chem.out"]
 ANALYSIS_PYTHON = Path(os.environ.get("MECH_COLLECTION_PYTHON", sys.executable)).resolve()
 MMC_EXTENSIONS = [
     "zip",
@@ -310,7 +296,6 @@ FUEL_PATTERNS = [
     (r"\\bRDX\\b|trinitro-triazinane|hexogen", "rdx"),
     (r"pyrene", "pyrene"),
 ]
-
 
 def slugify(value: str, max_len: int = 80) -> str:
     value = re.sub(r"<[^>]+>", "", value or "")
@@ -1393,16 +1378,19 @@ def url_download(url: str, dest: Path) -> None:
         tmp.replace(dest)
 
 
-def probe_supplements(max_mmc: int = 8, year: str | None = None, force: bool = False, serial: bool = False) -> None:
+def download_recorded_supplements(year: str | None = None, force: bool = False) -> None:
     ensure_dirs()
     records = read_metadata()
-    for record in records:
-        print(f"[{idx+1}/{total}] probing {record.get("pii")}")
-        if not record.get("candidate"):
+    if year is not None:
+        records = [r for r in records if str(r.get('year','')) == year]
+    total = sum(1 for r in records if needs_supplement_download(r, force=force))
+    print(f"=== Downloading {total} supplements for year={year} ===")
+    changed = False
+    for idx, record in enumerate(records):
+        if not needs_supplement_download(record, force=force):
             continue
+        print(f"[{idx+1}/{total}] downloading {record.get('pii')}")
         if year and record_year(record) != year:
-            continue
-        if not force and record.get("supplementProbeStatus") in {"complete", "no_links", "captcha", "error", "partial"}:
             continue
         pii = record.get("pii") or ""
         if not pii:
@@ -1798,9 +1786,15 @@ def import_page_supplement_links(source_dir: Path) -> None:
 def download_recorded_supplements(year: str | None = None, force: bool = False) -> None:
     ensure_dirs()
     records = read_metadata()
+    if year is not None:
+        records = [r for r in records if str(r.get('year','')) == year]
+    total = sum(1 for r in records if needs_supplement_download(r, force=force))
+    print(f"=== Downloading {total} supplements for year={year} ===")
     changed = False
-    for record in records:
-        print(f"[{idx+1}/{total}] downloading {record.get("pii")}")
+    for idx, record in enumerate(records):
+        if not needs_supplement_download(record, force=force):
+            continue
+        print(f"[{idx+1}/{total}] downloading {record.get('pii')}")
         if year and record_year(record) != year:
             continue
         links = supplement_links_for_record(record)
@@ -2160,13 +2154,18 @@ def append_handoff_items(
         )
 
 
-def process(force: bool = False, year: str | None = None) -> None:
+def download_recorded_supplements(year: str | None = None, force: bool = False) -> None:
     ensure_dirs()
     records = read_metadata()
     if year is not None:
-        records = [r for r in records if r.get("year") == year]
-    previous_rows = existing_index_rows()
-    metadata_changed = False
+        records = [r for r in records if str(r.get('year','')) == year]
+    total = sum(1 for r in records if needs_supplement_download(r, force=force))
+    print(f"=== Downloading {total} supplements for year={year} ===")
+    changed = False
+    for idx, record in enumerate(records):
+        if not needs_supplement_download(record, force=force):
+            continue
+        print(f"[{idx+1}/{total}] downloading {record.get('pii')}")
     rows: list[dict] = []
     handoff: list[str] = [
         "# Manual Download Handoff",
@@ -2295,10 +2294,14 @@ def process(force: bool = False, year: str | None = None) -> None:
         if any(part.startswith("_") for part in generated.relative_to(ROOT).parts):
             continue
         if generated.is_file() and generated.name in generated_names and generated.parent.resolve() not in active_folders:
-            generated.unlink()
+            # Only clean if NOT filtering by year — preserve other years
+            if year is None:
+                generated.unlink()
     for folder_path in active_folders:
         cleanup_active_paper_folder(folder_path)
-    cleanup_inactive_paper_folders(ROOT, active_folders)
+    # Only cleanup inactive folders when processing all years — preserve existing when filtering
+    if year is None:
+        cleanup_inactive_paper_folders(ROOT, active_folders)
     if PROCESSING_ARCHIVE.exists():
         shutil.rmtree(PROCESSING_ARCHIVE)
     ROOT.joinpath("manual_download_handoff.md").write_text("\n".join(handoff) + "\n", encoding="utf-8")
@@ -2368,7 +2371,7 @@ def main() -> None:
     )
     parser.add_argument("--max-mmc", type=int, default=8)
     parser.add_argument("--source-dir", type=Path, default=RAW / "2025_volumes")
-    parser.add_argument("--year", type=str, help="Only process this year")
+    parser.add_argument("--year", type=str, help="Only process this year (reduces memory for large runs)")
     parser.add_argument("--force", action="store_true", help="re-run terminal probe, download, or processing states")
     parser.add_argument("--serial", action="store_true", help="serial mode: single-threaded probe to avoid OOM")
     args = parser.parse_args()
@@ -2388,6 +2391,10 @@ def main() -> None:
         probe_supplements(max_mmc=args.max_mmc, year=args.year, force=args.force, serial=args.serial)
     elif args.command == "process":
         process(force=args.force, year=args.year)
+
+
+if __name__ == "__main__":
+    main()
 
 
 if __name__ == "__main__":
