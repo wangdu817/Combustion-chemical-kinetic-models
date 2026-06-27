@@ -2,6 +2,9 @@
 """Sci-Hub PDF download via sci.bban.top CDN (no captcha needed).
 Only downloads articles from 2021 and earlier.
 PDFs are saved alongside mechanism files with matching naming.
+
+D2 FIX: Scans DISK for mechanism_summary.md instead of relying on metadata
+processingStatus, so PDFs are still downloaded even if metadata is corrupted.
 """
 import json, re, os, time, urllib.request, urllib.error
 from pathlib import Path
@@ -56,49 +59,89 @@ def pdf_name(r):
     return f'{slugify(surname(fa),24)}_{y}_{slugify(fu,60)}_{aid(r)}.pdf'
 
 def main():
-    meta = json.loads(META.read_text('utf-8'))
-    
-    # Collect ≤2021 articles with mechanisms
+    # D2 FIX: Scan disk for mechanism_summary.md instead of relying on metadata
+    # Build a map of folder → year from disk
+    disk_folders = []
+    for summary in ROOT.rglob('mechanism_summary.md'):
+        # Skip _processing and _raw
+        parts = summary.relative_to(ROOT).parts
+        if any(p.startswith('_') for p in parts): continue
+        folder = summary.parent
+        # Extract year from path: fuel_type/YEAR/name/
+        year = None
+        for part in parts:
+            if re.fullmatch(r'\d{4}', part):
+                year = part
+                break
+        if not year: continue
+        if int(year) > 2021: continue
+        # Check if PDF already exists
+        existing_pdfs = list(folder.glob('*.pdf'))
+        if existing_pdfs:
+            continue  # Already have a PDF
+        disk_folders.append((folder, year))
+
+    # Load metadata to get DOI for each folder
+    meta_by_pii = {}
+    meta_by_folder = {}
+    if META.exists():
+        meta = json.loads(META.read_text('utf-8'))
+        for r in meta:
+            pii = r.get('pii','')
+            if pii:
+                meta_by_pii[pii] = r
+            # Also try to match by folder name
+            folder = r.get('processingFolder','')
+            if folder:
+                meta_by_folder[Path(folder).name] = r
+
+    # Match disk folders to metadata
     todo = []
-    for r in meta:
-        if r.get('processingStatus') not in ('included','conversion_failed'): continue
-        y = ryear(r)
-        if not y.isdigit() or int(y) > 2021: continue
-        
+    for folder, year in disk_folders:
+        # Try to find metadata by folder name
+        r = meta_by_folder.get(folder.name)
+        if not r:
+            # Try by PII in folder name
+            for pii, rec in meta_by_pii.items():
+                if pii in folder.name:
+                    r = rec
+                    break
+        if not r:
+            # Skip — can't download without DOI
+            continue
+        if not r.get('doi'):
+            continue
+
         nm = pdf_name(r)
-        folder = r.get('processingFolder','')
-        target = Path(folder) / nm if folder else ROOT / '_raw' / 'pdfs' / nm
-        
+        target = folder / nm
         if target.exists() and target.stat().st_size > 5000:
-            continue  # Already have it
-        
+            continue
+
         todo.append((r, target))
-    
-    print(f'≤2021 articles: {len(todo)} PDFs needed')
+
+    print(f'≤2021 articles: {len(todo)} PDFs needed (disk-scanned)')
     if not todo:
         print("All done!"); return
-    
+
     ok = 0; fail = 0
     for i, (r, target) in enumerate(todo):
         doi = r['doi']; year = ryear(r)
         title = (r.get('title','') or '')[:55]
         url = f'https://sci.bban.top/pdf/{doi}.pdf?download=true'
-        
+
         print(f'[{i+1}/{len(todo)}] [{year}] {title}...', end=' ', flush=True)
-        
+
         try:
             req = urllib.request.Request(url, headers={
                 'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36',
                 'Referer': 'https://sci-hub.ren/'
             })
             with urllib.request.urlopen(req, timeout=20) as resp:
-                # Stream to temp file to avoid loading entire PDF into memory
                 import tempfile, shutil
                 tmp = tempfile.NamedTemporaryFile(suffix='.pdf', delete=False)
                 shutil.copyfileobj(resp, tmp)
                 tmp.close()
-            
-            # Verify PDF header and move
+
             with open(tmp.name, 'rb') as f:
                 header = f.read(5)
             if header == b'%PDF-':
@@ -124,11 +167,19 @@ def main():
         except Exception as e:
             fail += 1
             print(f'ERR: {str(e)[:40]}')
-        
-        # Save metadata at end only to reduce memory churn
+
         time.sleep(0.5)
-    
-    if ok > 0:
+
+    if ok > 0 and META.exists():
+        # Re-read and save metadata (avoid clobbering concurrent writes)
+        meta = json.loads(META.read_text('utf-8'))
+        for r_updated in todo:
+            if r_updated[0].get('paperPdfLocal'):
+                for r in meta:
+                    if r.get('pii') == r_updated[0].get('pii'):
+                        r['paperPdfLocal'] = r_updated[0]['paperPdfLocal']
+                        r['paperPdfSource'] = r_updated[0].get('paperPdfSource','')
+                        break
         META.write_text(json.dumps(meta, ensure_ascii=False, indent=2), encoding='utf-8')
     print(f'\nDone: {ok} OK, {fail} failed, {ok+fail} total')
 

@@ -334,17 +334,43 @@ def read_metadata() -> list[dict]:
     if not source.exists():
         return []
     records = json.loads(source.read_text(encoding="utf-8-sig"))
-    if source == LEGACY_METADATA_JSON and not METADATA_JSON.exists():
-        write_metadata(records)
-    return records
+    # Global dedup by PII — keep last seen record with most processingStatus data
+    seen: dict[str, dict] = {}
+    deduped: list[dict] = []
+    for record in records:
+        pii = str(record.get("pii", "")).lower()
+        if not pii:
+            deduped.append(record)
+            continue
+        if pii in seen:
+            # Merge: keep fields from both, prefer existing processingStatus
+            old = seen[pii]
+            for field in record:
+                if record.get(field) and not old.get(field):
+                    old[field] = record[field]
+        else:
+            seen[pii] = record
+            deduped.append(record)
+    if len(deduped) < len(records):
+        # Write deduped if we removed duplicates
+        write_metadata(deduped)
+    return deduped
 
 
 def write_metadata(records: list[dict]) -> None:
     ensure_dirs()
-    METADATA_JSON.write_text(
-        json.dumps(records, ensure_ascii=False, indent=2),
-        encoding="utf-8",
-    )
+    # C3 FIX: Use atomic write with file lock to prevent concurrent corruption
+    import fcntl
+    lock_path = METADATA_JSON.with_suffix('.lock')
+    lock_path.touch(exist_ok=True)
+    with open(lock_path, 'w') as lock_file:
+        fcntl.flock(lock_file.fileno(), fcntl.LOCK_EX)
+        tmp = METADATA_JSON.with_suffix('.json.tmp')
+        tmp.write_text(
+            json.dumps(records, ensure_ascii=False, indent=2),
+            encoding="utf-8",
+        )
+        tmp.replace(METADATA_JSON)
 
 
 def now_iso() -> str:
@@ -1349,6 +1375,8 @@ def cleanup_inactive_paper_folders(root: Path, active_folders: set[Path]) -> Non
 def cleanup_active_paper_folder(folder: Path) -> None:
     allowed_files = {"mechanism_summary.md", "chem.inp", "therm.dat", "tran.dat", "mechanism.yaml"}
     allowed_dirs = {"_processing"}
+    # Never delete PDFs — they are primary files
+    allowed_extensions = {".pdf"}
     if not folder.exists():
         return
     for child in list(folder.iterdir()):
@@ -1356,8 +1384,11 @@ def cleanup_active_paper_folder(folder: Path) -> None:
             if child.name not in allowed_dirs:
                 shutil.rmtree(child)
             continue
-        if child.name not in allowed_files:
-            child.unlink()
+        if child.name in allowed_files:
+            continue
+        if child.suffix.lower() in allowed_extensions:
+            continue
+        child.unlink()
 
 
 def url_head(url: str) -> tuple[int, str, int]:
