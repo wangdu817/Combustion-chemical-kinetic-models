@@ -4355,3 +4355,1823 @@ END
 
 
 
+      1.61   -0.4E3 !(265,-265)<MEBEL NIST>!
+O2+R10C2H3V=HCHO+R5CHO         4.5E16     -1.39    1.0E3 !(266a,-266a)<MEBEL NIST>!
+O2+R10C2H3V=B1O+R13CH2CHO      3.3E11     -0.29      10. !(266b,-266b)<MEBEL NIST>!
+O2+C2H4Z=R10C2H3V+R3OOH        4.2E13      0.     57.4E3 !(267,-267)<TSANG86>!
+O2+R11C2H5=R17C2H5OO           2.2E10      0.77   -0.6E3 !(268,-268)<WAGNER90>!
+O2+R11C2H5=C2H4Z+R3OOH         8.4E11      0.      3.9E3 !(269,-269)<TSANG86>!
+O2+R11C2H5=R15C2H5O+B1O        1.2E13     -0.2    27.9E3 !(270,-270)<BOZZELLI90NIST>!
+O2+R11C2H5=CH3CHO+R2OH         6.0E10      0.      6.9E3 !(271,-271)<TSANG86>!
+O2+C2H6=R11C2H5+R3OOH          6.0E13      0.     51.7E3 !(272,-272)<BAULCH94>!
+O2+R2OH=R3OOH+B1O              2.2E13      0.     52.5E3 !(273,-273)<TSANG86>!
+O2+B2CO=CO2+B1O                2.5E12      0.     47.7E3 !(274,-274)<TSANG86>!
+O2+R5CHO=B2CO+R3OOH            7.6E12      0.     0.41E3 !(275,-275)<TIMONEN88>!
+O2+HCHO=R5CHO+R3OOH            2.0E13      0.     38.8E3 !(276,-276)<TSANG86)!
+O2+R7CH3O=HCHO+R3OOH           2.2E10      0.      1.7E3 !(277,-277)<BAULCH94>!
+O2+R6CH2OH=HCHO+R3OOH          1.2E12      0.         0. !(278,-278)<TSANG87>!
+O2+CH3OH=R6CH2OH+R3OOH         2.0E13      0.     44.9E3 !(279,-279)<TSANG87>!
+O2+R12CHCOV=>B2CO+B2CO+R2OH    1.5E12      0.      2.5E3 !(280)     <DAGAUT91>!
+O2+R14CH3CO=R18CH3COOO         2.4E12      0.         0. !(282,-282)<COX90>!
+O2+R13CH2CHO=>HCHO+R2OH+B2CO   5.9E9       0.     -1.4E3 !(283)     <COX90>!
+O2+R13CH2CHO=CH2COZ+R3OOH      1.0E10      0.     -1.4E3 !(284,-284)<COX90>!
+O2+CH3CHO=R14CH3CO+R3OOH       5.0E13      0.     36.4E3 !(285,-285)<COX90>!
+O2+CH3CHO=R13CH2CHO+R3OOH      1.0E13      0.5    46.0E3 !(285',-285)<Ranzi94>!
+O2+C2H4OE#3=R3OOH+R13CH2CHO     5.0E13      0.     48.0E3 !(286,-286)<RANZI94>!
+O2+R15C2H5O=CH3CHO+R3OOH       6.0E10      0.      1.7E3 !(287,-287)<BAULCH94>!
+
+!REACTIONS DE R3OOH!
+R3OOH+R1H=H2+O2                 4.3E13      0.      1.4E3 !(288,-288)<BAULCH94>!
+R3OOH+R1H=2R2OH                 1.7E14      0.      0.9E3 !(289,-289)<BAULCH94>!
+R3OOH+R1H=H2O+B1O               3.0E13      0.      1.7E3 !(290,-290)<BAULCH94>!
+R3OOH+B6CH2=HCHO+R2OH           3.0E13      0.         0. !(291,-291)<TSANG86>!
+R3OOH+B5CH2=HCHO+R2OH           1.8E13      0.         0. !(292,-292)<TSANG86>!
+R3OOH+R4CH3=R7CH3O+R2OH         1.8E13      0.         0. !(293,-293)<BAULCH94>!
+!R3OOH+R4CH3=R7CH3O+R2OH         4.0E13      0.      5.0E3 !(293,-293)<DAGAUT>
+R3OOH+CH4=R4CH3+H2O2            9.0E12      0.     24.6E3 !(294,-294)<BAULCH94>!
+R3OOH+R9C2HT=R12CHCOV+R2OH       1.8E13      0.         0. !(295,-295)<TSANG86>!
+R3OOH+C2H2T=CH2COZ+R2OH          6.0E9       0.      8.0E3 !(296,-296)<TSANG86>!
+!incertitude au moins un facteur 10
+R3OOH+R10C2H3V=>R2OH+R4CH3+B2CO 3.0E13      0.         0. !(297)     <TSANG86>!
+R3OOH+C2H4Z=CH3CHO+R2OH         6.0E9       0.      7.9E3 !(298,-298)<TSANG86>!
+R3OOH+C2H4Z=C2H4OE#3+R2OH        2.2E12      0.     17.2E3 !(299,-299)<BAULCH94>!
+R3OOH+R11C2H5=>R4CH3+HCHO+R2OH  2.4E13      0.         0. !(300)     <TSANG86>!
+R3OOH+R11C2H5=C2H4Z+H2O2        3.0E11      0.         0. !(301,-301)<TSANG86>!
+R3OOH+C2H6=R11C2H5+H2O2         1.3E13      0.     20.4E3 !(302,-302)<BAULCH94>!
+R3OOH+R2OH=H2O+O2               2.9E13      0.     -0.5E3 !(303,-303)<BAULCH94>!
+R3OOH+B2CO=CO2+R2OH             1.57E5      2.18    17.9E3 !(304,-304)<TSANG86>; nouvelles donnees M. Cord !
+R3OOH+R5CHO=>R2OH+R1H+CO2       3.0E13      0.         0. !(305)     <TSANG86>!
+R3OOH+HCHO=R5CHO+H2O2           3.0E12      0.     13.0E3 !(306,-306)<BAULCH94>!
+R3OOH+R7CH3O=HCHO+H2O2          3.0E11      0.         0. !(307,-307)<TSANG86>!
+R3OOH+R6CH2OH=HCHO+H2O2         1.2E13      0.         0. !(308,-308)<TSANG87>!
+R3OOH+CH3OH=R6CH2OH+H2O2        9.6E10      0.     12.6E3 !(309,-309)<TSANG87>!
+R3OOH+R14CH3CO=>R4CH3+CO2+R2OH  3.0E13      0.         0. !(310)<TSANG86>!
+R3OOH+CH3CHO=R14CH3CO+H2O2      1.0E12      0.     10.0E3 !(311,-311)<CAVANAGH90>!
+R3OOH+C2H4OE#3=H2O2+R13CH2CHO    1.6E12      0.     15.0E3 !(312,-312)<RANZI94>
+R3OOH+R3OOH=H2O2+O2             1.3E11      0.    -1.63E3 !(313,-313)<BAULCH 94>!
+     DUPLICATE
+R3OOH+R3OOH=H2O2+O2             4.2E14      0.    11.98E3 !(313,-313)<BAULCH 94>!
+     DUPLICATE
+
+!REACTIONS DE H2O2!
+!Modifs de PAG en date du 7/11/2013
+! Mise en commentaire des 2 réactions qui suivent
+! pour ajout de la troisième réaction
+!R2OH+R2OH(+ M)=>H2O2 (+ M)      7.23E13    -0.37    0.00  !(314)<BAULCH94>!
+!        O2/0.4/ B2CO/0.75/ CO2/1.5/ H2O/6.5/ CH4/3.0/ C2H6/3.0/ AR/0.35/
+!        N2/0.4/ HE/0.35/                              
+!        LOW  /5.53E19  -0.76     0.00 /   
+!        TROE /0.5 1 1.E8/                 
+!H2O2(+M)=>R2OH+R2OH(+M)        3.00E14     0.00    48.5E3 !(-314)<BAULCH94>!
+!        O2/0.4/ B2CO/0.75/ CO2/1.5/ H2O/6.5/ CH4/3.0/ C2H6/3.0/ AR/0.35/
+!        N2/0.4/ HE/0.35/
+!        LOW  /3.0E17   0.0     45.5E3/  
+!        TROE /0.5 1. 1.E8/
+H2O2(+M)=R2OH+R2OH(+M)        2.00E12     0.90    48.7E3 !(314) <TROE2010 C&F>
+HE/0.44/ AR/0.68/ O2/0.79/ N2/1.00/ CO2/1.06/ H2O/5.1/ H2O2/5.2/
+LOW  /3.7E24   -2.3     48.7E3/
+TROE /0.43 1. 1.E8/
+
+H2O2+R1H=H2+R3OOH              1.7E12      0.      3.7E3 !(315,-315)<BAULCH94>!
+H2O2+R1H=H2O+R2OH              1.0E13      0.      3.6E3 !(316,-316)<BAULCH94>!
+H2O2+B6CH2=R7CH3O+R2OH         3.0E13      0.         0. !(317,-317)<TSANG86>!
+H2O2+R10C2H3V=C2H4Z+R3OOH      1.2E10      0.     -0.6E3 !(318,-318)<TSANG86>!
+H2O2+B1O=R2OH+R3OOH            6.6E11      0.      4.0E3 !(319,-319)<BAULCH94>!
+H2O2+R2OH=H2O+R3OOH            7.8E12      0.      1.3E3 !(320,-320)<BAULCH94>!
+
+!REACTIONS DE CO2!
+CO2+B5CH2=HCHO+B2CO            2.3E10      0.         0. !(321,-321)<TSANG86>!
+
+!REACTIONS DE R8CH3OO!
+R8CH3OO=HCHO+R2OH                 1.5E13      0.     47.0E3 !(322,-322)<RANZI94>!
+R8CH3OO+R1H=R7CH3O+R2OH           9.6E13      0.         0. !(323,-323)<TSANG86>!
+R8CH3OO+H2=CH3OOH+R1H             3.0E13      0.     26.0E3 !(324,-324)<TSANG86>!
+R8CH3OO+B6CH2=HCHO+R7CH3O         1.8E13      0.         0. !(325,-325)<TSANG86>!
+R8CH3OO+B5CH2=HCHO+R7CH3O         1.8E13      0.         0. !(326,-326)<TSANG86>!
+R8CH3OO+R4CH3=R7CH3O+R7CH3O       5.0E12      0.     -1.4E3 !(327,-327)<CAVANAGH90>!
+R8CH3OO+CH4=CH3OOH+R4CH3          1.8E11      0.     18.5E3 !(328,-328)<TSANG86>!
+R8CH3OO+R9C2HT=R7CH3O+R12CHCOV     2.4E13      0.         0. !(329,-329)<TSANG86>!
+R8CH3OO+C2H2T=CH3OOH+R9C2HT         5.6E11      0.     24.5E3 !(330,-330)<RANZI94>!
+R8CH3OO+R10C2H3V=R7CH3O+R13CH2CHO 2.4E13      0.         0. !(331,-331)<TSANG86*>!
+!* assuming that C2H3O decompose rapidly to R13CH2CHO!
+R8CH3OO+C2H4Z=R7CH3O+C2H4OE#3      1.1E15      0.     20.0E3 !(332,-332)<NIKISHA81/MOSHKINA80NIST>!
+R8CH3OO+C2H4Z=CH3OOH+R10C2H3V     3.9E12      0.     24.5E3 !(333,-333)<RANZI94>!
+R8CH3OO+R11C2H5=R7CH3O+R15C2H5O   2.4E13      0.         0. !(334,-334)<TSANG86>!
+R8CH3OO+C2H6=CH3OOH+R11C2H5       2.9E11      0.     14.9E3 !(335,-335)<TSANG86>!
+R8CH3OO+B1O=R7CH3O+O2             3.6E13      0.         0. !(336,-336)<TSANG86>!
+R8CH3OO+R2OH=CH3OH+O2             6.0E13      0.         0. !(337,-337)<TSANG86>!
+R8CH3OO+R2OH=R7CH3O+R3OOH         3.0E12      0.         0. !(338,-338)<RANZI94>!
+R8CH3OO+B2CO=R7CH3O+CO2           1.0E14      0.     24.0E3 !(339,-339)<RANZI94>!
+R8CH3OO+R5CHO=>R7CH3O+R1H+CO2     3.0E13      0.         0. !(340)     <TSANG86>!
+R8CH3OO+HCHO=CH3OOH+R5CHO         1.0E12      0.     12.1E3 !(341,-341)<CAVANAGH90>!
+R8CH3OO+R7CH3O=HCHO+CH3OOH        3.0E11      0.         0. !(342,-342)<TSANG86>!
+R8CH3OO+R6CH2OH=>R7CH3O+R2OH+HCHO 1.2E13      0.         0. !(343)<TSANG87>!
+R8CH3OO+CH3OH=CH3OOH+R6CH2OH      1.8E12      0.     13.7E3 !(344,-344)<TSANG87>!
+R8CH3OO+CH3OH=CH3OOH+R7CH3O       2.8E11      0.     18.8E3 !(345,-345)<RANZI94>!
+R8CH3OO+CH2COZ=CH3OOH+R12CHCOV    1.7E12      0.     27.0E3 !(346,-346)<RANZI94>!
+R8CH3OO+R14CH3CO=R4CH3+CO2+R7CH3O 2.4E13      0.         0. !(347,-347)<TSANG86>!
+R8CH3OO+CH3CHO=CH3OOH+R14CH3CO    1.0E12      0.     12.1E3 !(348,-348)<CAVANAGH90>!
+R8CH3OO+CH3CHO=CH3OOH+R13CH2CHO   1.7E12      0.     19.2E3 !(349,-349)<RANZI94>!
+R8CH3OO+C2H4OE#3=CH3OOH+R13CH2CHO  2.2E12      0.     16.0E3 !(350,-350)<RANZI94>!
+R8CH3OO+R3OOH=CH3OOH+O2           2.5E11      0.     -1.6E3 !(351,-351)<BAULCH94>!
+R8CH3OO+R3OOH=>O2+HCHO+H2O        5.0E10      0.         0. !(352)<RANZI94>!
+R8CH3OO+H2O2=CH3OOH+R3OOH         2.4E12      0.      9.9E3 !(353,-353)<TSANG86>!
+R8CH3OO+R8CH3OO=CH3OH+HCHO+O2     2.5E10      0.     -0.8E3 !(354,-354)<BAULCH94>!
+R8CH3OO+R8CH3OO=R7CH3O+R7CH3O+O2  2.5E10      0.     -0.8E3 !(355,-355)<BAULCH94>!
+
+!REACTIONS DE CH3OOH!
+CH3OOH=R7CH3O+R2OH               6.0E14      0.     42.3E3 !(356,-356)<BAULCH94>!
+CH3OOH+B1O=R8CH3OO+R2OH          2.0E13      0.      4.8E3 !(357,-357)<BAULCH94average>!
+CH3OOH+R2OH=H2O+R8CH3OO          1.8E12      0.    -0.37E3 !(358,-358)<BAULCH94average>!
+CH3OOH+R7CH3O=>CH3OH+R2OH+HCHO   1.5E11      0.      6.5E3 !(359)<RANZI94>!
+
+!REACTIONS DE R17C2H5OO!
+R17C2H5OO=R16C2H4OOH               4.2E12      0.     36.9E3 !(360,-360)<HUGHES93>!
+R17C2H5OO+H2=C2H5OOH+R1H           7.9E12      0.     21.0E3 !(361,-361)<RANZI94>!
+R17C2H5OO+R4CH3=R15C2H5O+R7CH3O    2.0E12      0.     -1.2E3 !(362,-362)<RANZI94>!
+R17C2H5OO+CH4=C2H5OOH+R4CH3        3.9E12      0.     24.0E3 !(363,-363)<RANZI94>!
+R17C2H5OO+C2H2T=C2H5OOH+R9C2HT       5.6E11      0.     24.4E3 !(364,-364)<RANZI94>!
+R17C2H5OO+C2H4Z=C2H5OOH+R10C2H3V   3.9E12      0.     24.4E3 !(365,-365)<RANZI94>!
+R17C2H5OO+C2H4Z=R15C2H5O+C2H4OE#3   2.3E16      0.     21.9E3 !(366,-366)<MOSHKINA80NIST>!
+R17C2H5OO+C2H6=C2H5OOH+R11C2H5     5.1E12      0.     19.5E3 !(367,-367)<RANZI94>!
+R17C2H5OO+H2O=C2H5OOH+R2OH         5.6E12      0.     30.6E3 !(368,-368)<RANZI94>!
+R17C2H5OO+B2CO=CO2+R15C2H5O        1.0E14      0.     24.0E3 !(369,-369)<RANZI94>!
+R17C2H5OO+HCHO=C2H5OOH+R5CHO       4.5E12      0.     14.4E3 !(370,-370)<RANZI94>!
+R17C2H5OO+CH3OH=C2H5OOH+R7CH3O     2.8E11      0.     18.4E3 !(371,-371)<RANZI94>!
+R17C2H5OO+CH3OH=C2H5OOH+R6CH2OH    2.8E12      0.     19.5E3 !(372,-372)<RANZI94>!
+R17C2H5OO+CH2COZ=C2H5OOH+R12CHCOV  1.7E12      0.     24.4E3 !(373,-373)<RANZI94>!
+R17C2H5OO+CH3CHO=C2H5OOH+R14CH3CO  3.9E12      0.     14.4E3 !(374,-374)<RANZI94>!
+R17C2H5OO+CH3CHO=C2H5OOH+R13CH2CHO 1.7E12      0.     19.5E3 !(375,-375)<RANZI94>!
+R17C2H5OO+C2H4OE#3=C2H5OOH+R13CH2CHO 2.2E12      0.     16.3E3 !(376,-376)<RANZI94>!
+R17C2H5OO+R3OOH=O2+C2H5OOH         3.9E11      0.     -1.3E3 !(377,-377)<BAULCH89>!
+!Rate constant measured between 240 and 380K!
+R17C2H5OO+H2O2=C2H5OOH+R3OOH       4.5E11      0.     10.8E3 !(378,-378)<RANZI94>!
+R17C2H5OO+R8CH3OO=>R15C2H5O+R7CH3O+O2  2.0E11      0.         0. !(379)<RANZI94>!
+R17C2H5OO+CH3OOH=C2H5OOH+R8CH3OO   1.1E12      0.     16.3E3 !(380,-380)<RANZI94>!
+R17C2H5OO+R17C2H5OO=2R15C2H5O+O2   4.1E10      0.      0.2E3 !(381,-381)<LIGHTFOOT92>!
+R17C2H5OO+R17C2H5OO=C2H5OH+CH3CHO+O2  1.8E10      0.       0.2E3 !(382,-382)<LIGHTFOOT92>!
+
+!REACTIONS DE R16C2H4OOH!
+R16C2H4OOH=C2H4OE#3+R2OH            1.5E11      0.     20.0E3 !(383,-383)<RANZI94>!
+R16C2H4OOH=R6CH2OH+HCHO            2.5E13      0.     27.5E3 !(384,-384)<RANZI94>!
+R16C2H4OOH=C2H4Z+R3OOH             2.0E13      0.     23.5E3 !(385,-385)<RANZI94>!
+
+!REACTIONS DE C2H5OOH
+C2H5OOH=R15C2H5O+R2OH               4.0E15      0.     42.9E3 !(386,-386)<BAULCH94>!
+C2H5OOH+R1H=>CH3CHO+R2OH+H2         3.2E13      0.      7.7E3 !(387)<RANZI94>!
+C2H5OOH+R4CH3=>CH3CHO+R2OH+CH4      5.7E11      0.      8.7E3 !(388)<RANZI94>!
+C2H5OOH+R9C2HT=>CH3CHO+R2OH+C2H2T     6.0E11      0.      9.2E3 !(389)<RANZI94>!
+C2H5OOH+R10C2H3V=>CH3CHO+R2OH+C2H4Z 1.0E12      0.      8.7E3 !(390)<RANZI94>!
+C2H5OOH+R11C2H5=>CH3CHO+R2OH+C2H6   3.4E11      0.     11.4E3 !(391)<RANZI94>!
+C2H5OOH+R2OH=>CH3CHO+R2OH+H2O       5.9E12      0.      0.9E3 !(392)<RANZI94>!
+C2H5OOH+R5CHO=>CH3CHO+R2OH+HCHO     1.8E12      0.     16.7E3 !(393)<RANZI94>!
+C2H5OOH+R7CH3O=>CH3CHO+R2OH+CH3OH   6.3E11      0.      5.5E3 !(394)<RANZI94>!
+C2H5OOH+R6CH2OH=>CH3CHO+R2OH+CH3OH  4.2E11      0.     13.6E3 !(395)<RANZI94>!
+C2H5OOH+R14CH3CO=>2CH3CHO+R2OH      2.0E12      0.     18.5E3 !(396)<RANZI94>!
+C2H5OOH+R13CH2CHO=>2CH3CHO+R2OH     3.4E11      0.     15.7E3 !(397)<RANZI94>!
+C2H5OOH+R3OOH=>CH3CHO+R2OH+H2O2     8.0E11      0.     16.2E3 !(398)<RANZI94>!
+C2H5OOH+R8CH3OO=>CH3CHO+R2OH+CH3OOH 1.1E12      0.     16.7E3 !(399)<RANZI94>!
+C2H5OOH+R17C2H5OO=>CH3CHO+R2OH+C2H5OOH  1.1E12      0.     16.7E3 !(400)<RANZI94>!  
+
+!REACTIONS DE R18CH3COOO!
+R18CH3COOO+C2H4OE#3=CH3COOOH+R13CH2CHO     1.0E12      0.      9.3E3 !(401,-402)<RANZI94>!
+R18CH3COOO+R3OOH=CH3COOOH+O2              5.5E10      0.     -2.6E3 !(402,-402)<COX90>!
+R18CH3COOO+C2H5OOH=CH3COOOH+R17C2H5OO     5.0E11      0.      9.2E3 !(403,-403)<RANZI94>!
+R18CH3COOO+C2H5OOH=>CH3CHO+R2OH+CH3COOOH  5.0E11      0.      9.2E3 !(404)<RANZI94>!
+R18CH3COOO+R18CH3COOO=>2R4CH3+O2+2CO2     1.7E12      0.     -1.0E3 !(405)<CAVANAGH90>!
+
+!REACTIONS DE CH3COOOH!
+CH3COOOH=>R4CH3+CO2+R2OH                  1.0E16      0.     40.0E3 !(406)<CAVANAGH90>!
+
+!REACTIONS DE R21CH3OCO = CH3-O-C(.)=O
+R4CH3+CO2=R21CH3OCO	                  4.76E7      1.54    3.47E4 ! <GLAUDE05>!
+R7CH3O+B2CO=R21CH3OCO	                  1.55E6      2.02    5.73E3 ! <GLAUDE05>!
+
+! REACTIONS DE R22CO2H = O=C(.)-OH
+R22CO2H(+M)=B2CO+R2OH(+M)    5.9E+12  0.53  33980 ! Larson                             
+	    LOW / 2.20E23  -1.83  35260.0 /
+R22CO2H(+M)=CO2+R1H(+M)    1.7E+12  0.31  32920 ! Larson
+            LOW / 2.9E26  -3.02  35070.0 /
+! REACTION DE R23C2H3O2B
+R23C2H3O2B=>CO2+R4CH3	1.70E9	1.0	38640
+
+!********************************************************
+
+!REACTIONS PRODUISANT DES C2+ RADICALAIRES
+C2H4Z+R4CH3=>R19C3H7                      2.1E11    0.     7.35E3  !(407)<BAULCH94>!
+R11C2H5+C2H4Z=>R20C4H9                    1.1E11    0.     7.3E3   !(408)<BAULCH94>!
+
+!REACTIONS PRODUISANT DES C2+ MOLECULAIRES 
+!REACTIONS DE R9C2HT!
+!R9C2HT+R9C2HT=>C4H2                         1.8E13      0.         0. !(24,-24)<TSANG86>!  
+
+!REACTIONS DE C2H2T!
+!C2H2T+B6CH2=>C3H4                          1.7E14      0.         0. !(27,-27)<BAULCH94>! 
+!C2H2T+B5CH2=>C3H4                          3.5E12      0.         0. !(28,-28)<TSANG86>!
+!C2H2T+R4CH3=>C3H4+R1H                      6.7E19     -2.08   31.6E3 !(29,-29)<DEAN87>!
+!C2H2T+R9C2HT=>C4H2+R1H                      9.0E13      0.         0. !(30,-30)<BAULCH94>!
+!C2H2T+C2H2T=>C4H4                           5.5E12      0.     37.0E3 !(31,-31)<DURAN89>!
+
+!REACTIONS DE C2H3!
+!R10C2H3V+R4CH3=>C3H6Y                     2.5E13      0.         0. !(37,-37)<TSANG86>!
+!R10C2H3V+R9C2HT=>C4H4                      1.8E13      0.         0. !(38,-38)<TSANG86>!
+!R10C2H3V+C2H2T=>C4H4+R1H                   2.0E12      0.      5.0E3 !(40,-40)<FAHR89>!
+!R10C2H3V+R10C2H3V=>C4H6YZ                 9.6E12      0.         0. !(41,-41)<TSANG86>!
+
+!REACTIONS DE C2H4!
+!C2H4Z+B4CH=>C3H4+R1H                      1.3E14      0.     -0.3E3 !(46,-46)<BAULCH94>! 
+!C2H4Z+B6CH2=>C3H6Y                        9.6E13      0.         0. !(47,-47)<BAULCH94>! 
+!C2H4Z+B5CH2=>C3H6Y                        3.2E12      0.      5.1E3 !(48,-48)<BAULCH94>!
+!C2H4Z+R9C2HT=>C4H4+R1H                     1.2E13      0.         0. !(50,-50)<TSANG86>!
+!C2H4Z+R4CH3=>C3H6Y+R1H                    6.6E11      0.          15.9E3  !<TSANG86>!
+!C2H4Z+R10C2H3V=>C4H6YZ+R1H                5.0E11      0.      7.3E3 !(51,-51)<TSANG86>! 
+
+!REACTIONS DE C2H5!
+R11C2H5+R10C2H3V=>nC4H8Y                  1.5E13      0.         0. !(61,-61)<TSANG86>!
+R11C2H5+R11C2H5=>C4H10                    1.1E13      0.         0. !(65,-65)<BAULCH94>!
+
+!REACTIONS DE HCO!
+R5CHO+R10C2H3V=>C2H3CHOZ                  1.8E13      0.         0. !(138,-138)<TSANG86>!
+R5CHO+R11C2H5=>C2H5CHO                    1.8E13      0.         0. !(141,-141)<TSANG86>!
+
+!REACTIONS DE CH3O!
+!R7CH3O+R4CH3=CH3OCH3                      1.2E13      0.         0. !(159,-159)<TSANG86>!
+!R7CH3O+R7CH3O=>CH3OOCH3                   1.8E12      0.         0. !(172,-172)<TSANG86>!
+
+!REACTIONS DE CH2OH!
+R6CH2OH+R11C2H5=C3H7OH                    1.2E13      0.         0. !(189,-189)<TSANG87>!
+
+!REACTIONS DE CH3CO!
+R14CH3CO+R4CH3=>C2H6CO                    4.0E15     -0.8        0. !(231,-231)<TSANG86>!
+R14CH3CO+R11C2H5=>C3H8CO                  3.1E14     -0.5        0. !(232,-232)<TSANG86>!
+!R14CH3CO+R5CHO=>CH3COCHO                  1.8E13      0.         0. !(237,-237)<TSANG86>!
+!R14CH3CO+R6CH2OH=>CH3COCH2OH              1.2E13      0.         0. !(241,-241)<TSANG87>!
+!R14CH3CO+R14CH3CO=>CH3COCOCH3             1.2E13      0.     12.3E3 !(243,-243)<TSANG86>!
+
+
+!REACTIONS RAJOUTEES POUR TENIR COMPTE DE L ACROLEINE
+
+!C3H6Y+B1O=CH3CHCO+2R1H                    5.0E7       1.76  -1.22E3 !<TSANG91>!
+!CH3CHCO+R2OH=B2CO+R10C2H3V+H2O                  4.0E6       2.0    0.0    !<MARINOV>!
+!CH3CHCO+B1O=B2CO+R10C2H3V+R2OH                  7.2E12      0.0    2.0E3  !<MARINOV>!
+!CH3CHCO+R1H=B2CO+R10C2H3V+H2                    2.0E5       2.5    2.5E3  !<MARINOV>!
+!CH3CHCO+R1H=R11C2H5+B2CO                  2.0E13      0.0    2.0E3  !<MARINOV>!
+!CH3CHCO+B1O=R4CH3+R5CHO+B2CO              3.0E7       2.0    0.0    !<MARINOV>!
+!tC3H5+O2=CH3CHCO+R1H+B1O                  1.6E15     -0.78    3.1E3 !<MARINOV>!
+!tC3H5+B1O=CH3CHCO+R1H                     1.0E14      0.0     0.0E3 !<MARINOV>!
+!aC4H5+O2=CH3CHCO+R5CHO                    4.2E10      0.0     2.5E3 !<SLAGLE92>!
+C2H3CHOZ+R2OH=B2CO+R10C2H3V+H2O                 1.0E13      0.0    0.0    !<MARINOV>!
+C2H3CHOZ+B1O=B2CO+R10C2H3V+R2OH                 7.2E12      0.0    2.0E3  !<MARINOV>!
+C2H3CHOZ+B1O=CH2COZ+R5CHO+R1H             5.0E7       1.76   0.08E3 !<MARINOV>!
+C2H3CHOZ+R1H=B2CO+R10C2H3V+H2                   4.0E13      0.0    4.2E3  !<MARINOV>!
+C2H3CHOZ+R1H=C2H4Z+R5CHO                  2.0E13      0.0    3.5E3  !<MARINOV>!
+C2H3CHOZ+O2=B2CO+R10C2H3V+R3OOH                 3.0E13      0.0   36.0E3  !<MARINOV>!
+!.C3H5Y+R3OOH=C2H3CHOZ+R1H+R2OH            7.0E18     -2.0    0.0    !<TSANG91>!
+!.C3H5Y+O2=C2H3CHOZ+R2OH                   1.8E13     -0.41   22.9E3 !<BOZELLI93>!
+!.C3H5Y+B1O=C2H3CHOZ+R1H                   1.8E14      0.0     0.0   !<SLAGLE92>!
+
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!                                                                !!         
+!! BASE C3-C6 :                                                   !!
+!!       REACTIONS OF C3 SPECIES                                  !!
+!!       REACTIONS OF C4 SPECIES                                  !!
+!!       REACTIONS OF C5 SPECIES                                  !!
+!!       REACTIONS OF C6 SPECIES                                  !!
+!!                                                                !!
+!!       MECHANISM FOR THE GAS PHASE OXIDATION OF BENZENE         !!
+!!       MECHANISM FOR THE GAS PHASE OXIDATION OF TOLUENE         !!
+!!	 MECHANISM FOR THE GAS PHASE OXIDATION OF ETHYLBENZENE    !!
+!!                                                                !!
+!!	 REACTIONS OF CRESOL       AND DERIVED RADICALS           !!
+!!	 REACTIONS OF BENZYLALCOOL AND DERIVED RADICALS           !! 
+!!	 REACTIONS OF STYRENE      AND DERIVED RADICALS           !!
+!!	 REACTIONS OF BIBENZYL     AND DERIVED RADICALS           !!
+!!	 REACTIONS OF STILBENE     AND DERIVED RADICALS           !!
+!! 	 REACTIONS of NAPHTHALENE  AND DERIVED RADICALS           !!
+!! 	 REACTIONS of INDENE       AND DERIVED RADICALS           !!
+!!                                                                !!
+!!       COMPLEMENTARY REACTIONS:                                 !!
+!!	 REACTIONS OF HOC6H4CHO                                   !!
+!! 	 REACTIONS OF Benzofuran                                  !!
+!! 	 REACTIONS OF CUMENE                                      !!
+!! 	 REACTIONS OF CH3styre                                    !!
+!! 	 REACTIONS OF C6H5CH2CHO                                  !!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+!*****************************************************!
+!*****************************************************!
+!       REACTIONS DES ESPECES NON OXYGENES EN C3      !
+!*****************************************************!
+!*****************************************************!
+
+!****** REACTIONS DE C3H2  ***** (CHCCH(..))*****!
+
+B4CH+C2H2T=C3H2+R1H                    2.1E14       0.0        -0.5E3 !<MILLER92/BAULCH94>!
+C3H2+B1O=R9C2HT+R1H+B2CO               3.0E13       0.0         0.0   !<PEETERS97>!
+C3H2+R2OH=C2H2T+R5CHO                  5.0E13       0.0         0.0   !<MILLER92>!
+C3H2+O2=R12CHCOV+B2CO+R1H              5.0E13       0.0         0.0   !<MILLER92>!
+
+!****** REACTIONS DE R31C3H3T ***** (CHCCH2(.)) Propargyl*****stablilise par resonnance !
+
+B6CH2+C2H2T=R31C3H3T+R1H                  1.8E14       0.0         0.0   !<MILLER87/BAULCH94>!
+R31C3H3T+R1H=C3H2+H2                      2.0E13       0.0         0.0   !<MILLER92/BRAUn89>!
+R31C3H3T+B1O=R9C2HT+HCHO                  1.4E14       0.0         0.0   !<MILLER92/SLAGUE91>!
+R31C3H3T+R2OH=C3H2+H2O                    2.0E13       0.0         0.0   !<MILLER92>!
+R31C3H3T+R2OH=R10C2H3V+R5CHO              4.0E13       0.0         0.0   !<WAnG97>!
+C2H2T+R12CHCOV=R31C3H3T+B2CO              1.0E11       0.0         3.0E3 !<MILLER92>!
+R31C3H3T+O2=CH2COZ+R5CHO                  3.0E10       0.0         2.9E3 !<MILLER92/SLAGUE88>!
+C3H2+R1H=R31C3H3T                         1.0E14       0.0         0.0   !<est>!
+R31C3H3T+R3OOH=>R2OH+R9C2HT+HCHO          1.0E15      -0.8         0.0   !<Heyberger>!
+R31C3H3T+R31C3H3T=C6H6@                       1.0E12       0.0         0.0   !<STEIn90>shocktube!  
+R31C3H3T+R31C3H3T=R1C6H5@+R1H                   1.0E12       0.0         0.0   !<STEIn90>flame!  
+
+!****** REACTIONS DE C3H4T ***** (CH3CCH) Propyne *****!
+
+C3H4T+M=R31C3H3T+R1H+M                     4.7E18      0.0        80.0E3 	!<HIDAKA89>!
+C2H2T+B5CH2=C3H4T                      3.5E12      0.0         0.0   	!<TSAnG86>!
+C3H4T=R9C2HT+R4CH3                     4.2E15      0.0       125.0E3 	!<KInGAS1500>!
+C3H4T+O2=R31C3H3T+R3OOH                    2.1E12      0.0        40.8E3 	!<est Ingham>!
+C3H4T+R1H=C2H2T+R4CH3                  1.3E5       2.5         1.00E3 	!<hidaka89> !
+C3H4T+R1H(+M)=R29C3H5V(+M)                8.5E12      0.0         1.7E3 	!<WAGnER72>!
+			    LOW   /5.6E25     -7.27     6.58E3/         !<Marinov97!
+C3H4T+R1H(+M)=R30C3H5V(+M)                5.8E12      0.0         3.1E3 	!<WAGnER72>!
+			    LOW   /3.8E25     -7.27     7.98E3/         !<estimated>!
+C3H4T+R4CH3=R31C3H3T+CH4                   2.2E0       3.5         5.7E3 	!<asTSAnG91>!
+C3H4T+R1H=R31C3H3T+H2                      1.7E5       2.5         2.5E3 	!<asTSAnG91>
+C3H4T+R9C2HT=R31C3H3T+C2H2T                3.6E12      0.0         0.0   	!<asTSAnG91>!
+C3H4T+R10C2H3V=R31C3H3T+C2H4Z              2.2E0       3.5         4.7E3 	!<asTSAnG91>!
+C3H4T+R11C2H5=R31C3H3T+C2H6                2.2E0       3.5         6.6E3 	!<asTSAnG91>!
+C3H4T+B1O=R12CHCOV+R4CH3               1.5E13      0.0         2.1E3 	!<WARnATZ84>!
+C3H4T+B1O=R2OH+R31C3H3T                    3.4E4       2.16        4.8E3 	!<<ADUSEI, G.Y, 1996>!
+C3H4T+R2OH=CH2COZ+R4CH3                4.3E11      0.0        -0.8E3 	!<BOODAGHIAnS87>!
+C3H4T+R2OH=R1H+C2H3CHOZ                4.3E11      0.0        -0.8E3 	!<asBOODAGHIAnS87>!
+C3H4T+R2OH=R31C3H3T+H2O                    3.1E6       2.0        -0.3E3 	!<asTSAnG91>!
+C3H4T+R3OOH=C2H4Z+B2CO+R2OH            6.0E9       0.0         8.0E3 	!as296<TSAnG86>!
+C3H4T+R3OOH=R31C3H3T+H2O2                  9.6E3       2.6        13.9E3 	!<asTSAnG91>!
+C3H4T+R7CH3O=CH3OH+R31C3H3T                2.0E12      0.0         4.0E3 	!<Heyberger>!     
+ 
+!******** REACTIONS DE C3H4Z2 ***** (CH2CCH2) Allene  *******!  
+
+C3H4Z2=C3H4T                            2.5E12      0.0        59.0E3 	!<HIDAKA89>!
+C3H4Z2+M=R31C3H3T+R1H+M                     2.0E18      0.0        80.0E3 	!<HIDAKA89>!
+C3H4Z2+O2=R31C3H3T+R3OOH                    2.8E13      0.0        39.0E3 	!<Estimation Ingham>!
+C3H4Z2+R1H(+M)=R26C3H5Y(+M)	       4.0E12      0.0        2.7E3 	!<WAGnER72>!
+			    LOW   /5.6E33       -5.0   4.44E3/          !<Marinov97> !
+C3H4Z2+R1H(+M)=R29C3H5V(+M)                8.5E12      0.0         2.0E3 	!<WAGnER72>!
+			    LOW   /1.1E34     -5.0     4.44E3/          !<Marinov97!
+C2H4Z+B4CH=C3H4Z2+R1H                   1.3E14      0.0        -0.3E3 	!<BAULCH94base>!
+R10C2H3V+B5CH2=C3H4Z2+R1H               3.0E13      0.0         0.0   	!<MILLER92>!
+R41C4H3VT+B5CH2=C3H4Z2+R9C2HT               2.0E13      0.0        0.0   	!<MILLER92>!
+C3H4Z2+B1O=R1H+B2CO+R10C2H3V            6.6E12      0.0         3.0E3 	!<Aleksandrev nist>!
+C3H4Z2+R2OH=CH2COZ+R4CH3                2.0E12      0.0        -0.2E3 	!<LIU88>!
+C3H4Z2+R2OH=HCHO+R10C2H3V               2.0E12      0.0        -0.2E3 	!<LIU88>!
+C3H4Z2+R1H=R31C3H3T+H2                      1.3E6       2.53        9.2E3 	!<est.butatiene>!
+C3H4Z2+B1O=R31C3H3T+R2OH                    6.2E12      0.0         1.9E3 	!<fromAleksandrev nist>!
+!d'après leur vitesse de réaction total et d'addition !
+C3H4Z2+R2OH=R31C3H3T+H2O                    6.2E6       2.0         0.4E3 	!<est.butadiene>!
+C3H4Z2+R4CH3=R31C3H3T+CH4                   2.0E12      0.0         7.7E3 	!<WU87>!
+C3H4Z2+R9C2HT=R31C3H3T+C2H2T                1.0E13      0.0         0.0   	!<WU87>!
+C3H4Z2+R26C3H5Y=R31C3H3T+C3H6Y                2.0E12      0.0         7.7E3 	!<DAGAUT92>
+C3H4Z2+R7CH3O=CH3OH+R31C3H3T		       4.0E12      0.0         9.6E3 	!<correlations a partir de Heyberger>!	
+C3H4Z2+R11C2H5=C2H6+R31C3H3T		       5.0E14      0.0        19.8E3 	!<asbutadiene>!
+C3H4Z2+R10C2H3V=C2H4Z+R31C3H3T	       5.0E14      0.0        19.8E3 	!<asbutadiene>!
+C3H4Z2+R4CH3=R39C4H7V                      0.4E11      0.0         5.0E3  	!<Tsang73/3>!
+
+!fort effet de fall off, environ un facteur 4 pour 6.7 kPa et 1100 K (Tsang91)!
+!C3H4Z2+R31C3H3T=C6H6@+R1H                 1.4E12       0.0        10.0E3 	!<HIDAKA89>!
+
+!******** REACTIONS DE cC3H4 ***** cyclopropene *********!
+
+cC3H4=C3H4Z2                            1.5E14      0.0    50.5E3  !<Karni>
+cC3H4=C3H4T                            7.1E13      0.0    47.8E3  !<Karni>
+cC3H4+R1H=cC3H3+H2                     5.4E4       2.5    -1.9E3  !<Heyberger>!
+cC3H4+R2OH=cC3H3+H2O                   3.0E6       2.0    -1.5E3  !<Heyberger>!
+cC3H4+R2OH=C2H4Z+R5CHO                 2.8E12      0.0    -1.0E3  !<Heyberger>!
+cC3H3+R3OOH=R2OH+C2H2T+R5CHO           1.0E15     -0.8     0.0    !<Heyberger>!
+cC3H3+R4CH3=cC4H6                      1.0E13      0.0     0.0    !<estimation>!
+cC3H3+R1H=cC3H4                        1.0E14      0.0     0.0    !<estimation>!
+
+!****** REACTIONS DE R26C3H5Y ***** (CH2CHCH2(.)) Allyl *****stablilise par resonnance !
+ 
+!R26C3H5Y+R1H=C3H6Y                       2.0E13      0.0      0.0  !<TSAnG91>!
+R26C3H5Y+R1H=C3H4Z2+H2                     1.8E13      0.0      0.0  !TSANG 91!*
+R26C3H5Y+R1H=C3H6Y                        1.0E14      0.0      0.0  !<allara>!!
+! issu de la base C0C2
+R26C3H5Y+R3OOH=C2H3CHOZ+R1H+R2OH          7.0E18     -2.0      0.0  !<TSANG91>!
+R26C3H5Y+O2=C2H3CHOZ+R2OH                 1.8E13     -0.41   22.9E3 !<BOZELLI93>!
+R26C3H5Y+B1O=C2H3CHOZ+R1H                 1.8E14      0.0      0.0  !<SLAGLE92>!
+
+!réaction importante pour la formation de propène!
+R26C3H5Y+R4CH3=C3H4Z2+CH4                  3.0E12     -0.32     -0.1E3  !<TSAnG91>!
+R26C3H5Y+R4CH3=nC4H8Y                      1.0E14     -0.32     -0.1E3  !<TSAnG91>!
+R26C3H5Y+R2OH=C3H4Z2+H2O                   6.03E12     0.0         0.0  !Tsang 91!
+!peu d'effet de fall off!
+R26C3H5Y+R10C2H3V=C3H4Z2+C2H4Z             2.4E12      0.0         0.0  !<TSAnG91>!
+!R26C3H5Y+R11C2H5=C3H4Z2+C2H6              9.6E11      0.0      -0.1E3  !<TSAnG91>!
+R26C3H5Y+R11C2H5=C3H4Z2+C2H6               2.0E13      0.0      -0.1E3  !<TSAnG91>MODIF!!!!!
+R26C3H5Y+B1O=R10C2H3V+HCHO                1.8E14      0.0         0.0  !<SLAGLE90,LEUnG95>!
+!R26C3H5Y+R2OH=HCHO+C2H4Z                 1.5E13      0.0         0.0  !<TSAnG91>!
+!R26C3H5Y+R3OOH=R2OH+R5CHO+C2H4Z          5.0E12      0.0         0.0  !<asEXGAS>MODIF!!!!!!!
+!processus non elementaire impliquant la formation-decomposition de l'hydroperoxyde
+!R26C3H5Y+R31C3H3T=C6H6@+2R1H                 5.6E20     -2.535     1.7E3 	!<MARInOV97>!
+R26C3H5Y+R26C3H5Y=C3H4Z2+C3H6Y                8.4E10      0.0      -0.3E3 	!<TSAnG91>!
+
+!****** REACTIONS DE R28C3H3COX *****
+R28C3H3COX=R10C2H3V+B2CO		1.0E14	0.0	34.0E3	!<MARINOV>!
+!R28C3H3COX+B1O=R10C2H3V+CO2		1.0E14	0.0	0.0	!<MARINOV>!
+
+!****** REACTIONS DE R30C3H5V ***** (CH3CHCH(.)) 2-methyl vinyl *****!
+
+R30C3H5V=R26C3H5Y                           5.0E13      0.0        37.0E3 !<WEISSMAn89>!
+R4CH3+C2H2T=R30C3H5V                      6.0E11      0.0	      7.7E3 !<BAULCH94>!
+
+!****** REACTIONS DE R29C3H5V ***** (CH3C(.)CH2) 1-methyl vinyl *****!
+
+R29C3H5V+R1H=C3H4Z2+H2                     3.3E12      0.0         0.0   !<DAGAUT90>!
+R29C3H5V+R4CH3=C3H4Z2+CH4                  1.0E11      0.0         0.0   !<DAGAUT90>!
+R29C3H5V+R10C2H3V=C3H4Z2+C2H4Z             1.0E12      0.0         0.0   !<LEUnG95>!
+R29C3H5V+R11C2H5=C3H4Z2+C2H6               1.0E12      0.0         0.0   !<LEUnG95>!
+R29C3H5V+B1O=CH2COZ+R4CH3                 1.8E14      0.0         0.0   !<LEUnG95>!
+R29C3H5V+O2=R4CH3+B2CO+HCHO               4.3E12      0.0         0.0   !<DAGAUT90>!
+R29C3H5V=R26C3H5Y                           2.0E13      0.0        47.0E3 !<Weissman89>!
+
+!****** REACTIONS DE C3H6Y ***** (CH3CHCH2) propene *****!
+
+C2H4Z+B6CH2=C3H6Y                      9.6E13      0.0        0.0  !<BAULCH94>! 
+C2H4Z+B5CH2=C3H6Y                      3.2E12      0.0      5.1E3  !<BAULCH94>!
+!duplicate R10C2H3V+R4CH3=C3H6Y        2.5E13      0.0        0.0  !<TSAnG86>!
+C2H4Z+R4CH3=C3H6Y+R1H                  6.6E11      0.0     15.9E3  !<TSAnG86>!
+R11C2H5+B6CH2=C3H6Y+R1H                9.0E12      0.0        0.0  !<TSAnG86>!
+C2H6+B4CH=C3H6Y+R1H                    1.1E14      0.0     -0.3E3  !<BAULCH94>!
+C3H6Y+R1H=R30C3H5V+H2                     7.83E5      2.5    12.28E3  !<TSAnG92>! 
+C3H6Y+R1H=R29C3H5V+H2                     3.9E5       2.5     5.82E3  !<TSAnG92>! 
+C3H6Y+R1H=R26C3H5Y+H2                    1.7E5       2.5      2.5E3  !<TSAnG91>!
+C3H6Y+R4CH3=R26C3H5Y+CH4                 2.2E0       3.5      5.7E3  !<TSAnG91>!
+C3H6Y+R4CH3=R30C3H5V+CH4                  8.4E-1      3.5     11.7E3  !<TSAnG91>!
+C3H6Y+R4CH3=R29C3H5V+CH4                  1.3E0       3.5     12.9E3  !<TSAnG91>!
+C3H6Y+R11C2H5=R26C3H5Y+C2H6              2.2E0       3.5      6.6E3  !<TSAnG91>!
+C3H6Y+B1O=>CH2COZ+R1H+R4CH3            1.2E+5      2.56   -1130.0  !<TSAnG91>! MF
+C3H6Y+B1O=R26C3H5Y+R2OH                  1.7E11      0.7      5.9E3  !<TSAnG91>!
+C3H6Y+R2OH=HCHO+R11C2H5                1.45E12     0.0     -0.9E3  !<TSAnG91>! MF
+C3H6Y+R2OH=R4CH3+CH3CHO		       1.45E12     0.0     -0.9E3  !<TSAnG91>! MF
+C3H6Y+R2OH=R26C3H5Y+H2O                  3.1E6       2.0     -0.3E3  !<TSAnG91>!
+C3H6Y+R2OH=R30C3H5V+H2O                   1.1E6       2.0     1.45E3  !<TSAnG91>!
+C3H6Y+R2OH=R29C3H5V+H2O                   2.1E6       2.0      2.8E3  !<TSAnG91>!
+C3H6Y+O2=R26C3H5Y+R3OOH                  1.9E12      0.0     39.0E3  !<WALKER93>!
+C3H6Y+R3OOH=R26C3H5Y+H2O2                9.6E3       2.6     13.9E3  !<TSAnG91>!
+
+C3H6Y+R9C2HT=C3H4T+R10C2H3V            1.2E13       0.0     0.0     !TSANG 91 mehdi!
+ 
+!****** REACTIONS DE cC3H6 ***** cyclopropane *****!
+
+cC3H6=C3H6Y     		        4.6E14      0.0   62.6E3   !<Hidaka87>!
+cC3H6+R1H=R26C3H5Y+H2  		        1.6E14      0.0   11.7E3   !<Marshall86>!
+cC3H6+R2OH=R26C3H5Y+H2O  		        7.0E7       1.5    1.0E3   !<Dobe82>!
+cC3H6+R4CH3=R26C3H5Y+CH4  	        2.0E11      0.0    9.6E3   !<Exgas>!
+
+!****** REACTIONS DE R19C3H7 et iC3H7 ***** CH3CH2CH2(.) et  CH3CH(.)CH3 ***** !
+
+!R19C3H7 = R4CH3+C2H4Z                   6.400E+12   0.00   31000.00
+!R19C3H7 = R1H+C3H6Y                     3.000E+13   0.00   38000.00
+R27C3H7 = R1H+C3H6Y                     6.000E+13   0.00   39000.00
+!R19C3H7 = R27C3H7                       1.960E+10   1.00   38600.00
+!R19C3H7+O2 =R3OOH+C3H6Y                 3.700E+16  -1.63    3420.00 ! 2003DES/KLI4415-4427
+R27C3H7+O2 = R3OOH+C3H6Y                1.400E+12   0.00    5000.00
+
+!****** Propane (C3H8) chemistry ******!
+
+R11C2H5+R4CH3=C3H8      	3.4E13     0.000      0.0  !<BAULCH94>!
+C3H8+O2=>R3OOH+R27C3H7          1.4E+0013  0.000  50323.7  ! BI 2 CN
+C3H8+O2=>R3OOH+R19C3H7          4.2E+0013  0.000  53033.0  ! BI 3 CN
+B1O+C3H8=>R2OH+R27C3H7          2.6E+0013  0.000   5200.0  ! ME 15 CW
+B1O+C3H8=>R2OH+R19C3H7          1.0E+0014  0.000   7850.0  ! ME 16 CW
+C3H8+R1H=>H2+R27C3H7            9.0E+0006  2.000   5000.0  ! ME 17 CW
+C3H8+R1H=>H2+R19C3H7            5.7E+0007  2.000   7700.0  ! ME 18 CW
+C3H8+R2OH=>H2O+R27C3H7    	2.6E+0006  2.000   -765.0  ! ME 19 CW
+C3H8+R2OH=>H2O+R19C3H7    	5.4E+0006  2.000    450.0  ! ME 20 CW
+C3H8+R3OOH=>H2O2+R27C3H7    	4.0E+0011  0.000  15500.0  ! ME 21 CN
+C3H8+R3OOH=>H2O2+R19C3H7    	1.2E+0012  0.000  17000.0  ! ME 22 CN
+C3H8+R4CH3=>CH4+R27C3H7    	2.0E+0011  0.000   9600.0  ! ME 23 CN
+C3H8+R4CH3=>CH4+R19C3H7    	6.0E-0001  4.000   8200.0  ! ME 24 CN
+C3H8+R5CHO=>HCHO+R27C3H7    	1.0E+0007  1.900  17000.0  ! ME 25 CN
+C3H8+R5CHO=>HCHO+R19C3H7    	2.0E+0005  2.500  18500.0  ! ME 26 CN
+C3H8+R11C2H5=>C2H6+R27C3H7      2.0E+0011  0.000  11000.0  ! ME 33 CN
+C3H8+R11C2H5=>C2H6+R19C3H7      6.0E+0011  0.000  13500.0  ! ME 34 CR
+C3H8+R27C3H7=>C3H8+R19C3H7    	8.4E-0003  4.200   8700.0  ! ME 35 CN
+R1H+R27C3H7=>C3H8               8.3E+0012  0.000      0.0  ! CO 36 K
+
+
+!*****************************************************!
+!*****************************************************!
+!       REACTIONS DES ESPECES NON OXYGENES EN C4      !
+!*****************************************************!
+!*****************************************************!
+
+
+!****** REACTIONS DE C4H2T2  ***** (CH///CC///CH) diacetylene ***** !
+
+R9C2HT+R9C2HT=C4H2T2                    1.8E13       0.0         0.0   !<TSAnG86>! 
+2C2H2T=C4H2T2+H2                        1.5E13       0.0      42.7E3   !<LEUnG95>! 
+C2H2T+R9C2HT=C4H2T2+R1H                 9.0E13       0.0         0.0   !<BAULCH94>!
+!C4H2T2+R1H=C2H2T+R9C2HT                6.0E14       0.0      15.4E3   !<MEREDITH86>!
+C4H2T2+R2OH=>R5CHO+C3H2                 6.7E12       0.0      -0.4E3   !<LEEDS-website>! 
+C4H2T2+O2=R12CHCOV+R12CHCOV             9.6E12       0.0      31.1E3   !<HIDAKA02>!
+C4H2T2+R9C2HT=>C6H2T3+R1H                 4.0E13       0.0         0.0   !<MEREDITH86>!
+C6H2T3+R1H=>C4H2T2+R9C2HT                 9.3E14       0.0      15.1E3   !<MEREDITH86>!
+       
+!****** REACTIONS DE R32C4H3VT  ***** (¥CH//CHC///CH) **********!
+
+R32C4H3VT(+M)=C4H2T2+R1H(+M)               1.0E14       0.0      36.0E3    !<MILLER92>!
+          LOW   /1.0E14 0.0 30E3/ 
+          TROE / 1.0  1.0  1.0E8/ 
+R31C3H3T+B4CH=R32C4H3VT+R1H                  7.0E13       0.0         0.0   !<MILLER92>!
+!R31C3H3T+B4CH=R32C4H3VT+R1H                 5.0E13       0.0         0.0   !<MILLER92>!
+R9C2HT+R10C2H3V=R32C4H3VT+R1H            1.8E13       0.0         0.0   !<TSAnG86>!
+R32C4H3VT+R1H=R41C4H3VT+R1H                  2.4E11       0.79     2.41E3   !<WAnG97>20Torr!
+R32C4H3VT+R1H=C4H2T2+H2                    0.6E13       0.0         0.0   !<0.5*la cst de la react(c2h3+h)>! 
+2C2H2T=R32C4H3VT+R1H                     1.0E12       0.0      64.1E3   !<LEUnG95>! 
+R32C4H3VT+R2OH=C4H2T2+H2O                  1.5E13       0.0         0.0   !<0.5* la cst de la react(c2h3+oh)>!
+!***
+!R32C4H3VT+C2H2T=C6H4#+R1H               1.64E9       0.73     12.2E3   !<WESTMORELAnD89, p=2.6kPa>!
+R32C4H3VT+C2H2T=C6H4#+R1H                3.0E-11      6.48      6.6E3   !<WESTMORELAnD89, p=101kPa>!
+!***
+!R32C4H3VT+C2H2T=C6H4ZT2+R1H               29.6         3.33      9.6E3   !<WESTMORELAnD89, p=2.6kPa>!
+R32C4H3VT+C2H2T=C6H4ZT2+R1H                2.77E-7      5.59      6.0E3   !<WESTMORELAnD89, p=101kPa>!
+!***
+!R32C4H3VT+C2H2T=lC6H5                   1.73E11     -0.41      4.0E3   !<WESTMORELAnD89, p=2.6kPa>!
+R32C4H3VT+C2H2T=lC6H5                    6.17E15     -1.51      4.8E3   !<WESTMORELAnD89, p=101kPa>!
+!***
+!R32C4H3VT+C2H2T=R1C6H5@                   3.33E24     -3.89      9.2E3   !<WESTMORELAnD89, p=2.6kPa>!
+R32C4H3VT+C2H2T=R1C6H5@                    7.0E14      -0.86      6.4E3   !<WESTMORELAnD89, p=101kPa>!
+!***
+
+!****** REACTIONS DE R41C4H3VT  ***** (CH2//C¥C///CH) *****
+
+R41C4H3VT=R32C4H3VT                          1.5E13       0.0      67.8E3   !<LEUnG95>! 
+R41C4H3VT(+M)=C4H2T2+R1H(+M)               1.0E14       0.0      55.0E3   !<MILLER92>!
+           LOW  /2.0E15 0.0 48E3/
+           TROE /1.0  1.0  1.0E8/
+C3H2+B5CH2=R41C4H3VT+R1H                 1.2E14       0.0       0.8E3   !as(7)<BAULCH94>!
+R41C4H3VT+R1H=2C2H2T                     2.40E19     -1.6       2800.0  !<WAnG97>20Torr! 
+R31C3H3T+B4CH=R41C4H3VT+R1H                  7.0E13       0.0         0.0   !<MILLER92>!
+R41C4H3VT+R1H=C4H2T2+H2                    1.2E13       0.0         0.0   !<equiv à la cst de la react(c2h3+h)>! 
+R41C4H3VT+B1O=CH2COZ+R9C2HT              2.0E13       0.0         0.0   !<MILLER92>!
+R41C4H3VT+R2OH=C4H2T2+H2O                  3.0E13       0.0         0.0   !< equiv à la cst de la react(c2h3+oh)>! 
+R41C4H3VT+O2=CH2COZ+R12CHCOV             1.0E12       0.0         0.0   !<MILLER92>!                                                                                                    *
+R41C4H3VT+R10C2H3V=2R31C3H3T                 4.0E12       0.0         0.0   !MILLER 92 ! 
+R41C4H3VT+R10C2H3V=>lC6H5+R1H            6.0E12       0.0         0.0   !MILLER 92! 
+
+!****** REACTIONS DE C4H4ZT  ***** (CH2//CHC///CH) vinylacetylene *****!
+
+R31C3H3T+B5CH2=C4H4ZT+R1H                  4.0E13       0.0           0.0 !<MILLER92>!   
+R10C2H3V+C2H2T=>C4H4ZT+R1H             2.0E13       0.0        25.1E3 !(40,-40)<DOUTE95>!
+C4H4ZT+R1H=>R10C2H3V+C2H2T             2.0E13       0.0        12.4E3 !<DOUTE95>
+C2H4Z+R9C2HT=C4H4ZT+R1H                1.2E13       0.0           0.0 !(50,-50)<TSAnG86>!
+C4H4ZT+R1H=R32C4H3VT+H2                    2.0E7        2.0         15.E3 !<Miller 92>!
+C4H4ZT+R1H=R41C4H3VT+H2                    3.0E7        2.0          5.E3 !<Miller 92>!
+R9C2HT+C4H4ZT=>C2H2T+R41C4H3VT             4.0E13       0.0           0.0 !<MEREDITH86>!
+C2H2T+R41C4H3VT=>R9C2HT+C4H4ZT             3.0E13       0.0        27.9E3 !<MEREDITH86>!
+R10C2H3V+C4H4ZT=>C2H4Z+R32C4H3VT           5.0E11       0.0        16.3E3 !<MEREDITH86>!
+R32C4H3VT+C2H4Z=>R10C2H3V+C4H4ZT           3.5E11       0.0        13.4E3 !<MEREDITH86>!
+R10C2H3V+C4H4ZT=>C2H4Z+R41C4H3VT           5.0E11       0.0        16.3E3 !<MEREDITH86>!
+R41C4H3VT+C2H4Z=>R10C2H3V+C4H4ZT           1.3E11       0.0        24.1E3 !<MEREDITH86>!
+C4H4ZT+C2H2T=R1C6H5@+R1H                 1.0E09       0.0       30.02E3 ! BENSON  !MF
+C4H4ZT+R10C2H3V=C6H6@+R1H              1.9E12       0.0         2.5E3 !<LInSTEDT96>!
+C4H4ZT+B1O=C3H4Z2+B2CO                  3.0E13       0.0         1.8E3 !<LEUnG95>!
+C4H4ZT+B1O=C3H4T+B2CO                  2.7E13       0.0         1.8E3 !<MILLER>!
+C4H4ZT+R2OH=R32C4H3VT+H2O                  7.5E6        2.0         5.0E3 !<MILLER92>!
+C4H4ZT+R2OH=R41C4H3VT+H2O                  1.0E7        2.0         2.0E3 !<MILLER92>!
+C3H4Z2+C3H4Z2=C2H4Z+C4H4ZT               1.0E15       0.0        48.0E3 !<HIDAKA89>! 
+
+!****** REACTIONS DE tC4H4  ***** (CH2//C//C//CH2) *****!
+
+tC4H4+R2OH=R41C4H3VT+H2O                 2.0E7        2.0        2.0E3   !<Marinov>!
+tC4H4+R1H=R41C4H3VT+H2                   3.0E7        2.0        6.0E3   !<Marinov>!
+ 
+!****** REACTIONS DE R42C4H5VZ  ***** (¥CH//CHCH//CH2) *****
+
+R42C4H5VZ(+M)=R1H+C4H4ZT(+M)               1.0E14       0.0       37.0E3    !<MILLER92>! 
+            LOW   /1.00e+14 0.0 30000/ 
+R42C4H5VZ+R1H=C4H4ZT+H2                    1.5E13       0.0          0.0    !<WAnG97>!
+R42C4H5VZ+R1H=R43C4H5VZ+R1H                  1.0E14       0.0          0.0    !<MILLER92>!
+R42C4H5VZ+R4CH3=C5H8YZ                   1.0E13       0.0          0.0    !<estimated>!
+
+R42C4H5VZ=C2H2T+R10C2H3V                 1.0E14       0.0       43.9E3    !<HIDAKA96>!
+!***
+!MF car lC6H6 n'intervient qu'ici
+!R42C4H5VZ+C2H2T=lC6H6+R1H               1.17E-15     7.84       2.0E3  !<WESTMORELAnD89, p=2.6kPa>!
+!R42C4H5VZ+C2H2T=lC6H6+R1H               3.47E-15     7.73       2.5E3  !<WESTMORELAnD89, p=101kPa>!
+!***
+!R42C4H5VZ+C2H2T=C6H6@+R1H               1.90E7       1.47       4.2E3  !<WESTMORELAnD89, p=2.6kPa>!
+R42C4H5VZ+C2H2T=C6H6@+R1H                2.38E8       1.18       3.7E3  !<WESTMORELAnD89, p=101kPa>!
+!***
+!R42C4H5VZ+C2H2T=lC6H7                   8.74E12     -1.27       3.6E3 !<WESTMORELAnD89, p=2.6kPa>!
+R42C4H5VZ+C2H2T=lC6H7                    7.24E14     -1.38       4.0E3 !<WESTMORELAnD89, p=101kPa>!
+!*** 
+!R42C4H5VZ+C2H2T=C6H7#                   1.96E19     -3.35       5.2E3 !<WESTMORELAnD89, p=2.6kPa>! 
+R42C4H5VZ+C2H2T=C6H7#                    7.12E21     -3.64       6.3E3 !<WESTMORELAnD89, p=101kPa>!
+!***
+!R10C2H3V+R42C4H5VZ=lC6H7+R1H            8.28E-28    11.89       5.0E3 !<WESTMORELAnD89, p=2.6kPa>!
+R10C2H3V+R42C4H5VZ=lC6H7+R1H             3.55E-43    16.16      -0.2E3 !<WESTMORELAnD89, p=101kPa>!
+!***
+!R10C2H3V+R42C4H5VZ=C6H8Z3                2.90E15     -0.78       1.0E3 !<WESTMORELAnD89, p=2.6kPa>!
+R10C2H3V+R42C4H5VZ=C6H8Z3                 1.50E13     -0.075      0.1E3 !<WESTMORELAnD89, p=101kPa>!
+!***
+!R10C2H3V+R42C4H5VZ=C6H8#                5.50E15     -1.67       1.5E3 !<WESTMORELAnD89, p=2.6kPa>!
+R10C2H3V+R42C4H5VZ=C6H8#                 8.53E13     -1.11       0.8E3 !<WESTMORELAnD89, p=101kPa>!
+!***
+!R10C2H3V+R42C4H5VZ=C6H6@+H2             2.80E-7      5.63      -1.9E3 !<WESTMORELAnD89, p=2.6kPa>!
+R10C2H3V+R42C4H5VZ=C6H6@+H2              1.84E-13     7.07      -3.6E3 !<WESTMORELAnD89, p=101kPa>!
+!***
+R42C4H5VZ+R2OH=C4H4ZT+H2O                  2.5E12       0.0        0.0   !<WAnG97>!
+!R42C4H5VZ+O2=R5CHO+C2H3CHOZ             1.7e29      -5.31       6.5E3 !MF as O2+C2H3=HCHO+CHO <Marinov Combust. Flame114(1998)192 - 213>
+R42C4H5VZ+O2=R5CHO+C2H3CHOZ              5.67E28     -5.31       6.5E3 !MF
+R42C4H5VZ+O2=C2H4Z+B2CO+R5CHO            1.13e29     -5.31       6.5E3 !MF
+R42C4H5VZ+O2=C4H4ZT+R3OOH                  5.19E15     -1.26       3.31e3!MF as O2+C2H3=HCHO+CHO <Marinov Combust. Flame114(1998)192 - 213>
+
+ !****** REACTIONS DE R43C4H5VZ  ***** (CH2//CHC¥//CH2) *****stablilise par resonnance
+R43C4H5VZ=R42C4H5VZ                          1.5E13       0.0        67.8E3 !<LEUnG95>! 
+R43C4H5VZ(+M)=R1H+C4H4ZT(+M)               1.0E14       0.0        50.0E3 !<MILLER92>!
+            LOW   /2.0E15 0.0 42000/  
+R43C4H5VZ+R1H=C4H4ZT+H2                    3.0E13       0.0           0.0 !<WAnG97>!
+R43C4H5VZ+R4CH3=iC5H8YZ                    1.0E13       0.0           0.0 !<estimated> !
+2R10C2H3V=R43C4H5VZ+R1H                  1.5E30      -4.95       13.0E3 !<WAnG97>20Torr!
+!***2R10C2H3V=R43C4H5VZ+R1H              1.2E22      -2.44       13.7E3 !<WAnG97>760Torr!
+R43C4H5VZ+R2OH=C4H4ZT+H2O                  5.50E12      0.0           0.0 !<WAnG97>!
+R43C4H5VZ+O2=HCHO+R28C3H3COX                4.5E16      -1.39        1.0E3 !estimé par{O2+C2H3=HCHO+CHO}!
+R43C4H5VZ+O2=C4H4ZT+R3OOH                  1.34E6       1.61         -400 !estimé par {O2+C2H3=C2H2T+OOH}!
+
+
+!****** REACTIONS DE R33C4H5T  ***** (CH3/CH¥/C///CH) *****stablilise par resonnance
+
+!R33C4H5T=R1H+C4H4ZT                       3.0E13       0.0        45.0E3 !<HIDAKA96>!
+R33C4H5T=R1H+C4H4ZT                        6.0E13       0.0        50.4E3 !add inverse!
+! Les réactions suivantes sont deduites de celles de R31C3H3T
+R33C4H5T+R1H=C4H4ZT+H2                     2.0E13       0.0         0.0   !<MILLER92/BRAUn89>!
+R33C4H5T+B1O=R9C2HT+CH3CHO               1.4E14       0.0         0.0   !<MILLER92/SLAGUE91>!
+R33C4H5T+R2OH=C4H4ZT+H2O                   2.0E13       0.0         0.0   !<MILLER92>!
+R33C4H5T+R2OH=R5CHO+R30C3H5V                4.0E13       0.0         0.0   !<WAnG97>!
+R33C4H5T+O2=R5CHO+B2CO+C2H4Z             3.0E10       0.0         2.9E3 !<MILLER92/SLAGUE88>!
+R33C4H5T+R33C4H5T=C8H10#                  1.0E12       0.0         0.0   !<STEIn90>shocktube!  
+
+!****** REACTIONS DE R34C4H5T  ***** (CH2¥/CH2/C///CH) *****
+
+!R34C4H5T=R1H+C4H4ZT                        3.0E13       0.0        45.0E3 !<HIDAKA96>!
+!R34C4H5T=R1H+C4H4ZT                        4.0E13       0.0        38.8E3 !<HIDAKA96>!
+R34C4H5T=R9C2HT+C2H4Z                     2.0E14       0.0        57.0E3 !<HIDAKA96>!
+R34C4H5T+O2=C4H4ZT+R3OOH                    1.6E12       0.0         5.0E3 !PAG00!
+R34C4H5T=R33C4H5T                          5.0E12       0.0        37.4E3 !PAG00!
+
+!****** REACTIONS DE R35C4H5T  ***** (CH3/C///C/CH2¥) *****stablilise par resonnance
+
+!R35C4H5T=R1H+tC4H4                       3.0E13       0.0       50.0E3 !<fromHIDAKA96+5!
+R35C4H5T=R1H+tC4H4                        6.0E13       0.0       54.3E3 !toto!
+!R35C4H5T=R43C4H5VZ                           3.0E13       0.0       50.0E3 !<fromHIDAKA96>!
+R35C4H5T=R43C4H5VZ                            5.0E12       0.0       50.5E3 !PAG00!
+R35C4H5T+R35C4H5T=C8H10#                    1.0E12       0.0          0.0 !<STEIn90>shocktube!  
+
+! Les réactions suivantes sont deduites de celles de R31C3H3T
+R35C4H5T+B1O=R31C3H3T+HCHO                  1.4E14       0.0         0.0   !<MILLER92/SLAGUE91>!
+R35C4H5T+R2OH=R10C2H3V+B2CO+R4CH3       4.0E13       0.0         0.0   !<WAnG97>!
+R35C4H5T+O2=CH2COZ+B2CO+R4CH3           3.0E10       0.0         2.9E3 !<MILLER92/SLAGUE88>!
+
+!****** REACTIONS DE C4H6Z2-13  ***** 1,3 Butadiene (CH2CHCHCH2) *****!
+!R10C2H3V+R10C2H3V=C4H6Z2-13           6.8E12       0.0         0.0   !<TSAnG86 P=2.6KPa T=1500>!
+R10C2H3V+R10C2H3V=C4H6Z2-13            9.8E14      -0.5         0.0   !<HIDAKA96shocktube>!
+C4H6Z2-13=C4H4ZT+H2                      2.5E15       0.0      94.7E3   !<HIDAKA96>
+C4H6Z2-13=R43C4H5VZ+R1H                    1.4E15       0.0      98.0E3   !<HIDAKA96>! 
+C2H4Z+R10C2H3V=C4H6Z2-13+R1H           5.0E11       0.0       7.3E3   !<TSAnG86>! 
+C4H6Z2-13+R1H=R42C4H5VZ+H2                 1.3E6        2.53     12.2E3   !<WAnG97>!
+C4H6Z2-13+R1H=R43C4H5VZ+H2                 6.6E5        2.53      9.2E3   !<WAnG97>!
+C4H6Z2-13+R1H=R36C4H7Z                   2.6E13       0         3.2E3   ! ESTIMATED *2!
+C4H6Z2-13+R1H=R40C4H7Y                   2.6E13       0        1.56E3   ! ESTIMATED *2!
+!C4H6Z2-13+R1H=R36C4H7Z                  1.3E13       0         3.2E3   ! ESTIMATED 
+!C4H6Z2-13+R1H=R40C4H7Y                  1.3E13       0        1.56E3   ! ESTIMATED !
+C4H6Z2-13+R4CH3=R42C4H5VZ+CH4              7.0E13       0.0      18.5E3   !<WU87>!
+C4H6Z2-13+R4CH3=R43C4H5VZ+CH4              7.0E13       0.0      15.5E3   !<WU87-3kcal>!
+C4H6Z2-13+R4CH3=R47C5H9X                 6.3E10       0.0      7.49E3   ! PERRIN 88 nist!
+C4H6Z2-13+R4CH3=R45C5H9Z                  1.8E11       0.0       8.0E3   !Estimated*2!
+!C4H6Z2-13+R4CH3=R47C5H9X                6.31E10      0.0      7.49E3   ! PERRIN 88 nist!
+!C4H6Z2-13+R4CH3=R45C5H9Z                 9.64E10      0.0       8.0E3   !Estimated!
+C4H6Z2-13+R10C2H3V=R42C4H5VZ+C2H4Z         5.0E14       0.0      22.8E3   !<HIDAKA96>!
+C4H6Z2-13+R10C2H3V=R43C4H5VZ+C2H4Z         5.0E14       0.0      19.8E3   !<HIDAKA96-3kcal>!
+C4H6Z2-13+B1O=>R26C3H5Y+R1H+B2CO          6.0E08       1.45      0.9E3   !<LEUnG95,BREZInSKY84>!
+!R10C2H3V+C4H6Z2-13=C6H8#+R1H          7.4E014     -0.66     8.42E3   !<frenklach >!                         
+!R10C2H3V+C4H6Z2-13=C6H8#+R1H          2.28E12     -0.24      9.9E3   !<WESTMORELAnD89, p=2.6kPa>!
+R10C2H3V+C4H6Z2-13=C6H8#+R1H           4.15E-11     6.39      2.4E3   !<WESTMORELAnD89, p=101kPa>!
+!***
+!R10C2H3V+C4H6Z2-13=C6H8Z3+R1H          1.0E10       1.05     14.0E3   !<WESTMORELAnD89, p=2.6kPa>!
+R10C2H3V+C4H6Z2-13=C6H8Z3+R1H           2.48E-15     8.20      6.3E3   !<WESTMORELAnD89, p=101kPa>!
+!***
+C4H6Z2-13+C2H2T=C6H8#                  2.3E12       0.0      35.0E3   !<WESTMORELAnD89>!
+!***
+!MF car lC6H9 n'intervient qu'ici
+!R10C2H3V+C4H6Z2-13=lC6H9              5.48E28     -5.31      9.3E3   !<WESTMORELAnD89, p=2.6kPa>!
+!R10C2H3V+C4H6Z2-13=lC6H9              1.48E12     -0.17      3.2E3   !<WESTMORELAnD89, p=101kPa>!
+!***
+!R10C2H3V+C4H6Z2-13=C6H9Z#              1.64E29     -6.12      9.6E3   !<WESTMORELAnD89, p=2.6kPa>!
+R10C2H3V+C4H6Z2-13=C6H9Z#               7.06E13     -1.35      4.0E3   !<WESTMORELAnD89, p=101kPa>!
+!***
+C4H6Z2-13+C2H4Z=C6H10#                  2.3E10       0.0      27.0E3   !<WESTMORELAnD89>!
+C4H6Z2-13+R2OH=R42C4H5VZ+H2O                6.2E6        2.0       3.4E3   !<WAnG97>!
+C4H6Z2-13+R2OH=R43C4H5VZ+H2O                3.1E6        2.0       0.4E3   !<WAnG97>!
+C4H6Z2-13+R2OH=R26C3H5Y+HCHO              2.8E12       0.0      -0.9E3   !<LInSTEDT96>!
+C4H6Z2-13+R2OH=CH3CHO+R10C2H3V          5.6E12       0.0      -0.9E3   !<fromLInSTEDT96>!
+C4H6Z2-13+O2=R43C4H5VZ+R3OOH                4.0E13       0.0      57.9E3   !<LEUnG95>!
+C4H6Z2-13+R31C3H3T=R42C4H5VZ+C3H4Z2              1.0E13       0.0      22.5E3   !<HIDAKA96>!
+C4H6Z2-13+R31C3H3T=R43C4H5VZ+C3H4Z2              1.0E13       0.0      19.5E3   !<HIDAKA96-3kcal>!
+
+!****** REACTIONS DE C4H6Z2-12  ***** (1,2) Butadiene (CH2CCHCH3) *****
+
+C4H6Z2-12=C4H6Z2-13                   3.0E13       0.0        65.0E3 !<HIDAKA96>!
+C4H6Z2-12=R43C4H5VZ+R1H                   4.2E15       0.0        92.6E3 !<LEUnG95>!
+C4H6Z2-12+R1H=R10C2H3V+C2H4Z          4.0E11       0.0           0.0 !<LEUnG95>!
+C4H6Z2-12=R31C3H3T+R4CH3                  7.3E14       0.0        75.4E3 !<kingas1500K>!
+C4H6Z2-12+R1H=R37C4H7V                  1.3E13       0.0         1.6E3 !<heyberger> !
+C4H6Z2-12+R1H=R40C4H7Y                  1.2E11       0.69        3.0E3 !<heyberger>!
+C4H6Z2-12+R1H=R38C4H7V                   1.3E13       0.0         3.2E3 !<heyberger> !
+C4H6Z2-12+R1H=R43C4H5VZ+H2                1.7E5        2.5         2.5E3 !<asTSAnG91>!
+C4H6Z2-12+R4CH3=R43C4H5VZ+CH4             2.2E0        3.5         5.7E3 !<asTSAnG91>!
+C4H6Z2-12+R11C2H5=R43C4H5VZ+C2H6          2.2E0        3.5         6.6E3 !<asTSAnG91>!
+C4H6Z2-12+B1O=R43C4H5VZ+R2OH              1.7E11       0.7         5.9E3 !<asTSAnG91>!
+C4H6Z2-12+R2OH=R43C4H5VZ+H2O              3.1E6        2.0        -0.3E3 !<asTSAnG91>!
+C4H6Z2-12+R3OOH=R43C4H5VZ+H2O2            9.6E3        2.6        13.9E3 !<asTSAnG91>!
+
+!****** REACTIONS DE (c-C4H6)  ***** methyl-cyclopropene  *****
+
+B6CH2+C3H4T=cC4H6                    1.8E14       0.0         0.0   !<LEUnG95>!
+cC4H6=C4H6Z2-13                      3.0E13       0.0        42.3E3 !<LEUnG95>!
+cC4H6=C4H6Z2-12                      3.0E13       0.0        43.8E3 !<LEUnG95>!
+
+!****** REACTIONS DE (C4H6T-1) *****  1 Butyne *****
+
+C4H6T-1=C4H6Z2-12                       2.5E13       0.0        65.0E3 !<HIDAKA96>!
+C4H6T-1=R33C4H5T+R1H                   7.7E14       0.0        87.9E3 !Kinga&dH Melius!
+C4H6T-1=R34C4H5T+R1H                   9.1E14       0.0        99.6E3 !Kingas!
+C4H6T-1=>R31C3H3T+R4CH3                   3.0E15       0.0        75.8E3 !<HIDAKA96>!
+!C4H6T-1+R1H=R4CH3+C3H4Z2              1.3E5        2.5         1.0E3 !<HIDAKA96>!
+!C4H6T-1+R1H=R11C2H5+C2H2T            6.5E4        2.5         1.0E3 !<HIDAKA96>!
+C4H6T-1+R1H=R4CH3+C3H4Z2               3.2E12       0.0         1.7E3 !<asWAGnER72>!
+C4H6T-1+R1H=R11C2H5+C2H2T             3.2E12       0.0         1.7E3 !<asWAGnER72>!
+! Les réactions suivantes sont deduites de celles de 1-C4H8 generes par EXGAS
+C4H6T-1+R1H=H2+R33C4H5T                5.4E4        2.5        -1.9E3 !<EXGAS>!
+C4H6T-1+R4CH3=CH4+R33C4H5T             1.5E12       0.0         7.1E3 !<EXGAS>!
+C4H6T-1+B1O=R2OH+R33C4H5T              8.8E10       0.7         3.2E3 !<EXGAS>!
+C4H6T-1+R2OH=H2O+R33C4H5T              3.0E6        2.0        -1.5E3 !<EXGAS>!
+!C4H6T-1+O2=>R3OOH+R33C4H5T            1.4E12       0.0        36.0E3 !<InGHAM95sec>!
+C4H6T-1+O2=>R3OOH+R33C4H5T             1.4E12       0.0        41.4E3 !<InGHAM95sec>!
+!C4H6T-1+O2=>R3OOH+R33C4H5T            4.2E12       0.0        49.5E3 !<DAGAUT90sec>!
+C4H6T-1+R3OOH=>H2O2+R33C4H5T           6.4E3        2.6        12.4E3 !<EXGAS>!           
+! Les réactions suivantes sont deduites de celles generes par EXGAS pour H primaires
+C4H6T-1+R1H=H2+R34C4H5T                2.9E7        2.0         7.7E3 !<EXGAS>!
+C4H6T-1+R4CH3=CH4+R34C4H5T             3.7          4.0         8.2E3 !<EXGAS>!MF
+C4H6T-1+B1O=R2OH+R34C4H5T              5.1E13       0.0         7.8E3 !<EXGAS>!
+C4H6T-1+R2OH=>H2O+R34C4H5T             2.7E6        2.0        -0.4E3 !<EXGAS>!
+C4H6T-1+O2=>R3OOH+R34C4H5T             1.2E13       0.0        49.0E3 !<EXGAS>!
+C4H6T-1+R3OOH=>H2O2+R34C4H5T           6.0E11       0.0        17.0E3 !<EXGAS>!  
+! Les réactions d'addition suivantes sont deduites de celles de C3H4T
+C4H6T-1+B1O=R12CHCOV+R11C2H5          1.5E13       0.0         2.1E3 !<asWARnATZ84>!
+C4H6T-1+R2OH=CH2COZ+R11C2H5           4.3E11       0.0        -0.8E3 !<asBOODAGHIAnS87>!
+
+!***** REACTIONS DE (C4H6T-2)***** 2 Butyne  *****
+
+C4H6T-2=C4H6Z2-13                     3.0E13       0.0        65.0E3 !<HIDAKA96>!
+C4H6T-2=C4H6Z2-12                     3.0E13       0.0        67.0E3 !<HIDAKA96>!
+C4H6T-2=R35C4H5T+R1H                    2.0E14       0.0        87.3E3 !<HIDAKA96>! 
+!C4H6T-2+R1H=R4CH3+C3H4T              2.6E5        2.5         1.0E3 !<HIDAKA96>!
+C4H6T-2+R1H=R4CH3+C3H4T               6.5E12       0.0         1.7E3 !<asWAGnER72>
+
+! Les réactions suivantes sont deduites de celles de C3H4T
+C4H6T-2+R1H=R35C4H5T+H2                  3.4E5        2.5         2.5E3 !<asTSAnG91*2>!
+C4H6T-2+R4CH3=R35C4H5T+CH4               4.4E0        3.5         5.7E3 !<asTSAnG91*2>!
+C4H6T-2+B1O=B2CO+R10C2H3V+R4CH3        1.5E13       0.0         2.1E3 !<asWARnATZ84>!
+C4H6T-2+B1O=R2OH+R35C4H5T                1.2E11       0.7         7.6E3 !<asTSAnG91*2>!
+C4H6T-2+R2OH=B2CO+C2H4Z+R4CH3          4.3E11       0.0        -0.8E3 !<asBOODAGHIAnS87>!
+C4H6T-2+R2OH=R35C4H5T+H2O                6.2E6        2.0        -0.3E3 !<asTSAnG91*2>!
+C4H6T-2+O2=R35C4H5T+R3OOH                4.2E12       0.0        44.0E3 !<InGHAM95*2>+4!
+C4H6T-2+R3OOH=R35C4H5T+H2O2              1.9E4        2.6        13.9E3 !<asTSAnG91*2>!
+
+!******* Reactions de R36C4H7Z (CH2=CH-CH2-CH2.)!
+
+R36C4H7Z=R40C4H7Y                         3.34E09       1.0      39.1E3  !ESTIMATED ! 
+R36C4H7Z=R44C4H7V                          3.3E9         1.0      20.7E3  !Estimated!
+R36C4H7Z=C2H4Z+R10C2H3V                 2.0E13        0.0      35.5E3  !Estimated!
+R36C4H7Z+R4CH3=nC5H10Z                   2.0E13        0.0         0.0  !Estimated !
+R36C4H7Z+R1H=nC4H8Y                      1.0E14        0.0         0.0  !Estimated! 
+
+!******* Reactions de R40C4H7Y (CH3-CH.-CH=CH2)!*****stablilise par resonnance
+R40C4H7Y+R1H=nC4H8Y                      2.0E13        0.0         0.0  !asTSANG 91!!
+R40C4H7Y+R1H=H2+C4H6Z2-13               0.9E13        0.0         0.0  !asTSANG 91!!
+R40C4H7Y+R1H=H2+C4H6Z2-12               0.9E13        0.0         0.0  !asTSANG 91!
+R40C4H7Y+R3OOH=R2OH+C2H3CHOZ+R4CH3      1.0E15       -0.8         0.0  !<Heyberger>!
+R40C4H7Y+R4CH3=iC5H10Z                   0.5E13        0.0         0.0  !Estimated !
+
+!**************Reactions de R44C4H7V (CH3-CH2-CH=CH.)*******!
+R44C4H7V=R40C4H7Y                          1.9E10         1.0      36.3E3  !Heyberger!
+R44C4H7V=R11C2H5+C2H2T                   2.0E13         0.0      33.0E3  !Heyberger!
+
+!**************Reactions de R37C4H7V (CH3-C.=CH-CH3)*****!
+R37C4H7V=R40C4H7Y                        2.9E10      1.0	 37.8E3  !ESTIMATED !
+R37C4H7V=R4CH3+C3H4T                   2.0E13      0.0     31.5E3  !ESTIMATED !
+
+!**************Reactions de R38C4H7V (CH2=C.-CH2-CH3)********!
+
+R38C4H7V=R36C4H7Z                        3.34E09      1.0      40.6E3   !ESTIMATED !
+R38C4H7V=R40C4H7Y                        2.0E13       0.0      47.0E3   !<Heyberger>!
+R38C4H7V=R4CH3+C3H4Z2                   2.0E13       0.0      32.5E3   !ESTIMATED !             
+
+!**************Reactions de nC4H8Y 1-butene (CH3/CH2/CH//CH2)!********!
+
+nC4H8Y+O2=R40C4H7Y+R3OOH                3.6E12       0.0        38.2E3  !<Heyberger>!
+nC4H8Y+R1H=R40C4H7Y+H2                  5.4E4        2.5        -1.9E3  !<Heyberger>!
+nC4H8Y+R2OH=>HCHO+R4CH3+C2H4Z         1.4E12       0.0        -1.0E3  !<Heyberger>!
+nC4H8Y+R2OH=R4CH3+C2H5CHO            1.4E12       0.0        -1.0E3  !<Heyberger>!
+nC4H8Y+R2OH=R40C4H7Y+H2O                3.0E6        2.0       -1.52E3  !<Heyberger>!
+nC4H8Y+R4CH3=R40C4H7Y+CH4               1.0E11       0.0         7.3E3  !<Heyberger>!
+
+C2H5CHO+R1H=H2+B2CO+R11C2H5          4.0E13       0.0        4.2E3  !<Heyberger>!
+C2H5CHO+R2OH=H2O+B2CO+R11C2H5        4.0E12       0.0        0.5E3  !<Heyberger>!
+
+!***********reactions de nC4H8Y********!
+nC4H8Y+R2OH=R27C3H7+HCHO              1.4E12        0.0     -1040.0    !(idem RF)
+nC4H8Y+R1H=>R39C4H7V+H2                  3.5E+05       2.5        2510    !(idem RF)
+nC4H8Y+R2OH=>R39C4H7V+H2O                6.0E+06       2.0      -298.0    ! MES 878<C.M.>!(idem RF)
+R39C4H7V+R1H=nC4H8Y                      1.0E+14       0.0         0.0    !<estimation>!
+R39C4H7V+R3OOH=>R2OH+HCHO+R29C3H5V         1.0E+15      -0.8         0.0    !<Heyberger>!
+
+
+!*****************************************************!
+!*****************************************************!
+!       REACTIONS DES ESPECES NON OXYGENES EN C5      !
+!*****************************************************!
+!*****************************************************!
+
+
+!*******Reactions of R47C5H9X (CH2=CH-CH•-CH2-CH3)
+
+!R47C5H9X=R1H+C5H8YZ                    3.0E13      	 0.0        50.5E3      !Estimated HEYBERGER! 
+R47C5H9X+R1H=H2+C5H8YZ                 1.8E13         0.0           0.0      !asTSANG 91!
+R47C5H9X+R1H=nC5H10Z                  2.0E13      	 0.0           0.0      ! Estimated TSANG  ! 
+
+!****************Reactions of R45C5H9Z (CH2•-CH(CH3)-CH=CH2)!
+
+R45C5H9Z=R46C5H9Y                     1.7E09          1          38.1E3       !Estimated 
+R45C5H9Z=C3H6Y+R10C2H3V             2.0E13      	 0.0        35.5E3       !Estimated!
+R45C5H9Z=iC5H8YZ+R1H                  1.6E13      	 0.0        34.3E3       !Estimated! 
+
+!****************Reactions of R46C5H9Y (CH3-C•(CH3)-CH=CH2)!
+
+R46C5H9Y=iC5H8YZ+R1H                1.0E13      0.0         51.5E3  !Estimated                                    
+R46C5H9Y+R1H=H2+iC5H8YZ             1.8E13      0.0            0.0  !asTSANG 91!
+R46C5H9Y+R1H=iC5H10Z               2.0E13      0.0            0.0  ! Estimated TSANG  ! 
+R46C5H9Y+R26C3H5Y=iC5H8YZ+C3H6Y        8.4E10      0.0         -0.3E3  !<asTSAnG91>!
+R46C5H9Y+R46C5H9Y=iC5H8YZ+iC5H10Z      8.4E10      0.0         -0.3E3  !<asTSAnG91>!
+
+
+!*****************************************************!
+!*****************************************************!
+!       REACTIONS DES ESPECES NON OXYGENES EN C6      !
+!*****************************************************!
+!*****************************************************!
+
+C6H4#+R1H=R1C6H5@                    3.0E17        0.0     36.3E3   !WANG97!!               
+C6H8#+R1H=H2+C6H7#                 1.1E05        2.5      -1900   !thése de Dayma!
+C6H8#+R2OH=H2O+C6H7#               6.0E6         2.0      -1520   !thése de Dayma!
+C6H8#=C6H6@+H2                     1.28E28     -4.94     49.3E3   !ellis!
+
+C6H10#=C6H9Z#+R1H                  5.0E15        0.0      81.4E3  !<DEAn85>!
+! ajout Roda : reaction de decomposition  
+!mf C6H9Z#=C3H4Z2+C3H5Y              2.0E13          0.0        33000       !HEYBERGER02 MF
+
+C6H9Z#=>C2H4Z+R42C4H5VZ                  1.3e+13  0.000   35900.0  ! BH
+C6H9Z#=R1H+C6H8#                     3.0e+13  0.000   50500.0  ! BH 
+
+
+!***************************************************************************!
+!**********************************************************************************!
+!*             MECHANISM FOR THE GAS PHASE OXIDATION OF BENZENE                   *!
+!*                                                                                *!
+!*    efficiency  coefficients for O2, CO, CO2, H2O, AR, C6H6@                    *!
+!**********************************************************************************!
+!*           PRIMARY MECHANISM OF THE OXIDATION OF BENZENE                        *!
+!**********************************************************************************!
+
+
+!REACTIONS OF BENZENE MOLECULES!
+!***Umimolecular inititiation! 
+R1C6H5@+R1H(+M)=C6H6@(+M)             1.0E14      0.0        0.0      !<WANG97>!
+                          LOW   /6.6E75  -16.3   7.0E3/  
+                          TROE /1.0 0.1 585 6113/
+      O2/0.4/ B2CO/0.75/ CO2/1.5/ H2O/6.5/ AR/0.35/ C6H6@/3.0/
+!***Bimolecular inititiation!
+C6H6@+O2=R1C6H5@+R3OOH		        6.0E13	    0.0	       63.4E3   !<ALZUETA00>!
+!***additions! 
+C6H6@+R1H=C6H7#                     3.2E13      0.0         3.2E3   !<MEBEL97>!
+C6H6@+B1O=R3C6H5O@EY+R1H                2.8E13      0.0        4.91E3   !<EMDEE92>!
+C6H6@+R2OH=C6H6O@L+R1H              1.3E13      0.0        10.6E3   !<BAULCH94>!
+C6H6@+R9C2HT=C6H5#C2H+R1H           5.0E13      0.0           0.0   !<WANG97>!
+C6H6@+R10C2H3V=C8H8@Z+R1H          7.9E11      0.0         6.4E3   !<WANG97>!
+!***Metatheses! 
+
+!*modif Zhenyu*!
+!C6H6@+R1H=R1C6H5@+H2                 6.0E8       1.8        16.8E3   !<MEBEL97>!
+C6H6@+R1H=R1C6H5@+H2                  1.22E8      2.031     15.88E3   !calcul CBS-QB3 Fournet
+
+C6H6@+B1O=R1C6H5@+R2OH	            2.0E13  	0.0        14.7E3   !<LINDSTEDT94>!
+
+!*modif Zhenyu*!
+!C6H6@+R2OH=R1C6H5@+H2O               1.6E8       1.42       1.45E3   !<BAULCH92>!
+C6H6@+R2OH=R1C6H5@+H2O         	    1.36E4      2.7      0.6196E3   !as C7H8@+R2OH=C6H4CH3+H2O
+
+!*modif Zhenyu*!
+!C6H6@+R3OOH=R1C6H5@+H2O2             5.5E12      0.0        28.9E3   !<BAULCH94>!
+C6H6@+R3OOH=R1C6H5@+H2O2              9.2E12      0.0       28.81E3   !as C7H8@+R3OOH=C6H4CH3+H2O2
+
+!*modif Zhenyu*!
+!C6H6@+R4CH3=R1C6H5@+CH4              2.0E12      0.0        15.0E3   !<ZHANG89>!
+C6H6@+R4CH3=R1C6H5@+CH4               2.07E0      3.861      13.3E3   !calcul CBS-QB3 Fournet
+
+C6H6@+R11C2H5=R1C6H5@+C2H6            6.3E11      0.0        15.0E3   !<ZHANG89>!
+R1C6H5@+C3H6Y=C6H6@+R26C3H5Y            7.94E13     0.0       11.94E3   !MF <Heckmann,Hippler,Troe(1996)>
+C6H6@+R42C4H5VZ=R1C6H5@+C4H6Z2-13         6.3E11      0.0        15.0E3   !estimated!
+C6H6@+R43C4H5VZ=R1C6H5@+C4H6Z2-13         6.3E11      0.0        20.0E3   !estimated!
+
+!REACTIONS OF C6H7# RADICALS!
+!***Isomerization!
+C6H7#=lC6H7                         2.5E14      0.7       41.8E3    !<WEISSMAN89! 
+
+!***Decomposition by beta-scission!
+!C6H7#=>C2H2T+R42C4H5VZ                  2.0E13      0.0       50.0E3    !estimated!
+!Breaking of a Csp3-Csp2 bond in an allylic radical as proposed by HEYBERGER02!
+!***Oxidation!
+C6H7#+O2=C6H6@+R3OOH                7.9E11      0.0        9.9E3    !estimated!
+!Oxidation of an allylic radical as proposed by HEYBERGER02!
+!combimations!
+C6H7#+R1H=C6H8#                     1.0E14      0.0        0.0      !estimated!
+!***Disproportionnations!
+C6H7#+R1H=C6H6@+H2                  3.3E12      0.0        0.0      !<RISTORI01>!
+C6H7#+R2OH=C6H6@+H2O                1.0E13      0.0        0.0      !estimated!
+C6H7#+R4CH3=C6H6@+CH4               3.0E12     -0.32      -0.1E3    !estimated!
+C6H7#+C6H7#=C6H6@+C6H8#             8.4E10      0.0       -0.3E3    !estimated!
+!analogy with the disproprotionnations ofR26C3H5Y proposed by TSANG91!
+
+!REACTIONS OF R1C6H5@ RADICALS!
+!***Isomerization!
+R1C6H5@=lC6H5                         5.0E13      0.0       72.5E3    !<BRAUN89>!
+!lC6H5 = ch///c/ch//ch/ch//ch(.)!
+lC6H5=>2C2H2T+R9C2HT                2.0E13      0.0       51.0E3   !estimated!
+!DH298 =44kcal/mol, Eadd=7 kcal/mol!
+lC6H5=C6H4ZT2+R1H			    2.0E12      0.0       41.0E3   !estimated!
+!C6H4ZT2 = ch///c/ch//ch/c///ch , DH298 =38kcal/mol, Eadd=3 kcal/mol!
+!from BRAUN89 at 1500 K!
+!***Reactions with O2!
+R1C6H5@+O2=C6H5O2                     2.2E19     -2.5         0.0    !estimated!
+R1C6H5@+O2=R3C6H5O@EY+B1O                 2.6E13      0.0        6.1E3   !<FRANK94>!
+R1C6H5@+O2=OC6H4O+R1H                 3.0E13      0.0        9.0E3   !<FRANK94>!
+
+!as the addition of oxygen to alkyl radicals proposed by GLAUDE99!
+!***Additions!
+R1C6H5@+C2H2T=C6H5#C2H+R1H            4.0E13      0.0       10.1E3    !<MARINOV97>!
+R1C6H5@+C6H6@=biphenyl+R1H            5.6E12     -0.074      7.5E3    !<WANG97>!
+!***Combinations!
+R1C6H5@+B1O=C5H5#+B2CO		    1.0E14      0.0	    0.0	    !<FRANK94>!
+R1C6H5@+R2OH=C6H6O@L		    1.0E13	0.0	    0.0	    !calculated!
+!C7H8@=R1C6H5@+R4CH3		    1.0E16	0.0	   97.0E3   !<COLKET94>! 
+!calculation by KINGAS!
+R1C6H5@+R5CHO=C7H6O@A                 5.0E12      0.0        0.0      !estimated!
+R1C6H5@+R10C2H3V=C8H8@Z              5.0E12      0.0        0.0      !estimated!
+R1C6H5@+R11C2H5=C8H10@                5.0E12      0.0        0.0      !estimated!
+R1C6H5@+R3OOH=R3C6H5O@EY+R2OH             5.0E12      0.0        0.0      !estimated!
+!C6H5R31C3H3T n'intervient qu'ici
+!R1C6H5@+R31C3H3T=C6H5R31C3H3T                3.0E12      0.0        0.0      !<D'ANNA98>!
+R1C6H5@+R1C6H5@=biphenyl                3.8E31     -5.75       7.9E3    !<WANG97>!
+!***disproportionnations!
+R1C6H5@+R2OH=R3C6H5O@EY+R1H               5.0E13      0.0        0.0      !<ALZUETA00>!
+R1C6H5@+C6H7#=C6H6@+C6H6@             1.0E12      0.0        0.0      !<SHANDROSS96>!
+
+!REACTIONS OF PHENYLPEROXY RADICALS!
+!***Decomposition by beta-scission!
+!mfC6H5O2=OC6H4O+R1H                2.0E13      0.0       30.0E3    !estimated!  
+C6H5O2=C5H4O#+R5CHO                 2.0E13      0.0       30.0E3    !estimated!
+!see DA COSTA01!
+
+!MF
+C6H5O2+R3OOH=C6H6O2@P+O2		    2.0E11	0.00	-1300.0
+C6H6O2@P=R3C6H5O@EY+R2OH		    1.5E16	0.00	43000.0
+
+!REACTIONS OF PHENOXY RADICALS!
+!***CO elimination!
+R3C6H5O@EY=B2CO+C5H5#                    2.5E11      0.0      43.8E3    !<BAULCH92>!
+!***Combinations!
+!--R3C6H5O@EY+R1H(+M)=C6H6O@L(+M)        2.5E14      0.0        0.0     !<FRENKLACH>!
+R3C6H5O@EY+R1H(+M)=C6H6O@L(+M)           1.0E14      0.0        0.0     !estimated!
+                          LOW   /1.0E94  -21.84   13.9E3/           !<FRENKLACH>!
+                          TROE /0.043 304 60000 5896/
+O2/0.4/ B2CO/0.75/ CO2/1.5/ H2O/6.5/ AR/0.35/ C6H6@/3.0/
+R3C6H5O@EY+R1H=C5H6#+B2CO                1.1E53    -10.7        41.4E3   !<TAN96>!
+R3C6H5O@EY+B1O=OC6H4OH                   2.6E10      0.47        0.8E3   !<LIN95>!
+R3C6H5O@EY+B1O=OC6H4O+R1H                8.5E13      0.0         0.0     !<FRANCK94>!
+R3C6H5O@EY+B1O=C5H5#+CO2                 1.0E13      0.0         0.0     !<FRANCK94>!
+
+!REACTIONS OF HYDROXYPHENOXY RADICALS!
+!***CO elimination!
+OC6H4OH=B2CO+C5H4OH#                 7.4E11      0.0        43.8E3   !estimated!
+!as for phenoxy radicals!
+
+!REACTIONS OF CYCLOPENTADIENYL RADICALS!
+!***Isomerization!
+C5H5#=R48C5H5ZT                          1.0E14      0.0       45.5E3    !<BRAUN89>!
+
+!R48C5H5ZT = ch///c/ch//ch/ch2(.), DH298 =31kcal/mol!
+
+!MF car lC5H6 n'intervient qu'ici
+!R48C5H5ZT+R1H=lC5H6                     1.0E14      0.0        0.0      !estimated!
+R48C5H5ZT=R31C3H3T+C2H2T                     2.0E13      0.0        50.0E3   !estimated!
+!DH298 =43kcal/mol, Eadd=7 kcal/mol!
+
+!***Reactions with O2!
+C5H5#+O2=R5CHO+C4H4OKZ2                 1.2E19     -2.48      11.0E3    !<ZHONG98>!
+!***Combinations!
+C5H6# = C5H5# + R1H		     5.0E15	 0.00	  7.87E4     ! MF<Burcat, Int.J.Chem.Kinet.29(1997)505>
+
+C5H5#+B1O=C5H4O#+R1H                5.8E13     -0.02       0.02E3   !<ZHONG98>!
+C5H5#+B1O=>2C2H2T+R5CHO             3.2E13     -0.17       0.44E3   !<ZHONG98>!
+C5H5#+R2OH=>C4H6Z2-13+B2CO          4.0E14      0.0        4500     ![PENGLOAN- RODA]
+
+C5H5#+R2OH=C5H5OH#  		    1.0E13      0.0        0.0      !calculated!
+C5H5#+R3OOH=C5H5O#+R2OH             3.0E12      0.0        0.0      !calculated!
+!calculation by KINGAS!
+C5H5#+C5H5#=>C10H10#                2.0E12      0.0        0.0      !estimated!
+C10H10#=>C5H5#+C5H5#                3.2E15      0.0        57.5E3   !calculated!
+!***disproportionnations!
+C5H5#+R3OOH=>C5H6#+O2               2.5E9       1.0        3.5E3    !estimated!
+!estimated as for allylic radicals (HEYBERGER02)/10! 
+
+!REACTIONS OF CYCLOPENTADIONYL RADICALS!
+!***Decompositions by beta-scission!
+C5H5O#=>2C2H2T+R5CHO                 2.0E13      0.0       30.0E3   !estimated!
+C5H5O#=C5H4O#+R1H                    2.0E13      0.0       30.0E3   !estimated!
+!see DA COSTA01!
+!***Combinations!
+C5H5O#+R1H=C5H5OH#                   1.0E14      0.0        0.0     !estimated!
+!***no disproportionnations considered!
+
+!REACTIONS OF HYDROXYCYCLOPENTADIENYL RADICALS!
+C5H4OH#+O2=C5H4O#+R3OOH              1.0E13      0.0        5.0E3    !estimated!
+C5H4OH#+R1H=C5H5OH#                  1.0E14      0.0        0.0      !estimated!
+C5H4OH#+B1O=>CO2+C2H2T+R10C2H3V      3.2E13     -0.17       0.44E3   !estimated!
+!C5H4OH#+R3OOH=>R2OH+CO2+R10C2H3V+C2H2T 3.0E12      0.0        0.0      ! estimated!
+C5H4OH#+R3OOH=>R2OH+R2OH+C5H4O# 	3.0E12      0.0        0.0      ! mf
+
+C5H4OH#+R3OOH=>C5H5OH#+O2            2.5E9       1.0        3.5E3    !estimated!
+!Reactions derived from those of cyclopentadienyl radicals!
+C5H4OH#+R3C6H5O@EY=C5H4O#+C6H6O@L        1.0E12      0.0        0.0      !estimated!
+
+!**********************************************************************************!
+!*                   SECONDARY MECHANISM OF THE OXIDATION OF BENZENE              !*
+!**********************************************************************************!
+
+!REACTIONS OF ORTHOBENZOQUINONE!
+OC6H4O=>C5H4O#+B2CO                  1.0E12      0.0       40.0E3    !<ALZUETA00>!
+OC6H4O+R1H=>2B2CO+C2H2T+R10C2H3V     5.2E13      0.0        3.2E3    !estimated!
+!estimated as the addition of H-atoms to four tertiary C (HEYBERGER02)!    
+OC6H4O+R1H=>H2+2B2CO+C2H2T+R9C2HT    1.6E6       2.5        9.8E3    !estimated!
+OC6H4O+R2OH=>H2O+2B2CO+C2H2T+R9C2HT  4.4E6       2.0        1.4E3    !estimated!
+!estimated as the metathesis of 4 tertiary vinylic H-atoms (HEYBERGER02)!
+
+!REACTIONS OF PHENOL AND DERIVED RADICALS!
+C6H6O@L=C5H6#+B2CO                  1.0E12     0.0        61.2E3   !<HORN98>!
+C6H6O@L+O2=R3OOH+R3C6H5O@EY             1.0E13     0.0       38.9E3    !<ALZUETA00>!
+C6H6O@L+B1O=OC6H4OH+R1H             1.6E13     0.0         3.4E3    !estimated!
+!as the addition of O-atoms to C7H8@ (DACOSTA01)!
+C6H6O@L+R1H=R3C6H5O@EY+H2               1.2E14     0.0       12.4E3    !<ALZUETA00>!
+C6H6O@L+B1O=R3C6H5O@EY+R2OH             1.3E13     0.0        2.9E3  !<ALZUETA00>!
+C6H6O@L+R2OH=R3C6H5O@EY+H2O             1.4E8      1.4       -0.96E3  !<SHANDROSS96>!
+C6H6O@L+R3OOH=R3C6H5O@EY+H2O2           1.0E12     0.0       10.0E3    !<ALZUETA00>!
+C6H6O@L+R4CH3=R3C6H5O@EY+CH4            1.8E11     0.0        7.7E3    !<MULCAHY65>!
+C6H6O@L+R1C6H5@=R3C6H5O@EY+C6H6@          4.9E12     0.0        4.4E3    !<ALZUETA00>!
+!C6H6O@L+C5H5#=R3C6H5O@EY+C5H6#         4.9E11     0.0        9.4E3    !estimated!
+!C6H6O@L+R26C3H5Y=R3C6H5O@EY+C3H6Y        4.9E11     0.0        9.4E3    !estimated!
+!C6H6O@L+R43C4H5VZ=R3C6H5O@EY+C4H6Z2-13     4.9E11     0.0        9.4E3    !estimated!
+C6H6O@L+C5H5#=R3C6H5O@EY+C5H6#          2.67e14    0.0        25.238e3 !MF <Lovell Int. J. Chem. Kinet.21(1989)547>
+C6H6O@L+R26C3H5Y=R3C6H5O@EY+C3H6Y         2.67e14    0.0        25.238e3 !MF <Lovell Int. J. Chem. Kinet.21(1989)547>
+C6H6O@L+R43C4H5VZ=R3C6H5O@EY+C4H6Z2-13      2.67e14    0.0        25.238e3 !MF <Lovell Int. J. Chem. Kinet.21(1989)547>
+
+!A/10 and 5 kcal/mol more than R1C6H5@ because of the stabilization!
+C6H6O@L+R1H=C6H4OH#+H2              1.7E14     0.0       16.0E3    !<SHANDROSS96>!
+C6H6O@L+B1O=C6H4OH#+R2OH	    2.0E13     0.0	 14.7E3    !estimated!
+C6H6O@L+R2OH=C6H4OH#+H2O            1.4E13     0.0        4.6E3    !<SHANDROSS96>!
+C6H6O@L+R3OOH=C6H4OH#+H2O2          4.0E11     0.0       28.9E3    !estimated! 
+C6H6O@L+R4CH3=C6H4OH#+CH4	    2.0E12     0.0       15.0E3    !estimated! 
+!as the H-abstractions from benzene!
+ 
+C6H4OH#+O2=OC6H4OH+B1O              2.1E13     0.0       6.1E3    !estimated!  
+!as for phenyl radicals (FRANCK94)!
+C6H4OH#+R1H=C6H6O@L                 1.0E14     0.0       0.0      !estimated!  
+C6H4OH#+R4CH3=HOC6H4CH3             5.0E12     0.0       0.0      !MF
+
+!REACTIONS OF CYCLOPENTADIENE AND DERIVED RADICALS!
+C5H6#+O2=>C5H5#+R3OOH               1.4E12      0.0        31.6E3   !<INGHAM94>!  
+!C5H6#+R1H=C5H7#                    5.2E13      0.0        3.2E3    !estimated!
+!estimated as the addition of H-atoms to four tertiary C (HEYBERGER02)!
+C5H6#+B1O=>C5H5O#+R1H               8.9E12     -0.15       590.0    !<ZHONG98>!
+C5H6#+R1H=C5H5#+H2                  2.8E13      0.0        2.0E3    !<ROY97>!
+C5H6#+B1O=C5H5#+R2OH                4.8E4       2.7        1.1E3    !<ZHONG98>!
+C5H6#+R2OH=C5H5#+H2O                3.1E6       2.0        0.0      !<ZHONG98>!
+C5H6#+R3OOH=C5H5#+H2O2              1.1E4       2.6       12.9E3    !<ZHONG98>!  
+C5H6#+R4CH3=C5H5#+CH4               1.8E-1      4.0        0.0      !<ZHONG98>!
+C5H6#+R26C3H5Y=C5H5#+C3H6Y            1.6E12      0.0       15.1E3    !asC7H8@!
+C5H6#+R42C4H5VZ=C5H5#+C4H6Z2-13         1.6E12      0.0       11.1E3    !asC7H8@!
+C5H6#+R43C4H5VZ=C5H5#+C4H6Z2-13         1.6E12      0.0       15.1E3    !asC7H8@!
+!C5H6#+R26C3H5Y=C5H5#+C3H6Y           6.0E12      0.0        0.0      !estimated!
+!C5H6#+R42C4H5VZ=C5H5#+C4H6Z2-13        6.0E12      0.0        0.0      !estimated!
+!C5H6#+R43C4H5VZ=C5H5#+C4H6Z2-13        6.0E12      0.0        0.0      !<EMDEE92>!         
+
+!C5H7#=>C2H2T+R26C3H5Y                2.0E13      0.0       35.5E3    !estimated!
+!Breaking of a Csp3-Csp2 bond in an alkenyl radical as proposed by HEYBERGER02!
+!C5H7#+O2=C5H6#+R3OOH               7.9E11      0.0        5.0E3    !estimated!
+!oxidation of an alkylic radical!
+ 
+!REACTIONS OF CYCLOPENTADIONE AND DERIVED RADICALS!
+C5H4O#=>2C2H2T+B2CO                 5.7E32     -6.76      68.5E3    !<ALZUETA00>!
+!C5H4O#=B2CO+C4H4ZT                   1.00e12     0.0        53000    ! roda PENGLOAN!
+C5H4O#+R1H=B2CO+R42C4H5VZ               2.6E13      0.0        3.2E3    !estimated!
+
+!estimated as the addition of H-atoms to two tertiary C (HEYBERGER02)!
+C5H4O#+B1O=C4H4ZT+CO2                  1.0E13     0.0        2.0E3     !<ALZUETA00>!
+C5H4O#+R1H=C5H3O#+H2                 8.13E7     2.031    15.88E3     !MF idem C6H6@+R1H=R1C6H5@+H2  
+C5H4O#+B1O=C5H3O#+R2OH               1.4E13     0.0       14.7E3     !<ALZUETA00>!
+C5H4O#+R2OH=C5H3O#+H2O               1.1E8      1.42       1.4E3     !<ALZUETA00>!
+
+C5H3O#=>C2H2T+B2CO+R9C2HT            2.0E13     0.0        51.0E3    !estimated!
+!estimated as the decomposition of lC6H5!
+C5H3O#+O2=>CO2+C2H2T+R12CHCOV        9.7E58   -13.47       38.2E3    !<ALZUETA00>! 
+
+C5H5OH#+R1H=C5H5O#+H2	             4.0E13      0.0        6.1E3    !<ALZUETA00>!
+C5H5OH#+B1O=C5H5O#+R2OH              1.0E13      0.0        4.6E3    !<ALZUETA00>!
+C5H5OH#+R2OH=C5H5O#+H2O              1.0E13      0.0        1.7E3    !<ALZUETA00>!
+
+!Estimated from the same reaction for CH3OH!
+
+C5H5OH#+R1H=C5H4OH#+H2	             1.4E13     0.0        2.0E3    !estimated!
+C5H5OH#+B1O=C5H4OH#+R2OH             4.8E4      2.7        1.1E3    !estimated!
+C5H5OH#+R2OH=C5H4OH#+H2O             1.5E6      2.0        0.0E3    !estimated!
+
+!estimated from the same reaction for cyclopentadiene!
+
+!REACTIONS OF VINYLKETENE!
+!additions decomposition
+C4H4OKZ2+R1H=>R10C2H3V+CH2COZ            1.3E13    0.0        3.0E3     !estimated!
+C4H4OKZ2+R1H=>C2H4Z+R12CHCOV             1.3E13    0.0        3.0E3     !estimated!
+C4H4OKZ2+R1H=>R30C3H5V+B2CO                 1.3E13    0.0        1.5E3     !estimated!
+C4H4OKZ2+R2OH=>C2H3CHOZ+R5CHO            1.4E12    0.0       -1.0E3     !estimated!
+C4H4OKZ2+R2OH=>CO2+R26C3H5Y                1.4E12    0.0       -1.0E3     !estimated!
+C4H4OKZ2+B1O=>R13CH2CHO+R12CHCOV         6.0E4     2.56      -1.1E3     !estimated!
+C4H4OKZ2+B1O=>2CH2COZ                    6.0E4     2.56      -1.1E3     !estimated!
+!estimated as the addition of radicals to a double bond (HEYBERGER02)!
+
+!metatheses/decomposition
+C4H4OKZ2+R1H=>C2H2T+R12CHCOV+H2          8.2E5     2.5        12.3E3    !estimated!                   
+C4H4OKZ2+R1H=>R31C3H3T+B2CO+H2               4.1E5     2.5         9.8E3    !estimated!
+C4H4OKZ2+R2OH=>C2H2T+R12CHCOV+H2O        2.2E6     2.0         2.8E3    !estimated!
+C4H4OKZ2+R2OH=>R31C3H3T+B2CO+H2O             1.1E6     2.0         1.5E3    !estimated!
+C4H4OKZ2+B1O=>C2H2T+R12CHCOV+R2OH        1.2E11    0.7         8.7E3    !estimated!
+C4H4OKZ2+B1O=>R31C3H3T+B2CO+R2OH             6.0E10    0.7         8.7E3    !estimated!
+!estimated as the metatheses of vinylic H-atoms (HEYBERGER02)!
+
+         
+!**********************************************************************************!
+!*										  *!
+!*             MECHANISM FOR THE GAS PHASE OXIDATION OF C7H8@                   *!
+!*										  *!       
+!*    efficiency  coefficients for O2, CO, CO2, H2O, N2, AR, HE, C6H6@ and C7H8@*!
+!*										  *!
+!**********************************************************************************!
+
+!**********************************************************************************!
+!*										  *!
+!*           PRIMARY MECHANISM OF THE OXIDATION OF C7H8@                        *!
+!*										  *!
+!**********************************************************************************!
+
+!********************************!
+!*REACTIONS OF C7H8@ MOLECULES*!
+!********************************!
+
+!**UMIMOLECULAR INITITIATIONS
+
+C7H8@=R2C7H7@Y+R1H           2.09E15  0.0   87.51E3    !<Oehlschlaeger07>! Zhenyu
+C7H8@=R1C6H5@+R4CH3	     2.66E16  0.0   97.88E3    !<Oehlschlaeger07> Zhenyu
+
+!**BIMOLECULAR INITITIATION
+C7H8@+O2=R2C7H7@Y+R3OOH      1.8E12   0.0    39.7E3    !<BAULCH94>! 
+!C7H8@+O2=R2C7H7@Y+R3OOH     2.18e7   2.50    46045    !mf<Oehlschlaeger06>!                                     
+
+!**ADDITIONS 
+
+C7H8@+R1H=C6H6@+R4CH3	       5.67E8   1.43   5.65E3	 !Calcul CBS-QB3 Fournet Zhenyu
+C7H8@+B1O=OC6H4CH3+R1H       1.7E13   0.0     3.6E3    !<TAPPE89>!
+!C7H8@+R2OH=HOC6H4CH3+R1H    2.3E12   0.0   -0.36E3	 !<BAULCH92>! 
+C7H8@+R2OH=HOC6H4CH3+R1H     1.3E13   0.0    10.6E3    !<BAULCH94>as benzene!
+C7H8@+R2OH=C6H6O@L+R4CH3     7.83E2   2.884  3.2193E3  !Seta V Nakajima V Miyoshi JPCA 2006 Zhenyu
+!C7H8@+R2OH=C6H6O@L+R4CH3    1.00E5   2.58   1134.0    !Olive as benzene+OH
+
+!**METATHESES 
+!**METATHESES WITH ABSTRACTION OF BENZYLIC H-ATOM
+
+C7H8@+R1H=R2C7H7@Y+H2		   2.92E6   2.372  5.81E3	 !Calcul CBS-QB3 Fournet Zhenyu
+C7H8@+B1O=R2C7H7@Y+R2OH		   6.3E11   0.0       0.0	 !<HOFFMANN90>!
+C7H8@+R2OH=R2C7H7@Y+H2O		   5.2E09   1.0    0.87E3	 !<BAULCH94>!
+C7H8@+R3OOH=R2C7H7@Y+H2O2	   4.0E11   0.0    14.0E3	 !<BAULCH94>!
+C7H8@+R4CH3=R2C7H7@Y+CH4	   3.91E0   3.76   6.98E3	 !Calcul CBS-QB3 Fournet Zhenyu
+
+! ajout MF
+C7H8@+R7CH3O=R2C7H7@Y+CH3OH 	2.12E+10 0.0 3000.0	!PITZ2001
+C7H8@+R8CH3OO=R2C7H7@Y+CH3OOH 	1.02E+04 2.5 12339.3	!PITZ2001
+
+!C7H8@+R5CHO=R2C7H7@Y+HCHO       3.77E13  0.0   23.7874E3    !MEHL 09 Zhenyu
+R2C7H7@Y+HCHO = C7H8@+R5CHO      1.26e8   1.9   18.183E3
+R2C7H7@Y+CH3CHO = C7H8@+R14CH3CO 1.26e8   1.9   18.183E3
+
+C7H8@+R10C2H3V=R2C7H7@Y+C2H4Z      4.0e12   0.0     8.0e3  	 !<COLKET94>!
+C7H8@+R26C3H5Y=R2C7H7@Y+C3H6Y	   1.6E12   0.0    15.1E3	 !<estimated(a)>! 
+C7H8@+R31C3H3T=R2C7H7@Y+C3H4T	   1.6E12   0.0    15.1E3	 !<estimated(a)>!
+C7H8@+R43C4H5VZ=R2C7H7@Y+C4H6Z2-13     1.6E12   0.0    15.1E3	 !<estimated(a)>!
+C7H8@+R42C4H5VZ=R2C7H7@Y+C4H6Z2-13     1.6E12   0.0    11.1E3	 !<estimated(a)>!
+C7H8@+C5H5#=R2C7H7@Y+C5H6#	   1.6E11   0.0    15.1E3	 !<estimated(a)>!
+!(a) :Rate constant taken equal to that of the H-abstraction with methyl radicals proposed !
+!by COLKETT94 with A divided by 10 for cyclic radicals !
+! and with an activation energy 4 kcal/mol higher for resonnance stabilised radicals! 
+
+!ajout MF
+C7H8@+C6H5O2=R2C7H7@Y+C6H6O2@P	   1.02E+04 2.5  12339.3    !PITZ2001 
+C7H8@+R1C6H5@=R2C7H7@Y+C6H6@	   7.9E13   0.0    12.0E3   !<HECKMANN96>!
+
+C7H8@+R3C6H5O@EY=R2C7H7@Y+C6H6O@L	    1.6E11   0.0   15.1E3	!<estimated(a)>! peut etre trop rapide
+C7H8@+C6H4CH3=R2C7H7@Y+C7H8@	    7.9E13   0.0   12.0E3	!<estimated(b)>!
+C7H8@+OC6H4CH3=R2C7H7@Y+HOC6H4CH3   1.6E11   0.0   15.1E3	!<estimated(a)>!
+C7H8@+C6H5CH2OO=R2C7H7@Y+C6H5CH2OOH 4.0E11   0.0   14.0E3	!<estimated(c)>!
+C7H8@+C6H5CH2O=R2C7H7@Y+C6H5CH2OH   1.6E11   0.0   11.1E3	!<estimated(a)>!
+C7H8@+HOC6H4CH2=R2C7H7@Y+HOC6H4CH3  1.6E11   0.0   15.1E3 	!<estimated(a)>!
+!(b) :Rate constant taken equal to that of the H-abstraction with phenyl radicals proposed !
+!by HECKMANN96!
+!(c) :Rate constant taken equal to that of the H-abstraction with HO2 radicals proposed !
+!by BAULCH94!
+
+!**METATHESES WITH ABSTRACTION OF PHENYLIC H-ATOM!
+
+C7H8@+R1H=C6H4CH3+H2		1.22E08  2.031 15.88E3  !as C6H6@+R1H=R1C6H5@+H2 CBS-QB3 Fournet Zhenyu
+C7H8@+B1O=C6H4CH3+R2OH	2.0E13   0.0    14.7E3	!<estimated(d)>!
+
+C7H8@+R2OH=C6H4CH3+H2O     1.36E4   2.7  0.6196E3	!<Seta06>! in Sakai07 Zhenyu
+C7H8@+R3OOH=C6H4CH3+H2O2   9.2E12   0.0   28.81E3	!<Baulch94>! in Sakai07 Zhenyu
+C7H8@+R4CH3=C6H4CH3+CH4    2.07E0   3.861  13.3E3	!as C6H6@+R4CH3=R1C6H5@+CH4 CBS-QB3 Fournet Zhenyu
+
+
+!******************************!
+!*REACTIONS OF R2C7H7@Y RADICALS*!
+!******************************!
+
+!**DECOMPOSITION BY BETA-SCISSION
+R2C7H7@Y=>C5H5#+C2H2T             6.0E13   0.0    70.0E3	!<Colket94>!
+R2C7H7@Y=>R31C3H3T+C4H4ZT               2.0E14   0.0    83.6E3	!<Colket94>!
+
+!**REACTIONS WITH OXYGEN
+R2C7H7@Y+O2=C6H5CH2OO		4.6E11   0.0   -377.0	!<FENTER94>!
+R2C7H7@Y+O2=C6H5CH2O+B1O          6.3E12   0.0   40.0E3	!<BREZYNSKY84>! 
+
+!**TERMINATION REACTIONS
+R2C7H7@Y+B1O=R1C6H5@+HCHO		   3.5E13   0.0      0.0	!<EMDEE92>!
+R2C7H7@Y+B1O=C7H6O@A+R1H		   1.0E14   0.0      0.0	!<estimated(e)>!
+!(e) : This rate constant is that proposed by <HIPPLER90-2> divided by 4 
+!(LINSTEDT96?? has used 3.5E13)!
+
+R2C7H7@Y+R8CH3OO=>C6H5CH2O+R7CH3O	    5.0E12	0.0	0.0
+R2C7H7@Y+R17C2H5OO=>C6H5CH2O+R15C2H5O 5.0E12	0.0	0.0
+R2C7H7@Y+R2OH=C6H5CH2OH               2.0E13      0.0     0.0	!<HIPLER91>!
+
+!MFR2C7H7@Y+R3OOH=C6H5CH2OOH	       5.0E12   0.0      0.0	  !<HIPPLER92>!
+R2C7H7@Y+R3OOH=C6H5CH2OOH	               8.21E4   2.20      -5.13E3 !MF<da silva-bozzelli- proceedings  comb inst 32(2009)287-294>!
+2R2C7H7@Y=bibenzyl  		       5.01E12  0.0    0.454E3    !<Oehlschlaeger05>! in Sakai07 Zhenyu
+C8H10@ = R2C7H7@Y + R4CH3	               6.1e15   0.0    75120      !<BAULCH94>!
+
+!*************************************!
+!*REACTIONS OF METHYL PHENYL RADICALS*!
+!*************************************!
+
+!**reactions with oxygen
+!mfC6H4CH3+O2=OC6H4CH3+B1O             	2.6E13   0.0   6.1E3	!<estimated(f)>!
+!mfC6H4CH3+O2=OC6H4O+R4CH3             	3.0E13   0.0   9.0E3	!<estimated(f)>!
+!(f) : Rate constant taken equal to that of the similar reaction in the case of phenyl!
+!radicals!
+
+!ajout MF
+C6H4CH3+O2=>OOC6H4CH3			3.72E13	  -0.22	  -711		!2008DAS/BOZ3566-3575
+OOC6H4CH3=>C6H4CH3+O2			6.36E19	  -1.372  48.74E3	!2008DAS/BOZ3566-3575
+OOC6H4CH3=>OC6H4CH3+B1O			1.27E15	  -0.25	   3.85E4	!2008DAS/BOZ3566-3575
+OOC6H4CH3=>OC6H4O+R4CH3			5.0E11	   0.00	   46400	!
+
+!***termination reactions!
+C6H4CH3+R1H=C7H8@                 	1.0E14   0.0   0.0	!<estimated(g)>!
+!(g) : Rate constant taken equal to that of the recombination of H atoms with alkyl !
+!radicals as proposed by Allara!
+
+C6H4CH3+B1O=OC6H4CH3                	1.0E14   0.0     0.0	!<estimated(f)>!
+C6H4CH3+R2OH=HOC6H4CH3              	1.0E13   0.0     0.0	!<estimated(f)>!
+C6H4CH3+R4CH3=C8H10#      		1.2E06   1.96   -3.7E3	!<estimation(fbis)>!
+!(fbis) : Rate constant taken equal to that of the similar reaction in the case of phenyl!
+!radicals: Rao, skinner, 1989 J.P.C. (93,1864)!
+
+C6H4CH3+R3OOH=OC6H4CH3+R2OH         	5.0E12   0.0   0.0	!<estimated(f)>!
+C6H4CH3 +R1H = R2C7H7@Y + R1H		1.0E13   0.0   0.0	!<MILLER92>!
+
+
+!*************************************!
+!*REACTIONS OF BENZYL PEROXY RADICALS*!
+!*************************************!
+
+!**isomerisation-decomposition reactions
+C6H5CH2OO=C7H6O@A+R2OH	             	3.4E9   1.0   37.5E3	!<estimated(h)>!
+!(h) : Rate constant of the isomerisation :!
+!A = ekbT/h x rpd x exp ((Dnirotx3.5)/R),  Ea = 23 (4 membered transition ring)!
+!+ 14.5 (secondary allylic H-atom)!
+
+!**Combination reactions
+!MF C6H5CH2OO+R1H=C6H5CH2OOH            1.0E14   0.0   0.0E3	!<estimated(g)>!
+
+!**dispropotionnation reactions!
+C6H5CH2OO+R3OOH=C6H5CH2OOH+O2	     	2.0E11   0.0   -1.3E3	!<estimated(i)>!
+2C6H5CH2OO=C6H5CH2OH+C7H6O@A+O2      	1.4E10   0.0   -725.0	!<estimated(i)>!
+C6H5CH2OO+C6H5CH2OO=2C6H5CH2O+O2     	6.3E10   0.0   -725.0	!<estimated(i)>!
+!(i) : Rate constant taken equal to that the disproportionnation of peroxyalkyl radicals !
+!as proposed by Warth! 
+
+! ajout MF
+C6H5CH2OO+R1H=C6H5CH2O+R2OH		3.80E14	 -0.19	   1.89E3  !<da silva J Chem Theory Comput 2009>
+C6H5CH2OO+R1H=C6H5CH2OOH             	4.35e60	 -15.92	  11.40E3  !<da silva J Chem Theory Comput 2009>
+C6H5CH2OO+R1H=R2C7H7@Y+R3OOH            	1.96E4	   2.47	    1.43E3 !<da silva J Chem Theory Comput 2009>
+
+!*************************************!
+!*REACTIONS OF BENZYL ALCOXY RADICALS*!
+!*************************************!
+
+!**Decomposition by beta-scission ************
+C6H5CH2O=R1H+C7H6O@A                  	2.0E13   0.0   27.5E3	!<estimated(j)>! INHIBE
+C6H5CH2O=R1C6H5@+HCHO                   	2.0E13   0.0   27.5E3	!<estimated(j)>! ACCELERE
+!DH = 23.59 kcal/mol!
+!(j) For these beta-scissions involving the breaking of a C-C or a C-H bond,  A-factor !
+!is an average value for beta-scissions [Heyberger] and activation energies have been!
+! estimated from thermochemistry and to obtain the best results!
+
+!C6H5CH2O=R1H+C7H6O@A                  	5.26E28   -5.081   22.25E3	!mf<Da silva-bozzelli J phys chem 25(2009)6979>! 
+!C6H5CH2O=C6H6@+R5CHO                  	2.37E32   -6.095   28.81E3	!mf<Da silva-bozzelli J phys chem 25(2009)6979>! 
+!C6H5CH2O=R1C6H5@+HCHO                   	7.21E33   -6.21    36.85E3	!mf<Da silva-bozzelli J phys chem 25(2009)6979>! 
+
+!C6H5CH2O=R1H+C7H6O@A                  	1.00e14   0.00   2.91e4	!mf<Mehl Proc comb inst 33(2011)193>! 
+!C6H5CH2O=R1C6H5@+HCHO                   	1.46e20   -2.00  3.51e4	!mf<Mehl Proc comb inst 33(2011)193>! 
+
+!***reactions with oxygen
+C6H5CH2O+O2=R3OOH+C7H6O@A             	6.0E10   0.0   1.6E3	!<estimated(k)>!
+!(k) : Rate constant taken equal to that of the similar reaction in the case of ethoxy!
+!radicals as proposed by BAULCH92!
+
+!*******************************!
+!*REACTIONS OF CRESOXY RADICALS*!
+!*******************************!
+
+!**OC6H4CH3=HOC6H4CH2			2.9E9   1.0   3.2E3	!<estimated(h')>!
+!(h') : Rate constant of the isomerisation :!
+!A = ekbT/h x rpd x exp ((Dnirotx3.5)/R),  Ea = 5.9 + 5 (5 membered transition ring)!
+!+ 7.3 (primary alkyllic H-atom by CH3O)!
+
+!OC6H4CH3=HOC6H4CH2			1.1E9   1.0   22.9E3	! 
+! A x2/5 only for ortho isomere, Ea= 5.9(RSE)+17 (H allylique p by ROO. close bde)
+
+!**CO elimination with rearrangement
+!OC6H4CH3=>R1H+C6H6@+B2CO              7.5E11  0.0  43.8E3 !<FRANCK94>!
+OC6H4CH3=>R1H+C6H6@+B2CO               3.0E11  0.0  43.8E3 !<FRANCK94>!
+!OC6H4CH3=>R10C2H3V+C4H4ZT+B2CO          3.0E11  0.0  43.8E3 !<FRANCK94>!
+!OC6H4CH3=>C2H2T+R43C4H5VZ+B2CO            3.0E11  0.0  43.8E3 !<FRANCK94>!
+OC6H4CH3=>C2H2T+C4H4ZT+R1H+B2CO          3.0E11  0.0  43.8E3 !<FRANCK94>!
+OC6H4CH3=>R31C3H3T+C3H4Z2+B2CO              1.5E11  0.0  43.8E3 !<FRANCK94>!
+
+!**termination reactions!
+OC6H4CH3+R1H=HOC6H4CH3                 1.0E14  0.0   0.0E3 !<estimated(g)>!
+
+
+
+!*****************************************************************************!																				  *!
+!*                   SECONDARY MECHANISM OF THE OXIDATION OF C7H8@         *!
+!*****************************************************************************!
+
+
+!************************************************!
+!*REACTIONS OF BENZALDEHYDE AND DERIVED RADICALS*!
+!************************************************!
+
+! Amorcage
+!C7H6O@A+O2=C6H5CO+R3OOH	2.0E13   0.0   38.9E3	!<EMDEE92>!
+C7H6O@A+O2=C6H5CO+R3OOH		7.0E11   0.0   39.5E3   !RODA RODA
+C7H6O@A = C6H5CO + R1H          3.98E15  0.0   83.74E3  !NIST GRELA86!
+
+! Addition
+C7H6O@A+R1H=C6H6@+R5CHO		5.8E13   0.0   8.1E3	!<estimated(m)>!
+!(m) : Rate constant taken equal to that of the same reaction in the case of C7H8@!
+
+! Metatheses
+C7H6O@A+R1H=C6H5CO+H2		4.0E13   0.0   3.2E3    !<estimated(n)>!
+!(n) : Rate constant estimated from the parameters proposed by WARNATZ84 for acetaldehyde!
+!with an activation energy 1 kcal/mol lower due to the  resonnance stabilisation of the!
+! obtained radical!
+
+C7H6O@A+B1O=C6H5CO+R2OH		6.0E12	0.0	1.8E3	!<BAULCH94>!
+C7H6O@A+R2OH=C6H5CO+H2O		7.8E12	0.0	0.0	!<BAULCH94>!
+C7H6O@A+R3OOH=C6H5CO+H2O2	3.0E12	0.0	11.0E3	!<estimated(o)>!
+C7H6O@A+R4CH3=C6H5CO+CH4	2.0E-6	5.6	2.5E3	!MF <BAULCH94>!
+C7H6O@A+R11C2H5=C6H5CO+C2H6	1.3E12	0.0	7.5E3	!<estimated(o)>!
+!(o) : Rate constant estimated from the parameters proposed by BAULCH94 (HO2, CH3) and by !
+!HOLHEIN70 (C2H5) for acetaldehyde with an activation energy 1 kcal/mol lower due to the  !
+!resonnance stabilisation of the obtained radical!
+
+C7H6O@A+R26C3H5Y=C6H5CO+C3H6Y	        1.3E12	0.0	11.5E3  !<estimated(p)>!
+C7H6O@A+R43C4H5VZ=C6H5CO+C4H6Z2-13	        1.3E12	0.0	11.5E3  !<estimated(p)>!
+C7H6O@A+R42C4H5VZ=C6H5CO+C4H6Z2-13	        1.3E12	0.0	 7.5E3  !<estimated(p)>!
+C7H6O@A+R2C7H7@Y=C7H8@+C6H5CO		1.3E11	0.0	11.5E3	!<estimated(p)>
+C7H6O@A+R3C6H5O@EY=C6H5CO+C6H6O@L		1.3E11	0.0	11.5E3	!<estimated(p)>
+C7H6O@A+OC6H4CH3=C6H5CO+HOC6H4CH3	1.3E11	0.0	11.5E3	!<estimated(p)>
+C7H6O@A+C5H5#=C6H5CO+C5H6#		1.3E11	0.0	11.5E3	!<estimated(p)>
+!(p) :Rate constant taken equal to that of the H-abstraction with ethyl radicals  !
+! with A divided by 10 for cyclic radicals and with an activation energy ! 
+!4 kcal/mol higher for resonnance stabilised radicals! 
+
+C7H6O@A+HOC6H4CH2=C6H5CO+HOC6H4CH3	1.3E11	0.0	11.5E3	!<estimated(p)>
+C7H6O@A+R1C6H5@=C6H5CO+C6H6@		1.3E11	0.0	11.5E3  !<estimated(p)> 
+
+C6H5CO=R1C6H5@+B2CO                       4E14   0.0      29.5e3   !<SOLLY71>!
+!Author(s):   Solly, R.K.; Benson, S.W.
+!Title:   Kinetics of the gas-phase unimolecular decomposition of the benzoyl radical
+!Journal:   J. Am. Chem. Soc.
+!Volume:   93
+!Page(s):   2127
+!Year:   1971
+
+!***********************************!
+!*REACTIONS OF BENZYL HYDROPEROXYDE*!
+!***********************************!
+
+C6H5CH2OOH=C6H5CH2O+R2OH		3.29E13	     0.42	39.89E3  !MF<da silva Proc comb inst 32(2009)287-294>
+C6H5CH2OOH=C7H6O@A+H2O			7.45E8	     1.19	46.04E3  !MF<da silva Proc comb inst 32(2009)287-294>
+
+!******************************************!
+!*REACTIONS OF CRESOL AND DERIVED RADICALS*!
+!******************************************!
+
+! amorcage
+HOC6H4CH3+O2=OC6H4CH3+R3OOH		1.0E13	0.0	38.9E3	!<estimated(s)>! ralenti
+!A=1E13 pour phenol!
+!(s) : Rate constant taken equal to that of the same reaction for phenol !
+
+!HOC6H4CH3+O2=HOC6H4CH2+R3OOH        	2.1E13      0.0       38.0E3    !<EMDEE92*2>!
+HOC6H4CH3+O2=HOC6H4CH2+R3OOH        	2.1E12      0.0       38.6E3    !RODA <estimated(aaa)>!
+
+! addition
+HOC6H4CH3+R1H=C6H6O@L+R4CH3	        5.8E13	    0.0	      8.1E3     !<estimated(t)>!
+!(t) : Rate constant taken equal to that of the same reaction for C7H8@ !
+
+! metatheses
+HOC6H4CH3+R1H=OC6H4CH3+H2	        1.2E14	0.0	12.4E3	!<estimated(s)>!
+HOC6H4CH3+B1O=OC6H4CH3+R2OH	        1.3E13	0.0	2.9E3	!<estimated(s)>!
+HOC6H4CH3+R2OH=OC6H4CH3+H2O		1.4E8	1.4	-0.96E3	!<estimated(s)>!
+HOC6H4CH3+R3OOH=OC6H4CH3+H2O2       	1.0E12	0.0	10.0E3	!<estimated(s)>!
+HOC6H4CH3+R4CH3=OC6H4CH3+CH4	    	1.8E11	0.0	7.7E3	!<estimated(s)>! 
+HOC6H4CH3+R1C6H5@=OC6H4CH3+C6H6@      	4.9E12	0.0	4.4E3	!<estimated(s)>!
+HOC6H4CH3+C5H5#=OC6H4CH3+C5H6#      	4.9E11	0.0	9.4E3   !<estimated(s)>!
+HOC6H4CH3+R26C3H5Y=OC6H4CH3+C3H6Y     	4.9E11	0.0	9.4E3   !<estimated(s)>!
+HOC6H4CH3+R43C4H5VZ=OC6H4CH3+C4H6Z2-13     	4.9E11	0.0	9.4E3   !<estimated(s)>!
+HOC6H4CH3+R3C6H5O@EY=OC6H4CH3+C6H6O@L	4.9E11	0.0	9.4E3   !<estimated(s)>!
+HOC6H4CH3+R1H=HOC6H4CH2+H2	        1.2E14  0.0     8.4E3   !<estimated(t)>!
+HOC6H4CH3+B1O=HOC6H4CH2+R2OH		6.3E11	0.0	0.0     !<estimated(t)>!
+HOC6H4CH3+R2OH=HOC6H4CH2+H2O        	5.2E9   1.0     0.87E3  !<estimated(t)>!
+HOC6H4CH3+R3OOH=HOC6H4CH2+H2O2      	4.0E11  0.0     14.0E3  !<estimated(t)>!
+HOC6H4CH3+R4CH3=HOC6H4CH2+CH4	    	1.6E12	0.0     11.1E3  !<estimated(t)>! 
+HOC6H4CH3+R26C3H5Y=HOC6H4CH2+C3H6Y	1.6E12	0.0     15.1E3  !<estimated(t)>! 
+HOC6H4CH3+R31C3H3T=HOC6H4CH2+C3H4T	    	1.6E12	0.0     15.1E3  !<estimated(t)>!
+HOC6H4CH3+R43C4H5VZ=HOC6H4CH2+C4H6Z2-13	1.6E12	0.0     15.1E3  !<estimated(t)>!
+HOC6H4CH3+R42C4H5VZ=HOC6H4CH2+C4H6Z2-13    	1.6E12	0.0     11.1E3  !<estimated(t)>!
+HOC6H4CH3+C5H5#=HOC6H4CH2+C5H6#	        1.6E11	0.0     15.1E3	!<estimated(t)>! 
+HOC6H4CH3+R1C6H5@=HOC6H4CH2+C6H6@	        7.9E13  0.0     12.0E3	!<estimated(t)>!
+HOC6H4CH3+R3C6H5O@EY=HOC6H4CH2+C6H6O@L	1.6E11	0.0     15.1E3  !<estimated(t)>!
+HOC6H4CH3+C6H4CH3=HOC6H4CH2+C7H8@	7.9E13  0.0     12.0E3  !<estimated(t)>!
+HOC6H4CH3+OC6H4CH3=HOC6H4CH2+HOC6H4CH3 	1.6E11	0.0     15.1E3  !<estimated(t)>!
+HOC6H4CH3+C6H5CH2OO=HOC6H4CH2+C6H5CH2OOH 4.0E11 0.0     14.0E3  !<estimated(t)>!
+HOC6H4CH3+C6H5CH2O=HOC6H4CH2+C6H5CH2OH	 1.6E11	0.0     11.1E3  !<estimated(t)>!
+
+HOC6H4CH2+O2=HOC6H4CH2OO             	4.6E11	0.0	-377.0	!<estimated(u)>!
+HOC6H4CH2+O2=HOC6H4CH2O+B1O          	6.3E12	0.0	40.0E3	!<estimated(u)>!
+HOC6H4CH2+R3OOH=HOC6H4CH2O+R2OH	     	5.0E12	0.0	0.0	!<estimated(u)>!   
+!(u) : Rate constant taken equal to that of the same reaction for benzyl radicals !
+
+HOC6H4CH2+R1H=HOC6H4CH3       		1.0E14	0.0	0.0	!<estimated(g)>!
+HOC6H4CH2+R4CH3=C6H6O@L+C2H4Z 		5.0E12	0.0	0.0	!<estimated(g)>!
+
+HOC6H4CH2OO=C6H4OHCHO+R2OH		3.4E9	1.0	37.5E3	!<estimated(v)>!
+!(v) : Rate constant taken equal to that of the same reaction for benzyl peroxy radicals !
+
+HOC6H4CH2O=R1H+C6H4OHCHO             	2.0E13     0.0       27.5E3    !<estimated(w)>!
+HOC6H4CH2O=C6H4OH#+HCHO              	2.0E13     0.0       27.5E3    !<estimated(w)>!
+HOC6H4CH2O+O2=R3OOH+C6H4OHCHO       	6.0E10     0.0       1.6E3     !<estimated(w)>!
+!(w) : Rate constant taken equal to that of the same reaction for benzyl alcoxy radicals !
+
+C6H4OHCHO+R1H=C6H4OHCO+H2		4.0E13	0.0	3.2E3	!<estimated(x)>!
+C6H4OHCHO+B1O=C6H4OHCO+R2OH		6.0E12	0.0	1.8E3	!<estimated(x)>!
+C6H4OHCHO+R2OH=C6H4OHCO+H2O		7.8E12	0.0	0.0	!<estimated(x)>!
+C6H4OHCHO+R3OOH=C6H4OHCO+H2O2		3.0E12	0.0	11.0E3	!<estimated(x)>! 
+C6H4OHCHO+R4CH3=C6H4OHCO+CH4		2.0E-6	5.6	1.5E3	!<estimated(x)>!
+!(x) : Rate constant taken equal to that of the same reaction for benzaldehyde !
+
+C6H4OHCO=C6H4OH#+B2CO		         2.0E13	0.0	30.5E3	!<estimated(y)>
+!(y) : Rate constant taken equal to that of the same reaction for C6H5CO radicals !
+
+!************************************************!
+!*REACTIONS OF BENZYLALCOOL AND DERIVED RADICALS*! 
+!************************************************! 
+
+C6H5CH2OH+O2=R3OOH+C6H5CHOH		1.4E12	0.0	34.0E3    !RODA <estimated(aaa)>!
+C6H5CH2OH+O2=C6H5CH2O+R3OOH		2.0E14	0.0	41.4E3    !<EMDEE92>!     
+
+C6H5CH2OH+R1H=C6H6@+R6CH2OH		5.8E13  0.0	8.1E3     !<estimated(t)>! 
+
+C6H5CH2OH+R1H=C6H5CHOH+H2		8.0E13	0.0	6.4E3	!<estimated(t')>! 
+C6H5CH2OH+B1O=C6H5CHOH+R2OH		4.2E11	0.0    -2.0E3   !<estimated(t')>! 
+C6H5CH2OH+R2OH=C6H5CHOH+H2O		3.5E9	1.0    -1.13E3	!<estimated(t')>! 
+C6H5CH2OH+R3OOH=C6H5CHOH+H2O2		2.7E11	0.0	12.0E3	!<estimated(t')>! 
+C6H5CH2OH+R4CH3=C6H5CHOH+CH4		1.1E12	0.0	9.1E3	!<estimated(t')>! 
+C6H5CH2OH+R26C3H5Y=C6H5CHOH+C3H6Y	        1.1E12	0.0	13.1E3  !<estimated(t')>! 
+C6H5CH2OH+R43C4H5VZ=C6H5CHOH+C4H6Z2-13      1.1E12	0.0	13.1E3  !<estimated(t')>! 
+C6H5CH2OH+R42C4H5VZ=C6H5CHOH+C4H6Z2-13      1.112	0.0	13.1E3  !<estimated(t')>! 
+C6H5CH2OH+R1C6H5@=C6H5CHOH+C6H6@		5.2E13	0.0	10.0E3	!<estimated(t')>! 
+C6H5CH2OH+C6H4CH3=C6H5CHOH+C7H8@	5.2E13	0.0	10.0E3	!<estimated(t')>!
+C6H5CH2OH+R3C6H5O@EY=C6H5CHOH+C6H6O@L       1.1E11	0.0	13.1E3  !<estimated(t')>!  
+C6H5CH2OH+R2C7H7@Y=C6H5CHOH+C7H8@	1.1E11	0.0	13.1E3	!<estimated(t')>! 
+C6H5CH2OH+OC6H4CH3=C6H5CHOH+HOC6H4CH3	1.1E11	0.0	13.1E3	!<estimated(t')>! 
+C6H5CH2OH+HOC6H4CH2=C6H5CHOH+HOC6H4CH3	1.1E11	0.0	13.1E3  !<estimated(t')>! 
+C6H5CH2OH+C5H5#=C6H5CHOH+C5H6#		1.1E11	0.0	13.1E3  !<estimated(t')>! 
+!t': estimated as C7H8@ with A x(2/3) to take into account the number of abstractable !
+!H atoms and Ea -2 kcal/mol due to the OH substitution!
+C6H5CHOH=C7H6O@A+R1H                    2.0E13  0.0     36.373E3 !MF DHr=36.79 correlation baptiste E=0.6*DHr+14.3
+
+
+!************************************************!
+!*REACTIONS OF ETHYLBENZENE AND DERIVED RADICALS*!
+!************************************************!
+
+!** Amorçages monomoléculaires
+C8H10@ = R1H + C8H9#              4.3E14    0.0    83.6E3    !<kingas>!
+
+!** Amorçages bimoléculaires
+C8H10@+O2=C8H9#+R3OOH             1.4E12    0.0	   34.0E3    !<estimated(aaa)>!
+C8H10@+O2=C8H9#-1+R3OOH           1.2E13    0.0    49.0E3    !<exgas>!
+
+!** Additions ipso
+C8H10@+R1H=C6H6@+R11C2H5          5.8E13       0.0	8.1E3    !<estimated(t)>!
+
+!** Metatheses
+C8H10@+R1H=C8H9#+H2		   8.0E13	0.0	6.4E3   !<estimated(t")>! 
+C8H10@+B1O=C8H9#+R2OH		   4.2E11	0.0    -2.0    	!<estimated(t")>! 
+C8H10@+R2OH=C8H9#+H2O		   3.5E9	1.0    -1.13E3  !<estimated(t")>! 
+C8H10@+R3OOH=C8H9#+H2O2		   2.7E11	0.0	12.0E3  !<estimated(t")>! 
+C8H10@+R4CH3=C8H9#+CH4	           1.1E12	0.0	9.1E3   !<estimated(t")>! 
+C8H10@+R26C3H5Y=C8H9#+C3H6Y	   1.1E12	0.0	13.1E3  !<estimated(t")>! 
+C8H10@+R43C4H5VZ=C8H9#+C4H6Z2-13	   1.1E12	0.0	13.1E3  !<estimated(t")>! 
+C8H10@+R42C4H5VZ=C8H9#+C4H6Z2-13	   1.1E12	0.0	13.1E3  !<estimated(t")>! 
+C8H10@+R3C6H5O@EY=C8H9#+C6H6O@L        1.1E11	0.0	13.1E3  !<estimated(t")>! 
+C8H10@+R2C7H7@Y=C8H9#+C7H8@        1.1E11	0.0	13.1E3  !<estimated(t")>! 
+C8H10@+OC6H4CH3=C8H9#+HOC6H4CH3	   1.1E11	0.0	13.1E3	!<estimated(t")>! 
+C8H10@+HOC6H4CH2=C8H9#+HOC6H4CH3   1.1E11	0.0	13.1E3  !<estimated(t")>! 
+C8H10@+C5H5#=C8H9#+C5H6#	   1.1E11	0.0	13.1E3  !<estimated(t")>! 
+
+!t": estimated as C7H8@ with A x(2/3) to take into account the number of abstractable !
+!H atoms and Ea -2 kcal/mol due secondary H atoms instead of primary!
+
+C8H10@+R1H=C8H9#-1+H2		7.2E8	  	1.5	6.79E3  !MF correlation Dean-Bozzelli 2000
+C8H10@+B1O=C8H9#-1+R2OH		5.1E8		1.5	5.05E3 	!MF correlation Dean-Bozzelli 2000
+C8H10@+R2OH=C8H9#-1+H2O		3.6E6		2.0	4.82E2  !MF correlation Dean-Bozzelli 2000
+C8H10@+R3OOH=C8H9#-1+H2O2	4.2E4		2.69	1.85E4 	!MF correlation Dean-Bozzelli 2000
+C8H10@+R4CH3=C8H9#-1+CH4	2.43E6  	1.87 	1.03E4  !MF correlation Dean-Bozzelli 2000
+
+!mfC8H10@+R1C6H5@=C6H6@+C8H9#	5.27E13   0.0    12.0E3	 !ajout MF as 2/3 C7H8@ <HECKMANN96>!
+C8H10@+R1C6H5@=C6H6@+C8H9#	5.27E13   0.0    9.0E3	 !test MF 
+C8H10@+R1C6H5@=C6H6@+C8H9#-1	5.85E10   0.0    3.83E3	 !ajout MF as C5H12/4 <Park, Int J. Chem. Kinet.33(2001)64-69>
+
+! Ajout ipso MF
+C8H10@+B1O=R3C6H5O@EY+R11C2H5       1.7E13   0.0     3.6E3    !MF as C7H8@ !<TAPPE89>!
+C8H10@+R2OH=C6H6O@L+R11C2H5     1.3E13   0.0    10.6E3    !MF as C7H8@ <BAULCH94>as benzene
+!C8H10@+R4CH3=C7H8@+R11C2H5   1.2E12   0.0     1.59E4   !MF as benzene  <Robaugh,J. Phys. Chem.90(1986)4159 - 4163>
+C8H10@+R4CH3=C7H8@+R11C2H5    1.2E12   0.0     1.24E4   ! MF as benzene-kcal <Robaugh,J. Phys. Chem.90(1986)4159 - 4163>
+
+!** Decompositions
+
+C8H9#-1=C2H4Z+R1C6H5@             2.0E13   0.0     35.5E3    !MF correlation exgas 
+C8H9#  =R1H+C8H8@Z		3.1e13   0.0     50670     !<MULLER88>
+C8H9#-1=R1H+C8H8@Z		4.0E13   0.0     33.58E3   !MF <Sirjean, J.Phys.Chem.A 2008>
+
+!** Reactions of derived radicals
+C8H9#+O2=R3OOH+C8H8@Z          6.90E11  0.0     15.2E3    !<est (exgas-sylvain)>!
+
+C8H9#+R3OOH=C8H9#OOH		3.60E12  0.0        0.0    !MF KINGAS
+C8H9#OOH=R2OH+C8H9#O		5.00E15	 0.0	  42500	   !MF
+C8H9#O=R4CH3+C7H6O@A            2.69E13  0.0      12117    !MF  as but-3-en-1-oxy <Rauk, Can.J.Chem 81(2003)431-442>
+C8H9#O=R1C6H5@+CH3CHO		1.74E14  0.0      20458	   !MF  as but-3-en-1-oxy <Rauk, Can.J.Chem 81(2003)431-442>
+
+C8H9#-1+O2=R3OOH+C8H8@Z        2.60E11  0.0      2.5E3
+C8H9#-1+R3OOH=R2OH+HCHO+R2C7H7@Y  5.00E12  0.0      0.0      !<kingas>!
+
+!*******************************************!
+!*REACTIONS OF C8H8@Z AND DERIVED RADICALS*!
+!*******************************************!
+
+C8H8@Z+O2=R3OOH+C6H5C2H2          2.0E13       0.0        57.9E3  !<asbutadiene/2>!
+C8H8@Z+R2OH=R2C7H7@Y+HCHO           1.4E12       0.0        -0.9E3  !<as butadiene/2!
+C8H8@Z+R2OH=C7H6O@A+R4CH3         1.4E12       0.0        -0.9E3  !MF idem réaction précédente as C3H6Y <TSAnG91>
+
+C8H8@Z+R1H=C6H5C2H2+H2            3.3E5        2.53        9.2E3  !MF<as butadiene/2>!
+C8H8@Z+R2OH=C6H5C2H2+H2O          1.5E6        2.0         0.4E3  !<as butadiene/2>!
+C8H8@Z+R4CH3=C6H5C2H2+CH4	   3.5E13       0.0        15.5E3  !<as butadiene/2>
+
+C6H5C2H2+O2=C6H5CO+HCHO            4.5E16      -1.39        1.0E3  !<asMebel C2H3+O2>! **
+
+!*Addition Zhenyu*!
+C6H5C2H2+R1H=C6H5#C2H+H2   	   1.0E13       0.0     0.0  !in Slavinskaya09, R.P. Lindstedt, L.Q. Maurice, Comb. Sci. and Tech. 120 (1996) 119-167.
+C6H5C2H2+R2OH=C6H5#C2H+H2O         1.0E13       0.0     0.0  !in Slavinskaya09, R.P. Lindstedt, L.Q. Maurice, Comb. Sci. and Tech. 120 (1996) 119-167.
+
+! ajout d'un amorcage Roda
+C6H5#C2H   => R1C6H5@ + R9C2HT       2.2e16 	0.0 	98.0e3 ! MF as C7H8@
+
+
+!********************************************!
+!*REACTIONS OF BIBENZYL AND DERIVED RADICALS*!
+!********************************************!
+
+bibenzyl=C14H13#+R1H                 1.0E16      0.0    83.66E3  !<Oehlschlaeger05>! in Sakai07 Zhenyu
+bibenzyl+O2=C14H13#+R3OOH            2.8E12      0.0    35.0E3   !<est aaaa!
+bibenzyl+R1H=C14H13#+H2	             5.4E4       2.5    -1.9E3   !Table A-I-21 Zhenyu
+bibenzyl+B1O=C14H13#+R2OH            8.4E11	 0.0    -2.0     !<estimated(t"')>! 
+bibenzyl+R2OH=C14H13#+H2O            7.0E9	 1.0    -1.13E3  !<estimated(t"')>! 
+bibenzyl+R3OOH=C14H13#+H2O2          5.4E11	 0.0	12.0E3   !<estimated(t"')>! 
+bibenzyl+R4CH3=C14H13#+CH4           2.2E12	 0.0     9.1E3   !<estimated(t"')>! 
+bibenzyl+R3C6H5O@EY=C14H13#+C6H6O@L	     2.2E12      0.0    13.1e3   !<estimated(t"')>! 
+bibenzyl+R2C7H7@Y=C14H13#+C7H8@      2.2E12	 0.0	 9.1E3   !<Oehlschlaeger05>! in Sakai07 Zhenyu
+bibenzyl+R26C3H5Y=C14H13#+C3H6Y        2.2E12	 0.0	13.1E3   !<estimated(t"')>! 
+!t"': estimated as C7H8@ with A x(4/3) to take into account the number of abstractable !
+!H atoms and Ea -2 kcal/mol due secondary H atoms instead of primary!
+
+!Ajout ipso MF
+bibenzyl+R1H=C6H6@+C8H9#-1	     5.67E8   1.43   5.65E3    !Calcul CBS-QB3 Fournet as C7H8@
+bibenzyl+R2OH=C6H6O@L+C8H9#-1        7.83E2   2.884  3.2193E3  !Seta V Nakajima V Miyoshi JPCA 2006
+C14H13#=stilbene+R1H                 7.94E15  0.0    51.864E3  !<Oehlschlaeger05>! in Sakai07 Zhenyu
+C14H13#+O2= stilbene+R3OOH	     1.6E12   0.00   15200     !as allylique
+C14H13#+R3OOH=>R2OH+C7H6O@A+R2C7H7@Y   8.21E4   2.20  -5.13E3    !as R2C7H7@Y
+
+!********************************************!
+!*REACTIONS OF STILBENE                     *!
+!********************************************!
+
+!Ajout Ipso MF
+stilbene+R1H=>C6H6@+C2H2T+R1C6H5@	    5.67E8   1.43   5.65E3    !Calcul CBS-QB3 Fournet as C7H8@
+stilbene+R2OH=C6H6O@L+C6H5C2H2      7.83E2   2.884  3.2193E3  !Seta V Nakajima V Miyoshi JPCA 2006
+
+! ajout MF
+stilbene+R2OH=C7H6O@A+R2C7H7@Y       1.0E13       0.0        5.94E3  !<Baulch05> as C2H4
+
+!******************************************************!
+!* Reactions of naphthalene                           *!
+!******************************************************!
+2C5H5#=naphthalene+H2            4.3E36  -6.3  22.835E3 ! A.M. Dean, J. Phys. Chem. 94 (1990) 1432-1439.
+R1C6H5@+R41C4H3VT=naphthalene          3.18E23 -3.2   2.13E3  ! H.Y. Zhang, J.T. McKinnon, CST 107 (1995) 261-300.
+R1C6H5@+C4H4ZT=naphthalene+R1H       3.3E33  -5.7  12.75E3  ! J. Appel, H. Bockhorn, M. Frenklach, Combust. Flame 121 (2000) 122-136.
+R2C7H7@Y+R31C3H3T=>naphthalene+R1H+R1H 6.0E11   0.0   0.0     ! M.B. Colket, D.J. Seery, Proc. Combust. Inst. 25 (1994) 883-891.
+C6H5C2H2+C2H2T=naphthalene+R1H   1.6E16  -1.33  3.3E3   ! J. Appel, H. Bockhorn, M. Frenklach, Combust. Flame 121 (2000) 122-136.
+
+naphthalene+O2=R3OOH+naphthyl          8.0E13	   0.0	   63.4E3  !like benzene <ALZUETA00>A*8/6!
+naphthalene+B1O=>indenyl+B2CO+R1H      2.7E13      0.0      3.6E3  !like benzene <Nicovich82>A*8/6!
+naphthalene+R1H=naphthyl+H2            8.0E8       1.8     16.8E3  !like benzene <MEBEL97>A*8/6!
+naphthalene+B1O=naphthyl+R2OH	       2.7E13      0.0     14.7E3  !like benzene <LINDSTEDT94>A*8/6!
+naphthalene+R2OH=naphthyl+H2O          2.1E8       1.42    1.45E3  !like benzene <BAULCH92>A*8/6!
+naphthalene+R3OOH=naphthyl+H2O2        7.3E12      0.0     28.9E3  !like benzene <BAULCH94>A*8/6!
+naphthalene+R4CH3=naphthyl+CH4         2.7E12      0.0     15.0E3  !like benzene <ZHANG89>A*8/6! 
+ 
+naphthyl+R1H=naphthalene          1.0E14   0.0   0.0E3  !as n-buthylbenzene
+naphthyl+O2=>indenyl+B2CO+B1O     2.6E13   0.0   6.1E3  !as n-buthylbenzene
+naphthyl+B1O=>indenyl+B2CO        1.0E14   0.0   0.0    !as n-buthylbenzene
+naphthyl+R3OOH=>indenyl+B2CO+R2OH 5.0E12   0.0   0.0    !as n-buthylbenzene
+naphthyl+R2OH=>indenyl+B2CO+R1H   1.0E13   0.0   0.0    !as n-buthylbenzene
+
+!**************************************************!
+!* Reactions of indene and derived radicals       *!
+!**************************************************!
+
+indene+R2OH=>C2H4Z+C6H5CO   		1.37E12  0.0  -1.04E3  !Slavinskaya
+indene+R2OH=>R10C2H3V+B2CO+C6H6@   	1.37E12  0.0  -1.04E3  !Est.
+
+indene+O2=R3OOH+indenyl     		1.4E12   0.0   31.03E3 ! as n-buthylbenzene mais E = DH de reaction
+indene+B1O=indenyl+R2OH     		1.76E11  0.7   3.25E3  ! A-I-21 secondary  A*2
+indene+R1H=indenyl+H2       		1.08E5   2.5   -1.9E3  ! A-I-21 secondary  A*2
+indene+R2OH=indenyl+H2O     		6.0E6    2.0   -1.52E3 ! A-I-21 secondary  A*2
+indene+R4CH3=indenyl+CH4    		2.0E11   0.0   7.3E3   ! A-I-21 secondary  A*2
+indene+R3OOH=H2O2+indenyl   		1.28E4   2.6   12.4E3  ! A-I-21 secondary  A*2
+
+indene+R1H=>C2H2T+R2C7H7@Y                1.16E14  0.0  8.1E3 !MF 2x ipso-addition
+
+indenyl=>C5H5#+C4H2T2                      5.0E13   0.0  75.0E3  !Slavinskaya09   5.0E13  0.0  37.5E3
+indenyl+R1H=indene                       1.0E14   0.0   0.0    !as n-buthylbenzene
+R1C6H5@+R31C3H3T=indene                        6.46E12  0.0   0.0    !Slavinskaya09
+indenyl+R3OOH=>C6H6@+B2CO+R9C2HT+R2OH    3.0E12   0.0   0.0    !Est.!similar to C5H5#+HO2
+indenyl+R3OOH=>C6H5#C2H+R5CHO+R2OH	 3.0E12   0.0   0.0    !Est.!similar to C5H5#+HO2
+indenyl+B1O=>C6H6@+B2CO+R9C2HT           5.8E13  -0.02  0.02E3 !Est. C5H5#+B1O=C5H4O#+R1H
+indenyl+B1O=>C6H5#C2H+R5CHO              5.8E13  -0.02  0.02E3 !Est. C5H5#+B1O=C5H4O#+R1H
+indenyl+R2OH=>C8H8@Z+B2CO               4.0E14   0.0   4.5E3  !Est. C5H5#+OH=C4H6Z2-13+CO
+indenyl+C5H5#=>phenanthrene+2R1H         4.3E12   0.0   4.89E3 !in Slavinskaya09  A/10
+
+
+!********************************************!
+!*REACTIONS OF HOC6H4CHO                    *!
+!********************************************!
+
+! ajout MF
+HOC6H4CH2+O2=HOC6H4CHO+R2OH		6.3E12	0.00	40000  ! AS BENZYL+O2
+HOC6H4CH2+R3OOH=>HOC6H4CHO+R2OH+R1H	8.21e4	2.20	-5130  ! AS BENZYL+HO2
+
+! ajout MF
+HOC6H4CHO+R2OH=>B2CO+R3C6H5O@EY+H2O	      3.5E09    1.0     0.87E3   !AS PHENOL
+	DUPLICATE
+HOC6H4CHO+R1H=>B2CO+R3C6H5O@EY+H2	      1.95E6    2.372   5.81E3   !AS PHENOL
+	DUPLICATE
+HOC6H4CHO+B1O=>B2CO+R3C6H5O@EY+R2OH       4.2E11    0.0     0.0 	 !AS PHENOL
+	DUPLICATE
+
+HOC6H4CHO+R2OH=>B2CO+R3C6H5O@EY+H2O	      7.8E12	0.0    0.0	 !AS C7H6O@A
+	DUPLICATE
+HOC6H4CHO+R1H=>B2CO+R3C6H5O@EY+H2	      4.0E13    0.0    3.2E3     !AS C7H6O@A
+	DUPLICATE
+HOC6H4CHO+B1O=>B2CO+R3C6H5O@EY+R2OH       6.0E12	0.0    1.8E3 	 !AS C7H6O@A
+	DUPLICATE 
+
+!********************************************!
+!*REACTIONS OF C6H5C4H7                     *!
+!********************************************!
+
+R2C7H7@Y+R26C3H5Y=C6H5C4H7		   5.0E12	0.00	0.00
+
+! ajout MF
+C6H5C4H7+R2OH=>R2C7H7@Y+C3H4T+H2O	   5.2E09      1.0       0.87E3	 !AS 2/3C7H8@ wrong products but Y rad
+	DUPLICATE
+C6H5C4H7+R1H=>R2C7H7@Y+C3H4T+H2	   2.92E6      2.372     5.81E3	 !AS 2/3C7H8@ wrong products but Y rad
+	DUPLICATE
+C6H5C4H7+B1O=>R2C7H7@Y+C3H4T+R2OH    6.3E11      0.0       0.0	 !AS 2/3C7H8@ wrong products but Y rad
+	DUPLICATE
+
+C6H5C4H7+R2OH=>R2C7H7@Y+C3H4T+H2O	   3.0E6      2.0        -1520	 !AS 2Hs allyl wrong products but Y rad
+	DUPLICATE
+C6H5C4H7+R1H=>R2C7H7@Y+C3H4T+H2	   5.4E4      2.5        -1900	 !AS 2Hs allyl wrong products but Y rad
+	DUPLICATE
+C6H5C4H7+B1O=>R2C7H7@Y+C3H4T+R2OH     8.8E10    0.7         3250	 !AS 2Hs allyl wrong products but Y rad
+	DUPLICATE
+
+!*****************************!
+!* REACTIONS OF Benzofuran   *!
+!*****************************!
+
+R3C6H5O@EY+C2H2T=>benzofuran+R1H        1.2E10   0.0   0.46E3 	!TEST MF/10 analog oh+c2h2 base nist! 
+
+!*****************************
+!* REACTIONS OF CUMENE      *!
+!*****************************
+
+!**Unimolecular initiation
+C8H9#+R4CH3=cumene                   1E12   0.0     0.0  !A optimisé par MF
+R1C6H5@+R27C3H7=cumene                 1E12   0.0     0.0  !A optimisé par MF
+
+
+!*****************************!
+!* REACTIONS OF C6H5CH2CHO   *!
+!*****************************!
+
+!AJOUTS REACTION RODA :
+R2C7H7@Y+R5CHO = C6H5CH2CHO   		1.0E13  0.0     0.0
+
+C6H5CH2CHO+R1H=>H2+B2CO+R2C7H7@Y		4.0E13	0.0	4.2E3	!Butane mechanism
+C6H5CH2CHO+R2OH=>H2O+B2CO+R2C7H7@Y	4.2E12	0.0	0.5E3	!Butane mechanism
+C6H5CH2CHO+R3OOH=>H2O2+B2CO+R2C7H7@Y	1.0E12	0.0	10.0E3	!Butane mechanism
+C6H5CH2CHO+R4CH3=>CH4+B2CO+R2C7H7@Y	2.0E-6	0.0	2.5E3	!Butane mechanism
+C6H5CH2CHO+R11C2H5=>C2H6+B2CO+R2C7H7@Y	1.3E12	0.0	8.5E3	!Butane mechanism
+
+
+END
+
+
+
+

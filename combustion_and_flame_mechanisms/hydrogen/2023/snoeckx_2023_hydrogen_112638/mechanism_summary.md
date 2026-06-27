@@ -30,10 +30,22 @@ Ramses Snoeckx, Min Suk Cha. Kinetic study of plasma assisted oxidation of H2 fo
 
 ### Mechanism 1
 
-- Status: ok
+- Status: cantera_failed
 - Species count: 15
 - Reaction count: 43
-- Message: cantera conversion ok
+- Message: InputError: Error while reading entry in chem.inp starting on line 242: """ + H2 ! 4.75d-7 * (Te)**(-0.5) """ Section starts with unrecognized keyword '+ H2 ' Please check https://cantera.org/stable/userguide/ck2yaml-tutorial.html#debugging-common-errors-in-ck-files for the correct Chemkin syntax.; cleanup retry failed: InputError: Error while reading entry in chem_cantera_clean.inp starting on line 231: """ + H2 ! 4.75d-7 * (Te)**(-0.5) """ Section starts with unrecognized keyword '+ H2 ' Please check https://cantera.org/stable/userguide/ck2yaml-tutorial.html#debugging-common-errors-in-ck-files for the correct Chemkin syntax.
+- Method: cantera
+- Cantera YAML: mechanism.yaml
+- Standard chem.inp: chem.inp
+- Standard therm.dat: therm.dat
+- Standard tran.dat: not available
+
+### Mechanism 2
+
+- Status: cantera_failed
+- Species count: 15
+- Reaction count: 43
+- Message: InputError: Error while reading entry in chem.inp starting on line 242: """ + H2 ! 4.75d-7 * (Te)**(-0.5) """ Section starts with unrecognized keyword '+ H2 ' Please check https://cantera.org/stable/userguide/ck2yaml-tutorial.html#debugging-common-errors-in-ck-files for the correct Chemkin syntax.; cleanup retry failed: InputError: Error while reading entry in chem_cantera_clean.inp starting on line 231: """ + H2 ! 4.75d-7 * (Te)**(-0.5) """ Section starts with unrecognized keyword '+ H2 ' Please check https://cantera.org/stable/userguide/ck2yaml-tutorial.html#debugging-common-errors-in-ck-files for the correct Chemkin syntax.
 - Method: cantera
 - Cantera YAML: mechanism.yaml
 - Standard chem.inp: chem.inp
@@ -46,7 +58,7 @@ Non-thermal plasma discharges are considered as an assisted method for supportin
 
 ## Processing Notes
 
+- extracted S0010218023000238_mmc1.zip
 - extracted S0010218023000238_mmc3.zip
 - extracted S0010218023000238_mmc5.zip
 - extracted S0010218023000238_mmc2.zip
-- extracted S0010218023000238_mmc1.zip

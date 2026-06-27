@@ -31,9 +31,9 @@ Frédérique Battin-Leclerc, Valérie Warth, Roda Bounaceur, Benoit Husson, Oliv
 ### Mechanism 1
 
 - Status: cantera_failed
-- Species count: 3278
-- Reaction count: 8917
-- Message: CanteraError: ******************************************************************************* InputFileError thrown by AnyMap::fromYamlFile: Error on line 11670 of /home/icaurs/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/benzene/2015/battin_leclerc_2015_benzene_349-356/mechanism.yaml: illegal map value | Line | | 11665 | data: | 11666 | - [-4.3642435, 0.081931114, -5.6030149e-05, 1.1810722e-08, | 11667 | 2.4486862e-12, 2.6226262e+04, 47.226852] | 11668 | - [12.659496, 0.032473639, -1.0974883e-05, 1.7452765e-09, | 11669 | -1.0739891e-13, 2.1940416e+04, -39.444965] > 11670 > b: 0.0, Ea: 1.7e+04} ^ | 11671 | note: | | 11672 | MZ 351 | 11673 | - equation: nC5H10Z + R3OOH => H2O2 + C4H6Z2-13 + R4CH3 # Reaction 2012 ********************************************************* ... [truncated; see _processing logs]
+- Species count: not parsed
+- Reaction count: not parsed
+- Message: InputError: Error while reading entry in chem.inp starting on line 4358: """ 1.61 -0.4E3 !(265,-265)<MEBEL NIST>! """ Section starts with unrecognized keyword ' 1.61 -0.4E3 ' Ignoring redundant declaration for species 'C3H6OE#3' Ignoring redundant declaration for species 'C3H6OE#4' Ignoring redundant declaration for species 'C4H8OE#3' Ignoring redundant declaration for species 'C4H8OE#4' Ignoring redundant declaration for species 'C4H8OE#5' Ignoring redundant thermo data for species 'cC3H3' starting on line 945 of chem.inp. Ignoring redundant thermo data for species 'C2H4OE#3' starting on line 1013 of chem.inp. Ignoring redundant declaration for species 'B1O' Ignoring redundant declaration for species 'B2CO' Ignoring redundant declaration for species 'B3C' Ignoring redundant declaration fo ... [truncated; see _processing logs]
 - Method: cantera
 - Cantera YAML: mechanism.yaml
 - Standard chem.inp: chem.inp
@@ -43,9 +43,9 @@ Frédérique Battin-Leclerc, Valérie Warth, Roda Bounaceur, Benoit Husson, Oliv
 ### Mechanism 2
 
 - Status: cantera_failed
-- Species count: 3278
-- Reaction count: 8917
-- Message: CanteraError: ******************************************************************************* InputFileError thrown by AnyMap::fromYamlFile: Error on line 11670 of /home/icaurs/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/benzene/2015/battin_leclerc_2015_benzene_349-356/mechanism.yaml: illegal map value | Line | | 11665 | data: | 11666 | - [-4.3642435, 0.081931114, -5.6030149e-05, 1.1810722e-08, | 11667 | 2.4486862e-12, 2.6226262e+04, 47.226852] | 11668 | - [12.659496, 0.032473639, -1.0974883e-05, 1.7452765e-09, | 11669 | -1.0739891e-13, 2.1940416e+04, -39.444965] > 11670 > b: 0.0, Ea: 1.7e+04} ^ | 11671 | note: | | 11672 | MZ 351 | 11673 | - equation: nC5H10Z + R3OOH => H2O2 + C4H6Z2-13 + R4CH3 # Reaction 2012 ********************************************************* ... [truncated; see _processing logs]
+- Species count: 866
+- Reaction count: not parsed
+- Message: InputError: Error while reading entry in chem.inp starting on line 4358: """ 1.61 -0.4E3 !(265,-265)<MEBEL NIST>! """ Section starts with unrecognized keyword ' 1.61 -0.4E3 ' Ignoring redundant declaration for species 'C3H6OE#3' Ignoring redundant declaration for species 'C3H6OE#4' Ignoring redundant declaration for species 'C4H8OE#3' Ignoring redundant declaration for species 'C4H8OE#4' Ignoring redundant declaration for species 'C4H8OE#5' Ignoring redundant thermo data for species 'cC3H3' starting on line 945 of chem.inp. Ignoring redundant thermo data for species 'C2H4OE#3' starting on line 1013 of chem.inp. Ignoring redundant declaration for species 'B1O' Ignoring redundant declaration for species 'B2CO' Ignoring redundant declaration for species 'B3C' Ignoring redundant declaration fo ... [truncated; see _processing logs]
 - Method: cantera
 - Cantera YAML: mechanism.yaml
 - Standard chem.inp: chem.inp
@@ -55,9 +55,9 @@ Frédérique Battin-Leclerc, Valérie Warth, Roda Bounaceur, Benoit Husson, Oliv
 ### Mechanism 3
 
 - Status: cantera_failed
-- Species count: 3278
-- Reaction count: 8917
-- Message: CanteraError: ******************************************************************************* InputFileError thrown by AnyMap::fromYamlFile: Error on line 11670 of /home/icaurs/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/benzene/2015/battin_leclerc_2015_benzene_349-356/mechanism.yaml: illegal map value | Line | | 11665 | data: | 11666 | - [-4.3642435, 0.081931114, -5.6030149e-05, 1.1810722e-08, | 11667 | 2.4486862e-12, 2.6226262e+04, 47.226852] | 11668 | - [12.659496, 0.032473639, -1.0974883e-05, 1.7452765e-09, | 11669 | -1.0739891e-13, 2.1940416e+04, -39.444965] > 11670 > b: 0.0, Ea: 1.7e+04} ^ | 11671 | note: | | 11672 | MZ 351 | 11673 | - equation: nC5H10Z + R3OOH => H2O2 + C4H6Z2-13 + R4CH3 # Reaction 2012 ********************************************************* ... [truncated; see _processing logs]
+- Species count: 866
+- Reaction count: not parsed
+- Message: InputError: Error while reading entry in chem.inp starting on line 4358: """ 1.61 -0.4E3 !(265,-265)<MEBEL NIST>! """ Section starts with unrecognized keyword ' 1.61 -0.4E3 ' Ignoring redundant declaration for species 'C3H6OE#3' Ignoring redundant declaration for species 'C3H6OE#4' Ignoring redundant declaration for species 'C4H8OE#3' Ignoring redundant declaration for species 'C4H8OE#4' Ignoring redundant declaration for species 'C4H8OE#5' Ignoring redundant thermo data for species 'cC3H3' starting on line 945 of chem.inp. Ignoring redundant thermo data for species 'C2H4OE#3' starting on line 1013 of chem.inp. Ignoring redundant declaration for species 'B1O' Ignoring redundant declaration for species 'B2CO' Ignoring redundant declaration for species 'B3C' Ignoring redundant declaration fo ... [truncated; see _processing logs]
 - Method: cantera
 - Cantera YAML: mechanism.yaml
 - Standard chem.inp: chem.inp
@@ -67,9 +67,9 @@ Frédérique Battin-Leclerc, Valérie Warth, Roda Bounaceur, Benoit Husson, Oliv
 ### Mechanism 4
 
 - Status: cantera_failed
-- Species count: 3278
-- Reaction count: 8917
-- Message: CanteraError: ******************************************************************************* InputFileError thrown by AnyMap::fromYamlFile: Error on line 11670 of /home/icaurs/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/benzene/2015/battin_leclerc_2015_benzene_349-356/mechanism.yaml: illegal map value | Line | | 11665 | data: | 11666 | - [-4.3642435, 0.081931114, -5.6030149e-05, 1.1810722e-08, | 11667 | 2.4486862e-12, 2.6226262e+04, 47.226852] | 11668 | - [12.659496, 0.032473639, -1.0974883e-05, 1.7452765e-09, | 11669 | -1.0739891e-13, 2.1940416e+04, -39.444965] > 11670 > b: 0.0, Ea: 1.7e+04} ^ | 11671 | note: | | 11672 | MZ 351 | 11673 | - equation: nC5H10Z + R3OOH => H2O2 + C4H6Z2-13 + R4CH3 # Reaction 2012 ********************************************************* ... [truncated; see _processing logs]
+- Species count: 866
+- Reaction count: not parsed
+- Message: InputError: Error while reading entry in chem.inp starting on line 4358: """ 1.61 -0.4E3 !(265,-265)<MEBEL NIST>! """ Section starts with unrecognized keyword ' 1.61 -0.4E3 ' Ignoring redundant declaration for species 'C3H6OE#3' Ignoring redundant declaration for species 'C3H6OE#4' Ignoring redundant declaration for species 'C4H8OE#3' Ignoring redundant declaration for species 'C4H8OE#4' Ignoring redundant declaration for species 'C4H8OE#5' Ignoring redundant thermo data for species 'cC3H3' starting on line 945 of chem.inp. Ignoring redundant thermo data for species 'C2H4OE#3' starting on line 1013 of chem.inp. Ignoring redundant declaration for species 'B1O' Ignoring redundant declaration for species 'B2CO' Ignoring redundant declaration for species 'B3C' Ignoring redundant declaration fo ... [truncated; see _processing logs]
 - Method: cantera
 - Cantera YAML: mechanism.yaml
 - Standard chem.inp: chem.inp
@@ -79,9 +79,9 @@ Frédérique Battin-Leclerc, Valérie Warth, Roda Bounaceur, Benoit Husson, Oliv
 ### Mechanism 5
 
 - Status: cantera_failed
-- Species count: 3278
-- Reaction count: 8917
-- Message: CanteraError: ******************************************************************************* InputFileError thrown by AnyMap::fromYamlFile: Error on line 11670 of /home/icaurs/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/benzene/2015/battin_leclerc_2015_benzene_349-356/mechanism.yaml: illegal map value | Line | | 11665 | data: | 11666 | - [-4.3642435, 0.081931114, -5.6030149e-05, 1.1810722e-08, | 11667 | 2.4486862e-12, 2.6226262e+04, 47.226852] | 11668 | - [12.659496, 0.032473639, -1.0974883e-05, 1.7452765e-09, | 11669 | -1.0739891e-13, 2.1940416e+04, -39.444965] > 11670 > b: 0.0, Ea: 1.7e+04} ^ | 11671 | note: | | 11672 | MZ 351 | 11673 | - equation: nC5H10Z + R3OOH => H2O2 + C4H6Z2-13 + R4CH3 # Reaction 2012 ********************************************************* ... [truncated; see _processing logs]
+- Species count: 2482
+- Reaction count: 7594
+- Message: CanteraError: ******************************************************************************* InputFileError thrown by AnyMap::fromYamlFile: Error on line 200 of /home/icaurs/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/benzene/2015/battin_leclerc_2015_benzene_349-356/mechanism.yaml: end of sequence flow not found | Line | | 195 | R314C11H15O2@P, R315C11H15O2@P, R316C11H15O2@P, R317C11H15O2@P, | 196 | R318C15H23O4@UP, R319C15H23O4@UP, R320C13H19O4@UP, | 197 | R321C13H19O2@P, R322C13H19O2@P, R323C13H19O2@P, R324C13H19O2@P, | 198 | R325C10H13O4@UP, R326C10H13O4@UP, R327C10H13O4@UP, | 199 | R328C10H13O4@UP, R329C10H13O2@PX, R330C10H13O2@P, R > 200 > species: ^ | 201 | - name: B1O | 202 | composition: {O: 1} | 203 | thermo: ************************************************ ... [truncated; see _processing logs]
 - Method: cantera
 - Cantera YAML: mechanism.yaml
 - Standard chem.inp: chem.inp
@@ -91,9 +91,9 @@ Frédérique Battin-Leclerc, Valérie Warth, Roda Bounaceur, Benoit Husson, Oliv
 ### Mechanism 6
 
 - Status: cantera_failed
-- Species count: 3278
-- Reaction count: 8917
-- Message: CanteraError: ******************************************************************************* InputFileError thrown by AnyMap::fromYamlFile: Error on line 11670 of /home/icaurs/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/benzene/2015/battin_leclerc_2015_benzene_349-356/mechanism.yaml: illegal map value | Line | | 11665 | data: | 11666 | - [-4.3642435, 0.081931114, -5.6030149e-05, 1.1810722e-08, | 11667 | 2.4486862e-12, 2.6226262e+04, 47.226852] | 11668 | - [12.659496, 0.032473639, -1.0974883e-05, 1.7452765e-09, | 11669 | -1.0739891e-13, 2.1940416e+04, -39.444965] > 11670 > b: 0.0, Ea: 1.7e+04} ^ | 11671 | note: | | 11672 | MZ 351 | 11673 | - equation: nC5H10Z + R3OOH => H2O2 + C4H6Z2-13 + R4CH3 # Reaction 2012 ********************************************************* ... [truncated; see _processing logs]
+- Species count: 2482
+- Reaction count: 9631
+- Message: CanteraError: ******************************************************************************* InputFileError thrown by AnyMap::fromYamlFile: Error on line 200 of /home/icaurs/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/benzene/2015/battin_leclerc_2015_benzene_349-356/mechanism.yaml: end of sequence flow not found | Line | | 195 | R314C11H15O2@P, R315C11H15O2@P, R316C11H15O2@P, R317C11H15O2@P, | 196 | R318C15H23O4@UP, R319C15H23O4@UP, R320C13H19O4@UP, | 197 | R321C13H19O2@P, R322C13H19O2@P, R323C13H19O2@P, R324C13H19O2@P, | 198 | R325C10H13O4@UP, R326C10H13O4@UP, R327C10H13O4@UP, | 199 | R328C10H13O4@UP, R329C10H13O2@PX, R330C10H13O2@P, R > 200 > species: ^ | 201 | - name: B1O | 202 | composition: {O: 1} | 203 | thermo: ************************************************ ... [truncated; see _processing logs]
 - Method: cantera
 - Cantera YAML: mechanism.yaml
 - Standard chem.inp: chem.inp
@@ -103,9 +103,9 @@ Frédérique Battin-Leclerc, Valérie Warth, Roda Bounaceur, Benoit Husson, Oliv
 ### Mechanism 7
 
 - Status: cantera_failed
-- Species count: 3278
-- Reaction count: 8917
-- Message: CanteraError: ******************************************************************************* InputFileError thrown by AnyMap::fromYamlFile: Error on line 11670 of /home/icaurs/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/benzene/2015/battin_leclerc_2015_benzene_349-356/mechanism.yaml: illegal map value | Line | | 11665 | data: | 11666 | - [-4.3642435, 0.081931114, -5.6030149e-05, 1.1810722e-08, | 11667 | 2.4486862e-12, 2.6226262e+04, 47.226852] | 11668 | - [12.659496, 0.032473639, -1.0974883e-05, 1.7452765e-09, | 11669 | -1.0739891e-13, 2.1940416e+04, -39.444965] > 11670 > b: 0.0, Ea: 1.7e+04} ^ | 11671 | note: | | 11672 | MZ 351 | 11673 | - equation: nC5H10Z + R3OOH => H2O2 + C4H6Z2-13 + R4CH3 # Reaction 2012 ********************************************************* ... [truncated; see _processing logs]
+- Species count: 2482
+- Reaction count: 9631
+- Message: CanteraError: ******************************************************************************* InputFileError thrown by AnyMap::fromYamlFile: Error on line 200 of /home/icaurs/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/benzene/2015/battin_leclerc_2015_benzene_349-356/mechanism.yaml: end of sequence flow not found | Line | | 195 | R314C11H15O2@P, R315C11H15O2@P, R316C11H15O2@P, R317C11H15O2@P, | 196 | R318C15H23O4@UP, R319C15H23O4@UP, R320C13H19O4@UP, | 197 | R321C13H19O2@P, R322C13H19O2@P, R323C13H19O2@P, R324C13H19O2@P, | 198 | R325C10H13O4@UP, R326C10H13O4@UP, R327C10H13O4@UP, | 199 | R328C10H13O4@UP, R329C10H13O2@PX, R330C10H13O2@P, R > 200 > species: ^ | 201 | - name: B1O | 202 | composition: {O: 1} | 203 | thermo: ************************************************ ... [truncated; see _processing logs]
 - Method: cantera
 - Cantera YAML: mechanism.yaml
 - Standard chem.inp: chem.inp
@@ -115,9 +115,9 @@ Frédérique Battin-Leclerc, Valérie Warth, Roda Bounaceur, Benoit Husson, Oliv
 ### Mechanism 8
 
 - Status: cantera_failed
-- Species count: 1098
-- Reaction count: 8917
-- Message: CanteraError: ******************************************************************************* CanteraError thrown by Kinetics::checkDuplicates: Error on lines 24471 and 45396 of /home/icaurs/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/benzene/2015/battin_leclerc_2015_benzene_349-356/mechanism.yaml: Undeclared duplicate reactions detected: Reaction 2812: R19C3H7 => C2H4Z + R4CH3 Reaction 7349: R19C3H7 => C2H4Z + R4CH3 | Line | | 24466 | - equation: R507C13H19O4@UP => R2OH + C13H18O3@KP # Reaction 2811 | 24467 | duplicate: true | 24468 | rate-constant: {A: 5.0e+09, b: 1.0, Ea: 3.55e+04} | 24469 | note: | | 24470 | 2810 KB > 24471 > - equation: R19C3H7 => R4CH3 + C2H4Z # Reaction 2812 ^ | 24472 | rate-constant: {A: 2.0e+13, b: 0.0, Ea: 3.1e+04} | 24473 | note: |2 | 2447 ... [truncated; see _processing logs]
+- Species count: 2482
+- Reaction count: 9631
+- Message: CanteraError: ******************************************************************************* InputFileError thrown by AnyMap::fromYamlFile: Error on line 200 of /home/icaurs/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/benzene/2015/battin_leclerc_2015_benzene_349-356/mechanism.yaml: end of sequence flow not found | Line | | 195 | R314C11H15O2@P, R315C11H15O2@P, R316C11H15O2@P, R317C11H15O2@P, | 196 | R318C15H23O4@UP, R319C15H23O4@UP, R320C13H19O4@UP, | 197 | R321C13H19O2@P, R322C13H19O2@P, R323C13H19O2@P, R324C13H19O2@P, | 198 | R325C10H13O4@UP, R326C10H13O4@UP, R327C10H13O4@UP, | 199 | R328C10H13O4@UP, R329C10H13O2@PX, R330C10H13O2@P, R > 200 > species: ^ | 201 | - name: B1O | 202 | composition: {O: 1} | 203 | thermo: ************************************************ ... [truncated; see _processing logs]
 - Method: cantera
 - Cantera YAML: mechanism.yaml
 - Standard chem.inp: chem.inp

@@ -20,10 +20,10 @@ T. Hazenberg, J. van Dijk, J.A. van Oijen. Chemical flux analysis of low-tempera
 ## Mechanism Files
 
 - Standard mechanism file: chem.inp
-- Standard thermodynamic file: therm.dat
+- Standard thermodynamic file: not available
 - Standard transport file: not available
-- Original mechanism source files: _processing/extracted/s0010218023004121_mmc5/mmc5.chem, _processing/extracted/s0010218023004121_mmc4/mmc4.chem, _processing/extracted/s0010218023004121_mmc3/mmc3.chem
-- Original thermodynamic source files: _processing/extracted/s0010218023004121_mmc6/mmc6.therm, _processing/extracted/s0010218023004121_mmc7/mmc7.therm, _processing/extracted/s0010218023004121_mmc8/mmc8.therm
+- Original mechanism source files: _processing/extracted/s0010218023004121_mmc3/mmc3.chem
+- Original thermodynamic source files: not found
 - Original transport source files: not found
 
 ## Cantera Preprocessing Results
@@ -33,35 +33,11 @@ T. Hazenberg, J. van Dijk, J.A. van Oijen. Chemical flux analysis of low-tempera
 - Status: cantera_failed
 - Species count: not parsed
 - Reaction count: not parsed
-- Message: ValueError: could not convert string to float: 'EXC'; numeric cleanup retry failed: ValueError: could not convert string to float: 'EXC'
+- Message: InputError: Error while reading reaction in chem.inp starting on line 352: """ E+O2=>O2+E 0.000E+00 0.000E+00 0.0 BOLSIG/ O2 O2_elastic.dat / """ could not convert string to float: 'O2 O2_elastic.dat' Error while reading reaction in chem.inp starting on line 354: """ E+O2=>O2(a1)+E 1.000E+00 0.000E+00 0.0 BOLSIG/ O2 O2->O2(a1).dat / """ could not convert string to float: 'O2 O2->O2(a1).dat' Error while reading reaction in chem.inp starting on line 356: """ E+O2=>O2(b1)+E 1.000E+00 0.000E+00 0.0 BOLSIG/ O2 O2->O2(b1).dat / """ could not convert string to float: 'O2 O2->O2(b1).dat' Error while reading reaction in chem.inp starting on line 358: """ E+O2=>O2(A3)+E 1.000E+00 0.000E+00 0.0 BOLSIG/ O2 O2->O2(A3).dat / """ could not convert string to float: 'O2 O2->O2(A3).dat' Error while reading ... [truncated; see _processing logs]
 - Method: cantera
 - Cantera YAML: not available
 - Standard chem.inp: chem.inp
-- Standard therm.dat: therm.dat
-- Standard tran.dat: not available
-
-### Mechanism 2
-
-- Status: cantera_failed
-- Species count: not parsed
-- Reaction count: not parsed
-- Message: ValueError: could not convert string to float: 'EXC'; numeric cleanup retry failed: ValueError: could not convert string to float: 'EXC'
-- Method: cantera
-- Cantera YAML: not available
-- Standard chem.inp: chem.inp
-- Standard therm.dat: therm.dat
-- Standard tran.dat: not available
-
-### Mechanism 3
-
-- Status: cantera_failed
-- Species count: not parsed
-- Reaction count: not parsed
-- Message: ValueError: could not convert string to float: 'EXC'; numeric cleanup retry failed: ValueError: could not convert string to float: 'EXC'
-- Method: cantera
-- Cantera YAML: not available
-- Standard chem.inp: chem.inp
-- Standard therm.dat: therm.dat
+- Standard therm.dat: not available
 - Standard tran.dat: not available
 
 ## Abstract
@@ -70,11 +46,6 @@ Plasma can be used to enhance the reactivity of combustible mixtures at low temp
 
 ## Processing Notes
 
-- extracted S0010218023004121_mmc5.zip
 - extracted S0010218023004121_mmc1.zip
-- extracted S0010218023004121_mmc6.zip
-- extracted S0010218023004121_mmc2.zip
-- extracted S0010218023004121_mmc4.zip
-- extracted S0010218023004121_mmc8.zip
-- extracted S0010218023004121_mmc7.zip
 - extracted S0010218023004121_mmc3.zip
+- extracted S0010218023004121_mmc2.zip

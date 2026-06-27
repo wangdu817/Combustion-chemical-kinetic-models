@@ -1,0 +1,24 @@
+!!!!!!!
+pyrene dimerazation 
+!!!!!!!
+ELEMENT
+O H C N AR
+END
+SPECIES
+H  A4  A4-  C-DIM P-DIM PR-DIM H2
+AR N2
+END
+REACTIONS
+A4-+H<=>A4          1.218E+10     9.23E-01     -2263.8!calculated in this work 
+2H<=>H2             1.000E+18     -1.000          .00!taken form GRI mech
+2H+H2<=>2H2         9.000E+16      -.600          .00!taken from GRI mech
+!
+A4+A4=> P-DIM       1.460E+13       .000     -3220.00! calculated by Chakraborty
+P-DIM=> A4+A4       2.013E+24     -3.420      7.515E+03 !calculated base on the positive reaction calculated by Chakraborty and the equilibrium constant calculated by Totton  
+A4+A4-=>PR-DIM      2.000E+14       .000     -2500.00!estimate by Sirignano
+PR-DIM=>A4+A4-      4.260E+21     -2.885      4.08E+04 !estimate based on DIM-P=>A4+A4-
+!
+A4+A4-<=>C-DIM+H    9.000E+11       .000      4300.00!by estimate
+A4-+A4-<=>C-DIM     3.000E+13       .000          .00!by estimate
+!
+END                     

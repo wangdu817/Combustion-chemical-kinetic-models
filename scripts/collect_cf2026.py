@@ -1072,7 +1072,7 @@ def cantera_convert_once(
     result_path = result_path or log_path.with_suffix(".result.json")
     result_path.parent.mkdir(parents=True, exist_ok=True)
     if result_path.exists():
-        result_path.unlink()
+        result_path.unlink(missing_ok=True)
     code = r"""
 import json
 import sys

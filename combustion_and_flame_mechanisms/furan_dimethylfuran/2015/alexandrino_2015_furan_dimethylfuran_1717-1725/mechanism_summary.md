@@ -47,4 +47,3 @@ not available
 ## Processing Notes
 
 - extracted S1540748914001606_mmc1.zip
-- extracted Sens_plot-PROCI_2532.docx

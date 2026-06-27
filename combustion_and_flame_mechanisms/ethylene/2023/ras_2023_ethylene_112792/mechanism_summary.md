@@ -33,7 +33,7 @@ Kevin De Ras, Thomas Panaget, Yann Fenard, Jeroen Aerssens, Laure Pillier, Joris
 - Status: cantera_failed
 - Species count: 376
 - Reaction count: 7976
-- Message: TimeoutExpired: Cantera conversion exceeded 900 seconds
+- Message: CanteraError: ******************************************************************************* CanteraError thrown by Kinetics::checkDuplicates: Error on lines 6906 and 15472 of /home/icaurs/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/ethylene/2023/ras_2023_ethylene_112792/mechanism.yaml: Undeclared duplicate reactions detected: Reaction 1: H + O2 <=> O + OH Reaction 3989: H + O2 <=> O + OH | Line | | 6901 | rotational-relaxation: 1.0 | 6902 | note: '! InChI=1S/CHO3/c2-1(3)4/h(H,2,3)' | 6903 | note: "!\tInChI=1S/CHO3/c2-1(3)4/h(H,2,3)" | 6904 | | 6905 | reactions: > 6906 > - equation: H + O2 <=> O + OH # Reaction 1 ^ | 6907 | rate-constant: {A: 1.04e+14, b: 0.0, Ea: 1.5286e+04} | 6908 | - equation: O + H2 <=> H + OH # Reaction 2 | 6909 | rate-constant: {A: 5.08e+04, b ... [truncated; see _processing logs]
 - Method: cantera
 - Cantera YAML: mechanism.yaml
 - Standard chem.inp: chem.inp
@@ -46,8 +46,8 @@ Oxymethylene ethers have received much attention in recent years as a high-poten
 
 ## Processing Notes
 
-- extracted S0010218023001761_mmc5.zip
-- extracted S0010218023001761_mmc2.docx
-- extracted S0010218023001761_mmc4.xlsx
 - extracted S0010218023001761_mmc3.docx
+- extracted S0010218023001761_mmc2.docx
 - extracted S0010218023001761_mmc1.zip
+- extracted S0010218023001761_mmc4.xlsx
+- extracted S0010218023001761_mmc5.zip

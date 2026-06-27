@@ -23,17 +23,29 @@ Claudia-F. López-Cámara, Chiara Saggese, William J. Pitz, Xiao Shao, Hong G. I
 - Standard thermodynamic file: therm.dat
 - Standard transport file: tran.dat
 - Original mechanism source files: _processing/raw_downloads/S0010218023002031_mmc5.txt, _processing/extracted/s0010218023002031_mmc2/LUCI-Model1.inp
-- Original thermodynamic source files: _processing/raw_downloads/S0010218023002031_mmc3.txt, _processing/raw_downloads/S0010218023002031_mmc6.txt
+- Original thermodynamic source files: _processing/raw_downloads/S0010218023002031_mmc6.txt, _processing/raw_downloads/S0010218023002031_mmc3.txt
 - Original transport source files: _processing/raw_downloads/S0010218023002031_mmc7.txt, _processing/extracted/s0010218023002031_mmc4/transport_LUCI_Model1.inp
 
 ## Cantera Preprocessing Results
 
 ### Mechanism 1
 
-- Status: ok
+- Status: cantera_failed
 - Species count: 45
 - Reaction count: 216
-- Message: cantera conversion ok
+- Message: InputError: No transport data for species 'AR'. No transport data for species 'HE'. No transport data for species 'OC2H3OOH'. No transport data for species 'C2H4O'. No transport data for species 'CH2OH'. No transport data for species 'CH3CHO'. No transport data for species 'CH3CO'. No transport data for species 'C2H5OH'. No transport data for species 'CH2CH2OH'. No transport data for species 'CH3CHOH'. No transport data for species 'CH3CH2O'. No transport data for species 'C3H4'. No transport data for species 'C3H3'. No transport data for species 'C3H5'. No transport data for species 'C3H6'. No transport data for species 'C3H8'. No transport data for species 'I-C3H7'. No transport data for species 'N-C3H7'. No transport data for species 'C3H6OOH'. No transport data for species 'OC3H5OOH'. ... [truncated; see _processing logs]
+- Method: cantera
+- Cantera YAML: mechanism.yaml
+- Standard chem.inp: chem.inp
+- Standard therm.dat: therm.dat
+- Standard tran.dat: tran.dat
+
+### Mechanism 2
+
+- Status: cantera_failed
+- Species count: 45
+- Reaction count: 216
+- Message: InputError: No transport data for species 'AR'. No transport data for species 'HE'. No transport data for species 'OC2H3OOH'. No transport data for species 'C2H4O'. No transport data for species 'CH2OH'. No transport data for species 'CH3CHO'. No transport data for species 'CH3CO'. No transport data for species 'C2H5OH'. No transport data for species 'CH2CH2OH'. No transport data for species 'CH3CHOH'. No transport data for species 'CH3CH2O'. No transport data for species 'C3H4'. No transport data for species 'C3H3'. No transport data for species 'C3H5'. No transport data for species 'C3H6'. No transport data for species 'C3H8'. No transport data for species 'I-C3H7'. No transport data for species 'N-C3H7'. No transport data for species 'C3H6OOH'. No transport data for species 'OC3H5OOH'. ... [truncated; see _processing logs]
 - Method: cantera
 - Cantera YAML: mechanism.yaml
 - Standard chem.inp: chem.inp

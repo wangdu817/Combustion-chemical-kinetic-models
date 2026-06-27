@@ -23,7 +23,7 @@ Wei Guan, Abouelmagd Abdelsamie, Cheng Chi, Zhixia He, Dominique Thévenin. A de
 - Standard thermodynamic file: therm.dat
 - Standard transport file: tran.dat
 - Original mechanism source files: _processing/extracted/s0010218023003735_mmc1/mmc1.cti, _processing/extracted/s0010218023003735_mmc2/mmc2.mech
-- Original thermodynamic source files: _processing/extracted/s0010218023003735_mmc1/mmc1.cti, _processing/extracted/s0010218023003735_mmc3/mmc3.therm
+- Original thermodynamic source files: _processing/extracted/s0010218023003735_mmc3/mmc3.therm, _processing/extracted/s0010218023003735_mmc1/mmc1.cti
 - Original transport source files: _processing/extracted/s0010218023003735_mmc4/mmc4.tran, _processing/extracted/s0010218023003735_mmc1/mmc1.cti
 
 ## Cantera Preprocessing Results
@@ -32,7 +32,7 @@ Wei Guan, Abouelmagd Abdelsamie, Cheng Chi, Zhixia He, Dominique Thévenin. A de
 
 - Status: cantera_failed
 - Species count: 48
-- Reaction count: 294
+- Reaction count: not parsed
 - Message: CanteraError: ******************************************************************************* CanteraError thrown by newSolution: The CTI and XML formats are no longer supported. *******************************************************************************
 - Method: cantera
 - Cantera YAML: mechanism.yaml
@@ -60,5 +60,5 @@ Ammonia ( NH 3 ) as a promising energy vector receives growing interest to reduc
 
 - extracted S0010218023003735_mmc1.zip
 - extracted S0010218023003735_mmc2.zip
-- extracted S0010218023003735_mmc3.zip
 - extracted S0010218023003735_mmc4.zip
+- extracted S0010218023003735_mmc3.zip

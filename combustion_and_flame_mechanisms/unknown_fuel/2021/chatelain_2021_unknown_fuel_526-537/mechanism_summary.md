@@ -33,7 +33,7 @@ Karl P. Chatelain, Yizhuo He, Reham Alharbi, Rémy Mével, Eric L. Petersen, Dea
 - Status: cantera_failed
 - Species count: not parsed
 - Reaction count: not parsed
-- Message: InputError: Ignoring redundant declaration for species 'O' Ignoring redundant declaration for species 'N2O' Ignoring redundant declaration for species 'N' Ignoring redundant declaration for species 'OH*' Ignoring redundant declaration for species 'H' Suppressed 40 additional warnings about redundant species declarations. Run ck2yaml again with the '--verbose' option to see all warnings. Issue while reading reaction in chem.inp starting on line 48: """ OH*=OH+HV 1.400E+06 0.0 0.0 """ Found a reversible reaction containing a product photon. Converting to an irreversible reaction with the photon removed. No thermo data found for species 'N2O' No thermo data found for species 'H2O' No thermo data found for species 'HONO' No thermo data found for species 'O' No thermo data found for species 'O2 ... [truncated; see _processing logs]
+- Message: missing cantera result json
 - Method: cantera
 - Cantera YAML: not available
 - Standard chem.inp: chem.inp
@@ -45,7 +45,7 @@ Karl P. Chatelain, Yizhuo He, Reham Alharbi, Rémy Mével, Eric L. Petersen, Dea
 - Status: cantera_failed
 - Species count: not parsed
 - Reaction count: not parsed
-- Message: missing cantera result json
+- Message: InputError: Issue while reading reaction in chem.inp starting on line 121: """ OH*=OH+HV 1.400E+06 0.0 0.0 """ Found a reversible reaction containing a product photon. Converting to an irreversible reaction with the photon removed. No thermo data found for species 'O' No thermo data found for species 'N2O' No thermo data found for species 'N' No thermo data found for species 'SIO' No thermo data found for species 'OH*' No thermo data found for species 'O2' No thermo data found for species 'OH' No thermo data found for species 'HO2' No thermo data found for species 'H2O2' No thermo data found for species 'NH' No thermo data found for species 'NO' No thermo data found for species 'NH2' No thermo data found for species 'N2O3' No thermo data found for species 'HNO' No thermo data found for spe ... [truncated; see _processing logs]
 - Method: cantera
 - Cantera YAML: not available
 - Standard chem.inp: chem.inp
@@ -57,7 +57,7 @@ Karl P. Chatelain, Yizhuo He, Reham Alharbi, Rémy Mével, Eric L. Petersen, Dea
 - Status: cantera_failed
 - Species count: not parsed
 - Reaction count: not parsed
-- Message: InputError: Ignoring redundant declaration for species 'O' Ignoring redundant declaration for species 'N2O' Ignoring redundant declaration for species 'N' Ignoring redundant declaration for species 'OH*' Ignoring redundant declaration for species 'H' Suppressed 26 additional warnings about redundant species declarations. Run ck2yaml again with the '--verbose' option to see all warnings. Issue while reading reaction in chem.inp starting on line 120: """ OH*=OH+HV 1.400E+06 0.0 0.0 """ Found a reversible reaction containing a product photon. Converting to an irreversible reaction with the photon removed. No thermo data found for species 'N2O' No thermo data found for species 'H2O' No thermo data found for species 'HONO' No thermo data found for species 'O' No thermo data found for species 'O ... [truncated; see _processing logs]
+- Message: InputError: Ignoring redundant declaration for species 'N2' Ignoring redundant declaration for species 'H2' Ignoring redundant declaration for species 'N2O' Ignoring redundant declaration for species 'H2O' Ignoring redundant declaration for species 'HONO' Suppressed 26 additional warnings about redundant species declarations. Run ck2yaml again with the '--verbose' option to see all warnings. Issue while reading reaction in chem.inp starting on line 48: """ OH*=OH+HV 1.400E+06 0.0 0.0 """ Found a reversible reaction containing a product photon. Converting to an irreversible reaction with the photon removed. No thermo data found for species 'N2O' No thermo data found for species 'H2O' No thermo data found for species 'HONO' No thermo data found for species 'O' No thermo data found for specie ... [truncated; see _processing logs]
 - Method: cantera
 - Cantera YAML: not available
 - Standard chem.inp: chem.inp
@@ -69,9 +69,9 @@ Karl P. Chatelain, Yizhuo He, Reham Alharbi, Rémy Mével, Eric L. Petersen, Dea
 - Status: cantera_failed
 - Species count: not parsed
 - Reaction count: not parsed
-- Message: InputError: Ignoring redundant declaration for species 'N2' Ignoring redundant declaration for species 'H2' Ignoring redundant declaration for species 'N2O' Ignoring redundant declaration for species 'H2O' Ignoring redundant declaration for species 'HONO' Suppressed 26 additional warnings about redundant species declarations. Run ck2yaml again with the '--verbose' option to see all warnings. Issue while reading reaction in chem.inp starting on line 48: """ OH*=OH+HV 1.400E+06 0.0 0.0 """ Found a reversible reaction containing a product photon. Converting to an irreversible reaction with the photon removed. No thermo data found for species 'N2O' No thermo data found for species 'H2O' No thermo data found for species 'HONO' No thermo data found for species 'O' No thermo data found for specie ... [truncated; see _processing logs]
+- Message: CanteraError: ******************************************************************************* InputFileError thrown by setupPhase: Error on line 11 of /home/icaurs/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/unknown_fuel/2021/chatelain_2021_unknown_fuel_526-537/mechanism.yaml: Could not parse elements declaration of type 'vector<AnyValue>' | Line | | 6 | units: {length: cm, time: s, quantity: mol, activation-energy: cal/mol} | 7 | | 8 | phases: | 9 | - name: gas | 10 | thermo: ideal-gas > 11 > elements: [] ^ | 12 | species: [] | 13 | transport: mixture-averaged | 14 | state: {T: 300.0, P: 1 atm} *******************************************************************************
 - Method: cantera
-- Cantera YAML: not available
+- Cantera YAML: mechanism.yaml
 - Standard chem.inp: chem.inp
 - Standard therm.dat: therm.dat
 - Standard tran.dat: tran.dat
@@ -81,7 +81,7 @@ Karl P. Chatelain, Yizhuo He, Reham Alharbi, Rémy Mével, Eric L. Petersen, Dea
 - Status: cantera_failed
 - Species count: not parsed
 - Reaction count: not parsed
-- Message: InputError: Ignoring redundant declaration for species 'N2' Ignoring redundant declaration for species 'OH*' Ignoring redundant declaration for species 'H' Ignoring redundant declaration for species 'O' Ignoring redundant declaration for species 'OH' Suppressed 27 additional warnings about redundant species declarations. Run ck2yaml again with the '--verbose' option to see all warnings. Issue while reading reaction in chem.inp starting on line 126: """ OH*=OH+HV 1.400E+06 0.0 0.0 """ Found a reversible reaction containing a product photon. Converting to an irreversible reaction with the photon removed. Error while reading reaction in chem.inp starting on line 3432: """ C6H5 (+M) = o-C6H4 + H (+M) 4.300E+12 0.616 77313. ! RRKM 00-HAI-FRE LOW/ 1.000E+84 -18.866 90064 / """ could not convert ... [truncated; see _processing logs]
+- Message: InputError: Ignoring redundant declaration for species 'N2' Ignoring redundant declaration for species 'H2' Ignoring redundant declaration for species 'N2O' Ignoring redundant declaration for species 'H2O' Ignoring redundant declaration for species 'HONO' Suppressed 26 additional warnings about redundant species declarations. Run ck2yaml again with the '--verbose' option to see all warnings. Issue while reading reaction in chem.inp starting on line 48: """ OH*=OH+HV 1.400E+06 0.0 0.0 """ Found a reversible reaction containing a product photon. Converting to an irreversible reaction with the photon removed. No thermo data found for species 'N2O' No thermo data found for species 'H2O' No thermo data found for species 'HONO' No thermo data found for species 'O' No thermo data found for specie ... [truncated; see _processing logs]
 - Method: cantera
 - Cantera YAML: not available
 - Standard chem.inp: chem.inp
@@ -95,7 +95,7 @@ Karl P. Chatelain, Yizhuo He, Reham Alharbi, Rémy Mével, Eric L. Petersen, Dea
 - Reaction count: not parsed
 - Message: InputError: No transport data for species 'He'. No transport data for species 'Ne'. No transport data for species 'cSI3H6(1)'. No transport data for species 'H6SI3(2)'. No transport data for species 'SIH3(5)'. No transport data for species 'SI2H5(6)'. No transport data for species 'SIH3SIH(8)'. No transport data for species 'cSI4H8(9)'. No transport data for species 'H8SI4(10)'. No transport data for species 'SI3H8(12)'. No transport data for species 'H4SI2(13)'. No transport data for species 'SIH2SI(16)'. No transport data for species 'H4SI2(17)'. No transport data for species 'H2SI2(18)'. No transport data for species 'SI2H2(19)'. No transport data for species 'H5SI3(20)'. No transport data for species 'H4SI3(22)'. No transport data for species 'H3SI2(23)'. No transport data for species ... [truncated; see _processing logs]
 - Method: cantera
-- Cantera YAML: not available
+- Cantera YAML: mechanism.yaml
 - Standard chem.inp: chem.inp
 - Standard therm.dat: therm.dat
 - Standard tran.dat: tran.dat
@@ -105,9 +105,9 @@ Karl P. Chatelain, Yizhuo He, Reham Alharbi, Rémy Mével, Eric L. Petersen, Dea
 - Status: cantera_failed
 - Species count: not parsed
 - Reaction count: not parsed
-- Message: InputError: Ignoring redundant declaration for species 'N2' Ignoring redundant declaration for species 'OH*' Ignoring redundant declaration for species 'H' Ignoring redundant declaration for species 'O' Ignoring redundant declaration for species 'OH' Suppressed 27 additional warnings about redundant species declarations. Run ck2yaml again with the '--verbose' option to see all warnings. Issue while reading reaction in chem.inp starting on line 126: """ OH*=OH+HV 1.400E+06 0.0 0.0 """ Found a reversible reaction containing a product photon. Converting to an irreversible reaction with the photon removed. Error while reading reaction in chem.inp starting on line 3432: """ C6H5 (+M) = o-C6H4 + H (+M) 4.300E+12 0.616 77313. ! RRKM 00-HAI-FRE LOW/ 1.000E+84 -18.866 90064 / """ could not convert ... [truncated; see _processing logs]
+- Message: InputError: No transport data for species 'He'. No transport data for species 'Ne'. No transport data for species 'cSI3H6(1)'. No transport data for species 'H6SI3(2)'. No transport data for species 'SIH3(5)'. No transport data for species 'SI2H5(6)'. No transport data for species 'SIH3SIH(8)'. No transport data for species 'cSI4H8(9)'. No transport data for species 'H8SI4(10)'. No transport data for species 'SI3H8(12)'. No transport data for species 'H4SI2(13)'. No transport data for species 'SIH2SI(16)'. No transport data for species 'H4SI2(17)'. No transport data for species 'H2SI2(18)'. No transport data for species 'SI2H2(19)'. No transport data for species 'H5SI3(20)'. No transport data for species 'H4SI3(22)'. No transport data for species 'H3SI2(23)'. No transport data for species ... [truncated; see _processing logs]
 - Method: cantera
-- Cantera YAML: not available
+- Cantera YAML: mechanism.yaml
 - Standard chem.inp: chem.inp
 - Standard therm.dat: therm.dat
 - Standard tran.dat: tran.dat

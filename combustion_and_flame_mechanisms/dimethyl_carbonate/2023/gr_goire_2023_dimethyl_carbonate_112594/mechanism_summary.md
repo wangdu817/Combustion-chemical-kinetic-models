@@ -46,7 +46,7 @@ The pyrolysis of three linear carbonates - dimethyl carbonate (DMC), diethyl car
 
 ## Processing Notes
 
+- extracted S0010218022006022_mmc4.zip
+- extracted S0010218022006022_mmc5.zip
 - extracted S0010218022006022_mmc1.docx
 - extracted S0010218022006022_mmc2.xlsx
-- extracted S0010218022006022_mmc5.zip
-- extracted S0010218022006022_mmc4.zip

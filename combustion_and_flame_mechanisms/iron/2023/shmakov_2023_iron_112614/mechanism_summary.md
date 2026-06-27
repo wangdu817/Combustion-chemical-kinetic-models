@@ -20,10 +20,10 @@ Andrey G. Shmakov, Oleg P. Korobeinichev, Alexander M. Mebel, Denis P. Porfiriev
 ## Mechanism Files
 
 - Standard mechanism file: chem.inp
-- Standard thermodynamic file: therm.dat
+- Standard thermodynamic file: not available
 - Standard transport file: tran.dat
 - Original mechanism source files: _processing/raw_downloads/S0010218022006228_mmc3.txt
-- Original thermodynamic source files: _processing/raw_downloads/S0010218022006228_mmc4.txt
+- Original thermodynamic source files: not found
 - Original transport source files: _processing/raw_downloads/S0010218022006228_mmc2.txt
 
 ## Cantera Preprocessing Results
@@ -33,11 +33,11 @@ Andrey G. Shmakov, Oleg P. Korobeinichev, Alexander M. Mebel, Denis P. Porfiriev
 - Status: cantera_failed
 - Species count: not parsed
 - Reaction count: not parsed
-- Message: InputError: Ignoring redundant thermo data for species 'A1OCH3' starting on line 589 of therm.dat. Ignoring redundant thermo data for species 'A1OCH2' starting on line 593 of therm.dat. Ignoring redundant thermo data for species 'A1CH2O' starting on line 597 of therm.dat. Ignoring redundant thermo data for species 'P-C6H4O2' starting on line 624 of therm.dat. Ignoring redundant thermo data for species 'O-C6H4O2' starting on line 632 of therm.dat. Error while reading thermo entry in therm.dat starting on line 1667: """ A1(C2H3)2 C 10H 10 G 300.000 5000.000 5000.00 1 5.60848905E+01 0.00000000E+00 0.00000000E+00 0.00000000E+00 0.00000000E+00 2 -1.44640324E+04-3.08906342E+02 3.54769133E+00 6.32681160E-02-2.97482733E-05 3 6.21023998E-09-4.74202473E-13 2.29084499E+04 9.41010680E+00 4 """ Only on ... [truncated; see _processing logs]
+- Message: InputError: No thermo data found for species 'O2' No thermo data found for species 'O' No thermo data found for species 'H' No thermo data found for species 'H2' No thermo data found for species 'OH' No thermo data found for species 'H2O' No thermo data found for species 'N2' No thermo data found for species 'HO2' No thermo data found for species 'H2O2' No thermo data found for species 'AR' No thermo data found for species 'HE' No thermo data found for species 'NE' No thermo data found for species 'Kr' No thermo data found for species 'C' No thermo data found for species 'CH' No thermo data found for species 'CH*' No thermo data found for species 'CH2' No thermo data found for species 'CH2*' No thermo data found for species 'CH3' No thermo data found for species 'CH4' No thermo data found ... [truncated; see _processing logs]
 - Method: cantera
 - Cantera YAML: not available
 - Standard chem.inp: chem.inp
-- Standard therm.dat: therm.dat
+- Standard therm.dat: not available
 - Standard tran.dat: tran.dat
 
 ## Abstract

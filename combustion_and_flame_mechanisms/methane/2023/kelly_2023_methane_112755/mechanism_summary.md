@@ -22,8 +22,8 @@ Mark Kelly, Mark Fortune, Gilles Bourque, Stephen Dooley. Machine learned compac
 - Standard mechanism file: chem.inp
 - Standard thermodynamic file: therm.dat
 - Standard transport file: tran.dat
-- Original mechanism source files: _processing/extracted/s0010218023001396_mmc1/Machine Learned Compact Models for Methane Combustion Supplemental Material/Model Files/NUIGMECH1.0_15sOp.inp, _processing/extracted/s0010218023001396_mmc1/Machine Learned Compact Models for Methane Combustion Supplemental Material/Model Files/NUIGMECH1.0_15sOp.cti
-- Original thermodynamic source files: _processing/extracted/s0010218023001396_mmc1/Machine Learned Compact Models for Methane Combustion Supplemental Material/Model Files/NUIGMECH1.0_15sOp.cti, _processing/extracted/s0010218023001396_mmc1/Machine Learned Compact Models for Methane Combustion Supplemental Material/Model Files/therm.dat
+- Original mechanism source files: _processing/extracted/s0010218023001396_mmc1/Machine Learned Compact Models for Methane Combustion Supplemental Material/Model Files/NUIGMECH1.0_15sOp.cti, _processing/extracted/s0010218023001396_mmc1/Machine Learned Compact Models for Methane Combustion Supplemental Material/Model Files/NUIGMECH1.0_15sOp.inp
+- Original thermodynamic source files: _processing/extracted/s0010218023001396_mmc1/Machine Learned Compact Models for Methane Combustion Supplemental Material/Model Files/therm.dat, _processing/extracted/s0010218023001396_mmc1/Machine Learned Compact Models for Methane Combustion Supplemental Material/Model Files/NUIGMECH1.0_15sOp.cti
 - Original transport source files: _processing/extracted/s0010218023001396_mmc1/Machine Learned Compact Models for Methane Combustion Supplemental Material/Model Files/NUIGMECH1.0_15sOp.cti, _processing/extracted/s0010218023001396_mmc1/Machine Learned Compact Models for Methane Combustion Supplemental Material/Model Files/tran.dat
 
 ## Cantera Preprocessing Results
@@ -32,7 +32,7 @@ Mark Kelly, Mark Fortune, Gilles Bourque, Stephen Dooley. Machine learned compac
 
 - Status: cantera_failed
 - Species count: 15
-- Reaction count: 60
+- Reaction count: not parsed
 - Message: CanteraError: ******************************************************************************* CanteraError thrown by newSolution: The CTI and XML formats are no longer supported. *******************************************************************************
 - Method: cantera
 - Cantera YAML: mechanism.yaml
@@ -59,3 +59,4 @@ Chemical kinetic models are an essential component in the development and optimi
 ## Processing Notes
 
 - extracted S0010218023001396_mmc1.zip
+- extracted Supplemental Bound Refinement.docx

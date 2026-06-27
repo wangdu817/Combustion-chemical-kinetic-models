@@ -54,10 +54,10 @@ Qian Mao, Can Huang, Martina Baroncelli, Li Shen, Liming Cai, Kai Leonhard, et a
 
 ### Mechanism 3
 
-- Status: cantera_failed
+- Status: ok
 - Species count: 244
 - Reaction count: 6010
-- Message: CanteraError: ******************************************************************************* CanteraError thrown by addReactions: ******************************************************************************* InputFileError thrown by Reaction::checkBalance: Error on line 18176 of /home/icaurs/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/pah/2021/mao_2021_pah_729-737/mechanism.yaml: The following reaction is unbalanced: DCYC5 + H => 3.68 C5H6 + 0.16 C5H7 + 1.68 H + 2.16 H2 + H2O Element Reactants Products C 10 19.200000000000003 H 17 31.200000000000003 O 0 1 | Line | | 18171 | C5H7 # Reaction 5803 | 18172 | rate-constant: {A: 4.079e+05, b: 2.0, Ea: 1.378128e+04} | 18173 | - equation: C3H5-A + DCYC5 => H2 + 0.84 H + C3H6 + 1.84 C5H6 + 0.16 | 18174 | C5H7 # Reaction 58 ... [truncated; see _processing logs]
+- Message: cantera conversion ok
 - Method: cantera
 - Cantera YAML: mechanism.yaml
 - Standard chem.inp: chem.inp

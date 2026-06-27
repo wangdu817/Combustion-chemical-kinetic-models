@@ -30,10 +30,10 @@ A. Abd El-Sabor Mohamed, Snehasish Panigrahy, Amrit Bikram Sahu, Gilles Bourque,
 
 ### Mechanism 1
 
-- Status: cantera_failed
+- Status: ok
 - Species count: 2834
 - Reaction count: 11175
-- Message: TimeoutExpired: Cantera conversion exceeded 120 seconds
+- Message: cantera conversion ok
 - Method: cantera
 - Cantera YAML: mechanism.yaml
 - Standard chem.inp: chem.inp

@@ -46,7 +46,7 @@ The ignition delay times (IDTs) of ammonia/dimethoxymethane (DMM) mixtures at DM
 
 ## Processing Notes
 
-- extracted S0010218023003437_mmc3.zip
 - extracted S0010218023003437_mmc2.zip
-- extracted S0010218023003437_mmc1.docx
 - extracted S0010218023003437_mmc4.zip
+- extracted S0010218023003437_mmc3.zip
+- extracted S0010218023003437_mmc1.docx

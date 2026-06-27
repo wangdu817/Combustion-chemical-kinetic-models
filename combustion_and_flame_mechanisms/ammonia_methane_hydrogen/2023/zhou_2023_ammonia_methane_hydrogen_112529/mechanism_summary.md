@@ -47,3 +47,5 @@ The oxidation of neat NH3 and co-oxidation of NH3 with H2/CO/CH4 are investigate
 ## Processing Notes
 
 - extracted S0010218022005387_mmc1.zip
+- extracted Experimental data.xlsx
+- extracted Supplementary Material.docx

@@ -1,0 +1,1107 @@
+description: |-
+  === Sub-mechanism without element O ===
+
+  === Sub-mechanism with Carbon number <= 3 ===
+
+  === Sub-mechanism without element N ===
+  === Sub-mechanism with Carbon number (= 3 ===
+  ****************************************************************************
+
+   USC Mech ver 2.0
+   Release date: May 2007
+
+   The reaction model includes the high-temperature chemistry of
+   H2/CO/C1-C4 compounds.
+
+   How to cite:
+   Hai Wang, Xiaoqing You, Ameya V. Joshi, Scott G. Davis, Alexander Laskin,
+   Fokion Egolfopoulos, and Chung K. Law,  USC Mech Version II.
+   High-Temperature Combustion Reaction Model of H2/CO/C1-C4 Compounds.
+   http://ignis.usc.edu/USC_Mech_II.htm, May 2007.
+
+  ****************************************************************************
+
+   Please contact Hai Wang at haiw@usc.edu for questions and comments
+
+  ***************************************************************************
+   CO+OH, OH+HO2 and CO+HO2 Updated May 2007 by Xiaoqing You.
+  ***************************************************************************
+   Last updated April 2005 for H2/CO Chemistry by Ameya Joshi
+  ****************************************************************************
+            Revised H2/CO high temperature Combustion Mechanism
+
+                Scott Davis, Ameya Joshi, and Hai Wang
+  Department of Mechanical Engineering, University of Delaware, Neark, DE 19716
+
+                                   January 2003
+
+  ****************************************************************************
+
+   Added the mechanism of n-butane combustion
+   Added the mechanism of benzene and toluene combustion
+
+   Ameya Joshi and Hai Wang, October 2001
+
+  ****************************************************************************
+            A Detailed Kinetic Model of 1,3-Butadiene Combustion
+
+                       Alexander Laskin and Hai Wang
+  Department of Mechanical Engineering, University of Delaware, Neark, DE 19716
+
+                            Chung K. Law
+  Department of Mechanical and Aerospace Engineering, Princeton University
+
+                                   June 1999
+
+  ****************************************************************************
+
+   Reference sources can be found at the end of the file.
+
+  ============================================================================
+
+generator: ck2yaml
+input-files: [USCMechII_test_C3_filtered_no_N_O_gas.inp]
+cantera-version: 2.5.0a4
+date: Thu, 08 Apr 2021 22:53:24 -0400
+
+units: {length: cm, time: s, quantity: mol, activation-energy: cal/mol}
+
+phases:
+- name: gas
+  thermo: ideal-gas
+  elements: [H, C, Ar]
+  species: [AR, H, H2, C, CH, CH2, CH2*, CH3, CH4, C2H, C2H2, H2CC, C2H3,
+    C2H4, C2H5, C2H6, C3H3, pC3H4, aC3H4, cC3H4, aC3H5, CH3CCH2, CH3CHCH,
+    C3H6, nC3H7, iC3H7, C3H8]
+  kinetics: gas
+  transport: mixture-averaged
+  state: {T: 300.0, P: 1 atm}
+
+species:
+- name: AR
+  composition: {Ar: 1}
+  thermo:
+    model: NASA7
+    temperature-ranges: [300.0, 1000.0, 5000.0]
+    data:
+    - [2.5, 0.0, 0.0, 0.0, 0.0, -745.375, 4.366]
+    - [2.5, 0.0, 0.0, 0.0, 0.0, -745.375, 4.366]
+    note: '120186'
+  transport:
+    model: gas
+    geometry: atom
+    well-depth: 136.5
+    diameter: 3.33
+- name: H
+  composition: {H: 1}
+  thermo:
+    model: NASA7
+    temperature-ranges: [200.0, 1000.0, 3500.0]
+    data:
+    - [2.5, 7.05332819e-13, -1.99591964e-15, 2.30081632e-18, -9.27732332e-22,
+      2.54736599e+04, -0.446682853]
+    - [2.50000001, -2.30842973e-11, 1.61561948e-14, -4.73515235e-18, 4.98197357e-22,
+      2.54736599e+04, -0.446682914]
+    note: L-7-88
+  transport:
+    model: gas
+    geometry: atom
+    well-depth: 145.0
+    diameter: 2.05
+- name: H2
+  composition: {H: 2}
+  thermo:
+    model: NASA7
+    temperature-ranges: [200.0, 1000.0, 3500.0]
+    data:
+    - [2.34433112, 7.98052075e-03, -1.9478151e-05, 2.01572094e-08, -7.37611761e-12,
+      -917.935173, 0.683010238]
+    - [3.3372792, -4.94024731e-05, 4.99456778e-07, -1.79566394e-10, 2.00255376e-14,
+      -950.158922, -3.20502331]
+    note: TPIS78
+  transport:
+    model: gas
+    geometry: linear
+    well-depth: 38.0
+    diameter: 2.92
+    polarizability: 0.79
+    rotational-relaxation: 280.0
+- name: C
+  composition: {C: 1}
+  thermo:
+    model: NASA7
+    temperature-ranges: [200.0, 1000.0, 3500.0]
+    data:
+    - [2.55423955, -3.21537724e-04, 7.33792245e-07, -7.32234889e-10, 2.66521446e-13,
+      8.54438832e+04, 4.53130848]
+    - [2.49266888, 4.79889284e-05, -7.2433502e-08, 3.74291029e-11, -4.87277893e-15,
+      8.54512953e+04, 4.80150373]
+    note: L11-88
+  transport:
+    model: gas
+    geometry: atom
+    well-depth: 71.4
+    diameter: 3.298
+- name: CH
+  composition: {H: 1, C: 1}
+  thermo:
+    model: NASA7
+    temperature-ranges: [200.0, 1000.0, 3500.0]
+    data:
+    - [3.48981665, 3.23835541e-04, -1.68899065e-06, 3.16217327e-09, -1.40609067e-12,
+      7.07972934e+04, 2.08401108]
+    - [2.87846473, 9.70913681e-04, 1.44445655e-07, -1.30687849e-10, 1.76079383e-14,
+      7.10124364e+04, 5.48497999]
+    note: TPIS79
+  transport:
+    model: gas
+    geometry: linear
+    well-depth: 80.0
+    diameter: 2.75
+- name: CH2
+  composition: {H: 2, C: 1}
+  thermo:
+    model: NASA7
+    temperature-ranges: [200.0, 1000.0, 3500.0]
+    data:
+    - [3.76267867, 9.68872143e-04, 2.79489841e-06, -3.85091153e-09, 1.68741719e-12,
+      4.60040401e+04, 1.56253185]
+    - [2.87410113, 3.65639292e-03, -1.40894597e-06, 2.60179549e-10, -1.87727567e-14,
+      4.6263604e+04, 6.17119324]
+    note: L-S-93
+  transport:
+    model: gas
+    geometry: linear
+    well-depth: 144.0
+    diameter: 3.8
+- name: CH2*
+  composition: {H: 2, C: 1}
+  thermo:
+    model: NASA7
+    temperature-ranges: [200.0, 1000.0, 3500.0]
+    data:
+    - [4.19860411, -2.36661419e-03, 8.2329622e-06, -6.68815981e-09, 1.94314737e-12,
+      5.04968163e+04, -0.769118967]
+    - [2.29203842, 4.65588637e-03, -2.01191947e-06, 4.17906e-10, -3.39716365e-14,
+      5.09259997e+04, 8.62650169]
+    note: L-S-93
+  transport:
+    model: gas
+    geometry: linear
+    well-depth: 144.0
+    diameter: 3.8
+- name: CH3
+  composition: {H: 3, C: 1}
+  thermo:
+    model: NASA7
+    temperature-ranges: [200.0, 1000.0, 3500.0]
+    data:
+    - [3.6735904, 2.01095175e-03, 5.73021856e-06, -6.87117425e-09, 2.54385734e-12,
+      1.64449988e+04, 1.60456433]
+    - [2.28571772, 7.23990037e-03, -2.98714348e-06, 5.95684644e-10, -4.67154394e-14,
+      1.67755843e+04, 8.48007179]
+    note: L11-89
+  transport:
+    model: gas
+    geometry: linear
+    well-depth: 144.0
+    diameter: 3.8
+- name: CH4
+  composition: {H: 4, C: 1}
+  thermo:
+    model: NASA7
+    temperature-ranges: [200.0, 1000.0, 3500.0]
+    data:
+    - [5.14987613, -0.0136709788, 4.91800599e-05, -4.84743026e-08, 1.66693956e-11,
+      -1.02466476e+04, -4.64130376]
+    - [0.074851495, 0.0133909467, -5.73285809e-06, 1.22292535e-09, -1.0181523e-13,
+      -9468.34459, 18.437318]
+    note: L-8-88
+  transport:
+    model: gas
+    geometry: nonlinear
+    well-depth: 141.4
+    diameter: 3.746
+    polarizability: 2.6
+    rotational-relaxation: 13.0
+- name: C2H
+  composition: {H: 1, C: 2}
+  thermo:
+    model: NASA7
+    temperature-ranges: [200.0, 1000.0, 3500.0]
+    data:
+    - [2.88965733, 0.0134099611, -2.84769501e-05, 2.94791045e-08, -1.09331511e-11,
+      6.68393932e+04, 6.22296438]
+    - [3.16780652, 4.75221902e-03, -1.83787077e-06, 3.04190252e-10, -1.7723277e-14,
+      6.7121065e+04, 6.63589475]
+    note: L-1-91
+  transport:
+    model: gas
+    geometry: linear
+    well-depth: 209.0
+    diameter: 4.1
+    rotational-relaxation: 2.5
+- name: C2H2
+  composition: {H: 2, C: 2}
+  thermo:
+    model: NASA7
+    temperature-ranges: [200.0, 1000.0, 3500.0]
+    data:
+    - [0.808681094, 0.0233615629, -3.55171815e-05, 2.80152437e-08, -8.50072974e-12,
+      2.64289807e+04, 13.9397051]
+    - [4.14756964, 5.96166664e-03, -2.37294852e-06, 4.67412171e-10, -3.61235213e-14,
+      2.59359992e+04, -1.23028121]
+    note: L-1-91
+  transport:
+    model: gas
+    geometry: linear
+    well-depth: 209.0
+    diameter: 4.1
+    rotational-relaxation: 2.5
+- name: H2CC
+  composition: {H: 2, C: 2}
+  thermo:
+    model: NASA7
+    temperature-ranges: [200.0, 1000.0, 6000.0]
+    data:
+    - [3.2815483, 6.9764791e-03, -2.3855244e-06, -1.2104432e-09, 9.8189545e-13,
+      4.8621794e+04, 5.920391]
+    - [4.278034, 4.7562804e-03, -1.6301009e-06, 2.5462806e-10, -1.4886379e-14,
+      4.8316688e+04, 0.64023701]
+    note: L12-89
+  transport:
+    model: gas
+    geometry: nonlinear
+    well-depth: 209.0
+    diameter: 4.1
+    rotational-relaxation: 2.5
+- name: C2H3
+  composition: {H: 3, C: 2}
+  thermo:
+    model: NASA7
+    temperature-ranges: [200.0, 1000.0, 3500.0]
+    data:
+    - [3.21246645, 1.51479162e-03, 2.59209412e-05, -3.57657847e-08, 1.47150873e-11,
+      3.48598468e+04, 8.51054025]
+    - [3.016724, 0.0103302292, -4.68082349e-06, 1.01763288e-09, -8.62607041e-14,
+      3.46128739e+04, 7.78732378]
+    note: L-2-92
+  transport:
+    model: gas
+    geometry: nonlinear
+    well-depth: 209.0
+    diameter: 4.1
+    rotational-relaxation: 1.0
+- name: C2H4
+  composition: {H: 4, C: 2}
+  thermo:
+    model: NASA7
+    temperature-ranges: [200.0, 1000.0, 3500.0]
+    data:
+    - [3.95920148, -7.57052247e-03, 5.70990292e-05, -6.91588753e-08, 2.69884373e-11,
+      5089.77593, 4.09733096]
+    - [2.03611116, 0.0146454151, -6.71077915e-06, 1.47222923e-09, -1.25706061e-13,
+      4939.88614, 10.3053693]
+    note: L-1-91
+  transport:
+    model: gas
+    geometry: nonlinear
+    well-depth: 280.8
+    diameter: 3.971
+    rotational-relaxation: 1.5
+- name: C2H5
+  composition: {H: 5, C: 2}
+  thermo:
+    model: NASA7
+    temperature-ranges: [200.0, 1000.0, 3500.0]
+    data:
+    - [4.30646568, -4.18658892e-03, 4.97142807e-05, -5.99126606e-08, 2.30509004e-11,
+      1.28416265e+04, 4.70720924]
+    - [1.95465642, 0.0173972722, -7.98206668e-06, 1.75217689e-09, -1.49641576e-13,
+      1.285752e+04, 13.4624343]
+    note: L12-92
+  transport:
+    model: gas
+    geometry: nonlinear
+    well-depth: 252.3
+    diameter: 4.302
+    rotational-relaxation: 1.5
+- name: C2H6
+  composition: {H: 6, C: 2}
+  thermo:
+    model: NASA7
+    temperature-ranges: [200.0, 1000.0, 3500.0]
+    data:
+    - [4.29142492, -5.5015427e-03, 5.99438288e-05, -7.08466285e-08, 2.68685771e-11,
+      -1.15222055e+04, 2.66682316]
+    - [1.0718815, 0.0216852677, -1.00256067e-05, 2.21412001e-09, -1.9000289e-13,
+      -1.14263932e+04, 15.1156107]
+    note: L-8-88
+  transport:
+    model: gas
+    geometry: nonlinear
+    well-depth: 252.3
+    diameter: 4.302
+    rotational-relaxation: 1.5
+- name: C3H3
+  composition: {H: 3, C: 3}
+  thermo:
+    model: NASA7
+    temperature-ranges: [200.0, 1000.0, 6000.0]
+    data:
+    - [1.35110927, 0.0327411223, -4.73827135e-05, 3.76309808e-08, -1.18540923e-11,
+      4.01057783e+04, 15.2058924]
+    - [7.1422188, 7.61902005e-03, -2.6745995e-06, 4.24914801e-10, -2.51475415e-14,
+      3.89087427e+04, -12.5848436]
+    note: T-5-97
+  transport:
+    model: gas
+    geometry: nonlinear
+    well-depth: 252.0
+    diameter: 4.76
+    rotational-relaxation: 1.0
+- name: pC3H4
+  composition: {H: 4, C: 3}
+  thermo:
+    model: NASA7
+    temperature-ranges: [200.0, 1000.0, 6000.0]
+    data:
+    - [2.6803869, 0.015799651, 2.5070596e-06, -1.3657623e-08, 6.6154285e-12,
+      2.0802374e+04, 9.8769351]
+    - [6.02524, 0.011336542, -4.0223391e-06, 6.4376063e-10, -3.8299635e-14,
+      1.9620942e+04, -8.6043785]
+    note: T-2-90
+  transport:
+    model: gas
+    geometry: linear
+    well-depth: 252.0
+    diameter: 4.76
+    rotational-relaxation: 1.0
+- name: aC3H4
+  composition: {H: 4, C: 3}
+  thermo:
+    model: NASA7
+    temperature-ranges: [200.0, 1000.0, 6000.0]
+    data:
+    - [2.6130445, 0.012122575, 1.853988e-05, -3.4525149e-08, 1.5335079e-11,
+      2.1541567e+04, 10.226139]
+    - [6.3168722, 0.011133728, -3.9629378e-06, 6.3564238e-10, -3.787554e-14,
+      2.0117495e+04, -10.995766]
+    note: L-8-89
+  transport:
+    model: gas
+    geometry: linear
+    well-depth: 252.0
+    diameter: 4.76
+    rotational-relaxation: 1.0
+- name: cC3H4
+  composition: {H: 4, C: 3}
+  thermo:
+    model: NASA7
+    temperature-ranges: [300.0, 1000.0, 5000.0]
+    data:
+    - [-0.024621047, 0.023197215, -1.8474357e-06, -1.5927593e-08, 8.6846155e-12,
+      3.2334137e+04, 22.729762]
+    - [6.6999931, 0.010357372, -3.4551167e-06, 5.0652949e-10, -2.6682276e-14,
+      3.0199051e+04, -13.37877]
+    note: T12-81
+  transport:
+    model: gas
+    geometry: linear
+    well-depth: 252.0
+    diameter: 4.76
+    rotational-relaxation: 1.0
+- name: aC3H5
+  composition: {H: 5, C: 3}
+  thermo:
+    model: NASA7
+    temperature-ranges: [300.0, 1000.0, 3000.0]
+    data:
+    - [1.3631835, 0.019813821, 1.249706e-05, -3.3355555e-08, 1.5846571e-11,
+      1.9245629e+04, 17.173214]
+    - [6.5007877, 0.014324731, -5.6781632e-06, 1.1080801e-09, -9.0363887e-14,
+      1.7482449e+04, -11.24305]
+    note: PD5-98
+  transport:
+    model: gas
+    geometry: nonlinear
+    well-depth: 266.8
+    diameter: 4.982
+    rotational-relaxation: 1.0
+- name: CH3CCH2
+  composition: {H: 5, C: 3}
+  thermo:
+    model: NASA7
+    temperature-ranges: [300.0, 1000.0, 3000.0]
+    data:
+    - [1.7329209, 0.02239462, -5.1490611e-06, -6.7596466e-09, 3.8253211e-12,
+      2.9040498e+04, 16.568878]
+    - [5.4255528, 0.015511072, -5.667835e-06, 7.9224388e-10, -1.6878034e-14,
+      2.7843027e+04, -3.3527184]
+    note: PD5-98
+  transport:
+    model: gas
+    geometry: nonlinear
+    well-depth: 266.8
+    diameter: 4.982
+    rotational-relaxation: 1.0
+- name: CH3CHCH
+  composition: {H: 5, C: 3}
+  thermo:
+    model: NASA7
+    temperature-ranges: [300.0, 1000.0, 3000.0]
+    data:
+    - [0.91372931, 0.026432343, -1.175895e-05, -2.3035678e-09, 2.7715488e-12,
+      3.0916867e+04, 19.989269]
+    - [5.3725281, 0.015780509, -5.992285e-06, 9.3089664e-10, -3.6550966e-14,
+      2.961476e+04, -3.4186478]
+    note: PD5-98
+  transport:
+    model: gas
+    geometry: nonlinear
+    well-depth: 266.8
+    diameter: 4.982
+    rotational-relaxation: 1.0
+- name: C3H6
+  composition: {H: 6, C: 3}
+  thermo:
+    model: NASA7
+    temperature-ranges: [300.0, 1000.0, 5000.0]
+    data:
+    - [1.493307, 0.02092518, 4.486794e-06, -1.668912e-08, 7.158146e-12,
+      1074.826, 16.14534]
+    - [6.732257, 0.01490834, -4.949899e-06, 7.212022e-10, -3.766204e-14,
+      -923.5703, -13.31335]
+    note: '120186'
+  transport:
+    model: gas
+    geometry: nonlinear
+    well-depth: 266.8
+    diameter: 4.982
+    rotational-relaxation: 1.0
+- name: nC3H7
+  composition: {H: 7, C: 3}
+  thermo:
+    model: NASA7
+    temperature-ranges: [300.0, 1000.0, 3000.0]
+    data:
+    - [1.0491173, 0.026008973, 2.3542516e-06, -1.9595132e-08, 9.3720207e-12,
+      1.0312346e+04, 21.136034]
+    - [7.7097479, 0.016031485, -5.2720238e-06, 7.5888352e-10, -3.8862719e-14,
+      7976.2236, -15.515297]
+    note: P11-94
+  transport:
+    model: gas
+    geometry: nonlinear
+    well-depth: 266.8
+    diameter: 4.982
+    rotational-relaxation: 1.0
+- name: iC3H7
+  composition: {H: 7, C: 3}
+  thermo:
+    model: NASA7
+    temperature-ranges: [300.0, 1000.0, 3000.0]
+    data:
+    - [1.4449199, 0.020999112, 7.7036222e-06, -1.8476253e-08, 7.1282962e-12,
+      9422.3724, 20.116317]
+    - [6.5192741, 0.017220104, -5.7364217e-06, 8.4130732e-10, -4.4565913e-14,
+      7322.7193, -9.0830215]
+    note: P11-94
+  transport:
+    model: gas
+    geometry: nonlinear
+    well-depth: 266.8
+    diameter: 4.982
+    rotational-relaxation: 1.0
+- name: C3H8
+  composition: {H: 8, C: 3}
+  thermo:
+    model: NASA7
+    temperature-ranges: [300.0, 1000.0, 3000.0]
+    data:
+    - [0.92851093, 0.026460566, 6.0332446e-06, -2.1914953e-08, 9.4961544e-12,
+      -1.4057907e+04, 19.225538]
+    - [7.5244152, 0.018898282, -6.2921041e-06, 9.2161457e-10, -4.8684478e-14,
+      -1.6564394e+04, -17.838375]
+    note: P11-94
+  transport:
+    model: gas
+    geometry: nonlinear
+    well-depth: 266.8
+    diameter: 4.982
+    rotational-relaxation: 1.0
+
+reactions:
+- equation: 2 H + M <=> H2 + M  # Reaction 1
+  type: three-body
+  rate-constant: {A: 1.78e+18, b: -1.0, Ea: 0.0}
+  efficiencies: {H2: 0.0, AR: 0.63}
+  note: GRI3.0 * 1.78
+- equation: 2 H + H2 <=> 2 H2  # Reaction 2
+  rate-constant: {A: 9.0e+16, b: -0.6, Ea: 0.0}
+  note: |-
+    HE/0.63/
+    GRI3.0
+- equation: CH + H <=> C + H2  # Reaction 3
+  rate-constant: {A: 1.1e+14, b: 0.0, Ea: 0.0}
+  note: |2-
+     Reactions of CH
+    GRI
+- equation: CH + H2 <=> CH2 + H  # Reaction 4
+  rate-constant: {A: 1.107e+08, b: 1.79, Ea: 1670.0}
+  note: GRI
+- equation: CH2 + H (+M) <=> CH3 (+M)  # Reaction 5
+  type: falloff
+  low-P-rate-constant: {A: 3.2e+27, b: -3.14, Ea: 1230.0}
+  high-P-rate-constant: {A: 2.5e+16, b: -0.8, Ea: 0.0}
+  Troe: {A: 0.68, T3: 78.0, T1: 1995.0, T2: 5590.0}
+  efficiencies: {H2: 2.0, CH4: 2.0, C2H6: 3.0, AR: 0.7}
+  note: |2-
+     Reactions of CH2(triplet)
+    GRI
+- equation: CH2 + H2 <=> H + CH3  # Reaction 6
+  rate-constant: {A: 5.0e+05, b: 2.0, Ea: 7230.0}
+  note: GRI
+- equation: CH2 + C <=> C2H + H  # Reaction 7
+  rate-constant: {A: 5.0e+13, b: 0.0, Ea: 0.0}
+  note: GRI
+- equation: CH2 + CH <=> C2H2 + H  # Reaction 8
+  rate-constant: {A: 4.0e+13, b: 0.0, Ea: 0.0}
+  note: GRI
+- equation: 2 CH2 <=> C2H2 + H2  # Reaction 9
+  rate-constant: {A: 3.2e+13, b: 0.0, Ea: 0.0}
+  note: GRI
+- equation: CH2* + AR <=> CH2 + AR  # Reaction 10
+  rate-constant: {A: 9.0e+12, b: 0.0, Ea: 600.0}
+  note: GRI
+- equation: CH2* + H <=> CH + H2  # Reaction 11
+  rate-constant: {A: 3.0e+13, b: 0.0, Ea: 0.0}
+  note: GRI
+- equation: CH2* + H2 <=> CH3 + H  # Reaction 12
+  rate-constant: {A: 7.0e+13, b: 0.0, Ea: 0.0}
+  note: GRI
+- equation: CH3 + H (+M) <=> CH4 (+M)  # Reaction 13
+  type: falloff
+  low-P-rate-constant: {A: 2.477e+33, b: -4.76, Ea: 2440.0}
+  high-P-rate-constant: {A: 1.27e+16, b: -0.63, Ea: 383.0}
+  Troe: {A: 0.783, T3: 74.0, T1: 2941.0, T2: 6964.0}
+  efficiencies: {H2: 2.0, CH4: 2.0, C2H6: 3.0, AR: 0.7}
+  note: |2-
+     Reactions of CH3
+    GRI
+- equation: CH3 + C <=> C2H2 + H  # Reaction 14
+  rate-constant: {A: 5.0e+13, b: 0.0, Ea: 0.0}
+  note: GRI
+- equation: CH3 + CH <=> C2H3 + H  # Reaction 15
+  rate-constant: {A: 3.0e+13, b: 0.0, Ea: 0.0}
+  note: GRI
+- equation: CH3 + CH2 <=> C2H4 + H  # Reaction 16
+  rate-constant: {A: 4.0e+13, b: 0.0, Ea: 0.0}
+  note: GRI
+- equation: CH3 + CH2* <=> C2H4 + H  # Reaction 17
+  rate-constant: {A: 1.2e+13, b: 0.0, Ea: -570.0}
+  note: GRI
+- equation: 2 CH3 (+M) <=> C2H6 (+M)  # Reaction 18
+  type: falloff
+  low-P-rate-constant: {A: 1.77e+50, b: -9.67, Ea: 6220.0}
+  high-P-rate-constant: {A: 2.12e+16, b: -0.97, Ea: 620.0}
+  Troe: {A: 0.5325, T3: 151.0, T1: 1038.0, T2: 4970.0}
+  efficiencies: {H2: 2.0, CH4: 2.0, C2H6: 3.0, AR: 0.7}
+  note: GRI
+- equation: 2 CH3 <=> H + C2H5  # Reaction 19
+  rate-constant: {A: 4.99e+12, b: 0.1, Ea: 1.06e+04}
+  note: GRI
+- equation: CH3 + C2H <=> C3H3 + H  # Reaction 20
+  rate-constant: {A: 2.41e+13, b: 0.0, Ea: 0.0}
+  note: 86TSA/HAM
+- equation: CH4 + H <=> CH3 + H2  # Reaction 21
+  rate-constant: {A: 6.6e+08, b: 1.62, Ea: 1.084e+04}
+  note: |2-
+     Reactions of CH4
+    GRI
+- equation: CH4 + CH <=> C2H4 + H  # Reaction 22
+  rate-constant: {A: 6.0e+13, b: 0.0, Ea: 0.0}
+  note: GRI
+- equation: CH4 + CH2 <=> 2 CH3  # Reaction 23
+  rate-constant: {A: 2.46e+06, b: 2.0, Ea: 8270.0}
+  note: GRI
+- equation: CH4 + CH2* <=> 2 CH3  # Reaction 24
+  rate-constant: {A: 1.6e+13, b: 0.0, Ea: -570.0}
+  note: GRI
+- equation: CH4 + C2H <=> C2H2 + CH3  # Reaction 25
+  rate-constant: {A: 1.81e+12, b: 0.0, Ea: 500.0}
+  note: 86TSA/HAM
+- equation: C2H + H (+M) <=> C2H2 (+M)  # Reaction 26
+  type: falloff
+  low-P-rate-constant: {A: 3.75e+33, b: -4.8, Ea: 1900.0}
+  high-P-rate-constant: {A: 1.0e+17, b: -1.0, Ea: 0.0}
+  Troe: {A: 0.6464, T3: 132.0, T1: 1315.0, T2: 5566.0}
+  efficiencies: {H2: 2.0, CH4: 2.0, C2H6: 3.0, AR: 0.7}
+  note: |2-
+     Reactions of C2H
+    GRI
+- equation: C2H + H2 <=> H + C2H2  # Reaction 27
+  rate-constant: {A: 4.9e+05, b: 2.5, Ea: 560.0}
+  note: GRI
+- equation: C2H2 (+M) <=> H2CC (+M)  # Reaction 28
+  type: falloff
+  low-P-rate-constant: {A: 2.45e+15, b: -0.64, Ea: 4.97e+04}
+  high-P-rate-constant: {A: 8.0e+14, b: -0.52, Ea: 5.075e+04}
+  efficiencies: {H2: 2.0, CH4: 2.0, C2H6: 3.0, C2H4: 2.5}
+  note: |2-
+     Reactions of C2H2
+    99LAS/WAN
+- equation: C2H3 (+M) <=> C2H2 + H (+M)  # Reaction 29
+  type: falloff
+  low-P-rate-constant: {A: 2.565e+27, b: -3.4, Ea: 3.579872e+04}
+  high-P-rate-constant: {A: 3.86e+08, b: 1.62, Ea: 3.70482e+04}
+  Troe: {A: 1.9816, T3: 5383.7, T1: 4.2932, T2: -0.0795}
+  efficiencies: {H2: 2.0, CH4: 2.0, C2H6: 3.0, AR: 0.7, C2H2: 3.0, C2H4: 3.0}
+  note: 96KNY/SLA
+- equation: C2H2 + CH2 <=> C3H3 + H  # Reaction 30
+  rate-constant: {A: 1.2e+13, b: 0.0, Ea: 6620.0}
+  note: 88BOH/TEM; 86FRA/BHA
+- equation: C2H2 + CH2* <=> C3H3 + H  # Reaction 31
+  rate-constant: {A: 2.0e+13, b: 0.0, Ea: 0.0}
+  note: 97WAN/FRE
+- equation: C2H2 + CH3 <=> pC3H4 + H  # Reaction 32
+  rate-constant: {A: 2.56e+09, b: 1.1, Ea: 1.3644e+04}
+  note: |-
+    C2H2+CH3 = pC3H4+H                           4.50E+06     1.86    11600.0  !99DAV/LAW RRKM 0.1 atm
+    99DAV/LAW RRKM 1 atm
+- equation: C2H2 + CH3 <=> aC3H4 + H  # Reaction 33
+  rate-constant: {A: 5.14e+09, b: 0.86, Ea: 2.2153e+04}
+  note: |-
+    C2H2+CH3 = pC3H4+H                           2.07E+10     0.85    14415.0  !99DAV/LAW RRKM 2 atm
+    C2H2+CH3 = pC3H4+H                           2.51E+11     0.56    15453.0  !99DAV/LAW RRKM 5 atm
+    C2H2+CH3 = pC3H4+H                           1.10E+12     0.39    16200.0  !99DAV/LAW RRKM 10 atm
+    C2H2+CH3 = pC3H4+H                           2.10E+12     0.37    18100.0  !99DAV/LAW RRKM 100 atm
+    C2H2+CH3 = aC3H4+H                           2.40E+09     0.91    20700.0  !99DAV/LAW RRKM 0.1 atm
+    99DAV/LAW RRKM 1 atm
+- equation: C2H2 + CH3 <=> CH3CCH2  # Reaction 34
+  rate-constant: {A: 4.99e+22, b: -4.39, Ea: 1.885e+04}
+  note: |-
+    C2H2+CH3 = aC3H4+H                           1.33E+10     0.75    22811.0  !99DAV/LAW RRKM 2 atm
+    C2H2+CH3 = aC3H4+H                           9.20E+10     0.54    23950.0  !99DAV/LAW RRKM 5 atm
+    C2H2+CH3 = aC3H4+H                           5.10E+11     0.35    25000.0  !99DAV/LAW RRKM 10 atm
+    C2H2+CH3 = aC3H4+H                           7.30E+12     0.11    28500.0  !99DAV/LAW RRKM 100 atm
+    C2H2+CH3 = CH3CCH2                           6.80E+20    -4.16    18000.0  !99DAV/LAW RRKM 0.1 atm
+    99DAV/LAW RRKM 1 atm
+- equation: C2H2 + CH3 <=> CH3CHCH  # Reaction 35
+  rate-constant: {A: 3.2e+35, b: -7.76, Ea: 1.33e+04}
+  note: |-
+    C2H2+CH3 = CH3CCH2                           6.00E+23    -4.60    19571.0  !99DAV/LAW RRKM 2 atm
+    C2H2+CH3 = CH3CCH2                           7.31E+25    -5.06    21150.0  !99DAV/LAW RRKM 5 atm
+    C2H2+CH3 = CH3CCH2                           9.30E+27    -5.55    22900.0  !99DAV/LAW RRKM 10 atm
+    C2H2+CH3 = CH3CCH2                           3.80E+36    -7.58    31300.0  !99DAV/LAW RRKM 100 atm
+    C2H2+CH3 = CH3CHCH                           1.40E+32    -7.14    10000.0  !99DAV/LAW RRKM 0.1 atm
+    99DAV/LAW RRKM 1 atm
+- equation: C2H2 + CH3 <=> aC3H5  # Reaction 36
+  rate-constant: {A: 2.68e+53, b: -12.82, Ea: 3.573e+04}
+  note: |-
+    C2H2+CH3 = CH3CHCH                           2.40E+38    -8.21    17100.0  !99DAV/LAW RRKM 10 atm
+    C2H2+CH3 = CH3CHCH                           1.40E+39    -8.06    20200.0  !99DAV/LAW RRKM 100 atm
+    C2H2+CH3 = aC3H5                             8.20E+53    -13.32   33200.0  !99DAV/LAW RRKM 0.1 atm
+    99DAV/LAW RRKM 1 atm
+- equation: H2CC + H <=> C2H2 + H  # Reaction 37
+  rate-constant: {A: 1.0e+14, b: 0.0, Ea: 0.0}
+  note: |-
+    C2H2+CH3 = aC3H5                             3.64E+52    -12.46   36127.0  !99DAV/LAW RRKM 2 atm
+    C2H2+CH3 = aC3H5                             1.04E+51    -11.89   36476.0  !99DAV/LAW RRKM 5 atm
+    C2H2+CH3 = aC3H5                             4.40E+49    -11.40   36700.0  !99DAV/LAW RRKM 10 atm
+    C2H2+CH3 = aC3H5                             3.80E+44     -9.63   37600.0  !99DAV/LAW RRKM 100 atm
+     Reactions of Vinylidene
+    Estimated
+- equation: C2H3 + H (+M) <=> C2H4 (+M)  # Reaction 38
+  type: falloff
+  low-P-rate-constant: {A: 1.4e+30, b: -3.86, Ea: 3320.0}
+  high-P-rate-constant: {A: 6.08e+12, b: 0.27, Ea: 280.0}
+  Troe: {A: 0.782, T3: 207.5, T1: 2663.0, T2: 6095.0}
+  efficiencies: {H2: 2.0, CH4: 2.0, C2H6: 3.0, AR: 0.7, C2H2: 3.0, C2H4: 3.0}
+  note: |2-
+     Reactions of C2H3
+    GRI1.2
+- equation: C2H3 + H <=> C2H2 + H2  # Reaction 39
+  rate-constant: {A: 9.0e+13, b: 0.0, Ea: 0.0}
+  note: 86TSA/HAM
+- equation: C2H3 + H <=> H2CC + H2  # Reaction 40
+  rate-constant: {A: 6.0e+13, b: 0.0, Ea: 0.0}
+  note: Estimated
+- equation: C2H3 + CH3 <=> C2H2 + CH4  # Reaction 41
+  rate-constant: {A: 3.92e+11, b: 0.0, Ea: 0.0}
+  note: 86TSA/HAM
+- equation: C2H3 + CH3 (+M) <=> C3H6 (+M)  # Reaction 42
+  type: falloff
+  low-P-rate-constant: {A: 4.27e+58, b: -11.94, Ea: 9769.8}
+  high-P-rate-constant: {A: 2.5e+13, b: 0.0, Ea: 0.0}
+  Troe: {A: 0.175, T3: 1340.6, T1: 6.0e+04, T2: 1.01398e+04}
+  efficiencies: {H2: 2.0, CH4: 2.0, C2H6: 3.0, AR: 0.7, C2H4: 3.0}
+  note: 86TSA/HAM
+- equation: C2H3 + CH3 <=> aC3H5 + H  # Reaction 43
+  rate-constant: {A: 1.5e+24, b: -2.83, Ea: 1.8618e+04}
+  note: 86TSA/HAM
+- equation: 2 C2H3 <=> C2H2 + C2H4  # Reaction 44
+  rate-constant: {A: 9.6e+11, b: 0.0, Ea: 0.0}
+  note: NIST DB
+- equation: C2H4 (+M) <=> H2 + H2CC (+M)  # Reaction 45
+  type: falloff
+  low-P-rate-constant: {A: 7.0e+50, b: -9.31, Ea: 9.986e+04}
+  high-P-rate-constant: {A: 8.0e+12, b: 0.44, Ea: 8.877e+04}
+  Troe: {A: 0.7345, T3: 180.0, T1: 1035.0, T2: 5417.0}
+  efficiencies: {H2: 2.0, CH4: 2.0, C2H6: 3.0, AR: 0.7}
+  note: |2-
+     Reactions of C2H4
+    GRI###
+- equation: C2H4 + H (+M) <=> C2H5 (+M)  # Reaction 46
+  type: falloff
+  low-P-rate-constant: {A: 2.027e+39, b: -6.642, Ea: 5769.0}
+  high-P-rate-constant: {A: 1.367e+09, b: 1.463, Ea: 1355.0}
+  Troe: {A: -0.569, T3: 299.0, T1: 9147.0, T2: -152.4}
+  efficiencies: {H2: 2.0, CH4: 2.0, C2H6: 3.0, AR: 0.7}
+  note: 04-MIL-KLI
+- equation: C2H4 + H <=> C2H3 + H2  # Reaction 47
+  rate-constant: {A: 5.07e+07, b: 1.9, Ea: 1.295e+04}
+  note: 96KNY/BEN
+- equation: C2H4 + CH <=> aC3H4 + H  # Reaction 48
+  rate-constant: {A: 3.0e+13, b: 0.0, Ea: 0.0}
+  note: Estimated
+- equation: C2H4 + CH <=> pC3H4 + H  # Reaction 49
+  rate-constant: {A: 3.0e+13, b: 0.0, Ea: 0.0}
+  note: Estimated
+- equation: C2H4 + CH2 <=> aC3H5 + H  # Reaction 50
+  rate-constant: {A: 2.0e+13, b: 0.0, Ea: 6000.0}
+  note: Estimated
+- equation: C2H4 + CH2* <=> H2CC + CH4  # Reaction 51
+  rate-constant: {A: 5.0e+13, b: 0.0, Ea: 0.0}
+  note: Estimated
+- equation: C2H4 + CH2* <=> aC3H5 + H  # Reaction 52
+  rate-constant: {A: 5.0e+13, b: 0.0, Ea: 0.0}
+  note: Estimated
+- equation: C2H4 + CH3 <=> C2H3 + CH4  # Reaction 53
+  rate-constant: {A: 2.27e+05, b: 2.0, Ea: 9200.0}
+  note: GRI
+- equation: C2H4 + CH3 <=> nC3H7  # Reaction 54
+  rate-constant: {A: 3.3e+11, b: 0.0, Ea: 7700.0}
+  note: KP
+- equation: C2H5 + H (+M) <=> C2H6 (+M)  # Reaction 55
+  type: falloff
+  low-P-rate-constant: {A: 1.99e+41, b: -7.08, Ea: 6685.0}
+  high-P-rate-constant: {A: 5.21e+17, b: -0.99, Ea: 1580.0}
+  Troe: {A: 0.8422, T3: 125.0, T1: 2219.0, T2: 6882.0}
+  efficiencies: {H2: 2.0, CH4: 2.0, C2H6: 3.0, AR: 0.7}
+  note: |2-
+     Reactions of C2H5
+    GRI
+- equation: C2H5 + H <=> C2H4 + H2  # Reaction 56
+  rate-constant: {A: 2.0e+12, b: 0.0, Ea: 0.0}
+  note: GRI
+- equation: C2H5 + CH3 (+M) <=> C3H8 (+M)  # Reaction 57
+  type: falloff
+  low-P-rate-constant: {A: 6.8e+61, b: -13.42, Ea: 6000.0}
+  high-P-rate-constant: {A: 4.9e+14, b: -0.5, Ea: 0.0}
+  Troe: {A: 1.0, T3: 1000.0, T1: 1433.9, T2: 5328.8}
+  efficiencies: {H2: 2.0, CH4: 2.0, C2H6: 3.0, AR: 0.7}
+  note: 88TSA
+- equation: C2H5 + C2H3 <=> aC3H5 + CH3  # Reaction 58
+  rate-constant: {A: 3.9e+32, b: -5.22, Ea: 1.9747e+04}
+  note: |-
+    C2H5+C2H3 = aC3H5+CH3                        8.00E+25  -3.46    11775.0    !86TSA/HAM RRKM 0.1 atm
+    86TSA/HAM RRKM 1 atm
+- equation: C2H6 + H <=> C2H5 + H2  # Reaction 59
+  rate-constant: {A: 1.15e+08, b: 1.9, Ea: 7530.0}
+  note: |-
+    C2H5+C2H3 = aC3H5+CH3                        3.90E+29  -4.24    22311.0    !86TSA/HAM RRKM 10 atm
+     Reactions of C2H6
+    GRI
+- equation: C2H6 + CH2* <=> C2H5 + CH3  # Reaction 60
+  rate-constant: {A: 4.0e+13, b: 0.0, Ea: -550.0}
+  note: GRI
+- equation: C2H6 + CH3 <=> C2H5 + CH4  # Reaction 61
+  rate-constant: {A: 6.14e+06, b: 1.74, Ea: 1.045e+04}
+  note: GRI
+- equation: C3H3 + H <=> pC3H4  # Reaction 62
+  rate-constant: {A: 1.5e+13, b: 0.0, Ea: 0.0}
+  note: |2-
+     Reactions of C3H2
+    C2H2 + CH = C3H2 + H                         3.00E+13    0.0        0.
+    C3H2 + O = C2H2 + CO                         6.80E+13    0.0        0.
+    C3H2 + OH = HCO + C2H2                       6.80E+13    0.0        0.
+    C3H2 + O2 = HCCO + H + CO                    2.00E+12    0.0     1000.
+    C3H2 + CH = C4H2 + H                         5.00E+13    0.0        0.
+    C3H2 + CH2 = nC4H3 + H                       5.00E+13    0.0        0.
+    C3H2 + CH3 = C4H4 + H                        5.00E+12    0.0        0.
+    C3H2 + HCCO = nC4H3 + CO                     1.00E+13    0.0        0.
+    C3H2 + H = C3H3	                      1.00E+13    0.0        0.
+    C3H3 + H = C3H2 + H2                         5.00E+13    0.0     1000.
+    C3H3 + OH = C3H2 + H2O                       2.00E+13    0.0        0.
+    C4H2 + O = C3H2 + CO                         2.70E+13    0.0     1720.
+    C6H3 + O2 =) CO + C3H2 + HCCO                5.00E+11    0.0        0.
+     Reactions of C3H3
+    Estimated
+- equation: C3H3 + H <=> aC3H4  # Reaction 63
+  rate-constant: {A: 2.5e+12, b: 0.0, Ea: 0.0}
+  note: Estimated
+- equation: aC3H4 + H <=> C3H3 + H2  # Reaction 64
+  rate-constant: {A: 1.3e+06, b: 2.0, Ea: 5500.0}
+  note: |2-
+     Reactions of aC3H4
+    99DAV/LAW
+- equation: aC3H4 + H <=> CH3CHCH  # Reaction 65
+  rate-constant: {A: 5.4e+29, b: -6.09, Ea: 1.63e+04}
+  note: |-
+    aC3H4+H = CH3CHCH                            1.10E+30   -6.52   15200.0    !99DAV/LAW RRKM 0.1 atm
+    99DAV/LAW RRKM 1 atm
+- equation: aC3H4 + H <=> CH3CCH2  # Reaction 66
+  rate-constant: {A: 9.46e+42, b: -9.43, Ea: 1.119e+04}
+  note: |-
+    aC3H4+H = CH3CHCH                            2.60E+31   -6.23   18700.0    !99DAV/LAW RRKM 10 atm
+    aC3H4+H = CH3CHCH                            3.20E+31   -5.88   21500.0    !99DAV/LAW RRKM 100 atm
+    aC3H4+H = CH3CCH2                            9.20E+38   -8.65    7000.0    !99DAV/LAW RRKM 0.1 atm
+    99DAV/LAW RRKM 1 atm
+- equation: aC3H4 + H <=> aC3H5  # Reaction 67
+  rate-constant: {A: 1.52e+59, b: -13.54, Ea: 2.6949e+04}
+  note: |-
+    aC3H4+H = CH3CCH2                            8.47E+43   -9.59   12462.0    !99DAV/LAW RRKM 2 atm
+    aC3H4+H = CH3CCH2                            6.98E+44   -9.70   14032.0    !99DAV/LAW RRKM 5 atm
+    aC3H4+H = CH3CCH2                            1.50E+45   -9.69   15100.0    !99DAV/LAW RRKM 10 atm
+    aC3H4+H = CH3CCH2                            1.80E+43   -8.78   16800.0    !99DAV/LAW RRKM 100 atm
+    aC3H4+H = aC3H5                              9.60E+61  -14.67   26000.0    !99DAV/LAW RRKM 0.1 atm
+    99DAV/LAW RRKM 1 atm
+- equation: aC3H4 + CH3 <=> C3H3 + CH4  # Reaction 68
+  rate-constant: {A: 1.3e+12, b: 0.0, Ea: 7700.0}
+  note: 87WU/KER
+- equation: aC3H4 + C2H <=> C2H2 + C3H3  # Reaction 69
+  rate-constant: {A: 1.0e+13, b: 0.0, Ea: 0.0}
+  note: 97WAN/FRE
+- equation: pC3H4 <=> cC3H4  # Reaction 70
+  rate-constant: {A: 1.2e+44, b: -9.92, Ea: 6.925e+04}
+  note: |2-
+     Reactions of pC3H4
+    pC3H4 = cC3H4                                1.73E+12   0.31    60015.0    !99DAV/LAW RRKM kinf
+    pC3H4 = cC3H4                                3.40E+46 -10.97    68900.0    !99DAV/LAW RRKM 0.1 atm
+    pC3H4 = cC3H4                                2.84E+45 -10.45    69284.0    !99DAV/LAW RRKM 0.4 atm
+    99DAV/LAW RRKM 1 atm
+- equation: pC3H4 <=> aC3H4  # Reaction 71
+  rate-constant: {A: 5.15e+60, b: -13.93, Ea: 9.1117e+04}
+  note: |-
+    pC3H4 = cC3H4                                5.47E+42  -9.43    69089.0    !99DAV/LAW RRKM 2 atm
+    pC3H4 = cC3H4                                3.92E+40  -8.69    68706.0    !99DAV/LAW RRKM 5 atm
+    pC3H4 = cC3H4                                5.30E+38  -8.06    68300.0    !99DAV/LAW RRKM 10 atm
+    pC3H4 = cC3H4                                2.80E+31  -5.69    66400.0    !99DAV/LAW RRKM 100 atm
+    pC3H4 = aC3H4                                6.40E+61 -14.59    88200.0    !99DAV/LAW RRKM 0.1 atm
+    pC3H4 = aC3H4                                5.81E+62 -14.63    91211.0    !99DAV/LAW RRKM 0.4 atm
+    99DAV/LAW RRKM 1 atm
+- equation: pC3H4 + H <=> aC3H4 + H  # Reaction 72
+  rate-constant: {A: 6.27e+17, b: -0.91, Ea: 1.0079e+04}
+  note: |-
+    pC3H4 = aC3H4                                7.64E+59 -13.59    91817.0    !99DAV/LAW RRKM 2 atm
+    pC3H4 = aC3H4                                3.12E+58 -13.07    92680.0    !99DAV/LAW RRKM 5 atm
+    pC3H4 = aC3H4                                1.90E+57 -12.62    93300.0    !99DAV/LAW RRKM 10 atm
+    pC3H4 = aC3H4                                1.40E+52 -10.86    95400.0    !99DAV/LAW RRKM 100 atm
+    pC3H4+H = aC3H4+H                            2.30E+15  -0.26     7600.0    !99DAV/LAW RRKM 0.1 atm
+    99DAV/LAW RRKM 1 atm
+- equation: pC3H4 + H <=> CH3CCH2  # Reaction 73
+  rate-constant: {A: 1.66e+47, b: -10.58, Ea: 1.369e+04}
+  note: |-
+    pC3H4+H = aC3H4+H                            1.50E+18  -1.00    10756.0    !99DAV/LAW RRKM 2 atm
+    pC3H4+H = aC3H4+H                            1.93E+18  -1.01    11523.0    !99DAV/LAW RRKM 5 atm
+    pC3H4+H = aC3H4+H                            3.10E+22  -2.18    14800.0    !99DAV/LAW RRKM 10 atm
+    pC3H4+H = aC3H4+H                            6.40E+27  -3.58    21200.0    !99DAV/LAW RRKM 100 atm
+    pC3H4+H = CH3CCH2                            4.60E+44 -10.21    10200.0    !99DAV/LAW RRKM 0.1 atm
+    99DAV/LAW RRKM 1 atm
+- equation: pC3H4 + H <=> CH3CHCH  # Reaction 74
+  rate-constant: {A: 5.5e+28, b: -5.74, Ea: 4300.0}
+  note: |-
+    pC3H4+H = CH3CCH2                            5.04E+47 -10.61    14707.0    !99DAV/LAW RRKM 2 atm
+    pC3H4+H = CH3CCH2                            9.62E+47 -10.55    15910.0    !99DAV/LAW RRKM 5 atm
+    pC3H4+H = CH3CCH2                            7.00E+47 -10.40    16600.0    !99DAV/LAW RRKM 10 atm
+    pC3H4+H = CH3CCH2                            3.20E+44  -9.11    17400.0    !99DAV/LAW RRKM 100 atm
+    pC3H4+H = CH3CHCH                            1.00E+25 -5.00      1800.0    !99DAV/LAW RRKM 0.1 atm
+    99DAV/LAW RRKM 1 atm
+- equation: pC3H4 + H <=> aC3H5  # Reaction 75
+  rate-constant: {A: 4.91e+60, b: -14.37, Ea: 3.1644e+04}
+  note: |-
+    pC3H4+H = CH3CHCH                            1.00E+34 -6.88      8900.0    !99DAV/LAW RRKM 10 atm
+    pC3H4+H = CH3CHCH                            9.70E+37 -7.63     13800.0    !99DAV/LAW RRKM 100 atm
+    pC3H4+H = aC3H5                              1.10E+60 -14.56    28100.0    !99DAV/LAW RRKM 0.1 atm
+    99DAV/LAW RRKM 1 atm
+- equation: pC3H4 + H <=> C3H3 + H2  # Reaction 76
+  rate-constant: {A: 1.3e+06, b: 2.0, Ea: 5500.0}
+  note: |-
+    pC3H4+H = aC3H5                              3.04E+60 -14.19    32642.0    !99DAV/LAW RRKM 2 atm
+    pC3H4+H = aC3H5                              9.02E+59 -13.89    33953.0    !99DAV/LAW RRKM 5 atm
+    pC3H4+H = aC3H5                              2.20E+59 -13.61    34900.0    !99DAV/LAW RRKM 10 atm
+    pC3H4+H = aC3H5                              1.60E+55 -12.07    37500.0    !99DAV/LAW RRKM 100 atm
+    97WAN/FRE
+- equation: pC3H4 + C3H3 <=> aC3H4 + C3H3  # Reaction 77
+  rate-constant: {A: 6.14e+06, b: 1.74, Ea: 1.045e+04}
+  note: Estimated
+- equation: pC3H4 + C2H <=> C2H2 + C3H3  # Reaction 78
+  rate-constant: {A: 1.0e+13, b: 0.0, Ea: 0.0}
+  note: Estimated
+- equation: pC3H4 + CH3 <=> C3H3 + CH4  # Reaction 79
+  rate-constant: {A: 1.8e+12, b: 0.0, Ea: 7700.0}
+  note: 87WU/KER
+- equation: cC3H4 <=> aC3H4  # Reaction 80
+  rate-constant: {A: 4.89e+41, b: -9.17, Ea: 4.9594e+04}
+  note: |2-
+     Reactions of cC3H4
+    cC3H4 = aC3H4                                1.98E+12   0.56    42240.0    !99DAV/LAW RRKM kinf
+    cC3H4 = aC3H4                                2.30E+39  -8.81    47800.0    !99DAV/LAW RRKM 0.1 atm
+    cC3H4 = aC3H4                                7.59E+40  -9.07    48831.0    !99DAV/LAW RRKM 0.4 atm
+    99DAV/LAW RRKM 1 atm
+- equation: aC3H5 + H (+M) <=> C3H6 (+M)  # Reaction 81
+  type: falloff
+  low-P-rate-constant: {A: 1.33e+60, b: -12.0, Ea: 5967.8}
+  high-P-rate-constant: {A: 2.0e+14, b: 0.0, Ea: 0.0}
+  Troe: {A: 0.02, T3: 1096.6, T1: 1096.6, T2: 6859.5}
+  efficiencies: {H2: 2.0, CH4: 2.0, C2H6: 3.0, AR: 0.7}
+  note: |-
+    cC3H4 = aC3H4                                8.81E+41  -9.15    50073.0    !99DAV/LAW RRKM 2 atm
+    cC3H4 = aC3H4                                4.33E+41  -8.93    50475.0    !99DAV/LAW RRKM 5 atm
+    cC3H4 = aC3H4                                7.20E+40  -8.60    50600.0    !99DAV/LAW RRKM 10 atm
+    cC3H4 = aC3H4                                1.60E+35  -6.64    49500.0    !99DAV/LAW RRKM 100 atm
+     Reactions of allyl
+    91TSA
+- equation: aC3H5 + H <=> aC3H4 + H2  # Reaction 82
+  rate-constant: {A: 1.8e+13, b: 0.0, Ea: 0.0}
+  note: 91TSA
+- equation: aC3H5 + CH3 <=> aC3H4 + CH4  # Reaction 83
+  rate-constant: {A: 3.0e+12, b: -0.32, Ea: -131.0}
+  note: 91TSA !
+- equation: aC3H5 <=> CH3CCH2  # Reaction 84
+  rate-constant: {A: 7.06e+56, b: -14.08, Ea: 7.5868e+04}
+  note: |-
+    aC3H5 = CH3CCH2                              3.90E+59 -15.42    75400.0    !99DAV/LAW RRKM 0.1 atm
+    99DAV/LAW RRKM 1 atm
+- equation: aC3H5 <=> CH3CHCH  # Reaction 85
+  rate-constant: {A: 5.0e+51, b: -13.02, Ea: 7.33e+04}
+  note: |-
+    aC3H5 = CH3CCH2                              4.80E+55 -13.59    75949.0    !99DAV/LAW RRKM 2 atm
+    aC3H5 = CH3CCH2                              4.86E+53 -12.81    75883.0    !99DAV/LAW RRKM 5 atm
+    aC3H5 = CH3CCH2                              6.40E+51 -12.12    75700.0    !99DAV/LAW RRKM 10 atm
+    aC3H5 = CH3CCH2                              2.80E+43  -9.27    74000.0    !99DAV/LAW RRKM 100 atm
+    aC3H5 = CH3CHCH                              1.30E+55 -14.53    73800.0    !99DAV/LAW RRKM 0.1 atm
+    99DAV/LAW RRKM 1 atm
+- equation: CH3CCH2 <=> CH3CHCH  # Reaction 86
+  rate-constant: {A: 1.5e+48, b: -12.71, Ea: 5.39e+04}
+  note: |2-
+     Reactions of CH3CCH2
+    CH3CCH2 = CH3CHCH                            1.60E+44 -12.16    52200.0    !99DAV/LAW RRKM 0.1 atm
+    99DAV/LAW RRKM 1 atm
+- equation: CH3CCH2 + H <=> pC3H4 + H2  # Reaction 87
+  rate-constant: {A: 3.34e+12, b: 0.0, Ea: 0.0}
+  note: |-
+    CH3CCH2 = CH3CHCH                            5.10E+52 -13.37    57200.0    !99DAV/LAW RRKM 10 atm
+    CH3CCH2 = CH3CHCH                            5.80E+51 -12.43    59200.0    !99DAV/LAW RRKM 100 atm
+    99DAV/LAW
+- equation: CH3CCH2 + CH3 <=> pC3H4 + CH4  # Reaction 88
+  rate-constant: {A: 1.0e+11, b: 0.0, Ea: 0.0}
+  note: 99DAV/LAW
+- equation: CH3CHCH + H <=> pC3H4 + H2  # Reaction 89
+  rate-constant: {A: 3.34e+12, b: 0.0, Ea: 0.0}
+  note: |-
+    Reactions of CH3CHCH
+    = CH3CCH2+H
+- equation: CH3CHCH + CH3 <=> pC3H4 + CH4  # Reaction 90
+  rate-constant: {A: 1.0e+11, b: 0.0, Ea: 0.0}
+  note: = CH3CCH2+CH3
+- equation: C3H6 + H (+M) <=> nC3H7 (+M)  # Reaction 91
+  type: falloff
+  low-P-rate-constant: {A: 6.26e+38, b: -6.66, Ea: 7000.0}
+  high-P-rate-constant: {A: 1.33e+13, b: 0.0, Ea: 3260.7}
+  Troe: {A: 1.0, T3: 1000.0, T1: 1310.0, T2: 4.8097e+04}
+  efficiencies: {H2: 2.0, CH4: 2.0, C2H6: 3.0, AR: 0.7}
+  note: |2-
+     Reactions of C3H6
+    91TSA
+- equation: C3H6 + H (+M) <=> iC3H7 (+M)  # Reaction 92
+  type: falloff
+  low-P-rate-constant: {A: 8.7e+42, b: -7.5, Ea: 4721.8}
+  high-P-rate-constant: {A: 1.33e+13, b: 0.0, Ea: 1559.8}
+  Troe: {A: 1.0, T3: 1000.0, T1: 645.4, T2: 6844.3}
+  efficiencies: {H2: 2.0, CH4: 2.0, C2H6: 3.0, AR: 0.7}
+  note: 91TSA
+- equation: C3H6 + H <=> C2H4 + CH3  # Reaction 93
+  rate-constant: {A: 8.0e+21, b: -2.39, Ea: 1.118e+04}
+  note: |-
+    C3H6+H = C2H4+CH3                            8.80E+16  -1.05     6461.0    !91TSA RRKM 0.1 atm
+    91TSA RRKM 1 atm
+- equation: C3H6 + H <=> aC3H5 + H2  # Reaction 94
+  rate-constant: {A: 1.73e+05, b: 2.5, Ea: 2490.0}
+  note: |-
+    C3H6+H = C2H4+CH3                            3.30E+24  -3.04    15610.0    !91TSA RRKM 10 atm
+    91TSA
+- equation: C3H6 + H <=> CH3CCH2 + H2  # Reaction 95
+  rate-constant: {A: 4.0e+05, b: 2.5, Ea: 9790.0}
+  note: 91TSA
+- equation: C3H6 + H <=> CH3CHCH + H2  # Reaction 96
+  rate-constant: {A: 8.04e+05, b: 2.5, Ea: 1.2283e+04}
+  note: 91TSA
+- equation: C3H6 + CH3 <=> aC3H5 + CH4  # Reaction 97
+  rate-constant: {A: 2.2, b: 3.5, Ea: 5675.0}
+  note: 91TSA
+- equation: C3H6 + CH3 <=> CH3CCH2 + CH4  # Reaction 98
+  rate-constant: {A: 0.84, b: 3.5, Ea: 1.166e+04}
+  note: 91TSA
+- equation: C3H6 + CH3 <=> CH3CHCH + CH4  # Reaction 99
+  rate-constant: {A: 1.35, b: 3.5, Ea: 1.2848e+04}
+  note: 91TSA
+- equation: iC3H7 + H (+M) <=> C3H8 (+M)  # Reaction 100
+  type: falloff
+  low-P-rate-constant: {A: 1.7e+58, b: -12.08, Ea: 1.12637e+04}
+  high-P-rate-constant: {A: 2.4e+13, b: 0.0, Ea: 0.0}
+  Troe: {A: 0.649, T3: 1213.1, T1: 1213.1, T2: 1.33697e+04}
+  efficiencies: {H2: 2.0, CH4: 2.0, C2H6: 3.0, AR: 0.7}
+  note: |2-
+     Reactions of iC3H7
+    88TSA
+- equation: iC3H7 + H <=> CH3 + C2H5  # Reaction 101
+  rate-constant: {A: 1.4e+28, b: -3.94, Ea: 1.5916e+04}
+  note: |-
+    iC3H7+H = CH3+C2H5                           5.90E+23  -2.81    10009.0    !88TSA RRKM 0.1 atm
+    88TSA RRKM 1 atm
+- equation: iC3H7 + H <=> C3H6 + H2  # Reaction 102
+  rate-constant: {A: 3.2e+12, b: 0.0, Ea: 0.0}
+  note: |-
+    iC3H7+H = CH3+C2H5                           4.00E+24  -2.83    17542.0    !88TSA RRKM 10 atm
+    88TSA
+- equation: iC3H7 + CH3 <=> CH4 + C3H6  # Reaction 103
+  rate-constant: {A: 2.2e+14, b: -0.68, Ea: 0.0}
+  note: 88TSA
+- equation: nC3H7 + H (+M) <=> C3H8 (+M)  # Reaction 104
+  type: falloff
+  low-P-rate-constant: {A: 3.01e+48, b: -9.32, Ea: 5833.6}
+  high-P-rate-constant: {A: 3.6e+13, b: 0.0, Ea: 0.0}
+  Troe: {A: 0.498, T3: 1314.0, T1: 1314.0, T2: 5.0e+04}
+  efficiencies: {H2: 2.0, CH4: 2.0, C2H6: 3.0, AR: 0.7}
+  note: |2-
+     Reactions of nC3H7
+    88TSA
+- equation: nC3H7 + H <=> C2H5 + CH3  # Reaction 105
+  rate-constant: {A: 3.7e+24, b: -2.92, Ea: 1.2505e+04}
+  note: |-
+    nC3H7+H = C2H5+CH3                           3.40E+18  -1.33     5386.0    !88TSA RRKM 0.1 atm
+    88TSA RRKM 1 atm
+- equation: nC3H7 + H <=> C3H6 + H2  # Reaction 106
+  rate-constant: {A: 1.8e+12, b: 0.0, Ea: 0.0}
+  note: |-
+    nC3H7+H = C2H5+CH3                           3.10E+27  -3.59    19059.0    !88TSA RRKM 10 atm
+    88TSA
+- equation: nC3H7 + CH3 <=> CH4 + C3H6  # Reaction 107
+  rate-constant: {A: 1.1e+13, b: 0.0, Ea: 0.0}
+  note: 88TSA
+- equation: C3H8 + H <=> H2 + nC3H7  # Reaction 108
+  rate-constant: {A: 1.3e+06, b: 2.54, Ea: 6756.0}
+  note: |2-
+     Reactions of C3H8
+    88TSA
+- equation: C3H8 + H <=> H2 + iC3H7  # Reaction 109
+  rate-constant: {A: 1.3e+06, b: 2.4, Ea: 4471.0}
+  note: 88TSA
+- equation: C3H8 + CH3 <=> CH4 + nC3H7  # Reaction 110
+  rate-constant: {A: 0.903, b: 3.65, Ea: 7153.0}
+  note: 88TSA
+- equation: C3H8 + CH3 <=> CH4 + iC3H7  # Reaction 111
+  rate-constant: {A: 1.51, b: 3.46, Ea: 5480.0}
+  note: 88TSA
