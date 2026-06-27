@@ -101098,7 +101098,11 @@
     "processingPreprocessStatus": "",
     "processingMechanismFileCount": 0,
     "processingThermoFileCount": 0,
-    "processingTransportFileCount": 0
+    "processingTransportFileCount": 0,
+    "supplementProbeStatus": "no_links",
+    "supplementProbeCheckedAt": "2026-06-27T12:58:40",
+    "supplementProbeMaxMmc": 12,
+    "supplementProbeMethod": "direct-ars"
   },
   {
     "year": "2020",
@@ -117582,7 +117586,11 @@
     "processingPreprocessStatus": "",
     "processingMechanismFileCount": 0,
     "processingThermoFileCount": 0,
-    "processingTransportFileCount": 0
+    "processingTransportFileCount": 0,
+    "supplementProbeStatus": "no_links",
+    "supplementProbeCheckedAt": "2026-06-27T12:57:48",
+    "supplementProbeMaxMmc": 12,
+    "supplementProbeMethod": "direct-ars"
   },
   {
     "year": "2020",
@@ -125124,7 +125132,17 @@
     "processingPreprocessStatus": "",
     "processingMechanismFileCount": 0,
     "processingThermoFileCount": 0,
-    "processingTransportFileCount": 0
+    "processingTransportFileCount": 0,
+    "probeErrors": [
+      {
+        "url": "https://ars.els-cdn.com/content/image/1-s2.0-S0010218007000740-mmc1.txt",
+        "error": "<urlopen error _ssl.c:1015: The handshake operation timed out>"
+      }
+    ],
+    "supplementProbeStatus": "error",
+    "supplementProbeCheckedAt": "2026-06-27T12:58:50",
+    "supplementProbeMaxMmc": 12,
+    "supplementProbeMethod": "direct-ars"
   },
   {
     "year": "2016",
@@ -210340,7 +210358,11 @@
     "processingPreprocessStatus": "",
     "processingMechanismFileCount": 0,
     "processingThermoFileCount": 0,
-    "processingTransportFileCount": 0
+    "processingTransportFileCount": 0,
+    "supplementProbeStatus": "no_links",
+    "supplementProbeCheckedAt": "2026-06-27T12:58:57",
+    "supplementProbeMaxMmc": 12,
+    "supplementProbeMethod": "direct-ars"
   },
   {
     "year": "2018",
@@ -215303,7 +215325,9 @@
         "error": "<urlopen error _ssl.c:1015: The handshake operation timed out>"
       }
     ],
-    "paperPdfStatus": "pending manual download; ScienceDirect PDF access triggered CAPTCHA or was not exposed"
+    "paperPdfStatus": "pending manual download; ScienceDirect PDF access triggered CAPTCHA or was not exposed",
+    "paperPdfLocal": "/home/icaurs/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/furan_tetrahydrofuran/2017/bruycker_2017_furan_tetrahydrofuran_409-428/bruycker_2017_furan_tetrahydrofuran_409-428.pdf",
+    "paperPdfSource": "sci-hub-bban"
   },
   {
     "year": "2017",
@@ -216561,7 +216585,11 @@
     "processingPreprocessStatus": "",
     "processingMechanismFileCount": 0,
     "processingThermoFileCount": 0,
-    "processingTransportFileCount": 0
+    "processingTransportFileCount": 0,
+    "supplementProbeStatus": "no_links",
+    "supplementProbeCheckedAt": "2026-06-27T12:57:43",
+    "supplementProbeMaxMmc": 12,
+    "supplementProbeMethod": "direct-ars"
   },
   {
     "year": "2017",
@@ -216721,7 +216749,11 @@
     "processingPreprocessStatus": "",
     "processingMechanismFileCount": 0,
     "processingThermoFileCount": 0,
-    "processingTransportFileCount": 0
+    "processingTransportFileCount": 0,
+    "supplementProbeStatus": "no_links",
+    "supplementProbeCheckedAt": "2026-06-27T12:58:40",
+    "supplementProbeMaxMmc": 12,
+    "supplementProbeMethod": "direct-ars"
   },
   {
     "year": "2017",
@@ -217098,7 +217130,9 @@
     "supplementProbeMaxMmc": 12,
     "supplementProbeMethod": "direct-ars",
     "supplementDownloadCheckedAt": "2026-06-27T10:31:20",
-    "paperPdfStatus": "pending manual download; ScienceDirect PDF access triggered CAPTCHA or was not exposed"
+    "paperPdfStatus": "pending manual download; ScienceDirect PDF access triggered CAPTCHA or was not exposed",
+    "paperPdfLocal": "/home/icaurs/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/iso_octane_n_octane/2017/atef_2017_iso_octane_n_octane_111-134/atef_2017_iso_octane_n_octane_111-134.pdf",
+    "paperPdfSource": "sci-hub-bban"
   },
   {
     "year": "2017",
@@ -217253,7 +217287,9 @@
     "supplementProbeMaxMmc": 12,
     "supplementProbeMethod": "direct-ars",
     "supplementDownloadCheckedAt": "2026-06-27T10:31:20",
-    "paperPdfStatus": "pending manual download; ScienceDirect PDF access triggered CAPTCHA or was not exposed"
+    "paperPdfStatus": "pending manual download; ScienceDirect PDF access triggered CAPTCHA or was not exposed",
+    "paperPdfLocal": "/home/icaurs/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/furan_tetrahydrofuran/2017/fenard_2017_furan_tetrahydrofuran_168-181/fenard_2017_furan_tetrahydrofuran_168-181.pdf",
+    "paperPdfSource": "sci-hub-bban"
   },
   {
     "year": "2017",
@@ -218549,7 +218585,9 @@
     "supplementProbeMaxMmc": 12,
     "supplementProbeMethod": "direct-ars",
     "supplementDownloadCheckedAt": "2026-06-27T10:31:20",
-    "paperPdfStatus": "pending manual download; ScienceDirect PDF access triggered CAPTCHA or was not exposed"
+    "paperPdfStatus": "pending manual download; ScienceDirect PDF access triggered CAPTCHA or was not exposed",
+    "paperPdfLocal": "/home/icaurs/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/ethylene/2017/kathrotia_2017_ethylene_172-184/kathrotia_2017_ethylene_172-184.pdf",
+    "paperPdfSource": "sci-hub-bban"
   },
   {
     "year": "2017",
@@ -221497,7 +221535,9 @@
         "error": "<urlopen error _ssl.c:1015: The handshake operation timed out>"
       }
     ],
-    "paperPdfStatus": "pending manual download; ScienceDirect PDF access triggered CAPTCHA or was not exposed"
+    "paperPdfStatus": "pending manual download; ScienceDirect PDF access triggered CAPTCHA or was not exposed",
+    "paperPdfLocal": "/home/icaurs/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/furan_2_methylfuran_dimethylfuran/2017/tran_2017_furan_2_methylfuran_dimethylfuran_251-269/tran_2017_furan_2_methylfuran_dimethylfuran_251-269.pdf",
+    "paperPdfSource": "sci-hub-bban"
   },
   {
     "year": "2017",
@@ -221560,7 +221600,9 @@
         "error": "<urlopen error _ssl.c:1015: The handshake operation timed out>"
       }
     ],
-    "paperPdfStatus": "pending manual download; ScienceDirect PDF access triggered CAPTCHA or was not exposed"
+    "paperPdfStatus": "pending manual download; ScienceDirect PDF access triggered CAPTCHA or was not exposed",
+    "paperPdfLocal": "/home/icaurs/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/unknown_fuel/2017/sun_2017_unknown_fuel_71-81/sun_2017_unknown_fuel_71-81.pdf",
+    "paperPdfSource": "sci-hub-bban"
   },
   {
     "year": "2017",
@@ -221740,7 +221782,9 @@
     "supplementProbeMaxMmc": 12,
     "supplementProbeMethod": "direct-ars",
     "supplementDownloadCheckedAt": "2026-06-27T10:31:20",
-    "paperPdfStatus": "pending manual download; ScienceDirect PDF access triggered CAPTCHA or was not exposed"
+    "paperPdfStatus": "pending manual download; ScienceDirect PDF access triggered CAPTCHA or was not exposed",
+    "paperPdfLocal": "/home/icaurs/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/1_butene/2017/li_2017_1_butene_198-213/li_2017_1_butene_198-213.pdf",
+    "paperPdfSource": "sci-hub-bban"
   },
   {
     "year": "2017",
@@ -221854,7 +221898,9 @@
     "supplementProbeMaxMmc": 12,
     "supplementProbeMethod": "direct-ars",
     "supplementDownloadCheckedAt": "2026-06-27T10:31:20",
-    "paperPdfStatus": "pending manual download; ScienceDirect PDF access triggered CAPTCHA or was not exposed"
+    "paperPdfStatus": "pending manual download; ScienceDirect PDF access triggered CAPTCHA or was not exposed",
+    "paperPdfLocal": "/home/icaurs/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/hexene/2017/meng_2017_hexene_283-299/meng_2017_hexene_283-299.pdf",
+    "paperPdfSource": "sci-hub-bban"
   },
   {
     "year": "2017",
@@ -222475,7 +222521,9 @@
         "error": "<urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1032)>"
       }
     ],
-    "paperPdfStatus": "pending manual download; ScienceDirect PDF access triggered CAPTCHA or was not exposed"
+    "paperPdfStatus": "pending manual download; ScienceDirect PDF access triggered CAPTCHA or was not exposed",
+    "paperPdfLocal": "/home/icaurs/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/ethane/2017/hashemi_2017_ethane_150-166/hashemi_2017_ethane_150-166.pdf",
+    "paperPdfSource": "sci-hub-bban"
   },
   {
     "year": "2017",
@@ -223659,7 +223707,9 @@
         "error": "<urlopen error _ssl.c:1015: The handshake operation timed out>"
       }
     ],
-    "paperPdfStatus": "pending manual download; ScienceDirect PDF access triggered CAPTCHA or was not exposed"
+    "paperPdfStatus": "pending manual download; ScienceDirect PDF access triggered CAPTCHA or was not exposed",
+    "paperPdfLocal": "/home/icaurs/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/pentane_cyclopentane/2017/rashidi_2017_pentane_cyclopentane_358-371/rashidi_2017_pentane_cyclopentane_358-371.pdf",
+    "paperPdfSource": "sci-hub-bban"
   },
   {
     "year": "2017",
@@ -226036,7 +226086,9 @@
     "supplementProbeMaxMmc": 12,
     "supplementProbeMethod": "direct-ars",
     "supplementDownloadCheckedAt": "2026-06-27T10:31:20",
-    "paperPdfStatus": "pending manual download; ScienceDirect PDF access triggered CAPTCHA or was not exposed"
+    "paperPdfStatus": "pending manual download; ScienceDirect PDF access triggered CAPTCHA or was not exposed",
+    "paperPdfLocal": "/home/icaurs/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/unknown_fuel/2017/thion_2017_unknown_fuel_4-15/thion_2017_unknown_fuel_4-15.pdf",
+    "paperPdfSource": "sci-hub-bban"
   },
   {
     "year": "2017",
@@ -227153,7 +227205,9 @@
     "supplementProbeMaxMmc": 12,
     "supplementProbeMethod": "direct-ars",
     "supplementDownloadCheckedAt": "2026-06-27T10:31:20",
-    "paperPdfStatus": "pending manual download; ScienceDirect PDF access triggered CAPTCHA or was not exposed"
+    "paperPdfStatus": "pending manual download; ScienceDirect PDF access triggered CAPTCHA or was not exposed",
+    "paperPdfLocal": "/home/icaurs/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/unknown_fuel/2017/sun_2017_unknown_fuel_173-187/sun_2017_unknown_fuel_173-187.pdf",
+    "paperPdfSource": "sci-hub-bban"
   },
   {
     "year": "2017",
@@ -227573,7 +227627,9 @@
     "supplementProbeMaxMmc": 12,
     "supplementProbeMethod": "direct-ars",
     "supplementDownloadCheckedAt": "2026-06-27T10:31:20",
-    "paperPdfStatus": "pending manual download; ScienceDirect PDF access triggered CAPTCHA or was not exposed"
+    "paperPdfStatus": "pending manual download; ScienceDirect PDF access triggered CAPTCHA or was not exposed",
+    "paperPdfLocal": "/home/icaurs/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/benzene_n_propylbenzene/2017/yuan_2017_benzene_n_propylbenzene_178-192/yuan_2017_benzene_n_propylbenzene_178-192.pdf",
+    "paperPdfSource": "sci-hub-bban"
   },
   {
     "year": "2017",
@@ -229669,7 +229725,9 @@
         "error": "<urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1032)>"
       }
     ],
-    "paperPdfStatus": "pending manual download; ScienceDirect PDF access triggered CAPTCHA or was not exposed"
+    "paperPdfStatus": "pending manual download; ScienceDirect PDF access triggered CAPTCHA or was not exposed",
+    "paperPdfLocal": "/home/icaurs/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/n_dodecane/2016/banerjee_2016_n_dodecane_12-30/banerjee_2016_n_dodecane_12-30.pdf",
+    "paperPdfSource": "sci-hub-bban"
   },
   {
     "year": "2016",
@@ -230868,7 +230926,9 @@
     "supplementProbeMaxMmc": 12,
     "supplementProbeMethod": "direct-ars",
     "supplementDownloadCheckedAt": "2026-06-27T10:31:20",
-    "paperPdfStatus": "pending manual download; ScienceDirect PDF access triggered CAPTCHA or was not exposed"
+    "paperPdfStatus": "pending manual download; ScienceDirect PDF access triggered CAPTCHA or was not exposed",
+    "paperPdfLocal": "/home/icaurs/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/biodiesel_diesel/2016/rodriguez_2016_biodiesel_diesel_346-362/rodriguez_2016_biodiesel_diesel_346-362.pdf",
+    "paperPdfSource": "sci-hub-bban"
   },
   {
     "year": "2016",
@@ -231589,7 +231649,9 @@
         "error": "<urlopen error _ssl.c:1015: The handshake operation timed out>"
       }
     ],
-    "paperPdfStatus": "pending manual download; ScienceDirect PDF access triggered CAPTCHA or was not exposed"
+    "paperPdfStatus": "pending manual download; ScienceDirect PDF access triggered CAPTCHA or was not exposed",
+    "paperPdfLocal": "/home/icaurs/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/dimethyl_carbonate/2016/sun_2016_dimethyl_carbonate_224-238/sun_2016_dimethyl_carbonate_224-238.pdf",
+    "paperPdfSource": "sci-hub-bban"
   },
   {
     "year": "2016",
@@ -233426,7 +233488,9 @@
     "supplementProbeMaxMmc": 12,
     "supplementProbeMethod": "direct-ars",
     "supplementDownloadCheckedAt": "2026-06-27T10:31:20",
-    "paperPdfStatus": "pending manual download; ScienceDirect PDF access triggered CAPTCHA or was not exposed"
+    "paperPdfStatus": "pending manual download; ScienceDirect PDF access triggered CAPTCHA or was not exposed",
+    "paperPdfLocal": "/home/icaurs/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/jet_fuel/2016/narayanaswamy_2016_jet_fuel_288-309/narayanaswamy_2016_jet_fuel_288-309.pdf",
+    "paperPdfSource": "sci-hub-bban"
   },
   {
     "year": "2016",
@@ -234706,7 +234770,9 @@
         "error": "<urlopen error _ssl.c:1015: The handshake operation timed out>"
       }
     ],
-    "paperPdfStatus": "pending manual download; ScienceDirect PDF access triggered CAPTCHA or was not exposed"
+    "paperPdfStatus": "pending manual download; ScienceDirect PDF access triggered CAPTCHA or was not exposed",
+    "paperPdfLocal": "/home/icaurs/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/hydrogen_iron/2016/nurkowski_2016_hydrogen_iron_243-254/nurkowski_2016_hydrogen_iron_243-254.pdf",
+    "paperPdfSource": "sci-hub-bban"
   },
   {
     "year": "2016",
@@ -236232,7 +236298,9 @@
         "error": "The read operation timed out"
       }
     ],
-    "paperPdfStatus": "pending manual download; ScienceDirect PDF access triggered CAPTCHA or was not exposed"
+    "paperPdfStatus": "pending manual download; ScienceDirect PDF access triggered CAPTCHA or was not exposed",
+    "paperPdfLocal": "/home/icaurs/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/1_butene/2016/zhou_2016_1_butene_353-379/zhou_2016_1_butene_353-379.pdf",
+    "paperPdfSource": "sci-hub-bban"
   },
   {
     "year": "2016",
@@ -236868,7 +236936,9 @@
     "supplementProbeMaxMmc": 12,
     "supplementProbeMethod": "direct-ars",
     "supplementDownloadCheckedAt": "2026-06-27T10:31:20",
-    "paperPdfStatus": "pending manual download; ScienceDirect PDF access triggered CAPTCHA or was not exposed"
+    "paperPdfStatus": "pending manual download; ScienceDirect PDF access triggered CAPTCHA or was not exposed",
+    "paperPdfLocal": "/home/icaurs/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/propane_dimethyl_ether/2016/dames_2016_propane_dimethyl_ether_310-330/dames_2016_propane_dimethyl_ether_310-330.pdf",
+    "paperPdfSource": "sci-hub-bban"
   },
   {
     "year": "2016",
@@ -239353,7 +239423,9 @@
         "error": "<urlopen error _ssl.c:1015: The handshake operation timed out>"
       }
     ],
-    "paperPdfStatus": "pending manual download; ScienceDirect PDF access triggered CAPTCHA or was not exposed"
+    "paperPdfStatus": "pending manual download; ScienceDirect PDF access triggered CAPTCHA or was not exposed",
+    "paperPdfLocal": "/home/icaurs/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/butanol/2016/jin_2016_butanol_154-170/jin_2016_butanol_154-170.pdf",
+    "paperPdfSource": "sci-hub-bban"
   },
   {
     "year": "2016",
@@ -239697,7 +239769,9 @@
         "error": "<urlopen error _ssl.c:1015: The handshake operation timed out>"
       }
     ],
-    "paperPdfStatus": "pending manual download; ScienceDirect PDF access triggered CAPTCHA or was not exposed"
+    "paperPdfStatus": "pending manual download; ScienceDirect PDF access triggered CAPTCHA or was not exposed",
+    "paperPdfLocal": "/home/icaurs/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/unknown_fuel/2016/christensen_2016_unknown_fuel_12-29/christensen_2016_unknown_fuel_12-29.pdf",
+    "paperPdfSource": "sci-hub-bban"
   },
   {
     "year": "2016",
@@ -240893,7 +240967,9 @@
         "error": "<urlopen error _ssl.c:1015: The handshake operation timed out>"
       }
     ],
-    "paperPdfStatus": "pending manual download; ScienceDirect PDF access triggered CAPTCHA or was not exposed"
+    "paperPdfStatus": "pending manual download; ScienceDirect PDF access triggered CAPTCHA or was not exposed",
+    "paperPdfLocal": "/home/icaurs/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/unknown_fuel/2016/bruycker_2016_unknown_fuel_237-251/bruycker_2016_unknown_fuel_237-251.pdf",
+    "paperPdfSource": "sci-hub-bban"
   },
   {
     "year": "2016",
@@ -241630,7 +241706,9 @@
     "supplementProbeMaxMmc": 12,
     "supplementProbeMethod": "direct-ars",
     "supplementDownloadCheckedAt": "2026-06-27T10:31:20",
-    "paperPdfStatus": "pending manual download; ScienceDirect PDF access triggered CAPTCHA or was not exposed"
+    "paperPdfStatus": "pending manual download; ScienceDirect PDF access triggered CAPTCHA or was not exposed",
+    "paperPdfLocal": "/home/icaurs/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/n_heptane/2016/zhang_2016_n_heptane_116-135/zhang_2016_n_heptane_116-135.pdf",
+    "paperPdfSource": "sci-hub-bban"
   },
   {
     "year": "2016",
@@ -243038,7 +243116,9 @@
         "error": "<urlopen error _ssl.c:1015: The handshake operation timed out>"
       }
     ],
-    "paperPdfStatus": "pending manual download; ScienceDirect PDF access triggered CAPTCHA or was not exposed"
+    "paperPdfStatus": "pending manual download; ScienceDirect PDF access triggered CAPTCHA or was not exposed",
+    "paperPdfLocal": "/home/icaurs/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/1_butene/2016/wang_2016_1_butene_347-369/wang_2016_1_butene_347-369.pdf",
+    "paperPdfSource": "sci-hub-bban"
   },
   {
     "year": "2016",
@@ -243629,7 +243709,9 @@
     "supplementProbeMaxMmc": 12,
     "supplementProbeMethod": "direct-ars",
     "supplementDownloadCheckedAt": "2026-06-27T10:31:20",
-    "paperPdfStatus": "pending manual download; ScienceDirect PDF access triggered CAPTCHA or was not exposed"
+    "paperPdfStatus": "pending manual download; ScienceDirect PDF access triggered CAPTCHA or was not exposed",
+    "paperPdfLocal": "/home/icaurs/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/styrene/2016/comandini_2016_styrene_425-440/comandini_2016_styrene_425-440.pdf",
+    "paperPdfSource": "sci-hub-bban"
   },
   {
     "year": "2016",
@@ -243874,7 +243956,9 @@
         "error": "<urlopen error [Errno 104] Connection reset by peer>"
       }
     ],
-    "paperPdfStatus": "pending manual download; ScienceDirect PDF access triggered CAPTCHA or was not exposed"
+    "paperPdfStatus": "pending manual download; ScienceDirect PDF access triggered CAPTCHA or was not exposed",
+    "paperPdfLocal": "/home/icaurs/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/alkane/2016/cai_2016_alkane_468-482/cai_2016_alkane_468-482.pdf",
+    "paperPdfSource": "sci-hub-bban"
   },
   {
     "year": "2016",
@@ -263188,7 +263272,9 @@
     "supplementDownloadCheckedAt": "2026-06-27T11:24:12",
     "paperPdfStatus": "pending manual download; ScienceDirect PDF access triggered CAPTCHA or was not exposed",
     "abstract": "Chemical reactions of ground-state species strongly govern the formation of excited-state species, including OH* and CH*, which are commonly used to determine ignition delay times of fuels. With well-characterized chemiluminescence rates embedded in chemical kinetics mechanisms, time histories of excited-state species can aid in identifying influential ground-state reactions which are important to processes such as ignition delay time. Placing emphasis on the high-temperature regime, improvements were made to a detailed chemical kinetics mechanism of n-nonane oxidation developed previously by the authors. Using characteristic features of OH* time histories measured in shock-tube experiments as a metric, detailed model analyses were performed over a broad range of conditions: T >1100K, 1.5<P (atm) < 10.5, ϕ =0.5, 1.0, 2.0. OH* time history measurements, particularly under fuel-rich conditions (ϕ =2.0), displayed a two-peak behavior, with the first peak occurring within the first 5–10μs after reflected-shock passage, and the second, wider peak corresponding to main oxidation and ignition. In the initial version of the kinetics mechanism, the two peaks at rich conditions were predicted to merge, blurring the main ignition process prior to the second peak. The work herein presents modifications to the initial chemical kinetics mechanism which led to improved agreement between measurements and model-based predictions, with emphasis on the fuel-rich condition. To this end, the predicted shapes of the OH* time histories were crucial to matching the two-peak behavior detected in the experiments. A first-order resistance–capacitance (RC) model of the experimental time response of the optical setup was developed and shown to reproduce the measured time dependence and peak behavior that are vital for matching the OH* behavior near time-zero. The RC model processes the kinetics predictions in a way that allows the kinetics model predictions to directly correspond to the true conditions in the experiment. In moving towards improved agreement in OH*-profile predictions for all conditions, improvements in the kinetics mechanism were also realized at the two leaner equivalence ratios (ϕ =1.0 and 0.5), both in terms of OH* profile shape and ignition delay times. Model calculations of oxidation processes indicate that reactions leading to the first OH* peak originate from fuel homolysis. The resulting (alkyl) radicals lead to the formation of methyl which then, through a series of H-abstraction reactions, leads to the production of the methylidyne radical (CH) that reacts with molecular oxygen to form OH*. The oxidation processes near time-zero terminate, in part, due to methyl depletion by methylene forming C2H4 +H2. In addition to the insight gained on n-nonane ignition and oxidation chemistry, the present study highlights the utility of correctly interpreted OH* measurements for inference of kinetic information other than ignition delay times.",
-    "abstractSource": "elsevier-api"
+    "abstractSource": "elsevier-api",
+    "paperPdfLocal": "/home/icaurs/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/unknown_fuel/2014/rotavera_2014_unknown_fuel_1146-1163/rotavera_2014_unknown_fuel_1146-1163.pdf",
+    "paperPdfSource": "sci-hub-bban"
   },
   {
     "year": "2014",
@@ -266508,7 +266594,9 @@
     "supplementDownloadCheckedAt": "2026-06-27T11:24:12",
     "paperPdfStatus": "pending manual download; ScienceDirect PDF access triggered CAPTCHA or was not exposed",
     "abstract": "The pyrolysis of 2,5-dimethylfuran (DMF) in a flow reactor was investigated at various pressures (30, 150 and 760Torr) by synchrotron vacuum ultraviolet photoionization mass spectrometry (SVUV-PIMS). Dozens of pyrolysis products, especially a series of radicals and aromatics, were identified from the measurement of photoionization efficiency spectra; and their mole fraction profiles were measured at 780–1470K. Phenol, 1,3-cyclopentadiene, 2-methylfuran, vinylacetylene and 1,3-butadiene were observed with high concentrations in the decomposition of DMF. The pressure-dependent rate constants of the major unimolecular decomposition reactions of DMF were theoretically calculated, and was adopted in the pyrolysis model of DMF with 285 species and 1173 reactions developed in the present work. The model was validated against the species profiles measured in both the present work and the previous pyrolysis studies of DMF. Based on the rate of production and sensitivity analyses, main pathways in the decomposition of DMF and the growth of aromatics were determined. The unimolecular decomposition to produce CH3CHCCH and acetyl radicals, H-atom abstraction to produce 5-methyl-2-furanylmethyl radical, ipso substitution by H-atom to produce 2-methylfuran and H-atom attack to produce 1,3-butadiene and acetyl radical were concluded to dominate the primary decomposition of DMF. Further decomposition of 5-methyl-2-furanylmethyl radical leads to great production of phenol and 1,3-cyclopentadiene which can be readily converted to precursors of large aromatics such as cyclopentadienyl radical, phenyl radical and benzene. As a result, the formation of aromatics in the pyrolysis of DMF is promoted compared with the pyrolysis of cyclohexane and methylcyclohexane under very close conditions. This observation implies the potentially high sooting tendency of DMF, and emphasizes the necessity to investigate the sooting behavior and soot formation mechanism in DMF combustion for the potential application of DMF as an alternative engine fuel.",
-    "abstractSource": "elsevier-api"
+    "abstractSource": "elsevier-api",
+    "paperPdfLocal": "/home/icaurs/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/furan_dimethylfuran/2014/cheng_2014_furan_dimethylfuran_2496-2511/cheng_2014_furan_dimethylfuran_2496-2511.pdf",
+    "paperPdfSource": "sci-hub-bban"
   },
   {
     "year": "2014",
@@ -266578,7 +266666,9 @@
     "supplementDownloadCheckedAt": "2026-06-27T11:24:12",
     "paperPdfStatus": "pending manual download; ScienceDirect PDF access triggered CAPTCHA or was not exposed",
     "abstract": "Laser-based OH, CO, CH3, and H2O species histories during 3-pentanone oxidation were measured behind reflected shock waves over the temperature range of 1277–1678K at pressures around 1.6atm, and for equivalence ratios of 0.5, 1.0 and 1.5, complementing recent work also conducted in this laboratory (Lam et al., 2012). These data are used to develop an improved detailed kinetic mechanism for 3-pentanone pyrolysis and oxidation. A 3-pentanone submechanism consisting of 13 species and 61 reactions is superimposed upon the H2/CO/C1–C4 base mechanism of JetSurF 2.0 (Wang et al., 2010), with several reactions updated in order to obtain better agreement with shock tube oxidation data. The improved mechanism shows satisfactory agreement with the wealth of shock tube data presented here and previously published, although there remain some conditions where the model can benefit from further improvements. Major rate parameter uncertainties in the model are also discussed and will be used in a companion work addressing model optimization and experimental design of shock tube studies using data obtained with the Stanford shock tube.",
-    "abstractSource": "elsevier-api"
+    "abstractSource": "elsevier-api",
+    "paperPdfLocal": "/home/icaurs/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/hydrogen/2014/dames_2014_hydrogen_1135-1145/dames_2014_hydrogen_1135-1145.pdf",
+    "paperPdfSource": "sci-hub-bban"
   },
   {
     "year": "2014",
@@ -266824,7 +266914,9 @@
     "supplementDownloadCheckedAt": "2026-06-27T11:24:12",
     "paperPdfStatus": "pending manual download; ScienceDirect PDF access triggered CAPTCHA or was not exposed",
     "abstract": "i-Butanol (iC4H9OH) pyrolysis has been studied in a flow reactor with synchrotron vacuum ultraviolet photoionization mass spectrometry combined with molecular-beam sampling technique. The pyrolysis species were identified and their mole fractions were determined. Three pressures of 30, 150 and 760Torr were selected to study the pressure effect of i-butanol chemistry. A detailed kinetic model consisting of 186 species and 1294 reactions was developed to simulate i-butanol high temperature chemistry. To enhance the accuracy, the model was further validated by the species profiles in shock tube pyrolysis, laminar premixed flames, oxidation data from jet-stirred reactor, ignition delay times, and flame speeds. Good agreement between the predicted and measured results was obtained.",
-    "abstractSource": "elsevier-api"
+    "abstractSource": "elsevier-api",
+    "paperPdfLocal": "/home/icaurs/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/butanol/2014/cai_2014_butanol_1955-1971/cai_2014_butanol_1955-1971.pdf",
+    "paperPdfSource": "sci-hub-bban"
   },
   {
     "year": "2014",
@@ -268113,7 +268205,9 @@
     "supplementDownloadCheckedAt": "2026-06-27T11:24:12",
     "paperPdfStatus": "pending manual download; ScienceDirect PDF access triggered CAPTCHA or was not exposed",
     "abstract": "This work quantifies the chemical kinetic and thermal effects of buffer gas composition on autoignition of three fuels at conditions relevant to engines, combustors, and experimental facilities used to study ignition kinetics. Computational simulations of autoignition of iso-octane, n-heptane, and of n-butanol were used to characterize the effects of buffer gas composition on ignition delay time and heat release rate. Stoichiometric mixtures, ϕ =1.0, and a temperature range of 600–1100K were considered. Iso-octane and n-heptane were studied at initial pressures of 9.0atm and 60.0atm, and n-butanol was studied at initial pressures of 3.2atm and 60.0atm. Two dilution levels of buffer gas to O2 of 3.76:1 (mole basis) and 5.64:1 were considered (∼21% and ∼15% O2 respectively, mole basis). The fuels and simulation conditions were selected based on the relevance to engine operating conditions and previously published ignition studies. The buffer gases considered were argon, nitrogen, water, and carbon dioxide. Simulation results predicted changes of greater than a factor of 2 in ignition delay time and heat release rate as a function of buffer gas composition in the negative temperature coefficient (NTC) region for n-heptane and iso-octane. Outside the NTC region, the predicted effects of changes in buffer gas composition were small ( a factor of 2). The heat release rates were also sensitive to buffer gas composition, with carbon dioxide exhibiting relatively high levels of early and late heat release relative to the other buffer gases. Sensitivity analysis of the third-body collision efficiencies for the buffer gases showed the effects of uncertainties in the third body collision efficiencies on ignition delay time and heat release rate. The results highlight the significance of buffer gas composition on low-temperature combustion chemistry, particularly via H2O2 and HO2 decomposition and recombination reactions.",
-    "abstractSource": "elsevier-api"
+    "abstractSource": "elsevier-api",
+    "paperPdfLocal": "/home/icaurs/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/n_heptane_iso_octane_n_octane_butanol/2014/wagnon_2014_n_heptane_iso_octane_n_octane_butanol_898-907/wagnon_2014_n_heptane_iso_octane_n_octane_butanol_898-907.pdf",
+    "paperPdfSource": "sci-hub-bban"
   },
   {
     "year": "2014",
@@ -268288,7 +268382,9 @@
     "supplementDownloadCheckedAt": "2026-06-27T11:24:12",
     "paperPdfStatus": "pending manual download; ScienceDirect PDF access triggered CAPTCHA or was not exposed",
     "abstract": "Propene is a significant component of Liquefied Petroleum Gas (LPG) and an intermediate in the combustion of higher order hydrocarbons. To better understand the combustion characteristics of propene, this study and its companion paper present new experimental data from jet-stirred (JSR) and flow reactors (Part I) and ignition delay time and flame speed experiments (Part II). Species profiles from JSR experiments are presented and were obtained at near-atmospheric pressure over a temperature range of 800–1100K and for equivalence ratios from φ =0.64 to 2.19. The new JSR data were obtained at lower dilution levels and temperatures than previously published. Also reported are species profiles from two high-pressure flow reactor facilities: the Princeton Variable Pressure Flow Reactor (VPFR) and the High Pressure Laminar Flow Reactor (HPLFR). The VPFR experiments were conducted at pressures of 6–12.5atm, in the temperature range 843–1020K and at equivalence ratios of 0.7–1.3. The HPLFR experiments were conducted at 15atm, at a temperature of 800K and at equivalence ratios of 0.35–1.25. The flow reactor data is at higher pressures and lower temperatures than existing data in the literature. A detailed chemical kinetic mechanism has been simultaneously developed to describe the combustion of propene under the experimental conditions described above. Important reactions highlighted via flux and sensitivity analyses include: hydrogen atom abstraction from propene by molecular oxygen, hydroxyl, and hydroperoxyl radicals; allyl–allyl radical recombination; the reaction between allyl and hydroperoxyl radicals; and the reactions of 1- and 2-propenyl radicals with molecular oxygen. The current mechanism accurately predicts the combustion characteristics of propene across the range of experimental conditions presented in this study, from jet-stirred and flow reactors and for ignition delay times and flame speed measurements presented in Part II. In comparison to a previous mechanism, AramcoMech 1.3, the current mechanism results in much improved performance, which highlights the importance of the new experimental data in constraining the important reactions.",
-    "abstractSource": "elsevier-api"
+    "abstractSource": "elsevier-api",
+    "paperPdfLocal": "/home/icaurs/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/propene/2014/burke_2014_propene_2765-2784/burke_2014_propene_2765-2784.pdf",
+    "paperPdfSource": "sci-hub-bban"
   },
   {
     "year": "2014",
@@ -268866,7 +268962,9 @@
     "supplementProbeMaxMmc": 12,
     "supplementProbeMethod": "direct-ars",
     "supplementDownloadCheckedAt": "2026-06-27T11:24:12",
-    "paperPdfStatus": "pending manual download; ScienceDirect PDF access triggered CAPTCHA or was not exposed"
+    "paperPdfStatus": "pending manual download; ScienceDirect PDF access triggered CAPTCHA or was not exposed",
+    "paperPdfLocal": "/home/icaurs/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/methane_hydrogen/2014/matsugi_2014_methane_hydrogen_1425-1431/matsugi_2014_methane_hydrogen_1425-1431.pdf",
+    "paperPdfSource": "sci-hub-bban"
   },
   {
     "year": "2011",
@@ -269788,7 +269886,9 @@
       }
     ],
     "abstract": "A versatile flow-reactor design is presented that permits multi-species profile measurements under industrially relevant temperatures and pressures. The reactor combines a capillary sampling technique with a novel fiber-optic Laser-Induced Fluorescence (LIF) method. The gas sampling provides quantitative analysis of stable species by means of gas chromatography (i.e. CH 4 , O 2 , CO , CO 2 , H 2 O , H 2 , C 2 H 6 , C 2 H 4 ), and the fiber-optic probe enables in situ detection of transient LIF-active species, demonstrated here for C H 2 O. A thorough analysis of the LIF correction terms for the temperature-dependent Boltzmann fraction and collisional quenching are presented. The laminar flow reactor is modeled by solving the two-dimensional Navier–Stokes equations in conjunction with a detailed kinetic mechanism. Experimental and simulated profiles are compared. The experimental profiles provide much needed data for the continued validation of the kinetic mechanism with respect to C 1 and C 2 chemistry; additionally, the results provide mechanistic insight into the reaction network of fuel-rich gas-phase methane oxidation, thus allowing optimization of the industrial process.",
-    "abstractSource": "elsevier-api"
+    "abstractSource": "elsevier-api",
+    "paperPdfLocal": "/home/icaurs/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/methane/2014/schwarz_2014_methane_1688-1700/schwarz_2014_methane_1688-1700.pdf",
+    "paperPdfSource": "sci-hub-bban"
   },
   {
     "year": "2014",
@@ -270372,7 +270472,9 @@
     "supplementDownloadCheckedAt": "2026-06-27T11:24:12",
     "paperPdfStatus": "pending manual download; ScienceDirect PDF access triggered CAPTCHA or was not exposed",
     "abstract": "This study presents new ignition delay data measured in a rapid compression machine over a wide range temperature, pressure and fuel/air ratio. This data is an extension of that measured previously (D. Darcy, C.J. Tobin, K. Yasunaga, J.M. Simmie, J. Würmel, T. Niass, O. Mathieu, S.S. Ahmed, C.K. Westbrook, H.J. Curran, Combust. Flame, 159 (2012) 2219–2232.) for the oxidation of n-propylbenzene in a high-pressure shock tube. The data was obtained for equivalence ratios of 0.29, 0.48, 0.96, and 1.92, at compressed gas pressures of 10, 30 and 50atm, and over the temperature range of 650–1000K. Experimental data was also obtained at 50atm for all equivalence ratios in our new heated high-pressure shock tube and this is also presented here. Comparisons between the data obtained in both the rapid compression machine and the shock tube facilities showed excellent agreement. A previously published chemical kinetic mechanism has been improved and a low-temperature reaction mechanism has been added to simulate ignition delay times at the lower temperature conditions of this study by adding the appropriate species and reactions including alkyl-peroxyl and hydroperoxy-alkyl radical chemistry. Special attention was given to R O ̇ 2 isomerizations and H O ̇ 2 elimination reactions involving the secondary benzylic site on n-propylbenzene to obtain good agreement with the present experimental results. In general, good agreement was obtained between the model and experiments and consistent trends were observed and these are discussed.",
-    "abstractSource": "elsevier-api"
+    "abstractSource": "elsevier-api",
+    "paperPdfLocal": "/home/icaurs/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/benzene_n_propylbenzene/2014/darcy_2014_benzene_n_propylbenzene_65-74/darcy_2014_benzene_n_propylbenzene_65-74.pdf",
+    "paperPdfSource": "sci-hub-bban"
   },
   {
     "year": "2014",
@@ -272020,7 +272122,9 @@
     "supplementDownloadCheckedAt": "2026-06-27T11:24:12",
     "paperPdfStatus": "pending manual download; ScienceDirect PDF access triggered CAPTCHA or was not exposed",
     "abstract": "The combustion characteristics of promising alternative fuels have been studied extensively in the recent years. Nevertheless, the pyrolysis and oxidation kinetics for many oxygenated fuels are not well characterized compared to those of hydrocarbons. In the present investigation, the first chemical kinetic study of a long-chain linear symmetric ether, di-n-butyl ether (DBE), is presented and a detailed reaction model is developed. DBE has been identified recently as a candidate biofuel produced from lignocellulosic biomass. The model includes both high temperature and low temperature reaction pathways with reaction rates generated using appropriate rate rules. In addition, experimental studies on fundamental combustion characteristics, such as ignition delay times and laminar flame speeds have been performed. A laminar flow reactor was used to determine the ignition delay times of lean and stoichiometric DBE/air mixtures. The laminar flame speeds of DBE/air mixtures were measured in the stagnation flame configuration for a wide rage of equivalence ratios at atmospheric pressure and an unburned reactant temperature of 373K. All experimental data were modeled using the present kinetic model. The agreement between measured and computed results is satisfactory, and the model was used to elucidate the oxidation pathways of DBE. The dissociation of keto-hydroperoxides, leading to radical chain branching was found to dominate the ignition of DBE in the low temperature regime. The results of the present numerical and experimental study of the oxidation of di-n-butyl ether provide a good basis for further investigation of long chain linear and branched ethers.",
-    "abstractSource": "elsevier-api"
+    "abstractSource": "elsevier-api",
+    "paperPdfLocal": "/home/icaurs/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/biofuel/2014/cai_2014_biofuel_798-809/cai_2014_biofuel_798-809.pdf",
+    "paperPdfSource": "sci-hub-bban"
   },
   {
     "year": "2014",
@@ -272218,7 +272322,9 @@
     "supplementDownloadCheckedAt": "2026-06-27T11:24:12",
     "paperPdfStatus": "pending manual download; ScienceDirect PDF access triggered CAPTCHA or was not exposed",
     "abstract": "Using surrogate fuels in lieu of real fuels is an appealing concept for combustion studies. A major limitation however, is the capability to design compact and reliable kinetic models that capture all the specificities of the simpler, but still multi-component surrogates. This task is further complicated by the fairly large nature of the hydrocarbons commonly considered as potential surrogate components, since they typically result in large detailed reaction schemes. Towards addressing this challenge, the present work proposes a single, compact, and reliable chemical mechanism, that can accurately describe the oxidation of a wide range of fuels, which are important components of surrogate fuels. A well-characterized mechanism appropriate for the oxidation of smaller hydrocarbon species [G. Blanquart, P. Pepiot-Desjardins, H. Pitsch, Chemical mechanism for high temperature combustion of engine relevant fuels with emphasis on soot precursors, Combust. Flame 156 (2009) 588–607], and several substituted aromatic species [K. Narayanaswamy, G. Blanquart, H. Pitsch, A consistent chemical mechanism for the oxidation of substituted aromatic species, Combust. Flame 157 (10) (2010) 1879–1898], ideally suited as a base to model surrogates, has now been extended to describe the oxidation of n-dodecane, a representative of the paraffin class, which is often used in diesel and jet fuel surrogates. To ensure compactness of the kinetic scheme, a short mechanism for the low to high temperature oxidation of n-dodecane is extracted from the detailed scheme of Sarathy et al. [S. M. Sarathy, C. K.Westbrook, M. Mehl, W. J. Pitz, C. Togbe, P. Dagaut, H. Wang, M. A. Oehlschlaeger, U. Niemann, K. Seshadri, Comprehensive chemical kinetic modeling of the oxidation of 2-methylalkanes from C7 to C20, Combust. Flame 158 (12) (2011) 2338–2357] and integrated in a systematic way into the base model. Rate changes based on recent rate recommendations from literature are introduced to the resulting chemical mechanism in a consistent manner, which improve the model predictions. Extensive validation of the revised kinetic model is performed using a wide range of experimental conditions and data sets.",
-    "abstractSource": "elsevier-api"
+    "abstractSource": "elsevier-api",
+    "paperPdfLocal": "/home/icaurs/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/n_dodecane/2014/narayanaswamy_2014_n_dodecane_866-884/narayanaswamy_2014_n_dodecane_866-884.pdf",
+    "paperPdfSource": "sci-hub-bban"
   },
   {
     "year": "2014",
@@ -272311,7 +272417,9 @@
     "supplementDownloadCheckedAt": "2026-06-27T11:24:12",
     "paperPdfStatus": "pending manual download; ScienceDirect PDF access triggered CAPTCHA or was not exposed",
     "abstract": "The pyrolysis of n-decane was investigated in a flow reactor at 5, 30, 150 and 760Torr, and the oxidation of n-decane at equivalence ratios of 0.7, 1.0 and 1.8 was studied in laminar premixed flames at 30Torr. In both experiments, synchrotron vacuum ultraviolet photoionization mass spectrometry (SVUV-PIMS) was used to identify combustion species and measure their mole fraction profiles. A new detailed kinetic model of n-decane with 234 species and 1452 reactions was developed for applications in intermediate and high temperature regions, and was validated against the experimental results in the present work. The model was also validated against previous experimental data on n-decane combustion, including species profiles in pyrolysis and oxidation in high pressure shock tube and atmospheric pressure flow reactor, jet stirred reactor oxidation, atmospheric pressure laminar premixed flame, counterflow diffusion flame and global combustion parameters such as laminar flame speeds and ignition delay times. In general, the performance of the present model in reproducing these experimental data is reasonably good. Sensitivity analysis and rate of production analysis were conducted to understand the decomposition processes of n-decane.",
-    "abstractSource": "elsevier-api"
+    "abstractSource": "elsevier-api",
+    "paperPdfLocal": "/home/icaurs/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/n_decane/2014/zeng_2014_n_decane_1701-1715/zeng_2014_n_decane_1701-1715.pdf",
+    "paperPdfSource": "sci-hub-bban"
   },
   {
     "year": "2014",
@@ -272391,7 +272499,9 @@
     "supplementDownloadCheckedAt": "2026-06-27T11:24:12",
     "paperPdfStatus": "pending manual download; ScienceDirect PDF access triggered CAPTCHA or was not exposed",
     "abstract": "In order to understand the interactions between butanol and hydrocarbon fuels in the PAH formation, experimental and kinetic modeling investigations were combined to study methane laminar coflow diffusion flames doped with two inlet mole fractions of n-butanol (1.95% and 3.90%) in this work. Mole fractions of flame species along the flame centerline were measured using synchrotron VUV photoionization mass spectrometry. A detailed kinetic model of n-butanol combustion, extended from a recent published n-butanol model, was provided in this work to reproduce the fuel decomposition and the formation of benzene and PAHs in the investigated flames. Numerical simulations were performed with laminarSMOKE code, a CFD code specifically conceived to handle large kinetic mechanisms. The simulation results were able to follow the observed effects of n-butanol addition from the experimental results. In particular, unsaturated hydrocarbons, especially C6–C16 aromatics, were predicted satisfactorily. The reaction flux analysis revealed that benzene precursors, especially C3 radicals, increase significantly with increasing inlet mole fraction of n-butanol. This enhances the formation of phenyl and benzyl radicals, which are important PAH precursors. Reactions of benzyl, phenyl radicals and benzene with C2–C3 species are the major formation pathways for indene and naphthalene. And PAHs with more carbon atoms are dominantly formed from naphthyl and indenyl radicals.",
-    "abstractSource": "elsevier-api"
+    "abstractSource": "elsevier-api",
+    "paperPdfLocal": "/home/icaurs/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/methane_butanol_pah/2014/jin_2014_methane_butanol_pah_657-670/jin_2014_methane_butanol_pah_657-670.pdf",
+    "paperPdfSource": "sci-hub-bban"
   },
   {
     "year": "2014",
@@ -273587,7 +273697,9 @@
     "supplementDownloadCheckedAt": "2026-06-27T11:24:12",
     "paperPdfStatus": "pending manual download; ScienceDirect PDF access triggered CAPTCHA or was not exposed",
     "abstract": "Methylcyclohexane is the simplest alkylated cyclohexane, and has been broadly used as the representative cycloalkane component in fuel surrogates. Understanding its combustion chemistry is crucial for developing kinetic models of larger cycloalkanes and practical fuels. In this work, the synchrotron vacuum ultraviolet photoionization mass spectrometry combined with molecular-beam sampling was used to investigate the species formed during the pyrolysis of methylcyclohexane and in premixed flame of methylcyclohexane. A number of pyrolysis and flame intermediates were identified and quantified, especially including radicals (e.g. CH3, C3H3, C3H5 and C5H5) and cyclic C6- and C7-intermediates (benzene, 1,3-cyclohexadiene, cyclohexene, toluene, C7H10 and C7H12, etc.). In particular, the observation of cyclic C6- and C7-intermediates provides important experimental evidence to clarify the special formation channels of toluene and benzene which were observed with high concentrations in both pyrolysis and flame of methylcyclohexane. Furthermore, the rate constants of H-abstraction of methylcyclohexane via H attack, and the isomerization and decomposition of the formed cyclic C7H13 radicals were calculated in this work. A kinetic model of methylcyclohexane combustion with 249 species and 1570 reactions was developed including a new sub-mechanism of MCH. The rate of production and sensitivity analysis were carried out to elucidate methylcyclohexane consumption, and toluene and benzene formation under various pyrolytic and flame conditions. Furthermore, the present kinetic model was also validated by experimental data from literatures on speciation in premixed flames, ignition delays and laminar flame speeds.",
-    "abstractSource": "elsevier-api"
+    "abstractSource": "elsevier-api",
+    "paperPdfLocal": "/home/icaurs/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/cyclohexane_ethylcyclohexane/2014/wang_2014_cyclohexane_ethylcyclohexane_84-100/wang_2014_cyclohexane_ethylcyclohexane_84-100.pdf",
+    "paperPdfSource": "sci-hub-bban"
   },
   {
     "year": "2014",
@@ -337372,7 +337484,7 @@
     "fuelType": "unknown_fuel",
     "candidate": false,
     "processingStatus": "excluded_no_mechanism_signal",
-    "processedAt": "2026-06-27T08:27:01",
+    "processedAt": "2026-06-27T12:59:15",
     "processingFolder": "",
     "processedSupplementLinkCount": 0,
     "processedLocalDownloadCount": 0,
@@ -337518,7 +337630,7 @@
     "fuelType": "unknown_fuel",
     "candidate": false,
     "processingStatus": "excluded_no_mechanism_signal",
-    "processedAt": "2026-06-27T08:27:01",
+    "processedAt": "2026-06-27T12:59:15",
     "processingFolder": "",
     "processedSupplementLinkCount": 0,
     "processedLocalDownloadCount": 0,
@@ -337556,7 +337668,7 @@
     "fuelType": "acetylene_hydrogen",
     "candidate": false,
     "processingStatus": "excluded_no_mechanism_signal",
-    "processedAt": "2026-06-27T08:27:01",
+    "processedAt": "2026-06-27T12:59:15",
     "processingFolder": "",
     "processedSupplementLinkCount": 0,
     "processedLocalDownloadCount": 0,
@@ -337594,7 +337706,7 @@
     "fuelType": "n_heptane",
     "candidate": false,
     "processingStatus": "excluded_no_mechanism_signal",
-    "processedAt": "2026-06-27T08:27:01",
+    "processedAt": "2026-06-27T12:59:15",
     "processingFolder": "",
     "processedSupplementLinkCount": 0,
     "processedLocalDownloadCount": 0,
@@ -337632,7 +337744,7 @@
     "fuelType": "unknown_fuel",
     "candidate": false,
     "processingStatus": "excluded_no_mechanism_signal",
-    "processedAt": "2026-06-27T08:27:01",
+    "processedAt": "2026-06-27T12:59:15",
     "processingFolder": "",
     "processedSupplementLinkCount": 0,
     "processedLocalDownloadCount": 0,
@@ -337718,7 +337830,7 @@
     "fuelType": "butanol",
     "candidate": false,
     "processingStatus": "excluded_no_mechanism_signal",
-    "processedAt": "2026-06-27T08:27:01",
+    "processedAt": "2026-06-27T12:59:15",
     "processingFolder": "",
     "processedSupplementLinkCount": 0,
     "processedLocalDownloadCount": 0,
@@ -337754,7 +337866,7 @@
     "fuelType": "unknown_fuel",
     "candidate": false,
     "processingStatus": "excluded_no_mechanism_signal",
-    "processedAt": "2026-06-27T08:27:01",
+    "processedAt": "2026-06-27T12:59:15",
     "processingFolder": "",
     "processedSupplementLinkCount": 0,
     "processedLocalDownloadCount": 0,
@@ -337793,7 +337905,7 @@
     "fuelType": "unknown_fuel",
     "candidate": false,
     "processingStatus": "excluded_no_mechanism_signal",
-    "processedAt": "2026-06-27T08:27:01",
+    "processedAt": "2026-06-27T12:59:15",
     "processingFolder": "",
     "processedSupplementLinkCount": 0,
     "processedLocalDownloadCount": 0,
@@ -337863,7 +337975,7 @@
     "fuelType": "unknown_fuel",
     "candidate": false,
     "processingStatus": "excluded_no_mechanism_signal",
-    "processedAt": "2026-06-27T08:27:01",
+    "processedAt": "2026-06-27T12:59:15",
     "processingFolder": "",
     "processedSupplementLinkCount": 0,
     "processedLocalDownloadCount": 0,
@@ -337899,7 +338011,7 @@
     "fuelType": "unknown_fuel",
     "candidate": false,
     "processingStatus": "excluded_no_mechanism_signal",
-    "processedAt": "2026-06-27T08:27:01",
+    "processedAt": "2026-06-27T12:59:15",
     "processingFolder": "",
     "processedSupplementLinkCount": 0,
     "processedLocalDownloadCount": 0,
@@ -337980,7 +338092,7 @@
     "fuelType": "unknown_fuel",
     "candidate": false,
     "processingStatus": "excluded_no_mechanism_signal",
-    "processedAt": "2026-06-27T08:27:01",
+    "processedAt": "2026-06-27T12:59:15",
     "processingFolder": "",
     "processedSupplementLinkCount": 0,
     "processedLocalDownloadCount": 0,
@@ -338020,7 +338132,7 @@
     "fuelType": "unknown_fuel",
     "candidate": false,
     "processingStatus": "excluded_no_mechanism_signal",
-    "processedAt": "2026-06-27T08:27:01",
+    "processedAt": "2026-06-27T12:59:15",
     "processingFolder": "",
     "processedSupplementLinkCount": 0,
     "processedLocalDownloadCount": 0,
@@ -338096,7 +338208,7 @@
     "fuelType": "unknown_fuel",
     "candidate": false,
     "processingStatus": "excluded_no_mechanism_signal",
-    "processedAt": "2026-06-27T08:27:01",
+    "processedAt": "2026-06-27T12:59:15",
     "processingFolder": "",
     "processedSupplementLinkCount": 0,
     "processedLocalDownloadCount": 0,
@@ -338134,7 +338246,7 @@
     "fuelType": "formaldehyde",
     "candidate": false,
     "processingStatus": "excluded_no_mechanism_signal",
-    "processedAt": "2026-06-27T08:27:01",
+    "processedAt": "2026-06-27T12:59:15",
     "processingFolder": "",
     "processedSupplementLinkCount": 0,
     "processedLocalDownloadCount": 0,
@@ -338252,7 +338364,7 @@
     "fuelType": "unknown_fuel",
     "candidate": false,
     "processingStatus": "excluded_no_mechanism_signal",
-    "processedAt": "2026-06-27T08:27:01",
+    "processedAt": "2026-06-27T12:59:15",
     "processingFolder": "",
     "processedSupplementLinkCount": 0,
     "processedLocalDownloadCount": 0,
@@ -338291,7 +338403,7 @@
     "fuelType": "methane",
     "candidate": false,
     "processingStatus": "excluded_no_mechanism_signal",
-    "processedAt": "2026-06-27T08:27:01",
+    "processedAt": "2026-06-27T12:59:15",
     "processingFolder": "",
     "processedSupplementLinkCount": 0,
     "processedLocalDownloadCount": 0,
@@ -338423,7 +338535,17 @@
     "processingPreprocessStatus": "",
     "processingMechanismFileCount": 0,
     "processingThermoFileCount": 0,
-    "processingTransportFileCount": 0
+    "processingTransportFileCount": 0,
+    "probeErrors": [
+      {
+        "url": "https://ars.els-cdn.com/content/image/1-s2.0-S0010218007000740-mmc1.txt",
+        "error": "<urlopen error _ssl.c:1015: The handshake operation timed out>"
+      }
+    ],
+    "supplementProbeStatus": "error",
+    "supplementProbeCheckedAt": "2026-06-27T12:58:50",
+    "supplementProbeMaxMmc": 12,
+    "supplementProbeMethod": "direct-ars"
   },
   {
     "year": "2007",
@@ -338631,7 +338753,7 @@
     "fuelType": "toluene",
     "candidate": true,
     "processingStatus": "excluded_no_supplement_found",
-    "processedAt": "2026-06-27T08:27:01",
+    "processedAt": "2026-06-27T12:59:15",
     "processingFolder": "",
     "processedSupplementLinkCount": 0,
     "processedLocalDownloadCount": 0,
@@ -338648,7 +338770,11 @@
     "processingMechanismFileCount": 0,
     "processingThermoFileCount": 0,
     "processingTransportFileCount": 0,
-    "processingSkipReason": "reused existing terminal processing state from collection_index.csv"
+    "processingSkipReason": "reused existing terminal processing state from collection_index.csv",
+    "supplementProbeStatus": "no_links",
+    "supplementProbeCheckedAt": "2026-06-27T12:58:51",
+    "supplementProbeMaxMmc": 12,
+    "supplementProbeMethod": "direct-ars"
   },
   {
     "year": "2007",
@@ -338669,7 +338795,7 @@
     "fuelType": "nitric_oxide_methane_hydrogen",
     "candidate": false,
     "processingStatus": "excluded_no_mechanism_signal",
-    "processedAt": "2026-06-27T08:27:01",
+    "processedAt": "2026-06-27T12:59:15",
     "processingFolder": "",
     "processedSupplementLinkCount": 0,
     "processedLocalDownloadCount": 0,
@@ -338709,7 +338835,7 @@
     "fuelType": "methane",
     "candidate": false,
     "processingStatus": "excluded_no_mechanism_signal",
-    "processedAt": "2026-06-27T08:27:01",
+    "processedAt": "2026-06-27T12:59:15",
     "processingFolder": "",
     "processedSupplementLinkCount": 0,
     "processedLocalDownloadCount": 0,
@@ -338822,7 +338948,7 @@
     "fuelType": "methane_n_dodecane",
     "candidate": false,
     "processingStatus": "excluded_no_mechanism_signal",
-    "processedAt": "2026-06-27T08:27:01",
+    "processedAt": "2026-06-27T12:59:15",
     "processingFolder": "",
     "processedSupplementLinkCount": 0,
     "processedLocalDownloadCount": 0,
@@ -338865,7 +338991,7 @@
     "fuelType": "syngas",
     "candidate": false,
     "processingStatus": "excluded_no_mechanism_signal",
-    "processedAt": "2026-06-27T08:27:01",
+    "processedAt": "2026-06-27T12:59:15",
     "processingFolder": "",
     "processedSupplementLinkCount": 0,
     "processedLocalDownloadCount": 0,
@@ -338905,7 +339031,7 @@
     "fuelType": "unknown_fuel",
     "candidate": false,
     "processingStatus": "excluded_no_mechanism_signal",
-    "processedAt": "2026-06-27T08:27:01",
+    "processedAt": "2026-06-27T12:59:15",
     "processingFolder": "",
     "processedSupplementLinkCount": 0,
     "processedLocalDownloadCount": 0,
@@ -338943,7 +339069,7 @@
     "fuelType": "unknown_fuel",
     "candidate": false,
     "processingStatus": "excluded_no_mechanism_signal",
-    "processedAt": "2026-06-27T08:27:01",
+    "processedAt": "2026-06-27T12:59:15",
     "processingFolder": "",
     "processedSupplementLinkCount": 0,
     "processedLocalDownloadCount": 0,
@@ -338981,7 +339107,7 @@
     "fuelType": "unknown_fuel",
     "candidate": false,
     "processingStatus": "excluded_no_mechanism_signal",
-    "processedAt": "2026-06-27T08:27:01",
+    "processedAt": "2026-06-27T12:59:15",
     "processingFolder": "",
     "processedSupplementLinkCount": 0,
     "processedLocalDownloadCount": 0,
@@ -339019,7 +339145,7 @@
     "fuelType": "unknown_fuel",
     "candidate": false,
     "processingStatus": "excluded_no_mechanism_signal",
-    "processedAt": "2026-06-27T08:27:01",
+    "processedAt": "2026-06-27T12:59:15",
     "processingFolder": "",
     "processedSupplementLinkCount": 0,
     "processedLocalDownloadCount": 0,
@@ -339134,7 +339260,7 @@
     "fuelType": "diesel",
     "candidate": false,
     "processingStatus": "excluded_no_mechanism_signal",
-    "processedAt": "2026-06-27T08:27:01",
+    "processedAt": "2026-06-27T12:59:15",
     "processingFolder": "",
     "processedSupplementLinkCount": 0,
     "processedLocalDownloadCount": 0,
@@ -339171,7 +339297,7 @@
     "fuelType": "n_heptane",
     "candidate": false,
     "processingStatus": "excluded_no_mechanism_signal",
-    "processedAt": "2026-06-27T08:27:01",
+    "processedAt": "2026-06-27T12:59:15",
     "processingFolder": "",
     "processedSupplementLinkCount": 0,
     "processedLocalDownloadCount": 0,
@@ -339213,7 +339339,7 @@
     "fuelType": "n_heptane_toluene",
     "candidate": true,
     "processingStatus": "excluded_no_supplement_found",
-    "processedAt": "2026-06-27T08:27:01",
+    "processedAt": "2026-06-27T12:59:16",
     "processingFolder": "",
     "processedSupplementLinkCount": 0,
     "processedLocalDownloadCount": 0,
@@ -339230,7 +339356,11 @@
     "processingMechanismFileCount": 0,
     "processingThermoFileCount": 0,
     "processingTransportFileCount": 0,
-    "processingSkipReason": "reused existing terminal processing state from collection_index.csv"
+    "processingSkipReason": "reused existing terminal processing state from collection_index.csv",
+    "supplementProbeStatus": "no_links",
+    "supplementProbeCheckedAt": "2026-06-27T12:58:53",
+    "supplementProbeMaxMmc": 12,
+    "supplementProbeMethod": "direct-ars"
   },
   {
     "year": "2016",
@@ -339287,7 +339417,7 @@
     "fuelType": "unknown_fuel",
     "candidate": false,
     "processingStatus": "excluded_no_mechanism_signal",
-    "processedAt": "2026-06-27T08:27:01",
+    "processedAt": "2026-06-27T12:59:16",
     "processingFolder": "",
     "processedSupplementLinkCount": 0,
     "processedLocalDownloadCount": 0,
@@ -339474,7 +339604,7 @@
     "fuelType": "unknown_fuel",
     "candidate": false,
     "processingStatus": "excluded_no_mechanism_signal",
-    "processedAt": "2026-06-27T08:27:01",
+    "processedAt": "2026-06-27T12:59:16",
     "processingFolder": "",
     "processedSupplementLinkCount": 0,
     "processedLocalDownloadCount": 0,
@@ -339550,7 +339680,7 @@
     "fuelType": "methane",
     "candidate": false,
     "processingStatus": "excluded_no_mechanism_signal",
-    "processedAt": "2026-06-27T08:27:01",
+    "processedAt": "2026-06-27T12:59:16",
     "processingFolder": "",
     "processedSupplementLinkCount": 0,
     "processedLocalDownloadCount": 0,
@@ -339588,7 +339718,7 @@
     "fuelType": "nitric_oxide_methane",
     "candidate": false,
     "processingStatus": "excluded_no_mechanism_signal",
-    "processedAt": "2026-06-27T08:27:01",
+    "processedAt": "2026-06-27T12:59:16",
     "processingFolder": "",
     "processedSupplementLinkCount": 0,
     "processedLocalDownloadCount": 0,
@@ -339625,7 +339755,7 @@
     "fuelType": "ethylene",
     "candidate": false,
     "processingStatus": "excluded_no_mechanism_signal",
-    "processedAt": "2026-06-27T08:27:01",
+    "processedAt": "2026-06-27T12:59:16",
     "processingFolder": "",
     "processedSupplementLinkCount": 0,
     "processedLocalDownloadCount": 0,
@@ -339665,7 +339795,7 @@
     "fuelType": "unknown_fuel",
     "candidate": false,
     "processingStatus": "excluded_no_mechanism_signal",
-    "processedAt": "2026-06-27T08:27:01",
+    "processedAt": "2026-06-27T12:59:16",
     "processingFolder": "",
     "processedSupplementLinkCount": 0,
     "processedLocalDownloadCount": 0,
@@ -339706,7 +339836,7 @@
     "fuelType": "ethane",
     "candidate": true,
     "processingStatus": "excluded_no_supplement_found",
-    "processedAt": "2026-06-27T08:27:01",
+    "processedAt": "2026-06-27T12:59:16",
     "processingFolder": "",
     "processedSupplementLinkCount": 0,
     "processedLocalDownloadCount": 0,
@@ -339723,7 +339853,11 @@
     "processingMechanismFileCount": 0,
     "processingThermoFileCount": 0,
     "processingTransportFileCount": 0,
-    "processingSkipReason": "reused existing terminal processing state from collection_index.csv"
+    "processingSkipReason": "reused existing terminal processing state from collection_index.csv",
+    "supplementProbeStatus": "no_links",
+    "supplementProbeCheckedAt": "2026-06-27T12:58:54",
+    "supplementProbeMaxMmc": 12,
+    "supplementProbeMethod": "direct-ars"
   },
   {
     "year": "2007",
@@ -339745,7 +339879,7 @@
     "fuelType": "unknown_fuel",
     "candidate": false,
     "processingStatus": "excluded_no_mechanism_signal",
-    "processedAt": "2026-06-27T08:27:01",
+    "processedAt": "2026-06-27T12:59:16",
     "processingFolder": "",
     "processedSupplementLinkCount": 0,
     "processedLocalDownloadCount": 0,
@@ -339782,7 +339916,7 @@
     "fuelType": "methane_ethylene_hydrogen",
     "candidate": false,
     "processingStatus": "excluded_no_mechanism_signal",
-    "processedAt": "2026-06-27T08:27:01",
+    "processedAt": "2026-06-27T12:59:16",
     "processingFolder": "",
     "processedSupplementLinkCount": 0,
     "processedLocalDownloadCount": 0,
@@ -339822,7 +339956,7 @@
     "fuelType": "iso_octane_n_octane",
     "candidate": false,
     "processingStatus": "excluded_no_mechanism_signal",
-    "processedAt": "2026-06-27T08:27:01",
+    "processedAt": "2026-06-27T12:59:16",
     "processingFolder": "",
     "processedSupplementLinkCount": 0,
     "processedLocalDownloadCount": 0,
@@ -339861,7 +339995,7 @@
     "fuelType": "unknown_fuel",
     "candidate": false,
     "processingStatus": "excluded_no_mechanism_signal",
-    "processedAt": "2026-06-27T08:27:01",
+    "processedAt": "2026-06-27T12:59:16",
     "processingFolder": "",
     "processedSupplementLinkCount": 0,
     "processedLocalDownloadCount": 0,
@@ -339898,7 +340032,7 @@
     "fuelType": "ethane",
     "candidate": false,
     "processingStatus": "excluded_no_mechanism_signal",
-    "processedAt": "2026-06-27T08:27:01",
+    "processedAt": "2026-06-27T12:59:16",
     "processingFolder": "",
     "processedSupplementLinkCount": 0,
     "processedLocalDownloadCount": 0,
@@ -340052,7 +340186,7 @@
     "fuelType": "unknown_fuel",
     "candidate": false,
     "processingStatus": "excluded_no_mechanism_signal",
-    "processedAt": "2026-06-27T08:27:01",
+    "processedAt": "2026-06-27T12:59:16",
     "processingFolder": "",
     "processedSupplementLinkCount": 0,
     "processedLocalDownloadCount": 0,
@@ -340129,7 +340263,7 @@
     "fuelType": "unknown_fuel",
     "candidate": false,
     "processingStatus": "excluded_no_mechanism_signal",
-    "processedAt": "2026-06-27T08:27:01",
+    "processedAt": "2026-06-27T12:59:16",
     "processingFolder": "",
     "processedSupplementLinkCount": 0,
     "processedLocalDownloadCount": 0,
@@ -340205,7 +340339,7 @@
     "fuelType": "unknown_fuel",
     "candidate": true,
     "processingStatus": "excluded_no_supplement_found",
-    "processedAt": "2026-06-27T08:27:01",
+    "processedAt": "2026-06-27T12:59:16",
     "processingFolder": "",
     "processedSupplementLinkCount": 0,
     "processedLocalDownloadCount": 0,
@@ -340222,7 +340356,11 @@
     "processingMechanismFileCount": 0,
     "processingThermoFileCount": 0,
     "processingTransportFileCount": 0,
-    "processingSkipReason": "reused existing terminal processing state from collection_index.csv"
+    "processingSkipReason": "reused existing terminal processing state from collection_index.csv",
+    "supplementProbeStatus": "no_links",
+    "supplementProbeCheckedAt": "2026-06-27T12:58:56",
+    "supplementProbeMaxMmc": 12,
+    "supplementProbeMethod": "direct-ars"
   },
   {
     "year": "2007",
@@ -340244,7 +340382,7 @@
     "fuelType": "unknown_fuel",
     "candidate": false,
     "processingStatus": "excluded_no_mechanism_signal",
-    "processedAt": "2026-06-27T08:27:01",
+    "processedAt": "2026-06-27T12:59:16",
     "processingFolder": "",
     "processedSupplementLinkCount": 0,
     "processedLocalDownloadCount": 0,
@@ -340334,7 +340472,7 @@
     "fuelType": "unknown_fuel",
     "candidate": false,
     "processingStatus": "excluded_no_mechanism_signal",
-    "processedAt": "2026-06-27T08:27:01",
+    "processedAt": "2026-06-27T12:59:16",
     "processingFolder": "",
     "processedSupplementLinkCount": 0,
     "processedLocalDownloadCount": 0,
@@ -340560,7 +340698,7 @@
     "fuelType": "aluminum",
     "candidate": false,
     "processingStatus": "excluded_no_mechanism_signal",
-    "processedAt": "2026-06-27T08:27:01",
+    "processedAt": "2026-06-27T12:59:16",
     "processingFolder": "",
     "processedSupplementLinkCount": 0,
     "processedLocalDownloadCount": 0,
@@ -340614,7 +340752,11 @@
     "processingPreprocessStatus": "",
     "processingMechanismFileCount": 0,
     "processingThermoFileCount": 0,
-    "processingTransportFileCount": 0
+    "processingTransportFileCount": 0,
+    "supplementProbeStatus": "no_links",
+    "supplementProbeCheckedAt": "2026-06-27T12:58:57",
+    "supplementProbeMaxMmc": 12,
+    "supplementProbeMethod": "direct-ars"
   },
   {
     "year": "2007",
@@ -340707,7 +340849,7 @@
     "fuelType": "methane",
     "candidate": false,
     "processingStatus": "excluded_no_mechanism_signal",
-    "processedAt": "2026-06-27T08:27:01",
+    "processedAt": "2026-06-27T12:59:16",
     "processingFolder": "",
     "processedSupplementLinkCount": 0,
     "processedLocalDownloadCount": 0,
@@ -340783,7 +340925,7 @@
     "fuelType": "unknown_fuel",
     "candidate": false,
     "processingStatus": "excluded_no_mechanism_signal",
-    "processedAt": "2026-06-27T08:27:01",
+    "processedAt": "2026-06-27T12:59:16",
     "processingFolder": "",
     "processedSupplementLinkCount": 0,
     "processedLocalDownloadCount": 0,
@@ -340820,7 +340962,7 @@
     "fuelType": "unknown_fuel",
     "candidate": false,
     "processingStatus": "excluded_no_mechanism_signal",
-    "processedAt": "2026-06-27T08:27:01",
+    "processedAt": "2026-06-27T12:59:16",
     "processingFolder": "",
     "processedSupplementLinkCount": 0,
     "processedLocalDownloadCount": 0,
@@ -340857,7 +340999,7 @@
     "fuelType": "unknown_fuel",
     "candidate": false,
     "processingStatus": "excluded_no_mechanism_signal",
-    "processedAt": "2026-06-27T08:27:01",
+    "processedAt": "2026-06-27T12:59:16",
     "processingFolder": "",
     "processedSupplementLinkCount": 0,
     "processedLocalDownloadCount": 0,
@@ -340896,7 +341038,7 @@
     "fuelType": "unknown_fuel",
     "candidate": false,
     "processingStatus": "excluded_no_mechanism_signal",
-    "processedAt": "2026-06-27T08:27:01",
+    "processedAt": "2026-06-27T12:59:16",
     "processingFolder": "",
     "processedSupplementLinkCount": 0,
     "processedLocalDownloadCount": 0,
@@ -340934,7 +341076,7 @@
     "fuelType": "n2o_hydrogen",
     "candidate": true,
     "processingStatus": "excluded_no_supplement_found",
-    "processedAt": "2026-06-27T08:27:01",
+    "processedAt": "2026-06-27T12:59:16",
     "processingFolder": "",
     "processedSupplementLinkCount": 0,
     "processedLocalDownloadCount": 0,
@@ -340951,7 +341093,11 @@
     "processingMechanismFileCount": 0,
     "processingThermoFileCount": 0,
     "processingTransportFileCount": 0,
-    "processingSkipReason": "reused existing terminal processing state from collection_index.csv"
+    "processingSkipReason": "reused existing terminal processing state from collection_index.csv",
+    "supplementProbeStatus": "no_links",
+    "supplementProbeCheckedAt": "2026-06-27T12:58:59",
+    "supplementProbeMaxMmc": 12,
+    "supplementProbeMethod": "direct-ars"
   },
   {
     "year": "2007",
@@ -341049,7 +341195,7 @@
     "fuelType": "unknown_fuel",
     "candidate": false,
     "processingStatus": "excluded_no_mechanism_signal",
-    "processedAt": "2026-06-27T08:27:01",
+    "processedAt": "2026-06-27T12:59:16",
     "processingFolder": "",
     "processedSupplementLinkCount": 0,
     "processedLocalDownloadCount": 0,
@@ -341122,7 +341268,7 @@
     "fuelType": "unknown_fuel",
     "candidate": false,
     "processingStatus": "excluded_no_mechanism_signal",
-    "processedAt": "2026-06-27T08:27:01",
+    "processedAt": "2026-06-27T12:59:16",
     "processingFolder": "",
     "processedSupplementLinkCount": 0,
     "processedLocalDownloadCount": 0,
@@ -341159,7 +341305,7 @@
     "fuelType": "n_decane_n_dodecane",
     "candidate": false,
     "processingStatus": "excluded_no_mechanism_signal",
-    "processedAt": "2026-06-27T08:27:01",
+    "processedAt": "2026-06-27T12:59:16",
     "processingFolder": "",
     "processedSupplementLinkCount": 0,
     "processedLocalDownloadCount": 0,
@@ -341196,7 +341342,7 @@
     "fuelType": "methane_hydrogen",
     "candidate": false,
     "processingStatus": "excluded_no_mechanism_signal",
-    "processedAt": "2026-06-27T08:27:01",
+    "processedAt": "2026-06-27T12:59:16",
     "processingFolder": "",
     "processedSupplementLinkCount": 0,
     "processedLocalDownloadCount": 0,
@@ -341235,7 +341381,7 @@
     "fuelType": "unknown_fuel",
     "candidate": false,
     "processingStatus": "excluded_no_mechanism_signal",
-    "processedAt": "2026-06-27T08:27:01",
+    "processedAt": "2026-06-27T12:59:16",
     "processingFolder": "",
     "processedSupplementLinkCount": 0,
     "processedLocalDownloadCount": 0,
@@ -341272,7 +341418,7 @@
     "fuelType": "unknown_fuel",
     "candidate": false,
     "processingStatus": "excluded_no_mechanism_signal",
-    "processedAt": "2026-06-27T08:27:01",
+    "processedAt": "2026-06-27T12:59:16",
     "processingFolder": "",
     "processedSupplementLinkCount": 0,
     "processedLocalDownloadCount": 0,
@@ -341313,7 +341459,7 @@
     "fuelType": "unknown_fuel",
     "candidate": false,
     "processingStatus": "excluded_no_mechanism_signal",
-    "processedAt": "2026-06-27T08:27:01",
+    "processedAt": "2026-06-27T12:59:16",
     "processingFolder": "",
     "processedSupplementLinkCount": 0,
     "processedLocalDownloadCount": 0,
@@ -341351,7 +341497,7 @@
     "fuelType": "methane",
     "candidate": false,
     "processingStatus": "excluded_no_mechanism_signal",
-    "processedAt": "2026-06-27T08:27:01",
+    "processedAt": "2026-06-27T12:59:16",
     "processingFolder": "",
     "processedSupplementLinkCount": 0,
     "processedLocalDownloadCount": 0,
@@ -341389,7 +341535,7 @@
     "fuelType": "propane",
     "candidate": false,
     "processingStatus": "excluded_no_mechanism_signal",
-    "processedAt": "2026-06-27T08:27:01",
+    "processedAt": "2026-06-27T12:59:16",
     "processingFolder": "",
     "processedSupplementLinkCount": 0,
     "processedLocalDownloadCount": 0,
@@ -341426,7 +341572,7 @@
     "fuelType": "iso_octane_n_octane",
     "candidate": false,
     "processingStatus": "excluded_no_mechanism_signal",
-    "processedAt": "2026-06-27T08:27:01",
+    "processedAt": "2026-06-27T12:59:16",
     "processingFolder": "",
     "processedSupplementLinkCount": 0,
     "processedLocalDownloadCount": 0,
@@ -341502,7 +341648,7 @@
     "fuelType": "unknown_fuel",
     "candidate": false,
     "processingStatus": "excluded_no_mechanism_signal",
-    "processedAt": "2026-06-27T08:27:01",
+    "processedAt": "2026-06-27T12:59:16",
     "processingFolder": "",
     "processedSupplementLinkCount": 0,
     "processedLocalDownloadCount": 0,
@@ -341539,7 +341685,7 @@
     "fuelType": "methane",
     "candidate": false,
     "processingStatus": "excluded_no_mechanism_signal",
-    "processedAt": "2026-06-27T08:27:01",
+    "processedAt": "2026-06-27T12:59:16",
     "processingFolder": "",
     "processedSupplementLinkCount": 0,
     "processedLocalDownloadCount": 0,
@@ -341647,7 +341793,7 @@
     "fuelType": "unknown_fuel",
     "candidate": false,
     "processingStatus": "excluded_no_mechanism_signal",
-    "processedAt": "2026-06-27T08:27:01",
+    "processedAt": "2026-06-27T12:59:16",
     "processingFolder": "",
     "processedSupplementLinkCount": 0,
     "processedLocalDownloadCount": 0,
@@ -341681,7 +341827,7 @@
     "fuelType": "unknown_fuel",
     "candidate": false,
     "processingStatus": "excluded_no_mechanism_signal",
-    "processedAt": "2026-06-27T08:27:01",
+    "processedAt": "2026-06-27T12:59:16",
     "processingFolder": "",
     "processedSupplementLinkCount": 0,
     "processedLocalDownloadCount": 0,
@@ -341718,7 +341864,7 @@
     "fuelType": "unknown_fuel",
     "candidate": true,
     "processingStatus": "excluded_no_supplement_found",
-    "processedAt": "2026-06-27T08:27:01",
+    "processedAt": "2026-06-27T12:59:16",
     "processingFolder": "",
     "processedSupplementLinkCount": 0,
     "processedLocalDownloadCount": 0,
@@ -341735,7 +341881,17 @@
     "processingMechanismFileCount": 0,
     "processingThermoFileCount": 0,
     "processingTransportFileCount": 0,
-    "processingSkipReason": "reused existing terminal processing state from collection_index.csv"
+    "processingSkipReason": "reused existing terminal processing state from collection_index.csv",
+    "probeErrors": [
+      {
+        "url": "https://ars.els-cdn.com/content/image/1-s2.0-S0010218007001101-mmc1.yml",
+        "error": "<urlopen error _ssl.c:1015: The handshake operation timed out>"
+      }
+    ],
+    "supplementProbeStatus": "error",
+    "supplementProbeCheckedAt": "2026-06-27T12:59:02",
+    "supplementProbeMaxMmc": 12,
+    "supplementProbeMethod": "direct-ars"
   },
   {
     "year": "2007",
@@ -341758,7 +341914,7 @@
     "fuelType": "benzene_ethylbenzene",
     "candidate": false,
     "processingStatus": "excluded_no_mechanism_signal",
-    "processedAt": "2026-06-27T08:27:01",
+    "processedAt": "2026-06-27T12:59:16",
     "processingFolder": "",
     "processedSupplementLinkCount": 0,
     "processedLocalDownloadCount": 0,
@@ -341796,7 +341952,7 @@
     "fuelType": "unknown_fuel",
     "candidate": false,
     "processingStatus": "excluded_no_mechanism_signal",
-    "processedAt": "2026-06-27T08:27:01",
+    "processedAt": "2026-06-27T12:59:16",
     "processingFolder": "",
     "processedSupplementLinkCount": 0,
     "processedLocalDownloadCount": 0,
@@ -341833,7 +341989,7 @@
     "fuelType": "unknown_fuel",
     "candidate": false,
     "processingStatus": "excluded_no_mechanism_signal",
-    "processedAt": "2026-06-27T08:27:01",
+    "processedAt": "2026-06-27T12:59:16",
     "processingFolder": "",
     "processedSupplementLinkCount": 0,
     "processedLocalDownloadCount": 0,
@@ -341867,7 +342023,7 @@
     "fuelType": "unknown_fuel",
     "candidate": false,
     "processingStatus": "excluded_no_mechanism_signal",
-    "processedAt": "2026-06-27T08:27:01",
+    "processedAt": "2026-06-27T12:59:16",
     "processingFolder": "",
     "processedSupplementLinkCount": 0,
     "processedLocalDownloadCount": 0,
@@ -341905,7 +342061,7 @@
     "fuelType": "magnesium",
     "candidate": false,
     "processingStatus": "excluded_no_mechanism_signal",
-    "processedAt": "2026-06-27T08:27:01",
+    "processedAt": "2026-06-27T12:59:16",
     "processingFolder": "",
     "processedSupplementLinkCount": 0,
     "processedLocalDownloadCount": 0,
@@ -341977,7 +342133,7 @@
     "fuelType": "unknown_fuel",
     "candidate": false,
     "processingStatus": "excluded_no_mechanism_signal",
-    "processedAt": "2026-06-27T08:27:01",
+    "processedAt": "2026-06-27T12:59:16",
     "processingFolder": "",
     "processedSupplementLinkCount": 0,
     "processedLocalDownloadCount": 0,
@@ -342015,7 +342171,7 @@
     "fuelType": "unknown_fuel",
     "candidate": false,
     "processingStatus": "excluded_no_mechanism_signal",
-    "processedAt": "2026-06-27T08:27:01",
+    "processedAt": "2026-06-27T12:59:16",
     "processingFolder": "",
     "processedSupplementLinkCount": 0,
     "processedLocalDownloadCount": 0,
@@ -342172,7 +342328,7 @@
     "fuelType": "methane",
     "candidate": false,
     "processingStatus": "excluded_no_mechanism_signal",
-    "processedAt": "2026-06-27T08:27:01",
+    "processedAt": "2026-06-27T12:59:16",
     "processingFolder": "",
     "processedSupplementLinkCount": 0,
     "processedLocalDownloadCount": 0,
@@ -342256,7 +342412,7 @@
     "fuelType": "diesel",
     "candidate": false,
     "processingStatus": "excluded_no_mechanism_signal",
-    "processedAt": "2026-06-27T08:27:01",
+    "processedAt": "2026-06-27T12:59:16",
     "processingFolder": "",
     "processedSupplementLinkCount": 0,
     "processedLocalDownloadCount": 0,
@@ -342295,7 +342451,7 @@
     "fuelType": "unknown_fuel",
     "candidate": false,
     "processingStatus": "excluded_no_mechanism_signal",
-    "processedAt": "2026-06-27T08:27:01",
+    "processedAt": "2026-06-27T12:59:16",
     "processingFolder": "",
     "processedSupplementLinkCount": 0,
     "processedLocalDownloadCount": 0,
@@ -342437,7 +342593,7 @@
     "fuelType": "methane_n_heptane_hydrogen",
     "candidate": false,
     "processingStatus": "excluded_no_mechanism_signal",
-    "processedAt": "2026-06-27T08:27:01",
+    "processedAt": "2026-06-27T12:59:16",
     "processingFolder": "",
     "processedSupplementLinkCount": 0,
     "processedLocalDownloadCount": 0,
@@ -342474,7 +342630,7 @@
     "fuelType": "methane",
     "candidate": true,
     "processingStatus": "excluded_no_supplement_found",
-    "processedAt": "2026-06-27T08:27:01",
+    "processedAt": "2026-06-27T12:59:16",
     "processingFolder": "",
     "processedSupplementLinkCount": 0,
     "processedLocalDownloadCount": 0,
@@ -342491,7 +342647,11 @@
     "processingMechanismFileCount": 0,
     "processingThermoFileCount": 0,
     "processingTransportFileCount": 0,
-    "processingSkipReason": "reused existing terminal processing state from collection_index.csv"
+    "processingSkipReason": "reused existing terminal processing state from collection_index.csv",
+    "supplementProbeStatus": "no_links",
+    "supplementProbeCheckedAt": "2026-06-27T12:59:04",
+    "supplementProbeMaxMmc": 12,
+    "supplementProbeMethod": "direct-ars"
   },
   {
     "year": "2007",
@@ -342514,7 +342674,7 @@
     "fuelType": "unknown_fuel",
     "candidate": true,
     "processingStatus": "excluded_no_supplement_found",
-    "processedAt": "2026-06-27T08:27:01",
+    "processedAt": "2026-06-27T12:59:16",
     "processingFolder": "",
     "processedSupplementLinkCount": 0,
     "processedLocalDownloadCount": 0,
@@ -342531,7 +342691,11 @@
     "processingMechanismFileCount": 0,
     "processingThermoFileCount": 0,
     "processingTransportFileCount": 0,
-    "processingSkipReason": "reused existing terminal processing state from collection_index.csv"
+    "processingSkipReason": "reused existing terminal processing state from collection_index.csv",
+    "supplementProbeStatus": "no_links",
+    "supplementProbeCheckedAt": "2026-06-27T12:59:06",
+    "supplementProbeMaxMmc": 12,
+    "supplementProbeMethod": "direct-ars"
   },
   {
     "year": "2007",
@@ -342551,7 +342715,7 @@
     "fuelType": "unknown_fuel",
     "candidate": false,
     "processingStatus": "excluded_no_mechanism_signal",
-    "processedAt": "2026-06-27T08:27:01",
+    "processedAt": "2026-06-27T12:59:16",
     "processingFolder": "",
     "processedSupplementLinkCount": 0,
     "processedLocalDownloadCount": 0,
@@ -342591,7 +342755,7 @@
     "fuelType": "unknown_fuel",
     "candidate": false,
     "processingStatus": "excluded_no_mechanism_signal",
-    "processedAt": "2026-06-27T08:27:01",
+    "processedAt": "2026-06-27T12:59:16",
     "processingFolder": "",
     "processedSupplementLinkCount": 0,
     "processedLocalDownloadCount": 0,
@@ -342629,7 +342793,7 @@
     "fuelType": "acetylene_pah",
     "candidate": true,
     "processingStatus": "excluded_no_supplement_found",
-    "processedAt": "2026-06-27T08:27:01",
+    "processedAt": "2026-06-27T12:59:16",
     "processingFolder": "",
     "processedSupplementLinkCount": 0,
     "processedLocalDownloadCount": 0,
@@ -342646,7 +342810,17 @@
     "processingMechanismFileCount": 0,
     "processingThermoFileCount": 0,
     "processingTransportFileCount": 0,
-    "processingSkipReason": "reused existing terminal processing state from collection_index.csv"
+    "processingSkipReason": "reused existing terminal processing state from collection_index.csv",
+    "probeErrors": [
+      {
+        "url": "https://ars.els-cdn.com/content/image/1-s2.0-S0010218006001362-mmc1.pdf",
+        "error": "<urlopen error _ssl.c:1015: The handshake operation timed out>"
+      }
+    ],
+    "supplementProbeStatus": "error",
+    "supplementProbeCheckedAt": "2026-06-27T12:59:10",
+    "supplementProbeMaxMmc": 12,
+    "supplementProbeMethod": "direct-ars"
   },
   {
     "year": "2007",
@@ -342703,7 +342877,7 @@
     "fuelType": "nitric_oxide",
     "candidate": false,
     "processingStatus": "excluded_no_mechanism_signal",
-    "processedAt": "2026-06-27T08:27:01",
+    "processedAt": "2026-06-27T12:59:16",
     "processingFolder": "",
     "processedSupplementLinkCount": 0,
     "processedLocalDownloadCount": 0,
@@ -342740,7 +342914,7 @@
     "fuelType": "coal",
     "candidate": true,
     "processingStatus": "excluded_no_supplement_found",
-    "processedAt": "2026-06-27T08:27:02",
+    "processedAt": "2026-06-27T12:59:16",
     "processingFolder": "",
     "processedSupplementLinkCount": 0,
     "processedLocalDownloadCount": 0,
@@ -342757,7 +342931,11 @@
     "processingMechanismFileCount": 0,
     "processingThermoFileCount": 0,
     "processingTransportFileCount": 0,
-    "processingSkipReason": "reused existing terminal processing state from collection_index.csv"
+    "processingSkipReason": "reused existing terminal processing state from collection_index.csv",
+    "supplementProbeStatus": "no_links",
+    "supplementProbeCheckedAt": "2026-06-27T12:59:11",
+    "supplementProbeMaxMmc": 12,
+    "supplementProbeMethod": "direct-ars"
   },
   {
     "year": "2007",
@@ -342781,7 +342959,7 @@
     "fuelType": "pyrrole",
     "candidate": false,
     "processingStatus": "excluded_no_mechanism_signal",
-    "processedAt": "2026-06-27T08:27:02",
+    "processedAt": "2026-06-27T12:59:16",
     "processingFolder": "",
     "processedSupplementLinkCount": 0,
     "processedLocalDownloadCount": 0,
@@ -342857,7 +343035,7 @@
     "fuelType": "unknown_fuel",
     "candidate": true,
     "processingStatus": "excluded_no_supplement_found",
-    "processedAt": "2026-06-27T08:27:02",
+    "processedAt": "2026-06-27T12:59:16",
     "processingFolder": "",
     "processedSupplementLinkCount": 0,
     "processedLocalDownloadCount": 0,
@@ -342874,7 +343052,11 @@
     "processingMechanismFileCount": 0,
     "processingThermoFileCount": 0,
     "processingTransportFileCount": 0,
-    "processingSkipReason": "reused existing terminal processing state from collection_index.csv"
+    "processingSkipReason": "reused existing terminal processing state from collection_index.csv",
+    "supplementProbeStatus": "no_links",
+    "supplementProbeCheckedAt": "2026-06-27T12:59:13",
+    "supplementProbeMaxMmc": 12,
+    "supplementProbeMethod": "direct-ars"
   },
   {
     "year": "2016",
@@ -342929,7 +343111,7 @@
     "fuelType": "unknown_fuel",
     "candidate": false,
     "processingStatus": "excluded_no_mechanism_signal",
-    "processedAt": "2026-06-27T08:27:02",
+    "processedAt": "2026-06-27T12:59:16",
     "processingFolder": "",
     "processedSupplementLinkCount": 0,
     "processedLocalDownloadCount": 0,
@@ -343012,7 +343194,7 @@
     "fuelType": "unknown_fuel",
     "candidate": false,
     "processingStatus": "excluded_no_mechanism_signal",
-    "processedAt": "2026-06-27T08:27:02",
+    "processedAt": "2026-06-27T12:59:16",
     "processingFolder": "",
     "processedSupplementLinkCount": 0,
     "processedLocalDownloadCount": 0,
@@ -343054,7 +343236,7 @@
     "fuelType": "nitromethane",
     "candidate": false,
     "processingStatus": "excluded_no_mechanism_signal",
-    "processedAt": "2026-06-27T08:21:56",
+    "processedAt": "2026-06-27T12:59:14",
     "processingFolder": "",
     "processedSupplementLinkCount": 0,
     "processedLocalDownloadCount": 0,
@@ -343108,7 +343290,11 @@
     "processingPreprocessStatus": "",
     "processingMechanismFileCount": 0,
     "processingThermoFileCount": 0,
-    "processingTransportFileCount": 0
+    "processingTransportFileCount": 0,
+    "supplementProbeStatus": "no_links",
+    "supplementProbeCheckedAt": "2026-06-27T12:57:43",
+    "supplementProbeMaxMmc": 12,
+    "supplementProbeMethod": "direct-ars"
   },
   {
     "year": "2006",
@@ -343128,7 +343314,7 @@
     "fuelType": "unknown_fuel",
     "candidate": true,
     "processingStatus": "excluded_no_supplement_found",
-    "processedAt": "2026-06-27T08:21:56",
+    "processedAt": "2026-06-27T12:59:14",
     "processingFolder": "",
     "processedSupplementLinkCount": 0,
     "processedLocalDownloadCount": 0,
@@ -343145,7 +343331,11 @@
     "processingMechanismFileCount": 0,
     "processingThermoFileCount": 0,
     "processingTransportFileCount": 0,
-    "processingSkipReason": "reused existing terminal processing state from collection_index.csv"
+    "processingSkipReason": "reused existing terminal processing state from collection_index.csv",
+    "supplementProbeStatus": "no_links",
+    "supplementProbeCheckedAt": "2026-06-27T12:57:45",
+    "supplementProbeMaxMmc": 12,
+    "supplementProbeMethod": "direct-ars"
   },
   {
     "year": "2006",
@@ -343167,7 +343357,7 @@
     "fuelType": "unknown_fuel",
     "candidate": false,
     "processingStatus": "excluded_no_mechanism_signal",
-    "processedAt": "2026-06-27T08:21:56",
+    "processedAt": "2026-06-27T12:59:14",
     "processingFolder": "",
     "processedSupplementLinkCount": 0,
     "processedLocalDownloadCount": 0,
@@ -343280,7 +343470,7 @@
     "fuelType": "unknown_fuel",
     "candidate": true,
     "processingStatus": "excluded_no_supplement_found",
-    "processedAt": "2026-06-27T08:21:56",
+    "processedAt": "2026-06-27T12:59:14",
     "processingFolder": "",
     "processedSupplementLinkCount": 0,
     "processedLocalDownloadCount": 0,
@@ -343297,7 +343487,11 @@
     "processingMechanismFileCount": 0,
     "processingThermoFileCount": 0,
     "processingTransportFileCount": 0,
-    "processingSkipReason": "reused existing terminal processing state from collection_index.csv"
+    "processingSkipReason": "reused existing terminal processing state from collection_index.csv",
+    "supplementProbeStatus": "no_links",
+    "supplementProbeCheckedAt": "2026-06-27T12:57:47",
+    "supplementProbeMaxMmc": 12,
+    "supplementProbeMethod": "direct-ars"
   },
   {
     "year": "2006",
@@ -343320,7 +343514,7 @@
     "fuelType": "unknown_fuel",
     "candidate": false,
     "processingStatus": "excluded_no_mechanism_signal",
-    "processedAt": "2026-06-27T08:21:56",
+    "processedAt": "2026-06-27T12:59:14",
     "processingFolder": "",
     "processedSupplementLinkCount": 0,
     "processedLocalDownloadCount": 0,
@@ -343359,7 +343553,7 @@
     "fuelType": "unknown_fuel",
     "candidate": false,
     "processingStatus": "excluded_no_mechanism_signal",
-    "processedAt": "2026-06-27T08:21:56",
+    "processedAt": "2026-06-27T12:59:14",
     "processingFolder": "",
     "processedSupplementLinkCount": 0,
     "processedLocalDownloadCount": 0,
@@ -343547,7 +343741,7 @@
     "fuelType": "unknown_fuel",
     "candidate": false,
     "processingStatus": "excluded_no_mechanism_signal",
-    "processedAt": "2026-06-27T08:21:56",
+    "processedAt": "2026-06-27T12:59:14",
     "processingFolder": "",
     "processedSupplementLinkCount": 0,
     "processedLocalDownloadCount": 0,
@@ -343586,7 +343780,7 @@
     "fuelType": "unknown_fuel",
     "candidate": false,
     "processingStatus": "excluded_no_mechanism_signal",
-    "processedAt": "2026-06-27T08:21:56",
+    "processedAt": "2026-06-27T12:59:14",
     "processingFolder": "",
     "processedSupplementLinkCount": 0,
     "processedLocalDownloadCount": 0,
@@ -343623,7 +343817,7 @@
     "fuelType": "hydrogen",
     "candidate": false,
     "processingStatus": "excluded_no_mechanism_signal",
-    "processedAt": "2026-06-27T08:21:56",
+    "processedAt": "2026-06-27T12:59:14",
     "processingFolder": "",
     "processedSupplementLinkCount": 0,
     "processedLocalDownloadCount": 0,
@@ -343661,7 +343855,7 @@
     "fuelType": "iso_octane_n_octane",
     "candidate": false,
     "processingStatus": "excluded_no_mechanism_signal",
-    "processedAt": "2026-06-27T08:21:56",
+    "processedAt": "2026-06-27T12:59:14",
     "processingFolder": "",
     "processedSupplementLinkCount": 0,
     "processedLocalDownloadCount": 0,
@@ -343699,7 +343893,7 @@
     "fuelType": "hydrogen",
     "candidate": false,
     "processingStatus": "excluded_no_mechanism_signal",
-    "processedAt": "2026-06-27T08:21:56",
+    "processedAt": "2026-06-27T12:59:14",
     "processingFolder": "",
     "processedSupplementLinkCount": 0,
     "processedLocalDownloadCount": 0,
@@ -343809,7 +344003,7 @@
     "fuelType": "methane_hydrogen",
     "candidate": false,
     "processingStatus": "excluded_no_mechanism_signal",
-    "processedAt": "2026-06-27T08:21:56",
+    "processedAt": "2026-06-27T12:59:14",
     "processingFolder": "",
     "processedSupplementLinkCount": 0,
     "processedLocalDownloadCount": 0,
@@ -343884,7 +344078,7 @@
     "fuelType": "methane",
     "candidate": false,
     "processingStatus": "excluded_no_mechanism_signal",
-    "processedAt": "2026-06-27T08:21:56",
+    "processedAt": "2026-06-27T12:59:14",
     "processingFolder": "",
     "processedSupplementLinkCount": 0,
     "processedLocalDownloadCount": 0,
@@ -343923,7 +344117,7 @@
     "fuelType": "unknown_fuel",
     "candidate": false,
     "processingStatus": "excluded_no_mechanism_signal",
-    "processedAt": "2026-06-27T08:21:56",
+    "processedAt": "2026-06-27T12:59:14",
     "processingFolder": "",
     "processedSupplementLinkCount": 0,
     "processedLocalDownloadCount": 0,
@@ -343977,7 +344171,11 @@
     "processingPreprocessStatus": "",
     "processingMechanismFileCount": 0,
     "processingThermoFileCount": 0,
-    "processingTransportFileCount": 0
+    "processingTransportFileCount": 0,
+    "supplementProbeStatus": "no_links",
+    "supplementProbeCheckedAt": "2026-06-27T12:57:48",
+    "supplementProbeMaxMmc": 12,
+    "supplementProbeMethod": "direct-ars"
   },
   {
     "year": "2006",
@@ -344002,7 +344200,7 @@
     "fuelType": "benzene_ethylbenzene_pah",
     "candidate": true,
     "processingStatus": "excluded_no_supplement_found",
-    "processedAt": "2026-06-27T08:21:56",
+    "processedAt": "2026-06-27T12:59:14",
     "processingFolder": "",
     "processedSupplementLinkCount": 0,
     "processedLocalDownloadCount": 0,
@@ -344019,7 +344217,17 @@
     "processingMechanismFileCount": 0,
     "processingThermoFileCount": 0,
     "processingTransportFileCount": 0,
-    "processingSkipReason": "reused existing terminal processing state from collection_index.csv"
+    "processingSkipReason": "reused existing terminal processing state from collection_index.csv",
+    "probeErrors": [
+      {
+        "url": "https://ars.els-cdn.com/content/image/1-s2.0-S0010218005002695-mmc1.yaml",
+        "error": "<urlopen error _ssl.c:1015: The handshake operation timed out>"
+      }
+    ],
+    "supplementProbeStatus": "error",
+    "supplementProbeCheckedAt": "2026-06-27T12:57:51",
+    "supplementProbeMaxMmc": 12,
+    "supplementProbeMethod": "direct-ars"
   },
   {
     "year": "2006",
@@ -344041,7 +344249,7 @@
     "fuelType": "diesel_pah",
     "candidate": false,
     "processingStatus": "excluded_no_mechanism_signal",
-    "processedAt": "2026-06-27T08:21:56",
+    "processedAt": "2026-06-27T12:59:14",
     "processingFolder": "",
     "processedSupplementLinkCount": 0,
     "processedLocalDownloadCount": 0,
@@ -344078,7 +344286,7 @@
     "fuelType": "unknown_fuel",
     "candidate": false,
     "processingStatus": "excluded_no_mechanism_signal",
-    "processedAt": "2026-06-27T08:21:56",
+    "processedAt": "2026-06-27T12:59:14",
     "processingFolder": "",
     "processedSupplementLinkCount": 0,
     "processedLocalDownloadCount": 0,
@@ -344119,7 +344327,7 @@
     "fuelType": "unknown_fuel",
     "candidate": false,
     "processingStatus": "excluded_no_mechanism_signal",
-    "processedAt": "2026-06-27T08:21:56",
+    "processedAt": "2026-06-27T12:59:14",
     "processingFolder": "",
     "processedSupplementLinkCount": 0,
     "processedLocalDownloadCount": 0,
@@ -344196,7 +344404,7 @@
     "fuelType": "ammonia_hydrogen",
     "candidate": false,
     "processingStatus": "excluded_no_mechanism_signal",
-    "processedAt": "2026-06-27T08:21:56",
+    "processedAt": "2026-06-27T12:59:14",
     "processingFolder": "",
     "processedSupplementLinkCount": 0,
     "processedLocalDownloadCount": 0,
@@ -344233,7 +344441,7 @@
     "fuelType": "unknown_fuel",
     "candidate": false,
     "processingStatus": "excluded_no_mechanism_signal",
-    "processedAt": "2026-06-27T08:21:56",
+    "processedAt": "2026-06-27T12:59:14",
     "processingFolder": "",
     "processedSupplementLinkCount": 0,
     "processedLocalDownloadCount": 0,
@@ -344270,7 +344478,7 @@
     "fuelType": "coal",
     "candidate": false,
     "processingStatus": "excluded_no_mechanism_signal",
-    "processedAt": "2026-06-27T08:21:56",
+    "processedAt": "2026-06-27T12:59:14",
     "processingFolder": "",
     "processedSupplementLinkCount": 0,
     "processedLocalDownloadCount": 0,
@@ -344308,7 +344516,7 @@
     "fuelType": "unknown_fuel",
     "candidate": false,
     "processingStatus": "excluded_no_mechanism_signal",
-    "processedAt": "2026-06-27T08:21:56",
+    "processedAt": "2026-06-27T12:59:14",
     "processingFolder": "",
     "processedSupplementLinkCount": 0,
     "processedLocalDownloadCount": 0,
@@ -344346,7 +344554,7 @@
     "fuelType": "unknown_fuel",
     "candidate": false,
     "processingStatus": "excluded_no_mechanism_signal",
-    "processedAt": "2026-06-27T08:21:56",
+    "processedAt": "2026-06-27T12:59:14",
     "processingFolder": "",
     "processedSupplementLinkCount": 0,
     "processedLocalDownloadCount": 0,
@@ -344383,7 +344591,7 @@
     "fuelType": "hydrogen",
     "candidate": true,
     "processingStatus": "excluded_no_supplement_found",
-    "processedAt": "2026-06-27T08:21:56",
+    "processedAt": "2026-06-27T12:59:14",
     "processingFolder": "",
     "processedSupplementLinkCount": 0,
     "processedLocalDownloadCount": 0,
@@ -344400,7 +344608,11 @@
     "processingMechanismFileCount": 0,
     "processingThermoFileCount": 0,
     "processingTransportFileCount": 0,
-    "processingSkipReason": "reused existing terminal processing state from collection_index.csv"
+    "processingSkipReason": "reused existing terminal processing state from collection_index.csv",
+    "supplementProbeStatus": "no_links",
+    "supplementProbeCheckedAt": "2026-06-27T12:57:53",
+    "supplementProbeMaxMmc": 12,
+    "supplementProbeMethod": "direct-ars"
   },
   {
     "year": "2006",
@@ -344462,7 +344674,7 @@
     "fuelType": "unknown_fuel",
     "candidate": false,
     "processingStatus": "excluded_no_mechanism_signal",
-    "processedAt": "2026-06-27T08:21:56",
+    "processedAt": "2026-06-27T12:59:14",
     "processingFolder": "",
     "processedSupplementLinkCount": 0,
     "processedLocalDownloadCount": 0,
@@ -344501,7 +344713,7 @@
     "fuelType": "unknown_fuel",
     "candidate": false,
     "processingStatus": "excluded_no_mechanism_signal",
-    "processedAt": "2026-06-27T08:21:56",
+    "processedAt": "2026-06-27T12:59:14",
     "processingFolder": "",
     "processedSupplementLinkCount": 0,
     "processedLocalDownloadCount": 0,
@@ -344539,7 +344751,7 @@
     "fuelType": "unknown_fuel",
     "candidate": false,
     "processingStatus": "excluded_no_mechanism_signal",
-    "processedAt": "2026-06-27T08:21:56",
+    "processedAt": "2026-06-27T12:59:14",
     "processingFolder": "",
     "processedSupplementLinkCount": 0,
     "processedLocalDownloadCount": 0,
@@ -344578,7 +344790,7 @@
     "fuelType": "unknown_fuel",
     "candidate": false,
     "processingStatus": "excluded_no_mechanism_signal",
-    "processedAt": "2026-06-27T08:21:56",
+    "processedAt": "2026-06-27T12:59:14",
     "processingFolder": "",
     "processedSupplementLinkCount": 0,
     "processedLocalDownloadCount": 0,
@@ -344653,7 +344865,7 @@
     "fuelType": "unknown_fuel",
     "candidate": false,
     "processingStatus": "excluded_no_mechanism_signal",
-    "processedAt": "2026-06-27T08:21:56",
+    "processedAt": "2026-06-27T12:59:14",
     "processingFolder": "",
     "processedSupplementLinkCount": 0,
     "processedLocalDownloadCount": 0,
@@ -344730,7 +344942,7 @@
     "fuelType": "hydrogen",
     "candidate": true,
     "processingStatus": "excluded_no_supplement_found",
-    "processedAt": "2026-06-27T08:21:56",
+    "processedAt": "2026-06-27T12:59:14",
     "processingFolder": "",
     "processedSupplementLinkCount": 0,
     "processedLocalDownloadCount": 0,
@@ -344747,7 +344959,17 @@
     "processingMechanismFileCount": 0,
     "processingThermoFileCount": 0,
     "processingTransportFileCount": 0,
-    "processingSkipReason": "reused existing terminal processing state from collection_index.csv"
+    "processingSkipReason": "reused existing terminal processing state from collection_index.csv",
+    "probeErrors": [
+      {
+        "url": "https://ars.els-cdn.com/content/image/1-s2.0-S001021800500180X-mmc1.yaml",
+        "error": "<urlopen error _ssl.c:1015: The handshake operation timed out>"
+      }
+    ],
+    "supplementProbeStatus": "error",
+    "supplementProbeCheckedAt": "2026-06-27T12:57:56",
+    "supplementProbeMaxMmc": 12,
+    "supplementProbeMethod": "direct-ars"
   },
   {
     "year": "2006",
@@ -344768,7 +344990,7 @@
     "fuelType": "unknown_fuel",
     "candidate": false,
     "processingStatus": "excluded_no_mechanism_signal",
-    "processedAt": "2026-06-27T08:21:56",
+    "processedAt": "2026-06-27T12:59:14",
     "processingFolder": "",
     "processedSupplementLinkCount": 0,
     "processedLocalDownloadCount": 0,
@@ -344806,7 +345028,7 @@
     "fuelType": "unknown_fuel",
     "candidate": false,
     "processingStatus": "excluded_no_mechanism_signal",
-    "processedAt": "2026-06-27T08:21:56",
+    "processedAt": "2026-06-27T12:59:14",
     "processingFolder": "",
     "processedSupplementLinkCount": 0,
     "processedLocalDownloadCount": 0,
@@ -344843,7 +345065,7 @@
     "fuelType": "unknown_fuel",
     "candidate": false,
     "processingStatus": "excluded_no_mechanism_signal",
-    "processedAt": "2026-06-27T08:21:56",
+    "processedAt": "2026-06-27T12:59:14",
     "processingFolder": "",
     "processedSupplementLinkCount": 0,
     "processedLocalDownloadCount": 0,
@@ -344879,7 +345101,7 @@
     "fuelType": "unknown_fuel",
     "candidate": false,
     "processingStatus": "excluded_no_mechanism_signal",
-    "processedAt": "2026-06-27T08:21:56",
+    "processedAt": "2026-06-27T12:59:14",
     "processingFolder": "",
     "processedSupplementLinkCount": 0,
     "processedLocalDownloadCount": 0,
@@ -344919,7 +345141,7 @@
     "fuelType": "unknown_fuel",
     "candidate": false,
     "processingStatus": "excluded_no_mechanism_signal",
-    "processedAt": "2026-06-27T08:21:56",
+    "processedAt": "2026-06-27T12:59:14",
     "processingFolder": "",
     "processedSupplementLinkCount": 0,
     "processedLocalDownloadCount": 0,
@@ -344955,7 +345177,7 @@
     "fuelType": "ethane_ethylene_acetylene_benzene",
     "candidate": false,
     "processingStatus": "excluded_no_mechanism_signal",
-    "processedAt": "2026-06-27T08:21:56",
+    "processedAt": "2026-06-27T12:59:14",
     "processingFolder": "",
     "processedSupplementLinkCount": 0,
     "processedLocalDownloadCount": 0,
@@ -344992,7 +345214,7 @@
     "fuelType": "unknown_fuel",
     "candidate": false,
     "processingStatus": "excluded_no_mechanism_signal",
-    "processedAt": "2026-06-27T08:21:56",
+    "processedAt": "2026-06-27T12:59:14",
     "processingFolder": "",
     "processedSupplementLinkCount": 0,
     "processedLocalDownloadCount": 0,
@@ -345068,7 +345290,7 @@
     "fuelType": "unknown_fuel",
     "candidate": false,
     "processingStatus": "excluded_no_mechanism_signal",
-    "processedAt": "2026-06-27T08:21:56",
+    "processedAt": "2026-06-27T12:59:14",
     "processingFolder": "",
     "processedSupplementLinkCount": 0,
     "processedLocalDownloadCount": 0,
@@ -345108,7 +345330,7 @@
     "fuelType": "aluminum",
     "candidate": false,
     "processingStatus": "excluded_no_mechanism_signal",
-    "processedAt": "2026-06-27T08:21:56",
+    "processedAt": "2026-06-27T12:59:14",
     "processingFolder": "",
     "processedSupplementLinkCount": 0,
     "processedLocalDownloadCount": 0,
@@ -345144,7 +345366,7 @@
     "fuelType": "unknown_fuel",
     "candidate": false,
     "processingStatus": "excluded_no_mechanism_signal",
-    "processedAt": "2026-06-27T08:21:56",
+    "processedAt": "2026-06-27T12:59:14",
     "processingFolder": "",
     "processedSupplementLinkCount": 0,
     "processedLocalDownloadCount": 0,
@@ -345181,7 +345403,7 @@
     "fuelType": "unknown_fuel",
     "candidate": false,
     "processingStatus": "excluded_no_mechanism_signal",
-    "processedAt": "2026-06-27T08:21:56",
+    "processedAt": "2026-06-27T12:59:14",
     "processingFolder": "",
     "processedSupplementLinkCount": 0,
     "processedLocalDownloadCount": 0,
@@ -345219,7 +345441,7 @@
     "fuelType": "unknown_fuel",
     "candidate": false,
     "processingStatus": "excluded_no_mechanism_signal",
-    "processedAt": "2026-06-27T08:21:56",
+    "processedAt": "2026-06-27T12:59:14",
     "processingFolder": "",
     "processedSupplementLinkCount": 0,
     "processedLocalDownloadCount": 0,
@@ -345257,7 +345479,7 @@
     "fuelType": "unknown_fuel",
     "candidate": false,
     "processingStatus": "excluded_no_mechanism_signal",
-    "processedAt": "2026-06-27T08:21:56",
+    "processedAt": "2026-06-27T12:59:14",
     "processingFolder": "",
     "processedSupplementLinkCount": 0,
     "processedLocalDownloadCount": 0,
@@ -345294,7 +345516,7 @@
     "fuelType": "methane_ethane_propane",
     "candidate": true,
     "processingStatus": "excluded_no_supplement_found",
-    "processedAt": "2026-06-27T08:21:56",
+    "processedAt": "2026-06-27T12:59:14",
     "processingFolder": "",
     "processedSupplementLinkCount": 0,
     "processedLocalDownloadCount": 0,
@@ -345311,7 +345533,21 @@
     "processingMechanismFileCount": 0,
     "processingThermoFileCount": 0,
     "processingTransportFileCount": 0,
-    "processingSkipReason": "reused existing terminal processing state from collection_index.csv"
+    "processingSkipReason": "reused existing terminal processing state from collection_index.csv",
+    "probeErrors": [
+      {
+        "url": "https://ars.els-cdn.com/content/image/1-s2.0-S0010218005001768-mmc1.xls",
+        "error": "<urlopen error _ssl.c:1015: The handshake operation timed out>"
+      },
+      {
+        "url": "https://ars.els-cdn.com/content/image/1-s2.0-S0010218005001768-mmc1.inp",
+        "error": "<urlopen error _ssl.c:1015: The handshake operation timed out>"
+      }
+    ],
+    "supplementProbeStatus": "error",
+    "supplementProbeCheckedAt": "2026-06-27T12:57:59",
+    "supplementProbeMaxMmc": 12,
+    "supplementProbeMethod": "direct-ars"
   },
   {
     "year": "2006",
@@ -345332,7 +345568,7 @@
     "fuelType": "unknown_fuel",
     "candidate": false,
     "processingStatus": "excluded_no_mechanism_signal",
-    "processedAt": "2026-06-27T08:21:56",
+    "processedAt": "2026-06-27T12:59:14",
     "processingFolder": "",
     "processedSupplementLinkCount": 0,
     "processedLocalDownloadCount": 0,
@@ -345369,7 +345605,7 @@
     "fuelType": "methane",
     "candidate": false,
     "processingStatus": "excluded_no_mechanism_signal",
-    "processedAt": "2026-06-27T08:21:56",
+    "processedAt": "2026-06-27T12:59:14",
     "processingFolder": "",
     "processedSupplementLinkCount": 0,
     "processedLocalDownloadCount": 0,
@@ -345407,7 +345643,7 @@
     "fuelType": "unknown_fuel",
     "candidate": false,
     "processingStatus": "excluded_no_mechanism_signal",
-    "processedAt": "2026-06-27T08:21:56",
+    "processedAt": "2026-06-27T12:59:14",
     "processingFolder": "",
     "processedSupplementLinkCount": 0,
     "processedLocalDownloadCount": 0,
@@ -345444,7 +345680,7 @@
     "fuelType": "coal_iron",
     "candidate": true,
     "processingStatus": "excluded_no_supplement_found",
-    "processedAt": "2026-06-27T08:21:56",
+    "processedAt": "2026-06-27T12:59:14",
     "processingFolder": "",
     "processedSupplementLinkCount": 0,
     "processedLocalDownloadCount": 0,
@@ -345461,7 +345697,17 @@
     "processingMechanismFileCount": 0,
     "processingThermoFileCount": 0,
     "processingTransportFileCount": 0,
-    "processingSkipReason": "reused existing terminal processing state from collection_index.csv"
+    "processingSkipReason": "reused existing terminal processing state from collection_index.csv",
+    "probeErrors": [
+      {
+        "url": "https://ars.els-cdn.com/content/image/1-s2.0-S0010218005002658-mmc1.inp",
+        "error": "The read operation timed out"
+      }
+    ],
+    "supplementProbeStatus": "error",
+    "supplementProbeCheckedAt": "2026-06-27T12:58:05",
+    "supplementProbeMaxMmc": 12,
+    "supplementProbeMethod": "direct-ars"
   },
   {
     "year": "2006",
@@ -345520,7 +345766,7 @@
     "fuelType": "unknown_fuel",
     "candidate": false,
     "processingStatus": "excluded_no_mechanism_signal",
-    "processedAt": "2026-06-27T08:21:56",
+    "processedAt": "2026-06-27T12:59:14",
     "processingFolder": "",
     "processedSupplementLinkCount": 0,
     "processedLocalDownloadCount": 0,
@@ -345560,7 +345806,7 @@
     "fuelType": "unknown_fuel",
     "candidate": false,
     "processingStatus": "excluded_no_mechanism_signal",
-    "processedAt": "2026-06-27T08:21:56",
+    "processedAt": "2026-06-27T12:59:14",
     "processingFolder": "",
     "processedSupplementLinkCount": 0,
     "processedLocalDownloadCount": 0,
@@ -345597,7 +345843,7 @@
     "fuelType": "unknown_fuel",
     "candidate": false,
     "processingStatus": "excluded_no_mechanism_signal",
-    "processedAt": "2026-06-27T08:21:56",
+    "processedAt": "2026-06-27T12:59:14",
     "processingFolder": "",
     "processedSupplementLinkCount": 0,
     "processedLocalDownloadCount": 0,
@@ -345634,7 +345880,7 @@
     "fuelType": "unknown_fuel",
     "candidate": false,
     "processingStatus": "excluded_no_mechanism_signal",
-    "processedAt": "2026-06-27T08:21:56",
+    "processedAt": "2026-06-27T12:59:14",
     "processingFolder": "",
     "processedSupplementLinkCount": 0,
     "processedLocalDownloadCount": 0,
@@ -345714,7 +345960,7 @@
     "fuelType": "unknown_fuel",
     "candidate": false,
     "processingStatus": "excluded_no_mechanism_signal",
-    "processedAt": "2026-06-27T08:21:56",
+    "processedAt": "2026-06-27T12:59:14",
     "processingFolder": "",
     "processedSupplementLinkCount": 0,
     "processedLocalDownloadCount": 0,
@@ -345751,7 +345997,7 @@
     "fuelType": "unknown_fuel",
     "candidate": false,
     "processingStatus": "excluded_no_mechanism_signal",
-    "processedAt": "2026-06-27T08:21:56",
+    "processedAt": "2026-06-27T12:59:14",
     "processingFolder": "",
     "processedSupplementLinkCount": 0,
     "processedLocalDownloadCount": 0,
@@ -345790,7 +346036,7 @@
     "fuelType": "nitric_oxide",
     "candidate": true,
     "processingStatus": "excluded_no_supplement_found",
-    "processedAt": "2026-06-27T08:21:56",
+    "processedAt": "2026-06-27T12:59:14",
     "processingFolder": "",
     "processedSupplementLinkCount": 0,
     "processedLocalDownloadCount": 0,
@@ -345807,7 +346053,11 @@
     "processingMechanismFileCount": 0,
     "processingThermoFileCount": 0,
     "processingTransportFileCount": 0,
-    "processingSkipReason": "reused existing terminal processing state from collection_index.csv"
+    "processingSkipReason": "reused existing terminal processing state from collection_index.csv",
+    "supplementProbeStatus": "no_links",
+    "supplementProbeCheckedAt": "2026-06-27T12:58:06",
+    "supplementProbeMaxMmc": 12,
+    "supplementProbeMethod": "direct-ars"
   },
   {
     "year": "2006",
@@ -345828,7 +346078,7 @@
     "fuelType": "unknown_fuel",
     "candidate": false,
     "processingStatus": "excluded_no_mechanism_signal",
-    "processedAt": "2026-06-27T08:21:56",
+    "processedAt": "2026-06-27T12:59:14",
     "processingFolder": "",
     "processedSupplementLinkCount": 0,
     "processedLocalDownloadCount": 0,
@@ -345866,7 +346116,7 @@
     "fuelType": "n_heptane",
     "candidate": true,
     "processingStatus": "excluded_no_supplement_found",
-    "processedAt": "2026-06-27T08:21:56",
+    "processedAt": "2026-06-27T12:59:14",
     "processingFolder": "",
     "processedSupplementLinkCount": 0,
     "processedLocalDownloadCount": 0,
@@ -345883,7 +346133,11 @@
     "processingMechanismFileCount": 0,
     "processingThermoFileCount": 0,
     "processingTransportFileCount": 0,
-    "processingSkipReason": "reused existing terminal processing state from collection_index.csv"
+    "processingSkipReason": "reused existing terminal processing state from collection_index.csv",
+    "supplementProbeStatus": "no_links",
+    "supplementProbeCheckedAt": "2026-06-27T12:58:08",
+    "supplementProbeMaxMmc": 12,
+    "supplementProbeMethod": "direct-ars"
   },
   {
     "year": "2006",
@@ -345903,7 +346157,7 @@
     "fuelType": "unknown_fuel",
     "candidate": false,
     "processingStatus": "excluded_no_mechanism_signal",
-    "processedAt": "2026-06-27T08:21:56",
+    "processedAt": "2026-06-27T12:59:14",
     "processingFolder": "",
     "processedSupplementLinkCount": 0,
     "processedLocalDownloadCount": 0,
@@ -345941,7 +346195,7 @@
     "fuelType": "unknown_fuel",
     "candidate": false,
     "processingStatus": "excluded_no_mechanism_signal",
-    "processedAt": "2026-06-27T08:21:56",
+    "processedAt": "2026-06-27T12:59:14",
     "processingFolder": "",
     "processedSupplementLinkCount": 0,
     "processedLocalDownloadCount": 0,
@@ -346022,7 +346276,7 @@
     "fuelType": "unknown_fuel",
     "candidate": false,
     "processingStatus": "excluded_no_mechanism_signal",
-    "processedAt": "2026-06-27T08:21:56",
+    "processedAt": "2026-06-27T12:59:14",
     "processingFolder": "",
     "processedSupplementLinkCount": 0,
     "processedLocalDownloadCount": 0,
@@ -346061,7 +346315,7 @@
     "fuelType": "unknown_fuel",
     "candidate": false,
     "processingStatus": "excluded_no_mechanism_signal",
-    "processedAt": "2026-06-27T08:21:56",
+    "processedAt": "2026-06-27T12:59:14",
     "processingFolder": "",
     "processedSupplementLinkCount": 0,
     "processedLocalDownloadCount": 0,
@@ -346133,7 +346387,7 @@
     "fuelType": "unknown_fuel",
     "candidate": false,
     "processingStatus": "excluded_no_mechanism_signal",
-    "processedAt": "2026-06-27T08:21:56",
+    "processedAt": "2026-06-27T12:59:14",
     "processingFolder": "",
     "processedSupplementLinkCount": 0,
     "processedLocalDownloadCount": 0,
@@ -346173,7 +346427,7 @@
     "fuelType": "iron",
     "candidate": false,
     "processingStatus": "excluded_no_mechanism_signal",
-    "processedAt": "2026-06-27T08:21:56",
+    "processedAt": "2026-06-27T12:59:14",
     "processingFolder": "",
     "processedSupplementLinkCount": 0,
     "processedLocalDownloadCount": 0,
@@ -346248,7 +346502,7 @@
     "fuelType": "diesel",
     "candidate": false,
     "processingStatus": "excluded_no_mechanism_signal",
-    "processedAt": "2026-06-27T08:21:56",
+    "processedAt": "2026-06-27T12:59:14",
     "processingFolder": "",
     "processedSupplementLinkCount": 0,
     "processedLocalDownloadCount": 0,
@@ -346286,7 +346540,7 @@
     "fuelType": "unknown_fuel",
     "candidate": false,
     "processingStatus": "excluded_no_mechanism_signal",
-    "processedAt": "2026-06-27T08:21:56",
+    "processedAt": "2026-06-27T12:59:14",
     "processingFolder": "",
     "processedSupplementLinkCount": 0,
     "processedLocalDownloadCount": 0,
@@ -346325,7 +346579,7 @@
     "fuelType": "methanol_ethanol",
     "candidate": false,
     "processingStatus": "excluded_no_mechanism_signal",
-    "processedAt": "2026-06-27T08:21:56",
+    "processedAt": "2026-06-27T12:59:14",
     "processingFolder": "",
     "processedSupplementLinkCount": 0,
     "processedLocalDownloadCount": 0,
@@ -346404,7 +346658,7 @@
     "fuelType": "unknown_fuel",
     "candidate": false,
     "processingStatus": "excluded_no_mechanism_signal",
-    "processedAt": "2026-06-27T08:21:56",
+    "processedAt": "2026-06-27T12:59:14",
     "processingFolder": "",
     "processedSupplementLinkCount": 0,
     "processedLocalDownloadCount": 0,
@@ -346442,7 +346696,7 @@
     "fuelType": "nitric_oxide_n_heptane_pah",
     "candidate": false,
     "processingStatus": "excluded_no_mechanism_signal",
-    "processedAt": "2026-06-27T08:21:56",
+    "processedAt": "2026-06-27T12:59:14",
     "processingFolder": "",
     "processedSupplementLinkCount": 0,
     "processedLocalDownloadCount": 0,
@@ -346482,7 +346736,7 @@
     "fuelType": "unknown_fuel",
     "candidate": false,
     "processingStatus": "excluded_no_mechanism_signal",
-    "processedAt": "2026-06-27T08:21:56",
+    "processedAt": "2026-06-27T12:59:14",
     "processingFolder": "",
     "processedSupplementLinkCount": 0,
     "processedLocalDownloadCount": 0,
@@ -346520,7 +346774,7 @@
     "fuelType": "aluminum",
     "candidate": false,
     "processingStatus": "excluded_no_mechanism_signal",
-    "processedAt": "2026-06-27T08:21:56",
+    "processedAt": "2026-06-27T12:59:14",
     "processingFolder": "",
     "processedSupplementLinkCount": 0,
     "processedLocalDownloadCount": 0,
@@ -346557,7 +346811,7 @@
     "fuelType": "ethane",
     "candidate": true,
     "processingStatus": "excluded_no_supplement_found",
-    "processedAt": "2026-06-27T08:21:56",
+    "processedAt": "2026-06-27T12:59:14",
     "processingFolder": "",
     "processedSupplementLinkCount": 0,
     "processedLocalDownloadCount": 0,
@@ -346574,7 +346828,11 @@
     "processingMechanismFileCount": 0,
     "processingThermoFileCount": 0,
     "processingTransportFileCount": 0,
-    "processingSkipReason": "reused existing terminal processing state from collection_index.csv"
+    "processingSkipReason": "reused existing terminal processing state from collection_index.csv",
+    "supplementProbeStatus": "no_links",
+    "supplementProbeCheckedAt": "2026-06-27T12:58:09",
+    "supplementProbeMaxMmc": 12,
+    "supplementProbeMethod": "direct-ars"
   },
   {
     "year": "2006",
@@ -346594,7 +346852,7 @@
     "fuelType": "unknown_fuel",
     "candidate": true,
     "processingStatus": "excluded_no_supplement_found",
-    "processedAt": "2026-06-27T08:21:56",
+    "processedAt": "2026-06-27T12:59:14",
     "processingFolder": "",
     "processedSupplementLinkCount": 0,
     "processedLocalDownloadCount": 0,
@@ -346611,7 +346869,17 @@
     "processingMechanismFileCount": 0,
     "processingThermoFileCount": 0,
     "processingTransportFileCount": 0,
-    "processingSkipReason": "reused existing terminal processing state from collection_index.csv"
+    "processingSkipReason": "reused existing terminal processing state from collection_index.csv",
+    "probeErrors": [
+      {
+        "url": "https://ars.els-cdn.com/content/image/1-s2.0-S0010218005003068-mmc1.7z",
+        "error": "<urlopen error _ssl.c:1015: The handshake operation timed out>"
+      }
+    ],
+    "supplementProbeStatus": "error",
+    "supplementProbeCheckedAt": "2026-06-27T12:58:12",
+    "supplementProbeMaxMmc": 12,
+    "supplementProbeMethod": "direct-ars"
   },
   {
     "year": "2006",
@@ -346631,7 +346899,7 @@
     "fuelType": "unknown_fuel",
     "candidate": false,
     "processingStatus": "excluded_no_mechanism_signal",
-    "processedAt": "2026-06-27T08:21:56",
+    "processedAt": "2026-06-27T12:59:14",
     "processingFolder": "",
     "processedSupplementLinkCount": 0,
     "processedLocalDownloadCount": 0,
@@ -346668,7 +346936,7 @@
     "fuelType": "unknown_fuel",
     "candidate": false,
     "processingStatus": "excluded_no_mechanism_signal",
-    "processedAt": "2026-06-27T08:21:56",
+    "processedAt": "2026-06-27T12:59:14",
     "processingFolder": "",
     "processedSupplementLinkCount": 0,
     "processedLocalDownloadCount": 0,
@@ -346707,7 +346975,7 @@
     "fuelType": "unknown_fuel",
     "candidate": false,
     "processingStatus": "excluded_no_mechanism_signal",
-    "processedAt": "2026-06-27T08:21:56",
+    "processedAt": "2026-06-27T12:59:14",
     "processingFolder": "",
     "processedSupplementLinkCount": 0,
     "processedLocalDownloadCount": 0,
@@ -346747,7 +347015,7 @@
     "fuelType": "unknown_fuel",
     "candidate": false,
     "processingStatus": "excluded_no_mechanism_signal",
-    "processedAt": "2026-06-27T08:21:56",
+    "processedAt": "2026-06-27T12:59:14",
     "processingFolder": "",
     "processedSupplementLinkCount": 0,
     "processedLocalDownloadCount": 0,
@@ -346787,7 +347055,7 @@
     "fuelType": "unknown_fuel",
     "candidate": false,
     "processingStatus": "excluded_no_mechanism_signal",
-    "processedAt": "2026-06-27T08:21:56",
+    "processedAt": "2026-06-27T12:59:14",
     "processingFolder": "",
     "processedSupplementLinkCount": 0,
     "processedLocalDownloadCount": 0,
@@ -346867,7 +347135,7 @@
     "fuelType": "iso_octane_hexene",
     "candidate": true,
     "processingStatus": "excluded_no_supplement_found",
-    "processedAt": "2026-06-27T08:21:56",
+    "processedAt": "2026-06-27T12:59:14",
     "processingFolder": "",
     "processedSupplementLinkCount": 0,
     "processedLocalDownloadCount": 0,
@@ -346884,7 +347152,11 @@
     "processingMechanismFileCount": 0,
     "processingThermoFileCount": 0,
     "processingTransportFileCount": 0,
-    "processingSkipReason": "reused existing terminal processing state from collection_index.csv"
+    "processingSkipReason": "reused existing terminal processing state from collection_index.csv",
+    "supplementProbeStatus": "no_links",
+    "supplementProbeCheckedAt": "2026-06-27T12:58:14",
+    "supplementProbeMaxMmc": 12,
+    "supplementProbeMethod": "direct-ars"
   },
   {
     "year": "2016",
@@ -346946,7 +347218,7 @@
     "fuelType": "propane",
     "candidate": false,
     "processingStatus": "excluded_no_mechanism_signal",
-    "processedAt": "2026-06-27T08:21:56",
+    "processedAt": "2026-06-27T12:59:14",
     "processingFolder": "",
     "processedSupplementLinkCount": 0,
     "processedLocalDownloadCount": 0,
@@ -346986,7 +347258,7 @@
     "fuelType": "methane",
     "candidate": false,
     "processingStatus": "excluded_no_mechanism_signal",
-    "processedAt": "2026-06-27T08:21:56",
+    "processedAt": "2026-06-27T12:59:14",
     "processingFolder": "",
     "processedSupplementLinkCount": 0,
     "processedLocalDownloadCount": 0,
@@ -347094,7 +347366,7 @@
     "fuelType": "aluminum",
     "candidate": false,
     "processingStatus": "excluded_no_mechanism_signal",
-    "processedAt": "2026-06-27T08:21:56",
+    "processedAt": "2026-06-27T12:59:14",
     "processingFolder": "",
     "processedSupplementLinkCount": 0,
     "processedLocalDownloadCount": 0,
@@ -347130,7 +347402,7 @@
     "fuelType": "unknown_fuel",
     "candidate": false,
     "processingStatus": "excluded_no_mechanism_signal",
-    "processedAt": "2026-06-27T08:21:56",
+    "processedAt": "2026-06-27T12:59:14",
     "processingFolder": "",
     "processedSupplementLinkCount": 0,
     "processedLocalDownloadCount": 0,
@@ -347168,7 +347440,7 @@
     "fuelType": "n_heptane",
     "candidate": true,
     "processingStatus": "excluded_no_supplement_found",
-    "processedAt": "2026-06-27T08:21:56",
+    "processedAt": "2026-06-27T12:59:14",
     "processingFolder": "",
     "processedSupplementLinkCount": 0,
     "processedLocalDownloadCount": 0,
@@ -347185,7 +347457,11 @@
     "processingMechanismFileCount": 0,
     "processingThermoFileCount": 0,
     "processingTransportFileCount": 0,
-    "processingSkipReason": "reused existing terminal processing state from collection_index.csv"
+    "processingSkipReason": "reused existing terminal processing state from collection_index.csv",
+    "supplementProbeStatus": "no_links",
+    "supplementProbeCheckedAt": "2026-06-27T12:58:15",
+    "supplementProbeMaxMmc": 12,
+    "supplementProbeMethod": "direct-ars"
   },
   {
     "year": "2006",
@@ -347205,7 +347481,7 @@
     "fuelType": "unknown_fuel",
     "candidate": false,
     "processingStatus": "excluded_no_mechanism_signal",
-    "processedAt": "2026-06-27T08:21:56",
+    "processedAt": "2026-06-27T12:59:14",
     "processingFolder": "",
     "processedSupplementLinkCount": 0,
     "processedLocalDownloadCount": 0,
@@ -347245,7 +347521,7 @@
     "fuelType": "hydrogen",
     "candidate": true,
     "processingStatus": "excluded_no_supplement_found",
-    "processedAt": "2026-06-27T08:21:57",
+    "processedAt": "2026-06-27T12:59:14",
     "processingFolder": "",
     "processedSupplementLinkCount": 0,
     "processedLocalDownloadCount": 0,
@@ -347262,7 +347538,11 @@
     "processingMechanismFileCount": 0,
     "processingThermoFileCount": 0,
     "processingTransportFileCount": 0,
-    "processingSkipReason": "reused existing terminal processing state from collection_index.csv"
+    "processingSkipReason": "reused existing terminal processing state from collection_index.csv",
+    "supplementProbeStatus": "no_links",
+    "supplementProbeCheckedAt": "2026-06-27T12:58:17",
+    "supplementProbeMaxMmc": 12,
+    "supplementProbeMethod": "direct-ars"
   },
   {
     "year": "2006",
@@ -347284,7 +347564,7 @@
     "fuelType": "unknown_fuel",
     "candidate": false,
     "processingStatus": "excluded_no_mechanism_signal",
-    "processedAt": "2026-06-27T08:21:57",
+    "processedAt": "2026-06-27T12:59:14",
     "processingFolder": "",
     "processedSupplementLinkCount": 0,
     "processedLocalDownloadCount": 0,
@@ -347361,7 +347641,7 @@
     "fuelType": "propane",
     "candidate": false,
     "processingStatus": "excluded_no_mechanism_signal",
-    "processedAt": "2026-06-27T08:21:57",
+    "processedAt": "2026-06-27T12:59:14",
     "processingFolder": "",
     "processedSupplementLinkCount": 0,
     "processedLocalDownloadCount": 0,
@@ -347436,7 +347716,7 @@
     "fuelType": "unknown_fuel",
     "candidate": false,
     "processingStatus": "excluded_no_mechanism_signal",
-    "processedAt": "2026-06-27T08:21:57",
+    "processedAt": "2026-06-27T12:59:14",
     "processingFolder": "",
     "processedSupplementLinkCount": 0,
     "processedLocalDownloadCount": 0,
@@ -347475,7 +347755,7 @@
     "fuelType": "ethylene",
     "candidate": false,
     "processingStatus": "excluded_no_mechanism_signal",
-    "processedAt": "2026-06-27T08:21:57",
+    "processedAt": "2026-06-27T12:59:14",
     "processingFolder": "",
     "processedSupplementLinkCount": 0,
     "processedLocalDownloadCount": 0,
@@ -347551,7 +347831,7 @@
     "fuelType": "unknown_fuel",
     "candidate": true,
     "processingStatus": "excluded_no_supplement_found",
-    "processedAt": "2026-06-27T08:21:57",
+    "processedAt": "2026-06-27T12:59:14",
     "processingFolder": "",
     "processedSupplementLinkCount": 0,
     "processedLocalDownloadCount": 0,
@@ -347568,7 +347848,11 @@
     "processingMechanismFileCount": 0,
     "processingThermoFileCount": 0,
     "processingTransportFileCount": 0,
-    "processingSkipReason": "reused existing terminal processing state from collection_index.csv"
+    "processingSkipReason": "reused existing terminal processing state from collection_index.csv",
+    "supplementProbeStatus": "no_links",
+    "supplementProbeCheckedAt": "2026-06-27T12:58:20",
+    "supplementProbeMaxMmc": 12,
+    "supplementProbeMethod": "direct-ars"
   },
   {
     "year": "2006",
@@ -347705,7 +347989,7 @@
     "fuelType": "propane",
     "candidate": false,
     "processingStatus": "excluded_no_mechanism_signal",
-    "processedAt": "2026-06-27T08:21:57",
+    "processedAt": "2026-06-27T12:59:14",
     "processingFolder": "",
     "processedSupplementLinkCount": 0,
     "processedLocalDownloadCount": 0,
@@ -347821,7 +348105,7 @@
     "fuelType": "unknown_fuel",
     "candidate": true,
     "processingStatus": "excluded_no_supplement_found",
-    "processedAt": "2026-06-27T08:21:57",
+    "processedAt": "2026-06-27T12:59:14",
     "processingFolder": "",
     "processedSupplementLinkCount": 0,
     "processedLocalDownloadCount": 0,
@@ -347838,7 +348122,11 @@
     "processingMechanismFileCount": 0,
     "processingThermoFileCount": 0,
     "processingTransportFileCount": 0,
-    "processingSkipReason": "reused existing terminal processing state from collection_index.csv"
+    "processingSkipReason": "reused existing terminal processing state from collection_index.csv",
+    "supplementProbeStatus": "no_links",
+    "supplementProbeCheckedAt": "2026-06-27T12:58:21",
+    "supplementProbeMaxMmc": 12,
+    "supplementProbeMethod": "direct-ars"
   },
   {
     "year": "2006",
@@ -347860,7 +348148,7 @@
     "fuelType": "unknown_fuel",
     "candidate": false,
     "processingStatus": "excluded_no_mechanism_signal",
-    "processedAt": "2026-06-27T08:21:57",
+    "processedAt": "2026-06-27T12:59:14",
     "processingFolder": "",
     "processedSupplementLinkCount": 0,
     "processedLocalDownloadCount": 0,
@@ -347897,7 +348185,7 @@
     "fuelType": "hydrogen",
     "candidate": true,
     "processingStatus": "excluded_no_supplement_found",
-    "processedAt": "2026-06-27T08:21:57",
+    "processedAt": "2026-06-27T12:59:14",
     "processingFolder": "",
     "processedSupplementLinkCount": 0,
     "processedLocalDownloadCount": 0,
@@ -347914,7 +348202,11 @@
     "processingMechanismFileCount": 0,
     "processingThermoFileCount": 0,
     "processingTransportFileCount": 0,
-    "processingSkipReason": "reused existing terminal processing state from collection_index.csv"
+    "processingSkipReason": "reused existing terminal processing state from collection_index.csv",
+    "supplementProbeStatus": "no_links",
+    "supplementProbeCheckedAt": "2026-06-27T12:58:22",
+    "supplementProbeMaxMmc": 12,
+    "supplementProbeMethod": "direct-ars"
   },
   {
     "year": "2006",
@@ -347936,7 +348228,7 @@
     "fuelType": "unknown_fuel",
     "candidate": false,
     "processingStatus": "excluded_no_mechanism_signal",
-    "processedAt": "2026-06-27T08:21:57",
+    "processedAt": "2026-06-27T12:59:14",
     "processingFolder": "",
     "processedSupplementLinkCount": 0,
     "processedLocalDownloadCount": 0,
@@ -348015,7 +348307,7 @@
     "fuelType": "unknown_fuel",
     "candidate": false,
     "processingStatus": "excluded_no_mechanism_signal",
-    "processedAt": "2026-06-27T08:21:57",
+    "processedAt": "2026-06-27T12:59:14",
     "processingFolder": "",
     "processedSupplementLinkCount": 0,
     "processedLocalDownloadCount": 0,
@@ -348055,7 +348347,7 @@
     "fuelType": "coal",
     "candidate": false,
     "processingStatus": "excluded_no_mechanism_signal",
-    "processedAt": "2026-06-27T08:21:57",
+    "processedAt": "2026-06-27T12:59:14",
     "processingFolder": "",
     "processedSupplementLinkCount": 0,
     "processedLocalDownloadCount": 0,
@@ -348092,7 +348384,7 @@
     "fuelType": "iron",
     "candidate": false,
     "processingStatus": "excluded_no_mechanism_signal",
-    "processedAt": "2026-06-27T08:21:57",
+    "processedAt": "2026-06-27T12:59:14",
     "processingFolder": "",
     "processedSupplementLinkCount": 0,
     "processedLocalDownloadCount": 0,
@@ -348132,7 +348424,7 @@
     "fuelType": "iso_octane_n_octane",
     "candidate": false,
     "processingStatus": "excluded_no_mechanism_signal",
-    "processedAt": "2026-06-27T08:21:57",
+    "processedAt": "2026-06-27T12:59:14",
     "processingFolder": "",
     "processedSupplementLinkCount": 0,
     "processedLocalDownloadCount": 0,
@@ -348245,7 +348537,7 @@
     "fuelType": "aluminum",
     "candidate": false,
     "processingStatus": "excluded_no_mechanism_signal",
-    "processedAt": "2026-06-27T08:21:57",
+    "processedAt": "2026-06-27T12:59:14",
     "processingFolder": "",
     "processedSupplementLinkCount": 0,
     "processedLocalDownloadCount": 0,
@@ -348282,7 +348574,7 @@
     "fuelType": "unknown_fuel",
     "candidate": false,
     "processingStatus": "excluded_no_mechanism_signal",
-    "processedAt": "2026-06-27T08:21:57",
+    "processedAt": "2026-06-27T12:59:14",
     "processingFolder": "",
     "processedSupplementLinkCount": 0,
     "processedLocalDownloadCount": 0,
@@ -348320,7 +348612,7 @@
     "fuelType": "unknown_fuel",
     "candidate": false,
     "processingStatus": "excluded_no_mechanism_signal",
-    "processedAt": "2026-06-27T08:21:57",
+    "processedAt": "2026-06-27T12:59:14",
     "processingFolder": "",
     "processedSupplementLinkCount": 0,
     "processedLocalDownloadCount": 0,
@@ -348391,7 +348683,7 @@
     "fuelType": "unknown_fuel",
     "candidate": false,
     "processingStatus": "excluded_no_mechanism_signal",
-    "processedAt": "2026-06-27T08:21:57",
+    "processedAt": "2026-06-27T12:59:14",
     "processingFolder": "",
     "processedSupplementLinkCount": 0,
     "processedLocalDownloadCount": 0,
@@ -348428,7 +348720,7 @@
     "fuelType": "unknown_fuel",
     "candidate": false,
     "processingStatus": "excluded_no_mechanism_signal",
-    "processedAt": "2026-06-27T08:21:57",
+    "processedAt": "2026-06-27T12:59:14",
     "processingFolder": "",
     "processedSupplementLinkCount": 0,
     "processedLocalDownloadCount": 0,
@@ -348466,7 +348758,7 @@
     "fuelType": "n_heptane",
     "candidate": true,
     "processingStatus": "excluded_no_supplement_found",
-    "processedAt": "2026-06-27T08:21:57",
+    "processedAt": "2026-06-27T12:59:14",
     "processingFolder": "",
     "processedSupplementLinkCount": 0,
     "processedLocalDownloadCount": 0,
@@ -348483,7 +348775,11 @@
     "processingMechanismFileCount": 0,
     "processingThermoFileCount": 0,
     "processingTransportFileCount": 0,
-    "processingSkipReason": "reused existing terminal processing state from collection_index.csv"
+    "processingSkipReason": "reused existing terminal processing state from collection_index.csv",
+    "supplementProbeStatus": "no_links",
+    "supplementProbeCheckedAt": "2026-06-27T12:58:24",
+    "supplementProbeMaxMmc": 12,
+    "supplementProbeMethod": "direct-ars"
   },
   {
     "year": "2006",
@@ -348505,7 +348801,7 @@
     "fuelType": "unknown_fuel",
     "candidate": false,
     "processingStatus": "excluded_no_mechanism_signal",
-    "processedAt": "2026-06-27T08:21:57",
+    "processedAt": "2026-06-27T12:59:14",
     "processingFolder": "",
     "processedSupplementLinkCount": 0,
     "processedLocalDownloadCount": 0,
@@ -348546,7 +348842,7 @@
     "fuelType": "unknown_fuel",
     "candidate": false,
     "processingStatus": "excluded_no_mechanism_signal",
-    "processedAt": "2026-06-27T08:21:57",
+    "processedAt": "2026-06-27T12:59:14",
     "processingFolder": "",
     "processedSupplementLinkCount": 0,
     "processedLocalDownloadCount": 0,
@@ -348586,7 +348882,7 @@
     "fuelType": "unknown_fuel",
     "candidate": true,
     "processingStatus": "excluded_no_supplement_found",
-    "processedAt": "2026-06-27T08:21:57",
+    "processedAt": "2026-06-27T12:59:14",
     "processingFolder": "",
     "processedSupplementLinkCount": 0,
     "processedLocalDownloadCount": 0,
@@ -348603,7 +348899,11 @@
     "processingMechanismFileCount": 0,
     "processingThermoFileCount": 0,
     "processingTransportFileCount": 0,
-    "processingSkipReason": "reused existing terminal processing state from collection_index.csv"
+    "processingSkipReason": "reused existing terminal processing state from collection_index.csv",
+    "supplementProbeStatus": "no_links",
+    "supplementProbeCheckedAt": "2026-06-27T12:58:26",
+    "supplementProbeMaxMmc": 12,
+    "supplementProbeMethod": "direct-ars"
   },
   {
     "year": "2006",
@@ -348624,7 +348924,7 @@
     "fuelType": "unknown_fuel",
     "candidate": false,
     "processingStatus": "excluded_no_mechanism_signal",
-    "processedAt": "2026-06-27T08:21:57",
+    "processedAt": "2026-06-27T12:59:14",
     "processingFolder": "",
     "processedSupplementLinkCount": 0,
     "processedLocalDownloadCount": 0,
@@ -348703,7 +349003,7 @@
     "fuelType": "unknown_fuel",
     "candidate": false,
     "processingStatus": "excluded_no_mechanism_signal",
-    "processedAt": "2026-06-27T08:21:57",
+    "processedAt": "2026-06-27T12:59:14",
     "processingFolder": "",
     "processedSupplementLinkCount": 0,
     "processedLocalDownloadCount": 0,
@@ -348742,7 +349042,7 @@
     "fuelType": "unknown_fuel",
     "candidate": false,
     "processingStatus": "excluded_no_mechanism_signal",
-    "processedAt": "2026-06-27T08:21:57",
+    "processedAt": "2026-06-27T12:59:14",
     "processingFolder": "",
     "processedSupplementLinkCount": 0,
     "processedLocalDownloadCount": 0,
@@ -348783,7 +349083,7 @@
     "fuelType": "unknown_fuel",
     "candidate": false,
     "processingStatus": "excluded_no_mechanism_signal",
-    "processedAt": "2026-06-27T08:21:57",
+    "processedAt": "2026-06-27T12:59:14",
     "processingFolder": "",
     "processedSupplementLinkCount": 0,
     "processedLocalDownloadCount": 0,
@@ -348824,7 +349124,7 @@
     "fuelType": "hydrogen",
     "candidate": true,
     "processingStatus": "excluded_no_supplement_found",
-    "processedAt": "2026-06-27T08:21:57",
+    "processedAt": "2026-06-27T12:59:15",
     "processingFolder": "",
     "processedSupplementLinkCount": 0,
     "processedLocalDownloadCount": 0,
@@ -348841,7 +349141,11 @@
     "processingMechanismFileCount": 0,
     "processingThermoFileCount": 0,
     "processingTransportFileCount": 0,
-    "processingSkipReason": "reused existing terminal processing state from collection_index.csv"
+    "processingSkipReason": "reused existing terminal processing state from collection_index.csv",
+    "supplementProbeStatus": "no_links",
+    "supplementProbeCheckedAt": "2026-06-27T12:58:27",
+    "supplementProbeMaxMmc": 12,
+    "supplementProbeMethod": "direct-ars"
   },
   {
     "year": "2006",
@@ -348904,7 +349208,7 @@
     "fuelType": "hydrogen",
     "candidate": false,
     "processingStatus": "excluded_no_mechanism_signal",
-    "processedAt": "2026-06-27T08:21:57",
+    "processedAt": "2026-06-27T12:59:15",
     "processingFolder": "",
     "processedSupplementLinkCount": 0,
     "processedLocalDownloadCount": 0,
@@ -348941,7 +349245,7 @@
     "fuelType": "unknown_fuel",
     "candidate": false,
     "processingStatus": "excluded_no_mechanism_signal",
-    "processedAt": "2026-06-27T08:21:57",
+    "processedAt": "2026-06-27T12:59:15",
     "processingFolder": "",
     "processedSupplementLinkCount": 0,
     "processedLocalDownloadCount": 0,
@@ -349057,7 +349361,7 @@
     "fuelType": "unknown_fuel",
     "candidate": false,
     "processingStatus": "excluded_no_mechanism_signal",
-    "processedAt": "2026-06-27T08:21:57",
+    "processedAt": "2026-06-27T12:59:15",
     "processingFolder": "",
     "processedSupplementLinkCount": 0,
     "processedLocalDownloadCount": 0,
@@ -349094,7 +349398,7 @@
     "fuelType": "unknown_fuel",
     "candidate": false,
     "processingStatus": "excluded_no_mechanism_signal",
-    "processedAt": "2026-06-27T08:21:57",
+    "processedAt": "2026-06-27T12:59:15",
     "processingFolder": "",
     "processedSupplementLinkCount": 0,
     "processedLocalDownloadCount": 0,
@@ -349131,7 +349435,7 @@
     "fuelType": "gasoline",
     "candidate": false,
     "processingStatus": "excluded_no_mechanism_signal",
-    "processedAt": "2026-06-27T08:21:57",
+    "processedAt": "2026-06-27T12:59:15",
     "processingFolder": "",
     "processedSupplementLinkCount": 0,
     "processedLocalDownloadCount": 0,
@@ -349169,7 +349473,7 @@
     "fuelType": "unknown_fuel",
     "candidate": false,
     "processingStatus": "excluded_no_mechanism_signal",
-    "processedAt": "2026-06-27T08:21:57",
+    "processedAt": "2026-06-27T12:59:15",
     "processingFolder": "",
     "processedSupplementLinkCount": 0,
     "processedLocalDownloadCount": 0,
@@ -349207,7 +349511,7 @@
     "fuelType": "ethylene_ethanol_pah",
     "candidate": false,
     "processingStatus": "excluded_no_mechanism_signal",
-    "processedAt": "2026-06-27T08:21:57",
+    "processedAt": "2026-06-27T12:59:15",
     "processingFolder": "",
     "processedSupplementLinkCount": 0,
     "processedLocalDownloadCount": 0,
@@ -349301,7 +349605,7 @@
     "fuelType": "methane",
     "candidate": false,
     "processingStatus": "excluded_no_mechanism_signal",
-    "processedAt": "2026-06-27T08:21:57",
+    "processedAt": "2026-06-27T12:59:15",
     "processingFolder": "",
     "processedSupplementLinkCount": 0,
     "processedLocalDownloadCount": 0,
@@ -349373,7 +349677,7 @@
     "fuelType": "unknown_fuel",
     "candidate": false,
     "processingStatus": "excluded_no_mechanism_signal",
-    "processedAt": "2026-06-27T08:21:57",
+    "processedAt": "2026-06-27T12:59:15",
     "processingFolder": "",
     "processedSupplementLinkCount": 0,
     "processedLocalDownloadCount": 0,
@@ -349410,7 +349714,7 @@
     "fuelType": "unknown_fuel",
     "candidate": false,
     "processingStatus": "excluded_no_mechanism_signal",
-    "processedAt": "2026-06-27T08:21:57",
+    "processedAt": "2026-06-27T12:59:15",
     "processingFolder": "",
     "processedSupplementLinkCount": 0,
     "processedLocalDownloadCount": 0,
@@ -349447,7 +349751,7 @@
     "fuelType": "n_heptane",
     "candidate": true,
     "processingStatus": "excluded_no_supplement_found",
-    "processedAt": "2026-06-27T08:21:57",
+    "processedAt": "2026-06-27T12:59:15",
     "processingFolder": "",
     "processedSupplementLinkCount": 0,
     "processedLocalDownloadCount": 0,
@@ -349464,7 +349768,17 @@
     "processingMechanismFileCount": 0,
     "processingThermoFileCount": 0,
     "processingTransportFileCount": 0,
-    "processingSkipReason": "reused existing terminal processing state from collection_index.csv"
+    "processingSkipReason": "reused existing terminal processing state from collection_index.csv",
+    "probeErrors": [
+      {
+        "url": "https://ars.els-cdn.com/content/image/1-s2.0-S0010218006000903-mmc1.dat",
+        "error": "<urlopen error _ssl.c:1015: The handshake operation timed out>"
+      }
+    ],
+    "supplementProbeStatus": "error",
+    "supplementProbeCheckedAt": "2026-06-27T12:58:30",
+    "supplementProbeMaxMmc": 12,
+    "supplementProbeMethod": "direct-ars"
   },
   {
     "year": "2006",
@@ -349484,7 +349798,7 @@
     "fuelType": "unknown_fuel",
     "candidate": false,
     "processingStatus": "excluded_no_mechanism_signal",
-    "processedAt": "2026-06-27T08:21:57",
+    "processedAt": "2026-06-27T12:59:15",
     "processingFolder": "",
     "processedSupplementLinkCount": 0,
     "processedLocalDownloadCount": 0,
@@ -349560,7 +349874,7 @@
     "fuelType": "unknown_fuel",
     "candidate": false,
     "processingStatus": "excluded_no_mechanism_signal",
-    "processedAt": "2026-06-27T08:21:57",
+    "processedAt": "2026-06-27T12:59:15",
     "processingFolder": "",
     "processedSupplementLinkCount": 0,
     "processedLocalDownloadCount": 0,
@@ -349597,7 +349911,7 @@
     "fuelType": "unknown_fuel",
     "candidate": false,
     "processingStatus": "excluded_no_mechanism_signal",
-    "processedAt": "2026-06-27T08:21:57",
+    "processedAt": "2026-06-27T12:59:15",
     "processingFolder": "",
     "processedSupplementLinkCount": 0,
     "processedLocalDownloadCount": 0,
@@ -349636,7 +349950,7 @@
     "fuelType": "biodiesel_diesel",
     "candidate": true,
     "processingStatus": "excluded_no_supplement_found",
-    "processedAt": "2026-06-27T08:21:57",
+    "processedAt": "2026-06-27T12:59:15",
     "processingFolder": "",
     "processedSupplementLinkCount": 0,
     "processedLocalDownloadCount": 0,
@@ -349653,7 +349967,17 @@
     "processingMechanismFileCount": 0,
     "processingThermoFileCount": 0,
     "processingTransportFileCount": 0,
-    "processingSkipReason": "reused existing terminal processing state from collection_index.csv"
+    "processingSkipReason": "reused existing terminal processing state from collection_index.csv",
+    "probeErrors": [
+      {
+        "url": "https://ars.els-cdn.com/content/image/1-s2.0-S0010218006001672-mmc1.xls",
+        "error": "<urlopen error _ssl.c:1015: The handshake operation timed out>"
+      }
+    ],
+    "supplementProbeStatus": "error",
+    "supplementProbeCheckedAt": "2026-06-27T12:58:33",
+    "supplementProbeMaxMmc": 12,
+    "supplementProbeMethod": "direct-ars"
   },
   {
     "year": "2006",
@@ -349675,7 +349999,7 @@
     "fuelType": "unknown_fuel",
     "candidate": false,
     "processingStatus": "excluded_no_mechanism_signal",
-    "processedAt": "2026-06-27T08:21:57",
+    "processedAt": "2026-06-27T12:59:15",
     "processingFolder": "",
     "processedSupplementLinkCount": 0,
     "processedLocalDownloadCount": 0,
@@ -349792,7 +350116,7 @@
     "fuelType": "unknown_fuel",
     "candidate": false,
     "processingStatus": "excluded_no_mechanism_signal",
-    "processedAt": "2026-06-27T08:21:57",
+    "processedAt": "2026-06-27T12:59:15",
     "processingFolder": "",
     "processedSupplementLinkCount": 0,
     "processedLocalDownloadCount": 0,
@@ -349829,7 +350153,7 @@
     "fuelType": "coal",
     "candidate": false,
     "processingStatus": "excluded_no_mechanism_signal",
-    "processedAt": "2026-06-27T08:21:57",
+    "processedAt": "2026-06-27T12:59:15",
     "processingFolder": "",
     "processedSupplementLinkCount": 0,
     "processedLocalDownloadCount": 0,
@@ -349905,7 +350229,7 @@
     "fuelType": "methanol_ethanol",
     "candidate": false,
     "processingStatus": "excluded_no_mechanism_signal",
-    "processedAt": "2026-06-27T08:21:57",
+    "processedAt": "2026-06-27T12:59:15",
     "processingFolder": "",
     "processedSupplementLinkCount": 0,
     "processedLocalDownloadCount": 0,
@@ -350023,7 +350347,7 @@
     "fuelType": "diesel",
     "candidate": true,
     "processingStatus": "excluded_no_supplement_found",
-    "processedAt": "2026-06-27T08:21:57",
+    "processedAt": "2026-06-27T12:59:15",
     "processingFolder": "",
     "processedSupplementLinkCount": 0,
     "processedLocalDownloadCount": 0,
@@ -350040,7 +350364,11 @@
     "processingMechanismFileCount": 0,
     "processingThermoFileCount": 0,
     "processingTransportFileCount": 0,
-    "processingSkipReason": "reused existing terminal processing state from collection_index.csv"
+    "processingSkipReason": "reused existing terminal processing state from collection_index.csv",
+    "supplementProbeStatus": "no_links",
+    "supplementProbeCheckedAt": "2026-06-27T12:58:36",
+    "supplementProbeMaxMmc": 12,
+    "supplementProbeMethod": "direct-ars"
   },
   {
     "year": "2006",
@@ -350102,7 +350430,7 @@
     "fuelType": "methane_allene_propyne",
     "candidate": false,
     "processingStatus": "excluded_no_mechanism_signal",
-    "processedAt": "2026-06-27T08:21:57",
+    "processedAt": "2026-06-27T12:59:15",
     "processingFolder": "",
     "processedSupplementLinkCount": 0,
     "processedLocalDownloadCount": 0,
@@ -350142,7 +350470,7 @@
     "fuelType": "unknown_fuel",
     "candidate": true,
     "processingStatus": "excluded_no_supplement_found",
-    "processedAt": "2026-06-27T08:21:57",
+    "processedAt": "2026-06-27T12:59:15",
     "processingFolder": "",
     "processedSupplementLinkCount": 0,
     "processedLocalDownloadCount": 0,
@@ -350159,7 +350487,11 @@
     "processingMechanismFileCount": 0,
     "processingThermoFileCount": 0,
     "processingTransportFileCount": 0,
-    "processingSkipReason": "reused existing terminal processing state from collection_index.csv"
+    "processingSkipReason": "reused existing terminal processing state from collection_index.csv",
+    "supplementProbeStatus": "no_links",
+    "supplementProbeCheckedAt": "2026-06-27T12:58:37",
+    "supplementProbeMaxMmc": 12,
+    "supplementProbeMethod": "direct-ars"
   },
   {
     "year": "2006",
@@ -350213,7 +350545,7 @@
     "fuelType": "unknown_fuel",
     "candidate": false,
     "processingStatus": "excluded_no_mechanism_signal",
-    "processedAt": "2026-06-27T08:21:57",
+    "processedAt": "2026-06-27T12:59:15",
     "processingFolder": "",
     "processedSupplementLinkCount": 0,
     "processedLocalDownloadCount": 0,
@@ -350253,7 +350585,7 @@
     "fuelType": "unknown_fuel",
     "candidate": true,
     "processingStatus": "excluded_no_supplement_found",
-    "processedAt": "2026-06-27T08:21:57",
+    "processedAt": "2026-06-27T12:59:15",
     "processingFolder": "",
     "processedSupplementLinkCount": 0,
     "processedLocalDownloadCount": 0,
@@ -350270,7 +350602,11 @@
     "processingMechanismFileCount": 0,
     "processingThermoFileCount": 0,
     "processingTransportFileCount": 0,
-    "processingSkipReason": "reused existing terminal processing state from collection_index.csv"
+    "processingSkipReason": "reused existing terminal processing state from collection_index.csv",
+    "supplementProbeStatus": "no_links",
+    "supplementProbeCheckedAt": "2026-06-27T12:58:39",
+    "supplementProbeMaxMmc": 12,
+    "supplementProbeMethod": "direct-ars"
   },
   {
     "year": "2006",
@@ -350291,7 +350627,7 @@
     "fuelType": "toluene",
     "candidate": false,
     "processingStatus": "excluded_no_mechanism_signal",
-    "processedAt": "2026-06-27T08:21:57",
+    "processedAt": "2026-06-27T12:59:15",
     "processingFolder": "",
     "processedSupplementLinkCount": 0,
     "processedLocalDownloadCount": 0,
@@ -350348,7 +350684,11 @@
     "processingPreprocessStatus": "",
     "processingMechanismFileCount": 0,
     "processingThermoFileCount": 0,
-    "processingTransportFileCount": 0
+    "processingTransportFileCount": 0,
+    "supplementProbeStatus": "no_links",
+    "supplementProbeCheckedAt": "2026-06-27T12:58:40",
+    "supplementProbeMaxMmc": 12,
+    "supplementProbeMethod": "direct-ars"
   },
   {
     "year": "2016",
@@ -350415,7 +350755,7 @@
     "fuelType": "unknown_fuel",
     "candidate": false,
     "processingStatus": "excluded_no_mechanism_signal",
-    "processedAt": "2026-06-27T08:21:57",
+    "processedAt": "2026-06-27T12:59:15",
     "processingFolder": "",
     "processedSupplementLinkCount": 0,
     "processedLocalDownloadCount": 0,
@@ -350604,7 +350944,7 @@
     "fuelType": "methane",
     "candidate": false,
     "processingStatus": "excluded_no_mechanism_signal",
-    "processedAt": "2026-06-27T08:21:57",
+    "processedAt": "2026-06-27T12:59:15",
     "processingFolder": "",
     "processedSupplementLinkCount": 0,
     "processedLocalDownloadCount": 0,
@@ -350643,7 +350983,7 @@
     "fuelType": "unknown_fuel",
     "candidate": false,
     "processingStatus": "excluded_no_mechanism_signal",
-    "processedAt": "2026-06-27T08:21:57",
+    "processedAt": "2026-06-27T12:59:15",
     "processingFolder": "",
     "processedSupplementLinkCount": 0,
     "processedLocalDownloadCount": 0,
@@ -350682,7 +351022,7 @@
     "fuelType": "unknown_fuel",
     "candidate": false,
     "processingStatus": "excluded_no_mechanism_signal",
-    "processedAt": "2026-06-27T08:21:57",
+    "processedAt": "2026-06-27T12:59:15",
     "processingFolder": "",
     "processedSupplementLinkCount": 0,
     "processedLocalDownloadCount": 0,
@@ -350721,7 +351061,7 @@
     "fuelType": "unknown_fuel",
     "candidate": false,
     "processingStatus": "excluded_no_mechanism_signal",
-    "processedAt": "2026-06-27T08:21:57",
+    "processedAt": "2026-06-27T12:59:15",
     "processingFolder": "",
     "processedSupplementLinkCount": 0,
     "processedLocalDownloadCount": 0,
@@ -350871,7 +351211,7 @@
     "fuelType": "n_octane",
     "candidate": true,
     "processingStatus": "excluded_no_supplement_found",
-    "processedAt": "2026-06-27T08:21:57",
+    "processedAt": "2026-06-27T12:59:15",
     "processingFolder": "",
     "processedSupplementLinkCount": 0,
     "processedLocalDownloadCount": 0,
@@ -350888,7 +351228,11 @@
     "processingMechanismFileCount": 0,
     "processingThermoFileCount": 0,
     "processingTransportFileCount": 0,
-    "processingSkipReason": "reused existing terminal processing state from collection_index.csv"
+    "processingSkipReason": "reused existing terminal processing state from collection_index.csv",
+    "supplementProbeStatus": "no_links",
+    "supplementProbeCheckedAt": "2026-06-27T12:58:42",
+    "supplementProbeMaxMmc": 12,
+    "supplementProbeMethod": "direct-ars"
   },
   {
     "year": "2006",
@@ -350909,7 +351253,7 @@
     "fuelType": "unknown_fuel",
     "candidate": false,
     "processingStatus": "excluded_no_mechanism_signal",
-    "processedAt": "2026-06-27T08:21:57",
+    "processedAt": "2026-06-27T12:59:15",
     "processingFolder": "",
     "processedSupplementLinkCount": 0,
     "processedLocalDownloadCount": 0,
@@ -350948,7 +351292,7 @@
     "fuelType": "coal",
     "candidate": false,
     "processingStatus": "excluded_no_mechanism_signal",
-    "processedAt": "2026-06-27T08:21:57",
+    "processedAt": "2026-06-27T12:59:15",
     "processingFolder": "",
     "processedSupplementLinkCount": 0,
     "processedLocalDownloadCount": 0,
@@ -351026,7 +351370,7 @@
     "fuelType": "unknown_fuel",
     "candidate": false,
     "processingStatus": "excluded_no_mechanism_signal",
-    "processedAt": "2026-06-27T08:21:57",
+    "processedAt": "2026-06-27T12:59:15",
     "processingFolder": "",
     "processedSupplementLinkCount": 0,
     "processedLocalDownloadCount": 0,
@@ -351066,7 +351410,7 @@
     "fuelType": "nitric_oxide_methane",
     "candidate": false,
     "processingStatus": "excluded_no_mechanism_signal",
-    "processedAt": "2026-06-27T08:21:57",
+    "processedAt": "2026-06-27T12:59:15",
     "processingFolder": "",
     "processedSupplementLinkCount": 0,
     "processedLocalDownloadCount": 0,
@@ -351185,7 +351529,7 @@
     "fuelType": "unknown_fuel",
     "candidate": false,
     "processingStatus": "excluded_no_mechanism_signal",
-    "processedAt": "2026-06-27T08:21:57",
+    "processedAt": "2026-06-27T12:59:15",
     "processingFolder": "",
     "processedSupplementLinkCount": 0,
     "processedLocalDownloadCount": 0,
@@ -351257,7 +351601,7 @@
     "fuelType": "unknown_fuel",
     "candidate": false,
     "processingStatus": "excluded_no_mechanism_signal",
-    "processedAt": "2026-06-27T08:21:57",
+    "processedAt": "2026-06-27T12:59:15",
     "processingFolder": "",
     "processedSupplementLinkCount": 0,
     "processedLocalDownloadCount": 0,
@@ -351294,7 +351638,7 @@
     "fuelType": "unknown_fuel",
     "candidate": false,
     "processingStatus": "excluded_no_mechanism_signal",
-    "processedAt": "2026-06-27T08:21:57",
+    "processedAt": "2026-06-27T12:59:15",
     "processingFolder": "",
     "processedSupplementLinkCount": 0,
     "processedLocalDownloadCount": 0,
