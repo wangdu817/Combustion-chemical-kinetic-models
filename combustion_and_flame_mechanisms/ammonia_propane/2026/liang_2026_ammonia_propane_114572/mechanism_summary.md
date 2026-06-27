@@ -22,8 +22,8 @@ Yueying Liang, Zimu Wang, Liang Yu, Xingcai Lu. Experimental and kinetic insight
 - Standard mechanism file: chem.inp
 - Standard thermodynamic file: therm.dat
 - Standard transport file: not available
-- Original mechanism source files: _processing\extracted\s0010218025006091_mmc3\Mech.inp
-- Original thermodynamic source files: _processing\extracted\s0010218025006091_mmc3\Mech.inp
+- Original mechanism source files: _processing/extracted/s0010218025006091_mmc3/Mech.inp
+- Original thermodynamic source files: _processing/extracted/s0010218025006091_mmc3/Mech.inp
 - Original transport source files: not found
 
 ## Cantera Preprocessing Results
@@ -31,9 +31,9 @@ Yueying Liang, Zimu Wang, Liang Yu, Xingcai Lu. Experimental and kinetic insight
 ### Mechanism 1
 
 - Status: cantera_failed
-- Species count: 1836
-- Reaction count: 12838
-- Message: CanteraError:
+- Species count: 612
+- Reaction count: 6668
+- Message: CanteraError: ******************************************************************************* CanteraError thrown by Kinetics::checkDuplicates: Error on lines 6564 and 24117 of /home/icaurs/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/ammonia_propane/2026/liang_2026_ammonia_propane_114572/mechanism.yaml: Undeclared duplicate reactions detected: Reaction 1: H2 + M <=> 2 H + M Reaction 3335: H2 + M <=> 2 H + M | Line | | 6559 | - [4.16893487, 6.17767838e-03, -2.35286422e-06, 3.24605288e-10, | 6560 | -8.03245562e-15, -1.59903892e+04, 3.07758328] | 6561 | note: '\COMMENT:' | 6562 | | 6563 | reactions: > 6564 > - equation: H2 + M <=> 2 H + M # Reaction 1 ^ | 6565 | type: three-body | 6566 | rate-constant: {A: 4.577e+19, b: -1.4, Ea: 1.044e+05} | 6567 | efficiencies: {H2: 2 ... [truncated; see _processing logs]
 - Method: cantera
 - Cantera YAML: mechanism.yaml
 - Standard chem.inp: chem.inp
@@ -46,4 +46,6 @@ Propane is a major component of liquefied petroleum gas. Ignition delay times of
 
 ## Processing Notes
 
-- none
+- extracted S0010218025006091_mmc2.xlsx
+- extracted S0010218025006091_mmc1.docx
+- extracted S0010218025006091_mmc3.zip

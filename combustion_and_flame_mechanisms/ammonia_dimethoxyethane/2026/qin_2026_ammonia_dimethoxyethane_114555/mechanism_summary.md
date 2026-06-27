@@ -22,8 +22,8 @@ Chunlan Qin, Shuyao Chen, Qingbo Zhu, Weijie Xu, ... Lidong Zhang. Kinetic study
 - Standard mechanism file: chem.inp
 - Standard thermodynamic file: therm.dat
 - Standard transport file: not available
-- Original mechanism source files: _processing\extracted\s0010218025005929_mmc2\Liu-SMM3_12DME_mech.inp
-- Original thermodynamic source files: _processing\extracted\s0010218025005929_mmc3\Liu-SMM4_12DME_therm.dat
+- Original mechanism source files: _processing/extracted/s0010218025005929_mmc2/Liu-SMM3_12DME_mech.inp
+- Original thermodynamic source files: _processing/extracted/s0010218025005929_mmc3/Liu-SMM4_12DME_therm.dat
 - Original transport source files: not found
 
 ## Cantera Preprocessing Results
@@ -46,4 +46,6 @@ Ammonia (NH3) is a promising carbon-free green fuel, but faces challenges such a
 
 ## Processing Notes
 
-- none
+- extracted S0010218025005929_mmc3.zip
+- extracted S0010218025005929_mmc2.zip
+- extracted S0010218025005929_mmc1.docx

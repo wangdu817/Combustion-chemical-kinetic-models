@@ -1,0 +1,443 @@
+ELEMENTS
+O  H  C  N  AR  HE 
+END
+SPECIES
+!
+!C0
+ AR        N2        HE        H         H2        H2O       H2O2      O2
+!C1
+ C         CH        CH2       CH2*      CH3       CH4       CH*       CO        CO2
+!C2
+ C2H       C2H2      H2CC      C2H3      C2H4      C2H5      C2H6
+!C3
+ C3H2      C3H3      pC3H4     aC3H4     cC3H4     aC3H5     CH3CCH2   CH3CHCH
+ C3H6      nC3H7     iC3H7     C3H8
+!C4  
+ C4H2      nC4H3     iC4H3     C4H4      nC4H5     iC4H5     C4H5-2    C4H6      
+ C4H612    C4H6-2    SAXC4H7   C4H7      iC4H7     iC4H7-1   C4H7-2     CH3CCHCH3 
+ C4H81     C4H82     iC4H8     pC4H9     sC4H9     iC4H9     tC4H9     
+ C4H10     iC4H10
+!C5
+ C5H3      cC5H4     C5H4      lC5H5     C5H5      C5H6      lC5H7
+!C6
+ C6H2      C6H3      l-C6H4    o-C6H4    nC6H5     A1-       fulvene   A1 
+
+
+!SAXC4H7     CH2=CH-CH*-CH3
+!C4H7        CH2=CH-CH2-CH2*
+!C4H7-2       CH2=C*-CH2-CH3
+!iC4H7       CH2=C(CH3)CH2*
+!iC4H7-1     CH*=C(CH3)2
+!CH3CCHCH3   CH3-C*=CH-CH3
+!A1          C6H6
+!A1-         C6H5-
+REACTIONS
+!
+!                         reactions of C4H81
+ aC3H5+CH3(+M) = C4H81(+M)                    1.00E+14  -0.32     -262.3    !USC Mech II (91TSA)
+                                       LOW  / 3.91E+60 -12.81     6250.0    /
+                                       TROE / 0.104  1606.0 60000.0  6118.4 /
+                           H2/2/ H2O/6/ CH4/2/ CO/1.5/ CO2/2/ C2H6/3/ AR/0.7/
+ C2H5+C2H3(+M) = C4H81(+M)                    1.50E+13   0.00        0.0    !USC Mech II (86TSA/HAM) 
+                                       LOW  / 1.55E+56 -11.79     8984.5    /
+                                       TROE / 0.198 2277.9 60000.0 5723.2   /
+                           H2/2/ H2O/6/ CH4/2/ CO/1.5/ CO2/2/ C2H6/3/ AR/0.7/
+ C4H7+H(+M) = C4H81(+M)                       3.60E+13   0.00         0.0   !USC Mech II (= nC3H7+H)
+                                       LOW  / 3.01E+48  -9.32      5833.6   /
+                                       TROE / 0.498  1314.0  1314.0 50000.0 /
+                           H2/2/ H2O/6/ CH4/2/ CO/1.5/ CO2/2/ C2H6/3/ AR/0.7/
+ C4H81+H=C4H82+H                                    5.00E+14     -0.26       7600.0    !Ref: pC3H4+H = aC3H4+H in USC Mech II
+ SAXC4H7+H=C4H81                                    5.00E+13      0.0        5000.0    !EST
+ C4H7-2+H = C4H81                                   1.00E+13      0.0        0.0       !EST
+ C4H81+H = SAXC4H7+H2                               1.30E+06      2.40       4471.0    !JetSurF 2.0 (C3H8+H)
+ C4H81+H = C4H7+H2                                  1.30E+06      2.4        4470      !Ref C6H12+H=C6H11-5+H2 in 2009 Kiefer et al.
+ C4H81+H = C4H7-2+H2                                4.00E+05      2.50       9790.0    !Ref C3H6+H=CH3CCH2+H2 in USC Mech II (91TSA)
+ C4H81+H = C3H6+CH3                                 3.20E+22	 -2.39       11180     !2009 Kiefer et al. 25Torr
+ C4H81+H = C2H4+C2H5                                8.80E+16     -1.05       6461.0    !Ref C3H6+H=C2H4+CH3 in USC Mech II (91TSA RRKM 0.1 atm)
+ C4H81+CH3 = SAXC4H7+CH4                            2.82E+00      3.60       7153      !Ref C6H12+CH3=SAXC6H11+CH4 in 2009 Kiefer et al.
+ C4H81+CH3 = C4H7+CH4                               4.50E-01      3.65       7153.0    !USC Mech II (C3H8+CH3)
+ C4H81+aC3H5 = SAXC4H7+C3H6                         7.90E+10      0.00       12400     !LLNL
+!
+!                         reactions of C4H82
+ CH3CHCH+CH3(+M) = C4H82(+M)                        5.00E+13      0.0        0.00      !Ref C2H3+CH3(+M)=C3H6(+M)
+                                              LOW  /8.54E+58    -11.940      9769.80 /
+                                              TROE /0.175  1340.6 60000.0    10139.8 /
+               H2/2/ H2O/6/ CH4/2/ CO/1.5/ CO2/2/ C2H6/3/ AR/0.7/C2H2/3.00/ C2H4/3.00/
+ C4H82 = aC3H5+CH3                                  0.75E+66    -15.6        97300     !Assume by this work
+ C4H82+H = SAXC4H7+H2                               3.16E+06      2.5        6756      !Ref C6H12+H=SAXC6H11+H2 in 2009 Kiefer et al. x2   
+ C4H82+H=CH3CCHCH3+H2                               1.32E+06      2.53       12240.0   !Ref C2H4+H=C2H3+H2
+ C4H82 = H+SAXC4H7                                  4.60E+84     -20.03      132787    !Ref C3H6=aC3H5+H in 2009 Kiefer et al. x2 25Torr/5 to 5Torr
+ C4H82+H = C3H6+CH3                                 3.46E+17     -1.05       6461.0    !Ref C3H6+H=C2H4+CH3 x2 in USC Mech II (91TSA RRKM 0.1 atm) 
+ C4H82+CH3 = SAXC4H7+CH4                            4.40E+00      3.50       5675.0    !Ref C3H6+CH3=aC3H5+CH3 x2 in USC Mech II 
+!
+!                         reactions of iC4H8
+ iC4H7+H(+M) = iC4H8(+M)                            2.00E+14      0.00       0.0       !USC Mech II (=(aC3H5+H) TS5 600cm-1)
+                                             LOW  / 1.33E+60 -12.00      5967.8   /
+                                             TROE / 0.020  1096.6  1096.6  6859.5 /
+                                 H2/2/ H2O/6/ CH4/2/ CO/1.5/ CO2/2/ C2H6/3/ AR/0.7/
+ CH3CCH2+CH3 (+M) = iC4H8(+M)                       2.50E+13      0.00       0.0       !USC Mech II (86TSA/HAM) C2H3+CH3 (+M) = C3H6(+M)
+                                              LOW  /4.270E+58    -11.940    9769.80 /
+                                              TROE /0.175  1340.6  60000.0   10139.8 /
+                                    H2/2/ H2O/6/ CH4/2/ CO/1.5/ CO2/2/ C2H6/3/ AR/0.7/
+                                                                 C2H2/3.00/ C2H4/3.00/
+ iC4H8+H = iC4H7+H2                                 1.72E+14      0.0        8000      !2009 Yasunaga et al. 
+ iC4H8+H = iC4H7-1+H2                               1.20E+14      0.0        13000     !2009 Yasunaga et al.
+ iC4H8+H = C3H6+CH3                                 8.80E+16     -1.05       6461.0    !Ref C3H6+H = C2H4+CH3 in USC Mech II (91TSA RRKM 0.1 atm)
+ iC4H8+CH3 = iC4H7+CH4                              4.40E+00       3.50      5675.0    !Ref C3H6+CH3=aC3H5+CH3 x2 in USC Mech II 
+ iC4H8+CH3 = iC4H7-1+CH4                            2.00E+12      0.0        15000     !2009 Yasunaga et al.
+!
+!                         reactions of saxC4H7 C4H7 C4H7-2
+ C4H7(+M) = SAXC4H7(+M)                             5.75E+12      0.0       30400      !2010 Miyoshi
+                                              LOW  /1.17E+15      0.0       8170     / !
+                                              TROE /0.031   50    100000      50000  / 
+ SAXC4H7(+M) = C4H6+H(+M)                           4.70E+08      1.32      44697.6    !USC Mech II (08/TSAwip)
+                                              LOW  /4.6E-37      15.37     -603.1  /   
+                                            H2/2/ H2O/6/ CH4/2/ CO/1.5/ CO2/2/ C2H6/3/ 
+ C4H7(+M)=C4H6+H(+M)                                3.16E+13     0.0       17160       !2010 Miyoshi
+                                              LOW / 1.47E28     -3.683     13890    / 
+                                             TROE / 0.81    50    1150      50000    / 
+ C4H7(+M)=C2H3+C2H4(+M)                             1.78E14       0.0       18590      !2010 Miyoshi
+                                              LOW / 4.2E+37     -6.262     18970   /  
+                                             TROE / 1    50       1670      50000   / 
+ SAXC4H7+CH3=C4H6+CH4                               3.00E+12     -0.32     -131.0      !Ref aC3H5+CH3=aC3H4+CH4 
+ C4H612+H = SAXC4H7                                 1.20E+10      0.69      3000       !2007 Gueniche & Battin et al./10
+ C4H7-2 = SAXC4H7                                   2.00E+12      0.0       47000      !2007 Gueniche & Battin et al./10
+ C4H7-2 = CH3+aC3H4                                 2.00E+12      0.0       32500      !2007 Gueniche & Battin et al./10
+ C4H7-2 = C4H7                                      3.30E+08      1.0       43300      !2007 Gueniche & Battin et al./10
+ C4H612+H = C4H7-2                                  1.30E+12      0.0       3200       !2007 Gueniche & Battin et al./10 
+ CH3CCHCH3=pC3H4+CH3                                2.00E+12      0.0       31500      !2007 Gueniche & Battin et al./10
+!
+!                         reactions of iC4H7  iC4H7-1
+ iC4H7+H = aC3H5+CH3                                2.20E+51     -9.98       37730.0   !USC Mech II
+ iC4H7=aC3H4+CH3                                    0.50E+12      0.0        51000     !2009 Yasunaga et al. /20 to 5 Torr
+ iC4H7-1=pC3H4+CH3                                  1.20E+13      0.0        37000     !2009 Yasunaga et al. /10 to 5 Torr
+ iC4H7+H=aC3H4+CH4                                  6.31E+13      0.0        0.0       !2009 Yasunaga et al.
+ iC4H7-1+H=pC3H4+CH4                                3.00E+13      0.0        0.0       !EST
+ iC4H7-1=iC4H7                                      5.00E+11      0.0        36000     !2009 Yasunaga et al. /10 to 5 Torr   
+ iC4H7=SAXC4H7                                      6.00E+13      0.         70000     !Assume by this work
+ iC4H7+H=SAXC4H7+H                                  1.47E+13      0.26       4103      !Ref aC3H4+H=pC3H4+H
+!
+!                         reactions of C4H6 
+ C2H3+C2H3 = C4H6                                   7.00E+57     -13.82      17629.    !USC Mech II (RRKM 0.026 atm  WAN/FRE)
+ C4H6 = C4H4+H2                                     0.50E+15      0.0        94700.    !USC Mech II (96HID/HIG) /5 to 5 Torr
+ C4H6 = H2CC+C2H4                                   1.00E+13      0.0        85000.0   !Est
+ C4H6+H = nC4H5+H2                                  1.33E+06      2.53       12240.    !USC Mech II
+ C4H6+H = iC4H5+H2                                  6.65E+05      2.53       9240.     !USC Mech II (Estimated)
+ C4H612 = C4H6                                      1.00E+12      0.0        65000     !USC Mech II /30 to 5 Torr
+ C4H612+H = C4H6+H                                  2.00E+13      0.0        4000.     !Est
+ C4H612 = C3H3+CH3                                  7.30E+13      0.0        75400     !BATTIN /10 to 5 Torr
+ C4H612+H = nC4H5+H2                                1.33E+06      2.53       12240.    !USC Mech II (= C2H4+H)
+ C4H612+H = iC4H5+H2                                6.65E+05      2.53       9240.     !USC Mech II (Estimated)
+ C4H6+H = C2H4+C2H3                                 1.46E+30     -4.34       21647.    !USC Mech II (97WAN/FRE 1 atm)
+ C4H6+CH3 = nC4H5+CH4                               2.00E+14      0.0        22800.    !USC Mech II (96HID/HIG)
+ C4H6+CH3 = iC4H5+CH4                               1.00E+14      0.0        19800.    !USC Mech II (96HID/HIG)
+!
+!                         reactions of C4H5
+ nC4H5 = iC4H5                                      2.40E+60     -16.08     47500.     !USC Mech II (10 Torr RRKM WAN/FRE)
+ nC4H5+H = iC4H5+H                                  1.00E+36     -6.26      17486.     !USC Mech II (20 Torr RRKM WAN/FRE)
+ C2H3+C2H2 = nC4H5                                  1.10E+31     -7.14      5600.      !USC Mech II (10 Torr RRKM WAN/FRE)
+ C2H3+C2H2 = C4H4+H                                 5.00E+14     -0.71      6700.      !USC Mech II (20 Torr RRKM WAN/FRE)
+ C2H3+C2H2 = iC4H5                                  5.00E+34     -8.42      7900.      !USC Mech II (10 Torr RRKM WAN/FRE)
+ C4H4+H = iC4H5                                     6.10E+53     -13.19     14200.     !USC Mech II (10 Torr RRKM WAN/FRE)
+ C4H4+H = nC4H5                                     1.20E+51     -12.57     12300.     !USC Mech II (10 Torr RRKM WAN/FRE)
+ C2H3+C2H3 = iC4H5+H                                1.50E+30     -4.95      12958.     !USC Mech II (20 Torr RRKM WAN/FRE)
+ C2H3+C2H3 = nC4H5+H                                1.10E+24     -3.28      12395.     !USC Mech II (20 Torr RRKM WAN/FRE)
+!
+!                         reactions of C4H4
+ H2CC+C2H2(+M) = C4H4(+M)                           3.50E+05      2.055    -2400.      !USC Mech II (99LAS/WAN)
+                                              LOW  /1.40E+60     -12.599    7417.    /
+                                              TROE /0.98 560.     580.      4164.    /
+              H2/2.0/ CH4/2.0/ H2O/6.0/ C2H2/3.0/ CO/1.5/ C2H4/3.0/ C2H6/3.0/ CO2/2.0/
+ C2H3+C2H = C4H4                                    1.00E+14      0.00      0.         !1988 Duran
+ C3H3+CH2* = C4H4+H                                 4.00E+13      0.0       0.0        !2007 Gueniche  & Glaude & Fournet & Battin
+ C4H4+H = nC4H3+H2                                  6.65E+05      2.53      12240.     !USC Mech II (97WAN/FRE)
+ C4H4+H = iC4H3+H2                                  3.33E+05      2.53      9240.      !USC Mech II (97WAN/FRE)
+ C3H3+CH2=C4H4+H                                    5.00E+13      0.00      0.         !2007 Gueniche  & Glaude & Fournet & Battin(1992 Miller)
+ C3H2+CH3=C4H4+H                                    5.00E+12      0.00      0.         !USC Mech II
+!
+!                         reactions of C4H3
+ C2H2+C2H(+M) = nC4H3(+M)                           8.30E+10      0.899    -363.00     !USC Mech II (92WAN)
+                                              LOW  /1.240E+31    -4.718     1871.00  /
+                                              TROE /1.0 100.      5613.     13387.   /
+                                   H2/2.0/ H2O/6.0/ CH4/2.0/ CO/1.5/ CO2/2.0/ C2H6/3.0/ 
+                                                                    C2H2/2.5/ C2H4/2.5/  
+ C2H2+C2H(+M) = iC4H3(+M)                           8.30E+10      0.899    -363.00     !USC Mech II (92WAN)
+                                              LOW  /1.240E+31    -4.718     1871.00  /
+                                              TROE /1.0 100.      5613.     13387.   /
+                                   H2/2.0/ H2O/6.0/ CH4/2.0/ CO/1.5/ CO2/2.0/ C2H6/3.0/ 
+                                                                    C2H2/2.5/ C2H4/2.5/
+ C4H2+H(+M)<=>iC4H3(+M)                             4.31E+10      1.160     1751.91    !USC Mech II (92WAN)
+                                        H2/2.00/ H2O/12.00/ CO2/3.60/ CO/1.75/ AR/0.70/ 
+                                                                   CH4/2.00/ C2H6/3.00/ 
+                                              LOW  /2.30e+45     -8.100     2507.17  /                            
+                                              TROE /0.0748        1.00     -4216.00  /                              
+ C4H2+H = nC4H3                                     1.70E+49     -11.67     12804.0    !USC Mech II (20 Torr RRKM WAN/FRE)
+ C3H3+CH = nC4H3+H                                  5.00E+13      0.0       0.0        !USC Mech II (Estimated)
+ C3H2+CH2 = nC4H3+H                                 5.00E+13      0.0       0.         !USC Mech II (92MIL/MEL)
+ C2H2+C2H2 = C4H2+H2                                1.50E+13      0.0       42700      !2007 Gueniche  & Glaude & Fournet & Battin(Leung 95)
+ C2H2+C2H = C4H2+H                                  9.60E+13      0.00      0.00       !USC Mech II (91SHI/MIC, 92KOS/FUK, 93FAR/MOR)
+!
+!                         reactions of C3H7
+ C3H6+H(+M) = iC3H7(+M)                             1.33E+13      0.00      1559.8     !USC Mech II (91TSA)
+                                              LOW  /8.70E+42     -7.50      4721.8   / 
+                                              TROE /1.000  1000.0   645.4  6844.3     /
+                                     H2/2/ H2O/6/ CH4/2/ CO/1.5/ CO2/2/ C2H6/3/ AR/0.7/
+ iC3H7+H = CH3+C2H5                                 5.90E+23     -2.81       10009.0   !USC Mech II (88TSA RRKM 0.1 atm)
+ nC3H7 = C3H6+H                                     2.00E+27     -5.613     29791      !2009 Kiefer et al. 25Torr /4 to 5 Torr
+ nC3H7 = C2H4+CH3                                   1.23E+19     -3.396     17919      !2009 Kiefer et al. 25Torr /4 to 5 Torr
+!
+!                         reactions of C3H6
+ C2H3+CH3 (+M) = C3H6(+M)                           2.50E+13      0.000     0.00       !USC Mech II (86TSA/HAM)
+                                              LOW  /4.270E+58    -11.940    9769.80 /
+                                              TROE /0.175  1340.6  60000.0   10139.8 /
+                                    H2/2/ H2O/6/ CH4/2/ CO/1.5/ CO2/2/ C2H6/3/ AR/0.7/
+                                                                 C2H2/3.00/ C2H4/3.00/
+ aC3H5+H(+M) = C3H6(+M)                             2.00E+14      0.00      0.0        !USC Mech II (91TSA)
+                                             LOW  / 1.33E+60     -12.00     5967.8  /
+                                             TROE / 0.020  1096.6  1096.6  6859.5 /
+                                    H2/2/ H2O/6/ CH4/2/ CO/1.5/ CO2/2/ C2H6/3/ AR/0.7/                                    
+ C3H6+H = CH3CCH2+H2                                4.00E+05      2.50      9790.0     !USC Mech II (91TSA) 
+ C3H6+H = CH3CHCH+H2                                8.04E+05      2.50      12283.0    !USC Mech II (91TSA)            
+ C3H6+CH3 = CH3CCH2+CH4                             8.40E-01      3.50      11660.0    !USC Mech II (91TSA)
+ C3H6+CH3 = CH3CHCH+CH4                             1.35E+00      3.50      12848.0    !USC Mech II (91TSA)
+ C3H6+H = aC3H5+H2                                  1.73E+05      2.50      2490.0     !USC Mech II (91TSA)
+ C3H6+H = C2H4+CH3                                  8.80E+16     -1.05      6461.0     !USC Mech II (91TSA RRKM 0.1 atm)
+ C3H6+CH3 = aC3H5+CH4                               2.20E+00      3.50      5675.0     !USC Mech II (91TSA)
+ C3H6 = H2 + pC3H4                                  1.18E+95     -23.6      125649     !2009 Kiefer et al.
+ C3H6 = H2 + aC3H4                                  1.18E+95     -23.6      125649     !ref:C3H6 = H2 + pC3H4
+!
+!                         reactions of C3H5
+ pC3H4+H = aC3H5                              1.10E+59 -14.56    28100.0    !99DAV/LAW RRKM 0.1 atm 1.10E+60/10
+ aC3H4+H = aC3H5                              9.60E+60  -14.67   26000.0    !99DAV/LAW RRKM 0.1 atm 9.60E+61/10
+ aC3H5 = CH3CCH2                                    3.90E+59     -15.42     75400.0    !USC Mech II (99DAV/LAW RRKM 0.1 atm)
+ aC3H5 = CH3CHCH                                    1.30E+55     -14.53     73800.0    !USC Mech II (99DAV/LAW RRKM 0.1 atm)
+ C2H5+C2H3 = aC3H5+CH3                              8.00E+25     -3.46      11775.0    !USC Mech II (86TSA/HAM RRKM 0.1 atm)
+ C2H2+CH3 = aC3H5                                   8.20E+53     -13.32     33200.0    !USC Mech II (99DAV/LAW RRKM 0.1 atm)
+ aC3H5+H = aC3H4+H2                                 9.56E+03      2.80      3291.11    !2009 Pitsch
+ aC3H5+CH3 = aC3H4+CH4                              3.00E+12     -0.32     -131.0      !2009 Kifer et al
+ aC3H5+aC3H5 = pC3H4+C3H6                           8.43E+10      0.0      -263        !2009 Kifer et al
+ CH3CCH2 = CH3CHCH                                  1.60E+44     -12.16     52200.0    !USC Mech II (99DAV/LAW RRKM 0.1 atm)
+ H+pC3H4 = CH3CHCH                                  3.38E+50     -12.75     7722       !2008 Miller 30 Torr  /4
+ CH3+C2H2 = CH3CHCH                                 1.70E+49     -12.3      16642      !2008 Miller 30 Torr  /4
+ H+aC3H4 = CH3CCH2                                  0.40E+53     -13.10     14472      !2008 Miller 30 Torr  /4
+ H+pC3H4 = CH3CCH2                                  0.80E+52     -12.69     14226      !2008 Miller 30 Torr  /4
+ C2H2+CH3 = CH3CCH2                                 6.80E+20     -4.16      18000.0    !USC Mech II (99DAV/LAW RRKM 0.1 atm)
+ CH3CCH2+H = aC3H5+H                                1.47E+13      0.26      4103       !Ref aC3H4+H=pC3H4+H
+ CH3CHCH+H = aC3H5+H                                1.47E+13      0.26      4103       !Ref H+aC3H4=H+pC3H4
+!
+!                         reactions of C3H4
+ aC3H4 = C3H3+H                                     5.02E+50     -10.96     102317     !2009 Kiefer et al. 170Torr  /6 to 5 Torr
+ pC3H4 = C3H3+H                                     2.12E+44     -9.06      100390     !2009 Kiefer et al. 155Torr  /6 to 5 Torr
+ pC3H4 = aC3H4                                      6.40E+61     -14.59     88200.0    !USC Mech II (99DAV/LAW RRKM 0.1 atm)
+ aC3H4+H = C3H3+H2                                  6.60E+03      3.1       5522       !2008 Miller
+ pC3H4+H = C3H3+H2                                  3.57E+04      2.8       4821       !2008 Miller
+ aC3H4+CH3 = C3H3+CH4                               6.61E-04      5         8300       !2009 Kiefer et al.
+ pC3H4+CH3 = C3H3+CH4                               2.19E-04      5         8300       !2009 Kiefer et al.
+ H+aC3H4 = H+pC3H4                                  1.47E+13      0.26      4103       !2008 Miller 30 Torr
+ H+aC3H4 = CH3+C2H2                                 2.72E+09      1.2       6834       !2008 Miller 30 Torr
+ H+pC3H4 = C2H2+CH3                                 3.89E+10      0.989     4114       !2008 Miller 30 Torr
+!
+!                         reactions of C3H3 C3H2
+ C3H2+H(+M)<=>C3H3(+M)                              1.02e+13      0.27      279.64     !2009 Pitsch
+                                              LOW  /2.80e+30     -3.860     3319.79 /                          
+                                              TROE /0.782 207.50  2663.00   6095.00 / 
+                                      H2/2.00/ H2O/12.00/ CO2/3.60/ CO/1.75/ AR/0.70/
+                                                                 CH4/2.00/ C2H6/3.00/
+ C3H3+H = C3H2+H2                                   1.00E+13      0.0       1000.      !USC Mech II
+ CH3+C2H = C3H3+H                                   2.41E+13      0.0       0.0        !USC Mech II (86TSA/HAM)
+ C2H2+CH2 = C3H3+H                                  1.20E+13      0.00      6620.00    !USC Mech II (88BOH/TEM; 86FRA/BHA)
+ C2H2+CH2* = C3H3+H                                 2.00E+13      0.00      0.00       !USC Mech II (97WAN/FRE)
+!
+!                         reactions of C2H6 C2H5
+ CH3+CH3(+M) = C2H6(+M)                       2.120E+16   -0.970    620.00  !GRI
+                                      LOW  /  1.770E+50   -9.670   6220.00  /
+                                      TROE/  0.5325  151.0  1038.00  4970.0 /
+                 H2/2.0/ H2O/6.0/ CH4/2.0/ CO/1.5/ CO2/2.0/ C2H6/3.0/ AR/0.7/ 
+ C2H5+H(+M) = C2H6(+M)                              5.21E+17     -0.99      1580.00    !USC Mech II (GRI)
+                                              LOW  /1.99E+41     -7.08      6685.00 /
+                                              TROE /0.8422 125.0  2219.00   6882.0  /
+                         H2/2.0/ H2O/6.0/ CH4/2.0/ CO/1.5/ CO2/2.0/ C2H6/3.0/ AR/0.7/
+ C2H6+H = C2H5+H2                                   1.15E+08      1.900     7530.00    !USC Mech II (GRI)
+ C2H6+CH2* = C2H5+CH3                               4.00E+13      0.000    -550.00     !USC Mech II (GRI)
+ C2H6+CH3 = C2H5+CH4                                6.14E+06      1.740     10450.00   !USC Mech II (GRI)
+ C2H5+H = C2H4+H2                                   4.21E+13      0.00      0.00       !2005 DATA
+ CH3+CH3 = H+C2H5                                   4.99E+12      0.10      10600.00   !USC Mech II (GRI)
+ C2H5+CH3 = C2H4+CH4                                3.00e+12      0.0      -730        !Ref C2H3+CH3 = C2H2+CH4
+!
+!                         reactions of C2H4 C2H3 C2H2
+ C2H4+M = H2+H2CC+M                                 7.86E+14      0.00      54245.0    !JetSurF 2.0 (10PIL/DAV)
+                                                    H2/2.0/ H2O/6.0/ CH4/2.0/ CO/1.5/
+                                                           CO2/2.0/ C2H6/3.0/ AR/0.7/
+ C2H4+H(+M) = C2H5(+M)                              1.37E+09      1.463     1355.00    !USC Mech II (04-MIL-KLI)
+                                              LOW  /2.027E+39   -6.642      5769.00 /
+                                              TROE /-0.569  299.0  9147.0   -152.40 /
+                                                    H2/2.0/ H2O/6.0/ CH4/2.0/ CO/1.5/
+                                                           CO2/2.0/ C2H6/3.0/ AR/0.7/
+ C2H3+H(+M) = C2H4(+M)                              6.08E+12     0.27       280.00     !USC Mech II (GRI1.2)
+                                              LOW  /1.40E+30    -3.86       3320.00 /
+                                              TROE /0.7820 207.50  2663.00  6095.00 /
+                                                    H2/2.0/ H2O/6.0/ CH4/2.0/ CO/1.5/  
+                                     CO2/2.0/ C2H6/3.0/ AR/0.7/ C2H2/3.00/ C2H4/3.00/
+ C2H2(+M) = H2CC(+M)                                8.00E+14     -0.52      50750.0    !USC Mech II (99LAS/WAN)
+                                              LOW  /2.45E+15     -0.64      49700.0/
+                                           H2/2.0/ H2O/6.0/ CH4/2.0/ CO/1.5/ CO2/2.0/
+                                                         C2H6/3.0/C2H2/2.5/ C2H4/2.5/ 
+ C2H3(+M) = C2H2+H(+M)                              3.86E+08     1.62       37048.2    !USC Mech II (96KNY/SLA)
+                                              LOW  /2.56E+27     -3.40      35798.7/
+                                              TROE /1.9816 5383.7  4.2932  -0.0795 /
+                                           H2/2.0/ H2O/6.0/ CH4/2.0/ CO/1.5/ CO2/2.0/
+                                                         C2H6/3.0/ AR/0.7/ C2H2/3.00/ 
+ C2H+H(+M) = C2H2(+M)                               1.00E+17     -1.00      0.00       !USC Mech II (GRI)
+                                              LOW  /3.750E+33    -4.80      1900.00 /
+                                              TROE /0.6464  132.00  1315.00 5566.0  /
+                                           H2/2.0/ H2O/6.0/ CH4/2.0/ CO/1.5/ CO2/2.0/
+                                           C2H6/3.0/ AR/0.7/
+ C2H3+C2H3 = C2H2+C2H4                              9.60E+11      0.00      0.         !USC Mech II (NIST DB)
+ CH3+CH2 = C2H4+H                                   4.00E+13      0.00      0.00       !USC Mech II (GRI)
+ CH4+CH = C2H4+H                                    6.00E+13      0.00      0.00       !USC Mech II (GRI)
+ CH3+CH2* = C2H4+H                                  1.20E+13      0.00     -570.00     !USC Mech II (GRI)
+ H+C2H4<=>C2H3+H2                                   1.32E+06      2.53      12240.0    !USC Mech II (GRI) 
+ C2H4+CH3 = C2H3+CH4                                2.27E+05      2.00      9200.00    !USC Mech II (GRI)
+ C2H3+CH3 = C2H2+CH4                                3.00E+12      0.0      -730        !2002 Knyaze
+ C2H3+H = C2H2+H2                                   9.00E+13      0.00      0.00       !USC Mech II (86TSA/HAM)
+ C2H3+H = H2CC+H2                                   6.00E+13      0.00      0.00       !USC Mech II (Estimated)
+ CH3+CH = C2H3+H                                    3.00E+13      0.00      0.00       !USC Mech II (GRI)
+ 2CH2<=>H2+C2H2                                     1.60E+15      0.00      11944.0    !GRI 3.0
+ C2H+H2 = H+C2H2                                    4.90E+05      2.50      560.00     !USC Mech II (GRI)
+ C2H+CH4 = C2H2+CH3                                 1.81E+12      0.0       500.0      !USC Mech II (86TSA/HAM)
+ CH3+C = C2H2+H                                     5.00E+13      0.00      0.00       !USC Mech II (GRI)
+ H2CC+H = C2H2+H                                    1.00E+14      0.00      0.00       !USC Mech II (Estimated)
+ CH2+C = C2H+H                                      5.00E+13      0.00      0.00       !USC Mech II (GRI)
+!
+!                         reactions of C1
+ H+CH3(+M)<=>CH4(+M)                                1.39E+16     -0.534     536.00     !GRI 3.0
+                                              LOW  /2.62E+33     -4.760     2440.00 /
+                                              TROE /0.7830  74.00  2941.00  6964.00 /
+                                                H2/2.00/ H2O/6.00/ CH4/3.00/ CO/1.50/ 
+                                                        CO2/2.00/ C2H6/3.00/ AR/0.70/ 
+ CH2+H(+M) = CH3(+M)                                2.50E+16     -0.800     0.00       !USC Mech II (GRI)
+                                              LOW  /3.20E+27     -3.140     1230.00 /
+                                              TROE /0.6800   78.00  1995.0  5590.0  /
+                                                    H2/2.0/ H2O/6.0/ CH4/2.0/ CO/1.5/ 
+                                                           CO2/2.0/ C2H6/3.0/ AR/0.7/
+ CH+H2(+M)<=>CH3(+M)                                1.97E+12      0.430     -370.00    !GRI 3.0
+                                              LOW  /4.82E+25     -2.80       590.0  /    
+                                              TROE /0.578  122.0  2535.0  9365.0    / 
+                                                H2/2.00/ H2O/6.00/ CH4/2.00/ CO/1.50/
+                                                        CO2/2.00/ C2H6/3.00/ AR/ .70/
+ H+H+M = H2+M                                       1.78E+18     -1.000      0.00      !USC Mech II (GRI3.0 * 1.78)
+                                                    H2/0.0/ H2O/0.0/ CO2/0.0/ AR/0.63/  
+ CH4+H = CH3+H2                                     6.60E+08      1.620      10840.00  !USC Mech II (GRI)
+ CH3+H = CH2+H2                                     1.26E+16     -0.56       15900     !USC Mech II 
+ CH2*+H = CH+H2                                     1.20E+14      0.00       0.00      !2005 DATA
+ H+H+H2 = H2+H2                                     9.00E+16     -0.60       0.00      !USC Mech II (GRI3.0)
+ CH+H = C+H2                                        1.10E+14      0.00       0.00      !USC Mech II (GRI)
+ CH+H2 = CH2+H                                      1.10E+08      1.79       1670.00   !USC Mech II (GRI)
+ CH2*+AR = CH2+AR                                   9.00E+12      0.00       600.00    !USC Mech II (GRI)
+ CH4+CH2 = CH3+CH3                                  2.46E+06      2.00       8270.00   !USC Mech II (GRI)
+ CH4+CH2* = CH3+CH3                                 1.60E+13      0.00      -570.00    !USC Mech II (GRI)
+!
+!                          reactions of C5H5 and C5H6
+ C5H5 + H (+M)= C5H6 (+M)                           1.00E+14      0.000      0.00      !92-EMD-BRE, est., 94-FRA-HER
+                                             LOW  / 4.40E+80     -18.280     12994.0 / !96-DAV-WAN, 97-WAN-FRE
+                                             TROE / 0.068 400.7   4135.8     5501.9  /
+                                            H2/2.0/ H2O/6.0/ CH4/2.0/ CO/1.5/ CO2/2.0/ 
+ C5H5(+M)=C2H2+C3H3(+M)                             6.31E+13    -0.075       62300.0   !2009 Detilleux and Vandooren (KERN ET AL. 1998)
+                                              LOW /1.00E+45 8.4   47500/
+ C2H3+C3H3=lC5H5+H                                  1.00E+13      0.0        0.0       !USC Mech V2.0
+ C4H5-2+C2H4=C5H6+CH3                               5.00E+14      0.0        25000.0   !USC Mech V2.0 
+ aC3H5+C2H2=lC5H7                                   8.38E+30     -6.2        12824.0   !USC Mech V2.0 (90DEAN)
+ iC4H5+CH3=lC5H7+H                                  1.00E+13      0.0         0.0      !Est
+ C5H6+H=C5H5+H2                                     3.00E+14      0.0        6640.0    !2001 Mac&Bac
+ C5H6+H=C2H2+aC3H5                                  7.74E+36     -6.2        32890.0   !USC Mech V2.0  (98-ZHO-BOZ)
+ C5H6+H=lC5H7                                       8.27+126     -32.3       82348.0   !USC Mech V2.0  (02-MOS-LIN)
+ aC3H5+C2H3=lC5H7+H                                 1.00E+13      0.0        0.0       !USC Mech V2.0 (90DEAN)
+ C5H6+C2H3=C5H5+C2H4                                6.00E+12      0.0        0.0       !2001 Mac&Bac                
+ C5H6+CH3=C5H5+CH4                                  5.00E+11      0.0        5000.0    !2001 Mac&Bac
+ C5H5+H=cC5H4+H2                                    3.23E+07      2.095      15842.0   !MIT [Mebel et al. 1997, C6H6+H]       
+ C5H5+CH3=cC5H4+CH4                                 2.00E+12      0.0        15060.0   !MIT [Zhang et al. 1989, C6H6+CH3]    
+ lC5H5+H=C5H4+H2                                    1.81E+12      0.0        0.0       !MIT [C2H5+H, Tsang/Hampson '86]              
+ lC5H5+CH3=C5H4+CH4                                 1.95E+13     -0.50       0.0       !MIT [C2H5+CH3, Tsang/Hampson '86]            
+ C5H5=lC5H5                                         1.64E+96    -23.50       137409.0  !MIT [Moskaleva and Lin 2000, 100 torr]       
+!
+!                          reactions of C6H4                                        
+ o-C6H4=C4H2+C2H2                                   2.00E+14      0.0        83000.0   !2010 Toluene pyrolysis
+ l-C6H4+H=o-C6H4+H                                  2.20E+47    -10.0        24000.0   !USC Mech V2.0  (20 Torr RRKM WAN/FRE)
+ l-C6H4+H=C6H3+H2                                   1.33E+06      2.5        9240.0    !USC Mech V2.0
+ C3H2+C3H2=l-C6H4                                   3.00E+11      0.0        0.0       !Est. ref: C3H3+C3H3=A1 (1987WU/KER6291)
+ C4H2+C2H2=l-C6H4                                   4.47E+11      0.0        30010.0   !Est. ref: C4H4+C2H2=A1 (MIT)
+ nC4H3+C2H2=l-C6H4+H                                3.70E+16     -1.2        11100.0   !USC Mech V2.0  (20 Torr RRKM WAN/FRE)
+ C4H4+C2H=l-C6H4+H                                  1.20E+13      0.0        0.0       !USC Mech V2.0 
+ C6H3+H=l-C6H4                                      4.20E+44    -10.3        7890.0    !USC Mech V2.0  (20 Torr RRKM WAN/FRE)
+ C5H3+CH2=l-C6H4+H                                  5.00E+13      0.0        0.0       !ABF
+ C4H2+C2H=C6H3                                      4.50E+37     -7.7        7100.0    !USC Mech V2.0  (20 Torr RRKM WAN/FRE)
+ C6H2+H=C6H3                                        4.30E+45    -10.2        13250.0   !USC Mech V2.0  (20 Torr RRKM WAN/FRE)
+ C6H3+H=C4H2+C2H2                                   2.40E+19     -1.6        2800.0    !USC Mech V2.0  (20 Torr RRKM WAN/FRE)
+!                                                                                  
+!                          reactions of A1-                                         
+ A1-=o-C6H4+H                                       3.00E+13      0.0        72923.0   !2010 Toluene pyrolysis
+ nC4H3+C2H2=A1-                                     2.30E+68    -17.6        24400.0   !USC Mech V2.0  (20 Torr RRKM WAN/FRE)
+ A1-+H=o-C6H4+H2                                    4.40E-13      7.831      9261.0    ![Mebel et al. 2001, 100 torr]  MIT
+ nC6H5=A1-                                          1.66E+11      0.0        16350.0   ![Dewar et al. 1987] MIT
+ l-C6H4+H=A1-                                       3.60E+77    -20.1        28100.0   !USC Mech V2.0  (20 Torr RRKM WAN/FRE)
+!                                                                        
+!                          reactions of A1                                         
+ A1+H=A1-+H2                                        3.88e+08      1.86       15976.0   !1997 Mebel et al
+ A1-+H=A1                                           8.02E+19     -2.0        1968.0    !MIT  2001 Mebel et al. 100 torr
+ A1-+CH4=A1+CH3                                     3.89E-03      4.6        5256.0    !USC Mech V2.0 (99-TOK-LIN)
+ A1-+C2H6=A1+C2H5                                   2.10E+11      0.0        4443.0    !USC Mech V2.0 (01-PAR-LIN)
+ C5H6+A1-=C5H5+A1                                   3.10E+11      0.0        5500.0    !2001 Mac&Bac
+ nC4H3+C2H3=A1                                      2.87E+14      0.0        817.0     !2006 Brezinsky
+ aC3H4+C3H3=A1+H                                    2.20E+11      0.0        2000.0    !2002 D'Anna & Kent
+ iC4H5+C2H2=A1+H                                    3.00E+11      0.0        14900.0   !2002 D'Anna & Kent
+ C4H4+C2H3=A1+H                                     1.90E+12      0.0        2510.0    !MIT  Kubitza et al. '94, in Lindstedt/Skevis '97
+ pC3H4+C3H3=A1+H                                    2.20E+11      0.0        2000.0    !MIT  1987 Wu and Kern
+ C4H4+C2H2=A1                                       4.47E+11      0.0        30010.0   !MIT  1986 Chanmugathas/Heicklen 
+ nC4H5+C2H2=A1+H                                    2.10E+15     -1.1        4800.0    !USC Mech V2.0  (20 Torr RRKM WAN/FRE)
+ nC4H5+C2H3=A1+H2                                   1.84E-13      7.1       -3611.0    !USC Mech V2.0  (89WES/DEA)
+ C4H5-2+C2H2=A1+H                                   5.00E+14      0.0        25000.0   !USC Mech V2.0
+ C3H3+C3H3=A1-+H                                    2.02e+33     -6.0        15940.0   !2009 Hansen et al C3H4 FLAME
+ C3H3+C3H3=fulvene                                  1.45e+65    -16.0        25035.0   !2009 Hansen et al C3H4 FLAME  30Torr /5 to 5 Torr
+ duplicate                                                                 
+ C3H3+C3H3=fulvene                                  0.84e+39     -9.0        6098.0    !2009 Hansen et al C3H4 FLAME  30Torr /5 to 5 Torr
+ duplicate                                                                 
+ C3H3+C3H3=A1                                       0.35e+66    -15.9        27529.0   !2009 Hansen et al C3H4 FLAME  30Torr /5 to 5 Torr
+ duplicate                                                                 
+ C3H3+C3H3=A1                                       0.24e+35     -7.4        5058.0    !2009 Hansen et al C3H4 FLAME  30Torr /5 to 5 Torr
+ duplicate                                                                 
+ fulvene=A1                                         5.62E+81    -19.4        121500.0  !2009 Hansen et al C3H4 FLAME
+ fulvene+H=A1+H                                     3.00e+12      0.5        2000.0    !2009 Hansen et al C3H4 FLAME
+ fulvene=A1-+H                                      2.57E+97    -23.2        153470.0  !2009 Hansen et al C3H4 FLAME
+ aC3H4+C3H2=A1                                      7.40E+12     -0.7        920.0     !2002 Kern JH
+ pC3H4+C3H2=A1                                      1.40E+13     -0.8        1030.0    !2002 Kern JH
+END
+
+USC Mech V2.0                                H. Wang, X. You, A.V. Joshi, S.G. Davis, A. Laskin, F. Egolfopoulos, C.K. Law, 
+                                             High-Temperature Combustion Reaction Model of H2/CO/C1-C4 Compounds,
+                                             http://ignis.usc.edu/USC_Mech_II.htm (2007).
+JetSurF 2.0                                  2009 JetSurF Version 2.0 ¨C A working model for the combustion of n-alkane up to n-dodecane,
+                                             cyclohexane, and mono-alkylated cyclohexane up to n-butyl-cyclohexane
+GRI                                          D.M.G. Gregory P. Smith, Michael Frenklach, Nigel W. Moriarty, Boris Eiteneer, 
+                                             Mikhail Goldenberg, C. Thomas Bowman, Ronald K. Hanson, Soonho Song, William C. 
+                                             Gardiner, Jr., Vitali V. Lissianski, and Zhiwei Qin, 
+                                             http://www.me.berkeley.edu/gri_mech/ (1999).
+MIT                                          H. Richter, S. Granata, W.H. Green, J.B. Howard, Proc. Combust. Inst. 30 (2004) 1397-1405.
+ABF                                          J. Appel, H. Bockhorn, M. Frenklach, Combust. Flame 121 (2000) 122-136.
+2010 Toluene pyrolysis                       Zhang, L. D.; Cai, J. G.; Zhang, T. C.; Qi, F. Combustion and Flame 2010, 157, 1686
+2010 Miyoshi                                 Miyoshi, A. International Journal of Chemical Kinetics 2010, 42, 273.
+2009 Kiefer et al.                           Kiefer, J. H.; Gupte, K. S.; Harding, L. B.; Klippenstein, S. J. Journal of Physical Chemistry A 2009, 113, 13570
+2009 Yasunaga et al.                         Yasunaga, K.; Kuraguchi, Y.; Ikeuchi, R.; Masaoka, H.; Takahashi, O.; Koike, T.; 
+                                             Hidaka, Y. Proceedings of the Combustion Institute 2009, 32, 453
+2009 Westbrook & Pitz et al.                 Mehl, M.; Vanhove, G.; Pitz, W. J.; Ranzi, E. Combustion and Flame 2008, 155, 756.
+2009 Blanquart et al.                        G. Blanquart, P. Pepiot-Desjardins, H. Pitsch, Combust. Flame 156 (2009) 588-607.
+2007 Gueniche & Battin et al.                Gueniche, H. A.; Glaude, P. A.; Fournet, R.; Battin-Leclerc, F. Combustion and Flame 2007, 151, 245.
+2006 Orme & Curran & Simmie                  Orme, J. P.; Curran, H. J.; Simmie, J. M. Journal of Physical Chemistry A 2006, 110, 114.
+2006 Brezinsky                               R. Sivaramakrishnan, R.S. Tranter, K. Brezinsky, J. Phys. Chem. A 110 (2006) 9400-9404.
+2005 DATA                                    Baulch, D. L.; Bowman, C. T.; Cobos, C. J.; Cox, R. A.; Just, T.; Kerr, J. A.; Pilling,
+                                             M. J.; Stocker, D.; Troe, J.; Tsang, W.; Walker, R. W.; Warnatz, J. J. Phys. Chem. Ref. Data 2005, 34, 757.
+2004 Oehlschlaeger & Davidson & Hanson       Oehlschlaeger, M. A.; Davidson, D. F.; Hanson, R. K. Journal of Physical Chemistry A 2004, 108, 4247.
+2001 Mac & Bac                               G.B. Bacskay, J.C. Mackie, Phys. Chem. Chem. Phys. 3 (2001) 2467-2473.
+2002 D'Anna & Kent                           A. D'Anna, J.H. Kent, Combust. Flame 132 (2002) 715-722.
+1996 Knyaze & Slagle                         Knyazev, V. D.; Slagle, I. R. Journal of Physical Chemistry 1996, 100, 5318.
+1998 Kern                                    R.D. Kern, Q. Zhang, J. Yao, B.S. Jursic, R.S. Tranter, M.A. Greybill,
+                                             J.H. Kiefer, Proc. Combust. Inst. 27 (1998) 143-150.

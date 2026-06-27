@@ -22,8 +22,8 @@ Yu-ichiro Izato, Yuta Nakamura, Kota Watanabe, Atsumi Miyake. Detailed pyrolysis
 - Standard mechanism file: chem.inp
 - Standard thermodynamic file: therm.dat
 - Standard transport file: not available
-- Original mechanism source files: _processing\extracted\s0010218025006388_mmc1\kinetics.inp
-- Original thermodynamic source files: _processing\extracted\s0010218025006388_mmc1\thermo.dat
+- Original mechanism source files: _processing/extracted/s0010218025006388_mmc1/kinetics.inp
+- Original thermodynamic source files: _processing/extracted/s0010218025006388_mmc1/thermo.dat
 - Original transport source files: not found
 
 ## Cantera Preprocessing Results
@@ -46,4 +46,4 @@ The contamination of ammonium nitrate (AN) with chlorides is known to significan
 
 ## Processing Notes
 
-- none
+- extracted S0010218025006388_mmc1.zip

@@ -1,0 +1,2890 @@
+! Mechanism for gasoline surrogate fuels developed at King Abdullah University of Science and Technology (KAUST), Saudi Arabia to account for the formation of PAHs up to coronene
+! Base mechanism for chemistry upto benzene: C. Vovelle et al, Modelling of Aromatics and Soot Formation from Large Fuel Molecules, Proc. Combust. Inst., 32, 2008
+! Rates for some of the reactions are updated, and many new PAH reactions are added. The keyword "KAUST" is added in the comments area, wherever changes are made.
+!
+! n-decane, n-heptane, iso-octane, toluene mechanism
+!
+ELEMENTS
+C  H  O  N  AR
+END
+!
+SPECIES
+!
+! inert
+!
+N2 AR 
+!
+! H2/O2
+! ------------------------------------------------------------
+H       H2      O       OH      H2O     O2      HO2     H2O2
+!
+! C1
+! ------------------------------------------------------------
+C       CH      CH2     CH2*    CH3     CH4     CO      HCO     
+CH2O    CH2OH   CH3O    CH3OH   CO2	
+!
+! C2
+! ------------------------------------------------------------
+C2H     C2H2    C2H3    C2H4    C2H5    C2H6	
+HCCO    CH2CO   HCCOH   C2O     C2H3O   CH3CHO  
+!
+! C3
+! ------------------------------------------------------------
+C3H2    C3H3    AC3H4   PC3H4	C3H5-A  C3H5-S  C3H5-T  C3H6	
+n-C3H7 i-C3H7 
+!
+! C4
+! ------------------------------------------------------------
+C4H     C4H2    n-C4H3  i-C4H3  C4H4    n-C4H5  i-C4H5  H2C4O
+C4H6-13 C4H6-12 i-C4H8  i-C4H9  t-C4H9
+!
+! C5
+! ------------------------------------------------------------
+C5H2    C5H3    C5H5    C5H6    C5H4O   C5H4OH  C5H5O   
+!
+! C6
+! ------------------------------------------------------------
+C6H     C6H2    C6H3    l-C6H4  c-C6H4  n-C6H5  i-C6H5  l-C6H6  
+!
+! C6 
+! ------------------------------------------------------------
+A1      A1-     C6H5O   C6H5OH 	n-C6H7  i-C6H7  c-C6H7  C6H8    
+C6H5CH2 C6H5CH3 
+!
+! PAH
+!
+A1C2H   A1C2H*  A1C2H-  A1C2H_2
+n-A1C2H2 
+i-A1C2H2 
+A1C2H3  A1C2H3*  
+A2      A2-1    A2-2    naphthyn 
+A2C2HA  A2C2HB  A2C2HA* A2C2HB* A2C2H2  A2C2H_2
+A3      A3-1    A3-4    A3C2H   A3C2H2  P2      P2-      P2-H 
+A2R5    A2R5-   A4      A4-1 A4-2 A4-4 !A4-     
+A1C2HC2H2    A1C2HC2H2u ! newly added species (KAUST)
+!
+! n-heptane
+! ------------------------------------------------------------
+C7H16   C7H15   C7H14
+C5H11-1 C5H10-1 C5H9    C5H8
+C4H9-1  C4H9-2  C4H8-1  C4H8-2  n-C4H7  C4H7-B   
+!
+! iso-octane
+! ------------------------------------------------------------
+i-C8H18 M224Pyl1
+M224Pyl3
+M244Pyl2
+M244Pyl1
+M24Pen1 M24Pen2 M44Pen2 M44Pen1
+M2Pdn14 M4Pdn13 M2Pdn13
+neoC5H11
+M2Bten1 M2Bten2 a-C5H9  b-C5H9  C5H8-13 C5H8-14 M2Bdn13
+C4H7-S  i-C4H7  
+!
+! n-decane
+! ------------------------------------------------------------
+C10H22  C10H21  C10H20
+C6H13-1 C6H13-2 C6H12-1
+!
+! New added species (KAUST)
+C3H8
+C10H10 C10H9 c-C5H5 C5H5-2 c-C5H6  A3CH2 A3CH3
+A1C2H4 A1C2H5 A2C2H2B A2CH3 A2CH2 A2OH A2O-C10H7O A1OH A1CH2O A1CHO
+A2R5C2H2 A2R5C2H A2R5C2HY A3R5 A3R5X A4R5 FLTN 
+OC6H4O C9H7 C9H6O C9H8 O-C6H4 C4H4O C8H2
+OA1CH3 HOA1CH3 A1CH2OH C5H4CH2
+!Fei Qi species, combust Flame, 2010 (KAUST)
+C14H14 C14H12 C6H4CH3 C7H6 C7H5 C5H4 C4H5-2 lC5H7 A1C3H2 BIPHEN
+PHNAPH PHNAPH-H PHNAPH- ! 1-phenyl naphthalene
+C5H5CH3
+!NEW SPECIES FOR pah REACTION UPTO CORONENE
+!PYRENJ1 PYRENJ2 PYRENJ4 
+A3C2H-2 A3C2H-2JS CHRYSENJ1
+CHRYSENJ4 CHRYSENJ5 CHRYSEN BAPYR PYC2H-1 PYC2H-2
+PYC2H-4 PYC2H-1JP PYC2H-2JS BAPYRJS PYC2H-4JS
+BEPYRENJS BEPYREN BGHIPER PERYLEN PERYLENJS ANTHAN
+ANTHANJS CORONEN BGHIPEJS1
+!
+END
+REACTIONS
+!=========================================================================!
+!                                                                         !
+! C1 and C2 chemistry is taken from GRI-MECH version 1.2                  !
+!                                                                         !
+! Changes made by Vovelle et al, Combust Flame, 2009                                                                 !
+!                                                                         !
+! (1) C2H + H2 = C2H2 + H  --->   k updated based on new measurments      !
+!                                                                         !
+! (2) CH2 + O2 = HCO + OH  --->   CH2 + O2 = CO2 + H + H with the same    !
+!                                 rate coefficient.                       !
+!                                                                         !
+!     reason: to boost CO2 and H concentration                            !
+!                                                                         !
+! (3) C2H3 + O2 = HCO + CH2O ---> rate coefficient of Bozelli-Dean used.  !
+!                                                                         !
+!     additional reaction channels for C2H3O added.                       !
+!                                                                         !
+!     reason: to properly account for C2H3 oxidation near main flame zone !
+!                                                                         !
+!=========================================================================!
+!
+! GRI-Mech Version 1.2  released 11/16/94   CHEMKIN-II format
+! See README file at anonymous FTP site GRI_MECH at CRVAX.SRI.COM or
+!   WorldWideWeb home page at http://diesel.fsc.psu.edu/~gri_mech
+!      for additional information, contacts, and disclaimer.
+!
+! Rearanged GRI-12 reaction order
+!
+!
+! Reactions of H2/O2
+!
+ H+O2 = O+OH                              8.300E+13    0.000  14413.00
+! H+O2 = O+OH                              1.77e14    0.000  16578.00 
+ O+H2 = H+OH                              5.000E+04    2.670   6290.00
+ OH+H2 = H+H2O                            2.160E+08    1.510   3430.00
+ OH+OH = O+H2O                            3.570E+04    2.400  -2110.00
+ H+H+M = H2+M                             1.000E+18   -1.000      0.00
+   H2/0.0/ H2O/0.0/ CH4/2.0/ CO2/0.0/ C2H6/3.00/ AR/0.63/
+ H+H+H2 = H2+H2                           9.000E+16   -0.600      0.00
+ H+H+H2O = H2+H2O                         6.000E+19   -1.250      0.00
+ H+H+CO2 = H2+CO2                         5.500E+20   -2.000      0.00
+ H+OH+M = H2O+M                           2.200E+22   -2.000      0.00
+   H2/0.73/ H2O/3.65/ CH4/2.0/ C2H6/3.0/ AR/0.38/
+ O+H+M = OH+M                             5.000E+17   -1.000      0.00
+   H2/2.0/ H2O/6.0/ CH4/2.0/ CO/1.5/ CO2/2.0/ C2H6/3.0/ AR/0.7/
+ O+O+M = O2+M                             1.200E+17   -1.000      0.00
+   H2/ 2.4/ H2O/15.4/ CH4/ 2.0/ CO/ 1.75/ CO2/ 3.6/ C2H6/ 3.0/ AR/ 0.83/
+ H+O2+M = HO2+M                           2.800E+18   -0.860      0.00
+   O2/0.0/ H2O/0.0/ CO/0.75/ CO2/1.5/ C2H6/1.5/ N2/0.0/ AR/0.0/
+ H+O2+O2 = HO2+O2                         3.000E+20   -1.720      0.00
+ H+O2+H2O = HO2+H2O                       9.380E+18   -0.760      0.00
+ H+O2+N2 = HO2+N2                         3.750E+20   -1.720      0.00
+ H+O2+AR = HO2+AR                         7.000E+17   -0.800      0.00
+ OH+OH(+M) = H2O2(+M)                     7.400E+13   -0.370      0.00
+      LOW  /  2.300E+18   -0.900  -1700.00/
+      TROE/  0.7346   94.00  1756.00  5182.00 /
+   H2/2.0/ H2O/6.0/ CH4/2.0/ CO/1.5/ CO2/2.0/ C2H6/3.0/ AR/0.7/
+!
+! Reactions of HO2
+!
+ HO2+H = O+H2O                            3.970E+12    0.000    671.00
+ HO2+H = O2+H2                            2.800E+13    0.000   1068.00
+ HO2+H = OH+OH                            1.340E+14    0.000    635.00
+ HO2+O = OH+O2                            2.000E+13    0.000      0.00
+ HO2+OH = O2+H2O                          2.900E+13    0.000   -500.00
+ HO2+HO2 = O2+H2O2                        1.300E+11    0.000  -1630.00
+  DUPLICATE
+ HO2+HO2 = O2+H2O2                        4.200E+14    0.000  12000.00
+  DUPLICATE
+!
+! Reactions of H2O2
+!
+ H2O2+H = HO2+H2                          1.210E+07    2.000   5200.00
+ H2O2+H = OH+H2O                          1.000E+13    0.000   3600.00
+ H2O2+O = OH+HO2                          9.630E+06    2.000   4000.00
+ H2O2+OH = HO2+H2O                        1.750E+12    0.000    320.00
+  DUPLICATE
+ H2O2+OH = HO2+H2O                        5.800E+14    0.000   9560.00
+  DUPLICATE
+!
+! Reactions of CO/CO2
+!
+ CO+O+M = CO2+M                           6.020E+14    0.000   3000.00
+   H2/2.0/ O2/6.0/ H2O/6.0/ CH4/2.0/ CO/1.5/ CO2/3.5/ C2H6/3.0/ AR/0.5/
+ CO+OH = CO2+H                            4.760E+07    1.228     70.00
+ CO+H2(+M) = CH2O(+M)                     4.300E+07    1.500  79600.00
+      LOW  /  5.070E+27   -3.420  84350.00/
+      TROE/  0.9320  197.00  1540.00 10300.00 /
+ H2/2.0/ H2O/6.0/ CH4/2.0/ CO/1.5/ CO2/2.0/ C2H6/3.0/ AR/0.7/
+ CO+O2 = CO2+O                            2.500E+12    0.000  47800.00
+ CO+HO2 = CO2+OH                          1.500E+14    0.000  23600.00
+!
+! Reactions of C
+!
+ C+OH = CO+H                              5.000E+13    0.000      0.00
+ C+O2 = CO+O                              5.800E+13    0.000    576.00
+!
+! Reactions of CH
+!
+ CH+H = C+H2                              1.100E+14    0.000      0.00
+ CH+O = CO+H                              5.700E+13    0.000      0.00
+ CH+OH = HCO+H                            3.000E+13    0.000      0.00
+ CH+H2 = CH2+H                            1.107E+08    1.790   1670.00
+ CH+H2O = CH2O+H                          5.710E+12    0.000   -755.00
+ CH+O2 = HCO+O                            3.300E+13    0.000      0.00
+ CH+CO(+M) = HCCO(+M)                     5.000E+13    0.000      0.00
+      LOW  /  2.690E+28   -3.740   1936.00/
+      TROE/  0.5757  237.00  1652.00  5069.00 /
+    H2/2.0/ H2O/6.0/ CH4/2.0/ CO/1.5/ CO2/2.0/ C2H6/3.0/ AR/0.7/
+ CH+CO2 = HCO+CO                          3.400E+12    0.000    690.00
+!
+! Reactions of HCO
+!
+ HCO+H(+M) = CH2O(+M)                     1.090E+12    0.480   -260.00
+      LOW  /  1.350E+24   -2.570   1425.00/
+      TROE/  0.7824  271.00  2755.00  6570.00 /
+    H2/2.0/ H2O/6.0/ CH4/2.0/ CO/1.5/ CO2/2.0/ C2H6/3.0/ AR/0.7/
+ HCO+H = CO+H2                            7.340E+13    0.000      0.00
+ HCO+O = CO+OH                            3.000E+13    0.000      0.00
+ HCO+O = CO2+H                            3.000E+13    0.000      0.00
+ HCO+OH = CO+H2O                          5.000E+13    0.000      0.00
+ HCO+M = CO+H+M                           1.870E+17   -1.000  17000.00
+    H2/2.0/ H2O/12.0/ CH4/2.0/ CO/1.5/ CO2/2.0/ C2H6/3.0/
+ HCO+O2 = CO+HO2                          7.600E+12    0.000    400.00
+!
+! Reactions of CH2(triplet)
+!
+ CH2+H(+M) = CH3(+M)                      2.500E+16   -0.800      0.00
+      LOW  /  3.200E+27   -3.140   1230.00/
+      TROE/  0.6800   78.00  1995.00  5590.00 /
+    H2/2.0/ H2O/6.0/ CH4/2.0/ CO/1.5/ CO2/2.0/ C2H6/3.0/ AR/0.7/
+ CH2+O = HCO+H                            8.000E+13    0.000      0.00
+ CH2+OH = CH2O+H                          2.000E+13    0.000      0.00
+ CH2+OH = CH+H2O                          1.130E+07    2.000   3000.00
+ CH2+H2 = H+CH3                           5.000E+05    2.000   7230.00
+!
+! PRODUCTS CHANGED FROM GRI-MECH 1.2 to push H peak concentration up.
+!
+ CH2+O2 = CO2+H+H                         1.320E+13    0.000   1500.00
+!CH2+O2 = HCO+OH                          1.320E+13    0.000   1500.00
+ CH2+HO2 = CH2O+OH                        2.000E+13    0.000      0.00
+ CH2+C = C2H+H                            5.000E+13    0.000      0.00
+ CH2+CO(+M) = CH2CO(+M)                   8.100E+11    0.500   4510.00
+      LOW  /  2.690E+33   -5.110   7095.00/
+      TROE/  0.5907  275.00  1226.00  5185.00 /
+ H2/2.0/ H2O/6.0/ CH4/2.0/ CO/1.5/ CO2/2.0/ C2H6/3.0/ AR/0.7/
+ CH2+CH = C2H2+H                          4.000E+13    0.000      0.00
+ CH2+CH2 = C2H2+H2                        3.200E+13    0.000      0.00
+!
+! Reactions of CH2(singlet)
+!
+ CH2*+N2 = CH2+N2                         1.500E+13    0.000    600.00
+ CH2*+AR = CH2+AR                         9.000E+12    0.000    600.00
+ CH2*+H = CH+H2                           3.000E+13    0.000      0.00
+ CH2*+O = CO+H2                           1.500E+13    0.000      0.00
+ CH2*+O = HCO+H                           1.500E+13    0.000      0.00
+ CH2*+OH = CH2O+H                         3.000E+13    0.000      0.00
+ CH2*+H2 = CH3+H                          7.000E+13    0.000      0.00
+ CH2*+O2 = H+OH+CO                        2.800E+13    0.000      0.00
+ CH2*+O2 = CO+H2O                         1.200E+13    0.000      0.00
+ CH2*+H2O(+M) = CH3OH(+M)                 2.000E+13    0.000      0.00
+      LOW  /  2.700E+38   -6.300   3100.00/
+      TROE/  0.1507  134.00  2383.00  7265.00 /
+    H2/2.0/ H2O/6.0/ CH4/2.0/ CO/1.5/ CO2/2.0/ C2H6/3.0/
+ CH2*+H2O = CH2+H2O                       3.000E+13    0.000      0.00
+ CH2*+CO = CH2+CO                         9.000E+12    0.000      0.00
+ CH2*+CO2 = CH2+CO2                       7.000E+12    0.000      0.00
+ CH2*+CO2 = CH2O+CO                       1.400E+13    0.000      0.00
+!
+! Reactions of CH2O
+!
+ CH2O+H(+M) = CH2OH(+M)                   5.400E+11    0.454   3600.00
+      LOW  /  1.270E+32   -4.820   6530.00/
+      TROE/  0.7187  103.00  1291.00  4160.00 /
+    H2/2.0/ H2O/6.0/ CH4/2.0/ CO/1.5/ CO2/2.0/ C2H6/3.0/
+ CH2O+H(+M) = CH3O(+M)                    5.400E+11    0.454   2600.00
+      LOW  /  2.200E+30   -4.800   5560.00/
+      TROE/  0.7580   94.00  1555.00  4200.00 /
+    H2/2.0/ H2O/6.0/ CH4/2.0/ CO/1.5/ CO2/2.0/ C2H6/3.0/
+ CH2O+H = HCO+H2                          2.300E+10    1.050   3275.00
+ CH2O+O = HCO+OH                          3.900E+13    0.000   3540.00
+ CH2O+OH = HCO+H2O                        3.430E+09    1.180   -447.00
+ CH2O+O2 = HCO+HO2                        1.000E+14    0.000  40000.00
+ CH2O+HO2 = HCO+H2O2                      1.000E+12    0.000   8000.00
+ CH2O+CH = CH2CO+H                        9.460E+13    0.000   -515.00
+!
+! Reactions of CH3
+!
+ CH3+H(+M) = CH4(+M)                      1.270E+16   -0.630    383.00
+      LOW  /  2.477E+33   -4.760   2440.00/
+      TROE/  0.7830   74.00  2941.00  6964.00 /
+    H2/2.0/ H2O/6.0/ CH4/2.0/ CO/1.5/ CO2/2.0/ C2H6/3.0/ AR/0.7/
+ CH3+O = CH2O+H                           8.430E+13    0.000      0.00
+ CH3+OH(+M) = CH3OH(+M)                   6.300E+13    0.000      0.00
+      LOW  /  2.700E+38   -6.300   3100.00/
+      TROE/  0.2105   83.50  5398.00  8370.00 /
+    H2/2.0/ H2O/6.0/ CH4/2.0/ CO/1.5/ CO2/2.0/ C2H6/3.0/
+ CH3+OH = CH2+H2O                         5.600E+07    1.600   5420.00
+ CH3+OH = CH2*+H2O                        2.501E+13    0.000      0.00
+ CH3+O2 = O+CH3O                          2.675E+13    0.000  28800.00
+ CH3+O2 = OH+CH2O                         3.600E+10    0.000   8940.00
+ CH3+HO2 = CH4+O2                         1.000E+12    0.000      0.00
+ CH3+HO2 = CH3O+OH                        2.000E+13    0.000      0.00
+ CH3+H2O2 = CH4+HO2                       2.450E+04    2.470   5180.00
+ CH3+C = C2H2+H                           5.000E+13    0.000      0.00
+ CH3+CH = C2H3+H                          3.000E+13    0.000      0.00
+ CH3+HCO = CH4+CO                         2.648E+13    0.000      0.00
+ CH3+CH2O = CH4+HCO                       3.320E+03    2.810   5860.00
+ CH3+CH2 = C2H4+H                         4.000E+13    0.000      0.00
+ CH3+CH2* = C2H4+H                        1.200E+13    0.000   -570.00
+ CH3+CH3(+M) = C2H6(+M)                   2.120E+16   -0.970    620.00
+      LOW  /  1.770E+50   -9.670   6220.00/
+      TROE/  0.5325  151.00  1038.00  4970.00 /
+ H2/2.0/ H2O/6.0/ CH4/2.0/ CO/1.5/ CO2/2.0/ C2H6/3.0/ AR/0.7/
+ CH3+CH3 = H+C2H5                         4.990E+12    0.100  10600.00
+!
+! Reactions of CH3O/CH2OH
+!
+ CH3O+H(+M) = CH3OH(+M)                   5.000E+13    0.000      0.00
+      LOW  /  8.600E+28   -4.000   3025.00/
+      TROE/  0.8902  144.00  2838.00 45569.00 /
+    H2/2.0/ H2O/6.0/ CH4/2.0/ CO/1.5/ CO2/2.0/ C2H6/3.0/
+ CH3O+H = CH2OH+H                         3.400E+06    1.600      0.00
+ CH3O+H = CH2O+H2                         2.000E+13    0.000      0.00
+ CH3O+H = CH3+OH                          3.200E+13    0.000      0.00
+ CH3O+H = CH2*+H2O                        1.600E+13    0.000      0.00
+ CH3O+O = CH2O+OH                         1.000E+13    0.000      0.00
+ CH3O+OH = CH2O+H2O                       5.000E+12    0.000      0.00
+ CH3O+O2 = CH2O+HO2                       4.280E-13    7.600  -3530.00
+!
+ CH2OH+H(+M) = CH3OH(+M)                  1.800E+13    0.000      0.00
+      LOW  /  3.000E+31   -4.800   3300.00/
+      TROE/  0.7679  338.00  1812.00  5081.00 /
+    H2/2.0/ H2O/6.0/ CH4/2.0/ CO/1.5/ CO2/2.0/ C2H6/3.0/
+ CH2OH+H = CH2O+H2                        2.000E+13    0.000      0.00
+ CH2OH+H = CH3+OH                         1.200E+13    0.000      0.00
+ CH2OH+H = CH2*+H2O                       6.000E+12    0.000      0.00
+ CH2OH+O = CH2O+OH                        1.000E+13    0.000      0.00
+ CH2OH+OH = CH2O+H2O                      5.000E+12    0.000      0.00
+ CH2OH+O2 = CH2O+HO2                      1.800E+13    0.000    900.00
+!
+! Reactions of CH4
+!
+ CH4+H = CH3+H2                           6.600E+08    1.620  10840.00
+ CH4+O = CH3+OH                           1.020E+09    1.500   8600.00
+ CH4+OH = CH3+H2O                         1.000E+08    1.600   3120.00
+ CH4+CH = C2H4+H                          6.000E+13    0.000      0.00
+ CH4+CH2 = CH3+CH3                        2.460E+06    2.000   8270.00
+ CH4+CH2* = CH3+CH3                       1.600E+13    0.000   -570.00
+!
+! Reactions of CH3OH
+!
+ CH3OH+H = CH2OH+H2                       1.700E+07    2.100   4870.00
+ CH3OH+H = CH3O+H2                        4.200E+06    2.100   4870.00
+ CH3OH+O = CH2OH+OH                       3.880E+05    2.500   3100.00
+ CH3OH+O = CH3O+OH                        1.300E+05    2.500   5000.00
+ CH3OH+OH = CH2OH+H2O                     1.440E+06    2.000   -840.00
+ CH3OH+OH = CH3O+H2O                      6.300E+06    2.000   1500.00
+ CH3OH+CH3 = CH2OH+CH4                    3.000E+07    1.500   9940.00
+ CH3OH+CH3 = CH3O+CH4                     1.000E+07    1.500   9940.00
+!
+! Reactions of C2H
+!
+ C2H+H(+M) = C2H2(+M)                     1.000E+17   -1.000      0.00
+      LOW  /  3.750E+33   -4.800   1900.00/
+      TROE/  0.6464  132.00  1315.00  5566.00 /
+    H2/2.0/ H2O/6.0/ CH4/2.0/ CO/1.5/ CO2/2.0/ C2H6/3.0/ AR/0.7/
+ C2H+O = CH+CO                            5.000E+13    0.000      0.00
+ C2H+OH = H+HCCO                          2.000E+13    0.000      0.00
+ C2H+O2 = HCO+CO                          5.000E+13    0.000   1500.00
+!
+! Changed from GRI-MECH v1.2
+! The rate coefficients of the following reaction updated, see notes
+!
+ C2H+H2 = H+C2H2                          4.900E+05    2.500    560.00
+!C2H+H2 = H+C2H2                          4.070E+05    2.400    200.00
+!
+! Reactions of HCCO
+!
+ HCCO+H = CH2*+CO                         1.000E+14    0.000      0.00
+ HCCO+O = H+CO+CO                         1.000E+14    0.000      0.00
+ HCCO+O2 = OH+2CO                         1.600E+12    0.000    854.00
+ HCCO+CH = C2H2+CO                        5.000E+13    0.000      0.00
+ HCCO+CH2 = C2H3+CO                       3.000E+13    0.000      0.00
+ HCCO+HCCO = C2H2+CO+CO                   1.000E+13    0.000      0.00
+!
+! Reactions of C2H2
+!
+ C2H2+H(+M) = C2H3(+M)                    5.600E+12    0.000   2400.00
+      LOW  /  3.800E+40   -7.270   7220.00/
+      TROE/  0.7507   98.50  1302.00  4167.00 /
+    H2/2.0/ H2O/6.0/ CH4/2.0/ CO/1.5/ CO2/2.0/ C2H6/3.0/ AR/0.7/
+ C2H2+O = HCCO+H                          1.020E+07    2.000   1900.00
+ C2H2+O = C2H+OH                          4.600E+19   -1.410  28950.00
+ C2H2+O = CH2+CO                          1.020E+07    2.000   1900.00
+ C2H2+OH = CH2CO+H                        2.180E-04    4.500  -1000.00
+ C2H2+OH = HCCOH+H                        5.040E+05    2.300  13500.00
+ C2H2+OH = C2H+H2O                        3.370E+07    2.000  14000.00
+ C2H2+OH = CH3+CO                         4.830E-04    4.000  -2000.00
+!
+! Reactions of CH2CO/HCCOH
+!
+ CH2CO+H = HCCO+H2                        5.000E+13    0.000   8000.00
+ CH2CO+H = CH3+CO                         1.130E+13    0.000   3428.00
+ CH2CO+O = HCCO+OH                        1.000E+13    0.000   8000.00
+ CH2CO+O = CH2+CO2                        1.750E+12    0.000   1350.00
+ CH2CO+OH = HCCO+H2O                      7.500E+12    0.000   2000.00
+!
+ HCCOH+H = CH2CO+H                        1.000E+13    0.000      0.00
+!
+! Reactions of C2H3
+!
+ C2H3+H(+M) = C2H4(+M)                    6.080E+12    0.270    280.00
+      LOW  /  1.400E+30   -3.860   3320.00/
+      TROE/  0.7820  207.50  2663.00  6095.00 /
+    H2/2.0/ H2O/6.0/ CH4/2.0/ CO/1.5/ CO2/2.0/ C2H6/3.0/ AR/0.7/
+ C2H3+H = C2H2+H2                         4.000E+13    0.000      0.00!Miller
+ C2H3+O = CH2CO+H                         3.000E+13    0.000      0.00
+ C2H3+OH = C2H2+H2O                       2.000E+13    0.000      0.00!Miller
+!
+! Change from GRI-MECH v 1.1
+! Replace Gutman's k with those of MCLIN
+! 
+ C2H3+O2 = C2H2+HO2                       1.12E+8     0.913   200.0
+!C2H3+O2 = C2H3O+O                        2.50E+12    0.057    950.0 ! 20 t, 90 t
+! 
+ C2H3+O2 = C2H3O+O                        3.64E+11    0.270     101.0 ! 760 t
+!C2H3+O2 = HCO+CH2O                       1.64E+21   -2.780   2523.0 ! 20 t, 90 t
+ C2H3+O2 = HCO+CH2O                       4.58E+16   -1.390   1015.0 ! 760 t
+!
+!C2H3+O2 = HCO+CH2O                       3.980E+12    0.000   -240.00
+!
+! Reactions of C2H4
+!
+ C2H4(+M) = H2+C2H2(+M)                   8.000E+12    0.440  88770.00
+      LOW  /  7.000E+50   -9.310  99860.00/
+      TROE/  0.7345  180.00  1035.00  5417.00 /
+    H2/2.0/ H2O/6.0/ CH4/2.0/ CO/1.5/ CO2/2.0/ C2H6/3.0/ AR/0.7/
+ C2H4+H(+M) = C2H5(+M)                    1.080E+12    0.454   1820.00
+      LOW  /  1.200E+42   -7.620   6970.00/
+      TROE/  0.9753  210.00   984.00  4374.00 /
+    H2/2.0/ H2O/6.0/ CH4/2.0/ CO/1.5/ CO2/2.0/ C2H6/3.0/ AR/0.7/
+ C2H4+H = C2H3+H2                         1.325E+06    2.530  12240.00
+ C2H4+O = CH3+HCO                         1.920E+07    1.830    220.00
+ C2H4+OH = C2H3+H2O                       3.600E+06    2.000   2500.00
+ C2H4+CH3 = C2H3+CH4                      2.270E+05    2.000   9200.00
+!
+! Reactions of C2H5
+!
+ C2H5+H(+M) = C2H6(+M)                    5.210E+17   -0.990   1580.00
+      LOW  /  1.990E+41   -7.080   6685.00/
+      TROE/  0.8422  125.00  2219.00  6882.00 /
+    H2/2.0/ H2O/6.0/ CH4/2.0/ CO/1.5/ CO2/2.0/ C2H6/3.0/ AR/0.7/
+ C2H5+H = C2H4+H2                         2.000E+12    0.000      0.00
+ C2H5+O = CH3+CH2O                        1.320E+14    0.000      0.00
+ C2H5+O2 = C2H4+HO2                       8.400E+11    0.000   3875.00
+!
+! Reactions of C2H6
+!
+ C2H6+H = C2H5+H2                         1.150E+08    1.900   7530.00
+ C2H6+O = C2H5+OH                         8.980E+07    1.920   5690.00
+ C2H6+OH = C2H5+H2O                       3.540E+06    2.120    870.00
+ C2H6+CH2* = C2H5+CH3                     4.000E+13    0.000   -550.00
+ C2H6+CH3 = C2H5+CH4                      6.140E+06    1.740  10450.00
+!
+!=========================================================================!
+!                                                                         !
+! C3-up chemistry from the present work - June 1994                       !
+!                                                                         !
+!=========================================================================!
+!                                                                         !
+! (4) C4 and higher linear species: H-abstraction by OH                 !
+!                                                                         !
+!     A refit to Liu's expression with n=2 (assumed equal to k(C2H4+OH)   !
+!     gives C4H6 + OH = i-C4H5 + H2O 3.1E+6, 2.0, 430.0 (cal/mol)         !
+!     Thus, each C-H to produce i-CxHy is 1.55E+06, 2.0, 430 (cal/mol)    !
+!           each C-H to produce n-CxHy is 1.55E+06, 2.0,3430 (cal/mol)    !
+!           with + 3cal/mol assumed.                                      !
+!                                                                         !
+! (5) C4 and higher lineat species: H-abstraction by H                   !
+!                                                                         !
+!     k = k(C2H4 + H) per H atom for n-CxHy + H2 and                      !
+!         E-3kcal/mol for i-CxHy + H2 products.                           !
+!=========================================================================!
+!
+! C2O taken from Miller-Melius
+!
+ HCCO + OH = C2O + H2O            3.00E+13    0.0      0.0
+ C2O + H = CH + CO                5.00E+13    0.0      0.0
+ C2O + O = CO + CO                5.00E+13    0.0      0.0
+ C2O + OH = CO + CO + H           2.00E+13    0.0      0.0
+ C2O + O2 = CO + CO + O           2.00E+13    0.0      0.0
+!
+! C2H3O chemistry
+!
+ CH2CO + H = C2H3O                5.40E+11    0.454 1820.0  ! half of kinf(C2H4+H)
+ C2H3O + H = CH2CO + H2           1.00E+13    0.0      0.0  ! Estimated
+ C2H3O + O = CH2O + HCO           9.60E+06    1.83   220.0  ! half of k(C2H4+O)
+ C2H3O + O = CH2CO + OH           1.00E+13    0.0      0.0  ! Estimated
+ C2H3O + OH = CH2CO + H2O         5.00E+12    0.0      0.0  ! Estimated
+!
+ CH3 + HCCO = C2H4 + CO           5.00E+13    0.0      0.0  ! Guess
+ CH3 + C2H = C3H3 + H             2.41E+13    0.0      0.0  ! Tsang-Hampson
+ CH4 + C2H = C2H2 + CH3           1.81E+12    0.0    500.0  ! Tsang-Hampson
+!
+ C2H2 + CH = C3H2 + H             3.00E+13    0.0      0.0  ! Warnatz 83
+!  
+! C2H2 + CH2 = C3H3 + H            2.40E+13    0.0   6620.0  ! Bohland 86
+ C2H2 + CH2 = C3H3 + H            2.40E+13    0.0   6620.0  ! Bohland 86
+
+C2H2 + CH2* = C3H3 + H            4.00E+13    0.0      0.0  ! Estimated
+! C2H2 + CH2* = C3H3 + H           2.00E+13    0.0      0.0  ! Estimated ak
+!
+!C2H2 + CH3 = AC3H4 + H          2.87E+21 -2.74 24800.0 !  20 t Westml
+!C2H2 + CH3 = AC3H4 + H          2.87E+21 -2.74 24800.0 !  90 t Westml
+ C2H2 + CH3 = AC3H4 + H         5.72E+20 -2.36 31500.0 ! 760 t Westml
+!
+!C2H2 + CH3 = PC3H4 + H          1.00E+13 -0.53 13400.0 !  20 t Westml
+!C2H2 + CH3 = PC3H4 + H          1.00E+13 -0.53 13400.0 !  90 t Westml
+ C2H2 + CH3 = PC3H4 + H         2.72E+18 -1.97 20200.0 ! 760 t Westml
+!
+ C2H2 + C2H = C4H2 + H            9.60E+13    0.0      0.0  ! See notes
+!C2H2 + C2H = C4H2 + H            3.00E+13    0.0      0.0  ! Changed
+!
+!C2H2 + C2H = n-C4H3              1.10E+30   -6.30  2790.0  ! RRKM, 20 t
+!C2H2 + C2H = n-C4H3              1.30E+30   -6.12  2510.0  ! RRKM, 90 t
+ C2H2 + C2H = n-C4H3              4.50E+37   -7.68  7100.0  ! RRKM, 760 t
+!
+!C2H2 + C2H = i-C4H3              4.10E+33   -7.31  4600.0  ! RRKM, 20 t
+!C2H2 + C2H = i-C4H3              1.60E+34   -7.28  4830.0  ! RRKM, 90 t
+ C2H2 + C2H = i-C4H3              2.60E+44   -9.47 14650.0  ! RRKM, 760 t
+!
+!C2H3 + C2H2 = C4H4 + H            7.2E+13   -0.48   6100. ! 10 t
+!C2H2 + C2H3 = C4H4 + H            5.00E+14  -0.71   6700. ! 20 t
+!C2H2 + C2H3 = C4H4 + H            4.60E+16  -1.25   8400. ! 90 t
+ C2H2 + C2H3 = C4H4 + H            2.00E+18  -1.68  10600. ! 760 t
+!C2H3 + C2H2 = C4H4 + H            4.9E+16   -1.13  11800. ! 7600 t
+!
+!C2H3 + C2H2 = n-C4H5              1.1E+31   -7.14   5600. ! 10 t
+!C2H2 + C2H3 = n-C4H5              1.1E+32   -7.33   6200. ! 20 t
+!C2H2 + C2H3 = n-C4H5              2.4E+31   -6.95   5600. ! 90 t
+ C2H2 + C2H3 = n-C4H5              9.3E+38   -8.76  12000. ! 760 t
+!C2H3 + C2H2 = n-C4H5              8.1E+37   -8.09  13400. ! 7600 t
+!
+!C2H3 + C2H2 = i-C4H5              5.0E+34   -8.42   7900. ! 10 t
+!C2H2 + C2H3 = i-C4H5              2.1E+36   -8.78   9100. ! 20 t
+!C2H2 + C2H3 = i-C4H5              1.0E+37   -8.77   9800. ! 90 t
+ C2H2 + C2H3 = i-C4H5              1.6E+46  -10.98  18600. ! 760 t
+!C2H3 + C2H2 = i-C4H5              5.1E+53  -12.64  28800. ! 7600 t
+!
+ C2H4 + C2H = C4H4 + H            1.20E+13    0.0      0.0  ! Tsang
+!
+!C2H4 + C2H3 = C4H6-13 + H           7.4E+14    -0.66  8420.0  ! 20 t
+!C2H4 + C2H3 = C4H6-13 + H           1.9E+17    -1.32 10600.0  ! 90 t
+ C2H4 + C2H3 = C4H6-13 + H           2.8E+21    -2.44 14720.0  ! 760 t
+!
+ C2H2 + HCCO = C3H3 + CO          1.00E+11    0.0   3000.0  ! Miller-Bowman
+!
+! Too larger the reverse rate constant
+ C2H4 + O2 = C2H3 + HO2           4.22E+13    0.0  60800.0  ! Tsang-Hampson +3.2kcal/mol
+!
+ C2H3 + H2O2 = C2H4 + HO2         1.21E+10    0.0   -596.0  ! Tsang-Hampson
+ C2H3 + HCO = C2H4 + CO           2.50E+13    0.0      0.0  ! Guess
+ C2H3 + CH3 = C2H2 + CH4          3.92E+11    0.0      0.0  ! Tsang-Hampson
+!
+!C2H3 + C2H3 = C4H6-13              7.0E+57  -13.82     17629.  ! RRKM 20 t
+!C2H3 + C2H3 = C4H6-13              1.5E+52  -11.97     16056.  ! RRKM 90 t
+ C2H3 + C2H3 = C4H6-13              1.5E+42   -8.84     12483.  ! RRKM 760 t
+!
+!C2H3 + C2H3 = i-C4H5 + H        1.5E+30   -4.95     12958.  ! RRKM 20 t
+!C2H3 + C2H3 = i-C4H5 + H        7.2E+28   -4.49     14273.  ! RRKM 90 t
+ C2H3 + C2H3 = i-C4H5 + H        1.2E+22   -2.44     13654.  ! RRKM 760 t
+!
+!C2H3 + C2H3 = n-C4H5 + H        1.1E+24   -3.28     12395.  ! RRKM 20 t
+!C2H3 + C2H3 = n-C4H5 + H        4.6E+24   -3.38     14650.  ! RRKM 90 t
+ C2H3 + C2H3 = n-C4H5 + H        2.4E+20   -2.04     15361.  ! RRKM 760 t
+!
+! Reactions of C3Hx species
+!
+ C3H2 + O = C2H2 + CO             6.80E+13    0.0      0.0  ! Warnatz 82
+ C3H2 + OH = HCO + C2H2           6.80E+13    0.0      0.0  ! Warnatz 82
+ C3H2 + O2 = HCCO + CO + H        5.00E+13    0.0      0.0  ! Miller-Melius
+ C3H2 + CH = C4H2 + H             5.00E+13    0.0      0.0  ! Estimated
+ C3H2 + CH2 = n-C4H3 + H          5.00E+13    0.0      0.0  ! Guess
+ C3H2 + CH3 = C4H4 + H            5.00E+12    0.0      0.0  ! Guess
+ C3H2 + HCCO = n-C4H3 + CO        1.00E+13    0.0      0.0  ! Guess
+!
+ C3H3 + H (+M) = AC3H4 (+M)       3.00E+13    0.0      0.0  ! Est. See notes
+     LOW/ 1.4E+31 -5.00 -6000.0/
+     TROE / 0.5 2000. 10.0 10000.0/
+   H2/2.0/ H2O/6.0/ CH4/2.0/ CO/1.5/ CO2/2.0/ C2H6/3.0/ AR/0.7/
+ C3H3 + H (+M) = PC3H4 (+M)       3.00E+13    0.0      0.0  ! Est. See notes
+     LOW/ 1.4E+31 -5.00 -6000.0/
+     TROE / 0.5 2000. 10.0 10000.0/
+   H2/2.0/ H2O/6.0/ CH4/2.0/ CO/1.5/ CO2/2.0/ C2H6/3.0/ AR/0.7/
+ C3H3 + O = CH2O + C2H            2.00E+13    0.0      0.0  ! Miller-Bowman
+!
+! Products reassigned to avoid C3H3 and C3H2 build-up
+!
+ C3H3 + OH = C3H2 + H2O           2.00E+13    0.0      0.0  ! Miller-Bowman
+ C3H3 + OH = C2H3 + HCO           4.00E+13    0.0      0.0  ! Guess
+ C3H3 + O2 = CH2CO + HCO          3.00E+10    0.0   2878.0  ! Gutman
+ C3H3 + HO2 = AC3H4 + O2          1.00E+12    0.0      0.0  ! Guess
+ C3H3 + HO2 = PC3H4 + O2          1.00E+12    0.0      0.0  ! Guess
+ C3H3 + HCO = AC3H4 + CO          2.50E+13    0.0      0.0  ! Guess
+ C3H3 + HCO = PC3H4 + CO          2.50E+13    0.0      0.0  ! Guess
+!
+ C3H3 + CH = i-C4H3 + H           5.00E+13    0.0      0.0  ! Guess
+ C3H3 + CH2 = C4H4 + H            2.00E+13    0.0      0.0  ! Guess
+ i-C4H5 + H = C3H3 + CH3          2.00E+13    0.0   2000.0  ! Guess
+ C3H3 + CH3 (+M) = C4H6-12 (+M)    1.50E+13    0.0      0.0  ! kinf assumed falloff=C2H3+CH3 TS1 600 cm-1
+                         LOW /2.60E+58 -11.94 9770.0/
+                         TROE /0.175 1340.6 60000.0 9769.8/
+   H2/2.0/ H2O/6.0/ CH4/2.0/ CO/1.5/ CO2/2.0/ C2H6/3.0/ AR/0.7/
+!
+!DUE TO THE LACK OF CONCLUSIVE EXPERTIMENTAL EVIDENCE I'VE USED THE REACTION RATE
+!ESTIMATE'S OF MARINOV ET AL (IN COMB. AND FLAME 1998) TO FIT VOVELLES EXP. PEAK IN BENZENE
+!
+AC3H4 + C3H3 = A1 + H		       4.4E11      0.0      2000    ! WU and KERN
+C3H3 + C3H3 = A1- + H              2E12         0.0     0.0    ! MARINOV ET AL. ESTIMATE 760TORR
+C3H3 + C3H3 = A1                   5.56E+20    -2.535   1692   ! MARINOV ET AL. ESTIMATE 760TORR
+!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!
+! Joerg devided by 2
+ AC3H4 + H = C3H3 + H2            5.75E+07    1.9   7530.0  ! = Above
+ AC3H4 + O = CH2CO + CH2          2.00E+07    1.8   1000.0  ! Est. See notes
+ AC3H4 + OH = C3H3 + H2O          5.30E+06    2.0   2000.0  ! Refit to Liu(note
+ AC3H4 + C2H = C2H2 + C3H3        1.00E+13    0.0      0.0  ! Guess
+!
+ PC3H4 + H = C3H3 + H2            1.15E+08    1.9   7530.0  ! = C2H6 + H
+!PC3H4 + H = CH3 + C2H2           1.30E+05    2.5   1000.0  ! Hidaka
+ PC3H4 + OH = C3H3 + H2O          3.54E+06    2.12   870.0  ! = C2H6 + OH
+ PC3H4 + C2H = C2H2 + C3H3        1.00E+13    0.0      0.0  ! Guess
+!
+! Reactions of C4H and C4H2
+!
+ C4H + H (+M) = C4H2 (+M)                     1.000E+17   -1.000      0.00
+      LOW  /  3.750E+33   -4.800   1900.00/
+      TROE/  0.6464  132.00  1315.00  5566.00 /
+   H2/2.0/ H2O/6.0/ CH4/2.0/ CO/1.5/ CO2/2.0/ C2H6/3.0/ AR/0.7/
+!
+ C4H + C2H2 = C6H2 + H            9.60E+13    0.0      0.0  ! = C2H2 + C2H
+!C4H + C2H2 = C6H2 + H            3.00E+13    0.0      0.0  ! = C2H2 + C2H
+!
+ C4H + O = C2H + C2O              5.00E+13    0.0      0.0  ! = C2H + O
+ C4H + O2 = HCCO + C2O            5.00E+13    0.0   1500.0  ! = C2H + O2
+ C4H + H2 = H + C4H2              4.90E+05    2.5    560.0  ! = C2H + H2
+!
+!C4H2 + H = n-C4H3                1.70E+49  -11.67 12804.0  ! RRKM, 20 t
+!C4H2 + H = n-C4H3                3.30E+50  -11.80 15010.0  ! RRKM, 90 t
+ C4H2 + H = n-C4H3                1.10E+42   -8.72 15300.0  ! RRKM, 760 t
+!
+!C4H2 + H = i-C4H3                4.30E+45  -10.15 13250.0  ! RRKM, 20 t
+!C4H2 + H = i-C4H3                2.60E+46  -10.15 15500.0  ! RRKM, 90 t
+ C4H2 + H = i-C4H3                1.10E+30   -4.92 10800.0  ! RRKM, 760 t
+!
+ C4H2 + O = C3H2 + CO             2.70E+13    0.0   1720.0  ! Wellman
+ C4H2 + OH = H2C4O + H            6.60E+12    0.0   -410.0  ! Perry?
+ C4H2 + OH = C4H + H2O            3.37E+07    2.0  14000.0  ! = C2H2 + OH
+ C4H2 + CH = C5H2 + H             5.00E+13    0.0      0.0  ! Guess
+ C4H2 + CH2 = C5H3 + H            1.30E+13    0.0   6620.0  ! = C2H2 + CH2
+ C4H2 + CH2* = C5H3 + H           2.00E+13    0.0      0.0  ! Miller-Melius
+!
+ C4H2 + C2H = C6H2 + H            9.60E+13    0.0      0.0  ! = C2H2 + C2H
+!C4H2 + C2H = C6H2 + H            3.00E+13    0.0      0.0  ! = C2H2 + C2H
+!
+!C4H2 + C2H = C6H3                1.10E+30   -6.30  2790.0  ! RRKM, 20 t
+!C4H2 + C2H = C6H3                1.30E+30   -6.12  2510.0  ! RRKM, 90 t
+ C4H2 + C2H = C6H3                4.50E+37   -7.68  7100.0  ! RRKM, 760 t
+!
+ H2C4O + H = C2H2 + HCCO          5.00E+13    0.0   3000.0  ! Miller-Melius
+ H2C4O + OH = CH2CO + HCCO        1.00E+07    2.0   2000.0  ! Miller-Melius
+ H2C4O + O = CH2CO + C2O          2.00E+07    1.9    200.0  ! Estimated
+!
+! Reactions of C4H3 and C4H4
+!
+!n-C4H3 = i-C4H3                  3.70E+61  -15.81 54890.0  ! RRKM, 20 t
+!n-C4H3 = i-C4H3                  1.00E+51  -12.45 51000.0  ! RRKM, 90 t
+ n-C4H3 = i-C4H3                  4.10E+43   -9.49 53000.0  ! RRKM, 760 t
+!
+!n-C4H3 + H = i-C4H3 + H          2.40E+11    0.79  2410.0  ! RRKM, 20 t
+!n-C4H3 + H = i-C4H3 + H          9.20E+11    0.63  2990.0  ! RRKM, 90 t
+ n-C4H3 + H = i-C4H3 + H          2.50E+20   -1.67 10800.0  ! RRKM, 760 t
+!
+!n-C4H3 + H = C2H2 + C2H2         1.60E+19   -1.60  2220.0  ! RRKM, 20 t
+!n-C4H3 + H = C2H2 + C2H2         1.30E+20   -1.85  2960.0  ! RRKM, 90 t
+ n-C4H3 + H = C2H2 + C2H2         6.30E+25   -3.34 10014.0  ! RRKM, 760 t
+!
+!i-C4H3 + H = C2H2 + C2H2         2.40E+19   -1.60  2800.0  ! RRKM, 20 t
+!i-C4H3 + H = C2H2 + C2H2         3.70E+22   -2.50  5140.0  ! RRKM, 90 t
+ i-C4H3 + H = C2H2 + C2H2         2.80E+23   -2.55 10780.0  ! RRKM, 760 t
+!
+!n-C4H3 + H = C4H4                1.10E+42   -9.65  7000.0  ! RRKM, 20 t
+!n-C4H3 + H = C4H4                1.10E+42   -9.65  7000.0  ! RRKM, 90 t
+ n-C4H3 + H = C4H4                2.00E+47  -10.26 13070.0  ! RRKM, 760 t
+!
+!i-C4H3 + H = C4H4                4.20E+44  -10.27  7890.0  ! RRKM, 20 t
+!i-C4H3 + H = C4H4                5.30E+46  -10.68  9270.0  ! RRKM, 90 t
+ i-C4H3 + H = C4H4                3.40E+43   -9.01 12120.0  ! RRKM, 760 t
+!
+ n-C4H3 + H = C4H2 + H2           1.50E+13    0.00     0.0  ! 0.5*C2H3+H
+ i-C4H3 + H = C4H2 + H2           3.00E+13    0.00     0.0  ! C2H3+H
+ n-C4H3 + OH = C4H2 + H2O         2.50E+12    0.00     0.0
+ i-C4H3 + OH = C4H2 + H2O         5.00E+12    0.00     0.0
+ i-C4H3 + O2 = HCCO + CH2CO       7.86E+16   -1.80     0.0  ! Gutman
+!
+!n-C4H3 + C2H2 = l-C6H4 + H        1.4E+15   -0.81  10000. ! 10 t
+!n-C4H3 + C2H2 = l-C6H4 + H        3.7E+16   -1.21  11100. ! 20 t
+!n-C4H3 + C2H2 = l-C6H4 + H        1.8E+19   -1.95  13200. ! 90 t
+ n-C4H3 + C2H2 = l-C6H4 + H        2.5E+14   -0.56  10600. ! 760 t
+!n-C4H3 + C2H2 = l-C6H4 + H        1.2E+17   -1.28  13700. ! 7600 t
+!
+!n-C4H3 + C2H2 = n-C6H5            1.5E+33   -7.29  13300. ! 10 t
+!n-C4H3 + C2H2 = n-C6H5            6.0E+33   -7.37  13700. ! 20 t
+!n-C4H3 + C2H2 = n-C6H5            4.1E+33   -7.12  13700. ! 90 t
+ n-C4H3 + C2H2 = n-C6H5            2.7E+36   -7.62  16200. ! 760 t
+!n-C4H3 + C2H2 = n-C6H5            3.8E+21   -3.17   6400. ! 7600 t
+!
+!n-C4H3 + C2H2 = A1-               1.4E+67  -17.42  23000. ! 10 t
+!n-C4H3 + C2H2 = A1-               2.3E+68  -17.65  24400. ! 20 t
+!n-C4H3 + C2H2 = A1-               9.8E+68  -17.58  26500. ! 90 t
+ n-C4H3 + C2H2 = A1-               9.6E+70  -17.77  31300. ! 760 t
+!n-C4H3 + C2H2 = A1-               1.9E+63  -15.25  30600. ! 7600 t
+!
+!n-C4H3 + C2H2 = c-C6H4 + H        9.2E+33   -6.57  15900. ! 10 t
+!n-C4H3 + C2H2 = c-C6H4 + H        1.9E+36   -7.21  17900. ! 20 t
+!n-C4H3 + C2H2 = c-C6H4 + H        3.5E+41   -8.63  23000. ! 90 t
+ n-C4H3 + C2H2 = c-C6H4 + H        6.9E+46  -10.01  30100. ! 760 t
+!n-C4H3 + C2H2 = c-C6H4 + H        3.1E+49  -10.59  37700. ! 7600 t
+!
+!C4H4 + H = n-C4H5                 1.2E+51  -12.57  12300. ! 10 t
+!C4H4 + H = n-C4H5                 4.2E+50  -12.34  12500. ! 20 t
+!C4H4 + H = n-C4H5                 1.1E+50  -11.94  13400. ! 90 t
+ C4H4 + H = n-C4H5                 1.3E+51  -11.92  16500. ! 760 t
+!C4H4 + H = n-C4H5                 6.2E+45  -10.08  15800. ! 7600 t
+!
+!C4H4 + H = i-C4H5                 6.1E+53  -13.19  14200. ! 10 t
+!C4H4 + H = i-C4H5                 9.6E+52  -12.85  14300. ! 20 t
+!C4H4 + H = i-C4H5                 2.1E+52  -12.44  15500. ! 90 t
+ C4H4 + H = i-C4H5                 4.9E+51  -11.92  17700. ! 760 t
+!C4H4 + H = i-C4H5                 1.5E+48  -10.58  18800. ! 7600 t
+!
+ C4H4 + H = n-C4H3 + H2           6.65E+05    2.53 12240.0  ! =(C2H4+H)/2
+ C4H4 + H = i-C4H3 + H2           3.33E+05    2.53  9240.0  ! -3kcal/mol, /4
+!
+ C4H4 + OH = n-C4H3 + H2O         3.10E+06    2.0   3430.0  ! = C4H6 + OH
+ C4H4 + OH = i-C4H3 + H2O         1.55E+06    2.0    430.0  ! -3kcal/mol, /2
+!
+ C4H4 + O = PC3H4 + CO            3.00E+13    0.0   1808.0  ! Homann&Wellman
+!
+!C4H4 + C2H3 = l-C6H6 + H         7.4E+14    -0.66  8420.0  ! 20 t
+!C4H4 + C2H3 = l-C6H6 + H         1.9E+17    -1.32 10600.0  ! 90 t
+ C4H4 + C2H3 = l-C6H6 + H         2.8E+21    -2.44 14720.0  ! 760 t
+!
+! Reactions of C4H5 and 1,3-C4H6
+!
+!n-C4H5 = i-C4H5                   2.4E+60  -16.08  47500. ! 10 t
+!n-C4H5 = i-C4H5                   1.3E+62  -16.38  49600. ! 20 t
+!n-C4H5 = i-C4H5                   4.9E+66  -17.26  55400. ! 90 t
+ n-C4H5 = i-C4H5                   1.5E+67  -16.89  59100. ! 760 t
+!n-C4H5 = i-C4H5                   2.0E+60  -14.46  58600. ! 7600 t
+!
+!n-C4H5 + H = i-C4H5 + H         1.0E+36   -6.26     17486.  ! RRKM 20 t
+!n-C4H5 + H = i-C4H5 + H         1.0E+34   -5.61     18476.  ! RRKM 90 t
+ n-C4H5 + H = i-C4H5 + H         3.1E+26   -3.35     17423.  ! RRKM 760 t
+!
+!C4H6-13 = i-C4H5 + H               8.2E+51  -10.92    118409.  ! RRKM 20 t
+!C4H6-13 = i-C4H5 + H               3.3E+45   -8.95    115934.  ! RRKM 90 t
+ C4H6-13 = i-C4H5 + H               5.7E+36   -6.27    112353.  ! RRKM 760 t
+!
+!C4H6-13 = n-C4H5 + H               3.5E+61  -13.87    129677.  ! RRKM 20 t
+!C4H6-13 = n-C4H5 + H               8.5E+54  -11.78    127472.  ! RRKM 90 t
+ C4H6-13 = n-C4H5 + H               5.3E+44   -8.62    123608.  ! RRKM 760 t
+!
+ n-C4H5 + H = C4H4 + H2            1.5E+13    0.00      0.
+ i-C4H5 + H = C4H4 + H2            3.0E+13    0.00      0.
+ n-C4H5 + OH = C4H4 + H2O          2.5E+12    0.00      0.
+ i-C4H5 + OH = C4H4 + H2O          5.0E+12    0.00      0.
+ n-C4H5 + O2 => C2H4 + CO + HCO    4.16E+10   0.00   2500.  ! Gutman
+ i-C4H5 + O2 = CH2CO + C2H3O       7.86E+16   -1.80     0.0  ! =i-C4H3+O2
+!
+!n-C4H5 + C2H2 + M = n-C6H7 + M    4.5E+26   -3.28  10200. ! 10 t
+!n-C4H5 + C2H2 + M = n-C6H7 + M    4.5E+26   -3.28  10200. ! 20 t
+!n-C4H5 + C2H2 + M = n-C6H7 + M    4.5E+26   -3.28  10200. ! 90 t
+ n-C4H5 + C2H2 = n-C6H7            1.1E+14   -1.27   2900. ! 760 t
+!n-C4H5 + C2H2 = n-C6H7            5.2E+15   -1.46   4000. ! 7600 t
+!
+!n-C4H5 + C2H2 + M = c-C6H7 + M    5.2E+25   -4.21   4000. ! 10 t
+!n-C4H5 + C2H2 + M = c-C6H7 + M    5.2E+25   -4.21   4000. ! 20 t
+!n-C4H5 + C2H2 + M = c-C6H7 + M    5.2E+25   -4.21   4000. ! 90 t
+ n-C4H5 + C2H2 = c-C6H7            5.0E+24   -5.46   4600. ! 760 t
+!n-C4H5 + C2H2 = c-C6H7            7.7E+25   -5.50   5400. ! 7600 t
+!
+!n-C4H5 + C2H2 = l-C6H6 + H        5.8E+08    1.02  10900. ! 10 t
+!n-C4H5 + C2H2 = l-C6H6 + H        5.8E+08    1.02  10900. ! 20 t
+!n-C4H5 + C2H2 = l-C6H6 + H        5.8E+08    1.02  10900. ! 90 t
+ n-C4H5 + C2H2 = l-C6H6 + H        5.8E+08    1.02  10900. ! 760 t
+!n-C4H5 + C2H2 = l-C6H6 + H        2.9E+04    2.24   8600. ! 7600 t
+!
+!n-C4H5 + C2H2 = A1 + H            2.1E+15   -1.07   4800. ! 10 t
+!n-C4H5 + C2H2 = A1 + H            2.1E+15   -1.07   4800. ! 20 t
+!n-C4H5 + C2H2 = A1 + H            2.1E+15   -1.07   4800. ! 90 t
+ n-C4H5 + C2H2 = A1 + H            1.6E+16   -1.33   5400. ! 760 t
+!n-C4H5 + C2H2 = A1 + H            1.6E+18   -1.88   7400. ! 7600 t
+!
+ C4H6-13 + H = n-C4H5 + H2           1.33E+06    2.53 12240.0  ! = C2H4 + H
+ C4H6-13 + H = i-C4H5 + H2           6.65E+05    2.53  9240.0  ! -3kcal/mol,/2
+ C4H6-13 + OH = n-C4H5 + H2O         6.20E+06    2.0   3430.0  ! refit to Liu
+ C4H6-13 + OH = i-C4H5 + H2O         3.10E+06    2.0    430.0  ! -3kcal/mol
+!
+!C4H6-13 + C2H3 = C6H8 + H           7.4E+14    -0.66  8420.0  ! 20 t
+!C4H6-13 + C2H3 = C6H8 + H           1.9E+17    -1.32 10600.0  ! 90 t
+ C4H6-13 + C2H3 = C6H8 + H           2.8E+21    -2.44 14720.0  ! 760 t
+!
+! Reactions of 1,2-C4H6
+!
+ C4H6-12 + H = C4H6-13 + H            2.00E+13    0.0   4000.0  ! Guess
+ C4H6-12 + H = i-C4H5 + H2         1.70E+05    2.5   2490.0  ! = C3H6+H TS5
+! Joerg changed
+ C4H6-12 + H = AC3H4 + CH3         8.00E+13    0.0   1000.0  ! Guess
+ C4H6-12 + O = CH2CO + C2H4        1.20E+08    1.65   327.0  ! C3H6+O TS5
+ C4H6-12 + O = i-C4H5 + OH         1.80E+11    0.70  5880.0  ! C3H6+O TS5
+ C4H6-12 + OH = i-C4H5 + H2O       3.10E+06    2.00  -298.0  ! C3H6+OH
+!
+! Reactions of C5H2 and C5H3
+!
+ C5H2 + OH => C4H2 + H + CO       2.00E+13    0.0      0.0  ! Guess
+ C5H2 + CH = C6H2 + H             5.00E+13    0.0      0.0  ! Guess
+ C5H2 + O2 = H2C4O + CO           1.00E+12    0.0      0.0  ! Guess
+ C5H3 + OH = C5H2 + H2O           1.00E+13    0.0      0.0  ! Guess
+ C5H3 + CH = C6H2 + H + H         5.00E+13    0.0      0.0  ! Guess
+ C5H3 + CH2 = l-C6H4 + H          5.00E+13    0.0      0.0  ! = C3H3+CH2
+ C5H3 + O2 = H2C4O + HCO          1.00E+12    0.0      0.0  ! Guess
+!
+! Reactions of C6H and C6H2
+!
+ C6H + H (+M) = C6H2 (+M)                     1.000E+17   -1.000      0.00
+      LOW  /  3.750E+33   -4.800   1900.00/
+      TROE/  0.6464  132.00  1315.00  5566.00 /
+   H2/2.0/ H2O/6.0/ CH4/2.0/ CO/1.5/ CO2/2.0/ C2H6/3.0/ AR/0.7/
+!C6H2 + H = C6H3                  4.30E+45  -10.15 13250.0  ! RRKM, 20 t
+!C6H2 + H = C6H3                  2.60E+46  -10.15 15500.0  ! RRKM, 90 t
+ C6H2 + H = C6H3                  1.10E+30   -4.92 10800.0  ! RRKM, 760 t
+ C6H + O = C4H + C2O              5.00E+13    0.0      0.0  ! = C2H + O
+ C6H + H2 = H + C6H2              4.90E+05    2.5    560.0  ! = C2H + H2
+ C6H2 + O = C5H2 + CO             2.70E+13    0.0   1720.0  ! = C4H2 + O
+ C6H2 + OH =>C2H+C2H2+C2O         6.60E+12    0.0   -410.0  ! = C4H2 + OH
+ C6H2 + OH = C6H + H2O            3.37E+07    2.0  14000.0  ! = C2H2 + OH
+!
+! Reactions of C6H3 and C6H4
+!
+!C6H3 + H = C4H2 + C2H2           2.40E+19   -1.60  2800.0  ! RRKM, 20 t
+!C6H3 + H = C4H2 + C2H2           3.70E+22   -2.50  5140.0  ! RRKM, 90 t
+ C6H3 + H = C4H2 + C2H2           2.80E+23   -2.55 10780.0  ! RRKM, 760 t
+!
+!C6H3 + H = l-C6H4                4.20E+44  -10.27  7890.0  ! RRKM, 20 t
+!C6H3 + H = l-C6H4                5.30E+46  -10.68  9270.0  ! RRKM, 90 t
+ C6H3 + H = l-C6H4                3.40E+43   -9.01 12120.0  ! RRKM, 760 t
+!
+ C6H3 + H = C6H2 + H2             3.00E+13    0.00     0.0  ! C2H3+H
+ C6H3 + OH = C6H2 + H2O           5.00E+12    0.00     0.0
+ C6H3+O2 => CO+C3H2+HCCO          5.00E+11    0.00     0.0  ! Estimated
+!
+!l-C6H4 + H = n-C6H5               1.6E+44  -10.05  18400. ! 10 t
+!l-C6H4 + H = n-C6H5               3.3E+44  -10.04  18800. ! 20 t
+!l-C6H4 + H = n-C6H5               2.6E+43   -9.53  18100. ! 90 t
+ l-C6H4 + H = n-C6H5               5.9E+39   -8.25  15600. ! 760 t
+!l-C6H4 + H = n-C6H5               9.5E+23   -3.54   5300. ! 7600 t
+!
+!l-C6H4 + H = A1-                  4.4E+74  -19.09  25800. ! 10 t
+!l-C6H4 + H = A1-                  3.6E+77  -20.09  28100. ! 20 t
+!l-C6H4 + H = A1-                  4.7E+78  -20.10  29500. ! 90 t
+ l-C6H4 + H = A1-                  1.7E+78  -19.72  31400. ! 760 t
+!l-C6H4 + H = A1-                  3.9E+69  -16.63  34100. ! 7600 t
+!
+!l-C6H4 + H = c-C6H4+ H            8.7E+45   -9.61  22300. ! 10 t
+!l-C6H4 + H = c-C6H4+ H            2.2E+47   -9.98  24000. ! 20 t
+!l-C6H4 + H = c-C6H4+ H            9.7E+48  -10.37  27000. ! 90 t
+ l-C6H4 + H = c-C6H4+ H            1.4E+54  -11.70  34500. ! 760 t
+!l-C6H4 + H = c-C6H4+ H            5.7E+55  -11.98  41900. ! 7600 t
+!
+ l-C6H4 + H = C6H3 + H2           6.65E+06    2.53  9240.0  ! = C4H4+H
+ l-C6H4 + OH = C6H3 + H2O         3.10E+06    2.0    430.0  ! see notes
+!
+!c-C6H4 + H = A1-                  2.3E+79  -19.51  36800. ! 10 t
+!c-C6H4 + H = A1-                  1.2E+77  -18.77  36300. ! 20 t
+!c-C6H4 + H = A1-                  1.0E+71  -16.88  34200. ! 90 t
+ c-C6H4 + H = A1-                  2.4E+60  -13.66  29500. ! 760 t
+!c-C6H4 + H = A1-                  1.5E+47   -9.74  22900. ! 7600 t
+!
+! Reactions of C6H5 and C6H6
+!
+!n-C6H5 = A1-                      3.7E+63  -16.49  36100. ! 10 t
+!n-C6H5 = A1-                      1.3E+62  -15.94  35800. ! 20 t
+!n-C6H5 = A1-                      1.3E+59  -14.78  35600. ! 90 t
+ n-C6H5 = A1-                      5.1E+54  -13.11  35700. ! 760 t
+!n-C6H5 = A1-                      3.5E+46  -10.44  33600. ! 7600 t
+!
+!n-C6H5 = c-C6H4 + H               1.6E+65  -16.00  58400. ! 10 t
+!n-C6H5 = c-C6H4 + H               2.7E+65  -15.93  59700. ! 20 t
+!n-C6H5 = c-C6H4 + H               1.5E+64  -15.32  61500. ! 90 t
+ n-C6H5 = c-C6H4 + H               1.3E+59  -13.56  62000. ! 760 t
+!n-C6H5 = c-C6H4 + H               1.1E+50  -10.69  60900. ! 7600 t
+!
+!n-C6H5 + H = i-C6H5 + H          2.40E+11    0.79  2410.0  ! RRKM, 20 t
+!n-C6H5 + H = i-C6H5 + H          9.20E+11    0.63  2990.0  ! RRKM, 90 t
+ n-C6H5 + H = i-C6H5 + H          2.50E+20   -1.67 10800.0  ! RRKM, 760 t
+!
+!n-C6H5 + H = C4H4 + C2H2         1.60E+19   -1.60  2220.0  ! RRKM, 20 t
+!n-C6H5 + H = C4H4 + C2H2         1.30E+20   -1.85  2960.0  ! RRKM, 90 t
+ n-C6H5 + H = C4H4 + C2H2         6.30E+25   -3.34 10014.0  ! RRKM, 760 t
+!
+!i-C6H5 + H = C4H4 + C2H2         2.40E+19   -1.60  2800.0  ! RRKM, 20 t
+!i-C6H5 + H = C4H4 + C2H2         3.70E+22   -2.50  5140.0  ! RRKM, 90 t
+ i-C6H5 + H = C4H4 + C2H2         2.80E+23   -2.55 10780.0  ! RRKM, 760 t
+!
+!n-C6H5 + H = l-C6H6              1.10E+42   -9.65  7000.0  ! RRKM, 20 t
+!n-C6H5 + H = l-C6H6              1.10E+42   -9.65  7000.0  ! RRKM, 90 t
+ n-C6H5 + H = l-C6H6              2.00E+47  -10.26 13070.0  ! RRKM, 760 t
+!
+!i-C6H5 + H = l-C6H6              4.20E+44  -10.27  7890.0  ! RRKM, 20 t
+!i-C6H5 + H = l-C6H6              5.30E+46  -10.68  9270.0  ! RRKM, 90 t
+ i-C6H5 + H = l-C6H6              3.40E+43   -9.01 12120.0  ! RRKM, 760 t
+!
+ n-C6H5 + H = l-C6H4 + H2         1.50E+13    0.00     0.0  ! 0.5*C2H3+H
+ i-C6H5 + H = l-C6H4 + H2         3.00E+13    0.00     0.0  ! C2H3+H
+ n-C6H5 + OH = l-C6H4 + H2O       2.50E+12    0.00     0.0
+ i-C6H5 + OH = l-C6H4 + H2O       5.00E+12    0.00     0.0
+ n-C6H5 + O2 => C4H4 + CO + HCO   4.16E+10   0.00   2500.  ! =(n-C4H5+O2)
+ i-C6H5 + O2 => CH2CO+CH2CO+C2H   7.86E+16   -1.80     0.0  ! =(i-C4H3+O2)
+!
+!l-C6H6 + H + M = n-C6H7 + M       2.9E+17   -0.52   1000. ! 10 t
+!l-C6H6 + H + M = n-C6H7 + M       2.9E+17   -0.52   1000. ! 20 t
+!l-C6H6 + H + M = n-C6H7 + M       2.9E+17   -0.52   1000. ! 90 t
+ l-C6H6 + H = n-C6H7               1.5E+16   -1.69   1600. ! 760 t
+!l-C6H6 + H = n-C6H7               2.2E+18   -2.01   3200. ! 7600 t
+!
+!l-C6H6 + H + M = c-C6H7 + M       1.7E+28   -4.72   2800. ! 10 t
+!l-C6H6 + H + M = c-C6H7 + M       1.7E+28   -4.72   2800. ! 20 t
+!l-C6H6 + H + M = c-C6H7 + M       1.7E+28   -4.72   2800. ! 90 t
+ l-C6H6 + H = c-C6H7               4.7E+27   -6.11   3800. ! 760 t
+!l-C6H6 + H = c-C6H7               5.1E+28   -6.10   4800. ! 7600 t
+!
+!l-C6H6 + H = A1 + H               8.7E+16   -1.34   3500. ! 10 t
+!l-C6H6 + H = A1 + H               8.7E+16   -1.34   3500. ! 20 t
+!l-C6H6 + H = A1 + H               8.7E+16   -1.34   3500. ! 90 t
+ l-C6H6 + H = A1 + H               2.0E+18   -1.73   4500. ! 760 t
+!l-C6H6 + H = A1 + H               3.7E+20   -2.35   6800. ! 7600 t
+!
+ l-C6H6 + H = n-C6H5 + H2          6.65E+05    2.53 12240.0  ! = C2H4 + H/2
+ l-C6H6 + H = i-C6H5 + H2          3.33E+05    2.53  9240.0  ! -3kcal/mol,/4
+ l-C6H6 + OH = n-C6H5 + H2O        6.20E+06    2.0   3430.0  ! see notes
+ l-C6H6 + OH = i-C6H5 + H2O        3.10E+06    2.0    430.0  ! see notes
+!
+! Reactions of C6H7 and C6H8
+!
+!n-C6H7 = c-C6H7                   2.4E+23   -6.94   3200. ! 10 t
+!n-C6H7 = c-C6H7                   4.1E+24   -7.11   3900. ! 20 t
+!n-C6H7 = c-C6H7                   3.6E+27   -7.54   5800. ! 90 t
+ n-C6H7 = c-C6H7                   1.2E+31   -7.95   8900. ! 760 t
+!n-C6H7 = c-C6H7                   9.4E+30   -7.30  10800. ! 7600 t
+!
+!n-C6H7 = A1 + H                   5.9E+20   -3.98  10500. ! 10 t
+!n-C6H7 = A1 + H                   8.4E+21   -4.22  11300. ! 20 t
+!n-C6H7 = A1 + H                   8.8E+24   -4.86  13400. ! 90 t
+ n-C6H7 = A1 + H                   3.2E+26   -4.99  15500. ! 760 t
+!n-C6H7 = A1 + H                   5.3E+25   -4.42  17300. ! 7600 t
+!
+!n-C6H7 + H = i-C6H7 + H          4.0E+41    -8.09 19200.  ! 20 t
+!n-C6H7 + H = i-C6H7 + H          1.6E+42    -8.18 21800.  ! 90 t
+ n-C6H7 + H = i-C6H7 + H          2.4E+49   -10.72 15100.  ! 760 t
+!
+!i-C6H7 + H = C6H8                1.2E+60   -13.86 21000.  ! 20 t
+!i-C6H7 + H = C6H8                1.4E+55   -12.32 19300.  ! 90 t
+ i-C6H7 + H = C6H8                1.8E+39    -7.62 11000.  ! 760 t
+!
+!n-C6H7 + H = C6H8                8.7E+69   -17.01 24000.  ! 20 t
+!n-C6H7 + H = C6H8                6.7E+65   -15.64 23200.  ! 90 t
+ n-C6H7 + H = C6H8                5.6E+48   -10.54 14700.  ! 760 t
+!
+ n-C6H7 + H = l-C6H6 + H2          1.5E+13    0.00      0.
+ i-C6H7 + H = l-C6H6 + H2          3.0E+13    0.00      0.
+ n-C6H7 + OH = l-C6H6 + H2O        2.5E+12    0.00      0.
+ i-C6H7 + OH = l-C6H6 + H2O        5.0E+12    0.00      0.
+ n-C6H7 + O2 => C4H6-13 + CO + HCO   4.16E+10   0.00   2500.  ! =(n-C4H5+O2)
+ i-C6H7 + O2 => CH2CO+CH2CO+C2H3  7.86E+16   -1.80     0.0  ! =(i-C4H3+O2)
+!
+ C6H8 + H = n-C6H7 + H2           1.33E+06    2.53 12240.0  ! = C2H4 + H
+ C6H8 + H = i-C6H7 + H2           6.65E+05    2.53  9240.0  ! -3kcal/mol, /2
+ C6H8 + OH = n-C6H7 + H2O         6.20E+06    2.0   3430.0  ! see notes
+ C6H8 + OH = i-C6H7 + H2O         3.10E+06    2.0    430.0  ! see notes
+!
+! Reactions of benzene and phenyl
+!
+!A1 + H = c-C6H7                   3.2E+51  -12.57  13500. ! 20 t
+!A1 + H = c-C6H7                   1.7E+52  -12.54  15000. ! 90 t
+ A1 + H = c-C6H7                   1.4E+51  -11.90  16100. ! 760 t
+!
+ A1 + H = A1- + H2                 2.50E+14   0.0   16000. ! Kiefer
+ A1 + OH = A1- + H2O               1.60E+08  1.42  1450.0  ! CEC
+! Joerg tried 
+!A1 + O = A1- + OH                 7.23E+02  3.68  990.0   ! Baulch 2 channels!
+!
+ A1- + H (+M) = A1 (+M)            1.0E+14    0.00      0.
+     LOW/ 6.6E+75  -16.30   7000. /
+     TROE / 1.0 0.1 584.9 6113. /
+   H2/2.0/ H2O/6.0/ CH4/2.0/ CO/1.5/ CO2/2.0/ C2H6/3.0/
+!
+! Formation and reactions of A1C2H
+!
+!n-C4H3 + C4H2 = A1C2H-            1.4E+67  -17.42  23000. ! 10 t =(C2H2 + n-C4H3)
+!n-C4H3 + C4H2 = A1C2H-            2.3E+68  -17.65  24400. ! 20 t
+!n-C4H3 + C4H2 = A1C2H-            9.8E+68  -17.58  26500. ! 90 t
+ n-C4H3 + C4H2 = A1C2H-            9.6E+70  -17.77  31300. ! 760 t
+!n-C4H3 + C4H2 = A1C2H-            1.9E+63  -15.25  30600. ! 7600 t
+!
+ A1 + C2H = A1C2H + H              5.00E+13   0.0       0. ! Guess
+!
+!A1- + C2H2 = n-A1C2H2             4.0E+39   -8.94  12000. ! 10 t
+!A1- + C2H2 = n-A1C2H2             7.7E+40   -9.19  13400. ! 20 t
+!A1- + C2H2 = n-A1C2H2             9.9E+41   -9.26  15700. ! 90 t
+ A1- + C2H2 = n-A1C2H2             7.0E+38   -8.02  16400. ! 760 t
+!A1- + C2H2 = n-A1C2H2             7.9E+29   -5.15  13700. ! 7600 t
+!
+!A1- + C2H2 = A1C2H + H            5.6E+24   -3.38  15200. ! 10 t
+!A1- + C2H2 = A1C2H + H            7.5E+26   -3.96  17100. ! 20 t
+!A1- + C2H2 = A1C2H + H            9.9E+30   -5.07  21100. ! 90 t
+ A1- + C2H2 = A1C2H + H            3.3E+33   -5.70  25500. ! 760 t
+!A1- + C2H2 = A1C2H + H            2.5E+29   -4.43  26400. ! 7600 t
+!
+!A1C2H + H = n-A1C2H2              4.7E+54  -13.06  16778. ! 10 t
+!A1C2H + H = n-A1C2H2              1.0E+54  -12.76  17185. ! 20 t
+!A1C2H + H = n-A1C2H2              1.2E+51  -11.69  17280. ! 90 t
+ A1C2H + H = n-A1C2H2              3.0E+43   -9.22  15272. ! 760 t
+!A1C2H + H = n-A1C2H2              1.6E+32   -5.72  11090. ! 7600 t
+!
+!A1C2H + H = i-A1C2H2              4.7E+54  -13.06  16778. ! 10 t
+!A1C2H + H = i-A1C2H2              1.0E+54  -12.76  17185. ! 20 t
+!A1C2H + H = i-A1C2H2              1.2E+51  -11.69  17280. ! 90 t
+ A1C2H + H = i-A1C2H2              3.0E+43   -9.22  15272. ! 760 t
+!A1C2H + H = i-A1C2H2              1.6E+32   -5.72  11090. ! 7600 t
+!
+!A1C2H + H = A1C2H* + H2           2.50E+14   0.0   16000. ! =A1+H
+ A1C2H + H = A1C2H- + H2           2.50E+14   0.0   16000. ! =A1+H
+ A1C2H + OH = A1C2H* + H2O         1.60E+08  1.42  1450.0 ! =A1+OH
+ A1C2H + OH = A1C2H- + H2O         1.60E+08  1.42  1450.0 ! =A1+OH
+!
+ A1C2H- + H (+M) = A1C2H (+M)      1.0E+14    0.00      0. ! = A1-+H
+     LOW/ 6.6E+75  -16.30   7000. /
+     TROE / 1.0 0.1 584.9 6113. /
+   H2/2.0/ H2O/6.0/ CH4/2.0/ CO/1.5/ CO2/2.0/ C2H6/3.0/
+!
+ A1C2H* + H (+M) = A1C2H (+M)      1.0E+14    0.00      0. ! = A1-+H
+     LOW/ 6.6E+75  -16.30   7000. /
+     TROE / 1.0 0.1 584.9 6113. /
+   H2/2.0/ H2O/6.0/ CH4/2.0/ CO/1.5/ CO2/2.0/ C2H6/3.0/
+!
+! Formation and reactions of phenylvinyl and styrene
+!
+ A1 + C2H3 = A1C2H3 + H            7.90E+11   0.0    6400. ! Stein
+! A1- + C2H4 = A1C2H3 + H           2.51E+12   0.00   6190. ! Stein
+!
+!A1- + C2H3 = A1C2H3             1.9E+48  -10.52     17489.  ! RRKM 20 t
+!A1- + C2H3 = A1C2H3             3.9E+38   -7.63     12868.  ! RRKM 90 t
+ A1- + C2H3 = A1C2H3             1.2E+27   -4.22      7235.  ! RRKM 760 t
+!
+!A1- + C2H3 = i-A1C2H2 + H        1.8E+31   -4.63     31652.  ! RRKM 20 t
+!A1- + C2H3 = i-A1C2H2 + H        5.8E+18   -1.00     26852.  ! RRKM 90 t
+ A1- + C2H3 = i-A1C2H2 + H        8.5E-02    4.71     18424.  ! RRKM 760 t
+!
+!A1- + C2H3 = n-A1C2H2 + H        1.5E+32   -4.91     35504.  ! RRKM 20 t
+!A1- + C2H3 = n-A1C2H2 + H        5.1E+20   -1.56     31412.  ! RRKM 90 t
+ A1- + C2H3 = n-A1C2H2 + H        9.4E+00    4.14     23234.  ! RRKM 760 t
+!
+!A1C2H3 = i-A1C2H2 + H            1.2E+46   -9.07    118323.  ! RRKM 20 t
+!A1C2H3 = i-A1C2H2 + H            3.8E+37   -6.55    114204.  ! RRKM 90 t
+ A1C2H3 = i-A1C2H2 + H            5.3E+27   -3.63    109332.  ! RRKM 760 t
+!
+!A1C2H3 = n-A1C2H2 + H            1.9E+54  -11.39    130224.  ! RRKM 20 t
+!A1C2H3 = n-A1C2H2 + H            1.3E+44   -8.36    125385.  ! RRKM 90 t
+ A1C2H3 = n-A1C2H2 + H            1.1E+32   -4.77    119483.  ! RRKM 760 t
+!
+ A1C2H3 + H = A1C2H3*+ H2         2.50E+14   0.0   16000. ! Kiefer
+ A1C2H3 + OH = A1C2H3* + H2O      1.60E+08   1.42  1450.0 ! CEC
+ A1C2H3* + H (+M) = A1C2H3 (+M)   1.0E+14    0.00      0. ! = A1-+H
+     LOW/ 6.6E+75  -16.30   7000. /
+     TROE / 1.0 0.1 584.9 6113. /
+   H2/2.0/ H2O/6.0/ CH4/2.0/ CO/1.5/ CO2/2.0/ C2H6/3.0/
+!
+ A1C2H3 + H = n-A1C2H2 + H2       6.65E+06    2.53 12240.0  ! = C2H4 + H
+ A1C2H3 + H = i-A1C2H2 + H2       3.33E+05    2.53  9240.0  ! -3kcal/mol,/2
+ A1C2H3 + OH = n-A1C2H2 + H2O     3.10E+06    2.0   3430.0  ! refit to Liu
+ A1C2H3 + OH = i-A1C2H2 + H2O     1.55E+06    2.0    430.0  ! -3kcal/mol
+!
+ n-A1C2H2 + H = A1C2H + H2         1.5E+13    0.0       0.
+ i-A1C2H2 + H = A1C2H + H2         3.0E+13    0.0       0.
+!
+!n-A1C2H2 + H = i-A1C2H2 + H     2.3E+37   -6.00     35164.  ! RRKM 20 t
+!n-A1C2H2 + H = i-A1C2H2 + H     1.2E+25   -2.42     30530.  ! RRKM 90 t
+ n-A1C2H2 + H = i-A1C2H2 + H     9.9E+04    3.37     22040.  ! RRKM 760 t
+!
+ n-A1C2H2 + OH = A1C2H + H2O       2.5E+12    0.0       0.
+ i-A1C2H2 + OH = A1C2H + H2O       5.0E+12    0.0       0.
+!
+! Formation and reactions of A2
+!
+!A1C2H* + C2H2 = A1C2HC2H2         1.0E+51  -12.06  28900. ! 10xt
+!A1C2H* + C2H2 = A1C2HC2H2         3.9E+48  -11.30  27200. ! 20xt
+!A1C2H* + C2H2 = A1C2HC2H2         1.1E+43   -9.57  23100. ! 90xt
+!A1C2H* + C2H2 = A1C2HC2H2         1.4E+32   -6.28  14800. ! 760xt,
+A1C2H* + C2H2 => A1C2HC2H2         2.3E+04    2.53   2860. ! uncommented and rate changed (KAUST)
+A1C2HC2H2 => A1C2H* + C2H2         4.8E+13    0.456 43186. ! backward rate added (KAUST)
+!A1C2H* + C2H2 = A1C2HC2H2         1.9E+21   -2.93   8100. ! 7600xt
+!
+!A1C2H* + C2H2 = A2-1              7.5E+74  -18.83  34200. ! 10 t
+!A1C2H* + C2H2 = A2-1              5.2E+72  -18.11  33900. ! 20 t
+!A1C2H* + C2H2 = A2-1              2.0E+72  -17.74  36600. ! 90 t
+! * 2
+! A1C2H* + C2H2 = A2-1              2.2E+62  -14.56  33100. ! 760 t commented,detailed mech added at KAUST 
+!A1C2H* + C2H2 = A2-1              5.1E+48  -10.53  28000. ! 7600 t
+!
+!A1C2H* + C2H2 = A1C2H_2 + H      1.1E+29   -4.44  24300. ! 10 t
+!A1C2H* + C2H2 = A1C2H_2 + H      5.5E+32   -5.46  27600. ! 20 t
+!A1C2H* + C2H2 = A1C2H_2 + H      4.8E+29   -4.59  26000. ! 90 t
+!  
+ A1C2H* + C2H2 = A1C2H_2 + H      1.8E+19   -1.67  18800. ! 760 t
+!A1C2H* + C2H2 = A1C2H_2 + H      2.1E+10    0.85  13700. ! 7600 t
+!
+!A1C2H* + C2H2= naphthyn + H      7.9E+57  -12.78  43200. ! 10 t
+!A1C2H* + C2H2= naphthyn + H      2.3E+58  -12.87  44600. ! 20 t
+!A1C2H* + C2H2= naphthyn + H      5.2E+64  -14.54  52200. ! 90 t
+ A1C2H* + C2H2= naphthyn + H      5.7E+64  -14.41  57000. ! 760 t
+!A1C2H* + C2H2= naphthyn + H      4.4E+56  -12.00  57100. ! 7600 t
+!
+!A1C2H_2 + H = A1C2HC2H2          2.7E+51  -11.78  22700. ! 10xt
+!A1C2H_2 + H = A1C2HC2H2          3.0E+48  -10.87  20500. ! 20xt
+!A1C2H_2 + H = A1C2HC2H2          7.1E+42   -9.13  16300. ! 90xt
+!A1C2H_2 + H = A1C2HC2H2           2.0E+27   -4.55   4800. ! 760xt
+ A1C2H_2 + H => A1C2HC2H2u         1.2e+09    1.53   3695.5! DFT rate evaluated at KAUST; multiplied by 2 due to symmetry, 2010
+ A1C2HC2H2u => A1C2H_2 + H        1.97E+11   0.986  39642. ! DFT backward rate evaluated at KAUST; 2010
+ !A1C2H_2 + H = A1C2HC2H2          1.6E+26   -3.92   5400. ! 7600xt
+!
+! additional reactions (KAUST)
+A1C2HC2H2 => A1C2HC2H2u            2.7E+12    0.04  5092.  ! Evaluated using DFT at KAUST
+A1C2HC2H2u => A1C2HC2H2            3.89E12   0.029  4307.  ! backward rate Evaluated using DFT at KAUST
+A1C2HC2H2u => A2-1                 1.2E+12  -0.003  4484.  ! Evaluated using DFT at KAUST
+A2-1 => A1C2HC2H2u                 2.98E12   0.681 59594.  ! backward rate Evaluated using DFT at KAUST            
+!
+!A1C2H_2 + H = A2-1               9.5E+84  -21.09  37600. ! 10 t
+!A1C2H_2 + H = A2-1               2.0E+82  -20.23  36900. ! 20 t
+!A1C2H_2 + H = A2-1               2.0E+75  -18.06  34500. ! 90 t
+!*2
+!A1C2H_2 + H = A2-1               1.4E+64  -14.57  29900. ! 760 t
+ A1C2H_2 + H => A2-1               1.2e+09    1.53   3695.5! DFT rate evaluated at KAUST; multiplied by 2 due to symmetry, 2010
+!A1C2H_2 + H = A2-1               1.5E+51  -10.77  25500. ! 7600 t
+!
+!A1C2H_2 + H = naphthyn + H      2.0E+69  -15.48  48400. ! 10 t
+!A1C2H_2 + H = naphthyn + H      3.9E+74  -16.91  53700. ! 20 t
+!A1C2H_2 + H = naphthyn + H      2.7E+76  -17.32  58200. ! 90 t
+!A1C2H_2 + H = naphthyn + H      1.9E+73  -16.30  60900. ! 760 t
+ A1C2H_2 + H => naphthyn + H      1.2e+09    1.53   3695.5! DFT rate evaluated at KAUST; multiplied by 2 due to symmetry, 2010
+!A1C2H_2 + H = naphthyn + H      9.6E+62  -13.29  59500. ! 7600 t
+!
+!naphthyn + H = A2-1              3.7E+67  -17.51  38000. ! 10 t
+!naphthyn + H = A2-1              3.3E+65  -16.79  37400. ! 20 t
+!naphthyn + H = A2-1              5.9E+61  -15.42  36500. ! 90 t
+ naphthyn + H = A2-1              4.9E+52  -12.43  33000. ! 760 t
+!naphthyn + H = A2-1              2.0E+43   -9.35  30700. ! 7600 t
+!
+ A1C2H + C2H = A1C2H_2 + H        5.00E+13   0.0       0. ! Estimated
+!
+!A1C2H3*+ C2H2 = A2 + H            2.1E+15   -1.07   6000. ! 10 t C4H5+C2H2, +1.2 kcal
+!A1C2H3*+ C2H2 = A2 + H            2.1E+15   -1.07   6000. ! 20 t
+!A1C2H3*+ C2H2 = A2 + H            2.1E+15   -1.07   6000. ! 90 t
+ A1C2H3*+ C2H2 => A2 + H            1.6E+16   -1.33   6600. ! 760 t, reaction made forward KAUST
+!A1C2H3*+ C2H2 = A2 + H            1.6E+18   -1.88   8600. ! 7600 t
+!
+!n-A1C2H2 + C2H2 = A2 + H          2.1E+15   -1.07   4800. ! 10 t C4H5 + C2H2
+!n-A1C2H2 + C2H2 = A2 + H          2.1E+15   -1.07   4800. ! 20 t
+!n-A1C2H2 + C2H2 = A2 + H          2.1E+15   -1.07   4800. ! 90 t
+!n-A1C2H2 + C2H2 = A2 + H          1.6E+16   -1.33   5400. ! 760 t
+n-A1C2H2 + C2H2 => A2 + H           3.80E+07	  1.6	 4438.3 ! rate updated from Pitsch mech, KAUST, 2010, reaction made forward KAUST
+!n-A1C2H2 + C2H2 = A2 + H          1.6E+18   -1.88   7400. ! 7600 t
+!
+!A2 + H = A2-1 + H2                 2.50E+14   0.0   16000. ! Kiefea
+!A2 + H = A2-2 + H2                 2.50E+14   0.0   16000. ! Kiefea
+ A2 + OH = A2-1 + H2O               1.60E+08  1.42  1450.0 ! CEC
+ A2 + OH = A2-2 + H2O               1.60E+08  1.42  1450.0 ! CEC
+!
+ A2-1 + H (+M) = A2 (+M)             1.00E+14    0.0       0.0
+                         LOW  /  3.80E+127 -31.434 18676.0 /
+                         TROE / 0.200   122.8   478.4  5411.9 /
+   H2/2.0/ H2O/6.0/ CH4/2.0/ CO/1.5/ CO2/2.0/ C2H6/3.0/
+ A2-2 + H (+M) = A2 (+M)        1.00E+14    0.00       0.0
+                         LOW  /  9.50E+129 -32.132  18782.0  /
+                         TROE / 0.870   492.7   117.9  5652.0 /
+   H2/2.0/ H2O/6.0/ CH4/2.0/ CO/1.5/ CO2/2.0/ C2H6/3.0/
+!A2-1 + H = A2-2 + H            8.80E+58  -11.68   60974.0 ! 20 t
+!A2-1 + H = A2-2 + H            6.50E+45  -7.90    55488.0 ! 90 t
+ A2-1 + H = A2-2 + H            2.40E+24  -1.81    45281.0 ! 760 t
+!
+! Formation and reactions of A2C2H
+!
+! A2C2HA 1-ethynylnaphthalene
+! A2C2HB 2-ethynylnaphthalene
+!
+ A2 + C2H = A2C2HA + H              5.00E+13   0.0       0. ! Estimated
+ A2 + C2H = A2C2HB + H              5.00E+13   0.0       0. ! Estimated
+!
+!A2-1 + C2H2 = A2C2H2               3.8E+37   -8.23  12600. ! 10 t
+!A2-1 + C2H2 = A2C2H2               4.5E+39   -8.71  14300. ! 20 t
+!A2-1 + C2H2 = A2C2H2               3.4E+43   -9.56  18200. ! 90 t
+!A2-1 + C2H2 = A2C2H2               1.7E+43   -9.12  21100. ! 760 t commented at KAUST
+ A2-1 + C2H2 = A2C2H2               1.584e4    2.55   3951.6! DFT RATE EVALUATED AT KAUST
+!A2-1 + C2H2 = A2C2H2               2.0E+28   -4.59  14400. ! 7600 t
+!
+!A2-1 + C2H2 = A2C2HA + H            1.2E+21   -2.35  16300. ! 10 t
+!A2-1 + C2H2 = A2C2HA + H            1.4E+22   -2.64  17400. ! 20 t
+!A2-1 + C2H2 = A2C2HA + H            9.1E+24   -3.39  20400. ! 90 t
+ A2-1 + C2H2 = A2C2HA + H            1.3E+24   -3.06  22600. ! 760 t
+!A2-1 + C2H2 = A2C2HA + H            1.6E+14   -0.19  20000. ! 7600 t
+!
+!A2-1 + C2H2 = A2R5 + H             1.1E+30   -5.15  15900. ! 10xt
+!A2-1 + C2H2 = A2R5 + H             8.2E+30   -5.38  16900. ! 20xt
+!A2-1 + C2H2 = A2R5 + H             9.2E+32   -5.91  19700. ! 90xt
+!A2-1 + C2H2 = A2R5 + H             9.7E+30   -5.26  21600. ! 760xt
+!A2-1 + C2H2 = A2R5 + H             8.0E+25   -3.73  22700. ! 7600xt
+!
+!A2C2HA + H = A2C2H2                 1.8E+48  -11.17  14200. ! 10 t
+!A2C2HA + H = A2C2H2                 1.9E+50  -11.63  16200. ! 20 t
+!A2C2HA + H = A2C2H2                 3.3E+51  -11.72  18900. ! 90 t
+ A2C2HA + H = A2C2H2                 5.9E+46  -10.03  19100. ! 760 t
+!A2C2HA + H = A2C2H2                 1.7E+30   -5.07  11200. ! 7600 t
+!
+!A2C2HA + H = A2R5 + H              5.5E+37   -7.23  17200. ! 10xt
+!A2C2HA + H = A2R5 + H              1.9E+38   -7.36  18200. ! 20xt
+!A2C2HA + H = A2R5 + H              1.0E+40   -7.79  21000. ! 90xt
+!A2C2HA + H = A2R5 + H              4.6E+37   -7.03  23100. ! 760xt
+!A2C2HA + H = A2R5 + H              1.6E+32   -5.40  24300. ! 7600xt
+!
+!A2C2H2A = A2R5 + H                 4.4E+50  -12.26  37100. ! 10xt
+!A2C2H2A = A2R5 + H                 2.1E+50  -12.05  37800. ! 20xt
+!A2C2H2A = A2R5 + H                 2.2E+50  -11.80  40100. ! 90xt
+!A2C2H2A = A2R5 + H                 1.5E+46  -10.27  41300. ! 760xt
+!A2C2H2A = A2R5 + H                 6.6E+40   -8.42  42500. ! 7600xt
+!
+ A2C2H2 + H = A2C2HA + H2           1.50E+13   0.0       0. ! Estimated
+ A2C2H2 + OH = A2C2HA + H2O         2.50E+12   0.0       0. ! Estimated
+!
+ A2C2HA + H = A2C2HA* + H2           2.50E+14   0.0    16000. ! Kiefer
+ A2C2HB + H = A2C2HB* + H2           2.50E+14   0.0    16000. ! Kiefer
+ A2C2HA + OH = A2C2HA* + H2O         1.60E+08   1.42    1450. ! CEC
+ A2C2HB + OH = A2C2HB* + H2O         1.60E+08   1.42    1450. ! CEC
+!
+ A2C2HB* + H (+M) = A2C2HB (+M)      1.00E+14    0.0       0.0
+                         LOW  /  3.80E+127 -31.434 18676.0 /
+                         TROE / 0.200   122.8   478.4  5411.9 /
+   H2/2.0/ H2O/6.0/ CH4/2.0/ CO/1.5/ CO2/2.0/ C2H6/3.0/
+ A2C2HA* + H (+M) = A2C2HA (+M)      1.00E+14    0.00       0.0
+                         LOW  /  9.50E+129 -32.132  18782.0  /
+                         TROE / 0.870   492.7   117.9  5652.0 /
+   H2/2.0/ H2O/6.0/ CH4/2.0/ CO/1.5/ CO2/2.0/ C2H6/3.0/
+!
+! Formation and reactions of A3
+!
+!A2C2HB* + C2H2 = A3-1              7.5E+74  -18.83  34200. ! 10 t
+!A2C2HB* + C2H2 = A3-1              5.2E+72  -18.11  33900. ! 20 t
+!A2C2HB* + C2H2 = A3-1              2.0E+72  -17.74  36600. ! 90 t
+!A2C2HB* + C2H2 = A3-1              1.1E+62  -14.56  33100. ! 760 t commented (KAUST)
+ A2C2HB* + C2H2 => A3-1             2.3E+04    2.53   2860. ! (KAUST) rate evaluated for A1- = A2 used without any change(KAUST), reaction made forward KAUST
+!A2C2HB* + C2H2 = A3-1              5.1E+48  -10.53  28000. ! 7600 t
+!
+!A2C2HB* + C2H2 = A2C2H_2 + H      1.1E+29   -4.44  24300. ! 10 t
+!A2C2HB* + C2H2 = A2C2H_2 + H      5.5E+32   -5.46  27600. ! 20 t
+!A2C2HB* + C2H2 = A2C2H_2 + H      4.8E+29   -4.59  26000. ! 90 t
+ A2C2HB* + C2H2 = A2C2H_2 + H      1.8E+19   -1.67  18800. ! 760 t
+!A2C2HB* + C2H2 = A2C2H_2 + H      2.1E+10    0.85  13700. ! 7600 t
+!
+!A2C2H_2 + H = A3-1               9.5E+84  -21.09  37600. ! 10 t
+!A2C2H_2 + H = A3-1               2.0E+82  -20.23  36900. ! 20 t
+!A2C2H_2 + H = A3-1               2.0E+75  -18.06  34500. ! 90 t
+!A2C2H_2 + H = A3-1               6.9E+63  -14.57  29900. ! 760 t
+ A2C2H_2 + H => A3-1              1.2e+09    1.53   3695.5! DFT rate evaluated at KAUST, reaction made forward KAUST
+!A2C2H_2 + H = A3-1               1.5E+51  -10.77  25500. ! 7600 t
+!
+!A2C2HA* + C2H2 = A3-4              7.5E+74  -18.83  34200. ! 10 t
+!A2C2HA* + C2H2 = A3-4              5.2E+72  -18.11  33900. ! 20 t
+!A2C2HA* + C2H2 = A3-4              2.0E+72  -17.74  36600. ! 90 t
+!A2C2HA* + C2H2 = A3-4              1.1E+62  -14.56  33100. ! 760 t
+A2C2HA* + C2H2 => A3-4              2.3E+04    2.53   2860. ! (KAUST) rate evaluated for A1- = A2 used without any change(KAUST), reaction made forward KAUST
+!A2C2HA* + C2H2 = A3-4              5.1E+48  -10.53  28000. ! 7600 t
+!
+!A2C2HA* + C2H2 = A2C2H_2 + H      1.1E+29   -4.44  24300. ! 10 t
+!A2C2HA* + C2H2 = A2C2H_2 + H      5.5E+32   -5.46  27600. ! 20 t
+!A2C2HA* + C2H2 = A2C2H_2 + H      4.8E+29   -4.59  26000. ! 90 t
+ A2C2HA* + C2H2 = A2C2H_2 + H      1.8E+19   -1.67  18800. ! 760 t
+!A2C2HA* + C2H2 = A2C2H_2 + H      2.1E+10    0.85  13700. ! 7600 t
+!
+!A2C2H_2 + H = A3-4               9.5E+84  -21.09  37600. ! 10 t
+!A2C2H_2 + H = A3-4               2.0E+82  -20.23  36900. ! 20 t
+!A2C2H_2 + H = A3-4               2.0E+75  -18.06  34500. ! 90 t
+ A2C2H_2 + H => A3-4              1.2e+09    1.53   3695.5! 760 t DFT rate used, UPDATED AT KAUST, 2010, reaction made forward KAUST
+!A2C2H_2 + H = A3-4               1.5E+51  -10.77  25500. ! 7600 t
+!
+ A2C2HA + C2H = A2C2H_2 + H        5.00E+13   0.0       0. ! Estimated
+ A2C2HB + C2H = A2C2H_2 + H        5.00E+13   0.0       0. ! Estimated
+!
+!A3 + H = A3-1 + H2                 2.50E+14   0.0   16000. ! Kiefer
+!A3 + H = A3-4 + H2                 2.50E+14   0.0   16000. ! Kiefer
+ A3 + OH = A3-1 + H2O               1.60E+08  1.42  1450.0 ! CEC
+ A3 + OH = A3-4 + H2O               1.60E+08  1.42  1450.0 ! CEC
+!
+ A3-1 + H (+M) = A3 (+M)           1.00E+14   0.0      0.0
+                         LOW  / 4.0E+148 -37.505 20551.0 /
+                         TROE / 1.000   536.3   144.9  5632.8 /
+   H2/2.0/ H2O/6.0/ CH4/2.0/ CO/1.5/ CO2/2.0/ C2H6/3.0/
+ A3-4 + H (+M) = A3 (+M)           1.00E+14   0.0      0.0
+                         LOW  /2.1E+139  -34.803 18378.0 /
+                         TROE / 0.001   171.4   171.4  4992.8 /
+   H2/2.0/ H2O/6.0/ CH4/2.0/ CO/1.5/ CO2/2.0/ C2H6/3.0/
+!A3-1 + H = A3-4 + H              1.70E+72 -15.215  77175.0 ! 20 t
+!A3-1 + H = A3-4 + H              9.30E+58 -11.447  71113.0 ! 90 t
+ A3-1 + H = A3-4 + H              3.80E+40  -6.309  61782.0 ! 760 t
+! REACTIONS ADDED BY Joerg
+! A1- + C4H4 = A2 + H              3.3E+33   -5.70   25500. ! 760 t
+ A1- + C4H4 => A2 + H              1.26E+04	 2.61	 1649.2 ! KAUST, Jorge Aguilera-Iparraguirre et al, 2007, reaction made forward KAUST
+! A2-1 + C4H4 = A3 + H             3.3E+33   -5.70   25500. ! 760 t
+ !A2-2 + C4H4 => A3 + H             3.3E+33   -5.70   25500. ! 760 t
+ A2-1 + C4H4 => A3 + H             1.26E+04   2.61	 1649.2 ! KAUST, Jorge Aguilera-Iparraguirre et al, 2007, reaction made forward KAUST
+ A2-2 + C4H4 => A3 + H	          1.26E+04   2.61	 1649.2 ! KAUST, Jorge Aguilera-Iparraguirre et al, 2007, reaction made forward KAUST
+ !A2R5- + C2H2 = A3-4             2.0E+13    0.00   55000. ! Nigel Moriaty
+ A2R5 + H = A2R5- + H2            2.50E+14   0.0    16000. ! A1 + H
+ A2R5 + OH = A2R5- + H2O          1.60E+8    1.42   1450.0 ! A1 + OH
+ A2R5- +H (+M) = A2R5 (+M)        1.0E+14    0.00      0.0 ! A1- + H
+     LOW/ 6.6E+75  -16.30  7000.  /
+     TROE / 1.0 0.1 584.9  6113.  /
+ H2/2.0/ H2O/6.0/ CH4/2.0/ CO/1.5/ CO2/2.0/ C2H6/3.0/
+!A2-1 + C2H2 = A2R5 + H            9.7E+30  -5.26   21600.0 ! H.Wang M.Frenklach JPC.98.44.1994 commented at KAUST, 2010
+!A2-1 + C2H2 = A2R5 + H            1.584e4   2.55    3951.6 ! DFT rate evaluated at KAUST used
+ A2C2HA + H = A2R5 + H             4.6E+37  -7.03   23100.  ! 760
+ !A2C2H2 = A2R5 + H                 1.56E+46 -10.27  41300   ! 760
+ A2C2H2 = A2R5 + H                  3.48E+11  0.181  15551.  ! DFT rate evaluated at KAUST
+! A1C2H* + A1 = A3 + H              1.1E+23  -2.92   15890.0 ! 760
+ A1C2H* + A1 => A3 + H              8.6E+00   3.066   5148.0  ! KAUST, DFT calculation, 2010
+! A1- + A1C2H = A3 + H              1.1E+23  -2.92   15890.0 ! 760
+  A1- + A1C2H => A3 + H             1.4E+01   3.052   5451.0 ! KAUST, DFT calculation, 2010
+ DUPLICATE
+ !A1- + A1C2H => A3 + H              4.2E+03   2.74    3513.4 ! KAUST, W Klopper et al, JCTC 2007 (diff. mechamism)
+ A1- + A1C2H => A3 + H               4.815E1   3.08    7302.2 ! DFT calc at KAUST
+ DUPLICATE
+!
+! Formation and reactions of A4
+!
+ A3 + C2H = A3C2H + H               5.00E+13   0.00      0. ! Estimated
+!
+!A3-4 + C2H2 = A3C2H2               8.1E+44  -10.38  20600. ! 10 t
+!A3-4 + C2H2 = A3C2H2               6.7E+45  -10.55  21200. ! 20 t
+!A3-4 + C2H2 = A3C2H2               6.5E+53  -12.59  26900. ! 90 t
+!A3-4 + C2H2 = A3C2H2               8.0E+61  -14.50  34800. ! 760 t
+ A3-4 + C2H2 = A3C2H2               1.28e+06   2.050 1931.17! rate updated from Pitsch mechanism, KAUST, 2010
+!A3-4 + C2H2 = A3C2H2               5.6E+50  -10.96  31300. ! 7600 t
+!
+!A3-4 + C2H2 = A3C2H + H            3.8E+17   -1.12  22300. ! 10 t
+!A3-4 + C2H2 = A3C2H + H            8.0E+17   -1.21  22600. ! 20 t
+!A3-4 + C2H2 = A3C2H + H            3.4E+12    0.34  19700. ! 90 t
+!A3-4 + C2H2 = A3C2H + H            1.2E+26   -3.44  30200. ! 760 t
+ A3-4 + C2H2 = A3C2H + H            1.28e+06   2.050 1931.17! rate updated from Pitsch mechanism, KAUST, 2010
+!A3-4 + C2H2 = A3C2H + H            7.3E+26   -3.52  35100. ! 7600 t
+!
+!A3-4 + C2H2 = A4 + H               3.6E+22   -2.91  13600. ! 10 t
+!A3-4 + C2H2 = A4 + H               4.0E+23   -3.20  14400. ! 20 t
+!A3-4 + C2H2 = A4 + H               8.9E+24   -3.56  15900. ! 90 t
+! multiplied by 2
+!A3-4 + C2H2 => A4 + H               6.6E+24   -3.36  17800. ! 760 t
+A3-4 + C2H2 => A4 + H                1.28e+06   2.050 1931.17! rate updated from Pitsch mechanism, KAUST, 2010
+!A3-4 + C2H2 = A4 + H               5.7E+25   -3.60  22700. ! 7600 t
+!
+!A3C2H + H = A3C2H2                4.9E+37   -8.29   8400. ! 10 t
+!A3C2H + H = A3C2H2                5.2E+47  -11.05  14700. ! 20 t
+!A3C2H + H = A3C2H2                1.4E+56  -13.21  21000. ! 90 t
+!A3C2H + H = A3C2H2                1.9E+64  -15.12  29300. ! 760  commented (KAUST)
+ A3C2H + H = A3C2H2                3.18e09   1.175   4580. ! rate updated from Raj et al, Combust Flame, 2009 (KAUST)
+!A3C2H + H = A3C2H2                4.5E+51  -11.16  24900. ! 7600 t
+!
+!A3C2H + H = A4 + H                6.5E+25   -3.79   8700. ! 10 t
+!A3C2H + H = A4 + H                6.8E+26   -4.07   9500. ! 20 t
+!A3C2H + H = A4 + H                4.2E+27   -4.25  10900. ! 90 t
+!A3C2H + H = A4 + H                9.0E+38   -7.39  20700. ! 760 t commented (KAUST)
+ A3C2H + H = A4 + H                3.18e09   1.175   4580. ! rate updated from Raj et al, Combust Flame, 2009 (KAUST) 
+!A3C2H + H = A4 + H                5.2E+27   -4.08  17700. ! 7600 t
+!
+!A3C2H2 = A4 + H                   7.9E+46  -11.42  26400. ! 10 t
+!A3C2H2 = A4 + H                   7.3E+48  -11.86  28100. ! 20 t
+!A3C2H2 = A4 + H                   6.3E+59  -14.70  36900. ! 90 t
+!A3C2H2 = A4 + H                   2.0E+63  -15.28  43200. ! 760 t commented (KAUST)
+ A3C2H2 = A4 + H                   1.91E09   1.138   1629. ! rate updated from Raj et al, Combust Flame, 2009 (KAUST)
+!A3C2H2 = A4 + H                   2.5E+33   -6.48  26800. ! 7600 t
+!
+!A4 + H = A4-1 + H2                 2.50E+14   0.0   16000. ! Kiefer
+ A4 + OH = A4-1 + H2O               1.60E+08  1.42  1450.0 ! CEC
+ A4-1 + H = A4                      1.00E+14   0.0       0. ! kinf
+!A4 + H = A4-2 + H2                 2.50E+14   0.0   16000. ! Kiefer
+ A4 + OH = A4-2 + H2O               1.60E+08  1.42  1450.0 ! CEC
+ A4-2 + H = A4                      1.00E+14   0.0       0. ! kinf
+!A4 + H = A4-4 + H2                 2.50E+14   0.0   16000. ! Kiefer
+ A4 + OH = A4-4 + H2O               1.60E+08  1.42  1450.0 ! CEC
+ A4-4 + H = A4                      1.00E+14   0.0       0. ! kinf
+!
+! Formation and reactions of biphenyl
+!
+!A1 + A1- = P2 + H            5.60E+12 -0.074   7550.0 ! 20 t
+!A1 + A1- = P2 + H            1.50E+14 -0.45    8915.0 ! 90 t
+ A1 + A1- = P2 + H            1.1E+23  -2.92   15890.0 ! 760 t
+!
+!A1 + A1- = P2-H              8.1E+36  -8.62    9125.0 ! 20 t
+!A1 + A1- = P2-H              2.2E+36  -8.21    9920.0 ! 90 t
+ A1 + A1- = P2-H              3.7E+32  -6.74    9870.0 ! 760 t
+!
+!P2-H = P2 + H                6.1E+42 -10.09   27460.0 ! 20 t
+!P2 + H = P2-H                2.4E+40  -9.06   11570.0 ! 90 t
+ P2-H = P2 + H                3.8E+37  -7.96   27880.0 ! 760 t
+!
+!A1- + A1- = P2               3.8E+31  -5.75    7950.0 ! 20 t
+!A1- + A1- = P2               6.1E+25  -4.00    5590.0 ! 90 t
+ A1- + A1- = P2               2.0E+19  -2.05    2900.0 ! 760 t
+!
+!A1- + A1- = P2- + H          7.0E+23  -2.33   38540.0 ! 20 t
+!A1- + A1- = P2- + H          8.6E+13   0.50   34820.0 ! 90 t
+ A1- + A1- = P2- + H          2.3E-01   4.62   28950.0 ! 760 t
+!
+!P2 = P2- + H                 9.0E+37  -6.63  119580.0 ! 20 t
+!P2 = P2- + H                 8.1E+31  -4.79  117120.0 ! 90 t
+ P2 = P2- + H                 1.1E+25  -2.72  114270.0 ! 760 t
+!
+!P2 + H = P2- + H2                 2.50E+14   0.0   16000. ! Kiefea
+ P2 + OH = P2- + H2O               1.60E+08  1.42  1450.0 ! CEC
+!
+!P2- + C2H2 => A3 + H          4.6E+06   1.97    7300.0 ! A3-+C2H2, kinf ! reaction made forward, KAUST
+ P2- + C2H2 => A3 + H          2.6E+04   2.55    5644.4 ! DFT calculation, KAUST !3.290e+06    2.050   3162.05! rate from pitsch !4.6E+06   1.97    7300.0 ! A3-+C2H2, kinf ! reaction made forward, KAUST
+!
+!
+! Benzene oxidation
+!
+ A1 + O = C6H5O + H           2.20E+13  0.0   4530.0 ! CEC
+ A1 + OH = C6H5OH + H         1.30E+13  0.0  10600.0 ! CEC
+!A1- + O2 = C6H5O + O         2.10E+12  0.0   7470.0 ! LIN
+! A1- + O2 = C6H5O + O         7.70E+03	2.43 38718.9 ! KAUST, Sander Et al, Proc Combust Inst, 2009
+!A1- + O2 = C6H5O + O         2.70E+12  0.35  5970.0 ! Sum of two channels, Just
+ A1-+ O2 = C6H5O + O          2.39E+21 -2.62  4400.0 ! [QRRK-HR, 20 torr]  MODIF, Fei Qi 2010 rate added at KAUST
+!
+ !C6H5O = CO + C5H5            2.50E+11  0.0  43900.0 ! LIN, commented KAUST
+ C6H5O = CO + c-C5H5           2.90E+10  0    36424.5 ! Pitsch rate (KAUST)
+ !C6H5O + H = CO + C5H6        3.00E+13  0.0      0.0 ! Est., commented KAUST 
+ C6H5O + H = CO + c-C5H6       3.00E+13  0.0      0.0 ! Est.
+ C6H5O + O = HCO + 2C2H2 + CO  3.00E+13  0.0      0.0 ! Est.
+ C6H5O + H (+M) = C6H5OH (+M) 2.5E+14   0.0     0.0
+                         LOW  / 1.00E+94 -21.84 13880.0 /       ! E in cal/mol
+                         TROE / 0.043 304.2 60000. 5896.4 /
+   H2/2.0/ H2O/6.0/ CH4/2.0/ CO/1.5/ CO2/2.0/ C2H6/3.0/
+!
+ C6H5OH + H = C6H5O + H2      1.15E+14  0.0  12400.0 ! LIN
+ C6H5OH + O = C6H5O + OH      2.80E+13  0.0   7352.0 ! Brezinski
+ C6H5OH + OH = C6H5O + H2O    6.00E+12  0.0      0.0 ! LIN
+!
+ C5H5 + H = C5H6              1.00E+14  0.0      0.0 ! Brezinsky
+! c-C5H5 + H (+M) = c-C5H6 (+M)    1.0E+14   0.0     0.0 ! c-C5H5, c-C5H6 , Fei Qi rate used, KAUST
+!                          LOW  / 4.4E+80 -18.28 12994.0 /       ! E in cal/mol
+!                          TROE / 0.068   400.7  4135.8  5501.9 /
+!   H2/2.0/ H2O/6.0/ CH4/2.0/ CO/1.5/ CO2/2.0/ C2H6/3.0/
+!
+ c-C5H5 + O = n-C4H5 + CO       1.00E+14  0.0      0.0 ! Brezinsky
+ c-C5H5 + OH = C5H4OH + H       5.00E+12  0.0      0.0 ! Est.
+ c-C5H5 + HO2 = C5H5O + OH      3.00E+13  0.0      0.0 ! Brezinsky
+!
+!c-C5H6 + H = c-C5H5 + H2         2.20E+08  1.77  3000.0 ! Brezinsky
+ c-C5H6 + O = c-C5H5 + OH         1.80E+13  0.0   3080.0 ! Brezinsky
+ c-C5H6 + OH = c-C5H5 + H2O       3.43E+09  1.18  -447.0 ! Brezinsky
+!
+ C5H5 + O = n-C4H5 + CO       1.00E+14  0.0      0.0 ! Brezinsky
+ C5H5 + OH = C5H4OH + H       5.00E+12  0.0      0.0 ! Est.
+ C5H5 + HO2 = C5H5O + OH      3.00E+13  0.0      0.0 ! Brezinsky
+!
+ C5H6 + H = C5H5 + H2         2.20E+08  1.77  3000.0 ! Brezinsky
+ C5H6 + O = C5H5 + OH         1.80E+13  0.0   3080.0 ! Brezinsky
+ C5H6 + OH = C5H5 + H2O       3.43E+09  1.18  -447.0 ! Brezinsky 
+!
+ C5H5O = n-C4H5 + CO          2.50E+11  0.0  43900.0 ! Brezinsky
+ C5H5O + H = CH2O + 2C2H2     3.00E+13  0.0      0.0 ! Est.
+ C5H5O + O = CO2 + n-C4H5     3.00E+13  0.0      0.0 ! Est.
+!
+ C5H4OH = C5H4O + H           2.10E+13  0.0  48000.0 ! Brezinsky
+ C5H4OH + H = CH2O + 2C2H2    3.00E+13  0.0      0.0 ! Est.
+ C5H4OH + O = CO2 + n-C4H5    3.00E+13  0.0      0.0 ! Est.
+!
+ C5H4O = CO + C2H2 + C2H2     1.00E+15  0.0  78000.0 ! Brezinsky
+ C5H4O + O = CO2 + 2C2H2      3.00E+13  0.0      0.0 ! Est
+!
+! Higher PAH oxidation by OH
+!
+ A1C2H + OH => A1- + CH2CO         2.18E-04  4.5  -1000.0  ! =C2H2+OH
+ A1C2H_2 + OH => A1C2H- + CH2CO    2.18E-04  4.5  -1000.0  ! =C2H2+OH
+ A2C2HA + OH => A2-1 + CH2CO       2.18E-04  4.5  -1000.0  ! =C2H2+OH
+ A2C2HB + OH => A2-2 + CH2CO       2.18E-04  4.5  -1000.0  ! =C2H2+OH
+ A3C2H + OH => A3-4 + CH2CO        2.18E-04  4.5  -1000.0  ! =C2H2+OH
+!
+ A1C2H + OH => C6H5O + C2H2        1.30E+13  0.0  10600.0 ! CEC
+ A1C2H3 + OH => C6H5O + C2H4       1.30E+13  0.0  10600.0 ! CEC
+ A1C2H_2 + OH => C4H2 + C6H5O      1.30E+13  0.0  10600.0 ! CEC
+ A2 + OH => A1C2H + CH2CO + H      1.30E+13  0.0  10600.0 ! CEC
+ A2C2HA + OH => A1C2H + H2C4O + H  1.30E+13  0.0  10600.0 ! CEC
+ A2C2HB + OH => A1C2H + H2C4O + H  1.30E+13  0.0  10600.0 ! CEC
+ A3 + OH => A2C2HB + CH2CO + H     6.50E+12  0.0  10600.0 ! CEC
+ A3 + OH => A2C2HA + CH2CO + H     6.50E+12  0.0  10600.0 ! CEC
+ A3C2H + OH => A2C2HA + H2C4O + H  6.50E+12  0.0  10600.0 ! CEC
+ A3C2H + OH => A2C2HB + H2C4O + H  6.50E+12  0.0  10600.0 ! CEC
+ A4 + OH => A3-4 + CH2CO           1.30E+13  0.0  10600.0 ! CEC
+!
+! Higher PAH oxidation by O
+!
+ A1C2H + O => HCCO + A1-           2.04E+07  2.0   1900.0 ! =C2H2+O
+ A1C2H_2 + O => HCCO + A1C2H-      2.04E+07  2.0   1900.0 ! =C2H2+O
+ A1C2H3 + O => A1- + CH3 + CO      1.92E+07  1.83   220.0 ! =C2H4+O
+ A2C2HA + O => HCCO + A2-1         2.04E+07  2.0   1900.0 ! =C2H2+O
+ A2C2HB + O => HCCO + A2-2         2.04E+07  2.0   1900.0 ! =C2H2+O
+!
+ A1C2H + O => C2H + C6H5O          2.20E+13  0.0   4530.0 ! =A1 + O
+ A1C2H3 + O => C2H3 + C6H5O        2.20E+13  0.0   4530.0 ! =A1 + O
+ A1C2H_2 + O => C6H5O + C4H        2.20E+13  0.0   4530.0 ! =A1 + O
+ A2 + O => CH2CO + A1C2H           2.20E+13  0.0   4530.0 ! =A1 + O
+ A2C2HA + O => A1C2H_2 + CH2CO     2.20E+13  0.0   4530.0 ! =A1 + O
+ A2C2HB + O => A1C2H_2 + CH2CO     2.20E+13  0.0   4530.0 ! =A1 + O
+ A3 + O => A2C2HA + CH2CO          1.10E+13  0.0   4530.0 ! =A1 + O / 2
+ A3 + O => A2C2HB + CH2CO          1.10E+13  0.0   4530.0 ! =A1 + O / 2
+ A3C2H + O => A2C2HA + H2C4O       1.10E+13  0.0   4530.0 ! =A1 + O / 2
+ A3C2H + O => A2C2HB + H2C4O       1.10E+13  0.0   4530.0 ! =A1 + O / 2
+ A4 + O => A3-4 + HCCO             2.20E+13  0.0   4530.0 ! =A1 + O
+!
+! Higher PAH oxidation by O2
+!
+!A1C2H* + O2 => l-C6H4 + CO + HCO      2.70E+12  0.35  5970.0 ! = A1- + O2
+!A1C2H- + O2 => l-C6H4 + CO + HCO      
+!
+!n-C3H7 AND i-C3H7 REACTIONS
+!
+n-C3H7=CH3+C2H4                        1.20E+13        0       30188.1         !       126.79
+n-C3H7+O2=C3H6+HO2                     1.00E+12        0       4976.19         !       20.9
+i-C3H7+O2=C3H6+HO2                     1.00E+12        0       2976.19         !       12.5
+H+C3H6= n-C3H7                         1.32E+13        0       3247.619        !       13.64
+H+C3H6= i-C3H7                         1.32E+13        0       1557.143        !       6.54
+!
+!C3H6 REACTIONS
+!
+C3H6=>C2H3+CH3                          6.31E+15        0       85390.48        !       358.64
+C2H3+CH3=>C3H6                          1.00E+10        1       0               !       0
+H+C3H6=>C3H5-A+H2                      1.73E+05        2.5     2483.333        !       10.43
+OH+C3H6=>C3H5-A+H2O                    3.12E+06        2.0     -297.619        !       -1.25
+!OH+C3H6=>C3H5-A+H2O                   3.18e13         0.0     -2660           !       -1.25
+O+C3H6=>C3H5-A+OH                      1.75E+11        0.7     5859.524        !       24.61
+H+C3H6=>C3H5-S+H2                      8.04E+05        2.5     12238.1         !       51.4
+!OH+C3H6=>C3H5-S+H2O                   2.14E+06        2       2766.667        !       11.62
+OH+C3H6=>C3H5-S+H2O                    9e13            0.0     6424            !       11.62
+O+C3H6=>C3H5-S+OH                      1.20E+11        0.7     8921.429        !       37.47
+H+C3H6=>C3H5-T+H2                      4.10E+05        2.5     9759.524        !       40.99
+OH+C3H6=>C3H5-T+H2O                    1.11E+06        2       1445.238        !       6.07
+O+C3H6=>C3H5-T+OH                      6.02E+10        0.7     7600            !       31.92
+O+C3H6=>C2H5+HCO                        6.76E+04        2.56    -1123.81        !       -4.72
+O+C3H6=>C2H4+CH2O                       6.76E+04        2.56    -1123.81        !       -4.72
+O+C3H6=>CH3+CH3+CO                      5.00E+12        0       452.381         !       1.9
+OH+C3H6=>C2H5+CH2O                      1.00E+12        0       0               !       0
+OH+C3H6=>CH3CHO+CH3                     3.50E+11        0       0               !       0
+H+C3H5-A=C3H6                          2.00E+14        0       0               !       0
+C3H5-A+HO2=>C3H6+O2                    7.35E+12        0       1304.762        !       5.48
+C3H5-A+CH2O=>C3H6+HCO                  1.26E+08        1.9     18121.43        !       76.11
+C3H5-A+HCO=>C3H6+CO                    6.03E+13        0       0               !       0
+C2H5+C3H5-A=>C3H6+C2H4                 2.59E+12        0       -130.952        !       -0.55
+!
+! -------------------------------------------------------------------------
+! Consumption of C3H5-A   (Allyl radical  CH2*CH=CH2)
+! -------------------------------------------------------------------------
+!
+!
+C3H5-A  +O2      =>AC3H4    +HO2                 6.03E+11      0.00    9952.4        !       41.8
+C3H5-A  +O       =>C2H3     +HCO     +H          1.81E+14      0.00       0.0        !       0
+C3H5-A  +OH      =>C2H3     +HCO     +H2         1.51E+13      0.00       0.0        !       0
+C3H5-A  +HO2     =>C2H3     +CH2O    +OH         9.38E+12      0.00     697.6        !       2.93
+C3H5-A           =>AC3H4    +H                   1.50E+11      0.84   59555.0        !       280.7
+AC3H4   +H       =>C3H5-A                        1.20E+11      0.69    2994.0
+C2H2    +CH3     =C3H5-A                         1.40E+04      2.21   16430.0        !       154.46
+C3H5-A  +H       =>AC3H4    +H2                  1.81E+13      0.00       0.0        !       0
+C3H5-A  +OH      =>AC3H4    +H2O                 6.03E+12      0.00       0.0        !       0
+C3H5-A  +CH3     =>AC3H4    +CH4                 3.01E+12     -0.32    -130.9        !       -0.55
+C2H5    +C3H5-A  =>AC3H4    +C2H6                9.64E+11      0.00    -130.9        !       -0.55
+!
+! -------------------------------------------------------------------------
+! Consumption of C3H5-S   (2-Methyl vinyl radical  CH*=CH-CH3)
+! -------------------------------------------------------------------------
+!
+!
+C3H5-S  +O2      =>CH3CHO   +HCO                 4.34E+12      0.00       0.0        !       0
+C3H5-S           =>PC3H4    +H                   3.98E+12      0.00   36340.0        !       185.83
+PC3H4   +H       =>C3H5-S                        3.06E+12      0.00    3176.2        !       13.34
+C2H2    +CH3     =C3H5-S                         1.61E+40     -8.58   20233.3        !       84.98
+C3H5-S  +H       =>PC3H4    +H2                  2.00E+13      0.00       0.0        !       0
+C3H5-S  +OH      =>PC3H4    +H2O                 2.00E+13      0.00       0.0        !       0
+!
+! -------------------------------------------------------------------------
+! Consumption of C3H5-T   (1-Methyl vinyl radical  CH3-C*=CH2)
+! -------------------------------------------------------------------------
+!
+C3H5-T  +O2      =>CH3      +CO      +CH2O       4.34E+12      0.00       0.0        !       0
+AC3H4   +H       =C3H5-T                         8.50E+12      0.00    1990.5        !       8.36
+PC3H4   +H       =C3H5-T                         6.50E+12      0.00    1990.5        !       8.36
+C3H5-T  +H       =>PC3H4    +H2                  2.00E+13      0.00       0.0        !       0
+C3H5-T  +OH      =>PC3H4    +H2O                 2.00E+13      0.00       0.0        !       0
+C3H5-T  +H       =>AC3H4    +H2                  2.00E+13      0.00       0.0        !       0
+C3H5-T  +OH      =>AC3H4    +H2O                 2.00E+13      0.00       0.0        !       0
+!
+AC3H4            =>PC3H4                         5.00E+14      0.00   68071.0
+PC3H4            =>AC3H4                         2.10E+11      0.00   54952.0
+!
+!TOLUENE REACTIONS OF VOVELLE
+!
+!C6H5CH2 + H = C6H5CH3				9.01E+13	0.0       0.0
+!C6H5CH3 + H = C6H5CH2 + H2			1.24E+14 	0.0    8357.0
+C6H5CH3 + H = A1 + CH3				3.50E+13	0.0    3690.0 !commented at KAUST
+!C6H5CH3 + H = A1 + CH3	            2.310e+6    2.170   4163.48! pitsxh rate KAUST changed 2.310e+06    2.170   4163.48
+!C6H5CH3 + H = A1 + CH3              1.56E+13    0.0     5796.0 ! Fei Qi rate used, KAUST 
+C6H5CH2 = C3H3 + C4H4				4.00E+16    	0.0  103000.0 ! duplicate reaction added from Brezinsky 2005(KAUST)
+!
+! -------------------------------------------------------------------------
+! -------------------------------------------------------------------------
+! Consumption of C7H16 (n-heptane)
+! -------------------------------------------------------------------------
+! -------------------------------------------------------------------------
+!
+C7H16            =n-C3H7   +C4H9-1             3.16E+16        0       80619.05        
+C7H16            =C5H11-1  +C2H5               6.50E+16        0       82000.00        
+C7H16   +H       =>C7H15   +H2                 4.57E+07        2.0     4976.19         
+C7H16   +OH      =>C7H15   +H2O                2.34E+08        1.61    -40.4762        
+C7H16   +O       =>C7H15   +OH                 1.55E+06        2.5     2219.048        
+C7H16   +HO2     =>C7H15   +H2O2               3.06E+13        0       16919.05        
+C7H16   +CH3     =>C7H15   +CH4                2.00E+12        0       9454.762        
+!
+! -------------------------------------------------------------------------
+! Consumption of C7H15 (radicaux-heptyles)
+! -------------------------------------------------------------------------
+!
+C7H15   +O2      =>C7H14   +HO2                1.00E+12        0       1990.476        
+C7H15   =>C2H4   +C5H11-1                        2.50E+13        0       28666.67        
+!
+! -------------------------------------------------------------------------
+! Consumption of C7H14 (heptene)
+! -------------------------------------------------------------------------
+!
+C7H14   +H       =>C5H10-1 +C2H3    +H2        1.600E+07  2.0      20.90   !(CW-22nd Sympo)
+C7H14   +H       =C2H5     +C5H10-1            2.270E+13  0.0       7.83   !(ce travail)
+C7H14   +H       =>C3H6    +C4H7-B  +H2        9.140E+06  2.0      20.90   !(ce travail)
+C7H14   +H       =>C3H6    +n-C4H7  +H2        9.140E+06  2.0      20.90   !(A_travail)
+C7H14   +O       =>C2H3    +C5H10-1 +OH        5.640E+13  0.0      21.74   !(CW-22nd Sympo)
+C7H14   +O       =>C3H5-A  +C4H8-1  +OH        5.640E+13  0.0      21.74   !(CW-22nd Sympo)
+C7H14   +O       =>C4H7-B  +C3H6    +OH        2.820E+13  0.0      21.74   !(CW-22nd Sympo)
+C7H14   +O       =>C5H9    +C2H4    +OH        1.500E+14  0.0      32.82   !(CW-22nd Sympo)
+C7H14   +O       =>n-C4H7  +C3H6    +OH        2.820E+13  0.0      21.74   !(CW-22nd Sympo)
+C7H14   +OH      =>C4H8-1  +C3H5-A   +H2O       2.600E+09  1.25      2.94   !(CW-22nd Sympo)
+C7H14   +OH      =>C5H10-1 +C2H3    +H2O       2.600E+09  1.25      2.926  !(CW-22nd Sympo)
+C7H14   +OH      =>C4H7-B  +C3H6    +H2O       1.300E+09  1.25      2.926  !(CW-22nd Sympo)
+C7H14   +OH      =>C5H9    +C2H4    +H2O       1.280E+10  1.05      7.57   !(CW-22nd Sympo)*3
+C7H14   +OH      =>n-C4H7  +C3H6    +H2O       1.300E+09  1.25      2.926  !(CW-22nd Sympo)
+!
+! -------------------------------------------------------------------------
+! Consumption of C5H11-1  (1-pentyl radical   CH2*-CH2-CH2-CH2-CH3)
+! -------------------------------------------------------------------------
+!
+C5H11-1          =>C2H4    +n-C3H7             2.50E+13        0       28666.67    
+C5H11-1 +O2      =>C5H10-1 +HO2                1.00E+12        0       1990.476    
+!
+!
+! -------------------------------------------------------------------------
+! Consumption of C5H10-1 (1-pentene   CH2=CH-CH2-CH2-CH3)
+! -------------------------------------------------------------------------
+!
+C5H10-1 =C3H5-A   +C2H5                        0.100E+20   -1.00   73401.9!  (Bakali)   
+C5H10-1 +H       =>C2H4    +C3H5-A   +H2       0.280E+08    2.00    7701.0!  (Bakali)                         
+C5H10-1 +O       =>C2H4    +C3H5-A   +OH       0.217E+07    2.40    5500.0!  (Bakali)         
+C5H10-1 +OH      =>C2H4    +C3H5-A   +H2O      0.521E+10    0.97    1590.9!  (Bakali)       
+C5H10-1 +H       =>C3H6    +C2H3    +H2        0.914E+07    2.00    5000.0!  (Bakali)       
+C5H10-1 +O       =>C3H6    +C2H3    +OH        0.310E+06    2.50    2229.7!  (Bakali)       
+C5H10-1 +OH      =>C3H6    +C2H3    +H2O       0.469E+08    1.61     -40.7!  (Bakali)          
+C5H10-1 +H       =>C4H6-13 +CH3    +H2         0.173E+06    2.50    2495.2!  (Bakali)                         
+C5H10-1 +O       =>C4H6-13 +CH3    +OH         0.175E+12    0.70    5887.6!  (Bakali)       
+C5H10-1 +OH      =>C4H6-13 +CH3    +H2O        0.312E+07    2.00    -298.3!  (Bakali)            
+C5H10-1 +H       =C2H5     +C3H6               0.227E+14    0.00    1870.8!  (Bakali)                         
+C5H10-1 +H       =n-C3H7   +C2H4               0.227E+14    0.00    3569.4!  (Bakali)             
+C5H10-1 +O       =>C4H8-1  +CH2O               0.723E+06    2.34   -1050.2!  (Bakali)                         
+C5H10-1 +O       =>CH3CHO    +C3H6               0.129E+14    0.00     850.0!  (Bakali)                         
+C5H10-1 +O       =>CH3     +CO      +n-C3H7    0.129E+14    0.00     850.0!  (Bakali)                         
+C5H10-1 +OH      =C4H9-1   +CH2O               0.150E+13    0.00       0.0!  (Bakali)                         
+C5H10-1 +OH      =n-C3H7   +CH3CHO               0.100E+12    0.00       0.0!  (CW-22nd Sympo)                                 
+!C5H10-1 +OH      =>CH3     +CO      +C3H8      0.100E+11    0.00       0.0!  (Bakali)                   
+!
+!-------------------------------------------------------------------------------
+! Consumption of C5H9  (pentene-yl radicals)
+!-------------------------------------------------------------------------------
+!
+C5H9    +O2      = C5H8    +HO2                 0.100E+12    0.00       0.0!  (Bakali)             
+C5H9             =>C2H4    +C3H5-A              0.331E+14    0.00   22521.5!  (Gierzak, T., 1986)                                 
+C5H9             =>C2H4    +C3H5-S              0.699E+13    0.00   31842.1!  (Bakali)                         
+C5H9             =>CH3     +C4H6-13             0.126E+14    0.00   38236.8!  (Perrin, D., 1988)                                 
+C5H9             =>n-C3H7  +C2H2                0.126E+14    0.00   33430.6!  (Bakali)         
+!
+!-------------------------------------------------------------------------------
+! Consumption of C5H8  (pentadiene   CH2=CH-CH2-CH=CH2, CH3-CH=CH-CH=CH2)
+!-------------------------------------------------------------------------------
+!
+C5H8    +H       =>C3H6    +C2H3               0.454E+14    0.00    1873.2!  (Bakali)                         
+C5H8    +H       =>C2H4    +C3H5-A             0.454E+14    0.00    3569.4!  (Bakali)                         
+!
+! -------------------------------------------------------------------------
+! Consumption of C4H9-1  (1-butyl radical   CH2*-CH2-CH2-CH3)
+! -------------------------------------------------------------------------
+!
+C4H9-1  =C2H5    +C2H4                         2.50E+13        0       28666.67        
+C4H9-1  +O2      =C4H8-1   +HO2                1.00E+12        0       1990.476       
+!
+! -------------------------------------------------------------------------
+! Consumption of C4H9-2   (2-butyl radical CH3-CH*-CH2-CH3)
+! -------------------------------------------------------------------------
+!
+C4H9-2  =C3H6    +CH3                          4.00E+13        0       32738.1      
+C4H9-2  +O2      =C4H8-1   +HO2                7.59E+09        0       -1990.48     
+C4H9-2  +O2      =C4H8-2   +HO2                1.81E+10        0       -1990.48    
+H       +C4H8-2  =>C4H9-2                      2.09E+13        0       2061.905      
+C4H9-2           =>H       +C4H8-2             3.16E+12        0       36738.1        
+!
+!
+! -------------------------------------------------------------------------
+! Consumption of C4H8-1   (1-butene       CH2=CH-CH2-CH3)
+! -------------------------------------------------------------------------
+!
+H       +C4H8-1  =C4H9-1                       2.27E+13        0       3552.381       
+H       +C4H8-1  =C4H9-2                       2.27E+13        0       1864.286      
+CH3     +C3H5-A  =>C4H8-1                      1.350E+13  0.00       0.00   !(CW-22nd Sympo)
+C4H8-1           =>C3H5-A   +CH3               3.16E+16   0.00   80619.05   !(CW-22nd Sympo) 
+C4H8-1  +H       =>n-C4H7  +H2                 1.730E+05  2.50    2483.3    !(Bakali)
+C4H8-1  +O       =>n-C4H7  +OH                 1.750E+11  0.70    5859.5    !(Bakali)
+C4H8-1  +OH      =>n-C4H7  +H2O                3.120E+06  2.00    -297.6    !(Bakali)
+C4H8-1  +H       =C3H6    +CH3                 1.320E+13  0.00    3263.2    !(Bakali)
+C4H8-1  +O       =>C3H6    +CH2O               1.29E+13   0.00     845.2    !(Cowart, J.S. 1989)
+C4H8-1  +H       =C2H4    +C2H5                1.320E+13  0.00    3263.2    !(Bakali)
+C4H8-1  +O       =>CH3CHO  +C2H4               1.290E+13  0.00     850.0    !(Cowart, J.S. 1989)
+C4H8-1  +O       =>CH3     +CO      +C2H5      1.290E+13  0.00     845.2    !(Cowart, J.S. 1989)
+C4H8-1  +OH      =>C2H5    +CH3CHO             1.000E+11  0.00       0.0    !(Axelsson, E.I. 1989)
+C4H8-1  +OH      =>CH3     +CO      +C2H6      1.000E+10  0.00       0.0    !(Axelsson, E.I. 1989)
+C4H8-1  +OH      =>n-C3H7  +CH2O               1.50E+12   0.00       0.0 
+C4H8-1  +H       =>C4H7-B  +H2                 2.800E+07  2.00    7664.3    !(Bakali)
+C4H8-1  +OH      =>C4H7-B  +H2O                5.210E+09  0.97    1583.3    !(Bakali)
+C4H8-1  +O       =>C4H7-B  +OH                 2.170E+06  2.40    5473.8    !(Bakali)
+!
+! -------------------------------------------------------------------------
+! Consumption of C4H8-2   (2-butene       CH3-CH=CH-CH3)
+! -------------------------------------------------------------------------
+!
+C4H8-2  +H       =>n-C4H7  +H2                 3.46E+05   2.50    2483.3        
+C4H8-2  +OH      =>n-C4H7  +H2O                6.24E+06   2.00    -297.6        
+C4H8-2  +O       =>n-C4H7  +OH                 3.50E+11   0.70    5859.5        
+C4H8-2  +O       =>CH3CHO  +C2H4               1.00E+12   0.00       0.0        
+C4H8-2  +OH      =>CH3CHO  +C2H5               3.00E+12   0.00       0.0        
+!
+! -------------------------------------------------------------------------
+! Consumption of n-C4H7   (1-butene-3-yl radical CH2=CH-CH*-CH3)
+! -------------------------------------------------------------------------
+!
+n-C4H7  +H       =C4H8-1                       5.00E+13   0.00       0.0        
+n-C4H7  +O2      =>C4H6-13 +HO2                6.03E+11   0.00    9952.4        
+n-C4H7           =C4H6-13  +H                  2.42E+29  -4.89   66833.3        
+n-C4H7  +H       =>C4H6-13 +H2                 3.16E+13   0.00       0.0        
+C2H2    +C2H5    =n-C4H7                       2.61E+46  -9.82   36776.2        
+!
+! -------------------------------------------------------------------------
+! Consumption of C4H7-B    (1-butene-4-yl radical CH2=CH-CH2-CH2*)
+! -------------------------------------------------------------------------
+!
+C4H7-B  +H       =C4H8-1                       2.00E+14   0.00       0.0        ! (Bakali)
+C4H7-B  +O2      =>C4H6-13 +HO2                2.00E+12   0.00    4980.9        
+C4H7-B           =C4H6-13  +H                  3.16E+13   0.00   34666.7        !  (Weisman, M., 1984)
+C4H7-B  +H       =>C4H6-13 +H2                 3.16E+13   0.00       0.0        !  (Axelsson, E.I. 1989) 
+C2H3    +C2H4    =C4H7-B                       2.00E+11   0.00    1990.5        !  (Weisman, M., 1984)
+!
+! -------------------------------------------------------------------------
+! -------------------------------------------------------------------------
+! Consumption of i-C8H18  (iso-octane)
+! -------------------------------------------------------------------------
+! -------------------------------------------------------------------------
+!
+i-C8H18          =neoC5H11+i-C3H7              2.000E+16  0.0   77990.4    !(CW-22nd Sympo)
+i-C8H18          =i-C4H9  +t-C4H9              2.000E+16  0.0   77990.4    !(CW-22nd Sympo)
+i-C8H18 +H       =>M224Pyl1 +H2                8.400E+07  2.0    7701.0    !(Tamura T.M., 1987)
+i-C8H18 +O       =>M224Pyl1 +OH                6.520E+06  2.4    5500.0    !(Tamura T.M., 1987)
+i-C8H18 +OH      =>M224Pyl1 +H2O               1.560E+10  0.97   1590.9    !(Tamura T.M., 1987)
+i-C8H18 +CH3     =>M224Pyl1 +CH4               1.920E+12  0.0   11600.5    !(Tamura T.M., 1987)
+i-C8H18 +H       =>M224Pyl3 +H2                9.140E+06  2.0    5000.0    !(Tamura T.M., 1987)
+i-C8H18 +O       =>M224Pyl3 +OH                3.100E+05  2.5    2229.7    !(Tamura T.M., 1987)
+i-C8H18 +OH      =>M224Pyl3 +H2O               4.690E+07  1.61    -40.7    !(Tamura T.M., 1987)
+i-C8H18 +CH3     =>M224Pyl3 +CH4               4.000E+11  0.0    9500.0    !(Tamura T.M., 1987)
+i-C8H18 +H       =>M244Pyl2 +H2                1.260E+14  0.0    7299.0    !(Tamura T.M., 1987)
+i-C8H18 +O       =>M244Pyl2 +OH                1.100E+13  0.0    3279.9    !(Tamura T.M., 1987)
+i-C8H18 +OH      =>M244Pyl2 +H2O               5.750E+10  0.51     59.8    !(Tamura T.M., 1987)
+i-C8H18 +CH3     =>M244Pyl2 +CH4               1.000E+11  0.0    7899.5    !(Tamura T.M., 1987)
+i-C8H18 +H       =>M244Pyl1 +H2                5.600E+07  2.0    7701.0    !(Tamura T.M., 1987)
+i-C8H18 +O       =>M244Pyl1 +OH                4.350E+06  2.4    5500.0    !(Tamura T.M., 1987)
+i-C8H18 +OH      =>M244Pyl1 +H2O               1.040E+10  0.97   1590.9    !(Tamura T.M., 1987)
+i-C8H18 +CH3     =>M244Pyl1 +CH4               1.280E+12  0.0   11600.5    !(Tamura T.M., 1987)
+!
+!
+! -------------------------------------------------------------------------
+! neoC5H11
+! -------------------------------------------------------------------------
+!
+neoC5H11         =>CH3     +i-C4H8             1.000E+11  0.0   26000.0    !(Axelsson, E.I. 1989)
+!
+! -------------------------------------------------------------------------
+! Consumption of M224Pyl1   TriMethyl2,2,4-Pentyl-1 *CH2-C(CH3)2-CH2-CH(CH3)-CH3
+! -------------------------------------------------------------------------
+!
+M224Pyl1         =>M244Pyl1                     6.000E+11  0.0   14102.9    !(CW-22nd Sympo)
+M244Pyl1         =>M224Pyl1                     9.000E+11  0.0   14102.9    !(CW-22nd Sympo)
+M224Pyl1         =>M244Pyl2                     1.000E+11  0.0   16102.9    !(CW-22nd Sympo)
+M244Pyl2         =>M224Pyl1                     9.000E+11  0.0   21102.9    !(CW-22nd Sympo)
+M224Pyl1         =>i-C4H8  +i-C4H9              1.260E+13  0.0   29497.6    !(Bakali)
+M224Pyl1         =>CH3     +M24Pen1             2.000E+14  0.0   32799.0    !(Bakali)
+!
+! -------------------------------------------------------------------------
+! Consumption of M224Pyl3    TriMethyl 2,2,4-Pentyl-3 CH3-C(CH3)2-CH*-CH(CH3)-CH3
+! -------------------------------------------------------------------------
+!
+M224Pyl3         =>CH3     +M24Pen2             1.500E+14  0.0   32799.0    !(Bakali)
+M224Pyl3         =>CH3     +M44Pen2             1.000E+14  0.0   32799.0    !(Bakali)
+!
+! -------------------------------------------------------------------------
+! Consumption of M244Pyl2    TriMethyl 2,4,4-Pentyl-2 CH3-C*(CH3)-CH2-C(CH3)2-CH3
+! -------------------------------------------------------------------------
+!
+M244Pyl2         =>t-C4H9  +i-C4H8              2.500E+13  0.0   28205.7    !(Bakali)
+!
+! -------------------------------------------------------------------------
+! Consumption of M244Pyl1    TriMethyl 2,4,4-Pentyl-1 *CH2-CH(CH3)-CH2-C(CH3)2-CH3
+! -------------------------------------------------------------------------
+!
+M244Pyl1         =>neoC5H11+C3H6                1.260E+13  0.0   29497.6    !(Bakali)
+M244Pyl1         =>CH3     +M44Pen1             5.000E+13  0.0   32799.0    !(Bakali)
+!
+! -------------------------------------------------------------------------
+! Consumption of M24Pen1     DiMethyl 2,4-Pentene-1  CH2=C(CH3)-CH2-CH(CH3)-CH3
+! -------------------------------------------------------------------------
+!
+M24Pen1          =>i-C3H7  +i-C4H7             2.500E+16  0.00  71000.0    !(CW-22nd Sympo)
+M24Pen1 +H       =>M2Pdn14+CH3     +H2         2.800E+07  2.0    7701.0    !(Bakali)
+M24Pen1 +OH      =>M2Pdn14+CH3     +H2O        5.200E+09  0.97   1590.9    !(Bakali)
+M24Pen1 +H       =>i-C4H7  +C3H6    +H2        2.800E+07  2.0    7701.0    !(Bakali)
+M24Pen1 +OH      =>i-C4H7  +C3H6    +H2O       5.200E+09  0.97   1590.9    !(Bakali)
+M24Pen1 +H       =>C3H5-T   +i-C4H8  +H2       1.260E+14  0.0    7299.0    !(Bakali)
+M24Pen1 +OH      =>C3H5-T   +i-C4H8  +H2O      5.750E+10  0.51     59.8    !(Bakali)
+M24Pen1 +H       =>M2Pdn13+CH3     +H2         1.730E+05  2.5    2495.2    !(Bakali)
+M24Pen1 +OH      =>M2Pdn13+CH3     +H2O        3.120E+06  2.0    -298.3    !(Bakali)
+M24Pen1 +H       =>AC3H4   +i-C4H9  +H2        1.730E+05  2.5    2495.2    !(Bakali)
+M24Pen1 +OH      =>AC3H4   +i-C4H9  +H2O       3.120E+06  2.0    -298.3    !(Bakali)
+M24Pen1 +H       =>C3H6    +i-C4H9             1.720E+13  0.0    3600.5    !(Bakali)
+M24Pen1 +H       =>i-C4H8  +i-C3H7             3.680E+13  0.0    1686.6    !(Bakali)
+M24Pen1 +O       =>HCO     +C3H6    +i-C3H7    7.240E+05  2.34  -1050.2    !(Bakali)
+M24Pen1 +OH      =>CH2O    +C3H6    +i-C3H7    1.510E+12  0.0       0.0    !(Bakali)
+!
+! -------------------------------------------------------------------------
+! Consumption of M24Pen2     DiMethyl 2,4-Pentene-2  CH3-C(CH3)=CH-CH(CH3)-CH3
+! -------------------------------------------------------------------------
+!
+M24Pen2 +H       =>C4H7-S   +C3H6    +H2        2.800E+07  2.0    7701.0    !(Bakali)
+M24Pen2 +OH      =>C4H7-S   +C3H6    +H2O       5.200E+09  0.97   1590.9    !(Bakali)
+M24Pen2 +H       =>M2Pdn13+CH3     +H2          3.460E+05  2.5    2495.2    !(Bakali)
+M24Pen2 +OH      =>M2Pdn13+CH3     +H2O         6.240E+06  2.0    -298.3    !(Bakali)
+M24Pen2 +H       =>i-C4H8  +i-C3H7              3.680E+13  0.0    1686.6    !(Bakali)
+M24Pen2 +O       =>CO      +i-C3H7  +i-C3H7     7.240E+05  2.34  -1050.2    !(Bakali)
+M24Pen2 +OH      =>HCO     +i-C3H7  +i-C3H7     1.510E+12  0.0       0.0    !(Bakali)
+!
+! -------------------------------------------------------------------------
+! Consumption of M44Pen2     DiMethyl 4,4-Pentene-2  CH3-CH=CH-C(CH3)2-CH3
+! -------------------------------------------------------------------------
+!
+M44Pen2 +H       =>M2Pdn13+CH3     +H2          4.200E+07  2.0    7701.0    !(Bakali)
+M44Pen2 +OH      =>M2Pdn13+CH3     +H2O         7.800E+09  0.97   1590.9    !(Bakali)
+M44Pen2 +H       =>C3H5-S   +i-C4H8  +H2        4.200E+07  2.0    7701.0    !(Bakali)
+M44Pen2 +OH      =>C3H5-S   +i-C4H8  +H2O       7.800E+09  0.97   1590.9    !(Bakali)
+M44Pen2 +H       =>t-C4H9  +C3H6                2.270E+13  0.0    1870.8    !(Bakali)
+M44Pen2 +O       =>HCO     +t-C4H9  +C2H4       4.640E+05  2.12  -1775.1    !(Bakali)
+M44Pen2 +OH      =>CH3CHO  +neoC5H11            1.300E+13  0.0       0.0    !(Bakali)
+M44Pen2 +OH      =>HCO     +t-C4H9  +C2H5       1.300E+13  0.0       0.0    !(Bakali)
+!
+! -------------------------------------------------------------------------
+! Consumption of M44Pen1     DiMethyl 4,4-Pentene-1  CH2=CH-CH2-C(CH3)2-CH3
+! -------------------------------------------------------------------------
+!
+M44Pen1          =>C3H5-A   +t-C4H9             2.500E+16  0.00  71000.0    !(CW-22nd Sympo)
+M44Pen1 +H       =>M2Pdn14+CH3     +H2          4.200E+07  2.0    7701.0    !(Bakali)
+M44Pen1 +OH      =>M2Pdn14+CH3     +H2O         7.800E+09  0.97   1590.9    !(Bakali)
+M44Pen1 +H       =>C3H5-A   +i-C4H8  +H2        4.200E+07  2.0    7701.0    !(Bakali)
+M44Pen1 +OH      =>C3H5-A   +i-C4H8  +H2O       7.800E+09  0.97   1590.9    !(Bakali)
+M44Pen1 +H       =>M4Pdn13+CH3     +H2          1.730E+05  2.5    2495.2    !(Bakali)
+M44Pen1 +OH      =>M4Pdn13+CH3     +H2O         3.120E+06  2.0    -298.3    !(Bakali)
+M44Pen1 +H       =>neoC5H11+C2H4                2.270E+13  0.0    3569.4    !(Bakali)
+M44Pen1 +H       =>t-C4H9  +C3H6                2.270E+13  0.0    1870.8    !(Bakali)
+!M44Pen1 +O      =>CH2O    +PRODUCT             7.240E+05  2.34  -1050.2    !(Bakali)
+M44Pen1 +O       =>CO      +CH3     +neoC5H11   1.290E+13  0.0     849.3    !(Bakali)
+M44Pen1 +OH      =>CH2O    +t-C4H9  +C2H4       1.500E+12  0.0       0.0    !(Bakali)
+M44Pen1 +OH      =>CH3CHO  +neoC5H11            1.000E+11  0.0       0.0    !(Bakali)
+!
+! -------------------------------------------------------------------------
+! Consumption of M2Pdn14     Methyl-2 Pentadiene-1,4  CH2=C(CH3)-CH2-CH=CH2
+! -------------------------------------------------------------------------
+!
+M2Pdn14+H       =>C3H5-T   +C3H6                2.270E+13  0.0    1870.8    !(Bakali)
+M2Pdn14+H       =>i-C4H7  +C2H4                 2.270E+13  0.0    3569.4    !(Bakali)
+M2Pdn14+H       =>C3H5-A   +C3H6                8.600E+12  0.0    3600.5    !(Bakali)
+M2Pdn14+H       =>C5H8-14 +CH3                  8.600E+12  0.0    3600.5    !(Bakali)
+M2Pdn14+H       =>C2H3    +i-C4H8               3.680E+13  0.0    1686.6    !(Bakali)
+M2Pdn14+H       =>C5H6    +CH3     +H2          1.730E+05  2.5    2495.2    !(Bakali)
+M2Pdn14+OH      =>C5H6    +CH3     +H2O         3.120E+06  2.0    -298.3    !(Bakali)
+M2Pdn14+H       =>C3H5-A   +AC3H4   +H2         1.730E+05  2.5    2495.2    !(Bakali)
+M2Pdn14+OH      =>C3H5-A   +AC3H4   +H2O        3.120E+06  2.0    -298.3    !(Bakali) 
+!
+! -------------------------------------------------------------------------
+! Consumption of M4Pdn13     Methyl-4 Pentadiene-1,3  CH2=CH-CH=C(CH3)-CH3
+! -------------------------------------------------------------------------
+!
+M4Pdn13+H       =>C4H7-S   +C2H4                2.000E+13  0.0    1299.0    !(Bakali)
+M4Pdn13+H       =>C5H8-13 +CH3                  2.000E+13  0.0    1299.0    !(Bakali)
+M4Pdn13+H       =>C2H3    +i-C4H8               2.000E+13  0.0    1299.0    !(Bakali)
+M4Pdn13+H       =>C5H6    +CH3     +H2          3.460E+05  2.5    2495.2    !(Bakali)
+M4Pdn13+OH      =>C5H6    +CH3     +H2O         6.240E+06  2.0    -298.3    !(Bakali)
+!
+! -------------------------------------------------------------------------
+! Consumption of M2Pdn13    Methyl-2 Pentadiene-1,3  CH2=C(CH3)-CH=CH-CH3
+! -------------------------------------------------------------------------
+! 
+M2Pdn13+H       =>C3H5-T   +C3H6               2.000E+13  0.0    1299.0    !(Bakali)
+M2Pdn13+H       =>M2Bdn13 +CH3                 6.000E+13  0.0    1299.0    !(Bakali)
+M2Pdn13+H       =>C3H5-S   +C3H6               1.000E+13  0.0    1299.0    !(Bakali)
+M2Pdn13+H       =>C5H8-13 +CH3                 1.000E+13  0.0    1299.0    !(Bakali)
+M2Pdn13+H       =>C3H5-S   +AC3H4   +H2        1.730E+05  2.5    2495.2    !(Bakali)
+M2Pdn13+OH      =>C3H5-S   +AC3H4   +H2O       3.120E+06  2.0    -298.3    !(Bakali)
+M2Pdn13+H       =>C5H6    +CH3     +H2         1.730E+05  2.5    2495.2    !(Bakali)
+M2Pdn13+OH      =>C5H6    +CH3     +H2O        3.120E+06  2.0    -298.3    !(Bakali)
+!
+! -------------------------------------------------------------------------
+! Consumption of M2Bten1    Methyl-2 Butene-1 CH2=C(CH3)-CH2-CH3
+! -------------------------------------------------------------------------
+!
+M2Bten1          =M2Bten2                      4.000E+12  0.00  59827.8    !(Bakali)
+CH3     +i-C4H7  =M2Bten1                      1.000E+14  0.00      0.00   !(Tsang, W., 1973)X5 
+M2Bten1 +H       =>a-C5H9  +H2                 1.000E+14  0.0    3799.0    !(Tamura, T.M., 1987)
+M2Bten1 +OH      =>a-C5H9  +H2O                1.000E+13  0.0    2600.5    !(Tamura, T.M., 1987)
+M2Bten1 +O       =>a-C5H9  +OH                 2.000E+13  0.00   4000.0    !(Tamura, T.M., 1987)
+!
+! -------------------------------------------------------------------------
+! Consumption of M2Bten2    Methyl-2 Butene-2 CH3-C(CH3)=CH-CH3
+! -------------------------------------------------------------------------
+!
+M2Bten2 +H       =>b-C5H9  +H2                 4.000E+13  0.0    3799.0    !(Tamura, T.M., 1987)
+M2Bten2 +OH      =>b-C5H9  +H2O                1.000E+13  0.0    2600.5    !(Tamura, T.M., 1987)
+M2Bten2 +O       =>b-C5H9  +OH                 2.000E+13  0.00   4000.0    !(Tamura, T.M., 1987)
+!
+! -------------------------------------------------------------------------
+! Consumption of a-C5H9     Methyle-2 Butene-1-yle-3 CH2=C(CH3)-CH*-CH3
+! -------------------------------------------------------------------------
+!
+a-C5H9           =>C4H6-12 +CH3                1.200E+07  2.5   45000.0    !(Tamura, T.M., 1987)  
+a-C5H9           =>M2Bdn13 +H                  1.000E+14  0.0   38000.0    !(Bakali)
+a-C5H9  +H       =>M2Bdn13 +H2                 3.160E+13  0.0       0.00   !(Bakali) 
+a-C5H9  +OH      =>M2Bdn13 +H2O                1.160E+13  0.0       0.00   !(Bakali)
+a-C5H9  +O       =>M2Bdn13 +OH                 3.160E+13  0.0       0.00   !(Bakali)
+!
+! -------------------------------------------------------------------------
+! Consumption of b-C5H9     Methyle-2 Butene-2-yle-4 CH3-C(CH3)=CH2-CH2*
+! -------------------------------------------------------------------------
+!
+b-C5H9           =>M2Bdn13 +H                  1.000E+14  0.0   38000.0    !(Bakali)
+b-C5H9  +H       =>M2Bdn13 +H2                 3.160E+13  0.0       0.00   !(Bakali)
+b-C5H9  +OH      =>M2Bdn13 +H2O                1.160E+13  0.0       0.00   !(Bakali)
+b-C5H9  +O       =>M2Bdn13 +OH                 3.160E+13  0.0       0.00   !(Bakali)
+!
+! -------------------------------------------------------------------------
+! Consumption of C5H8-14    1,4 Propadiene    CH2=CH-CH2-CH=CH2
+! -------------------------------------------------------------------------
+!
+C5H8-14 +H       =>C2H3    +C3H6               4.540E+13  0.0    1870.8    !(Bakali)
+C5H8-14 +H       =>C3H5-A  +C2H4               4.540E+13  0.0    3569.4    !(Bakali)
+!
+! -------------------------------------------------------------------------
+! Consumption of C5H8-13    1,3 Propadiene    CH2=CH-CH=CH-CH3
+! -------------------------------------------------------------------------
+!
+C5H8-13 +H       =>C2H3    +C3H6               2.000E+13  0.0    1299.0    !(Bakali)
+C5H8-13 +H       =>C4H6-13 +CH3                2.000E+13  0.0    1299.0    !(Bakali)
+C5H8-13 +H       =>C3H5-S  +C2H4               2.000E+13  0.0    1299.0    !(Bakali)
+!
+! -------------------------------------------------------------------------
+! Consumption of M2Bdn13    Methyl 2-Butadiene 1,3 CH2=C(CH3)-CH=CH2
+! -------------------------------------------------------------------------
+!
+M2Bdn13 +H       =>C2H3    +C3H6               5.000E+12  0.0    1299.0    !(Bakali)
+M2Bdn13 +H       =>C4H6-13 +CH3                5.000E+12  0.0    1299.0    !(Bakali)
+M2Bdn13 +H       =>C3H5-T  +C2H4               2.000E+13  0.0    1299.0    !(Bakali)
+M2Bdn13 +H       =>C4H6-12 +CH3                2.000E+13  0.0    1299.0    !(Bakali)
+M2Bdn13 +H       =>C2H3    +AC3H4   +H2        1.730E+05  2.5    2495.2    !(Bakali)
+M2Bdn13 +OH      =>C2H3    +AC3H4   +H2O       3.120E+06  2.0    -298.3    !(Bakali)
+!
+! -------------------------------------------------------------------------
+! Consumption of C5H6       1,2,3 pentatriene   CH2=C=C=CH-CH3
+! -------------------------------------------------------------------------
+!
+C5H6    +H       =>PC3H4   +C2H3               4.250E+12  0.0    2000.0    !(Bakali)
+C5H6    +H       =>AC3H4   +C2H3               4.250E+12  0.0    2000.0    !(Bakali)
+C5H6    +H       =>C3H3    +C2H4               2.500E+12  0.0    2392.3    !(Bakali)
+C5H6    +H       =>C3H3    +C2H2    +H2        8.000E+13  0.0   14354.1    !(Bakali)
+C5H6    +OH      =>C3H3    +C2H2    +H2O       3.000E+13  0.0    3014.4    !(Bakali)
+!c-C5H6    +H       =>PC3H4   +C2H3               4.250E+12  0.0    2000.0    !(Bakali)
+!c-C5H6    +H       =>AC3H4   +C2H3               4.250E+12  0.0    2000.0    !(Bakali)
+!c-C5H6    +H       =>C3H3    +C2H4               2.500E+12  0.0    2392.3    !(Bakali)
+!c-C5H6    +H       =>C3H3    +C2H2    +H2        8.000E+13  0.0   14354.1    !(Bakali)
+!c-C5H6    +OH      =>C3H3    +C2H2    +H2O       3.000E+13  0.0    3014.4    !(Bakali)
+!
+! -------------------------------------------------------------------------
+! Consumption of t-C4H9    ter-bytyle   (CH3)3-C*
+! -------------------------------------------------------------------------
+!
+t-C4H9           =i-C4H8  +H                   8.300E+13  0.0   38189.0    !(Tsang, W., 1990)
+t-C4H9  +O2      =>i-C4H8  +HO2                4.820E+11  0.0       0.0    !(Tsang, W., 1990)
+!
+! -------------------------------------------------------------------------
+! Consumption of i-C4H9    iso-bytyle   (CH3)2CH-CH2*
+! -------------------------------------------------------------------------
+!
+i-C4H9           =C3H6    +CH3                 2.000E+13  0.00  29985.6    !(Tsang, W., 1990)
+i-C4H9  +O2      =>i-C4H8  +HO2                4.700E+12  0.00   6363.6    !(Baker, R.R., 1978)
+!
+! -------------------------------------------------------------------------
+! Consumption of i-C4H8   iso-butene     (CH3)2C=CH2
+! -------------------------------------------------------------------------
+!
+i-C4H8  +H       =>i-C4H7  +H2                 1.000E+13  0.0    3799.0    !(Axelsson, E.I. 1989)
+i-C4H8  +OH      =>i-C4H7  +H2O                1.910E+12  0.0    1229.7    !(Axelsson, E.I. 1989)
+i-C4H8  +O       =>i-C4H7  +OH                 2.510E+05  2.56  -1129.2    !(Axelsson, E.I. 1989)
+i-C4H8  +O       =i-C3H7   +HCO                7.240E+05  2.34  -1050.2    !(Axelsson, E.I. 1989)
+i-C4H8  +OH      =i-C3H7   +CH2O               1.510E+12  0.0       0.0    !(Axelsson, E.I. 1989)
+i-C4H8  +H       =CH3      +C3H6               1.720E+13  0.0    3600.5    !(Tsang-22nd Sympo)
+i-C4H8           =H        +i-C4H7             2.510E+16  0.0   87399.5    !(Douhou, S. 1994)
+i-C4H8           =C3H5-T   +CH3                1.100E+21 -1.20  97812.4    !(Bakali)
+!
+! -------------------------------------------------------------------------
+! Consumption of C4H7-S  (Methyl-2 Propene-1-yl-3 radical  CH2=C(CH2*)-CH3)
+! -------------------------------------------------------------------------
+!
+C4H7-S           =>CH3    +PC3H4               1.000E+13  0.0   32600.5    !(Axelsson, E.I. 1989)
+PC3H4   +CH3     =>C4H7-S                      5.010E+11  0.0    8808.6    !(Kerr, J.A. 1972)
+!
+! -------------------------------------------------------------------------
+! Consumption of i-C4H7  (Methyl-2 Propene-1-yl-1 radical  CH*=C(CH3)-CH3)
+! -------------------------------------------------------------------------
+!
+CH3     +AC3H4   =i-C4H7                       7.900E+10  0.0    4973.7    !(Tsang, W., 1973)/2
+C2H2    +C2H5    =i-C4H7                       7.900E+10  0.0    4973.7    !(Tsang, W., 1973)/2
+!
+! -------------------------------------------------------------------------
+! -------------------------------------------------------------------------
+! Consumption of C10H22 (n-decane)
+! -------------------------------------------------------------------------
+! -------------------------------------------------------------------------
+!
+C10H22           =C5H11-1 +C5H11-1             3.16E+16   0.00  80619.0     
+C10H22           =C4H9-1  +C6H13-1             3.16E+16   0.00  80619.0     
+C10H22           =n-C3H7  +C7H15               3.16E+16   0.00  80619.0     
+C10H22  +H       =>C10H21  +H2                 8.24E+07   2.00   4976.1     
+C10H22  +OH      =>C10H21  +H2O                4.22E+08   1.61    -40.4     
+C10H22  +O       =>C10H21  +OH                 2.79E+06   2.50   2219.0     
+C10H22  +HO2     =>C10H21  +H2O2               3.06E+13   0.00  16919.0     
+C10H22  +CH3     =>C10H21  +CH4                3.59E+12   0.00   9454.7     
+!
+! -------------------------------------------------------------------------
+! Consumption of C10H22 (n-decane)
+! -------------------------------------------------------------------------
+!
+C10H21           =>C4H8-1  +C6H13-1            1.60E+13   0.00   28166.6     
+C10H21  +O2      =>C10H20  +HO2                4.00E+12   0.00    4230.9     
+!
+! -------------------------------------------------------------------------
+! Consumption of C6H13-1    (1-hexyl radical CH2*-CH2-CH2-CH2-CH2-CH3)
+! -------------------------------------------------------------------------
+!
+C6H13-1 +O2      =>C6H12-1 +HO2                1.00E+12   0.00    1990.4     
+C6H13-1          =>C6H13-2                     2.00E+11   0.00   11047.6     
+C6H13-1          =>C2H4    +C4H9-1             2.50E+13   0.00   28666.6     
+!
+! -------------------------------------------------------------------------
+! Consumption of C6H13-2    (2-hexyl radical CH3-CH*-CH2-CH2-CH2-CH3)
+! -------------------------------------------------------------------------
+!
+C6H13-2 +O2      =>C6H12-1 +HO2                2.00E+12   0.00    4230.9     
+C6H13-2          =>C6H13-1                     3.00E+11   0.00   14033.3     
+C6H13-2          =>n-C3H7  +C3H6               3.5e13     0.00   28166.6     
+!
+! -------------------------------------------------------------------------
+! Consumption of C6H12-1    (1-hexene  CH2=CH-CH2-CH2-CH2-CH3)
+! -------------------------------------------------------------------------
+!
+C6H12-1 +H       =>C2H4    +C4H7-B  +H2        0.280E+08   2.00   7701.0 !  (Bakali)                         
+C6H12-1 +OH      =>C2H4    +C4H7-B  +H2O       0.521E+10   0.97   1590.9 !  (Bakali)                         
+C6H12-1 +O       =>C2H4    +C4H7-B  +OH        0.217E+07   2.40   5500.0 !  (Bakali)          
+C6H12-1          =n-C3H7   +C3H5-A             0.250E+17   0.00  71100.0 !  (CW-22nd Sympo)    
+C6H12-1 +H       =n-C3H7   +C3H6               0.227E+14   0.00   1870.8 !  (Bakali)                         
+C6H12-1 +H       =C4H9-1   +C2H4               0.227E+14   0.00   3569.4 !  (Bakali)      
+C6H12-1 +O       =>C5H10-1 +CH2O               0.723E+06   2.34  -1050.2 !  (Bakali)                         
+C6H12-1 +O       =>CH3CHO  +C4H8-1             0.129E+14   0.00    850.0 !  (Bakali)                         
+C6H12-1 +O       =>CH3     +CO      +C4H9-1    0.129E+14   0.00    850.0 !  (Bakali)                         
+C6H12-1 +OH      =C5H11-1  +CH2O               0.150E+13   0.00      0.0 !  (Bakali)                         
+C6H12-1 +OH      =C4H9-1   +CH3CHO             0.100E+12   0.00      0.0 !  (Bakali)                         
+!
+!-------------------------------------------------------------------------------------------
+! New PAH reactions added from Blanquart and Pitsch, Combust Flame, 2009
+!the rates for some of the reactions have been changed at KAUST. Such reactions will have KAUST as a keyword in the comments area.
+!-------------------------------------------------------------------------------------------
+A1 + O = C6H5OH	                                                1.11E+13     0          4531.6
+A1 + O = A1- + OH	                                            4.00E+13	 0	       14698.9
+A1 + O2 = A1- + HO2	                                            6.00E+13	 0	       63401.1
+!A1 + OH = C6H5OH + H	                                        1.30E+13     0	       10600
+A1 = A1- + H	                                                1.29E+61	-12.5	  148085.6
+A1- + C2H4 = A1C2H4	                                            4.41E+05	 2	        1928.8
+A1- + C2H4 = A1 + C2H3	                                        9.44E-03	 4.5	    4469.4
+A1- + CH2O = A1 + HCO	                                        8.55E+04	 2.2	      38.2
+A1- + CH2O = A1CH2O	                                            3.79E+58	-15.9	   12813.1
+A1- + CH2O = A1CHO + H	                                        2.91E+04	 2.1	    -411.1
+!A1- + CH4 = A1 + CH3	                                        3.89E-03	 4.6	    5258.1
+A1- + HO2 = C6H5O + OH	                                        3.00E+13	 0	           0
+A1- + O = C6H5O	                                                1.00E+14	 0	           0
+! A1- + O2 = OC6H4O + H	                                        3.00E+13	 0	        8979.5 ! commented at KAUST
+A1- + O2 = OC6H4O + H	                                        4.52E+12     0.0        3604.0     !2005 combustion DATA from Fei Qi 2010, new PCI mech 
+A1- + OH = C6H5O + H	                                        3.00E+13	 0	           0
+A1-( + M) = O-C6H4 + H( + M)	                                4.30E+12	 0.6	   77301.6
+H2/2.00/ H2O/12.00/ CO2/3.60/ CO/1.75/ AR/0.70/ CH4/2.00/ C2H6/3.00/ 
+     LOW  /  1.000e+84  -18.870  90100.38 /
+     TROE/   0.902   696.00    358.00   3856.00 /		
+!
+C6H5O + O = OC6H4O + H	                                        1.68E+14	 0	           0
+C6H5O + O2 = OC6H4O + OH	                                    1.08E+12	 0.1	   17999.5
+OC6H4O + O => CH2CO + C2H2 + 2CO	                            3.00E+13	 0	        5000
+!
+A1CHO + CH3 => A1- + CO + CH4	                                2.72E+06	 1.8	    5920.2
+A1CHO + H => A1- + CO + H2	                                    2.05E+09	 1.2	    2404.4
+A1CHO + HO2 => A1- + CO + H2O2	                                3.01E+12	 0	       11924
+A1CHO + O => A1- + CO + OH	                                    6.62E+12	 0	        1809.3
+A1CHO + O2 => A1- + CO + HO2	                                3.01E+13	 0	       39149.1
+A1CHO + OH => A1- + CO + H2O	                                2.34E+10	 0.7	   -1113.8
+A1CHO => A1- + HCO	                                            2.61E+15	 0.1	   80549.7
+!
+A1CH2O + H = A1CHO + H2                                     	1.33E+13	 0	           0
+A1CH2O + H( + M) = A1CH2OH( + M)	                            2.43E+12	 0.5	      50.2
+H2/2.00/ H2O/12.00/ CO2/3.60/ CO/1.75/ AR/0.70/ CH4/2.00/ C2H6/3.00/ 
+     LOW  /  4.660e+41   -7.440  14079.83 /
+     TROE/     0.7   100.00  90000.00  10000.00 /		
+A1CH2O + O = A1CHO + OH	                                        6.67E+12	 0	           0
+A1CH2O + OH = A1CHO + H2O	                                    3.33E+12	 0             0
+A1CH2O = A1CHO + H	                                            1.27E+13	 0	       20599.9
+!
+A1CH2OH + CH3 = A1CH2O + CH4	                                1.00E+07	 1.5	    9940.3
+A1CH2OH + H = A1CH2O + H2	                                    4.20E+06	 2.1	    4870.9
+A1CH2OH + O = A1CH2O + OH	                                    1.30E+05	 2.5	    5000
+A1CH2OH + OH = A1CH2O + H2O	                                    6.30E+06	 2	        1501
+!
+C6H5OH + O2 = C6H5O + HO2	                                    7.32E+13	 0	       41400.6
+C6H5OH = c-C5H6 + CO	                                        8.62E+15	-0.61	   74091.77
+!C6H5OH = C6H5O + H	                                            1.01E+71	-15.9	  124789.7
+!
+HOA1CH3 + H = OA1CH3 + H2	                                    1.15E+14	  0	       12397.2
+HOA1CH3 + O = OA1CH3 + OH	                                    2.81E+13	  0	        7351.8
+HOA1CH3 + OH = OA1CH3 + H2O	                                    2.95E+06	  2	       -1312.1
+HOA1CH3 = OA1CH3 + H	                                        1.01E+71	 -15.9	  124789.7
+!
+C6H5CH3 + A1- = C6H5CH2 + A1	                                7.94E+13	  0	       11950.3
+C6H5CH3 + CH3 = C6H5CH2 + CH4	                                4.22E+14	  0	       22256.2
+!C6H5CH3 + HO2 = C6H5CH2 + H2O2	                                9.33E+04	  2.5	   14684.5
+!C6H5CH3 + O = C6H5CH2 + OH	                                    3.19E+09	  1.2	    2504.8
+C6H5CH3 + O = OA1CH3 + H	                                    3.10E+13	  0	        3974.7
+!C6H5CH3 + O2 = C6H5CH2 + HO2	                                2.18E+07	  2.5	   46044.5
+!C6H5CH3 + OH = C6H5CH2 + H2O	                                1.62E+13	  0	        2770.1
+C6H5CH3 + OH = C6H5OH + CH3	                                    7.83E+02      2.9       3221.8
+C6H5CH3 + OH = HOA1CH3 + H	                                    3.14E+01      3.4	    4720.4
+!C6H5CH3 = A1- + CH3	                                        2.16E+29	 -3.6	  110164.9
+!
+C6H5CH2 + H = A1- + CH3	                                        5.83E+67	 -14.2	   68329.4
+C6H5CH2 + HO2 = A1CH2O + OH	                                    1.06E+16	 -0.9	    2523.9
+C6H5CH2 + O = A1CH2O	                                        3.31E+14	  0	           0
+C6H5CH2 + OH = A1CH2OH	                                        2.00E+13	  0	           0
+C6H5CH2 + C2H2 = C9H8 + H	                                    3.16E+04	  2.5	   11061.2
+!C6H5CH2 + C3H3 = A2 + H2	                                    1.64E+44	 -9.2	   15153
+!C6H5CH2 + C3H3 => A2 + H2                                      2.00E+14      0.0      20000.0 !detailed mech from Fei Qi, Combust Flame, 2010 ADDED (KAUST)
+!C6H5CH2 = c-C5H5 + C2H2	                                    8.20E+14	  0	       80676.4
+!C6H5CH2 = C4H4 + C3H3                                          2.00E+14      0        83600
+C6H5CH2 = c-C5H5 + C2H2                                         2.00E+14      0        70000
+!C6H5CH2 = c-C5H5 + C2H2                                        3.00E+12      0        70000
+!	 
+A1C2H + C2H3 => A2 + H	                                        3.60E+17	 -1.4	   15757.6!, reaction made forward KAUST
+A1C2H = A1C2H* + H	                                            2.10E+60	 -12.4	  148076
+A1C2H* + C2H4 => A2 + H	                                        3.62E+28	 -4.2	   23864.7 !, reaction made forward KAUST
+!
+n-A1C2H2 =  A1C2H3*	                                            6.13E+10	  0.5	   26369.5
+!
+A1C2H3 =  A1C2H3* + H	                                        2.10E+60	 -12.4	  148076
+A1C2H4 + CH3 = A1C2H3 + CH4	                                    3.31E+12	  0	        -769.6
+A1C2H4 + H = A1C2H3 + H2	                                    1.67E+12	  0	           0
+A1C2H4 + H( + M) = A1C2H5( + M)                             	3.61E+13	  0	           0
+H2/2.00/ H2O/12.00/ CO2/3.60/ CO/1.75/ AR/0.70/ CH4/2.00/ C2H6/3.00/ 
+     LOW  /  4.420e+61  -13.550  11357.55 /
+     TROE/   0.315   369.00   3285.00   6667.00 /		
+A1C2H4 + O2 = A1C2H3 + HO2	                                    3.70E+16	 -1.6	    3417.8
+A1C2H4 + OH = A1C2H3 + H2O                                   	2.41E+13	  0	           0
+A1C2H4 = A1C2H3 + H	                                            3.79E+06	  2	       32105.6
+A1C2H5 + CH3 = A1C2H4 + CH4	                                    4.52E-01	  3.6	    7153.4
+A1C2H5 + H = A1C2H4 + H2	                                    3.30E+05	  2.5	    6756.7
+A1C2H5 + H = A1 + C2H5	                                        2.31E+06	  2.2	    4163.5
+A1C2H5 + HO2 = A1C2H4 + H2O2	                                4.82E+03	  2.6	   13910.1
+A1C2H5 + O = A1C2H4 + OH	                                    9.65E+04	  2.7	    3716.5
+A1C2H5 + OH = A1C2H4 + H2O	                                    2.00E+08	  1.5	     537.8
+A1C2H5 = A1- + C2H5                                         	2.16E+29	 -3.6	  110164.9
+!
+A2 + A1- => FLTN + H + H2	                                    6.37E+11	  0	        2167.8
+A2 + C2H3 = A2C2H2 + H2	                                        7.20E+17	 -1.4	   15757.6
+A2 + C2H3 = A2C2H2B + H2	                                    7.20E+17	 -1.4	   15757.6
+A2 + O = A2O-C10H7O + H                                        	1.83E+13      0     	4529.2
+A2 + O = A2OH	                                                1.83E+13	  0	        4529.2
+A2 + OH = A2OH + H	                                            2.20E+02   	  3.3	    5590.3
+A2 = A2-2 + H	                                                8.60E+60	 -12.5	  148076
+c-C5H5 + c-C5H5 => A2 + 2H	                                    6.39E+29	 -4	       35205.5
+!
+A2-1 + A1 => FLTN + H + H2	                                    9.55E+11	  0	        2167.8
+A2-1 + A1- => FLTN + H2                                      	1.39E+13	  0	         112.3
+!A2-1 + C2H3 = A2C2H2 + H                                       6.00E+12	  0	           0
+A2-1 + C2H3 = A2C2H2 + H	                                    9.4E+00       4.14     23234.! equivalent to A2C2HA* + C2H3, KAUST !
+A2-1 + C2H4 = A2C2H2 + H2	                                    3.62E+28	 -4.2	   23864.7
+A2-1 + O = A2O-C10H7O	                                        1.00E+14	  0	           0
+A2-1 + O2 = A2O-C10H7O + O	                                    8.90E+03	  2.4	   38277.51196 ! Sander et al, KAUST
+!A2-1 + O2 => C9H6O + CO + H	                                3.00E+13      0	        8979.5
+A2-1 + OH = A2O-C10H7O + H	                                    3.00E+13	  0	           0 
+A2-2 + C2H2 = A2C2H2B	                                        3.29E+06	  2	        3162.1
+!A2-2 + C2H3 = A2C2H2B + H                                      6.00E+12      0	           0
+A2-2 + C2H3 = A2C2H2B + H	                                    9.4E+00       4.14     23234.! equivalent to A2C2HA* + C2H3, KAUST !
+A2-2 + C2H4 = A2C2H2B + H2	                                    3.62E+28	 -4.2	   23864.7
+A2-2 + O = A2O-C10H7O	                                        1.00E+14	  0	           0
+A2-2 + O2 = A2O-C10H7O + O	                                    8.90E+03	  2.4	   38277.51196 ! Sander et al, KAUST
+!A2-2 + O2 => C9H6O + CO + H	                                3.00E+13	  0	        8979.5
+A2-2 + OH = A2O-C10H7O + H	                                    3.00E+13	  0	           0
+!
+A2O-C10H7O + O = C9H6O + CO + H	                                1.68E+14	  0	           0
+A2O-C10H7O + O2 = C9H6O + CO + OH	                            1.08E+12	  0.1      17999.5
+A2O-C10H7O = C9H7 + CO	                                        2.90E+10	  0	       36424.5
+A2OH + H = A2O-C10H7O + H2	                                    1.15E+14      0	       12397.2
+A2OH + O = A2O-C10H7O + OH	                                    2.81E+13	  0	        7351.8
+A2OH + OH = A2O-C10H7O + H2O	                                2.95E+06	  2	       -1312.1
+A2OH = A2O-C10H7O + H	                                        1.01E+71	 -15.9	  124789.7
+A2OH = C9H8 + CO	                                            8.62E+15	 -0.6	   74118.1
+!
+!A2CH2 + C3H3 => A3 + H2	                                    1.64E+44	 -9.2	   15153 !, reaction made forward KAUST
+A2CH2 + H = A2-1 + CH3	                                        5.83E+67	 -14.2	   68329.4
+A2CH2 = C9H7 + C2H2	                                            8.20E+14	  0	       80676.4
+A2CH3 + CH3 = A2CH2 + CH4	                                    3.07E+06	  1.7	   10449.3
+A2CH3 + H = A2 + CH3	                                        3.85E+06	  2.2	    4163.5 ! 3.50E+13	0.0    3690.0     !changed at KAUST !
+A2CH3 + H = A2CH2 + H2                                      	6.47E+00	  4	        3384.3
+A2CH3 + HO2 = A2CH2 + H2O2	                                    9.33E+04	  2.5      14684.5
+A2CH3 + O = A2CH2 + OH	                                        6.02E+11	  0	           0
+A2CH3 + O2 = A2CH2 + HO2	                                    2.18E+07	  2.5	   46044.5
+A2CH3 + OH = A2CH2 + H2O	                                    1.62E+13	  0	        2770.1
+A2CH3 + OH = A2OH + CH3	                                        7.83E+02	  2.9	    3221.8
+A2CH3 = A2CH2 + H	                                            1.25E+18	 -0.6	   94787.3
+A2CH3 = A2-1 + CH3	                                            3.20E+34	 -5	      114251.9
+!
+A2C2HA + C2H3 => A3 + H	                                        1.80E+17	 -1.4	   15757.6 !, reaction made forward KAUST
+A2C2HA = A2C2HA* + H	                                        2.15E+60	 -12.5	  148076
+!A2C2HA* + C2H3 => A3                                           6.00E+12	  0	           0 !, reaction made forward KAUST
+A2C2HA* + C2H3 => A3	                                        9.4E+00       4.14     23234.! equivalent to A2C2HA* + C2H3, KAUST !
+A2C2HA* + C2H4 => A3 + H	                                    3.62E+28	 -4.2	   23864.7! reaction made forward, KAUST
+A2C2HB + C2H3 => A3 + H	                                        1.80E+17	 -1.4	   15757.6! reaction made forward, KAUST
+A2C2HB = A2C2HB* + H	                                        2.15E+60	 -12.5	  148076
+!A2C2HB* + C2H3 => A3                                           6.00E+12	  0	           0 !, reaction made forward KAUST
+A2C2HB* + C2H3 => A3	                                        9.4E+00       4.14     23234.! equivalent to A2C2HA* + C2H3, KAUST
+A2C2HB* + C2H4 => A3 + H	                                    3.62E+28	 -4.2	   23864.7! reaction made forward, KAUST
+!
+A2C2H2 + C2H2 => A3 + H	                                        3.80E+07	  1.6	    4438.3 !, reaction made forward KAUST
+A2C2H2B + C2H2 => A3 + H	                                    3.80E+07	  1.6	    4438.3 !, reaction made forward KAUST
+A2C2H2B + H = A2C2HB + H2	                                    1.65E+11	  0.5	   10631
+A2C2H2B + OH = A2C2HB + H2O                                 	2.50E+12	  0	           0
+A2C2H2B = A2C2HB + H	                                        7.18E+10	  1	       38673.5
+!
+A1C2H4 + O = C6H5CH2 + CH2O	                                    9.64E+13	  0	           0
+A1C2H5( + M) = C6H5CH2 + CH3( + M)	                            6.45E+36	 -5.8	   97387.7
+H2/2.00/ H2O/12.00/ CO2/3.60/ CO/1.75/ AR/0.70/ CH4/2.00/ C2H6/3.00/ 
+     LOW  /  2.820e+74  -15.740  98718.93 /
+     TROE/    0.31    50.00   3000.00   9000.00 /
+!
+A2R5 + C2H3 = A2R5C2H2 + H2	                                    3.60E+17	 -1.4	   15757.6
+A2R5 = A2R5- + H	                                            8.60E+60	 -12.5	  148076
+!A2R5- + C2H2 = A2R5C2H2	                                    3.29E+06	  2	        3162.1 ! reaction commented at KAUST
+A2R5- + C2H2 = A2R5C2H2	                                        1.584e4       2.55      3951.6  ! DFT rate for A2- + C2H2 used, KAUST
+!A2R5- + C2H3 = A2R5C2H2 + H                                    6.00E+12	  0	           0
+A2R5- + C2H3 = A2R5C2H2 + H	                                    9.4E+00       4.14     23234.! equivalent to A2C2HA* + C2H3, KAUST !
+A2R5- + C2H4 = A2R5C2H2 + H2	                                3.62E+28	 -4.2	   23864.7
+A2R5- + C4H4 => A3R5 + H	                                    3.30E+33	 -5.7	   25500 !, reaction made forward KAUST
+A2R5- + C2H2 => A3-4                                            3.29E+06	  2	        3162.1 ! rate of a2r5- + c2h2 (KAUST)
+!
+A2R5C2H + H = A2R5C2HY + H2	                                    1.32E+08	  1.9	   16821.2
+A2R5C2H + OH = A2R5C2HY + H2O	                                6.72E+01	  3.3	    1455.5
+A2R5C2H = A2R5C2HY + H	                                        2.15E+60	 -12.5	  148076
+A2R5C2H2 + C2H2 => A3R5 + H	                                    3.80E+07	  1.6	    4438.3 ! reaction made forward, KAUST
+A2R5C2H2 + H = A2R5C2H + H2	                                    1.65E+11	  0.5	   10631
+A2R5C2H2 + OH = A2R5C2H + H2O	                                2.50E+12	  0	           0 
+A2R5C2H2 = A2R5C2H + H	                                        7.18E+10	  1	       38673.5
+A2R5C2HY + C2H2 => A3R5X	                                    1.34E+04	  2.5	    1283.5
+!
+A3 = A3-1 + H	                                                4.30E+60	 -12.5	  148076
+C9H7 + c-C5H5 => A3 + 2H	                                    6.39E+29	 -4	       35205.5
+!
+! A3-4 + C2H2 => A4 + H	                                        1.28E+06	  2	        1931.2 !, reaction made forward KAUST
+A3-4 => A2R5- + C2H2	                                        2.30E+09      1.6031   61850  ! added at KAUST, Raj et al, Carbon, 2010  ! 1.30E+11	1.1	70399.1 ! commented KAUST         
+!A3-1 + C2H2 = A3R5 + H	                                        1.28E+06	  2	        1931.2 ! commented at KAUST..rate too high
+A3-1 + C2H2 = A3R5 + H                                          1.584e4       2.55      3951.6 ! DFT RATE EVALUATED AT KAUST
+!A3-1 + C2H3 = A3R5 + H2                                        6.00E+12	  0	           0
+A3-1 + C2H3 = A3R5 + H2	                                        9.4E+00       4.14     23234.! equivalent to A2C2HA* + C2H3, KAUST 
+!
+A3R5 + H = A3R5X + H2	                                        2.65E+08	  1.9	   17096.1
+A3R5 + OH = A3R5X + H2O	                                        9.63E+02	  3	        4373.8
+A3R5 = A3R5X + H	                                            2.15E+60	 -12.5	  148076
+A3R5X + C2H2 = A4R5 + H	                                        1.28E+06	  2	        1931.2
+!
+!A4- + C2H2 = A4R5 + H	                                        1.28E+06	  2	        1931.2 !commented at KAUST..rate too high
+A4-2 + C2H2 = A4R5 + H	                                        1.584e4       2.55      3951.6 ! DFT RATE EVALUATED AT KAUST
+!
+C5H9 + O2 = C5H8-13 + HO2	                                    5.00E+10	  0	           0
+C5H9 + O2 = C5H8-14 + HO2	                                    5.00E+10	  0	           0
+C6H2 + C2H = C8H2 + H	                                        7.80E+13	  0	           0
+!
+C9H6O + H =>  A1C2H3* + CO	                                    1.79E+07	  2.1	     841.3
+C9H6O => O-C6H4 + C2H2 + CO	                                    3.37E+44	 -8	      108675.9
+!
+C9H7 + C3H3 = A2R5 + H2	                                        4.10E+43	 -9.2	   15153
+C9H7 + HO2 = C9H6O + H2O	                                    4.76E+32	 -6.5	   13401
+C9H7 + HO2 => C9H6O + H + OH	                                1.31E+29	 -4.7      11649.1
+C9H7 + O = C9H6O + H	                                        2.80E+13	  0	           0
+C9H7 + O2 = C9H6O + OH	                                        1.38E+11	  0	       25320.3
+C9H7 + O2 => C9H6O + H + O	                                    3.09E+15	 -0.7	   48740.4
+!C9H8 + CH3 = C9H7 + CH4	                                    1.80E-01	  4     	 456.5
+!C9H8 + H = C9H7 + H2	                                        2.80E+13	  0	        2258.6
+C9H8 + HCO = C9H7 + CH2O	                                    1.08E+08	  1.9      15999
+C9H8 + HO2 = C9H7 + H2O2	                                    1.10E+04	  2.6	   12899.1
+C9H8 + O = C9H7 + OH	                                        4.77E+04	  2.7	    2105.6
+C9H8 + O => C9H6O + 2H	                                        6.65E+12	 -0.1	     360.9
+C9H8 + O2 = C9H7 + HO2	                                        4.00E+13	  0	       49639.1
+C9H8 + OH = C9H7 + H2O	                                        3.08E+06	  1.6	     -35.9
+C9H8 + OH => O-C6H4 + C2H4 + HCO	                            1.88E+36	 -7.8	    7060.2
+C9H8 = C9H7 + H	                                                1.73E+68	 -15.2	  116371.9
+!
+!-----------------------------------------------------------
+n-C4H5 + C2H2 = C5H4CH2 + H                  4.620e+15   -0.890   9141.97
+i-C4H5 + C2H2 = C5H4CH2 + H                  6.800e+24   -3.450  20337.00
+C5H4CH2 = A1                                 1.450e+45   -8.900  97002.87
+C5H4CH2 = A1- + H                            2.240e+68  -14.650 142576.48
+c-C5H6 = c-C5H5 + H                          1.730e+68  -15.160 116371.89
+c-C5H6 + O2 = c-C5H5 + HO2                   4.000e+13    0.000  37151.05
+c-C5H6 + HO2 = c-C5H5 + H2O2                 1.100e+04    2.600  12899.14
+c-C5H6 + O = C5H5O + H                       1.330e+13   -0.100    360.90
+c-C5H6 + OH = C4H6-13 + HCO                  3.750e+36   -7.800   7060.23
+C3H3 + C2H2 = c-C5H5                         2.350e+11    0.000   9995.22
+c-C5H5 + O = C5H4OH                          7.000e+13    0.000      0.00
+c-C5H5 + O2 = C5H4O + OH                     3.440e+11   -0.010  25320.27
+c-C5H5 + O2 = C5H4OH + O                     7.730e+15   -0.730  48740.44 !fwd
+c-C5H5 + HO2 = C5H4OH + OH                   6.270e+29   -4.690  11649.14!fwd
+c-C5H5 + HO2 = C5H4O + H2O                   1.190e+33   -6.520  13401.05
+c-C5H5 + O2 = C4H4O + HCO                    1.220e+11   -0.140   5707.46
+C5H4OH + H= C5H4O + H2                       6.670e+12    0.000      0.00!fwd
+C5H4OH + O = C5H4O + OH                      3.330e+12    0.000      0.00!fwd
+C5H4OH + OH = C5H4O + H2O                    1.670e+12    0.000      0.00!fwd
+C5H4OH + O2 = C5H4O + HO2                    1.430e-13    7.600  -3530.11!fwd
+C5H5O + H = C5H4O + H2                       1.330e+12    0.000      0.00!fwd!fwd
+C5H5O + O2 = C5H4O + HO2                     1.280e+07    1.020  -2033.94!fwd
+C5H4O + H = C5H5O                            2.000e+13    0.000   2000.48
+C5H4O + H = CO + n-C4H5                      4.300e+09    1.450   3900.57
+C5H4O + O = CO + HCO + C3H3                  6.200e+08    1.450   -858.03
+OA1CH3 => C5H4CH2 + CO + H                   2.900e+10    0.000  36424.47
+OC6H4O = C5H4O + CO                          7.400e+11    0.000  59000.96
+OC6H4O + H = C5H5O + CO                      4.300e+09    1.450   3867.11
+OA1CH3 + O => c-C5H6 + 2CO + H               1.68E+14	  0	         0
+!
+!c-C5H6 + H = c-C5H5 + H2                     2.800e+13    0.000   2258.60
+!c-C5H6 + H = C3H5-A + C2H2                   6.600e+14    0.000  12344.65 rate of Fei Qi used, KAUST (very slow one chosen)
+!c-C5H6 + O = c-C5H5 + OH                     4.770e+04    2.710   1106.60
+!c-C5H6 + OH = c-C5H5 + H2O                   3.080e+06    2.000      0.00
+!c-C5H6 + CH3 = c-C5H5 + CH4                  1.800e-01    4.000      0.00 ! Fei Qi rate used, KAUST
+!c-C5H5 + HO2 = C5H5O + OH                    5.530e+45  -10.350  18049.71
+!c-C5H5 + OH = C5H4OH + H                     3.020e+13    0.000      0.00!fwd
+!C5H4OH = C5H4O + H                           2.000e+13    0.000  30000.00!fwd
+!C5H5O => n-C4H5 + CO                         1.000e+12    0.000  35999.04
+!C5H4O => 2C2H2 + CO                          3.370e+44   -8.000 108675.91
+!i-C4H5 + C2H2 = A1 + H                       1.670e+23   -3.300  24959.37
+!C3H5-A + C3H3 = A1 + H2                      8.200e+43   -9.200  15152.96
+!2C3H3 = C5H4CH2                              8.250e+46  -10.100  16959.85
+!
+!------------------------------------------------------------
+! Reactions added from Fei Qi, Combust Flame, 2010 at KAUST
+!the rates for some of the reactions have been changed at KAUST. Such reactions will have KAUST as a keyword in the comments area.
+!------------------------------------------------------------
+!C6H5CH3+H=A1-+CH4                               6.00E-01    5.0    30000.0     !Est.
+!C6H5CH3+H=C6H4CH3+H2                            6.00E+08    1.0    16800.0     !2005 Bounaceur   
+!C6H4CH3+H=C6H5CH3                               3.00E+13    0.0        0.0     !2005 Bounaceur       /3
+!C6H4CH3+H=C6H5CH2+H                             1.00E+13    0.0        0.0     !2005 Bounaceur
+!C6H5CH3+A1-=C6H5CH2+A1                          2.10E+12    0.0     4400.0     !USC Mech V2.0 (88-FAH-STE)
+!
+C6H5CH3 + c-C5H5 = C6H5CH2 + c-C5H6              2.10E+12    0.0     4400.0     !Ref to C6H5CH3+A1-=C6H5CH2+A1
+C6H5CH2 = C7H6 + H                               4.38E+13    0.078  75900.0     !refit 0.1atm  see text
+C6H5CH2 + H = C7H6 + H2                          5.00E+13    0.0        0.0     !Est.
+!C6H5CH2 + H = A1- + CH3                         4.5E+58   -11.9    51860.0     !2007 Klippenstein
+!                 reactions of C7H5 and C7H6
+C7H6 + H => c-C5H5 + C2H2                        3.00E+14    0.0        0.0     !2009 Detilleux and Vandooren
+C7H5 + H = C7H6                                  2.00E+12    0.0        0.0     !Est.
+C7H6 + CH3 = C7H5 + CH4                          1.87E+04    2.724   6008.0     !2009 Da Silva C7H5 
+C7H6 + H = C7H5 + H2                             1.90E+08    1.847   4965.0     !2009 Da silva C7H5
+C7H5 + H = C5H4 + C2H2                           1.00E+14    0.0        0.0     !Est. 
+C7H5(+M) = C4H2 + C3H3(+M)                       3.00E+12   -0.075  62300.0     !Ref c-C5H5=C3H3+C2H2
+                                              LOW /1.00E+045 8.4   47500/
+C7H5(+M) = C2H2 + C5H3(+M)                       2E+11      -0.075  62300       !Ref c-C5H5=C3H3+C2H2
+                                              LOW /1.00E+045 8.4   47500/
+!
+A1- + C2H6 = A1 + C2H5                              2.10E+11    0.0     4443.0     !USC Mech V2.0 (01-PAR-LIN)
+c-C5H6 + A1- = c-C5H5 + A1                          3.10E+11    0.0     5500.0     !2001 Mac&Bac
+c-C5H6 + C2H3 = c-C5H5 + C2H4                       6.00E+12    0.0        0.0     !2001 Mac&Bac 
+!c-C5H6 + CH3 = c-C5H5 + CH4                        5.00E+11    0.0     5000.0     !2001 Mac&Bac
+c-C5H5(+M) = C2H2 + C3H3(+M)                        6.31E+13   -0.075  62300.0     !2009 Detilleux and Vandooren (KERN ET AL. 1998)
+                                              LOW /1.00E+45 8.4   47500/
+
+c-C5H6(+M) = c-C5H5 + H(+M)                         7.65E+19   -1.18   84473.0     !2009 Detilleux and Vandooren (ROY ET AL. 2001)
+                                              LOW / 1.07E+80 -16.788 16985/
+C4H5-2 + C2H4 = c-C5H6 + CH3                        5.00E+14    0.0    25000.0     !USC Mech V2.0 
+C4H6-13 + C2H3 = c-C5H6 + CH3                       5.00E+14    0.0    25000.0     !Est
+c-C5H6 + H = C2H2 + C3H5-A                          7.74E+36   -6.2    32890.0     !USC Mech V2.0  (98-ZHO-BOZ)
+c-C5H6 + H = lC5H7                                  8.27+126  -32.3    82348.0     !USC Mech V2.0  (02-MOS-LIN)
+C3H5-A + C2H2 = lC5H7                               8.38E+30   -6.2    12824.0     !USC Mech V2.0 (90DEAN)
+C3H5-A + C2H3 = lC5H7 + H                           1.00E+13    0.0        0.0     !USC Mech V2.0
+!
+!                 reactions of C5H3 and C5H4
+C3H3 + C2H2 = C5H4 + H                              2.35E+11    0.0     9995.2     !Est. ref: C3H3+C2H2=c-C5H5 (2002 Knyazev &slagle)
+C4H2 + CH3 = C5H4 + H                               2.40E+09    0.9    20700.0     !Est. ref: C2H2+CH3=aC3H4+H (USC Mech V2.0)
+C4H + CH4 = C5H4 + H                                2.40E+09    0.9    20700.0     !Est. ref: C2H2+CH3=aC3H4+H (USC Mech V2.0)
+AC3H4 + C2H = C5H4 + H                              9.60E+13    0.0        0.0     !Est. ref: C2H2+C2H=C4H2+H (USC Mech V2.0)
+C5H4 + H = C5H3 + H2                                1.00E+06    2.5     5000.0     !2000 est by Alzueta
+C5H3 + H = C5H4                                     1.00E+13    0.0        0.0     !
+C5H3 + H = C3H2 + C2H2                              5.00E+13    0.0        0.0     !Est
+C5H3 + CH3 = C2H2 + C4H4                            2.00E+13    0.0        0.0     !Est
+
+C6H5CH2 + CH2 = A1C2H3 + H                          1.00E+13    0.0        0.0     !Est.
+C6H5CH2 + CH3 = A1C2H5                              2.00E+13    0.0        0.0     !Est.
+A1- + C4H4 = A1C2H3 + C2H                           3.20E+11    0.0     1900.0     !MIT 1988 Harris et al.
+A1- + C4H6-13 = A1C2H3 + C2H3                       3.20E+11    0.0     1900.0     !MIT 1988 Harris et al.
+C4H4 + C4H4 = A1C2H3                                1.50E+14    0.0    38000.0     !MIT 1984 Lundgard and Heicklen
+!A1C2H5 + H = A1 + C2H5                             1.20E+13    0.0     5100.0     !MIT 1995 Zhang and McKinnon
+A1C2H5 + H = A1C2H3 + H2 + H                        8.00E+13    0.0     8235.0     !MIT 1992 Emdee et al.
+A1C2H5 = A1C2H3 + H2                                5.01E+12    0.0    64000.0     !MIT 1970 Clark and Price
+A1- + C2H6 = A1C2H5 + H                             2.51E+12    0.0     6190.0     !Est. ref: A1-+C2H4=A1C2H3+H (ABF)
+n-C4H5 + C4H4 = A1C2H3 + H                          3.16E+11    0.0      600.0     !USC Mech V2.0  (84COL/BIT)
+
+A1- + n-C4H3 = A2                                   1.51E+75  -17.9    39600.0     !MIT [QRRK-HR, 20 torr]
+A1- + n-C4H3 = A2-2 + H                             1.84E+72  -16.1    57630.0     !MIT [QRRK-HR, 20 torr]
+A1- + n-C4H3 = A2-1 + H                             1.84E+72  -16.1    57630.0     !MIT [QRRK-HR, 20 torr]
+
+c-C6H4 + c-C6H4 = BIPHEN                            4.60E+12    0.0        0.0     !MIT 1968 Porter and Steinfeld 
+P2- = BIPHEN+H                                      1.30E+16    0.0    33203.0     !MIT Mebel et al. 1997 for C6H7=C6H6+H
+P2- + H = BIPHEN + H2                               6.02E+12    0.0        0.0     !MIT Mebel et al. 1997 for C6H7+H=C6H6+H2
+A1- + A1- = BIPHEN + H2                             5.60E+12   -0.074   7550.0     !Est. ref: A1+A1-=P2 + H (ABF 20Torr)
+A1- + C3H3 = A1C3H2 + H                             3.00E+12    0.0        0.0     !MIT 1998 D'Anna and Violi
+A1C3H2 + C3H3 = P2- + H                             3.00E+12    0.0        0.0     !MIT 1998 D'Anna and Violi
+
+
+C7H6 + C2H2 = C9H8                                  1.44+292  -78.2   245010.0     !2009 da Silva & Bozzelli (C7H6+C2H2)   
+C7H6 + C2H2 = C9H7 + H                              9.70E-42   16.7    37520.0     !2009 da Silva & Bozzelli (C7H6+C2H2)     
+!C6H5CH2 + C2H2 = C9H8 + H                          3.16E+04    2.5    11061.2     !2009 Blanquart
+A1- + AC3H4 = C9H8 + H                              5.13E+02    3.2     2788.0     !2003 Vereecken & Berringer & Peerers
+A1- + C3H3 = C9H8                                   1.50E+75  -17.8    39600.0     !Est. ref: A1-+C4H3=A2 (MIT)
+A1 + C3H3 = C9H8 + H                                6.26E+09    2.61   56500.0     !Est.
+!C9H8 = C9H7 + H                                    1.73E+68  -15.2   116371.9     !2009 Blanquart
+!C9H7 + C3H3 = A2R5 + H2                            4.10E+43   -9.2    15153.0     !2009 Blanquart
+!C9H7 + C3H2 = A2R5 + H                             1E13        0.0        0.0     !Est.
+!C9H7 + c-C5H5 = A3 + 2H                            5.00E+12    0.0     8000.0     !MIT 1997 0.5JMarinov et al
+!C9H7 + c-C5H5 => A3 + 2H                           6.390e+29   -4.03  35205.54   !2009 Blanquart
+!
+!C6H5CH2 + C3H3 => A2 + 2H                          3.00E+11    0.0        0.0     !2001 D'Anna & Kent
+C6H5CH2 + C3H3 = C10H10                             1.51E+75  -17.9    39600.0     !Est. ref: A1-+C4H3=A2 (MIT)
+C6H5CH3 + C3H2 = C10H10                             1.51E+75  -17.9    39600.0     !Est. ref: A1-+C4H3=A2 (MIT)
+C10H9 + H = C10H10                                  1.00E+13    0.0        0.0     !Est.
+C10H10 + H = C10H9 + H2                             1.00E+13    0.0        0.0     !Est.
+C10H9 + H = A2 + H2                                 1.00E+13    0.0        0.0     !Est.
+!C6H5CH3 + C3H2 = A2 + H2                           1.51e75   -17.8    39600       ! KAUST: reaction added from Fei Qi, Combust Flame, 2010
+C6H5CH2 + C6H5CH2 => C14H14                         5.01E+12    0.0      454.0     !1990 Hippler and Tore
+C14H14 => C6H5CH2 + C6H5CH2                         1.40E+13    0.0    59751.0     !Est.
+C14H14 = C14H12 + H2                                1.50e15     0.0    84700
+C14H12 = A3 +H2                                     2.50e15     0.0    84700
+C14H14 + H => C14H12 + H + H2                       8.00e13     0.0     8235
+C9H7 + C3H2 = A2R5 + H                              1.00e13     0.0        0
+!C6H5CH3 + CH2 = A1C2H3 + H2                        1.00e13     0.0        0
+C6H5CH3 + CH2 = A1C2H3 + H2                         3.00e13     0.0        0 ! Fei Qi rate, KAUST
+!C6H5CH2 + CH3 = A1C2H5                             2.00e13     0.0        0
+!A1- + C4H4 = A1C2H3 + C2H                          3.20e11     0.0     1900
+!A1- + C4H6 = A1C2H3 + C2H3                         3.20e11     0.0     1900 ! c4h6 isomers are present
+!C4H4 + C4H4 = A1C2H3                               1.50e14     0.0    38000
+!A1C2H5 = A1C2H3 + H2                               5.01e12     0.0    64000
+!A1- + C2H6 = A1C2H5 + H                            2.51e12     0.0     6190
+!------------------------------------------------------------
+!Fei Qi e al, Proc Combust Inst 2010
+!------------------------------------------------------------
+C6H5CH3 = C6H5CH2 + H                                   2.83e64   -13.99  120613.0     !2010 toluene pyrolysis model (refit 20 Torr)
+C6H5CH3 = A1- + CH3                                     2.16E88   -20.61  144292.0     !2010 toluene pyrolysis model (refit 20 Torr)
+C6H5CH3 + H = C6H5CH2 + H2                              6.47E00     3.98    3394.0     !2006 Oehlschlaeger MA.   
+!C6H5CH3 + H = A1 + CH3                                 1.56E+13    0.0     5796.0     !2005 combustion DATA
+C6H5CH3 + H = A1- + CH4                                 6.00E-01    5.0    30000.0     !Est.
+C6H5CH3 + H = C6H4CH3 + H2                              6.00E08     1.0    16800.0     !2005 Bounaceur 
+C6H4CH3 + H = C6H5CH3                                   1.00E14     0.0        0.0     !2005 Bounaceur 
+C6H4CH3 + H = C6H5CH2 + H                               1.00E13     0.0        0.0     !1992 Miller
+C6H5CH3 + O2 = C6H5CH2 + HO2                            1.81E+12    0.0    39717.0     !2008 Andrea
+C6H5CH3 + OH = C6H5CH2 + H2O                            1.77e+05    2.394   -602.0     !2006 Seta and Nakajima and Miyoshi
+C6H5CH3 + OH = C6H4CH3 + H2O                            1.36e+04    2.691    620.0     !2006 Seta and Nakajima and Miyoshi
+!C6H5CH3 + OH = HOC6H4CH3 + H                           3.14E+01    3.365   4719.1     !2006 Seta and Nakajima and Miyoshi
+C6H5CH3 + O = C6H5CH2 + OH                              6.30E+11    0.0        0.0     !2008 Andrea [1990 Hoffmann] 
+C6H5CH3 + HO2 = C6H5CH2 + H2O2                          1.30e+11    0.0    14070.0     !1994 Baulch  Unc 3.16 
+!C6H5CH3 + O = OC6H4CH3 + H                             1.63E+13    0.0     3418.0     !1992 Emdee
+C6H5CH3 + O = C6H4CH3 + OH                              2.00E+13    0.0    14700.0     !2005 Bounaceur
+C6H5CH3 + HO2 = C6H4CH3 +  H2O2                         4.00E+11    0.0    28900.0     !2005 Bounaceur
+!------------------------------------------------------------
+! Reactions added from DLR mech, N. A. Slavinskaya et al, 2005
+!the rates for some of the reactions have been changed at KAUST. Such reactions will have KAUST as a keyword in the comments area.
+!------------------------------------------------------------
+!A2C2HA* + C4H4 => A4 + H         3.3E33 -5.7 12750. 
+!C6H5CH2 + C9H7 => A4 + H2 + H2   2.0E12  0.0  2000.
+!A2CH2 + C3H3 => A3 + H + H       2.00E+14    0.0    20000.0!!1.51e75  -17.8  39600
+!A2CH2 + c-C5H5 => A4 + H2 +H2    5.0E13  0.0  2000.
+!A2CH2 + C3H5-A => A3 + H2 + H2   2.5E12  0.0     0. 
+!A2CH2 + C3H5-T => A3 + H2 + H2   2.5E12  0.0     0. 
+!C9H7 + C9H7 => A4 + C2H2 + H2    6.39E+29	-4.03	35205.5
+A2C2HA* + C4H4 => A4 + H          3.3E33     -5.7    12750. 
+!A1C2H* + C4H4 = A2R5 + H         3.3E33     -5.7    12750. ! KAUST
+C6H5CH2 + C9H7 => A4 + H2 + H2    2.0E12      0.0    2000.
+A2CH2 + C3H3 => A3 + H + H        1.51e75    -17.8   39600!!2.00E+14    0.0    20000.0!!
+A2CH3 + C3H2 => A3 + 2H           1.51e75    -17.8   39600 ! KAUST
+A2CH2 + C3H2 => A3 + H            1.0e13      0      0           ! KAUST
+A2CH2 + c-C5H5 => A4 + H2 +H2     2.0E12      0.0    2000. !5.0E13      0.0    2000.
+A2CH2 + C3H5-A => A3 + H2 + H2    2.5E12      0.0    0. 
+A2CH2 + C3H5-S => A3 + H2 + H2    2.5E12      0.0    0. 
+C9H7 + C9H7 => A4 + C2H2 + H2     6.39E+29	-4.03	35205.5
+A3CH2 + CH2 => A4 + H2 + H        2.4e+14     0      0 
+!------------------------------------------------------------
+!MIT mechanism, 2004 symp paper (http://web.mit.edu/anish/www/mitsootmodel1atmsymp2004.mec) (added at KAUST)
+!------------------------------------------------------------
+A3-4 + CH3 = A3CH2 + H              5.00E13     0.0       0 ! [Marinov et al. 1996]
+A3CH2 + H = A3CH3                   1.00E14     0.0       0 ! [Marinov et al. 1996]
+A3CH3 + H = A3CH2 + H2              3.98E02    3.44    3120 ! [Park and Lin 1997]
+A3CH3 + H = A3 + CH3                3.50E+13	0.0    3690.0     !commented at KAUST !5.78E13     0.0    8090 ! [Park and Lin 1997]
+A3CH3 + OH = A3CH2 + H2O            1.26E13     0.0    2583 ! [Emdee et al. 1992]
+A1C2H* + A1C2H => A4 + H             8.51E11     0.0    3986 ! [Park et al. 1999  HP-limit]
+!------------------------------------------------------------
+!C3H8 reactions from Blanquart, Pitsch, Combust. Flame, 2009. (added at KAUST)
+!------------------------------------------------------------
+C3H8(+M) = C2H5 + CH3(+M)                  1.290e+37   -5.840  97387.67
+H2/2.00/ H2O/12.00/ CO2/3.60/ CO/1.75/ AR/0.70/ CH4/2.00/ C2H6/3.00/ 
+     LOW  /  5.640e+74  -15.740  98718.93 /
+     TROE/    0.31    50.00   3000.00   9000.00 /
+n-C3H7 + H(+M) = C3H8 (+M)                  3.610e+13    0.000      0.00
+H2/2.00/ H2O/12.00/ CO2/3.60/ CO/1.75/ AR/0.70/ CH4/2.00/ C2H6/3.00/ 
+     LOW  /  4.420e+61  -13.550  11357.55 /
+     TROE/   0.315   369.00   3285.00   6667.00 /
+C3H8 + H = n-C3H7 + H2                       1.320e+06    2.540   6756.69
+C3H8 + O = n-C3H7 + OH                       1.930e+05    2.680   3716.54
+C3H8 + OH = n-C3H7 + H2O                     4.000e+08    1.460    537.76
+C3H8 + CH3 = n-C3H7 + CH4                    9.030e-01    3.650   7153.44
+C3H8 + HO2 = n-C3H7 + H2O2                   9.640e+03    2.600  13910.13
+!
+!----------------------------------------------------------------------------
+! New reactions added (KAUST)
+!----------------------------------------------------------------------------
+c-C5H5 + CH3 => C5H5CH3                      1.50E+15     -1.527  -13500        ! Sharma, Green (2009), fitted to data
+C5H5CH3 => c-C5H5 + CH3                      6.59E+59    -13.606   82000        ! Sharma, Green (2009), fitted to data
+C5H5CH3 = C5H4CH2 + H2                       1.46E+48	 -12.326   80000        ! Sharma, Green (2009), fitted to data    
+c-C5H5 + CH3 = C5H4CH2 + H2                  1.50E+11    -0.3452   16631        ! Sharma, Green (2009), fitted to data    
+!
+!c-C5H6 + H => C5H5-2 + H2        1.96E+8   1.81   12838
+!c-C5H6 + OH => C5H5-2 + H2O      6.17E+2   3.16   -141.4
+!C5H5-2 + H2 => c-C5H6 + H        5.44E+4   2.44   1965.9
+!C5H5-2 + H2O => c-C5H6 + OH      1.24E+0   3.64   -372
+!C5H5-2 + H (+M) = c-C5H6 (+M)    1.0E+14   0.0     0.0
+!                              LOW  / 4.4E+80 -18.28 12994.0 /       ! E in cal/mol
+!                             TROE / 0.068   400.7  4135.8  5501.9 /
+!                            H2/2.0/ H2O/6.0/ CH4/2.0/ CO/1.5/ CO2/2.0/ C2H6/3.0/
+!C5H5-2 => C2H2 + C3H3          3.15E+12  0.504   41476
+!C2H2 + C3H3 => C5H5-2          1.07E+4   2.44    13327
+!A2R5 + C2H3 => A3-4 + 2H	           3.60E+17	 -1.4	15757.6 ! equivalent to A2R5 + C2H3, KAUST, reaction made forward KAUST
+!A1C2H* + C2H3 => A2                 9.4E+00    4.14     23234. ! equivalent to A2C2HA* + C2H3, KAUST, reaction made forward KAUST
+!A3-4 + C2H3 => A4 + H2	           9.4E+00    4.14     23234. ! equivalent to A3-4 + C2H3 = A3R5 + H2 from Pitsch mech, KAUST, reaction made forward KAUST
+!A2-1 + C2H3 = A2R5 + H2            9.4E+00    4.14     23234. ! rate of pitsch for A3-1 + C2H2 = A3R5+H added at KAUST !
+!A3 + C2H3 => A4 + H + H2          7.20E+17	-1.4	15757.6 !A2+C2H3 rate from Pitsch, KAUST, reaction made forward KAUST
+! A2 + A1- = PHNAPH + H            1.1E+23  -2.92   15890.0 ! 760 t, added at KAUST, A1 + A1-
+!A2 + A1- = PHNAPH-H               3.7E+32  -6.74    9870.0 ! 760 t, added at KAUST, A1 + A1-
+!PHNAPH-H = PHNAPH + H             3.8E+37  -7.96   27880.0 ! 760 t, added at KAUST, P2-H
+!A2-1 + A1- = PHNAPH               2.0E+19  -2.05    2900.0 ! 760 t, added at KAUST, A1- + A1-
+!A2-1 + A1- = PHNAPH- + H          2.3E-01   4.62   28950.0 ! 760 t, added at KAUST, A1- + A1-
+!PHNAPH = PHNAPH- + H             1.1E+25  -2.72  114270.0 ! 760 t, added at KAUST, P2 = P2- + H
+!PHNAPH + H = PHNAPH- + H2        2.50E+14   0.0   16000.  ! added at KAUST, P2 + H
+!PHNAPH + OH = PHNAPH- + H2O      1.60E+08  1.42    1450.0 ! added at KAUST, P2 + OH
+!PHNAPH- => A4 + H                3.14E+12 0.719    68024 ! DFT calculation, KAUST
+!P2- => A2R5 + H                  3.14E+12 0.719    68024 ! DFT calculation, KAUST
+!
+! H abstraction reactions
+A1 + CH3 => A1- + CH4             4.42E-00 3.916    11463 ! DFT calculation, KAUST 
+A1- + CH4 => A1 + CH3             3.94E-01 4.212    4145  ! DFT calculation, KAUST 
+A2 + CH3 => A2-1 + CH4            3.99E-01 3.933    11771 ! DFT calculation, KAUST 
+A2-1 + CH4 => A2 + CH3            4.48E-02 4.248    4277  ! DFT calculation, KAUST 
+A2 + CH3 => A2-2 + CH4            2.95E-00 3.916    11463 ! DFT calculation, KAUST 
+A2-2 + CH4 => A2 + CH3            3.94E-01 4.212    4145  ! DFT calculation, KAUST 
+A3 + CH3 => A3-4 + CH4            1.17E-02 4.177    12246 ! DFT calculation, KAUST 
+A3-4 + CH4 => A3 + CH3            3.13E-03 4.486    6563.7! DFT calculation, KAUST 
+A3 + CH3 => A3-1 + CH4            1.47E-00 3.916    11463 ! DFT calculation, KAUST 
+A3-1 + CH4 => A3 + CH3            3.94E-01 4.212    4145  ! DFT calculation, KAUST 
+A4 + CH3 => A4-1 + CH4             7.98E-01 3.933    11771 ! DFT calculation, KAUST 
+A4-1 + CH4 => A4 +CH3              4.48E-02 4.248    4277  ! DFT calculation, KAUST 
+A4 + CH3 => A4-2 + CH4             7.98E-01 3.933    11771 ! DFT calculation, KAUST 
+A4-2 + CH4 => A4 +CH3              4.48E-02 4.248    4277  ! DFT calculation, KAUST 
+A4 + CH3 => A4-4 + CH4             7.98E-01 3.933    11771 ! DFT calculation, KAUST 
+A4-4 + CH4 => A4 +CH3              4.48E-02 4.248    4277  ! DFT calculation, KAUST 
+!
+A1 + C3H3 => A1- + AC3H4          2.27E+01 3.517    24065   ! DFT calculation, KAUST 
+A1- + AC3H4 => A1 + C3H3          2.58E-00 3.730    899.32  ! DFT calculation, KAUST 
+A2 + C3H3 => A2-1 + AC3H4         9.538E+0 3.529    24449.2 !DFT calculation, KAUST 
+A2-1 + AC3H4 => A2 + C3H3         1.36E-00 3.761    1088.91 !DFT calculation, KAUST 
+A2 + C3H3 => A2-2 + AC3H4         1.51E+01 3.517    24065   ! DFT calculation, KAUST (A1 rate X 2/3)
+A2-2 + AC3H4 => A2 + C3H3         2.58E-00 3.730    899.32  ! DFT calculation, KAUST (A1 rate)
+A3 + C3H3 => A3-4 + AC3H4         3.27E-01 3.768    24434   !DFT calculation, KAUST 
+A3-4 + AC3H4 => A3 + C3H3         1.12E-01 3.994    2904.7  !DFT calculation, KAUST 
+A3 + C3H3 => A3-1 + AC3H4         0.75E+01 3.517    24065   ! DFT calculation, KAUST (A1 rate X 2/3) 
+A3-1 + AC3H4 => A3 + C3H3         2.58E-00 3.730    899.32  ! DFT calculation, KAUST (A1 rate)
+A4 + C3H3 => A4-1 + AC3H4          1.91E+01 3.529    24449.2 !DFT calculation, KAUST (A2 rate X 2)
+A4-1 + AC3H4 => A4 + C3H3          1.36E-00 3.761    1088.91 !DFT calculation, KAUST A2 rate
+A4 + C3H3 => A4-2 + AC3H4          1.91E+01 3.529    24449.2 !DFT calculation, KAUST (A2 rate X 2)
+A4-2 + AC3H4 => A4 + C3H3          1.36E-00 3.761    1088.91 !DFT calculation, KAUST A2 rate
+A4 + C3H3 => A4-4 + AC3H4          1.91E+01 3.529    24449.2 !DFT calculation, KAUST (A2 rate X 2)
+A4-4 + AC3H4 => A4 + C3H3          1.36E-00 3.761    1088.91 !DFT calculation, KAUST A2 rate
+!
+A2 + H => A2-1 + H2               2.45e+08 1.884    9829.5  !DFT calculation, KAUST 
+A2-1 + H2 => A2 + H               4.90e+04 2.467    2926.4  !DFT calculation, KAUST 
+A2 + H => A2-2 + H2               2.11E+08 1.908    9455.6  !DFT calculation, KAUST A1 rate X 2/3
+A2-2 + H2 => A2 + H               5.06E+04 2.472    2747.1  !DFT calculation, KAUST A1 rate
+A3 + H => A3-4 + H2               6.12e+07 1.921    9824.5  !DFT calculation, KAUST 
+A3-4 + H2 => A3 + H               2.96E+04 2.498    4751.6  !DFT calculation, KAUST 
+A3 + H => A3-1 + H2               1.05E+08 1.908    9455.6  !DFT calculation, KAUST A1 rate *2/3 
+A3-1 + H2 => A3 + H               5.06E+04 2.472    2747.1  !DFT calculation, KAUST A1 rate
+A4 + H => A4-1 + H2                4.90e+08 1.884    9829.5  !DFT calculation, KAUST (A2 rate X 2)
+A4-1 + H2 => A4 + H                4.90e+04 2.467    2926.4  !DFT calculation, KAUST A2 rate
+A4 + H => A4-2 + H2                4.90e+08 1.884    9829.5  !DFT calculation, KAUST (A2 rate X 2)
+A4-2 + H2 => A4 + H                4.90e+04 2.467    2926.4  !DFT calculation, KAUST A2 rate
+A4 + H => A4-4 + H2                4.90e+08 1.884    9829.5  !DFT calculation, KAUST (A2 rate X 2)
+A4-4 + H2 => A4 + H                4.90e+04 2.467    2926.4  !DFT calculation, KAUST A2 rate
+!
+!
+P2 + H => P2- + H2                1.61E+08 1.912    9897.6  !DFT Calculation, KAUST
+P2- + H2 => P2 + H                2.46E+04 2.486    3682.2  !DFT Calculation, KAUST
+P2 + CH3 => P2- + CH4             1.49E-01 4.002    11934.1 !DFT Calculation, KAUST
+P2- + CH4 => P2 + CH3             1.27E-02 4.309    5108.7  !DFT Calculation, KAUST
+P2 + C3H3 => P2- + AC3H4          3.321E+0 3.571    24292   !DFT Calculation, KAUST
+P2- + AC3H4 => P2 + C3H3          3.60E-01 3.795    1619.8  !DFT Calculation, KAUST
+!
+C9H8 + H => C9H7 + H2	          7.61E+07 1.841   -126.5   !DFT Calculation, KAUST
+C9H7 + H2 => C9H8 + H             5.46E+04 2.378    26891   !DFT Calculation, KAUST
+C9H8 + CH3 => C9H7 + CH4	      2.746E+0 3.614    3380.1  !DFT Calculation, KAUST
+C9H7 + CH4 => C9H8 + CH3	      1.10E-02 3.883    29788   !DFT Calculation, KAUST
+C9H8 + C3H3 => C9H7 + AC3H4	      5.15E-03 4.376    8021.8  !DFT Calculation, KAUST
+C9H7 + AC3H4 => C9H8 + C3H3	      2.63E-03 4.563    18582   !DFT Calculation, KAUST  
+!
+c-C5H6 + H => c-C5H5 + H2	          5.995E+7 1.876    70.5    !DFT Calculation, KAUST
+c-C5H5 + H2 => c-C5H6 + H             6.268E+3 2.273    23984   !DFT Calculation, KAUST
+c-C5H6 + CH3 => c-C5H5 + CH4	      3.072E+0 3.579    3565.6  !DFT Calculation, KAUST
+c-C5H5 + CH4 => c-C5H6 + CH3	      1.78E-01 3.708    26869.2 !DFT Calculation, KAUST 
+c-C5H6 + C3H3 => c-C5H5 + AC3H4	      4.89E-03 4.326    8587.6  !DFT Calculation, KAUST
+c-C5H5 + AC3H4 => c-C5H6 + C3H3       1.82E-04 4.372    16043.9 !DFT Calculation, KAUST
+!
+A1C2H + H => A1C2H* + H2              1.35e+08 1.890    10767   !DFT Calculation, KAUST                        
+A1C2H* + H2 => A1C2H + H              5.38e+04 2.469    2827.1  !DFT Calculation, KAUST
+A1C2H + CH3 => A1C2H* + CH4           8.81e-01 3.843    12253.8 !DFT Calculation, KAUST
+A1C2H* + CH4 => A1C2H + CH3           1.95E-01 4.154    3700.9  !DFT Calculation, KAUST
+A1C2H + C3H3 => A1C2H* + AC3H4        1.21E+01 3.443    24836.1 !DFT Calculation, KAUST
+A1C2H* + AC3H4 => A1C2H + C3H3        3.43E-00 3.671    436.1   !DFT Calculation, KAUST
+!
+!--------------------------------------------------------------------------------------------------------------
+!--------------------------------------------------------------------------------------------------------------
+!Reaction for the growth of PAHs upto coronene from MIT mechanism, http://web.mit.edu/anish/www/mitsootmodellowpsymp2004.mec (added at KAUST)
+!Some new reacions in this list are added at KAUST (which were not present in original MIT mechanism). Also, the rates for some reactions have been updated.
+!Such reactions will have KAUST as a keyword in the comments area.
+!--------------------------------------------------------------------------------------------------------------
+!
+A3-1 + C4H4 => CHRYSEN + H             1.26E+04   2.61	 1649.2 ! KAUST, Jorge Aguilera-Iparraguirre et al, 2007, reaction made forward KAUST            
+A4-1 + C4H4 => BAPYR + H               1.26E+04   2.61	 1649.2 ! KAUST, Jorge Aguilera-Iparraguirre et al, 2007, reaction made forward KAUST
+A4-2 + C4H4 => BAPYR + H               1.26E+04   2.61	 1649.2 ! KAUST, Jorge Aguilera-Iparraguirre et al, 2007, reaction made forward KAUST
+A4-4 + C4H4 => BEPYREN + H             1.26E+04   2.61	 1649.2 ! KAUST, Jorge Aguilera-Iparraguirre et al, 2007, reaction made forward KAUST
+!A2CH2 + C9H7 => BAPYR + 2H2           5.00E+12   0       0      ! DLR mech
+!A2CH2 + A2 => BAPYR + CH4 + H         5.00E+12   0       0      ! DLR mech 
+!A2CH3 + A2-2 => BAPYR + CH4 + H       5.00E+12   0       0      ! DLR mech
+!
+!CHRYSENE
+!
+A3-1 + C2H2 = A3C2H-2 + H            2.08E15   -0.13     20860 ! [QRRK-HR, w/o is., A3]
+!A3C2H-2 + H = A3C2H-2JS + H2        3.23E07    2.095    15842  ! [Mebel et al. 1997] commented at KAUST
+A3C2H-2 + H => A3C2H-2JS + H2        1.35e+08   1.890    10767  ! rate from DFT Calculation on A1C2H used, KAUST                        
+A3C2H-2JS + H2 => A3C2H-2 + H        5.38e+04   2.469    2827.1 ! rate from DFT Calculation on A1C2H used, KAUST     
+A3C2H-2 + OH = A3C2H-2JS + H2O       1.60E+08   1.42     1450.0 ! KAUST !2.10E13     0.0     4600 ! [Harris et al. 1988]
+A3C2H-2 + CH3 => A3C2H-2JS + CH4     8.81e-01   3.843    12253.8    ! rate from DFT Calculation on A1C2H used, KAUST                        
+A3C2H-2JS + CH4 => A3C2H-2 + CH3     1.95E-01   4.154    3700.9     ! rate from DFT Calculation on A1C2H used, KAUST     
+A3C2H-2 + C3H3 => A3C2H-2JS + AC3H4  1.21E+01   3.443    24836.1    ! rate from DFT Calculation on A1C2H used, KAUST                        
+A3C2H-2JS + AC3H4 => A3C2H-2 + C3H3  3.43E-00   3.671    436.1  ! rate from DFT Calculation on A1C2H used, KAUST     
+A3C2H-2JS + C2H2 = CHRYSENJ1         1.87E07    1.787    3262   ! [O. Mazyar, HP-limit]
+!CHRYSEN+H=CHRYSENJ1+H2              3.23E07    2.095    15842  ! [Mebel et al. 1997]
+!CHRYSEN+H=CHRYSENJ4+H2              3.23E07    2.095    15842  ! [Mebel et al. 1997]
+!CHRYSEN+H=CHRYSENJ5+H2              3.23E07    2.095    15842  ! [Mebel et al. 1997]
+ CHRYSEN + H => CHRYSENJ1 + H2       4.90e+08   1.884    9829.5 ! DFT calculation, KAUST (A2 rate X 2)
+ CHRYSENJ1 + H2 => CHRYSEN + H       4.90e+04   2.467    2926.4 ! DFT calculation, KAUST A2 rate
+ CHRYSEN + H => CHRYSENJ4 + H2       4.90e+08   1.884    9829.5 ! DFT calculation, KAUST (A2 rate X 2)
+ CHRYSENJ4 + H2 => CHRYSEN + H       4.90e+04   2.467    2926.4 ! DFT calculation, KAUST A2 rate
+ CHRYSEN + H => CHRYSENJ5 + H2       4.90e+08   1.884    9829.5 ! DFT calculation, KAUST (A2 rate X 2)
+ CHRYSENJ5 + H2 => CHRYSEN + H       4.90e+04   2.467    2926.4 ! DFT calculation, KAUST A2 rate
+ CHRYSEN + CH3 => CHRYSENJ1 + CH4    7.98E-01   3.933    11771      ! DFT calculation, KAUST (A2 rate X 2)                        
+CHRYSENJ1 + CH4 => CHRYSEN + CH3     4.48E-02   4.248    4277       ! DFT calculation, KAUST A2 rate    
+CHRYSEN + C3H3 => CHRYSENJ1 + AC3H4  1.9076E+1  3.529    24449.2    ! DFT calculation, KAUST (A2 rate X 2)                       
+CHRYSENJ1 + AC3H4 => CHRYSEN + C3H3  1.36E-00   3.761    1088.91    ! DFT calculation, KAUST A2 rate     
+CHRYSEN + CH3 => CHRYSENJ4 + CH4     7.98E-01   3.933    11771      ! DFT calculation, KAUST (A2 rate X 2)                       
+CHRYSENJ4 + CH4 => CHRYSEN + CH3     4.48E-02   4.248    4277       ! DFT calculation, KAUST A2 rate     
+CHRYSEN + C3H3 => CHRYSENJ4 + AC3H4  1.9076E+1  3.529    24449.2    ! DFT calculation, KAUST (A2 rate X 2)                        
+CHRYSENJ4 + AC3H4 => CHRYSEN + C3H3  1.36E-00   3.761    1088.91    ! DFT calculation, KAUST A2 rate     
+CHRYSEN + CH3 => CHRYSENJ5 + CH4     7.98E-01   3.933    11771      ! DFT calculation, KAUST (A2 rate X 2)                       
+CHRYSENJ5 + CH4 => CHRYSEN + CH3     4.48E-02   4.248    4277       ! DFT calculation, KAUST A2 rate     
+CHRYSEN + C3H3 => CHRYSENJ5 + AC3H4  1.9076E+1  3.529    24449.2    ! DFT calculation, KAUST (A2 rate X 2)                        
+CHRYSENJ5 + AC3H4 => CHRYSEN + C3H3  1.36E-00   3.761    1088.91    ! DFT calculation, KAUST A2 rate    
+CHRYSEN + OH = CHRYSENJ1 + H2O       1.60E+08   1.42     1450.0 ! KAUST !2.10E13     0.0     4600 ! [Harris et al. 1988] 
+CHRYSEN + OH = CHRYSENJ4 + H2O       1.60E+08   1.42     1450.0 ! KAUST !2.10E13     0.0     4600 ! [Harris et al. 1988] 
+CHRYSEN + OH = CHRYSENJ5 + H2O       1.60E+08   1.42     1450.0 ! KAUST !2.10E13     0.0     4600 ! [Harris et al. 1988] 
+CHRYSENJ1 + H = CHRYSEN              5.00E13    0.0        0    ! 
+CHRYSENJ4 + H = CHRYSEN              5.00E13    0.0        0    !
+CHRYSENJ5 + H = CHRYSEN              5.00E13    0.0        0    ! 
+!
+!
+! Chrysene-Oxidation
+!
+CHRYSEN + OH => A3C2H-2 + CH2CO + H     6.50E12    0.0   10600 ! [Wang and Frenklach 1997]
+CHRYSEN + O => A3C2H-2 + CH2CO          1.10E13    0.0    4530 ! [Wang and Frenklach 1997]
+CHRYSENJ1 + O2 => A3C2H-2 + HCO + CO    2.10E12    0.0    7470 ! [Wang and Frenklach 1997]
+A3C2H-2 + OH => A3-1 + CH2CO            2.18E-4    4.5   -1000 ! [Wang and Frenklach 1997]
+A3C2H-2 + O => A3-1 + HCCO              2.04E07    2.0    1900 ! [Wang and Frenklach 1997]
+!
+!
+! BENZO[a]PYRENE
+!
+CHRYSENJ4 + C2H2 = BAPYR + H          1.87E07   1.787   3262 ! [O. Mazyar, HP-limit]
+CHRYSENJ5 + C2H2 = BAPYR + H          1.87E07   1.787   3262 ! [O. Mazyar, HP-limit]
+!
+A4-1 + C2H2 = PYC2H-1 + H        7.92E-6    5.71   13330 ! [QRRK-HR, A4, w/ is.]
+A4-2 + C2H2 = PYC2H-2 + H        1.25E17   -0.56   22560 ! [QRRK-HR, A4(si.= 2)]
+A4-4 + C2H2 = PYC2H-4 + H        7.92E-6    5.71   13330 ! [QRRK-HR, A4, w/ is.]
+!
+!PYC2H-1 + H = PYC2H-1JP + H2        3.23E07    2.095    15842  ! [Mebel et al. 1997]
+!PYC2H-2 + H = PYC2H-2JS + H2        3.23E07    2.095    15842  ! [Mebel et al. 1997]
+PYC2H-1 + H => PYC2H-1JP + H2        1.35e+08   1.890    10767  ! rate from DFT Calculation on A1C2H used, KAUST ! 3.23E07    2.095    15842 ! [Mebel et al. 1997]
+PYC2H-2 + H => PYC2H-2JS + H2        1.35e+08   1.890    10767  ! rate from DFT Calculation on A1C2H used, KAUST ! 3.23E07    2.095    15842 ! [Mebel et al. 1997]
+PYC2H-1JP + H2 => PYC2H-1 + H        5.38e+04   2.469    2827.1 ! rate from DFT Calculation on A1C2H used, KAUST ! 3.23E07    2.095    15842 ! [Mebel et al. 1997]
+PYC2H-2JS + H2 => PYC2H-2 + H        5.38e+04   2.469    2827.1 ! rate from DFT Calculation on A1C2H used, KAUST ! 3.23E07    2.095    15842 ! [Mebel et al. 1997]
+PYC2H-1 + CH3 => PYC2H-1JP + CH4     8.81e-01   3.843    12253.8      ! rate from DFT Calculation on A1C2H used, KAUST ! 3.23E07    2.095    15842 ! [Mebel et al. 1997]
+PYC2H-2 + CH3 => PYC2H-2JS + CH4     8.81e-01   3.843    12253.8      ! rate from DFT Calculation on A1C2H used, KAUST ! 3.23E07    2.095    15842 ! [Mebel et al. 1997]
+PYC2H-1JP + CH4 => PYC2H-1 + CH3     1.95E-01   4.154    3700.9       ! rate from DFT Calculation on A1C2H used, KAUST ! 3.23E07    2.095    15842 ! [Mebel et al. 1997]
+PYC2H-2JS + CH4 => PYC2H-2 + CH3     1.95E-01   4.154    3700.9       ! rate from DFT Calculation on A1C2H used, KAUST ! 3.23E07    2.095    15842 ! [Mebel et al. 1997]
+PYC2H-1 + C3H3 => PYC2H-1JP + AC3H4  1.21E+01   3.443    24836.1      ! rate from DFT Calculation on A1C2H used, KAUST ! 3.23E07    2.095    15842 ! [Mebel et al. 1997]
+PYC2H-2 + C3H3 => PYC2H-2JS + AC3H4  1.21E+01   3.443    24836.1      ! rate from DFT Calculation on A1C2H used, KAUST ! 3.23E07    2.095    15842 ! [Mebel et al. 1997]
+PYC2H-1JP + AC3H4 => PYC2H-1 + C3H3  3.43E-00   3.671    436.1        ! rate from DFT Calculation on A1C2H used, KAUST ! 3.23E07    2.095    15842 ! [Mebel et al. 1997]
+PYC2H-2JS + AC3H4 => PYC2H-2 + C3H3  3.43E-00   3.671    436.1  ! rate from DFT Calculation on A1C2H used, KAUST ! 3.23E07    2.095    15842 ! [Mebel et al. 1997]
+PYC2H-1 + OH = PYC2H-1JP + H2O       1.60E+08   1.42     1450.0 ! KAUST !2.10E13     0.0     4600 ! [Harris et al. 1988] 
+PYC2H-2 + OH = PYC2H-2JS + H2O       1.60E+08   1.42     1450.0 ! KAUST !2.10E13     0.0     4600 ! [Harris et al. 1988] 
+PYC2H-1JP + C2H2 => BAPYRJS          1.87E07    1.787    3262   ! [O. Mazyar, HP-limit]
+PYC2H-2JS + C2H2 => BAPYRJS          1.87E07    1.787    3262   ! [O. Mazyar, HP-limit]
+BAPYRJS + H = BAPYR                  5.00E13    0.0      0      ! 
+!
+! Benzo[a]pyrene-Oxidation
+!
+BAPYR + OH => PYC2H-2 + CH2CO + H     6.50E12    0.0   10600 ! [Wang and Frenklach 1997]
+BAPYR + O => PYC2H-2 + CH2CO          1.10E13    0.0    4530 ! [Wang and Frenklach 1997]
+BAPYRJS + O2 => PYC2H-2 + HCO + CO    2.10E12    0.0    7470 ! [Wang and Frenklach 1997]
+PYC2H-2 + OH => A4-2  + CH2CO         2.18E-4    4.5   -1000 ! [Wang and Frenklach 1997]
+PYC2H-2 + O => A4-2 + HCCO            2.04E07    2.0    1900 ! [Wang and Frenklach 1997]
+!
+!
+! Benzo[e]pyrene (A5)
+!
+!PYC2H-4 + H = PYC2H-4JS + H2        3.23E07    2.095    15842  ! [Mebel et al. 1997]
+PYC2H-4 + H => PYC2H-4JS + H2        1.35e+08   1.890    10767  ! rate from DFT Calculation on A1C2H used, KAUST ! 3.23E07    2.095    15842 ! [Mebel et al. 1997]
+PYC2H-4JS + H2 => PYC2H-4 + H        5.38e+04   2.469    2827.1 ! rate from DFT Calculation on A1C2H used, KAUST 
+PYC2H-4 + CH3 => PYC2H-4JS + CH4     8.81e-01   3.843    12253.8! rate from DFT Calculation on A1C2H used, KAUST ! 3.23E07    2.095    15842 ! [Mebel et al. 1997]
+PYC2H-4JS + CH4 => PYC2H-4 + CH3     1.95E-01   4.154    3700.9 ! rate from DFT Calculation on A1C2H used, KAUST 
+PYC2H-4 + C3H3 => PYC2H-4JS + AC3H4  1.21E+01   3.443    24836.1! rate from DFT Calculation on A1C2H used, KAUST ! 3.23E07    2.095    15842 ! [Mebel et al. 1997]
+PYC2H-4JS + AC3H4 => PYC2H-4 + C3H3  3.43E-00   3.671    436.1  ! rate from DFT Calculation on A1C2H used, KAUST 
+PYC2H-4 + OH = PYC2H-4JS + H2O       1.60E+08   1.42     1450.0 ! KAUST !2.10E13     0.0     4600 ! [Harris et al. 1988] 
+PYC2H-4JS + C2H2 => BEPYRENJS        1.87E07    1.787    3262   ! [O. Mazyar, HP-limit]
+BEPYRENJS + H = BEPYREN              5.00E13    0.0        0    !   
+!
+!! Perylene and benzo[ghi]perylene (A6)
+!
+!BEPYREN + H = BEPYRENJS + H2        3.23E07   2.095    15842   ! [Mebel et al. 1997]
+BEPYREN + H => BEPYRENJS + H2        6.12e+07  1.921    9824.5  ! DFT calculation on A3-4 + H, KAUST
+BEPYRENJS + H2 => BEPYREN + H        2.96E+04  2.498    4751.6  ! DFT calculation on A3 + H2, KAUST
+BEPYREN + CH3 => BEPYRENJS + CH4     1.17E-02  4.177    12246   ! DFT calculation on A3-4 + H, KAUST
+BEPYRENJS + CH4 => BEPYREN + CH3     3.94E-01  4.212    4145    ! DFT calculation on A3 + H2, KAUST
+BEPYREN + C3H3 => BEPYRENJS + AC3H4  3.27E-01  3.768    24434   ! DFT calculation on A3-4 + H, KAUST
+BEPYRENJS + AC3H4 => BEPYREN + C3H3  1.12E-01  3.994    2904.7  ! DFT calculation on A3 + H2, KAUST
+BEPYREN + OH = BEPYRENJS + H2O       1.60E+08  1.42     1450.0  ! KAUST !2.10E13     0.0     4600 ! [Harris et al. 1988] 
+BEPYRENJS + C2H2 => BGHIPER + H      1.87E07   1.787    3262    ! [O. Mazyar, HP-limit]
+A2-1 + A2-1 => PERYLEN + 2H          1.39E13   0.0      111     ! [Park and Lin 1997]
+A2-1 + A2 => PERYLEN + H2 + H        8.51E11   0.0      3986    ! [Park et al. 1999 HP-limit]
+!PERYLEN + H = PERYLENJS + H2        3.23E07   2.095    15842   ! [Mebel et al. 1997]
+PERYLEN + H => PERYLENJS + H2        6.12e+07  1.921    9824.5  ! DFT calculation on A3-4 + H, KAUST
+PERYLENJS + H2 => PERYLEN + H        2.96E+04  2.498    4751.6  ! DFT calculation on A3 + H2, KAUST
+PERYLEN + CH3 => PERYLENJS + CH4     1.17E-02  4.177    12246   ! DFT calculation on A3-4 + H, KAUST
+PERYLENJS + CH4 => PERYLEN + CH3     3.94E-01  4.212    4145    ! DFT calculation on A3 + H2, KAUST
+PERYLEN + C3H3 => PERYLENJS + AC3H4  3.27E-01  3.768    24434   ! DFT calculation on A3-4 + H, KAUST
+PERYLENJS + AC3H4 => PERYLEN + C3H3  1.12E-01  3.994    2904.7  ! DFT calculation on A3 + H2, KAUST
+PERYLEN + OH = PERYLENJS + H2O       1.60E+08  1.42     1450.0  ! KAUST !2.10E13     0.0     4600 ! [Harris et al. 1988] 
+PERYLENJS + C2H2 => BGHIPER + H      1.87E07   1.787    3262    ! [O. Mazyar, HP-limit]
+!
+!
+! ANTHANTHRACENE
+!
+!BAPYR + H = BAPYRJS + H2        3.23E07   2.095   15842      ! [Mebel et al. 1997]
+BAPYR + H => BAPYRJS + H2        6.12e+07  1.921   9824.5     ! DFT calculation on A3-4 + H, KAUST
+BAPYRJS + H2 => BAPYR + H        2.96E+04  2.498   4751.6     ! DFT calculation on A3 + H2, KAUST
+BAPYR + CH3 => BAPYRJS + CH4     1.17E-02  4.177   12246      ! DFT calculation on A3-4 + H, KAUST
+BAPYRJS + CH4 => BAPYR + CH3     3.94E-01  4.212   4145       ! DFT calculation on A3 + H2, KAUST
+BAPYR + C3H3 => BAPYRJS + AC3H4  3.27E-01  3.768   24434      ! DFT calculation on A3-4 + H, KAUST
+BAPYRJS + AC3H4 => BAPYR + C3H3  1.12E-01  3.994   2904.7     ! DFT calculation on A3 + H2, KAUST
+BAPYR + OH = BAPYRJS + H2O       1.60E+08  1.42    1450.0     ! KAUST !2.10E13     0.0     4600 ! [Harris et al. 1988] 
+BAPYRJS + C2H2 => ANTHAN + H     1.87E07   1.787   3262       ! [O. Mazyar, HP-limit]
+!
+! Anthanthracene-Oxidation
+!
+!ANTHAN + H = ANTHANJS + H2         3.23E07    2.095    15842   ! [Mebel et al. 1997]
+ANTHAN + H => ANTHANJS + H2         4.90e+08   1.884    9829.5  ! DFT calculation, KAUST (A2 rate X 2)
+ANTHANJS + H2 => ANTHAN + H         4.90e+04   2.467    2926.4  ! DFT calculation, KAUST A2 rate
+ANTHAN + CH3 => ANTHANJS + CH4      7.98E-01   3.933    11771   ! DFT calculation, KAUST (A2 rate X 2)
+ANTHANJS + CH4 => ANTHAN + CH3      4.48E-02   4.248    4277    ! DFT calculation, KAUST A2 rate
+ANTHAN + C3H3 => ANTHANJS + AC3H4   1.9076E+1  3.529    24449.2 ! DFT calculation, KAUST (A2 rate X 2)
+ANTHANJS + AC3H4 => ANTHAN + C3H3   1.36E-00   3.761    1088.91 ! DFT calculation, KAUST A2 rate
+ANTHAN + OH = ANTHANJS + H2O        1.60E+08   1.42     1450.0  ! KAUST !2.10E13     0.0     4600 ! [Harris et al. 1988] 
+ANTHAN + OH => BAPYRJS + CH2CO      1.30E13     0.0     10600   ! [Wang and Frenklach 1997]
+ANTHAN + O => BAPYRJS + HCCO        2.20E13     0.0     4530    ! [Wang and Frenklach 1997]
+ANTHANJS + O2 => BAPYRJS + 2CO      2.10E12     0.0     7470    ! [Wang and Frenklach 1997]
+!
+! CORONENE (called BIN1) (A7)
+!
+!
+!BGHIPER + H = BGHIPEJS1 + H2        3.23E07   2.095   15842      ! [Mebel et al. 1997]
+BGHIPER + H => BGHIPEJS1 + H2        6.12e+07  1.921   9824.5     ! DFT calculation on A3-4 + H, KAUST
+BGHIPEJS1 + H2 => BGHIPER + H        2.96E+04  2.498   4751.6     ! DFT calculation on A3 + H2, KAUST
+BGHIPER + CH3 => BGHIPEJS1 + CH4     1.17E-02 4.177    12246      ! DFT calculation on A3-4 + H, KAUST
+BGHIPEJS1 + CH4 => BGHIPER + CH3     3.94E-01 4.212    4145       ! DFT calculation on A3 + H2, KAUST
+BGHIPER + C3H3 => BGHIPEJS1 + AC3H4  3.27E-01 3.768    24434      ! DFT calculation on A3-4 + H, KAUST
+BGHIPEJS1 + AC3H4 => BGHIPER + C3H3  1.12E-01 3.994    2904.7     ! DFT calculation on A3 + H2, KAUST
+BGHIPER + OH = BGHIPEJS1 + H2O       1.60E+08  1.42    1450.0     ! KAUST !2.10E13     0.0     4600 ! [Harris et al. 1988] 
+BGHIPEJS1 + C2H2 => CORONEN + H      1.87E07   1.787   3262       ! [O. Mazyar, HP-limit]
+!!BGHIPEJS1 + C2H2 => BIN1+H         1.87E07   1.787   3262       ! [O. Mazyar, HP-limit]
+!
+END											
+EOF

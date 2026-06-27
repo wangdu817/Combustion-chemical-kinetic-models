@@ -22,9 +22,9 @@ Shubao Song, Lin Zhang, Jinghua Wu, Meishuai Zou, Jiankun Shao. High-temperature
 - Standard mechanism file: chem.inp
 - Standard thermodynamic file: therm.dat
 - Standard transport file: tran.dat
-- Original mechanism source files: _processing\extracted\s0010218026000192_mmc3\BIT_NM model_mech.inp
-- Original thermodynamic source files: _processing\extracted\s0010218026000192_mmc4\BIT_NM model_thermo.dat
-- Original transport source files: _processing\extracted\s0010218026000192_mmc5\BIT_NM model_tran.dat
+- Original mechanism source files: _processing/extracted/s0010218026000192_mmc3/BIT_NM model_mech.inp
+- Original thermodynamic source files: _processing/extracted/s0010218026000192_mmc4/BIT_NM model_thermo.dat
+- Original transport source files: _processing/extracted/s0010218026000192_mmc5/BIT_NM model_tran.dat
 
 ## Cantera Preprocessing Results
 
@@ -46,4 +46,8 @@ A detailed experimental and modeling study was conducted to investigate the high
 
 ## Processing Notes
 
-- none
+- extracted S0010218026000192_mmc4.zip
+- extracted S0010218026000192_mmc3.zip
+- extracted S0010218026000192_mmc2.xlsx
+- extracted S0010218026000192_mmc5.zip
+- extracted S0010218026000192_mmc1.docx

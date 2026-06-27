@@ -22,9 +22,9 @@ Chunlan Qin, Bingzhi Liu, Weijie Xu, Canbin Lin, ... Lidong Zhang. A kinetic and
 - Standard mechanism file: chem.inp
 - Standard thermodynamic file: therm.dat
 - Standard transport file: tran.dat
-- Original mechanism source files: _processing\extracted\s0010218025006121_mmc4\USTC-NH3_DMM.inp
-- Original thermodynamic source files: _processing\extracted\s0010218025006121_mmc3\USTC-NH3_DMM.dat
-- Original transport source files: _processing\extracted\s0010218025006121_mmc5\USTC-NH3_DMM_trans.dat
+- Original mechanism source files: _processing/extracted/s0010218025006121_mmc4/USTC-NH3_DMM.inp
+- Original thermodynamic source files: _processing/extracted/s0010218025006121_mmc3/USTC-NH3_DMM.dat
+- Original transport source files: _processing/extracted/s0010218025006121_mmc5/USTC-NH3_DMM_trans.dat
 
 ## Cantera Preprocessing Results
 
@@ -46,4 +46,7 @@ The carbon-neutral potential of ammonia is constrained by fundamental combustion
 
 ## Processing Notes
 
-- none
+- extracted S0010218025006121_mmc4.zip
+- extracted S0010218025006121_mmc5.zip
+- extracted S0010218025006121_mmc1.xlsx
+- extracted S0010218025006121_mmc3.zip

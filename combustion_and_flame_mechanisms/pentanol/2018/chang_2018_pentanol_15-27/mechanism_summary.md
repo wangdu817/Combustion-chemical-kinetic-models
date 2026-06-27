@@ -15,7 +15,7 @@ Yachao Chang, Ming Jia, Bo Niu, Zhen Xu, Zihe Liu, Yaopeng Li, et al.. Construct
 - Paper PDF link: 
 - Fuel type: pentanol
 - Plasma-related mechanism: no
-- Validation reactor/type from abstract: not clear from abstract
+- Validation reactor/type from abstract: shock tube, rapid compression machine, jet-stirred reactor, stirred reactor
 
 ## Mechanism Files
 
@@ -42,7 +42,7 @@ Yachao Chang, Ming Jia, Bo Niu, Zhen Xu, Zihe Liu, Yaopeng Li, et al.. Construct
 
 ## Abstract
 
-not available
+Pentanol has attracted increasing attentions in recent years due to its ability to reduce the pollution emissions of engines and the dependence on fossil fuels. A skeletal oxidation mechanism composed of 47 species and 177 reactions is first developed for n-pentanol based on the decoupling methodology in this study. Then, the rate constants of the reactions in the fuel-related sub-mechanism are automatically optimized by using the genetic algorithm to reproduce the ignition delay times in shock tubes and rapid compression machines, and the major species concentrations in jet-stirred reactors. The final mechanism is determined based on the method of uncertainty minimization using polynomial chaos expansions by comparing the predicted uncertainty of the optimized mechanisms with available experimental data in shock tubes, rapid compression machines, and jet-stirred reactors. The final n-pentanol mechanism is validated against measurements in shock tubes, rapid compression machines, jet-stirred reactors, and premixed laminar flames over low-to-high temperatures. Good agreements between the measured and predicted results are obtained for various reactors. Due to the compact size and the reliable performance, the final mechanism is capable of well reproducing the combustion and emission behaviors of n-pentanol in a homogeneous charge compression ignition engine in coupling with a three-dimensional Computational Fluid Dynamics (CFD) model.
 
 ## Processing Notes
 

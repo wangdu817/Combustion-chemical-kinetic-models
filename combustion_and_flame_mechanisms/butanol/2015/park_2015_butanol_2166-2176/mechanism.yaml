@@ -38,7 +38,7 @@ description: |2-
 generator: ck2yaml
 input-files: [chem_cantera_numeric_clean.inp, therm.dat, tran.dat]
 cantera-version: 3.2.0
-date: Fri, 26 Jun 2026 19:59:07 +0800
+date: Sat, 27 Jun 2026 09:50:55 +0800
 
 units: {length: cm, time: s, quantity: mol, activation-energy: cal/mol}
 

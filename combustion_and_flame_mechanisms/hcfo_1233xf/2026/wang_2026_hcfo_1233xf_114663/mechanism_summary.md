@@ -15,16 +15,16 @@ Xingyu Wang, Xiao Zhang, Peiyao Chen. Investigation of kinetic inhibition effect
 - Paper PDF link: 
 - Fuel type: hcfo_1233xf
 - Plasma-related mechanism: no
-- Validation reactor/type from abstract: not clear from abstract
+- Validation reactor/type from abstract: burner/flame structure
 
 ## Mechanism Files
 
 - Standard mechanism file: chem.inp
 - Standard thermodynamic file: therm.dat
 - Standard transport file: tran.dat
-- Original mechanism source files: _processing\raw_downloads\S0010218025006984_mmc1.txt
-- Original thermodynamic source files: _processing\raw_downloads\S0010218025006984_mmc3.txt
-- Original transport source files: _processing\raw_downloads\S0010218025006984_mmc4.txt
+- Original mechanism source files: _processing/raw_downloads/S0010218025006984_mmc1.txt
+- Original thermodynamic source files: _processing/raw_downloads/S0010218025006984_mmc3.txt
+- Original transport source files: _processing/raw_downloads/S0010218025006984_mmc4.txt
 
 ## Cantera Preprocessing Results
 
@@ -42,8 +42,8 @@ Xingyu Wang, Xiao Zhang, Peiyao Chen. Investigation of kinetic inhibition effect
 
 ## Abstract
 
-not available
+The search for viable chemical fire suppressants in civil aviation persists, as current candidates are limited by high toxicity, low efficiency, or high boiling points. This study experimentally investigates the suppression effects of HCFO-1233xf (2‑chloro-3,3,3-trifluoropropene, abbreviated as XF) on methane-air and propane-air premixed flames under ambient conditions. Results demonstrate that XF exhibits 30 % and 38 % higher mass-based suppression efficiency than R125 (CF3CHF2) and R227ea (CF3CHFCF3) in stoichiometric flames, respectively. A kinetic model was developed to reveal the inhibition mechanism of the superior chemical kinetic efficiency of XF under stoichiometric and fuel-rich conditions. Simulation results suggest that the double bond in XF enhances its reactivity, likely enabling rapid decomposition to generate Cl and CF3 radicals, which are effective in slowing combustion chain reactions. This mechanism is consistent with the observed simulation data, where the chemical inhibition effect of XF is approximately 1.5 times greater than that of R125 and R123 and twice that of R227ea. Normalized burning velocity calculations for methane-air flames indicate the mass-based inhibition parameter for XF ranks highest among known halon alternatives, surpassed only by brominated compounds.
 
 ## Processing Notes
 
-- none
+- extracted S0010218025006984_mmc2.docx

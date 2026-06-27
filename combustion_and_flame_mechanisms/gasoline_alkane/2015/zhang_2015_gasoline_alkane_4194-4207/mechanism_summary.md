@@ -23,7 +23,7 @@ Kuiwen Zhang, Colin Banyon, Casimir Togbé, Philippe Dagaut, John Bugler, Henry 
 - Standard thermodynamic file: therm.dat
 - Standard transport file: not available
 - Original mechanism source files: _processing/extracted/s0010218015002576_mmc1/C6_Mech.inp
-- Original thermodynamic source files: _processing/extracted/s0010218015002576_mmc1/C6.DOC.bak, _processing/extracted/s0010218015002576_mmc1/C6_Therm.dat, _processing/extracted/s0010218015002576_mmc1/C6.DOC
+- Original thermodynamic source files: _processing/extracted/s0010218015002576_mmc1/C6.DOC, _processing/extracted/s0010218015002576_mmc1/C6_Therm.dat, _processing/extracted/s0010218015002576_mmc1/C6.DOC.bak
 - Original transport source files: not found
 
 ## Cantera Preprocessing Results
@@ -47,5 +47,3 @@ Ignition delay times for n-hexane oxidation have been measured in a rapid compre
 ## Processing Notes
 
 - extracted S0010218015002576_mmc1.zip
-- extracted mmc2.docx
-- extracted mmc4.xlsx

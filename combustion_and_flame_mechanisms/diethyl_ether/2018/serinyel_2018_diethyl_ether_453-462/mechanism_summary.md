@@ -32,7 +32,19 @@ Zeynep Serinyel, Maxence Lailliau, Sébastien Thion, Guillaume Dayma, Philippe D
 
 - Status: ok
 - Species count: 471
-- Reaction count: 3073
+- Reaction count: 3072
+- Message: cantera conversion ok
+- Method: cantera
+- Cantera YAML: mechanism.yaml
+- Standard chem.inp: chem.inp
+- Standard therm.dat: therm.dat
+- Standard tran.dat: not available
+
+### Mechanism 2
+
+- Status: ok
+- Species count: 471
+- Reaction count: 3072
 - Message: cantera conversion ok
 - Method: cantera
 - Cantera YAML: mechanism.yaml

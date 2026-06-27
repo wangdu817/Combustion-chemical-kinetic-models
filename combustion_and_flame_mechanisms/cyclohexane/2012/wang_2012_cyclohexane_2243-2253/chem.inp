@@ -1,0 +1,1317 @@
+!Reaction Mechanism
+!Title:    An experimental and kinetic modeling study of cyclohexane pyrolysis at low pressure
+!Authors:  Zhandong Wang, Zhanjun Cheng, Wenhao Yuan, Jianghuai Cai, Lidong Zhang, Feng Zhang, Jing Wang, Fei Qi
+!Address1: State Key Laboratory of Fire Science, University of Science and Technology of China, Hefei, Anhui 230026, P. R. China
+!Address2: National Synchrotron Radiation Laboratory, University of Science and Technology of China, Hefei, Anhui 230029, P. R. China
+!Address3: Institute of Mechanics, Chinese Academy of Sciences, Beijing 100190, P. R. China
+
+ELEMENTS
+O  H  C  N  AR  HE 
+END
+SPECIES
+
+!C0
+ AR        N2        HE        H         H2       H2O      O2             
+!C1
+ C         CH        CH*       CH2       CH2*      CH3       CH4       CO      CO2         
+!C2                                                         
+ C2H       C2H2      H2CC      C2H3      C2H4      C2H5      C2H6    
+!C3
+ C3H2      C3H3      aC3H4     pC3H4     aC3H5     CH3CCH2   CH3CHCH  C3H6  nC3H7   
+ iC3H7     C3H8    
+!C4  
+ C4H       C4H2      nC4H3     iC4H3     C4H4      nC4H5     iC4H5     C4H5-2   c-C4H5 
+ C4H6      C4H612    C4H6-2   SAXC4H7    C4H7      iC4H7     iC4H7-1   C4H7-2   CH3CCHCH3 
+ C4H81     C4H82     iC4H8     pC4H9     sC4H9     tC4H9     iC4H9     C4H10    iC4H10   
+!C5
+ C5H2      C5H3      C5H4       cC5H4      lC5H5      C5H5        C5H6    lC5H7   C5H7   
+ PAXCH2-2-C4H5       cC5H8      C5H8-14    C5H8-13    C5H8-12      CH3-2-C4H5-13   
+ PXCH2-3-1C4H7      SAXC5H9     PXC5H9     SXC5H9     cC5H9        CH3-2-PXC4H6 
+ PAXCH2-2-1C4H7      C5H10      PXC5H11    PXCH2-2-C4H9            SXC5H11           
+ S2XC5H11     NC5H12   
+!C6                                                               
+ C6H2               C6H3        l-C6H4      o-C6H4         nC6H5       i-C6H5        A1-        
+ l-C6H6             fulvene     A1          SAXcC6H7       cC6H8-13    cC6H8-14      PXcC6H9 
+ SAXcC6H9           cC6H10      C6H10-13    C6H10-12       C6H10-15    CH2-3-1C5H8   C2H3-2-1C4H7              
+ C2H5-2-C4H513      SAXC6H9-15  PXC6H9-13   cC6H11         PXC6H11     SXC6H11       S2XC6H11     
+ SAXC6H11           PX6-2C6H11  PXC2H4-2-1C4H7             PX1-3C6H11  C6H12         cC6H12        
+ PXCH2cC5H9         PXCH2-3-1C5H9      PXCH2-4-1C5H9       CH3S3XcC5H8     CH2cC5H8  
+!aromatic species
+ A1CH3    A1CH2        A1CH    C6H4CH3      A1C2H-      A1C2H*      A1C2H       A1CHCH  
+ A1CCH2   A1C2H3       A1C2H3*  A1CH2CH2    A1CHCH3     C6H4C2H4    A1C2H5      C7H5 
+ C7H6     C9H7         C9H8      A2-1       A2           A2-2       A1C2HC2H2  A1(C2H)2  
+      
+!
+!AR               argon                                    	
+!N2               nitrogen                                 
+!HE               helium                                   
+!H                H atom                                   
+!H2               hydrogen                                 
+!H2O              water                                                          
+!O2               oxygen                                   
+!CH               methylidene, doublet                     
+!CH*              methylidene, singal                      
+!CH2              methylene, triplet B(1)                  
+!CH2*             methylene, singlet A(1)                  
+!CH3              methyl radical, doublet                  
+!CH4              methane                                  
+!CO               carbon monoxide                           
+!CO2              carbon dioxide                           
+!C2H              ethynyl                                  
+!C2H2             acetylene                 
+!H2CC             vinylidene                               
+!C2H3             vinyl                    
+!C2H4             ethylene                    
+!C2H5             ethyl                                    
+!C2H6             ethane                                   
+!C3H2             propargylene, HCCCH                      
+!C3H3             propargyl, CH2CCH                        
+!aC3H4            allene                  
+!pC3H4            propyne                
+!aC3H5            allyl             
+!CH3CCH2          propen-2-yl / CH2=C*-CH3                 
+!CH3CHCH          propenyl (E and Z) / *CH=CH-CH3          
+!C3H6             propene                      
+!nC3H7            n-propyl / *CH2-CH2-CH3                  
+!iC3H7            isopropyl / CH3-CH*-CH3                  
+!C3H8             propane    
+!C4H              butadiynyl/ CHCCC               
+!C4H2             1,3-butadiyne           
+!nC4H3            *CH=CH-CCH, but-1-en-3-ynyl              
+!iC4H3            CH2C*-CCH                 
+!C4H4             1-buten-3-yne           
+!nC4H5            *CH=CH-CH=CH2                          
+!iC4H5            CH2=C*-CH=CH2     
+!C4H5-2           CH3-CC-*CH2       
+!C4H6             1,3-butadiene           
+!C4H612           1,2-butadiene       
+!C4H6-2           2-butyne                                 
+!SAXC4H7          CH2=CH-CH*-CH3                           
+!C4H7             CH2=CH-CH2-CH2*               
+!iC4H7            CH2=C(CH3)CH2*                           
+!iC4H7-1          CH*=C(CH3)2                              
+!C4H7-2           CH2=C*-CH2-CH3                           
+!CH3CCHCH3        CH3-C*=CH-CH3                            
+!C4H81            1-butene / CH2=CH-CH2-CH3                
+!C4H82            2-butene / CH3-CH=CH-CH3                 
+!iC4H8            iso-butene / CH3CH(CH3)=CH2              
+!pC4H9            1-butyl / CH3CH2CH2CH2                   
+!sC4H9            2-butyl / CH3CH2CHCH3                    
+!tC4H9            t-butyl / C(CH3)3                        
+!iC4H9            i-butyl / CH2CH(CH3)2                    
+!C4H10            n-butane / CH3CH2CH2CH3                  
+!iC4H10           i-butane / CH(CH3)3            
+!C5H5             cyclopentadienyl                        
+!C5H6             cyclopentadiene                                   
+!PAXCH2-2-C4H5    CH2C(CH2*)CHCH2/ 2-methylene-3-butenyl
+!cC5H8            cyclopentene  
+!C5H8-14          1,4-pentadiene       
+!C5H8-13          1,3-pentadiene
+!C5H8-12          1,2-pentadiene
+!CH3-2-C4H5-13    2-methyl-1,3-butadiene
+!PXCH2-3-1C4H7    2-methyl-3-butenyl               
+!SAXC5H9          1-penten-3-yl    
+!PXC5H9           1-penten-5-yl
+!SXC5H9           1-penten-4-yl                            
+!cC5H9            cyclopentyl 
+!CH3-2-PXC4H6     3-methyl-1-buten-3-yl /CH2*CH2C(CH3)CH2
+!PAXCH2-2-1C4H7   2-methylene-butyl                        
+!C5H10            1-pentene   
+!PXC5H11          1-pentyl
+!SXC5H11          2-pentyl
+!S2XC5H11         3-pentyl
+!NC5H12           pentane                     
+!C6H2             1,3,5-hexatriyne           
+!l-C6H4           3-hexen-1,5--diyne
+!o-C6H4           benzyne
+!nC6H5            1,3-hexadien--5-yn-1-yl
+!A1-              phenyl radical 
+!fulvene          C5H4CH2
+!A1               benzene
+!SAXcC6H7         cyclohexadienyl
+!cC6H8-13         1,3-cyclohexadiene
+!SAXcC6H9         3-cyclohexenyl radical
+!cC6H10           cyclohexene
+!C6H10-13         1,3-hexadiene
+!C6H10-12         1,2-hexadiene
+!C6H10-15         1,5-hexadiene
+!SAXC6H9-15       CH2CHCH2CH*CHCH2
+!PXC6H9-13        CH2CHCHCH2CH2*
+!cC6H11           cyclohexyl 
+!PXC6H11          1-hexen-6-yl
+!SXC6H11          1-hexen-5-yl
+!S2XC6H11         1-hexen-4-yl
+!SAXC6H11         1-hexen-3-yl
+!PX6-2C6H11       CH3CHCHCH2CH2CH2*
+!PX1-3C6H11       CH3CH2CHCHCH2CH2*
+!C6H12            1-hexene
+!cC6H12           cyclohexane
+!PXCH2cC5H9       cyclopentylcarbinyl
+!PXCH2-3-1C5H9    CH2CHCH(CH2*)CH2CH3
+!PXCH2-4-1C5H9    CH2CHCH2CH(CH2*)CH3
+!CH2cC5H8         methylenecyclopentane
+!A1CH3            toluene
+!A1CH2            benzyl
+!A1CH             A1CH
+!C6H4CH3          C6H4CH3
+!A1C2H- 	  C6H5C2*
+!A1C2H*  	  C6H4C2H
+!A1C2H            A1C2H 
+!A1CHCH           A1CHCH  
+!A1CCH2           A1CCH2 
+!A1C2H3           Styrene
+!A1C2H5           Ethylbenzene
+!C7H5             C5H4CH
+!C7H6             C5H4CH2
+!C9H7             Indenyl radical
+!C9H8             Indene          
+!A2-1             1-naphthyl
+!A2-2             2-naphthyl
+!A2               Naphthalene
+
+ 
+REACTIONS
+
+!################################  H2 reactions   ################################################################
+
+ H+H+M = H2+M                                 1.780E+18   -1.000      0.00         !GRI3.0 * 1.78
+                                              H2/0.0/ H2O/0.0/ CO2/0.0/ AR/0.63/ HE/0.63/                                                                  
+ H+H+H2 = H2+H2                               9.000E+16   -0.600      0.00         !GRI3.0
+
+!################################  CH reactions   ################################################################
+
+ CH+H = C+H2                                  1.100E+14    0.000      0.00         !GRI
+ CH+H2 = CH2+H                                1.107E+08    1.790      1670.00      !GRI
+ 
+!################################  CH2(triplet) reactions   ################################################################ 
+
+ CH2+H(+M) = CH3(+M)                          2.500E+16   -0.800      0.00         !GRI
+                                      LOW  /  3.200E+27   -3.140      1230.00  /
+                                      TROE/   0.6800   78.00  1995.0  5590.0 /
+                          H2/2.0/ H2O/6.0/ CH4/2.0/ CO/1.5/ CO2/2.0/ C2H6/3.0/ AR/0.7/                               
+ CH2+H2 = H+CH3                               5.000E+05    2.000      7230.00      !GRI
+ CH2+C = C2H+H                                5.000E+13    0.000      0.00         !GRI
+ CH2+CH = C2H2+H                              4.000E+13    0.000      0.00         !GRI  
+ CH2+CH2 = C2H2+H2                            3.200E+13    0.000      0.00         !GRI
+
+!################################  CH2(singlet) reactions   ################################################################ 
+
+ CH2*+N2 = CH2+N2                             1.500E+13    0.000      600.00       !GRI
+ CH2*+AR = CH2+AR                             9.000E+12    0.000      600.00       !GRI
+ CH2*+H = CH+H2                               3.000E+13    0.000      0.00         !GRI
+ CH2*+H2 = CH3+H                              7.000E+13    0.000      0.00         !GRI
+
+!################################  CH3 reactions   ################################################################ 
+
+ CH3+H(+M) = CH4(+M)                          1.270E+16   -0.630      383.00       !GRI
+                                     LOW  /   2.477E+33   -4.760      2440.00  /
+                                     TROE/    0.7830   74.00  2941.00  6964.0 /
+                          H2/2.0/ H2O/6.0/ CH4/2.0/ CO/1.5/ CO2/2.0/ C2H6/3.0/ AR/0.7/                                 
+ CH3+C = C2H2+H                               5.000E+13    0.000      0.00         !GRI
+ CH3+CH = C2H3+H                              3.000E+13    0.000      0.00         !GRI
+ CH3+CH2 = C2H4+H                             4.000E+13    0.000      0.00         !GRI
+ CH3+CH2* = C2H4+H                            1.200E+13    0.000     -570.00       !GRI
+ CH3+CH3(+M) = C2H6(+M)                       2.120E+16   -0.970      620.00       !GRI
+                                      LOW  /  1.770E+50   -9.670      6220.00  /
+                                      TROE/   0.5325  151.0  1038.00  4970.0 /
+                          H2/2.0/ H2O/6.0/ CH4/2.0/ CO/1.5/ CO2/2.0/ C2H6/3.0/ AR/0.7/  
+ CH3+CH3 = H+C2H5                             4.990E+12    0.100      10600.00     !GRI
+ CH3+C2H = C3H3+H                             2.41E+13     0.0        0.0          !86TSA/HAM
+
+!################################  CH4 reactions   ################################################################ 
+
+ CH4+H = CH3+H2                               6.600E+08    1.620      10840.00     !GRI     
+ CH4+CH = C2H4+H                              6.000E+13    0.000      0.00         !GRI
+ CH4+CH2 = CH3+CH3                            2.460E+06    2.000      8270.00      !GRI
+ CH4+CH2* = CH3+CH3                           1.600E+13    0.000     -570.00       !GRI
+ CH4+C2H = C2H2+CH3                           1.810E+12    0.0        500.0        !86TSA/HAM
+                         
+!################################  C2H reactions   ################################################################                                                                                                                                                                                          
+
+ C2H+H(+M) = C2H2(+M)                         1.000E+17   -1.000      0.00         !GRI
+                                      LOW  /  3.750E+33   -4.800      1900.00   /
+                                      TROE/   0.6464  132.00  1315.00 5566.0 /
+                          H2/2.0/ H2O/6.0/ CH4/2.0/ CO/1.5/ CO2/2.0/ C2H6/3.0/ AR/0.7/
+ C2H+H2 = H+C2H2                              4.900E+05    2.500      560.00       !GRI
+  
+
+!################################  C2H2 reactions   ################################################################   
+
+C2H2 (+M) = H2CC (+M)                        8.000E+14   -0.520      50750.00     !99LAS/WAN
+                                      LOW /   2.450E+15   -0.640      49700.00  /
+                          H2/2.0/ H2O/6.0/ CH4/2.0/ CO/1.5/ CO2/2.0/ C2H6/3.0/C2H2/2.5/ C2H4/2.5/ 
+C2H3 (+M) = C2H2+H (+M)                      3.860E+08    1.620      37048.2      !96KNY/SLA
+                                     LOW  /  2.565E+27   -3.400      35798.72  /
+                                     TROE/   1.9816  5383.7  4.2932 -0.0795 /
+                         H2/2.0/ H2O/6.0/ CH4/2.0/ CO/1.5/ CO2/2.0/ C2H6/3.0/ AR/0.7/ C2H2/3.00/  C2H4/3.00/    
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         
+!################################  Vinylidene reactions   ################################################################   
+
+ H2CC+H = C2H2+H                              1.000E+14    0.000      0.00         !Estimated
+
+!################################  C2H3 reactions   ################################################################   
+
+ C2H3+H(+M) = C2H4(+M)                        6.080E+12    0.270      280.00       !GRI1.2
+                                      LOW  /  1.400E+30   -3.860      3320.00 /
+                                     TROE/    0.7820  207.50  2663.00  6095.00/
+                          H2/2.0/ H2O/6.0/ CH4/2.0/ CO/1.5/ CO2/2.0/ C2H6/3.0/ AR/0.7/ C2H2/3.00/ C2H4/3.00/      
+                                                       
+ C2H3+H = C2H2+H2                             9.000E+13    0.000      0.00         !86TSA/HAM
+ C2H3+H = H2CC+H2                             6.000E+13    0.000      0.00         !Estimated
+ C2H3+CH3 = C2H2+CH4                          3.920E+11    0.000      0.00         !86TSA/HAM
+ C2H3+C2H3 = C2H2+C2H4                        9.600E+11    0.00       0.           !NIST DB
+
+!################################  C2H4 reactions   ################################################################  
+
+ H+C2H4(+M)=C2H5(+M)                          5.40E+11     0.45       1820.        !  GRI 3.0    
+                                      LOW  /  6.00E+41    -7.62       6970./                   
+                                      TROE /  0.9753 210 984 4374/                                                          
+                          H2/2.0/ H2O/6.0/ CH4/2.0/ CO/1.5/ CO2/2.0/ C2H6/3.0/ AR/0.7/                        
+ C2H4(+M)=H2+C2H2(+M)                         8.00E+12     0.44       88770.       ! GRI 3.0              
+                                      LOW   / 1.58E+51    -9.30       97800./                            
+                                      TROE /  0.7345 180 1035 5417/                                                                   
+                          H2/2.0/ H2O/6.0/ CH4/2.0/ CO/1.5/ CO2/2.0/ C2H6/3.0/ AR/0.7/                                                                                                                           
+ C2H4+H = C2H3+H2                             5.070E+07    1.900      12950.00     !96KNY/BEN
+ C2H4+CH = aC3H4+H                            3.000E+13    0.000      0.00         !Estimated
+ C2H4+CH = pC3H4+H                            3.000E+13    0.000      0.00         !Estimated
+ C2H4+CH2 = aC3H5+H                           2.000E+13    0.000      6000.00      !Estimated
+ C2H4+CH2* = H2CC+CH4                         5.000E+13    0.000      0.00         !Estimated
+ C2H4+CH2* = aC3H5+H                          5.000E+13    0.000      0.00         !Estimated
+ C2H4+CH3 = C2H3+CH4                          2.270E+05    2.000      9200.00      !GRI
+ C2H4+C2H = C4H4+H                            1.200E+13    0.000      0.00         !86TSA/HAM
+
+!################################  C2H5 reactions   ################################################################  
+
+ C2H5+H(+M) = C2H6(+M)                        5.210E+17   -0.990      1580.00      !GRI
+                                       LOW  / 1.990E+41   -7.080      6685.00   /
+                                       TROE / 0.8422  125.0  2219.00 6882.0 /
+                          H2/2.0/ H2O/6.0/ CH4/2.0/ CO/1.5/ CO2/2.0/ C2H6/3.0/ AR/0.7/
+ C2H5+H = C2H4+H2                             2.000E+12    0.000      0.00         !GRI
+ C2H5+CH3(+M) = C3H8(+M)                      4.90E+14    -0.50       0.0          !88TSA  JetSurF 2.0
+                                       LOW  / 6.80E+61    -13.42      6000.0    /
+                                       TROE / 1.000  1000.0  1433.9  5328.8 /
+                          H2/2/ H2O/6/ CH4/2/ CO/1.5/ CO2/2/ C2H6/3/ AR/0.7/
+
+!################################  C2H6 reactions   ################################################################ 
+
+ C2H6+H = C2H5+H2                             1.15E+08     1.900      7530.00      !GRI
+ C2H6+CH2* = C2H5+CH3                         4.00E+13     0.000     -550.00       !GRI
+ C2H6+CH3 = C2H5+CH4                          6.14E+06     1.740      10450.00     !GRI
+                                                                                                                                                                                                                                                                             
+!################################  C3H2 reactions   ################################################################
+
+ C3H2+H(+M)<=>C3H3(+M)                        1.02e+13     0.27       279.64       !2009 Blanquart et al.   
+                                      LOW/    2.80e+30    -3.860      3319.79 /                          
+                                      TROE/   0.782   207.50   2663.00   6095.00 / 
+                          H2/2.00/ H2O/12.00/ CO2/3.60/ CO/1.75/ AR/0.70/ CH4/2.00/ C2H6/3.00/
+ C3H2+CH=C4H2+H                               5.00E+13     0.0        0.
+ 
+!################################ C3H3 reactions ################################################################
+
+ C3H3+CH = iC4H3+H                            5.00E+13     0.0        0.0          !Estimated  JetSurF 2.0
+ C3H3+H = C3H2+H2                             1.00E+13     0.0        1000.        !USC Mech II                                   
+ C2H2+CH2 = C3H3+H                            1.20E+13     0.00       6620.00      !USC Mech II (88BOH/TEM; 86FRA/BHA)    
+ C2H2+CH2* = C3H3+H                           2.00E+13     0.00       0.00         !USC Mech II (97WAN/FRE)               
+
+!################################ C3H4 reactions ################################################################
+
+ aC3H4 = C3H3+H                               1.02E+51    -10.96      102317       !2009 Kiefer et al. 170Torr  /3 
+ pC3H4 = C3H3+H                               3.7E+44     -9.06       100390       !2009 Kiefer et al. 155Torr  /3 
+ pC3H4 = aC3H4                                6.40E+61    -14.59      88200.0      !USC Mech II (99DAV/LAW RRKM 0.1 atm)
+ aC3H4+H = C3H3+H2                            6.60E+03     3.1        5522         !2008 Miller
+ pC3H4+H = C3H3+H2                            3.57E+04     2.8        4821         !2008 Miller
+ aC3H4+CH3 = C3H3+CH4                         6.61E-04     5          8300         !2009 Kiefer et al.
+ pC3H4+CH3 = C3H3+CH4                         2.19E-04     5          8300         !2009 Kiefer et al.
+ H+aC3H4 = H+pC3H4                            1.47E+13     0.26       4103         !2008 Miller 30 Torr
+ H+aC3H4 = CH3+C2H2                           2.72E+09     1.2        6834         !2008 Miller 30 Torr
+ H+pC3H4 = C2H2+CH3                           3.89E+10     0.989      4114         !2008 Miller 30 Torr
+ 
+ !################################ CH3CHCH CH3CCH2 and aC3H5 reactions ################################################################   
+ 
+ aC3H4+H = aC3H5                              4.80E+61    -14.67      26000.0      !99DAV/LAW RRKM 0.1 atm   /2
+ pC3H4+H = aC3H5                              5.50E+59    -14.56      28100.0      !99DAV/LAW RRKM 0.1 atm  /2
+ aC3H5 = CH3CCH2                              3.90E+59    -15.42      75400.0      !USC Mech II (99DAV/LAW RRKM 0.1 atm)
+ aC3H5 = CH3CHCH                              1.30E+55    -14.53      73800.0      !USC Mech II (99DAV/LAW RRKM 0.1 atm)
+ C2H5+C2H3 = aC3H5+CH3                        8.00E+25    -3.46       11775.0      !USC Mech II (86TSA/HAM RRKM 0.1 atm)
+ C2H2+CH3 = aC3H5                             8.20E+53    -13.32      33200.0      !USC Mech II (99DAV/LAW RRKM 0.1 atm)
+ aC3H5+H = aC3H4+H2                           9.56E+03     2.80       3291.11      !2009 Pitsch
+ aC3H5+CH3 = aC3H4+CH4                        3.00E+12    -0.32      -131.0        !2009 Kifer et al
+ aC3H5+aC3H5 = pC3H4+C3H6                     8.43E+10     0.0       -263          !2009 Kifer et al
+ CH3CCH2 = CH3CHCH                            1.60E+44    -12.16      52200.0      !USC Mech II (99DAV/LAW RRKM 0.1 atm)
+ H+pC3H4 = CH3CHCH                            1.352E+51   -12.75      7722         !2008 Miller 30 Torr                
+ H+aC3H4 = CH3CCH2                            1.60E+53    -13.10      14472        !2008 Miller 30 Torr           
+ H+pC3H4 = CH3CCH2                            3.20E+52    -12.69      14226        !2008 Miller 30 Torr
+ CH3+C2H2 = CH3CHCH                           6.80E+49    -12.3       16642        !2008 Miller 30 Torr        
+ C2H2+CH3 = CH3CCH2                           6.80E+20    -4.16       18000.0      !USC Mech II (99DAV/LAW RRKM 0.1 atm)
+ CH3CCH2+H = aC3H5+H                          1.47E+13     0.26       4103         !Ref aC3H4+H=pC3H4+H
+ CH3CHCH+H = aC3H5+H                          1.47E+13     0.26       4103         !Ref H+aC3H4=H+pC3H4
+                                                                                                  
+ !################################  C3H6 reactions    ################################################################
+ 
+ aC3H5+H(+M) = C3H6(+M)                       2.00E+14     0.00       0.0          !91TSA     JetSurF2.0
+                                      LOW  /  1.33E+60    -12.00      5967.8      /
+                                      TROE /  0.020  1096.6  1096.6  6859.5 /
+                          H2/2/ H2O/6/ CH4/2/ CO/1.5/ CO2/2/ C2H6/3/ AR/0.7/ 
+ C2H3+CH3 (+M) = C3H6(+M)                     2.50E+13     0.000      0.00         !86TSA/HAM  JetSurF2.0
+                                      LOW  /  4.270E+58   -11.940     9769.80 /
+                                      TROE /  0.175  1340.6 60000.0 10139.8 /
+                          H2/2/ H2O/6/ CH4/2/ CO/1.5/ CO2/2/ C2H6/3/ AR/0.7/C2H2/3.00/ C2H4/3.00/
+ C3H6 = H2 + pC3H4                            1.18E+95    -23.6       125649       !2009 Kiefer et al.                    
+ C3H6 = H2 + aC3H4                            1.18E+95    -23.6       125649       !ref:C3H6 = H2 + pC3H4                 
+ C3H6+H = C2H4+CH3                            8.80E+16    -1.05       6461.0       !91TSA   JetSurF2.0
+ C3H6+H = aC3H5+H2                            1.73E+05     2.50       2490.0       !91TSA   JetSurF2.0
+ C3H6+H = CH3CCH2+H2                          4.00E+05     2.50       9790.0       !91TSA   JetSurF2.0
+ C3H6+H = CH3CHCH+H2                          8.04E+05     2.50       12283.0      !91TSA   JetSurF2.0
+ C3H6+CH3 = aC3H5+CH4                         2.20E+00     3.50       5675.0       !91TSA   JetSurF2.0
+ C3H6+CH3 = CH3CCH2+CH4                       8.40E-01     3.50       11660.0      !91TSA   JetSurF2.0
+ C3H6+CH3 = CH3CHCH+CH4                       1.35E+00     3.50       12848.0      !91TSA   JetSurF2.0
+ C3H6+C2H3 = C4H6+CH3                         7.23E+11     0.0        5000.0       !91TSA   JetSurF2.0
+ 
+!##################################    reactions of nC3H7  ##########################################################!
+
+ nC3H7+H(+M) = C3H8(+M)                       3.60E+13     0.00       0.0          !88TSA    JetSurF2.0
+                                      LOW  /  3.01E+48    -9.32       5833.6    /
+                                      TROE /  0.498  1314.0  1314.0 50000.0 /
+                          H2/2/ H2O/6/ CH4/2/ CO/1.5/ CO2/2/ C2H6/3/ AR/0.7/                                     
+ nC3H7 = C3H6+H                               8.00E+27    -5.613      29791        !2009 Kiefer et al. 
+ nC3H7 = C2H4+CH3                             4.23E+19    -3.396      17919        !2009 Kiefer et al. 
+ nC3H7+H = C2H5+CH3                           3.40E+18    -1.33       5386.0       !88TSA   JetSurF2.0
+ nC3H7+H = C3H6+H2                            1.80E+12     0.00       0.0          !88TSA   JetSurF2.0
+ nC3H7+CH3 = CH4+C3H6                         1.10E+13     0.00       0.0          !88TSA   JetSurF2.0
+
+!##################################    reactions of iC3H7  ##########################################################!
+
+ iC3H7+H(+M) = C3H8(+M)                       2.40E+13     0.00       0.0          !88TSA    JetSurF2.0
+                                       LOW  / 1.70E+58    -12.08      11263.7    /     
+                                       TROE / 0.649  1213.1  1213.1 13369.7 /     
+                          H2/2/ H2O/6/ CH4/2/ CO/1.5/ CO2/2/ C2H6/3/ AR/0.7/       
+ C3H6+H(+M) = iC3H7(+M)                       1.33E+13     0.00       1559.8       !91TSA    JetSurF2.0  
+                                       LOW  / 8.70E+42    -7.50       4721.8   /   
+                                       TROE / 1.000  1000.0   645.4  6844.3     /  
+                          H2/2/ H2O/6/ CH4/2/ CO/1.5/ CO2/2/ C2H6/3/ AR/0.7/       
+ iC3H7+H = CH3+C2H5                           5.90E+23    -2.81       10009.0      !88TSA RRKM 0.1 atm   JetSurF2.0
+ iC3H7+H = C3H6+H2                            3.20E+12     0.00       0.0          !88TSA                JetSurF2.0
+ iC3H7+CH3 = CH4 + C3H6                       2.20E+14    -0.68       0.0          !88TSA                JetSurF2.0                   
+ 
+ !##################################   reactions of C4H2  ##########################################################! 
+
+ C2H2+C2H2 = C4H2+H2                          1.50E+13     0.0        42700        !JetSurF 2.0
+ C2H2+C2H = C4H2+H                            9.60E+13     0.00       0.00         !91SHI/MIC, 92KOS/FUK, 93FAR/MOR     JetSurF 2.0
+ 
+ !##################################   reactions of nC4H3  ##########################################################!
+
+ C2H2+C2H(+M) = nC4H3(+M)                     8.30E+10     0.899     -363.00       !92WAN                JetSurF2.0
+                                       LOW  / 1.240E+31   -4.718      1871.00  /
+                                       TROE / 1.0 100.     5613.      13387.   /
+                          H2/2.0/ H2O/6.0/ CH4/2.0/ CO/1.5/ CO2/2.0/ C2H6/3.0/  C2H2/2.5/ C2H4/2.5/                                                                        
+ nC4H3 + H = C4H4                             1.10E+42    -9.65       7000.0       !0.026 atm RRKM WAN/FRE       JetSurF2.0     
+ C4H2+H<=>nC4H3                               1.70E+49    -11.67      12804.0      !0.026 atm RRKM WAN/FRE       JetSurF2.0 
+ nC4H3 = iC4H3                                3.70E+61    -15.81      54890.0      !0.026 atm RRKM WAN/FRE       JetSurF2.0
+ C3H3+CH = nC4H3+H                            5.00E+13     0.0        0.0          !USC Mech II (Estimated)        
+ C3H2+CH2 = nC4H3+H                           5.00E+13     0.0        0.0          !USC Mech II (92MIL/MEL)        
+ nC4H3+H = C4H2+H2                            3.00E+13     0.00       0.0          != 0.5*C2H3+H                 JetSurF2.0
+ nC4H3 + H = C2H2 + H2CC                      1.60E+19    -1.60       2220.0       !0.026 atm RRKM WAN/FRE       JetSurF2.0
+ nC4H3 + H = iC4H3 + H                        2.40E+11     0.79       2410.0       !0.026 atm RRKM WAN/FRE       JetSurF2.0
+ 
+!##################################   reactions of iC4H3  ##########################################################! 
+ 
+ C2H2+C2H(+M) = iC4H3(+M)                     8.30E+10     0.899     -363.00       !92WAN     JetSurF2.0
+                                       LOW  / 1.240E+31   -4.718      1871.00  /
+                                       TROE / 1.0 100.     5613.      13387.   /
+                          H2/2.0/ H2O/6.0/ CH4/2.0/ CO/1.5/ CO2/2.0/ C2H6/3.0/C2H2/2.5/ C2H4/2.5/                                                                   
+ C4H2+H(+M)<=>iC4H3(+M)                       4.31E+10     1.160      1751.91      !USC Mech II (92WAN)                                                                                                       
+                                       LOW  / 2.30e+45    -8.100      2507.17  /                            
+                                       TROE / 0.0748       1.00      -4216.00  / 
+                          H2/2.00/ H2O/12.00/ CO2/3.60/ CO/1.75/ AR/0.70/  CH4/2.00/ C2H6/3.00/                                  
+ iC4H3 + H = C4H4                             4.20E+44    -10.27      7890.0       !0.026 atm RRKM WAN/FRE    JetSurF2.0                                           
+ iC4H3 + H = C2H2 + H2CC                      2.40E+19    -1.60       2800.0       !0.026 atm RRKM WAN/FRE    etSurF2.0                              
+ iC4H3+H = C4H2+H2                            6.00E+13     0.00       0.0          != C2H3+H                  JetSurF2.0
+ 
+ !##################################   reactions of C4H4  ##########################################################!
+
+ H2CC+C2H2(+M) = C4H4(+M)                     3.50E+05     2.055     -2400.        !99LAS/WAN JetSurF2.0
+                                       LOW  / 1.40E+60    -12.599     7417.    /
+                                       TROE / 0.98 560.    580.       4164.    /
+                          H2/2.0/ CH4/2.0/ H2O/6.0/ C2H2/3.0/ CO/1.5/ C2H4/3.0/ C2H6/3.0/ CO2/2.0/
+ C2H3+C2H = C4H4                              1.00E+14     0.00       0.0          !1988 Duran et al.
+ C3H3+CH2* = C4H4+H                           4.00E+13     0.0        0.0          !2007 Gueniche  & Glaude & Fournet & Battin
+ C4H4+H = nC4H3+H2                            6.65E+05     2.53       12240.       !97WAN/FRE     JetSurF2.0
+ C4H4+H = iC4H3+H2                            3.33E+05     2.53       9240.        !97WAN/FRE     JetSurF2.0
+ C2H3+C2H2=C4H4+H                             5.00E+14    -0.71       6700.        !0.026 atm RRKM WAN/FRE   JetSurF2.0 
+ C3H3+CH2=C4H4+H                              5.00E+13     0.00       0.0          !92MIL/MEL    JetSurF2.0 
+ C3H2+CH3=C4H4+H                              5.00E+12     0.00       0.0          !USC Mech II
+ 
+ !##################################   reactions of nC4H5  ##########################################################!
+
+ nC4H5 = iC4H5                                1.30E+62    -16.38      49600.       !0.026 atm RRKM WAN/FRE         JetSurF2.0
+ nC4H5+H = iC4H5+H                            1.00E+36    -6.26       17486.       !0.026 atm RRKM WAN/FRE         JetSurF2.0
+ C2H3 + C2H2 = nC4H5                          1.10E+32    -7.33       6200.        !0.026 atm RRKM WAN/FRE         JetSurF2.0
+ C4H4 + H = nC4H5                             4.20E+50    -12.34      12500.       !0.026 atm RRKM WAN/FRE         JetSurF2.0
+ C2H3+C2H3 = nC4H5+H                          1.10E+24    -3.28       12395.       !0.026 atm RRKM WAN/FRE         JetSurF2.0
+ nC4H5+H = C4H4+H2                            1.50E+13     0.00       0.0          !97WAN/FRE                      JetSurF2.0
+ 
+!##################################   reactions of iC4H5  ##########################################################! 
+ 
+ C2H3 + C2H2 = iC4H5                          2.10E+36    -8.78       9100.        !0.026 atm RRKM WAN/FRE            JetSurF2.0
+ C4H4 + H = iC4H5                             9.60E+52    -12.85      14300.       !0.026 atm RRKM WAN/FRE            JetSurF2.0
+ C2H3+C2H3 = iC4H5+H                          1.50E+30    -4.95       12958.       !0.026 atm RRKM WAN/FRE            JetSurF2.0
+ iC4H5+H = C4H4+H2                            3.0E+13      0.00       0.           !97WAN/FRE                         JetSurF2.0
+ iC4H5+H=C3H3+CH3                             1.0E14       0.00       0.           !2009 Hansen et al C3H4 FLAME     
+ 
+ !##################################   reactions of C4H5-2  ##########################################################!                                                                                                                                                                                                     
+                                                                                             
+ C4H5-2 = iC4H5                               1.30E+62    -16.38      49600.       !0.026 atm RRKM WAN/FRE                          JetSurF2.0
+ iC4H5+H = C4H5-2+H                           1.00E+36    -6.26       17486.       != nC4H5+H=>iC4H5+H  0.026 atm RRKM WAN/FRE      JetSurF2.0
+ 
+!##################################   Ractions of c-C4H5  ##########################################################!    
+
+ c-C4H5 + H = C4H6                            1.000E+13    0.000      0.00         !Est. HW, fast c-C4H6 -> C4H6 - Lifshitz JetSurF2.0
+ c-C4H5 + H = C2H4 + C2H2                     1.000E+13    0.000      0.00         !Est. HW JetSurF2.0
+ c-C4H5 = C4H4 + H                            3.000E+12    0.000      52000.00     !Est. HW JetSurF2.0
+ c-C4H5 = C2H3 + C2H2                         2.000E+12    0.000      58000.00     !Est. HW JetSurF2.0
+
+!##################################   reactions of C4H6  ##########################################################!
+
+ C2H3+C2H3 = C4H6                             7.00E+57    -13.82      17629.       !RRKM 0.026 atm  WAN/FRE    JetSurF2.0
+ C4H6 = iC4H5 + H                             8.20E+51    -10.92      118409.      !RRKM 0.026 atm  WAN/FRE    JetSurF2.0
+ C4H6 = nC4H5 + H                             3.50E+61    -13.87      129677.      !RRKM 0.026 atm  WAN/FRE    JetSurF2.0
+ C4H6 = C4H4+H2                               8.33E+13     0.0        94700.       !96HID/HIG     JetSurF2.0 2.5E+15 /30
+ C4H6 = H2CC+C2H4                             1.00E+13     0.0        85000.0      !EST
+ C4H6+H = nC4H5+H2                            1.33E+06     2.53       12240.       != C2H4+H    JetSurF2.0
+ C4H6+H = iC4H5+H2                            6.65E+05     2.53       9240.        !Estimated   JetSurF2.0
+ !C2H4+C2H3=C4H6+H                            7.40E+14    -0.66       8420.        !1997 Wang et al. 20Torr   
+ !C2H4+C2H3=C4H6+H                            5.0E+11      0.0        7300         !1986 Tsang
+ C4H6+H = C2H4+C2H3                           1.46E+30    -4.34       21647.       !USC Mech II (97WAN/FRE 1 atm)
+ 
+!##################################   reactions of 1,2-C4H6  ##########################################################!
+
+ C4H612 = C4H6                                1.00E+12     0.0        65000        ! /30        JetSurF2.0    
+ C3H3+CH3 (+M) = C4H612 (+M)                  1.50E+12     0.0        0.0          !97WAN/FRE   JetSurF 2.0
+                                       LOW /  2.60E+57    -11.94      9770.0    /                                      
+                                       TROE / 0.175 1340.6 60000.0 9769.8  /                                      
+                          H2/2.0/ H2O/6.0/ CH4/2.0/ CO/1.5/ CO2/2.0/ C2H6/3.0/ AR/0.7/                                      
+ C4H612+H = nC4H5+H2                          1.33E+06     2.53       12240.       != C2H4+H    JetSurF2.0         
+ C4H612 = iC4H5+H                             2.10E+14     0.0        92600.       !95LEU/LIN   JetSurF 2.0  4.20E+15 /20
+ C4H612+H = C4H6+H                            2.00E+13     0.0        4000.        !Estimated   JetSurF 2.0
+ C4H612+H = iC4H5+H2                          1.70E+05     2.5        2490.        != C3H6+H    JetSurF 2.0
+ C4H612+H = aC3H4+CH3                         2.00E+13     0.0        2000.        !97WAN/FRE   JetSurF 2.0
+ C4H612+H = pC3H4+CH3                         2.00E+13     0.0        2000.        !97WAN/FRE   JetSurF 2.0
+ C4H612+CH3 = iC4H5+CH4                       7.00E+13     0.0        18500.       !88KER/SIN   JetSurF 2.0
+
+!##################################   reactions of C4H6-2  ##########################################################!
+
+ C4H6-2 = C4H6                                1.00E+12     0.000      65000.       !96HID/HIG   JetSurF 2.0  3.00E+13  /30
+ C4H6-2 = C4H612                              1.00E+12     0.000      67000.       !96HID/HIG   JetSurF 2.0  3.00E+13  /30
+ C4H6-2+H = C4H612+H                          2.00E+13     0.0        4000.        !Estimated   JetSurF 2.0
+ C4H6-2+H = C4H5-2+H2                         3.40E+05     2.5        2490.        != C3H6+H    JetSurF 2.0
+ C4H6-2+H = CH3+pC3H4                         2.60E+5      2.500      1000.        !96HID/HIG   JetSurF 2.0
+ C4H6-2 = H+C4H5-2                            1.67E+14     0.000      87300.       !96HID/HIG   JetSurF 2.0   5.00E+15 /30
+ C4H6-2+CH3 = C4H5-2+CH4                      1.40E+14     0.0        18500.       !Estimated   JetSurF 2.0
+     
+ !##################################   reactions of saxC4H7  ##########################################################!
+
+ SAXC4H7(+M) = C4H6+H(+M)                     4.70E+08     1.32       44697.6      !08/TSAwip   JetSurF 2.0
+                                       LOW  / 4.6E-37      15.37     -603.1  /     
+                                       TROE / -51.87  258  28  50000.0 /           
+                          H2/2/ H2O/6/ CH4/2/ CO/1.5/ CO2/2/ C2H6/3/               
+ SAXC4H7+H = C4H612+H2                        1.80E+13     0.0        0.0          !EST        JetSurF 2.0                                                  
+ C4H612+H = SAXC4H7                           1.20E+10     0.69       3000         !2007 Gueniche & Battin et al./10 
+ 
+!##################################   reactions of C4H7   ##########################################################!
+                                 
+ C4H7 = C4H6+H                                1.27E+24    -4.75       23777         !2009 Kiefer et al
+ C4H7 = C2H4+C2H3                             2.32E+24    -4.8        25054         !2009 Kiefer et al
+ 
+!##################################   reactions of C4H7-2   ##########################################################! 
+ 
+ C4H7-2 = SAXC4H7                             2.00E+12     0.0        47000        !2007 Gueniche & Battin et al./10
+ C4H7-2 = CH3+aC3H4                           2.00E+12     0.0        32500        !2007 Gueniche & Battin et al./10
+ C4H7-2 = C4H7                                3.30E+08     1.0        43300        !2007 Gueniche & Battin et al./10
+ C4H612+H = C4H7-2                            1.30E+12     0.0        3200         !2007 Gueniche & Battin et al./10
+ CH3CCHCH3=pC3H4+CH3                          2.00E+12     0.0        31500        !2007 Gueniche & Battin et al./10
+ 
+!##################################   reactions of iC4H7  iC4H7-1  C4H7-2 ##########################################################!
+
+ iC4H7=aC3H4+CH3                              1.00E+12     0.0        51000        !2009 Yasunaga et al.   /10 
+ iC4H7+H=aC3H4+CH4                            6.31E+13     0.0        0.0          !2009 Yasunaga et al.       
+ iC4H7=SAXC4H7                                6.00E+13     0.         70000        !2011 Zhang et al                                                                                                   
+ iC4H7+H=SAXC4H7+H                            1.47E+13     0.26       4103         !Ref aC3H4+H=pC3H4+H                                                                                             
+ iC4H7+H = aC3H5+CH3                          2.20E+51    -9.98       37730.0      !=(aC3H5+H) TS5 0.1 atm  JetSurF 2.0
+ iC4H7+H = CH3CCH2+CH3                        2.20E+51    -9.98       37730.0      !=(aC3H5+H) TS5 0.1 atm  JetSurF 2.0
+ iC4H7-1=pC3H4+CH3                            1.20E+14     0.0        37000        !2009 Yasunaga et al. 
+ C4H7-2+H=pC3H4+CH4                           3.00E+13     0.0        0.0          !EST                                     
+ iC4H7-1=iC4H7                                5.00E+12     0.0        36000        !2009 Yasunaga et al.          
+ 
+ !################################## reactions of C4H81 ##########################################################!
+
+ aC3H5+CH3(+M)=C4H81(+M)                      1.00E+14    -0.32      -262.         !1991 Tsang                                               
+                                       LOW   /3.51E+60    -12.97      6000./                                                                  
+                                       TROE / 0.896 60000 1606 6118/                                                                                                     
+                          H2/2.0/ H2O/6.0/ CH4/2.0/ CO/1.5/ CO2/2.0/ C2H6/3.0/ AR/0.7/   
+ C2H5+C2H3(+M) = C4H81(+M)                    1.50E+13     0.00       0.0          !86TSA/HAM  JetSurF 2.0
+                                        LOW  / 1.55E+56   -11.79      8984.5/
+                                        TROE / 0.198 2277.9 60000.0 5723.2   /
+                          H2/2/ H2O/6/ CH4/2/ CO/1.5/ CO2/2/ C2H6/3/ AR/0.7/    
+ C4H7+H(+M) = C4H81(+M)                       3.60E+13     0.00       0.0          != nC3H7+H          JetSurF 2.0
+                                       LOW  / 3.01E+48    -9.32       5833.6   /                  
+                                       TROE / 0.498  1314.0  1314.0 50000.0 /                  
+                          H2/2/ H2O/6/ CH4/2/ CO/1.5/ CO2/2/ C2H6/3/ AR/0.7/                  
+ SAXC4H7+H(+M) = C4H81(+M)                    2.00E+14     0.00       0.0          !(ac3H5+H)         JetSurF 2.0             
+                                       LOW  / 2.66E+60    -12.00   5967.8 /        !2*(aC3H5+H)            
+                          H2/2/ H2O/6/ CH4/2/ CO/1.5/ CO2/2/ C2H6/3/                             
+ C4H81+H=C4H82+H                              5.00E+14    -0.26       7600.0       !Ref: pC3H4+H = aC3H4+H in JetSurF 2.0 
+ C4H7-2+H = C4H81                             1.00E+13     0.0        0.0          !EST  2011 Zhang et al                                                                                                                     
+ C4H81+H = SAXC4H7+H2                         1.30E+06     2.40       4471.0       !(C3H8+H) JetSurF 2.0 
+ C4H81+H = C4H7+H2                            6.50E+05     2.5        6756         !Ref  C6H12+H=PXC6H11+H2 in 2009 Kiefer et al.  
+ C4H81+H = C4H7-2+H2                          4.00E+05     2.50       9790.0       !C3H6+H = CH3CCH2+H2  91TSA   JetSurF2.0 
+ C4H81+H = C3H6+CH3                           3.20E+22	  -2.39       11180        !2009 Kiefer et al. 25Torr
+ C4H81+H = C2H4+C2H5                          8.80E+16    -1.05       6461.0       !Ref C3H6+H = C2H4+CH3  91TSA RRKM 0.1 atm JetSurF2.0
+ C4H81+CH3 = SAXC4H7+CH4                      2.82E+00     3.60       7153         !Ref C6H12+CH3=SAXC6H11+CH4 in 2009 Kiefer et al.  
+ C4H81+CH3 = C4H7+CH4                         4.50E-01     3.65       7153.0       !=(C3H8+CH3)
+ C4H81+aC3H5 = SAXC4H7+C3H6                   7.90E+10     0.00       12400        !LLNL      
+ 
+!##################################  reactions of C4H82 ##########################################################!
+
+ CH3CHCH+CH3(+M) = C4H82(+M)                  5.00E+13     0.0        0.00         !86TSA/HAM  JetSurF2.0  X2
+                                       LOW  / 8.54E+58    -11.940     9769.80 /
+                                       TROE / 0.175  1340.6 60000.0   10139.8 /
+                          H2/2/ H2O/6/ CH4/2/ CO/1.5/ CO2/2/ C2H6/3/ AR/0.7/C2H2/3.00/ C2H4/3.00/
+ C4H82 = H+SAXC4H7                            2.30E+85    -20.03      132787       !Ref C3H6=aC3H5+H in 2009 Kiefer et al. 5.31E+84 x4   
+ C4H82 = aC3H5+CH3                            7.5E+65     -15.6       97300        !2011 Zhang et al
+ C4H82+H = SAXC4H7+H2                         3.16E+06     2.5        6756         !Ref C6H12+H=SAXC6H11+H2 in 2009 Kiefer et al. X2   
+ C4H82+H=CH3CCHCH3+H2                         1.32E+06     2.53       12240.0      !Ref C2H4+H=C2H3+H2
+ C4H82+H = C3H6+CH3                           3.46E+17    -1.05       6461.0       !Ref C3H6+H=C2H4+CH3 x2  91TSA RRKM 0.1 atm in JetSurF2.0 
+ C4H82+CH3 = SAXC4H7+CH4                      4.40E+00     3.50       5675.0       !Ref C3H6+CH3=aC3H5+CH3 x2   in JetSurF 2.0 
+ C4H82+H = C4H7+H2                            3.40E+05     2.50       2490.0       !Ref (C3H6+H)*2 TS5 k(a)     in JetSurF 2.0  
+ C4H82+CH3 = C4H7+CH4                         4.40E+00     3.50       5675.0       !Ref (C3H6+CH3)*2 TS5 k(c)   in JetSurF 2.0  
+ 
+!##################################   reactions of iC4H8 ##########################################################!
+
+ iC4H7+H(+M) = iC4H8(+M)                      2.00E+14     0.00       0.0          !(=(aC3H5+H) TS5 600cm-1)    JetSurF 2.0              
+                                       LOW  / 1.33E+60 -12.00         5967.8   /                                                             
+                                       TROE / 0.020  1096.6  1096.6  6859.5 /                                                            
+                          H2/2/ H2O/6/ CH4/2/ CO/1.5/ CO2/2/ C2H6/3/ AR/0.7/                                                               
+ CH3CCH2+CH3 (+M) = iC4H8(+M)                 2.50E+13     0.00       0.0          !(86TSA/HAM) C2H3+CH3 (+M) = C3H6(+M)    JetSurF 2.0      
+                                       LOW  / 4.270E+58   -11.940     9769.80 /                                                                
+                                       TROE / 0.175  1340.6  60000.0   10139.8 /                                                               
+                          H2/2/ H2O/6/ CH4/2/ CO/1.5/ CO2/2/ C2H6/3/ AR/0.7/                                                                
+ iC4H8+H = iC4H7+H2                           1.72E+14     0.0        8000         !2009 Yasunaga et al. 
+ iC4H8+H = iC4H7-1+H2                         1.20E+14     0.0        13000        !2009 Yasunaga et al.
+ iC4H8+H = C3H6+CH3                           8.80E+16    -1.05       6461.0       !Ref C3H6+H = C2H4+CH3  (91TSA RRKM 0.1 atm) in JetSurF 2.0 
+ iC4H8+CH3 = iC4H7+CH4                        4.40E+00     3.50       5675.0       !Ref C3H6+CH3=aC3H5+CH3 x2 in JetSurF 2.0
+ iC4H8+CH3 = iC4H7-1+CH4                      2.00E+12     0.0        15000        !2009 Yasunaga et al.
+ 
+ !################################## reactions of pC4H9 ##########################################################!
+
+ pC4H9(+M) = C2H4+C2H5(+M)                    1.00E+13     0.00       28366.4      !98TSA !BS    JetSurF 2.0 
+                                       LOW  / 7.10E-35     15.41     -600.0   /
+                                       TROE / -5.91  333.0  28.0      50000.0 /
+                          H2/2/ H2O/6/ CH4/2/ CO/1.5/ CO2/2/ C2H6/3/ AR/0.7/
+ pC4H9 = C4H81+H                              8.00E+27    -5.613      29791        !Ref nC3H7=C3H6+H in 2009 Kiefer et al.                                   
+ pC4H9+H = C2H5+C2H5                          3.40E+18    -1.33       5386.0       !=(nC3H7+H) TS3 0.1 atm    JetSurF 2.0                                
+ pC4H9+CH3 = C4H81+CH4                        1.10E+13     0.00       0.0          !=(nC3H7+CH3) TS3          JetSurF 2.0
+ 
+!################################## reactions of  sC4H9 ##########################################################!
+
+  C3H6+CH3(+M) = sC4H9(+M)                    1.70E+11     0.00       7403.6       !TS5 600cm-1  JetSurF 2.0
+                                       LOW  / 2.31E+28    -4.27       1831.0   /
+                                       TROE / 0.565 60000.0   534.2   3007.2 /
+                          H2/2/ H2O/6/ CH4/2/ CO/1.5/ CO2/2/ C2H6/3/ AR/0.7/                                    
+ sC4H9=C4H81+H                                8.00E+27    -5.613      29791        !Ref nC3H7=C3H6+H in 2009 Kiefer et al. 
+ sC4H9=C4H82+H                                8.00E+27    -5.613      29791        !Ref nC3H7=C3H6+H in 2009 Kiefer et al.
+ sC4H9+H = C4H81+H2                           3.20E+12     0.00       0.0          !=(iC3H7+H) TS3            JetSurF 2.0
+ sC4H9+H = C4H82+H2                           2.10E+12     0.00       0.0          !=(iC3H7+H)*2/3 TS3        JetSurF 2.0
+ sC4H9+CH3 = CH4+C4H81                        2.20E+14    -0.68       0.0          !=(iC3H7+CH3) TS3          JetSurF 2.0
+ sC4H9+CH3 = CH4+C4H82                        1.50E+14    -0.68       0.0          !=(iC3H7+CH3)*2/3 TS3      JetSurF 2.0
+ 
+!################################## reactions of iC4H9 ##########################################################!
+
+ C3H6+CH3(+M) = iC4H9(+M)                     9.60E+10     0.00       8003.6       !TS5 600cm-1  JetSurF 2.0
+                                       LOW  / 1.30E+28    -4.27       2431.1   /
+                                       TROE / 0.565 60000.0   534.2   3007.2 /
+                          H2/2/ H2O/6/ CH4/2/ CO/1.5/ CO2/2/ C2H6/3/ AR/0.7/
+ iC4H8+H(+M) = iC4H9(+M)                      1.33E+13     0.00       3260.7       !=(C3H6+H=nC3H7) TS5 600 cm-1 JetSurF 2.0
+                                       LOW  / 6.26E+38    -6.66       7000.0  /
+                                       TROE / 1.000 1000    1310.0    48097.0 /
+                          H2/2/ H2O/6/ CH4/2/ CO/1.5/ CO2/2/ C2H6/3/ AR/0.7/                                                                                
+ iC4H9+H = iC3H7+CH3                          1.10E+32    -5.04       16760.0      !TS4 eq 0.1 atm    JetSurF 2.0
+ iC4H9+H = iC4H8+H2                           9.00E+11     0.00       0.0          !TS4               JetSurF 2.0
+ iC4H9+CH3 = iC4H8+CH4                        6.00E+12    -0.32       0.0          !TS4               JetSurF 2.0      
+ 
+!################################## reactions of  tC4H9 ##########################################################!   
+
+ tC4H9(+M) = iC4H8+H(+M)                      8.30E+13     0.00       38150.4      !TS4 600cm-1       JetSurF 2.0
+                                       LOW  / 1.90E+41    -7.36       36631.7 /
+                                       TROE / 0.293  649.0  60000     3425.9  /
+                          H2/2/ H2O/6/ CH4/2/ CO/1.5/ CO2/2/ C2H6/3/ AR/0.7/                          
+ tC4H9+H = iC3H7+CH3                          2.80E+34    -5.69       20500.0      !TS4 eq 0.1 atm    JetSurF 2.0
+ tC4H9+H = iC4H8+H2                           5.42E+12     0.00       0.0          !TS4               JetSurF 2.0
+ tC4H9+CH3 = iC4H8+CH4                        3.80E+15    -1.00       0.0          !TS4               JetSurF 2.0
+ 
+ !################################## reactions of iC4H10  ##########################################################!
+ 
+ iC4H10(+M) = iC3H7+CH3(+M)                   4.83E+16     0.0        79900        !2004 Oehlschlaeger MA    
+                                       LOW  / 2.41E+19     0.0        52600 /  
+                                       TROE / 0.75    0.1  750.0      50000.0   /       
+ iC4H9+H = iC4H10                             2.50E+13     0.22       3000
+ tC4H9+H = iC4H10                             5.20E+12     0.28       3000
+ iC4H10+H = iC4H9+H2                          1.80E+06     2.54       6760.0       !TS4     JetSurF 2.0
+ iC4H10+H = tC4H9+H2                          6.00E+05     2.40       2580.0       !TS4     JetSurF 2.0
+ iC4H10+CH3 = iC4H9+CH4                       1.36E+00     3.65       7150.0       !TS4     JetSurF 2.0
+ iC4H10+CH3 = tC4H9+CH4                       9.00E-01     3.46       4600.0       !TS4     JetSurF 2.0
+
+!################################## reactions of C4H10  ##########################################################!
+ 
+ C4H10(+M) = nC3H7+CH3(+M)                    4.28E+14     0.0        69902        !2004 Oehlschlaeger MA   
+                                       LOW  / 5.34E+17     0.0        42959   /    
+                                       TROE / 0.28   0.1   1500.0     50000.0 /                
+ C4H10(+M) = C2H5+C2H5 (+M)                   2.72E+15     0.0        75605        !2004 Oehlschlaeger MA 
+                                       LOW  / 4.72E+18     0.0        49575   /    
+                                       TROE / 0.28   0.1   1500.0     50000.0 /    
+ pC4H9+H(+M) = C4H10(+M)                      3.60E+13     0.00       0.0          !=(nC3H7+H) TS3 600 cm-1  JetSurF 2.0
+                                      LOW  /  3.01E+48    -9.32       5833.6  /
+                                      TROE /  0.498        1314.0     1314.0   50000.0 /
+                          H2/2/ H2O/6/ CH4/2/ CO/1.5/ CO2/2/ C2H6/3/ AR/0.7/
+ sC4H9+H(+M) = C4H10(+M)                      2.40E+13     0.00    0.0             !=(iC3H7+H) TS3 600 cm-1  JetSurF 2.0  
+                                      LOW  /  1.70E+58    -12.08      11263.7 /
+                                      TROE /  0.649        1213.1  1213.1       13369.7 /
+                          H2/2/ H2O/6/ CH4/2/ CO/1.5/ CO2/2/ C2H6/3/ AR/0.7/        
+ C4H10+H = pC4H9+H2                           9.20E+05     2.54       6756.0       !=(C3H8+H scaled to BBW at 753K)  JetSurF 2.0
+ C4H10+H = sC4H9+H2                           2.40E+06     2.40       4471.0       !=(C3H8+H scaled to BBW at 753K)  JetSurF 2.0
+ C4H10+CH3 = pC4H9+CH4                        9.03E-01     3.65       7153.0       !=(C3H8+CH3) TS3 see notes        JetSurF 2.0
+ C4H10+CH3 = sC4H9+CH4                        3.00E+00     3.46       5480.0       !=(C3H8+CH3)*2 TS3 see notes      JetSurF 2.0
+ C4H10+C2H5 = pC4H9+C2H6                      1.58E+11     0.00       12300        !LLNL                             JetSurF 2.0
+ C4H10+C2H5 = sC4H9+C2H6                      1.00E+11     0.00       10400        !LLNL                             JetSurF 2.0     
+ 
+ !################################   reactions of C5H2 to C5H4 ################################################################
+
+ C2H3+C3H3=C5H4+H2                            5.00E+12     0.0        0.0          !Est
+ C4H2+CH2*=C5H3+H                             1.30E+13     0.0        0.0          !MIT [Miller and Melius 1992]         
+ C4H2+CH2=C5H3+H                              3.00E+13     0.0        0.0          !MIT [Miller and Melius 1992]         
+ C4H2+CH=C5H2+H                               1.00E+14     0.0        0.0          !MIT [Miller and Melius 1992]         
+ C5H3+H=C5H2+H2                               6.03E+13     0.0        15103.0      !MIT [CH3+H, Baulch et al. 1992]      
+ cC5H4=C5H4                                   1.00E+13     0.0        6000.0       !MIT [estimate, present work]
+ C4H2+CH3=C5H4+H                              2.40E+09     0.91       20700.0      !Ref:  C2H2+CH3=aC3H4+H
+ C4H+CH4=C5H4+H                               2.40E+09     0.91       20700.0      !Ref:  C2H2+CH3=aC3H4+H
+ aC3H4+C2H=C5H4+H                             9.60E+13     0.00       0.0          !Ref:  C2H2+C2H=C4H2+H
+ C5H3+H=C5H4                                  2.00E+13     0.0        0.0          !2000 Alzueta MA est(/10)
+ C5H4+H=C5H3+H2                               1.00E+13     0.0        0.0          !Est
+ 
+ !################################  reactions of C5H5 ################################################################
+
+ C2H3+C3H3=lC5H5+H                            1.00E+13     0.0        0.0          !USC Mech V2.0 
+ C5H5(+M)=C2H2+C3H3(+M)                       6.31E+13    -0.075      62300.0      !2009 Detilleux and Vandooren (KERN ET AL. 1998)       
+                                       LOW /  1.00E+45     8.4        47500/                                                                            
+ C5H5+H=cC5H4+H2                              3.23E+07     2.095      15842.0      !MIT [Mebel et al. 1997, A1+H]       
+ C5H5+CH3=cC5H4+CH4                           2.00E+12     0.0        15060.0      !MIT [Zhang et al. 1989, A1+CH3]    
+ lC5H5+H=C5H4+H2                              1.81E+12     0.0        0.0          ![C2H5+H, Tsang/Hampson '86]              MIT
+ lC5H5+CH3=C5H4+CH4                           1.95E+13    -0.50       0.0          ![C2H5+CH3, Tsang/Hampson '86]            MIT
+ C5H5=lC5H5                                   1.64E+96    -23.50      137409.0     ![Moskaleva and Lin 2000, 100 torr]       MIT
+ 
+ !################################  reactions of C5H6  ################################################################ 
+ 
+ C5H5+H(+M)=C5H6(+M)                          1.00E+14     0.000      0.00         !92-EMD-BRE, est., 94-FRA-HER
+                                       LOW  / 4.400E+80   -18.280     12994.0  /   !96-DAV-WAN, 97-WAN-FRE
+                                       TROE / 0.068 400.7 4135.8 5501.9     /
+                          H2/2.0/ H2O/6.0/ CH4/2.0/ CO/1.5/ CO2/2.0/ 
+ C4H5-2+C2H4=C5H6+CH3                         5.00E+14     0.0        25000.0      !USC Mech V2.0                           
+ C5H6+H=C2H2+aC3H5                            7.740E+36   -6.180      32890.00     !98-ZHO-BOZ                      
+ C5H6+H=lC5H7                                 8.27E+126   -32.30      82348.00     !02-MOS-LIN        
+ C5H6+H=C5H5+H2                               3.030E+08    1.710      5590.00      !02-MOS-LIN                    
+ C5H6+CH3=C5H5+CH4                            5.00E+11     0.0        5000.0       !2001 Mac&Bac                                   
+ C5H6+C2H3=C5H5+C2H4                          6.00E+12     0.0        0.0          !2001 Mac&Bac               
+
+ !################################  reactions of lC5H7  ################################################################
+ 
+ aC3H5+C2H2=lC5H7                             8.38E+30     -6.2        12824.0      !USC Mech V2.0            
+ iC4H5+CH3=lC5H7+H                            1.00E+13     0.0        0.0          !Est                          
+ aC3H5+C2H3=lC5H7+H                           1.00E+13      0.0        0.0          !USC Mech V2.0 (est) 
+  
+ !################################## reactions of C5H8  ##########################################################!   
+  
+ C5H8-13+H = C2H4+CH3CHCH                     1.46E+30    -4.34       21647.0      !=(C4H6+H)                  JetSurF 2.0
+ C5H8-13+H = C4H6-2+CH3                       2.00E+12     0.0        7000.        !=(C4H6+H)                  JetSurF 2.0
+ C5H8-13+H = C4H612+CH3                       2.00E+12     0.0        7000.        !=(C4H6+H)                  JetSurF 2.0
+ C5H8-13+H = lC5H7+H2                         1.73E+05     2.50       2490.0       !(=C3H6+H)                  JetSurF 2.0
+ C5H8-13+CH3 = lC5H7+CH4                      2.20E+00     3.50       5675.0       !=(C3H6+CH3)                 JetSurF 2.0
+ C5H8-12 = C5H8-13                            1.0E+13      0.00       67000.0      !2.20E+14 /22             JetSurF 2.0   
+ C5H8-12 = C2H4+pC3H4                         3.30E+11     0.00       58100.0      !6.60E+12 /20             JetSurF 2.0  
+ nC4H5+CH3 = C5H8-13                          3.60E+12     0.00       0.0          !04/LAU-FAR  7.23E+13 /20   JetSurF 2.0  
+ C5H8-14+H = aC3H5+C2H4                       1.60E+22    -2.39       11180.0      != C3H6+H                    JetSurF 2.0
+ C5H8-14+H = lC5H7+H2                         1.15E+05     2.50       2490.0       !(=C3H6+H)                  JetSurF 2.0
+ C5H8-14+H = C4H6+CH3                         2.00E+12     0.0        7000.        ! =(C4H6+H)                  JetSurF 2.0
+ C5H8-14+CH3 = lC5H7+CH4                      1.47E+00     3.50       5675.0       !=(C3H6+CH3)                 JetSurF 2.0
+ CH3-2-C4H5-13+H = C3H6+C2H3                  1.46E+30    -4.34       21647.0      !=(C4H6+H)                  JetSurF 2.0
+ !CH3-2-C4H5-13+H = C4H6+CH3                   8.00E+21    -2.39       11180.0      !91TSA RRKM 1 atm            JetSurF 2.0
+ CH3-2-C4H5-13+H = PAXCH2-2-C4H5+H2           1.20E+06     2.54       6760.0       ! 89TSA (=iC4H8+H)           JetSurF 2.0
+ CH3-2-C4H5-13+CH3 = PAXCH2-2-C4H5+CH4        2.20E+00     3.50       5675.0       !=(C3H6+CH3)                 JetSurF 2.0
+ CH3+iC4H5 = CH3-2-C4H5-13                    1.00E+12     0.00       0.0          !PW P   2.00E+13 /20        JetSurF 2.0  
+ !                                     LOW  / 4.270E+58   -11.940     9769.80 /                   
+ !                                     TROE / 0.175  1340.6 60000.0 10139.8 /                  
+ !                        H2/2/ H2O/6/ CH4/2/ CO/1.5/ CO2/2/ C2H6/3/ AR/0.7/C2H2/3.00/ C2H4/3.00/                  
+ PAXCH2-2-C4H5 = aC3H4+C2H3                   4.00E11      0.00       50078.0      !73/TSA                     JetSurF 2.0  2.00E13 /500
+ 
+!################################## reactions of C5H9  ##########################################################!   
+ 
+ PXC5H9 = C5H8-13+H                           1.27E+24    -4.75       23777        !Ref C4H7 = C4H6+H in 2009 Kiefer et al.   
+ PXC5H9+H(+M) = C5H10(+M)                     3.60E+13     0.00       0.0          !=nC3H7+H     JetSurF 2.0
+                                       LOW  / 3.01E+48    -9.32       5833.6   /
+                                       TROE / 0.498  1314.0  1314.0 50000.0 /
+                          H2/2/ H2O/6/ CH4/2/ CO/1.5/ CO2/2/ C2H6/3/ AR/0.7/
+ PXC5H9+H = CH3+C4H7                          2.00E+21    -2.00       11000.0      !Estimated    JetSurF 2.0
+ PXC5H9 = C2H4+aC3H5                          2.32E+24    -4.8        25054        !Ref C4H7 = C4H6+H in 2009 Kiefer et al. 
+ cC5H9(+M) = PXC5H9(+M)                       6.03E+12     0.07       27982.9      !Ref cC6H11(+M) = PXC6H11(+M)  08/TSAwip  in JetSurF 2.0                        
+                                       LOW  / 5.10E-33     15.29     -602.6    /                                                 
+                                       TROE / -25.11  225  28 50000.0 /                                                   
+                          H2/2/ H2O/6/ CH4/2/ CO/1.5/ CO2/2/ C2H6/3/ AR/0.7/                                          
+ cC5H9(+M) = cC5H8+H(+M)                      3.34E+11     0.69       33947.9      !Ref cC6H11(+M) = cC6H10+H(+M)   08/TSAwip in  JetSurF 2.0   
+                                       LOW  / 3.00E-40     17.33     -602.7    /                                                  
+                                       TROE / -19.22  230  28 50000.0 /                                                      
+                          H2/2/ H2O/6/ CH4/2/ CO/1.5/ CO2/2/ C2H6/3/ AR/0.7/                                                
+ SXC5H9 = C5H8-13+H                           1.27E+24    -4.75       23777        !Ref C4H7 = C4H6+H in 2009 Kiefer et al.   
+ SXC5H9(+M) = C3H6+C2H3(+M)                   4.57E+12     0.13       24386.4      !Ref SXC6H11(+M) = C3H6+aC3H5(+M)  08/TSAwip in JetSurF 2.0
+                                       LOW  / 2.50E-31     14.57     -578.8    /
+                                       TROE / -13.17  268  28 50000.0 /
+                          H2/2/ CH4/2/  C2H6/3/ AR/0.7/ 
+ C5H8-14+H(+M) = SXC5H9(+M)                   1.33E+13     0.00       1559.8       !Ref C3H6+H(+M) = iC3H7(+M) in  USC Mech II (91TSA)
+                                       LOW  / 8.70E+42    -7.50       4721.8   / 
+                                       TROE / 1.000  1000.0   645.4   6844.3     /
+                          H2/2/ H2O/6/ CH4/2/ CO/1.5/ CO2/2/ C2H6/3/ AR/0.7/        
+ SXC5H9(+M) = PXCH2-3-1C4H7(+M)               7.59E+06     1.81       6447.8       !Ref S2XC6H11(+M) = PXCH2-3-1C5H9(+M)  08/TSAwip in JetSurF 2.0
+                                       LOW  / 9.30E-19     11.698    -602.9    /                                     
+                                       TROE / -58.54  201  28 50000.0 /                                         
+                          H2/2/ H2O/6/ CH4/2/ CO/1.5/ CO2/2/ C2H6/3/ AR/0.7/                       
+ PXCH2-3-1C4H7(+M) = C4H6+CH3(+M)             4.90E+12     0.15       11139.1      !Ref PXCH2-3-1C5H9(+M) = C4H6+C2H5(+M)    08/TSAwip in JetSurF 2.0
+                                      LOW  /  1.70E-14     9.652     -603.1    /                                      
+                                      TROE /  -76.60  221  28 50000.0 /                                         
+                          H2/2/  CH4/2/ C2H6/3/ AR/0.7/                                   
+ PXC5H9(+M) = SAXC5H9(+M)                     1.55E+02     2.83       15566.2      !Ref PXC6H11(+M) = SAXC6H11(+M)   08/TSAwip  in  JetSurF 2.0                           
+                                      LOW  /  1.50E-30     14.56     -602.4    /                                                                              
+                                      TROE /  -13.59  214  28 50000.0 /                                                                                   
+                          H2/2/ H2O/6/ CH4/2/ CO/1.5/ CO2/2/ C2H6/3/ AR/0.7/                                  
+ SAXC5H9(+M) = C4H6+CH3(+M)                   3.39E+11     0.66       32262.9      !Ref SAXC6H11(+M) = C4H6+C2H5(+M)   08/TSAwip  in  JetSurF 2.0
+                                      LOW  /  4.00E-42     18.05     -602.6    /                  
+                                      TROE /  -18.50  246  28 50000.0 /                      
+                          H2/2/ H2O/6/ CH4/2/ CO/1.5/ CO2/2/ C2H6/3/ AR/0.7/           
+ CH3-2-PXC4H6 = C2H4+CH3CCH2                  2.32E+24    -4.8        25054        !Ref C4H7 = C2H4+C2H3 in 2009 Kiefer et al.
+ CH3-2-PXC4H6 = CH3-2-C4H5-13+H               1.27E+24    -4.75       23777        !Ref C4H7 = C4H6+H in 2009 Kiefer et al.  
+ PAXCH2-2-1C4H7 = aC3H4+C2H5                  2.32E+24    -4.8        25054        !Ref C4H7 = C2H4+C2H3 in 2009 Kiefer et al.
+ 
+ !################################## reactions of C5H10  ##########################################################! 
+                
+ C5H10(+M)=aC3H5+C2H5(+M)                     2.20E+15     0.0        70000        !Ref C6H12 = aC3H5+C3H7 in 2009 Kiefer et al. refit 
+                                      LOW/    8.00E+90    -20.0       105000.0 /
+                                      TROE/   4.0  200.0  400.0  50000.0 /
+                          H2/2/ H2O/6/ CH4/2/ CO/1.5/ CO2/2/ C2H6/3/ AR/0.7/                                                                                            
+ C5H10=C4H7+CH3	                              2.7E+80     -1.93E+01   1.07E+05     !Ref C6H12 = C4H7+C2H5 in 2009 Kiefer et al.                                
+ C5H10 = C3H6+C2H4                            8.0E+05      1.81       53454.0      !08/TSAwip  !BS       JetSurF 2.0     1.62E+06 /20
+ C5H10+H = C2H4+nC3H7                         8.00E+21    -2.39       11180.0      !=(C3H6+H)            JetSurF 2.0
+ C5H10+H = C3H6+C2H5                          1.60E+22    -2.39       11180.0      !Estimated            JetSurF 2.0
+ C5H10+H = SAXC5H9+H2                         5.40E+04     2.50      -1900.0       !05/TO-BU  !BS        JetSurF 2.0
+ C5H10+H = PXC5H9+H2                          3.23E-02     4.700      3679.00      !10LV                 JetSurF 2.0
+ C5H10+H = SXC5H9+H2                          3.17E-02     4.65       1340.00      !10LV                 JetSurF 2.0
+ C5H10+CH3 = PXC5H9+CH4                       2.58E-08     6.08       6223.00      !10LV                 JetSurF 2.0
+ 
+ !################################  reactions of C5H11    ################################################################  
+ 
+ PXC5H11+H(+M) = NC5H12(+M)                   3.60E+13     0.00       0.0          !=(nC3H7+H)   JetSurF 2.0    
+                                       LOW  / 3.01E+48    -9.32       5833.6  /                            
+                                       TROE / 0.498  1314.0  1314.0 50000.0 /                            
+                          H2/2/ H2O/6/ CH4/2/ CO/1.5/ CO2/2/ C2H6/3/ AR/0.7/                            
+ PXC5H11(+M) = C2H4+nC3H7(+M)                 1.00E+13     0.00       28366.4      !98TSA !BS   JetSurF 2.0
+                                       LOW  / 7.10E-35     15.411    -600.0    /   
+                                       TROE / -5.91  333.0  28.0 50000.0 /         
+                          H2/2/ H2O/6/ CH4/2/ CO/1.5/ CO2/2/ C2H6/3/ AR/0.7/       
+ PXC5H11(+M) = SXC5H11(+M)                    1.00E+12     0.00       22453.1      !BS 98TSA      JetSurF 1.1
+                                     LOW  /   2.00E-26     12.833    -600.7    /   
+                                     TROE /   -10.14 307.0   28.0  5000000 /       
+                          H2/2/ H2O/6/ CH4/2/ CO/1.5/ CO2/2/ C2H6/3/ AR/0.7/         
+ PXC5H11=C5H10+H                              8.00E+27    -5.613      29791        !Ref nC3H7=C3H6+H in 2009 Kiefer et al.  
+ PXC5H11+H = nC3H7+C2H5                       3.40E+18    -1.33       5386.0       !=(nC3H7+H) 0.1 atm     JetSurF 2.0
+ PXC5H11+H = C5H10+H2                         1.80E+12     0.00       0.0          !=(nC3H7+H)             JetSurF 2.0
+ PXC5H11+CH3 = C5H10+CH4                      1.10E+13     0.00       0.0          !=(nC3H7+CH3)           JetSurF 2.0
+ SXC5H11(+M) = C3H6+C2H5(+M)                  8.00E+12     0.00       27392.8      !98TSA !BS     JetSurF 2.0
+                                     LOW  /   3.70E-33     14.91     -600.0     /  
+                                     TROE /   -6.53  333.0  28.0 50000.0 /         
+                          H2/2/ H2O/6/ CH4/2/ CO/1.5/ CO2/2/ C2H6/3/ AR/0.7/       
+ SXC5H11+H(+M) = NC5H12(+M)                   2.40E+13     0.00       0.0          !=(iC3H7+H)      JetSurF 2.0
+                                     LOW  /   1.70E+58    -12.08      11263.7  /   
+                                     TROE /   0.649  1213.1  1213.1 13369.7 /      
+                          H2/2/ H2O/6/ CH4/2/ CO/1.5/ CO2/2/ C2H6/3/ AR/0.7/       
+ C5H10+H(+M) = SXC5H11(+M)                    1.33E+13     0.00       1559.8       !C3H6+H(+M) = iC3H7(+M)  USC Mech II (91TSA)
+                                     LOW  /   8.70E+42    -7.50       4721.8   / 
+                                     TROE /   1.000  1000.0   645.4  6844.3     /
+                          H2/2/ H2O/6/ CH4/2/ CO/1.5/ CO2/2/ C2H6/3/ AR/0.7/              
+ SXC5H11+H = nC3H7+C2H5                       5.90E+23    -2.81       10009.0      !=(iC3H7+H)           JetSurF 2.0
+ SXC5H11+H = C5H10+H2                         3.20E+12     0.00       0.0          !=(iC3H7+H)           JetSurF 2.0
+ SXC5H11+CH3 = CH4+C5H10                      2.20E+14    -0.68       0.0          !=(iC3H7+CH3)         JetSurF 2.0
+ S2XC5H11(+M) = C4H81+CH3(+M)                 1.80E+13     0.00       29348.0      !98TSA !BS            JetSurF 2.0
+                                     LOW  /   4.00E-39     16.782    -600.4   /    
+                                     TROE /  -7.03  314.0  28.0 50000.0 /         
+                          H2/2/ H2O/6/ CH4/2/ CO/1.5/ CO2/2/ C2H6/3/ AR/0.7/       
+ PXCH2-2-C4H9(+M) = C3H6+C2H5(+M)             5.47E+11     0.50       27798.1      !08TSAc (2-methyl-pent-4-yl)  JetSurF 2.0
+                                     LOW  /   8.50E-37     16.21     -603.1    /
+                                     TROE /  -26.70  216  28 50000.0 /
+                          H2/2/ H2O/6/ CH4/2/ CO/1.5/ CO2/2/ C2H6/3/ AR/0.7/
+               
+!################################## C6H10 reactions ##########################################################!
+
+ C6H10-13+H = C4H81+C2H3                      1.46E+30    -4.34       21647.0      !=(C4H6+H)               JetSurF 2.0
+ lC5H7(+M)+CH3 = C6H10-13(+M)                 1.00E+14    -0.32      -262.3        !91TSA                   JetSurF 2.0
+                                       LOW  / 3.91E+60    -12.81      6250.0    /      
+                                       TROE / 0.104  1606.0 60000.0  6118.4 /       
+                          H2/2/ H2O/6/ CH4/2/ CO/1.5/ CO2/2/ C2H6/3/ AR/0.7/         
+ C6H10-15+H = C4H7+C2H4                       1.60E+22    -2.39       11180.0      !=(C3H6+H)               JetSurF 2.0       
+ C6H10-15 = aC3H5+aC3H5                       1.07E+80    -19.33      95177        !Ref C6H12 = aC3H5+C3H7 in 2009 Kiefer et al.
+ C6H10-15+H = SAXC6H9-15+H2                   3.30E+05     2.50       2490.0       !(=C3H6+H)               JetSurF 2.0
+ C6H10-15+CH3 = SAXC6H9-15+CH4                2.94E+00     3.50       5675.0       !(=C3H6+CH3)             JetSurF 2.0           
+ C4H6+C2H3 = SAXC6H9-15                       2.10E+12     0.0        1300.0       !04/CAV  4.20E+13  /20   JetSurF 2.0              
+ SAXC6H9-15 (+M) = C4H6+C2H3 (+M)             3.39E+11     0.66       32262.9      !Ref SAXC6H11(+M) = C4H6+C2H5(+M)  08/TSAwip in   JetSurF 2.0                
+                                       LOW  / 4.00E-42     18.05     -602.6    /                                    
+                                       TROE / -18.50  246  28 50000.0 /                                         
+                          H2/2/ H2O/6/ CH4/2/ CO/1.5/ CO2/2/ C2H6/3/ AR/0.7/                                          
+ C6H10-12+H = C4H6+C2H5                       2.00E+13     0.0        2000.0       !97WAN/FRE               JetSurF 2.0
+ 
+!################################## cC6H10 cC6H9 cC6H8 A1 reactions ##########################################################!
+
+ cC6H10 = C4H6+C2H4                           2.3E+101    -25.30      115500       !1987 Kiefer et al.  1.82E+102 /8
+ PXcC6H9+H(+M) = cC6H10(+M)                   3.60E+13     0.00       0.0          !Ref to C4H7+H(+M) = C4H81(+M)                                                                                                                                                                                                                                                                                  
+                                       LOW  / 3.01E+48    -9.32       5833.6   /                                                                                                                                                                                                                                                                                                                       
+                                       TROE / 0.498  1314.0  1314.0 50000.0 /                                                                                                                                                                                                                                                                                                                          
+                        H2/2/ H2O/6/ CH4/2/ CO/1.5/ CO2/2/ C2H6/3/ AR/0.7/                                                                                                                                                                                                                                                                                                                           
+ SAXcC6H9+H(+M) = cC6H10(+M)                  2.00E+14     0.00       0.0          !Ref to SAXC4H7+H(+M) = C4H81(+M)                                                                                                                                                                                                                                                                                   
+                                       LOW  / 2.66E+60    -12.00   5967.8 /                                                                                                                                                                                                                                                                                                               
+                        H2/2/ H2O/6/ CH4/2/ CO/1.5/ CO2/2/ C2H6/3/                                                                                                                                                                                                                                                                                                                                
+ !cC6H10+H = SAXcC6H9+H2                       2.30E+05     2.50       2490.0      !(=C3H6+H)             JetSurF 2.0   
+ !cC6H10+CH3 = SAXcC6H9+CH4                    2.94E+00     3.50       5675.0      !(=C3H6+CH3)           JetSurF 2.0    
+ cC6H10+H = SAXcC6H9+H2                       1.10E+05     2.50      -1900         !2003 Dayma et al.
+ cC6H10+CH3 = SAXcC6H9+CH4                    2.00E+11     0.00       7300         !2003 Dayma et al.
+ cC6H10+H = PXcC6H9+H2                        1.80E+07     2.00       5000         !2003 Dayma et al.   
+ cC6H10+CH3 = PXcC6H9+CH4                     4.00E+11     0.00       9600         !2003 Dayma et al.
+ SAXcC6H9=cC6H8-13+H                          1.62E+57    -13.03      66036.       !2011 Li et al. 
+ SAXcC6H9=PXC6H9-13                           5.36E+50    -11.92      48276.       !2011 Li et al.    
+ PXC6H9-13=nC4H5+C2H4                         2.32E+24    -4.8        25054         !Ref to C4H7 = C2H4+C2H3                                                                                 
+ PXcC6H9=cC6H8-13+H                           1.27E+24    -4.75       23777        !Ref to C4H7 = C4H6+H
+ PXcC6H9=cC6H8-14+H                           8.00E+27    -5.613      29791        !Ref to nC3H7 = C3H6+H          
+ cC6H8-14=A1+H2                               7.60E+10     0.000      43800.0      !2003 Dayma et al.  2.3E+12 /30
+ cC6H8-14=SAXcC6H7+H                          1.03E+13     0.000      77400        !2003 Dayma et al.  3.10E+14 /30  
+ cC6H8-14+H = SAXcC6H7+H2                     1.10E+05     2.50      -1900         !2003 Dayma et al.
+ cC6H8-14+CH3 = SAXcC6H7+CH4                  2.00E+12     0.00       7300         !2003 Dayma et al.                     
+ SAXcC6H9+H = cC6H8-13+H2                     1.80E+12     0.00       0.0          !(=C4H7+H)		    JetSurF 2.0
+ SAXcC6H9+CH3 = cC6H8-13+CH4                  1.10E+13     0.00       0.0          !(=C4H7+H)	            JetSurF 2.0
+ !cC6H8-13+H = SAXcC6H7+H2                     2.30E+05     2.50       2490.0      !(=C3H6+H)	            JetSurF 2.0
+ !cC6H8-13+CH3 = SAXcC6H7+CH4                  2.94E+00     3.50       5675.0      !(=C3H6+CH3)             JetSurF 2.0
+ cC6H8-13+H = SAXcC6H7+H2                     1.10E+05      2.50       -1900       !2003 Dayma et al.           
+ cC6H8-13+CH3 = SAXcC6H7+CH4                  2.00E+12      0.00       7300        !2003 Dayma et al.           
+ cC6H8-13=SAXcC6H7+H                          7.29E+40    -7.98       87064.       !2011 Li et al.           
+ SAXcC6H7 = A1+H                              2.64E+59    -14.35      44929.       !2011 Li et al.       
+ SAXcC6H7+H = A1+H2                           1.80E+12     0.00       0.0          !(=C4H7+H)              JetSurF 2.0
+ SAXcC6H7+CH3 = A1+CH4                        1.10E+13     0.00       0.0          !(=C4H7+H)	           JetSurF 2.0
+
+!################################## C6H11 reactions ##########################################################! 
+
+ PXC6H11 = C6H10-13+H                         1.27E+24    -4.75       23777           !Ref C4H7 = C4H6+H in 2009 Kiefer et al.                                   
+ PXC6H11+H(+M) = C6H12(+M)                    3.60E+13     0.00       0.0             != nC3H7+H    JetSurF 2.0
+                                       LOW  / 3.01E+48    -9.32       5833.6      /                                                 
+                                       TROE / 0.498  1314.0  1314.0 50000.0 /                                                 
+                          H2/2/ H2O/6/ CH4/2/ CO/1.5/ CO2/2/ C2H6/3/ AR/0.7/                                                       
+ PXC6H11+H = CH3+PXC5H9                       2.00E+21    -2.00       11000.0         !=(C4H7+H)     JetSurF 2.0
+ PXC6H11+H = C6H10-13+H2                      1.80E+12     0.00       0.0             != nC3H7+H     JetSurF 2.0
+ PXC6H11+CH3 = C6H10-13+CH4                   1.10E+13     0.00       0.0             != nC3H7+CH3   JetSurF 2.0      
+ PXC6H11(+M) = C4H7+C2H4(+M)                  3.98E+12     0.12       27571.6         ! 08/TSAwip    JetSurF 2.0       
+                                       LOW  / 3.30E-43     18.35     -602.5  /                                                   
+                                       TROE / -13.87       227  28 50000.0 /                                                        
+                          H2/2/ H2O/6/ CH4/2/ CO/1.5/ CO2/2/ C2H6/3/ AR/0.7/                                                                                      
+ PXC6H11(+M) = SAXC6H11(+M)                   1.55E+02     2.83       15566.2         !08/TSAwip JetSurF 2.0                     
+                                       LOW  / 1.50E-30     14.56     -602.4    /                                                                   
+                                       TROE / -13.59       214  28 50000.0 /                                                                        
+                          H2/2/ H2O/6/ CH4/2/ CO/1.5/ CO2/2/ C2H6/3/ AR/0.7/              
+                                                                                                                                                                                                    
+ PXC6H11(+M) = PXCH2cC5H9(+M)                 9.55E+08     0.36       10704.0         !08/TSAwip JetSurF 2.0
+                                      LOW  /  2.30E-28     14.28     -602.5    /                           
+                                      TROE /  -18.98  214  28 50000.0 /                               
+                          H2/2/ H2O/6/ CH4/2/ CO/1.5/ CO2/2/ C2H6/3/ AR/0.7/                                                                                                                                                                                                                                           			
+ SAXC6H11+H(+M)=C6H12(+M)                     2.00E+14     0.00       0.0             !(aC3H5+H) JetSurF 2.0
+                                      LOW  /  1.33E+60    -12.00      5967.8      /          
+                                      TROE /  0.020  1096.6  1096.6  6859.5 /          
+                          H2/2/ H2O/6/ CH4/2/ CO/1.5/ CO2/2/ C2H6/3/ AR/0.7/  
+ SAXC6H11(+M) = C4H6+C2H5(+M)                 3.39E+11     0.66       32262.9         !08/TSAwip JetSurF 2.0           
+                                      LOW  /  4.00E-42     18.05     -602.6    /
+                                      TROE /  -18.50  246  28 50000.0 /
+                          H2/2/ H2O/6/ CH4/2/ CO/1.5/ CO2/2/ C2H6/3/ AR/0.7/                                                                                                                                                
+ CH3S3XcC5H8(+M) = SXC6H11(+M)                7.59E+12     0.15       32940.5         !08/TSAwip JetSurF 2.0
+                                      LOW  /  1.10E-36     16.19     -602.5    /                              
+                                      TROE /  -21.60  225  28 50000.0 /                                  
+                          H2/2/ H2O/6/ CH4/2/ CO/1.5/ CO2/2/ C2H6/3/ AR/0.7/                                             
+ SXC6H11(+M) = C3H6+aC3H5(+M)                 4.57E+12     0.13       24386.4         !08/TSAwip JetSurF 2.0   
+                                      LOW  /  2.50E-31     14.57     -578.8    /                                
+                                      TROE /  -13.17  268  28 50000.0 /                                   
+                          H2/2/ H2O/6/ CH4/2/ CO/1.5/ CO2/2/ C2H6/3/ AR/0.7/                                                
+ S2XC6H11(+M) = C5H8-14+CH3(+M)               8.13E+10     0.78       29648.0         !07TSA     JetSurF 2.0
+                                      LOW  /  4.00E-39     16.782    -600.4    /                                 
+                                      TROE /  -7.03  314.0  28.0 50000.0 /                                 
+                          H2/2/ H2O/6/ CH4/2/ CO/1.5/ CO2/2/ C2H6/3/ AR/0.7/                                                    
+ S2XC6H11(+M) = PXCH2-3-1C5H9(+M)             7.59E+06     1.81       6447.8          !08/TSAwip JetSurF 2.0
+                                      LOW  /  9.30E-19     11.698    -602.9    /                              
+                                      TROE /  -58.54  201  28 50000.0 /                                  
+                          H2/2/ H2O/6/ CH4/2/ CO/1.5/ CO2/2/ C2H6/3/ AR/0.7/                                                                                
+ PXCH2cC5H9(+M) = CH3S3XcC5H8(+M)             6.61E+01     2.85       21082.1         !08/TSAwip JetSurF 2.0
+                                      LOW  /  1.10E-36     16.12     -602.5    /                            
+                                      TROE /  -21.57  225  28 50000.0 /                                
+                          H2/2/ H2O/6/ CH4/2/ CO/1.5/ CO2/2/ C2H6/3/ AR/0.7/                                        
+ CH3S3XcC5H8(+M) = PXCH2-4-1C5H9(+M)          3.55E+12     0.15       32404.0         !08/TSAwip JetSurF 2.0
+                                      LOW  /  1.90E-36     15.96     -578.8    /                              
+                                      TROE /  -11.13  269  28 50000.0 /                                    
+                          H2/2/ H2O/6/ CH4/2/ CO/1.5/ CO2/2/ C2H6/3/ AR/0.7/                                                  
+ PXCH2cC5H9(+M) = CH2cC5H8+H(+M)              7.76E+08     1.11       34615.5         !08/TSAwip JetSurF 2.0
+                                     LOW  /   8.60E-47     18.89     -602.3    /                               
+                                     TROE /   -19.78  230  28 50000.0 /                                   
+                          H2/2/ H2O/6/ CH4/2/ CO/1.5/ CO2/2/ C2H6/3/ AR/0.7/                                                  
+ PXCH2-4-1C5H9(+M) = aC3H5+C3H6(+M)           5.37E+12     0.12       23947.3         !08/TSAwip JetSurF 2.0
+                                    LOW  /    4.90E-31     14.54     -578.8    /                         
+                                    TROE /    -11.90  267  28 50000.0 /                             
+                          H2/2/ CH4/2/  C2H6/3/ AR/0.7/                                         
+ PXCH2-3-1C5H9(+M) = C4H6+C2H5(+M)            4.90E+12     0.15       11139.1         !08/TSAwip JetSurF 2.0
+                                    LOW  /    1.70E-14     9.652     -603.1    /                                    
+                                    TROE /    -76.60  221  28 50000.0 /                                       
+                          H2/2/  CH4/2/ C2H6/3/ AR/0.7/                                                   
+ PX6-2C6H11(+M) = SAXC4H7+C2H4(+M)            1.04E+12    -0.37       25124.2         !08/TSAwip JetSurF 2.0 
+                                    LOW  /    5.90E-31     13.982    -603.1 /           
+                                    TROE /    -14.78  229  28 50000.0   /              
+                          H2/2/ H2O/6/ CH4/2/ CO/1.5/ CO2/2/ C2H6/3/ AR/0.7/                
+ PXC2H4-2-1C4H7(+M) = C2H3-2-1C4H7+H(+M)      4.27E+09    -0.96       31962.9         !08/TSwip JetSurF 2.0 
+                                    LOW  /    3.00E-45     13.55     -603.1    /        
+                                    TROE /    -35.89  249  28 50000.0 /               
+                          H2/2/ H2O/6/ CH4/2/ CO/1.5/ CO2/2/ C2H6/3/ AR/0.7/              
+ PX1-3C6H11(+M) = C6H10-13+H(+M)              4.27E+09    -0.96       31962.9         !08/TSwip JetSurF 2.0 
+                                    LOW  /    3.00E-45     13.55     -603.1    /             
+                                    TROE /    -35.89  249  28 50000.0 /                  
+                          H2/2/ H2O/6/ CH4/2/ CO/1.5/ CO2/2/ C2H6/3/ AR/0.7/
+                 
+!################################## cC6H11 reactions ##########################################################!    
+                                                                                                                                                     
+ cC6H11(+M) = PXC6H11(+M)                     6.03E+12     0.07       27982.9         !08/TSAwip   JetSurF 2.0                      
+                                   LOW  /     5.10E-33     15.29     -602.6    /                                             
+                                   TROE /     -25.11  225  28 50000.0 /                                               
+                          H2/2/ H2O/6/ CH4/2/ CO/1.5/ CO2/2/ C2H6/3/ AR/0.7/                                      
+ cC6H11(+M) = cC6H10+H(+M)                    3.34E+11     0.69       33947.9         !08/TSAwip   JetSurF 2.0    
+                                   LOW  /     3.00E-40     17.33     -602.7    /                                         
+                                   TROE /     -19.22  230  28 50000.0 /                                                     
+                          H2/2/ H2O/6/ CH4/2/ CO/1.5/ CO2/2/ C2H6/3/ AR/0.7/                         
+                          
+!################################## C6H12 reactions ##########################################################!
+                                                                                                               
+ C6H12=aC3H5+nC3H7	                          1.07E+80	  -19.33      95177 	        !2009 Kiefer et al. 
+ C6H12=C4H7+C2H5	                            2.7E+80	    -1.93E+01   1.07E+05        !2009 Kiefer et al. 
+ C6H12+H=C3H6+nC3H7	                          3.20E+22	  -2.39       11180.0         !Estimated         JetSurF 2.0  
+ C6H12+H = C2H4+pC4H9                         8.00E+21    -2.39       11180.0         !=(C3H6+H)         JetSurF 2.0                                                        
+ C6H12+H = PXC6H11+H2                         3.23E-02     4.700      3679.00         !10LV             JetSurF 2.0
+ C6H12+H = SXC6H11+H2                         3.17E-02     4.65       1340.00         !10LV             JetSurF 2.0
+ C6H12+H = S2XC6H11+H2                        3.17E-02     4.65       1340.00         !10LV             JetSurF 2.0
+ C6H12+H = SAXC6H11+H2                        5.40E+04     2.50      -1900.0          !05/TO-BU  !BS    JetSurF 2.0
+ C6H12+CH3 = PXC6H11+CH4                      4.5E-1       3.65       7153            !2009 Kiefer et al.                                                                                                               
+ C6H12+CH3 = SAXC6H11+CH4                     2.82E0       3.60       7153            !2009 Kiefer et al.                                                                                                               
+ C6H12+CH3 = S2XC6H11+CH4                     1.50E0       3.460      5480            !2009 Kiefer et al.                                                                                                                16
+ C6H12+CH3 = SXC6H11+CH4                      1.50E0       3.460      5480            !2009 Kiefer et al.                                
+
+!################################## cC6H12 reactions ##########################################################!	
+						 
+ cC6H12=C6H12                                 1.33E+137    -34.70     162775          !2009 Kiefer et al.      2.0E+137 /1.5      
+ cC6H11+H(+M)=cC6H12(+M)                      4.80E+13     0.00       0.0             !=(iC3H7+H)      JetSurF 2.0
+                                    LOW  /    1.70E+58    -12.08      11263.7    /               
+                                    TROE /    0.649  1213.1  1213.1 13369.7 /                
+                          H2/2/ H2O/6/ CH4/2/ CO/1.5/ CO2/2/ C2H6/3/ AR/0.7/                                     
+ cC6H12+H=cC6H11+H2                           2.69E+10     1.385      8229            !2009 Kiefer et al. 
+ cC6H12+CH3=cC6H11+CH4                        3.82E+02     3.21       11633.65        !10LV  JetSurF 2.0                                                                                          
+ !cC6H12+H=cC6H11+H2                           6.00E+14     0          8373           !1998 Voisin et al.                   
+ !cC6H12+CH3=cC6H11+CH4                        1.35E+12     0.0        9540.          !1998 Voisin et al.   
+ 
+! Reactions of aromatics                                         
+!################################  reactions of C6H4 C6H3 C6H2 ################################################################
+                                             
+ o-C6H4=C4H2+C2H2                             2.00E+14     0.0        83000.0         !2007 C. Xu *, M. Braun-Unkhoff, C. Naumann, P. Frank   fall-off by 1997
+ nC4H3+C2H2=o-C6H4+H                          1.90E+36    -7.21       17900.          !0.026 atm RRKM WAN/FRE  JetSurF 2.0
+ l-C6H4+H=o-C6H4+H                            2.20E+47    -10.0       24000.0         !USC Mech V2.0  (20 Torr RRKM WAN/FRE)             
+ l-C6H4+H=C6H3+H2                             1.33E+06     2.5        9240.0          !USC Mech V2.0                               
+ C3H2+C3H2=l-C6H4                             3.00E+11     0.0        0.0             !Est. ref: C3H3+C3H3=A1 (1987WU/KER6291)            
+ C4H2+C2H2=l-C6H4                             4.47E+11     0.0        30010.0         !Est. ref: C4H4+C2H2=A1 (MIT)                   
+ nC4H3+C2H2=l-C6H4+H                          3.70E+16    -1.2        11100.0         !USC Mech V2.0  (20 Torr RRKM WAN/FRE)              
+ C4H4+C2H=l-C6H4+H                            1.20E+13     0.0        0.0             !USC Mech V2.0                                      
+ C6H3+H=l-C6H4                                4.20E+44    -10.3       7890.0          !USC Mech V2.0  (20 Torr RRKM WAN/FRE)              
+ C5H3+CH2=l-C6H4+H                            5.00E+13     0.0        0.0             !ABF                                                 
+ C4H2+C2H = C6H2+H                            9.60E+13     0.0        0.              != C2H2 + C2H   JetSurF 2.0       
+ C4H2+C2H=C6H3                                4.50E+37    -7.7        7100.0          !USC Mech V2.0  (20 Torr RRKM WAN/FRE)
+ C6H2+H=C6H3                                  4.30E+45    -10.2       13250.0         !USC Mech V2.0  (20 Torr RRKM WAN/FRE)
+ C6H3+H=C4H2+C2H2                             2.40E+19    -1.6        2800.0          !USC Mech V2.0  (20 Torr RRKM WAN/FRE)
+ 
+!################################  reactions of l-C6H6 nC6H5  i-C6H5  ################################################################
+ 
+ l-C6H4+H=nC6H5                               3.30E+44    -10.0       18800.0         !ABF  (20 Torr RRKM)
+ nC6H5=A1-                                    1.30E+62    -15.9       35800.0         !ABF  (20 Torr RRKM)
+ nC6H5+H=C4H4+C2H2                            1.60E+19    -1.6        2220.0          !ABF  (20 Torr RRKM)
+ nC6H5+H=l-C6H6                               1.10E+42    -9.7        7000.0          !ABF  (20 Torr RRKM)
+ i-C6H5+H=l-C6H6                              4.20E+44    -10.3       7890.0          !ABF  (20 Torr RRKM)
+ nC6H5+H=l-C6H4+H2                            1.50E+13     0.0        0.0             !ABF
+ i-C6H5+H=l-C6H4+H2                           3.00E+13     0.0        0.0             !ABF        
+ l-C6H6+H=A1+H                                8.70E+16    -1.3        3500.0          !ABF  (20 Torr RRKM)     
+ l-C6H6+H=nC6H5+H2                            6.65E+05     2.5        12240.0         !ABF                     
+ l-C6H6+H=i-C6H5+H2                           3.33E+05     2.5        9240.0          !ABF                     
+
+ !################################   reactions of A1-    ################################################################                                                                                
+                                     
+ A1-(+M)=o-C6H4+H(+M)                         4.3E12       0.62       77294.          !H. Wang 28th
+                                       LOW   /1.0E84  -18.87  90091./
+                                       TROE  /0.902 696. 358. 3856./
+                          H2/2/ CO/2/ CO2/3/ H2O/5/                                     
+ nC4H3+C2H2=A1-                               2.30E+68    -17.6       24400.0         !USC Mech V2.0  (20 Torr RRKM WAN/FRE)
+ H+A1-=o-C6H4+H2                              2.0E7        2.0        1000.           !JAM
+ !nC6H5=A1-                                    1.66E+11     0.0        16350.0         ! [Dewar et al. 1987] MIT
+ l-C6H4+H=A1-                                 3.60E+77    -20.1       28100.0         !USC Mech V2.0  (20 Torr RRKM WAN/FRE)
+ C3H3+C3H3=A1-+H                              2.02e+33    -6.0        15940.0         !2009 Hansen et al C3H4 FLAME
+ 
+ !################################   reactions of A1    ################################################################                                                                             
+                             
+ A1-+H2=A1+H                                  5.707E+04    2.430      6273.00         !97-MEB-LIN  JetSurF 2.0 
+ A1-+H=A1                                     8.02E+19    -2.0        1968.0          !MIT  2001 Mebel et al. 100 torr
+ A1-+CH4=A1+CH3                               3.89E-03     4.6        5256.0          !USC Mech V2.0 (99-TOK-LIN)
+ A1-+C2H6=A1+C2H5                             2.10E+11     0.0        4443.0          !USC Mech V2.0 (01-PAR-LIN)
+ C5H6+A1-=C5H5+A1                             3.10E+11     0.0        5500.0          !2001 Mac&Bac
+ nC4H3+C2H3=A1                                2.87E+14     0.0        817.0           !2006 Brezinsky                         
+ aC3H4+C3H3=A1+H                              2.20E+11     0.0        2000.0          !2002 D'Anna & Kent
+ C4H4+C2H3=A1+H                               1.90E+12     0.0        2510.0          !MIT  Kubitza et al. '94, in Lindstedt/Skevis '97
+ pC3H4+C3H3=A1+H                              2.20E+11     0.0        2000.0          !MIT  1987 Wu and Kern
+ C4H4+C2H2=A1                                 4.47E+11     0.0        30010.0         !MIT  1986 Chanmugathas/Heicklen 
+ nC4H5+C2H3=A1+H2                             1.84E-13     7.1       -3611.0          !USC Mech V2.0  (89WES/DEA)
+ nC4H5+C2H2=A1+H                              2.94E+16    -1.09       9257.           !2007 Senosiain and Miller                                                                                                                                                                                                                                                                                                                                                                                             
+ nC4H5+C2H2=fulvene+H                          1.52E+15   -0.76       8762.           !2007 Senosiain and Miller                                                                                                                                                                                                   
+ iC4H5+C2H2=A1+H                              1.47E+23    -3.28       24907.          !2007 Senosiain and Miller                                                                                                                                                                                                  
+ iC4H5+C2H2=fulvene+H                          1.01E+34   -5.94       28786.          !2007 Senosiain and Miller                                                                                                                                                                                              
+ C3H3+C3H3=fulvene                            7.25e+65    -16.0       25035.0         !2009 Hansen et al C3H4 FLAME   
+ duplicate                                                                             
+ C3H3+C3H3=fulvene                            4.19e+39    -9.0        6098.0          !2009 Hansen et al C3H4 FLAME    
+ duplicate                                                                             
+ C3H3+C3H3=A1                                 1.64e+66    -15.9       27529.0         !2009 Hansen et al C3H4 FLAME    
+ duplicate                                                                             
+ C3H3+C3H3=A1                                 1.20e+35    -7.4        5058.0          !2009 Hansen et al C3H4 FLAME   
+ duplicate                                                                             
+ fulvene=A1                                   5.62E+81    -19.4       121500.0        !2009 Hansen et al C3H4 FLAME  
+ fulvene+H=A1+H                               3.00e+12     0.5        2000.0          !2009 Hansen et al C3H4 FLAME  
+ fulvene=A1-+H                                2.57E+97    -23.2       153470.0        !2009 Hansen et al C3H4 FLAME  
+ C3H3+aC3H5=fulvene+2H                        3.26E+29    -5.4        3390.0          !2009 Hansen et al C3H4 FLAME  
+ aC3H4+C3H2=A1                                7.40E+12    -0.7        920.0           !2002 D'Anna & Kent
+ pC3H4+C3H2=A1                                1.40E+13    -0.8        1030.0          !2002 D'Anna & Kent
+ 
+ !################################## Reactions of benzyl radical (A1CH2)) ##########################################################!
+
+ A1CH2+H(+M)=A1CH3(+M)                        7.22E+13     0.062     -44              !2007 Klippenstein   
+                                       LOW /  3.02E+136   -33.35      55560 /
+                                       TROE / 0.5  600 900 5500/                    
+                          H2/2/ H2O/6/ CH4/2/ CO/1.5/ CO2/2/ C2H6/3/                                                                                           
+ A1CH2=C5H5+C2H2                              3.00E+12     0.0         70000.0        !1994  Colket   /10 
+ A1CH2=C7H6+H                                 4.38E+13     0.078       75900.0        !2010 toluene pyrolysis model (refit 0.1atm ) 
+ A1CH2+H=C7H6+H2                              1.00E+12     0.0         0.0            !2010 toluene pyrolysis model 
+ A1CH2+H=A1-+CH3                              4.5E+58     -11.9        51860.0        !2007 Klippenstein
+ C7H6+H=>C5H5+C2H2                            7.00E+12     0.0         0.0            !2009 Carlo Cavalotti
+ !C7H6+H=>C5H5+C2H2                            3.00E+14    0.0         0.0            !2009 Detilleux and Vandooren
+ !C7H5+H=C7H6                                 2.00E+12     0.0         0.0            !2010 toluene pyrolysis model
+ !C7H6=C7H5+H                                  1.0          0.0         0.0            ! 2011 Polino and Cavallotti.
+ !                                     PLOG /  0.1          1.023E116  -28.46    157860  /
+ !                                     PLOG /  1            4.90E66    -14.64    119550  /
+ !                                     PLOG /  10           1.17E27    -3.54     89150  /  
+ C7H6=C7H5+H                                  5.0E+115    -28.46       157860         !2011 Polino and Cavallotti. 76 Torr /2                                                                  
+ C7H6+CH3=C7H5+CH4                            1.87E+04     2.724       6008.0         !2009 da Silva & Bozzelli (C7H5)
+ C7H6+H=C7H5+H2                               1.90E+08     1.847       4965.0         !2009 da Silva & Bozzelli (C7H5)
+ C7H5(+M)=C4H2+C3H3(+M)                       3.00E+12    -0.075       62300.0        !Ref C5H5=C3H3+C2H2
+                                       LOW   /1.00E+45     8.4         47500/               
+ C7H5(+M)=C2H2+C5H3(+M)                       2.00E+11    -0.075       62300.0        !Ref C5H5=C3H3+C2H2
+                                       LOW   /1.00E+45     8.4         47500/
+
+!################################## Reactions of A1CH3  ##########################################################! 
+
+ A1-+CH3(+M)=A1CH3(+M)                        2.33e+14    -0.28       -191            !2007 Klippenstein
+                                       LOW  / 6.67E+83    -19.22       14980 /   
+                                       TROE  / 0.0075  1  -1000        50000 /   
+ A1CH3+H=A1CH2+H2                             6.47E00      3.98        3394.0         !2006 Oehlschlaeger MA.   
+ A1CH3 + CH3 = A1CH2 + CH4                    3.160E+11    0.000       9500.00        !76-KER-PAR  JetSurF 2.0
+ A1CH3 + A1- = A1CH2 + A1                     2.103E+12    0.000       4400.00        !88-FAH-STE  JetSurF 2.0
+                                     
+!################################## A1C2H reactions ##########################################################!
+                         
+ A1C2H- + H (+M) = A1C2H (+M)                 1.00E+14     0.0         0.0            !USC Mech V2.0 (= A1-+H)   
+                                       LOW/   6.6E+75     -16.30       7000. /              
+                                       TROE / 1.0 0.1 584.9 6113. /                   
+                          H2/2.0/ H2O/6.0/ CH4/2.0/ CO/1.5/ CO2/2.0/ C2H6/3.0/        
+ A1C2H* + H (+M) = A1C2H (+M)                 1.00E+14     0.0         0.0            !USC Mech V2.0 (= A1-+H)      
+                                       LOW/   6.6E+75     -16.30       7000. /                 
+                                       TROE / 1.0 0.1 584.9 6113. /                   
+                          H2/2.0/ H2O/6.0/ CH4/2.0/ CO/1.5/ CO2/2.0/ C2H6/3.0/         
+ A1+C2H=A1C2H+H                               5.00E+13     0.          0.0            !HACA
+ A1C2H+H=A1C2H*+H2                            2.50E+14     0.0         16000.0        !HACA  
+ A1C2H+H=A1C2H-+H2                            2.50E+14     0.0         16000.0        !HACA
+ A1C2H-+H=A1C2H                               8.02E+19    -2.0         1968.0         !MIT
+ A1CH+H=A1CH2                                 1.00E+13     0.0         0.0            !MIT [guess, p.w.]     
+ A1CH2+H=A1CH+H2                              6.03E+13     0.0         15103.0        !MIT [Baulch et al. 1992 for CH3+H=HCH(T)+H2]
+ A1-+C2H2=A1C2H+H                             7.50E+26    -4.0         17100.0        !HACA 20 torr           
+ A1-+C4H4=A1C2H+C2H3                          3.20E+11     0.0         1350.0         !MIT [Harris et al. 1988] 
+ nC4H5+C4H2=A1C2H+H                           3.16E+11     0.0         1800.0         !MIT [Cole et al. 1984]   
+ 
+!################################## A1C2H2 reactions ##########################################################!
+
+ A1-+C2H3=A1CCH2+H                            1.80E+31    -4.63        31652.0        !HACA RRKM 20 Torr  
+ A1-+C2H3=A1CHCH+H                            1.50E+32    -4.91        35504.0        !HACA RRKM 20 Torr  
+ A1CHCH+H=A1CCH2+H                            2.30E+37    -6.00        35164.0        !HACA RRKM 20 Torr  
+ A1-+C2H2=A1CHCH                              7.70E+40    -9.2         13400.0        !HACA RRKM 20 Torr  
+ A1C2H+H=A1CHCH                               5.00E+54    -12.8        17185.0        !HACA *5  adjust in pyrolysis of A1C2H3
+ A1C2H+H=A1CCH2                               5.00E+54    -12.8        17185.0        !HACA *5  adjust in pyrolysis of A1C2H3
+ A1CHCH+H=A1C2H+H2                            1.50E+13     0.0         0.0            !HACA
+ A1CCH2+H=A1C2H+H2                            3.00E+13     0.0         0.0            !HACA
+
+!################################## A1C2H3 reactions ##########################################################!
+
+ A1+C2H3=A1C2H3+H                             35.90E+11    0.0         6400.0         !HACA *5  adjust in pyrolysis of A1C2H3
+ A1-+C2H4=A1C2H3+H                            5.10E+12     0.0         6190.0         !HACA *2  adjust in pyrolysis of A1C2H3
+ A1-+C2H3=A1C2H3                              1.90E+48    -10.52       17489.0        !HACA RRKM 20 Torr
+ A1C2H3=A1CCH2+H                              6.00E+46    -9.07        118323.0       !HACA *5  adjust in pyrolysis of A1C2H3
+ A1C2H3+H=A1CCH2+H2                           3.33E+05     2.53        9240.0         !HACA           
+ A1C2H3=A1CHCH+H                              9.50E+54    -11.39       130224.0       !HACA *5  adjust in pyrolysis of A1C2H3
+ A1C2H3+H=A1CHCH+H2                           6.65E+05     2.53        12240.0        !HACA          
+ 
+!################################## A1C2H4 reactions ##########################################################!
+                        
+ A1-+C2H4=A1CH2CH2                            1.00E+40    -9.2         13400.0        !Ref: A1-+C2H2=A1CHCH  (HACA) 
+ A1CHCH3=A1CH2CH2                             6.40E+61    -14.59       88200.0        !Ref: pC3H4 = aC3H4   (0.1ATM WH)
+ A1CH2CH2+H=A1CHCH3+H                         2.30E+37    -6.00        35164.         !Ref: A1CHCH+H=A1CCH2+H
+ A1CHCH3=A1C2H3+H                             9.00E+12     0.00        50669.0        ![Mueller-Markgraf/Troe '88] fall-off /3
+ A1CH2CH2=A1C2H3+H                            5.00E+12     0.0         50669.0        !Est
+ A1CHCH3+H = A1C2H3+H2                        2.00E+12     0.00        0.0            !C2H5+H=C2H4+H2  GRI
+ A1CH2CH2+H = A1C2H3+H2                       2.00E+12     0.00        0.0            !C2H5+H=C2H4+H2  GRI
+ C4H4+C4H4=A1C2H3                             0.75E+14     0.0         38000.0        !MIT[Lundgard and Heicklen 1984]  /2
+ C6H4C2H4+H=A1CH2CH2                          3.00E+13     0.0         0.0            !Est
+ C6H4C2H4=o-C6H4+C2H4                         2.00E+14     0.0         83000.0        !o-C6H4=C4H2+C2H2
+ 
+!################################## A1C2H5 reactions ##########################################################!
+
+ A1-+C2H5(+M)=A1C2H5(+M)                      2.33E+14    -0.283      -191.0          !Ref  A1-+CH3=A1CH3  (2007 Kliphenstein )
+                                        LOW/  6.73E83     -19.22       14980.0 /                 
+                                        TROE/ 0.5918 320.14 1858.22 5394.9928/        
+ A1CHCH3+H(+M)=A1C2H5(+M)                     7.22E+13     0.062      -44.0           !Ref A1CH2+H=A1CH3 ( 2007 Kliphenstein)
+                                        LOW/  3.02E136    -33.35       55560.0 /                  
+                                        TROE/ 2.545  2.156  453.23    4551.5/         
+ A1CH2CH2+H(+M)=A1C2H5 (+M)                   5.21E+17    -0.990       1580.0         !Ref C2H5+H=C2H6 (GRI)
+                                        LOW/  1.990E+41   -7.080       6685.00 /
+                                        TROE/ 0.8422  125.0  2219.00 6882.0 /
+                          H2/2.0/ H2O/6.0/ CH4/2.0/ CO/1.5/ CO2/2.0/ C2H6/3.0/ AR/0.7/
+ A1C2H5+H=A1CHCH3+H2                          3.31E+07     2.0         5345.3         !2005 Combusition DATA
+ A1C2H5+H=A1CH2CH2+H2                         7.22E+08     1.50        7412.0         !2005 Combusition DATA
+ A1CH2+CH3=A1C2H5                             6.00E+12     0.00        221            !2005 Richter et al. 
+ A1C2H5+H=A1+C2H5                             5.78E+13     0           8087.0         !2005 Combustion Data        
+ 
+!################################## C9H7 and C9H8 reactions ##########################################################!
+                       
+ C7H6+C2H2=C9H8                               1.44E+292   -78.2        245010.0       !2009 da Silva & Bozzelli (C7H6+C2H2)    
+ C7H6+C2H2=C9H7+H                             9.70E-42     16.7        37520.0        !2009 da Silva & Bozzelli (C7H6+C2H2)    
+ A1CH2+C2H2=C9H8+H                            3.16E+04     2.5         11061.2        !2009 Blanquart et al.
+ A1-+aC3H4=C9H8+H                             5.13E+02     3.2         2788.0         !2003 Vereecken & Berringer & Peerers
+ A1-+C3H3=C9H8                                1.50E+75    -17.8        39600.0        !Est. ref: A1-+C4H3=A2 (MIT) 
+ A1+C3H3=C9H8+H                               6.26E+09     2.61        56500.0        !2010 toluene pyrolysis model
+ C9H8=C9H7+H                                  0.63E+68    -15.2        116371.9       !2010 toluene pyrolysis model 
+ C9H8+H=C9H7+H2                               2.80e+13     0.0         2258.6         !2009 Blanquart et al.
+ C9H8+CH3<=>C9H7+CH4                          1.80E-01     4.0         456.5          !2009 Blanquart et al.
+
+!##################################  C10H7 to C10H8 reactions ##########################################################!
+
+ A2-1 + H (+M) = A2 (+M)                      1.00E+14     0.0         0.0            !HACA
+                                       LOW  / 3.80E+127   -31.434  18676.0 /           
+                                       TROE / 0.200   122.8   478.4  5411.9 /         
+                          H2/2.0/ H2O/6.0/ CH4/2.0/CO/1.5/ CO2/2.0/ C2H6/3.0/                     
+ A2-2 + H (+M) = A2 (+M)                      1.00E+14     0.0         0.0            !HACA
+                                       LOW  / 9.50E+129   -32.132      18782.0  /           
+                                       TROE / 0.870   492.7   117.9   5652.0 /          
+                          H2/2.0/ H2O/6.0/ CH4/2.0/CO/1.5/ CO2/2.0/ C2H6/3.0/                      
+ A1-+C4H4=A2+H                                1.26e+04     2.61        1434.0         !2009 Blanquart et al.
+ C5H5+C5H5=>A2+2H                             6.39e+29    -4.030       35205.54       !2009 Blanquart et al.
+ A1+nC4H3=A2+H                                4.00E+13     0.0         16000.0        !Estimated  
+ A1C2H3*+C2H2=A2+H                            21.00E+15   -1.1         6000.0         !HACA 20Torr  *10
+ A1CHCH+C2H2=A2+H                             21.00E+15   -1.1         4800.0         !HACA 20Torr  *10
+ A1C2H*+C2H2=A1C2HC2H2                        3.90E+48    -11.3        27200.0        !HACA 20Torr
+ A1C2H*+C2H2=A2-1                             5.20E+72    -18.1        33900.0        !HACA 20Torr
+ A1C2H*+C2H2=A1(C2H)2+H                       5.50E+32    -5.5         27600.0        !HACA 20Torr
+ A1(C2H)2+H=A1C2HC2H2                         3.00E+48    -10.9        20500.0        !HACA 20Torr
+ A1(C2H)2+H=A2-1                              2.00E+82    -20.2        36900.0        !HACA 20Torr
+ A2+H=A2-1+H2                                 2.50E+14     0.0         16000.0        !HACA (Kiefea)
+ A2+H=A2-2+H2                                 2.50E+14     0.0         16000.0        !HACA (Kiefea)
+ A2-1+H=A2-2+H                                8.80E+58    -11.7        60974.0        !HACA 20Torr
+ A1CH2+C3H3=A2+2H                             3.00E+11     0.0         0.0            !2001 D'Anna & Kent
+ A1-+nC4H3=A2                                 1.51E+75    -17.9        39600.0        !MIT [QRRK-HR, 20 torr]
+ A1-+nC4H3=A2-2+H                             1.84E+72    -16.1        57630.0        !MIT [QRRK-HR, 20 torr]
+ A1-+nC4H3=A2-1+H                             1.84E+72    -16.1        57630.0        !MIT [QRRK-HR, 20 torr]
+ 
+!
+END
+
+GRI                                          M. Frenklach, H. Wang, M. Goldenberg, G. P. Smith, D. M. Golden,
+                                             C. T. Bowman, R. K. Hanson, W. C. Gardiner, V. Lissiansky.             
+                                             GRI-Mech: An Optimized Chemical Reaction Mechanism for Methane
+	                                           Combustion (version GRI-Mech 1.2), GRI Report No. GRI-95/0058,
+	                                           Gas Research Institute, Chicago, 1995.                            	                                                                                  	                                                                                                                                                                                                                                      
+GRI3.0                                       G. P. Smith, D. M. Golden, M. Frenklach, N. W. Moriarty, B. Eiteneer, M. Goldenberg, 
+                                             C. T. Bowman, R. K. Hanson, S. Song, W. C. Gardiner, Jr., V. V. Lissianski,Z. Qin 
+                                             http://www.me.berkeley.edu/gri_mech/                                                                                                                                                                                                                                                                                                                                                                                                                                                   
+USC Mech V2.0                                H. Wang, X. You, A.V. Joshi, S.G. Davis, A. Laskin, F. Egolfopoulos, C.K. Law, 
+                                             High-Temperature Combustion Reaction Model of H2/CO/C1-C4 Compounds,
+                                             http://ignis.usc.edu/USC_Mech_II.htm (2007).
+JetSurF 2.0                                  H. Wang, E. Dames, B. Sirjean, D. A. Sheen, R. Tangko, A. Violi, J. Y. W.  
+                                             Lai, F. N. Egolfopoulos,  D. F. Davidson, R. K. Hanson, C. T. Bowman, C.   
+                                             K. Law, W. Tsang, N. P. Cernansky, D. L. Miller, R. P. Lindstedt, A        
+                                             high-temperature chemical kinetic model of n-alkane (up to n-dodecane),    
+                                             cyclohexane, and methyl-, ethyl-, n-propyl and n-butyl-cyclohexane         
+                                             oxidation at high temperatures, JetSurF version 2.0, September 19, 2010    
+                                             (http://melchior.usc.edu/JetSurF/JetSurF2.0).                                                                      
+MIT                                          H. Richter, S. Granata, W.H. Green, J.B. Howard, Proc. Combust. Inst. 30 (2004) 1397-1405.
+HACA                                         H. Wang, M. Frenklach, J. Phys. Chem. 98 (1994) 11465-11489.
+ABF                                          J. Appel, H. Bockhorn, M. Frenklach, Combust. Flame 121 (2000) 122-136.  
+1986 Tsang                                   W. Tsang and R. F. Hampson, J. Phys. Chem. Ref. Data, 15(3)(1986):1087                                                     
+1987 WU/KER6291                              C.H. Wu, R.D. Kern, J. Phys. Chem. 91 (1987) 6291-6296. 
+1987 Kiefer et al.                           J.H. Kiefer, J.N. Shah, J. Phys. Chem. 91 (1987) 3024-3030.   
+1988 Duran et al.                            R. P. Duran, V. T. Amorebieta, A. J. Colussi, J. Phys. Chem. 92 (3) (1988) 636-640 
+1991 Tsang                                   W. Tsang, J. Phys. Chem. Ref. Data 20 (1991) 221.    
+1994  Colket	                               M. B. Colket, D. J. SeerySymposium (International) on Combustion 25 (1) (1994) 883-891   
+1997 Wang et al.                             H. Wang, M. Frenklach, Combustion and Flame 110 (1-2) (1997) 173-221
+1998 Voisin et al.                           D. Voisin, A. Marchal, M. Reuillon, J.C. Boettner, M. Cathonnet, Combust. Sci. Technol. 138 (1998) 137-158. 
+2000 Alzueta                                 M.U. Alzueta, P. Glarborg, K. Dam-Johansen, Int. J. Chem. Kinet. 32 (2000) 498-522.  
+2001 D'Anna & Kent                           A. D'Anna, A. D'Alessio, J. Kent, Combust. Flame 125 (2001) 1196-1206.
+2001 Mac&Bac                                 G.B. Bacskay, J.C. Mackie, Phys. Chem. Chem. Phys. 3 (2001) 2467-2473. 
+2002 D'Anna & Kent                           A. D'Anna, J.H. Kent, Combust. Flame 132 (2002) 715-722.    
+2003 Dayma et al.                            G. Dayma, P. A. Glaude, R. Fournet, F. Battin-leclerc, Int. J. Chem. Kinet. 35 (2003) 273-285
+2003 Vereecken & Berringer & Peerers         L. Vereecken, J. Peeters, Phys. Chem. Chem. Phys. 5 (2003) 2807-2817.
+2004 Oehlschlaeger MA                        M. A. Oehlschlaeger, D. F. Davidson, R. K. Hanson, J. Phys. Chem. A 2004, 108 (19), 4247-4253.
+2005 Richter et al.                          H. Richter, S. Granata, W.H. Green, J.B. Howard, Proc. Combust. Inst. 30 (2005) 1397-1405.
+2005 combustion DATA                         D.L. Baulch, C.T. Bowman, C.J. Cobos, R.A. Cox, T. Just, J.A. Kerr, M.J. Pilling, D. Stocker, 
+                                             J. Troe, W. Tsang, R.W. Walker, J. Warnatz, J. Phys. Chem. Ref. Data 34 (2005) 757-1397.  
+2006 Oehlschlaeger MA.                       M.A. Oehlschlaeger, D.F. Davidson, R.K. Hanson, J. Phys. Chem. A 110 (2006) 9867-9873.
+2006 Brezinsky                               R. Sivaramakrishnan, R.S. Tranter, K. Brezinsky, J. Phys. Chem. A 110 (2006) 9388-9399.                                                                                                                           
+2006 Richter                                 H. Richter, S. Granata, W.H. Green, J.B. Howard, Proc. Combust. Inst. 30 (2005) 1397-1405 
+2007 Klippenstein                            S.J. Klippenstein, L.B. Harding, Y. Georgievskii, Proc. Combust. Inst. 31 (2007) 221-229.
+2007 Senosiain and Miller                    J. P. Senosiain, J. A. Miller,J. Phys. Chem. A 111 (2007) 3740-3747.
+2007 Gueniche & Battin et al.                H. A. Gueniche, P. A. Glaude; R. Fournet, F. Battin-Leclerc, Combust. Flame (2007) 151, 245.
+2008 Miller 30 Torr                          J. A. Miller, J. P. Senosiain, S. J. Klippenstein, Y. Georgievskii, J. Phys. Chem. A 112 (2008) 9429-9438 
+2009 da Silva & Bozzelli (C7H6+C2H2)         G. da Silva, J.W. Bozzelli, J. Phys. Chem. A 113 (2009) 8971-8978.
+2009 da Silva & Bozzelli (C7H5)              G. da Silva, J.W. Bozzelli, J. Phys. Chem. A 113 (2009) 12045-12048.
+2009 Blanquart et al.                        G. Blanquart, P. Pepiot-Desjardins, H. Pitsch, Combust. Flame 156 (2009) 588-607.                                                                                       
+2009 Kiefer et al.                           J. H. Kiefer, K. S. Gupte, L. B. Harding, S. J. Klippenstein, J. Phys. Chem. A 113 (48) (2009) 13570-13583
+2009 Hansen et al C3H4 FLAME                 N. Hansen, J. A. Miller, T. Kasper, K. Kohse-H?inghaus, P. R. Westmoreland, J. Wang, T. A. Cool, Combust. Flame 156 (2009) 2153-2164. 
+2009 Yasunaga et al.                         K. Yasunaga, Y. Kuraguchi, R. Ikeuchi, H. Masaoka, O. Takahashi, T. Koike, Y. Hidaka, Proc. Combust. Inst.32 (2009) 453-460 
+2009 Detilleux and Vandooren                 V. r. Detilleux, J. Vandooren, J. Phys. Chem. A  113 (2009) 10913-10922        
+2010 Pousse et al.                           E. Pousse, R. Porter, V. Warth, P.A. Glaude, R. Fournet, F. Battin-Leclerc, Combust. Flame 157 (2010) 75-90.     
+2010 toluene pyrolysis model                 L. Zhang, J. Cai, T. Zhang, F. Qi, Combust. Flame 157 (2010) 1686-1697.
+2011 Zhang et al.                            Y. Zhang; J. Cai; L. Zhao; J. Yang; H. Jin; Z. Cheng; Y. Li; L. Zhang; F. Qi, Combust. Flame doi:10.1016/j.combustflame.2011.09.005   
+2011 Li et al.                               W. Li, M.E. Law, P.R. Westmoreland, T. Kasper, N. Hansen, K. Kohse-H?inghaus, Combust. Flame 158 (2011) 2077-2089.
+
+
+                                            
+
+
+
+
+
+

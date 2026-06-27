@@ -22,9 +22,9 @@ Matteo Pelucchi, Kieran P. Somers, Kenji Yasunaga, Ultan Burke, Alessio Frassold
 - Standard mechanism file: chem.inp
 - Standard thermodynamic file: therm.dat
 - Standard transport file: tran.dat
-- Original mechanism source files: _processing/extracted/s0010218014002314_mmc4/4_a_POLIMI_aldehydes_kinetics.CKI, _processing/extracted/s0010218014002314_mmc3/3_a_NUIG_aldehydes_kinetics.MECH
-- Original thermodynamic source files: _processing/extracted/s0010218014002314_mmc4/4_b_POLIMI_aldehydes_thermo.CKT, _processing/extracted/s0010218014002314_mmc3/3_b_NUIG_aldehydes_LT_HT.therm
-- Original transport source files: _processing/extracted/s0010218014002314_mmc4/4_c_POLIMI_transport.TRC, _processing/extracted/s0010218014002314_mmc3/3_c_NUIG_aldehydes.tran
+- Original mechanism source files: _processing/extracted/s0010218014002314_mmc3/3_a_NUIG_aldehydes_kinetics.MECH, _processing/extracted/s0010218014002314_mmc4/4_a_POLIMI_aldehydes_kinetics.CKI
+- Original thermodynamic source files: _processing/extracted/s0010218014002314_mmc3/3_b_NUIG_aldehydes_LT_HT.therm, _processing/extracted/s0010218014002314_mmc4/4_b_POLIMI_aldehydes_thermo.CKT
+- Original transport source files: _processing/extracted/s0010218014002314_mmc3/3_c_NUIG_aldehydes.tran, _processing/extracted/s0010218014002314_mmc4/4_c_POLIMI_transport.TRC
 
 ## Cantera Preprocessing Results
 
@@ -33,7 +33,7 @@ Matteo Pelucchi, Kieran P. Somers, Kenji Yasunaga, Ultan Burke, Alessio Frassold
 - Status: cantera_failed
 - Species count: not parsed
 - Reaction count: not parsed
-- Message: InputError: Ignoring redundant thermo data for species 'HOCH2O2H' starting on line 107 of therm.dat. Ignoring redundant thermo data for species 'HOCH2O2' starting on line 111 of therm.dat. Ignoring redundant thermo data for species 'OCH2O2H' starting on line 115 of therm.dat. Error while reading thermo entry in therm.dat starting on line 485: """ CHOCOCH2OOH THERMC 3H 4O 4 0 300.000 5000.000 1387.000 41 1.88513241E+01 9.20926912E-03-3.31625639E-06 5.32903065E-10-3.16697392E-14 2 -4.88407829E+04-6.72981510E+01 1.14193480E+00 5.43367117E-02-4.78232702E-05 3 2.06439596E-08-3.52353283E-12-4.31220565E+04 2.63898462E+01 4 """ could not convert string to float: '0 5000.00' Error while reading thermo entry in therm.dat starting on line 489: """ CHOCOOHCHO THERMC 3H 4O 4 0 300.000 5000.000 1387.000 ... [truncated; see _processing logs]
+- Message: InputError: No transport data for species 'ETC3H4O2'. No transport data for species 'KEA3G2'. No transport data for species 'KEA3B3'. No transport data for species 'RALD3B'. No transport data for species 'RALD3G'. No transport data for species 'CH2OOHCHCHO'. No transport data for species 'CH3CHOOCHO'. No transport data for species 'CH2OOCH2CHO'. No transport data for species 'CH2CHOOHCHO'. No transport data for species 'CH2OOHCHOOCHO'. No transport data for species 'CH2OOCHOOHCHO'. No transport data for species 'RALD4B'. No transport data for species 'RALD4G'. No transport data for species 'RALD4D'. Please check https://cantera.org/stable/userguide/ck2yaml-tutorial.html#debugging-common-errors-in-ck-files for the correct Chemkin syntax.
 - Method: cantera
 - Cantera YAML: not available
 - Standard chem.inp: chem.inp
@@ -58,7 +58,7 @@ Due to the increasing interest in the use of biofuels for energy production, it 
 
 ## Processing Notes
 
-- extracted S0010218014002314_mmc1.docx
-- extracted S0010218014002314_mmc4.zip
 - extracted S0010218014002314_mmc2.docx
+- extracted S0010218014002314_mmc4.zip
 - extracted S0010218014002314_mmc3.zip
+- extracted S0010218014002314_mmc1.docx

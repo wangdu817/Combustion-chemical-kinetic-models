@@ -42,7 +42,7 @@ Alan E. Long, Shamel S. Merchant, Aäron G. Vandeputte, Hans-Heinrich Carstensen
 
 ## Abstract
 
-not available
+Cyclopentadiene (CPD) and cyclopentadienyl radical (CPDyl) reactions are known to provide fast routes to naphthalene and other polycyclic aromatic hydrocarbon (PAH) precursors in many systems. In this work, we combine literature quantum chemical pathways for the CPDyl + CPDyl recombination reaction and provide pressure dependent rate coefficient calculations and analysis. We find that the simplified 1-step global reaction leading to naphthalene and two H atoms used in many kinetic models is not an adequate description of this chemistry at conditions of relevance to pyrolysis and steam cracking. The C10H10 species is observed to live long enough to undergo H abstraction reactions to enter the C10H9 potential energy surface (PES). Rate coefficient expressions as functions of T and P are reported in CHEMKIN format for future use in kinetic modeling.
 
 ## Processing Notes
 

@@ -22,18 +22,18 @@ Cheng-Yin Ye, Ling-Nan Wu, Dong-Xu Tian, Jiu-Zhong Yang, ... Zhen-Yu Tian. Exper
 - Standard mechanism file: chem.inp
 - Standard thermodynamic file: therm.dat
 - Standard transport file: not available
-- Original mechanism source files: _processing\raw_downloads\S0010218025007771_mmc2.txt
-- Original thermodynamic source files: _processing\raw_downloads\S0010218025007771_mmc3.txt
+- Original mechanism source files: _processing/raw_downloads/S0010218025007771_mmc2.txt
+- Original thermodynamic source files: _processing/raw_downloads/S0010218025007771_mmc3.txt
 - Original transport source files: not found
 
 ## Cantera Preprocessing Results
 
 ### Mechanism 1
 
-- Status: cantera_failed
+- Status: ok
 - Species count: 323
 - Reaction count: 2041
-- Message: missing cantera result json
+- Message: cantera conversion ok
 - Method: cantera
 - Cantera YAML: mechanism.yaml
 - Standard chem.inp: chem.inp
@@ -46,4 +46,4 @@ The pyrolysis of pyridine, a model compound for fuel-nitrogen in coal, biomass, 
 
 ## Processing Notes
 
-- none
+- extracted S0010218025007771_mmc1.xlsx

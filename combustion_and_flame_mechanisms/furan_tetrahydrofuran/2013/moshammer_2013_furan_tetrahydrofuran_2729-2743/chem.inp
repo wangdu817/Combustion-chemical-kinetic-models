@@ -1,0 +1,2792 @@
+ELEMEntS
+ar h c n o he 
+END
+SpEciES
+he
+ar
+c*cc#c
+c*cc*c*o
+c*cc*cj
+c*occ*cj
+c2h
+c2h2
+c2h3
+c2h3chcho
+c2h3cho
+c2h3choch2
+c2h3co
+c2h3o1-2
+c2h3oh
+c2h4
+c2h4o1-2
+c2h4o2h
+c2h5
+c2h5cho
+c2h5co
+c2h5o
+c2h5o2
+c2h5o2h
+c2h5oh
+c2h6
+c3h2
+c3h3
+c3h4-a
+c3h4-p
+c3h5-a
+c3h5-s
+c3h5-t
+c3h5o
+c3h6
+c3h6cho-1
+c3h6cho-2
+c3h6cho-3
+c3h6o1-2
+c3h6oh
+c3h8
+c4h10
+c4h2
+c4h5-1p
+c4h5-2
+c4h6
+c4h6o23
+c4h71-3
+c4h71-1
+c4h71-2
+c4h71-4
+c4h7o
+c4h7o1-4
+c4h8-1
+c4h8-2
+c4h8o1-4
+c4h8oh-1
+cc3h4
+ch
+ch2
+ch2(s)
+ch2cch2oh
+ch2ch2cho
+ch2cho
+ch2co
+ch2o
+ch2oh
+ch3
+ch3chcho
+ch3chco
+ch3cho
+ch3chocho
+ch3co
+ch3coch3
+ch3coch2
+ch3o
+ch3o2
+ch3o2h
+ch3oh
+ch4
+cj*cc*o
+co
+co2
+cycc*cco
+cyccc(o2)co
+cyccc(o2h)co
+cyccc(oh)cjo
+cyccc*co
+cyccccjo
+cycccjco
+cyccjc*co
+h
+h2
+h2c4o
+h2cc
+h2o
+h2o2
+hcccho
+hccco
+hcco
+hccoh
+hco
+hcohco
+ho2
+ho2cho
+hoc3h6o2
+hoc4h6
+hoch2o
+hocho
+i-c4h3
+i-c4h5
+ic3h6cho
+ic3h7
+ic3h7o
+ic3h7o2
+ic4h7
+ic4h8
+ic4h9
+n-c4h3
+n2
+nc3h7
+nc3h7cho
+nc3h7co
+nc3h7o2
+o
+o2
+o2c2h4oh
+o2cho
+ocho
+oh
+pc2h4oh
+pc4h9
+pro13al1j
+sc2h4oh
+sc3h5cho
+sc3h5co
+sc4h8oh
+sc4h8oh-2o2
+sc4h9
+tc4h9
+cyc3h5(cho)
+
+! soot chemistry species
+benzene
+c5h4ch2  ! fulvene
+phenyl
+o-c6h4   ! o-benzyne (c6h4)
+phenol
+a1o    	      ! phenoxy radical (c6h5o)
+cycc*cc*c     ! cyclopentadiene (c5h6)
+cycjc*cc*c    ! cyclopentadienyl radical (c5h5)
+oc6h4o	      ! 1,4-benzoquinone
+cyc(*o)c*cc*c ! cyclopentadiene-1-one (c5h4o)
+t-c5h5o	      ! 1-oxyl-1,3-cyclopentadiene radical
+s-c5h5o	      ! 1-oxyl-1,4-cyclopentadiene radical
+toluene
+a1jch3		! toluene radical (radical center on one of the carbon atoms in the ring)
+a1ch2		! benzyl radical
+hoa1ch3		! cresol (lumped)
+oa1ch3		! methylphenoxy radical (lumped) (= cresol - hydroxy hydrogen)
+a1ch2o		! benzoxyl radical
+a1ch2oh		! benzyl alcohol
+a1cho		! benzaldehyde
+
+! 2mthf species
+mthf-2
+c5h9o-1
+c5h9o-2
+c5h9o-3
+c5h9o-4
+c5h9o-5
+cjccoc*c
+c2h3och2
+ojcccc*c
+cjcoc(*c)c
+cjccc(*o)c
+cjoc(c)c*c
+ojccc*cc
+c4h72-1
+c*ccc(c)oj
+c*ccocjc
+c*coc(cj)c
+o*ccccjc
+cyccc*c(c)o
+cycc*cc(c)o
+cyc*ccc(c)o
+cyc*ccjc(c)o
+c3h5chcho
+cycjc(oh)cc(c)o         
+c4h71-3
+
+
+END
+
+
+REactiOnS
+
+!!!###################################!!!
+!!! H2/O2 mechanism from Burke et al. !!!
+!!!###################################!!!
+
+!h2-o2 chain Reactions
+!Baulch et al., J. Phys. chem. Ref Data, 21:411 (1992)
+o+h2=h+oh				 3.818E+12 0.00  7.948E+03
+DUP
+o+h2=h+oh				 8.792E+14 0.00  1.917E+04
+DUP
+! hong et al., Proc. comb. Inst. (2010) in press, doi:10.1016/j.proci.2010.05.101.
+h+o2 = o+oh                              1.08E+14  0.0   1.5395E+04
+
+! Michael and sutherland, J. Phys. chem. 92:3853 (1988)
+h2+oh = h2o+h				 0.216E+09  1.51  0.343E+04	 
+
+!Baulch et al., J. Phys. chem. Ref Data, 21:411 (1992)
+oh+oh=o+h2o				 3.34E+04   2.42  -1.93E+03
+
+!h2-o2 Dissociation Reactions
+
+! Tsang and hampson, J. Phys. chem. Ref. Data, 15:1087 (1986) 
+h2+M = h+h+M				 4.577E+19  -1.40  1.0438E+05
+   h2/2.5/ h2o/12/
+   co/1.9/ co2/3.8/
+   ar/0.0/ he/0.0/
+! Tsang and hampson, J. Phys. chem. Ref. Data, 15:1087 (1986) 
+h2+ar = h+h+ar                           5.840E+18 -1.10  1.0438E+05
+h2+he = h+h+he                           5.840E+18 -1.10  1.0438E+05
+
+! Tsang and hampson, J. Phys. chem. Ref. Data, 15:1087 (1986) 
+o+o+M = o2+M                             6.165E+15 -0.50  0.000E+00
+   h2/2.5/ h2o/12/
+   ar/0.0/  he/0.0/
+   co/1.9/ co2/3.8/
+
+! Tsang and hampson, J. Phys. chem. Ref. Data, 15:1087 (1986) 
+o+o+ar = o2+ar                           1.886E+13  0.00 -1.788E+03
+o+o+he = o2+he                           1.886E+13  0.00 -1.788E+03
+
+! Tsang and hampson, J. Phys. chem. Ref. Data, 15:1087 (1986) 
+o+h+M = oh+M                             4.714E+18 -1.00  0.000E+00
+   h2/2.5/ h2o/12/
+   ar/0.75/ he/0.75/
+   co/1.9/ co2/3.8/
+
+! srinivasan and Michael, Int. J. chem. Kinetic. 38 (2006)
+! Rate constant is for ar with efficiencies from Michael et al., J. Phys. chem. A, 106 (2002)
+h2o+M = h+oh+M                              6.064E+27 -3.322 1.2079E+05
+   h2/3.0/ h2o/0.0/
+   he/1.10/ n2/2.00/
+   o2/1.5/ !ch4/7.0/
+! not listed in srinivasan and Michael study using "conventional" values
+   co/1.9/ co2/3.8/
+h2o+h2o = h+oh+h2o                       1.006E+26 -2.44  1.2018E+05
+
+h+o2(+M) = ho2(+M)                       4.65084E+12  0.44  0.000E+00
+   LoW/6.366E+20 -1.72  5.248E+02/
+   TRoE/0.5  1E-30  1E+30/
+   h2/2.0/ h2o/14/ o2/0.78/ co/1.9/ co2/3.8/ ar/0.00/ he/0.00/
+
+h+o2(+ar) = ho2(+ar)                     4.65084E+12  0.44  0.000E+00
+   LoW/9.042E+19 -1.50  4.922E+02/
+   TRoE/0.5 1E-30  1E+30/
+
+h+o2(+he) = ho2(+he)                     4.65084E+12  0.44  0.000E+00
+   LoW/1.085E+20 -1.50  4.922E+02/
+   TRoE/0.5 1E-30  1E+30/
+
+! Michael et al., Proc. comb. Inst. 28:1471 (2000)
+! Rate constant below has been computed from reverse reaction and equilibrium
+! constant given by Michael et al.
+ho2+h=h2+o2                              2.750E+06  2.09 -1.451E+03
+
+! Mueller et al., Int. J. chem. Kinetic. 31 (1999) 113
+ho2+h = oh+oh                            7.079E+13  0.00  2.950E+02
+
+! Baulch et al. JPcRD, 34, 2005
+!ho2+h=h2o+o                             1.445E+12  0.00  0.000E+00
+
+
+!Fernandez-Ramos & Varandas 2002
+!Rate constant below determined by 3-parameter fit over a temperature range 
+!from 800 to 1600K within 8%
+ho2+o = o2+oh                            2.85E+10   1.00 -7.2393E+02
+
+! Keyser, J. Phys. chem. 92:1193 (1988)
+ho2+oh = h2o+o2                          2.890E+13  0.00 -4.970E+02
+
+!Formation and consumption of h2o2
+
+! hippler et al., J. chem. Phys. 93:1755 (1990)
+ho2+ho2 = h2o2+o2                        4.200e+14  0.00  1.1982E+04
+   DUPLIcATE
+ho2+ho2 = h2o2+o2                        1.300e+11  0.00 -1.6293E+03
+   DUPLIcATE
+
+!!Troe cnF 2010
+!k0 and Fc for ar
+!3rd body eff's taken from Troe for he, ar, o2, n2, co2, h2o, and h2o2
+!3rd body eff's taken from Li et al. for h2, co
+h2o2(+M) = oh+oh(+M)                     2.00E+12   0.9	  48749
+   LoW/2.49E+24 -2.3 48749/
+   TRoE/0.43 1E-30 1E+30/
+   h2/3.7/ h2o/7.5/
+   co/2.8/ co2/1.6/
+   n2/1.5/ o2/1.2/
+   he/0.65/ h2o2/7.7/
+
+! Tsang and hampson, J. Phys. chem. Ref. Data, 15:1087 (1986)
+h2o2+h = h2o+oh                          2.410E+13  0.00  3.970E+03
+h2o2+h = ho2+h2                          4.820E+13  0.00  7.950E+03
+h2o2+o = oh+ho2                          9.550E+06  2.00  3.970E+03
+
+!hong et al., J. Phys. chem. A  114 (2010) 5718?727
+h2o2+oh = ho2+h2o                        1.740E+12  0.00  3.180E+02
+   DUPLIcATE
+h2o2+oh = ho2+h2o                        7.590E+13  0.00  7.270E+03
+   DUPLIcATE
+
+
+
+!!!##############!!!
+!!! CO chemistry !!! further updates from ESSCI paper Haas and Vranckx
+!!!##############!!!
+
+
+!updated by Stijn to Tsang and Hampson, JPC Ref. Data, 15:1087 (1986)
+co+o2 = co2+o                            2.530E+12    0.00  4.770E+04
+
+! updated by Stijn to Senosiain, Klippenstein & Miller (2005) LPL
+co+oh = co2+h                             3.018E+05    1.86 -5.334E+02
+	 
+co+ho2<=>co2+oh                           1.570e+05    2.180  17942.64
+
+co+o(+M)<=>co2(+M)                       1.800e+10    0.000   2385.28
+h2/2.00/ h2o/12.00/ ar/0.70/ co/1.75/ co2/3.60/ 
+     LoW  /  1.550e+24   -2.790   4192.16 /
+     TRoE/       1     1.00 10000000.00 10000000.00 /
+
+hco+M<=>co+h+M                           4.748e+11    0.659  14873.80
+h2/2.00/ h2o/0.00/ co/1.75/ co2/3.60/ 
+
+hco+oh = co+h2o                          3.020e+13    0.000      0.00
+
+2hco = h2+2co		3.0E12	0.0	0.0		 
+
+2hco = ch2o+co		3.0E13	0.0	0.0		
+
+! updated by Stijn to Timonen et al., JPc, 91:692 (1987)
+hco+h = co+h2                            7.230E+13    0.00  0.000E+00
+
+hco+o<=>co+oh                            3.000e+13    0.000      0.00
+hco+o<=>co2+h                            3.000e+13    0.000      0.00
+	
+
+hco+ch3=ch4+co		3.98E13	0.0	0.0		 
+
+hco+o2<=>co+ho2                          7.580e+12    0.000    409.89
+
+
+hco+ho2=ch2o+o2		3.0E14	-0.061	13920.0		 
+
+hco+ho2=co2+h+oh	3.0E13	0.0	0.0		
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+hco+h(+M)=ch2o(+M)	1.09E12	0.48	-260.0	
+ ch4 /2.0/
+ co /1.5/
+ co2 /2.0/
+ ar /0.7/
+ c2h6 /3.0/
+ h2o /6.0/
+ h2 /2.0/
+LOW/1.35E24 -2.57E0 1.425E3/
+tROE/7.824E-1 2.71E2 2.755E3 6.57E3/	 
+
+co+h2(+M)=ch2o(+M)		4.3E7	1.5	79600.0	
+ ch4 /2.0/
+ co /1.5/
+ co2 /2.0/
+ ar /0.7/
+ c2h6 /3.0/
+ h2o /6.0/
+ h2 /2.0/
+LOW/5.07E27 -3.42E0 8.4348E4/
+tROE/9.32E-1 1.97E2 1.54E3 1.03E4/	
+ 
+ch2o+oh=hco+h2o		2.5E9	1.2	-447.0
+		 
+ch2o+h=hco+h2		5.74E7	1.9	2740.0	
+	 
+ch2o+o=hco+oh		4.16E11	0.57	2762.0		 
+
+ch2o+ch3=hco+ch4	3.83E1	3.36	4312.0		 
+
+ch2o+ho2=hco+h2o2	6.0E5	2.31	11980.0		 
+
+ch2o+ch3o=ch3oh+hco	6.62E11	0.0	2294.0		 
+
+hco+o2=o2cho		1.2E11	0.0	-1100.0		
+
+ho2+o2cho=ocho+oh+o2	2.5E11	0.0	-1570.0		 
+
+2o2cho=2ocho+o2		1.4E16	-1.61	1860.0		 
+
+ch3oh+o2cho=ch2oh+ho2cho	1.81E12	0.0	13710.0		 
+
+ch2o+o2cho=hco+ho2cho		1.99E12	0.0	11670.0		 
+
+ho2cho=ocho+oh		5.01E14	0.0	40150.0		 
+
+h+co2=ocho		7.5E13	0.0	29000.0		 
+
+ch2o+oh=hoch2o		6.32E6	1.63	4280.0		 
+
+hoch2o=hocho+h		1.0E14	0.0	14900.0	
+	 
+ocho+ch2o=hocho+hco	5.6E12	0.0	13600.0		 
+
+ocho+ho2=hocho+o2	3.5E10	0.0	-3275.0		 
+
+ocho+h2o2=hocho+ho2	2.4E12	0.0	10000.0		 
+
+ocho+o=oh+co2		6.0E12	0.0	0.0		 
+
+ocho+oh=h2o+co2		6.0E12	0.0	0.0		 
+
+hocho(+M)=co+h2o(+M)	7.49E14	0.0	68710.0	
+ ch4 /2.0/
+ co /1.5/
+ co2 /2.0/
+ ar /0.7/
+ c2h6 /3.0/
+ h2o /6.0/
+ h2 /2.0/
+LOW/4.05E15 0.0E0 5.298E4/	 
+
+hocho(+M)=co2+h2(+M)		4.46E13	0.0	68240.0	
+ ch4 /2.0/
+ co /1.5/
+ co2 /2.0/
+ ar /0.7/
+ c2h6 /3.0/
+ h2o /6.0/
+ h2 /2.0/
+LOW/1.69E15 0.0E0 5.11E4/	 
+
+hco+oh=hocho		3.0E13	0.0	0.0	
+	 
+hocho+oh=>h2o+co2+h	2.62E6	2.06	916.0	
+	 
+hocho+oh=>h2o+co+oh	1.85E7	1.51	-962.0	
+	 
+hocho+h=>h2+co2+h	4.24E6	2.1	4868.0		 
+
+hocho+h=>h2+co+oh	6.03E13	-0.35	2988.0		 
+
+hocho+ch3=>ch4+co+oh	3.9E-7	5.8	2200.0		 
+
+hocho+ho2=>h2o2+co+oh	1.0E12	0.0	11920.0		
+ 
+hocho+o=>co+2oh		1.77E18	-1.9	2975.0		 
+
+ch3oh(+M)=ch3+oh(+M)	1.9E16	0.0	91730.0	
+LOW/2.95E44 -7.35E0 9.546E4/
+tROE/4.14E-1 2.79E2 5.459E3/
+	 
+ch3oh(+M)=ch2oh+h(+M)		2.69E16	-0.08	98940.0	
+LOW/2.34E40 -6.33E0 1.031E5/
+tROE/7.73E-1 6.93E2 5.333E3/	 
+
+ch2(s)+h2o(+M)=ch3oh(+M)		2.0E13	0.0	0.0	
+ ch4 /2.0/
+ co /1.5/
+ co2 /2.0/
+ h2o /6.0/
+ h2 /2.0/
+LOW/2.7E38 -6.3E0 3.1E3/
+tROE/1.507E-1 1.34E2 2.383E3 7.265E3/	 
+
+ch3o+h(+M)=ch3oh(+M)	5.0E13	0.0	0.0	
+ ch4 /2.0/
+ co /1.5/
+ co2 /2.0/
+ h2o /6.0/
+ h2 /2.0/
+LOW/8.6E28 -4.0E0 3.025E3/
+tROE/8.902E-1 1.44E2 2.838E3 4.5569E4/	 
+
+ch3oh(+M)=ch2o+h2(+M)		2.03E9	1.0	91443.0	
+ co /2.0/
+ co2 /3.0/
+ h2o /10.0/
+ h2 /2.0/
+LOW/9.784E47 -8.4E0 1.0176E5/
+tROE/9.0E-1 8.25E2 1.125E3 5.7E3/	 
+
+ch3oh+h=ch3o+h2		3.6E12	0.0	6095.0		
+
+ch3oh+h=ch2oh+h2		4.72E8	1.58	5180.0	
+	 
+ch3oh+o=ch2oh+oh		2.16E13	0.0	5150.0	
+	 
+ch3oh+oh=ch2oh+h2o		1.44E+06	2	-839
+
+ch3oh+oh=ch3o+h2o		5.13E+05	2.13	2450
+
+ch3oh+o2=ch2oh+ho2		2.05E+13	0	44900
+
+ch3oh+ho2=ch2oh+h2o2		3.98E+13	0	19400
+
+ch3oh+ch3=ch2oh+ch4		3.19E+01	3.17	7172
+
+ch3oh+ch3o=ch2oh+ch3oh		3.00E+11	0	4074
+
+ch3oh+o=ch3o+oh			1.30E+05	2.5	5000
+
+ch3oh+ch3o2=ch2oh+ch3o2h	1.81E12	0.0	13710.0		
+ 
+ch2o+h(+M)=ch2oh(+M)		5.4E11	0.454	3600.0	
+ ch4 /2.0/
+ co /1.5/
+ co2 /2.0/
+ c2h6 /3.0/
+ h2o /6.0/
+ h2 /2.0/
+LOW/1.27E32 -4.82E0 6.53E3/
+tROE/7.187E-1 1.03E2 1.291E3 4.16E3/	 
+
+ch2oh+o2=ch2o+ho2		1.51E+15	-1	0	
+
+DUp
+ch2oh+o2=ch2o+ho2		2.41E+14	0	5017	
+DUp
+
+ch2oh+h=ch2o+h2			6.00E+12	0	0	
+
+ch2oh+h=ch2(s)+h2o		6.00E+12	0	0	
+
+ch2oh+o=ch2o+oh			4.20E+13	0	0
+	
+ch2oh+oh=ch2o+h2o		2.40E+13	0	0
+	
+ch2oh+ho2=ch2o+h2o2		1.20E+13	0	0
+	
+ch2oh+ho2=hoch2o+oh		1.00E+13	0	0
+	
+ch2oh+hco=2ch2o			1.50E+13	0	0
+	
+ch2oh+hco=ch3oh+co		1.00E+13	0	0
+	
+ch2oh+ch3o=ch2o+ch3oh		2.40E+13	0	0
+	
+2ch2oh=ch2o+ch3oh		3.00E+12	0	0
+	
+ch2oh+ch2o=ch3oh+hco		1.88E+04	2.722	4208	
+
+ch3o(+M)=ch2o+h(+M)		6.8E13	0.0	26170.0	
+ ch4 /2.0/
+ co /1.5/
+ co2 /2.0/
+ c2h6 /3.0/
+ h2o /6.0/
+ h2 /2.0/
+LOW/1.867E25 -3.0E0 2.4307E4/
+tROE/9.0E-1 2.5E3 1.3E3 1.0E99/	 
+
+ch3o+ch3=ch2o+ch4		1.20E+13	0	0
+
+ch3o+ho2=ch2o+h2o2		3.01E+11	0	0
+
+ch3o+o2=ch2o+ho2		4.38E-19	9.5	-5501
+
+ch3o+h=ch2o+h2			2.00E+13	0	0
+
+ch3o+h=ch2(s)+h2o		1.60E+13	0	0
+
+ch3o+o=ch2o+oh			6.00E+12	0	0
+
+ch3o+oh=ch2o+h2o		1.81E+13	0	0
+
+ch3o+co=ch3+co2			8.00E+12	0	11800
+
+2ch3o=ch3oh+ch2o		6.03E+13	0	0
+
+ch3o+hco=ch3oh+co		9.00E+13	0	0
+
+ch3+h(+M)=ch4(+M)		2.138E15	-0.4	0.0	
+ ch4 /2.0/
+ co /2.0/
+ co2 /3.0/
+ ar /0.7/
+ c2h6 /3.0/
+ h2o /6.0/
+ h2 /2.0/
+LOW/3.31E30 -4.0E0 2.108E3/
+tROE/0.0E0 1.0E-15 1.0E-15 4.0E1/	 
+
+ch4+h=ch3+h2			6.14E+05	2.5	9587
+
+ch4+oh=ch3+h2o			5.83E+04	2.6	2190
+
+ch4+o=ch3+oh			2.13E+06	2.21	6480
+
+ch4+ch2=2ch3			2.46E+06	2	8270
+
+ch4+ho2=ch3+h2o2		1.13E+01	3.74	21010
+
+ch4+ch3o=ch3+ch3oh		1.57E+11	0	8842
+
+ch4+ch3o2=ch3+ch3o2h		1.81E+11	0	18480
+
+ch2+h(+M)=ch3(+M)		6.0E14	0.0	0.0	
+ ch4 /2.0/
+ co /1.5/
+ co2 /2.0/
+ ar /0.7/
+ c2h6 /3.0/
+ h2o /6.0/
+ h2 /2.0/
+LOW/1.04E26 -2.76E0 1.6E3/
+tROE/5.62E-1 9.1E1 5.836E3 8.552E3/	 
+
+ch+h2(+M)=ch3(+M)		1.97E12	0.43	-370.0	
+ ch4 /2.0/
+ co /1.5/
+ co2 /2.0/
+ ar /0.7/
+ c2h6 /3.0/
+ h2o /6.0/
+ h2 /2.0/
+LOW/4.82E25 -2.8E0 5.9E2/
+tROE/5.78E-1 1.22E2 2.535E3 9.365E3/	 
+
+ch3+oh=ch2o+h2			8.00E+09	0.5	-1755
+
+ch3+oh=ch2+h2o			5.60E+07	1.6	5420
+
+ch3+oh=ch2(s)+h2o		4.51E+17	-1.34	1417
+
+ch3+oh=ch3o+h			6.94E+07	1.343	11200
+
+ch3+oh=ch2oh+h			3.09E+07	1.596	4506
+
+ch3+ho2=ch3o+oh			1.00E+12	0.269	-688
+
+ch3+ho2=ch4+o2			1.16E+05	2.23	-3022
+
+ch3+o=ch2o+h			8.00E+13	0	0
+
+ch3+h=ch2+h2			6.00E+13	0	15100
+
+ch3+o2=ch3o+o			7.55E+12	0	28320
+
+ch3+o2=ch2o+oh			2.64E+00	3.283	8105
+
+ch3+o2(+M)=ch3o2(+M)		7.812E9	0.9	0.0	
+LOW/6.85E24 -3.0E0 0.0E0/
+tROE/6.0E-1 1.0E3 7.0E1 1.7E3/	 
+
+2ch3o2=ch2o+ch3oh+o2		3.11E+14	-1.61	-1051
+	
+2ch3o2=2ch3o+o2			1.40E+16	-1.61	1860
+	
+ch3o2+ch3=2ch3o			5.08E+12	0	-1411
+	
+ch3o2+ho2=ch3o2h+o2		2.47E+11	0	-1570
+	
+ch3o2h=ch3o+oh			6.31E+14	0	42300
+	
+ch3o2+h2=ch3o2h+h		1.50E+14	0	26030
+	
+ch3o2+h2o2=ch3o2h+ho2		1.32E+04	2.5	9560
+	
+ch3o2+h=ch3o+oh			9.60E+13	0	0
+	
+ch3o2+o=ch3o+o2			3.60E+13	0	0
+	
+ch3o2+oh=ch3oh+o2		6.00E+13	0	0
+	
+ch3o2+ch2o=ch3o2h+hco		1.99E+12	0	11670
+	
+ch+o=co+h			5.70E+13	0	0
+	
+ch+oh=hco+h			3.00E+13	0	0
+	
+ch+o2=hco+o			3.30E+13	0	0
+	
+ch+h2o=ch2o+h			5.71E+12	0	-755
+	
+ch+co2=hco+co			3.40E+12	0	690
+	
+ch2+o=hco+h			8.00E+13	0	0
+	
+ch2+h=ch+h2			1.00E+18	-1.56	0	
+
+DUp
+ch2+h=ch+h2			2.70E+11	0.67	25700	
+DUp
+
+ch2+oh=ch+h2o			8.63E+05	2.02	6780	
+
+ch2+oh=ch2o+h			2.86E+13	0.12	-160	
+
+ch2+ho2=ch2o+oh			2.00E+13	0	0	
+
+ch2+o2=hco+oh			4.00E+12	0	1500	
+
+ch2+o2=>co2+2h			2.64E+12	0	1500	
+
+ch2(s)+M=ch2+M			1.0E13	0.0	0.0	
+ co2 /0.5/
+ ar /0.8/
+ h2o /6.0/	 
+
+ch2(s)+ch4=2ch3			1.60E+13	0.00	-570.0
+					
+ch2(s)+o2=>co+oh+h		7.00E+13	0.00	0.0
+					
+ch2(s)+h2=ch3+h			7.00E+13	0.00	0.0
+					
+ch2(s)+h=ch+h2			3.00E+13	0.00	0.0
+					
+ch2(s)+h=ch2+h			3.00E+13	0.00	0.0
+					
+ch2(s)+o=co+h2			1.50E+13	0.00	0.0
+					
+ch2(s)+o=hco+h			1.50E+13	0.00	0.0
+					
+ch2(s)+oh=ch2o+h		3.00E+13	0.00	0.0
+					
+ch2(s)+co2=ch2o+co		3.00E+12	0.00	0.0
+
+
+2ch3(+M)=c2h6(+M)		9.214E16	-1.17	635.8	
+ ch4 /2.0/
+ co /1.5/
+ co2 /2.0/
+ ar /0.7/
+ c2h6 /3.0/
+ h2o /6.0/
+ h2 /2.0/
+LOW/1.135E36 -5.246E0 1.705E3/
+tROE/4.05E-1 1.12E3 6.96E1 1.0E10/	 
+
+c2h5+h(+M)=c2h6(+M)		5.21E17	-0.99	1580.0	
+ ch4 /2.0/
+ co /1.5/
+ co2 /2.0/
+ ar /0.7/
+ c2h6 /3.0/
+ h2o /6.0/
+ h2 /2.0/
+LOW/1.99E41 -7.08E0 6.685E3/
+tROE/8.42E-1 1.25E2 2.219E3 6.882E3/	
+
+c2h5+o2=ch3cho+oh		8.68E+14	-1.121	10610
+
+c2h5+o2=c2h4+ho2		1.00E+26	-4.423	10438
+
+c2h5+o2=c2h4o1-2+oh		3.52E+27	-5.005	15249
+
+c2h5+o2=c2h5o2			9.89E55	-13.551	15110.0	
+pLOG/1.0E-1 2.95E56 -1.4446E1 1.1829E4/
+pLOG/1.0E0 2.46E58 -1.4635E1 1.4209E4/
+pLOG/1.0E1 9.89E55 -1.3551E1 1.511E4/
+pLOG/1.0E2 8.29E47 -1.0824E1 1.3409E4/	 
+
+c2h5+o2=c2h4o2h		7.84E40	-9.739	14966.0	
+pLOG/1.0E-1 1.77E30 -7.483E0 4.332E3/
+pLOG/1.0E0 4.0E36 -8.939E0 9.445E3/
+pLOG/1.0E1 7.84E40 -9.739E0 1.4966E4/
+pLOG/1.0E2 5.47E39 -8.918E0 1.8988E4/	 
+
+c2h5o2=c2h4+ho2		7.53E55	-13.504	46652.0	
+pLOG/1.0E-1 8.02E58 -1.4945E1 4.5118E4/
+pLOG/1.0E0 1.99E60 -1.512E1 4.6911E4/
+pLOG/1.0E1 7.53E55 -1.3504E1 4.6652E4/
+pLOG/1.0E2 2.33E46 -1.0404E1 4.4019E4/	 
+
+c2h5o2=c2h4o2h			4.14E+65	-17.029	52310
+
+c2h5o2=c2h4o1-2+oh		1.07E+65	-16.475	57170
+
+c2h4o2h=c2h4+ho2		2.92E+38	-8.269	23756
+
+c2h4o2h=c2h4o1-2+oh		4.84E+38	-8.348	23736
+
+c2h5o2+ho2=c2h5o2h+o2		4.10E+11	0	-1390
+
+c2h6+h=c2h5+h2			1.15E+08	1.9	7530
+
+c2h6+ch3=c2h5+ch4		6.14E+06	1.74	10450
+
+c2h6+oh=c2h5+h2o		1.48E+07	1.9	950
+
+c2h6+o=c2h5+oh			3.55E+06	2.4	5830
+
+c2h6+o2=c2h5+ho2		6.03E+13	0	51870
+
+c2h6+ho2=c2h5+h2o2		3.96E+04	2.5	15900
+
+c2h6+ch3o2=c2h5+ch3o2h		1.94E+01	3.64	17100
+
+c2h6+c2h5o2=c2h5+c2h5o2h	8.60E+00	3.76	17200
+
+c2h6+ch3o=c2h5+ch3oh		2.41E+11	0	7090
+
+c2h6+ch=c2h5+ch2		1.10E+14	0	-260
+
+c2h6+ch2(s)=ch3+c2h5		1.20E+14	0	0
+
+c2h4+h(+M)=c2h5(+M)		1.95E12	0.454	1822.0	
+ ch4 /2.0/
+ co /1.5/
+ c4h10 /3.0/
+ co2 /2.0/
+ ar /0.7/
+ c2h6 /3.0/
+ h2o /6.0/
+ c2h4 /3.0/
+ c3h8 /3.0/
+ c2h2 /3.0/
+ c3h6 /3.0/
+ h2 /2.0/
+LOW/2.16E42 -7.62E0 6.97E3/
+tROE/9.75E-1 2.1E2 9.84E2 4.374E3/	 
+
+c2h5+c2h3=2c2h4		6.859E11	0.11	-4300.0		 
+c2h3+h(+M)=c2h4(+M)		6.08E12	0.27	280.0	
+ ch4 /2.0/
+ co /1.5/
+ co2 /2.0/
+ ar /0.7/
+ c2h6 /3.0/
+ h2o /6.0/
+ h2 /2.0/
+LOW/1.4E30 -3.86E0 3.32E3/
+tROE/7.82E-1 2.075E2 2.663E3 6.095E3/	 
+
+c2h4(+M)=c2h2+h2(+M)		8.0E12	0.44	88770.0	
+ ch4 /2.0/
+ co /1.5/
+ co2 /2.0/
+ ar /0.7/
+ c2h6 /3.0/
+ h2o /6.0/
+ h2 /2.0/
+LOW/7.0E50 -9.31E0 9.986E4/
+tROE/7.345E-1 1.8E2 1.035E3 5.417E3/	 
+
+c2h3(+M)=c2h2+h(+M)		2.573E8	1.62	37048.2	
+ ch4 /2.0/
+ co /1.5/
+ co2 /2.0/
+ ar /0.7/
+ c2h6 /3.0/
+ h2o /6.0/
+ c2h4 /3.0/
+ c2h2 /3.0/
+ h2 /2.0/
+LOW/1.71E27 -3.4E0 3.579872E4/
+tROE/1.9816E0 5.3837E3 4.2932E0 -7.95E-2/	 
+
+c2h+h(+M)=c2h2(+M)		1.0E17	-1.0	0.0	
+ ch4 /2.0/
+ co /1.5/
+ co2 /2.0/
+ ar /0.7/
+ c2h6 /3.0/
+ h2o /6.0/
+ h2 /2.0/
+LOW/3.75E33 -4.8E0 1.9E3/
+tROE/6.464E-1 1.32E2 1.315E3 5.566E3/	 
+
+c2h2(+M)=h2cc(+M)		1.091E15	-0.52	50750.0	
+ ch4 /2.0/
+ co /1.5/
+ co2 /2.0/
+ c2h6 /3.0/
+ h2o /6.0/
+ c2h4 /3.0/
+ c2h2 /3.0/
+ h2 /2.0/
+LOW/3.341E15 -6.4E-1 4.97E4/	 
+
+c2h+oh=ch2+co		1.81E+13	0	0
+
+c2h+oh=h+hcco		2.00E+13	0	0
+
+c2h+o2=hco+co		2.41E+12	0	0
+
+c2h+o2=ch+co2		2.00E+10	0	0
+
+c2h+o=co+ch		1.81E+13	0	0
+
+ch2+o=co+2h		5.00E+13	0	0
+
+ch+ch4=c2h4+h		6.00E+13	0	0
+
+c2h4+h=c2h3+h2		1.00E+14	0	15320
+
+c2h4+oh=c2h3+h2o		1.49E-04	5.11	-2260
+
+c2h4+ch3=c2h3+ch4		1.41E+02	3.50	10934
+
+c2h4+hco=c2h5+co		1.00E+07	2.00	8000
+
+c2h4+ch2(s)=h2cc+ch4		5.00E+12	0.00	0
+
+c2h4+o2=c2h3+ho2		2.00E+14	0.00	57630
+
+c2h4+ch3o=c2h3+ch3oh		1.20E+11	0.00	6750
+
+c2h4+ch3o2=c2h3+ch3o2h		2.23E+12	0.00	17190
+
+c2h4+c2h5o2=c2h3+c2h5o2h		2.23E+12	0.00	17190
+
+c2h4+o=ch3+hco		5.00E+07	1.88	183
+
+c2h4+o=ch2cho+h		4.99E+06	1.88	183
+
+c2h3+o2=ch2o+hco		7.50E+28	-5.31	6500
+
+c2h3+o2=ch2cho+o		1.44E+14	0	12900
+
+c2h3+o2=c2h2+ho2		6.60E+21	-3.3	5410
+
+c2h3+o=ch2co+h		4.80E+13	0	0
+
+c2h3+o=ch3+co		4.80E+13	0	0
+
+ch2+co(+M)=ch2co(+M)	8.1E11	0.0	0.0	
+ ch4 /2.0/
+ co /1.5/
+ co2 /2.0/
+ ar /0.7/
+ c2h6 /3.0/
+ h2o /6.0/
+ h2 /2.0/
+LOW/2.69E33 -5.11E0 7.095E3/
+tROE/5.907E-1 2.75E2 1.226E3 5.185E3/	 
+
+ch2co+h=ch3+co		1.10E+13	0	3400
+
+ch2co+h=hcco+h2		2.00E+14	0	8000
+
+ch2co+o=ch2+co2		1.75E+12	0	1350
+
+ch2co+o=hcco+oh		1.00E+13	0	8000
+
+ch2co+oh=hcco+h2o		1.00E+13	0	2000
+
+ch2co+oh=ch2oh+co		2.00E+12	0	-1010
+
+hcco+oh=2hco		1.00E+13	0	0
+
+hcco+h=ch2(s)+co		1.10E+13	0	0
+
+hcco+o=>h+2co		8.00E+13	0	0
+
+ch3+c2h3=ch4+c2h2		3.92E+11	0	0
+
+ch3+c2h5=ch4+c2h4		1.18E+04	2.45	-2921
+
+c2h3+h=c2h2+h2		2.00E+13	0	2500
+
+c2h5+h=2ch3		9.69E+13	0	220
+
+c2h5oh(+M)=ch2oh+ch3(+M)		5.71E23	-1.68	94410.0	
+ ch4 /2.0/
+ co /2.0/
+ co2 /3.0/
+ c2h6 /3.0/
+ h2o /5.0/
+ h2 /2.0/
+LOW/3.11E85 -1.884E1 1.131E5/
+tROE/5.0E-1 5.5E2 8.25E2 6.1E3/	 
+
+c2h5oh(+M)=c2h5+oh(+M)	2.4E23	-1.62	99540.0	
+ ch4 /2.0/
+ co /2.0/
+ co2 /3.0/
+ c2h6 /3.0/
+ h2o /5.0/
+ h2 /2.0/
+LOW/5.11E85 -1.88E1 1.1877E5/
+tROE/5.0E-1 6.5E2 8.0E2 1.0E15/	 
+
+c2h5oh(+M)=c2h4+h2o(+M)		2.79E13	0.09	66140.0	
+ h2o /5.0/
+LOW/2.57E83 -1.885E1 8.6453E4/
+tROE/7.0E-1 3.5E2 8.0E2 3.8E3/	 
+
+c2h5oh(+M)=ch3cho+h2(+M)	7.24E11	0.1	91010.0	
+ h2o /5.0/
+LOW/4.46E87 -1.942E1 1.1559E5/
+tROE/9.0E-1 9.0E2 1.1E3 3.5E3/	 
+
+c2h5oh+o2=pc2h4oh+ho2		2.00E+13	0.00	52800.00
+				
+c2h5oh+o2=sc2h4oh+ho2		1.50E+13	0.00	50200.00
+				
+c2h5oh+oh=pc2h4oh+h2o		1.74E+11	0.27	600.00
+				
+c2h5oh+oh=sc2h4oh+h2o		4.64E+11	0.15	0.00
+				
+c2h5oh+h=pc2h4oh+h2		1.23E+07	1.80	5100.00
+				
+c2h5oh+h=sc2h4oh+h2		2.58E+07	1.65	2830.00
+				
+c2h5oh+ho2=pc2h4oh+h2o2		1.23E+04	2.55	15800.00
+				
+c2h5oh+ho2=sc2h4oh+h2o2		8.20E+03	2.55	10800.00
+				
+c2h5oh+ho2=c2h5o+h2o2		2.50E+12	0.00	24000.00
+
+
+c2h5oh+o=pc2h4oh+oh		9.41E+07	1.7	5459
+
+c2h5oh+o=sc2h4oh+oh		1.88E+07	1.85	1824
+
+c2h5oh+ch3=pc2h4oh+ch4		1.33E+02	3.18	9362
+
+c2h5oh+ch3=sc2h4oh+ch4		4.44E+02	2.9	7690
+
+c2h5oh+c2h5=pc2h4oh+c2h6	5.00E+10	0	13400
+
+c2h5oh+c2h5=sc2h4oh+c2h6	5.00E+10	0	10400
+
+pc2h4oh=c2h4+oh			1.05E+25	-3.99	30390
+
+sc2h4oh+M=ch3cho+h+M		1.00E+14	0	25000
+
+ch3+hco(+M)=ch3cho(+M)		1.8E13	0.0	0.0	
+ ch4 /2.0/
+ co /1.5/
+ co2 /2.0/
+ h2o /6.0/
+ c2h2 /3.0/
+ h2 /2.0/
+LOW/2.2E48 -9.588E0 5.1E3/
+tROE/6.173E-1 1.308E1 2.078E3 5.093E3/	 
+
+ch3cho+o2=ch3co+ho2		3.01E+13	0.00	39200.00			
+ch3cho+oh=ch3co+h2o		2.00E+06	1.80	1300.00			
+ch3cho+h=ch3co+h2		1.34E+13	0.00	3300.00			
+ch3cho+o=ch3co+oh		5.94E+12	0.00	1870.00			
+ch3cho+ho2=ch3co+h2o2		3.01E+12	0.00	11900.00			
+ch3cho+ch3=ch3co+ch4		2.61E+06	1.78	5910.00			
+ch3o2+ch3cho=ch3o2h+ch3co		3.01E+12	0.00	11900.00			
+ch3cho+oh=ch3+hocho		3.00E+15	-1.08	0.00			
+ch3cho+oh=ch2cho+h2o		1.72E+05	2.40	815.00			
+ch3co(+M)=ch3+co(+M)		3.00E+12	0.00	16700.00	
+LOW/1.2E15 0.0E0 1.2518E4/		
+ch3co+h=ch2co+h2		2.00E+13	0.00	0.00			
+ch3co+o=ch2co+oh		2.00E+13	0.00	0.00			
+ch3co+ch3=ch2co+ch4		5.00E+13	0.00	0.00			
+c2h5+o=ch3cho+h		5.00E+13	0.00	0.00			
+ch3+ch2o=c2h5o		3.00E+11	0.00	6340.00			
+ch3cho+h=c2h5o		8.00E+12	0.00	6400.00		
+
+
+
+	
+
+c2h5oh+oh=c2h5o+h2o		7.46E+11	0.3	1634		
+c2h5oh+h=c2h5o+h2		1.50E+07	1.6	3038		
+c2h5oh+o=c2h5o+oh		1.58E+07	2	4448		
+c2h5oh+ch3=c2h5o+ch4		1.34E+02	2.92	7452		
+sc2h4oh+o2=ch3cho+ho2		3.81E+06	2	1641		
+c2h5o+o2=ch3cho+ho2		4.28E+10	0	1097		
+c2h5o2h=c2h5o+oh		6.31E+14	0	42300		
+c2h5o2+ch2o=c2h5o2h+hco		1.99E+12	0	11670		
+ch4+c2h5o2=ch3+c2h5o2h		1.81E+11	0	18480		
+ch3oh+c2h5o2=ch2oh+c2h5o2h		1.81E+12	0	13710		
+c2h5+ho2=c2h5o+oh		1.10E+13	0	0		
+ch3o2+c2h5=ch3o+c2h5o		7.00E+12	0	-1000		
+2c2h5o2=2c2h5o+o2		2.49E+12	-0.507	1098		
+2c2h5o2=c2h5oh+ch3cho+o2		2.12E+11	-0.778	-959		
+ch3o2+c2h5o2=ch3o+c2h5o+o2		1.40E+16	-1.61	1860		
+o2c2h4oh=pc2h4oh+o2		3.90E+16	-1	30000		
+o2c2h4oh=>oh+2ch2o		1.25E+10	0	18900		
+c2h4+ch3o2=c2h4o1-2+ch3o		2.82E+12	0	17110		
+c2h4+c2h5o2=c2h4o1-2+c2h5o		2.82E+12	0	17110		
+c2h4o1-2=ch3+hco		3.63E+13	0	57200		
+c2h4o1-2=ch3cho		7.41E+12	0	53800		
+c2h4o1-2+oh=c2h3o1-2+h2o		1.78E+13	0	3610		
+c2h4o1-2+h=c2h3o1-2+h2		8.00E+13	0	9680		
+c2h4o1-2+ho2=c2h3o1-2+h2o2		1.13E+13	0	30430		
+c2h4o1-2+ch3o2=c2h3o1-2+ch3o2h		1.13E+13	0	30430		
+c2h4o1-2+c2h5o2=c2h3o1-2+c2h5o2h		1.13E+13	0	30430		
+c2h4o1-2+ch3=c2h3o1-2+ch4		1.07E+12	0	11830		
+c2h4o1-2+ch3o=c2h3o1-2+ch3oh		1.20E+11	0	6750		
+c2h3o1-2=ch3co		8.50E+14	0	14000		
+c2h3o1-2=ch2cho		1.00E+14	0	14000		
+c2h4+ho2=c2h4o1-2+oh		2.23E+12	0	17190		
+ch2(s)+o=co+2h		3.00E+13	0	0		
+ch2(s)+ch3=c2h4+h		2.00E+13	0	0		
+ch2(s)+ch2co=c2h4+co		1.60E+14	0	0		
+c2h5+h=c2h4+h2		2.00E+12	0	0		
+c2h5+o=ch3+ch2o		1.60E+13	0	0		
+c2h5+ho2=c2h4+h2o2		3.00E+11	0	0		
+c2h5o2+h2o2=c2h5o2h+ho2		1.32E+04	2.5	9560		
+c2h5o2+h2=c2h5o2h+h		1.50E+14	0	26030		
+c2h5oh+ch3o2=pc2h4oh+ch3o2h		1.23E+04	2.55	15750		
+c2h5oh+ch3o2=sc2h4oh+ch3o2h		8.20E+03	2.55	10750		
+c2h5oh+ch3o2=c2h5o+ch3o2h		2.50E+12	0	24000		
+c2h3+oh=c2h2+h2o		3.01E+13	0	0		
+c2h3+oh=c2h3oh		2.40E+13	0	0		
+ch2cho+h=c2h3oh		2.40E+13	0	12510		
+c2h3oh+o2=ch2cho+ho2		5.31E+11	0.21	39830		
+c2h3oh+h=ch2cho+h2		9.81E+02	3.37	3537		
+c2h3oh+o=ch2cho+oh		1.88E+06	1.9	-860		
+c2h3oh+oh=ch2cho+h2o		3.33E+09	1.1	540.5		
+c2h3oh+ch3=ch2cho+ch4		2.03E-08	5.9	1052		
+c2h3oh+ho2=ch2cho+h2o2		3.40E+03	2.5	8922		
+c2h3oh+ch3o2=ch2cho+ch3o2h		3.40E+03	2.5	8922		
+
+ch+co(+M)=hcco(+M)		5.0E13	0.0	0.0	
+ ch4 /2.0/
+ co /1.5/
+ co2 /2.0/
+ ar /0.7/
+ c2h6 /3.0/
+ h2o /6.0/
+ h2 /2.0/
+LOW/2.69E28 -3.74E0 1.936E3/
+tROE/5.757E-1 2.37E2 1.652E3 5.069E3/	 
+
+ch2+ch=c2h2+h		4.00E+13	0.00	0
+2ch2=c2h2+h2		1.58E+14	0.00	11940
+2ch2=c2h2+2h		2.00E+14	0.00	10990
+ch2o+ch=ch2co+h		9.46E+13	0.00	-515
+ch3+ch=c2h3+h		3.00E+13	0.00	0
+ch3+ch2=c2h4+h		4.00E+13	0.00	0
+ch3+hcco=c2h4+co		5.00E+13	0.00	0
+ch3o+h=ch2oh+h		3.40E+06	1.60	0
+ch4+c2h=c2h2+ch3		1.81E+12	0.00	500
+c2h+h2=c2h2+h		4.90E+05	2.50	560
+hcco+o2=>co2+co+h		2.00E+13	-0.4	0
+hcco+ch=c2h2+co		5.00E+13	0	0
+hcco+ch2=c2h3+co		3.00E+13	0	0
+2hcco=>c2h2+2co		1.00E+13	0	0
+c2h2+oh=hccoh+h		5.04E+05	2.3	13500
+c2h2+oh=ch3+co		4.83E-04	4	-2000
+c2h2+oh=c2h+h2o		3.37E+07	2	14000
+c2h2+oh=ch2co+h		1.00E+07	1.5	0
+c2h2+ho2=c2h+h2o2		1.32E+04	2.5	34840
+c2h2+o2=c2h+ho2		1.21E+13	0	74520
+c2h2+o=c2h+oh		4.60E+19	-1.4	28950
+c2h2+o=ch2+co		4.10E+09	1.1	2370
+c2h2+o=hcco+h		2.00E+04	2.7	2360
+c2h2+hco=c2h3+co		1.00E+07	2	6000
+h2cc+h=c2h2+h		1.00E+14	0	0
+h2cc+oh=ch2co+h		2.00E+13	0	0
+h2cc+o2=2hco		1.00E+13	0	0
+hccoh+h=ch2co+h		1.00E+13	0	0
+c2h3+ho2=ch2cho+oh		1.00E+13	0	0
+c2h3+h2o2=c2h4+ho2		1.21E+10	0	-596
+c2h3+hco=c2h4+co		9.03E+13	0	0
+2c2h3=c2h2+c2h4		9.60E+11	0	0
+ch2cho=ch3+co		7.80E+41	-9.147	46900
+
+ch2co+h(+M)=ch2cho(+M)		3.3E14	-0.06	8500.0	
+ ch4 /2.0/
+ co /1.5/
+ co2 /2.0/
+ c2h6 /3.0/
+ ar /0.7/
+ h2o /6.0/
+ c2h4 /3.0/
+ c2h2 /3.0/
+ h2 /2.0/
+LOW/3.8E41 -7.64E0 1.19E4/
+tROE/3.37E-1 1.707E3 3.2E3 4.131E3/	 
+
+ch2cho+h(+M)=ch3cho(+M)		1.0E14	0.0	0.0	
+ ch4 /2.0/
+ co /1.5/
+ co2 /2.0/
+ c2h6 /3.0/
+ h2o /6.0/
+ c2h4 /3.0/
+ c2h2 /3.0/
+ h2 /2.0/
+LOW/5.2E39 -7.297E0 4.7E3/
+tROE/5.5E-1 8.9E3 4.35E3 7.244E3/	 
+
+ch2cho+h=ch3co+h		5.00E+12	0.00	0
+ch2cho+h=ch3+hco		9.00E+13	0.00	0
+ch2cho+h=ch2co+h2		2.00E+13	0.00	4000
+ch2cho+o=ch2co+oh		2.00E+13	0.00	4000
+ch2cho+oh=ch2co+h2o		1.00E+13	0	2000
+ch2cho+o2=>ch2o+co+oh		1.57E+11	0	0
+
+ch3co+h(+M)=ch3cho(+M)		9.6E13	0.0	0.0	
+ ch4 /2.0/
+ co /1.5/
+ co2 /2.0/
+ c2h6 /3.0/
+ h2o /6.0/
+ c2h4 /3.0/
+ c2h2 /3.0/
+ h2 /2.0/
+LOW/3.85E44 -8.569E0 5.5E3/
+tROE/1.0E0 2.9E3 2.9E3 5.132E3/	 
+
+
+!till here correction is finished
+
+
+ch3co+h=ch3+hco		9.60E+13	0.00	0.00			
+ch3co+o=ch3+co2		1.50E+14	0.00	0.00			
+ch3co+oh=ch2co+h2o		1.20E+13	0.00	0.00			
+ch3co+oh=>ch3+co+oh		3.00E+13	0.00	0.00			
+ch3co+ho2=ch3+co2+oh		3.00E+13	0.00	0.00			
+ch3cho+h=ch4+hco		5.00E+10	0.00	0.00			
+ch3cho+hco=co+hco+ch4		8.00E+12	0.00	10400.00			
+c2h4o1-2=ch4+co		1.21E+13	0.00	57200.00			
+c2h4o1-2+h=c2h3+h2o		5.00E+09	0.00	5000.00			
+c2h4o1-2+h=c2h4+oh		9.51E+10	0.00	5000.00			
+c2h4o1-2+o=c2h3o1-2+oh		1.91E+12	0.00	5250.00			
+c2h3o1-2+M=ch3+co+M		3.16E+14	0.00	12000.00			
+c2h3o1-2+M=ch2co+h+M		3.00E+13	0.00	8000.00			
+c2h5+oh=c2h4+h2o		9.00E+12	0.00	0.00			
+c2h3+c2h=2c2h2		3.00E+13	0.00	0.00			
+c2h3+ch=ch2+c2h2		5.00E+13	0.00	0.00			
+ch2cho+o=ch2o+hco		3.00E+13	0.00	0.00			
+							
+hcohco(+M)=ch2o+co(+M)		4.27E+12	0.00	50600.00
+	LOW/8.91E16 0.0E0 4.92E4/		
+							
+hcco+o=ch+co2		2.95E+13	0.00	1113.00			
+c2h5o+co=c2h5+co2		8.00E+12	0.00	11800.00			
+c2h5o+h=ch3+ch2oh		3.00E+13	0.00	0.00			
+c2h5o+h=c2h4+h2o		3.00E+13	0.00	0.00			
+c2h5o+oh=ch3cho+h2o		1.00E+13	0.00	0.00			
+sc2h4oh+o=ch3cho+oh		1.00E+14	0.00	0.00			
+sc2h4oh+h=c2h4+h2o		3.00E+13	0.00	0.00			
+sc2h4oh+h=ch3+ch2oh		3.00E+13	0.00	0.00			
+sc2h4oh+oh=ch3cho+h2o		5.00E+12	0.00	0.00			
+ch3cho+o=ch2cho+oh		3.72E+13	-0.20	3556.00			
+ch3cho+h=ch2cho+h2		1.85E+12	0.40	5359.00			
+ch3cho+ch3=ch2cho+ch4		2.45E+01	3.15	5727.00			
+ch3cho+ho2=ch2cho+h2o2		2.32E+11	0.40	14864.00			
+ch2cho+ho2=>ch2o+hco+oh		7.00E+12	0.00	-1000.00			
+ch2cho+ho2=ch3cho+o2		3.00E+12	0.00	0.00			
+nc3h7+o2=c3h6+ho2		1.71E+42	-9.21	19790.00			
+
+
+
+
+
+nc3h7+o2=>nc3h7o2		5.53E62	-15.669	17788.0	
+pLOG/1.0E0 8.59E65 -1.7018E1 1.6809E4/
+pLOG/1.0E1 5.53E62 -1.5669E1 1.7788E4/
+	 
+nc3h7o2=>nc3h7+o2	1.26E62	-14.626	50279.0	
+pLOG/1.0E0 1.91E65 -1.5973E1 4.9294E4/
+pLOG/1.0E1 1.26E62 -1.4626E1 5.0279E4/
+	 
+nc3h7o2=c3h6+ho2	3.25E56	-13.822	45661.0	
+	 
+ic3h7+o2=c3h6+ho2		3.9E48	-11.002	21249.0		
+ 
+ic3h7+o2=>ic3h7o2		4.16E73	-18.952	21998.0	
+pLOG/1.0E0 1.61E77 -2.0422E1 2.1167E4/
+pLOG/1.0E1 4.16E73 -1.8952E1 2.1998E4/	 
+
+ic3h7o2=>ic3h7+o2	3.49E71	-17.307	56609.0	
+pLOG/1.0E0 1.34E75 -1.8776E1 5.5775E4/
+pLOG/1.0E1 3.49E71 -1.7307E1 5.6609E4/	 
+
+ic3h7o2=c3h6+ho2		8.46E65	-16.45	50010.0	
+	 
+c2h3+ch3(+M)=c3h6(+M)		2.5E13	0.0	0.0	
+LOW/4.27E58 -1.194E1 9.7698E3/
+tROE/1.75E-1 1.3406E3 6.0E4 1.014E4/	 
+
+c3h5-a+h(+M)=c3h6(+M)		2.0E14	0.0	0.0	
+LOW/1.33E60 -1.2E1 5.9678E3/
+tROE/2.0E-2 1.0966E3 1.0966E3 6.8595E3/	 
+
+c3h6=c3h5-s+h		7.71E+69	-16.10	140000.00
+c3h6=c3h5-t+h		5.62E+71	-16.60	139000.00
+c3h6+o=>ch2co+ch3+h		2.50E+07	1.76	76.00
+c3h6+o=>ch3chco+2h		2.50E+07	1.76	76.00
+c3h6+o=c2h5+hco		1.58E+07	1.76	-1220.00
+c3h6+o=c3h5-a+oh		5.24E+11	0.70	5880.00
+c3h6+o=c3h5-s+oh		1.20E+11	0.70	8960.00
+c3h6+o=c3h5-t+oh		6.03E+10	0.70	7630.00
+c3h6+ho2=c3h5-a+h2o2		1.50E+11	0.00	14200.00
+c3h6+ho2=c3h5-s+h2o2		7.50E+09	0.00	12600.00
+c3h6+ho2=c3h5-t+h2o2		3.00E+09	0.00	9930.00
+c3h6+oh=c3h5-a+h2o		3.12E+06	2.00	-298.00
+c3h6+oh=c3h5-s+h2o		2.11E+06	2.00	2780.00
+c3h6+oh=c3h5-t+h2o		1.11E+06	2.00	1450.00
+c3h6+oh=c2h3oh+ch3		7.50E+16	-1.00	11700.00
+c3h6+h=c3h5-a+h2		5.00E+08	1.50	3940.00
+c3h6+h=c3h5-s+h2		8.04E+05	2.50	12300.00
+c3h6+h=c3h5-t+h2		4.05E+05	2.50	9790.00
+c3h6+h=c2h4+ch3		4.83E+33	-5.81	18500.00
+c3h6+o2=c3h5-s+ho2		2.00E+12	0.00	62900.00
+c2h4+ch3=nc3h7		1.90E+34	-6.99	17100.00
+c3h6+h=nc3h7		2.07E+37	-7.39	12000.00
+c3h6+h=ic3h7		2.64E+13	0.00	2160.00
+ic3h7+h=c2h5+ch3		2.00E+13	0.00	0.00
+
+
+c2h5+ch3(+M)=c3h8(+M)		4.9E14	-0.5	0.0	
+ ch4 /2.0/
+ co /1.5/
+ co2 /2.0/
+ c2h6 /3.0/
+ ar /0.7/
+ h2o /6.0/
+ h2 /2.0/
+LOW/6.8E61 -1.342E1 6.0E3/
+tROE/1.0E0 1.0E3 1.4339E3 5.3288E3/	 
+
+c3h8+o2=ic3h7+ho2		4.00E+13	0.00	47500.00
+c3h8+o2=nc3h7+ho2		4.00E+13	0.00	47500.00
+c3h8+h=ic3h7+h2		1.30E+06	2.40	4470.00
+c3h8+h=nc3h7+h2		3.49E+05	2.69	6450.00
+c3h8+o=ic3h7+oh		5.49E+05	2.50	3140.00
+c3h8+o=nc3h7+oh		3.71E+06	2.40	5510.00
+c3h8+oh=nc3h7+h2o		1.05E+10	0.97	1590.00
+c3h8+oh=ic3h7+h2o		4.67E+07	1.61	-35.00
+c3h8+ho2=ic3h7+h2o2		6.32E+01	3.37	13700.00
+c3h8+ho2=nc3h7+h2o2		4.08E+01	3.59	17200.00
+ch3+c3h8=ch4+ic3h7		6.40E+04	2.17	7520.00
+ch3+c3h8=ch4+nc3h7		9.04E-01	3.65	7150.00
+ic3h7+c3h8=nc3h7+c3h8		3.00E+10	0.00	12900.00
+c2h3+c3h8=c2h4+ic3h7		1.00E+11	0.00	10400.00
+c2h3+c3h8=c2h4+nc3h7		1.00E+11	0.00	10400.00
+c2h5+c3h8=c2h6+ic3h7		1.00E+11	0.00	10400.00
+c2h5+c3h8=c2h6+nc3h7		1.00E+11	0.00	10400.00
+c3h8+c3h5-a=ic3h7+c3h6		2.00E+11	0.00	16100.00
+c3h8+c3h5-a=nc3h7+c3h6		7.94E+11	0.00	20500.00
+c3h8+ch3o=nc3h7+ch3oh		3.00E+11	0.00	7000.00
+c3h8+ch3o=ic3h7+ch3oh		3.00E+11	0.00	7000.00
+ch3coch3=ch3co+ch3		1.22E+23	-1.99	84000.00
+c2h5co=c2h5+co		1.83E+15	-0.73	12900.00
+c2h5cho+h=c2h5co+h2		3.98E+13	0.00	4200.00
+c2h5cho+o=c2h5co+oh		5.01E+12	0.00	1790.00
+c2h5cho+oh=c2h5co+h2o		2.69E+10	0.76	-340.00
+c2h5cho+ch3=c2h5co+ch4		2.61E+06	1.78	5910.00
+c2h5cho+ho2=c2h5co+h2o2		1.00E+12	0.00	11000.00
+c2h5cho+ch3o=c2h5co+ch3oh		1.00E+12	0.00	3300.00
+c2h5cho+c2h5=c2h5co+c2h6		1.00E+12	0.00	8000.00
+c2h5cho=c2h5+hco		9.85E+18	-0.73	81700.00
+c2h5cho+o2=c2h5co+ho2		2.00E+13	0.50	42200.00
+c2h5cho+nc3h7=c2h5co+c3h8		1.70E+12	0.00	8440.00
+c2h5cho+ic3h7=c2h5co+c3h8		1.70E+12	0.00	8440.00
+c2h5cho+c2h3=c2h5co+c2h4		1.70E+12	0.00	8440.00
+
+c2h5cho+c3h5-a=c2h5co+c3h6		1.70E+12	0	8440
+c3h6+o2=c3h5-t+ho2		1.40E+12	0	60700
+c2h3co=c2h3+co		3.04E+14	-0.46	30510
+c2h3cho+oh=c2h3co+h2o		9.24E+06	1.5	-962
+c2h3cho+h=c2h3co+h2		1.34E+13	0	3300
+c2h3cho+o=c2h3co+oh		5.94E+12	0	1868
+c2h3cho+ho2=c2h3co+h2o2		3.01E+12	0	11930
+c2h3cho+ch3=c2h3co+ch4		2.61E+06	1.78	5911
+c2h3cho+ch3o2=c2h3co+ch3o2h		3.01E+12	0	11930
+c3h5o=c2h3cho+h		5.80E+13	0	13600
+c3h5o=c2h3+ch2o		5.00E+09	1.418	30500
+c3h5o+o2=c2h3cho+ho2		8.43E+09	0	-300
+c3h5-a+ho2=c3h5o+oh		7.00E+12	0	0
+c3h5-a+ch3o2=c3h5o+ch3o		7.00E+12	0	0
+c3h6+ho2=c3h6o1-2+oh		1.29E+12	0	14900
+c3h6+ch3o2=c3h5-a+ch3o2h		3.24E+11	0	14900
+c3h6o1-2=c2h4+ch2o		6.00E+14	0	60000
+c3h6o1-2+oh=ch2o+c2h3+h2o		5.00E+12	0	0
+c3h6o1-2+h=ch2o+c2h3+h2		2.63E+07	2	5000
+c3h6o1-2+o=ch2o+c2h3+oh		8.43E+13	0	5200
+c3h6o1-2+ho2=>ch2o+c2h3+h2o2		1.00E+13	0	15000
+c3h6o1-2+ch3o2=ch2o+c2h3+ch3o2h		1.00E+13	0	19000
+c3h6o1-2+ch3=ch2o+c2h3+ch4		2.00E+11	0	10000
+ic3h7o=ch3+ch3cho		3.85E+17	-1.25	20490
+ic3h7o=ch3coch3+h		2.00E+14	0	21500
+ic3h7o+o2=ch3coch3+ho2		9.09E+09	0	390
+ic3h7o2+ch3o2=ic3h7o+ch3o+o2		1.40E+16	-1.61	1860
+ic3h7o2+c2h5o2=ic3h7o+c2h5o+o2		1.40E+16	-1.61	1860
+2ic3h7o2=o2+2ic3h7o		1.40E+16	-1.61	1860
+ic3h7o2+ch3=ic3h7o+ch3o		7.00E+12	0	-1000
+ic3h7o2+c2h5=ic3h7o+c2h5o		7.00E+12	0	-1000
+ic3h7o2+ic3h7=2ic3h7o		7.00E+12	0	-1000
+ic3h7o2+c3h5-a=ic3h7o+c3h5o		7.00E+12	0	-1000
+c3h6+c2h5o2=c3h5-a+c2h5o2h		3.24E+11	0	14900
+ic3h7+ho2=ic3h7o+oh		7.00E+12	0	-1000
+ch3o2+ic3h7=ch3o+ic3h7o		7.00E+12	0	-1000
+ch3o2+c3h8=ch3o2h+nc3h7		1.70E+13	0	20460
+ch3o2+c3h8=ch3o2h+ic3h7		2.00E+12	0	17000
+c2h5o2+c3h8=c2h5o2h+nc3h7		1.70E+13	0	20460
+c2h5o2+c3h8=c2h5o2h+ic3h7		2.00E+12	0	17000
+c2h5cho+ch3o2=c2h5co+ch3o2h		3.01E+12	0	11930
+c2h5cho+c2h5o=c2h5co+c2h5oh		6.03E+11	0	3300
+c2h5cho+c2h5o2=c2h5co+c2h5o2h		3.01E+12	0	11930
+c3h4-a+ho2=c3h3+h2o2		2.82E+04	2.5	13900
+c3h4-a+ho2=>c2h4+co+oh		1.00E+12	0	14000
+c3h4-a+ho2=>ch2co+ch2+oh		4.00E+12	0	19000
+c3h6+o2=c3h5-a+ho2		4.00E+12	0	39900
+c3h6+ch3=c3h5-a+ch4		8.00E+05	1.87	8000
+c3h6+ch3=c3h5-s+ch4		1.35E+00	3.5	12850
+c3h6+ch3=c3h5-t+ch4		8.40E-01	3.5	11660
+c3h6+c2h5=c3h5-a+c2h6		1.00E+11	0	9800
+c3h5-a+h=c3h4-a+h2		1.23E+03	3.035	2582
+c3h5-a+ch3=c3h4-a+ch4		3.02E+12	-0.3	-131
+c3h5-a+c2h5=c2h6+c3h4-a		4.00E+11	0	0
+c3h5-a+c2h5=c2h4+c3h6		4.00E+11	0	0
+c3h5-a+c2h3=c2h4+c3h4-a		1.00E+12	0	0
+2c3h5-a=c3h4-a+c3h6		8.43E+10	0	-262
+c3h5-s+h=c3h4-a+h2		3.33E+12	0	0
+c3h5-s+ch3=c3h4-a+ch4		1.00E+11	0	0
+c3h5-s+o2=ch3cho+hco		4.34E+12	0	0
+c3h5-t+o2=c3h4-a+ho2		1.89E+30	-5.59	15540
+c3h5-t+o2=ch2o+ch3co		3.71E+25	-3.96	7043
+c3h5-t+h=c3h4-p+h2		3.33E+12	0	0
+c3h5-t+ch3=c3h4-p+ch4		1.00E+11	0	0
+c3h4-a+h=c3h4-p+h		3.00E+16	-1	3000
+c3h4-p+h=c2h2+ch3		9.00E+12	0	4500
+c3h4-a+h=c2h2+ch3		1.57E+15	-0.311	13886
+c3h5-a=c2h2+ch3		2.40E+48	-9.9	82080
+c2h2+ch3=c3h5-s		3.20E+35	-7.76	13300
+c3h5-t=c2h2+ch3		2.16E+10	-8.31	45110
+c3h4-p+h=c3h5-a		4.91E+60	-14.37	31644
+c3h4-a+h=c3h5-a		1.30E+13	0.2	0
+c3h4-a+h=c3h5-t		9.00E+11	0	0
+c3h4-p+h=c3h5-t		6.50E+12	0	2000
+c3h4-p+h=c3h5-s		5.80E+12	0	3100
+c3h5-a=c3h5-t		7.06E+56	-14.08	75868
+c3h5-a=c3h5-s		5.00E+51	-13.02	73300
+c3h5-t=c3h5-s		1.50E+48	-12.71	53900
+c3h4-p=c3h4-a		5.15E+60	-13.93	91117
+c3h4-p=cc3h4		1.20E+44	-9.92	69250
+cc3h4=c3h4-a		4.89E+41	-9.17	49594
+c2h+ch3=c3h4-p		1.02E+12	0.61	-1600
+
+c3h3+h=c3h4-p		3.6308E36	-7.36	6039.0	
+pLOG/3.947E-2 3.6308E36 -7.36E0 6.039E3/
+pLOG/1.0E0 7.943E29 -5.06E0 4.861E3/
+pLOG/1.0E1 1.072E24 -3.15E0 3.261E3/	 
+
+c3h3+h=c3h4-a		3.3884E36	-7.41	6337.0	
+pLOG/3.947E-2 3.3884E36 -7.41E0 6.337E3/
+pLOG/1.0E0 3.1623E29 -5.0E0 4.711E3/
+pLOG/1.0E1 8.7096E23 -3.2E0 3.255E3/	 
+
+c3h3+h=cc3h4		8.9125E112	-28.26	83611.0	
+pLOG/3.947E-2 8.9125E112 -2.826E1 8.3611E4/
+pLOG/1.0E0 1.0715E21 -2.95E0 2.687E3/
+pLOG/1.0E1 3.2359E18 -2.05E0 2.053E3/	 
+
+c3h3+h=c3h2+h2		1.20E+14	0.00	0.00
+c3h4-p+o2=>hcco+oh+ch2		1.00E+07	1.50	30100.00
+c3h3+ho2=c3h4-a+o2		4.50E+11	0.00	0.00
+c3h3+ho2=c3h4-p+o2		1.10E+12	0.00	0.00
+c3h4-a+oh=c3h3+h2o		2.00E+07	2.00	5000.00
+c3h4-a+oh=ch2co+ch3		3.04E+12	0.00	-199.00
+c3h4-p+oh=c3h3+h2o		2.00E+07	2.00	1000.00
+c3h4-p+oh=ch2co+ch3		5.00E-04	4.50	-1000.00
+c3h4-p+oh=hcco+ch4		5.00E+12	0.00	5000.00
+c3h4-p+oh=c2h4+hco		5.00E+12	0.00	5000.00
+c3h4-a+ch2=c4h5-2+h		2.00E+13	0.00	4000.00
+c3h4-a+ch2(s)=c4h5-2+h		2.00E+13	0.00	0.00
+c3h4-a+ch2=i-c4h5+h		2.00E+13	0.00	4000.00
+c3h4-a+ch2(s)=i-c4h5+h		2.00E+13	0.00	0.00
+c3h4-p+ch2=c4h5-2+h		2.00E+13	0.00	4000.00
+c3h4-p+ch2(s)=c4h5-2+h		2.00E+13	0.00	0.00
+c3h4-p+ch2=i-c4h5+h		2.00E+13	0.00	4000.00
+c3h4-p+ch2(s)=i-c4h5+h		2.00E+13	0.00	0.00
+c3h4-a+o=c2h2+ch2o		3.00E-03	4.61	-4240.00
+c3h4-a+o=c2h4+co		7.80E+12	0.00	1600.00
+c3h2+oh=c2h2+hco		9.00E+13	0.00	0.00
+c3h4-a+ch3=c3h3+ch4		3.67E-02	4.01	6830.00
+c3h4-a+c3h5-a=c3h3+c3h6		1.05E+11	0.00	12600.00
+c3h4-a+c2h=c3h3+c2h2		1.00E+13	0.00	0.00
+c3h4-p+ho2=>c2h4+co+oh		3.00E+12	0.00	19000.00
+c3h4-p+o=c3h3+oh		7.65E+08	1.50	8600.00
+c3h4-p+o=c2h3+hco		3.20E+12	0.00	2010.00
+c3h4-p+o=hcco+ch3		9.60E+08	1.00	0.00
+c3h4-a+h=c3h3+h2		6.63E+02	3.10	5520.00
+c3h4-p+h=c3h3+h2		3.57E+04	2.83	4820.00
+c3h4-p+ch3=c3h3+ch4		1.50E+00	3.50	5600.00
+c3h4-p+c2h=c3h3+c2h2		1.00E+12	0.00	0.00
+c3h4-p+c2h3=c3h3+c2h4		1.00E+12	0.00	7700.00
+c3h4-p+c3h5-a=c3h3+c3h6		1.00E+12	0.00	11000.00
+c3h3+o=ch2o+c2h		1.00E+13	0.00	0.00
+c3h3+oh=c3h2+h2o		1.00E+13	0.00	0.00
+c3h3+o2=ch2co+hco		1.70E+05	1.70	1500.00
+c2h5+c2h=c3h3+ch3		1.81E+13	0.00	0.00
+c3h2+o2=>h+co+hcco		2.00E+11	0.00	1000.00
+c3h8+o2cho=nc3h7+ho2cho		5.52E+04	2.55	16480.00
+c3h8+o2cho=ic3h7+ho2cho		1.48E+04	2.60	13910.00
+c3h5-a+o2=c3h4-a+ho2		2.18E+21	-2.85	30760.00
+c3h5-a+o2=ch2cho+ch2o		7.14E+15	-1.21	21050.00
+c3h5-a+o2=c2h3cho+oh		2.47E+13	-0.44	23020.00
+c3h5-a+o2=>c2h2+ch2o+oh		4.86E+29	-5.71	21450.00
+ic3h7+oh=c3h6+h2o		2.41E+13	0.00	0.00
+ic3h7+o=ch3coch3+h		4.82E+13	0.00	0.00
+ic3h7+o=ch3cho+ch3		4.82E+13	0.00	0.00
+ch2cch2oh+o2=>ch2oh+co+ch2o		4.34E+12	0.00	0.00
+ch2cch2oh=c2h2+ch2oh		2.16E+40	-8.31	45110.00
+c3h4-a+oh=ch2cch2oh		8.50E+12	0.00	6000.00
+ch3chco+oh=c2h5+co2		1.73E+12	0.00	-1010.00
+ch3chco+oh=sc2h4oh+co		2.00E+12	0.00	-1010.00
+ch3chco+h=c2h5+co		4.40E+12	0.00	1459.00
+ch3chco+o=ch3cho+co		3.20E+12	0.00	-437.00
+ch2ch2cho=c2h4+hco		3.13E+13	-0.52	24590.00
+ch3chcho+ho2=c2h5cho+o2		7.35E+12	0.00	1310.00
+ch3chcho+ho2=ch3chocho+oh		9.64E+12	0.00	0.00
+ch3chocho=ch3cho+hco		3.98E+13	0.00	9700.00
+ch3chcho=c2h3cho+h		3.52E+15	-0.51	41060.00
+ch3chcho=ch3chco+h		1.14E+16	-0.66	40310.00
+ch3chcho+h2=c2h5cho+h		2.16E+05	2.38	18990.00
+c2h5cho+ho2=ch3chcho+h2o2		8.00E+10	0.00	11920.00
+ch3chcho+o2=ch3chco+ho2		1.81E+11	0.00	1840.00
+ch3chcho+o2=c2h3cho+ho2		2.73E+11	0.00	7240.00
+ch3chcho+o2=>ch3cho+co+oh		3.62E+10	0.00	0.00
+c3h6+oh=c3h6oh		9.93E+11	0.00	-960.00
+hoc3h6o2=c3h6oh+o2		2.87E+19	-1.90	34290.00
+hoc3h6o2=ch3cho+ch2o+oh		1.25E+10	0.00	18900.00
+c3h5-a+ch2o=c3h6+hco		6.30E+08	1.90	18190.00
+c3h5-a+oh=c3h4-a+h2o		6.03E+12	0.00	0.00
+c3h6+c2h3=c3h5-a+c2h4		2.21E+00	3.50	4690.00
+ch2co+hco=pro13al1j		1.32E+04	2.48	6130.00
+sc2h4oh+ch3=c3h6+h2o		1.00E+13	0.00	0.00
+ch2cho+ch3=c2h5cho		4.90E+14	-0.50	0.00
+c3h5o+co=c3h5-a+co2		4.68E+02	3.16	5380.00
+c3h3+ch3=c3h2+ch4		2.00E+13	0.00	0.00
+c2h3cho+o2=c2h3co+ho2		1.01E+13	0.00	40700.00
+c2h3cho+c2h3=c2h3co+c2h4		1.74E+12	0.00	8440.00
+c2h3cho+ch3o=c2h3co+ch3oh		1.00E+12	0.00	3300.00
+cj*cc*o+oh=ch2cho+hco		1.00E+12	0.00	0.00
+ch3+c2h=c3h3+h		2.41E+13	0.00	0.00
+c2h2+ch=c3h2+h		3.00E+13	0.00	0.00
+c2h2+ch2=c3h3+h		1.20E+13	0.00	6620.00
+c2h2+ch2(s)=c3h3+h		2.00E+13	0.00	0.00
+c2h2+hcco=c3h3+co		1.00E+11	0.00	3000.00
+c2h3+hco=c2h3cho		1.80E+13	0.00	0.00
+c2h3+ch3=c3h5-a+h		1.50E+24	-2.83	18618.00
+c2h4+ch=c3h4-a+h		3.00E+13	0.00	0.00
+c2h4+ch=c3h4-p+h		3.00E+13	0.00	0.00
+c2h4+ch2=c3h5-a+h		2.00E+12	0.00	6000.00
+c2h4+ch2(s)=c3h5-a+h		5.00E+12	0.00	0.00
+c2h5+c2h3=c3h5-a+ch3		3.90E+32	-5.22	19747.00
+c3h2+h=c3h3		3.00E+12	0.00	0.00
+c3h2+o=c2h2+co		4.00E+13	0.00	0.00
+c3h3+ho2=oh+co+c2h3		8.00E+11	0.00	0.00
+c3h3+hco=c3h4-a+co		2.50E+13	0.00	0.00
+c3h3+hco=c3h4-p+co		2.50E+13	0.00	0.00
+c3h4-p+o=c2h4+co		1.00E+13	0.00	2250.00
+c3h5-a+o=c2h3cho+h		6.00E+13	0.00	0.00
+c3h5-a+hco=c3h6+co		6.00E+13	0.00	0.00
+c3h5-t+o=ch3+ch2co		6.00E+13	0.00	0.00
+c3h5-t+oh=ch3+ch2co+h		5.00E+12	0.00	0.00
+c3h5-t+ho2=ch3+ch2co+oh		2.00E+13	0.00	0.00
+c3h5-t+hco=c3h6+co		9.00E+13	0.00	0.00
+c3h5-s+h=c3h4-p+h2		3.34E+12	0.00	0.00
+c3h5-s+o=c2h4+hco		6.00E+13	0.00	0.00
+c3h5-s+oh=c2h4+hco+h		5.00E+12	0.00	0.00
+c3h5-s+ho2=c2h4+hco+oh		2.00E+13	0.00	0.00
+c3h5-s+hco=c3h6+co		9.00E+13	0.00	0.00
+c3h5-s+ch3=c3h4-p+ch4		1.00E+11	0.00	0.00
+c2h3cho+h=c2h4+hco		1.08E+11	0.45	5820.00
+c2h3cho+o=ch2o+ch2co		1.90E+07	1.80	220.00
+c2h3co+h=c2h3cho		1.00E+14	0.00	0.00
+c3h6o1-2=c2h5cho		1.84E+14	0.00	58500.00
+c3h6o1-2=c2h5+hco		2.45E+13	0.00	58500.00
+c3h6o1-2=ch3+ch2cho		2.45E+13	0.00	58800.00
+c3h6o1-2=ch3coch3		1.01E+14	0.00	59900.00
+c3h6o1-2=ch3+ch3co		4.54E+13	0.00	59900.00
+
+
+ic3h7+h(+M)=c3h8(+M)		2.4E13	0.0	0.0	
+ ch4 /2.0/
+ co /1.5/
+ co2 /2.0/
+ ar /0.7/
+ c2h6 /3.0/
+ h2o /6.0/
+ h2 /2.0/
+LOW/1.7E58 -1.208E1 1.1264E4/
+tROE/6.49E-1 1.2131E3 1.2131E3 1.337E4/	 
+
+ic3h7+h=c3h6+h2		3.20E+12	0.00	0.00
+ic3h7+hco=c3h8+co		1.20E+14	0.00	0.00
+ic3h7+ch3=ch4+c3h6		2.20E+14	-0.68	0.00
+
+
+nc3h7+h(+M)=c3h8(+M)	3.6E13	0.0	0.0	
+ ch4 /2.0/
+ co /1.5/
+ co2 /2.0/
+ ar /0.7/
+ c2h6 /3.0/
+ h2o /6.0/
+ h2 /2.0/
+LOW/3.01E48 -9.32E0 5.8336E3/
+tROE/4.98E-1 1.314E3 1.314E3 5.0E4/	 
+
+nc3h7+h=c2h5+ch3		3.70E+24	-2.92	12505.00	
+nc3h7+h=c3h6+h2		1.80E+12	0.00	0.00	
+nc3h7+o=c2h5+ch2o		9.60E+13	0.00	0.00	
+nc3h7+oh=c3h6+h2o		2.40E+13	0.00	0.00	
+nc3h7+hco=c3h8+co		6.00E+13	0.00	0.00	
+nc3h7+ch3=ch4+c3h6		1.10E+13	0.00	0.00	
+ch3chco+oh=c2h3co+h2o		4.00E+06	2.00	0.00	
+ch3chco+o=c2h3co+oh		7.60E+08	1.50	8500.00	
+ch3chco+h=c2h3co+h2		2.00E+05	2.50	2500.00	
+c3h5-s+oh=c3h4-p+h2o		1.00E+13	0.00	0.00	
+c3h5-t+oh=c3h4-p+h2o		2.00E+13	0.00	0.00	
+cj*cc*o+oh=hcccho+h2o		1.00E+13	0.00	0.00	
+cj*cc*o+h=hcccho+h2		2.00E+13	0.00	0.00	
+hcccho+h=c2h2+hco		1.00E+14	0.00	3000.00	
+hcccho+oh=hccco+h2o		1.00E+13	0.00	0.00	
+hcccho+h=hccco+h2		4.00E+13	0.00	4200.00	
+hccco+o2=>hco+2co		1.40E+09	1.00	0.00	
+ic4h8+c3h5-t=ic4h7+c3h6		7.94E+11	0.00	20500.00	
+ic4h8+c3h5-s=ic4h7+c3h6		7.94E+11	0.00	20500.00	
+2c2h3=c4h6		1.50E+42	-8.84	12500.00	
+c4h6+oh=c2h5+ch2co		1.00E+12	0.00	0.00	
+c4h6+oh=ch2o+c3h5-a		1.00E+12	0.00	0.00	
+c4h6+oh=c2h3+ch3cho		1.00E+12	0.00	0.00	
+c4h6+oh=c*cc*cj+h2o		4.05E+05	2.34	2110.00	
+c4h6+oh=i-c4h5+h2o		2.46E+06	2.07	1610.00	
+c4h6+o=c2h4+ch2co		1.00E+12	0.00	0.00	
+c4h6+o=ch2o+c3h4-a		1.00E+12	0.00	0.00	
+c4h6+o=ch2cho+c2h3		1.00E+12	0.00	0.00	
+ic4h7=c3h4-a+ch3		1.23E+47	-9.74	74300.00	
+ic4h8=c3h5-t+ch3		1.92E+66	-14.20	128000.00	
+ic4h8=ic4h7+h		3.07E+55	-11.50	114000.00	
+ic4h8+o=>ch2co+2ch3		3.33E+07	1.76	76.00	
+ic4h8+h=c3h6+ch3		5.68E+33	-5.72	20000.00	
+ic4h8+h=ic4h7+h2		3.40E+05	2.50	2490.00	
+ic4h8+o=ic4h7+oh		1.21E+11	0.70	7630.00	
+ic4h8+oh=ic4h7+h2o		5.20E+06	2.00	-298.00	
+ic4h8+o=ic3h7+hco		1.58E+07	1.76	-1220.00	
+ic4h8+ch3o2=ic4h7+ch3o2h		1.93E+04	2.60	13900.00	
+ic4h8+ch3=ic4h7+ch4		4.42E+00	3.50	5680.00	
+ic4h8+ho2=ic4h7+h2o2		1.93E+04	2.60	13910.00	
+c4h71-3+c3h6=c4h8-2+c3h5-a		1.00E+11	0.00	15900.00	
+2c4h71-3=c4h8-1+c4h6		1.60E+12	0.00	0.00	
+2c4h71-3=c4h8-2+c4h6		1.60E+12	0.00	0.00	
+!c4h71-3+ch3=c4h6+ch4		1.10E+13	0.00	0.00	
+!c3h5-a+c4h71-3=c3h6+c4h6		6.31E+12	0.00	0.00	
+!c4h71-3+o2=c4h6+ho2		1.00E+09	0.00	0.00	
+!c4h71-3+h=c4h6+h2		3.16E+13	0.00	0.00	
+!c2h5+c4h71-3=c4h6+c2h6		3.98E+12	0.00	0.00	
+c2h5+c4h71-3=c2h4+c4h8-1		9.24E+06	1.50	-962.00	
+c2h5+c4h71-3=c2h4+c4h8-2		5.00E+11	0.00	0.00	
+c2h3+c4h71-3=c2h4+c4h6		3.98E+12	0.00	0.00	
+c4h8-2=h+c4h71-3		4.11E+18	-1.00	97350.00	
+c4h8-2+ch3=c4h71-3+ch4		1.00E+11	0.00	8200.00	
+c4h8-2+h=c4h71-3+h2		5.00E+13	0.00	3800.00	
+c4h8-2+oh=c2h5+ch3cho		2.60E+13	0.00	0.00	
+c4h8-2+o=ic3h7+hco		2.79E+06	2.12	-1775.00	
+c4h8-2+oh=c4h71-3+h2o		3.90E+13	0.00	2217.00	
+c4h8-2+o=c2h4+ch3cho		4.64E+05	2.12	-1775.00	
+c4h8-2+ho2=c4h71-3+h2o2		3.20E+12	0.00	14900.00	
+c4h8-2+o2=c4h71-3+ho2		8.00E+13	0.00	35400.00	
+c4h8-2+ch3o=c4h71-3+ch3oh		1.80E+01	2.95	11990.00	
+pc4h9=sc4h9		3.56E+10	0.88	37300.00	
+DUp
+pc4h9=sc4h9		3.80E+10	0.67	36600.00	
+DUp
+ic4h9=tc4h9		3.56E+10	0.88	34600.00	
+c2h5+c2h4=pc4h9		1.32E+04	2.48	6130.00	
+c4h8-1+h=pc4h9		2.50E+11	0.51	2620.00	
+c3h6+ch3=sc4h9		1.76E+04	2.48	6130.00	
+c4h8-1+h=sc4h9		4.24E+11	0.51	1230.00	
+c4h8-2+h=sc4h9		2.50E+11	0.51	2620.00	
+ic4h8+h=tc4h9		1.06E+12	0.51	1230.00	
+ic4h8+h=ic4h9		6.25E+11	0.51	2620.00	
+c3h6+ch3=ic4h9		1.89E+03	2.67	6850.00	
+
+
+2c2h5(+M)=c4h10(+M)		1.88E14	-0.5	0.0	
+ ch4 /2.0/
+ co /1.5/
+ co2 /2.0/
+ c2h6 /3.0/
+ ar /0.7/
+ h2o /6.0/
+ h2 /2.0/
+LOW/2.61E61 -1.342E1 6.0E3/
+tROE/1.0E0 1.0E3 1.4339E3 5.3288E3/	 
+
+nc3h7+ch3(+M)=c4h10(+M)		1.93E14	-0.32	0.0	
+ ch4 /2.0/
+ co /1.5/
+ co2 /2.0/
+ c2h6 /3.0/
+ ar /0.7/
+ h2o /6.0/
+ h2 /2.0/
+LOW/2.68E61 -1.324E1 6.0E3/
+tROE/1.0E0 1.0E3 1.4339E3 5.3288E3/	 
+
+pc4h9+h(+M)=c4h10(+M)		3.6E13	0.0	0.0	
+ ch4 /2.0/
+ co /1.5/
+ co2 /2.0/
+ c2h6 /3.0/
+ ar /0.7/
+ h2o /6.0/
+ h2 /2.0/
+LOW/3.01E48 -9.32E0 5.8336E3/
+tROE/4.98E-1 1.314E3 1.314E3 5.0E4/	
+
+sc4h9+h(+M)=c4h10(+M)		2.4E13	0.0	0.0	
+ ch4 /2.0/
+ co /1.5/
+ co2 /2.0/
+ c2h6 /3.0/
+ ar /0.7/
+ h2o /6.0/
+ h2 /2.0/
+LOW/1.7E58 -1.208E1 1.12637E4/
+tROE/6.49E-1 1.2131E3 1.2131E3 1.33697E4/	
+
+c4h10+o2=pc4h9+ho2		6.00E+13	0.00	52340.00
+c4h10+o2=sc4h9+ho2		4.00E+13	0.00	49800.00
+c4h10+c3h5-a=pc4h9+c3h6		7.94E+11	0.00	20500.00
+c4h10+c3h5-a=sc4h9+c3h6		3.16E+11	0.00	16400.00
+c4h10+c2h5=pc4h9+c2h6		1.58E+11	0.00	12300.00
+c4h10+c2h5=sc4h9+c2h6		1.00E+11	0.00	10400.00
+c4h10+c2h3=pc4h9+c2h4		1.00E+12	0.00	18000.00
+c4h10+c2h3=sc4h9+c2h4		8.00E+11	0.00	16800.00
+c4h10+ch3=pc4h9+ch4		2.19E+11	0.00	11400.00
+c4h10+ch3=sc4h9+ch4		2.19E+11	0.00	9600.00
+c4h10+h=pc4h9+h2		1.09E+08	1.94	8300.00
+c4h10+h=sc4h9+h2		2.11E+08	1.82	5710.00
+c4h10+o=pc4h9+oh		4.90E+06	2.40	5500.00
+c4h10+o=sc4h9+oh		4.30E+05	2.60	2580.00
+c4h10+ch3o=pc4h9+ch3oh		3.00E+11	0.00	7000.00
+c4h10+ch3o=sc4h9+ch3oh		6.00E+11	0.00	7000.00
+c4h10+pc4h9=sc4h9+c4h10		1.00E+11	0.00	10400.00
+c4h10+oh=pc4h9+h2o		3.30E+07	1.80	954.00
+c4h10+oh=sc4h9+h2o		5.40E+06	2.00	-596.00
+c4h10+ho2=pc4h9+h2o2		4.08E+01	3.59	17200.00
+c4h10+ho2=sc4h9+h2o2		2.54E+02	3.37	13700.00
+ic3h7o2+c4h71-3=ic3h7o+c4h7o		7.00E+12	0.00	-1000.00
+ic4h7+o2=>c3h4-a+ch2o+oh		7.29E+29	-5.71	21500.00
+c4h7o=ch3cho+c2h3		7.94E+14	0.00	19000.00
+c4h7o=c2h3cho+ch3		7.94E+14	0.00	19000.00
+!c4h71-3+ho2=c4h7o+oh		7.00E+12	0.00	-1000.00
+!c4h71-3+ch3o2=c4h7o+ch3o		7.00E+12	0.00	-1000.00
+c4h71-3+c2h5o2=c4h7o+c2h5o		7.00E+12	0.00	-1000.00
+sc4h8oh-2o2=sc4h8oh+o2		4.09E+19	-0.18	52000.00
+sc4h8oh-2o2=oh+2ch3cho		1.00E+16	0.00	25000.00
+sc4h8oh=c4h8-2+oh		1.50E+13	0.00	25800.00
+c4h8-2+ch3o2=c4h71-3+ch3o2h		3.20E+12	0.00	14900.00
+c4h8-2+c2h5o2=c4h71-3+c2h5o2h		3.20E+12	0.00	14900.00
+ch3o2+c4h10=ch3o2h+pc4h9		1.39E+00	3.97	18300.00
+ch3o2+c4h10=ch3o2h+sc4h9		2.04E+01	3.58	14800.00
+c2h5o2+c4h10=c2h5o2h+pc4h9		4.08E+01	3.59	17200.00
+c2h5o2+c4h10=c2h5o2h+sc4h9		1.26E+02	3.37	13700.00
+c4h10+c2h5o=pc4h9+c2h5oh		3.00E+11	0.00	7000.00
+c4h10+c2h5o=sc4h9+c2h5oh		6.00E+11	0.00	7000.00
+c2h5cho+pc4h9=c2h5co+c4h10		1.70E+12	0.00	8440.00
+c2h5cho+sc4h9=c2h5co+c4h10		1.70E+12	0.00	8440.00
+c2h5cho+c4h71-3=c2h5co+c4h8-1		1.70E+12	0.00	8440.00
+c2h5cho+c4h71-3=c2h5co+c4h8-2		1.70E+12	0.00	8440.00
+ic4h8+c3h5-a=ic4h7+c3h6		7.94E+11	0.00	20500.00
+ic4h8+o2cho=ic4h7+ho2cho		1.93E+04	2.60	13910.00
+c4h10+o2cho=pc4h9+ho2cho		1.68E+13	0.00	20440.00
+c4h10+o2cho=sc4h9+ho2cho		1.12E+13	0.00	17690.00
+ic4h8+o2=ic4h7+ho2		6.00E+12	0.00	39900.00
+nc3h7cho+o2=nc3h7co+ho2		2.00E+13	0.50	42200.00
+nc3h7cho+oh=nc3h7co+h2o		2.69E+10	0.76	-340.00
+nc3h7cho+h=nc3h7co+h2		4.00E+13	0.00	4200.00
+nc3h7cho+o=nc3h7co+oh		5.00E+12	0.00	1790.00
+nc3h7cho+ho2=nc3h7co+h2o2		2.80E+12	0.00	13600.00
+nc3h7cho+ch3=nc3h7co+ch4		1.70E+12	0.00	8440.00
+nc3h7cho+ch3o=nc3h7co+ch3oh		1.15E+11	0.00	1280.00
+nc3h7cho+ch3o2=nc3h7co+ch3o2h		1.00E+12	0.00	9500.00
+nc3h7cho+oh=c3h6cho-1+h2o		5.27E+09	0.97	1586.00
+nc3h7cho+oh=c3h6cho-2+h2o		4.67E+07	1.61	-35.00
+nc3h7cho+oh=c3h6cho-3+h2o		2.70E+09	1.00	-149.00
+nc3h7cho+ho2=c3h6cho-1+h2o2		9.03E-01	3.65	7153.00
+nc3h7cho+ho2=c3h6cho-2+h2o2		1.48E+04	2.60	13910.00
+nc3h7cho+ho2=c3h6cho-3+h2o2		3.61E+03	2.55	10530.00
+nc3h7cho+ch3o2=c3h6cho-1+ch3o2h		6.03E+12	0.00	19380.00
+nc3h7cho+ch3o2=c3h6cho-2+ch3o2h		9.63E+03	2.60	13910.00
+nc3h7cho+ch3o2=c3h6cho-3+ch3o2h		9.63E+03	2.60	11510.00
+nc3h7co=nc3h7+co		5.33E+15	-0.86	13400.00
+sc3h5cho+ho2=sc3h5co+h2o2		1.00E+12	0.00	11920.00
+sc3h5cho+ch3=sc3h5co+ch4		3.98E+12	0.00	8700.00
+sc3h5cho+o=sc3h5co+oh		7.18E+12	0.00	1389.00
+sc3h5cho+o2=sc3h5co+ho2		4.00E+13	0.00	37600.00
+sc3h5cho+h=sc3h5co+h2		2.60E+12	0.00	2600.00
+sc3h5cho+oh=sc3h5co+h2o		2.69E+10	0.76	-340.00
+sc3h5co=c3h5-s+co		8.60E+15	0.00	23000.00
+c3h6cho-3=c2h3cho+ch3		3.17E+14	-0.39	29900.00
+c3h6cho-2=sc3h5cho+h		4.95E+12	-0.15	31300.00
+c3h6cho-2=c3h6+hco		8.25E+12	-0.18	21900.00
+c3h6cho-1=c2h4+ch2cho		7.40E+11	0.00	21970.00
+ic3h6cho=c3h6+hco		1.03E+15	-0.62	23170.00
+ic3h6cho=c2h3cho+ch3		2.43E+13	-0.27	22470.00
+c2h3chcho+ho2=>c2h3cho+hco+oh		8.91E+12	0.00	0.00
+c4h7o1-4=ch2o+c3h5-a		2.41E+16	-1.14	7550.00
+tc4h9+o2=ic4h8+ho2		7.00E+24	-3.90	6600.00
+ic4h9+o2=ic4h8+ho2		1.60E+24	-3.90	7600.00
+pc4h9+o2=c4h8-1+ho2		1.60E+24	-3.90	7600.00
+sc4h9+o2=c4h8-1+ho2		4.00E+24	-3.90	7100.00
+sc4h9+o2=c4h8-2+ho2		4.00E+24	-3.90	7100.00
+
+
+c2h5+c2h3(+M)=c4h8-1(+M)		1.5E13	0.0	0.0	
+ ch4 /2.0/
+ co /1.5/
+ co2 /2.0/
+ c2h6 /3.0/
+ ar /0.7/
+ h2o /6.0/
+ h2 /2.0/
+LOW/1.55E56 -1.179E1 8.9845E3/
+tROE/1.98E-1 2.2779E3 6.0E4 5.7232E3/	 
+
+!c4h71-3+h(+M)=c4h8-1(+M)	3.6E13	0.0	0.0	
+ !ch4 /2.0/
+ !co /1.5/
+ !co2 /2.0/
+ !c2h6 /3.0/
+ !ar /0.7/
+ !h2o /6.0/
+ !h2 /2.0/
+!LOW/3.01E48 -9.32E0 5.8336E3/
+!tROE/4.98E-1 1.314E3 1.314E3 5.0E4/	 
+
+c3h5-a+ch3(+M)=c4h8-1(+M)		1.0E14	-0.32	-262.3	
+ ch4 /2.0/
+ co /1.5/
+ co2 /2.0/
+ c2h6 /3.0/
+ ar /0.7/
+ h2o /6.0/
+ h2 /2.0/
+LOW/3.91E60 -1.281E1 6.25E3/
+tROE/1.04E-1 1.606E3 6.0E4 6.1184E3/	 
+
+c4h8-1+o2=c4h71-3+ho2		2.00E+13	0	37190	
+c4h8-1+o=c4h71-3+oh		1.50E+13	0	5760	
+DUp
+c4h8-1+o=c4h71-3+oh		2.60E+13	0	4470	
+DUp
+c4h8-1+o=c4h71-4+oh		2.17E+06	2.4	5500	
+c4h8-1+h=c4h71-3+h2		1.73E+05	2.5	2492	
+c4h8-1+h=c4h71-4+h2		6.65E+05	2.54	6756	
+c4h8-1+h=c4h71-1+h2		7.81E+05	2.5	12290	
+c4h8-1+h=c4h71-2+h2		3.90E+05	2.5	5821	
+c4h8-1+oh=c4h71-3+h2o		3.12E+06	2	-298	
+c4h8-1+oh=c4h71-1+h2o		9.00E+05	2	2500	
+c4h8-1+oh=c4h71-2+h2o		2.22E+06	2	1451	
+c4h8-1+oh=c4h71-4+h2o		5.27E+09	0.97	1586	
+c4h8-1+ch3=c4h71-3+ch4		2.21E+00	3.5	5675	
+c4h8-1+ch3=c4h71-4+ch4		4.52E-01	3.65	7154	
+c4h8-1+ho2=c4h71-3+h2o2		1.40E+12	0	14900	
+c4h8-1+ho2=c4h71-4+h2o2		2.38E+03	2.55	16490	
+c4h8-1+ch3o2=c4h71-3+ch3o2h		1.40E+12	0	14900	
+c4h8-1+ch3o2=c4h71-4+ch3o2h		2.38E+03	2.55	16490	
+c4h8-1+c2h5o2=c4h71-3+c2h5o2h		1.40E+12	0	14900	
+c4h8-1+ch3o=c4h71-3+ch3oh		4.00E+01	2.9	8609	
+c4h8-1+ch3o=c4h71-4+ch3oh		2.17E+11	0	6458	
+c4h8-1+c3h5-a=c4h71-3+c3h6		7.90E+10	0	12400	
+c4h8-1+h=c2h4+c2h5		2.60E+08	1.5	2410	
+c4h8-1+h=c3h6+ch3		2.60E+08	1.5	2010	
+c4h8-1+oh=c4h8oh-1		4.75E+12	0	-782	
+c4h8-1+oh=nc3h7+ch2o		1.00E+12	0	0	
+c4h8-1+o=nc3h7+hco		3.30E+08	1.45	-402	
+c4h8-1+o=c3h6+ch2o		1.10E+08	1.45	-402	
+c4h8-1+o=ch3cho+c2h4		1.30E+13	0	850	
+c4h8-1+o=ch3co+c2h5		1.30E+13	0	850	
+c4h8-1+oh=ch3cho+c2h5		1.00E+12	0	0	
+c4h8-1+oh=ch3co+c2h6		5.00E+11	0	0	
+c4h8-1+o=c2h5cho+ch2		1.30E+13	0	850	
+c4h8-1+o=c2h5co+ch3		1.30E+13	0	850	
+c4h8-1+oh=c2h5cho+ch3		1.00E+12	0	0	
+c4h8-1+oh=c2h5co+ch4		5.00E+11	0	0	
+c4h71-3=c4h6+h		2.48E+53	-12.3	52000	
+c2h4+c2h3=c4h71-4		2.00E+11	0	7800	
+
+c4h71-4(+M)=c4h6+h(+M)	4.7E8	1.32	44697.6	
+ ch4 /2.0/
+ co /1.5/
+ co2 /2.0/
+ c2h6 /3.0/
+ ar /0.7/
+ h2o /6.0/
+ h2 /2.0/
+LOW/4.6E-37 1.537E1 -6.031E2/
+tROE/-5.187E1 2.58E2 2.8E1 5.0E4/	 
+
+c4h71-4+h(+M)=c4h8-1(+M)		2.0E14	0.0	0.0	
+ ch4 /2.0/
+ co /1.5/
+ co2 /2.0/
+ c2h6 /3.0/
+ ar /0.7/
+ h2o /6.0/
+ h2 /2.0/
+LOW/1.33E60 -1.2E1 5.9678E3/
+tROE/2.0E-2 1.0966E3 1.0966E3 6.8595E3/	 
+
+c4h71-4+o2=c4h6+ho2		2.00E+12	0.00	5004.78
+c4h71-1=c2h2+c2h5		1.07E+15	-0.56	30320.00
+c4h71-2=c3h4-a+ch3		9.59E+14	-0.71	31260.00
+c4h71-3+ch3o=c4h8-1+ch2o		2.41E+13	0.00	0.00
+!c4h71-3+o=c2h3cho+ch3		6.03E+13	0.00	0.00
+c2h3chcho+ch3=c*cc*c*o+ch4		2.00E+12	0.00	0.00
+c2h3chcho+ch3o2=c*cc*c*o+ch3o2h		1.00E+12	0.00	0.00
+c2h5o2+ic4h8=c2h5o2h+ic4h7		3.24E+11	0.00	14900.00
+c4h5-1p=c*cc#c+h		4.00E+13	0.00	38800.00
+c4h5-1p=c2h+c2h4		2.00E+14	0.00	57000.00
+c4h5-1p+o2=c*cc#c+ho2		1.60E+12	0.00	5000.00
+c2h2+ch2cho=c*occ*cj		7.77E+06	1.41	7760.00
+c3h2+ch2=i-c4h3+h		3.00E+13	0.00	0.00
+c2h+c2h2=c4h2+h		1.94E+13	0.24	-73.50
+
+
+c2h2+c2h(+M)=n-c4h3(+M)		8.3E10	0.899	-363.0	
+ ch4 /2.0/
+ co /1.5/
+ co2 /2.0/
+ c2h6 /3.0/
+ h2o /6.0/
+ c2h4 /2.5/
+ c2h2 /2.5/
+ h2 /2.0/
+LOW/1.24E31 -4.718E0 1.871E3/
+tROE/1.0E0 1.0E2 5.613E3 1.3387E4/	
+
+c2h2+c2h(+M)=i-c4h3(+M)		8.3E10	0.899	-363.0	
+ ch4 /2.0/
+ co /1.5/
+ co2 /2.0/
+ c2h6 /3.0/
+ h2o /6.0/
+ c2h4 /2.5/
+ c2h2 /2.5/
+ h2 /2.0/
+LOW/1.24E31 -4.718E0 1.871E3/
+tROE/1.0E0 1.0E2 5.613E3 1.3387E4/	 
+
+h2cc+c2h2(+M)=c*cc#c(+M)		3.5E5	2.055	-2400.0	
+ ch4 /2.0/
+ co /1.5/
+ co2 /2.0/
+ c2h6 /3.0/
+ h2o /6.0/
+ c2h4 /3.0/
+ c2h2 /3.0/
+ h2 /2.0/
+LOW/1.4E60 -1.2599E1 7.417E3/
+tROE/9.8E-1 5.6E1 5.8E2 4.164E3/	 
+
+
+!till here it is done
+
+h2cc+c2h4=c4h6		1.00E+12	0.00	0.00
+c2h3+c2h2=i-c4h5		1.60E+46	-11.00	18600.00
+2c2h3=i-c4h5+h		1.20E+22	-2.44	13700.00
+c2h4+c2h=c*cc#c+h		1.20E+13	0.00	0.00
+c3h2+ch=c4h2+h		5.00E+13	0.00	0.00
+c3h2+ch2=n-c4h3+h		5.00E+13	0.00	0.00
+c3h2+ch3=c*cc#c+h		5.00E+12	0.00	0.00
+c3h2+hcco=n-c4h3+co		1.00E+13	0.00	0.00
+c3h3+hcco=c*cc#c+co		2.50E+13	0.00	0.00
+c3h3+ch=i-c4h3+h		5.00E+13	0.00	0.00
+c3h3+ch2=c*cc#c+h		5.00E+13	0.00	0.00
+c3h6+c2h3=c4h6+ch3		7.23E+11	0.00	5000.00
+c2h3cho+c2h3=c4h6+hco		2.80E+21	-2.44	14700.00
+
+
+c4h2+h=n-c4h3		1.1E42	-8.72	15300.0	
+pLOG/2.6316E-2 1.7E49 -1.167E1 1.2804E4/
+pLOG/1.1842E-1 3.3E50 -1.18E1 1.501E4/
+pLOG/1.0E0 1.1E42 -8.72E0 1.53E4/	 
+
+c4h2+h=i-c4h3	1.1E30	-4.92	10800.0	
+pLOG/2.6316E-2 4.3E45 -1.015E1 1.325E4/
+pLOG/1.1842E-1 2.6E46 -1.015E1 1.55E4/
+pLOG/1.0E0 1.1E30 -4.92E0 1.08E4/	 
+
+c4h2+o=c3h2+co		2.70E+13	0	1720
+c4h2+oh=h2c4o+h		6.60E+12	0.00	-410
+h2c4o+h=c2h2+hcco		5.00E+13	0.00	3000
+h2c4o+oh=ch2co+hcco		1.00E+07	2.00	2000
+
+n-c4h3=i-c4h3		4.1E43	-9.49	53000.0	
+pLOG/2.6316E-2 3.7E61 -1.581E1 5.489E4/
+pLOG/1.1842E-1 1.0E51 -1.245E1 5.1E4/
+pLOG/1.0E0 4.1E43 -9.49E0 5.3E4/	
+
+n-c4h3+h=i-c4h3+h		2.5E20	-1.67	10800.0	
+pLOG/2.6316E-2 2.4E11 7.9E-1 2.41E3/
+pLOG/1.1842E-1 9.2E11 6.3E-1 2.99E3/
+pLOG/1.0E0 2.5E20 -1.67E0 1.08E4/	 
+
+n-c4h3+h=2c2h2		6.3E25	-3.34	10014.0	
+pLOG/2.6316E-2 1.6E19 -1.6E0 2.22E3/
+pLOG/1.1842E-1 1.3E20 -1.85E0 2.96E3/
+pLOG/1.0E0 6.3E25 -3.34E0 1.0014E4/	 
+
+n-c4h3+h=c*cc#c		2.0E47	-10.26	13070.0	
+pLOG/2.6316E-2 1.1E42 -9.65E0 7.0E3/
+pLOG/1.1842E-1 1.1E42 -9.65E0 7.0E3/
+pLOG/1.0E0 2.0E47 -1.026E1 1.307E4/	 
+
+n-c4h3+h=c4h2+h2		3.0E13	0.0	0.0		
+n-c4h3+oh=c4h2+h2o		2.0E12	0.0	0.0
+		
+i-c4h3+h=c*cc#c		3.4E43	-9.01	12120.0	
+pLOG/2.6316E-2 4.2E44 -1.027E1 7.89E3/
+pLOG/1.1842E-1 5.3E46 -1.068E1 9.27E3/
+pLOG/1.0E0 3.4E43 -9.01E0 1.212E4/	 
+
+i-c4h3+h=c4h2+h2	6.0E13	0.0	0.0		
+i-c4h3+oh=c4h2+h2o		4.0E12	0.0	0.0
+
+		
+c*cc#c+h=c*cc*cj	1.3E51	-11.92	16500.0	
+pLOG/1.3158E-2 1.2E51 -1.257E1 1.23E4/
+pLOG/2.6316E-2 4.2E50 -1.234E1 1.25E4/
+pLOG/1.1842E-1 1.1E50 -1.194E1 1.34E4/
+pLOG/1.0E0 1.3E51 -1.192E1 1.65E4/
+pLOG/1.0E1 6.2E45 -1.008E1 1.58E4/	 
+
+c*cc#c+h=i-c4h5		4.9E51	-11.92	17700.0	
+pLOG/1.3158E-2 6.1E53 -1.319E1 1.42E4/
+pLOG/2.6316E-2 9.6E52 -1.285E1 1.43E4/
+pLOG/1.1842E-1 2.1E52 -1.244E1 1.55E4/
+pLOG/1.0E0 4.9E51 -1.192E1 1.77E4/
+pLOG/1.0E1 1.5E48 -1.058E1 1.88E4/	 
+
+c*cc#c+h=n-c4h3+h2		6.65E+05	2.53	12200.00
+c*cc#c+h=i-c4h3+h2		3.33E+05	2.53	9240.00
+c*cc#c+oh=n-c4h3+h2o		3.10E+07	2.00	3430.00
+c*cc#c+oh=i-c4h3+h2o		1.55E+07	2.00	430.00
+c*cc#c+o=c3h3+hco		6.00E+08	1.45	-860.00
+
+
+c*cc*cj=i-c4h5		1.5E67	-16.89	59100.0	
+pLOG/1.3158E-2 2.4E60 -1.608E1 4.75E4/
+pLOG/2.6316E-2 1.3E62 -1.638E1 4.96E4/
+pLOG/1.1842E-1 4.9E66 -1.726E1 5.54E4/
+pLOG/1.0E0 1.5E67 -1.689E1 5.91E4/
+pLOG/1.0E1 2.0E60 -1.446E1 5.86E4/	
+
+c*cc*cj+h=i-c4h5+h		3.1E26	-3.35	17423.0
+pLOG/2.6316E-2 1.0E36 -6.26E0 1.7486E4/
+pLOG/1.1842E-1 1.0E34 -5.61E0 1.8476E4/
+pLOG/1.0E0 3.1E26 -3.35E0 1.7423E4/	
+
+c*cc*cj+h=c*cc#c+h2		1.50E+13	0.00	0.00
+c*cc*cj+oh=c*cc#c+h2o		2.00E+12	0.00	0.00
+c*cc*cj+hco=c4h6+co		5.00E+12	0.00	0.00
+c*cc*cj+ho2=>c2h3+ch2co+oh		6.60E+12	0.00	0.00
+c*cc*cj+h2o2=c4h6+ho2		1.21E+10	0.00	-596.00
+c*cc*cj+ho2=c4h6+o2		6.00E+11	0.00	0.00
+c*cc*cj+o2=c2h3chcho+o		3.00E+11	0.29	11.00
+i-c4h5+h=c*cc#c+h2		3.00E+13	0.00	0.00
+i-c4h5+h=c3h3+ch3		2.00E+13	0.00	2000.00
+i-c4h5+oh=c*cc#c+h2o		4.00E+12	0.00	0.00
+i-c4h5+hco=c4h6+co		5.00E+12	0.00	0.00
+i-c4h5+ho2=c4h6+o2		6.00E+11	0.00	0.00
+i-c4h5+ho2=c2h3+ch2co+oh		6.60E+12	0.00	0.00
+i-c4h5+h2o2=c4h6+ho2		1.21E+10	0.00	-596.00
+i-c4h5+o2=ch2co+ch2cho		2.16E+10	0.00	2500.00
+c4h5-2=i-c4h5		1.50E+67	-16.90	59100.00
+c4h5-2+h=i-c4h5+h		3.10E+26	-3.35	17400.00
+c4h5-2+ho2=oh+c2h2+ch3co		8.00E+11	0.00	0.00
+c4h5-2+o2=ch3co+ch2co		2.16E+10	0.00	2500.00
+
+
+c4h6=i-c4h5+h	5.7E36	-6.27	112353.0	
+pLOG/2.6316E-2 8.2E51 -1.092E1 1.1841E5/
+pLOG/1.1842E-1 3.3E45 -8.95E0 1.1593E5/
+pLOG/1.0E0 5.7E36 -6.27E0 1.1235E5/	 
+
+c4h6=c*cc*cj+h		5.3E44	-8.62	123608.0	
+pLOG/2.6316E-2 3.5E61 -1.387E1 1.2968E5/
+pLOG/1.1842E-1 8.5E54 -1.178E1 1.2747E5/
+pLOG/1.0E0 5.3E44 -8.62E0 1.2361E5/	 
+
+2c2h3=c*cc*cj+h		2.4E20	-2.04	15361.0	
+pLOG/2.6E-2 1.1E24 -3.28E0 1.2395E4/
+pLOG/1.2E-1 4.6E24 -3.38E0 1.465E4/
+pLOG/1.0E0 2.4E20 -2.04E0 1.5361E4/	 
+
+c4h6=c*cc#c+h2		2.50E+15	0.00	94700.00			
+c4h6+h=c*cc*cj+h2		1.33E+06	2.53	12240.00			
+c4h6+h=i-c4h5+h2		6.65E+05	2.53	9240.00			
+c4h6+h=c2h4+c2h3		1.46E+30	-4.34	21647.00			
+c4h6+h=c3h4-p+ch3		2.00E+12	0.00	7000.00			
+c4h6+h=c3h4-a+ch3		2.00E+12	0.00	7000.00			
+c4h6+o=c*cc*cj+oh		7.50E+06	1.90	3740.00			
+c4h6+o=i-c4h5+oh		7.50E+06	1.90	3740.00			
+c4h6+o=sc3h5co+h		1.50E+08	1.45	-860.00			
+c4h6+o=c2h3chcho+h		4.50E+08	1.45	-860.00			
+c4h6+ho2=c2h3choch2+oh		4.80E+12	0.00	14000.00			
+c4h6+ch3=c*cc*cj+ch4		2.00E+14	0.00	22800.00			
+c4h6+ch3=i-c4h5+ch4		1.00E+14	0.00	19800.00			
+c4h6+c2h3=i-c4h5+c2h4		2.50E+13	0.00	19800.00			
+c4h6+c2h3=c*cc*cj+c2h4		5.00E+13	0.00	22800.00			
+c4h6+c3h3=c*cc*cj+c3h4-a		1.00E+13	0.00	22500.00			
+c4h6+c3h3=i-c4h5+c3h4-a		5.00E+12	0.00	19500.00			
+c4h6+c3h5-a=c*cc*cj+c3h6		1.00E+13	0.00	22500.00			
+c4h6+c3h5-a=i-c4h5+c3h6		5.00E+12	0.00	19500.00			
+c2h3choch2=c4h6o23		2.00E+14	0.00	50600.00			
+c4h6o23=sc3h5cho		1.95E+13	0.00	49400.00			
+c4h6o23=c2h4+ch2co		5.75E+15	0.00	69300.00			
+c4h6o23=c2h2+c2h4o1-2		1.00E+16	0.00	75800.00			
+sc3h5cho=c3h6+co		3.90E+14	0.00	69000.00			
+sc3h5cho+h=c2h3chcho+h2		1.70E+05	2.50	2490.00			
+sc3h5cho+h=ch3+c2h3cho		4.00E+21	-2.39	11200.00			
+sc3h5cho+h=c3h6+hco		4.00E+21	-2.39	11200.00			
+sc3h5cho+ch3=c2h3chcho+ch4		2.10E+00	3.50	5680.00			
+sc3h5cho+c2h3=c2h3chcho+c2h4		2.21E+00	3.50	4680.00			
+sc3h5cho+c2h3=sc3h5co+c2h4		1.11E+00	3.50	4680.00			
+sc3h5co+h=sc3h5cho		1.00E+14	0.00	0.00			
+c2h3chcho=c3h5-a+co		1.00E+14	0.00	25000.00			
+c2h3chcho+h=sc3h5cho		1.00E+14	0.00	0.00			
+c4h71-3+h=ch3+c3h5-a		2.00E+21	-2.00	11000.00			
+c4h71-3+hco=c4h8-1+co		6.00E+13	0.00	0.00			
+h2c4o+oh=c2h2+co+hco		1.00E+13	0.00	0.00			
+n-c4h3+c2h3=c4h2+c2h4		1.00E+12	0.00	5000.00			
+n-c4h3+c2h3=c*cc#c+c2h2		2.00E+12	0.00	5000.00			
+i-c4h3+c2h3=2c3h3		4.00E+12	0.00	0.00			
+i-c4h3+c2h3=c4h2+c2h4		1.00E+12	0.00	5000.00			
+i-c4h3+c2h3=c*cc#c+c2h2		2.00E+12	0.00	5000.00			
+i-c4h5+c2h=2c3h3		4.00E+12	0.00	0.00			
+i-c4h5+c2h=c*cc#c+c2h2		3.00E+12	0.00	5000.00			
+c*cc*cj+c2h=c*cc#c+c2h2		3.00E+12	0.00	5000.00			
+c4h6+oh=hoc4h6		1.84E+12	0.00	-1170.00			
+hoc4h6=>sc3h5cho+h		5.00E+14	0.00	28000.00			
+sc3h5cho=c2h4+ch2co		1.00E+16	0.00	730000.00			
+tc4h9=c3h6+ch3		1.02E+16	-0.74	36500.00			
+c3h3+ch=n-c4h3+h		7.00E+13	0.00	0.00			
+ic4h8+o=c3h6+ch2o		4.70E+12	0.00	0.00			
+ic4h8+oh=ic3h7+ch2o		1.50E+12	0.00	0.00			
+!c4h71-3+oh=c4h6+h2o		1.00E+13	0.00	0.00			
+c4h71-4+oh=c4h6+h2o		1.00E+13	0.00	0.00			
+c4h71-4+ch3=c4h6+ch4		8.00E+12	0.00	0.00			
+c4h71-4+c3h5-a=c3h6+c4h6		6.31E+12	0.00	0.00			
+c4h5-2+h=ch3+c3h3		1.00E+14	0.00	0.00			
+c4h5-2+h=c*cc#c+h2		1.00E+14	0.00	8000.00			
+c4h5-2+oh=c*cc#c+h2o		1.00E+13	0.00	0.00			
+c4h5-2(+M)=c*cc#c+h(+M)		1.00E+13	0.00	56000.00	
+LOW/2.0E14 0.0E0 4.8E4/		
+c*cc*cj+o2=cj*cc*o+ch2o		1.00E+12	0.00	0.00			
+c*cc*cj+o2=c*cc#c+ho2		1.34E+06	1.61	-383.50			
+n-c4h3+o2=hcccho+hco		2.35E+17	-1.80	0.00			
+i-c4h3+o=h2c4o+h		2.00E+13	0.00	0.00			
+i-c4h3+ch2=c3h4-a+c2h		2.00E+13	0.00	0.00			
+ic4h8=c3h5-a+ch3		1.92E+66	-14.20	128100.00			
+ic4h8=c3h5-s+ch3		1.92E+66	-14.20	128100.00			
+c4h8-2=c3h5-a+ch3		1.92E+66	-14.20	128100.00			
+c4h8-2=c3h5-t+ch3		1.92E+66	-14.20	128100.00			
+c4h8-2=c3h5-s+ch3		3.16E+17	0.00	99360.00			
+c4h8-2+o=c4h71-3+oh		2.19E+11	0.81	7550.00			
+c4h8oh-1=c2h3oh+c2h5		1.52E+12	0.60	29120.00			
+c4h8oh-1=nc3h7cho+h		3.07E+14	-0.45	34700.00			
+c4h8oh-1+o2=nc3h7cho+ho2		6.00E+12	0.00	0.00			
+
+
+		
+cyccccjo+h=c4h8o1-4		1.00E+14	0.00	0.00			
+cycccjco+h=c4h8o1-4		1.00E+14	0.00	0.00			
+
+
+c4h8o1-4(+M)=c3h6+ch2o(+M)	2.48E25	-2.29	85330.0	
+LOW/7.1E83 -1.8724E1 9.6839E4/
+tROE/9.0353E-6 5.0571E2 1.4142E10 2.4713E3/	
+
+c4h8o1-4(+M)=c2h4+ch3cho(+M)		2.81E22	-1.59	88408.0	
+LOW/7.9502E78 -1.7506E1 9.951E4/
+tROE/9.413E-2 4.3665E2 2.6334E7 2.8333E3/	
+
+DUp
+c4h8o1-4(+M)=c2h4+ch3cho(+M)		5.53E24	-2.23	89010.0	
+LOW/6.632E59 -1.213E1 8.472E4/
+tROE/2.438E-1 7.4406E2 5.0E9 5.0E9/	
+DUp 
+
+c4h8o1-4+oh=cyccccjo+h2o		2.24E+11	0.50	-380.00
+c4h8o1-4+oh=cycccjco+h2o		9.40E+07	1.61	-35.00
+c4h8o1-4+ho2=cyccccjo+h2o2		5.90E+04	2.60	13900.00
+c4h8o1-4+ho2=cycccjco+h2o2		2.52E+02	3.37	13700.00
+c4h8o1-4+o2=cyccccjo+ho2		5.20E+13	0.00	45800.00
+c4h8o1-4+h=cyccccjo+h2		1.15E+06	2.49	2330.00
+c4h8o1-4+o=cyccccjo+oh		2.90E+05	2.47	876.00
+c4h8o1-4+ch3o2=cyccccjo+ch3o2h		1.45E+04	2.60	14400.00
+c4h8o1-4+cyccc(o2)co=cyccccjo+cyccc(o2h)co		1.45E+04	2.60	14400.00
+c4h8o1-4+ch3=cyccccjo+ch4		4.00E+01	3.37	7630.00
+c4h8o1-4+c2h5=cyccccjo+c2h6		1.00E+11	0.00	10400.00
+c4h8o1-4+c2h3=cyccccjo+c2h4		6.00E+11	0.00	5200.00
+c4h8o1-4+ch3o=cyccccjo+ch3oh		3.00E+11	0.00	4500.00
+c4h8o1-4+c2h5o=cyccccjo+c2h5oh		1.50E+11	0.00	4500.00
+c4h8o1-4+cycccjco=cyccccjo+c4h8o1-4		1.00E+11	0.00	10400.00
+cyccccjo+ch2o=c4h8o1-4+hco		2.25E+04	2.61	6700.00
+cyccccjo+ch3cho=c4h8o1-4+ch3co		1.12E+04	2.61	6700.00
+c4h8o1-4+o2=cycccjco+ho2		4.00E+13	0.00	49800.00
+c4h8o1-4+h=cycccjco+h2		2.60E+06	2.40	4470.00
+c4h8o1-4+o=cycccjco+oh		9.54E+04	2.71	2110.00
+c4h8o1-4+ch3o2=cycccjco+ch3o2h		2.04E+01	3.58	14800.00
+c4h8o1-4+cyccc(o2)co=cycccjco+cyccc(o2h)co		2.04E+01	3.58	14800.00
+c4h8o1-4+ch3=cycccjco+ch4		5.41E+04	2.26	7290.00
+c4h8o1-4+c2h5=cycccjco+c2h6		1.00E+11	0.00	10400.00
+c4h8o1-4+c2h3=cycccjco+c2h4		8.00E+11	0.00	16800.00
+c4h8o1-4+ch3o=cycccjco+ch3oh		2.19E+11	0.00	5000.00
+cycccjco+ch2o=c4h8o1-4+hco		2.00E+03	2.61	6700.00
+cycccjco+ch3cho=c4h8o1-4+ch3co		1.00E+03	2.61	6700.00
+cyccccjo+h=cyccc*co+h2		5.00E+13	0.00	0.00
+cyccccjo+oh=cyccc*co+h2o		1.00E+13	0.00	0.00
+cyccccjo+o=cyccc*co+oh		3.00E+13	0.00	0.00
+cyccccjo+ch3=cyccc*co+ch4		2.00E+12	0.00	0.00
+cyccccjo+ch3o=cyccc*co+ch3oh		8.00E+12	0.00	0.00
+cycccjco+h=cycc*cco+h2		5.00E+13	0.00	0.00
+cycccjco+oh=cycc*cco+h2o		1.00E+13	0.00	0.00
+cycccjco+o=cycc*cco+oh		3.00E+13	0.00	0.00
+cycccjco+ch3=cycc*cco+ch4		2.00E+12	0.00	0.00
+cycccjco+ch3o=cycc*cco+ch3oh		8.00E+12	0.00	0.00
+c3h6cho-1=cyccccjo		2.78E+11	0.00	18000.00
+c4h7o1-4=cycccjco		1.83E+12	0.00	18300.00
+cyccccjo+o2=cyccc*co+ho2		4.00E+24	-3.90	7100.00
+cycccjco+o2=cyccc*co+ho2		4.00E+24	-3.90	7100.00
+cycccjco+o2=cycc*cco+ho2		4.00E+24	-3.90	7100.00
+cycccjco=cyccccjo		5.50E+13	0.00	36400.00
+cyccc*co+h=cyccjc*co+h2		3.38E+05	2.36	207.00
+cyccc*co+oh=cyccjc*co+h2o		2.76E+04	2.64	-1920.00
+cyccc*co+ho2=cyccjc*co+h2o2		4.82E+03	2.55	10500.00
+cyccc*co+o=cyccjc*co+oh		9.59E+12	0.00	1970.00
+cyccc*co+ch3=cyccjc*co+ch4		3.69E+00	3.31	4000.00
+cyccc*co+ch3o=cyccjc*co+ch3oh		4.00E+01	2.90	8610.00
+cycc*cco+h=cyccjc*co+h2		3.38E+05	2.36	207.00
+cycc*cco+oh=cyccjc*co+h2o		2.76E+04	2.64	-1920.00
+cycc*cco+ho2=cyccjc*co+h2o2		4.82E+03	2.55	10500.00
+cycc*cco+o=cyccjc*co+oh		9.59E+12	0.00	1970.00
+cycc*cco+ch3=cyccjc*co+ch4		3.69E+00	3.31	4000.00
+cycc*cco+ch3o=cyccjc*co+ch3oh		4.00E+01	2.90	8610.00
+cyccc*co+h=cyccccjo		1.20E+13	0.00	3700.00
+cycc*cco+h=cycccjco		1.20E+13	0.00	3700.00
+cyccc*co+oh=cyccc(oh)cjo		2.30E+12	0.00	-1110.00
+cycc*cco+oh=cyccc(oh)cjo		2.30E+12	0.00	-1110.00
+cyccc(oh)cjo=c3h5o+ch2o		1.25E+10	0.79	26300.00
+cyccc*co+o=hcohco+c2h4		3.00E+12	0.00	0.00
+cyccc*co+o=c2h3cho+ch2o		3.00E+12	0.00	0.00
+cycc*cco+o=c2h3cho+ch2o		6.00E+12	0.00	0.00
+c2h3chcho=cyccjc*co		1.62E+12	0.00	18300.00
+cyccjc*co+h=cyccc*co		1.00E+14	0.00	0.00
+cyccjc*co+h=cycc*cco		1.00E+14	0.00	0.00
+
+! extra reaction added for the isomerisation of 2,3 dihydrofuran (cyccc*co) to propenylaldehyde (sc3h5cho)
+! rate constants from theoretical study Dubnikova and Lifshitz 2002 JPCA 106
+cyccc*co = sc3h5cho             4.57e+14        0.00    63570.0
+cyccc*co = cyc3h5(cho)          6.31e+14        0.00    56300.0
+cyc3h5(cho) = sc3h5cho          4.07e+14        0.00    58880.0
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+! left out low T reactions of THF !!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+! benzene and toluene formation and consumption reactions   !!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+ c*cc*cj+c2h3 = benzene+h2                     1.840e-13    7.070  -3611.38
+ c5h4ch2+h = benzene+h                        1.500e+12    0.500   2000.48
+ c*cc*cj+c2h2 = c5h4ch2+h                 4.620e+15   -0.890   9141.97
+ i-c4h5+c2h2 = c5h4ch2+h                 6.800e+24   -3.450  20337.00
+ c5h4ch2 = benzene                            1.450e+45   -8.900  97002.87
+ c5h4ch2 = phenyl+h                         2.240e+68  -14.650 142576.48
+ n-c4h3+c2h2 = phenyl                       9.600e+70  -17.770  31300.19
+ c*cc*cj+c2h2 = benzene+h                      1.380e+16   -1.000   8900.57
+ i-c4h5+c2h2 = benzene+h                      1.670e+23   -3.300  24959.37
+ c3h5-a+c3h3 => c5h4ch2+2h               2.160e+39   -7.740  23852.77
+ 2c3h3 = c5h4ch2                         8.250e+46  -10.100  16959.85
+ 2c3h3 = benzene                              1.070e+45   -9.570  17014.82
+ 2c3h3 = phenyl+h                           5.770e+37   -7.000  31505.74
+ phenyl+c2h4 = benzene+c2h3                      9.450e-03    4.470   4471.80
+ 
+ benzene = phenyl+h                              1.290e+61  -12.480 148085.56
+ phenyl(+M) = o-c6h4+h(+M)                  4.300e+12    0.620  77301.63
+   h2/2.00/ h2o/12.00/ co2/3.60/ co/1.75/ ar/0.70/ ch4/2.00/ c2h6/3.00/ 
+   LoW  /  1.000e+84  -18.870  90100.38 /
+   TRoE/   0.902   696.00    358.00   3856.00 /
+ c4h2+c2h2 = o-c6h4                      5.000e+78  -19.310  67920.65
+ benzene+h = phenyl+h2                           6.020e+08    1.800  16352.77
+ benzene+oh = phenyl+h2o                         2.340e+04    2.680    733.75
+ benzene+o2 = phenyl+ho2                         4.340e+14    0.000  64292.54
+
+ benzene+oh = phenol+h                          1.320e+02    3.250   5590.34
+ benzene+o = a1o+h                            2.740e+08    1.550   3090.34
+   DUPLicatE
+ benzene+o = a1o+h                            1.990e+07    1.800   3974.67
+   DUPLicatE
+ benzene+o = phenol                             2.030e+12    0.300   4402.49
+ benzene+o = cycc*cc*c+co                          5.800e+16   -0.770  15291.59
+ benzene+o = phenyl+oh                           4.000e+13    0.000  14698.85
+ phenyl+o2 = a1o+o                          8.570e+20   -2.270   7189.29
+ phenyl+o2 = oc6h4o+h                       3.000e+13    0.000   8981.84
+ phenyl+o = a1o                             1.000e+14    0.000      0.00
+ phenyl+oh = a1o+h                          3.000e+13    0.000      0.00
+ phenyl+ho2 = a1o+oh                        3.000e+13    0.000      0.00
+ phenyl+ch4 = benzene+ch3                        3.890e-03    4.570   5258.13
+ phenol = cycc*cc*c+co                          6.590e+15   -0.610  74118.07
+ phenol = a1o+h                            1.010e+71  -15.920 124789.67
+ phenol+h = a1o+h2                         6.830e+01    3.400   7232.31
+ phenol+oh = a1o+h2o                       1.730e+01    3.400  -1142.45
+ phenol+ch3 = a1o+ch4                      3.700e-04    4.700   4827.92
+ phenol+o2 = a1o+ho2                       7.320e+13    0.000  41400.57
+ a1o = co+cycjc*cc*c                           2.900e+10    0.000  36424.47
+ a1o+o = oc6h4o+h                        6.340e+13    0.030   -394.36
+ a1o+o2 = oc6h4o+oh                      6.510e+07    1.300  17667.30
+ oc6h4o = cyc(*o)c*cc*c+co                       7.400e+11    0.000  59000.96
+ oc6h4o+h = t-c5h5o+co                   4.300e+09    1.450   3867.11
+ oc6h4o+o => ch2co+c2h2+2co              3.000e+13    0.000   5000.00
+
+! consumption of cycc*cc*c, cycjc*cc*c, cyc(*o)c*cc*c, t-c5h5o
+
+ cycc*cc*c = cycjc*cc*c+h                           1.730e+68  -15.160 116371.89
+ cycc*cc*c+h = cycjc*cc*c+h2                        2.800e+13    0.000   2258.60
+ cycc*cc*c+h = c3h5-a+c2h2                    3.300e+14    0.000  12344.65
+ cycc*cc*c+h => c3h5-s+c2h2                   3.300e+14    0.000  12344.65
+ cycc*cc*c+o = cycjc*cc*c+oh                        4.770e+04    2.710   1106.60
+ cycc*cc*c+oh = cycjc*cc*c+h2o                      3.080e+06    2.000      0.00
+ cycc*cc*c+o2 = cycjc*cc*c+ho2                      1.000e+14    0.000  37151.05
+ cycc*cc*c+ho2 = cycjc*cc*c+h2o2                    1.100e+04    2.600  12899.14
+ cycc*cc*c+ch3 = cycjc*cc*c+ch4                     1.800e-01    4.000      0.00
+ cycc*cc*c+c2h3 = cycjc*cc*c+c2h4                   6.000e+12    0.000      0.00
+ cycc*cc*c+c*cc*cj = cycjc*cc*c+c4h6                 6.000e+12    0.000      0.00
+ cycc*cc*c+o = t-c5h5o+h                      7.660e+09    0.880   1140.06
+ cycc*cc*c+o => c2h4+c2h2+co                  3.890e+08    1.360    886.71
+ cycc*cc*c+oh => c4h6+hco                     3.750e+36   -7.800   7060.23
+ cycc*cc*c+oh => c2h4+c2h2+hco                3.750e+36   -7.800   7060.23
+ c3h3+c2h2 = cycjc*cc*c                        6.870e+55  -12.500  42065.01
+ cycjc*cc*c+ch3 => c5h4ch2+2h                  4.910e+31   -4.850  24772.94
+ cycjc*cc*c+o = cyc(*o)c*cc*c+h                        7.000e+13    0.000      0.00
+ cycjc*cc*c+o2 = cyc(*o)c*cc*c+oh                      4.340e+07    1.300  17667.30
+ cycjc*cc*c+ho2 = s-c5h5o+oh                   3.100e+13    0.000      0.00
+ cycjc*cc*c+oh => s-c5h5o+h                    1.020e+13    0.000      0.00
+ s-c5h5o = cyc(*o)c*cc*c+h                       2.000e+13    0.000  30000.00
+ t-c5h5o => c*cc*cj+co                    1.000e+12    0.000  35999.04
+ s-c5h5o+h => cyc(*o)c*cc*c+h2                   6.670e+12    0.000      0.00
+ s-c5h5o+o => cyc(*o)c*cc*c+oh                   3.330e+12    0.000      0.00
+ s-c5h5o+oh => cyc(*o)c*cc*c+h2o                 1.670e+12    0.000      0.00
+ s-c5h5o+o2 => cyc(*o)c*cc*c+ho2                 1.430e-13    7.600  -3530.11
+ t-c5h5o+h => cyc(*o)c*cc*c+h2                   1.330e+12    0.000      0.00
+ t-c5h5o+o2 => cyc(*o)c*cc*c+ho2                 1.280e+07    1.020  -2033.94
+ cyc(*o)c*cc*c => 2c2h2+co                       3.370e+44   -8.000 108675.91
+ cyc(*o)c*cc*c+h = t-c5h5o                       2.740e+09    1.460   1355.16
+ cyc(*o)c*cc*c+o = c*cc#c+co2                      1.000e+13    0.000   2000.48
+
+! extra consumption reactions of c*cc#c  (c4h4)
+
+ c4h2+h2 = c*cc#c                          4.000e+14    0.000  53900.57
+ c*cc#c+ch3 = n-c4h3+ch4                   1.140e+05    2.000   9199.33
+ c*cc#c+ch3 = i-c4h3+ch4                   5.680e+04    2.000   9199.33
+ c*cc#c+o = c3h4-a+co                      6.250e+06    2.000   1900.10
+ c*cc#c+o = c3h2+ch2o                      3.580e+04    2.470    929.73
+
+! production and consumption of toluene
+
+ toluene+h = benzene+ch3                        2.310e+06    2.170   4163.48
+ toluene = a1ch2+h                         1.560e+13    0.680  89206.50
+ toluene = phenyl+ch3                         4.350e+22   -1.730 104208.89
+ a1ch2+h = phenyl+ch3                       5.830e+67  -14.150  68329.35
+ a1ch2 = cycjc*cc*c+c2h2                       8.200e+14    0.000  80676.39
+ toluene+o2 = a1ch2+ho2                    2.180e+07    2.500  46044.46
+ toluene+h = a1ch2+h2                      6.470e+00    3.980   3384.32
+ toluene+oh = a1ch2+h2o                    1.770e+05    2.390   -602.29
+ toluene+oh = phenol+ch3                     7.830e+02    2.880   3221.80
+ toluene+oh = hoa1ch3+h                    3.140e+01    3.370   4720.36
+ toluene+o = a1ch2+oh                      1.180e+00    4.090   2545.41
+ toluene+o = hoa1ch3                       1.690e+12    0.300   4402.49
+ toluene+o = oa1ch3+h                      1.660e+07    1.800   3974.67
+ toluene+ch3 = a1ch2+ch4                   4.220e+14    0.000  22256.21
+ toluene+ho2 = a1ch2+h2o2                  9.330e+04    2.500  14684.51
+ toluene+phenyl = a1ch2+benzene                    7.940e+13    0.000  11950.29
+ a1ch2+o = a1ch2o                        2.280e+14    0.000      0.00
+ a1ch2+oh = a1ch2oh                      2.000e+13    0.000      0.00
+ a1ch2+ho2 = a1ch2o+oh                   1.190e+09    1.030  -2249.04
+ a1ch2+o2 = a1cho+oh                     3.760e+15   -1.550  11321.70
+ a1ch2+o2 = a1o+ch2o                     6.260e+37   -8.860  16582.22
+ a1ch2o+h(+M) = a1ch2oh(+M)              2.430e+12    0.520     50.19
+   h2/2.00/ h2o/12.00/ co2/3.60/ co/1.75/ ar/0.70/ ch4/2.00/ c2h6/3.00/ 
+   LoW  /  4.660e+41   -7.440  14079.83 /
+   TRoE/     0.7   100.00  90000.00  10000.00 /
+ a1ch2oh+h = a1ch2o+h2                   4.200e+06    2.100   4870.94
+ a1ch2oh+o = a1ch2o+oh                   1.300e+05    2.500   5000.00
+ a1ch2oh+oh = a1ch2o+h2o                 6.300e+06    2.000   1500.96
+ a1ch2oh+ch3 = a1ch2o+ch4                1.000e+07    1.500   9940.25
+ phenyl+ch2o = benzene+hco                       8.550e+04    2.190     38.24
+ a1ch2o = a1cho+h                        5.260e+28   -5.080  22249.04
+ a1ch2o = phenyl+ch2o                       7.210e+33   -6.210  36849.90
+ a1ch2o = benzene+hco                         2.370e+32   -6.100  28809.75
+ a1ch2o+h = a1cho+h2                     1.330e+13    0.000      0.00
+ a1ch2o+o = a1cho+oh                     6.670e+12    0.000      0.00
+ a1ch2o+oh = a1cho+h2o                   3.330e+12    0.000      0.00
+ a1ch2o+o2 = a1cho+ho2                   2.850e-13    7.600  -3530.11
+ a1cho => phenyl+co+h                       2.100e+16    0.000  81739.96
+ a1cho+h => phenyl+co+h2                    4.090e+09    1.160   2404.40
+ a1cho+o => phenyl+co+oh                    5.840e+12    0.000   1809.27
+ a1cho+oh => phenyl+co+h2o                  2.890e+08    1.350  -1572.66
+ a1cho+o2 => phenyl+co+ho2                  1.200e+05    2.500  37554.97
+ a1cho+ho2 => phenyl+co+h2o2                4.090e+04    2.500  10203.15
+ a1cho+ch3 => phenyl+co+ch4                 3.490e-08    6.210   1630.02
+ hoa1ch3 = oa1ch3+h                      1.010e+71  -15.920 124789.67
+ hoa1ch3+h = oa1ch3+h2                   1.150e+14    0.000  12397.23
+ hoa1ch3+o = oa1ch3+oh                   2.810e+13    0.000   7351.82
+ hoa1ch3+oh = oa1ch3+h2o                 2.950e+06    2.000  -1312.14
+ oa1ch3 => c5h4ch2+co+h                  2.900e+10    0.000  36424.47
+ toluene = a1jch3+h                        8.390e+60  -12.480 148085.56
+ toluene+h = a1jch3+h2                     3.910e+08    1.800  16352.77
+ toluene+o = a1jch3+oh                     2.600e+13    0.000  14698.85
+ toluene+oh = a1jch3+h2o                   1.360e+04    2.690    619.02
+ toluene+ch3 = a1jch3+ch4                  1.790e-02    4.460  13637.67
+ a1jch3+o = oa1ch3                       1.000e+14    0.000      0.00
+ a1jch3+oh = oa1ch3+h                    3.000e+13    0.000      0.00
+ a1jch3+ho2 = oa1ch3+oh                  3.000e+13    0.000      0.00
+ a1jch3+o2 = oa1ch3+o                    8.570e+20   -2.270   7189.29
+ a1jch3+o2 => c5h4ch2+co2+h              2.550e+13   -0.440  -1649.14
+ a1jch3+o2 => c3h4-p+c2h3+2co            2.550e+13   -0.440  -1649.14
+
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!! list of 2mthf reactions  !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+!!! fuel c-h bond scissions from THF mechanism Chitral and from C2H5+H=C2H6
+
+c5h9o-5 + h = mthf-2		1.00E+14	0.00	0.00			
+c5h9o-4 + h = mthf-2		1.00E+14	0.00	0.00			
+c5h9o-3 + h = mthf-2		1.00E+14	0.00	0.00			
+c5h9o-2 + h = mthf-2		1.00E+14	0.00	0.00
+c5h9o-1 + h (+M) = mthf-2 (+M)  5.210e+17      -0.990   1579.83
+h2/2.00/ h2o/12.00/ ar/0.70/ co/1.75/ co2/3.60/ ch4/2.00/ c2h6/3.00/ 
+     LoW  /  1.990e+41   -7.080   6684.99 /
+     TRoE/  0.8422   125.00   2219.00   6882.00 /
+
+!!! fuel c-ch3 bond scission
+
+mthf-2 = cyccccjo + ch3		4.214e+24	-2.329  88091   ! simmie et al dmthf c-ch3 split
+
+!!! fuel decomposition
+
+mthf-2(+M)=c4h8-1+ch2o(+M)	1.24E25	-2.29	85330.0	 	! THF rate /2
+LOW/7.1E83 -1.8724E1 9.6839E4/
+tROE/9.0353E-6 5.0571E2 1.4142E10 2.4713E3/	
+
+mthf-2(+M)=c3h6+ch3cho(+M)	1.24E25	-2.29	85330.0	 	! THF rate /2
+LOW/7.1E83 -1.8724E1 9.6839E4/
+tROE/9.0353E-6 5.0571E2 1.4142E10 2.4713E3/	
+DUp
+
+mthf-2(+M)=c3h6+ch3cho(+M)		2.81E22	-1.59	88408.0	 ! THF rate /2
+LOW/7.9502E78 -1.7506E1 9.951E4/
+tROE/9.413E-2 4.3665E2 2.6334E7 2.8333E3/	
+
+DUp
+mthf-2(+M)=c3h6+ch3cho(+M)		5.53E24	-2.23	89010.0	 ! THF rate /2
+LOW/6.632E59 -1.213E1 8.472E4/
+tROE/2.438E-1 7.4406E2 5.0E9 5.0E9/	
+DUp
+
+mthf-2(+M)=c2h4+ch3coch3(+M)		2.81E22	-1.59	88408.0	 ! THF rate /2
+LOW/7.9502E78 -1.7506E1 9.951E4/
+tROE/9.413E-2 4.3665E2 2.6334E7 2.8333E3/	
+
+DUp
+mthf-2(+M)=c2h4+ch3coch3(+M)		5.53E24	-2.23	89010.0	 ! THF rate /2
+LOW/6.632E59 -1.213E1 8.472E4/
+tROE/2.438E-1 7.4406E2 5.0E9 5.0E9/	
+DUp
+
+
+!!! hydrogen abstractions from 2MThF
+
+mthf-2 + h = c5h9o-1 + h2        1.07e+3	3.064	6.571    ! from 25DMTHF Simmie /2
+mthf-2 + h = c5h9o-2 + h2        1.96e+5	2.354	637.7    ! from 25DMTHF Simmie /2
+mthf-2 + h = c5h9o-3 + h2        1.69e+3	3.005	3.906    ! from 25DMTHF Simmie /2
+mthf-2 + h = c5h9o-4 + h2        1.69e+3	3.005	3.906    ! from 25DMTHF Simmie /2
+mthf-2 + h = c5h9o-5 + h2        0.58E+06	2.49	2330.00  ! from THF mechanism chitral /2
+mthf-2 + oh = c5h9o-1 + h2o      4.70E+07	1.61	-35.00   ! rough estimate equal to C3
+mthf-2 + oh = c5h9o-2 + h2o      4.70E+07	1.61	-35.00   ! rough estimate equal to C3
+mthf-2 + oh = c5h9o-3 + h2o      4.70E+07	1.61	-35.00   ! from THF mechanism chitral /2
+mthf-2 + oh = c5h9o-4 + h2o      4.70E+07	1.61	-35.00   ! from THF mechanism chitral /2
+mthf-2 + oh = c5h9o-5 + h2o      1.12E+11	0.50	-380.00  ! from THF mechanism chitral /2
+mthf-2 + ho2 = c5h9o-1 + h2o2    2.52E+02	3.37	13700.00 ! rough estimate equal to C3 
+mthf-2 + ho2 = c5h9o-2 + h2o2    2.52E+02	3.37	13700.00 ! rough estimate equal to C3          
+mthf-2 + ho2 = c5h9o-3 + h2o2    2.52E+02	3.37	13700.00 ! from THF mechanism chitral /2
+mthf-2 + ho2 = c5h9o-4 + h2o2    2.52E+02	3.37	13700.00 ! from THF mechanism chitral /2
+mthf-2 + ho2 = c5h9o-5 + h2o2    5.90E+04	2.60	13900.00 ! from THF mechanism chitral /2
+mthf-2 + ch3 = c5h9o-1 + ch4     4.87e+2	2.886	14935    ! from 25DMTHF Simmie /2
+mthf-2 + ch3 = c5h9o-2 + ch4     1.22e+3	2.818	8721     ! from 25DMTHF Simmie /2
+mthf-2 + ch3 = c5h9o-3 + ch4     0.54e+3	2.887	12413    ! from 25DMTHF Simmie /2
+mthf-2 + ch3 = c5h9o-4 + ch4     2.71E+04	2.26	7290.00  ! from THF mechanism chitral /2
+mthf-2 + ch3 = c5h9o-5 + ch4     2.00E+01	3.37	7630.00  ! from THF mechanism chitral /2
+
+!!! primary radicals beta bond dissociation reactions and subsequent secondary bond dissociation
+!!! all rate expressions based on the work of Simmie et al for 2MTHF and 25DMTHF
+
+c5h9o-1 = cjccoc*c		5.0e+13 0.0 21773
+cjccoc*c = c2h4 + c2h3och2	5.0e+13 0.0 25358  
+
+c5h9o-1 = ojcccc*c		5.0e+13 0.0 18355
+ojcccc*c = ch2o + c4h71-4	5.0e+13 0.0 14029
+
+c5h9o-2 = cjcoc(*c)c		7.41e+13 0.0 32337
+cjcoc(*c)c = c2h4 + ch3coch2	6.88e+11 0.0 14483
+
+c5h9o-2 = cjccc(*o)c		4.88e+13 0.0 21630
+cjccc(*o)c = c2h4 + ch3coch2	2.76e+12 0.0 20674
+
+c5h9o-3 = cjoc(c)c*c		3.90e+13 0.0 32337
+cjoc(c)c*c = ch2o + c4h71-3	3.79e+13 0.0 17471
+
+c5h9o-3 = ojccc*cc		2.22e+13 0.0 29588
+ojccc*cc = ch2o + c4h72-1	1.29e+13 0.424 19048
+
+c5h9o-4 = c*ccc(c)oj		5.0e+13  0.0 30951
+c*ccc(c)oj = c3h5-a + ch3cho	5.0e+13  0.0 16491
+
+c5h9o-4 = c*ccocjc		5.0e+13  0.0 31620
+c*ccocjc = c3h5-a + ch3cho	5.0e+13  0.0 15511
+
+c5h9o-5 = c*coc(cj)c		5.0e+13  0.0 33269
+c*coc(cj)c = c3h6 + ch2cho	5.0e+13  0.0 11042
+
+c5h9o-5 = o*ccccjc		5.0e+13  0.0 21821
+o*ccccjc = c3h6 + ch2cho	5.0e+13  0.0 19789
+
+! species not yet captured in base chemistry
+
+!c4h72-1 reactions from C4H71-4 c4h71-3 reactions butane model
+
+c2h4+c2h3=c4h72-1		2.00E+11	0	7800	
+
+c4h72-1(+M)=c4h6+h(+M)	4.7E8	1.32	44697.6	
+ ch4 /2.0/
+ co /1.5/
+ co2 /2.0/
+ c2h6 /3.0/
+ ar /0.7/
+ h2o /6.0/
+ h2 /2.0/
+LOW/4.6E-37 1.537E1 -6.031E2/
+tROE/-5.187E1 2.58E2 2.8E1 5.0E4/	 
+
+c4h72-1+h(+M)=c4h8-1(+M)		2.0E14	0.0	0.0	
+ ch4 /2.0/
+ co /1.5/
+ co2 /2.0/
+ c2h6 /3.0/
+ ar /0.7/
+ h2o /6.0/
+ h2 /2.0/
+LOW/1.33E60 -1.2E1 5.9678E3/
+tROE/2.0E-2 1.0966E3 1.0966E3 6.8595E3/	 
+
+c4h72-1+o2=c4h6+ho2		2.00E+12	0.00	5004.78
+
+c4h72-1+oh=c4h6+h2o		1.00E+13	0.00	0.00			
+c4h72-1+ch3=c4h6+ch4		8.00E+12	0.00	0.00			
+c4h72-1+c3h5-a=c3h6+c4h6	6.31E+12	0.00	0.00		
+
+c4h72-1+o => c2h3cho+ch3 	6.03E+13	 0 	0.00E+00
+c2h3cho+ch3 => c4h72-1+o 	3.39E+15 	-0.78 	8.16E+04
+
+c4h72-1+ho2 => c4h7o+oh 	9.64E+12 0 0.00E+00
+c4h7o+oh => c4h72-1+ho2 	7.29E+15 -1.09 1.55E+04
+
+c4h72-1+ch3o2 => c4h7o+ch3o 	9.64E+12 0 0.00E+00
+c4h7o+ch3o => c4h72-1+ch3o2 	7.12E+17 -1.67 2.03E+04
+
+h+c4h72-1 => c4h6+h2 		3.16E+13 0 0.00E+00
+c4h6+h2 => h+c4h72-1 		1.07E+13 0 5.68E+04
+
+c2h5+c4h72-1 => c4h6+c2h6 	3.98E+12 0 0.00E+00
+c4h6+c2h6 => c2h5+c4h72-1 	3.21E+12 0 4.98E+04
+
+
+!c4h73-1 reactions from C4H71-4 c4h71-3 reactions butane model
+
+
+
+
+
+c2h4+c2h3=c4h71-3		2.00E+11	0	7800	
+
+c4h71-3(+M)=c4h6+h(+M)	4.7E8	1.32	44697.6	
+ ch4 /2.0/
+ co /1.5/
+ co2 /2.0/
+ c2h6 /3.0/
+ ar /0.7/
+ h2o /6.0/
+ h2 /2.0/
+LOW/4.6E-37 1.537E1 -6.031E2/
+tROE/-5.187E1 2.58E2 2.8E1 5.0E4/	 
+
+
+
+!...............corrected on 240313........................................................................................................................................
+
+
+
+ 
+
+c4h71-3+h(+M)=c4h8-1(+M)		2.0E14	0.0	0.0	
+ ch4 /2.0/
+ co /1.5/
+ co2 /2.0/
+ c2h6 /3.0/
+ ar /0.7/
+ h2o /6.0/
+ h2 /2.0/
+LOW/1.33E60 -1.2E1 5.9678E3/
+tROE/2.0E-2 1.0966E3 1.0966E3 6.8595E3/	 
+
+c4h71-3+o2=c4h6+ho2		2.00E+12	0.00	5004.78
+
+c4h71-3+oh=c4h6+h2o		1.00E+13	0.00	0.00			
+c4h71-3+ch3=c4h6+ch4		8.00E+12	0.00	0.00			
+c4h71-3+c3h5-a=c3h6+c4h6	6.31E+12	0.00	0.00		
+
+c4h71-3+o => c2h3cho+ch3 	6.03E+13	 0 	0.00E+00
+c2h3cho+ch3 => c4h71-3+o 	3.39E+15 	-0.78 	8.16E+04
+
+c4h71-3+ho2 => c4h7o+oh 	9.64E+12 0 0.00E+00
+c4h7o+oh => c4h71-3+ho2 	7.29E+15 -1.09 1.55E+04
+
+c4h71-3+ch3o2 => c4h7o+ch3o 	9.64E+12 0 0.00E+00
+c4h7o+ch3o => c4h71-3+ch3o2 	7.12E+17 -1.67 2.03E+04
+
+h+c4h71-3 => c4h6+h2 		3.16E+13 0 0.00E+00
+c4h6+h2 => h+c4h71-3 		1.07E+13 0 5.68E+04
+
+c2h5+c4h71-3 => c4h6+c2h6 	3.98E+12 0 0.00E+00
+c4h6+c2h6 => c2h5+c4h71-3 	3.21E+12 0 4.98E+04
+
+
+
+
+
+!.......................................................................................................
+
+
+
+
+
+
+! c2h3och2 dissociation from ch3och2 dissociation in butane model
+
+c2h3och2 => c2h3 + ch2o 	1.60E+13 0 2.55E+04
+c2h3 + ch2o => c2h3och2 	2.60E+05 1.879 1.67E+04
+
+! ch3coch2 consumption from Pitsch et al.
+
+ch3coch2=>c2h5+co                        1.016e+30   -5.758  25778.44
+ch3coch2=>ch2co+ch3                      2.568e-26    9.636 -12096.08
+
+!!! H-elimination reactions
+
+c5h9o-2 = cyccc*c(c)o + h	2.84e+14 0.0 37785  ! from 25DMF Simmie
+c5h9o-3 = cyccc*c(c)o + h	3.37e+14 0.0 33583  ! from 25DMF Simmie
+c5h9o-3 = cycc*cc(c)o + h	1.94e+14 0.0 37610  ! from 25DMF Simmie
+c5h9o-4 = cycc*cc(c)o + h	1.94e+14 0.0 37610  ! from 25DMF Simmie
+c5h9o-4 = cyc*ccc(c)o + h	3.37e+14 0.0 33583  ! from 25DMF Simmie
+cyc*ccc(c)o + h = c5h9o-5	1.20E+13 0.0 3700.0 ! THF mechanism chitral
+
+! H-bond scission from the methyl group not important, too high barrier
+
+! ch3 elimination
+!c5h9o-3(+M) = cyccc*co+ch3(+M)                1.76E+11    0.57  28791.6  ! from methylcyclohexane radical ch3 elimination Jetsurf 2.0
+!LOW  / 4.70E-39  16.77    -603.1    /
+!TROE / -27.89  216  28 50000.0 /
+!h2/2/ h2o/6/ ch4/2/ co/1.5/ co2/2/ c2h6/3/ ar/0.7/
+
+cyccc*co+ch3 = c5h9o-3    1.760e+04 2.480 6.130e+03      ! c3h6+ch3<=>sc4h9 1.760e+04 2.480 6.130e+03	
+
+!!! radical isomerisations
+
+c5h9o-4=c5h9o-5			5.50E+13 0.00 36400.00  ! THF mechanism chitral
+c5h9o-3=c5h9o-2			5.50E+13 0.00 36400.00  ! THF mechanism chitral
+c5h9o-4=c5h9o-3			5.50E+13 0.00 36400.00  ! THF mechanism chitral
+c5h9o-2=c5h9o-1			5.50E+13 0.00 36400.00  ! THF mechanism chitral
+
+
+!!! radical - radical reactions, see model THF chitral, important? c5h9o-5 and c5h9o-4 direct alternatives for THF species, c5h9o-3 taken equal to c5h9o-4, c5h9o-2 taken equal to c5h9o-5
+!!! abstraction from c5h9o-1 too slow due too high ring strain in product
+
+c5h9o-5 + h = cyc*ccc(c)o + h2		5.00E+13	0.00	0.00
+c5h9o-5 + oh = cyc*ccc(c)o + h2o	1.00E+13	0.00	0.00
+c5h9o-5 + o = cyc*ccc(c)o + oh		3.00E+13	0.00	0.00
+c5h9o-5 + ch3 = cyc*ccc(c)o + ch4	2.00E+12	0.00	0.00
+c5h9o-5 + ch3o = cyc*ccc(c)o + ch3oh	8.00E+12	0.00	0.00
+c5h9o-4 + h = cycc*cc(c)o + h2		5.00E+13	0.00	0.00
+c5h9o-4 + oh = cycc*cc(c)o + h2o	1.00E+13	0.00	0.00
+c5h9o-4 + o = cycc*cc(c)o + oh		3.00E+13	0.00	0.00
+c5h9o-4 + ch3 = cycc*cc(c)o + ch4	2.00E+12	0.00	0.00
+c5h9o-4 + ch3o = cycc*cc(c)o + ch3oh	8.00E+12	0.00	0.00
+c5h9o-3 + h = cycc*cc(c)o + h2		5.00E+13	0.00	0.00
+c5h9o-3 + oh = cycc*cc(c)o + h2o	1.00E+13	0.00	0.00
+c5h9o-3 + o = cycc*cc(c)o + oh		3.00E+13	0.00	0.00
+c5h9o-3 + ch3 = cycc*cc(c)o + ch4	2.00E+12	0.00	0.00
+c5h9o-3 + ch3o = cycc*cc(c)o + ch3oh	8.00E+12	0.00	0.00
+c5h9o-2 + h = cyccc*c(c)o + h2		5.00E+13	0.00	0.00
+c5h9o-2 + oh = cyccc*c(c)o + h2o	1.00E+13	0.00	0.00
+c5h9o-2 + o = cyccc*c(c)o + oh		3.00E+13	0.00	0.00
+c5h9o-2 + ch3 = cyccc*c(c)o + ch4	2.00E+12	0.00	0.00
+c5h9o-2 + ch3o = cyccc*c(c)o + ch3oh	8.00E+12	0.00	0.00
+
+c5h9o-5 + o2 = cyc*ccc(c)o + ho2	4.00E+24	-3.90	7100.00
+c5h9o-4 + o2 = cyc*ccc(c)o + ho2	4.00E+24	-3.90	7100.00
+c5h9o-4 + o2 = cycc*cc(c)o + ho2	4.00E+24	-3.90	7100.00
+c5h9o-3 + o2 = cycc*cc(c)o + ho2	4.00E+24	-3.90	7100.00
+c5h9o-3 + o2 = cyccc*c(c)o + ho2	4.00E+24	-3.90	7100.00
+c5h9o-2 + o2 = cyccc*c(c)o + ho2	4.00E+24	-3.90	7100.00
+
+
+!!! consumption of unsaturated intermediates, rate coefficients from THF mechanism
+!!! attention, the consumption of cyccc*c(c)o yields same radical as other unsaterated compounds for simplicity !!!
+
+cyc*ccc(c)o+h=cyc*ccjc(c)o+h2			3.38E+05	2.36	207.00
+cyc*ccc(c)o+oh=cyc*ccjc(c)o+h2o			2.76E+04	2.64	-1920.00
+cyc*ccc(c)o+ho2=cyc*ccjc(c)o+h2o2		4.82E+03	2.55	10500.00
+cyc*ccc(c)o+o=cyc*ccjc(c)o+oh			9.59E+12	0.00	1970.00
+cyc*ccc(c)o+ch3=cyc*ccjc(c)o+ch4		3.69E+00	3.31	4000.00
+cyc*ccc(c)o+ch3o=cyc*ccjc(c)o+ch3oh		4.00E+01	2.90	8610.00
+
+cycc*cc(c)o+h=cyc*ccjc(c)o+h2			3.38E+05	2.36	207.00
+cycc*cc(c)o+oh=cyc*ccjc(c)o+h2o			2.76E+04	2.64	-1920.00
+cycc*cc(c)o+ho2=cyc*ccjc(c)o+h2o2		4.82E+03	2.55	10500.00
+cycc*cc(c)o+o=cyc*ccjc(c)o+oh			9.59E+12	0.00	1970.00
+cycc*cc(c)o+ch3=cyc*ccjc(c)o+ch4		3.69E+00	3.31	4000.00
+cycc*cc(c)o+ch3o=cyc*ccjc(c)o+ch3oh		4.00E+01	2.90	8610.00
+
+cyccc*c(c)o+h=cyc*ccjc(c)o+h2			3.38E+05	2.36	207.00
+cyccc*c(c)o+oh=cyc*ccjc(c)o+h2o			2.76E+04	2.64	-1920.00
+cyccc*c(c)o+ho2=cyc*ccjc(c)o+h2o2		4.82E+03	2.55	10500.00
+cyccc*c(c)o+o=cyc*ccjc(c)o+oh			9.59E+12	0.00	1970.00
+cyccc*c(c)o+ch3=cyc*ccjc(c)o+ch4		3.69E+00	3.31	4000.00
+cyccc*c(c)o+ch3o=cyc*ccjc(c)o+ch3oh		4.00E+01	2.90	8610.00
+
+cyc*ccc(c)o+oh=cycjc(oh)cc(c)o		2.30E+12	0.00	-1110.00
+cycc*cc(c)o+oh=cycjc(oh)cc(c)o		2.30E+12	0.00	-1110.00
+cyccc*c(c)o+oh=cycjc(oh)cc(c)o		2.30E+12	0.00	-1110.00
+cycjc(oh)cc(c)o=c3h6+hcohco+h		1.25E+10	0.79	26300.00
+
+cyc*ccc(c)o+o=hcohco+c3h6		3.00E+12	0.00	0.00
+cyc*ccc(c)o+o=c2h3cho+ch3cho		3.00E+12	0.00	0.00
+cycc*cc(c)o+o=c2h3cho+ch3cho		6.00E+12	0.00	0.00
+cyccc*c(c)o+o=c2h3cho+ch3cho		6.00E+12	0.00	0.00
+
+!!! consumption of cyc*ccjc(c)o
+c3h5chcho=cyc*ccjc(c)o			1.62E+12	0.00	18300.00
+c3h5chcho+o2=sc3h5cho+ocho		1.20E+36	-7.25	33600.00
+c3h5chcho=c4h71-3+co			1.00E+14	0.00	25000.00	
+
+cyc*ccjc(c)o+h=cyc*ccc(c)o		1.00E+14	0.00	0.00
+cyc*ccjc(c)o+h=cycc*cc(c)o		1.00E+14	0.00	0.00
+cyc*ccjc(c)o+h=cyccc*c(c)o		1.00E+14	0.00	0.00
+
+	
+! possible reactions for THF formation through radical transformation between 2mthf and thf radicals
+! reactions don't have an influence on simulations as radical decompositions are faster in the T-range where they could have an influence
+! rate from c4h8o1-4+cycccjco=cyccccjo+c4h8o1-4
+mthf-2+cyccccjo=c5h9o-5+c4h8o1-4		1.00E+12	0.00	10400.00
+mthf-2+cyccccjo=c5h9o-4+c4h8o1-4		1.00E+12	0.00	10400.00
+mthf-2+cyccccjo=c5h9o-3+c4h8o1-4		1.00E+12	0.00	10400.00
+mthf-2+cyccccjo=c5h9o-2+c4h8o1-4		1.00E+12	0.00	10400.00
+mthf-2+cyccccjo=c5h9o-1+c4h8o1-4		1.00E+12	0.00	10400.00
+c4h8o1-4+c5h9o-5=cycccjco+mthf-2		1.00E+10	0.00	10400.00
+c4h8o1-4+c5h9o-4=cycccjco+mthf-2		1.00E+10	0.00	10400.00
+c4h8o1-4+c5h9o-3=cycccjco+mthf-2		1.00E+10	0.00	10400.00
+c4h8o1-4+c5h9o-2=cycccjco+mthf-2		1.00E+10	0.00	10400.00
+c4h8o1-4+c5h9o-1=cycccjco+mthf-2		1.00E+10	0.00	10400.00
+
+!!! end of high temperature chemistry set for 2-MTHF !!!
+
+END

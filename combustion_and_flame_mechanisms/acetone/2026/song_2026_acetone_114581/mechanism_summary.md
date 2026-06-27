@@ -22,9 +22,9 @@ Shubao Song, Jiankun Shao, Lin Zhang, Jiachen Sun, ... Jianli Feng. Comprehensiv
 - Standard mechanism file: chem.inp
 - Standard thermodynamic file: therm.dat
 - Standard transport file: tran.dat
-- Original mechanism source files: _processing\extracted\s0010218025006182_mmc3\CH3COCH3_mech data.inp
-- Original thermodynamic source files: _processing\extracted\s0010218025006182_mmc4\CH3COCH3_thermo data.dat
-- Original transport source files: _processing\raw_downloads\S0010218025006182_mmc5.txt
+- Original mechanism source files: _processing/extracted/s0010218025006182_mmc3/CH3COCH3_mech data.inp
+- Original thermodynamic source files: _processing/extracted/s0010218025006182_mmc4/CH3COCH3_thermo data.dat
+- Original transport source files: _processing/raw_downloads/S0010218025006182_mmc5.txt
 
 ## Cantera Preprocessing Results
 
@@ -46,4 +46,6 @@ Acetone (CH3COCH3) is a key intermediate and a representative oxygenated volatil
 
 ## Processing Notes
 
-- none
+- extracted S0010218025006182_mmc3.zip
+- extracted S0010218025006182_mmc4.zip
+- extracted S0010218025006182_mmc2.xlsx

@@ -22,20 +22,20 @@ Qiao Wang, Peng Zhang, Chengcheng Liu, Bin Yang. Co-oxidation of ammonia with et
 - Standard mechanism file: chem.inp
 - Standard thermodynamic file: therm.dat
 - Standard transport file: tran.dat
-- Original mechanism source files: _processing\raw_downloads\S0010218025006674_mmc3.txt
-- Original thermodynamic source files: _processing\raw_downloads\S0010218025006674_mmc3.txt, _processing\raw_downloads\S0010218025006674_mmc4.txt
-- Original transport source files: _processing\raw_downloads\S0010218025006674_mmc5.txt
+- Original mechanism source files: _processing/raw_downloads/S0010218025006674_mmc3.txt
+- Original thermodynamic source files: _processing/raw_downloads/S0010218025006674_mmc3.txt, _processing/raw_downloads/S0010218025006674_mmc4.txt
+- Original transport source files: _processing/raw_downloads/S0010218025006674_mmc5.txt
 
 ## Cantera Preprocessing Results
 
 ### Mechanism 1
 
 - Status: cantera_failed
-- Species count: 157
+- Species count: not parsed
 - Reaction count: not parsed
 - Message: IndexError: list index out of range; numeric cleanup retry failed: IndexError: list index out of range
 - Method: cantera
-- Cantera YAML: mechanism.yaml
+- Cantera YAML: not available
 - Standard chem.inp: chem.inp
 - Standard therm.dat: therm.dat
 - Standard tran.dat: tran.dat
@@ -46,4 +46,5 @@ The co-firing of ammonia (NH3) with hydrocarbon fuels represents an important ap
 
 ## Processing Notes
 
-- none
+- extracted S0010218025006674_mmc1.docx
+- extracted S0010218025006674_mmc2.xlsx

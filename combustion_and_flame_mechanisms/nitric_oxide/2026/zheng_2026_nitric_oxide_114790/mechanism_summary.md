@@ -22,8 +22,8 @@ Menglei Zheng, Yong Bao, Xianhui Chen, Xiaoyuan Zhang. Direct NO removal driven 
 - Standard mechanism file: chem.inp
 - Standard thermodynamic file: therm.dat
 - Standard transport file: not available
-- Original mechanism source files: _processing\extracted\s0010218026000271_mmc3\kinetic.inp
-- Original thermodynamic source files: _processing\extracted\s0010218026000271_mmc4\therm.dat
+- Original mechanism source files: _processing/extracted/s0010218026000271_mmc3/kinetic.inp
+- Original thermodynamic source files: _processing/extracted/s0010218026000271_mmc4/therm.dat
 - Original transport source files: not found
 
 ## Cantera Preprocessing Results
@@ -46,4 +46,7 @@ Mitigating nitrogen oxide (NOx) pollution remains a formidable challenge amid th
 
 ## Processing Notes
 
-- none
+- extracted S0010218026000271_mmc2.zip
+- extracted S0010218026000271_mmc4.zip
+- extracted S0010218026000271_mmc1.docx
+- extracted S0010218026000271_mmc3.zip

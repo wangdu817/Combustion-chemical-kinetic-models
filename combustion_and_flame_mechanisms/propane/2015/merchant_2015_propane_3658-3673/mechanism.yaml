@@ -1,0 +1,1910 @@
+generator: ck2yaml
+input-files: [chem.inp, therm.dat]
+cantera-version: 3.2.0
+date: Sat, 27 Jun 2026 09:53:56 +0800
+
+units: {length: cm, time: s, quantity: mol, activation-energy: cal/mol}
+
+phases:
+- name: gas
+  thermo: ideal-gas
+  elements: [C, H, N, O, Ar, He, C, H, N, O, Ar, He]
+  species: [HE, AR, N2, H, H2, HEG, HCFG, Halt, O, O2, OH, H2O, HO2, 
+      H2O2, CO, CO2, HCO, CH2O, formyloxy, formylperoxy, formylooh, C, 
+      CH, CH2(S), CH2, CH3, CH4, CH3OO, CH3OOH, CH2OH, CH3O, CH3OH, 
+      OCH2OOH, HOCH2OO, HOCH2OOH, HOCH2O, C2H2, C2H3, C2H4, C2H5, C2H6,
+    ketene, HCCO, ethynol, acetaldehyde, acetyl, vinoxy, acetylperoxy, 
+      acetyloxy, ethoxy, CH3CH2OO, CH3CH2OOH, CH2CH2OOH, ethanol, 
+      CH2CH2OH, CH3CHOH, oxirane, oxiranyl, ethenol, C3H6, npropyl, 
+      ipropyl, C3H8, allyl, propen1yl, propen2yl, acetone, CH3OCH3, 
+      CH3OCH2, acrolein, CH2CHCO, CH3CHCO, allyloxy, allyl-alcohol, 
+      propanal, propionyl, npropyloxy, ipropyloxy, npropyloo, 
+      npropylooh, ipropyloo, ipropylooh, propen1ol, propen2ol, CH3CO3H,
+    O2C2H4OH, propoxide, QOOH_1, QOOH_2, QOOH_3, well_1, well_2, 
+      well_3, well_5, prod_1, prod_2, prod_3, prod_4, prod_5, prod_6, 
+      prod_7, frag_1, frag_3, frag_4, frag_5, propen1oxy, propen2oxy, 
+      glyoxal, vinoxylmethyl, formylethyl]
+  kinetics: gas
+  state: {T: 300.0, P: 1 atm}
+
+species:
+- name: HE
+  composition: {He: 1}
+  thermo:
+    model: NASA7
+    temperature-ranges: [200.0, 6000.0]
+    data:
+    - [2.5, 0.0, 0.0, 0.0, 0.0, -745.375, 0.928723974]
+    note: REF ELEMENT
+- name: AR
+  composition: {Ar: 1}
+  thermo:
+    model: NASA7
+    temperature-ranges: [200.0, 6000.0]
+    data:
+    - [2.5, 0.0, 0.0, 0.0, 0.0, -745.375, 4.3796749]
+    note: |-
+      L 6/88
+       The first four sets of polynomial coefficients (Ar, N2, Ne, He) are from         
+       THIRD MILLENIUM IDEAL GAS AND CONDENSED PHASE THERMOCHEMICAL DATABASE FOR     
+       COMBUSTION WITH UPDATES FROM ACTIVE THERMOCHENICAL TABLES                     
+       Authors: Alexander Burcat and Branko Ruscic                                   
+       The rest of the species are computed by CFG using RQCI/CBS//B3LYP/6-311++G(d,p) and CanTherm.
+- name: N2
+  composition: {N: 2}
+  thermo:
+    model: NASA7
+    temperature-ranges: [200.0, 1000.0, 6000.0]
+    data:
+    - [3.53100528, -1.23660988e-04, -5.02999433e-07, 2.43530612e-09, 
+        -1.40881235e-12, -1046.97628, 2.96747038]
+    - [2.95257637, 1.3969004e-03, -4.92631603e-07, 7.86010195e-11, 
+        -4.60755204e-15, -923.948688, 5.87188762]
+    note: G 8/02
+- name: H
+  composition: {H: 1}
+  thermo:
+    model: NASA7
+    temperature-ranges: [298.0, 1000.0, 6000.0]
+    data:
+    - [2.50052819, -3.11697989e-06, 6.47853854e-09, -5.71962326e-12, 
+        1.82988158e-15, 2.55011937e+04, -0.462100153]
+    - [2.50000005, -6.91290402e-11, 3.17013507e-14, -5.99512384e-18, 
+        4.00484424e-22, 2.5501259e+04, -0.459778617]
+- name: H2
+  composition: {H: 2}
+  thermo:
+    model: NASA7
+    temperature-ranges: [298.0, 1000.0, 3000.0]
+    data:
+    - [3.48870327, 1.02702531e-04, -3.02211299e-07, 2.89514709e-10, 
+        -4.75166356e-15, -1041.94147, -4.23034959]
+    - [3.62611241, -7.07448862e-04, 9.49227986e-07, -3.32722051e-10, 
+        3.87880605e-14, -1044.5701, -4.79857925]
+    note: |2-
+       Species # 1      RQCISD(T)/CBS//B3LYP/6-311++G(d,p) + BAC by C. F. Goldsmith
+      H2
+- name: HEG
+  composition: {H: 1}
+  thermo:
+    model: NASA7
+    temperature-ranges: [200.0, 6000.0]
+    data:
+    - [2.5, 0.0, 0.0, 0.0, 0.0, 2.547366e+04, -0.44668285]
+    note: L 6/94
+- name: HCFG
+  composition: {H: 1}
+  thermo:
+    model: NASA7
+    temperature-ranges: [298.0, 1000.0, 3000.0]
+    data:
+    - [2.49997316, 1.64167026e-07, -3.47919922e-10, 3.10682776e-13, 
+        -1.00079312e-16, 2.54768313e+04, -0.459662169]
+    - [2.50000055, -1.20019318e-09, 9.35492989e-13, -3.11899044e-16, 
+        3.77069252e-20, 2.54768281e+04, -0.459781794]
+- name: Halt
+  composition: {H: 1}
+  thermo:
+    model: NASA7
+    temperature-ranges: [200.0, 6000.0]
+    data:
+    - [0.0, 0.0, 0.0, 0.0, 0.0, 1000.0, 1.0]
+    note: L 6/94
+- name: O
+  composition: {O: 1}
+  thermo:
+    model: NASA7
+    temperature-ranges: [298.0, 1000.0, 6000.0]
+    data:
+    - [2.50052819, -3.11697989e-06, 6.47853854e-09, -5.71962326e-12, 
+        1.82988158e-15, 2.93011937e+04, 4.09007152]
+    - [2.50000005, -6.91290402e-11, 3.17013507e-14, -5.99512384e-18, 
+        4.00484424e-22, 2.9301259e+04, 4.09239305]
+- name: O2
+  composition: {O: 2}
+  thermo:
+    model: NASA7
+    temperature-ranges: [298.0, 1000.0, 3000.0]
+    data:
+    - [3.73919094, -2.57259356e-03, 8.31553249e-06, -7.79499779e-09, 
+        2.46236871e-12, -1059.16806, 3.80588137]
+    - [2.95870332, 2.12372581e-03, -1.23235198e-06, 3.3411345e-10, 
+        -3.46898036e-14, -977.078078, 7.18948256]
+    note: |2-
+       Species # 17      RQCISD(T)/CBS//B3LYP/6-311++G(d,p) + BAC by C. F. Goldsmith
+      O2
+- name: OH
+  composition: {H: 1, O: 1}
+  thermo:
+    model: NASA7
+    temperature-ranges: [298.0, 1000.0, 3000.0]
+    data:
+    - [3.48552785, 1.90678864e-04, -7.61226601e-07, 1.06744613e-09, 
+        -3.38195682e-13, 3446.85909, 2.22843987]
+    - [3.23447499, 1.51896174e-04, 4.34111743e-07, -2.02953413e-10, 
+        2.67010622e-14, 3563.47771, 3.73600742]
+    note: |2-
+       Species # 7      RQCISD(T)/CBS//B3LYP/6-311++G(d,p) + BAC by C. F. Goldsmith
+      hydroxyl radical
+- name: H2O
+  composition: {H: 2, O: 1}
+  thermo:
+    model: NASA7
+    temperature-ranges: [298.0, 1000.0, 3000.0]
+    data:
+    - [4.1821803, -2.07725471e-03, 6.84832209e-06, -6.02731059e-09, 
+        1.9840831e-12, -3.04340222e+04, -0.774536721]
+    - [3.14529933, 1.9582429e-03, -6.98290283e-08, -1.50137039e-10, 
+        2.64440298e-14, -3.01866053e+04, 4.34191314]
+    note: |2-
+       Species # 8      RQCISD(T)/CBS//B3LYP/6-311++G(d,p) + BAC by C. F. Goldsmith
+      H2O
+- name: HO2
+  composition: {H: 1, O: 2}
+  thermo:
+    model: NASA7
+    temperature-ranges: [298.0, 1000.0, 3000.0]
+    data:
+    - [3.6072309, 4.61881768e-04, 6.97418735e-06, -8.41984228e-09, 
+        3.04543691e-12, 235.057523, 6.5811405]
+    - [3.28110235, 3.77506215e-03, -1.75648628e-06, 4.07034574e-10, 
+        -3.78181331e-14, 224.752226, 7.71463465]
+    note: |2-
+       Species # 18      RQCISD(T)/CBS//B3LYP/6-311++G(d,p) + BAC by C. F. Goldsmith
+      hydroperoxyl radical
+- name: H2O2
+  composition: {H: 2, O: 2}
+  thermo:
+    model: NASA7
+    temperature-ranges: [298.0, 1000.0, 3000.0]
+    data:
+    - [3.4902375, 4.56236214e-03, 3.03586997e-06, -6.32874728e-09, 
+        2.62194355e-12, -1.74279031e+04, 6.77235305]
+    - [3.69370684, 5.68657782e-03, -2.49129909e-06, 5.39632959e-10, 
+        -4.69526598e-14, -1.75344065e+04, 5.38396941]
+    note: |2-
+       Species # 19      RQCISD(T)/CBS//B3LYP/6-311++G(d,p) + BAC by C. F. Goldsmith
+      hydrogen-peroxide
+      HOOH                    H  2 C  0 O  2      G     298.0    3000.0    1000.0    1
+- name: CO
+  composition: {C: 1, O: 1}
+  thermo:
+    model: NASA7
+    temperature-ranges: [298.0, 1000.0, 3000.0]
+    data:
+    - [3.80247114, -2.25185963e-03, 5.20575536e-06, -3.65732275e-09, 
+        8.67311679e-13, -1.43329842e+04, 2.55332027]
+    - [2.67221589, 2.14795865e-03, -1.09600046e-06, 2.6770494e-10, 
+        -2.55232313e-14, -1.41047428e+04, 8.02677269]
+    note: |2-
+       Species # 9      RQCISD(T)/CBS//B3LYP/6-311++G(d,p) + BAC by C. F. Goldsmith
+      carbon monoxide
+- name: CO2
+  composition: {C: 1, O: 2}
+  thermo:
+    model: NASA7
+    temperature-ranges: [298.0, 1000.0, 3000.0]
+    data:
+    - [2.11231308, 0.0107974715, -1.19114446e-05, 7.62857192e-09, 
+        -2.12847092e-12, -4.84358078e+04, 10.9027469]
+    - [3.64040468, 4.93199615e-03, -2.70677442e-06, 7.03503909e-10, 
+        -7.06893347e-14, -4.87796744e+04, 3.40411502]
+    note: |2-
+       Species # 20      RQCISD(T)/CBS//B3LYP/6-311++G(d,p) + BAC by C. F. Goldsmith
+      carbon dioxide
+- name: HCO
+  composition: {H: 1, C: 1, O: 1}
+  thermo:
+    model: NASA7
+    temperature-ranges: [298.0, 1000.0, 3000.0]
+    data:
+    - [3.96826149, -1.25427815e-03, 8.35078315e-06, -7.55503835e-09, 
+        2.20318729e-12, 3934.58151, 4.41683585]
+    - [2.51159756, 5.3723946e-03, -2.80388609e-06, 7.01207106e-10, 
+        -6.83977496e-14, 4186.38779, 11.2455901]
+    note: |2-
+       Species # 10      RQCISD(T)/CBS//B3LYP/6-311++G(d,p) + BAC by C. F. Goldsmith
+      formyl radical
+- name: CH2O
+  composition: {H: 2, C: 1, O: 1}
+  thermo:
+    model: NASA7
+    temperature-ranges: [298.0, 1000.0, 3000.0]
+    data:
+    - [4.02550517, -4.0677088e-03, 2.17177398e-05, -2.0878282e-08, 
+        6.59719571e-12, -1.43510901e+04, 3.76247699]
+    - [1.21253087, 0.0103100703, -5.3242686e-06, 1.32521523e-09, 
+        -1.29097877e-13, -1.39186182e+04, 16.6174479]
+    note: |2-
+       Species # 11      RQCISD(T)/CBS//B3LYP/6-311++G(d,p) + BAC by C. F. Goldsmith
+      formaldehyde
+- name: formyloxy
+  composition: {H: 1, C: 1, O: 2}
+  thermo:
+    model: NASA7
+    temperature-ranges: [298.0, 1000.0, 3000.0]
+    data:
+    - [3.56060492, 0.0114033058, -1.07956214e-05, 6.33393819e-09, 
+        -1.76729568e-12, -1.67014616e+04, 7.14416613]
+    - [4.97589467, 6.53225658e-03, -3.62793365e-06, 9.50833132e-10, 
+        -9.6118972e-14, -1.70589151e+04, 0.0314702949]
+    note: |2-
+       Species # 22      RQCISD(T)/CBS//B3LYP/6-311++G(d,p) + BAC by C. F. Goldsmith
+      formyloxy radical
+  note: ' formyloxy'
+- name: formylperoxy
+  composition: {H: 1, C: 1, O: 3}
+  thermo:
+    model: NASA7
+    temperature-ranges: [298.0, 1000.0, 3000.0]
+    data:
+    - [1.1388915, 0.0286632119, -3.4394508e-05, 2.15795539e-08, 
+        -5.6498166e-12, -1.40352338e+04, 19.6624013]
+    - [6.51772857, 8.76369884e-03, -5.2315057e-06, 1.43761318e-09, 
+        -1.50202235e-13, -1.52497529e+04, -6.83620038]
+    note: |2-
+       Species # 28      RQCISD(T)/CBS//B3LYP/6-311++G(d,p) + BAC by C. F. Goldsmith
+      formylperoxy radical
+  note: ' formylperoxy'
+- name: formylooh
+  composition: {H: 2, C: 1, O: 3}
+  thermo:
+    model: NASA7
+    temperature-ranges: [298.0, 1000.0, 3000.0]
+    data:
+    - [0.146729769, 0.046001067, -7.47045497e-05, 5.93138163e-08, 
+        -1.7958499e-11, -3.6331274e+04, 22.1605939]
+    - [8.154987, 7.12464341e-03, -3.07276462e-06, 6.45248157e-10, 
+        -5.35496767e-14, -3.7692429e+04, -15.0180043]
+    note: |2-
+       Species # 29      RQCISD(T)/CBS//B3LYP/6-311++G(d,p) + BAC by C. F. Goldsmith
+      formyl-hydroperoxide
+      OCHOOH                  H  2 C  1 O  3      G     298.0    3000.0    1000.0    1
+  note: ' formyl-hydroperoxide'
+- name: C
+  composition: {C: 1}
+  thermo:
+    model: NASA7
+    temperature-ranges: [298.0, 1000.0, 6000.0]
+    data:
+    - [2.50052819, -3.11697989e-06, 6.47853854e-09, -5.71962326e-12, 
+        1.82988158e-15, 8.55489015e+04, 3.65902567]
+    - [2.50000005, -6.91290402e-11, 3.17013507e-14, -5.99512384e-18, 
+        4.00484424e-22, 8.55489668e+04, 3.66134721]
+- name: CH
+  composition: {H: 1, C: 1}
+  thermo:
+    model: NASA7
+    temperature-ranges: [298.0, 1000.0, 3000.0]
+    data:
+    - [3.59786591, -5.44427017e-04, 6.03986457e-07, 5.80967707e-10, 
+        -4.34005808e-13, 7.06409577e+04, 1.62018856]
+    - [2.74348624, 1.5298936e-03, -5.52389459e-07, 8.80014113e-11, 
+        -4.60454258e-15, 7.0880997e+04, 6.08287339]
+    note: |2-
+       Species # 2      RQCISD(T)/CBS//B3LYP/6-311++G(d,p) + BAC by C. F. Goldsmith
+      CH radical
+- name: CH2(S)
+  composition: {H: 2, C: 1}
+  thermo:
+    model: NASA7
+    temperature-ranges: [298.0, 1000.0, 3000.0]
+    data:
+    - [4.09382097, -1.57355496e-03, 6.14481761e-06, -4.54290901e-09, 
+        1.16592128e-12, 5.04222053e+04, -0.346255517]
+    - [2.28071747, 4.60602412e-03, -1.97447412e-06, 4.09217875e-10, 
+        -3.33894485e-14, 5.08537803e+04, 8.70740526]
+    note: |2-
+       Species # 3      RQCISD(T)/CBS//B3LYP/6-311++G(d,p) + BAC by C. F. Goldsmith
+      CH2 singlet
+- name: CH2
+  composition: {H: 2, C: 1}
+  thermo:
+    model: NASA7
+    temperature-ranges: [298.0, 1000.0, 3000.0]
+    data:
+    - [3.40215504, 3.4666736e-03, -3.77573716e-06, 3.12335389e-09, 
+        -9.43817916e-13, 4.61091515e+04, 3.19557878]
+    - [3.03963103, 3.06098054e-03, -9.3418239e-07, 1.07128289e-10, 
+        -9.30010209e-16, 4.6292816e+04, 5.4544082]
+    note: |2-
+       Species # 4      RQCISD(T)/CBS//B3LYP/6-311++G(d,p) + BAC by C. F. Goldsmith
+      CH2 triplet
+      CH2(T)                  H  2 C  1 O  0      G     298.0    3000.0    1000.0    1
+- name: CH3
+  composition: {H: 3, C: 1}
+  thermo:
+    model: NASA7
+    temperature-ranges: [298.0, 1000.0, 3000.0]
+    data:
+    - [3.52930959, 3.93813981e-03, 3.59568786e-07, -1.1908585e-09, 
+        4.30776377e-13, 1.64865209e+04, 2.10649376]
+    - [2.45689312, 6.85662424e-03, -2.7300966e-06, 5.22525136e-10, 
+        -3.90098356e-14, 1.67951949e+04, 7.68715124]
+    note: |2-
+       Species # 5      RQCISD(T)/CBS//B3LYP/6-311++G(d,p) + BAC by C. F. Goldsmith
+      methyl radical
+- name: CH4
+  composition: {H: 4, C: 1}
+  thermo:
+    model: NASA7
+    temperature-ranges: [298.0, 1000.0, 3000.0]
+    data:
+    - [4.16716351, -6.31932813e-03, 2.98516596e-05, -2.80272841e-08, 
+        8.87170742e-12, -1.0062635e+04, -0.580421443]
+    - [-0.212057774, 0.0139686455, -6.59704471e-06, 1.5240037e-09, 
+        -1.39628424e-13, -9263.38717, 20.0089507]
+    note: |2-
+       Species # 6      RQCISD(T)/CBS//B3LYP/6-311++G(d,p) + BAC by C. F. Goldsmith
+      methane
+- name: CH3OO
+  composition: {H: 3, C: 1, O: 2}
+  thermo:
+    model: NASA7
+    temperature-ranges: [298.0, 1000.0, 3000.0]
+    data:
+    - [2.98319406, 8.41462643e-03, 1.08731853e-05, -1.71342331e-08, 
+        6.4493573e-12, 315.932734, 12.600879]
+    - [2.64738112, 0.0148477436, -7.61804675e-06, 1.89383796e-09, 
+        -1.84785879e-13, 168.74199, 13.0489369]
+    note: |2-
+       Species # 24      RQCISD(T)/CBS//B3LYP/6-311++G(d,p) + BAC by C. F. Goldsmith
+      methylperoxy radical
+- name: CH3OOH
+  composition: {H: 4, C: 1, O: 2}
+  thermo:
+    model: NASA7
+    temperature-ranges: [298.0, 1000.0, 3000.0]
+    data:
+    - [2.82184432, 0.0164737593, -3.06985502e-06, -5.66411133e-09, 
+        2.92984321e-12, -1.70148153e+04, 13.0015178]
+    - [3.8737665, 0.0156959828, -7.77768567e-06, 1.87848924e-09, 
+        -1.79072394e-13, -1.73724393e+04, 7.12981738]
+    note: |2-
+       Species # 26      RQCISD(T)/CBS//B3LYP/6-311++G(d,p) + BAC by C. F. Goldsmith
+      methyl-hydroperoxide
+- name: CH2OH
+  composition: {H: 3, C: 1, O: 1}
+  thermo:
+    model: NASA7
+    temperature-ranges: [298.0, 1000.0, 3000.0]
+    data:
+    - [2.82495458, 0.0112705233, -4.57074212e-06, -1.60781616e-09, 
+        1.44390945e-12, -3107.96166, 10.0763394]
+    - [4.00727361, 8.29366647e-03, -3.67893214e-06, 8.10551112e-10, 
+        -7.17299662e-14, -3400.58619, 4.01290816]
+    note: |2-
+       Species # 15      RQCISD(T)/CBS//B3LYP/6-311++G(d,p) + BAC by C. F. Goldsmith
+      hydroxymethyl radical
+- name: CH3O
+  composition: {H: 3, C: 1, O: 1}
+  thermo:
+    model: NASA7
+    temperature-ranges: [298.0, 1000.0, 3000.0]
+    data:
+    - [2.05790201, 9.53454644e-03, 2.56323913e-06, -7.59370108e-09, 
+        3.02439392e-12, 1414.8058, 12.7986825]
+    - [1.84600348, 0.0127916998, -6.49261849e-06, 1.59518222e-09, 
+        -1.53886597e-13, 1355.18213, 13.2648102]
+    note: |2-
+       Species # 14      RQCISD(T)/CBS//B3LYP/6-311++G(d,p) + BAC by C. F. Goldsmith
+      methoxy radical
+- name: CH3OH
+  composition: {H: 4, C: 1, O: 1}
+  thermo:
+    model: NASA7
+    temperature-ranges: [298.0, 1000.0, 3000.0]
+    data:
+    - [3.66108629, 3.78050479e-04, 2.45757569e-05, -2.72736479e-08, 
+        9.35484626e-12, -2.55776356e+04, 6.96921095]
+    - [1.20506556, 0.0152693588, -7.35564052e-06, 1.74086533e-09, 
+        -1.63557134e-13, -2.52734175e+04, 17.7172879]
+    note: |2-
+       Species # 16      RQCISD(T)/CBS//B3LYP/6-311++G(d,p) + BAC by C. F. Goldsmith
+      methanol
+- name: OCH2OOH
+  composition: {H: 3, C: 1, O: 3}
+  thermo:
+    model: NASA7
+    temperature-ranges: [298.0, 1000.0, 3000.0]
+    data:
+    - [1.45095087, 0.0417168434, -6.11947821e-05, 4.6762422e-08, 
+        -1.40110494e-11, -1.26833133e+04, 18.2296764]
+    - [8.16020712, 0.0104965195, -4.9765337e-06, 1.14903191e-09, 
+        -1.04839976e-13, -1.38997181e+04, -13.277113]
+    note: |2-
+       Species # 30      RQCISD(T)/CBS//B3LYP/6-311++G(d,p) + BAC by C. F. Goldsmith
+      hydroperoxy-methoxy radical
+      HOOCH2O                 H  3 C  1 O  3      G     298.0    3000.0    1000.0    1
+  note: ' hydroperoxyl-methoxy'
+- name: HOCH2OO
+  composition: {H: 3, C: 1, O: 3}
+  thermo:
+    model: NASA7
+    temperature-ranges: [298.0, 1000.0, 3000.0]
+    data:
+    - [2.96657563, 0.0256408495, -2.19237324e-05, 9.11321759e-09, 
+        -1.32332737e-12, -2.17343666e+04, 12.8574586]
+    - [7.17818574, 0.011919933, -5.93183992e-06, 1.44682066e-09, 
+        -1.39516527e-13, -2.27363122e+04, -8.25083014]
+    note: |2-
+       Species # 31      RQCISD(T)/CBS//B3LYP/6-311++G(d,p) + BAC by C. F. Goldsmith
+      hydroxymethyl-peroxy radical
+  note: ' hydroxymethyl-peroxy'
+- name: HOCH2OOH
+  composition: {H: 4, C: 1, O: 3}
+  thermo:
+    model: NASA7
+    temperature-ranges: [298.0, 1000.0, 3000.0]
+    data:
+    - [2.88219063, 0.0294738467, -1.96730229e-05, 1.83229328e-09, 
+        2.14962784e-12, -3.99383149e+04, 12.311296]
+    - [8.65721338, 0.0130768169, -6.50568247e-06, 1.5907996e-09, 
+        -1.54211888e-13, -4.13827948e+04, -17.1113305]
+    note: |2-
+       Species # 32      RQCISD(T)/CBS//B3LYP/6-311++G(d,p) + BAC by C. F. Goldsmith
+      hydroperoxy-methanol
+      HOOCH2OH                H  4 C  1 O  3      G     298.0    3000.0    1000.0    1
+  note: ' hydroperoxyl-methanol'
+- name: HOCH2O
+  composition: {H: 3, C: 1, O: 2}
+  thermo:
+    model: NASA7
+    temperature-ranges: [298.0, 1000.0, 3000.0]
+    data:
+    - [0.37205031, 0.0275141397, -2.51014485e-05, 1.11443106e-08, 
+        -1.7587657e-12, -2.15629517e+04, 23.1808083]
+    - [5.01330781, 0.0117929803, -5.96627478e-06, 1.47376169e-09, 
+        -1.4348859e-13, -2.26274389e+04, 0.093406828]
+    note: |2-
+       Species # 25      RQCISD(T)/CBS//B3LYP/6-311++G(d,p) + BAC by C. F. Goldsmith
+      hydroxymethoxy radical
+  note: ' hydroxymethoxy'
+- name: C2H2
+  composition: {H: 2, C: 2}
+  thermo:
+    model: NASA7
+    temperature-ranges: [298.0, 1000.0, 3000.0]
+    data:
+    - [0.611881334, 0.0235511205, -3.51876788e-05, 2.71287984e-08, 
+        -8.05709816e-12, 2.65590923e+04, 14.879359]
+    - [4.20453369, 5.72745973e-03, -2.29545656e-06, 4.44130884e-10, 
+        -3.36445221e-14, 2.59806724e+04, -1.67122889]
+    note: |2-
+       Species # 36      RQCISD(T)/CBS//B3LYP/6-311++G(d,p) + BAC by C. F. Goldsmith
+      acetylene ethyne
+- name: C2H3
+  composition: {H: 3, C: 2}
+  thermo:
+    model: NASA7
+    temperature-ranges: [298.0, 1000.0, 3000.0]
+    data:
+    - [1.24592766, 0.0168943133, -1.37100903e-05, 6.43932293e-09, 
+        -1.27588205e-12, 3.47409772e+04, 16.5205709]
+    - [2.78908546, 0.0109134748, -5.21420437e-06, 1.21793184e-09, 
+        -1.12696119e-13, 3.44289873e+04, 9.04337729]
+    note: |2-
+       Species # 40      RQCISD(T)/CBS//B3LYP/6-311++G(d,p) + BAC by C. F. Goldsmith
+      vinyl radical
+- name: C2H4
+  composition: {H: 4, C: 2}
+  thermo:
+    model: NASA7
+    temperature-ranges: [298.0, 1000.0, 3000.0]
+    data:
+    - [1.26077718, 0.0125535099, 3.91765744e-06, -1.11347591e-08, 
+        4.58058379e-12, 5337.04654, 15.3160033]
+    - [1.21215839, 0.0161560224, -7.89891848e-06, 1.88672649e-09, 
+        -1.78219665e-13, 5219.65698, 14.8068311]
+    note: |2-
+       Species # 42      RQCISD(T)/CBS//B3LYP/6-311++G(d,p) + BAC by C. F. Goldsmith
+      ethene
+- name: C2H5
+  composition: {H: 5, C: 2}
+  thermo:
+    model: NASA7
+    temperature-ranges: [298.0, 1000.0, 3000.0]
+    data:
+    - [2.01543665, 0.0136856127, 3.09981682e-06, -9.89324355e-09, 
+        3.98938932e-12, 1.33584121e+04, 14.1655049]
+    - [1.39424662, 0.018574218, -9.00112446e-06, 2.12877239e-09, 
+        -1.99100582e-13, 1.34011406e+04, 16.6581828]
+    note: |2-
+       Species # 46      RQCISD(T)/CBS//B3LYP/6-311++G(d,p) + BAC by C. F. Goldsmith
+      ethyl radical
+- name: C2H6
+  composition: {H: 6, C: 2}
+  thermo:
+    model: NASA7
+    temperature-ranges: [298.0, 1000.0, 3000.0]
+    data:
+    - [2.06504612, 0.0117762358, 1.32773626e-05, -1.95211261e-08, 
+        6.98738503e-12, -1.13101096e+04, 11.8645311]
+    - [0.036869199, 0.0236238011, -1.15795684e-05, 2.76430238e-09, 
+        -2.60500835e-13, -1.10418516e+04, 20.8390764]
+    note: |2-
+       Species # 47      RQCISD(T)/CBS//B3LYP/6-311++G(d,p) + BAC by C. F. Goldsmith
+      ethane
+- name: ketene
+  composition: {H: 2, C: 2, O: 1}
+  thermo:
+    model: NASA7
+    temperature-ranges: [298.0, 1000.0, 3000.0]
+    data:
+    - [1.84575741, 0.0200191634, -2.24248148e-05, 1.47947272e-08, 
+        -4.09905914e-12, -7151.87655, 13.4255266]
+    - [4.24408656, 9.50856221e-03, -4.60045649e-06, 1.08459628e-09, 
+        -1.01014433e-13, -7608.43408, 2.02741024]
+    note: |2-
+       Species # 52      RQCISD(T)/CBS//B3LYP/6-311++G(d,p) + BAC by C. F. Goldsmith
+      ketene
+- name: HCCO
+  composition: {H: 1, C: 2, O: 1}
+  thermo:
+    model: NASA7
+    temperature-ranges: [298.0, 1000.0, 3000.0]
+    data:
+    - [3.04318442, 0.0146102883, -1.94446292e-05, 1.4484272e-08, 
+        -4.34187202e-12, 1.99516444e+04, 8.6775641]
+    - [5.00393576, 5.37847238e-03, -2.57702189e-06, 6.01265265e-10, 
+        -5.54080163e-14, 1.95977241e+04, -0.512761106]
+    note: |2-
+       Species # 50      RQCISD(T)/CBS//B3LYP/6-311++G(d,p) + BAC by C. F. Goldsmith
+      kentyl radical
+- name: ethynol
+  composition: {H: 2, C: 2, O: 1}
+  thermo:
+    model: NASA7
+    temperature-ranges: [298.0, 1000.0, 3000.0]
+    data:
+    - [1.92996781, 0.0240093186, -3.27888943e-05, 2.38766618e-08, 
+        -6.84413662e-12, 9702.17812, 12.8806688]
+    - [5.67465896, 6.82098744e-03, -2.85054414e-06, 5.85856749e-10, 
+        -4.80416922e-14, 9035.68479, -4.70300719]
+    note: |2-
+       Species # 51      RQCISD(T)/CBS//B3LYP/6-311++G(d,p) + BAC by C. F. Goldsmith
+      ethynol
+- name: acetaldehyde
+  composition: {H: 4, C: 2, O: 1}
+  thermo:
+    model: NASA7
+    temperature-ranges: [298.0, 1000.0, 3000.0]
+    data:
+    - [2.93890043, 9.57900047e-03, 1.29601852e-05, -1.88434352e-08, 
+        6.75416947e-12, -2.13254369e+04, 11.7108482]
+    - [1.67215938, 0.0194264694, -9.92486315e-06, 2.45289244e-09, 
+        -2.378378e-13, -2.12797614e+04, 16.7054665]
+    note: |2-
+       Species # 62      RQCISD(T)/CBS//B3LYP/6-311++G(d,p) + BAC by C. F. Goldsmith
+      acetaldehyde
+      CH3CHO                  H  4 C  2 O  1      G     298.0    3000.0    1000.0    1
+- name: acetyl
+  composition: {H: 3, C: 2, O: 1}
+  thermo:
+    model: NASA7
+    temperature-ranges: [298.0, 1000.0, 3000.0]
+    data:
+    - [2.85218862, 9.97887531e-03, 5.40771126e-06, -1.0864352e-08, 
+        4.11492482e-12, -2465.20894, 12.7342988]
+    - [2.41270342, 0.0150079079, -7.62703534e-06, 1.87719884e-09, 
+        -1.81426735e-13, -2521.44188, 14.0854]
+    note: |2-
+       Species # 59      RQCISD(T)/CBS//B3LYP/6-311++G(d,p) + BAC by C. F. Goldsmith
+      acetyl radical
+- name: vinoxy
+  composition: {H: 3, C: 2, O: 1}
+  thermo:
+    model: NASA7
+    temperature-ranges: [298.0, 1000.0, 3000.0]
+    data:
+    - [0.986311004, 0.0224920216, -1.64812936e-05, 5.86617239e-09, 
+        -6.81551147e-13, 1071.63704, 19.5196726]
+    - [3.6302633, 0.0141239404, -7.16478146e-06, 1.76263004e-09, 
+        -1.70391996e-13, 429.875072, 6.20577997]
+    note: |2-
+       Species # 58      RQCISD(T)/CBS//B3LYP/6-311++G(d,p) + BAC by C. F. Goldsmith
+      vinoxy radical
+- name: acetylperoxy
+  composition: {H: 3, C: 2, O: 3}
+  thermo:
+    model: NASA7
+    temperature-ranges: [298.0, 1000.0, 3000.0]
+    data:
+    - [3.66998082, 0.0250159315, -1.27410138e-05, -7.96811171e-10, 
+        1.92432531e-12, -2.09653381e+04, 10.5978123]
+    - [7.15801302, 0.0168385555, -9.00373237e-06, 2.31051337e-09, 
+        -2.30936859e-13, -2.19562215e+04, -7.68488453]
+    note: |2-
+       Species # 99      RQCISD(T)/CBS//B3LYP/6-311++G(d,p) + BAC by C. F. Goldsmith
+      acetylperoxy radical
+  note: ' acetylperoxy'
+- name: acetyloxy
+  composition: {H: 3, C: 2, O: 2}
+  thermo:
+    model: NASA7
+    temperature-ranges: [298.0, 1000.0, 3000.0]
+    data:
+    - [1.17076084, 0.0247046342, -1.42326686e-05, 1.70646336e-09, 
+        9.2672509e-13, -2.39364094e+04, 20.7079246]
+    - [4.14154939, 0.0170023887, -8.88617341e-06, 2.23864498e-09, 
+        -2.20494765e-13, -2.47418417e+04, 5.32485323]
+    note: |2-
+       Species # 82      RQCISD(T)/CBS//B3LYP/6-311++G(d,p) + BAC by C. F. Goldsmith
+      acetyloxy radical
+  note: ' acetyloxy '
+- name: ethoxy
+  composition: {H: 5, C: 2, O: 1}
+  thermo:
+    model: NASA7
+    temperature-ranges: [298.0, 1000.0, 3000.0]
+    data:
+    - [2.73919981, 0.018101308, -7.21353332e-08, -8.9160378e-09, 
+        3.86311285e-12, -3144.54778, 12.7492845]
+    - [2.85434976, 0.0211633718, -1.06528048e-05, 2.60003906e-09, 
+        -2.4950834e-13, -3320.3348, 11.3715907]
+    note: |2-
+       Species # 63      RQCISD(T)/CBS//B3LYP/6-311++G(d,p) + BAC by C. F. Goldsmith
+      ethoxy radical
+      CH3CH2O                 H  5 C  2 O  1      G     298.0    3000.0    1000.0    1
+- name: CH3CH2OO
+  composition: {H: 5, C: 2, O: 2}
+  thermo:
+    model: NASA7
+    temperature-ranges: [298.0, 1000.0, 3000.0]
+    data:
+    - [1.56891363, 0.0279047858, -1.16126651e-05, -2.60387172e-09, 
+        2.56377034e-12, -4135.77872, 20.6359158]
+    - [3.99240112, 0.0228320645, -1.15745589e-05, 2.84607517e-09, 
+        -2.75048946e-13, -4830.3305, 7.8417813]
+    note: |2-
+       Species # 89      RQCISD(T)/CBS//B3LYP/6-311++G(d,p) + BAC by C. F. Goldsmith
+      ethylperoxy radical
+- name: CH3CH2OOH
+  composition: {H: 6, C: 2, O: 2}
+  thermo:
+    model: NASA7
+    temperature-ranges: [298.0, 1000.0, 3000.0]
+    data:
+    - [1.9800665, 0.0317098108, -1.61557847e-05, 5.39673461e-10, 
+        1.67707875e-12, -2.12702211e+04, 17.8400102]
+    - [4.90574164, 0.0243699936, -1.2213467e-05, 2.97365019e-09, 
+        -2.85073504e-13, -2.20561572e+04, 2.67803319]
+    note: |2-
+       Species # 96      RQCISD(T)/CBS//B3LYP/6-311++G(d,p) + BAC by C. F. Goldsmith
+      ethyl-hydroperoxide
+- name: CH2CH2OOH
+  composition: {H: 5, C: 2, O: 2}
+  thermo:
+    model: NASA7
+    temperature-ranges: [298.0, 1000.0, 3000.0]
+    data:
+    - [2.78275428, 0.0291780121, -1.83781941e-05, 3.72267505e-09, 
+        6.46965042e-13, 4156.2688, 16.0489538]
+    - [6.23655657, 0.0191025783, -9.45182443e-06, 2.2826261e-09, 
+        -2.17724199e-13, 3297.67692, -1.50062965]
+    note: |2-
+       Species # 90      RQCISD(T)/CBS//B3LYP/6-311++G(d,p) + BAC by C. F. Goldsmith
+      hydroperoxyl-ethyl radical
+  note: ' QOOH for ethylperoxy'
+- name: ethanol
+  composition: {H: 6, C: 2, O: 1}
+  thermo:
+    model: NASA7
+    temperature-ranges: [298.0, 1000.0, 3000.0]
+    data:
+    - [1.67343252, 0.0216067828, 3.95866994e-08, -1.16485826e-08, 
+        5.25035221e-12, -2.9862349e+04, 17.7570603]
+    - [2.39391356, 0.0235476167, -1.15124002e-05, 2.75287099e-09, 
+        -2.60429407e-13, -3.02007918e+04, 13.192524]
+    note: |2-
+       Species # 67      RQCISD(T)/CBS//B3LYP/6-311++G(d,p) + BAC by C. F. Goldsmith
+      ethanol
+- name: CH2CH2OH
+  composition: {H: 5, C: 2, O: 1}
+  thermo:
+    model: NASA7
+    temperature-ranges: [298.0, 1000.0, 3000.0]
+    data:
+    - [3.83290357, 0.016377684, -1.11761545e-06, -7.22352305e-09, 
+        3.3943463e-12, -4842.14038, 8.36152361]
+    - [4.22757133, 0.0175986601, -8.31498469e-06, 1.93077682e-09, 
+        -1.78228173e-13, -5022.23318, 5.85467414]
+    note: |2-
+       Species # 65      RQCISD(T)/CBS//B3LYP/6-311++G(d,p) + BAC by C. F. Goldsmith
+      2-hydroxy-ethyl radical
+- name: CH3CHOH
+  composition: {H: 5, C: 2, O: 1}
+  thermo:
+    model: NASA7
+    temperature-ranges: [298.0, 1000.0, 3000.0]
+    data:
+    - [2.74766597, 0.0184167341, -1.08439547e-06, -9.10240458e-09, 
+        4.31028015e-12, -8184.28796, 13.2796002]
+    - [3.7514705, 0.0186443433, -9.06354158e-06, 2.15945978e-09, 
+        -2.03851879e-13, -8554.82143, 7.48210625]
+    note: |2-
+       Species # 66      RQCISD(T)/CBS//B3LYP/6-311++G(d,p) + BAC by C. F. Goldsmith
+      1-hydroxy-ethyl radical
+- name: oxirane
+  composition: {H: 4, C: 2, O: 1}
+  thermo:
+    model: NASA7
+    temperature-ranges: [298.0, 1000.0, 3000.0]
+    data:
+    - [-0.684201089, 0.0236878756, -5.41513728e-06, -8.43096475e-09, 
+        4.63073341e-12, -7010.4468, 26.3344882]
+    - [1.78916723, 0.0199822661, -1.03044753e-05, 2.57342854e-09, 
+        -2.52080658e-13, -7775.76654, 12.951916]
+    note: |2-
+       Species # 60      RQCISD(T)/CBS//B3LYP/6-311++G(d,p) + BAC by C. F. Goldsmith
+      oxirane ethylene-oxide
+  note: ' oxirane (ethylene-oxide)'
+- name: oxiranyl
+  composition: {H: 3, C: 2, O: 1}
+  thermo:
+    model: NASA7
+    temperature-ranges: [298.0, 1000.0, 3000.0]
+    data:
+    - [-0.463883975, 0.0248719728, -1.57280639e-05, 2.41896102e-09, 
+        9.80034783e-13, 1.93020105e+04, 26.3101152]
+    - [3.00080992, 0.0151408014, -7.83048347e-06, 1.96027921e-09, 
+        -1.9238634e-13, 1.84195302e+04, 8.60523802]
+    note: |2-
+       Species # 55      RQCISD(T)/CBS//B3LYP/6-311++G(d,p) + BAC by C. F. Goldsmith
+      oxiranyl radical
+  note: ' oxiranyl'
+- name: ethenol
+  composition: {H: 4, C: 2, O: 1}
+  thermo:
+    model: NASA7
+    temperature-ranges: [298.0, 1000.0, 3000.0]
+    data:
+    - [0.234225389, 0.0331420185, -3.44393722e-05, 1.93928172e-08, 
+        -4.42515436e-12, -1.63149479e+04, 21.4792059]
+    - [5.34592505, 0.0135683538, -6.33531671e-06, 1.45964394e-09, 
+        -1.34071498e-13, -1.73827569e+04, -3.40457374]
+    note: |2-
+       Species # 61      RQCISD(T)/CBS//B3LYP/6-311++G(d,p) + BAC by C. F. Goldsmith
+      ethenol vinyl alcohol
+  note: ' vinyl-alcohol'
+- name: C3H6
+  composition: {H: 6, C: 3}
+  thermo:
+    model: NASA7
+    temperature-ranges: [298.0, 1000.0, 3000.0]
+    data:
+    - [1.28764269, 0.0225006139, -4.53932009e-07, -1.09681215e-08, 
+        4.87404921e-12, 961.516107, 18.1216778]
+    - [1.64278374, 0.0254878392, -1.26572609e-05, 3.05815725e-09, 
+        -2.91267032e-13, 707.032253, 15.3987922]
+    note: |2-
+       Species # 117      RQCISD(T)/CBS//B3LYP/6-311++G(d,p) + BAC by C. F. Goldsmith
+      propene
+- name: npropyl
+  composition: {H: 7, C: 3}
+  thermo:
+    model: NASA7
+    temperature-ranges: [298.0, 1000.0, 3000.0]
+    data:
+    - [0.845465693, 0.0301374053, -1.26376899e-05, -1.23408463e-09, 
+        1.93083372e-12, 1.07500034e+04, 21.6839066]
+    - [2.27672113, 0.0272426458, -1.33728149e-05, 3.19705815e-09, 
+        -3.01679976e-13, 1.03498864e+04, 14.1405472]
+    note: |2-
+       Species # 119      RQCISD(T)/CBS//B3LYP/6-311++G(d,p) + BAC by C. F. Goldsmith
+      n-propyl radical
+- name: ipropyl
+  composition: {H: 7, C: 3}
+  thermo:
+    model: NASA7
+    temperature-ranges: [298.0, 1000.0, 3000.0]
+    data:
+    - [2.52276438, 0.0159475347, 1.75812516e-05, -2.72667484e-08, 
+        1.00176034e-11, 9139.05822, 15.0261961]
+    - [0.745963945, 0.0296693348, -1.48952386e-05, 3.63056876e-09, 
+        -3.4822321e-13, 9229.29138, 22.1086946]
+    note: |2-
+       Species # 120      RQCISD(T)/CBS//B3LYP/6-311++G(d,p) + BAC by C. F. Goldsmith
+      isopropyl radical
+- name: C3H8
+  composition: {H: 8, C: 3}
+  thermo:
+    model: NASA7
+    temperature-ranges: [298.0, 1000.0, 3000.0]
+    data:
+    - [0.733279309, 0.0293066683, -3.96523366e-06, -1.00627982e-08, 
+        4.79558278e-12, -1.41639443e+04, 20.6271043]
+    - [1.0903709, 0.0321718646, -1.59240915e-05, 3.83306336e-09, 
+        -3.63708846e-13, -1.44094551e+04, 17.9325047]
+    note: |2-
+       Species # 121      RQCISD(T)/CBS//B3LYP/6-311++G(d,p) + BAC by C. F. Goldsmith
+      propane
+- name: allyl
+  composition: {H: 5, C: 3}
+  thermo:
+    model: NASA7
+    temperature-ranges: [298.0, 1000.0, 3000.0]
+    data:
+    - [-1.0910808, 0.0370741552, -3.26737781e-05, 1.58472399e-08, 
+        -3.16091668e-12, 1.93832476e+04, 27.4877503]
+    - [3.53747862, 0.0202102168, -9.89265581e-06, 2.36380077e-09, 
+        -2.23220835e-13, 1.83762706e+04, 4.74822758]
+    note: |2-
+       Species # 112      RQCISD(T)/CBS//B3LYP/6-311++G(d,p) + BAC by C. F. Goldsmith
+      allyl radical
+- name: propen1yl
+  composition: {H: 5, C: 3}
+  thermo:
+    model: NASA7
+    temperature-ranges: [298.0, 1000.0, 3000.0]
+    data:
+    - [1.5645165, 0.0236197016, -1.07382165e-05, -8.68979222e-11, 
+        1.19817981e-12, 3.08476047e+04, 17.2062874]
+    - [2.88965689, 0.0206484496, -1.02005529e-05, 2.45220758e-09, 
+        -2.32477736e-13, 3.04802242e+04, 10.2662579]
+    note: |2-
+       Species # 115      RQCISD(T)/CBS//B3LYP/6-311++G(d,p) + BAC by C. F. Goldsmith
+      propen-1-yl (2-methyl-vinyl) radical
+- name: propen2yl
+  composition: {H: 5, C: 3}
+  thermo:
+    model: NASA7
+    temperature-ranges: [298.0, 1000.0, 3000.0]
+    data:
+    - [2.47223165, 0.0175096865, 1.54166152e-06, -1.03357169e-08, 
+        4.31484742e-12, 2.89681156e+04, 13.6627279]
+    - [2.36288328, 0.0215547888, -1.07842989e-05, 2.6198441e-09, 
+        -2.50507107e-13, 2.8837747e+04, 13.3587759]
+    note: |2-
+       Species # 114      RQCISD(T)/CBS//B3LYP/6-311++G(d,p) + BAC by C. F. Goldsmith
+      propen-2-yl (1-methyl-vinyl) radical
+- name: acetone
+  composition: {H: 6, C: 3, O: 1}
+  thermo:
+    model: NASA7
+    temperature-ranges: [298.0, 1000.0, 3000.0]
+    data:
+    - [1.82909358, 0.0237226695, 2.60795923e-06, -1.51649132e-08, 
+        6.34923415e-12, -2.77794505e+04, 18.2331772]
+    - [2.18783793, 0.0283158546, -1.43413978e-05, 3.52155814e-09, 
+        -3.39809566e-13, -2.81188108e+04, 15.0799896]
+    note: |2-
+       Species # 143      RQCISD(T)/CBS//B3LYP/6-311++G(d,p) + BAC by C. F. Goldsmith
+      acetone
+- name: CH3OCH3
+  composition: {H: 6, C: 2, O: 1}
+  thermo:
+    model: NASA7
+    temperature-ranges: [298.0, 1000.0, 3000.0]
+    data:
+    - [3.75480003, 9.94330522e-03, 2.0465892e-05, -2.65048607e-08, 
+        9.2039814e-12, -2.38174871e+04, 7.12147313]
+    - [1.1385197, 0.0258202899, -1.29425822e-05, 3.14818537e-09, 
+        -3.01294764e-13, -2.35157473e+04, 18.5133202]
+    note: |2-
+       Species # 68      RQCISD(T)/CBS//B3LYP/6-311++G(d,p) + BAC by C. F. Goldsmith
+      dimethyl-ether
+      DME                     H  6 C  2 O  1      G     298.0    3000.0    1000.0    1
+  note: ' dimethyl-ether'
+- name: CH3OCH2
+  composition: {H: 5, C: 2, O: 1}
+  thermo:
+    model: NASA7
+    temperature-ranges: [298.0, 1000.0, 3000.0]
+    data:
+    - [3.93734319, 9.90763869e-03, 1.63345997e-05, -2.34568933e-08, 
+        8.57704791e-12, -1325.47779, 7.99274498]
+    - [2.7430013, 0.0206529566, -1.03925669e-05, 2.54086134e-09, 
+        -2.44516053e-13, -1329.86515, 12.4007048]
+    note: |2-
+       Species # 64      RQCISD(T)/CBS//B3LYP/6-311++G(d,p) + BAC by C. F. Goldsmith
+      methoxy-methyl radical
+  note: ' methoxy-methyl'
+- name: acrolein
+  composition: {H: 4, C: 3, O: 1}
+  thermo:
+    model: NASA7
+    temperature-ranges: [298.0, 1000.0, 3000.0]
+    data:
+    - [1.30858881, 0.0290665687, -1.85267312e-05, 5.10575873e-09, 
+        -3.1235785e-13, -9341.39504, 17.5831373]
+    - [4.27745325, 0.0208995067, -1.10621906e-05, 2.80392911e-09, 
+        -2.76871274e-13, -1.01465486e+04, 2.26814496]
+    note: |2-
+       Species # 128      RQCISD(T)/CBS//B3LYP/6-311++G(d,p) + BAC by C. F. Goldsmith
+      acrolein
+  note: ' acrolein (2-propanal)'
+- name: CH2CHCO
+  composition: {H: 3, C: 3, O: 1}
+  thermo:
+    model: NASA7
+    temperature-ranges: [298.0, 1000.0, 3000.0]
+    data:
+    - [1.67431562, 0.0253644779, -1.74055511e-05, 5.43382478e-09, 
+        -4.34352533e-13, 1.02237218e+04, 17.8417413]
+    - [4.57165627, 0.0167235781, -8.58791816e-06, 2.13315141e-09, 
+        -2.07752945e-13, 9487.46848, 3.10327903]
+    note: |2-
+       Species # 125      RQCISD(T)/CBS//B3LYP/6-311++G(d,p) + BAC by C. F. Goldsmith
+      vinyl-formyl radical
+  note: ' vinylcarbonyl (acrolein radical)'
+- name: CH3CHCO
+  composition: {H: 4, C: 3, O: 1}
+  thermo:
+    model: NASA7
+    temperature-ranges: [298.0, 1000.0, 3000.0]
+    data:
+    - [2.63273517, 0.0208829926, -5.8067481e-06, -4.08387076e-09, 
+        2.34605959e-12, -9279.18867, 13.6140204]
+    - [3.54464083, 0.020508465, -1.03834881e-05, 2.54697013e-09, 
+        -2.45419418e-13, -9617.66498, 8.41528633]
+    note: |2-
+       Species # 130      RQCISD(T)/CBS//B3LYP/6-311++G(d,p) + BAC by C. F. Goldsmith
+      methyl-ketene
+      methylketene            H  4 C  3 O  1      G     298.0    3000.0    1000.0    1
+  note: ' methyl-ketene'
+- name: allyloxy
+  composition: {H: 5, C: 3, O: 1}
+  thermo:
+    model: NASA7
+    temperature-ranges: [298.0, 1000.0, 3000.0]
+    data:
+    - [1.47592708, 0.0307980197, -1.62687983e-05, 8.03319403e-10, 
+        1.60383861e-12, 1.0271041e+04, 19.7163468]
+    - [4.55999003, 0.0229569067, -1.17219703e-05, 2.89876847e-09, 
+        -2.81388328e-13, 9445.10841, 3.75291744]
+    note: |2-
+       Species # 132      RQCISD(T)/CBS//B3LYP/6-311++G(d,p) + BAC by C. F. Goldsmith
+      allyloxy radical
+  note: 'CH2CCH2OH      ! allyloxy, CH2=C*-CH2-OH '
+- name: allyl-alcohol
+  composition: {H: 6, C: 3, O: 1}
+  thermo:
+    model: NASA7
+    temperature-ranges: [298.0, 1000.0, 3000.0]
+    data:
+    - [4.63168946, 0.0226022203, -4.8676672e-06, -5.56888858e-09, 
+        2.91842104e-12, -1.74849943e+04, 3.73066075]
+    - [5.2410146, 0.0232475526, -1.11473421e-05, 2.61834985e-09, 
+        -2.43799924e-13, -1.7738126e+04, 0.077572739]
+    note: |2-
+       Species # 149      RQCISD(T)/CBS//B3LYP/6-311++G(d,p) + BAC by C. F. Goldsmith
+      allyl-alcohol
+      propen3ol               H  6 C  3 O  1      G     298.0    3000.0    1000.0    1
+  note: ' allyl-alcohol'
+- name: propanal
+  composition: {H: 6, C: 3, O: 1}
+  thermo:
+    model: NASA7
+    temperature-ranges: [298.0, 1000.0, 3000.0]
+    data:
+    - [5.17478484, 8.50643399e-03, 2.98201309e-05, -3.68849444e-08, 
+        1.28335527e-11, -2.48069163e+04, 3.98600787]
+    - [2.18064033, 0.0286296012, -1.46253971e-05, 3.6159418e-09, 
+        -3.50828195e-13, -2.45475248e+04, 16.564222]
+    note: |2-
+       Species # 144      RQCISD(T)/CBS//B3LYP/6-311++G(d,p) + BAC by C. F. Goldsmith
+      propanal (propaldehyde)
+- name: propionyl
+  composition: {H: 5, C: 3, O: 1}
+  thermo:
+    model: NASA7
+    temperature-ranges: [298.0, 1000.0, 3000.0]
+    data:
+    - [4.32383885, 0.0126910638, 1.51082804e-05, -2.29749485e-08, 
+        8.37734327e-12, -5429.37075, 8.72196525]
+    - [2.9680107, 0.024043747, -1.21943577e-05, 2.99771373e-09, 
+        -2.89535877e-13, -5408.79456, 13.8954959]
+    note: |2-
+       Species # 138      RQCISD(T)/CBS//B3LYP/6-311++G(d,p) + BAC by C. F. Goldsmith
+      propionyl radical
+      CH3CH2CO                H  5 C  3 O  1      G     298.0    3000.0    1000.0    1
+- name: npropyloxy
+  composition: {H: 7, C: 3, O: 1}
+  thermo:
+    model: NASA7
+    temperature-ranges: [298.0, 1000.0, 3000.0]
+    data:
+    - [1.28341389, 0.0357266194, -1.7696995e-05, 1.14202428e-09, 
+        1.40747781e-12, -5882.59252, 20.9279823]
+    - [3.71165592, 0.0298888018, -1.50650214e-05, 3.68054175e-09, 
+        -3.53437601e-13, -6551.69654, 8.27016784]
+    note: |2-
+       Species # 151      RQCISD(T)/CBS//B3LYP/6-311++G(d,p) + BAC by C. F. Goldsmith
+      n-propyloxy radical
+      npropoxy                H  7 C  3 O  1      G     298.0    3000.0    1000.0    1
+- name: ipropyloxy
+  composition: {H: 7, C: 3, O: 1}
+  thermo:
+    model: NASA7
+    temperature-ranges: [298.0, 1000.0, 3000.0]
+    data:
+    - [0.986554785, 0.0380805183, -2.31947108e-05, 5.9982404e-09, 
+        -9.14298018e-14, -7164.3567, 20.5454298]
+    - [3.97830632, 0.0291186145, -1.44865221e-05, 3.50229508e-09, 
+        -3.33520915e-13, -7905.48136, 5.3794563]
+    note: |2-
+       Species # 152      RQCISD(T)/CBS//B3LYP/6-311++G(d,p) + BAC by C. F. Goldsmith
+      isopropyloxy radical
+      ipropoxy                H  7 C  3 O  1      G     298.0    3000.0    1000.0    1
+- name: npropyloo
+  composition: {H: 7, C: 3, O: 2}
+  thermo:
+    model: NASA7
+    temperature-ranges: [298.0, 1000.0, 3000.0]
+    data:
+    - [1.52246006, 0.0385251663, -1.58096955e-05, -3.85939481e-09, 
+        3.62788379e-12, -6936.79546, 22.6331112]
+    - [4.85031552, 0.031675608, -1.61033529e-05, 3.96790163e-09, 
+        -3.84052336e-13, -7896.42282, 5.03537236]
+    note: |2-
+       Species # 174      RQCISD(T)/CBS//B3LYP/6-311++G(d,p) + BAC by C. F. Goldsmith
+      n-propylperoxy radical
+      npropylperoxy           H  7 C  3 O  2      G     298.0    3000.0    1000.0    1
+- name: npropylooh
+  composition: {H: 8, C: 3, O: 2}
+  thermo:
+    model: NASA7
+    temperature-ranges: [298.0, 1000.0, 3000.0]
+    data:
+    - [2.08926711, 0.0427509643, -2.27414771e-05, 2.18927661e-09, 
+        1.64449329e-12, -2.41421724e+04, 18.7589966]
+    - [5.87640564, 0.032962587, -1.6555492e-05, 4.03624745e-09, 
+        -3.87223853e-13, -2.51525165e+04, -0.81397244]
+    note: |2-
+       Species # 179      RQCISD(T)/CBS//B3LYP/6-311++G(d,p) + BAC by C. F. Goldsmith
+      n-propyl-hydroperoxide
+- name: ipropyloo
+  composition: {H: 7, C: 3, O: 2}
+  thermo:
+    model: NASA7
+    temperature-ranges: [298.0, 1000.0, 3000.0]
+    data:
+    - [2.20924157, 0.0398629462, -2.3251747e-05, 4.70532178e-09, 
+        5.34510797e-13, -9473.55758, 17.2651074]
+    - [5.60758263, 0.030271335, -1.51483767e-05, 3.68203155e-09, 
+        -3.52299148e-13, -1.03440319e+04, -0.107075754]
+    note: |2-
+       Species # 175      RQCISD(T)/CBS//B3LYP/6-311++G(d,p) + BAC by C. F. Goldsmith
+      isopropylperoxy radical
+      ipropylperoxy           H  7 C  3 O  2      G     298.0    3000.0    1000.0    1
+- name: ipropylooh
+  composition: {H: 8, C: 3, O: 2}
+  thermo:
+    model: NASA7
+    temperature-ranges: [298.0, 1000.0, 3000.0]
+    data:
+    - [2.14407086, 0.0468403178, -3.28372399e-05, 1.11350119e-08, 
+        -1.13983774e-12, -2.6473699e+04, 16.7149225]
+    - [7.05595859, 0.0311952856, -1.54979379e-05, 3.7459435e-09, 
+        -3.56926856e-13, -2.7652153e+04, -7.9725196]
+    note: |2-
+       Species # 180      RQCISD(T)/CBS//B3LYP/6-311++G(d,p) + BAC by C. F. Goldsmith
+      isopropyl-hydroperoxide
+- name: propen1ol
+  composition: {H: 6, C: 3, O: 1}
+  thermo:
+    model: NASA7
+    temperature-ranges: [298.0, 1000.0, 3000.0]
+    data:
+    - [2.73013612, 0.0303161502, -1.65712529e-05, 2.50557776e-09, 
+        7.89611311e-13, -2.00786225e+04, 11.8162879]
+    - [5.15026206, 0.0235923425, -1.14263883e-05, 2.70815158e-09, 
+        -2.54145326e-13, -2.06936916e+04, -0.556559884]
+    note: |2-
+       Species # 145      RQCISD(T)/CBS//B3LYP/6-311++G(d,p) + BAC by C. F. Goldsmith
+      propen-1-ol
+  note: propenol from Curran
+- name: propen2ol
+  composition: {H: 6, C: 3, O: 1}
+  thermo:
+    model: NASA7
+    temperature-ranges: [298.0, 1000.0, 3000.0]
+    data:
+    - [-1.34723298, 0.0542928968, -6.13931081e-05, 3.83637133e-08, 
+        -9.82127373e-12, -2.19843412e+04, 28.9668596]
+    - [6.72070609, 0.0213536079, -1.01134117e-05, 2.35116057e-09, 
+        -2.17067509e-13, -2.3593571e+04, -9.86191566]
+    note: |2-
+       Species # 146      RQCISD(T)/CBS//B3LYP/6-311++G(d,p) + BAC by C. F. Goldsmith
+      propen-2-ol
+- name: CH3CO3H
+  composition: {C: 2, H: 4, O: 3}
+  thermo:
+    model: NASA7
+    temperature-ranges: [300.0, 1391.0, 5000.0]
+    data:
+    - [2.24135876, 0.0337963514, -2.53887482e-05, 9.67583587e-09, 
+        -1.49266157e-12, -4.24677831e+04, 17.0668133]
+    - [12.5060485, 9.47789695e-03, -3.30402246e-06, 5.19630793e-10, 
+        -3.04233568e-14, -4.59856703e+04, -37.9195947]
+    note: |-
+      6/26/95 THERM
+      !!!!!!! TAKEN FROM CURRAN !!!!!!!!
+  note: ' acetyl-hydroperoxide'
+- name: O2C2H4OH
+  composition: {C: 2, H: 5, O: 3}
+  thermo:
+    model: NASA7
+    temperature-ranges: [300.0, 1392.0, 5000.0]
+    data:
+    - [4.11839445, 0.0272240632, -1.6082443e-05, 5.17033408e-09, 
+        -7.31610168e-13, -2.30857785e+04, 12.8482112]
+    - [10.7432659, 0.0130957787, -4.45370088e-06, 6.88548738e-10, 
+        -3.98230113e-14, -2.55911274e+04, -23.3254953]
+    note: 2/14/95 THERM
+  note: ' OOCH2CH2OH (i.e. O2 + ethanol radical)'
+- name: propoxide
+  composition: {H: 6, C: 3, O: 1}
+  thermo:
+    model: NASA7
+    temperature-ranges: [298.0, 1000.0, 3000.0]
+    data:
+    - [-0.272753323, 0.0342996253, -1.3059235e-05, -4.78188892e-09, 
+        3.73737145e-12, -1.25301469e+04, 26.4734627]
+    - [2.78122506, 0.028381859, -1.44671689e-05, 3.5739226e-09, 
+        -3.46718269e-13, -1.34280657e+04, 10.2348125]
+    note: |2-
+       Species # 147      RQCISD(T)/CBS//B3LYP/6-311++G(d,p) + BAC by C. F. Goldsmith
+      propylene-oxide
+      cC3H6O                  H  6 C  3 O  1      G     298.0    3000.0    1000.0    1
+  note: ' propylene-oxide '
+- name: QOOH_1
+  composition: {H: 7, C: 3, O: 2}
+  thermo:
+    model: NASA7
+    temperature-ranges: [298.0, 1000.0, 3000.0]
+    data:
+    - [1.65467469, 0.0465833783, -3.67582543e-05, 1.51768045e-08, 
+        -2.42986637e-12, 1164.33398, 22.7818199]
+    - [7.20881441, 0.0278973322, -1.39405464e-05, 3.38481989e-09, 
+        -3.23683276e-13, -125.925797, -4.90351019]
+    note: |2-
+       Species # 176      RQCISD(T)/CBS//B3LYP/6-311++G(d,p) + BAC by C. F. Goldsmith
+      3-hydroperoxyl-1-propyl radical
+  note: ' 3-hydroperoxyl-1-propyl'
+- name: QOOH_2
+  composition: {H: 7, C: 3, O: 2}
+  thermo:
+    model: NASA7
+    temperature-ranges: [298.0, 1000.0, 3000.0]
+    data:
+    - [3.22239332, 0.0330560778, -8.08099836e-06, -9.65892147e-09, 
+        5.35196836e-12, -0.828965983, 16.6771262]
+    - [5.8237676, 0.0298001534, -1.50805567e-05, 3.70519144e-09, 
+        -3.5803603e-13, -840.082264, 2.43596968]
+    note: |2-
+       Species # 177      RQCISD(T)/CBS//B3LYP/6-311++G(d,p) + BAC by C. F. Goldsmith
+      3-hydroperoxyl-2-propyl radical
+  note: ' 3-hydroperoxyl-2-propyl'
+- name: QOOH_3
+  composition: {H: 7, C: 3, O: 2}
+  thermo:
+    model: NASA7
+    temperature-ranges: [298.0, 1000.0, 3000.0]
+    data:
+    - [3.43134412, 0.0403907362, -2.67347092e-05, 7.03027282e-09, 
+        1.41046134e-13, -540.011884, 13.2991411]
+    - [8.04870947, 0.0263783481, -1.29983539e-05, 3.1272471e-09, 
+        -2.9726076e-13, -1666.5505, -10.0416931]
+    note: |2-
+       Species # 178      RQCISD(T)/CBS//B3LYP/6-311++G(d,p) + BAC by C. F. Goldsmith
+      2-methyl-2-hydroperoxyl-ethyl radical
+  note: ' 2-hydroperoxyl-1-propyl'
+- name: well_1
+  composition: {H: 7, C: 3, O: 4}
+  thermo:
+    model: NASA7
+    temperature-ranges: [298.0, 1000.0, 3000.0]
+    data:
+    - [6.60379976, 0.0449122613, -3.08071517e-05, 9.5820138e-09, 
+        -7.01961567e-13, -1.78852358e+04, -0.360410586]
+    - [11.6325706, 0.0296601591, -1.5041669e-05, 3.69434462e-09, 
+        -3.56443624e-13, -1.91403027e+04, -25.8523909]
+    note: |2-
+       Species # 189      RQCISD(T)/CBS//B3LYP/6-311++G(d,p) + BAC by C. F. Goldsmith
+      3-hydroperoxy-propylperoxy radical
+      HOOCH2CH2CH2OO          H  7 C  3 O  4      G     298.0    3000.0    1000.0    1
+  note: ' 3-hydroperoxyl-n-propylperoxy'
+- name: well_2
+  composition: {H: 7, C: 3, O: 4}
+  thermo:
+    model: NASA7
+    temperature-ranges: [298.0, 1000.0, 3000.0]
+    data:
+    - [2.49711224, 0.0769443763, -1.01855482e-04, 7.32246435e-08, 
+        -2.1043312e-11, -1.91358554e+04, 15.744176]
+    - [13.5170183, 0.0261559444, -1.25646195e-05, 2.92824986e-09, 
+        -2.69255263e-13, -2.11058793e+04, -35.9970204]
+    note: |2-
+       Species # 190      RQCISD(T)/CBS//B3LYP/6-311++G(d,p) + BAC by C. F. Goldsmith
+      1-methyl-2-hydroperoxy-ethylperoxy radical
+      CH3CHOOCH2OOH           H  7 C  3 O  4      G     298.0    3000.0    1000.0    1
+  note: ' 1-methyl-2-hydroperoxyl-ethylperoxy'
+- name: well_3
+  composition: {H: 7, C: 3, O: 4}
+  thermo:
+    model: NASA7
+    temperature-ranges: [298.0, 1000.0, 3000.0]
+    data:
+    - [4.24858306, 0.0632918461, -6.30618127e-05, 3.2639431e-08, 
+        -6.71064967e-12, -1.92732926e+04, 8.30116866]
+    - [14.5874242, 0.0259431123, -1.29689464e-05, 3.14652365e-09, 
+        -3.00715943e-13, -2.15441489e+04, -42.5862297]
+    note: |2-
+       Species # 191      RQCISD(T)/CBS//B3LYP/6-311++G(d,p) + BAC by C. F. Goldsmith
+      2-hydroperoxy-propylperoxy radical
+      CH3CHOOHCH2OO           H  7 C  3 O  4      G     298.0    3000.0    1000.0    1
+  note: ' 2-hydroperoxyl-n-propylperoxy'
+- name: well_5
+  composition: {H: 7, C: 3, O: 4}
+  thermo:
+    model: NASA7
+    temperature-ranges: [298.0, 1000.0, 3000.0]
+    data:
+    - [4.00512352, 0.0624598933, -6.28020657e-05, 3.36110878e-08, 
+        -7.35663902e-12, -1.14538769e+04, 13.2043868]
+    - [13.8796335, 0.0264727133, -1.3410579e-05, 3.29366836e-09, 
+        -3.18036174e-13, -1.36269914e+04, -35.3687193]
+    note: |2-
+       Species # 193      RQCISD(T)/CBS//B3LYP/6-311++G(d,p) + BAC by C. F. Goldsmith
+      2,3-dihydroperoxy-prop-1-yl radical
+      CH2CHOOHCH2OOH          H  7 C  3 O  4      G     298.0    3000.0    1000.0    1
+  note: ' 2,3-dihydroperoxyl-n-propyl'
+- name: prod_1
+  composition: {H: 6, C: 3, O: 3}
+  thermo:
+    model: NASA7
+    temperature-ranges: [298.0, 1000.0, 3000.0]
+    data:
+    - [8.68584677, 0.0190836959, 9.76869112e-06, -2.03721844e-08, 
+        7.73457955e-12, -3.45789004e+04, -10.2625316]
+    - [8.31930972, 0.0275344799, -1.41042258e-05, 3.48959681e-09, 
+        -3.38531652e-13, -3.48309394e+04, -10.1805581]
+    note: |2-
+       Species # 186      RQCISD(T)/CBS//B3LYP/6-311++G(d,p) + BAC by C. F. Goldsmith
+      2-formyl-ethyl-hydroperoxide
+      OCHCH2CH2OOH            H  6 C  3 O  3      G     298.0    3000.0    1000.0    1
+  note: ' 2-formyl-ethyl-hydroperoxide'
+- name: prod_2
+  composition: {H: 6, C: 3, O: 2}
+  thermo:
+    model: NASA7
+    temperature-ranges: [298.0, 1000.0, 3000.0]
+    data:
+    - [6.02007968, 0.0222497152, 4.04675932e-06, -1.73426523e-08, 
+        7.41858188e-12, -8782.37935, 0.355309105]
+    - [7.1028583, 0.025057924, -1.25274017e-05, 3.05240789e-09, 
+        -2.93304618e-13, -9300.92974, -6.51577061]
+    note: |2-
+       Species # 171      RQCISD(T)/CBS//B3LYP/6-311++G(d,p) + BAC by C. F. Goldsmith
+      allyl-hydroperoxide
+      CH2CHCH2OOH             H  6 C  3 O  2      G     298.0    3000.0    1000.0    1
+  note: ' allyl-hydroperoxide'
+- name: prod_3
+  composition: {H: 6, C: 3, O: 3}
+  thermo:
+    model: NASA7
+    temperature-ranges: [298.0, 1000.0, 3000.0]
+    data:
+    - [-0.520254353, 0.0696192397, -7.67189295e-05, 4.34390073e-08, 
+        -9.83408639e-12, -2.26077586e+04, 26.7134453]
+    - [12.3507428, 0.0222944719, -1.11072e-05, 2.70776647e-09, 
+        -2.60804386e-13, -2.54187945e+04, -36.4935904]
+    note: |2-
+       Species # 188      RQCISD(T)/CBS//B3LYP/6-311++G(d,p) + BAC by C. F. Goldsmith
+      oxiranyl-methyl-hydroperoxide
+      cC2H3OCH2OOH            H  6 C  3 O  3      G     298.0    3000.0    1000.0    1
+  note: ' oxiranyl-methyl-hydroperoxide'
+- name: prod_4
+  composition: {H: 6, C: 3, O: 3}
+  thermo:
+    model: NASA7
+    temperature-ranges: [298.0, 1000.0, 3000.0]
+    data:
+    - [1.6264302, 0.0558942035, -5.34245103e-05, 2.6939223e-08, 
+        -5.54669771e-12, -3.72869952e+04, 19.4645366]
+    - [10.4272269, 0.0250073523, -1.28135174e-05, 3.17657934e-09, 
+        -3.08992528e-13, -3.92882441e+04, -24.1364037]
+    note: |2-
+       Species # 187      RQCISD(T)/CBS//B3LYP/6-311++G(d,p) + BAC by C. F. Goldsmith
+      acetyl-methyl-hydroperoxide
+      CH3COCH2OOH             H  6 C  3 O  3      G     298.0    3000.0    1000.0    1
+  note: ' acetyl-methyl-hydroperoxide'
+- name: prod_5
+  composition: {H: 6, C: 3, O: 3}
+  thermo:
+    model: NASA7
+    temperature-ranges: [298.0, 1000.0, 3000.0]
+    data:
+    - [3.23116372, 0.0474027889, -3.77557889e-05, 1.44046705e-08, 
+        -1.84628325e-12, -3.502732e+04, 12.7812467]
+    - [10.2075131, 0.0253657068, -1.30815123e-05, 3.2642005e-09, 
+        -3.19357213e-13, -3.67301549e+04, -22.3779656]
+    note: |2-
+       Species # 185      RQCISD(T)/CBS//B3LYP/6-311++G(d,p) + BAC by C. F. Goldsmith
+      1-formyl-ethyl-hydroperoxide
+      CH3CHOOHCHO             H  6 C  3 O  3      G     298.0    3000.0    1000.0    1
+  note: ' 1-formyl-ethyl-hydroperoxide'
+- name: prod_6
+  composition: {H: 6, C: 3, O: 2}
+  thermo:
+    model: NASA7
+    temperature-ranges: [298.0, 1000.0, 3000.0]
+    data:
+    - [2.88310136, 0.0357368278, -2.00886103e-05, 2.2769586e-09, 
+        1.43634443e-12, -9973.37832, 14.8808142]
+    - [6.70982978, 0.0254248235, -1.26741121e-05, 3.07910818e-09, 
+        -2.95027345e-13, -1.0969867e+04, -4.78307418]
+    note: |2-
+       Species # 172      RQCISD(T)/CBS//B3LYP/6-311++G(d,p) + BAC by C. F. Goldsmith
+      propen-1-hydroperoxide
+      propen1ooh              H  6 C  3 O  2      G     298.0    3000.0    1000.0    1
+  note: ' 1-propene-hydroperoxide'
+- name: prod_7
+  composition: {H: 6, C: 3, O: 2}
+  thermo:
+    model: NASA7
+    temperature-ranges: [298.0, 1000.0, 3000.0]
+    data:
+    - [0.45703913, 0.0569309828, -6.78350659e-05, 4.53628221e-08, 
+        -1.2446857e-11, -1.21334464e+04, 22.8156115]
+    - [8.56064147, 0.0222685619, -1.06019602e-05, 2.46965806e-09, 
+        -2.27980209e-13, -1.37040246e+04, -15.8732201]
+    note: |2-
+       Species # 173      RQCISD(T)/CBS//B3LYP/6-311++G(d,p) + BAC by C. F. Goldsmith
+      propen-2-hydroperoxide
+      propen2ooh              H  6 C  3 O  2      G     298.0    3000.0    1000.0    1
+  note: ' 2-propene-hydroperoxide'
+- name: frag_1
+  composition: {H: 5, C: 3, O: 2}
+  thermo:
+    model: NASA7
+    temperature-ranges: [298.0, 1000.0, 3000.0]
+    data:
+    - [2.79876385, 0.0272587048, -2.96504186e-06, -1.22728864e-08, 
+        5.82361128e-12, -1.49318504e+04, 17.6308828]
+    - [4.84488635, 0.0266598779, -1.40800794e-05, 3.57198493e-09, 
+        -3.53518029e-13, -1.56993389e+04, 5.91577364]
+    note: |2-
+       Species # 167      RQCISD(T)/CBS//B3LYP/6-311++G(d,p) + BAC by C. F. Goldsmith
+      2-formyl-ethoxy radical
+      OCHCH2CH2O              H  5 C  3 O  2      G     298.0    3000.0    1000.0    1
+  note: ' 2-formyl-ethoxy'
+- name: frag_3
+  composition: {H: 5, C: 3, O: 2}
+  thermo:
+    model: NASA7
+    temperature-ranges: [298.0, 1000.0, 3000.0]
+    data:
+    - [0.0669191958, 0.0386805354, -1.8795819e-05, -2.47057289e-09, 
+        3.55188098e-12, -2947.85546, 27.6744739]
+    - [5.06768443, 0.0269552521, -1.42562037e-05, 3.62615737e-09, 
+        -3.59946479e-13, -4341.00122, 1.53160056]
+    note: |2-
+       Species # 170      RQCISD(T)/CBS//B3LYP/6-311++G(d,p) + BAC by C. F. Goldsmith
+      oxiranylmethoxy radical
+      oxiranylmethoxy         H  5 C  3 O  2      G     298.0    3000.0    1000.0    1
+  note: ' oxiranyl-methoxy'
+- name: frag_4
+  composition: {H: 5, C: 3, O: 2}
+  thermo:
+    model: NASA7
+    temperature-ranges: [298.0, 1000.0, 3000.0]
+    data:
+    - [1.36971561, 0.035575181, -1.44807509e-05, -6.25035506e-09, 
+        4.82574385e-12, -1.76407825e+04, 21.7437022]
+    - [6.53999782, 0.0244852001, -1.29637474e-05, 3.30761066e-09, 
+        -3.29526666e-13, -1.91301794e+04, -5.53703382]
+    note: |2-
+       Species # 169      RQCISD(T)/CBS//B3LYP/6-311++G(d,p) + BAC by C. F. Goldsmith
+      acetyl-methoxy radical
+      CH3COCH2O               H  5 C  3 O  2      G     298.0    3000.0    1000.0    1
+  note: ' acetyl-methoxy'
+- name: frag_5
+  composition: {H: 5, C: 3, O: 2}
+  thermo:
+    model: NASA7
+    temperature-ranges: [298.0, 1000.0, 3000.0]
+    data:
+    - [2.43857762, 0.0348510008, -2.0432515e-05, 2.87200565e-09, 
+        1.16477967e-12, -1.57866948e+04, 16.6725547]
+    - [6.47249105, 0.0241011715, -1.25041055e-05, 3.13122333e-09, 
+        -3.06931611e-13, -1.68589589e+04, -4.12558561]
+    note: |2-
+       Species # 168      RQCISD(T)/CBS//B3LYP/6-311++G(d,p) + BAC by C. F. Goldsmith
+      1-formyl-ethoxy radical
+      CH3CHOCHO               H  5 C  3 O  2      G     298.0    3000.0    1000.0    1
+  note: ' 1-formyl-ethoxy'
+- name: propen1oxy
+  composition: {H: 5, C: 3, O: 1}
+  thermo:
+    model: NASA7
+    temperature-ranges: [298.0, 1000.0, 3000.0]
+    data:
+    - [3.2764469, 0.0189130785, 5.91274119e-06, -1.66822408e-08, 
+        6.71806711e-12, -4710.06446, 11.4738055]
+    - [3.22021872, 0.024783925, -1.26744885e-05, 3.10666924e-09, 
+        -2.98231605e-13, -4937.48408, 10.4427557]
+    note: |2-
+       Species # 137      RQCISD(T)/CBS//B3LYP/6-311++G(d,p) + BAC by C. F. Goldsmith
+      1-formyl-ethyl radical
+      CH3CHCHO                H  5 C  3 O  1      G     298.0    3000.0    1000.0    1
+- name: propen2oxy
+  composition: {H: 5, C: 3, O: 1}
+  thermo:
+    model: NASA7
+    temperature-ranges: [298.0, 1000.0, 3000.0]
+    data:
+    - [0.772394826, 0.0335453112, -2.25767032e-05, 7.14331092e-09, 
+        -6.65023003e-13, -5006.0808, 23.286549]
+    - [3.96530269, 0.0238154906, -1.23265365e-05, 3.06238409e-09, 
+        -2.97350086e-13, -5804.10346, 7.10385079]
+    note: |2-
+       Species # 133      RQCISD(T)/CBS//B3LYP/6-311++G(d,p) + BAC by C. F. Goldsmith
+      propen-2-oxy radical
+- name: glyoxal
+  composition: {H: 2, C: 2, O: 2}
+  thermo:
+    model: NASA7
+    temperature-ranges: [298.0, 1000.0, 3000.0]
+    data:
+    - [3.1812278, 0.0124097204, 9.50866892e-06, -1.99129826e-08, 
+        7.90847333e-12, -2.71992815e+04, 10.4369933]
+    - [5.57943892, 0.0133919525, -7.77904487e-06, 2.12547111e-09, 
+        -2.22709869e-13, -2.82094142e+04, -3.78099288]
+    note: |2-
+       Species # 72      RQCISD(T)/CBS//B3LYP/6-311++G(d,p) + BAC by C. F. Goldsmith
+      glyoxal
+- name: vinoxylmethyl
+  composition: {H: 5, C: 3, O: 1}
+  thermo:
+    model: NASA7
+    temperature-ranges: [298.0, 1000.0, 3000.0]
+    data:
+    - [0.865182879, 0.0369123607, -2.91776933e-05, 1.10126628e-08, 
+        -1.29220645e-12, 9466.12939, 22.0002011]
+    - [5.97771354, 0.0202657041, -1.01668826e-05, 2.48262015e-09, 
+        -2.38848507e-13, 8261.82922, -3.59465019]
+    note: |2-
+       Species # 136      RQCISD(T)/CBS//B3LYP/6-311++G(d,p) + BAC by C. F. Goldsmith
+      vinoxyl-methyl radical
+      CH2OCHCH2               H  5 C  3 O  1      G     298.0    3000.0    1000.0    1
+- name: formylethyl
+  composition: {H: 5, C: 3, O: 1}
+  thermo:
+    model: NASA7
+    temperature-ranges: [298.0, 1000.0, 3000.0]
+    data:
+    - [4.82977185, 0.0156298758, 6.8640736e-06, -1.53833175e-08, 
+        5.95428018e-12, 1170.37374, 5.63486851]
+    - [4.30887848, 0.022379759, -1.12913742e-05, 2.76330887e-09, 
+        -2.6588825e-13, 1075.51853, 7.06707978]
+    note: |2-
+       Species # 134      RQCISD(T)/CBS//B3LYP/6-311++G(d,p) + BAC by C. F. Goldsmith
+      2-formyl-ethyl radical
+      CH2CH2CHO               H  5 C  3 O  1      G     298.0    3000.0    1000.0    1
+
+reactions:
+- equation: C3H8 + OH <=> npropyl + H2O  # Reaction 1
+  rate-constant: {A: 1.054e+10, b: 0.97, Ea: 1586.0}
+  note: |
+    HEALY ET AL C&F, 155: 451 461 (2008) 
+- equation: O2 + npropyl <=> npropyloo  # Reaction 2
+  type: pressure-dependent-Arrhenius
+  rate-constants:
+  - {P: 0.01 atm, A: 9.2e+08, b: 0.405, Ea: -4398.65}
+  - {P: 0.1 atm, A: 1.45e+14, b: -0.984, Ea: -1710.8}
+  - {P: 1.0 atm, A: 2.09e+13, b: -0.499, Ea: -938.423}
+  - {P: 10.0 atm, A: 1.15e+20, b: -2.42, Ea: 2451.26}
+  - {P: 100.0 atm, A: 2.07e+16, b: -1.3, Ea: 803.419}
+  note: |
+    C. F. Goldsmith, W. H. Green, S. J. Klippenstein, J. Phys. Chem. A 116 (13) (2012) 3325-3346.
+    -----------------------------------------------------------
+    ------------- CFG:  O2 + C3H7 MECHANISM   -----------------
+    -----------------------------------------------------------
+     o2 + n-propyl rates
+- equation: npropyloo <=> QOOH_1  # Reaction 3
+  duplicate: true
+  type: pressure-dependent-Arrhenius
+  rate-constants:
+  - {P: 0.01 atm, A: 1.69e+04, b: 1.56, Ea: 1.85703e+04}
+  - {P: 0.1 atm, A: 5.85e+04, b: 1.66, Ea: 1.9612e+04}
+  - {P: 1.0 atm, A: 1500.0, b: 2.32, Ea: 1.97537e+04}
+  - {P: 10.0 atm, A: 1.01, b: 3.38, Ea: 1.89948e+04}
+  - {P: 100.0 atm, A: 3.39, b: 3.23, Ea: 1.92093e+04}
+- equation: npropyloo <=> QOOH_1  # Reaction 4
+  duplicate: true
+  type: pressure-dependent-Arrhenius
+  rate-constants:
+  - {P: 0.01 atm, A: 7.72e+17, b: 5.57e-04, Ea: 4.03931e+04}
+  - {P: 0.1 atm, A: 7.02e+18, b: -1.18e-03, Ea: 4.69318e+04}
+  - {P: 1.0 atm, A: 1.19e+20, b: -7.68e-03, Ea: 5.52238e+04}
+  - {P: 10.0 atm, A: 1.26e+23, b: -0.0315, Ea: 7.54407e+04}
+  - {P: 100.0 atm, A: 4.06e+26, b: -0.0366, Ea: 9.94007e+04}
+- equation: O2 + QOOH_1 <=> well_1  # Reaction 5
+  type: pressure-dependent-Arrhenius
+  rate-constants:
+  - {P: 0.01 atm, A: 2.95e+42, b: -10.2, Ea: 5862.36}
+  - {P: 0.1 atm, A: 4.3e+42, b: -9.88, Ea: 7526.86}
+  - {P: 1.0 atm, A: 7.47e+36, b: -7.85, Ea: 6724.35}
+  - {P: 10.0 atm, A: 2.18e+27, b: -4.75, Ea: 4026.17}
+  - {P: 100.0 atm, A: 1.46e+18, b: -1.85, Ea: 1005.84}
+  note: |2
+     ROO = QOOH from n-heptane model
+    npropyloo = QOOH_1  2.500e+10 0.000     20.450    
+    -----------------------------------------------------------
+    -------------    O2 + C3H7 MECHANISM   -----------------
+    -----------------------------------------------------------
+    ----------------------------------------------------------
+    ------------- CFG:  O2 + QOOH MECHANISM   -----------------
+    -----------------------------------------------------------
+     o2 + qooh-1 
+- equation: well_1 <=> OH + prod_1  # Reaction 6
+  type: pressure-dependent-Arrhenius
+  rate-constants:
+  - {P: 0.01 atm, A: 4.08e+29, b: -6.39, Ea: 2.34402e+04}
+  - {P: 0.1 atm, A: 2.49e+25, b: -4.95, Ea: 2.26125e+04}
+  - {P: 1.0 atm, A: 1.01e+19, b: -2.88, Ea: 2.08036e+04}
+  - {P: 10.0 atm, A: 4.46e+11, b: -0.538, Ea: 1.84411e+04}
+  - {P: 100.0 atm, A: 1.67e+05, b: 1.48, Ea: 1.62379e+04}
+  note: |
+    well-1 
+- equation: prod_1 <=> frag_1 + OH  # Reaction 7
+  type: pressure-dependent-Arrhenius
+  rate-constants:
+  - {P: 0.01 atm, A: 3.41e+64, b: -15.9, Ea: 5.57614e+04}
+  - {P: 0.1 atm, A: 1.97e+61, b: -14.6, Ea: 5.60115e+04}
+  - {P: 1.0 atm, A: 1.07e+54, b: -12.1, Ea: 5.45628e+04}
+  - {P: 10.0 atm, A: 5.29e+43, b: -8.74, Ea: 5.15685e+04}
+  - {P: 100.0 atm, A: 4.06e+33, b: -5.54, Ea: 4.82254e+04}
+  note: |2
+     O2QOOH = OQOOH + OH from n-heptane model
+    well_1 = OH + prod_1 1.250E+10 0.00 1.745E+04
+    -------------------------------------------------
+     OC3H5OOH decomp
+- equation: frag_1 <=> vinoxy + CH2O  # Reaction 8
+  rate-constant: {A: 4.94e+10, b: 0.857, Ea: 5809.2}
+- equation: npropyloo <=> HO2 + C3H6  # Reaction 9
+  type: pressure-dependent-Arrhenius
+  rate-constants:
+  - {P: 0.01 atm, A: 4.3e+53, b: -14.0, Ea: 3.9526e+04}
+  - {P: 0.1 atm, A: 9.52e+57, b: -15.0, Ea: 4.26843e+04}
+  - {P: 1.0 atm, A: 6.9e+33, b: -7.03, Ea: 3.65435e+04}
+  - {P: 10.0 atm, A: 2.55e+16, b: -1.22, Ea: 3.24803e+04}
+  - {P: 100.0 atm, A: 2.26e+32, b: -6.22, Ea: 3.79482e+04}
+  note: |2
+     fragmentation rate from n-heptane model
+    prod_1 = frag_1 + OH 1.000E+16 0.00 3.900E+04
+    -----------------------------------------------------------
+    -------------    O2 + QOOH MECHANISM   -----------------
+    -----------------------------------------------------------
+- equation: O2 + npropyl <=> HO2 + C3H6  # Reaction 10
+  type: pressure-dependent-Arrhenius
+  rate-constants:
+  - {P: 0.01 atm, A: 5.05e+10, b: 0.0206, Ea: 501.905}
+  - {P: 0.1 atm, A: 7.47e+15, b: -1.45, Ea: 4112.9}
+  - {P: 1.0 atm, A: 1.18e+19, b: -2.35, Ea: 7299.53}
+  - {P: 10.0 atm, A: 2.63, b: 3.46, Ea: 2481.17}
+  - {P: 100.0 atm, A: 737.0, b: 2.71, Ea: 5496.47}
+  note: |2
+     HO2 elimination from ROO from n-heptane model
+    npropyloo = HO2 + C3H6 10.044E+38 -8.11 4.149E+04
+- equation: C3H8 + HO2 <=> npropyl + H2O2  # Reaction 11
+  rate-constant: {A: 8.1e+04, b: 2.5, Ea: 1.669e+04}
+  note: |
+    -----------------------------------------------------------
+    HEALY ET AL C&F, 155: 451 461 (2008) 
+    FROM SCOTT AND WALKER C&F 129(4) 365--377 2002 (*1.5)
+- equation: H2O2 + OH <=> HO2 + H2O  # Reaction 12
+  duplicate: true
+  rate-constant: {A: 1.0e+12, b: 0.0, Ea: 0.0}
+  note: |2
+                  H2/O2 MECHANISM OF LI ET AL. IJCK 36:565 (2004)
+    *********************************************************************************
+    H2-O2 CHAIN REACTIONS
+     HIPPLER AND TROE, J. CHEM. PHYS. LETT. 192:333 (1992)
+- equation: H2O2 + OH <=> HO2 + H2O  # Reaction 13
+  duplicate: true
+  rate-constant: {A: 5.8e+14, b: 0.0, Ea: 9557.0}
+- equation: HO2 + HO2 <=> H2O2 + O2  # Reaction 14
+  duplicate: true
+  rate-constant: {A: 4.2e+14, b: 0.0, Ea: 1.1982e+04}
+  note: |
+    HIPPLER ET AL., J. CHEM. PHYS. 93:1755 (1990)
+- equation: HO2 + HO2 <=> H2O2 + O2  # Reaction 15
+  duplicate: true
+  rate-constant: {A: 1.3e+11, b: 0.0, Ea: -1629.3}
+- equation: H2O2 (+M) <=> OH + OH (+M)  # Reaction 16
+  type: falloff
+  low-P-rate-constant: {A: 1.202e+17, b: 0.0, Ea: 4.55e+04}
+  high-P-rate-constant: {A: 2.951e+14, b: 0.0, Ea: 4.843e+04}
+  Troe: {A: 0.5, T3: 1.0e-30, T1: 1.0e+30}
+  efficiencies: {H2: 2.5, H2O: 12.0, CO: 1.9, CO2: 3.8, AR: 0.64, HE: 
+      0.64}
+  note: |
+    BROUWER ET AL., J. CHEM. PHYS. 86:6171 (1987) FOR KINF
+    WARNATZ, J. IN COMBUSTION CHEMISTRY (1984) FOR K0
+- equation: C3H8 + OH <=> ipropyl + H2O  # Reaction 17
+  rate-constant: {A: 4.67e+07, b: 1.61, Ea: -35.0}
+  note: |
+    ########### iso-propyl###########
+- equation: C3H8 + HO2 <=> ipropyl + H2O2  # Reaction 18
+  rate-constant: {A: 5.88e+04, b: 2.5, Ea: 1.486e+04}
+  note: |
+    HEALY ET AL C&F, 155: 451 461 (2008) 
+    FROM SCOTT AND WALKER C&F 129(4) 365--377 2002 (*1.2)
+- equation: O2 + ipropyl <=> ipropyloo  # Reaction 19
+  type: pressure-dependent-Arrhenius
+  rate-constants:
+  - {P: 0.01 atm, A: 7.33e+05, b: 1.33, Ea: -6345.64}
+  - {P: 0.1 atm, A: 2.24e+11, b: -0.105, Ea: -3697.87}
+  - {P: 1.0 atm, A: 1.54e+18, b: -2.02, Ea: -498.567}
+  - {P: 10.0 atm, A: 6.74e+27, b: -4.85, Ea: 3779.82}
+  - {P: 100.0 atm, A: 1.67e+29, b: -5.15, Ea: 5036.45}
+- equation: O2 + ipropyl <=> HO2 + C3H6  # Reaction 20
+  type: pressure-dependent-Arrhenius
+  rate-constants:
+  - {P: 0.01 atm, A: 5.91e+09, b: 0.428, Ea: -1438.57}
+  - {P: 0.1 atm, A: 1.6e+14, b: -0.845, Ea: 1423.77}
+  - {P: 1.0 atm, A: 4.05e+18, b: -2.07, Ea: 4971.47}
+  - {P: 10.0 atm, A: 4.91e+17, b: -1.66, Ea: 6964.04}
+  - {P: 100.0 atm, A: 9.84e+07, b: 1.34, Ea: 5379.12}
+- equation: ipropyloo <=> HO2 + C3H6  # Reaction 21
+  type: pressure-dependent-Arrhenius
+  rate-constants:
+  - {P: 0.01 atm, A: 1.61e+75, b: -20.6, Ea: 4.6203e+04}
+  - {P: 0.1 atm, A: 1.72e+66, b: -17.3, Ea: 4.54589e+04}
+  - {P: 1.0 atm, A: 4.03e+56, b: -14.0, Ea: 4.40102e+04}
+  - {P: 10.0 atm, A: 1.29e+40, b: -8.58, Ea: 3.94186e+04}
+  - {P: 100.0 atm, A: 6.4e+25, b: -4.02, Ea: 3.49139e+04}
+- equation: vinoxy + O2 <=> CH2O + CO + OH  # Reaction 22
+  rate-constant: {A: 2.0e+13, b: 0.0, Ea: 4200.0}
+  note: |
+    HEALY ET AL C&F, 155: 451 461 (2008) 
+    FROM BAULCH ET AL. J. PHYS. CHEM. REF. DATA, 21, 411--429, 1992
+- equation: CH2O + O2 <=> HCO + HO2  # Reaction 23
+  rate-constant: {A: 1.23e+06, b: 3.0, Ea: 5.2e+04}
+  note: |
+    HIDAKA ET AL. COMBUST FLAME 92:365 (1993)
+- equation: HCO + O2 <=> CO + HO2  # Reaction 24
+  rate-constant: {A: 7.58e+12, b: 0.0, Ea: 410.0}
+  note: |
+    TIMONEN ET AL., JPC, 92:651 (1988)
+- equation: CH2O + OH <=> HCO + H2O  # Reaction 25
+  rate-constant: {A: 3.43e+09, b: 1.18, Ea: -447.0}
+  note: |
+    TSANG AND HAMPSON, JPC REF. DATA, 15:1087 (1986)
+- equation: CH2O + HO2 <=> HCO + H2O2  # Reaction 26
+  rate-constant: {A: 4.11e+04, b: 2.5, Ea: 1.021e+04}
+  note: |
+    EITENEER ET AL, JPC A.,1998, 102, 5196
+- equation: C3H8 + O2 <=> npropyl + HO2  # Reaction 27
+  rate-constant: {A: 6.0e+13, b: 0.0, Ea: 5.229e+04}
+  note: |
+    HEALY ET AL C&F, 155: 451 461 (2008) 
+- equation: C3H8 + O2 <=> ipropyl + HO2  # Reaction 28
+  rate-constant: {A: 2.0e+13, b: 0.0, Ea: 4.964e+04}
+  note: |
+    HEALY ET AL C&F, 155: 451 461 (2008) 
+- equation: C3H8 + OH <=> npropyl + H2O  # Reaction 29
+  rate-constant: {A: 1.054e+10, b: 0.97, Ea: 1586.0}
+  note: |
+    HEALY ET AL C&F, 155: 451 461 (2008) 
+- equation: O2 + npropyl <=> npropyloo  # Reaction 30
+  type: pressure-dependent-Arrhenius
+  rate-constants:
+  - {P: 0.01 atm, A: 9.2e+08, b: 0.405, Ea: -4398.65}
+  - {P: 0.1 atm, A: 1.45e+14, b: -0.984, Ea: -1710.8}
+  - {P: 1.0 atm, A: 2.09e+13, b: -0.499, Ea: -938.423}
+  - {P: 10.0 atm, A: 1.15e+20, b: -2.42, Ea: 2451.26}
+  - {P: 100.0 atm, A: 2.07e+16, b: -1.3, Ea: 803.419}
+  note: |
+    C. F. Goldsmith, W. H. Green, S. J. Klippenstein, J. Phys. Chem. A 116 (13) (2012) 3325-3346.
+    -----------------------------------------------------------
+    ------------- CFG:  O2 + C3H7 MECHANISM   -----------------
+    -----------------------------------------------------------
+     o2 + n-propyl rates
+- equation: npropyloo <=> QOOH_1  # Reaction 31
+  duplicate: true
+  type: pressure-dependent-Arrhenius
+  rate-constants:
+  - {P: 0.01 atm, A: 1.69e+04, b: 1.56, Ea: 1.85703e+04}
+  - {P: 0.1 atm, A: 5.85e+04, b: 1.66, Ea: 1.9612e+04}
+  - {P: 1.0 atm, A: 1500.0, b: 2.32, Ea: 1.97537e+04}
+  - {P: 10.0 atm, A: 1.01, b: 3.38, Ea: 1.89948e+04}
+  - {P: 100.0 atm, A: 3.39, b: 3.23, Ea: 1.92093e+04}
+- equation: npropyloo <=> QOOH_1  # Reaction 32
+  duplicate: true
+  type: pressure-dependent-Arrhenius
+  rate-constants:
+  - {P: 0.01 atm, A: 7.72e+17, b: 5.57e-04, Ea: 4.03931e+04}
+  - {P: 0.1 atm, A: 7.02e+18, b: -1.18e-03, Ea: 4.69318e+04}
+  - {P: 1.0 atm, A: 1.19e+20, b: -7.68e-03, Ea: 5.52238e+04}
+  - {P: 10.0 atm, A: 1.26e+23, b: -0.0315, Ea: 7.54407e+04}
+  - {P: 100.0 atm, A: 4.06e+26, b: -0.0366, Ea: 9.94007e+04}
+- equation: O2 + QOOH_1 <=> well_1  # Reaction 33
+  type: pressure-dependent-Arrhenius
+  rate-constants:
+  - {P: 0.01 atm, A: 2.95e+42, b: -10.2, Ea: 5862.36}
+  - {P: 0.1 atm, A: 4.3e+42, b: -9.88, Ea: 7526.86}
+  - {P: 1.0 atm, A: 7.47e+36, b: -7.85, Ea: 6724.35}
+  - {P: 10.0 atm, A: 2.18e+27, b: -4.75, Ea: 4026.17}
+  - {P: 100.0 atm, A: 1.46e+18, b: -1.85, Ea: 1005.84}
+  note: |2
+     ROO = QOOH from n-heptane model
+    npropyloo = QOOH_1  2.500e+10 0.000     20.450    
+    -----------------------------------------------------------
+    -------------    O2 + C3H7 MECHANISM   -----------------
+    -----------------------------------------------------------
+    ----------------------------------------------------------
+    ------------- CFG:  O2 + QOOH MECHANISM   -----------------
+    -----------------------------------------------------------
+     o2 + qooh-1 
+- equation: well_1 <=> OH + prod_1  # Reaction 34
+  type: pressure-dependent-Arrhenius
+  rate-constants:
+  - {P: 0.01 atm, A: 4.08e+29, b: -6.39, Ea: 2.34402e+04}
+  - {P: 0.1 atm, A: 2.49e+25, b: -4.95, Ea: 2.26125e+04}
+  - {P: 1.0 atm, A: 1.01e+19, b: -2.88, Ea: 2.08036e+04}
+  - {P: 10.0 atm, A: 4.46e+11, b: -0.538, Ea: 1.84411e+04}
+  - {P: 100.0 atm, A: 1.67e+05, b: 1.48, Ea: 1.62379e+04}
+  note: |
+    well-1 
+- equation: prod_1 <=> frag_1 + OH  # Reaction 35
+  type: pressure-dependent-Arrhenius
+  rate-constants:
+  - {P: 0.01 atm, A: 3.41e+64, b: -15.9, Ea: 5.57614e+04}
+  - {P: 0.1 atm, A: 1.97e+61, b: -14.6, Ea: 5.60115e+04}
+  - {P: 1.0 atm, A: 1.07e+54, b: -12.1, Ea: 5.45628e+04}
+  - {P: 10.0 atm, A: 5.29e+43, b: -8.74, Ea: 5.15685e+04}
+  - {P: 100.0 atm, A: 4.06e+33, b: -5.54, Ea: 4.82254e+04}
+  note: |2
+     O2QOOH = OQOOH + OH from n-heptane model
+    well_1 = OH + prod_1 1.250E+10 0.00 1.745E+04
+    -------------------------------------------------
+     OC3H5OOH decomp
+- equation: frag_1 <=> vinoxy + CH2O  # Reaction 36
+  rate-constant: {A: 4.94e+10, b: 0.857, Ea: 5809.2}
+- equation: npropyloo <=> HO2 + C3H6  # Reaction 37
+  type: pressure-dependent-Arrhenius
+  rate-constants:
+  - {P: 0.01 atm, A: 4.3e+53, b: -14.0, Ea: 3.9526e+04}
+  - {P: 0.1 atm, A: 9.52e+57, b: -15.0, Ea: 4.26843e+04}
+  - {P: 1.0 atm, A: 6.9e+33, b: -7.03, Ea: 3.65435e+04}
+  - {P: 10.0 atm, A: 2.55e+16, b: -1.22, Ea: 3.24803e+04}
+  - {P: 100.0 atm, A: 2.26e+32, b: -6.22, Ea: 3.79482e+04}
+  note: |2
+     fragmentation rate from n-heptane model
+    prod_1 = frag_1 + OH 1.000E+16 0.00 3.900E+04
+    -----------------------------------------------------------
+    -------------    O2 + QOOH MECHANISM   -----------------
+    -----------------------------------------------------------
+- equation: O2 + npropyl <=> HO2 + C3H6  # Reaction 38
+  type: pressure-dependent-Arrhenius
+  rate-constants:
+  - {P: 0.01 atm, A: 5.05e+10, b: 0.0206, Ea: 501.905}
+  - {P: 0.1 atm, A: 7.47e+15, b: -1.45, Ea: 4112.9}
+  - {P: 1.0 atm, A: 1.18e+19, b: -2.35, Ea: 7299.53}
+  - {P: 10.0 atm, A: 2.63, b: 3.46, Ea: 2481.17}
+  - {P: 100.0 atm, A: 737.0, b: 2.71, Ea: 5496.47}
+  note: |2
+     HO2 elimination from ROO from n-heptane model
+    npropyloo = HO2 + C3H6 10.044E+38 -8.11 4.149E+04
+- equation: C3H8 + HO2 <=> npropyl + H2O2  # Reaction 39
+  rate-constant: {A: 8.1e+04, b: 2.5, Ea: 1.669e+04}
+  note: |
+    -----------------------------------------------------------
+    HEALY ET AL C&F, 155: 451 461 (2008) 
+    FROM SCOTT AND WALKER C&F 129(4) 365--377 2002 (*1.5)
+- equation: H2O2 + OH <=> HO2 + H2O  # Reaction 40
+  duplicate: true
+  rate-constant: {A: 1.0e+12, b: 0.0, Ea: 0.0}
+  note: |2
+                  H2/O2 MECHANISM OF LI ET AL. IJCK 36:565 (2004)
+    *********************************************************************************
+    H2-O2 CHAIN REACTIONS
+     HIPPLER AND TROE, J. CHEM. PHYS. LETT. 192:333 (1992)
+- equation: H2O2 + OH <=> HO2 + H2O  # Reaction 41
+  duplicate: true
+  rate-constant: {A: 5.8e+14, b: 0.0, Ea: 9557.0}
+- equation: HO2 + HO2 <=> H2O2 + O2  # Reaction 42
+  duplicate: true
+  rate-constant: {A: 4.2e+14, b: 0.0, Ea: 1.1982e+04}
+  note: |
+    HIPPLER ET AL., J. CHEM. PHYS. 93:1755 (1990)
+- equation: HO2 + HO2 <=> H2O2 + O2  # Reaction 43
+  duplicate: true
+  rate-constant: {A: 1.3e+11, b: 0.0, Ea: -1629.3}
+- equation: H2O2 (+M) <=> OH + OH (+M)  # Reaction 44
+  type: falloff
+  low-P-rate-constant: {A: 1.202e+17, b: 0.0, Ea: 4.55e+04}
+  high-P-rate-constant: {A: 2.951e+14, b: 0.0, Ea: 4.843e+04}
+  Troe: {A: 0.5, T3: 1.0e-30, T1: 1.0e+30}
+  efficiencies: {H2: 2.5, H2O: 12.0, CO: 1.9, CO2: 3.8, AR: 0.64, HE: 
+      0.64}
+  note: |
+    BROUWER ET AL., J. CHEM. PHYS. 86:6171 (1987) FOR KINF
+    WARNATZ, J. IN COMBUSTION CHEMISTRY (1984) FOR K0
+- equation: C3H8 + OH <=> ipropyl + H2O  # Reaction 45
+  rate-constant: {A: 4.67e+07, b: 1.61, Ea: -35.0}
+  note: |
+    ########### iso-propyl###########
+- equation: C3H8 + HO2 <=> ipropyl + H2O2  # Reaction 46
+  rate-constant: {A: 5.88e+04, b: 2.5, Ea: 1.486e+04}
+  note: |
+    HEALY ET AL C&F, 155: 451 461 (2008) 
+    FROM SCOTT AND WALKER C&F 129(4) 365--377 2002 (*1.2)
+- equation: O2 + ipropyl <=> ipropyloo  # Reaction 47
+  type: pressure-dependent-Arrhenius
+  rate-constants:
+  - {P: 0.01 atm, A: 7.33e+05, b: 1.33, Ea: -6345.64}
+  - {P: 0.1 atm, A: 2.24e+11, b: -0.105, Ea: -3697.87}
+  - {P: 1.0 atm, A: 1.54e+18, b: -2.02, Ea: -498.567}
+  - {P: 10.0 atm, A: 6.74e+27, b: -4.85, Ea: 3779.82}
+  - {P: 100.0 atm, A: 1.67e+29, b: -5.15, Ea: 5036.45}
+- equation: O2 + ipropyl <=> HO2 + C3H6  # Reaction 48
+  type: pressure-dependent-Arrhenius
+  rate-constants:
+  - {P: 0.01 atm, A: 5.91e+09, b: 0.428, Ea: -1438.57}
+  - {P: 0.1 atm, A: 1.6e+14, b: -0.845, Ea: 1423.77}
+  - {P: 1.0 atm, A: 4.05e+18, b: -2.07, Ea: 4971.47}
+  - {P: 10.0 atm, A: 4.91e+17, b: -1.66, Ea: 6964.04}
+  - {P: 100.0 atm, A: 9.84e+07, b: 1.34, Ea: 5379.12}
+- equation: ipropyloo <=> HO2 + C3H6  # Reaction 49
+  type: pressure-dependent-Arrhenius
+  rate-constants:
+  - {P: 0.01 atm, A: 1.61e+75, b: -20.6, Ea: 4.6203e+04}
+  - {P: 0.1 atm, A: 1.72e+66, b: -17.3, Ea: 4.54589e+04}
+  - {P: 1.0 atm, A: 4.03e+56, b: -14.0, Ea: 4.40102e+04}
+  - {P: 10.0 atm, A: 1.29e+40, b: -8.58, Ea: 3.94186e+04}
+  - {P: 100.0 atm, A: 6.4e+25, b: -4.02, Ea: 3.49139e+04}
+- equation: vinoxy + O2 <=> CH2O + CO + OH  # Reaction 50
+  rate-constant: {A: 2.0e+13, b: 0.0, Ea: 4200.0}
+  note: |
+    HEALY ET AL C&F, 155: 451 461 (2008) 
+    FROM BAULCH ET AL. J. PHYS. CHEM. REF. DATA, 21, 411--429, 1992
+- equation: CH2O + O2 <=> HCO + HO2  # Reaction 51
+  rate-constant: {A: 1.23e+06, b: 3.0, Ea: 5.2e+04}
+  note: |
+    HIDAKA ET AL. COMBUST FLAME 92:365 (1993)
+- equation: HCO + O2 <=> CO + HO2  # Reaction 52
+  rate-constant: {A: 7.58e+12, b: 0.0, Ea: 410.0}
+  note: |
+    TIMONEN ET AL., JPC, 92:651 (1988)
+- equation: CH2O + OH <=> HCO + H2O  # Reaction 53
+  rate-constant: {A: 3.43e+09, b: 1.18, Ea: -447.0}
+  note: |
+    TSANG AND HAMPSON, JPC REF. DATA, 15:1087 (1986)
+- equation: CH2O + HO2 <=> HCO + H2O2  # Reaction 54
+  rate-constant: {A: 4.11e+04, b: 2.5, Ea: 1.021e+04}
+  note: |
+    EITENEER ET AL, JPC A.,1998, 102, 5196
+- equation: C3H8 + O2 <=> npropyl + HO2  # Reaction 55
+  rate-constant: {A: 6.0e+13, b: 0.0, Ea: 5.229e+04}
+  note: |
+    HEALY ET AL C&F, 155: 451 461 (2008) 
+- equation: C3H8 + O2 <=> ipropyl + HO2  # Reaction 56
+  rate-constant: {A: 2.0e+13, b: 0.0, Ea: 4.964e+04}
+  note: |
+    HEALY ET AL C&F, 155: 451 461 (2008) 

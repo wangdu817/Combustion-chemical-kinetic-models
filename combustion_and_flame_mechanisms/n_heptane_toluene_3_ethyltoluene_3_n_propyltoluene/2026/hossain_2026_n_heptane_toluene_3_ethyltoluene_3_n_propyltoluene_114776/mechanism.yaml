@@ -8,9 +8,9 @@ description: |-
   Last update: 3/24/2020
 
 generator: ck2yaml
-input-files: [CRECK_2003_TOT_HT_LT_ET-3_PT-4.inp, CRECK_2003_TOT_HT_LT_ET-3_PT-4thermo.dat]
+input-files: [CRECK_2003_TOT_HT_LT_ET-3.inp, CRECK_2003_TOT_HT_LT_ET-3_thermo.dat]
 cantera-version: 3.0.0
-date: Thu, 09 Jan 2025 17:59:43 -0600
+date: Mon, 14 Oct 2024 19:08:02 -0500
 
 units: {length: cm, time: s, quantity: mol, activation-energy: cal/mol}
 
@@ -96,24 +96,7 @@ phases:
     CH3C6H4CH2CH2OO, OC6H4CH3, C6H5CH2OOH, C6H5CH2OO, HOph(CH2O)CH2CH3,
     HOph(CHO)CH2CH3, HOC6H3CH2CH3, HOph(CH3)CH2CH2O, HOph(CH3)CH2CHO, HOC6H3(CH3)2,
     CH3CHOH, C6H5CH2CH2OH, CH3C6H4CH2OH, HOC6H4CH2, CH3C6H4C2H2, CH3C6H4CO,
-    CH3C6H4CHO, m-CH3C6H4CH2CH2CH3, C6H4CH2CH2CH3, m-CH2C6H4CH2CH2CH3, m-CH3C6H4CH2CH2CH2,
-    m-CH3C6H4CH2CHCH3, m-CH3C6H4CHCH2CH3, OHph(CH3)CH2CH2CH3, ph(CH3)CH2CH2CH3,
-    m-CH3C6H4CHCHCH3, m-CH3C6H4CH2CHCH2, CH3A1CH(OO)CH2CH3, CH3C6H4CH(O)CH2CH3,
-    CH3A1CH2CH(OO)CH3, CH3C6H4CH2CH(O)CH3, CH3C6H4C(O)CH2CH3, CH3C6H4CH(OH)CH2CH3,
-    CH3A1CH(OOH)CH2CH3, CH3C6H4CH2CH2CHO, CH3C6H4CH2CH2CH2O, CH3C6H4CH2CH2CH2OH,
-    CH3C6H4CH2CH2CH2OOH, CH2OOC6H4CH2CH2CH3, CH2OC6H4CH2CH2CH3, OC6H3(CH3)CH2CH2CH3,
-    CH3C6H4CH2CH2CH2OO, CHOC6H4CH2CH2CH3, CH2OOHC6H4CH2CH2CH3, CH2C6H4C(O)CH2CH3,
-    CH2OC6H4C(O)CH2CH3, C6H5C(O)CH2CH3, CHOC6H4C(O)CH2CH3, C6H4C(O)CH2CH3,
-    CH3C6H4CH2CH2CO, CH2C6H4CH2CH2CHO, CH2OC6H4CH2CH2CHO, C6H5CH2CH2CHO,
-    CHOC6H4CH2CH2CHO, CH3C6H4CH2CHCHO, COC6H4CH2CH2CH3, CHOC6H4CH2CH2CH2,
-    CHOC6H4CH2CH2CH2O, CHOC6H4CHCH2CH3, HOC6H4CH2CH2CH3, Oph(CH3)CH2CH2CH2,
-    HOC6H3(CH3)CHCH2CH3, HOph(CH2O)CH2CH2CH3, HOph(CHO)CH2CH2CH3, HOC6H3CH2CH2CH3,
-    HOC6H3(CO)CH2CH2CH3, HOph(CH3)CH2CH2CH2O, HOph(CH3)CH2CH2CHO, CH3HOC6H3CH2CH2,
-    HOC6H3(CH3)CH2CH2CO, CH3HOphCH(O)CH2CH3, C6H5CH(OH)CH2CH3, C6H5CH2CH2CH2OH,
-    CH3C6H4C(OH)CH2CH3, CH3C6H4CH2CH2CHOH, CHOHC6H4CH2CH2CH3, CH3C6H4CCHCH3,
-    m-CH2C6H4CHCHCH3, m-CH3C6H4CHCH3CH2, CH2OHC6H4CH2CH2CH3, CH3C6H4C(O)CH2CH2,
-    C6H4CH2CH2CHO, HOph(CH2)CH2CH2CH3, HOph(CH3)CH2CH2CH2, HOCH3phC(O)CH2CH3,
-    m-CH2C6H4CH2CHCH2, CH2C]
+    CH3C6H4CHO,CH2C]
   kinetics: gas
   state: {T: 300.0, P: 1 atm}
 
@@ -6078,702 +6061,6 @@ species:
     note: |-
       0
        KINGAS
-- name: m-CH3C6H4CH2CH2CH3
-  composition: {C: 10, H: 14}
-  thermo:
-    model: NASA7
-    temperature-ranges: [100.0, 1069.43, 5000.0]
-    data:
-    - [-0.170528143, 0.0746515627, -2.19734274e-06, -4.00401121e-08, 1.75334246e-11,
-      -6177.99571, 32.4594411]
-    - [15.8730756, 0.0514358768, -2.12405802e-05, 4.00175102e-09, -2.82767354e-13,
-      -1.17134191e+04, -55.8552942]
-    note: |-
-      PT-3 oxidation          ########################RGM estimated#############################
-      ############################################################################################
-      ##########################################################################################
-       RGM
-- name: C6H4CH2CH2CH3
-  composition: {C: 9, H: 11}
-  thermo:
-    model: NASA7
-    temperature-ranges: [100.0, 1000.72, 5000.0]
-    data:
-    - [0.548280844, 0.0584185037, 1.51725185e-05, -5.7787833e-08, 2.51154525e-11,
-      2.8872028e+04, 28.7844782]
-    - [16.1011483, 0.0371547272, -1.42651713e-05, 2.66746976e-09, -1.91251393e-13,
-      2.37111272e+04, -56.4933941]
-- name: m-CH2C6H4CH2CH2CH3
-  composition: {C: 10, H: 13}
-  thermo:
-    model: NASA7
-    temperature-ranges: [100.0, 1072.3, 5000.0]
-    data:
-    - [-0.416446065, 0.0800545447, -1.69916045e-05, -2.84740966e-08, 1.43837447e-11,
-      1.3231591e+04, 31.3119411]
-    - [18.0284441, 0.0465077909, -1.93852966e-05, 3.67752467e-09, -2.61130328e-13,
-      7248.84101, -68.4134359]
-- name: m-CH3C6H4CH2CH2CH2
-  composition: {C: 10, H: 13}
-  thermo:
-    model: NASA7
-    temperature-ranges: [100.0, 1089.39, 5000.0]
-    data:
-    - [-0.140106276, 0.0754432283, -1.27408914e-05, -2.78410277e-08, 1.31992042e-11,
-      1.85049996e+04, 34.1381644]
-    - [15.8272948, 0.0488850253, -2.03307657e-05, 3.82684364e-09, -2.69547225e-13,
-      1.31230246e+04, -52.9967722]
-- name: m-CH3C6H4CH2CHCH3
-  composition: {C: 10, H: 13}
-  thermo:
-    model: NASA7
-    temperature-ranges: [100.0, 1177.41, 5000.0]
-    data:
-    - [0.0178632887, 0.0748399855, -2.09017436e-05, -1.34182332e-08, 7.03812471e-12,
-      1.71976288e+04, 34.5278887]
-    - [13.7529459, 0.0517837066, -2.16017129e-05, 4.00600132e-09, -2.77108536e-13,
-      1.23270367e+04, -40.9275328]
-- name: m-CH3C6H4CHCH2CH3
-  composition: {C: 10, H: 13}
-  thermo:
-    model: NASA7
-    temperature-ranges: [100.0, 1724.75, 5000.0]
-    data:
-    - [0.303391332, 0.0795519467, -3.52123404e-05, 2.99399207e-09, 7.99081274e-13,
-      1.17737005e+04, 26.9751458]
-    - [23.4815217, 0.0447149501, -2.13670781e-05, 4.00166163e-09, -2.68749428e-13,
-      964.708316, -105.636757]
-- name: OHph(CH3)CH2CH2CH3
-  composition: {C: 10, H: 14, O: 1}
-  thermo:
-    model: NASA7
-    temperature-ranges: [100.0, 1134.97, 5000.0]
-    data:
-    - [-1.09309754, 0.0961491687, -4.65560558e-05, -1.53028606e-09, 5.44880098e-12,
-      -2.77220718e+04, 36.6715805]
-    - [19.4880745, 0.0501086272, -2.0722974e-05, 3.86299844e-09, -2.69521442e-13,
-      -3.41003123e+04, -72.7439119]
-- name: ph(CH3)CH2CH2CH3
-  composition: {C: 10, H: 13}
-  thermo:
-    model: NASA7
-    temperature-ranges: [100.0, 1085.95, 5000.0]
-    data:
-    - [-0.237024761, 0.0784814654, -2.21932684e-05, -1.91222651e-08, 1.06118658e-11,
-      2.44546912e+04, 33.1587164]
-    - [15.9910888, 0.0475628124, -1.93443893e-05, 3.59795507e-09, -2.5175023e-13,
-      1.92286224e+04, -54.3047279]
-- name: m-CH3C6H4CHCHCH3
-  composition: {C: 10, H: 12}
-  thermo:
-    model: NASA7
-    temperature-ranges: [100.0, 1093.38, 5000.0]
-    data:
-    - [-0.0381014607, 0.0743168103, -1.75604172e-05, -2.16031129e-08, 1.10382698e-11,
-      6651.19769, 30.0625207]
-    - [15.4239714, 0.0466509555, -1.92540188e-05, 3.60427209e-09, -2.5290631e-13,
-      1542.53169, -53.8131418]
-- name: m-CH3C6H4CH2CHCH2
-  composition: {C: 10, H: 12}
-  thermo:
-    model: NASA7
-    temperature-ranges: [100.0, 1019.18, 5000.0]
-    data:
-    - [0.405713376, 0.0595941691, 2.91065347e-05, -7.16863057e-08, 2.89922566e-11,
-      9473.07027, 27.7965581]
-    - [15.4601726, 0.0462387996, -1.85407103e-05, 3.50543063e-09, -2.51017905e-13,
-      4029.43012, -56.7700651]
-- name: CH3A1CH(OO)CH2CH3
-  composition: {C: 10, H: 13, O: 2}
-  thermo:
-    model: NASA7
-    temperature-ranges: [100.0, 1184.35, 5000.0]
-    data:
-    - [-1.24877609, 0.0999283631, -5.49861913e-05, 7.05181283e-09, 2.43409809e-12,
-      72.0697669, 41.8482596]
-    - [19.9623397, 0.0506906184, -2.09961582e-05, 3.88862535e-09, -2.69192401e-13,
-      -6523.22553, -70.7043297]
-    note: afterComSym
-- name: CH3C6H4CH(O)CH2CH3
-  composition: {C: 10, H: 13, O: 1}
-  thermo:
-    model: NASA7
-    temperature-ranges: [100.0, 1048.83, 5000.0]
-    data:
-    - [-0.535755578, 0.0811591438, -9.16425115e-06, -3.94119987e-08, 1.86875427e-11,
-      873.555471, 37.5644603]
-    - [18.47171, 0.0486604415, -1.98799613e-05, 3.75340227e-09, -2.66785986e-13,
-      -5313.19065, -65.5278377]
-- name: CH3A1CH2CH(OO)CH3
-  composition: {C: 10, H: 13, O: 2}
-  thermo:
-    model: NASA7
-    temperature-ranges: [100.0, 1648.99, 5000.0]
-    data:
-    - [-1.40108398, 0.106317012, -7.36371884e-05, 2.55228191e-08, -3.58137713e-12,
-      0.430356173, 40.7745235]
-    - [23.39224, 0.046175028, -1.89290405e-05, 3.40492595e-09, -2.28120686e-13,
-      -8176.33901, -91.2395772]
-- name: CH3C6H4CH2CH(O)CH3
-  composition: {C: 10, H: 13, O: 1}
-  thermo:
-    model: NASA7
-    temperature-ranges: [100.0, 1098.51, 5000.0]
-    data:
-    - [-0.777116404, 0.0886843262, -3.22098824e-05, -1.46659205e-08, 9.78646786e-12,
-      805.740135, 36.804846]
-    - [18.6452469, 0.0489712842, -2.03255092e-05, 3.81912147e-09, -2.68651051e-13,
-      -5332.38292, -67.2377074]
-- name: CH3C6H4C(O)CH2CH3
-  composition: {C: 10, H: 12, O: 1}
-  thermo:
-    model: NASA7
-    temperature-ranges: [100.0, 2204.68, 5000.0]
-    data:
-    - [0.0232227127, 0.0860364812, -4.9048225e-05, 1.27445222e-08, -1.29993887e-12,
-      -2.05478443e+04, 32.3153295]
-    - [26.1238584, 0.0386816193, -1.68294271e-05, 3.00199625e-09, -1.95186155e-13,
-      -3.2056579e+04, -114.239909]
-- name: CH3C6H4CH(OH)CH2CH3
-  composition: {C: 10, H: 14, O: 1}
-  thermo:
-    model: NASA7
-    temperature-ranges: [100.0, 1052.86, 5000.0]
-    data:
-    - [-0.705076955, 0.0852282943, -1.53241913e-05, -3.40670061e-08, 1.69602719e-11,
-      -2.68266807e+04, 38.3641141]
-    - [18.5857918, 0.050371686, -2.0419342e-05, 3.8300176e-09, -2.70875797e-13,
-      -3.30189544e+04, -65.8129227]
-- name: CH3A1CH(OOH)CH2CH3
-  composition: {C: 10, H: 14, O: 2}
-  thermo:
-    model: NASA7
-    temperature-ranges: [100.0, 1135.83, 5000.0]
-    data:
-    - [-1.49786126, 0.103378663, -4.99313482e-05, -2.52664063e-09, 6.24245229e-12,
-      -1.81990936e+04, 41.9809635]
-    - [21.3270724, 0.0526672901, -2.21439852e-05, 4.16206502e-09, -2.91768547e-13,
-      -2.52980239e+04, -79.4682615]
-- name: CH3C6H4CH2CH2CHO
-  composition: {C: 10, H: 12, O: 1}
-  thermo:
-    model: NASA7
-    temperature-ranges: [100.0, 1373.28, 5000.0]
-    data:
-    - [-0.537687551, 0.0870821463, -4.69571388e-05, 8.66850458e-09, 3.18397001e-13,
-      -1.61273712e+04, 35.8381387]
-    - [18.4905447, 0.0469842118, -1.98996918e-05, 3.6601285e-09, -2.49306948e-13,
-      -2.27987724e+04, -67.2596778]
-- name: CH3C6H4CH2CH2CH2O
-  composition: {C: 10, H: 13, O: 1}
-  thermo:
-    model: NASA7
-    temperature-ranges: [100.0, 2152.74, 5000.0]
-    data:
-    - [-0.452459992, 0.0900782704, -5.1575791e-05, 1.3768323e-08, -1.45150134e-12,
-      1747.33204, 37.0772724]
-    - [26.802348, 0.0394361763, -1.62890578e-05, 2.84062375e-09, -1.8245559e-13,
-      -9987.16782, -115.308805]
-- name: CH3C6H4CH2CH2CH2OH
-  composition: {C: 10, H: 14, O: 1}
-  thermo:
-    model: NASA7
-    temperature-ranges: [100.0, 1211.39, 5000.0]
-    data:
-    - [-1.01310896, 0.0955908765, -5.08555744e-05, 6.24008804e-09, 2.14634815e-12,
-      -2.53729155e+04, 38.1988867]
-    - [18.7806969, 0.0508619608, -2.10153471e-05, 3.87645803e-09, -2.6716505e-13,
-      -3.16822098e+04, -67.3383668]
-- name: CH3C6H4CH2CH2CH2OOH
-  composition: {C: 10, H: 14, O: 2}
-  thermo:
-    model: NASA7
-    temperature-ranges: [100.0, 1677.62, 5000.0]
-    data:
-    - [-1.57711483, 0.111072202, -7.62093067e-05, 2.58666142e-08, -3.55046195e-12,
-      -1.6755491e+04, 40.9920636]
-    - [24.5621451, 0.0487477396, -2.04836678e-05, 3.72195223e-09, -2.50459028e-13,
-      -2.55258632e+04, -98.6386537]
-- name: CH2OOC6H4CH2CH2CH3
-  composition: {C: 10, H: 13, O: 2}
-  thermo:
-    model: NASA7
-    temperature-ranges: [100.0, 1716.41, 5000.0]
-    data:
-    - [-1.17982168, 0.102797507, -6.80819017e-05, 2.24047838e-08, -2.98981008e-12,
-      2316.6687, 41.3770705]
-    - [22.7660305, 0.0469932446, -1.93138155e-05, 3.46297113e-09, -2.30893123e-13,
-      -5903.54692, -87.0843129]
-- name: CH2OC6H4CH2CH2CH3
-  composition: {C: 10, H: 13, O: 1}
-  thermo:
-    model: NASA7
-    temperature-ranges: [100.0, 1518.28, 5000.0]
-    data:
-    - [-0.466774665, 0.0871149642, -4.45878948e-05, 8.20869868e-09, 7.59792203e-15,
-      2555.38506, 38.1810758]
-    - [19.2292713, 0.0491071511, -2.07530704e-05, 3.76528043e-09, -2.52373983e-13,
-      -5025.53814, -70.3350342]
-- name: OC6H3(CH3)CH2CH2CH3
-  composition: {C: 10, H: 13, O: 1}
-  thermo:
-    model: NASA7
-    temperature-ranges: [100.0, 1240.52, 5000.0]
-    data:
-    - [-0.894490985, 0.0932372281, -5.01237682e-05, 6.83426986e-09, 1.71957341e-12,
-      -1.16444383e+04, 36.20294]
-    - [18.9489415, 0.0490351243, -2.05958174e-05, 3.82043734e-09, -2.6364643e-13,
-      -1.8089803e+04, -69.9420597]
-- name: CH3C6H4CH2CH2CH2OO
-  composition: {C: 10, H: 13, O: 2}
-  thermo:
-    model: NASA7
-    temperature-ranges: [100.0, 1597.0, 5000.0]
-    data:
-    - [-1.03071131, 0.104452336, -7.16288002e-05, 2.48008248e-08, -3.52854766e-12,
-      1501.99638, 39.7685545]
-    - [20.161215, 0.0513730129, -2.17734712e-05, 3.98875472e-09, -2.7055397e-13,
-      -5266.70695, -72.3907564]
-- name: CHOC6H4CH2CH2CH3
-  composition: {C: 10, H: 12, O: 1}
-  thermo:
-    model: NASA7
-    temperature-ranges: [100.0, 1329.35, 5000.0]
-    data:
-    - [-0.779740953, 0.0909481207, -4.99076169e-05, 7.72692769e-09, 1.0697022e-12,
-      -1.77181158e+04, 35.35122]
-    - [20.8639966, 0.0452450227, -2.02534427e-05, 3.8461301e-09, -2.67392143e-13,
-      -2.51887049e+04, -81.6839605]
-- name: CH2OOHC6H4CH2CH2CH3
-  composition: {C: 10, H: 14, O: 2}
-  thermo:
-    model: NASA7
-    temperature-ranges: [100.0, 1776.26, 5000.0]
-    data:
-    - [-1.75390209, 0.109659768, -7.32190447e-05, 2.39185828e-08, -3.12742848e-12,
-      -1.59392525e+04, 42.7070156]
-    - [27.2765148, 0.0442870576, -1.80149906e-05, 3.19986198e-09, -2.11437523e-13,
-      -2.62526093e+04, -114.026914]
-- name: CH2C6H4C(O)CH2CH3
-  composition: {C: 10, H: 11, O: 1}
-  thermo:
-    model: NASA7
-    temperature-ranges: [100.0, 1776.29, 5000.0]
-    data:
-    - [0.0190515094, 0.0890069924, -5.70176951e-05, 1.73951215e-08, -2.15807983e-12,
-      -1149.93743, 30.268902]
-    - [18.7850857, 0.0467484065, -2.13324497e-05, 4.002059e-09, -2.73118816e-13,
-      -7816.7774, -71.0481149]
-- name: CH2OC6H4C(O)CH2CH3
-  composition: {C: 10, H: 11, O: 2}
-  thermo:
-    model: NASA7
-    temperature-ranges: [100.0, 2607.52, 5000.0]
-    data:
-    - [1.34890986, 0.0819268562, -4.33285491e-05, 9.73729139e-09, -8.32195105e-13,
-      -1.18937181e+04, 32.0158926]
-    - [30.1027229, 0.0378173389, -1.79538774e-05, 3.24966185e-09, -2.10177151e-13,
-      -2.68887906e+04, -134.261977]
-- name: C6H5C(O)CH2CH3
-  composition: {C: 9, H: 10, O: 1}
-  thermo:
-    model: NASA7
-    temperature-ranges: [100.0, 1352.28, 5000.0]
-    data:
-    - [0.196723681, 0.0728948788, -3.47580109e-05, 2.66423429e-09, 1.54411898e-12,
-      -1.61028345e+04, 29.4663196]
-    - [16.1691987, 0.0418611395, -1.83175008e-05, 3.42479812e-09, -2.35503931e-13,
-      -2.19050308e+04, -57.8929091]
-- name: CHOC6H4C(O)CH2CH3
-  composition: {C: 10, H: 10, O: 2}
-  thermo:
-    model: NASA7
-    temperature-ranges: [100.0, 1675.23, 5000.0]
-    data:
-    - [0.64669128, 0.0892834366, -5.73560152e-05, 1.71122832e-08, -2.1174105e-12,
-      -3.21452427e+04, 30.6756263]
-    - [14.2889988, 0.0567090867, -2.81888013e-05, 5.50497234e-09, -3.8520444e-13,
-      -3.67160183e+04, -42.1793022]
-- name: C6H4C(O)CH2CH3
-  composition: {C: 9, H: 9, O: 1}
-  thermo:
-    model: NASA7
-    temperature-ranges: [100.0, 1855.3, 5000.0]
-    data:
-    - [0.3566361, 0.0742412123, -4.68151046e-05, 1.41971129e-08, -1.73158786e-12,
-      1.45194172e+04, 30.0320709]
-    - [18.7698205, 0.0345426216, -1.47189838e-05, 2.66397509e-09, -1.77506734e-13,
-      7687.02639, -70.1810877]
-- name: CH3C6H4CH2CH2CO
-  composition: {C: 10, H: 11, O: 1}
-  thermo:
-    model: NASA7
-    temperature-ranges: [100.0, 1746.94, 5000.0]
-    data:
-    - [-0.502669402, 0.088892862, -5.84577053e-05, 1.89817192e-08, -2.4911523e-12,
-      3107.91156, 36.5225156]
-    - [20.8734813, 0.039946752, -1.64297628e-05, 2.94278301e-09, -1.9582694e-13,
-      -4360.54413, -78.5297471]
-- name: CH2C6H4CH2CH2CHO
-  composition: {C: 10, H: 11, O: 1}
-  thermo:
-    model: NASA7
-    temperature-ranges: [100.0, 1792.46, 5000.0]
-    data:
-    - [-0.813115834, 0.0927172257, -6.20864571e-05, 2.01169323e-08, -2.60228966e-12,
-      3283.78381, 34.8050599]
-    - [24.1341726, 0.0370458662, -1.54987246e-05, 2.78971581e-09, -1.85619956e-13,
-      -5659.66151, -100.110266]
-- name: CH2OC6H4CH2CH2CHO
-  composition: {C: 10, H: 11, O: 2}
-  thermo:
-    model: NASA7
-    temperature-ranges: [100.0, 2013.12, 5000.0]
-    data:
-    - [0.435250801, 0.0862335135, -4.94427768e-05, 1.30704214e-08, -1.38721527e-12,
-      -7454.12561, 36.8798287]
-    - [18.6875555, 0.0499663539, -2.2419336e-05, 4.1212005e-09, -2.75839101e-13,
-      -1.48028484e+04, -63.9476371]
-- name: C6H5CH2CH2CHO
-  composition: {C: 9, H: 10, O: 1}
-  thermo:
-    model: NASA7
-    temperature-ranges: [100.0, 1080.06, 5000.0]
-    data:
-    - [0.302471951, 0.0667020032, -9.97026425e-06, -2.74993071e-08, 1.29600543e-11,
-      -1.17130041e+04, 30.5512277]
-    - [15.3434135, 0.0415490356, -1.74674343e-05, 3.31825064e-09, -2.35410904e-13,
-      -1.67439619e+04, -51.4202724]
-- name: CHOC6H4CH2CH2CHO
-  composition: {C: 10, H: 10, O: 2}
-  thermo:
-    model: NASA7
-    temperature-ranges: [100.0, 1759.24, 5000.0]
-    data:
-    - [-0.146753745, 0.0926735501, -6.17506844e-05, 1.93432784e-08, -2.44755046e-12,
-      -2.7713879e+04, 35.0607487]
-    - [20.5806817, 0.045545043, -2.15666938e-05, 4.11538159e-09, -2.83546482e-13,
-      -3.50067317e+04, -76.6455454]
-- name: CH3C6H4CH2CHCHO
-  composition: {C: 10, H: 11, O: 1}
-  thermo:
-    model: NASA7
-    temperature-ranges: [100.0, 981.35, 5000.0]
-    data:
-    - [-0.206497825, 0.0682767823, 2.81083723e-05, -8.62874335e-08, 3.78384692e-11,
-      1401.86092, 31.2605602]
-    - [21.5870553, 0.0375948406, -1.38756086e-05, 2.61456454e-09, -1.91555734e-13,
-      -5675.55739, -87.7365342]
-- name: COC6H4CH2CH2CH3
-  composition: {C: 10, H: 11, O: 1}
-  thermo:
-    model: NASA7
-    temperature-ranges: [100.0, 1946.96, 5000.0]
-    data:
-    - [-0.818107866, 0.0919597167, -6.01159426e-05, 1.830895e-08, -2.19096041e-12,
-      886.39024, 35.5051549]
-    - [28.2122428, 0.0323176484, -1.4166063e-05, 2.57515303e-09, -1.70669201e-13,
-      -1.04178624e+04, -123.891704]
-- name: CHOC6H4CH2CH2CH2
-  composition: {C: 10, H: 11, O: 1}
-  thermo:
-    model: NASA7
-    temperature-ranges: [100.0, 1931.26, 5000.0]
-    data:
-    - [-0.808351027, 0.0921060208, -6.04465377e-05, 1.85186035e-08, -2.23197407e-12,
-      6968.45817, 36.5741426]
-    - [27.8165966, 0.0328177254, -1.43970828e-05, 2.62225019e-09, -1.74180597e-13,
-      -4087.85739, -120.36451]
-- name: CHOC6H4CH2CH2CH2O
-  composition: {C: 10, H: 11, O: 2}
-  thermo:
-    model: NASA7
-    temperature-ranges: [100.0, 1764.14, 5000.0]
-    data:
-    - [0.228812203, 0.0928554451, -5.891673e-05, 1.74485173e-08, -2.11273233e-12,
-      -9853.67927, 34.517931]
-    - [17.3776999, 0.0539726168, -2.58561092e-05, 4.95508857e-09, -3.42282802e-13,
-      -1.59043575e+04, -57.9505335]
-- name: CHOC6H4CHCH2CH3
-  composition: {C: 10, H: 11, O: 1}
-  thermo:
-    model: NASA7
-    temperature-ranges: [100.0, 2175.31, 5000.0]
-    data:
-    - [0.66924738, 0.0839513703, -4.61750506e-05, 9.71135966e-09, -6.59773076e-13,
-      -403.004064, 25.935375]
-    - [40.532003, 0.0239965386, -1.40352629e-05, 2.68176089e-09, -1.76010576e-13,
-      -2.09033195e+04, -204.617243]
-- name: HOC6H4CH2CH2CH3
-  composition: {C: 9, H: 12, O: 1}
-  thermo:
-    model: NASA7
-    temperature-ranges: [100.0, 1022.04, 5000.0]
-    data:
-    - [-0.277815101, 0.075795321, -8.48135576e-06, -4.06490968e-08, 1.99372819e-11,
-      -2.3306105e+04, 31.4926491]
-    - [19.0540834, 0.0405681949, -1.61210959e-05, 3.0413757e-09, -2.1781296e-13,
-      -2.93694618e+04, -72.5250982]
-- name: Oph(CH3)CH2CH2CH2
-  composition: {C: 10, H: 13, O: 1}
-  thermo:
-    model: NASA7
-    temperature-ranges: [100.0, 1150.12, 5000.0]
-    data:
-    - [-1.35249901, 0.101698029, -6.17974802e-05, 1.05237797e-08, 2.13036729e-12,
-      -8311.88274, 35.5733082]
-    - [21.7898699, 0.044947204, -1.87393735e-05, 3.50951452e-09, -2.45522224e-13,
-      -1.5205039e+04, -86.136858]
-- name: HOC6H3(CH3)CHCH2CH3
-  composition: {C: 10, H: 13, O: 1}
-  thermo:
-    model: NASA7
-    temperature-ranges: [100.0, 2310.36, 5000.0]
-    data:
-    - [0.254173722, 0.0921147795, -5.35213119e-05, 1.34919068e-08, -1.31152832e-12,
-      -9813.16397, 27.9450546]
-    - [30.9433544, 0.0389793628, -1.90217044e-05, 3.5364384e-09, -2.34218761e-13,
-      -2.39931722e+04, -145.81042]
-- name: HOph(CH2O)CH2CH2CH3
-  composition: {C: 10, H: 13, O: 2}
-  thermo:
-    model: NASA7
-    temperature-ranges: [100.0, 1652.02, 5000.0]
-    data:
-    - [-0.692418701, 0.101223613, -6.65055358e-05, 2.17232944e-08, -2.92700685e-12,
-      -1.90212691e+04, 39.8306952]
-    - [18.9162684, 0.0537455757, -2.33965036e-05, 4.32681908e-09, -2.9440291e-13,
-      -2.55000644e+04, -64.6134426]
-- name: HOph(CHO)CH2CH2CH3
-  composition: {C: 10, H: 12, O: 2}
-  thermo:
-    model: NASA7
-    temperature-ranges: [100.0, 1251.36, 5000.0]
-    data:
-    - [-1.1633178, 0.0976077147, -5.40401823e-05, 7.00342131e-09, 2.04436279e-12,
-      -4.23436893e+04, 36.8872282]
-    - [21.8529763, 0.0469807175, -2.08581601e-05, 3.97870179e-09, -2.78807316e-13,
-      -4.99005017e+04, -86.4921762]
-- name: HOC6H3CH2CH2CH3
-  composition: {C: 9, H: 11, O: 1}
-  thermo:
-    model: NASA7
-    temperature-ranges: [100.0, 1021.88, 5000.0]
-    data:
-    - [-0.329921142, 0.0794646645, -2.79630369e-05, -2.03227039e-08, 1.32328169e-11,
-      7325.9505, 32.8328896]
-    - [19.048763, 0.0368959211, -1.43370984e-05, 2.66347023e-09, -1.88905586e-13,
-      1627.45766, -69.5811734]
-- name: HOC6H3(CO)CH2CH2CH3
-  composition: {C: 10, H: 11, O: 2}
-  thermo:
-    model: NASA7
-    temperature-ranges: [100.0, 1832.14, 5000.0]
-    data:
-    - [-1.15479936, 0.101034691, -6.88209428e-05, 2.20210581e-08, -2.78813628e-12,
-      -2.25549307e+04, 37.1760874]
-    - [27.8667538, 0.0376724747, -1.69443634e-05, 3.14419669e-09, -2.12292554e-13,
-      -3.31890354e+04, -120.407677]
-- name: HOph(CH3)CH2CH2CH2O
-  composition: {C: 10, H: 13, O: 2}
-  thermo:
-    model: NASA7
-    temperature-ranges: [100.0, 1492.47, 5000.0]
-    data:
-    - [-0.598880109, 0.103370426, -7.11989761e-05, 2.50585869e-08, -3.71352722e-12,
-      -1.98328475e+04, 38.4352776]
-    - [16.1415413, 0.0585045759, -2.61072678e-05, 4.91694106e-09, -3.39687156e-13,
-      -2.48298188e+04, -49.0311744]
-- name: HOph(CH3)CH2CH2CHO
-  composition: {C: 10, H: 12, O: 2}
-  thermo:
-    model: NASA7
-    temperature-ranges: [100.0, 1560.03, 5000.0]
-    data:
-    - [-0.91360136, 0.102661705, -7.28433234e-05, 2.60115559e-08, -3.80805627e-12,
-      -3.76965367e+04, 38.0503174]
-    - [20.0528977, 0.04890306, -2.11538651e-05, 3.92270479e-09, -2.68282218e-13,
-      -4.42382802e+04, -72.4250529]
-- name: CH3HOC6H3CH2CH2
-  composition: {C: 9, H: 11, O: 1}
-  thermo:
-    model: NASA7
-    temperature-ranges: [100.0, 1119.18, 5000.0]
-    data:
-    - [-0.297995633, 0.0808213253, -3.88646551e-05, -2.65114911e-09, 5.29787548e-12,
-      -206.902753, 33.3567232]
-    - [17.5211762, 0.0407950616, -1.69297983e-05, 3.17223286e-09, -2.22408243e-13,
-      -5677.27665, -61.2368811]
-- name: HOC6H3(CH3)CH2CH2CO
-  composition: {C: 10, H: 11, O: 2}
-  thermo:
-    model: NASA7
-    temperature-ranges: [100.0, 1355.17, 5000.0]
-    data:
-    - [-0.826760267, 0.103848726, -8.22697014e-05, 3.39866004e-08, -5.80783936e-12,
-      -1.84630716e+04, 38.5522459]
-    - [17.8226016, 0.0488027634, -2.13415164e-05, 4.01371944e-09, -2.78541258e-13,
-      -2.35177376e+04, -57.0883899]
-- name: CH3HOphCH(O)CH2CH3
-  composition: {C: 10, H: 13, O: 2}
-  thermo:
-    model: NASA7
-    temperature-ranges: [100.0, 1094.93, 5000.0]
-    data:
-    - [-1.44593386, 0.102540816, -5.32618179e-05, -1.03146069e-09, 6.56850365e-12,
-      -2.06710981e+04, 41.7301674]
-    - [21.820655, 0.0477531458, -1.95915926e-05, 3.66661768e-09, -2.57716831e-13,
-      -2.75770366e+04, -80.8971393]
-- name: C6H5CH(OH)CH2CH3
-  composition: {C: 9, H: 12, O: 1}
-  thermo:
-    model: NASA7
-    temperature-ranges: [100.0, 994.82, 5000.0]
-    data:
-    - [0.0653623894, 0.0653131316, 2.16642548e-05, -7.24622421e-08, 3.14502502e-11,
-      -2.24086743e+04, 33.3517759]
-    - [18.9334929, 0.0395806782, -1.51278264e-05, 2.85083188e-09, -2.06426771e-13,
-      -2.86434841e+04, -70.0463467]
-- name: C6H5CH2CH2CH2OH
-  composition: {C: 9, H: 12, O: 1}
-  thermo:
-    model: NASA7
-    temperature-ranges: [100.0, 1039.03, 5000.0]
-    data:
-    - [-0.164815784, 0.0749386081, -1.21616276e-05, -3.30839321e-08, 1.64740757e-11,
-      -2.09585177e+04, 32.8954507]
-    - [17.5194444, 0.0426134, -1.7112987e-05, 3.2124445e-09, -2.28063693e-13,
-      -2.65634058e+04, -62.3854789]
-- name: CH3C6H4C(OH)CH2CH3
-  composition: {C: 10, H: 13, O: 1}
-  thermo:
-    model: NASA7
-    temperature-ranges: [100.0, 1211.67, 5000.0]
-    data:
-    - [-0.974853415, 0.0951329624, -5.55219338e-05, 1.08128221e-08, 8.61561717e-13,
-      -5577.42337, 38.7690083]
-    - [19.0639853, 0.0474883925, -1.94521979e-05, 3.57353498e-09, -2.45819832e-13,
-      -1.17921571e+04, -67.3607279]
-- name: CH3C6H4CH2CH2CHOH
-  composition: {C: 10, H: 13, O: 1}
-  thermo:
-    model: NASA7
-    temperature-ranges: [100.0, 1557.66, 5000.0]
-    data:
-    - [-1.03740364, 0.101522943, -7.25113109e-05, 2.63699186e-08, -3.91348621e-12,
-      -3692.04091, 37.8284373]
-    - [20.6365821, 0.0458654976, -1.89144906e-05, 3.43103586e-09, -2.31884812e-13,
-      -1.04442251e+04, -76.3417355]
-- name: CHOHC6H4CH2CH2CH3
-  composition: {C: 10, H: 13, O: 1}
-  thermo:
-    model: NASA7
-    temperature-ranges: [100.0, 1664.35, 5000.0]
-    data:
-    - [-1.18087422, 0.0998111584, -6.88081695e-05, 2.38252461e-08, -3.33037373e-12,
-      -2877.62639, 39.4160818]
-    - [22.864167, 0.0420222282, -1.67252823e-05, 2.96291044e-09, -1.9664012e-13,
-      -1.08814293e+04, -88.8365098]
-- name: CH3C6H4CCHCH3
-  composition: {C: 10, H: 11}
-  thermo:
-    model: NASA7
-    temperature-ranges: [100.0, 1303.61, 5000.0]
-    data:
-    - [-0.166574492, 0.0798042787, -4.43369622e-05, 8.66064172e-09, 3.1543242e-13,
-      3.52590525e+04, 31.0131144]
-    - [16.5267787, 0.0425724575, -1.75938459e-05, 3.21657113e-09, -2.19292773e-13,
-      2.97179887e+04, -58.5081079]
-- name: m-CH2C6H4CHCHCH3
-  composition: {C: 10, H: 11}
-  thermo:
-    model: NASA7
-    temperature-ranges: [100.0, 1099.72, 5000.0]
-    data:
-    - [-0.287160152, 0.0797541666, -3.24616945e-05, -9.91834038e-09, 7.84686113e-12,
-      2.60609235e+04, 28.9264568]
-    - [17.6104888, 0.0416727208, -1.73709458e-05, 3.27367285e-09, -2.30752462e-13,
-      2.04907311e+04, -66.5485108]
-- name: m-CH3C6H4CHCH3CH2
-  composition: {C: 10, H: 13}
-  thermo:
-    model: NASA7
-    temperature-ranges: [100.0, 1023.97, 5000.0]
-    data:
-    - [-0.085336631, 0.0730990616, -2.30198079e-06, -4.23921383e-08, 1.95656189e-11,
-      1.78269017e+04, 33.6708874]
-    - [16.083344, 0.0469906351, -1.8333467e-05, 3.38313666e-09, -2.37943811e-13,
-      1.25731539e+04, -54.2017692]
-- name: CH2OHC6H4CH2CH2CH3
-  composition: {C: 10, H: 14, O: 1}
-  thermo:
-    model: NASA7
-    temperature-ranges: [100.0, 1130.11, 5000.0]
-    data:
-    - [-0.795418159, 0.0900246229, -3.54094553e-05, -9.31769885e-09, 7.4291918e-12,
-      -2.45751212e+04, 38.4617066]
-    - [17.6960779, 0.0520623608, -2.15069426e-05, 4.00400616e-09, -2.79063328e-13,
-      -3.05099168e+04, -60.7769687]
-- name: CH3C6H4C(O)CH2CH2
-  composition: {C: 10, H: 11, O: 1}
-  thermo:
-    model: NASA7
-    temperature-ranges: [100.0, 1678.71, 5000.0]
-    data:
-    - [0.3305999, 0.0864451885, -5.47236879e-05, 1.68152727e-08, -2.14722706e-12,
-      4882.68343, 31.7992672]
-    - [14.953802, 0.0516013079, -2.35891934e-05, 4.45082843e-09, -3.05867281e-13,
-      -26.9428709, -46.3244331]
-- name: C6H4CH2CH2CHO
-  composition: {C: 9, H: 9, O: 1}
-  thermo:
-    model: NASA7
-    temperature-ranges: [100.0, 1107.72, 5000.0]
-    data:
-    - [0.230522379, 0.0705897562, -3.01370208e-05, -6.40678278e-09, 5.98451526e-12,
-      1.8919927e+04, 31.9636275]
-    - [15.5288108, 0.0375682569, -1.55118752e-05, 2.9008955e-09, -2.03297652e-13,
-      1.41673912e+04, -49.560464]
-- name: HOph(CH2)CH2CH2CH3
-  composition: {C: 10, H: 13, O: 1}
-  thermo:
-    model: NASA7
-    temperature-ranges: [100.0, 1150.12, 5000.0]
-    data:
-    - [-1.35249901, 0.101698029, -6.17974802e-05, 1.05237797e-08, 2.13036729e-12,
-      -8311.88274, 35.5733082]
-    - [21.7898699, 0.044947204, -1.87393735e-05, 3.50951452e-09, -2.45522224e-13,
-      -1.5205039e+04, -86.136858]
-- name: HOph(CH3)CH2CH2CH2
-  composition: {C: 10, H: 13, O: 1}
-  thermo:
-    model: NASA7
-    temperature-ranges: [100.0, 1204.39, 5000.0]
-    data:
-    - [-1.09913978, 0.0973096817, -5.81059937e-05, 1.15789638e-08, 8.88112926e-13,
-      -3037.3982, 38.4852301]
-    - [20.0567793, 0.0465955654, -1.92910094e-05, 3.570241e-09, -2.46861441e-13,
-      -9551.21057, -73.4003157]
-- name: HOCH3phC(O)CH2CH3
-  composition: {C: 10, H: 12, O: 2}
-  thermo:
-    model: NASA7
-    temperature-ranges: [100.0, 1386.94, 5000.0]
-    data:
-    - [-0.24691355, 0.100413573, -7.11757098e-05, 2.60770933e-08, -4.10205617e-12,
-      -4.21210115e+04, 34.1490913]
-    - [13.5225064, 0.0607013368, -2.82255975e-05, 5.43176709e-09, -3.80620974e-13,
-      -4.59404272e+04, -36.7841737]
-- name: m-CH2C6H4CH2CHCH2
-  composition: {C: 10, H: 11}
-  thermo:
-    model: NASA7
-    temperature-ranges: [100.0, 1019.46, 5000.0]
-    data:
-    - [0.162780668, 0.0649637413, 1.44197317e-05, -6.02444656e-08, 2.58883745e-11,
-      2.88825262e+04, 26.6382409]
-    - [17.5907019, 0.0413512582, -1.67081245e-05, 3.18644967e-09, -2.29808778e-13,
-      2.30027049e+04, -69.1872568]
 - name: CH2C          #Added from SJ Klippenstein and Raghu Sivaramakrishnan Argonne Core Mechanism
   composition: {C: 2, H: 2}
   thermo:
@@ -7645,8 +6932,21 @@ reactions:
   - {P: 10.0 atm, A: 5.02e+13, b: -1.11, Ea: 1409.0}
   - {P: 31.6 atm, A: 1.4e+70, b: -20.11, Ea: 1.543e+04}
   - {P: 100.0 atm, A: 9.21e+08, b: 0.25, Ea: 855.3}
-- equation: H + C2H3 <=> H2 + C2H2  # Reaction 239
-  rate-constant: {A: 9.6353e+13, b: 0.0, Ea: 0.0}
+#- equation: H + C2H3 <=> H2 + C2H2  # Reaction 239
+#  rate-constant: {A: 9.6353e+13, b: 0.0, Ea: 0.0}
+- equation: C2H3 + H <=> C2H2 + H2   # Reaction 239 (SJ Klippenstein and Raghu Sivaramakrishnan)
+  type: pressure-dependent-Arrhenius
+  rate-constants:
+  - { P: 0.003 atm, A: 1.49e+15, b: -0.311, Ea: 2.45e+02 }
+  - { P: 0.010 atm, A: 1.50e+15, b: -0.312, Ea: 2.45e+02 }
+  - { P: 0.030 atm, A: 1.50e+15, b: -0.312, Ea: 2.45e+02 }
+  - { P: 0.100 atm, A: 1.51e+15, b: -0.313, Ea: 2.48e+02 }
+  - { P: 0.300 atm, A: 1.49e+15, b: -0.310, Ea: 2.66e+02 }
+  - { P: 1.000 atm, A: 1.34e+15, b: -0.291, Ea: 3.82e+02 }
+  - { P: 3.000 atm, A: 4.27e+15, b: -0.426, Ea: 9.50e+02 }
+  - { P: 10.000 atm, A: 8.79e+15, b: -0.500, Ea: 1.677e+03 }
+  - { P: 30.000 atm, A: 5.40e+15, b: -0.424, Ea: 2.185e+03 }
+  - { P: 100.000 atm, A: 1.72e+13, b:  0.287, Ea: 1.158e+03 }
 - equation: OH + C2H3 <=> H2O + C2H2  # Reaction 240
   rate-constant: {A: 3.011e+13, b: 0.0, Ea: 0.0}
 - equation: CH3 + C2H3 <=> CH4 + C2H2  # Reaction 241
@@ -49622,6 +48922,425 @@ reactions:
   note: <estimated(t)>!  par rapport au toluene  HOC6H3(CH3)2+C6H5O#=CH3HOC6H3CH2+C6H5OH#
 - equation: OHph(CH3)CH2CH3 + RXYLENE <=> HOC6H3(CH3)CHCH3 + MXYLENE  # Reaction 18137
   rate-constant: {A: 1.6e+11, b: 0.0, Ea: 1.51e+04}
+  note: |-
+    OHph(CH3)CH2CH3+o-methylbenzyl=HOC6H3(CH3)CHCH3+o-xylene	1.6E11	    0.0       15.1E3   !<estimated(t)>!  par rapport au toluene  HOC6H3(CH3)2+o-methylbenzyl=CH3HOC6H3CH2+o-xylene
+    <estimated(t)>!  par rapport au toluene  HOC6H3(CH3)2+m-methylbenzyl=CH3HOC6H3CH2+m-xylene
+- equation: OHph(CH3)CH2CH3 + CH3C6H4 <=> HOC6H3(CH3)CHCH3 + C7H8  # Reaction 18138
+  rate-constant: {A: 7.9e+13, b: 0.0, Ea: 1.2e+04}
+  note: |-
+    OHph(CH3)CH2CH3+p-methylbenzyl=HOC6H3(CH3)CHCH3+p-xylene	1.6E11	    0.0       15.1E3   !<estimated(t)>!  par rapport au toluene  HOC6H3(CH3)2+p-methylbenzyl=CH3HOC6H3CH2+p-xylene
+    <estimated(t)>!  par rapport au toluene  HOC6H3(CH3)2+C6H4CH3=CH3HOC6H3CH2+toluene
+- equation: OHph(CH3)CH2CH3 + OC6H4CH3 <=> HOC6H3(CH3)CHCH3 + CRESOL  # Reaction 18139
+  rate-constant: {A: 1.6e+11, b: 0.0, Ea: 1.51e+04}
+  note: <estimated(t)>!  par rapport au toluene  HOC6H3(CH3)2+OC6H4CH3=CH3HOC6H3CH2+HOC6H4CH3
+- equation: OHph(CH3)CH2CH3 + C6H5CH2OO <=> HOC6H3(CH3)CHCH3 + C6H5CH2OOH  # Reaction 18140
+  rate-constant: {A: 4.0e+11, b: 0.0, Ea: 1.4e+04}
+  note: <estimated(t)>!  par rapport au toluene  HOC6H3(CH3)2+C6H5CH2OO=CH3HOC6H3CH2+C6H5CH2OOH
+- equation: OHph(CH3)CH2CH3 + C6H5CH2O <=> HOC6H3(CH3)CHCH3 + C6H5CH2OH  # Reaction 18141
+  rate-constant: {A: 1.6e+11, b: 0.0, Ea: 1.11e+04}
+  note: <estimated(t)>!  par rapport au toluene  HOC6H3(CH3)2+C6H5CH2O=CH3HOC6H3CH2+C6H5CH2OH
+- equation: HOph(CH2)CH2CH3 + H <=> OHph(CH3)CH2CH3  # Reaction 18142
+  rate-constant: {A: 1.0e+14, b: 0.0, Ea: 0.0}
+  note: <estimated(g)>! *1 CH3HOC6H3CH2+R1H=HOC6H3(CH3)2
+- equation: HOph(CH2)CH2CH3 + CH3 <=> HOC6H4CH2CH3 + C2H4  # Reaction 18143
+  rate-constant: {A: 5.0e+12, b: 0.0, Ea: 0.0}
+  note: <estimated(g)>! *1 CH3HOC6H3CH2+R4CH3=HOC6H4CH3+C2H4Z
+- equation: HOph(CH2)CH2CH3 + O2 <=> HOph(CH2O)CH2CH3 + O  # Reaction 18144
+  rate-constant: {A: 6.3e+12, b: 0.0, Ea: 4.0e+04}
+  note: <estimated(u)>! *1 CH3HOC6H3CH2+O2=CH3HOC6H3CH2O+B1O
+- equation: HOph(CH2)CH2CH3 + HO2 <=> HOph(CH2O)CH2CH3 + OH  # Reaction 18145
+  rate-constant: {A: 5.0e+12, b: 0.0, Ea: 0.0}
+  note: <estimated(u)>!  *1 CH3HOC6H3CH2+R3OOH=CH3HOC6H3CH2O+R2OH
+- equation: HOph(CH2O)CH2CH3 <=> H + HOph(CHO)CH2CH3  # Reaction 18146
+  rate-constant: {A: 2.0e+13, b: 0.0, Ea: 2.75e+04}
+  note: <estimated(w)>! *1 CH3HOC6H3CH2O=R1H+CH3OHC6H3CHO
+- equation: HOph(CH2O)CH2CH3 <=> HOC6H3CH2CH3 + CH2O  # Reaction 18147
+  rate-constant: {A: 2.0e+13, b: 0.0, Ea: 2.75e+04}
+  note: <estimated(w)>!  *1 CH3HOC6H3CH2O=HOC6H3CH3+HCHO
+- equation: HOph(CH2O)CH2CH3 + O2 <=> HO2 + HOph(CHO)CH2CH3  # Reaction 18148
+  rate-constant: {A: 6.0e+10, b: 0.0, Ea: 1600.0}
+  note: <estimated(w)>!  *1 CH3HOC6H3CH2O+O2=R3OOH+CH3OHC6H3CHO
+- equation: HOph(CHO)CH2CH3 + H <=> HOC6H3(CO)CH2CH3 + H2  # Reaction 18149
+  rate-constant: {A: 4.0e+13, b: 0.0, Ea: 3200.0}
+  note: <estimated(x)>!  *1 CH3OHC6H3CHO+R1H=CH3C6H3OHCO+H2
+- equation: HOph(CHO)CH2CH3 + O <=> HOC6H3(CO)CH2CH3 + OH  # Reaction 18150
+  rate-constant: {A: 6.0e+12, b: 0.0, Ea: 1800.0}
+  note: <estimated(x)>! *1 CH3OHC6H3CHO+B1O=CH3C6H3OHCO+R2OH
+- equation: HOph(CHO)CH2CH3 + OH <=> HOC6H3(CO)CH2CH3 + H2O  # Reaction 18151
+  rate-constant: {A: 7.8e+12, b: 0.0, Ea: 0.0}
+  note: <estimated(x)>! *1 CH3OHC6H3CHO+R2OH=CH3C6H3OHCO+H2O
+- equation: HOph(CHO)CH2CH3 + HO2 <=> HOC6H3(CO)CH2CH3 + H2O2  # Reaction 18152
+  rate-constant: {A: 3.0e+12, b: 0.0, Ea: 1.1e+04}
+  note: <estimated(x)>!  *1 CH3OHC6H3CHO+R3OOH=CH3C6H3OHCO+H2O2
+- equation: HOph(CHO)CH2CH3 + CH3 <=> HOC6H3(CO)CH2CH3 + CH4  # Reaction 18153
+  rate-constant: {A: 2.0e-06, b: 5.6, Ea: 1500.0}
+  note: <estimated(x)>! *1 CH3OHC6H3CHO+R4CH3=CH3C6H3OHCO+CH4
+- equation: HOC6H3(CO)CH2CH3 <=> HOC6H3CH2CH3 + CO  # Reaction 18154
+  rate-constant: {A: 4.0e+14, b: 0.0, Ea: 2.95e+04}
+  note: "!!2.0E13\t0.0\t30.5E3\t!<estimated(y)>  *1 CH3C6H3OHCO=HOC6H3CH3+B2CO"
+- equation: HOC6H3CH2CH3 + H <=> HOC6H4CH2CH3  # Reaction 18155
+  rate-constant: {A: 1.0e+14, b: 0.0, Ea: 0.0}
+  note: <estimated(g)>! *1 HOC6H3CH3 + R1H = HOC6H4CH3
+- equation: HOph(CH3)CH2CH2 + H <=> OHph(CH3)CH2CH3  # Reaction 18156
+  rate-constant: {A: 1.0e+14, b: 0.0, Ea: 0.0}
+  note: <estimated(g)>! *1 CH3HOC6H3CH2+R1H=HOC6H3(CH3)2
+- equation: HOph(CH3)CH2CH2 + CH3 <=> CRESOL + C3H6  # Reaction 18157
+  rate-constant: {A: 5.0e+12, b: 0.0, Ea: 0.0}
+  note: <estimated(g)>! *1 CH3HOC6H3CH2+R4CH3=HOC6H4CH3+C2H4Z
+- equation: HOph(CH3)CH2CH2 + O2 <=> HOph(CH3)CH2CH2O + O  # Reaction 18158
+  rate-constant: {A: 6.3e+12, b: 0.0, Ea: 4.0e+04}
+  note: <estimated(u)>! *1 CH3HOC6H3CH2+O2=CH3HOC6H3CH2O+B1O
+- equation: HOph(CH3)CH2CH2 + HO2 <=> HOph(CH3)CH2CH2O + OH  # Reaction 18159
+  rate-constant: {A: 5.0e+12, b: 0.0, Ea: 0.0}
+  note: <estimated(u)>!  *1 CH3HOC6H3CH2+R3OOH=CH3HOC6H3CH2O+R2OH
+- equation: HOph(CH3)CH2CH2O <=> H + HOph(CH3)CH2CHO  # Reaction 18160
+  rate-constant: {A: 2.0e+13, b: 0.0, Ea: 2.75e+04}
+  note: <estimated(w)>! *1 CH3HOC6H3CH2O=R1H+CH3OHC6H3CHO
+- equation: HOph(CH3)CH2CH2O <=> CH3HOC6H3CH2 + CH2O  # Reaction 18161
+  rate-constant: {A: 2.0e+13, b: 0.0, Ea: 2.75e+04}
+  note: <estimated(w)>!  *1 CH3HOC6H3CH2O=HOC6H3CH3+HCHO
+- equation: HOph(CH3)CH2CH2O + O2 <=> HO2 + HOph(CH3)CH2CHO  # Reaction 18162
+  rate-constant: {A: 6.0e+10, b: 0.0, Ea: 1600.0}
+  note: <estimated(w)>!  *1 CH3HOC6H3CH2O+O2=R3OOH+CH3OHC6H3CHO
+- equation: HOph(CH3)CH2CHO + H <=> HOC6H3(CH3)CH2CO + H2  # Reaction 18163
+  rate-constant: {A: 4.0e+13, b: 0.0, Ea: 3200.0}
+  note: <estimated(x)>!  *1 CH3OHC6H3CHO+R1H=CH3C6H3OHCO+H2
+- equation: HOph(CH3)CH2CHO + O <=> HOC6H3(CH3)CH2CO + OH  # Reaction 18164
+  rate-constant: {A: 6.0e+12, b: 0.0, Ea: 1800.0}
+  note: <estimated(x)>! *1 CH3OHC6H3CHO+B1O=CH3C6H3OHCO+R2OH
+- equation: HOph(CH3)CH2CHO + OH <=> HOC6H3(CH3)CH2CO + H2O  # Reaction 18165
+  rate-constant: {A: 7.8e+12, b: 0.0, Ea: 0.0}
+  note: <estimated(x)>! *1 CH3OHC6H3CHO+R2OH=CH3C6H3OHCO+H2O
+- equation: HOph(CH3)CH2CHO + HO2 <=> HOC6H3(CH3)CH2CO + H2O2  # Reaction 18166
+  rate-constant: {A: 3.0e+12, b: 0.0, Ea: 1.1e+04}
+  note: <estimated(x)>!  *1 CH3OHC6H3CHO+R3OOH=CH3C6H3OHCO+H2O2
+- equation: HOph(CH3)CH2CHO + CH3 <=> HOC6H3(CH3)CH2CO + CH4  # Reaction 18167
+  rate-constant: {A: 2.0e-06, b: 5.6, Ea: 1500.0}
+  note: <estimated(x)>! *1 CH3OHC6H3CHO+R4CH3=CH3C6H3OHCO+CH4
+- equation: HOC6H3(CH3)CH2CO <=> CH3HOC6H3CH2 + CO  # Reaction 18168
+  rate-constant: {A: 4.0e+14, b: 0.0, Ea: 2.95e+04}
+  note: "!!2.0E13\t0.0\t30.5E3\t!<estimated(y)>  *1 CH3C6H3OHCO=HOC6H3CH3+B2CO"
+- equation: HOC6H3(CH3)CHCH3 + H <=> OHph(CH3)CH2CH3  # Reaction 18169
+  rate-constant: {A: 1.0e+14, b: 0.0, Ea: 0.0}
+  note: <estimated(g)>! *1 CH3HOC6H3CH2+R1H=HOC6H3(CH3)2
+- equation: HOC6H3(CH3)CHCH3 + CH3 <=> CRESOL + C3H6  # Reaction 18170
+  rate-constant: {A: 5.0e+12, b: 0.0, Ea: 0.0}
+  note: <estimated(g)>! *1 CH3HOC6H3CH2+R4CH3=HOC6H4CH3+C2H4Z
+- equation: HOC6H3(CH3)CHCH3 + O2 <=> CH3HOphCH(O)CH3 + O  # Reaction 18171
+  rate-constant: {A: 6.3e+12, b: 0.0, Ea: 4.0e+04}
+  note: <estimated(u)>! *1 CH3HOC6H3CH2+O2=CH3HOC6H3CH2O+B1O
+- equation: HOC6H3(CH3)CHCH3 + HO2 <=> CH3HOphCH(O)CH3 + OH  # Reaction 18172
+  rate-constant: {A: 5.0e+12, b: 0.0, Ea: 0.0}
+  note: <estimated(u)>!  *1 CH3HOC6H3CH2+R3OOH=CH3HOC6H3CH2O+R2OH
+- equation: CH3HOphCH(O)CH3 <=> H + HOCH3phC(O)CH3  # Reaction 18173
+  rate-constant: {A: 2.0e+13, b: 0.0, Ea: 2.75e+04}
+  note: <estimated(w)>! *1 CH3HOC6H3CH2O=R1H+CH3OHC6H3CHO
+- equation: CH3HOphCH(O)CH3 <=> HOC6H3CH3 + CH3CHO  # Reaction 18174
+  rate-constant: {A: 2.0e+13, b: 0.0, Ea: 2.75e+04}
+  note: <estimated(w)>!  *1 CH3HOC6H3CH2O=HOC6H3CH3+HCHO
+- equation: CH3HOphCH(O)CH3 + O2 <=> HO2 + HOCH3phC(O)CH3  # Reaction 18175
+  rate-constant: {A: 6.0e+10, b: 0.0, Ea: 1600.0}
+  note: <estimated(w)>!  *1 CH3HOC6H3CH2O+O2=R3OOH+CH3OHC6H3CHO
+- equation: HOCH3phC(O)CH3 <=> HOC6H3(CH3)2 + CO  # Reaction 18176
+  rate-constant: {A: 4.0e+14, b: 0.0, Ea: 2.95e+04}
+  note: "!!2.0E13\t0.0\t30.5E3\t!<estimated(y)>  *1 CH3C6H3OHCO=HOC6H3CH3+B2CO"
+- equation: CH3C6H4CH(OH)CH3 + H <=> C7H8 + CH3CHOH  # Reaction 18177
+  rate-constant: {A: 5.8e+13, b: 0.0, Ea: 8100.0}
+  note: |-
+    ********************************************************************************************!
+    *REACTIONS OF BENZYLALCOOL AND  PHENYLETHYLALCOOL WITH DERIVED RADICALS*!
+    ********************************************************************************************!
+    <estimated(t)>!  *1 CH3C6H4CH2OH+R1H=toluene+R6CH2OH
+- equation: CH3C6H4CH(OH)CH3 + H <=> C6H5CH(OH)CH3 + CH3  # Reaction 18178
+  rate-constant: {A: 5.8e+13, b: 0.0, Ea: 8100.0}
+  note: <estimated(t)>!  *1 CH3C6H4CH2OH+R1H=C6H5CH2OH+R4CH3
+- equation: CH3C6H4CH2CH2OH + H <=> MXYLENE + CH2OH  # Reaction 18179
+  rate-constant: {A: 5.8e+13, b: 0.0, Ea: 8100.0}
+  note: <estimated(t)>!  *1 CH3C6H4CH2OH+R1H=toluene+R6CH2OH
+- equation: CH3C6H4CH2CH2OH + H <=> C7H8 + PC2H4OH  # Reaction 18180
+  rate-constant: {A: 5.8e+13, b: 0.0, Ea: 8100.0}
+  note: <estimated(t)>!  *1 CH3C6H4CH2OH+R1H=toluene+R6CH2OH
+- equation: C6H5CH(OH)CH3 + H <=> C6H6 + PC2H4OH  # Reaction 18181
+  rate-constant: {A: 5.8e+13, b: 0.0, Ea: 8100.0}
+  note: <estimated(t)>!
+- equation: C6H5CH2CH2OH + H <=> C6H6 + PC2H4OH  # Reaction 18182
+  rate-constant: {A: 5.8e+13, b: 0.0, Ea: 8100.0}
+  note: <estimated(t)>!
+- equation: CH3C6H4CH2CH2OH + H <=> C6H5CH2CH2OH + CH3  # Reaction 18183
+  rate-constant: {A: 5.8e+13, b: 0.0, Ea: 8100.0}
+  note: <estimated(t)>!  *1 CH3C6H4CH2OH+R1H=C6H5CH2OH+R4CH3
+- equation: CH2OHC6H4CH2CH3 + H <=> C6H5C2H5 + CH2OH  # Reaction 18184
+  rate-constant: {A: 5.8e+13, b: 0.0, Ea: 8100.0}
+  note: <estimated(t)>!  *1 CH3C6H4CH2OH+R1H=toluene+R6CH2OH
+- equation: CH2OHC6H4CH2CH3 + H <=> CH3C6H4CH2OH + CH3  # Reaction 18185
+  rate-constant: {A: 5.8e+13, b: 0.0, Ea: 8100.0}
+  note: <estimated(t)>!  *1 CH3C6H4CH2OH+R1H=C6H5CH2OH+R4CH3
+- equation: CH2OHC6H4CH2CH3 + H <=> C6H5CH2OH + C2H5  # Reaction 18186
+  rate-constant: {A: 5.8e+13, b: 0.0, Ea: 8100.0}
+  note: <estimated(t)>!  *1 CH3C6H4CH2OH+R1H=C6H5CH2OH+R4CH3
+- equation: CH3C6H4CH(OH)CH3 + H <=> CH3C6H4C(OH)CH3 + H2  # Reaction 18187
+  rate-constant: {A: 8.0e+13, b: 0.0, Ea: 6400.0}
+  note: <estimated(t')>!  *1 CH3C6H4CH2OH+R1H=CH3C6H4CHOH+H2
+- equation: CH3C6H4CH(OH)CH3 + O <=> CH3C6H4C(OH)CH3 + OH  # Reaction 18188
+  rate-constant: {A: 4.2e+11, b: 0.0, Ea: -2000.0}
+  note: <estimated(t')>!  *1 CH3C6H4CH2OH+B1O=CH3C6H4CHOH+R2OH
+- equation: CH3C6H4CH(OH)CH3 + O2 <=> HO2 + CH3C6H4C(OH)CH3  # Reaction 18189
+  rate-constant: {A: 1.4e+12, b: 0.0, Ea: 3.4e+04}
+  note: RODA <estimated(aaa)>! *1 CH3C6H4CH2OH+O2=R3OOH+CH3C6H4CHOH
+- equation: CH3C6H4CH(OH)CH3 + OH <=> CH3C6H4C(OH)CH3 + H2O  # Reaction 18190
+  rate-constant: {A: 3.5e+09, b: 1.0, Ea: -1130.0}
+  note: <estimated(t')>!  *1 CH3C6H4CH2OH+R2OH=CH3C6H4CHOH+H2O
+- equation: CH3C6H4CH(OH)CH3 + HO2 <=> CH3C6H4C(OH)CH3 + H2O2  # Reaction 18191
+  rate-constant: {A: 2.7e+11, b: 0.0, Ea: 1.2e+04}
+  note: <estimated(t')>!  *1 CH3C6H4CH2OH+R3OOH=CH3C6H4CHOH+H2O2
+- equation: CH3C6H4CH(OH)CH3 + CH3 <=> CH3C6H4C(OH)CH3 + CH4  # Reaction 18192
+  rate-constant: {A: 1.1e+12, b: 0.0, Ea: 9100.0}
+  note: <estimated(t')>!  *1 CH3C6H4CH2OH+R4CH3=CH3C6H4CHOH+CH4
+- equation: CH3C6H4CH(OH)CH3 + C6H5 <=> CH3C6H4C(OH)CH3 + C6H6  # Reaction 18193
+  rate-constant: {A: 5.2e+13, b: 0.0, Ea: 1.0e+04}
+  note: |-
+    CH3C6H4CH(OH)CH3+.C3H5Y=CH3C6H4C(OH)CH3+C3H6Y	       1.1E12	0.0	13.1E3  !<estimated(t')>!  *1 CH3C6H4CH2OH+.C3H5Y=CH3C6H4CHOH+C3H6Y
+    CH3C6H4CH(OH)CH3+iC4H5=CH3C6H4C(OH)CH3+C4H6Z2	       1.1E12	0.0	13.1E3  !<estimated(t')>!  *1 CH3C6H4CH2OH+iC4H5=CH3C6H4CHOH+C4H6Z2
+    CH3C6H4CH(OH)CH3+nC4H5=CH3C6H4C(OH)CH3+C4H6Z2	       1.112	0.0	13.1E3  !<estimated(t')>!  *1 CH3C6H4CH2OH+nC4H5=CH3C6H4CHOH+C4H6Z2
+    <estimated(t')>!  *1 CH3C6H4CH2OH+C6H5#=CH3C6H4CHOH+C6H6#
+- equation: CH3C6H4CH(OH)CH3 + CH3C6H4 <=> CH3C6H4C(OH)CH3 + C7H8  # Reaction 18194
+  rate-constant: {A: 5.2e+13, b: 0.0, Ea: 1.0e+04}
+  note: <estimated(t')>! *1 CH3C6H4CH2OH+C6H4CH3=CH3C6H4CHOH+toluene
+- equation: CH3C6H4CH(OH)CH3 + C6H5O <=> CH3C6H4C(OH)CH3 + C6H5OH  # Reaction 18195
+  rate-constant: {A: 1.1e+11, b: 0.0, Ea: 1.31e+04}
+  note: <estimated(t')>!   *1 CH3C6H4CH2OH+C6H5O#=CH3C6H4CHOH+C6H5OH#
+- equation: CH3C6H4CH(OH)CH3 + C7H7 <=> CH3C6H4C(OH)CH3 + C7H8  # Reaction 18196
+  rate-constant: {A: 1.1e+11, b: 0.0, Ea: 1.31e+04}
+  note: <estimated(t')>!  *1 CH3C6H4CH2OH+benzyl=CH3C6H4CHOH+toluene
+- equation: CH3C6H4CH(OH)CH3 + RXYLENE <=> CH3C6H4C(OH)CH3 + MXYLENE  # Reaction 18197
+  rate-constant: {A: 1.1e+11, b: 0.0, Ea: 1.31e+04}
+  note: <estimated(t')>!  *1 CH3C6H4CH2OH+m-methylbenzyl=CH3C6H4CHOH+m-xylene
+- equation: CH3C6H4CH(OH)CH3 + m-CH3C6H4CHCH3 <=> CH3C6H4C(OH)CH3 + m-CH3C6H4CH2CH3  # Reaction 18198
+  rate-constant: {A: 1.1e+11, b: 0.0, Ea: 1.31e+04}
+  note: <estimated(t')>!  *1 CH3C6H4CH2OH+m-methylbenzyl=CH3C6H4CHOH+m-xylene
+- equation: CH3C6H4CH(OH)CH3 + m-CH3C6H4CH2CH2 <=> CH3C6H4C(OH)CH3 + m-CH3C6H4CH2CH3  # Reaction 18199
+  rate-constant: {A: 1.1e+11, b: 0.0, Ea: 1.31e+04}
+  note: <estimated(t')>!  *1 CH3C6H4CH2OH+m-methylbenzyl=CH3C6H4CHOH+m-xylene
+- equation: CH3C6H4CH(OH)CH3 + m-CH2C6H4CH2CH3 <=> CH3C6H4C(OH)CH3 + m-CH3C6H4CH2CH3  # Reaction 18200
+  rate-constant: {A: 1.1e+11, b: 0.0, Ea: 1.31e+04}
+  note: <estimated(t')>!  *1 CH3C6H4CH2OH+m-methylbenzyl=CH3C6H4CHOH+m-xylene
+- equation: CH3C6H4CH(OH)CH3 + OC6H4CH3 <=> CH3C6H4C(OH)CH3 + CRESOL  # Reaction 18201
+  rate-constant: {A: 1.1e+11, b: 0.0, Ea: 1.31e+04}
+  note: <estimated(t')>!  *1 CH3C6H4CH2OH+OC6H4CH3=CH3C6H4CHOH+HOC6H4CH3
+- equation: CH3C6H4CH(OH)CH3 + HOC6H4CH2 <=> CH3C6H4C(OH)CH3 + CRESOL  # Reaction 18202
+  rate-constant: {A: 1.1e+11, b: 0.0, Ea: 1.31e+04}
+  note: <estimated(t')>!  *1 CH3C6H4CH2OH+HOC6H4CH2=CH3C6H4CHOH+HOC6H4CH3
+- equation: CH3C6H4CH(OH)CH3 + C5H5 <=> CH3C6H4C(OH)CH3 + C5H6  # Reaction 18203
+  rate-constant: {A: 1.1e+11, b: 0.0, Ea: 1.31e+04}
+  note: <estimated(t')>!  *1 CH3C6H4CH2OH+C5H5#=CH3C6H4CHOH+C5H6#
+- equation: CH3C6H4C(OH)CH3 <=> CH3C6H4C(O)CH3 + H  # Reaction 18204
+  rate-constant: {A: 2.0e+14, b: 0.0, Ea: 2.33e+04}
+  note: <asC2H5O>!  *1 CH3C6H4CHOH=CH3C6H4CHO+R1H
+- equation: CH3C6H4CH2CH2OH + H <=> CH3C6H4CH2CHOH + H2  # Reaction 18205
+  rate-constant: {A: 8.0e+13, b: 0.0, Ea: 6400.0}
+  note: <estimated(t')>!  *1 CH3C6H4CH2OH+R1H=CH3C6H4CHOH+H2
+- equation: CH3C6H4CH2CH2OH + O <=> CH3C6H4CH2CHOH + OH  # Reaction 18206
+  rate-constant: {A: 4.2e+11, b: 0.0, Ea: -2000.0}
+  note: <estimated(t')>!  *1 CH3C6H4CH2OH+B1O=CH3C6H4CHOH+R2OH
+- equation: CH3C6H4CH2CH2OH + O2 <=> HO2 + CH3C6H4CH2CHOH  # Reaction 18207
+  rate-constant: {A: 1.4e+12, b: 0.0, Ea: 3.4e+04}
+  note: RODA <estimated(aaa)>! *1 CH3C6H4CH2OH+O2=R3OOH+CH3C6H4CHOH
+- equation: CH3C6H4CH2CH2OH + OH <=> CH3C6H4CH2CHOH + H2O  # Reaction 18208
+  rate-constant: {A: 3.5e+09, b: 1.0, Ea: -1130.0}
+  note: <estimated(t')>!  *1 CH3C6H4CH2OH+R2OH=CH3C6H4CHOH+H2O
+- equation: CH3C6H4CH2CH2OH + HO2 <=> CH3C6H4CH2CHOH + H2O2  # Reaction 18209
+  rate-constant: {A: 2.7e+11, b: 0.0, Ea: 1.2e+04}
+  note: <estimated(t')>!  *1 CH3C6H4CH2OH+R3OOH=CH3C6H4CHOH+H2O2
+- equation: CH3C6H4CH2CH2OH + CH3 <=> CH3C6H4CH2CHOH + CH4  # Reaction 18210
+  rate-constant: {A: 1.1e+12, b: 0.0, Ea: 9100.0}
+  note: <estimated(t')>!  *1 CH3C6H4CH2OH+R4CH3=CH3C6H4CHOH+CH4
+- equation: CH3C6H4CH2CH2OH + C6H5 <=> CH3C6H4CH2CHOH + C6H6  # Reaction 18211
+  rate-constant: {A: 5.2e+13, b: 0.0, Ea: 1.0e+04}
+  note: |-
+    CH3C6H4CH2CH2OH+.C3H5Y=CH3C6H4CH2CHOH+C3H6Y	       1.1E12	0.0	13.1E3  !<estimated(t')>!  *1 CH3C6H4CH2OH+.C3H5Y=CH3C6H4CHOH+C3H6Y
+    CH3C6H4CH2CH2OH+iC4H5=CH3C6H4CH2CHOH+C4H6Z2	       1.1E12	0.0	13.1E3  !<estimated(t')>!  *1 CH3C6H4CH2OH+iC4H5=CH3C6H4CHOH+C4H6Z2
+    CH3C6H4CH2CH2OH+nC4H5=CH3C6H4CH2CHOH+C4H6Z2	       1.112	0.0	13.1E3  !<estimated(t')>!  *1 CH3C6H4CH2OH+nC4H5=CH3C6H4CHOH+C4H6Z2
+    <estimated(t')>!  *1 CH3C6H4CH2OH+C6H5#=CH3C6H4CHOH+C6H6#
+- equation: CH3C6H4CH2CH2OH + CH3C6H4 <=> CH3C6H4CH2CHOH + C7H8  # Reaction 18212
+  rate-constant: {A: 5.2e+13, b: 0.0, Ea: 1.0e+04}
+  note: <estimated(t')>! *1 CH3C6H4CH2OH+C6H4CH3=CH3C6H4CHOH+toluene
+- equation: CH3C6H4CH2CH2OH + C6H5O <=> CH3C6H4CH2CHOH + C6H5OH  # Reaction 18213
+  rate-constant: {A: 1.1e+11, b: 0.0, Ea: 1.31e+04}
+  note: <estimated(t')>!   *1 CH3C6H4CH2OH+C6H5O#=CH3C6H4CHOH+C6H5OH#
+- equation: CH3C6H4CH2CH2OH + C7H7 <=> CH3C6H4CH2CHOH + C7H8  # Reaction 18214
+  rate-constant: {A: 1.1e+11, b: 0.0, Ea: 1.31e+04}
+  note: <estimated(t')>!  *1 CH3C6H4CH2OH+benzyl=CH3C6H4CHOH+toluene
+- equation: CH3C6H4CH2CH2OH + RXYLENE <=> CH3C6H4CH2CHOH + MXYLENE  # Reaction 18215
+  rate-constant: {A: 1.1e+11, b: 0.0, Ea: 1.31e+04}
+  note: <estimated(t')>!  *1 CH3C6H4CH2OH+m-methylbenzyl=CH3C6H4CHOH+m-xylene
+- equation: CH3C6H4CH2CH2OH + m-CH3C6H4CHCH3 <=> CH3C6H4CH2CHOH + m-CH3C6H4CH2CH3  # Reaction 18216
+  rate-constant: {A: 1.1e+11, b: 0.0, Ea: 1.31e+04}
+  note: <estimated(t')>!  *1 CH3C6H4CH2OH+m-methylbenzyl=CH3C6H4CHOH+m-xylene
+- equation: CH3C6H4CH2CH2OH + m-CH3C6H4CH2CH2 <=> CH3C6H4CH2CHOH + m-CH3C6H4CH2CH3  # Reaction 18217
+  rate-constant: {A: 1.1e+11, b: 0.0, Ea: 1.31e+04}
+  note: <estimated(t')>!  *1 CH3C6H4CH2OH+m-methylbenzyl=CH3C6H4CHOH+m-xylene
+- equation: CH3C6H4CH2CH2OH + m-CH2C6H4CH2CH3 <=> CH3C6H4CH2CHOH + m-CH3C6H4CH2CH3  # Reaction 18218
+  rate-constant: {A: 1.1e+11, b: 0.0, Ea: 1.31e+04}
+  note: <estimated(t')>!  *1 CH3C6H4CH2OH+m-methylbenzyl=CH3C6H4CHOH+m-xylene
+- equation: CH3C6H4CH2CH2OH + OC6H4CH3 <=> CH3C6H4CH2CHOH + CRESOL  # Reaction 18219
+  rate-constant: {A: 1.1e+11, b: 0.0, Ea: 1.31e+04}
+  note: <estimated(t')>!  *1 CH3C6H4CH2OH+OC6H4CH3=CH3C6H4CHOH+HOC6H4CH3
+- equation: CH3C6H4CH2CH2OH + HOC6H4CH2 <=> CH3C6H4CH2CHOH + CRESOL  # Reaction 18220
+  rate-constant: {A: 1.1e+11, b: 0.0, Ea: 1.31e+04}
+  note: <estimated(t')>!  *1 CH3C6H4CH2OH+HOC6H4CH2=CH3C6H4CHOH+HOC6H4CH3
+- equation: CH3C6H4CH2CH2OH + C5H5 <=> CH3C6H4CH2CHOH + C5H6  # Reaction 18221
+  rate-constant: {A: 1.1e+11, b: 0.0, Ea: 1.31e+04}
+  note: <estimated(t')>!  *1 CH3C6H4CH2OH+C5H5#=CH3C6H4CHOH+C5H6#
+- equation: CH3C6H4CH2CHOH <=> CH3C6H4CH2CHO + H  # Reaction 18222
+  rate-constant: {A: 2.0e+14, b: 0.0, Ea: 2.33e+04}
+  note: <asC2H5O>!  *1 CH3C6H4CHOH=CH3C6H4CHO+R1H
+- equation: CH2OHC6H4CH2CH3 + H <=> CHOHC6H4CH2CH3 + H2  # Reaction 18223
+  rate-constant: {A: 8.0e+13, b: 0.0, Ea: 6400.0}
+  note: <estimated(t')>!  *1 CH3C6H4CH2OH+R1H=CH3C6H4CHOH+H2
+- equation: CH2OHC6H4CH2CH3 + O <=> CHOHC6H4CH2CH3 + OH  # Reaction 18224
+  rate-constant: {A: 4.2e+11, b: 0.0, Ea: -2000.0}
+  note: <estimated(t')>!  *1 CH3C6H4CH2OH+B1O=CH3C6H4CHOH+R2OH
+- equation: CH2OHC6H4CH2CH3 + O2 <=> HO2 + CHOHC6H4CH2CH3  # Reaction 18225
+  rate-constant: {A: 1.4e+12, b: 0.0, Ea: 3.4e+04}
+  note: RODA <estimated(aaa)>! *1 CH3C6H4CH2OH+O2=R3OOH+CH3C6H4CHOH
+- equation: CH2OHC6H4CH2CH3 + OH <=> CHOHC6H4CH2CH3 + H2O  # Reaction 18226
+  rate-constant: {A: 3.5e+09, b: 1.0, Ea: -1130.0}
+  note: <estimated(t')>!  *1 CH3C6H4CH2OH+R2OH=CH3C6H4CHOH+H2O
+- equation: CH2OHC6H4CH2CH3 + HO2 <=> CHOHC6H4CH2CH3 + H2O2  # Reaction 18227
+  rate-constant: {A: 2.7e+11, b: 0.0, Ea: 1.2e+04}
+  note: <estimated(t')>!  *1 CH3C6H4CH2OH+R3OOH=CH3C6H4CHOH+H2O2
+- equation: CH2OHC6H4CH2CH3 + CH3 <=> CHOHC6H4CH2CH3 + CH4  # Reaction 18228
+  rate-constant: {A: 1.1e+12, b: 0.0, Ea: 9100.0}
+  note: <estimated(t')>!  *1 CH3C6H4CH2OH+R4CH3=CH3C6H4CHOH+CH4
+- equation: CH2OHC6H4CH2CH3 + C6H5 <=> CHOHC6H4CH2CH3 + C6H6  # Reaction 18229
+  rate-constant: {A: 5.2e+13, b: 0.0, Ea: 1.0e+04}
+  note: |-
+    CH2OHC6H4CH2CH3+.C3H5Y=CHOHC6H4CH2CH3+C3H6Y	       1.1E12	0.0	13.1E3  !<estimated(t')>!  *1 CH3C6H4CH2OH+.C3H5Y=CH3C6H4CHOH+C3H6Y
+    CH2OHC6H4CH2CH3+iC4H5=CHOHC6H4CH2CH3+C4H6Z2	       1.1E12	0.0	13.1E3  !<estimated(t')>!  *1 CH3C6H4CH2OH+iC4H5=CH3C6H4CHOH+C4H6Z2
+    CH2OHC6H4CH2CH3+nC4H5=CHOHC6H4CH2CH3+C4H6Z2	       1.112	0.0	13.1E3  !<estimated(t')>!  *1 CH3C6H4CH2OH+nC4H5=CH3C6H4CHOH+C4H6Z2
+    <estimated(t')>!  *1 CH3C6H4CH2OH+C6H5#=CH3C6H4CHOH+C6H6#
+- equation: CH2OHC6H4CH2CH3 + CH3C6H4 <=> CHOHC6H4CH2CH3 + C7H8  # Reaction 18230
+  rate-constant: {A: 5.2e+13, b: 0.0, Ea: 1.0e+04}
+  note: <estimated(t')>! *1 CH3C6H4CH2OH+C6H4CH3=CH3C6H4CHOH+toluene
+- equation: CH2OHC6H4CH2CH3 + C6H5O <=> CHOHC6H4CH2CH3 + C6H5OH  # Reaction 18231
+  rate-constant: {A: 1.1e+11, b: 0.0, Ea: 1.31e+04}
+  note: <estimated(t')>!   *1 CH3C6H4CH2OH+C6H5O#=CH3C6H4CHOH+C6H5OH#
+- equation: CH2OHC6H4CH2CH3 + C7H7 <=> CHOHC6H4CH2CH3 + C7H8  # Reaction 18232
+  rate-constant: {A: 1.1e+11, b: 0.0, Ea: 1.31e+04}
+  note: <estimated(t')>!  *1 CH3C6H4CH2OH+benzyl=CH3C6H4CHOH+toluene
+- equation: CH2OHC6H4CH2CH3 + RXYLENE <=> CHOHC6H4CH2CH3 + MXYLENE  # Reaction 18233
+  rate-constant: {A: 1.1e+11, b: 0.0, Ea: 1.31e+04}
+  note: <estimated(t')>!  *1 CH3C6H4CH2OH+m-methylbenzyl=CH3C6H4CHOH+m-xylene
+- equation: CH2OHC6H4CH2CH3 + m-CH3C6H4CHCH3 <=> CHOHC6H4CH2CH3 + m-CH3C6H4CH2CH3  # Reaction 18234
+  rate-constant: {A: 1.1e+11, b: 0.0, Ea: 1.31e+04}
+  note: <estimated(t')>!  *1 CH3C6H4CH2OH+m-methylbenzyl=CH3C6H4CHOH+m-xylene
+- equation: CH2OHC6H4CH2CH3 + m-CH3C6H4CH2CH2 <=> CHOHC6H4CH2CH3 + m-CH3C6H4CH2CH3  # Reaction 18235
+  rate-constant: {A: 1.1e+11, b: 0.0, Ea: 1.31e+04}
+  note: <estimated(t')>!  *1 CH3C6H4CH2OH+m-methylbenzyl=CH3C6H4CHOH+m-xylene
+- equation: CH2OHC6H4CH2CH3 + m-CH2C6H4CH2CH3 <=> CHOHC6H4CH2CH3 + m-CH3C6H4CH2CH3  # Reaction 18236
+  rate-constant: {A: 1.1e+11, b: 0.0, Ea: 1.31e+04}
+  note: <estimated(t')>!  *1 CH3C6H4CH2OH+m-methylbenzyl=CH3C6H4CHOH+m-xylene
+- equation: CH2OHC6H4CH2CH3 + OC6H4CH3 <=> CHOHC6H4CH2CH3 + CRESOL  # Reaction 18237
+  rate-constant: {A: 1.1e+11, b: 0.0, Ea: 1.31e+04}
+  note: <estimated(t')>!  *1 CH3C6H4CH2OH+OC6H4CH3=CH3C6H4CHOH+HOC6H4CH3
+- equation: CH2OHC6H4CH2CH3 + HOC6H4CH2 <=> CHOHC6H4CH2CH3 + CRESOL  # Reaction 18238
+  rate-constant: {A: 1.1e+11, b: 0.0, Ea: 1.31e+04}
+  note: <estimated(t')>!  *1 CH3C6H4CH2OH+HOC6H4CH2=CH3C6H4CHOH+HOC6H4CH3
+- equation: CH2OHC6H4CH2CH3 + C5H5 <=> CHOHC6H4CH2CH3 + C5H6  # Reaction 18239
+  rate-constant: {A: 1.1e+11, b: 0.0, Ea: 1.31e+04}
+  note: <estimated(t')>!  *1 CH3C6H4CH2OH+C5H5#=CH3C6H4CHOH+C5H6#
+- equation: CHOHC6H4CH2CH3 <=> CHOC6H4CH2CH3 + H  # Reaction 18240
+  rate-constant: {A: 2.0e+14, b: 0.0, Ea: 2.33e+04}
+  note: <asC2H5O>!  *1 CH3C6H4CHOH=CH3C6H4CHO+R1H
+- equation: CH3styrene + O <=> C7H7 + CH2CHO  # Reaction 18241
+  rate-constant: {A: 3.0e+08, b: 1.45, Ea: 900.0}
+  note: |-
+    **********************************************************!
+    *REACTIONS OF CH3STYRENE AND DERIVED RADICALS*!
+    **********************************************************!
+    <asbutadiene/2>!styrene+B1O=C6H5#+R13CH2CHO
+- equation: CH3styrene + OH <=> RXYLENE + CH2O  # Reaction 18242
+  rate-constant: {A: 1.4e+12, b: 0.0, Ea: -900.0}
+  note: |-
+    CH3styrene+OH=o-methylbenzyl+CH2O              1.4E12       0.0        -0.9E3 !<as butadiene/2!styrene+R2OH=benzyl+HCHO
+    <as butadiene/2!styrene+R2OH=benzyl+HCHO
+- equation: CH3styrene + OH <=> CH3C6H4CHO + CH3  # Reaction 18243
+  rate-constant: {A: 2.8e+12, b: 0.0, Ea: -900.0}
+  note: |-
+    CH3styrene+R2OH=p-methylbenzyl+CH2O              1.4E12       0.0        -0.9E3 !<as butadiene/2!styrene+R2OH=benzyl+HCHO
+    <as butadiene/2!styrene+R2OH=C6H5CHO+R4CH3
+- equation: CH3styrene + O2 <=> HO2 + CH3C6H4C2H2  # Reaction 18244
+  rate-constant: {A: 2.0e+13, b: 0.0, Ea: 5.79e+04}
+  note: <asbutadiene/2>!styrene+O2=R3OOH+C6H5C2H2
+- equation: CH3styrene + H <=> CH3C6H4C2H2 + H2  # Reaction 18245
+  rate-constant: {A: 6.6e+05, b: 2.53, Ea: 9200.0}
+  note: <as butadiene/2>!styrene+R1H=C6H5C2H2+H2
+- equation: CH3styrene + OH <=> CH3C6H4C2H2 + H2O  # Reaction 18246
+  rate-constant: {A: 1.5e+06, b: 2.0, Ea: 400.0}
+  note: <as butadiene/2>!styrene+R2OH=C6H5C2H2+H2O
+- equation: CH3styrene + CH3 <=> CH3C6H4C2H2 + CH4  # Reaction 18247
+  rate-constant: {A: 3.5e+13, b: 0.0, Ea: 1.55e+04}
+  note: <as butadiene/2>!styrene+R4CH3=C6H5C2H2+CH4
+- equation: CH3C6H4C2H2 + O2 <=> CH3C6H4CO + CH2O  # Reaction 18248
+  rate-constant: {A: 4.5e+16, b: -1.39, Ea: 1000.0}
+  note: <asMebel C2H3+O2>! **C6H5C2H2+O2=C6H5CO+HCHO
+- equation: CH3styrene <=> CH2styrene + H  # Reaction 18249
+  rate-constant: {A: 1.0e+15, b: 0.0, Ea: 8.89e+04}
+  note: <HIPPLER90-1>!toluene = benzyl+ R1H
+- equation: CH3styrene + O2 <=> CH2styrene + HO2  # Reaction 18250
+  rate-constant: {A: 2.1e+12, b: 0.0, Ea: 3.86e+04}
+  note: <estimated(aaa)>!toluene+O2=benzyl+R3OOH
+- equation: CH3styrene + H <=> C6H5C2H3 + CH3  # Reaction 18251
+  rate-constant: {A: 5.8e+13, b: 0.0, Ea: 8100.0}
+  note: <BAULCH94>!toluene+R1H=C6H6#+R4CH3
+- equation: CH3styrene + H <=> CH2styrene + H2  # Reaction 18252
+  rate-constant: {A: 1.2e+14, b: 0.0, Ea: 8400.0}
+  note: <HIPPLER90-1>!toluene+R1H=benzyl+H2
+- equation: CH3styrene + O <=> CH2styrene + OH  # Reaction 18253
+  rate-constant: {A: 6.3e+11, b: 0.0, Ea: 0.0}
+  note: <HOFFMANN90>!toluene+B1O=benzyl+R2OH
+- equation: CH3styrene + OH <=> CH2styrene + H2O  # Reaction 18254
+  rate-constant: {A: 5.2e+09, b: 1.0, Ea: 870.0}
+  note: <BAULCH94>!toluene+R2OH=benzyl+H2O
+- equation: CH3styrene + HO2 <=> CH2styrene + H2O2  # Reaction 18255
+  rate-constant: {A: 4.0e+11, b: 0.0, Ea: 1.4e+04}
+  note: <BAULCH94>!toluene+R3OOH=benzyl+H2O2
+- equation: CH3styrene + CH3 <=> CH2styrene + CH4  # Reaction 18256
+  rate-constant: {A: 1.6e+12, b: 0.0, Ea: 1.11e+04}
+  note: <COLKET94>!toluene+R4CH3=benzyl+CH4
+- equation: CH3styrene + C2H3 <=> CH2styrene + C2H4  # Reaction 18257
+  rate-constant: {A: 4.0e+12, b: 0.0, Ea: 8000.0}
+  note: <COLKET94>!toluene+R10C2H3V=benzyl+C2H4Z
+- equation: CH2styrene => C7H7 + C2H2  # Reaction 18258
+  rate-constant: {A: 6.0e+13, b: 0.0, Ea: 7.0e+04}
+  note: <Colket94>!benzyl=>C5H5#+C2H2T
+- equation: C6H4CH2CH3 + H (+M) <=> C6H5C2H5 (+M)  # Reaction 18259
+  type: falloff
+  low-P-rate-constant: {A: 6.6e+75, b: -16.3, Ea: 7000.0}
+  high-P-rate-constant: {A: 1.0e+14, b: 0.0, Ea: 0.0}
+  Troe: {A: 1.0, T3: 0.1, T1: 584.9, T2: 6113.0}
+  efficiencies: {H2: 2.0, H2O: 6.0, CH4: 2.0, CO: 1.5, CO2: 2.0, C2H6: 3.0}
+  note: Refer to  A1-+H(+M)=A1(+M)  Yuan ethylbenzene model
+  
+- equation: m-CH3C6H4CH2CH3 + O2 <=> ph(CH3)CH2CH3 + HO2  # Reaction 18260
+  rate-constant: {A: 8.17E+12, b: 0.0, Ea: 63061.80}
+### C2H4 submodel reactions based on theoretical calculations for this work by SJ Klippenstein and Raghu Sivaramakrishnan added here:
+
+- equation: C2H4 <=> CH2C + H2            # Reaction 18261  (SJ Klippenstein and Raghu Sivaramakrishnan)
+  type: pressure-dependent-Arrhenius
+  rate-constants:
+  - { P: 0.003 atm, A: 6.49e+45, b: -9.908, Ea: 1.0692e+05 }
+  - { P: 0.010 atm, A: 3.23e+45, b: -9.670, Ea: 1.0747e+05 }
+  - { P: 0.030 atm, A: 9.68e+44, b: -9.384, Ea: 1.0791e+05 }
+  - { P: 0.100 atm, A: 1.22e+44, b: -8.982, Ea: 1.0829e+05 }
+  - { P: 0.300 atm, A: 6.28e+42, b: -8.488, Ea: 1.0842e+05 }
+  - { P: 1.000 atm, A: 8.30e+40, b: -7.822, Ea: 1.0830e+05 }
+  - { P: 3.000 atm, A: 3.90e+38, b: -7.051, Ea: 1.0778e+05 }
+  - { P: 10.000 atm, A: 3.24e+35, b: -6.070, Ea: 1.0680e+05 }
+  - { P: 30.000 atm, A: 1.62e+32, b: -5.051, Ea: 1.0551e+05 }
+  - { P: 100.000 atm, A: 2.11e+28, b: -3.873, Ea: 1.0379e+05 }
+- equation: CH2C => C2H2                        # Reaction 18262  (SJ Klippenstein and Raghu Sivaramakrishnan) 
+  rate-constant: {A: 1.00e+07, b: 0.0, Ea: 0.0}e+11, b: 0.0, Ea: 1.51e+04}
   note: |-
     OHph(CH3)CH2CH3+o-methylbenzyl=HOC6H3(CH3)CHCH3+o-xylene	1.6E11	    0.0       15.1E3   !<estimated(t)>!  par rapport au toluene  HOC6H3(CH3)2+o-methylbenzyl=CH3HOC6H3CH2+o-xylene
     <estimated(t)>!  par rapport au toluene  HOC6H3(CH3)2+m-methylbenzyl=CH3HOC6H3CH2+m-xylene

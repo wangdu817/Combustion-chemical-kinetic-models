@@ -15,7 +15,7 @@ Yann Fenard, Adrià Gil, Guillaume Vanhove, Hans-Heinrich Carstensen, Kevin M. V
 - Paper PDF link: 
 - Fuel type: furan_tetrahydrofuran
 - Plasma-related mechanism: no
-- Validation reactor/type from abstract: not clear from abstract
+- Validation reactor/type from abstract: shock tube, jet-stirred reactor, burner/flame structure, stirred reactor
 
 ## Mechanism Files
 
@@ -42,7 +42,7 @@ Yann Fenard, Adrià Gil, Guillaume Vanhove, Hans-Heinrich Carstensen, Kevin M. V
 
 ## Abstract
 
-not available
+The first detailed kinetic model of the low-temperature oxidation of tetrahydrofuran has been developed. Thermochemical and kinetic data related to the most important elementary reactions have been derived from ab initio calculations at the CBS-QB3 level of theory. A comparison of the rate constants at 600 K, obtained from these calculations with values estimated using recently published rate rules for alkanes, sometimes show differences of several orders of magnitude for alkylperoxy radical isomerizations, HO2-eliminations, and oxirane formations. The new model satisfactorily reproduces previously published ignition delay times obtained in a rapid-compression machine and in a shock tube, as well as numerous product mole fractions measured in a jet-stirred reactor at low to intermediate temperatures and in a low-pressure laminar premixed flame. To highlight the most significant reaction pathways, flow-rate and sensitivity analyses have been performed with this new model.
 
 ## Processing Notes
 

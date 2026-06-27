@@ -22,8 +22,8 @@ Xiang Gao, Du Wang, Hong-Qing Shi, Xu-Peng Yu, ... Zhen-Yu Tian. Experimental an
 - Standard mechanism file: chem.inp
 - Standard thermodynamic file: therm.dat
 - Standard transport file: not available
-- Original mechanism source files: _processing\extracted\s001021802500687x_mmc2\mmc2.inp
-- Original thermodynamic source files: _processing\extracted\s001021802500687x_mmc3\mmc3.txt
+- Original mechanism source files: _processing/extracted/s001021802500687x_mmc2/mmc2.inp
+- Original thermodynamic source files: _processing/extracted/s001021802500687x_mmc3/mmc3.txt
 - Original transport source files: not found
 
 ## Cantera Preprocessing Results
@@ -46,4 +46,6 @@ Highlights • High-pressure oxidation of a RP-3 surrogate fuel with three C9H12
 
 ## Processing Notes
 
-- none
+- extracted S001021802500687X_mmc4.xlsx
+- extracted S001021802500687X_mmc2.zip
+- extracted S001021802500687X_mmc3.zip

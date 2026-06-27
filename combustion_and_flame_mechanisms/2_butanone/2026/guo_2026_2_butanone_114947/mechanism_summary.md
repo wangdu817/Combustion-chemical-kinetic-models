@@ -22,9 +22,9 @@ Liqing Guo, Shusen Wang, Qianjin Lin, Bo Wei, ... Alexander A. Konnov. Measureme
 - Standard mechanism file: chem.inp
 - Standard thermodynamic file: therm.dat
 - Standard transport file: tran.dat
-- Original mechanism source files: _processing\extracted\s0010218026001835_mmc3\Butanone_V4MECH.inp
-- Original thermodynamic source files: _processing\extracted\s0010218026001835_mmc4\Butanone_V4THER.dat
-- Original transport source files: _processing\extracted\s0010218026001835_mmc5\Butanone_V4TRAN.dat
+- Original mechanism source files: _processing/extracted/s0010218026001835_mmc3/Butanone_V4MECH.inp
+- Original thermodynamic source files: _processing/extracted/s0010218026001835_mmc4/Butanone_V4THER.dat
+- Original transport source files: _processing/extracted/s0010218026001835_mmc5/Butanone_V4TRAN.dat
 
 ## Cantera Preprocessing Results
 
@@ -46,4 +46,6 @@ Laminar burning velocities (SL) of 2-butanone + air mixtures were measured using
 
 ## Processing Notes
 
-- none
+- extracted S0010218026001835_mmc4.zip
+- extracted S0010218026001835_mmc3.zip
+- extracted S0010218026001835_mmc5.zip

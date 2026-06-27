@@ -1104,7 +1104,7 @@ finally:
             [str(ANALYSIS_PYTHON), "-c", code, str(mech), str(thermo or ""), str(transport or ""), str(out_yaml), str(result_path)],
             text=True,
             capture_output=True,
-            timeout=900,
+            timeout=120,
         )
     except subprocess.TimeoutExpired as exc:
         log_path.write_text(
@@ -2215,23 +2215,28 @@ def process(force: bool = False, year: str | None = None) -> None:
         if mechanisms:
             if not record.get("paperPdfStatus"):
                 record["paperPdfStatus"] = "pending manual download; ScienceDirect PDF access triggered CAPTCHA or was not exposed"
-            for mech in sorted(mechanisms, key=mechanism_priority):
-                thermo = find_thermo_for(mech, thermos + mechanisms)
-                transport = find_transport_for(mech, transports)
-                result = process_with_cantera(mech, thermo, transport, folder, archive_folder)
-                processing_results.append(result)
-                if result.status in {"ok", "ok_after_cleanup"}:
-                    break
+            # Parallel Cantera conversion for all mechanism files
+            with concurrent.futures.ThreadPoolExecutor(max_workers=min(len(mechanisms), 8)) as executor:
+                futures = {}
+                for mech in sorted(mechanisms, key=mechanism_priority):
+                    thermo = find_thermo_for(mech, thermos + mechanisms)
+                    transport = find_transport_for(mech, transports)
+                    futures[executor.submit(process_with_cantera, mech, thermo, transport, folder, archive_folder)] = mech
+                for future in concurrent.futures.as_completed(futures):
+                    processing_results.append(future.result())
+            # Re-sort by mechanism_priority
+            processing_results.sort(key=lambda r: mechanism_priority(Path(r.standardized_mech or r.cantera_yaml or "") or Path()))
             write_summary(record, folder, mechanisms, thermos, transports, processing_results, extraction_notes)
         elif cantera:
             folder.mkdir(parents=True, exist_ok=True)
             if not record.get("paperPdfStatus"):
                 record["paperPdfStatus"] = "pending manual download; ScienceDirect PDF access triggered CAPTCHA or was not exposed"
-            for mech in sorted(cantera, key=mechanism_priority):
-                result = process_with_cantera(mech, None, None, folder, archive_folder)
-                processing_results.append(result)
-                if result.status in {"ok", "ok_after_cleanup"}:
-                    break
+            with concurrent.futures.ThreadPoolExecutor(max_workers=min(len(cantera), 8)) as executor:
+                futures = {}
+                for mech in sorted(cantera, key=mechanism_priority):
+                    futures[executor.submit(process_with_cantera, mech, None, None, folder, archive_folder)] = mech
+                for future in concurrent.futures.as_completed(futures):
+                    processing_results.append(future.result())
             write_summary(record, folder, cantera, thermos, transports, processing_results, extraction_notes + ["Cantera file detected"])
         elif candidate:
             pass

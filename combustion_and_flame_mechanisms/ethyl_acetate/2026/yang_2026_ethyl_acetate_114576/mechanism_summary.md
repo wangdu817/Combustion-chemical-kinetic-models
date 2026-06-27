@@ -22,9 +22,9 @@ Jie Yang, Shubao Song, Lin Zhang, Hengrui Liu, ... Jiankun Shao. Experimental an
 - Standard mechanism file: chem.inp
 - Standard thermodynamic file: therm.dat
 - Standard transport file: tran.dat
-- Original mechanism source files: _processing\extracted\s0010218025006133_mmc5\Current mech.inp
-- Original thermodynamic source files: _processing\extracted\s0010218025006133_mmc4\Current thermo.dat
-- Original transport source files: _processing\extracted\s0010218025006133_mmc3\Current.TRAN
+- Original mechanism source files: _processing/extracted/s0010218025006133_mmc5/Current mech.inp
+- Original thermodynamic source files: _processing/extracted/s0010218025006133_mmc4/Current thermo.dat
+- Original transport source files: _processing/extracted/s0010218025006133_mmc3/Current.TRAN
 
 ## Cantera Preprocessing Results
 
@@ -46,4 +46,8 @@ Ethyl acetate (EA) is not only a promising biofuel that offers new pathways for 
 
 ## Processing Notes
 
-- none
+- extracted S0010218025006133_mmc4.zip
+- extracted S0010218025006133_mmc1.xlsx
+- extracted S0010218025006133_mmc2.docx
+- extracted S0010218025006133_mmc5.zip
+- extracted S0010218025006133_mmc3.zip

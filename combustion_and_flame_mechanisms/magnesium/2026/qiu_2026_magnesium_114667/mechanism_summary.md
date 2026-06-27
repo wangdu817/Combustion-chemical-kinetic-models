@@ -22,8 +22,8 @@ Dongyang Qiu, Mohammad Zaid Kamil, Mohammad Alauddin, Lijuan Liu, ... Paul Amyot
 - Standard mechanism file: chem.inp
 - Standard thermodynamic file: therm.dat
 - Standard transport file: not available
-- Original mechanism source files: _processing\extracted\s0010218025007023_mmc1\S1_Mechanism_CHEMKIN.inp
-- Original thermodynamic source files: _processing\extracted\s0010218025007023_mmc2\S2_Thermo_CHEMKIN.dat
+- Original mechanism source files: _processing/extracted/s0010218025007023_mmc1/S1_Mechanism_CHEMKIN.inp
+- Original thermodynamic source files: _processing/extracted/s0010218025007023_mmc2/S2_Thermo_CHEMKIN.dat
 - Original transport source files: not found
 
 ## Cantera Preprocessing Results
@@ -46,4 +46,5 @@ not available
 
 ## Processing Notes
 
-- none
+- extracted S0010218025007023_mmc1.zip
+- extracted S0010218025007023_mmc2.zip

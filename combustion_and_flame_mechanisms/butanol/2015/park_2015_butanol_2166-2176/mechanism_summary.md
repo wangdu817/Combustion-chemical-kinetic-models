@@ -30,12 +30,12 @@ Sungwoo Park, Ossama Mannaa, Fethi Khaled, Rafik Bougacha, Morkous S. Mansour, A
 
 ### Mechanism 1
 
-- Status: cantera_failed
-- Species count: not parsed
-- Reaction count: not parsed
-- Message: InputError: Error while reading reaction in chem.inp starting on line 269: """ h2o2(+m)<=>oh+oh(+m) 2.00e+12 0.90 4.8749+04 low/ 3.658e+24 -2.30 4.8749+04/ troe/ 0.43 1e-30 1e+30/ ar/ 0.68/ o2/ 0.68/ h2/ 2.5/ co/ 1.9/ co2/ 3.8/ h2o/ 0.0/ he/ 0.0/ h2o2/ 5.2/ ch4/ 2/ c2h6/ 3/ """ could not convert string to float: '4.8749+04' Error while reading reaction in chem.inp starting on line 273: """ h2o2(+he)<=>oh+oh(+he) 2.00e+12 0.90 4.8749+04 low/ 1.609e+24 -2.30 4.8749+04/ troe/ 0.44 1e-30 1e+30/ """ could not convert string to float: '4.8749+04' Error while reading reaction in chem.inp starting on line 276: """ h2o2(+h2o)<=>oh+oh(+h2o) 2.00e+12 0.90 4.8749+04 low/ 1.865e+25 -2.30 4.8749+04/ troe/ 0.51 1e-30 1e+30/ """ could not convert string to float: '4.8749+04' Issue while reading reaction i ... [truncated; see _processing logs]
+- Status: ok_after_cleanup
+- Species count: 324
+- Reaction count: 2094
+- Message: normalized legacy numeric/reaction syntax; cantera conversion ok
 - Method: cantera
-- Cantera YAML: not available
+- Cantera YAML: mechanism.yaml
 - Standard chem.inp: chem.inp
 - Standard therm.dat: therm.dat
 - Standard tran.dat: tran.dat
@@ -58,8 +58,8 @@ Sungwoo Park, Ossama Mannaa, Fethi Khaled, Rafik Bougacha, Morkous S. Mansour, A
 
 ## Processing Notes
 
-- extracted S0010218015000176_mmc4.zip
-- extracted S0010218015000176_mmc2.zip
-- extracted S0010218015000176_mmc1.docx
 - extracted S0010218015000176_mmc3.zip
+- extracted S0010218015000176_mmc4.zip
 - extracted S0010218015000176_mmc5.zip
+- extracted S0010218015000176_mmc1.docx
+- extracted S0010218015000176_mmc2.zip

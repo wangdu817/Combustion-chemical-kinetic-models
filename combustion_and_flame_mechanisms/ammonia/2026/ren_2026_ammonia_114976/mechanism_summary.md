@@ -22,9 +22,9 @@ Ke Ren, Xiaoping Chen, Jiliang Ma. Development and numerical analysis of a detai
 - Standard mechanism file: chem.inp
 - Standard thermodynamic file: therm.dat
 - Standard transport file: tran.dat
-- Original mechanism source files: _processing\extracted\s0010218026002129_mmc2\Mechanism.yaml
-- Original thermodynamic source files: _processing\extracted\s0010218026002129_mmc2\Mechanism.yaml
-- Original transport source files: _processing\extracted\s0010218026002129_mmc2\Mechanism.yaml
+- Original mechanism source files: _processing/extracted/s0010218026002129_mmc2/Mechanism.yaml
+- Original thermodynamic source files: _processing/extracted/s0010218026002129_mmc2/Mechanism.yaml
+- Original transport source files: _processing/extracted/s0010218026002129_mmc2/Mechanism.yaml
 
 ## Cantera Preprocessing Results
 
@@ -46,4 +46,5 @@ Ammonia (NH3)/coal co-combustion has attracted increasing interest as a viable r
 
 ## Processing Notes
 
-- none
+- extracted S0010218026002129_mmc2.zip
+- extracted S0010218026002129_mmc1.docx

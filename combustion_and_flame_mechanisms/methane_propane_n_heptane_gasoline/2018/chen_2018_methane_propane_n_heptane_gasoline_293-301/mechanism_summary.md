@@ -30,9 +30,45 @@ Yulin Chen, Jyh-Yuan Chen. Towards improved automatic chemical kinetic model red
 
 ### Mechanism 1
 
+- Status: cantera_failed
+- Species count: 207
+- Reaction count: not parsed
+- Message: InputError: No transport data for species 'h'. No transport data for species 'h2'. No transport data for species 'o'. No transport data for species 'o2'. No transport data for species 'oh'. No transport data for species 'h2o'. No transport data for species 'n2'. No transport data for species 'co'. No transport data for species 'hco'. No transport data for species 'co2'. No transport data for species 'ch3'. No transport data for species 'ch4'. No transport data for species 'ho2'. No transport data for species 'h2o2'. No transport data for species 'ch2o'. No transport data for species 'ch3o'. No transport data for species 'c2h6'. No transport data for species 'c2h4'. No transport data for species 'c2h5'. No transport data for species 'ch2'. No transport data for species 'ch'. No transport da ... [truncated; see _processing logs]
+- Method: cantera
+- Cantera YAML: mechanism.yaml
+- Standard chem.inp: chem.inp
+- Standard therm.dat: therm.dat
+- Standard tran.dat: tran.dat
+
+### Mechanism 2
+
+- Status: cantera_failed
+- Species count: 282
+- Reaction count: not parsed
+- Message: InputError: No thermo data found for species 'H2' No thermo data found for species 'H' No thermo data found for species 'O' No thermo data found for species 'O2' No thermo data found for species 'OH' No thermo data found for species 'H2O' No thermo data found for species 'HO2' No thermo data found for species 'H2O2' No thermo data found for species 'CH2' No thermo data found for species 'CH2*' No thermo data found for species 'CH3' No thermo data found for species 'CH4' No thermo data found for species 'CO' No thermo data found for species 'CO2' No thermo data found for species 'HCO' No thermo data found for species 'CH2O' No thermo data found for species 'CH3O' No thermo data found for species 'C2H2' No thermo data found for species 'C2H3' No thermo data found for species 'C2H4' No thermo ... [truncated; see _processing logs]
+- Method: cantera
+- Cantera YAML: mechanism.yaml
+- Standard chem.inp: chem.inp
+- Standard therm.dat: therm.dat
+- Standard tran.dat: tran.dat
+
+### Mechanism 3
+
+- Status: cantera_failed
+- Species count: 593
+- Reaction count: not parsed
+- Message: InputError: No thermo data found for species 'H2' No thermo data found for species 'H' No thermo data found for species 'O' No thermo data found for species 'O2' No thermo data found for species 'OH' No thermo data found for species 'H2O' No thermo data found for species 'HO2' No thermo data found for species 'H2O2' No thermo data found for species 'CH2' No thermo data found for species 'CH2*' No thermo data found for species 'CH3' No thermo data found for species 'CH4' No thermo data found for species 'CO' No thermo data found for species 'CO2' No thermo data found for species 'HCO' No thermo data found for species 'CH2O' No thermo data found for species 'CH3O' No thermo data found for species 'C2H2' No thermo data found for species 'C2H3' No thermo data found for species 'C2H4' No thermo ... [truncated; see _processing logs]
+- Method: cantera
+- Cantera YAML: mechanism.yaml
+- Standard chem.inp: chem.inp
+- Standard therm.dat: therm.dat
+- Standard tran.dat: tran.dat
+
+### Mechanism 4
+
 - Status: ok
-- Species count: 27
-- Reaction count: 155
+- Species count: 207
+- Reaction count: 1858
 - Message: cantera conversion ok
 - Method: cantera
 - Cantera YAML: mechanism.yaml

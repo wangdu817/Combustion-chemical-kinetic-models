@@ -22,7 +22,7 @@ Claire M. Grégoire, Océane Clément, Olivier Mathieu, Eric L. Petersen, ... Gu
 - Standard mechanism file: chem.inp
 - Standard thermodynamic file: not available
 - Standard transport file: not available
-- Original mechanism source files: _processing\extracted\s0010218026002695_mmc1\chem_pro1oh.inp
+- Original mechanism source files: _processing/extracted/s0010218026002695_mmc1/chem_pro1oh.inp
 - Original thermodynamic source files: not found
 - Original transport source files: not found
 
@@ -46,9 +46,15 @@ The pyrolysis and oxidation of propan-1-ol were investigated in this work, provi
 
 ## Processing Notes
 
-- extracted S0010218026002695_mmc10.docx
-- extracted S0010218026002695_mmc11.zip
+- extracted S0010218026002695_mmc8.zip
 - extracted S0010218026002695_mmc12.docx
 - extracted S0010218026002695_mmc7.zip
-- extracted S0010218026002695_mmc8.zip
+- extracted S0010218026002695_mmc2.xlsx
+- extracted S0010218026002695_mmc4.zip
+- extracted S0010218026002695_mmc11.zip
+- extracted S0010218026002695_mmc10.docx
+- extracted S0010218026002695_mmc5.zip
+- extracted S0010218026002695_mmc6.zip
 - extracted S0010218026002695_mmc9.zip
+- extracted S0010218026002695_mmc1.zip
+- extracted S0010218026002695_mmc3.zip

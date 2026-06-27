@@ -22,9 +22,9 @@ Hang Xiao, Zhaohan Chu, Chenyue Tao, Xiao Liu, Bin Yang. Elucidating norbornane 
 - Standard mechanism file: chem.inp
 - Standard thermodynamic file: therm.dat
 - Standard transport file: tran.dat
-- Original mechanism source files: _processing\extracted\s0010218025006911_mmc4\Nor_O2-Xiao25-Mech.inp
-- Original thermodynamic source files: _processing\extracted\s0010218025006911_mmc5\Nor_O2-Xiao25-thermo.dat
-- Original transport source files: _processing\extracted\s0010218025006911_mmc6\Nor_O2-Xiao25-transport.dat
+- Original mechanism source files: _processing/extracted/s0010218025006911_mmc4/Nor_O2-Xiao25-Mech.inp
+- Original thermodynamic source files: _processing/extracted/s0010218025006911_mmc5/Nor_O2-Xiao25-thermo.dat
+- Original transport source files: _processing/extracted/s0010218025006911_mmc6/Nor_O2-Xiao25-transport.dat
 
 ## Cantera Preprocessing Results
 
@@ -46,4 +46,9 @@ Norbornane (C7H12), a typical polycyclic alkane, is currently of interest as a b
 
 ## Processing Notes
 
-- none
+- extracted S0010218025006911_mmc4.zip
+- extracted S0010218025006911_mmc2.docx
+- extracted S0010218025006911_mmc5.zip
+- extracted S0010218025006911_mmc1.docx
+- extracted S0010218025006911_mmc6.zip
+- extracted S0010218025006911_mmc3.zip
