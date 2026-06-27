@@ -2,157 +2,159 @@
 
 Items below need user-side ScienceDirect/Elsevier download or review.
 
-## Cantera conversion failed: Influence of molecular hydrogen on acetylene pyrolysis: Experiment and modeling
+## Cantera conversion failed: CSP-based chemical kinetics mechanisms simplification strategy for non-premixed combustion: An application to hybrid rocket propulsion
 
-- DOI: 10.1016/j.combustflame.2014.03.012
-- URL: https://www.sciencedirect.com/science/article/pii/S0010218014000923
-- Mechanism candidates: /home/icaurs/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/acetylene_hydrogen/2014/aghsaee_2014_acetylene_hydrogen_2263-2269/_processing/raw_downloads/S0010218014000923_mmc1.txt
-- Thermodynamic candidates: 
+- DOI: 10.1016/j.combustflame.2017.07.035
+- URL: https://www.sciencedirect.com/science/article/pii/S0010218017302912
+- Mechanism candidates: /home/icaurs/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/unknown_fuel/2017/ciottoli_2017_unknown_fuel_83-93/_processing/extracted/s0010218017302912_mmc1/single_press_3bar_39species_chem.inp; /home/icaurs/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/unknown_fuel/2017/ciottoli_2017_unknown_fuel_83-93/_processing/extracted/s0010218017302912_mmc1/single_press_36bar_37species_chem.inp; /home/icaurs/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/unknown_fuel/2017/ciottoli_2017_unknown_fuel_83-93/_processing/extracted/s0010218017302912_mmc1/single_press_36bar_20species_chem.inp; /home/icaurs/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/unknown_fuel/2017/ciottoli_2017_unknown_fuel_83-93/_processing/extracted/s0010218017302912_mmc1/comprehensive_39species_chem.inp; /home/icaurs/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/unknown_fuel/2017/ciottoli_2017_unknown_fuel_83-93/_processing/extracted/s0010218017302912_mmc1/single_press_3bar_19species_chem.inp; /home/icaurs/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/unknown_fuel/2017/ciottoli_2017_unknown_fuel_83-93/_processing/extracted/s0010218017302912_mmc1/single_press_17bar_33species_chem.inp; /home/icaurs/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/unknown_fuel/2017/ciottoli_2017_unknown_fuel_83-93/_processing/extracted/s0010218017302912_mmc1/single_press_36bar_28species_chem.inp; /home/icaurs/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/unknown_fuel/2017/ciottoli_2017_unknown_fuel_83-93/_processing/extracted/s0010218017302912_mmc1/single_press_17bar_19species_chem.inp; /home/icaurs/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/unknown_fuel/2017/ciottoli_2017_unknown_fuel_83-93/_processing/extracted/s0010218017302912_mmc1/single_press_17bar_27species_chem.inp; /home/icaurs/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/unknown_fuel/2017/ciottoli_2017_unknown_fuel_83-93/_processing/extracted/s0010218017302912_mmc1/single_press_17bar_17species_chem.inp; /home/icaurs/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/unknown_fuel/2017/ciottoli_2017_unknown_fuel_83-93/_processing/extracted/s0010218017302912_mmc1/single_press_17bar_39species_chem.inp; /home/icaurs/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/unknown_fuel/2017/ciottoli_2017_unknown_fuel_83-93/_processing/extracted/s0010218017302912_mmc1/comprehensive_20species_chem.inp; /home/icaurs/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/unknown_fuel/2017/ciottoli_2017_unknown_fuel_83-93/_processing/extracted/s0010218017302912_mmc1/single_press_36bar_39species_chem.inp; /home/icaurs/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/unknown_fuel/2017/ciottoli_2017_unknown_fuel_83-93/_processing/extracted/s0010218017302912_mmc1/single_press_3bar_25species_chem.inp; /home/icaurs/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/unknown_fuel/2017/ciottoli_2017_unknown_fuel_83-93/_processing/extracted/s0010218017302912_mmc1/comprehensive_30species_chem.inp; /home/icaurs/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/unknown_fuel/2017/ciottoli_2017_unknown_fuel_83-93/_processing/extracted/s0010218017302912_mmc1/single_press_3bar_17species_chem.inp; /home/icaurs/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/unknown_fuel/2017/ciottoli_2017_unknown_fuel_83-93/_processing/extracted/s0010218017302912_mmc1/single_press_3bar_37species_chem.inp; /home/icaurs/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/unknown_fuel/2017/ciottoli_2017_unknown_fuel_83-93/_processing/extracted/s0010218017302912_mmc1/single_press_36bar_17species_chem.inp
+- Thermodynamic candidates: /home/icaurs/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/unknown_fuel/2017/ciottoli_2017_unknown_fuel_83-93/_processing/extracted/s0010218017302912_mmc1/therm.dat
 - Last status: cantera_failed
-- Last message: InputError: No thermo data found for species 'C1' No thermo data found for species 'C2' No thermo data found for species 'C3' No thermo data found for species 'C4' No thermo data found for species 'C6' No thermo data found for species 'C8' No thermo data found for species 'C10' No thermo data found for species 'C12' No thermo data found for species 'H' No thermo data found for species 'H2' No thermo data found for species 'CH' No thermo data found for species 'CH2' No thermo data found for species 'CH2S' No thermo data found for species 'CH3' No thermo data found for species 'CH4' No thermo data found for species 'C3H' No thermo data found for species 'C2H' No thermo data found for species 'C2H2' No thermo data found for species 'C2H3' No thermo data found for species 'C2H4' No thermo data ... [truncated; see _processing logs]
-- Target folder: /home/icaurs/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/acetylene_hydrogen/2014/aghsaee_2014_acetylene_hydrogen_2263-2269
+- Last message: InputError: No thermo data found for species 'H' No thermo data found for species 'H2' No thermo data found for species 'OH' No thermo data found for species 'O' No thermo data found for species 'O2' No thermo data found for species 'H2O' No thermo data found for species 'HCO' No thermo data found for species 'CO' No thermo data found for species 'CO2' No thermo data found for species 'CH3' No thermo data found for species 'CH4' No thermo data found for species 'HO2' No thermo data found for species 'CH2O' No thermo data found for species 'C2H4' No thermo data found for species 'C2H5' No thermo data found for species 'CH2' No thermo data found for species 'C2H2' No thermo data found for species 'C2H3' No thermo data found for species 'C2H' No thermo data found for species 'HCCO' No thermo ... [truncated; see _processing logs]
+- Target folder: /home/icaurs/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/unknown_fuel/2017/ciottoli_2017_unknown_fuel_83-93
 
-## Cantera conversion failed: Chemical kinetics modeling of n-nonane oxidation in oxygen/argon using excited-state species time histories
+## Paper PDF pending: Pyrolysis of n-pentane, n-hexane and n-heptane in a single pulse shock tube
 
-- DOI: 10.1016/j.combustflame.2013.11.008
-- URL: https://www.sciencedirect.com/science/article/pii/S0010218013004215
-- Mechanism candidates: /home/icaurs/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/unknown_fuel/2014/rotavera_2014_unknown_fuel_1146-1163/_processing/extracted/s0010218013004215_mmc4/chem (HP).inp; /home/icaurs/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/unknown_fuel/2014/rotavera_2014_unknown_fuel_1146-1163/_processing/extracted/s0010218013004215_mmc5/chem (LP).inp
-- Thermodynamic candidates: /home/icaurs/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/unknown_fuel/2014/rotavera_2014_unknown_fuel_1146-1163/_processing/extracted/s0010218013004215_mmc3/therm (v 3.1).dat
-- Last status: cantera_failed
-- Last message: InputError: Error while reading entry in chem.inp starting on line 7957: """ c2h3+o2=ch2hco+o 1.450E+15 -0.78 3135.0 ! Updated by Rotavera (4/2011) using rate parameters form "Bloc pression 1 atm" reaction set; initial values were: 10 atm divided by 3 /Bozelli&Dean 1993, J. Phys.Chem,vol.97,pp.4427-4441 """ Section starts with unrecognized keyword 'c2h3+o2=ch2hco+o 1.450E+15 -0.78 3135.0 ' Ignoring redundant declaration for species 'c2h4o' Ignoring redundant declaration for species 'h2' Ignoring redundant declaration for species 'o2' Ignoring redundant declaration for species 'h2o' Ignoring redundant declaration for species 'co' Suppressed 65 additional warnings about redundant species declarations. Run ck2yaml again with the '--verbose' option to see all warnings. Issue while reading reac ... [truncated; see _processing logs]
-- Target folder: /home/icaurs/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/unknown_fuel/2014/rotavera_2014_unknown_fuel_1146-1163
-
-## Cantera conversion failed: Experimental and kinetic modeling study of 2,5-dimethylfuran pyrolysis at various pressures
-
-- DOI: 10.1016/j.combustflame.2014.03.022
-- URL: https://www.sciencedirect.com/science/article/pii/S0010218014001023
-- Mechanism candidates: /home/icaurs/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/furan_dimethylfuran/2014/cheng_2014_furan_dimethylfuran_2496-2511/_processing/extracted/s0010218014001023_mmc3/3.Reaction mechanism.inp
-- Thermodynamic candidates: /home/icaurs/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/furan_dimethylfuran/2014/cheng_2014_furan_dimethylfuran_2496-2511/_processing/extracted/s0010218014001023_mmc4/4.Thermodynamic data.dat
-- Last status: cantera_failed
-- Last message: InputError: Ignoring redundant declaration for species 'CHCHCHCO' Ignoring redundant declaration for species 'C5H5O13' Ignoring redundant declaration for species 'A1CH2O' Ignoring redundant declaration for species 'OC6H4CH3' Ignoring redundant declaration for species 'C6H4CH3' Suppressed 2 additional warnings about redundant species declarations. Run ck2yaml again with the '--verbose' option to see all warnings. Error while reading reaction in chem.inp starting on line 2724: """ A1-(+M)=o-C6H4+H(+M) 4.300E+12 0.616 77313. ! 2000 Wang et al. RRKM LOW/ 1.000E+84 -18.866 90064 / TROE/ 0.902, 696., 358., 3856. / H2/2.0/ H2O/6.0/ CH4/2.0/ CO/1.5/ CO2/2.0/ """ could not convert string to float: '0.902,' Ignoring redundant thermo data for species 'DMF' starting on line 20 of therm.dat. Ignoring r ... [truncated; see _processing logs]
-- Target folder: /home/icaurs/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/furan_dimethylfuran/2014/cheng_2014_furan_dimethylfuran_2496-2511
-
-## Paper PDF pending: An improved kinetic mechanism for 3-pentanone pyrolysis and oxidation developed using multispecies time histories in shock-tubes
-
-- DOI: 10.1016/j.combustflame.2013.11.010
-- URL: https://www.sciencedirect.com/science/article/pii/S0010218013004239
+- DOI: 10.1016/j.combustflame.2017.07.027
+- URL: https://www.sciencedirect.com/science/article/pii/S0010218017302729
 - PDF link from issue page: 
 - Reason: automated Chrome PDF access reached ScienceDirect CAPTCHA or no exact PDF link was exposed
-- Target folder: /home/icaurs/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/hydrogen/2014/dames_2014_hydrogen_1135-1145
+- Target folder: /home/icaurs/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/pentane_n_heptane/2017/yasunaga_2017_pentane_n_heptane_335-345
 
-## Cantera conversion failed: Experimental and kinetic modeling study of i-butanol pyrolysis and combustion
+## Cantera conversion failed: High temperature shock tube experiments and kinetic modeling study of diisopropyl ketone ignition and pyrolysis
 
-- DOI: 10.1016/j.combustflame.2014.02.004
-- URL: https://www.sciencedirect.com/science/article/pii/S0010218014000509
-- Mechanism candidates: /home/icaurs/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/butanol/2014/cai_2014_butanol_1955-1971/_processing/extracted/s0010218014000509_mmc2/iC4H9OH model.inp
-- Thermodynamic candidates: /home/icaurs/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/butanol/2014/cai_2014_butanol_1955-1971/_processing/extracted/s0010218014000509_mmc3/Thermo.dat
+- DOI: 10.1016/j.combustflame.2016.12.003
+- URL: https://www.sciencedirect.com/science/article/pii/S0010218016303662
+- Mechanism candidates: /home/icaurs/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/unknown_fuel/2017/barari_2017_unknown_fuel_207-218/_processing/raw_downloads/S0010218016303662_mmc1.txt
+- Thermodynamic candidates: /home/icaurs/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/unknown_fuel/2017/barari_2017_unknown_fuel_207-218/_processing/raw_downloads/S0010218016303662_mmc1.txt
 - Last status: cantera_failed
-- Last message: InputError: Error while reading entry in chem.inp starting on line 3643: """ USC Mech II H. Wang, X. You, A.V. Joshi, S.G. Davis, A. Laskin, F. Egolfopoulos, C.K. Law, """ Section starts with unrecognized keyword 'USC Mech II H. Wang, X. You, A.V. Joshi, S.G. Davis, A. Laskin, F. Egolfopoulos, C.K. Law, ' Ignoring redundant declaration for species 'HCCOH' Ignoring redundant declaration for species 'CH2COH' Ignoring redundant declaration for species 'C4H7OH2-1' Error while reading reaction in chem.inp starting on line 1300: """ C2H5COCH3(+M)<=>CH3+C2H5CO(+M) 9.130E+18 -0.74 8.360E+04 ! Z. Serinyel,J. M. Simmie et al. 2010 LOW / 8.8200+102 -2.4340E+01 1.0803E+05 / ! Z. Serinyel,J. M. Simmie et al. 2010 TROE / 8.8925E-02 2.0690E+02 9.9446E+09 1.7861E+09 / ! Z. Serinyel,J. M. Simmie et al. 201 ... [truncated; see _processing logs]
-- Target folder: /home/icaurs/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/butanol/2014/cai_2014_butanol_1955-1971
+- Last message: CanteraError: ******************************************************************************* CanteraError thrown by Kinetics::checkDuplicates: Error on lines 2991 and 8467 of /home/icaurs/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/unknown_fuel/2017/barari_2017_unknown_fuel_207-218/mechanism.yaml: Undeclared duplicate reactions detected: Reaction 1: H + O2 <=> O + OH Reaction 1605: H + O2 <=> O + OH | Line | | 2986 | 1.3069399e-11, 1.00357708e+04, 9.52528127] | 2987 | - [7.82535156, 9.6743986e-03, -3.37472789e-06, 5.33488179e-10, | 2988 | -3.15123265e-14, 8374.53019, -14.5181705] | 2989 | | 2990 | reactions: > 2991 > - equation: H + O2 <=> O + OH # Reaction 1 ^ | 2992 | rate-constant: {A: 1.04e+14, b: 0.0, Ea: 1.5286e+04} | 2993 | note: | | 2994 | REF:2 parameter fi ... [truncated; see _processing logs]
+- Target folder: /home/icaurs/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/unknown_fuel/2017/barari_2017_unknown_fuel_207-218
 
-## Paper PDF pending: Effects of buffer gas composition on autoignition
+## Cantera conversion failed: Experimental and modeling study of the pyrolysis and combustion of 2-methyl-tetrahydrofuran
 
-- DOI: 10.1016/j.combustflame.2013.09.022
-- URL: https://www.sciencedirect.com/science/article/pii/S0010218013003544
+- DOI: 10.1016/j.combustflame.2016.11.017
+- URL: https://www.sciencedirect.com/science/article/pii/S0010218016303571
+- Mechanism candidates: /home/icaurs/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/furan_tetrahydrofuran/2017/bruycker_2017_furan_tetrahydrofuran_409-428/_processing/extracted/s0010218016303571_mmc2/SM MTHF mechanism.inp
+- Thermodynamic candidates: /home/icaurs/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/furan_tetrahydrofuran/2017/bruycker_2017_furan_tetrahydrofuran_409-428/_processing/extracted/s0010218016303571_mmc2/SM MTHF mechanism.inp
+- Last status: cantera_failed
+- Last message: CanteraError: ******************************************************************************* CanteraError thrown by addReactions: ******************************************************************************* InputFileError thrown by PlogRate::validate: Error on line 11199 of /home/icaurs/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/furan_tetrahydrofuran/2017/bruycker_2017_furan_tetrahydrofuran_409-428/mechanism.yaml: Invalid rate coefficient for reaction 'C3H6 + H <=> NC3H7' at P = 1.0132e+07, T = 300.0 at P = 1.0132e+07, T = 500.0 at P = 1.0132e+07, T = 1000.0 at P = 1.0132e+07, T = 2000.0 at P = 1.0132e+07, T = 5000.0 at P = 1.0132e+07, T = 10000.0 To fix this error, remove this reaction or contact the author of the reaction/mechanism in question, because the rat ... [truncated; see _processing logs]
+- Target folder: /home/icaurs/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/furan_tetrahydrofuran/2017/bruycker_2017_furan_tetrahydrofuran_409-428
+
+## Cantera conversion failed: A comprehensive iso-octane combustion model with improved thermochemistry and chemical kinetics
+
+- DOI: 10.1016/j.combustflame.2016.12.029
+- URL: https://www.sciencedirect.com/science/article/pii/S0010218016304059
+- Mechanism candidates: /home/icaurs/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/iso_octane_n_octane/2017/atef_2017_iso_octane_n_octane_111-134/_processing/extracted/s0010218016304059_mmc1/ic8-reduced-mech-flamespeed-CNF.inp; /home/icaurs/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/iso_octane_n_octane/2017/atef_2017_iso_octane_n_octane_111-134/_processing/extracted/s0010218016304059_mmc1/ic8-detailed-mechanism-CNF-revised.txt
+- Thermodynamic candidates: /home/icaurs/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/iso_octane_n_octane/2017/atef_2017_iso_octane_n_octane_111-134/_processing/extracted/s0010218016304059_mmc1/updated_therm.txt
+- Last status: cantera_failed
+- Last message: InputError: Ignoring redundant thermo data for species 'C2H3OH' starting on line 6243 of therm.dat. Ignoring redundant thermo data for species 'OH' starting on line 6257 of therm.dat. Ignoring redundant thermo data for species 'HOCHO' starting on line 6272 of therm.dat. Ignoring redundant thermo data for species 'HOCH2O' starting on line 6293 of therm.dat. Ignoring redundant thermo data for species 'CH3O2' starting on line 6302 of therm.dat. Error while reading thermo entry in therm.dat starting on line 25471: """ BEH2O2(A) 81392BE 1H 2O 2 S 0300.00 1000.00 1000.00 1 0.01357669E+03 0.00000000E+00 0.00000000E+00 0.00000000E+00 0.00000000E+00 2 -0.01138925E+07-0.07369071E+03-0.07121292E+02 0.08378375E+00-0.01435144E-02 3 0.01164084E-05-0.03597983E-09-0.01091544E+07 0.02745148E+03 4 """ Only ... [truncated; see _processing logs]
+- Target folder: /home/icaurs/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/iso_octane_n_octane/2017/atef_2017_iso_octane_n_octane_111-134
+
+## Cantera conversion failed: Compositional effects on PAH and soot formation in counterflow diffusion flames of gasoline surrogate fuels
+
+- DOI: 10.1016/j.combustflame.2017.01.001
+- URL: https://www.sciencedirect.com/science/article/pii/S0010218017300019
+- Mechanism candidates: /home/icaurs/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/gasoline_pah/2017/park_2017_gasoline_pah_46-60/_processing/extracted/s0010218017300019_mmc2/KAM_GS_chem.inp; /home/icaurs/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/gasoline_pah/2017/park_2017_gasoline_pah_46-60/_processing/extracted/s0010218017300019_mmc2/KAM_GS_chem_high.inp
+- Thermodynamic candidates: /home/icaurs/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/gasoline_pah/2017/park_2017_gasoline_pah_46-60/_processing/extracted/s0010218017300019_mmc2/KAM_GS_therm.dat
+- Last status: cantera_failed
+- Last message: InputError: Ignoring redundant declaration for species 'H2C4O' Ignoring redundant declaration for species 'C2H3OCH2' Ignoring redundant declaration for species 'C3H2' Ignoring redundant declaration for species 'C6H101-3' Ignoring redundant declaration for species 'C6H101-4' Suppressed 1 additional warnings about redundant species declarations. Run ck2yaml again with the '--verbose' option to see all warnings. Error while reading reaction in chem.inp starting on line 8308: """ C7H6 + C2H2 = C9H8 1.44+292 -78.2 245010.0 !2009 da Silva & Bozzelli (C7H6+C2H2) """ could not convert string to float: '1.44+292' Ignoring redundant thermo data for species 'CH3CHCHO' starting on line 1614 of therm.dat. Ignoring redundant thermo data for species 'CH2CH2CHO' starting on line 1618 of therm.dat. Ignorin ... [truncated; see _processing logs]
+- Target folder: /home/icaurs/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/gasoline_pah/2017/park_2017_gasoline_pah_46-60
+
+## Cantera conversion failed: Experimental and kinetic modeling study of 2-methyltetrahydrofuran oxidation under engine-relevant conditions
+
+- DOI: 10.1016/j.combustflame.2017.01.008
+- URL: https://www.sciencedirect.com/science/article/pii/S0010218017300081
+- Mechanism candidates: /home/icaurs/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/furan_tetrahydrofuran/2017/fenard_2017_furan_tetrahydrofuran_168-181/_processing/extracted/s0010218017300081_mmc1/2MTHF-mech.txt
+- Thermodynamic candidates: /home/icaurs/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/furan_tetrahydrofuran/2017/fenard_2017_furan_tetrahydrofuran_168-181/_processing/extracted/s0010218017300081_mmc1/2MTHF-thermo.txt
+- Last status: cantera_failed
+- Last message: InputError: Ignoring redundant declaration for species 'H2C4O' Ignoring redundant declaration for species 'C5H6' Ignoring redundant declaration for species 'C2H3OCH2' Ignoring redundant declaration for species 'SC3H4OH' Ignoring redundant declaration for species 'CYCCC*C(C)O' Suppressed 1 additional warnings about redundant species declarations. Run ck2yaml again with the '--verbose' option to see all warnings. Ignoring redundant thermo data for species 'CYCC*CC(C)O' starting on line 146 of therm.dat. Ignoring redundant thermo data for species 'CYC*CCJC(C)O' starting on line 230 of therm.dat. Ignoring redundant thermo data for species 'CYCCC*C(C)O' starting on line 234 of therm.dat. Ignoring redundant thermo data for species 'O2CCYCCCCO' starting on line 350 of therm.dat. Ignoring redundan ... [truncated; see _processing logs]
+- Target folder: /home/icaurs/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/furan_tetrahydrofuran/2017/fenard_2017_furan_tetrahydrofuran_168-181
+
+## Cantera conversion failed: Kinetics of Ethylene Glycol: The first validated reaction scheme and first measurements of ignition delay times and speciation data
+
+- DOI: 10.1016/j.combustflame.2017.01.018
+- URL: https://www.sciencedirect.com/science/article/pii/S0010218017300184
+- Mechanism candidates: /home/icaurs/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/ethylene/2017/kathrotia_2017_ethylene_172-184/_processing/extracted/s0010218017300184_mmc1/mmc1/mmc2.inp; /home/icaurs/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/ethylene/2017/kathrotia_2017_ethylene_172-184/_processing/extracted/s0010218017300184_mmc1/mmc1/mmc1.inp
+- Thermodynamic candidates: /home/icaurs/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/ethylene/2017/kathrotia_2017_ethylene_172-184/_processing/extracted/s0010218017300184_mmc1/mmc1/mmc3.dat; /home/icaurs/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/ethylene/2017/kathrotia_2017_ethylene_172-184/_processing/extracted/s0010218017300184_mmc1/mmc1/mmc2.inp
+- Last status: cantera_failed
+- Last message: CanteraError: ******************************************************************************* CanteraError thrown by Kinetics::checkDuplicates: Error on lines 781 and 1662 of /home/icaurs/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/ethylene/2017/kathrotia_2017_ethylene_172-184/mechanism.yaml: Undeclared duplicate reactions detected: Reaction 1: EthGly <=> CH2O + CH3OH Reaction 271: EthGly <=> CH2O + CH3OH | Line | | 776 | well-depth: 436.0 | 777 | diameter: 3.97 | 778 | rotational-relaxation: 2.0 | 779 | | 780 | reactions: > 781 > - equation: EthGly <=> CH3OH + CH2O # Reaction 1 ^ | 782 | rate-constant: {A: 1.419e+15, b: 0.961, Ea: 320.48} | 783 | note: |2 | 784 | <IWR>*************************************************************************************** ... | 1657 ... [truncated; see _processing logs]
+- Target folder: /home/icaurs/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/ethylene/2017/kathrotia_2017_ethylene_172-184
+
+## Cantera conversion failed: Comparative experimental and modeling study of the low- to moderate-temperature oxidation chemistry of 2,5-dimethylfuran, 2-methylfuran, and furan
+
+- DOI: 10.1016/j.combustflame.2017.03.030
+- URL: https://www.sciencedirect.com/science/article/pii/S0010218017301256
+- Mechanism candidates: /home/icaurs/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/furan_2_methylfuran_dimethylfuran/2017/tran_2017_furan_2_methylfuran_dimethylfuran_251-269/_processing/raw_downloads/S0010218017301256_mmc3.txt
+- Thermodynamic candidates: /home/icaurs/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/furan_2_methylfuran_dimethylfuran/2017/tran_2017_furan_2_methylfuran_dimethylfuran_251-269/_processing/raw_downloads/S0010218017301256_mmc4.txt
+- Last status: cantera_failed
+- Last message: InputError: Error while reading reaction in chem.inp starting on line 3171: """ OH*<=>R2OH+Hv 1.400e+06 0.0 0.0 """ Unexpected token '+Hv' in reaction expression 'OH*<=>R2OH+Hv'. May be due to undeclared species 'Hv'. Error while reading reaction in chem.inp starting on line 3186: """ CH*<=>B4CH+Hv 1.860e+06 0.0 0.0 """ Unexpected token '+Hv' in reaction expression 'CH*<=>B4CH+Hv'. May be due to undeclared species 'Hv'. Ignoring redundant thermo data for species 'RC3H5O' starting on line 966 of therm.dat. Ignoring redundant thermo data for species 'CH3CHCO' starting on line 1058 of therm.dat. Ignoring redundant thermo data for species 'C3H2' starting on line 2012 of therm.dat. Ignoring redundant thermo data for species 'pC3H4' starting on line 2016 of therm.dat. Ignoring redundant thermo d ... [truncated; see _processing logs]
+- Target folder: /home/icaurs/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/furan_2_methylfuran_dimethylfuran/2017/tran_2017_furan_2_methylfuran_dimethylfuran_251-269
+
+## Paper PDF pending: Exploring the high-temperature kinetics of diethyl carbonate (DEC) under pyrolysis and flame conditions
+
+- DOI: 10.1016/j.combustflame.2017.03.009
+- URL: https://www.sciencedirect.com/science/article/pii/S0010218017301013
 - PDF link from issue page: 
 - Reason: automated Chrome PDF access reached ScienceDirect CAPTCHA or no exact PDF link was exposed
-- Target folder: /home/icaurs/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/n_heptane_iso_octane_n_octane_butanol/2014/wagnon_2014_n_heptane_iso_octane_n_octane_butanol_898-907
+- Target folder: /home/icaurs/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/unknown_fuel/2017/sun_2017_unknown_fuel_71-81
 
-## Cantera conversion failed: An experimental and modeling study of propene oxidation. Part 1: Speciation measurements in jet-stirred and flow reactors
+## Paper PDF pending: An extensive experimental and modeling study of 1-butene oxidation
 
-- DOI: 10.1016/j.combustflame.2014.05.010
-- URL: https://www.sciencedirect.com/science/article/pii/S0010218014001400
-- Mechanism candidates: /home/icaurs/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/propene/2014/burke_2014_propene_2765-2784/_processing/extracted/s0010218014001400_mmc2/56.53_release.chem
-- Thermodynamic candidates: /home/icaurs/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/propene/2014/burke_2014_propene_2765-2784/_processing/extracted/s0010218014001400_mmc3/56.53_release.therm
-- Last status: cantera_failed
-- Last message: InputError: Ignoring redundant declaration for species 'H2C4O' Ignoring redundant declaration for species 'C5H6' Ignoring redundant declaration for species 'C2H3OCH2' Ignoring redundant declaration for species 'SC3H4OH' Ignoring redundant thermo data for species 'HOCH2O2H' starting on line 106 of therm.dat. Ignoring redundant thermo data for species 'HOCH2O2' starting on line 110 of therm.dat. Ignoring redundant thermo data for species 'OCH2O2H' starting on line 114 of therm.dat. Ignoring redundant thermo data for species 'C4H8OOH2-2' starting on line 710 of therm.dat. Ignoring redundant thermo data for species 'IIC4H7Q2-T' starting on line 1018 of therm.dat. Suppressed 2 additional warnings about redundant thermo data. Run ck2yaml again with the '--verbose' option to see all warnings. Unp ... [truncated; see _processing logs]
-- Target folder: /home/icaurs/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/propene/2014/burke_2014_propene_2765-2784
-
-## Cantera conversion failed: Burning velocities and kinetics of H2/NF3/N2, CH4/NF3/N2, and C3H8/NF3/N2 flames
-
-- DOI: 10.1016/j.combustflame.2013.12.001
-- URL: https://www.sciencedirect.com/science/article/pii/S0010218013004380
-- Mechanism candidates: /home/icaurs/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/methane_hydrogen/2014/matsugi_2014_methane_hydrogen_1425-1431/_processing/raw_downloads/S0010218013004380_mmc1.txt
-- Thermodynamic candidates: /home/icaurs/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/methane_hydrogen/2014/matsugi_2014_methane_hydrogen_1425-1431/_processing/raw_downloads/S0010218013004380_mmc1.txt
-- Last status: cantera_failed
-- Last message: InputError: Error while reading entry in chem.inp starting on line 521: """ HE 0 10.200 2.576 0.000 0.000 0.000 ! * """ Section starts with unrecognized keyword 'HE 0 10.200 2.576 0.000 0.000 0.000 ' Error while reading entry in therm.dat starting on line 521: """ HE 0 10.200 2.576 0.000 0.000 0.000 ! * """ Section starts with unrecognized keyword 'HE 0 10.200 2.576 0.000 0.000 0.000 ' Ignoring redundant declaration for species 'HE' Ignoring redundant declaration for species 'AR' Ignoring redundant declaration for species 'H' Ignoring redundant declaration for species 'H2' Ignoring redundant declaration for species 'N' Suppressed 41 additional warnings about redundant species declarations. Run ck2yaml again with the '--verbose' option to see all warnings. Ignoring redundant thermo data for ... [truncated; see _processing logs]
-- Target folder: /home/icaurs/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/methane_hydrogen/2014/matsugi_2014_methane_hydrogen_1425-1431
-
-## Paper PDF pending: Fuel-rich methane oxidation in a high-pressure flow reactor studied by optical-fiber laser-induced fluorescence, multi-species sampling profile measurements and detailed kinetic simulations
-
-- DOI: 10.1016/j.combustflame.2014.01.007
-- URL: https://www.sciencedirect.com/science/article/pii/S0010218014000121
+- DOI: 10.1016/j.combustflame.2017.03.023
+- URL: https://www.sciencedirect.com/science/article/pii/S0010218017301153
 - PDF link from issue page: 
 - Reason: automated Chrome PDF access reached ScienceDirect CAPTCHA or no exact PDF link was exposed
-- Target folder: /home/icaurs/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/methane/2014/schwarz_2014_methane_1688-1700
+- Target folder: /home/icaurs/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/1_butene/2017/li_2017_1_butene_198-213
 
-## Cantera conversion failed: A high-pressure rapid compression machine study of n-propylbenzene ignition
+## Paper PDF pending: Revisiting 1-hexene low-temperature oxidation
 
-- DOI: 10.1016/j.combustflame.2013.08.001
-- URL: https://www.sciencedirect.com/science/article/pii/S0010218013002952
-- Mechanism candidates: /home/icaurs/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/benzene_n_propylbenzene/2014/darcy_2014_benzene_n_propylbenzene_65-74/_processing/raw_downloads/S0010218013002952_mmc4.txt
-- Thermodynamic candidates: /home/icaurs/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/benzene_n_propylbenzene/2014/darcy_2014_benzene_n_propylbenzene_65-74/_processing/raw_downloads/S0010218013002952_mmc5.txt
+- DOI: 10.1016/j.combustflame.2017.03.031
+- URL: https://www.sciencedirect.com/science/article/pii/S0010218017301268
+- PDF link from issue page: 
+- Reason: automated Chrome PDF access reached ScienceDirect CAPTCHA or no exact PDF link was exposed
+- Target folder: /home/icaurs/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/hexene/2017/meng_2017_hexene_283-299
+
+## Cantera conversion failed: High-pressure oxidation of ethane
+
+- DOI: 10.1016/j.combustflame.2017.03.028
+- URL: https://www.sciencedirect.com/science/article/pii/S0010218017301232
+- Mechanism candidates: /home/icaurs/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/ethane/2017/hashemi_2017_ethane_150-166/_processing/extracted/chemistry/chem.inp
+- Thermodynamic candidates: /home/icaurs/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/ethane/2017/hashemi_2017_ethane_150-166/_processing/extracted/chemistry/thermo.DAT
 - Last status: cantera_failed
-- Last message: InputError: Ignoring redundant declaration for species 'C6H5CH2O' Ignoring redundant declaration for species 'C10H10' Ignoring redundant declaration for species 'C10H9' Ignoring redundant declaration for species 'C16H10' Ignoring redundant declaration for species 'C6H5C4H7-1' Suppressed 15 additional warnings about redundant species declarations. Run ck2yaml again with the '--verbose' option to see all warnings. Error while reading reaction in chem.inp starting on line 3769: """ C6H12-1+OH<=>C6H12OH-1 1.000E+13 0.00 0.0000+03 ! """ could not convert string to float: '0.0000+03' Error while reading reaction in chem.inp starting on line 3774: """ C6H12-2+OH<=>C6H12OH-2 1.000E+13 0.00 0.0000+03 """ could not convert string to float: '0.0000+03' Error while reading reaction in chem.inp startin ... [truncated; see _processing logs]
-- Target folder: /home/icaurs/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/benzene_n_propylbenzene/2014/darcy_2014_benzene_n_propylbenzene_65-74
+- Last message: CanteraError: ******************************************************************************* CanteraError thrown by addReactions: ******************************************************************************* InputFileError thrown by PlogRate::validate: Error on line 5981 of /home/icaurs/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/ethane/2017/hashemi_2017_ethane_150-166/mechanism.yaml: Invalid rate coefficient for reaction 'HCCO + OH <=> CH2 + CO2' at P = 10133, T = 300.0 at P = 10133, T = 500.0 at P = 10133, T = 1000.0 at P = 10133, T = 2000.0 at P = 10133, T = 5000.0 at P = 10133, T = 10000.0 at P = 1.0132e+06, T = 300.0 at P = 1.0132e+06, T = 500.0 at P = 1.0132e+06, T = 1000.0 at P = 1.0132e+06, T = 2000.0 at P = 1.0132e+06, T = 5000.0 at P = 1.0132e+06, T = 10 ... [truncated; see _processing logs]
+- Target folder: /home/icaurs/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/ethane/2017/hashemi_2017_ethane_150-166
 
-## Cantera conversion failed: An experimental and modeling study of surrogate mixtures of n-propyl- and n-butylbenzene in n-heptane to simulate n-decylbenzene ignition
+## Cantera conversion failed: Cyclopentane combustion chemistry. Part I: Mechanism development and computational kinetics
 
-- DOI: 10.1016/j.combustflame.2013.12.006
-- URL: https://www.sciencedirect.com/science/article/pii/S0010218013004549
-- Mechanism candidates: /home/icaurs/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/n_heptane_benzene_n_butylbenzene/2014/darcy_2014_n_heptane_benzene_n_butylbenzene_1460-1473/_processing/extracted/s0010218013004549_mmc3/NewAromatics_v1_1_Paper.mech
-- Thermodynamic candidates: /home/icaurs/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/n_heptane_benzene_n_butylbenzene/2014/darcy_2014_n_heptane_benzene_n_butylbenzene_1460-1473/_processing/extracted/s0010218013004549_mmc3/NewAromatics_v1_1.therm
+- DOI: 10.1016/j.combustflame.2017.05.018
+- URL: https://www.sciencedirect.com/science/article/pii/S0010218017301931
+- Mechanism candidates: /home/icaurs/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/pentane_cyclopentane/2017/rashidi_2017_pentane_cyclopentane_358-371/_processing/raw_downloads/S0010218017301931_mmc5.txt; /home/icaurs/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/pentane_cyclopentane/2017/rashidi_2017_pentane_cyclopentane_358-371/_processing/raw_downloads/S0010218017301931_mmc4.txt; /home/icaurs/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/pentane_cyclopentane/2017/rashidi_2017_pentane_cyclopentane_358-371/_processing/raw_downloads/S0010218017301931_mmc3.txt
+- Thermodynamic candidates: /home/icaurs/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/pentane_cyclopentane/2017/rashidi_2017_pentane_cyclopentane_358-371/_processing/raw_downloads/S0010218017301931_mmc2.txt
 - Last status: cantera_failed
-- Last message: InputError: Ignoring redundant declaration for species 'C6H5CH2O' Ignoring redundant declaration for species 'C10H10' Ignoring redundant declaration for species 'C10H9' Ignoring redundant declaration for species 'C16H10' Ignoring redundant declaration for species 'C6H5C4H7-1' Suppressed 15 additional warnings about redundant species declarations. Run ck2yaml again with the '--verbose' option to see all warnings. Error while reading reaction in chem.inp starting on line 3765: """ C6H12-1+OH<=>C6H12OH-1 1.000E+13 0.00 0.0000+03 ! """ could not convert string to float: '0.0000+03' Error while reading reaction in chem.inp starting on line 3770: """ C6H12-2+OH<=>C6H12OH-2 1.000E+13 0.00 0.0000+03 """ could not convert string to float: '0.0000+03' Error while reading reaction in chem.inp startin ... [truncated; see _processing logs]
-- Target folder: /home/icaurs/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/n_heptane_benzene_n_butylbenzene/2014/darcy_2014_n_heptane_benzene_n_butylbenzene_1460-1473
+- Last message: InputError: No thermo data found for species 'H' No thermo data found for species 'H2' No thermo data found for species 'O' No thermo data found for species 'O2' No thermo data found for species 'OH' No thermo data found for species 'OH*' No thermo data found for species 'H2O' No thermo data found for species 'N2' No thermo data found for species 'HO2' No thermo data found for species 'H2O2' No thermo data found for species 'AR' No thermo data found for species 'CO' No thermo data found for species 'CO2' No thermo data found for species 'CH2O' No thermo data found for species 'HCO' No thermo data found for species 'HO2CHO' No thermo data found for species 'HCOH' No thermo data found for species 'O2CHO' No thermo data found for species 'HOCHO' No thermo data found for species 'OCHO' No ther ... [truncated; see _processing logs]
+- Target folder: /home/icaurs/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/pentane_cyclopentane/2017/rashidi_2017_pentane_cyclopentane_358-371
 
-## Cantera conversion failed: Chemical kinetic study of a novel lignocellulosic biofuel: Di-n-butyl ether oxidation in a laminar flow reactor and flames
+## Paper PDF pending: A chemical kinetic study of the oxidation of dibutyl-ether in a jet-stirred reactor
 
-- DOI: 10.1016/j.combustflame.2013.10.003
-- URL: https://www.sciencedirect.com/science/article/pii/S0010218013003775
-- Mechanism candidates: /home/icaurs/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/biofuel/2014/cai_2014_biofuel_798-809/_processing/raw_downloads/S0010218013003775_mmc1.txt
-- Thermodynamic candidates: /home/icaurs/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/biofuel/2014/cai_2014_biofuel_798-809/_processing/raw_downloads/S0010218013003775_mmc2.txt
-- Last status: cantera_failed
-- Last message: InputError: Ignoring redundant thermo data for species 'c2h5co' starting on line 795 of therm.dat. Ignoring redundant thermo data for species 'iic4h7q2-t' starting on line 1498 of therm.dat. Ignoring redundant thermo data for species 'c2h3oh' starting on line 2075 of therm.dat. Unparsable lines while reading thermo data in therm.dat starting on line 475: """ ! ! ! h l 6/98h 1c 0o 0 0g 200.000 6000.00 1000.00 1 0.25000000e+01 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00 2 0.25473660e+05-0.44668285e+00 0.25000000e+01 0.00000000e+00 0.00000000e+00 3 0.00000000e+00 0.00000000e+00 0.25473660e+05-0.44668285e+00 4 """ Lines could not be parsed as a NASA7 entry. Unparsable lines while reading thermo data in therm.dat starting on line 486: """ o l 1/90o 1 0 0 0g 200.000 6000.00 1000. ... [truncated; see _processing logs]
-- Target folder: /home/icaurs/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/biofuel/2014/cai_2014_biofuel_798-809
+- DOI: 10.1016/j.combustflame.2017.06.019
+- URL: https://www.sciencedirect.com/science/article/pii/S0010218017302407
+- PDF link from issue page: 
+- Reason: automated Chrome PDF access reached ScienceDirect CAPTCHA or no exact PDF link was exposed
+- Target folder: /home/icaurs/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/unknown_fuel/2017/thion_2017_unknown_fuel_4-15
 
-## Cantera conversion failed: A chemical mechanism for low to high temperature oxidation of n-dodecane as a component of transportation fuel surrogates
+## Paper PDF pending: Experimental and modeling efforts towards a better understanding of the high-temperature combustion kinetics of C3C5 ethyl esters
 
-- DOI: 10.1016/j.combustflame.2013.10.012
-- URL: https://www.sciencedirect.com/science/article/pii/S0010218013003866
-- Mechanism candidates: /home/icaurs/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/n_dodecane/2014/narayanaswamy_2014_n_dodecane_866-884/_processing/raw_downloads/S0010218013003866_mmc4.txt; /home/icaurs/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/n_dodecane/2014/narayanaswamy_2014_n_dodecane_866-884/_processing/raw_downloads/S0010218013003866_mmc2.txt
-- Thermodynamic candidates: /home/icaurs/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/n_dodecane/2014/narayanaswamy_2014_n_dodecane_866-884/_processing/raw_downloads/S0010218013003866_mmc6.txt
-- Last status: cantera_failed
-- Last message: InputError: Ignoring duplicate transport data for species "C6H2" on line 128 of "tran.dat". Error while reading transport data in tran.dat starting on line 227: """ I-C8H18 -1 458.500 6.414 0.000 0.000 0.000 """ Invalid geometry flag value '-1' for species 'I-C8H18'. Flag value must be 0, 1, or 2. Error while reading transport data in tran.dat starting on line 228: """ C-C8H17 -1 458.500 6.414 0.000 0.000 0.000 """ Invalid geometry flag value '-1' for species 'C-C8H17'. Flag value must be 0, 1, or 2. Error while reading transport data in tran.dat starting on line 229: """ Y-C7H15 -1 437.300 6.168 0.000 0.000 0.000 """ Invalid geometry flag value '-1' for species 'Y-C7H15'. Flag value must be 0, 1, or 2. Error while reading transport data in tran.dat starting on line 230: """ Y-C7H14 -1 439 ... [truncated; see _processing logs]
-- Target folder: /home/icaurs/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/n_dodecane/2014/narayanaswamy_2014_n_dodecane_866-884
+- DOI: 10.1016/j.combustflame.2017.07.013
+- URL: https://www.sciencedirect.com/science/article/pii/S0010218017302584
+- PDF link from issue page: 
+- Reason: automated Chrome PDF access reached ScienceDirect CAPTCHA or no exact PDF link was exposed
+- Target folder: /home/icaurs/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/unknown_fuel/2017/sun_2017_unknown_fuel_173-187
 
-## Cantera conversion failed: Experimental and kinetic modeling study of pyrolysis and oxidation of n-decane
+## Paper PDF pending: A comprehensive experimental and kinetic modeling study of n-propylbenzene combustion
 
-- DOI: 10.1016/j.combustflame.2014.01.002
-- URL: https://www.sciencedirect.com/science/article/pii/S0010218014000078
-- Mechanism candidates: /home/icaurs/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/n_decane/2014/zeng_2014_n_decane_1701-1715/_processing/extracted/s0010218014000078_mmc3/3.Reaction mechanism.inp
-- Thermodynamic candidates: /home/icaurs/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/n_decane/2014/zeng_2014_n_decane_1701-1715/_processing/extracted/s0010218014000078_mmc4/4.Thermodynamic data.DAT
-- Last status: cantera_failed
-- Last message: InputError: Error while reading entry in chem.inp starting on line 3644: """ References and Notes: """ Section starts with unrecognized keyword ' References and Notes:' Ignoring redundant declaration for species 'SAXC6H11' Ignoring redundant declaration for species 'C2H5CHO' Ignoring redundant declaration for species 'CH3CHO' Ignoring redundant declaration for species 'C2H5CO' Ignoring redundant declaration for species 'CH3CO' Suppressed 1 additional warnings about redundant species declarations. Run ck2yaml again with the '--verbose' option to see all warnings. Error while reading reaction in chem.inp starting on line 3250: """ A1-(+M)=o-C6H4+H(+M) 4.300E+12 0.616 77313. ! USC Mech II (00-HAI-FRE) LOW/ 1.000E+84 -18.866 90064 / TROE/ 0.902, 696., 358., 3856. / H2/2.0/ H2O/6.0/ CH4/2.0/ CO ... [truncated; see _processing logs]
-- Target folder: /home/icaurs/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/n_decane/2014/zeng_2014_n_decane_1701-1715
-
-## Cantera conversion failed: Experimental and kinetic modeling study of PAH formation in methane coflow diffusion flames doped with n-butanol
-
-- DOI: 10.1016/j.combustflame.2013.10.020
-- URL: https://www.sciencedirect.com/science/article/pii/S0010218013003945
-- Mechanism candidates: /home/icaurs/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/methane_butanol_pah/2014/jin_2014_methane_butanol_pah_657-670/_processing/extracted/s0010218013003945_mmc2/2-Mechanism
-- Thermodynamic candidates: /home/icaurs/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/methane_butanol_pah/2014/jin_2014_methane_butanol_pah_657-670/_processing/extracted/s0010218013003945_mmc3/3-Thermodynamic
-- Last status: cantera_failed
-- Last message: InputError: Error while reading entry in chem.inp starting on line 2496: """ References """ Section starts with unrecognized keyword 'References' Error while reading reaction in chem.inp starting on line 951: """ C5H6+H=lC5H7 8.27+126 -32.3 82348.0 !USC Mech II (02-MOS-LIN) """ could not convert string to float: '8.27+126' Ignoring redundant thermo data for species 'sC4H9' starting on line 415 of therm.dat. Ignoring redundant thermo data for species 'N2' starting on line 629 of therm.dat. Ignoring redundant thermo data for species 'N2' starting on line 636 of therm.dat. Ignoring redundant thermo data for species 'AR' starting on line 640 of therm.dat. Error while reading thermo entry in therm.dat starting on line 641: """ HE+ L10/90HE+ 1 0 0 0G 200.000 6000.000 1000. 1 2.50000000E+00 0.000 ... [truncated; see _processing logs]
-- Target folder: /home/icaurs/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/methane_butanol_pah/2014/jin_2014_methane_butanol_pah_657-670
-
-## Cantera conversion failed: Experimental and kinetic modeling study on methylcyclohexane pyrolysis and combustion
-
-- DOI: 10.1016/j.combustflame.2013.08.011
-- URL: https://www.sciencedirect.com/science/article/pii/S0010218013003052
-- Mechanism candidates: /home/icaurs/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/cyclohexane_ethylcyclohexane/2014/wang_2014_cyclohexane_ethylcyclohexane_84-100/_processing/raw_downloads/S0010218013003052_mmc3.txt
-- Thermodynamic candidates: /home/icaurs/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/cyclohexane_ethylcyclohexane/2014/wang_2014_cyclohexane_ethylcyclohexane_84-100/_processing/raw_downloads/S0010218013003052_mmc4.txt
-- Last status: cantera_failed
-- Last message: InputError: Error while reading entry in chem.inp starting on line 3627: """ GRI M. Frenklach, H. Wang, M. Goldenberg, G.P. Smith, D.M. Golden, C.T. Bowman, R.K. Hanson, W.C. Gardiner, """ Section starts with unrecognized keyword 'GRI M. Frenklach, H. Wang, M. Goldenberg, G.P. Smith, D.M. Golden, C.T. Bowman, R.K. Hanson, W.C. Gardiner,' Ignoring redundant declaration for species 'CH3-4-SAXcC6H8' Ignoring redundant declaration for species 'C7H12-13' Ignoring redundant thermo data for species 'CH2-3-1C6H10' starting on line 906 of therm.dat. Unparsable lines while reading thermo data in therm.dat starting on line 16: """ !############### From JetSurF 2.0 except for specific description ############### """ Lines could not be parsed as a NASA7 entry. Unparsable lines while reading thermo data ... [truncated; see _processing logs]
-- Target folder: /home/icaurs/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/cyclohexane_ethylcyclohexane/2014/wang_2014_cyclohexane_ethylcyclohexane_84-100
+- DOI: 10.1016/j.combustflame.2017.08.010
+- URL: https://www.sciencedirect.com/science/article/pii/S0010218017303073
+- PDF link from issue page: 
+- Reason: automated Chrome PDF access reached ScienceDirect CAPTCHA or no exact PDF link was exposed
+- Target folder: /home/icaurs/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/benzene_n_propylbenzene/2017/yuan_2017_benzene_n_propylbenzene_178-192
 

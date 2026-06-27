@@ -47,7 +47,3 @@ not available
 ## Processing Notes
 
 - extracted S0010218017300081_mmc1.zip
-- extracted SM_Model Nomenclature.docx
-- extracted SM_Senkin input files.docx
-- extracted SM_Speciation_results.docx
-- extracted Supplemental materials - experimental conditions.docx

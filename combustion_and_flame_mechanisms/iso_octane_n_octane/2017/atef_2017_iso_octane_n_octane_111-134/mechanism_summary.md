@@ -59,9 +59,3 @@ not available
 ## Processing Notes
 
 - extracted S0010218016304059_mmc1.zip
-- extracted KAUST_RCM_Profiles.xlsx
-- extracted NUIG-RCM-profiles-15bar.xlsx
-- extracted NUIG-RCM-profiles-20bar.xlsm
-- extracted UCONN-RCM-profiles.xlsx
-- extracted UCONN-profiles-2.xlsx
-- extracted supplementry.docx
