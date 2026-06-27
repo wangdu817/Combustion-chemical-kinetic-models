@@ -1,0 +1,320 @@
+! Supplementary Material for
+! Elliott, S.N.; Moore, K. B.; Copan, A. V.; Murat, K.; Cavallotti, C.; Georgievskii, Y.; Schaefer, H. F.; and Klippenstein, S. J.
+! Automated Theoretical Chemical Kinetics: Predicting the Kinetics for the Initial Stages of Pyrolysis, Proc. Combust. Inst. 38, 2021.
+
+REACTIONS
+
+! vib model: harm
+! tors model: 1dhr
+! sym model: sampling
+! energy level: 1.69 x RRccsd(t)-f12/cc-pvqz-f12//RUb2plypd3/cc-pvtz
+! + -0.69 x RRccsd(t)-f12/cc-pvtz-f12//RUb2plypd3/cc-pvtz
+! tors level: RUb2plypd3/cc-pvtz//RUb2plypd3/cc-pvtz
+
+H2CO+H=HCO+H2                    2.225E+08    1.719     3824 /
+! Info Regarding Rate Constant Fits
+! Pressure: High      Temps:   500-2500 K,  MeanAbsErr:   2.0%,  MaxErr:   6.2%
+
+CH4+H=CH3+H2                     2.334E+07    2.084    11104 /
+! Info Regarding Rate Constant Fits
+! Pressure: High      Temps:   500-2500 K,  MeanAbsErr:   1.7%,  MaxErr:   5.3%
+
+CH3OH+H=CH2OH+H2                 3.620E+06    2.228     5909 /
+! Info Regarding Rate Constant Fits
+! Pressure: High      Temps:   500-2500 K,  MeanAbsErr:   2.4%,  MaxErr:   7.8%
+
+CH3OH+H=CH3O+H2                  1.176E+05    2.399    10265 /
+! Info Regarding Rate Constant Fits
+! Pressure: High      Temps:   500-2500 K,  MeanAbsErr:   1.4%,  MaxErr:   3.9%
+
+CH4+OH=CH3+H2O                   7.947E+05    2.271     2559 /
+! Info Regarding Rate Constant Fits
+! Pressure: High      Temps:   500-2500 K,  MeanAbsErr:   2.1%,  MaxErr:   7.0%
+
+CH3OH+OH=CH2OH+H2O               4.356E+06    1.994      624 /
+! Info Regarding Rate Constant Fits
+! Pressure: High      Temps:   500-2500 K,  MeanAbsErr:   1.2%,  MaxErr:   4.0%
+
+CH3CHO+H=CH2CHO+H2               4.243E+05    2.469     6809 /
+! Info Regarding Rate Constant Fits
+! Pressure: High      Temps:   500-2500 K,  MeanAbsErr:   2.4%,  MaxErr:   7.7%
+
+CH3CHO+H=CH3CO+H2                6.938E+07    1.797     2976 /
+! Info Regarding Rate Constant Fits
+! Pressure: High      Temps:   500-2500 K,  MeanAbsErr:   1.3%,  MaxErr:   4.2%
+
+H2CO+CH3=HCO+CH4                 1.877E+02    3.213     5608 /
+! Info Regarding Rate Constant Fits
+! Pressure: High      Temps:   500-2500 K,  MeanAbsErr:   2.1%,  MaxErr:   7.1%
+
+CH3CHO+OH=CH2CHO+H2O             4.489E+04    2.544      612 /
+! Info Regarding Rate Constant Fits
+! Pressure: High      Temps:   500-2500 K,  MeanAbsErr:   2.0%,  MaxErr:   6.5%
+
+CH3CHO+OH=CH3CO+H2O              1.248E+07    1.812    -1078 /
+! Info Regarding Rate Constant Fits
+! Pressure: High      Temps:   500-2500 K,  MeanAbsErr:   0.7%,  MaxErr:   2.3%
+
+C2H6+H=C2H5+H2                   4.741E+08    1.728     8539 /
+! Info Regarding Rate Constant Fits
+! Pressure: High      Temps:   500-2500 K,  MeanAbsErr:   2.4%,  MaxErr:   7.9%
+
+C2H5OH+H=CH2CH2OH+H2             1.470E+07    2.084     9090 /
+! Info Regarding Rate Constant Fits
+! Pressure: High      Temps:   500-2500 K,  MeanAbsErr:   2.0%,  MaxErr:   6.5%
+
+C2H5OH+H=CH3CH2O+H2              4.595E+05    2.361    10209 /
+! Info Regarding Rate Constant Fits
+! Pressure: High      Temps:   500-2500 K,  MeanAbsErr:   1.6%,  MaxErr:   4.8%
+
+C2H5OH+H=CH3CHOH+H2              6.499E+06    2.114     4277 /
+! Info Regarding Rate Constant Fits
+! Pressure: High      Temps:   500-2500 K,  MeanAbsErr:   1.9%,  MaxErr:   6.0%
+
+C2H6+OH=C2H5+H2O                 5.081E+07    1.765     1461 /
+! Info Regarding Rate Constant Fits
+! Pressure: High      Temps:   500-2500 K,  MeanAbsErr:   1.6%,  MaxErr:   5.5%
+
+CH3OH+CH3=CH2OH+CH4              5.062E+00    3.612     8629 /
+! Info Regarding Rate Constant Fits
+! Pressure: High      Temps:   500-2500 K,  MeanAbsErr:   2.4%,  MaxErr:   7.3%
+
+CH3OH+CH3=CH3O+CH4               4.548E+00    3.431     8017 /
+! Info Regarding Rate Constant Fits
+! Pressure: High      Temps:   500-2500 K,  MeanAbsErr:   1.5%,  MaxErr:   4.7%
+
+C2H5OH+OH=CH2CH2OH+H2O           6.191E-01    3.805     -379 /
+! Info Regarding Rate Constant Fits
+! Pressure: High      Temps:   500-2500 K,  MeanAbsErr:   3.3%,  MaxErr:  10.3%
+
+C2H5OH+OH=CH3CH2O+H2O            4.464E+03    2.645      497 /
+! Info Regarding Rate Constant Fits
+! Pressure: High      Temps:   500-2500 K,  MeanAbsErr:   0.8%,  MaxErr:   2.9%
+
+CH2C(OH)CH3+H=CH2C(O)CH3+H2      6.646E+04    2.556     7235 /
+! Info Regarding Rate Constant Fits
+! Pressure: High      Temps:   500-2500 K,  MeanAbsErr:   2.4%,  MaxErr:   7.1%
+
+CH2C(OH)CH3+H=CH2C(OH)CH2+H2     6.449E+05    2.422     5717 /
+! Info Regarding Rate Constant Fits
+! Pressure: High      Temps:   500-2500 K,  MeanAbsErr:   2.3%,  MaxErr:   7.5%
+
+CH2C(OH)CH3+H=CHC(OH)CH3+H2      1.849E+08    1.833    16413 /
+! Info Regarding Rate Constant Fits
+! Pressure: High      Temps:   500-2500 K,  MeanAbsErr:   1.4%,  MaxErr:   4.9%
+
+CH3C(O)CH3+H=CH2C(O)CH3+H2       2.950E+06    2.313     6971 /
+! Info Regarding Rate Constant Fits
+! Pressure: High      Temps:   500-2500 K,  MeanAbsErr:   2.9%,  MaxErr:   9.5%
+
+CH3CHO+CH3=CH2CHO+CH4            1.375E+00    3.696     7718 /
+! Info Regarding Rate Constant Fits
+! Pressure: High      Temps:   500-2500 K,  MeanAbsErr:   2.1%,  MaxErr:   6.7%
+
+CH3CHO+CH3=CH3CO+CH4             1.230E+02    3.178     5359 /
+! Info Regarding Rate Constant Fits
+! Pressure: High      Temps:   500-2500 K,  MeanAbsErr:   1.5%,  MaxErr:   5.0%
+
+CH2C(OH)CH3+OH=CHC(OH)CH3+H2O    8.155E+02    2.929     2944 /
+! Info Regarding Rate Constant Fits
+! Pressure: High      Temps:   500-2500 K,  MeanAbsErr:   1.8%,  MaxErr:   5.6%
+
+CH2C(OH)CH3+OH=CH2C(O)CH3+H2O    6.578E+03    2.511    -5783 /
+! Info Regarding Rate Constant Fits
+! Pressure: High      Temps:   500-2500 K,  MeanAbsErr:   2.8%,  MaxErr:  10.2%
+
+CH2C(OH)CH3+OH=CHC(OH)CH3+H2O    1.776E+03    2.852     3017 /
+! Info Regarding Rate Constant Fits
+! Pressure: High      Temps:   500-2500 K,  MeanAbsErr:   1.7%,  MaxErr:   5.4%
+
+CH3C(O)CH3+OH=CH2C(O)CH3+H2O     2.005E+06    2.131      422 /
+! Info Regarding Rate Constant Fits
+! Pressure: High      Temps:   500-2500 K,  MeanAbsErr:   2.1%,  MaxErr:   7.0%
+
+C2H6+CH3=C2H5+CH4                4.051E+01    3.435     9979 /
+! Info Regarding Rate Constant Fits
+! Pressure: High      Temps:   500-2500 K,  MeanAbsErr:   2.2%,  MaxErr:   6.8%
+
+C3H8+H=CH2CH2CH3+H2              2.885E+08    1.790     8576 /
+! Info Regarding Rate Constant Fits
+! Pressure: High      Temps:   500-2500 K,  MeanAbsErr:   2.4%,  MaxErr:   8.0%
+
+C3H8+H=CH3CHCH3+H2               8.129E+07    1.830     5813 /
+! Info Regarding Rate Constant Fits
+! Pressure: High      Temps:   500-2500 K,  MeanAbsErr:   1.5%,  MaxErr:   4.8%
+
+C2H5OH+CH3=CH2CH2OH+CH4          9.775E+00    3.497    10286 /
+! Info Regarding Rate Constant Fits
+! Pressure: High      Temps:   500-2500 K,  MeanAbsErr:   2.1%,  MaxErr:   6.1%
+
+C2H5OH+CH3=CH3CH2O+CH4           3.257E+00    3.449     7994 /
+! Info Regarding Rate Constant Fits
+! Pressure: High      Temps:   500-2500 K,  MeanAbsErr:   1.7%,  MaxErr:   5.4%
+
+C2H5OH+CH3=CH3CHOH+CH4           1.186E+01    3.456     7336 /
+! Info Regarding Rate Constant Fits
+! Pressure: High      Temps:   500-2500 K,  MeanAbsErr:   1.9%,  MaxErr:   5.8%
+
+C3H8+OH=CH2CH2CH3+H2O            3.906E+06    2.040     1403 /
+! Info Regarding Rate Constant Fits
+! Pressure: High      Temps:   500-2500 K,  MeanAbsErr:   1.5%,  MaxErr:   5.1%
+
+C3H8+OH=CH3CHCH3+H2O             7.793E+06    1.882      223 /
+! Info Regarding Rate Constant Fits
+! Pressure: High      Temps:   500-2500 K,  MeanAbsErr:   0.5%,  MaxErr:   2.0%
+
+iC3H7OH+H=CH3C(OH)CH3+H2         9.883E+06    1.991     2810 /
+! Info Regarding Rate Constant Fits
+! Pressure: High      Temps:   500-2500 K,  MeanAbsErr:   1.3%,  MaxErr:   4.0%
+
+iC3H7OH+H=CH3CH(O)CH3+H2         4.835E+05    2.346    10086 /
+! Info Regarding Rate Constant Fits
+! Pressure: High      Temps:   500-2500 K,  MeanAbsErr:   1.5%,  MaxErr:   4.6%
+
+iC3H7OH+H=H2+CH3CH(OH)CH2        7.320E+07    1.953     9120 /
+! Info Regarding Rate Constant Fits
+! Pressure: High      Temps:   500-2500 K,  MeanAbsErr:   2.5%,  MaxErr:   8.2%
+
+nC3H7OH+H=CH2CH2CH2OH+H2         1.229E+07    2.114     8268 /
+! Info Regarding Rate Constant Fits
+! Pressure: High      Temps:   500-2500 K,  MeanAbsErr:   1.6%,  MaxErr:   5.3%
+
+nC3H7OH+H=CH3CH2CH2O+H2          2.404E+05    2.449    10256 /
+! Info Regarding Rate Constant Fits
+! Pressure: High      Temps:   500-2500 K,  MeanAbsErr:   1.4%,  MaxErr:   4.2%
+
+nC3H7OH+H=CH3CH2CHOH+H2          4.639E+06    2.158     4026 /
+! Info Regarding Rate Constant Fits
+! Pressure: High      Temps:   500-2500 K,  MeanAbsErr:   1.6%,  MaxErr:   5.0%
+
+nC3H7OH+H=CH3CHCH2OH+H2          1.138E+07    2.080     6706 /
+! Info Regarding Rate Constant Fits
+! Pressure: High      Temps:   500-2500 K,  MeanAbsErr:   1.6%,  MaxErr:   4.9%
+
+iC3H7OH+OH=CH3CH(O)CH3+H2O       3.167E+03    2.665      -43 /
+! Info Regarding Rate Constant Fits
+! Pressure: High      Temps:   500-2500 K,  MeanAbsErr:   0.9%,  MaxErr:   3.0%
+
+nC3H7OH+OH=CH2CH2CH2OH+H2O       8.695E+00    3.466    -2016 /
+! Info Regarding Rate Constant Fits
+! Pressure: High      Temps:   500-2500 K,  MeanAbsErr:   1.6%,  MaxErr:   5.6%
+
+nC3H7OH+OH=CH3CH2CHOH+H2O        1.861E+06    2.025     -868 /
+! Info Regarding Rate Constant Fits
+! Pressure: High      Temps:   500-2500 K,  MeanAbsErr:   0.4%,  MaxErr:   1.4%
+
+nC3H7OH+OH=CH3CHCH2OH+H2O        3.627E+00    3.400    -3197 /
+! Info Regarding Rate Constant Fits
+! Pressure: High      Temps:   500-2500 K,  MeanAbsErr:   0.3%,  MaxErr:   0.9%
+
+C3H8+CH3=CH2CH2CH3+CH4           2.981E+01    3.442     9908 /
+! Info Regarding Rate Constant Fits
+! Pressure: High      Temps:   500-2500 K,  MeanAbsErr:   2.2%,  MaxErr:   6.7%
+
+C3H8+CH3=CH3CHCH3+CH4            3.667E+01    3.319     8192 /
+! Info Regarding Rate Constant Fits
+! Pressure: High      Temps:   500-2500 K,  MeanAbsErr:   1.7%,  MaxErr:   5.1%
+
+C4H10+H=CH2CH2CH2CH3+H2          1.444E+08    1.885     8382 /
+! Info Regarding Rate Constant Fits
+! Pressure: High      Temps:   500-2500 K,  MeanAbsErr:   2.2%,  MaxErr:   7.5%
+
+C4H10+H=CH3CHCH2CH3+H2           2.912E+08    1.749     5907 /
+! Info Regarding Rate Constant Fits
+! Pressure: High      Temps:   500-2500 K,  MeanAbsErr:   1.8%,  MaxErr:   6.0%
+
+C4H10+OH=CH3CHCH2CH3+H2O         4.866E+08    1.421      208 /
+! Info Regarding Rate Constant Fits
+! Pressure: High      Temps:   500-2500 K,  MeanAbsErr:   0.6%,  MaxErr:   2.2%
+
+iC3H7OH+CH3=CH3C(OH)CH3+CH4      3.803E+01    3.224     6186 /
+! Info Regarding Rate Constant Fits
+! Pressure: High      Temps:   500-2500 K,  MeanAbsErr:   1.6%,  MaxErr:   5.0%
+
+iC3H7OH+CH3=CH3CH(O)CH3+CH4      5.844E+00    3.361     8384 /
+! Info Regarding Rate Constant Fits
+! Pressure: High      Temps:   500-2500 K,  MeanAbsErr:   1.9%,  MaxErr:   6.0%
+
+iC3H7OH+CH3=CH3CH(OH)CH2+CH4     3.597E+01    3.408    10092 /
+! Info Regarding Rate Constant Fits
+! Pressure: High      Temps:   500-2500 K,  MeanAbsErr:   2.4%,  MaxErr:   7.3%
+
+nC3H7OH+CH3=CH2CH2CH2OH+CH4      5.397E+00    3.557    10134 /
+! Info Regarding Rate Constant Fits
+! Pressure: High      Temps:   500-2500 K,  MeanAbsErr:   2.0%,  MaxErr:   5.9%
+
+nC3H7OH+CH3=CH3CH2CH2O+CH4       3.377E+00    3.472     8076 /
+! Info Regarding Rate Constant Fits
+! Pressure: High      Temps:   500-2500 K,  MeanAbsErr:   1.9%,  MaxErr:   6.3%
+
+nC3H7OH+CH3=CH3CH2CHOH+CH4       1.034E+01    3.454     7147 /
+! Info Regarding Rate Constant Fits
+! Pressure: High      Temps:   500-2500 K,  MeanAbsErr:   1.8%,  MaxErr:   5.3%
+
+nC3H7OH+CH3=CH3CHCH2OH+CH4       1.601E+01    3.397     8600 /
+! Info Regarding Rate Constant Fits
+! Pressure: High      Temps:   500-2500 K,  MeanAbsErr:   1.8%,  MaxErr:   5.1%
+
+nC4H9OH+H=CH3CH2CH2CH2O+H2       4.528E+04    2.673     9940 /
+! Info Regarding Rate Constant Fits
+! Pressure: High      Temps:   500-2500 K,  MeanAbsErr:   1.3%,  MaxErr:   3.8%
+
+nC4H9OH+H=CH3CH2CH2CHOH+H2       8.306E+05    2.395     3787 /
+! Info Regarding Rate Constant Fits
+! Pressure: High      Temps:   500-2500 K,  MeanAbsErr:   1.5%,  MaxErr:   4.9%
+
+! Info Regarding Rate Constant Fits
+! Pressure: High      Temps:   500-2500 K,  MeanAbsErr:   1.4%,  MaxErr:   4.5%
+
+nC4H9OH+H=CH3CHCH2CH2OH+H2       3.485E+06    2.233     5220 /
+! Info Regarding Rate Constant Fits
+! Pressure: High      Temps:   500-2500 K,  MeanAbsErr:   1.2%,  MaxErr:   4.0%
+
+CH2C(OH)CH3+CH3=CH2C(O)CH3+CH4   1.336E+01    3.317     6400 /
+! Info Regarding Rate Constant Fits
+! Pressure: High      Temps:   500-2500 K,  MeanAbsErr:   1.7%,  MaxErr:   5.2%
+
+CH2C(OH)CH3+CH3=CH2C(OH)CH2+CH4  1.385E+00    3.715     7571 /
+! Info Regarding Rate Constant Fits
+! Pressure: High      Temps:   500-2500 K,  MeanAbsErr:   2.3%,  MaxErr:   7.0%
+
+CH2C(OH)CH3+CH3=CHC(OH)CH3+CH4   2.185E+01    3.289    15153 /
+! Info Regarding Rate Constant Fits
+! Pressure: High      Temps:   500-2500 K,  MeanAbsErr:   1.5%,  MaxErr:   4.8%
+
+C4H10+CH3=CH2CH2CH2CH3+CH4       4.892E+01    3.380    10063 /
+! Info Regarding Rate Constant Fits
+! Pressure: High      Temps:   500-2500 K,  MeanAbsErr:   2.6%,  MaxErr:   8.2%
+
+C4H10+CH3=CH3CHCH2CH3+CH4        9.537E+01    3.256     8185 /
+! Info Regarding Rate Constant Fits
+! Pressure: High      Temps:   500-2500 K,  MeanAbsErr:   2.3%,  MaxErr:   7.2%
+
+! vib model: harm
+! tors model: 1dhr
+! sym model: sampling
+! energy level: 1.69 x RRccsd(t)-f12/cc-pvqz-f12//RUb2plypd3/cc-pvtz
+! + -0.69 x RRccsd(t)-f12/cc-pvtz-f12//RUb2plypd3/cc-pvtz
+! tors level: RUwb97xd/cc-pvtz//RUwb97xd/cc-pvtz
+
+iC3H7OH+OH=CH3C(OH)CH3+H2O       1.686E+04    2.481    -1438 /
+! Info Regarding Rate Constant Fits
+! Pressure: High      Temps:   500-2500 K,  MeanAbsErr:   1.1%,  MaxErr:   3.4%
+
+iC3H7OH+OH=CH3CH(OH)CH2+H2O      4.575E+01    3.354      -62 /
+! Info Regarding Rate Constant Fits
+! Pressure: High      Temps:   500-2500 K,  MeanAbsErr:   3.1%,  MaxErr:   9.9%
+
+nC3H7OH+OH=CH3CH2CH2O+H2O        6.728E+03    2.634      710 /
+! Info Regarding Rate Constant Fits
+! Pressure: High      Temps:   500-2500 K,  MeanAbsErr:   0.7%,  MaxErr:   2.5%
+
+C4H10+OH=CH2CH2CH2CH3+H2O        3.775E+06    2.053     1512 /
+! Info Regarding Rate Constant Fits
+! Pressure: High      Temps:   500-2500 K,  MeanAbsErr:   1.4%,  MaxErr:   5.0%
+
+CH3C(O)CH3+CH3=CH2C(O)CH3+CH4    4.693E+00    3.655     7853 /
+! Info Regarding Rate Constant Fits
+! Pressure: High      Temps:   500-2500 K,  MeanAbsErr:   2.4%,  MaxErr:   7.9%
+
+END

@@ -46,6 +46,6 @@ Pressurized oxy-fuel combustion is deemed an advanced oxy-fuel combustion techni
 
 ## Processing Notes
 
-- extracted S0010218021003898_mmc1.zip
-- extracted S0010218021003898_mmc3.docx
 - extracted S0010218021003898_mmc2.xlsx
+- extracted S0010218021003898_mmc3.docx
+- extracted S0010218021003898_mmc1.zip

@@ -22,7 +22,7 @@ Simon Drost, Miguel Sierra Aznar, Robert Schießl, Marcus Ebert, Jyh-Yuan Chen, 
 - Standard mechanism file: chem.inp
 - Standard thermodynamic file: not available
 - Standard transport file: not available
-- Original mechanism source files: _processing/extracted/s0010218020304132_mmc5/mmc5.mech, _processing/extracted/s0010218020304132_mmc4/mmc4.mech
+- Original mechanism source files: _processing/extracted/s0010218020304132_mmc4/mmc4.mech, _processing/extracted/s0010218020304132_mmc5/mmc5.mech
 - Original thermodynamic source files: not found
 - Original transport source files: not found
 
@@ -33,7 +33,7 @@ Simon Drost, Miguel Sierra Aznar, Robert Schießl, Marcus Ebert, Jyh-Yuan Chen, 
 - Status: cantera_failed
 - Species count: not parsed
 - Reaction count: not parsed
-- Message: InputError: Error while reading reaction in chem.inp starting on line 213: """ CH3O(+M)<=>CH2O+H(+M) 6.8000E+13 0.000 2.6170E+04 ! 173 LOW/ 1.8670E+25 -3.000 2.4307E+04 / TROE/ 0.9000 2500. 1300. 0.1000+100 / H2/ 2.00/ H2O/ 6.00/ CO/ 1.50/ CO2/ 2.00/ CH4/ 2.00/ C2H6/ 3.00/ """ could not convert string to float: '0.1000+100' No thermo data found for species 'AR' No thermo data found for species 'N2' No thermo data found for species 'H2' No thermo data found for species 'H' No thermo data found for species 'O2' No thermo data found for species 'O' No thermo data found for species 'H2O' No thermo data found for species 'OH' No thermo data found for species 'H2O2' No thermo data found for species 'HO2' No thermo data found for species 'CO' No thermo data found for species 'CO2' No thermo data ... [truncated; see _processing logs]
+- Message: InputError: Error while reading reaction in chem.inp starting on line 545: """ CH3O(+M)<=>CH2O+H(+M) 6.8000E+13 0.000 2.6170E+04 ! 173 LOW/ 1.8670E+25 -3.000 2.4307E+04 / TROE/ 0.9000 2500. 1300. 0.1000+100 / H2/ 2.00/ H2O/ 6.00/ CO/ 1.50/ CO2/ 2.00/ CH4/ 2.00/ C2H6/ 3.00/ """ could not convert string to float: '0.1000+100' No thermo data found for species 'AR' No thermo data found for species 'N2' No thermo data found for species 'H2' No thermo data found for species 'H' No thermo data found for species 'O2' No thermo data found for species 'O' No thermo data found for species 'H2O' No thermo data found for species 'OH' No thermo data found for species 'H2O2' No thermo data found for species 'HO2' No thermo data found for species 'CO' No thermo data found for species 'CO2' No thermo data ... [truncated; see _processing logs]
 - Method: cantera
 - Cantera YAML: not available
 - Standard chem.inp: chem.inp
@@ -58,11 +58,11 @@ We study the auto-ignition behavior of several natural gas surrogates; in partic
 
 ## Processing Notes
 
-- extracted S0010218020304132_mmc7.docx
 - extracted S0010218020304132_mmc8.docx
-- extracted S0010218020304132_mmc3.xlsx
-- extracted S0010218020304132_mmc1.xlsx
-- extracted S0010218020304132_mmc2.xlsx
 - extracted S0010218020304132_mmc6.docx
+- extracted S0010218020304132_mmc7.docx
+- extracted S0010218020304132_mmc2.xlsx
 - extracted S0010218020304132_mmc5.zip
 - extracted S0010218020304132_mmc4.zip
+- extracted S0010218020304132_mmc3.xlsx
+- extracted S0010218020304132_mmc1.xlsx

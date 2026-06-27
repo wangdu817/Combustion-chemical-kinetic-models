@@ -1,0 +1,3117 @@
+! A Detailed mechanism for the oxidation of Methyl Ethyl Ketone in a jet stirred reactor
+!
+! Sébastien Thion, Pascal Diévart, Pierre Van Cauwenberghe, Guillaume Dayma,  Zeynep Serinyel, and Philippe Dagaut
+!
+! Submitted for consideration at the 36th International Symposium on Combustion
+
+!
+
+ELEMENTS
+
+h c o n ar he
+
+END
+
+SPECIES
+
+ar            n2             he
+h2            h              o              oh             ho2
+o2            h2o            h2o2
+co            co2            ch2o           hco            ocho
+ch3oh         ch3o           ch2oh          ch3o2          ch3o2h
+ch4           ch3            ch2            ch2(s)         ch
+c             hocho          hoco           hochoh
+hoch2o
+
+c2h6          c2h5           c2h4           c2h3           c2h2
+c2h           c2             c2o            h2cc
+ch3cho        ch2cho         ch3co          ch2co          hcco
+ch3co2        ch3cooh        ch2cooh        ch3co3         ch3co3h
+c2h5oh        ch3ch2o        pc2h4oh        c2h5o2         c2h5o2h
+c2h4o2h       c2h3oh         c2h2oh         hccoh          c2h4o1-2
+c2h3o1-2      chocho         choco          o2c2h4oh       ch3choh
+
+c3h8          nc3h7          ic3h7          c3h6           c3h5-a
+c3h5-t        c3h5-s         c3h4-a         c3h4-p         c3h3
+c3h2          
+c2h5cho       c2h5co         c2h3cho        c2h3co
+ch3coch3      ch3coch2       ch3coch2o2     ch3coch2o
+c3h5-aooh     c3h5-aoo       c3h5o          c3h5oh
+c3h4o          c3h4o2h        c3h3o
+nc3h7o2       ic3h7o2        nc3h7o2h       ic3h7o2h       nc3h7o
+ic3h7o        prooh1-2       prooh1-3       prooh2-1       prooh1-2o2
+prooh1-3o2    prooh2-1o2     c3ket12        c3ket13        c3ket21    
+c3h6o1-3      c3h6o1-2
+ch3chco       ch2cco         hccco      
+ch2cch2oh
+c3h62oh       c3h61oh        c3h61oh2oo     c3h62oh1oo   
+ch3cocho      ch3coco        ch2cohch2
+ch3cohch      ch3cchoh       choch2cho
+ch3chocho     ch3chcho       pc2h4cho       o2pc2h4cho      opc2h4cho
+
+c2h5coch3     ch2ch2coch3    ch3chcoch3     c2h5coch2 
+c2h3coch3     c2h3coch2      
+
+c2h5coch2o2h  c2h5coch2o     c2h5cocho
+ch3choohcoch3 ch3chococh3    ch3cococh3
+c2h3coch2o2h  c2h3coch2o
+
+ch3choococh3
+
+END
+
+REACTIONS
+
+
+ch3+oh<=>ch2oh+h                       2.640E+19   -1.800     8068.0 ! DEAN, 1BAR 87
+plog /  0.026  4.280E+14   -0.540     1978.0 /
+plog /  1.000  2.640E+19   -1.800     8068.0 /
+plog / 10.000  1.990E+19   -1.680    11157.0 /
+
+ch3+oh<=>ch3o+h                        5.740E+12   -0.230    13931.0 ! DEAN, 1BAR 87
+plog /  0.026  9.160E+11   -0.020    13083.0 /
+plog /  1.000  5.740E+12   -0.230    13931.0 /
+plog / 10.000  9.950E+14   -0.820    16872.0 /
+
+ch3+oh<=>ch2(s)+h2o                    8.900E+18   -1.800     8067.0 ! DEAN, 1BAR 87
+plog /  0.026  1.380E+14   -0.540     1965.0 /
+plog /  1.000  8.900E+19   -1.800     8067.0 /
+plog / 10.000  6.370E+18   -1.670    11141.0 /
+
+ch3+oh<=>ch2o+h2                       3.190E+12   -0.530    10810.0 ! DEAN, 1BAR 87
+plog /  0.026  4.170E+10   -0.030     8786.0 /
+plog /  1.000  3.190E+12   -0.530    10810.0 /
+plog / 10.000  7.390E+14   -1.130    14551.0 /
+
+c2h3+o2<=>ch2cho+o                     3.700E+15   -0.831     3223.8 ! Bozzelli and Dean 1993, J. Phys.Chem,vol.97,pp.4427-4441 Fit between 700-2000K
+plog /   0.001  9.191E+14   -0.662     2672.4 /
+plog /   0.010  1.093E+15   -0.680     2763.9 /
+plog /   0.100  3.328E+14   -0.550     2236.7 /
+plog /   1.000  3.700E+15   -0.831     3223.8 /
+plog /   3.000  1.736E+17   -1.283     4815.5 /
+plog /  10.000  1.362E+19   -1.793     6771.9 /
+plog /  30.000  1.004E+21   -2.284     9172.8 /
+plog / 100.000  2.177E+21   -2.333    11039.6 /
+
+c2h3+o2<=>ch2o+hco                     8.219E+22   -3.249     3945.3 ! Bozzelli and Dean 1993, J. Phys.Chem,vol.97,pp.4427-4441 Fit between 700-2000K
+plog /   0.001  1.190E+22   -3.026     2993.1 /
+plog /   0.010  9.109E+21   -2.988     2999.8 /
+plog /   0.100  1.328E+22   -3.039     3080.3 /
+plog /   1.000  8.219E+22   -3.249     3945.3 /
+plog /   3.000  8.219E+22   -3.249     3945.3 /
+plog /  10.000  1.909E+24   -3.594     6205.6 /
+plog /  30.000  1.500E+27   -4.360     9574.0 /
+plog / 100.000  1.010E+28   -4.540    12197.0 /
+
+c2h3+o2<=>chocho+h                     1.721E+19   -2.516     3122.3 ! Bozzelli and Dean 1993, J. Phys.Chem,vol.97,pp.4427-4441 Fit between 700-2000K
+plog /   0.001  1.310E+18   -2.207     2119.1 /
+plog /   0.010  1.951E+18   -2.266     2171.4 /
+plog /   0.100  2.270E+18   -2.275     2289.3 /
+plog /   1.000  1.721E+19   -2.516     3122.3 /
+plog /   3.000  1.407E+20   -2.760     4147.7 /
+plog /  10.000  4.021E+20   -2.853     5481.2 /
+plog /  30.000  5.050E+22   -3.410     8180.0 /
+plog / 100.000  8.900E+23   -3.700    11082.0 /
+
+c2h3+o2<=>c2h2+ho2                     6.02E+15    -1.277     3383.1 ! Bozzelli and Dean 1993, J. Phys.Chem,vol.97,pp.4427-4441 Fit between 700-2000K
+plog /   0.001  7.79E+13    -0.752     1748.2 /
+plog /   0.010  1.48E+14    -0.846     1773.7 /
+plog /   0.100  2.01E+14    -0.877     1959.5 /
+plog /   1.000  6.02E+15    -1.277     3383.1 /
+plog /   3.000  3.84E+17    -1.770     5187.5 /
+plog /  10.000  1.22E+19    -2.132     7804.4 /
+plog /  30.000  1.66E+22    -2.960    12051.0 /
+plog / 100.000  3.06E+15    -0.986    10755.8 /
+
+ch2cho+o2=>ch2co+ho2                   2.510E+05    2.330    23800.0
+plog /   0.010  1.880E+05    2.370    23730.0 /
+plog /   0.100  1.880E+05    2.370    23730.0 /
+plog /   1.000  2.510E+05    2.330    23800.0 /
+plog /  10.000  7.050E+07    1.630    25290.0 /
+
+ch2cho+o2=>ch2o+co+oh                  1.650E+19   -2.220    10340.0 !
+plog /   0.010  2.680E+17   -1.840     6530.0 /
+plog /   0.100  1.520E+20   -2.580     8980.0 /
+plog /   1.000  1.650E+19   -2.220    10340.0 /
+plog /  10.000  8.953E+13   -0.600    10120.0 /
+
+
+c3h5-a+o2<=>c3h5-aoo                   2.430E+39    -8.960   8620.0 ! Lee & Bozzelli 2005
+c3h5-a+o2<=>c2h3cho+oh                 3.360E+05     1.810  19190.0 ! Lee & Bozzelli 2005
+c3h5-a+o2<=>c3h4-a+ho2                 2.060E+04     2.190  17590.0 ! Lee & Bozzelli 2005
+c3h5-a+o2<=>ch2cho+ch2o                3.080E+09     0.370  16910.0 ! Lee & Bozzelli 2005
+c3h5-a+o2<=>c2h2+ch2o+oh               9.710E+20    -2.700  24980.0 ! Lee & Bozzelli 2005
+
+! Miller et al., Journal of Physical Chemistry A (2008) Vol. 112, pp. 9429-9438
+c3h4-p+h<=>c3h5-s                      1.367E+51  -12.550     15428.0
+plog /   1.000   1.367E+51  -12.550    15428.0 /
+plog /  10.000   3.878E+50  -11.900    16915.0 /
+duplicate
+
+c3h4-p+h<=>c3h5-s                      5.751E+39   -9.510      8772.0
+plog /   1.000   5.751E+39   -9.510     8772.0 /
+plog /  10.000   4.330E+40   -9.600     9401.0 /
+duplicate
+
+! Miller  and Klippenstein,  Journal of Physical Chemistry A (2013) Vol. 117, pp. 2718-2727
+! The two Arrhenius expression has been fitted into one single Arrhenius function
+! The fitting is valid between 500 and 2500 K
+c3h6+h<=>c2h4+ch3           2.671E+12        0.4736    5431.1
+plog /   0.0013   1.540E+09    1.3549     2542.0 /
+plog /   0.0395   7.884E+10    0.8700     3599.6 /
+plog /   1.0000   2.671E+12    0.4736     5431.1 /
+plog /  10.0000   1.524E+17   -0.8261     9773.9 /
+plog / 100.0000   9.444E+18   -1.2425    13590.7 /
+
+! Miller et al., Journal of Physical Chemistry A (2008) Vol. 112, pp. 9429-9438
+c3h4-p+h<=>c2h2+ch3         3.455E+12        0.442     5463.0
+plog /   0.0013   2.444E+10    1.040      3980.0 /
+plog /   0.0395   3.889E+10    0.989      4114.0 /
+plog /   1.0000   3.455E+12    0.442      5463.0 /
+plog /  10.0000   1.722E+14   -0.010      7134.0 /
+plog / 100.0000   1.136E+18   -1.053     10763.7 /
+
+! Miller et al., Journal of Physical Chemistry A (2008) Vol. 112, pp. 9429-9438
+c3h4-a+h<=>c3h4-p+h         2.474E+15       -0.330     6436.0
+plog /   0.0013   8.488E+10    0.890      2503.0 /
+plog /   0.0395   1.475E+13    0.260      4103.0 /
+plog /   1.0000   2.474E+15   -0.330      6436.0 /
+plog /  10.0000   9.139E+19   -1.594     10463.2 /
+plog / 100.0000   9.132E+20   -1.783     13629.6 /
+
+! Miller et al., Journal of Physical Chemistry A (2008) Vol. 112, pp. 9429-9438
+c3h4-a+h<=>c2h2+ch3         2.759E+15       -0.442    12300.0
+plog /   0.0013   1.234E+08    1.530      4737.0 /
+plog /   0.0395   2.721E+09    1.200      6834.0 /
+plog /   1.0000   2.759E+15   -0.442     12300.0 /
+plog /  10.0000   1.114E+15   -0.265     13846.0 /
+plog / 100.0000   3.535E+16   -0.623     17173.1 /
+
+! Miller and Klippenstein, Journal of Physical Chemistry A (2003) Vol. 107, pp. 2680-2692
+! High Pressure limit: Klippenstein and Harding, Journal of Physical Chemistry A (2007) Vol. 111, pp. 3789-3801
+c3h4-a<=>c3h4-p                         7.762E+39   -7.800     78446.0
+plog /   0.0395   6.026E+53  -12.180     84276.0 /
+plog /   1.0000   7.762E+39   -7.800     78446.0 /
+plog /  10.0000   4.786E+48  -10.000     88685.0 /
+
+! Miller et al., Journal of Physical Chemistry A (2008) Vol. 112, pp. 9429-9438
+c2h2+ch3<=>c3h5-s           2.244E+43      -9.986     18141.4
+plog /   0.0013   3.811E+43  -11.052     15396.9 /
+plog /   0.0395   2.250E+43  -10.476     16458.2 /
+plog /   1.0000   2.244E+43   -9.986     18141.4 /
+plog /  10.0000   2.322E+42   -9.341     19478.1 /
+plog / 100.0000   4.992E+38   -7.932     19743.5 /
+
+! Miller et al., Journal of Physical Chemistry A (2008) Vol. 112, pp. 9429-9438
+c3h4-a+h<=>c3h5-t           5.785E+53      -12.727    16953.2
+plog /   0.0013   1.106E+68  -17.849     23933.9 /
+plog /   0.0395   5.806E+53  -13.261     14727.3 /
+plog /   1.0000   5.785E+53  -12.727     16953.2 /
+plog /  10.0000   1.619E+51  -11.622     17743.8 /
+plog / 100.0000   1.513E+51  -11.228     20998.0 /
+
+! Miller et al., Journal of Physical Chemistry A (2008) Vol. 112, pp. 9429-9438
+c3h4-a+h<=>c3h5-a           6.984E+44       -9.513    16581.6
+plog /   0.0013   5.879E+52  -12.700    15381.3 /
+plog /   0.0395   4.599E+50  -11.616    16783.4 /
+plog /   1.0000   6.984E+44   -9.513    16581.6 /
+plog /  10.0000   2.664E+37   -7.122    14521.8 /
+plog / 100.0000   6.426E+31   -5.290    13448.5 /
+
+! Miller et al., Journal of Physical Chemistry A (2008) Vol. 112, pp. 9429-9438
+c3h4-p+h<=>c3h5-t           4.542E+51     -11.999     15562.5
+plog /   0.0013   8.706E+50  -12.755     11514.5 /
+plog /   0.0395   4.572E+51  -12.456     13494.1 /
+plog /   1.0000   4.542E+51  -11.999     15562.5 /
+plog /  10.0000   1.459E+49  -10.943     16311.6 /
+plog / 100.0000   1.692E+46   -9.759     17529.8 /
+
+! Fridlyand et al., J.Phys.Chem.A 117(2013)4762-4776
+c3h5-a+c3h5-a<=>c3h4-a+c3h6            9.545E+40   -9.300     12470.0
+plog /   1.0000   9.545E+40   -9.300     12470.0 /
+plog /  10.0000   4.074E+28    -5.500     7410.0 /
+
+! Zador et al., Physical Chemistry and Chemical Physics (2009) Vol. 11, pp. 11040-11053
+c3h6+oh<=>c3h61oh                      2.595E+59  -14.170     23079.0 ! Zador et al., PCCP, 1 atm
+plog /   0.0013  2.300E+78  -20.700    32402.0 /
+plog /   0.0100  2.740E+77  -20.000    33874.0 /
+plog /   0.1000  1.040E+68  -17.010    27909.0 /
+plog /   1.0000  1.950E+59  -14.170    23079.0 /
+plog /  10.0000  7.580E+53  -12.230    22976.0 /
+plog / 100.0000  1.430E+48  -10.230    23772.0 /
+duplicate
+
+c3h6+oh<=>c3h61oh                      1.550E+50      -12.040    11493.0
+plog /   0.0013  6.410E+59  -15.840    11594.0 /
+plog /   0.0100  7.280E+59  -15.510    12898.0 /
+plog /   0.1000  1.350E+56  -14.040    12945.0 /
+plog /   1.0000  1.550E+50  -12.040    11493.0 /
+plog /  10.0000  6.410E+41   -9.350     8921.0 /
+plog / 100.0000  2.300E+32   -6.310     6088.0 /
+duplicate
+
+! Zador et al., Physical Chemistry and Chemical Physics (2009) Vol. 11, pp. 11040-11053
+c3h6+oh<=>c3h62oh                      2.595E+59  -14.170     23079.0 ! Zador et al., PCCP, 1 atm
+plog /   0.0013  2.300E+78  -20.700    32402.0 /
+plog /   0.0100  2.740E+77  -20.000    33874.0 /
+plog /   0.1000  1.040E+68  -17.010    27909.0 /
+plog /   1.0000  1.950E+59  -14.170    23079.0 /
+plog /  10.0000  7.580E+53  -12.230    22976.0 /
+plog / 100.0000  1.430E+48  -10.230    23772.0 /
+duplicate
+
+c3h6+oh<=>c3h62oh                      1.550E+50      -12.040    11493.0
+plog /   0.0013  6.410E+59  -15.840    11594.0 /
+plog /   0.0100  7.280E+59  -15.510    12898.0 /
+plog /   0.1000  1.350E+56  -14.040    12945.0 /
+plog /   1.0000  1.550E+50  -12.040    11493.0 /
+plog /  10.0000  6.410E+41   -9.350     8921.0 /
+plog / 100.0000  2.300E+32   -6.310     6088.0 /
+duplicate
+
+! Zador et al., Physical Chemistry and Chemical Physics (2009) Vol. 11, pp. 11040-11053
+c3h6+oh<=>c3h5oh+h                     8.069E+16   -1.000     15339.0
+plog /   0.0013  -1.740E-09  -0.490    11043.0 /
+plog /   0.0100  -1.750E-09  -0.490    11053.0 /
+plog /   0.1000  -1.040E-08  -0.660    11794.0 /
+plog /   1.0000   1.340E-07  -1.000    15339.0 /
+plog /  10.0000   2.070E-01  -2.680    20993.0 /
+plog / 100.0000   3.450E+01  -3.160    26266.0 /
+duplicate
+
+c3h6+oh<=>c3h5oh+h                     9.153E+07    1.420     10087.0
+plog /   0.0013   4.430E-11   0.050    10611.0 /
+plog /   0.0100   2.640E-10  -0.160    11125.0 /
+plog /   0.1000   5.140E-10  -0.220    11407.0 /
+plog /   1.0000   1.520E-16   1.420    10087.0 /
+plog /  10.0000   6.070E-19   2.140    10410.0 /
+plog / 100.0000   1.360E-21   2.840    10481.0 /
+duplicate
+
+! Zador et al., Physical Chemistry and Chemical Physics (2009) Vol. 11, pp. 11040-11053
+c3h6+oh<=>c2h3oh+ch3                   8.732E+20   -2.350     11290.0
+plog /   0.0013   1.110E-16   1.420     2708.0 /
+plog /   0.0100   6.240E-16   1.210     3068.0 /
+plog /   0.1000   3.470E-12   0.130     5407.0 /
+plog /   1.0000   1.450E-03  -2.350    11290.0 /
+plog /  10.0000   3.770E-26   4.030     1952.0 /
+plog / 100.0000   1.080E-01  -2.580    19256.0 /
+duplicate
+
+c3h6+oh<=>c2h3oh+ch3                   1.126E+04    2.500      3238.0
+plog /   0.0013   2.140E-18   1.650     1233.0 /
+plog /   0.0100   3.030E-20   2.100     1162.0 /
+plog /   0.1000   2.320E-23   3.210     1208.0 /
+plog /   1.0000   1.870E-20   2.500     3238.0 /
+plog /  10.0000   4.010E-05  -1.740    13107.0 /
+plog / 100.0000   5.480E-25   3.700     3665.0 /
+duplicate
+
+! Zador et al., Physical Chemistry and Chemical Physics (2009) Vol. 11, pp. 11040-11053
+c3h6+oh<=>c2h5cho+h                    2.909E+15   -0.740     11079.0
+plog /   0.0013   1.080E-13   0.530     7292.0 /
+plog /   0.0100   3.770E-14   0.660     6968.0 /
+plog /   0.1000   5.200E-13   0.360     7785.0 /
+plog /   1.0000   4.830E-09  -0.740    11079.0 /
+plog /  10.0000   7.490E-05  -1.860    15763.0 /
+plog / 100.0000   6.290E-03  -2.300    20501.0 /
+duplicate
+
+c3h6+oh<=>c2h5cho+h                    1.030E+02    2.830      4530.0
+plog /   0.0013   5.770E-18   1.530     4288.0 /
+plog /   0.0100   1.790E-17   1.340     4576.0 /
+plog /   0.1000   5.200E-19   1.690     4603.0 /
+plog /   1.0000   1.710E-22   2.830     4530.0 /
+plog /  10.0000   5.650E-26   3.890     4390.0 /
+plog / 100.0000   7.400E-30   5.030     4132.0 /
+duplicate
+
+! Zador et al., Physical Chemistry and Chemical Physics (2009) Vol. 11, pp. 11040-11053
+c3h6+oh<=>ch3coch3+h                   1.554E+10    0.620      7544.0
+plog /   0.0013   1.550E-20   2.350     2635.0 /
+plog /   0.0100   6.770E-20   2.170     3048.0 /
+plog /   0.1000   2.510E-17   1.440     4816.0 /
+plog /   1.0000   2.580E-14   0.620     7544.0 /
+plog /  10.0000   2.450E-29   4.750     2168.0 /
+plog / 100.0000   6.400E-05  -1.850    19219.0 /
+duplicate
+
+c3h6+oh<=>ch3coch3+h                   7.648E-07    5.050       874.0
+plog /   0.0013   4.760E-24   2.920      625.0 /
+plog /   0.0100   8.030E-25   2.980      704.0 /
+plog /   0.1000   7.700E-29   4.480      687.0 /
+plog /   1.0000   1.270E-30   5.050      874.0 /
+plog /  10.0000   4.380E-09  -0.800    12728.0 /
+plog / 100.0000   8.080E-28   4.320     4020.0 /
+duplicate
+
+! Zador et al., Physical Chemistry and Chemical Physics (2009) Vol. 11, pp. 11040-11053
+c3h6+oh<=>ch3cho+ch3                   5.167E+16   -1.670      8264.0
+plog /   0.0013  -7.370E-17   0.890      540.0 /
+plog /   0.0100   3.110E-05  -2.960     4951.0 /
+plog /   0.1000   1.570E-09  -1.300     5272.0 /
+plog /   1.0000   8.580E-08  -1.670     8264.0 /
+plog /  10.0000   8.520E-06  -2.110    12359.0 /
+plog / 100.0000   1.230E-04  -2.290    17262.0 /
+duplicate
+
+c3h6+oh<=>ch3cho+ch3                   3.156E-04    4.050     -1144.0
+plog /   0.0013   1.150E-18   1.490     -536.0 /
+plog /   0.0100   9.860E-21   2.010     -560.0 /
+plog /   0.1000   1.300E-24   3.100     -919.0 /
+plog /   1.0000   5.240E-28   4.050    -1144.0 /
+plog /  10.0000   1.260E-29   4.490     -680.0 /
+plog / 100.0000   9.050E-29   4.220     1141.0 /
+duplicate
+
+!*********************************************************************************************
+!****************************************** BASE C0 ******************************************
+!*********************************************************************************************
+
+!REF:2 parameter fit to hong et al.proc. of the comb. inst. 33 (2011) 309–316
+h+o2<=>o+oh                                       1.040E+014     0.000   15286.0
+
+!REF:sutherland et al., 21st symposium, p. 929 (1986)
+o+h2<=>h+oh                                       5.080E+004     2.670    6292.0
+
+!REF:Lam et al. Submitted IJcK
+oh+h2<=>h+h2o                                     4.380E+013     0.000    6990.0
+
+!REF:sutherland et al., 23rd symposium, p. 51 (1990)
+o+h2o<=>oh+oh                                     2.970E+006     2.020   13400.0
+
+!REF:tsang and hampson, j. phys. chem. ref. data, 15:1087 (1986)
+h2+M<=>h+h+M                                      4.577E+019    -1.400  104400.0
+h2/ 2.50/ h2o/ 12.00/ co/ 1.90/ co2/ 3.80/ he/ 0.83/ 
+o+o+M<=>o2+M                                      6.165E+015    -0.500       0.0
+h2/ 2.50/ h2o/ 12.00/ ar/ 0.83/ co/ 1.90/ co2/ 3.80/ he/ 0.83/ 
+o+h+M<=>oh+M                                      4.714E+018    -1.000       0.0
+h2/ 2.50/ h2o/ 12.00/ ar/ 0.75/ co/ 1.50/ co2/ 2.00/ he/ 0.75/ 
+
+!REF: li ijck 36: 566–575, 2004
+!REF:optimised to fit h2 and ch4 flames data
+h+oh+M<=>h2o+M                                    3.500E+022    -2.000       0.0
+
+!REF:efficiencies from GRI 3.0
+h2/ 0.73/ h2o/ 3.65/ ar/ 0.38/
+
+!REF:fernandes pccp 2008
+h+o2(+M)<=>ho2(+M)                                4.650E+012     0.440       0.0
+LOW/ 1.737E+019    -1.230      0.0/
+TROE/  6.700E-001  1.000E-030  1.000E+030  1.000E+030/
+h2/ 1.30/ co/ 1.90/ co2/ 3.80/  h2o/ 10.00/ ar/ 0.00/ he/ 0.00/
+
+h+o2(+ar)<=>ho2(+ar)                              4.650E+012     0.440       0.0
+!REF: bates et al. pccp 3 (2001) 2337-2342
+LOW/ 6.810E+018    -1.200       0.0/
+TROE/  7.000E-001  1.000E-030  1.000E+030  1.000E+030/
+
+!REF:LPL * 1.5 AK
+h+o2(+he)<=>ho2(+he)                              4.650E+012     0.440       0.0
+LOW/ 9.192E+018    -1.200       0.0/
+TROE/  5.900E-001  1.000E-030  1.000E+030  1.000E+030/
+ho2+h<=>oh+oh                                     7.079E+013     0.000     295.0
+
+!REF:michael sutherland 2000
+h2+o2<=>h+ho2                                     5.176E+005     2.433   53502.0
+
+!REF:baulch et al., j. phys. chem. ref data, 21:411 (1992)
+ho2+o<=>oh+o2                                     3.250E+013     0.000       0.0
+
+!REF:keyser, j. phys. chem. 92:1193 (1988) reduced by 15%
+ho2+oh<=>h2o+o2                                   1.930E+020    -2.490     584.0
+duplicate
+ho2+oh<=>h2o+o2                                   1.210E+009     1.240   -1307.0
+duplicate
+
+!REF:hippler et al. j.chem.phys 93 1755-1760 (1990)
+ho2+ho2<=>h2o2+o2                                 1.300E+011     0.000   -1630.0
+duplicate
+
+!REF:reduced by 13%
+ho2+ho2<=>h2o2+o2                                 3.658E+014     0.000   12000.0
+duplicate
+
+!REF:troe, combust. flame, 158:594-601 (2011)
+!REF:rate constant is for n2
+
+h2o2(+h2o)<=>oh+oh(+h2o)                          2.000E+012     0.900   48749.0
+LOW/ 1.866E+025    -2.300   48749.0/
+TROE/  5.100E-001  1.000E-030  1.000E+030/
+
+h2o2(+he)<=>oh+oh(+he)                            2.000E+012     0.900   48749.0
+LOW/ 1.609E+024    -2.300   48749.0/
+TROE/  3.700E-001  1.000E-030  1.000E+030/
+
+h2o2(+M)<=>oh+oh(+M)                              2.000E+012     0.900   48749.0
+LOW/ 3.658E+024    -2.300   48749.0/
+TROE/  4.300E-001  1.000E-030  1.000E+030/
+h2o/ 0.00/ co2/ 1.06/ n2/ 1.00/ o2/ 0.79/ h2o2/ 7.70/ he/ 0.00/
+ar/ 0.68/
+!REF:efficiencies for h2 and co taken from li et al., int. j. chem. kinet. 36:566-575 (2004)
+h2/ 3.70/ co/ 2.80/
+
+!REF:tsang and hampson, j. phys. chem. ref. data, 15:1087 (1986)
+h2o2+h<=>h2o+oh                                   2.410E+013     0.000    3970.0
+
+!REF: ellingson j. phys. chem. (2007) 111, (51), 13554-13566
+h2o2+h<=>h2+ho2                                   2.150E+010     1.000    6000.0
+
+!REF:tsang and hampson, j. phys. chem. ref. data, 15:1087 (1986)
+h2o2+o<=>oh+ho2                                   9.550E+006     2.000    3970.0
+
+!REF: hong et al. j. phys. chem. a 114 (2010) 5718-5727
+h2o2+oh<=>h2o+ho2                                 1.740E+012     0.000     318.0
+duplicate
+h2o2+oh<=>h2o+ho2                                 7.590E+013     0.000    7269.0
+duplicate
+
+!*********************************************************************************************
+!****************************************** BASE C1 ******************************************
+!*********************************************************************************************
+
+!*************
+! CO reactions
+!*************
+
+co+ho2<=>co2+oh                         1.150E+05    2.278   17550.0  ! Hongyan Sun et al, PCI 31-p439 (2007)
+co+o+m<=>co2+m                          2.830E+13    0.000   -4540.0 
+h2o/16.25/ h2/2.50/ co/1.875/ co2/3.75/ ch4/16.25/ c2h6/16.25/ ar/0.75/
+
+co+o2<=>co2+o                          2.530E+12     0.000   47700.0 
+
+co+oh<=>co2+h                          7.046E+04     2.053    -276.2 ! 06JOS/WANG
+duplicate
+co+oh<=>co2+h                          5.757E+12    -0.664     331.8 ! 06JOS/WANG
+duplicate
+
+!**************
+! HCO reactions
+!**************
+
+hco+m<=>h+co+m                         1.850E+17    -1.000   17090.0 ! Timonen et al., J.Phys.Chem. 91(1987)5325-
+h2o/16.25/ h2/1.9/ co/1.875/ co2/3.75/ ch4/16.25/ c2h6/16.25/ ar/1.0/ he/1.25/
+hco+oh<=>co+h2o                        1.000E+14     0.000       0.0 ! BOWMAN 70
+hco+o<=>co+oh                          3.000E+13     0.000       0.0 ! BROWNE 69
+hco+o<=>co2+h                          3.000E+13     0.000       0.0 ! WARNATZ 84
+hco+h<=>co+h2                          7.224E+13     0.000       0.0 ! GUTMAN 86
+hco+o2<=>co+ho2                        7.580E+12     0.000     410.0 ! Timonen et al., J.Phys.Chem. 92(1988)651-
+hco+ho2=>co2+oh+h                      3.000E+13     0.000       0.0 ! Tsang et al., J.Phys.Chem.Ref.Data 15(1986)1087-
+hco+hco<=>ch2o+co                      1.810E+13     0.000       0.0 ! Tsang et al., J.Phys.Chem.Ref.Data 15(1986)1087-
+hco+hco=>h2+co+co                      3.000E+12     0.000       0.0 ! Tsang et al., J.Phys.Chem.Ref.Data 15(1986)1087-
+
+
+!******************************
+! CH2O (formaldehyde) reactions
+!******************************
+
+ch2o+m<=>hco+h+m                       3.300E+39    -6.300  100000.0 ! Friedrichs et al. / Int. J. Chem. Kinet. 36 (2004) 157-169
+co/1.5/ ch2o/3.0/ h2/2.0/ h2o/12.0/ 
+ch2o+m<=>co+h2+m                       3.100E+45    -8.000   97600.0 ! Friedrichs et al. / Int. J. Chem. Kinet. 36 (2004) 157-169
+co/1.5/ ch2o/3.0/ h2/2.0/ h2o/12.0/ 
+
+ch2o+oh<=>hco+h2o                      1.391E+13     0.000     604.0 ! BAULCH 2003
+! Baulch et al., Journal of Physical Chemical Reference Data (2005) Vol. 34, pp. 757-1397
+ch2o+ho2<=>hco+h2o2     4.095E+04     2.500      10214.0
+ch2o+o<=>hco+oh                        1.807E+13     0.000    3088.0 ! Tsang et al., J.Phys.Chem.Ref.Data, 15(1986)1087-
+!ch2o+h<=>hco+h2                        2.190E+08     1.770    3000.0 ! Tsang et al., J.Phys.Chem.Ref.Data, 15(1986)1087-
+
+! Irdam et al., International Journal of Chemical Kinetic (1993) Vol. 25, pp. 285-303
+! Friedrichs et al. (International Journal of Chemical Kinetic (2002) Vol.34, pp. 374-) confirmed this number
+ch2o+h<=>hco+h2         5.741E+07     1.900       2742.0
+
+
+ch2o+o2<=>hco+ho2                      1.230E+06     3.000   52000.0 ! HIDAKA1993
+
+!***********************************
+! HOCH2O (Hydroxy Methoxy) reactions
+!***********************************
+
+hoch2o<=>ch2o+oh                       8.545E+13    -0.100   17530.0 
+hoch2o<=>hocho+h                       1.000E+13     0.000   15900.0 ! +1kcal/mol
+
+!************************************
+! hocho (Formic Acid) reactions
+! Adopted from Marshall and Glarborg
+!************************************
+
+hocho(+m)<=>co+h2o(+m)                 7.500E+14     0.000   68710.0 ! CHALIN07 
+low  /4.100E+15 0.000 52980.0 /
+
+hocho(+m)<=>co2+h2(+m)                 4.500E+13     0.000   68240.0 ! CHALIN07 
+low  /1.700E+15 0.000 51110.0 /
+
+hocho+h<=>hoco+h2                      2.300E+02     3.272    4858.0 ! PM 11/2013
+hocho+h<=>ocho+h2                      4.200E+05     2.255   14091.0 ! PM 11/2013
+hocho+h<=>hochoh                       2.500E+05     2.357    9783.0 ! PM 11/2013
+hocho+o<=>hoco+oh                      5.100E+01     3.422    4216.0 ! PM 11/2013
+hocho+o<=>ocho+oh                      1.700E+05     2.103    9880.0 ! PM 11/2013
+hocho+oh<=>hoco+h2o                    7.800E-06     5.570   -2365.0 ! ANG04 extrapolated
+hocho+oh<=>ocho+h2o                    4.900E-05     4.910   -5067.0 ! ANG04 extrapolated 
+hocho+ho2<=>hoco+h2o2                  4.700E-01     3.975   16787.0 ! PM 11/2013
+hocho+ho2<=>ocho+h2o2                  3.900E+01     3.080   25206.0 ! PM 11/2013  
+hoco+ho2<=>hocho+o2                    4.000E+11     0.000       0.0 ! YUMUC08
+hocho+o2<=>ocho+ho2                    3.000E+13     0.000   63000.0 ! est 
+
+ch2o+ocho<=>hco+hocho                  5.600E+12     0.000   13600.0
+
+!************************************
+! HOCO reactions
+! Adopted from Marshall and Glarborg
+!************************************
+
+! Golden et al., J. Phys. Chem. A (1998) Vol. 102, pp. 8598-8606
+! Troe factor adapted from the paper to the Chemkin format
+hoco(+M)<=>oh+co(+M)                   1.186E+14     0.132   36463.0
+LOW / 1.371E+25  -2.396  37483.0 /
+TROE / 0.500  1120.4  1120.4  1720.3 /
+ar/0.7/ h2/2.0/ h2o/6.0/ ch4/2.0/ co/2.0/ co2/3.0/ c2h6/3.0/
+ch3oh/3.0/
+
+! Golden et al., J. Phys. Chem. A (1998) Vol. 102, pp. 8598-8606
+! Troe factor adapted from the paper to the Chemkin format
+hoco(+M)<=>h+co2(+M)                   8.222E+11     0.413   35338.4
+LOW / 5.957E+26  -3.148  37019.6 /
+TROE / 0.445  819.8  822.8  5290.4 /
+ar/0.7/ h2/2.0/ h2o/6.0/ ch4/2.0/ co/2.0/ co2/3.0/ c2h6/3.0/
+ch3oh/3.0/
+
+! Yu et al., Journal of Chemical Physics (2007) Vol. 127, Paper 094302
+! The paper include a table listing the rate constant for  five temperature in the range 200 - 1000 K.
+! The expression below is a personnal fitting.
+hoco+o<=>co2+oh                        5.688E+11     0.394    -255.7
+
+! Yu et al., Journal of Physical Chemistry A (2005) Vol. 109, pp. 5230-5236
+! The authors calculated the rate for five temparatures in the range 250-850 K,
+! and they derived a non-Arrhenius expression k(T) = (4.553 x 10^12 + 9.544 * 10^6 * T^2) * EXP(45.0/T)
+! I have fitted this expression in a classical modified Arrhenius expression.
+hoco+oh<=>h2o+co2                      2.909E+08     1.501    -840.7
+
+! Yu and Muckerman, Journal of Physical Chemistry A (2006) Vol. 110, pp. 5312-5316
+! The authors calculated the rate for nine temparatures in the range 200-800 K.
+! The expression below is a personnal fitting.
+hoco+o2<=>ho2+co2                      1.097E+10     0.873     127.8
+
+hoco+h<=>co2+h2                        3.100E+17    -1.3475    555.0 ! Marshall and Glarborg, Proc. Combust. Inst (2015) Vol. 35, pp. 153-160
+hoco+h<=>co+h2o                        6.000E+15    -0.525    2125.0 ! Marshall and Glarborg, Proc. Combust. Inst (2015) Vol. 35, pp. 153-160
+co+h2o2<=>hoco+oh                      3.600E+04     2.500   28660.0 ! Marshall and Glarborg, Proc. Combust. Inst (2015) Vol. 35, pp. 153-160
+hoco+ho2<=>co2+h2o2                    4.000E+13     0.000       0.0 ! Marshall and Glarborg, Proc. Combust. Inst (2015) Vol. 35, pp. 153-160
+
+!************************************
+! ocho reactions
+! Adopted from Marshall and Glarborg
+!************************************
+
+ocho<=>co2+h                           1.000E+10     0.000       0.0 ! Marshall and Glarborg, Proc. Combust. Inst (2015) Vol. 35, pp. 153-160
+ocho+o2<=>co2+ho2                      5.000E+13     0.000       0.0 ! Marshall and Glarborg, Proc. Combust. Inst (2015) Vol. 35, pp. 153-160
+
+!************************************
+! hochoh reactions
+! Adopted from Marshall and Glarborg
+!************************************
+
+hochoh<=>hco+h2o                       2.000E+11     0.449   41259.0 ! Marshall and Glarborg, Proc. Combust. Inst (2015) Vol. 35, pp. 153-160
+hochoh+o2<=>hocho+ho2                  7.200E+13     0.000    3736.0 ! Marshall and Glarborg, Proc. Combust. Inst (2015) Vol. 35, pp. 153-160
+duplicate
+hochoh+o2<=>hocho+ho2                  2.900E+16    -1.500       0.0 ! Marshall and Glarborg, Proc. Combust. Inst (2015) Vol. 35, pp. 153-160
+duplicate
+
+!****************
+! CH3OH reactions
+!****************
+
+ch3oh(+m)<=>ch2oh+h(+m)                7.896E-03     5.038   84467.4
+LOW/ 3.390E+42    -7.244  105230.3 /
+TROE/ -73.91  3.705E+004  41500.0  5220.0 /
+
+ch3oh(+m)<=>ch3+oh(+m)                 2.084E+18    -0.615   92540.6
+LOW/ 1.500E+43    -6.995   97992.2 /
+TROE/ -0.4748  35580.0  1116.0 9023.0 /
+
+ch3oh(+m)<=>ch2(s)+h2o(+m)             3.121E+18    -1.017   91712.0
+LOW/ 1.430E+47    -8.227   99417.1 /
+TROE/ 2.5450  3290.0 47320.0  47110.0 /
+
+ch3oh+o2<=>ch2oh+ho2                   2.050E+13     0.000   44910.0 ! TSANG 87
+ch3oh+o2<=>ch3o+ho2                    2.500E+12     0.000   55000.0 ! MILAN
+ch3oh+ho2<=>ch2oh+h2o2                 1.130E+13     0.000   19360.0 ! ARONOWITZ 79 * 2
+ch3oh+oh<=>ch2oh+h2o                   7.100E+06     1.800    -596.0 ! Bott and Cohen, IJCK, 23:1075 (1991) 
+ch3oh+oh<=>ch3o+h2o                    1.000E+06     2.100     496.7 ! Bott and Cohen, IJCK, 23:1075 (1991) 
+ch3oh+o<=>ch2oh+oh                     1.630E+13     0.000    5030.0 ! KEIL  81
+ch3oh+h<=>ch2oh+h2                     1.440E+13     0.000    6095.0 ! HELD 94
+ch3oh+h<=>ch3o+h2                      3.600E+12     0.000    6095.0 ! HELD 94
+ch3oh+h<=>ch3+h2o                      1.700E+13     0.000    5311.0 ! CRIBB 1992 *3 (COMBUST. & FLAME 88 p186)
+ch3oh+ch2o<=>ch3o+ch3o                 1.549E+12     0.000   79570.0 ! PITZ 84)
+ch3oh+ch3<=>ch2oh+ch4                  3.566E+11     0.000    8663.0 ! DOMBROWSKY89 DAG
+ch3oh+ch3<=>ch3o+ch4                   4.677E+05     2.328   12764.0 ! DOMBROWSKY89 DAG
+
+!****************
+! CH2OH reactions
+!****************
+
+ch2oh+m<=>ch2o+h+m                     1.000E+14     0.000   25100.0 ! WARNATZ 84
+h2o/1.00/ co/1.875/ co2/3.75/ h2/2.50/ ch4/16.25/ c2h6/16.25/ ar/0.75/
+ch2oh+h<=>ch2o+h2                      3.000E+13     0.000       0.0 ! WARNATZ 84
+ch2oh+o2<=>ch2o+ho2                    2.410E+14     0.000    5017.0 ! GROTHEER88
+duplicate
+ch2oh+o2<=>ch2o+ho2                    1.510E+15    -1.000       0.0 ! GROTHEER88
+duplicate
+ch2oh+o<=>ch2o+oh                      4.220E+13     0.000       0.0 ! Tsang, JPC Ref. Data, 16:471 (1987)
+ch2oh+oh<=>ch2o+h2o                    2.410E+13     0.000       0.0 ! Tsang, JPC Ref. Data, 16:471 (1987)
+ch2oh+ho2<=>ch2o+h2o2                  1.200E+13     0.000       0.0 ! Tsang, JPC Ref. Data, 16:471 (1987)
+ch2oh+hco<=>ch3oh+co                   1.500E+13     0.000       0.0 ! Friedrichs et al. (2004)
+ch2oh+ch2o<=>ch3oh+hco                 1.292E-01     4.560    6596.0
+rev / 9.630E+03     2.900   13110.0 /
+ch2oh+ch3o<=>ch3oh+ch2o                4.000E+12     0.000       0.0 ! MILAN
+ch2oh+ch2oh<=>ch2o+ch3oh               4.000E+12     0.000       0.0 ! MILAN
+
+!****************
+! CH3O reactions
+!****************
+
+ch3o+m<=>ch2o+h+m                      4.880E+15     0.000   22773.0 ! WANTUCK 88
+!h2o/16.25/ co/1.875/ co2/3.75/ h2/2.50/ ch4/16.25/ c2h6/16.25/ ar/0.75/
+ch3o+ho2<=>ch2o+h2o2                   3.000E+11     0.000       0.0 ! Tsang et al., J.Phys.Chem.Ref.Data 15(1986)1087-
+ch3o+oh<=>ch2o+h2o                     1.000E+13     0.000       0.0 ! MILLER 82
+ch3o+o<=>ch2o+oh                       1.300E+13     0.000       0.0 ! ZELLNER 87
+ch3o+h<=>ch2o+h2                       2.000E+13     0.000       0.0 ! HOYERMANN 81
+
+ch3o+o2<=>ch2o+ho2                     2.350E+10     0.000    1788.0 ! DeMore et al., JPL Publication 97-4(1997)1-266
+ch3o+ch2o<=>ch3oh+hco                  3.424E+05     2.000      31.2 ! POLIMI
+ch3o+h2o2<=>ch3oh+ho2                  3.424E+04     2.000   -2593.8 ! POLIMI
+ch3o+co<=>ch3+co2                      1.570E+13     0.000   11804.0 ! Tsang et al., J.Phys.Chem.Ref.Data 15(1986)1087-
+ch3o+hco<=>ch3oh+co                    9.000E+13     0.000       0.0 ! Tsang et al., J.Phys.Chem.Ref.Data 15(1986)1087-
+ch3o+c2h5<=>ch2o+c2h6                  2.410E+13     0.000       0.0 ! Tsang et al., J.Phys.Chem.Ref.Data 15(1986)1087-
+ch3o+c2h4<=>ch2o+c2h5                  1.200E+11     0.000    7000.0 ! Tsang et al., J.Phys.Chem.Ref.Data 15(1986)1087-
+ch3oh+ch3o<=>ch3oh+ch2oh               3.010E+11     0.000    4070.0 ! TSANG 87
+
+!**************
+! CH4 reactions
+!**************
+
+ch4(+m)<=>ch3+h(+m)                    2.400E+16     0.000  104913.0 ! 90COB/TRO Z.P.C.N.F. 167, 129 (1990)
+LOW / 4.500E+17     0.000   90800.0 / 
+TROE /0.6400  1.0E-15  3195.0  12126.0 / 
+h2/2.00/ h2o/6.00/ ch4/2.00/ co/1.50/ co2/2.00/ c2h6/3.00/
+
+ch3+ho2<=>ch4+o2                       1.189E+05     2.228   -3022.0 ! Jasper et al., Proc.Comb.Inst. 32(2009)279-286
+ch4+h<=>ch3+h2                         4.083E+03     3.160    8760.0 ! Sutherland et al., Int.J.Chem.Kinet. 33(2001)669-684
+ch4+o<=>ch3+oh                         1.620E+06     2.300    7094.0 ! COHEN 86
+ch4+oh<=>ch3+h2o                       1.600E+06     2.100    2462.0 ! Warnatz 84
+ch4+ch2<=>ch3+ch3                      4.300E+12     0.000   10038.0 ! Bohland et al., Ber.Bunsenges.Phys.Chem. 89(1985)1110-
+ch4+ch2(s)<=>ch3+ch3                   4.000E+12     0.000       0.0 ! MILLER BOWMAN 89
+ch4+ho2<=>ch3+h2o2                     1.810E+11     0.000   18580.0 ! Tsang 88
+
+!**************
+! CH3 reactions
+!**************
+
+h+ch2(+M)<=>ch3(+M)                    6.000E+14     0.000       0.0
+LOW / 1.040E+26    -2.760    1600.0 /
+TROE/ 0.5620  91.00  5836.00  8552.00/
+h2/2.00/ h2o/6.00/ ch4/2.00/ co/1.50/ co2/2.00/ c2h6/3.00/ ar/ .70/ 
+
+ch+h2(+M)<=>ch3(+M)                    1.970E+12     0.430    -370.0
+LOW / 4.820E+25    -2.800     590.0 /
+TROE / 0.5780  122.0  2535.0  9365.0 /
+h2/2.00/ h2o/6.00/ ch4/2.00/ co/1.50/ co2/2.00/ c2h6/3.00/ ar/ .70/ 
+
+ch3+ho2<=>ch3o+oh                      1.000E+12     0.269    -687.5 ! Jasper et al., Proc.Comb.Inst. 32(2009)279-286
+ch3+o<=>ch2o+h                         4.540E+13     0.050    -136.0 ! Harding et al.,Proc.Combust.Inst. 30(2005)985-993
+ch3+o<=>hco+h2                         1.000E+13     0.050    -136.0 ! Harding et al.,Proc.Combust.Inst. 30(2005)985-993
+!ch3+o2<=>ch2o+oh                       4.255E+11     0.000   13514.0 ! Srinivasan et al., J.Phys.Chem.A 111(2007)11589-11591/1.5
+! Srinivasan et al., Journal of Physical Chemistry A (2007) Vol. 111, pp. 11589-11591
+ch3+o2<=>ch2o+oh        6.383E+11     0.000     13594.0
+
+ch3+o2<=>ch3o+o                        7.546E+12     0.000   28297.0 ! Srinivasan et al., J.Phys.Chem.A 109(2005)7902-7914
+ch3+ch3<=>c2h5+h                       3.010E+13     0.000   13513.0 ! Baulch 92
+
+ch3+ch3(+M)<=>c2h6(+M)       8.878E+16    -1.160       774.5
+                       LOW / 5.312E+50    -9.930      7389.0 / 
+TROE / 0.7548  158.0  32828.0  46564.0 /
+ar/0.7/ h2/2.0/ h2o/6.0/ ch4/2.0/ co/1.5/ co2/2.0/
+c2h6/3.0/ ch3oh/3.0/ !kr/0.70/
+
+ch3+ch3o<=>ch4+ch2o                    2.409E+13     0.000       0.0 ! Tsang et al., J.Phys.Chem.Ref.Data 15(1986)1087-
+ch3+ch2oh<=>ch4+ch2o                   2.410E+12     0.000       0.0 ! Tsang, J.Phys.Chem.Ref.Data 16(1987)471-
+
+ch3+o2(+m)<=>ch3o2(+m)                 7.830E+08     1.200       0.0 ! Baulch 92
+LOW/ 5.800E+25    -3.300       0.0 /
+TROE / 0.6640 100000.0 10.0 /
+
+ch3+h<=>ch2+h2                         6.030E+13     0.000   15100.0 ! Baulch 92
+ch3+hco<=>co+ch4                       8.480E+12     0.000       0.0 ! GRI
+ch3+ch2o<=>hco+ch4                     3.192E+01     3.360    4312.0 ! BAULCH 2003
+
+!**************
+! CH2 reactions
+!**************
+
+ch2+oh<=>ch+h2o                        1.130E+07     2.000    3000.0 ! MILLER BOWMAN 89
+ch2+oh<=>ch2o+h                        2.500E+13     0.000       0.0 ! MILLER BOWMAN 89
+ch2+o=>co+h+h                          5.000E+13     0.000       0.0 ! MILLER 92
+ch2+o<=>co+h2                          4.000E+13     0.000       0.0 ! 88FRA/JUS
+ch2+h<=>ch+h2                          1.000E+18    -1.560       0.0 ! MILLER 92
+ch2+o2<=>co2+h2                        2.630E+21    -3.300    2860.0 ! Dombrovsky
+ch2+o2=>co2+h+h                        3.290E+21    -3.300    2860.0 !
+ch2+o2<=>co+h2o                        2.240E+22    -3.300    2860.0 !
+ch2+o2<=>ch2o+o                        3.290E+21    -3.300    2860.0 !
+ch2+co2<=>ch2o+co                      1.100E+11     0.000    1000.0 ! MILLER 82
+ch2+ch2<=>c2h2+h2                      3.200E+13     0.000       0.0 ! BRAUN  70
+ch2+ch2=>c2h2+h+h                      4.000E+13     0.000       0.0 ! MILLER 92
+ch2+ch3<=>c2h4+h                       4.000E+13     0.000       0.0 ! WARNATZ 84
+ch2+ch<=>c2h2+h                        4.000E+13     0.000       0.0 ! BRAUN  70
+ch2+c2h2<=>h+c3h3                      1.200E+13     0.000    6620.0 ! BOHLAND 86
+ch2+c2h4<=>c3h6                        4.300E+12     0.000   10038.0 ! BOHLAND 86
+ch2+c2h6<=>ch3+c2h5                    6.500E+12     0.000    7911.0 ! BOHLAND 85
+
+!*****************
+! CH2(S) reactions
+!*****************
+
+ch2(s)+m<=>ch2+m                       1.000E+13     0.000       0.0
+h/0.0/ h2o/0.0/ co/1.875/ co2/3.75/ ch4/16.25/ c2h6/16.25/ h2/2.50/ ar/0.75/
+ch2(s)+h<=>ch2+h                       2.000E+14     0.000       0.0
+ch2(s)+h2o<=>ch2+h2o                   3.000E+13     0.000       0.0
+ch2(s)+o2=>co+oh+h                     3.000E+13     0.000       0.0
+ch2(s)+h2<=>ch3+h                      7.000E+13     0.000       0.0
+ch2(s)+h<=>ch+h2                       3.000E+13     0.000       0.0
+ch2(s)+o=>co+h+h                       1.500E+13     0.000       0.0
+ch2(s)+o<=>co+h2                       1.500E+13     0.000       0.0
+ch2(s)+oh<=>ch2o+h                     3.000E+13     0.000       0.0
+ch2(s)+ho2<=>ch2o+oh                   3.000E+13     0.000       0.0
+ch2(s)+h2o2<=>ch3o+oh                  3.000E+13     0.000       0.0
+ch2(s)+ch2o<=>ch3+hco                  1.200E+12     0.000       0.0
+ch2(s)+hco<=>ch3+co                    1.800E+13     0.000       0.0
+ch2(s)+ch3<=>c2h4+h                    1.800E+13     0.000       0.0
+ch2(s)+c2h6<=>ch3+c2h5                 1.200E+14     0.000       0.0
+ch2(s)+c2h4<=>c3h5-a+h                 1.300E+14     0.000       0.0
+ch2(s)+c2h2<=>c3h3+h                   1.800E+14     0.000       0.0
+ch2(s)+co2<=>ch2o+co                   3.000E+12     0.000       0.0
+ch2(s)+ch2co<=>c2h4+co                 1.600E+14     0.000       0.0
+
+!*************
+! CH reactions
+!*************
+
+ch+oh<=>hco+h                          3.000E+13     0.000       0.0 ! MILLER 85)
+ch+o<=>co+h                            5.700E+13     0.000       0.0 ! GRI
+ch+h<=>c+h2                            1.100E+14     0.000       0.0 ! GRI
+ch+o2<=>hco+o                          1.000E+13     0.000       0.0 ! Jachimowski, Combust.Flame 29(1977)55-66
+ch+o2<=>co+oh                          1.000E+13     0.000       0.0 !
+ch+co2<=>hco+co                        3.400E+12     0.000     690.0 ! BERMAN 82
+ch+h2o<=>ch2o+h                        1.710E+13     0.000    -755.0 !
+ch+ch4<=>c2h4+h                        6.000E+13     0.000       0.0 !
+ch+ch3<=>c2h3+h                        3.000E+13     0.000       0.0 !
+ch+ch2o<=>ch2co+h                      9.460E+13     0.000    -515.0 ! MiLLER 1992 
+
+!************
+! C reactions
+!************
+
+c+oh<=>co+h                            5.000E+13     0.000       0.0 ! GRI
+c+o2<=>co+o                            1.200E+14     0.000    3990.0 ! Dean et al., J.Phys.Chem. 95(1991)183-191
+
+!****************
+! CH3O2 reactions
+!****************
+
+ch3o2+ho2<=>ch3o2h+o2                  2.903E+11     0.000    1552.0 ! Raventos-Duran 2007
+ch3o2+ch2o<=>hco+ch3o2h                1.990E+12     0.000   11660.0 ! Tsang et al., J.Phys.Chem.Ref.Data 15(1986)1087-
+ch3o2+ch4<=>ch3+ch3o2h                 1.810E+11     0.000   18480.0 ! Tsang et al., J.Phys.Chem.Ref.Data 15(1986)1087-
+ch3o2+ho2<=>ch2o+h2o+o2                1.800E+10     0.000   -1431.0 !
+ch3o2+ho2<=>ch3oh+o+o2                 1.338E+11     0.000       0.0 ! as ch3o2+ch3o2
+ch3o2+ch3o2=>ch3oh+ch2o+o2             1.338E+11     0.000       0.0 ! 0.6*2.230e+11  
+ch3o2+ch3o2=>ch3o+ch3o+o2              4.460E+11     0.000    1030.0 ! Atkinson et al., UIPAC(2001)
+ch3o2+ch3<=>ch3o+ch3o                  5.060E+12     0.000   -1411.0 ! Keiffer et al., J.Chem.Soc.Faraday Trans.2 84(1988)505-
+ch3o2+oh<=>ch3oh+o2                    6.030E+13     0.000       0.0 ! Tsang et al., J.Phys.Chem.Ref.Data 15(1986)1087-
+ch3o2+h<=>ch3o+oh                      9.600E+13     0.000       0.0 !
+ch3o2+h<=>ch4+o2                       2.110E+10     1.020   16600.0 ! Bogdanchikov et al., Chem.Phys.Lett. 385(2004)486-490
+ch3o2+h2o2<=>ch3o2h+ho2                2.410E+12     0.000    9936.0 ! Tsang et al., J.Phys.Chem.Ref.Data 15(1986)1087-
+ch3o2+o<=>ch3o+o2                      3.610E+13     0.000       0.0 ! Tsang et al., J.Phys.Chem.Ref.Data 15(1986)1087-
+ch3o2+ch3o<=>ch3o2h+ch2o               3.010E+11     0.000       0.0 ! Tsang et al., J.Phys.Chem.Ref.Data 15(1986)1087-
+ch3o2+ch2oh<=>ch2o+ch3o2h              1.210E+13     0.000       0.0 ! Tsang et al., J.Phys.Chem.Ref.Data 15(1986)1087-
+ch3o2+h2<=>ch3o2h+h                    3.010E+13     0.000   26030.0 ! Tsang et al., J.Phys.Chem.Ref.Data 15(1986)1087-
+
+!*****************
+! CH3O2H reactions
+!*****************
+
+ch3o2h(+m)<=>ch3o+oh(+m)               4.050E+19    -1.153   44250.0 ! Jasper et al., Proc.Comb.Inst. 32(2009)279-286
+LOW / 3.891E+42    -7.502   46756.0 /
+TROE / 0.8375  36562.0  498.8  9990.0 /
+
+ch3o2h+oh<=>ch3o2+h2o                  1.140E+12     0.000    -380.0 ! Atkinson et al., UIPAC(2001)
+ch3o2h+o<=>oh+ch3o2                    2.000E+13     0.000    4750.0 ! Baulch et al., J.Phys.Chem.Ref.Data 23(1994)847-1033
+ch3o2h+h<=>ch3o+h2o                    7.300E+10     0.000    1860.0 
+
+!*********************************************************************************************
+!****************************************** BASE C2 ******************************************
+!*********************************************************************************************
+
+!************************
+! C2H6 (ethane) reactions
+!************************
+
+c2h6+ho2<=>c2h5+h2o2                   2.610E+02     3.370   15900.0 ! Carstensen et al., Proc.Combust.Inst. 30(2005)995-1003
+c2h6+ch3o2<=>c2h5+ch3o2h               1.940E+01     3.640   17100.0 ! Carstensen et al., Proc.Combust.Inst. 30(2005)995-1003
+c2h6+c2h5o2<=>c2h5+c2h5o2h             8.600E+00     3.760   17200.0 ! Carstensen et al., Proc.Combust.Inst. 30(2005)995-1003
+c2h6+oh<=>c2h5+h2o                     5.110E+06     2.060     854.0 
+c2h6+o<=>c2h5+oh                       9.990E+08     1.500    5803.0 ! 92BAU/COB
+c2h6+h<=>c2h5+h2                       1.440E+09     1.500    7410.0 ! 92BAU/COB
+c2h6+o2<=>c2h5+ho2                     6.030E+13     0.000   51870.0 ! Baulch et al.,(1992)        
+c2h6+ch3o<=>c2h5+ch3oh                 3.020E+11     0.000    7000.0 ! BENSON 82
+c2h6+ch3<=>c2h5+ch4                    7.536E+00     3.727    9883.0 ! FIT 93
+c2h6+hco<=>ch2o+c2h5                   4.700E+04     2.700   18235.0
+c2h6+ch<=>c2h5+ch2                     1.100E+14     0.000    -260.0
+rev / 3.829E+10     0.560     440.0 /
+
+!***********************
+! C2H5 (ethyl) reactions
+!***********************
+
+c2h5+o2<=>ch3ch2o+o                    1.100E+13    -0.210   27937.0
+c2h5+ho2<=>ch3ch2o+oh                  1.900E+12     0.000   -1200.0
+c2h5+ho2<=>c2h4+h2o2                   1.790E+12     0.000       0.0 ! Dobis et Benson (1993)
+c2h5+oh<=>c2h4+h2o                     2.409E+13     0.000       0.0 ! TSANG HAMPSON 86
+c2h5+oh=>ch3+ch2o+h                    2.409E+13     0.000       0.0 ! TSANG HAMPSON 86
+c2h5+o<=>ch2o+ch3                      1.610E+13     0.000       0.0 ! TSANG HAMPSON 86
+c2h5+o<=>ch3cho+h                      8.020E+13     0.000       0.0 ! TSANG HAMPSON 86
+c2h5+o<=>c2h4+oh                       3.170E+12     0.030    -390.0 ! Harding et al., Proc.Combust.Inst. 30(2005)985-993
+c2h5+h<=>c2h4+h2                       1.820E+12     0.000       0.0 ! TSANG HAMPSON 86
+c2h5+ch3<=>c2h4+ch4                    1.144E+12     0.000       0.0 ! BAULCH 92
+c2h5+c2h5<=>c2h4+c2h6                  1.400E+12     0.000       0.0 ! WarnATZ 84
+c2h5+hco<=>c2h6+co                     1.210E+14     0.000       0.0 ! TSANG HAMPSON 86
+
+h+c2h5(+m)<=>c2h6(+m)                  5.210E+17    -0.990    1580.0 ! GRI 3.0
+LOW / 1.990E+41    -7.080    6685.0 /
+TROE / 0.8422  125.0  2219.0  6882.0 /
+h2/2.00/ h2o/6.00/ co/1.50/ co2/2.00/ ch4/2.00/ c2h6/3.00/
+
+c2h5+o2<=>c2h5o2                       9.420E+36    -8.010    6098.0 ! Carstensen et al., J.Phys.Chem.A 109(2005)2264-2281
+c2h5+o2<=>ch3cho+oh                    1.940E+12    -0.476    7765.0 ! Carstensen et al., J.Phys.Chem.A 109(2005)2264-2281
+c2h5+o2<=>c2h4+ho2                     2.430E+17    -1.900    4430.0 ! Carstensen et al., J.Phys.Chem.A 109(2005)2264-2281
+duplicate
+c2h5+o2<=>c2h4o2h                      8.840E+37    -9.330   10159.0 ! Carstensen et al., J.Phys.Chem.A 109(2005)2264-2281
+c2h5+o2<=>c2h4+ho2                     1.020E+20    -2.970    8639.0 ! Carstensen et al., J.Phys.Chem.A 109(2005)2264-2281
+duplicate
+c2h5+o2<=>c2h4o1-2+oh                  1.930E+20    -3.080    8636.0 ! Carstensen et al., J.Phys.Chem.A 109(2005)2264-2281
+
+c2h5o2<=>ch3cho+oh                     2.130E+41    -9.810   45919.0 ! Carstensen et al., J.Phys.Chem.A 109(2005)2264-2281
+c2h5o2<=>c2h4+ho2                      6.460E+30    -6.060   35147.0 ! Carstensen et al., J.Phys.Chem.A 109(2005)2264-2281
+duplicate
+c2h5o2<=>c2h4o2h                       4.550E+51   -13.300   44125.0 ! Carstensen et al., J.Phys.Chem.A 109(2005)2264-2281
+c2h5o2<=>c2h4+ho2                      4.470E+42   -10.100   44734.0 ! Carstensen et al., J.Phys.Chem.A 109(2005)2264-2281
+duplicate
+c2h5o2<=>c2h4o1-2+oh                   3.010E+42   -10.000   44609.0 ! Carstensen et al., J.Phys.Chem.A 109(2005)2264-2281
+
+c2h4o2h<=>ch3cho+oh                    3.100E+37   -10.100   28588.0 ! Carstensen et al., J.Phys.Chem.A 109(2005)2264-2281
+c2h4o2h<=>c2h4+ho2                     5.650E+41   -10.900   26490.0 ! Carstensen et al., J.Phys.Chem.A 109(2005)2264-2281
+duplicate
+c2h4o2h<=>c2h4+ho2                     6.580E+41    -9.700   23023.0 ! Carstensen et al., J.Phys.Chem.A 109(2005)2264-2281
+duplicate
+c2h4o2h<=>c2h4o1-2+oh                  1.490E+41    -9.510   22589.0 ! Carstensen et al., J.Phys.Chem.A 109(2005)2264-2281
+
+!**********************
+! ETHENE c2h4 reactions
+!**********************
+
+c2h4+h(+m)<=>c2h5(+m)                  5.270E+09     1.183    1272.7 !NUIG
+LOW /                                  2.027E+40    -6.642    5769.0 /
+TROE / 0.9760  9.99E+09  384.0  3.29E+09 /
+h2/2.0/ h2o/6.0/ ch4/2.0/ co/1.5/ co2/2.0/ c2h6/3.0/ ar/0.7/
+
+c2h4+ho2<=>c2h4o1-2+oh                 2.230E+12    0.000    17190.0
+rev / 3.518E+17   -1.160    39670.0 /
+
+hco+c2h4<=>c2h3+ch2o                   4.500E+10    0.000     5400.0 !Base DCPR/2
+
+!! Tsang and Hampson, Journal of Physical chemical Reference Data (1986) Vol. 15, pp. 1087
+!c2h3+ch2o<=>c2h4+hco                 5.420E+03     2.810   5862.2
+
+c2h4(+M)<=>h2+c2h2(+M)                 8.000E+12    0.440    86770.0 !
+LOW / 2.630E+17    0.000    79350.0 /
+c2h4(+M)<=>h+c2h3(+M)                  8.000E+12    0.440    86770.0 !
+LOW / 2.630E+17    0.000    96560.0 /
+
+c2h4+oh<=>c2h3+h2o                     1.310E-01    4.200     -860.0 ! Senosiain et al., J.Phys.Chem.A, 110(2006)1436-1444
+c2h4+oh<=>c2h3oh+h                     1.939E+08    1.430     7829.0 ! Senosiain et al., J.Phys.Chem.A, 110(2006)1436-1444
+c2h4+oh<=>ch3cho+h                     8.250E+08    1.010    10507.0 ! Senosiain et al., J.Phys.Chem.A, 110(2006)1436-1444
+c2h4+o<=>ch3+hco                       1.200E+08    1.440      530.0 ! FONTIJN 87
+c2h4+o<=>ch2cho+h                      2.000E+08    1.440      530.0 ! FONTIJN 87
+
+c2h4+h<=>c2h3+h2                       1.270E+05    2.750    11650.0 ! Huynh et al.2007
+c2h4+o2<=>c2h3+ho2                     4.000E+13    0.000    61500.0 ! WALKER 77
+c2h4+c2h4<=>c2h5+c2h3                  5.000E+14    0.000    64700.0 ! Benson 67
+c2h4+ch3<=>c2h3+ch4                    4.154E+12    0.000    11128.0 ! 94BAU/COB
+c2h4+ch3o<=>c2h3+ch3oh                 1.200E+11    0.000     6750.0
+rev / 1.000E+10    0.000     9000.0 /
+
+c2h4+ho2<=>c2h3+h2o2                   4.800E+04    2.500    27622.0 ! Scott and Walker 2002
+
+c2h4+oh<=>pc2h4oh                      6.022E+37   -8.140     8043.0 ! Senosiain et al., J.Phys.Chem.A, 110(2006)1436-1444
+duplicate
+c2h4+oh<=>pc2h4oh                      7.287E+31   -6.910     2855.0 ! Senosiain et al., J.Phys.Chem.A, 110(2006)1436-1444
+duplicate
+
+pc2h4oh<=>ch3cho+h                     1.000E+13    0.000    30000.0
+pc2h4oh+o2<=>ch3cho+ho2                1.000E+12    0.000     2500.0
+pc2h4oh+o2<=>o2c2h4oh                  1.000E+12    0.000    -1100.0 ! Marinov 1998
+o2c2h4oh<=>ch2o+ch2o+oh                6.000E+10    0.000    24500.0 ! Marinov 1998
+
+!*********************
+! VINYL c2h3 reactions
+!*********************
+
+c2h3+ho2=>ch3+co+oh                    3.000E+13     0.000       0.0 ! TSANG/HAMPSON 86 
+c2h3+oh<=>c2h2+h2o                     3.000E+13     0.000       0.0 ! TSANG/HAMPSON 86
+c2h3+h<=>c2h2+h2                       1.210E+13     0.000       0.0 ! 92BAU/COB
+c2h3+o<=>ch3+co                        1.500E+13     0.000       0.0 ! HEINEMANN 88
+c2h3+o<=>ch2co+h                       1.500E+13     0.000       0.0 ! HEINEMANN 88
+c2h3+ch<=>ch2+c2h2                     5.000E+13     0.000       0.0 ! MILLER 92
+c2h3+ch3<=>c2h2+ch4                    3.910E+11     0.000       0.0 ! TSANG/HAMPSON 86
+c2h3+c2h6<=>c2h4+c2h5                  1.500E+13     0.000   10000.0 ! HIDAKA 85
+c2h3+c2h<=>c2h2+c2h2                   9.640E+11     0.000       0.0 ! TSANG/HAMPSON 86
+c2h3+hco<=>c2h4+co                     9.034E+13     0.000       0.0 ! TSANG/HAMPSON 86
+c2h3+c2h3<=>c2h2+c2h4                  1.084E+13     0.000       0.0 ! FAHR 298K   90
+c2h3+ch2<=>c3h4-a+h                    3.000E+13     0.000       0.0 ! MILLER 92
+
+! Only with C4
+!c2h3+c2h3<=>c4h6                       5.000E+13     0.000       0.0 ! FAHR 298K   90
+!c2h3+c2h4<=>c4h6+h                     5.000E+11     0.000    7310.0 ! TSANG/HAMPSON 86
+
+c2h3+ch2oh<=>c2h4+ch2o                 3.010E+13     0.000       0.0 ! Tsang, J.Phys.Chem.Ref.Data, 16(1987)471-  
+c2h3+ch3o<=>c2h4+ch2o                  2.410E+13     0.000       0.0 ! Tsang, J.Phys.Chem.Ref.Data, 15(1986)1087-  
+
+!***************
+! C2H2 reactions
+!***************
+
+c2h2+oh(+m)=c2h2oh(+m)                 2.290E+13     0.000    1808.0 ! FULLE: BER.BUNSENGES.P.C. 101, 1433 (1997)
+LOW / 7.440E+26    -3.100    1808.0 /
+TROE/ 0.1700  180.0  50000.0  12772.0 /
+
+c2h2+o2<=>hcco+oh                      7.000E+07     1.500   30100.0 ! MILLER 92)/3 as proposed by HIDAKA 96
+c2h2+o2<=>c2h+ho2                      1.210E+13     0.000   74520.0 ! TSANG 86
+c2h2+ho2<=>ch2co+oh                    6.090E+09     0.000    7948.0 ! TSANG 86
+c2h2+oh<=>c2h+h2o                      3.400E+07     2.000   14000.0 ! MILLER 88
+c2h2+oh<=>ch3+co                       4.840E-04     4.000   -2000.0 ! MILLER 88
+c2h2+oh<=>ch2co+h                      2.192E-04     4.500   -1000.0 ! MILLER 88
+c2h2+oh<=>hccoh+h                      5.059E+05     2.300   13500.0 ! MILLER 88
+
+c2h2+o<=>ch2+co                        4.080E+06     2.000    1900.0 ! JetSurf
+c2h2+o<=>hcco+h                        1.630E+07     2.000    1900.0 ! JetSurf
+c2h2+o<=>c2h+oh                        4.600E+19    -1.400   28950.0 ! JetSurf
+c2h2+ch3<=>c2h+ch4                     1.800E+11     0.000   17290.0 ! TSANG/HAMPSON 86
+
+c2h3(+m)<=>c2h2+h(+m)                  3.860E+08     1.620   37048.2 ! 96KNY/SLA
+LOW / 2.565E+27    -3.400   35798.7 /
+TROE / 1.9816  5383.7  4.2932  -0.0795 /
+h2/2.0/ h2o/6.0/ ch4/2.0/ co/1.5/ co2/2.0/ c2h6/3.0/ ar/0.7/ c2h2/3.00/
+
+c2h2(+M)<=>h2cc(+m)                    8.000E+14    -0.520   50750.0 ! 99LAS/WAN
+LOW /   2.450E+15   -0.640  49700.00  /
+h2/2.0/ h2o/6.0/ ch4/2.0/ co/1.5/ co2/2.0/ c2h6/3.0/ c2h2/2.5/ c2h4/2.5/ 
+h2cc+h<=>c2h2+h                        1.000E+14     0.000       0.0 ! Estimated
+h2cc+oh<=>ch2co+h                      2.000E+13     0.000       0.0 ! Estimated
+h2cc+o2<=>hco+hco                      1.000E+13     0.000       0.0 ! 99LAS/WAN
+h2cc+o2<=>ch2+co2                      3.300E+12     0.000       0.0 ! Eiteneer 2003
+c2h4+ch2(s)<=>h2cc+ch4                 5.000E+13     0.000       0.0 ! Estimated!
+
+! Only with C4
+!h2cc+c2h2(+M)<=>c4h4(+M)               3.500E+05     2.055   -2400.0 ! 99LAS/WAN
+!LOW / 1.400E+60   -12.599    7417.0 /
+!TROE / 0.9800  56.0  580.0  4164.0 /
+!h2/2.0/ h2o/6.0/ ch4/2.0/ co/1.5/ co2/2.0/ c2h6/3.0/ c2h2/3.00/ c2h4/3.00/
+
+!**************
+! C2H reactions
+!**************
+
+c2h+h2<=>c2h2+h                        1.506E+13     0.000    3100.0 ! WARNATZ 84)
+c2h+oh<=>hcco+h                        2.000E+13     0.000       0.0 ! MILLER 82)
+c2h+o<=>co+ch                          1.000E+13     0.000       0.0 ! WARNATZ 84)
+c2h+o2<=>co+co+h                       1.800E+13     0.000       0.0 ! HIDAKA 96)
+h+c2h(+m)<=>c2h2(+m)                   1.000E+17    -1.000       0.0 ! GRI3.0
+LOW / 3.750E+33    -4.800    1900.0 /
+TROE / 0.6464  132.0  1315.0  5566.0 /
+h2/2.0/ h2o/6.0/ ch4/2.0/ co/1.5/ co2/2.0/ c2h6/3.0/ ar/0.7/
+
+!*****************
+! C2H3OH reactions
+!*****************
+
+c2h3oh<=>c2h3+oh                       6.899E+21    -1.564  110700.0
+REV/ 2.410E+13     0.000       0.0 /
+c2h3oh<=>ch2cho+h                      3.643E+15    -0.397   95390.0
+REV/ 2.400E+13     0.000   12510.0 /
+c2h3oh+o2<=>ch2cho+ho2                 5.310E+11     0.210   39830.0
+REV/ 7.328E+09     0.535    5816.0 /
+c2h3oh+h<=>ch2cho+h2                   9.810E+02     3.370    3537.0
+REV/ 2.580E+00     4.043   24210.0 /
+c2h3oh+o<=>ch2cho+oh                   1.875E+06     1.900    -860.0
+REV/ 2.561E+03     2.554   18410.0 /
+c2h3oh+oh<=>ch2cho+h2o                 3.330E+09     1.100     540.5
+REV/ 9.291E+07     1.667   36110.0 /
+c2h3oh+ch3<=>ch2cho+ch4                2.030E-08     5.900    1052.0
+REV/ 4.874E-08     6.127   23270.0 /
+c2h3oh+ho2<=>ch2cho+h2o2               3.400E+03     2.500    8922.0
+REV/ 5.177E+03     2.478   13600.0 /
+c2h3oh+ch3o2<=>ch2cho+ch3o2h           3.400E+03     2.500    8922.0
+REV/ 1.007E+05     2.033   12000.0 /
+
+!****************
+! C2H4O reactions
+!****************
+
+c2h4o1-2<=>ch4+co                      1.210E+13     0.000   57200.0 ! LIFSHITZ 83
+c2h4o1-2+o2<=>c2h3o1-2+ho2             4.000E+13     0.000   61500.0 ! =c2h4+o2
+c2h4o1-2+h<=>c2h3+h2o                  5.000E+09     0.000    5000.0 ! LIFSHITZ 83
+c2h4o1-2+h<=>c2h4+oh                   9.510E+10     0.000    5000.0 ! LIFSHITZ 83
+c2h4o1-2+o<=>c2h3o1-2+oh               1.910E+12     0.000    5250.0 ! BOGAN 78
+c2h4o1-2+ch3<=>ch4+c2h3o1-2            1.070E+12     0.000   11830.0 ! BALDWIN 84
+
+c2h4o1-2<=>ch3+hco                     3.630E+13     0.000   57200.0
+rev / 1.006E+04     1.549   -2750.0 /
+c2h4o1-2<=>ch3cho                      7.407E+12     0.000   53800.0
+rev / 9.013E+10     0.207   80800.0 /
+c2h4o1-2+oh<=>c2h3o1-2+h2o             1.780E+13     0.000    3610.0
+rev / 1.347E+10     0.693   24740.0 /
+c2h4o1-2+h<=>c2h3o1-2+h2               8.000E+13     0.000    9680.0
+rev / 5.710E+09     0.799   15920.0 /
+c2h4o1-2+ho2<=>c2h3o1-2+h2o2           1.130E+13     0.000   30430.0
+rev / 4.666E+11     0.104   20670.0 /
+c2h4o1-2+ch3o<=>c2h3o1-2+ch3oh         1.200E+11     0.000    6750.0
+rev / 3.614E+09    -0.950   25480.0 /
+c2h4o1-2+ch3o2<=>c2h3o1-2+ch3o2h       1.130E+13     0.000   30430.0
+rev / 9.078E+12    -0.341   19070.0 /
+c2h4o1-2+c2h5o2<=>c2h3o1-2+c2h5o2h     1.130E+13     0.000   30430.0
+rev / 9.093E+12    -0.341   19080.0 /
+
+!*****************
+! c2h5o2 reactions
+!*****************
+
+c2h5o2+h2o2<=>c2h5o2h+ho2              2.410E+12     0.000    9936.0 ! Tsang et al., J.Phys.Chem.Ref.Data 15(1986)1087-
+c2h5o2+ch3<=>ch3ch2o+ch3o              8.170E+12     0.000    -906.0
+c2h5o2+ho2<=>c2h5o2h+o2                1.750E+10     0.000   -3275.0
+c2h5o2+ch2o<=>c2h5o2h+hco              1.990E+12     0.000   11660.0
+c2h4+c2h5o2<=>c2h3+c2h5o2h             2.230E+12     0.000   17190.0
+ch4+c2h5o2<=>ch3+c2h5o2h               1.810E+11     0.000   18480.0
+ch3o2+c2h5o2=>o2+ch3o+ch3ch2o          7.740E+10     0.000     -61.0 
+c2h5o2+c2h5o2=>ch3ch2o+ch3ch2o+o2      7.740E+10     0.000     -61.0
+c2h5o2+c2h5o2=>c2h5oh+ch3cho+o2        1.338E+11     0.000       0.0 ! as ch3o2+ch3o2  
+c3h6+c2h5o2<=>c3h5-a+c2h5o2h           3.240E+11     0.000   14900.0
+c2h5o2+c3h8<=>c2h5o2h+nc3h7            1.700E+13     0.000   20460.0
+c2h5o2+c3h8<=>c2h5o2h+ic3h7            2.000E+12     0.000   17000.0
+
+! Only with C4
+!c4h8-1+c2h5o2<=>c4h713+c2h5o2h         1.400E+12     0.000   14900.0
+
+!******************
+! c2h5o2h reactions
+!******************
+
+c2h5o2h+o<=>oh+c2h5o2                  2.000E+13     0.000    4750.0 
+c2h5o2h+oh<=>c2h5o2+h2o                2.000E+12     0.000    -370.0 
+c2h5o2h+h=>ch3cho+oh+h2                3.200E+13     0.000    7700.0 ! Ranzi 94
+c2h5o2h+ch3=>ch3cho+oh+ch4             5.700E+11     0.000    8700.0 ! Ranzi 94
+c2h5o2h+c2h5=>ch3cho+oh+c2h6           3.400E+11     0.000   11400.0 ! Ranzi 94
+c2h5o2h+oh=>ch3cho+oh+h2o              5.900E+12     0.000     900.0 ! Ranzi 94
+c2h5o2h+hco=>ch3cho+oh+ch2o            1.800E+12     0.000   16700.0 ! Ranzi 94
+c2h5o2h+ch3o=>ch3cho+oh+ch3oh          6.300E+11     0.000    5500.0 ! Ranzi 94
+c2h5o2h+ho2=>ch3cho+oh+h2o2            8.000E+11     0.000   16200.0 ! Ranzi 94
+c2h5o2h<=>ch3ch2o+oh                   6.310e+14     0.000   42300.0 ! Lightfoot et al., J.Chem.Soc.Faraday Trans. 87(1991)3213-3220
+
+!*****************
+! ch3cho reactions
+!*****************
+
+ch3cho<=>ch3+hco                       6.000E+14     0.000   79100.0 ! Yasunaga et al., Int.J.Chem.Kinet., 40(2008)73-102
+ch3cho<=>ch3co+h                       5.000E+14     0.000   87900.0 ! Yasunaga et al., Int.J.Chem.Kinet., 40(2008)73-102
+ch3cho<=>ch4+co                        1.000E+15     0.000   85000.0 ! Yasunaga et al., Int.J.Chem.Kinet., 40(2008)73-102
+ch3cho<=>ch2co+h2                      3.000E+14     0.000   84000.0 ! Yasunaga et al., Int.J.Chem.Kinet., 40(2008)73-102
+ch3cho+h<=>ch3co+h2                    1.200E+14     0.000    7000.0 ! Yasunaga et al., Int.J.Chem.Kinet., 40(2008)73-102
+ch3cho+h<=>ch2cho+h2                   4.400E+14     0.000   10000.0 ! Yasunaga et al., Int.J.Chem.Kinet., 40(2008)73-102
+ch3cho+ch3<=>ch3co+ch4                 1.700E+12     0.000    8440.0 ! BEELY/HUNT76
+ch3cho+ch3<=>ch2cho+ch4                6.000E+12     0.000   11000.0 ! Yasunaga et al., Int.J.Chem.Kinet., 40(2008)73-102
+ch3cho+o2<=>ch3co+ho2                  3.000E+13     0.000   39150.0 ! BAULCH92
+ch3cho+o<=>ch3co+oh                    5.850E+12     0.000    1808.0 ! BAULCH92
+ch3cho+o<=>ch2cho+oh                   1.500E+13     0.000    5000.0 ! Yasunaga et al., Int.J.Chem.Kinet., 40(2008)73-102
+ch3cho+oh<=>ch3co+h2o                  2.350E+10     0.730   -1113.0 ! BAULCH92
+ch3cho+oh<=>ch2cho+h2o                 1.550E+06     2.200    1000.0 ! Taylor et al., Symp.Int.Combust.Proc., 26(1996)497-504
+ch3cho+ho2<=>ch3co+h2o2                3.100E+12     0.000   11920.0 ! BAULCH92
+ch3cho+ho2<=>ch2cho+h2o2               1.000E+12     0.000   14000.0 ! Yasunaga et al., Int.J.Chem.Kinet., 40(2008)73-102
+ch3cho+c2h5<=>ch3co+c2h6               1.700E+12     0.000    8440.0 ! idem ch3
+
+!****************
+! ch3co reactions
+!****************
+
+ch3co+o<=>ch3+co2                      1.000E+13     0.000       0.0 ! Pichon et al., Combust.Flame, 156(2009)494-504
+ch3co+oh=>ch3+co+oh                    3.160E+13     0.000       0.0 ! Pichon et al., Combust.Flame, 156(2009)494-504
+ch3co+ho2=>ch3+co2+oh                  3.160E+13     0.000       0.0 ! Pichon et al., Combust.Flame, 156(2009)494-504
+ch3cho+oh<=>ch3cooh+h                  1.000e+08     1.180    -447.0 ! estimated
+ch2co+h<=>ch3co                        2.300E+08     1.610    2627.0 ! Senosiain et al., J.Phys.Chem.A, 110(2006)5772-5781
+ch3co+m<=>ch3+co+m                     8.640E+15     0.000   14400.0 ! WILK89
+h2o/16.25/ co/1.875/ co2/3.75/ ch4/16.25/ c2h6/16.25/ h2/2.50/ ar/0.75/
+
+ch3co+h<=>ch2co+h2                     2.000E+13     0.000       0.0
+rev / 7.270E+09     0.000   83040.0 /
+ch3co+o<=>ch2co+oh                     2.000E+13     0.000       0.0
+rev / 7.270E+09     0.000   83040.0 /
+ch3co+ch3<=>ch2co+ch4                  5.000E+13     0.000       0.0
+rev / 7.270E+09     0.000   83040.0 /
+
+!*****************
+! ch3co2 reactions
+!*****************
+
+ch3co2+m<=>ch3+co2+m                   4.400E+15     0.000   10500.0
+ch3co2+ho2<=>ch3cooh+o2                1.750E+10     0.000   -3275.0
+
+!*****************
+! ch3co3 reactions
+!*****************
+
+ch3co+o2<=>ch3co3                      1.200E+11     0.000   -1100.0
+ch3co3+ho2<=>ch3co3h+o2                1.750E+10     0.000   -3275.0
+ch3co3h<=>ch3co2+oh                    5.010E+14     0.000   40150.0
+ch3co3=>ch2co+ho2                      3.345e+09     1.000   32500.0 ! 29/06* butanal
+ch3co3h=>ch3+co2+oh                    1.000E+15     0.000   37400.0
+
+ch3co3+ho2=>ch3+co2+o2+oh              1.000E+12     0.000       0.0
+ch3co3+ch3o2=>o2+ch3+co2+ch3o          9.000E+11     0.000       0.0
+ch3co3+ch3o2=>o2+ch3cooh+ch2o          5.000E+11     0.000       0.0
+ch3co3+ch3co3=>2co2+2ch3+o2            2.500E+12     0.000       0.0
+
+!******************
+! ch3cooh reactions
+!******************
+
+ch3cooh<=>ch2co+h2o                    4.470E+14     0.000   79890.0 ! Duan and Page, J. Am. Chem. Soc. (1995) Vol. 117, pp. 5114-5119
+ch3cooh<=>ch4+co2                      7.080E+13     0.000   74520.0 ! Duan and Page, J. Am. Chem. Soc. (1995) Vol. 117, pp. 5114-5119
+
+ch3cooh=>ch3co+oh                      1.400E+17     0.000  105815.7 ! UI 8 KB
+ch3cooh<=>ch3co2+h                     2.300E+14     0.000  106345.3 ! UI 9 KB
+ch3cooh<=>ch3+hoco                     8.200E+16     0.000   88817.0 ! UI 10 KB
+
+ch3cooh+h<=>ch2cooh+h2                 9.400E+04     2.750    6280.0 ! 2  anc7, primary f
+!ch3cooh+h<=>ch3co2+h2                  5.550E-23    10.600   -4459.0 ! Park,Zhu,Lin, JcP 118, 9990-9996 (2003)
+ch3cooh+h<=>ch3co2+h2                  4.200E+05     2.255   14091.0 ! Marshall and Glarborg, Proc. Combust. Inst (2015) Vol. 35, pp. 153-160
+
+ch3cooh+o<=>ch2cooh+oh                 9.650E+04     2.680    3716.0 ! 2  anc7, primary f
+!ch3cooh+o<=>ch3co2+oh                  1.460E-03     4.730    1727.0 ! Wu, Lee, Xu, Lin, JPcA 2007
+ch3cooh+o<=>ch3co2+oh                  1.700E+05     2.103    9880.0 ! Marshall and Glarborg, Proc. Combust. Inst (2015) Vol. 35, pp. 153-160
+
+ch3cooh+oh<=>ch2cooh+h2o               5.250e+09     0.970    1590.0 ! 2  rnc7, primary;
+!ch3cooh+oh<=>ch3co2+h2o                2.810E+02     2.970    -580.0 ! Xu Lin pci 2007 31 159-166
+ch3cooh+oh<=>ch3co2+h2o                4.900E-05     4.910   -5067.0 ! Marshall and Glarborg, Proc. Combust. Inst (2015) Vol. 35, pp. 153-160
+
+ch3cooh+ch3<=>ch2cooh+ch4              4.520E-01     3.650    7154.0 ! 2  anc7, primary f
+ch3cooh+ch3<=>ch3co2+ch4               2.035E+00     3.570    7722.0 ! Xu,Park,Lin, JcP 120, 6593-6599 (2004)
+
+ch3cooh+ho2=>ch2cooh+h2o2              8.400E+12     0.000   20440.0 ! 2  anc7, primary f
+!ch3cooh+ho2<=>ch3co2+h2o2              2.500E+12     0.000   24000.0 ! Marinov 1998
+ch3cooh+ho2<=>ch3co2+h2o2              3.900E+01     3.080   25206.0 ! Marshall and Glarborg, Proc. Combust. Inst (2015) Vol. 35, pp. 153-160 
+
+ch3cooh+ch3o2<=>ch2cooh+ch3o2h         8.400E+12     0.000   20440.0 ! 2  anc7, primary f
+ch3cooh+ch3o<=>ch2cooh+ch3oh           1.581E+11     0.000    7000.0 ! 2  rnc7, primary;
+
+!******************
+! ch2cooh reactions
+!******************
+
+ch2cooh<=>ch2co+oh                     4.000E+13     0.000   58210.0
+ch2cooh=>co2+ch3                       1.700E+09     1.000   38640.0
+
+!*****************
+! ch2cho reactions
+!*****************
+
+ch2cho+o<=>ch2o+hco                    2.000E+13     0.000    4000.0 ! 82MIL/MIT
+ch2cho+ho2=>ch2o+hco+oh                1.000E+13     0.000       0.0 ! MARINOV94
+ch2cho+oh<=>ch2co+h2o                  1.000E+13     0.000    2000.0 ! 82MIL/MIT
+ch2cho+h<=>ch2co+h2                    2.000E+13     0.000    4000.0 ! 82MIL/MIT
+ch2cho+h<=>ch3co+h                     5.000E+12     0.000       0.0 ! Estimated 
+ch2cho+h<=>ch3+hco                     9.000E+13     0.000       0.0 ! Estimated
+ch2cho+ch3=>c2h5+co+h                  4.900E+14    -0.500       0.0 ! L
+
+ch2cho<=>ch3co                         1.000E+13     0.000   47100.0 ! Colket et al., IJCK 7 (1975) 223
+
+!ch2cho(+m)<=>ch2co+h(+m)               1.430E+15    -0.150   45600.0
+!LOW / 6.000E+29    -3.800   43423.9 /
+!TROE / 0.9850  393.0  9.80E+09  5.00E+09 /
+!
+!ch2cho(+m)<=>ch3+co(+m)                2.930E+12     0.290   40300.0
+!LOW / 9.520E+33    -5.070   41300.0 /
+!TROE / 0.0000  1150.0 4.99E+09  1.79E+09 /
+ch2cho<=>h+ch2co                     1.320E+34    -6.570   49460.0
+PLOG /    0.010       2.390E+25    -4.800   43429.0 /
+PLOG /    0.025       2.480E+27    -5.230   44309.0 /
+PLOG /    0.100       2.370E+30    -5.860   46120.0 /
+PLOG /    1.000       1.320E+34    -6.570   49460.0 /
+PLOG /   10.000       3.460E+36    -6.920   52986.0 /
+PLOG /  100.000       1.180E+36    -6.480   55178.0 /   
+
+! Senosiain et al., Journal of Physical Chemistry A (2006) Vol. 110, pp. 5772-5781
+ch2cho<=>ch3+co                      6.510E+34    -6.870   47197.0
+PLOG /    0.010       1.160E+30    -6.070   41337.0 /
+PLOG /    0.025       1.540E+31    -6.270   42483.0 /
+PLOG /    0.100       6.370E+32    -6.570   44288.0 /
+PLOG /    1.000       6.510E+34    -6.870   47197.0 /
+PLOG /   10.000       2.150E+35    -6.760   49554.0 /
+PLOG /  100.000       2.230E+33    -5.970   50454.0 / 
+!****************
+! ch2co reactions
+!****************
+
+ch2+co(+M)<=>ch2co(+M)                 8.100E+11     0.500    4510.0 ! GRI 3.0
+LOW  / 2.690E+33    -5.110    7095.0 /
+TROE/   0.5907  275.0  1226.0  5185.0 /
+h2/2.00/ h2o/6.00/ ch4/2.00/ co/1.50/ co2/2.00/ c2h6/3.00/ ar/ .70/ 
+
+ch2co+o2<=>ch2o+co2                    2.000E+13     0.000   61500.0 ! DAGAUT 90 c2h4/2
+ch2co+ho2=>ch2o+co+oh                  6.000E+11     0.000   12738.0 ! PILLING 90
+ch2co+o<=>ch2+co2                      1.760E+12     0.000    1349.0 ! WASHIDA 83
+ch2co+o<=>hcco+oh                      1.000E+13     0.000    8000.0 ! MILLER 82
+
+ch2co+oh<=>ch2oh+co                    2.000E+12     0.000   -1010.0
+ch2co+oh<=>hcco+h2o                    1.000E+13     0.000    2000.0
+
+ch2co+h<=>hcco+h2                      1.401E+15    -0.171    8783.2
+ch2co+h<=>ch3+co                       7.704E+13    -0.171    4183.2
+
+ch2co+ch3<=>c2h5+co                    9.000E+10     0.000       0.0 ! HIDAKA 96
+ch2co+ch3<=>hcco+ch4                   7.500E+12     0.000   13000.0 ! HIDAKA 96
+ch2co+ch2<=>c2h4+co                    1.000E+12     0.000       0.0 ! HIDAKA 96
+ch2co+ch2<=>hcco+ch3                   3.600E+13     0.000   11000.0 ! HIDAKA 96
+
+!*****************
+! chocho reactions
+!*****************
+
+chocho(+m)<=>ch2o+co(+m)               4.270E+12     0.000   50600.0 ! marinov 1995
+LOW / 8.910E+16     0.000   49200.0 / ! marinov 1995
+chocho(+m)=>co+co+h2(+m)               1.072E+14     0.000   55100.0 ! MARINOV94, SAITO:JPC 88, 1182 (1984)
+LOW / 2.570E+16     0.000   38400.0 /
+hco+hco<=>chocho                       1.000E+13     0.000       0.0 ! 9 ALLARA and shaw
+
+chocho+oh<=>choco+h2o                  1.000E+13     0.000       0.0 ! MARINOV94
+chocho+o<=>choco+oh                    7.240E+12     0.000    1970.0 ! MARINOV94
+chocho+h<=>ch2o+hco                    1.000E+12     0.000       0.0 ! MARINOV94
+chocho+ho2<=>choco+h2o2                1.700E+12     0.000   10700.0 ! MARINOV94
+chocho+ch3<=>choco+ch4                 1.740E+12     0.000    8440.0 ! MARINOV94
+chocho+o2=>hco+co+ho2                  6.300E+13     0.000   30000.0 ! MARINOV94
+
+!****************
+! choco reactions
+!****************
+
+choco<=>hco+co                         2.000E+07     0.000       0.0 ! MARINOV94
+choco+o2=>co+co+ho2                    3.980E+12     0.000   30000.0 ! MARINOV95
+
+!*******************
+! c2h3o1-2 reactions
+!*******************
+
+c2h3o1-2<=>ch2co+h                     4.960E+13     0.000   14860.0 ! Joshi et al.,JPCA, 109 (2005) 8016-8027
+c2h3o1-2<=>ch3+co                      7.310E+12     0.000   14280.0 ! Joshi et al.,JPCA, 109 (2005) 8016-8027
+c2h3o1-2<=>ch3co                       8.511E+14     0.000   14000.0 ! 90WILK/CER
+c2h3o1-2<=>ch2cho                      8.740E+31    -6.900   14990.0 ! Joshi et al.,JPCA, 109 (2005) 8016-8027
+
+!*****************
+! c2h2oh reactions
+!*****************
+
+c2h2oh<=>ch2co+h                       5.000E+15     0.000   28000.0 ! MILLER82
+c2h2oh+h<=>ch2co+h2                    2.000E+13     0.000    4000.0 ! MILLER82
+c2h2oh+o<=>ch2co+oh                    2.000E+13     0.000    4000.0 ! MILLER82
+c2h2oh+oh<=>ch2co+h2o                  1.000E+13     0.000    2000.0 ! MILLER82
+c2h2oh+o2=>hco+co2+h2                  4.000E+12     0.000    -250.0 ! GUTMANc2h3+o2
+
+!****************
+! hccoh reactions
+!****************
+
+hccoh+h<=>ch2co+h                      1.000E+13     0.000       0.0 ! MILLER 88
+
+!***************
+! hcco reactions
+!***************
+
+ch+co(+M)<=>hcco(+M)                   5.000E+13     0.000       0.0 !GRI 3.0
+LOW  / 2.690E+28    -3.740    1936.0 /
+TROE/   0.5757  237.0  1652.0  5069.0 /
+h2/2.00/ h2o/6.00/ ch4/2.00/ co/1.50/ co2/2.00/ c2h6/3.00/ ar/ .70/
+
+hcco+oh<=>c2o+h2o                      3.000E+13     0.000       0.0 ! MILLER 82
+hcco+oh=>hco+co+h                      1.000E+13     0.000       0.0 ! MILLER 82
+hcco+o=>co+co+h                        1.930E+14     0.000     590.0 ! VINCKIER 85
+hcco+h<=>ch2(s)+co                     1.500E+14     0.000       0.0 ! 88FRA/RAH
+hcco+o2=>co+co+oh                      1.600E+12     0.000     854.0 ! JetSurf
+hcco+ch2<=>c2h+ch2o                    1.000E+13     0.000    2000.0 ! MILLER 82
+hcco+ch2<=>c2h3+co                     3.000E+13     0.000       0.0 ! MILLER 82
+hcco+ch<=>c2h2+co                      5.000E+13     0.000       0.0 ! MILLER 92
+hcco+hcco=>c2h2+co+co                  1.000E+13     0.000       0.0 ! MILLER 92
+hcco+o<=>ch+co2                        2.950E+13     0.000    1113.0 ! PEETERS 1995
+hcco+c2h2<=>c3h3+co                    1.000E+11     0.000    3000.0 ! MILLER 92
+hcco+ch3<=>c2h4+co                     5.000E+13     0.000       0.0 ! Eiteneer 2003
+
+!**************
+! c2o reactions
+!**************
+
+c2o+o2=>co+co+o                        2.000E+13     0.000       0.0 ! MILLER 92
+c2o+oh=>co+co+h                        2.000E+13     0.000       0.0 ! MILLER 92
+c2o+o<=>co+co                          5.000E+13     0.000       0.0 ! MILLER 92
+c2o+h<=>ch+co                          5.000E+13     0.000       0.0 ! MILLER 92
+
+!*************
+! c2 reactions
+!*************
+
+c2+o2<=>co+co                          5.000E+13     0.000       0.0 ! MILLER 92
+c2+oh<=>c2o+h                          5.000E+13     0.000       0.0 ! MILLER 92
+c2+h2<=>c2h+h                          4.000E+05     2.400    1000.0 ! MILLER 92
+
+!*****************
+! c2h5oh reactions
+!*****************
+
+! Sivaramakrishnan et al., Journal of Physical Chemistry A (2010) Vol. 114, pp. 9425-9439
+c2h5oh<=>c2h4+h2o                    5.230E+43    -8.900  81514.9
+PLOG /   0.001   3.410E+59   -14.220  83681.0 /
+PLOG /   0.010   2.620E+57   -13.290  85270.8 /
+PLOG /   0.100   1.650E+52   -11.520  84754.1 /
+PLOG /   1.000   5.230E+43    -8.900  81514.9 /
+PLOG /  10.000   4.590E+32    -5.600  76070.0 /
+PLOG / 100.000   3.840E+20    -2.060  69472.5 /
+
+! Sivaramakrishnan et al., Journal of Physical Chemistry A (2010) Vol. 114, pp. 9425-9439
+c2h5oh<=>ch3+ch2oh                   5.550E+64   -14.470 107110.1
+PLOG /   0.001   1.200E+54   -12.940 100015.8 /
+PLOG /   0.010   5.180E+59   -13.980  99916.4 /
+PLOG /   0.100   1.620E+66   -15.300 105401.1 /
+PLOG /   1.000   5.550E+64   -14.470 107110.1 /
+PLOG /  10.000   1.550E+58   -12.290 105778.7 /
+PLOG / 100.000   1.780E+47    -8.960 101069.0 /
+
+! Sivaramakrishnan et al., Journal of Physical Chemistry A (2010) Vol. 114, pp. 9425-9439
+c2h5oh<=>c2h5+oh                     1.460E+65   -14.890 112356.3
+PLOG /   0.001   8.100E+46   -11.330 111064.6 /
+PLOG /   0.010   1.820E+56   -13.490 107249.2 /
+PLOG /   0.100   4.650E+63   -14.990 109633.8 /
+PLOG /   1.000   1.460E+65   -14.890 112356.3 /
+PLOG /  10.000   2.790E+61   -13.400 113091.6 /
+PLOG / 100.000   6.170E+51   -10.340 109951.8 /
+
+c2h5oh+o2<=>pc2h4oh+ho2                2.000E+13     0.000   52800.0
+c2h5oh+o2<=>ch3choh+ho2                1.500E+13     0.000   50150.0
+
+c2h5oh+c2h5<=>pc2h4oh+c2h6             5.000E+10     0.000   13400.0
+c2h5oh+c2h5<=>ch3choh+c2h6             5.000E+10     0.000   10400.0
+
+c2h5oh+oh<=>pc2h4oh+h2o                6.200E+03     2.680    -576.0 ! Xu Lin pci 2007 31 159-166
+c2h5oh+oh<=>ch3choh+h2o                1.306E+05     2.430   -1457.0 ! Xu Lin pci 2007 31 159-166
+c2h5oh+oh<=>ch3ch2o+h2o                2.810E+02     2.970    -580.0 ! Xu Lin pci 2007 31 159-166
+
+c2h5oh+h<=>pc2h4oh+h2                  1.878E+03     3.200    7150.0 ! Park,Zhu,Lin, JcP 118, 9990-9996 (2003)
+c2h5oh+h<=>ch3choh+h2                  1.794E+05     2.530    3420.0 ! Park,Zhu,Lin, JcP 118, 9990-9996 (2003)
+c2h5oh+h<=>ch3ch2o+h2                  5.550E-23    10.600   -4459.0 ! Park,Zhu,Lin, JcP 118, 9990-9996 (2003)
+
+c2h5oh+o<=>pc2h4oh +oh                 9.690E+02     3.230    4658.0 ! Wu, Lee, Xu, Lin, JPcA 2007
+c2h5oh+o<=>ch3choh+oh                  1.450E+05     2.410     876.0 ! Wu, Lee, Xu, Lin, JPcA 2007  
+c2h5oh+o<=>ch3ch2o+oh                  1.460E-03     4.730    1727.0 ! Wu, Lee, Xu, Lin, JPcA 2007
+
+c2h5oh+ch3<=>pc2h4oh+ch4               3.300E+02     3.300   12291.0 ! Xu,Park,Lin, JcP 120, 6593-6599 (2004)
+c2h5oh+ch3<=>ch3choh+ch4               1.990E+01     3.370    7635.0 ! Xu,Park,Lin, JcP 120, 6593-6599 (2004)
+c2h5oh+ch3<=>ch3ch2o+ch4               2.035E+00     3.570    7722.0 ! Xu,Park,Lin, JcP 120, 6593-6599 (2004)
+
+c2h5oh+ho2<=>ch3choh+h2o2              8.200E+03     2.550   10750.0 ! Marinov 1998 
+c2h5oh+ho2<=>pc2h4oh+h2o2              1.230E+04     2.550   15750.0 ! Marinov 1998 
+c2h5oh+ho2<=>ch3ch2o+h2o2              2.500E+12     0.000   24000.0 ! Marinov 1998 
+
+!******************
+! ch3ch2o reactions
+!******************
+
+ch3ch2o+m<=>ch3cho+h+m                 1.160E+35    -5.890   25274.0 ! Marinov 1998
+ch3ch2o+m<=>ch3+ch2o+m                 1.350E+38    -6.960   23800.0 ! Marinov 1998
+ch3ch2o+o2<=>ch3cho+ho2                4.000E+10     0.000    1100.0 ! hartmann 1990 
+ch3ch2o+h<=>ch3cho+h2                  1.000E+13     0.000       0.0 !
+ch3ch2o+oh<=>ch3cho+h2o                1.000E+13     0.000       0.0 ! Marinov 1998
+ch3ch2o+ho2<=>ch3cho+h2o2              3.000E+11     0.000       0.0 !
+ch3ch2o+co<=>c2h5+co2                  4.680E+02     3.160    5380.0 ! Marinov 1998 
+
+!******************
+! ch3choh reactions
+!******************
+
+ch3choh+o2<=>ch3cho+ho2                1.000E+13     0.000    5564.0 ! natarajan Bhaskaran pisstw 1982 13 834
+ch3choh+ch3<=>c3h6+h2o                 1.000E+13     0.000       0.0 ! Marinov 1998
+ch3choh+o<=>ch3cho+oh                  1.000E+14     0.000       0.0 ! Marinov 1998
+ch3choh+h<=>c2h4+h2o                   3.000E+13     0.000       0.0 ! Marinov 1998
+ch3choh+h<=>ch3+ch2oh                  3.000E+13     0.000       0.0 ! Marinov 1998
+ch3choh+ho2=>ch3cho+oh+oh              4.000E+13     0.000       0.0 ! Marinov 1998
+ch3choh+oh<=>ch3cho+h2o                5.000E+12     0.000       0.0 ! Marinov 1998
+ch3choh+m<=>ch3cho+h+m                 1.000E+14     0.000   25000.0 ! Marinov 1998
+
+
+!*********************************************************************************************
+!****************************************** BASE C3 ******************************************
+!*********************************************************************************************
+
+!***********************
+! c3h8 Propane reactions
+
+ch2+c3h8<=>ch3+ic3h7                   2.190E+12     0.000    6405.0 ! DOBE 85
+ch2+c3h8<=>ch3+nc3h7                   1.790E+12     0.000    6405.0 ! DOBE 85
+c3h8<=>c2h5+ch3                        1.000E+17     0.000   84650.0 ! Dean, J.Phys.Chem. 89 (1985) 4600-4608
+c3h8<=>nc3h7+h                         1.580E+16     0.000   97970.0 ! as n-C4H9 Dean et al., J.Phys.Chem. 89 (1985) 4600-4608
+c3h8<=>ic3h7+h                         5.000E+15     0.000   94990.0 ! as s-C4H9 Dean et al., J.Phys.Chem. 89 (1985) 4600-4608
+
+c3h8+o2<=>nc3h7+ho2                    4.000E+13     0.000   50872.0 ! WALKER 75 EST
+c3h8+o2<=>ic3h7+ho2                    4.000E+13     0.000   47500.0 ! WALKER 75
+
+c3h8+ho2<=>nc3h7+h2o2                  4.760E+04     2.550   16494.0 ! TSANG 88
+c3h8+ho2<=>ic3h7+h2o2                  9.640E+03     2.600   13910.0 ! TSANG 88
+
+c3h8+oh<=>nc3h7+h2o                    3.160E+07     1.800     934.0 ! CohEN 91
+c3h8+oh<=>ic3h7+h2o                    7.080E+06     1.900    -159.0 ! CohEN 91
+
+c3h8+o<=>nc3h7+oh                      3.715E+06     2.400    5505.0 ! CohEN 86
+c3h8+o<=>ic3h7+oh                      5.495E+05     2.500    3140.0 ! CohEN 86
+
+c3h8+h<=>nc3h7+h2                      1.336E+06     2.540    6756.0 ! TSANG 88
+c3h8+h<=>ic3h7+h2                      1.014E+04     2.880    2931.0 ! FITNIST
+
+c3h8+ch3<=>nc3h7+ch4                   3.000E+12     0.000   11710.0 ! WALKER 77 >
+c3h8+ch3<=>ic3h7+ch4                   8.070E+11     0.000   10110.0 ! WALKER 77*RTI*1.35
+
+c3h8+c2h5<=>nc3h7+c2h6                 3.160E+11     0.000   12300.0 ! ALLARA 80
+c3h8+c2h5<=>ic3h7+c2h6                 5.010E+10     0.000   10400.0 ! ALLARA 80
+
+c3h8+c2h3<=>nc3h7+c2h4                 6.000E+02     3.300   10502.0 ! TSANG 88
+c3h8+c2h3<=>ic3h7+c2h4                 1.000E+03     3.100    8829.0 ! TSANG 88
+
+c3h8+ic3h7<=>nc3h7+c3h8                1.000E+11     0.000   12900.0 ! ALLARA 80
+c3h8+c3h5-a<=>nc3h7+c3h6               7.940E+11     0.000   20500.0 ! ALLARA 80
+c3h8+c3h5-a<=>ic3h7+c3h6               7.940E+11     0.000   16200.0 ! EBERT  83
+c3h8+ch3o<=>nc3h7+ch3oh                3.180E+11     0.000    7050.0 ! WALKER 75
+c3h8+ch3o<=>ic3h7+ch3oh                7.200E+10     0.000    4470.0 ! WALKER 75
+
+!***********************
+! C3H7 REACTIONS
+! 1) C-C bond scision
+
+nc3h7(+M)<=>c2h4+ch3(+M)               1.230E+13    -0.100   30202.0 ! Bencsura 1992
+LOW / 5.545E+49   -10.000   35766.0 /
+TROE / 2.1700  1.0E-15  251.0  1185.0 /
+h2o /5.0/ h2/2.0/ co2/3.0/ co/2.0/
+
+c3h6+h(+m)<=>nc3h7(+m)                 1.330E+13     0.000    3260.7 ! 
+LOW / 6.260E+38    -6.660    7000.0 /
+TROE/ 1.0000  1000.0  1310.0  48097.0 /
+h2o/6.00/ co/1.875/ co2/3.75/ ch4/16.25/ c2h6/16.25/
+
+c3h6+h(+m)<=>ic3h7(+m)                 5.700E+09     1.200     874.0 ! Seakins 1993
+LOW / 1.640E+54   -11.100    9364.0 / ! marinov 1996 
+TROE/ 1.0000  1.0E-15  260.0  3000.0 /
+h2o/16.25/ co/1.875/ co2/3.85/
+
+nc3h7<=>ic3h7                          3.560E+10     0.880   37300.0 ! Matheu et al., Int.J.Chem.Kinet.35(2003)95-119
+
+! 3) oxydation reactions
+
+nc3h7+o2<=>c3h6+ho2                    3.703E+16    -1.630    3417.6 ! DeSain et al., J.Phys.Chem.A, 107(2003)4415-4427
+ic3h7+o2<=>c3h6+ho2                    6.697E+20    -3.020    2503.6 ! DeSain et al., J.Phys.Chem.A, 107(2003)4415-4427 
+
+! 4) H, OH, HO2 addition
+
+ho2+ic3h7<=>ic3h7o2h                   4.800E+12     0.000       0.0 ! CO 5199 KB
+ho2+nc3h7<=>nc3h7o2h                   4.800E+12     0.000       0.0 ! CO 5199 KB
+
+! 5) O2 addition
+nc3h7+o2<=>nc3h7o2                     1.150E+20    -2.420    2451.3 ! Goldsmith et al., J.Phys.Chem.A, 116(2012)3325-3346 10atm
+ic3h7+o2<=>ic3h7o2                     6.740E+27    -4.850    3779.8 ! Goldsmith et al., J.Phys.Chem.A, 116(2012)3325-3346 10atm
+
+nc3h7+o2<=>c3h6o1-2+oh                 3.350E+02     2.610    4697.4 ! Goldsmith et al., J.Phys.Chem.A, 116(2012)3325-3346 10atm
+ic3h7+o2<=>c3h6o1-2+oh                 2.810E+18    -2.310   10119.3 ! Goldsmith et al., J.Phys.Chem.A, 116(2012)3325-3346 10atm
+
+! 6) H, OH, O decomposition
+
+nc3h7+h<=>c2h5+ch3                     1.000E+14     0.000       0.0 ! TSANG 1988
+ic3h7+h<=>c2h5+ch3                     5.000E+13     0.000       0.0 ! TSANG 1988
+ic3h7+h<=>c3h6+h2                      3.614E+12     0.000       0.0
+ic3h7+o<=>ch3coch3+h                   4.818E+13     0.000       0.0
+ic3h7+o<=>ch3cho+ch3                   4.818E+13     0.000       0.0 
+nc3h7+o<=>ch2o+c2h5                    4.818E+13     0.000       0.0 
+nc3h7+o<=>c2h5cho+h                    4.818E+13     0.000       0.0 
+
+! 7) dismutation
+
+ch3o2+nc3h7<=>ch3o+nc3h7o              1.900E+12     0.000   -1200.0
+ic3h7o2+nc3h7<=>ic3h7o+nc3h7o          1.900E+12     0.000   -1200.0
+nc3h7o2+nc3h7<=>nc3h7o+nc3h7o          1.900E+12     0.000   -1200.0
+nc3h7+ho2<=>nc3h7o+oh                  1.900E+12     0.000   -1200.0
+
+ch3o2+ic3h7<=>ch3o+ic3h7o              1.900E+12     0.000   -1200.0
+ic3h7o2+ic3h7<=>ic3h7o+ic3h7o          1.900E+12     0.000   -1200.0
+nc3h7o2+ic3h7<=>nc3h7o+ic3h7o          1.900E+12     0.000   -1200.0
+ic3h7+ho2<=>ic3h7o+oh                  1.900E+12     0.000   -1200.0
+
+
+ic3h7+oh<=>c3h6+h2o                    2.410E+13     0.000       0.0
+
+!**********************************
+! C3H7O reactions Propanoxy radical
+
+nc3h7o<=>c2h5cho+h                     1.700E+13     0.000   20510.0 ! Rauk et al., J.Can.Chem. 81(2003)431-442
+nc3h7o<=>c2h5+ch2o                     5.890E+13     0.000   13890.0 ! Rauk et al., J.Can.Chem. 81(2003)431-442
+nc3h7o+o2<=>c2h5cho+ho2                8.430E+09     0.000     220.0 ! Atkinson 2001
+
+ic3h7o<=>ch3coch3+h                    1.580E+13     0.000   18310.0 ! Rauk et al., J.Can.Chem. 81(2003)431-442
+ic3h7o<=>ch3+ch3cho                    9.120E+13     0.000   14360.0 ! Rauk et al., J.Can.Chem. 81(2003)431-442
+ic3h7o+o2<=>ch3coch3+ho2               8.430E+09     0.000     420.0 ! Atkinson 2001
+
+!*****************
+! C3H7O2 reactions 
+
+ic3h7o2+c2h3cho<=>c2h3co+ic3h7o2h      2.800E+12     0.000   13600.0
+ic3h7o2+c2h4<=>c2h3+ic3h7o2h           1.130E+13     0.000   30430.0
+ic3h7o2+c2h5cho<=>ic3h7o2h+c2h5co      2.000E+11     0.000    9500.0
+ic3h7o2+c2h6<=>ic3h7o2h+c2h5           1.700E+13     0.000   20460.0
+ic3h7o2+ch2o<=>ic3h7o2h+hco            5.600E+12     0.000   13600.0
+ic3h7o2+ch3cho<=>ic3h7o2h+ch3co        2.800E+12     0.000   13600.0
+ic3h7o2+ch4<=>ch3+ic3h7o2h             1.120E+13     0.000   24640.0
+ic3h7o2+h2<=>h+ic3h7o2h                3.010E+13     0.000   26030.0
+ic3h7o2+ch3oh<=>ch2oh+ic3h7o2h         6.300E+12     0.000   19360.0
+ic3h7o2+ho2<=>ic3h7o2h+o2              2.290E+11     0.000   -1790.0 ! Atkinson et al., 2001
+ic3h7o2+c2h5o2=>ic3h7o+ch3ch2o+o2      5.000E+10     0.000       0.0
+ic3h7o2+ic3h7o2<=>o2+ic3h7o+ic3h7o     5.000E+10     0.000       0.0
+ic3h7o2+nc3h7o2=>ic3h7o+nc3h7o+o2      5.000E+10     0.000       0.0
+ic3h7o2+ch3co3=>ic3h7o+ch3co2+o2       5.000E+10     0.000       0.0
+ic3h7o2+ch3o2=>ic3h7o+ch3o+o2          1.000E+11     0.000       0.0
+ic3h7o2+ho2=>ic3h7o+oh+o2              1.000E+11     0.000       0.0
+ic3h7o2+c2h5<=>ic3h7o+ch3ch2o          1.900E+12     0.000   -1200.0
+ic3h7o2+c3h5-a<=>ic3h7o+c3h5o          1.900E+12     0.000   -1200.0
+ic3h7o2+ch3<=>ic3h7o+ch3o              1.900E+12     0.000   -1200.0
+ic3h7o2+h2o2<=>ic3h7o2h+ho2            2.410E+12     0.000    9936.0 ! Tsang et al., J.Phys.Chem.Ref.Data, 15(1986)1087-
+
+nc3h7o2+h2o2<=>nc3h7o2h+ho2            2.410E+12     0.000    9936.0 ! Tsang et al., J.Phys.Chem.Ref.Data, 15(1986)1087-
+nc3h7o2+c2h3cho<=>c2h3co+nc3h7o2h      2.800E+12     0.000   13600.0
+nc3h7o2+c2h4<=>c2h3+nc3h7o2h           1.130E+13     0.000   30430.0
+nc3h7o2+c2h5cho<=>nc3h7o2h+c2h5co      2.000E+11     0.000    9500.0
+nc3h7o2+c2h6<=>nc3h7o2h+c2h5           1.700E+13     0.000   20460.0
+nc3h7o2+ch3cho<=>nc3h7o2h+ch3co        2.800E+12     0.000   13600.0
+nc3h7o2+ch4<=>ch3+nc3h7o2h             1.120E+13     0.000   24640.0
+nc3h7o2+h2<=>h+nc3h7o2h                3.010E+13     0.000   26030.0
+nc3h7o2+ch3oh<=>ch2oh+nc3h7o2h         6.300E+12     0.000   19360.0
+nc3h7o2+ho2<=>nc3h7o2h+o2              2.290E+11     0.000   -1790.0 ! Atkinson et al., 2001
+nc3h7o2+c2h5o2=>nc3h7o+ch3ch2o+o2      5.000E+10     0.000       0.0
+nc3h7o2+nc3h7o2=>o2+nc3h7o+nc3h7o      5.000E+10     0.000       0.0
+nc3h7o2+ch3o2=>nc3h7o+ch3o+o2          1.000E+11     0.000       0.0
+nc3h7o2+ho2=>nc3h7o+oh+o2              1.000E+11     0.000       0.0
+nc3h7o2+c2h5<=>nc3h7o+ch3ch2o          1.900E+12     0.000   -1200.0
+nc3h7o2+c3h5-a<=>nc3h7o+c3h5o          1.900E+12     0.000   -1200.0
+nc3h7o2+ch3<=>nc3h7o+ch3o              1.900E+12     0.000   -1200.0
+
+nc3h7o2<=>c3h6+ho2                     4.160E+08     1.250   29600.0 ! Villano et al., J.Phys.Chem.A, 115(2011)13425-13442 (p-s)
+ic3h7o2<=>c3h6+ho2                     8.160E+08     1.280   30000.0 ! Villano et al., J.Phys.Chem.A, 115(2011)13425-13442 (s-p)
+
+nc3h7o2<=>c2h5cho+oh                   3.360E+05     2.310   36900.0 ! Villano et al., J.Phys.Chem.A, 115(2011)13425-13442
+ic3h7o2<=>ch3coch3+oh                  5.220E+04     2.450   35700.0 ! Villano et al., J.Phys.Chem.A, 115(2011)13425-13442
+nc3h7o2<=>prooh1-2                     2.540E-01     3.690   24800.0 ! Cord, PhD Thesis (5-II)
+nc3h7o2<=>prooh1-3                     1.410E+04     2.200   19800.0 ! Cord, PhD Thesis (3-II)
+ic3h7o2<=>prooh2-1                     1.826e-03     4.580   26900.0 ! Cord, PhD Thesis (3-II)
+
+nc3h7o2<=>c3h6o1-2+oh                  3.280E+21    -2.880   37342.8 ! Goldsmith et al., J.Phys.Chem.A, 116(2012)3325-3346 10atm
+ic3h7o2<=>c3h6o1-2+oh                  1.940E+53   -13.000   49382.4 ! Goldsmith et al., J.Phys.Chem.A, 116(2012)3325-3346 10atm
+
+prooh1-2<=>prooh1-3                    5.360E-85    31.000     535.8 ! Goldsmith et al., J.Phys.Chem.A, 116(2012)3325-3346 10atm
+
+!******************
+! C3H7O2H reactions
+
+nc3h7o2h<=>nc3h7o+oh                   2.500E+15     0.000   41000.0 ! Vasudevan et al., Int.J.Chem.Kinet., 37(2005)98-109
+ic3h7o2h<=>ic3h7o+oh                   2.500E+15     0.000   43000.0 ! Vasudevan et al., Int.J.Chem.Kinet., 37(2005)98-109
+
+nc3h7o2h<=>h2o+c2h5cho                 1.430E+10     1.050   42611.0 ! G3B3/TST
+
+!similar to c2h5o2h ranzi
+nc3h7o2h+o<=>oh+nc3h7o2                2.000E+13     0.000    4750.0 
+nc3h7o2h+oh<=>nc3h7o2+h2o              2.000E+12     0.000    -370.0 
+nc3h7o2h+h=>c2h5cho+oh+h2              3.200E+13     0.000    7700.0 !ranzi 94
+nc3h7o2h+ch3=>c2h5cho+oh+ch4           5.700E+11     0.000    8700.0 !ranzi 94
+nc3h7o2h+c2h5=>c2h5cho+oh+c2h6         3.400E+11     0.000   11400.0 !ranzi 94
+nc3h7o2h+nc3h7=>c2h5cho+oh+c3h8        3.400E+11     0.000   11400.0 !added
+nc3h7o2h+oh=>c2h5cho+oh+h2o            1.180E+13     0.000   -2000.0 !ranzi 94
+nc3h7o2h+hco=>c2h5cho+oh+ch2o          1.800E+12     0.000   16700.0 !ranzi 94
+nc3h7o2h+ch3o=>c2h5cho+oh+ch3oh        6.300E+11     0.000    5500.0 !ranzi 94
+nc3h7o2h+ho2=>c2h5cho+oh+h2o2          8.000E+11     0.000   16200.0 !ranzi 94
+
+!******************
+! prooh reactions
+
+prooh1-2<=>c3h6o1-2+oh                 3.300E+10     0.490   12600.0 ! Cord, PhD Thesis (3-II)
+prooh2-1<=>c3h6o1-2+oh                 1.240E+11     0.510   14500.0 ! Cord, PhD Thesis (3-I)
+prooh1-3<=>c3h6o1-3+oh                 3.050E+10     0.330   20200.0 ! Cord, PhD Thesis (4-I)
+
+c3h6+ho2<=>c3h6o1-2+oh                 1.920E+12     0.107   17384.8 ! Goldsmith et al., J.Phys.Chem.A, 116(2012)3325-3346 10atm
+
+c3h6+ho2<=>prooh1-2                    2.470E+04     2.130   12160.0 ! Chen et al., J.Phys.Chem.A, 104 (2000) 4997-5012
+c3h6+ho2<=>prooh2-1                    7.740E+03     2.290   11080.0 ! Chen et al., J.Phys.Chem.A, 104 (2000) 4997-5012
+
+prooh1-3=>oh+ch2o+c2h4                 2.890E+09     1.300   26700.0 ! Villano et al., J.Phys.Chem.A, 116(2012)5068-5089
+
+!*********************
+! prooh-o2 reactions
+prooh1-2+o2<=>prooh1-2o2               8.500E+18    -2.500       0.0 ! kp+ks/2
+prooh1-3+o2<=>prooh1-3o2               4.500E+18    -2.500       0.0 ! ks/2
+prooh2-1+o2<=>prooh2-1o2               7.500E+17    -2.500       0.0 ! kt/2
+
+prooh1-2o2<=>c3ket12+oh                2.540E-01     3.690   22800.0 ! Cord, PhD Thesis (5-II-2kcal/mol)
+prooh1-3o2<=>c3ket13+oh                6.360E+04     1.830   17200.0 ! Cord, PhD Thesis (6-II-2kcal/mol)
+prooh2-1o2<=>c3ket21+oh                1.200E+01     3.100   22500.0 ! Cord, PhD Thesis (5-III-2kcal/mol)
+
+!****************
+! C3ket reactions
+
+c3ket12=>ch3cho+hco+oh                 2.500E+15     0.000   43000.0 ! Vasudevan et al., Int.J.Chem.Kinet., 37(2005)98-109
+c3ket13=>ch2o+ch2cho+oh                2.500E+15     0.000   43000.0 ! Vasudevan et al., Int.J.Chem.Kinet., 37(2005)98-109
+c3ket21=>ch2o+ch3co+oh                 2.500E+15     0.000   43000.0 ! Vasudevan et al., Int.J.Chem.Kinet., 37(2005)98-109
+
+!^^^^^^^^^^^^^^^^^^^
+! c3h6o#x REACTIONS
+! Cyclic ethers
+
+c3h6o1-2+h=>h2+ch3chcho                9.600E+08     1.500    2785.0 ! 25  dbr, see shee
+c3h6o1-2+h=>h2+ch3coch2                4.800E+08     1.500    2005.0 ! 25  dbr, see shee
+c3h6o1-2+oh=>h2o+ch3chcho              4.800E+06     2.000   -1192.0 ! 25  dbr, see shee
+c3h6o1-2+oh=>h2o+ch3coch2              2.400E+06     2.000   -1192.0 ! 25  dbr, see shee
+c3h6o1-2+ho2=>h2o2+ch3chcho            8.000E+12     0.000   14400.0 ! 25  my evans-po
+c3h6o1-2+ho2=>h2o2+ch3coch2            4.000E+12     0.000   13260.0 ! 25  my evans-po
+
+
+c3h6o1-3+h=>h2+pc2h4cho                1.920E+09     1.500    2785.0 ! 25  dbr, see shee
+c3h6o1-3+oh=>h2o+pc2h4cho              9.600E+06     2.000   -1192.0 ! 25  dbr, see shee
+c3h6o1-3+ho2=>h2o2+pc2h4cho            1.600E+13     0.000   14400.0 ! 25  my evans-po
+
+c3h6o1-2<=>c2h5+hco                    2.450E+13     0.000   58500.0 ! Lifshitz,A.;Tamburu,C 1994
+c3h6o1-2<=>c2h5cho                     1.820E+14     0.000   58500.0 ! Lifshitz,A.;Tamburu,C 1994
+c3h6o1-2<=>ch3+ch3co                   4.540E+13     0.000   59900.0 ! Lifshitz,A.;Tamburu,C 1994
+c3h6o1-2<=>ch3+ch2cho                  2.450E+13     0.000   58820.0 ! Lifshitz,A.;Tamburu,C 1994
+c3h6o1-2<=>ch3+c2h3o1-2                8.000E+15     0.000   92010.0 ! Lifshitz,A.;Tamburu,C 1994
+
+c3h6o1-2<=>c2h4+ch2o                   6.000E+14     0.000   60000.0
+c3h6o1-3<=>c2h4+ch2o                   6.000E+14     0.000   60000.0
+
+!**********************
+!c3h6 reactions Propene
+
+c3h5-a+h(+m)=c3h6(+m)                  2.000E+14     0.000       0.0 ! TS5 600cm-1 !
+LOW / 1.330E+60   -12.000    5967.8 /
+TROE / 0.0200  1096.6  1096.6  6859.5 /
+h2o/6/ co/1.5/ co2/2/ ch4/2/ c2h6/3/ h2/2/ ar/0.7/
+
+c2h3+ch3(+m)=c3h6(+m)                  2.500E+13     0.000       0.0 !86TSA/hAM
+LOW / 4.270E+58   -11.940    9769.8 /
+TROE / 0.1750  1340.6  60000.0  10139.8 /
+h2o/6.0/ co/1.5/ co2/2.0/ ch4/2.0/ c2h6/3.0/ h2/2.0/ c2h2/3.0/ c2h4/3.0/ ar/0.7/ 
+
+c3h5-a+ho2<=>c3h6+o2                   1.000E+12     0.000       0.0 !
+c3h6+o2<=>c3h5-s+ho2                   1.400E+13     0.000   60200.0 ! WALKER77
+c3h6+o2<=>c3h5-t+ho2                   7.000E+12     0.000   60200.0 ! WALKER77
+
+c3h6+ho2<=>c3h5-a+h2o2                 2.700E+04     2.500   12340.0
+c3h6+ho2<=>c3h5-s+h2o2                 1.800E+04     2.500   27620.0
+c3h6+ho2<=>c3h5-t+h2o2                 9.000E+03     2.500   23590.0
+
+c3h6+oh<=>c3h5-a+h2o                   1.154E+05     2.560     564.0 ! fitted from Zador et al., PCCP
+c3h6+oh<=>c3h5-s+h2o                   7.588E+03     2.800    2193.0 ! Zador et al., PCCP
+duplicate
+c3h6+oh<=>c3h5-s+h2o                   1.012E+00     3.510    -101.0 ! Zador et al., PCCP
+duplicate
+c3h6+oh<=>c3h5-t+h2o                   4.673E+04     2.470    1748.0 ! Zador et al., PCCP
+duplicate
+c3h6+oh<=>c3h5-t+h2o                   5.721E-07     2.610   -3086.0 ! Zador et al., PCCP
+duplicate
+
+c3h6+o<=>c2h5+hco                      4.689E+07     1.570    -628.0 ! Mahmud et al., Symp.Int.Combust.Proc. 22(1989)991-996 (30/100)  
+c3h6+o<=>ch3+ch2cho                    3.900E+07     1.570    -628.0 ! Mahmud et al., Symp.Int.Combust.Proc. 22(1989)991-996 (25/100)  
+c3h6+o<=>c2h4+ch2o                     7.020E+07     1.570    -628.0 ! Mahmud et al., Symp.Int.Combust.Proc. 22(1989)991-996 (45/100)  
+
+c3h6+o<=>c3h5-a+oh                     1.750E+11     0.700    5884.0 ! TSANG91
+c3h6+o<=>c3h5-s+oh                     1.200E+11     0.700    8960.0 ! TSANG91
+c3h6+o<=>c3h5-t+oh                     6.020E+10     0.700    7633.0 ! TSANG91
+
+c3h6+h<=>c3h5-a+h2                     1.730E+05     2.500    2492.0
+c3h6+h<=>c3h5-s+h2                     8.040E+05     2.500   12280.0
+c3h6+h<=>c3h5-t+h2                     4.050E+05     2.500    9794.0
+
+c3h6+ch3<=>c3h5-a+ch4                  2.210E+00     3.500    5675.0
+c3h6+ch3<=>c3h5-s+ch4                  1.348E+00     3.500   12850.0
+c3h6+ch3<=>c3h5-t+ch4                  8.400E-01     3.500   11660.0
+
+c3h6+c3h6<=>c3h5-a+nc3h7               1.320E+13     0.000   48400.0 ! Burcat, Fuel 54(1975)87-93
+c3h6+c2h5<=>c3h5-a+c2h6                1.000E+11     0.000    9800.0 ! EDELSON 80
+! Only with C4
+!c3h6+c2h3<=>c4h6+ch3                   7.200E+11     0.000    5008.0 ! 91TSA
+c3h6+hco<=>c3h5-a+ch2o                 1.080E+07     1.900   17010.0 ! TSANG 1991
+c3h5-s+ch2o<=>c3h6+hco                 5.420E+03     2.810    5862.0 ! TSANG HAMPSON 86
+
+c3h6+c2h3<=>c3h5-a+c2h4                1.000E+12     0.000    8000.0 ! Hidaka et al.,(1992)
+c3h6+c2h3<=>c3h5-t+c2h4                2.210E+00     3.500    4682.0 !   
+c3h6+c2h3<=>c3h5-s+c2h4                2.210E+00     3.500    4682.0 !
+
+!*****************
+! c3h6oh reactions
+
+c3h61oh2oo=>ch3cho+ch2o+oh             1.000E+12     0.000      30.0 ! Stark et al.,
+c3h62oh1oo=>ch3cho+ch2o+oh             1.000E+12     0.000      30.0 ! Stark et al.,
+c3h61oh+o2<=>c2h5cho+ho2               1.500E+12     0.000    5000.0 ! 
+c3h62oh+o2<=>ch3coch3+ho2              1.500E+12     0.000    5000.0 ! 
+
+!****************
+! c3h5-a reactions
+
+c3h5-a+ho2<=>c3h5o+oh                  7.000E+12     0.000   -1000.0 ! Galway
+c3h5-a+ho2<=>c3h5-aooh                 1.030E+45   -10.600    7851.5
+c3h5-a+ho2<=>c2h3cho+h2o               6.050E+05     1.390     595.1
+c3h5-aooh<=>c2h3cho+h2o                1.500E+40    -8.840   53179.2
+
+c3h5-aooh<=>c3h5o+oh                   3.360E+046   -9.810   52468.5
+c3h5o<=>c2h4+hco                       1.070E+024   -4.160   18985.0
+
+c3h5-a+h<=>c3h4-a+h2                   1.232E+03     3.035    2582.0
+
+c3h5-a+oh<=>c3h4-a+h2o                 6.000E+12     0.000       0.0 ! 91TSA
+c2h3+ch3<=>c3h5-a+h                    1.500E+24    -2.830   18618.0 ! 86TSA/HAM
+c3h5-a+ch3<=>c3h4-a+ch4                1.000E+11     0.000       0.0 ! DAGAUT 88
+! Only with C4
+!c3h5-a+ch2<=>c4h6+h                    3.000E+13     0.000       0.0 ! 91TSA
+c3h5-a+c2h5<=>c3h4-a+c2h6              4.000E+11     0.000       0.0 ! SCHARFE 85
+c3h5-a+c2h3<=>c3h4-a+c2h4              1.000E+12     0.000       0.0 ! SCHARFE 85
+c3h5-a+o<=>c2h3cho+h                   6.030E+13     0.000       0.0 ! Tsang, J.Phys.Chem.Ref.Data 20(1991)221-273
+c3h5-a+hco<=>c3h6+co                   6.030E+13     0.000       0.0 ! Tsang, J.Phys.Chem.Ref.Data 20(1991)221-273
+c3h5-a+c2h3<=>c3h6+c2h2                4.820E+12     0.000       0.0 ! Tsang, J.Phys.Chem.Ref.Data 20(1991)221-273
+c3h5-a+c2h5<=>c2h4+c3h6                4.000E+11     0.000       0.0
+c3h5-aoo+ho2<=>c3h5-aooh+o2            3.370e+12     0.000       0.0
+
+!****************
+! c3h5-s reactions
+
+c3h5-s+o2=>ch3cho+hco                  4.335E+12     0.000       0.0 ! Slagle et al., Proc.Combust.Inst. 22(1988)953-962
+
+c3h5-s+ho2=>ch2co+ch3+oh               4.500E+12     0.000       0.0 ! =c3h4-a/WALKER 90
+c3h5-s+h<=>c3h4-p+h2                   3.333E+12     0.000       0.0 ! DAGAUT 90
+c3h5-s+o=>ch2co+ch3                    1.807E+14     0.000       0.0 ! DAGAUT 90
+c3h5-s+ch3<=>c3h4-p+ch4                1.000E+11     0.000       0.0 ! DAGAUT 88
+c3h5-s+c2h5<=>c3h4-p+c2h6              1.000E+11     0.000       0.0 ! DAGAUT 90
+c3h5-s+c2h3<=>c3h4-p+c2h4              1.000E+11     0.000       0.0 ! DAGAUT 90
+
+!****************
+! c3h5-t reactions
+
+c3h5-t+o2=>ch3co+ch2o                  1.000E+11     0.000       0.0 ! JetSurf
+c3h5-t+ho2=>ch2co+ch3+oh               2.000E+13     0.000       0.0 ! JetSurf
+c3h5-t+o=>ch2co+ch3                    1.807E+14     0.000       0.0 ! DAGAUT92
+c3h5-t+hco=>co+c3h6                    9.000E+13     0.000       0.0 ! JetSurf
+c3h5-t+oh=>ch2co+ch3+h                 5.000E+12     0.000       0.0 ! JetSurf
+c3h5-t+h<=>c3h4-p+h2                   1.000E+13     0.000       0.0 ! ESTIMEE
+c3h5-t+ch3<=>c3h4-a+ch4                1.000E+11     0.000       0.0 ! DAGAUT 90
+c3h5-t+ch3<=>c3h4-p+ch4                1.000E+11     0.000       0.0
+c3h5-t+c2h5<=>c3h4-a+c2h6              1.000E+11     0.000       0.0 ! DAGAUT 90
+c3h5-t+c2h3<=>c3h4-a+c2h4              1.000E+11     0.000       0.0 ! DAGAUT 90
+c3h5-t+o2<=>c3h4-a+ho2                 1.890E+30    -5.590   15540.0
+
+!****************
+! c3h4-a reactions
+
+c3h3+h(+m)=>c3h4-a(+m)                 2.000E+13     0.000       0.0 ! Eiteneer 2003
+LOW / 2.290E+56   -12.550    7934.0 /
+TROE/ 0.2340  330.0  4808.0  7262.0 /
+
+c3h4-a+o2<=>c3h3+ho2                   4.000E+13     0.000   39160.0 ! Galway
+c3h4-a+o2=>ch2co+ch2o                  1.000E+07     1.500   25000.0 !
+c3h4-a+ho2=>c3h4o2h                    3.000E+11     0.000    8000.0 !   
+c3h4-a+ho2<=>c3h3+h2o2                 1.800E+13     0.000   19000.0 ! ESTImEE
+c3h4-a+ho2=>ch2co+ch2+oh               4.000E+12     0.000   19000.0 ! Galway
+c3h4-a+ho2=>c2h3cho+oh                 5.000E+11     0.000   19000.0 ! 90DAG/CAT
+c3h4-a+ho2=>c2h2+ch2o+oh               5.000E+11     0.000   19000.0 ! 90DAG/CAT
+c3h4-a+oh<=>ch2co+ch3                  4.070E+25    -3.410   18370.0 ! Zador and Miller, Proc.Combust.Inst., (2014) 1bar
+duplicate
+c3h4-a+oh<=>ch2co+ch3                  1.510E+04     2.200    1759.0 ! Zador and Miller, Proc.Combust.Inst., (2014) 1bar
+duplicate
+c3h4-a+oh<=>c3h3+h2o                   5.050E+05     2.360    2879.0 ! Zador and Miller, Proc.Combust.Inst., (2014)
+duplicate
+c3h4-a+oh<=>c3h3+h2o                   5.950E+04     2.500     661.1 ! Zador and Miller, Proc.Combust.Inst., (2014)
+duplicate
+
+c3h4-a+o<=>c2h2+ch2o                   2.500E-03     4.613   -4243.0 ! DAGAUT90
+c3h4-a+o<=>c2h4+co                     7.800E+12     0.000    1600.0 ! Galway
+
+c3h4-a+h<=>c3h3+h2                     6.624E+03     3.095    5522.0 ! Miller et al., J.Phys.Chem.A 112(2008)9429-9438
+
+c3h4-a+ch3<=>c3h3+ch4                  6.607E-04     5.000    8300.0 ! KIEFFER97
+c3h4-a+c3h5-a<=>c3h3+c3h6              2.000E+11     0.000    7700.0
+
+c3h4-a+c2h<=>c3h3+c2h2                 1.000E+13     0.000       0.0 ! Davis et al., Combust.Flame, 119(1999)375-399
+! Only with C4
+!c3h4-a+c3h4-a<=>c2h4+c4h4              1.090E+15     0.000   48090.0 ! Hidaka et al.,(1989)
+
+!******************
+! c3h4o2h reactions
+
+c3h4o2h<=>c2h3cho+oh                   3.100E+37   -10.100   28588.0 ! Carstensen et al., J.Phys.Chem.A 109(2005)2264-2281 (c2h4)
+c3h4o2h<=>c3h4o+oh                     1.490E+41    -9.510   22589.0 ! Carstensen et al., J.Phys.Chem.A 109(2005)2264-2281 (c2h4)
+
+!***************
+!c3h4o reactions
+
+c3h4o<=>c2h3cho                        2.450E+14     0.000   58485.0 ! 77FLO/mETOXIRAN
+c3h4o+o2<=>c3h3o+ho2                   4.000E+13     0.000   61500.0 ! =OXIRAN
+c3h4o+ho2=>ch2co+ch2o+oh               1.000E+12     0.000   14340.0 ! =c4h8+ho2
+c3h4o+ho2<=>c3h3o+h2o2                 4.000E+12     0.000   17000.0 ! =OXIRAN
+c3h4o+oh<=>c3h3o+h2o                   4.790E+13     0.000    5955.0 ! =OXIRAN
+c3h4o+h<=>c3h3o+h2                     2.000E+13     0.000    8300.0 ! =OXIRAN
+
+!****************
+! c3h3o reactions
+
+c3h3o<=>c2h3co                         8.510E+14     0.000   14000.0 ! =c2h3o
+c3h3o+o2=>hcco+hco+oh                  5.010E+12     0.000   19192.0 ! =c3h5-a+o2
+
+!****************
+! c3h4-p reactions
+
+c3h3+h(+m)=>c3h4-p(+m)                 3.000E+13     0.000       0.0 ! Eiteneer 2003
+LOW / 1.600E+57   -12.590    8376.0 /
+TROE / 0.2450  330.0  3706.0  6777.0 /
+
+c3h4-p+o2<=>c3h3+ho2                   2.000E+13     0.000   41600.0 ! Galway
+c3h4-p+o2=>ch3co+hco                   1.000E+07     1.500   25000.0 !
+c3h4-p+o2=>hcco+oh+ch2                 1.000E+07     1.500   30100.0 ! DAGAUT 89 from C2H2
+c3h4-p+ho2=>c2h4+co+oh                 3.000E+12     0.000   19000.0 ! ESTImEE
+c3h4-p+ho2<=>ch3co+ch2o                3.000E+12     0.000   16000.0 ! ESTImEE
+c3h4-p+ho2<=>ch3cho+hco                4.500E+12     0.000   16000.0 ! ESTImEE
+c3h4-p+ho2<=>c3h3+h2o2                 5.000E+11     0.000   19000.0 ! ESTImEE
+c3h4-p+oh<=>c3h3+h2o                   3.870E+05     2.340    2173.0 ! Zador and Miller, Proc.Combust.Inst., (2014)
+duplicate
+c3h4-p+oh<=>c3h3+h2o                   4.930E+04     2.480     -62.0 ! Zador and Miller, Proc.Combust.Inst., (2014)
+duplicate
+c3h4-p+oh<=>ch2co+ch3                  4.070E+26    -4.290   12560.0 ! Zador and Miller, Proc.Combust.Inst., (2014) 1bar
+duplicate
+c3h4-p+oh<=>ch2co+ch3                  4.680E+06     1.600    3216.0 ! Zador and Miller, Proc.Combust.Inst., (2014) 1bar
+duplicate
+
+c3h4-p+o<=>ch2co+ch2                   6.400E+12     0.000    2100.0 ! DAGAUT90
+c3h4-p+o<=>c2h3+hco                    3.200E+12     0.000    2100.0 ! DAGAUT90
+c3h4-p+o<=>hcco+ch3                    9.180E+12     0.000    2100.0 ! DAGAUT90
+c3h4-p+o<=>ch2o+c2h2                   3.200E+11     0.000    2100.0 ! DAGAUT90
+
+c3h4-p+h<=>c3h3+h2                     3.571E+04     2.825    4821.0 ! Miller et al., J.Phys.Chem.A 112(2008)9429-9438
+
+c3h4-p+ch3<=>c3h3+ch4                  2.188E-04     5.000    8300.0 ! KIEFFER97
+c3h4-p+c2h3<=>c3h3+c2h4                1.000E+12     0.000    7700.0 ! DAGAUT 89
+c3h4-p+c2h<=>c3h3+c2h2                 1.000E+13     0.000       0.0 ! Davis et al., Combust.Flame, 119(1999)375-399         
+c3h4-p+o<=>c3h3+oh                     3.440E+04     2.160    4830.0 ! Adusei et al.,J.Phys.Chem.100(1996)16921-16924
+
+c2h2+ch2<=>c3h4-p                      4.200E+12     0.000    6620.0 ! HIDAKA 96
+
+!*****************
+! c3h4oh reactions
+!*****************
+
+c3h4-p+oh<=>ch3cohch                   5.380E+45   -10.360   14810.0 ! Zador and Miller, Proc.Combust.Inst., (2014) 1bar
+duplicate
+c3h4-p+oh<=>ch3cohch                   3.810E+29    -5.960    4629.0 ! Zador and Miller, Proc.Combust.Inst., (2014) 1bar
+duplicate
+
+c3h4-p+oh<=>ch3cchoh                   5.360E+47   -10.930   14280.0 ! Zador and Miller, Proc.Combust.Inst., (2014) 1bar
+duplicate
+c3h4-p+oh<=>ch3cchoh                   3.150E+33    -7.110    5101.0 ! Zador and Miller, Proc.Combust.Inst., (2014) 1bar
+duplicate
+
+ch3cohch<=>ch3coch2                    4.590E+67   -17.760   47730.0 ! Zador and Miller, Proc.Combust.Inst., (2014) 1bar
+duplicate
+ch3cohch<=>ch3coch2                    1.700E+37   -16.070    -964.0 ! Zador and Miller, Proc.Combust.Inst., (2014) 1bar
+duplicate
+
+ch3cohch<=>ch3+ch2co                   3.880E+45   -10.250   43340.0 ! Zador and Miller, Proc.Combust.Inst., (2014) 1bar
+duplicate
+ch3cohch<=>ch3+ch2co                   3.670E+21    -3.650   29870.0 ! Zador and Miller, Proc.Combust.Inst., (2014) 1bar
+duplicate
+
+c3h4-a+oh<=>ch2cch2oh                  2.590E+44    -9.870   12970.0 ! Zador and Miller, Proc.Combust.Inst., (2014) 1bar
+duplicate
+c3h4-a+oh<=>ch2cch2oh                  4.770E+29    -5.880    3477.0 ! Zador and Miller, Proc.Combust.Inst., (2014) 1bar
+duplicate
+
+c3h4-a+oh<=>ch2cohch2                  8.670E+22    -3.100    5518.0 ! Zador and Miller, Proc.Combust.Inst., (2014) 1bar
+duplicate
+c3h4-a+oh<=>ch2cohch2                  5.790E-28    10.400  -22290.0 ! Zador and Miller, Proc.Combust.Inst., (2014) 1bar
+duplicate
+
+ch2cohch2<=>ch2co+ch3                  4.360E+31    -5.460   60870.0 ! Zador and Miller, Proc.Combust.Inst., (2014) 10bar
+duplicate
+ch2cohch2<=>ch2co+ch3                  2.660E+10     0.090   46020.0 ! Zador and Miller, Proc.Combust.Inst., (2014) 10bar
+duplicate
+
+ch2cohch2+ho2=>ch2o+ch2cho+oh          1.000E+12     0.000       0.0 ! adapted from WALKER 90
+
+!***************
+! c3h3 reactions
+!***************
+
+c3h3+o2<=>ch2co+hco                    1.700E+05     1.700    1500.0 ! Hahn et al., Faraday Discuss. 119(2001)79-100
+c3h3+ho2=oh+co+c2h3                    8.000E+11     0.000       0.0 ! Davis et al., Combust.Flame, 119(1999)375-399           
+c3h3+oh<=>c3h2+h2o                     2.000E+13     0.000       0.0 ! Davis et al., Combust.Flame, 119(1999)375-399 
+c3h3+oh<=>hco+c2h3                     1.330E+13     0.000       0.0 ! Eiteneer et al., Int.J.Chem.Kinet. 35(2003)391-414
+c3h3+o<=>c2h2+hco                      1.385E+14     0.000       0.0 ! SLAGLE 90 23SIC
+c3h3+o<=>c2h3+co                       4.615E+13     0.000       0.0 ! SLAGLE 90 23SIC
+c3h3+o<=>c2h+ch2o                      4.615E+13     0.000       0.0 ! SLAGLE 90 23SIC
+c3h3+o=>c2h2+co+h                      4.615E+13     0.000       0.0 ! SLAGLE 90 23SIC
+c3h3+h<=>c3h2+h2                       5.000E+13     0.000    3000.0 ! MILLER 92
+
+! Only with C4
+!c3h3+ch<=>ic4h3+h                      7.000E+13     0.000       0.0 ! MILLER 92
+!c3h3+ch<=>nc4h3+h                      7.000E+13     0.000       0.0 ! MILLER 92
+!c3h3+ch2<=>c4h4+h                      4.000E+13     0.000       0.0 ! MILLER 92
+!c3h3+ch3<=>c4h6                        5.000E+12     0.000       0.0 ! 87WU/KERN
+!c3h3+ch3(+m)<=>c4h612(+m)              1.500E+12     0.000       0.0 ! 97WAN/FRE
+!LOW / 2.600E+57   -11.94    9770.0 /
+!TROE / 0.1750  1340.6  60000.0   9769.8  /
+!h2/2.0/ h2o/6.0/ ch4/2.0/ co/1.5/ co2/2.0/ c2h6/3.0/ ar/0.7/
+!c3h3+hcco<=>c4h4+co                    2.500E+13     0.000       0.0 ! Davis et al., Combust.Flame, 119(1999)375-399
+
+c3h3+hco<=>c3h4-a+co                    2.500E+13     0.000       0.0  !Davis et al., Combust.Flame, 119(1999)375-399
+c3h3+hco<=>c3h4-p+co                    2.500E+13     0.000       0.0  !Davis et al., Combust.Flame, 119(1999)375-399
+c3h3+ch3<=>c2h5+c2h                     4.564E+17    -1.100   48730.0
+rev / 1.810E+13     0.000      0.0 /
+ch3+c2h<=>c3h3+h                        2.410E+13     0.000      0.0 ! 86TSA/HAM
+c2h2+ch<=>c3h3                          3.000E+13     0.000      0.0 ! HIDAKA 96
+
+!***************
+! c3h2 reactions
+!****************
+
+ch+c2h2<=>c3h2+h                       1.000E+14     0.000       0.0 ! MILLER 89
+c3h2+o2<=>hcco+h+co                    2.000E+12     0.000    1000.0 ! Davis et al., Combust.Flame, 119(1999)375-399
+c3h2+o<=>c2h2+co                       6.800E+13     0.000       0.0 ! Davis et al., Combust.Flame, 119(1999)375-399         
+c3h2+oh<=>c2h2+hco                     5.000E+13     0.000       0.0 ! MILLER 92
+
+! Only with C4
+!c3h2+ch<=>c4h2+h                       5.000E+13     0.000       0.0 ! Davis et al., Combust.Flame, 119(1999)375-399         
+!c3h2+ch2<=>nc4h3+h                     5.000E+13     0.000       0.0 ! Davis et al., Combust.Flame, 119(1999)375-399         
+!c3h2+ch3<=>c4h4+h                      5.000E+12     0.000       0.0 ! Davis et al., Combust.Flame, 119(1999)375-399         
+!c3h2+hcco<=>nc4h3+co                   1.000E+13     0.000       0.0 ! Davis et al., Combust.Flame, 119(1999)375-399
+
+!****************
+! c3h5o reactions
+!****************
+
+c3h5o+o2<=>c2h3cho+ho2                 1.000E+12     0.000    6000.0 ! Pitz
+c3h5o<=>c2h3+ch2o                      3.390E+14     0.000   22658.0 ! Rauk J. Can. Chem 2003 vol. 81
+c3h5o<=>c2h3cho+h                      1.100E+13     0.000   18451.0 ! Rauk J. Can. Chem 2003 vol. 81
+
+!*******************
+! propanal REACTIONS
+!*******************
+
+c2h5cho<=>c2h5co+h                     5.000E+15     0.000   85000.0 ! r1
+c2h5cho<=>ch3chcho+h                   5.000E+15     0.000   94990.0 ! r2
+c2h5cho<=>pc2h4cho+h                   8.000E+15     0.000   98000.0 ! r3
+c2h5cho<=>c2h5+hco                     6.000E+14     0.000   79100.0 !
+c2h5cho<=>ch2cho+ch3                   1.000E+17     0.000   84650.0 ! asC4H10 Dean, J.Phys.Chem. 89 (1985) 4600-4608
+
+c2h5cho+o2<=>c2h5co+ho2                3.010E+13     0.000   39150.0 ! Baulch et al., (1992)
+c2h5cho+o2<=>ch3chcho+ho2              3.970E+13     0.000   47690.0 ! Tsang et al., J. Phys. Chem. Ref. Data 17 (1988) 887-
+c2h5cho+o2<=>pc2h4cho+ho2              1.985E+13     0.000   50870.0 ! Tsang et al., J. Phys. Chem. Ref. Data 17 (1988) 887-
+
+! H abstraction same as n-butanal
+
+c2h5cho+h<=>c2h5co+h2                  1.200E+14     0.000    7000.0 ! Yasunaga et al., Int.J.chem.Kinet., 40 (2008) 73-102
+c2h5cho+h<=>ch3chcho+h2                1.300E+06     2.400    4471.0 ! 2  anc7, secondary
+c2h5cho+h<=>pc2h4cho+h2                0.950E+05     2.750    6280.0 ! 2  anc7, primary f
+
+c2h5cho+o<=>c2h5co+oh                  5.850E+12     0.000    1808.0 ! BAULCH92       
+c2h5cho+o<=>ch3chcho+oh                4.770E+04     2.710    2106.0 ! 2  anc7, secondary
+c2h5cho+o<=>pc2h4cho+oh                9.500E+05     2.680    3716.0 ! 2  anc7, primary f
+
+c2h5cho+oh<=>c2h5co+h2o                2.350E+10     0.730   -1113.0 ! BAULCH92
+c2h5cho+oh<=>ch3chcho+h2o              4.680E+07     1.610     -35.0 ! 2  rnc7, secondary
+c2h5cho+oh<=>pc2h4cho+h2o              5.250E+10     0.970    1590.0 ! 2  rnc7, primary;
+
+c2h5cho+ho2<=>c2h5co+h2o2              3.100E+12     0.000   11920.0 ! BAULCH92
+c2h5cho+ho2<=>ch3chcho+h2o2            5.600E+12     0.000   17690.0 ! 2  anc7, secondary
+c2h5cho+ho2<=>pc2h4cho+h2o2            8.500E+13     0.000   20440.0 ! 2  anc7, primary f
+
+c2h5cho+ch3<=>c2h5co+ch4               1.700E+12     0.000    8440.0 ! BEELY/HUNT76
+c2h5cho+ch3<=>ch3chcho+ch4             2.705E+04     2.260    7287.0 ! 2  anc7, secondary
+c2h5cho+ch3<=>pc2h4cho+ch4             4.500E-01     3.650    7154.0 ! 2  anc7, primary f
+
+c2h5cho+hco<=>c2h5co+ch2o              1.700E+12     0.000    8440.0 ! idem ch3cho+ch3  
+c2h5cho+ch3o<=>c2h5co+ch3oh            1.150E+11     0.000    1280.0 ! 26  anc7: aldehydic
+c2h5cho+ch3o2<=>c2h5co+ch3o2h          1.000E+12     0.000    9500.0 ! 26  anc7: aldehydic
+c2h5cho+c2h5<=>c2h5co+c2h6             1.700E+12     0.000    8440.0 ! idem ch3
+c2h5cho+c2h3<=>c2h5co+c2h4             1.700E+12     0.000    8440.0 ! idem ch3
+
+!*******************
+! c2h5co REACTIONS
+!*******************
+
+c2h5co+m<=>c2h5+co+m                   8.640E+15     0.000   14400.0 ! WILK89 idem ch3co+m
+
+!*******************
+! ch3chcho REACTIONS
+!*******************
+
+ch3chcho+ho2<=>ch3chocho+oh            9.640E+12     0.000       0.0
+ch3chcho<=>ch3chco+h                   1.345E+13    -0.170   33460.0
+ch3chcho+o2<=>ch3chco+ho2              1.810E+11     0.000    1840.0
+ch3chcho+o2<=>c2h3cho+ho2              2.725E+11     0.000    7240.0
+ch3chcho+o2<=>ch3cho+co+oh             3.620E+10     0.000       0.0
+
+ch3chocho<=>ch3cho+hco                 3.980E+13     0.000    9700.0
+
+!*******************
+! pc2h4cho REACTIONS
+!*******************
+
+!pc2h4cho=c2h4+hco                  8.249E+12  -0.18  2.190E+04   !idem c3h6cho-3
+
+! Goldsmith et al.,  Journal of Physical Chemistry A (2012), Vol. 116, pp. 3325-3346
+pc2h4cho<=>c2h3+ch2o                   8.040E+35    -8.310   46919.7
+plog /    0.0010   6.890E-69    21.500   2638.0 /
+plog /    0.0100   5.340E-33    11.100  16749.1 /
+plog /    0.1000   6.110E+26    -6.010  44116.7 /
+plog /    1.0000   8.040E+35    -8.310  46919.7 /
+plog /   10.0000   5.520E+40    -9.190  50508.7 /
+plog /  100.0000   5.850E+35    -7.180  52038.4 /
+plog / 1000.0000   1.930E+19    -1.940  48440.0 /
+ 
+! Goldsmith et al.,  Journal of Physical Chemistry A (2012), Vol. 116, pp. 3325-3346
+pc2h4cho<=>c2h3cho+h                   7.580E+31    -6.630  37895.4
+plog /    0.0010   1.610E+10    -1.240  32371.3 /
+plog /    0.0100   5.840E+15    -2.610  32878.4 /
+plog /    0.1000   3.640E+23    -4.600  34275.3 /
+plog /    1.0000   7.580E+31    -6.630  37895.4 /
+plog /   10.0000   2.860E+32    -6.300  39990.7 /
+plog /  100.0000   1.570E+23    -3.140  38011.7 /
+plog / 1000.0000   4.520E+12     0.214  34570.5 /
+ 
+! Goldsmith et al.,  Journal of Physical Chemistry A (2012), Vol. 116, pp. 3325-3346
+pc2h4cho<=>c2h4+hco                    1.010E+34    -6.700  30018.1
+plog /    0.0010   2.900E+32    -7.240  25687.5 /
+plog /    0.0100   5.300E+33    -7.280  27100.6 /
+plog /    0.1000   2.000E+35    -7.410  29027.3 /
+plog /    1.0000   1.010E+34    -6.700  30018.1 /
+plog /   10.0000   9.760E+27    -4.630  28923.9 /
+plog /  100.0000   2.110E+19    -1.850  26239.8 /
+plog / 1000.0000   1.590E+13     0.063  24086.3 /
+
+! Low temperature chemistry
+
+pc2h4cho+o2<=>o2pc2h4cho               9.000E+18    -2.500       0.0 ! Buda et al., Combust Flame, 142 (2005) 170-186 (ks)
+o2pc2h4cho+ho2<=>c3ket13+o2            2.290E+11     0.000   -1790.0 ! Atkinson et al., 2001
+o2pc2h4cho+h2o2<=>c3ket13+ho2          2.410E+12     0.000    9936.0 
+o2pc2h4cho+ho2=>opc2h4cho+oh+o2        1.400E+16    -1.610    1860.0 ! 15  anc7
+o2pc2h4cho+ch3o2=>opc2h4cho+ch3o+o2    1.400E+16    -1.610    1860.0 ! 15  anc7
+opc2h4cho<=>ch2o+ch2cho                2.000E+13     0.000   20000.0 !
+opc2h4cho+o2<=>choch2cho+ho2           8.430E+09     0.000     220.0 ! Baulch et al., (2001)
+
+!******************
+! c2h3cho REACTIONS
+!******************
+
+c2h3+hco<=>c2h3cho                     1.800E+13     0.000       0.0 ! 86TSA/HAM
+c2h3cho<=>c2h4+co                      3.900E+14     0.000   69000.0 ! = HCCCHO=>C2H2+CO
+c2h3cho+o<=>oh+c2h3co                  5.010E+12     0.000    1790.0 ! 
+c2h3cho+h<=>c2h3co+h2                  1.200E+14     0.000    7000.0 ! Yasunaga et al., Int.J.chem.Kinet., 40 (2008) 73-102
+c2h3cho+oh<=>c2h3co+h2o                2.350E+10     0.730   -1113.0 ! BAULCH92
+c2h3cho+ho2<=>c2h3co+h2o2              3.100E+12     0.000   11920.0 ! BAULCH92
+c2h3cho+ch3<=>c2h3co+ch4               1.700E+12     0.000    8440.0 ! BEELY/HUNT76
+c2h3cho+c2h5<=>c2h3co+c2h6             5.010E+10     0.000    6280.0 ! Peter et al., ActaChim. Hung., 108 (1981) 235-
+c2h3cho+c2h3<=>c2h4+c2h3co             1.740E+12     0.000    8440.0 ! 
+
+!*****************
+! c2h3co REACTIONS
+!*****************
+
+c2h3co+m<=>c2h3+co+m                   8.600E+15     0.000   23000.0
+h2o/16.25/ co/1.875/ co2/3.75/ ch4/16.25/ c2h6/16.25/
+
+c2h3+ch3co<=>ch3+c2h3co                1.810E+13     0.000       0.0 ! Tsang et al., J. Phys. chem. Ref. Data 15 (1986) 1087-
+
+!******************
+! acetone REACTIONS
+!******************
+
+! Saxena et al., Proceedings of the Combustion Institute (2009) Vol. 32, pp. 123-130
+! The low pressure limit has been scaled by 1.40 to set N2 as the bath gas
+ch3coch3(+M)<=>ch3co+ch3(+M)               7.244E+25    -2.720   87710.0
+LOW / 7.456E+32    -4.048   62273.9 /
+TROE / 0.0525  265.9  64211148.7  2803.8 /
+h2/2.00/ h2o/6.00/ ch4/2.00/ co/1.50/ co2/2.0/ c2h6/3.00/
+c2h2/2.50/ c2h4/2.50/ ar/0.70/ he/0.70/ ch3oh/3.0/
+
+ch3coch3+o2<=>ch3coch2+ho2             6.030E+13     0.000   48500.0 ! Pichon et al., Combust Flame, 156(2009)494-504
+ch3coch3+o2=>ch3co+ch3o2               3.000E+13     0.500   42200.0 ! Pichon et al., Combust Flame, 156(2009)494-504
+ch3coch3+o<=>ch3coch2+oh               5.130E+11     0.210    4890.0 ! Pichon et al., Combust Flame, 156(2009)494-504
+ch3coch3+o<=>ch3co+ch3o                5.010E+12     0.000    1800.0 ! Pichon et al., Combust Flame, 156(2009)494-504
+ch3coch3+h<=>ch3coch2+h2               9.800E+05     2.430    5160.0 ! Pichon et al., Combust Flame, 156(2009)494-504
+ch3coch3+oh<=>ch3coch2+h2o             3.440E+05     2.400     815.0 ! Pichon et al., Combust Flame, 156(2009)494-504
+ch3coch3+oh<=>ch3co+ch3oh              1.500E+12     0.000       0.0 ! Pichon et al., Combust Flame, 156(2009)494-504
+ch3coch3+ho2<=>ch3coch2+h2o2           1.700E+13     0.000   20460.0 ! Pichon et al., Combust Flame, 156(2009)494-504
+ch3coch3+ch3<=>ch3coch2+ch4            3.960E+11     0.000    9784.0 ! Pichon et al., Combust Flame, 156(2009)494-504
+ch3coch3+ch3o<=>ch3coch2+ch3oh         1.000E+11     0.000    7000.0
+
+ch3coch3+ch3<=>ch3co+c2h6              7.940E+10     0.000    6000.0 ! Pichon et al., Combust Flame, 156(2009)494-504
+ch3cho+ch3<=>h+ch3coch3                1.660E+10     0.000   12420.0 ! Pichon et al., Combust Flame, 156(2009)494-504
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+! 2-OXOPROPYL CH3COCH2 REACTION SET
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+! Zador and Miller, Proceedings of the Combustion Institute (2015) Vol. 35, pp. 181-188
+ch3coch2<=>ch2co+ch3                   5.88E+16       -0.83    42440.0
+PLOG /  0.00099    5.410E+58      -14.540   55670.0 /
+PLOG /  0.00987    5.780E+57      -13.890   56880.0 /
+PLOG /  0.09869    4.720E+55      -12.920   58010.0 /
+PLOG /  0.13130    2.020E+55      -12.770   58120.0 /
+PLOG /  0.98690    1.280E+52      -11.540   58750.0 /
+PLOG /  9.86900    1.740E+46       -9.540   58370.0 /
+PLOG / 98.69000    7.040E+36       -6.610   55500.0 /
+duplicate
+
+! Zador and Miller, Proceedings of the Combustion Institute (2015) Vol. 35, pp. 181-188
+ch3coch2<=>ch2co+ch3                   3.990E+30       -5.630   45010.0
+PLOG /  0.00099    1.040E+46      -11.160   47470.0 /
+PLOG /  0.00987    1.550E+42       -9.700   47100.0 /
+PLOG /  0.09869    7.490E+36       -7.810   46220.0 /
+PLOG /  0.13130    1.230E+36       -7.530   46070.0 /
+PLOG /  0.98690    3.990E+30       -5.630   45010.0 /
+PLOG /  9.86900    3.960E+24       -3.580   43740.0 /
+PLOG / 98.69000    3.500E+19       -1.890   42580.0 /
+duplicate
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+! 1-PEROXY ACETONE acetoo2 REACTION SET
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+ch3coch2+o2<=>ch3coch2o2               1.200E+11     0.000   -1100.0
+
+ch3coch2o2+ho2<=>c3ket21+o2            2.290E+11     0.000   -1790.0 ! Atkinson et al., 2001
+ch3coch2o2+h2o2<=>c3ket21+ho2          2.410E+12     0.000    9936.0 
+ch3coch2o2+ho2=>ch3coch2o+oh+o2        1.400E+16    -1.610    1860.0 ! 15  anc7
+ch3coch2o2+ch3o2=>ch3coch2o+ch3o+o2    1.400E+16    -1.610    1860.0 ! 15  anc7
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+! 1-HYDROXY ACETONE acetoo REACTION SET
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+! Goldsmith et al.,  Journal of Physical Chemistry A (2012), Vol. 116, pp. 3325-3346
+ch3coch2o<=>ch3co+ch2o                 5.730E+13    -0.025    4473.5
+
+ch3coch2o+o2<=>ch3cocho+ho2            8.430E+09     0.000     220.0 ! Baulch et al., (2001)
+
+
+!*******************
+! ch3cocho REACTIONS
+!*******************
+
+ch3co+hco<=>ch3cocho                   1.000e+13     0.000       0.0 ! 9  ALLARA and shaw
+ch3cocho+h<=>ch3coco+h2                4.000e+13     0.000    4200.0 ! 26  anc7; aldehydic
+ch3cocho+oh<=>ch3coco+h2o              2.690e+10     0.760    -340.0 ! 26  anc7: aldehydic
+ch3cocho+o<=>ch3coco+oh                5.000e+12     0.000    1790.0 ! 26  anc7; aldehydic
+ch3cocho+ch3<=>ch3coco+ch4             1.700e+12     0.000    8440.0 ! 26  anc7: aldehydic
+ch3cocho+ho2<=>ch3coco+h2o2            2.800e+12     0.000   13600.0 ! 26  anc7: aldehydic
+
+!******************
+! ch3coco REACTIONS
+!******************
+
+ch3co+co<=>ch3coco                     1.500e+11     0.000    3000.0 ! 27  andme: co+ch3o=
+ch3coco+o2=>co2+co2+ch3                3.000E+10     0.000    2870.0
+ch3coco+ho2=>oh+co2+ch3co              2.000E+13     0.000       0.0
+
+!*****************
+! ch2cco REACTIONS
+!*****************
+
+ch2cco+h<=>c2h3co                      8.000E+11     0.000    2000.0 !
+ch2cco+oh<=>hccco+h2o                  2.200E+06     2.000    2780.0
+ch2cco+h<=>hccco+h2                    8.200E+05     2.500   12280.0
+
+hccco+o2=>hco+co+co                    4.600E+16    -1.390    1010.0 ! ST
+
+
+!**********************************************************************************************************************
+! BUTANONE
+!**********************************************************************************************************************
+
+
+! Present study G3//MP2/aug-cc-pVDZ
+! Rate constants calculated by solving the ME/RRKM equations with the MESMER software
+! The pressure dependence of these two reactions is very weak !
+
+c2h5coch3+h<=>c2h5+ch3cho              3.548E+12    -0.076    7920.7
+c2h5coch3+h<=>c2h5cho+ch3              9.983E+10     0.349    9474.7
+
+
+! Butanone unimolecular decomposition reactions
+! Rate constants calculated by solving the ME/RRKM equations with the MESMER software
+! The association ILT approach has been adopted. The rate constants of the association steps are provided as well as the 
+! G3//MP2/aug-cc-pVDZ ZPE corrected 0K energies. The vibrations frequencies and the torsional PES
+! of each single species (reactant and products) were calculated at the MP2/aug-cc-pVDZ level.
+! The energy tranfer model adopted is <Edown> = 200 * (T/300)^0.85 1/cm
+! The assocaition rate constants adopted are as follow:
+! (1) c2h5co + ch3 = c2h5coch3:    1.632E+14 * T^-0.377 * exp(37.6/T)
+!    the rate constant calculated by Saxena et al. (Proceedings of the Combustion Institute (2009),
+!    Vol. 32, pp. 123–130) for the reaction ch3co+ch3 has been adopted as it
+! (2) c2h5 + ch2co = c2h5coch3:    2.120E+14 * T^-0.401 * exp(95.3/T)
+!    the rate constant calculated by Saxena has been corrected to account for the change between methyl and ethyl
+!    k(c2h5+ch2co) = k(ch3+ch3co) * k(ch3+c2h5) / k (ch3+ch3)
+!    the rate constants for methyl-methyl and methyl-ethyl recombination were adopted from Klippenstein et al.
+!    (Physical Chemistry Chemical Physics (2006), Vol. 8, pp. 1133–1141)
+! (3) ch3 + ch3coch2 = c2h5coch3:  1.358E+14 * T^-0.354 * exp(122.1/T)
+!    the rate constant is assumed to be the same as the one for the reaction ch3 + c3h5-a = c4h8-1
+!    the rate constant for the methyl-allyl recombination is calculated as the geometric mean of the rate constants
+!    of the methyl-methyl (Klippenstein et al.) and allyl-allyl (Georgievskii et al., Physical Chemistry Chemical
+!    Physics (2007), Vol. 9, pp. 4259-4268) recombination reactions
+! (4) h + c2h5coch2 = c2h5coch3:  5.833E+13 * T^0.176 * exp(63/T)
+!    the rate constant is assumed to be the same as the one for the reaction h + c3h5-a = c3h6
+!    Harding et al., Journal of Physical Chemistry A (2007) Vol. 111, pp. 3789-3801
+! (5) h + ch3chcoch3 = c2h5coch3:  2.916E+13 * T^0.176 * exp(63/T)
+!    the rate constant is assumed to be the same as the one for the reaction h + c3h5-a = c3h6 but scaled
+!     by a factor 0.5 to account for steric hindrance (as recommended by Harding et al.)
+!    Harding et al., Journal of Physical Chemistry A (2007) Vol. 111, pp. 3789-3801
+! (5) h + ch2ch2coch3 = c2h5coch3:  5.444E+13 * T^0.160
+!    the rate constant is assumed to be the same as the one for the reaction h + c2h5 = c2h6
+!    Harding et al., Journal of Physical Chemistry A (2005) Vol. 109, pp. 4646-4656
+
+c2h5coch3(+m)<=>c2h5+ch3co(+m)             3.557E+27    -3.184     85748.1
+LOW / 2.578E+79   -17.020     96875.4 /
+TROE / 0.0002  910.7  22707.2  5635.5 /
+h2/2.00/ h2o/6.00/ co/1.50/ co2/2.00/ ch4/2.00/ c2h6/3.00/
+
+c2h5coch3(+m)<=>c2h5co+ch3 (+m)            3.362E+27    -3.360     88546.3
+LOW / 1.175E+72   -15.361     90947.2 /
+TROE / 0.0760  702.0  74414.9  5069.8 /
+h2/2.00/ h2o/6.00/ co/1.50/ co2/2.00/ ch4/2.00/ c2h6/3.00/
+
+c2h5coch3(+m)<=>ch3coch2+ch3 (+m)          2.243E+24    -2.477     87646.2
+LOW / 4.417E+69   -14.656     94755.7 /
+TROE / 0.1244  1057.9  1043025.4  6112.9 /
+h2/2.00/ h2o/6.00/ co/1.50/ co2/2.00/ ch4/2.00/ c2h6/3.00/
+
+c2h5coch3(+m)<=>h+c2h5coch2(+m)            3.054E+16    -0.275     97579.1
+LOW / 4.675E+31    -4.585     83404.6 /
+TROE / 0.6633  150283.2  3.2  1005.4 /
+h2/2.00/ h2o/6.00/ co/1.50/ co2/2.00/ ch4/2.00/ c2h6/3.00/
+
+c2h5coch3(+m)<=>h+ch3chcoch3(+m)           1.233E+14     0.389     91068.9
+LOW / 7.480E+32    -5.104     70813.1 /
+TROE / 0.5000  1.2  1.2  1428.5 /
+h2/2.00/ h2o/6.00/ co/1.50/ co2/2.00/ ch4/2.00/ c2h6/3.00/
+
+c2h5coch3(+m)<=>h+ch2ch2coch3(+m)          3.234E+13     0.706     99725.1
+LOW / 4.022E+26    -3.093     85409.6 /
+TROE /0.0204  2246.7  1705.4  1073.0 /
+h2/2.00/ h2o/6.00/ co/1.50/ co2/2.00/ ch4/2.00/ c2h6/3.00/
+
+
+! H abstraction reactions
+
+! Zhou et al. Physical Chemistry Chemical Physics (2011) Vol. 13, pp. 11175
+c2h5coch3+oh<=>ch2ch2coch3+h2o     1.350E+00    3.810    -2900.0
+c2h5coch3+oh<=>ch3chcoch3+h2o      2.360E+02    3.150    -3050.0
+c2h5coch3+oh<=>c2h5coch2+h2o       3.990E+02    3.080     -944.0
+
+!! Mendes et al. Journal of Physical Chemistry A (2013) Vol. 117, pp. 4515-4525 -3kcal
+c2h5coch3+ho2<=>ch2ch2coch3+h2o2   6.180E-05    4.910    11100.0
+c2h5coch3+ho2<=>ch3chcoch3+h2o2    8.420E-02    3.930    10400.0
+c2h5coch3+ho2<=>c2h5coch2+h2o2     5.580e-03    4.320    13400.0
+
+! Present work, TST + Eckart Tunnelling + Hindered Rotors with G3//MP2/aug-cc-pVDZ energetics and frequencies
+c2h5coch3+h<=>ch2ch2coch3+h2       7.347E+06    2.329     8780.9
+c2h5coch3+h<=>ch3chcoch3+h2        1.988E+06    2.256     4083.8
+c2h5coch3+h<=>c2h5coch2+h2         1.205E+07    2.225     6937.8
+
+! Present work, TST + Eckart Tunnelling + Hindered Rotors with G3//MP2/aug-cc-pVDZ energetics and frequencies
+c2h5coch3+ch3<=>ch2ch2coch3+ch4    3.602E+00    3.539   11228.3
+c2h5coch3+ch3<=>ch3chcoch3+ch4     1.997E+00    3.420    6858.1
+c2h5coch3+ch3<=>c2h5coch2+ch4      2.036E+01    3.441    9356.1
+
+! Seryniel et al., COmbustion Science and Technology () VOl. , pp. 
+c2h5coch3+o<=>ch2ch2coch3+oh       9.810E+05    2.430     4750.0 ! Serinyel et al.
+c2h5coch3+o<=>ch3chcoch3+oh        1.444E+11    0.230     2970.0 ! Serinyel et al.
+c2h5coch3+o<=>c2h5coch2+oh         5.000E+12    0.000     5962.0 ! Serinyel et al.
+
+! Seryniel et al., COmbustion Science and Technology () VOl. , pp. 
+c2h5coch3+o2<=>ch2ch2coch3+ho2     3.000E+13    0.000    52290.0 ! Serinyel et al.
+c2h5coch3+o2<=>ch3chcoch3+ho2      2.020E+13    0.000    45850.0 ! Serinyel et al.
+c2h5coch3+o2<=>c2h5coch2+ho2       2.050E+13    0.000    49150.0 ! Serinyel et al.
+
+! Seryniel et al., COmbustion Science and Technology () VOl. , pp. 
+c2h5coch3+ch3o<=>ch2ch2coch3+ch3oh 2.170E+11    0.000    6460.0 ! Serinyel et al.
+c2h5coch3+ch3o<=>ch3chcoch3+ch3oh  5.755E+11    0.000    4573.0 ! Serinyel et al.
+c2h5coch3+ch3o<=>c2h5coch2+ch3oh   2.170E+11    0.000    4660.0 ! Serinyel et al.
+
+! Seryniel et al., COmbustion Science and Technology () VOl. , pp. 
+c2h5coch3+ch3o2<=>ch2ch2coch3+ch3o2h 6.900E-01   3.970   18280.0 ! Serinyel et al.
+c2h5coch3+ch3o2<=>ch3chcoch3+ch3o2h 3.440E+12   0.050   17880.0 ! Serinyel et al.
+c2h5coch3+ch3o2<=>c2h5coch2+ch3o2h  3.010E+12   0.000   17580.0 ! Serinyel et al.
+
+c2h5coch3+c2h3<=>ch2ch2coch3+c2h4   5.000E+11   0.000   10400.0 ! Serinyel et al.
+c2h5coch3+c2h3<=>ch3chcoch3+c2h4    3.000E+11   0.000    5600.0 ! Serinyel et al.
+c2h5coch3+c2h3<=>c2h5coch2+c2h4     6.150E+10   0.000    4278.0 ! Serinyel et al.
+
+! Seryniel et al., Combustion Science and Technology () Vol. , pp. 
+c2h5coch3+c2h5<=>ch2ch2coch3+c2h6   5.000E+10   0.000   13400.0 ! Serinyel et al.
+c2h5coch3+c2h5<=>ch3chcoch3+c2h6    3.000E+11   0.000    8600.0 ! Serinyel et al.
+c2h5coch3+c2h5<=>c2h5coch2+c2h6     5.000E+10   0.000   11600.0 ! Serinyel et al.
+
+!oxidation reactions
+
+ch2ch2coch3+o2<=>ho2+c2h3coch3         2.630E+00    3.46    1481.17 ! Goldsmith et al., J.Phys.Chem.A, 116(2012)3325-3346 10atm
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+! BUT-2-ON-4-YL RADICAL ch2ch2coch3
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+! Present work
+! Energies of the reactants, products an transition states calculated at the G3//MP2/aug-cc-pVDZ
+! level of theory while the vibration frequencies and the torsional PES were at the MP2/aug-cc-pVDZ level.
+! The ME/RRKM has been solved with the Mesmer software
+! the fits below are valid for 500-1600 K
+
+ch2ch2coch3<=>c2h4+ch3co               9.996E+38    -8.208    33926.9
+plog /   0.001    2.459E+42   -10.313    30097.5 /
+plog /   0.010    2.445E+42    -9.942    31503.8 /
+plog /   0.010    1.010E+39    -8.555    31821.9 /
+plog /   1.000    9.996E+38    -8.208    33926.9 /
+plog /  10.000    3.825E+32    -6.019    32835.5 /
+plog /  25.000    7.306E+29    -5.128    32164.4 /
+plog /  50.000    2.181E+27    -4.326    31352.5 /
+plog / 100.000    3.662E+24    -3.460    30346.1 /
+
+ch2ch2coch3<=>h+c2h3coch3              1.142E+41    -9.554    44637.5
+plog /   0.001    3.039E+03     0.704    32051.3 /
+plog /   0.010    2.066E+33    -8.308    40067.9 /
+plog /   0.010    1.105E+37    -8.954    40834.9 /
+plog /   1.000    1.142E+41    -9.554    44637.5 /
+plog /  10.000    1.396E+35    -7.253    44868.4 /
+plog /  25.000    2.617E+34    -6.864    45674.5 /
+plog /  50.000    2.877E+32    -6.172    45523.2 /
+plog / 100.000    1.988E+29    -5.143    44676.3 /
+
+ch2ch2coch3<=>ch3chcoch3               5.147E+47   -11.501    42840.1
+plog /   0.001    5.220E+47   -13.075    37603.9 /
+plog /   0.010    5.214E+47   -12.540    38319.1 /
+plog /   0.010    5.192E+47   -12.014    40133.7 /
+plog /   1.000    5.147E+47   -11.501    42840.1 /
+plog /  10.000    1.013E+40    -8.777    42042.9 /
+plog /  25.000    5.069E+35    -7.365    40963.7 /
+plog /  50.000    2.674E+32    -6.310    40001.6 /
+plog / 100.000    2.224E+27    -4.737    38049.2 /
+
+ch2ch2coch3<=>c2h5coch2                2.762E+40    -9.465    35557.7
+plog /   0.001    5.507E+44   -11.911    31531.5 /
+plog /   0.010    5.471E+44   -11.517    33153.8 /
+plog /   0.010    5.424E+44   -11.120    35229.3 /
+plog /   1.000    2.762E+40    -9.465    35557.7 /
+plog /  10.000    3.347E+33    -7.098    34478.6 /
+plog /  25.000    1.607E+29    -5.720    33136.9 /
+plog /  50.000    3.813E+25    -4.584    31851.1 /
+plog / 100.000    7.447E+21    -3.434    30444.6 /
+
+ch2ch2coch3<=>ch3+ch3chco              2.883E+12    -0.610    40272.5
+plog /   0.001    1.583E+02     1.412    32436.8 /
+plog /   0.010    7.439E+04     0.987    34002.6 /
+plog /   0.010    3.461E+06     0.823    35613.5 /
+plog /   1.000    2.883E+12    -0.610    40272.5 /
+plog /  10.000    6.441E+11    -0.063    43433.5 /
+plog /  25.000    2.183E+14    -0.697    46225.8 /
+plog /  50.000    6.235E+14    -0.755    47692.3 /
+plog / 100.000    7.096E+12    -0.120    47951.3 /
+
+ch2ch2coch3<=>c2h5+ch2co               1.838E+33    -6.901    44551.8
+plog /   0.001    1.535E+35    -8.549    37487.7 /
+plog /   0.010    1.522E+35    -8.171    39573.9 /
+plog /   0.010    1.456E+35    -7.810    42139.9 /
+plog /   1.000    1.838E+33    -6.901    44551.8 /
+plog /  10.000    1.206E+29    -5.354    46577.5 /
+plog /  25.000    1.622E+26    -4.410    46834.5 /
+plog /  50.000    2.150E+25    -4.070    47951.4 /
+plog / 100.000    8.691E+20    -2.733    46915.9 /
+
+! Present work
+! Rate constants calculated by solving the ME/RRKM equations with the MESMER software
+! The association ILT approach has been adopted. The rate constants of the association steps are provided as well as the 
+! G3//MP2/aug-cc-pVDZ ZPE corrected 0K energies. The vibrations frequencies and the torsional PES
+! of each single species (reactant and products) were calculated at the MP2/aug-cc-pVDZ level.
+
+h+ch2ch2coch3<=>c2h5+ch3co             6.712E+27    -3.864   11710.5
+plog /   0.001   1.797E+17    -1.005    1471.0 /
+plog /   0.010   1.171E+18    -1.228    2176.1 /
+plog /   0.100   3.073E+20    -1.884    4450.4 /
+plog /   1.000   6.712E+27    -3.864   11710.5 /
+plog /  10.000   1.473E+35    -5.791   20746.4 /
+plog / 100.000   2.305E+62   -13.045   51107.3 /
+
+h+ch2ch2coch3<=>c2h5co+ch3             1.607E+26    -3.406   11553.2
+plog /   0.001   1.078E+16    -0.654    1715.7 /
+plog /   0.010   1.504E+17    -0.970    2654.1 /
+plog /   0.100   1.263E+19    -1.488    4548.3 /
+plog /   1.000   1.607E+26    -3.406   11553.2 /
+plog /  10.000   9.350E+33    -5.452   20860.3 /
+plog / 100.000   3.989E+55   -11.189   45995.8 /
+
+h+ch2ch2coch3<=>ch3coch2+ch3           8.160E+24    -3.054   11452.0
+plog /   0.001   8.752E+14    -0.357    1849.3 /
+plog /   0.010   4.913E+15    -0.562    2500.9 /
+plog /   0.100   8.698E+17    -1.172    4606.1 /
+plog /   1.000   8.160E+24    -3.054   11452.0 /
+plog /  10.000   8.129E+32    -5.165   20915.9 /
+plog / 100.000   5.192E+37    -6.321   30754.2 /
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+! BUT-2-ON-3-YL RADICAL ch3chcoch3
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+! Oxidation reactions
+
+! Direct H-abstraction
+! Present work, TST + Eckart Tunnelling with G3//M06-2X/aug-cc-pVDZ energetics and frequencies
+ch3chcoch3+o2<=>c2h3coch3+ho2          3.864E-07     4.152    4221.5
+duplicate
+ch3chcoch3+o2<=>c2h3coch3+ho2          1.504E-02     3.976   13140.8
+duplicate
+
+! Present work, Oxidation through complexes
+! Calculations at the G3//M06-2X/aug-cc-pVDZ level of theory
+ch3chcoch3+o2<=>c2h3coch3+ho2          1.834E+12    -0.554    6912.8
+plog /   0.100   6.267E+08     0.416    4338.9 /
+plog /   1.000   1.247E+11    -0.274    5452.6 /
+plog /  10.000   1.674E+15    -1.429    8322.4 /
+plog /  50.000   1.021E+20    -2.765   11849.7 /
+plog / 100.000   2.960E+21    -3.151   13292.1 /
+duplicate
+
+!ch3chcoch3+o2<=>c2h3coch3+ho2          1.834E+12    -0.554    6912.8
+!plog /   0.100   1.253E+09     0.416    4338.9 /
+!plog /   1.000   2.494E+11    -0.274    5452.6 /
+!plog /  10.000   3.348E+15    -1.429    8322.4 /
+!plog /  50.000   2.042E+20    -2.765   11849.7 /
+!plog / 100.000   5.920E+21    -3.151   13292.1 /
+!duplicate
+
+! Present work
+! Rate constants calculated by solving the ME/RRKM equations with the MESMER software
+! The association ILT approach has been adopted. The rate constants of the association steps are provided as well as the 
+! G3//MP2/aug-cc-pVDZ ZPE corrected 0K energies. The vibrations frequencies and the torsional PES
+! of each single species (reactant and products) were calculated at the MP2/aug-cc-pVDZ level.
+ch3chcoch3+ho2<=>ch3chococh3+oh        6.285E+24       -3.607     6948.5
+PLOG /   0.001        6.090E+17       -1.651     1573.5 /
+PLOG /   0.010        7.265E+17       -1.672     1626.8 /
+PLOG /   0.100        2.835E+19       -2.120     2758.7 /
+PLOG /   1.000        6.285E+24       -3.607     6948.5 /
+PLOG /  10.000        4.411E+28       -4.607    11770.5 /
+PLOG /  50.000        2.283E+25       -3.581    12436.0 /
+PLOG / 100.000        5.810E+21       -2.526    11457.5 /
+
+ch3chcoch3+ho2<=>ch3cococh3+h2o        1.592E+15       -1.194     4512.5
+PLOG /   0.001        4.641E+08        0.625     -571.5 /
+PLOG /   0.010        2.491E+08        0.704     -704.2 /
+PLOG /   0.100        8.675E+09        0.271      399.5 /
+PLOG /   1.000        1.592E+15       -1.194     4512.5 /
+PLOG /  10.000        1.527E+19       -2.234     9357.9 /
+PLOG /  50.000        1.204E+16       -1.259    10127.9 /
+PLOG / 100.000        1.295E+12       -0.095     8934.5 /
+
+! Present work, Oxidation through complexes
+! Calculations at the G3//M06-2X/aug-cc-pVDZ level of theory
+ch3chcoch3+o2<=>ch3choococh3           1.539E+64   -17.203   14641.3
+plog /   0.100   1.544E+64   -17.701   12491.4 /
+plog /   1.000   1.539E+64   -17.203   14641.3 /
+plog /  10.000   1.533E+64   -16.765   16797.9 /
+plog /  50.000   1.528E+64   -16.497   18321.0 /
+plog / 100.000   5.824E+60   -15.344   17596.6 /
+duplicate
+
+ch3chcoch3+o2<=>ch3choococh3           6.095E+68   -15.026   68660.6
+plog /   0.100   1.723E+106  -26.879   73566.4 /
+plog /   1.000   1.723E+106  -27.122   69049.0 /
+plog /  10.000   1.723E+106  -27.074   69119.2 /
+plog /  50.000   1.724E+106  -27.007   68991.7 /
+plog / 100.000   1.165E+107  -27.173   70238.6 /
+duplicate
+
+! Present work, Oxidation through complexes
+! Calculations at the G3//M06-2X/aug-cc-pVDZ level of theory
+ch3choococh3<=>c2h3coch3+ho2           1.440E+17    -3.157   20412.6
+plog /   0.100   7.553E+45   -12.015   30490.4 /
+plog /   1.000   7.540E+45   -11.528   31772.3 /
+plog /  10.000   7.186E+54   -13.770   37419.2 /
+plog /  50.000   7.181E+54   -13.362   39634.3 /
+plog / 100.000   7.191E+54   -13.215   40479.4 /
+
+
+! Present work
+! Energies of the reactants, products an transition states calculated at the G3//MP2/aug-cc-pVDZ
+! level of theory while the vibration frequencies and the torsional PES were at the MP2/aug-cc-pVDZ level.
+! The ME/RRKM has been solved with the Mesmer software
+! the fits below are valid for 500-1600 K
+
+ch3chcoch3<=>ch3+ch3chco               2.223E+36    -6.810    55442.8
+plog /   0.001    9.251E+62   -15.606    62063.0 /
+plog /   0.010    1.105E+58   -13.773    62068.2 /
+plog /   0.010    6.787E+47   -10.439    59300.8 /
+plog /   1.000    2.223E+36    -6.810    55442.8 /
+plog /  10.000    1.520E+31    -5.150    53980.4 /
+plog /  25.000    1.689E+26    -3.648    51832.5 /
+plog /  50.000    1.090E+23    -2.683    50439.7 /
+plog / 100.000    1.556E+20    -1.826    49167.1 /
+
+ch3chcoch3<=>h+c2h3coch3               3.785E+37     -7.380   56579.1
+plog /   0.001    2.107E+56    -13.843   59248.6 /
+plog /   0.010    2.074E+56    -13.488   61476.3 /
+plog /   0.010    2.870E+41     -8.776   56458.1 /
+plog /   1.000    3.785E+37     -7.380   56579.1 /
+plog /  10.000    1.675E+29     -4.789   53356.2 /
+plog /  25.000    1.176E+24     -3.227   51115.1 /
+plog /  50.000    5.139E+20     -2.211   49640.5 /
+plog / 100.000    5.854E+17     -1.325   48325.2 /
+
+ch3chcoch3<=>c2h5coch2                 1.271E+48    -11.380   61205.1
+plog /   0.001    5.266E+50    -13.502   51996.3 /
+plog /   0.010    2.615E+55    -14.499   56557.2 /
+plog /   0.010    5.994E+42    -10.279   54099.8 /
+plog /   1.000    1.271E+48    -11.380   61205.1 /
+plog /  10.000    1.222E+48    -10.858   67143.5 /
+plog /  25.000    3.525E+43     -9.364   66790.8 /
+plog /  50.000    8.005E+40     -8.473   66914.6 /
+plog / 100.000    1.015E+34     -6.395   63971.6 /
+
+ch3chcoch3<=>c2h4+ch3co                5.881E+42     -9.025   57190.8
+plog /   0.001    2.365E+55    -13.578   55927.7 /
+plog /   0.010    2.314E+49    -11.505   55141.5 /
+plog /   0.010    6.722E+43     -9.600   54738.5 /
+plog /   1.000    5.881E+42     -9.025   57190.8 /
+plog /  10.000    8.418E+39     -7.922   59709.2 /
+plog /  25.000    5.986E+37     -7.183   60586.2 /
+plog /  50.000    4.259E+33     -5.912   59699.6 /
+plog / 100.000    4.754E+31     -5.273   60263.5 /
+
+ch3chcoch3<=>c2h5+ch2co                2.687E+50    -11.475   71486.2
+plog /   0.001    1.015E+61    -15.941   62094.0 /
+plog /   0.010    1.006E+61    -15.514   65940.6 /
+plog /   0.010    1.060E+54    -12.983   67489.6 /
+plog /   1.000    2.687E+50    -11.475   71486.2 /
+plog /  10.000    7.125E+50    -11.131   79262.1 /
+plog /  25.000    1.178E+47     -9.864   80428.9 /
+plog /  50.000    6.220E+32     -5.685   73662.9 /
+plog / 100.000    7.745E+17     -1.349   66341.6 /
+
+! Present work
+! Rate constants calculated by solving the ME/RRKM equations with the MESMER software
+! The association ILT approach has been adopted. The rate constants of the association steps are provided as well as the 
+! G3//MP2/aug-cc-pVDZ ZPE corrected 0K energies. The vibrations frequencies and the torsional PES
+! of each single species (reactant and products) were calculated at the MP2/aug-cc-pVDZ level.
+
+h+ch3chcoch3<=>c2h5+ch3co              5.278E+31    -4.916   16950.9
+plog /   0.001   8.589E+18    -1.507    3032.9 /
+plog /   0.010   2.451E+23    -2.723    6991.1 /
+plog /   0.100   2.658E+28    -4.077   12107.8 /
+plog /   1.000   5.278E+31    -4.916   16950.9 /
+plog /  10.000   3.325E+36    -6.120   24776.3 /
+plog / 100.000   2.050E+33    -5.066   28491.5 /
+
+h+ch3chcoch3<=>ch3coch2+ch3            4.346E+28    -4.060   16742.6
+plog /   0.001   1.590E+16    -0.732    3621.6 /
+plog /   0.010   1.558E+20    -1.823    7109.1 /
+plog /   0.100   1.211E+25    -3.143   11951.6 /
+plog /   1.000   4.346E+28    -4.060   16742.6 /
+plog /  10.000   3.080E+38    -6.654   28683.2 /
+plog / 100.000   3.321E+36    -5.950   33125.9 /
+
+h+ch3chcoch3<=>c2h5co+ch3              1.250E+30    -4.457   16900.2
+plog /   0.001   2.758E+17    -1.075    3381.8 /
+plog /   0.010   3.971E+21    -2.211    7048.1 /
+plog /   0.100   3.524E+26    -3.544   11995.3 /
+plog /   1.000   1.250E+30    -4.457   16900.2 /
+plog /  10.000   4.405E+39    -6.965   28667.2 /
+plog / 100.000   1.228E+40    -6.908   35491.8 /
+
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+! BUT-2-ON-1-YL RADICAL c2h5coch2
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+! Present work
+! Energies of the reactants, products an transition states calculated at the G3//MP2/aug-cc-pVDZ
+! level of theory while the vibration frequencies and the torsional PES were at the MP2/aug-cc-pVDZ level.
+! The ME/RRKM has been solved with the Mesmer software
+! the fits below are valid for 500-1600 K
+
+c2h5coch2<=>c2h5+ch2co                 1.441E+40    -8.235   46882.2
+plog /   0.001    4.614E+49   -12.051   45098.6 /
+plog /   0.010    1.712E+48   -11.238   46554.0 /
+plog /   0.010    5.876E+46   -10.463   48080.1 /
+plog /   1.000    1.441E+40    -8.235   46882.2 /
+plog /  10.000    1.696E+29    -4.824   42920.1 /
+plog /  25.000    3.863E+24    -3.408   40988.5 /
+plog /  50.000    2.605E+21    -2.445   39631.9 /
+plog / 100.000    4.190E+18    -1.600   38408.5 /
+
+c2h5coch2<=>ch3+ch3chco                3.447E+47   -10.743   66018.7
+plog /   0.001    1.567E+55   -14.527   55725.3 /
+plog /   0.010    1.546E+55   -14.048   59203.1 /
+plog /   0.010    1.501E+55   -13.540   63819.5 /
+plog /   1.000    3.447E+47   -10.743   66018.7 /
+plog /  10.000    6.919E+48   -10.595   74370.0 /
+plog /  25.000    4.216E+39    -7.754   72166.1 /
+plog /  50.000    1.612E+30    -4.933   68826.4 /
+plog / 100.000    1.083E+15    -0.503   61517.2 /
+
+c2h5coch2<=>c2h4+ch3co                 6.787E+45   -10.211   49368.4
+plog /   0.001    3.982E+52   -13.177   43336.9 /
+plog /   0.010    3.722E+52   -12.850   45779.4 /
+plog /   0.010    1.018E+50   -11.765   47636.3 /
+plog /   1.000    6.787E+45   -10.211   49368.4 /
+plog /  10.000    6.323E+42    -9.021   52442.6 /
+plog /  25.000    1.126E+38    -7.540   51768.4 /
+plog /  50.000    2.907E+33    -6.143   50659.9 /
+plog / 100.000    5.429E+27    -4.432   48814.2 /
+
+c2h5coch2<=>h+c2h3coch3                3.307E+39    -8.830   54744.1
+plog /   0.001    3.794E+46   -12.238   50044.4 /
+plog /   0.010    3.762E+46   -11.800   51909.1 /
+plog /   0.010    3.706E+46   -11.355   54595.6 /
+plog /   1.000    3.307E+39    -8.830   54744.1 /
+plog /  10.000    1.351E+35    -7.132   57179.5 /
+plog /  25.000    5.500E+29    -5.420   56308.8 /
+plog /  50.000    7.544E+24    -3.914   55187.6 /
+plog / 100.000    1.274E+19    -2.164   53469.0 /
+
+
+! Present work
+! Rate constants calculated by solving the ME/RRKM equations with the MESMER software
+! The association ILT approach has been adopted. The rate constants of the association steps are provided as well as the 
+! G3//MP2/aug-cc-pVDZ ZPE corrected 0K energies. The vibrations frequencies and the torsional PES
+! of each single species (reactant and products) were calculated at the MP2/aug-cc-pVDZ level.
+
+h+c2h5coch2<=>c2h5+ch3co               7.433E+32    -5.201   16341.8
+plog /   0.001   3.548E+18    -1.332    2336.8 /
+plog /   0.010   5.972E+20    -1.943    4245.9 /
+plog /   0.100   2.133E+24    -2.903    7705.0 /
+plog /   1.000   7.433E+32    -5.201   16341.8 /
+plog /  10.000   2.242E+39    -6.882   25024.3 /
+plog / 100.000   1.214E+53   -10.441   43861.4 /
+
+h+c2h5coch2<=>c2h5co+ch3               1.103E+26    -3.362   10371.7
+plog /   0.001   1.698E+17    -0.952    2617.2 /
+plog /   0.010   1.845E+19    -1.510    4363.5 /
+plog /   0.100   1.103E+26    -3.362   10371.7 /
+plog /   1.000   2.497E+31    -4.784   16335.5 /
+plog /  10.000   3.240E+44    -8.274   30920.4 /
+plog / 100.000   1.214E+53   -10.445   44763.9 /
+
+h+c2h5coch2<=>ch3coch2+ch3             8.836E+29    -4.389   16144.8
+plog /   0.001   1.245E+16    -0.641    2795.5 /
+plog /   0.010   9.954E+17    -1.162    4426.9 /
+plog /   0.100   1.475E+21    -2.019    7505.6 /
+plog /   1.000   8.836E+29    -4.389   16144.8 /
+plog /  10.000   1.760E+35    -5.747   23742.0 /
+plog / 100.000   4.403E+38    -6.517   32464.3 /
+
+
+! Present work
+! Rate constants calculated by solving the ME/RRKM equations with the MESMER software
+! The association ILT approach has been adopted. The rate constants of the association steps are provided as well as the 
+! G3//MP2/aug-cc-pVDZ ZPE corrected 0K energies. The vibrations frequencies and the torsional PES
+! of each single species (reactant and products) were calculated at the MP2/aug-cc-pVDZ level.
+c2h5coch2+ho2<=>c2h5coch2o+oh          3.364E+25       -3.695     7858.8
+PLOG /   0.001        1.802E+17       -1.420      987.3 /
+PLOG /   0.010        9.653E+17       -1.624     1480.1 /
+PLOG /   0.100        3.425E+20       -2.330     3456.6 /
+PLOG /   1.000        3.364E+25       -3.695     7858.8 /
+PLOG /  10.000        1.661E+29       -4.649    12875.0 /
+PLOG /  50.000        1.031E+28       -4.236    14801.6 /
+PLOG / 100.000        8.168E+25       -3.620    14669.2 /
+
+!!!!!!!!!!!!!!!!!!!!!!!
+! METHYL KETENE ch3chco
+!!!!!!!!!!!!!!!!!!!!!!!
+
+! Present work
+! Energies calculated at the G3//MP2/aug-cc-pVDZ level of theory, Frequencies and torsional PES at the MP2/aug-cc-pVDZ level of theory
+! Rate constant computed by TST with an Eckart tunneling and 1D Hindered Rotor correction
+! Present Fittings valid between 500 and 3000 K
+ch3chco+h<=>c2h3co+h2                  2.211E+06     2.384    4412.7
+ch3chco+ch3<=>c2h3co+ch4               6.606E+00     3.428    8212.8
+ch3chco+oh<=>c2h3co+h2o                1.066E+05     2.600    -212.5
+ch3chco+ho2<=>c2h3co+h2o2              9.013E-03     4.306   11006.2
+
+! Assuming similar rate constants than c3h6+X<=>c3h5-a+hX
+ch3chco+o<=>c2h3co+oh                  1.750E+11     0.700    5884.0
+ch3chco+o2<=>c2h3co+ho2                5.960E+19    -1.670   46192.1
+
+! Present work,  Energies calculated at the G3//MP2/aug-cc-pVDZ level of theory and Rate constant computed by solving the ME/RRKM with the MESMER software
+ch3chco+oh=>c2h5+co2                   4.093E+13    -0.602   11646.6
+plog /   0.001   6.978E+07     0.963    1794.6 /
+plog /   0.010   1.903E+10     0.277    4313.2 /
+plog /   0.100   2.113E+13    -0.556    8308.2 /
+plog /   1.000   4.093E+13    -0.602   11646.6 /
+plog /  10.000   2.624E+08     0.856   11817.9 /
+plog /  50.000   4.975E-01     3.224    7607.3 /
+plog / 100.000   5.413E-02     3.451    7782.4 /
+
+! Present work,  Energies calculated at the G3//MP2/aug-cc-pVDZ level of theory and Rate constant computed by solving the ME/RRKM with the MESMER software
+ch3chco+oh=>ch3choh+co                 6.254E+04     2.141   -3207.4
+
+! From Galway
+ch3chco+o=>ch3cho+co                   3.200E+12     0.000    -437.0
+
+
+! Present work
+! Energies of the reactants, products an transition states calculated at the G3//MP2/aug-cc-pVDZ
+! level of theory while the vibration frequencies and the torsional PES were at the MP2/aug-cc-pVDZ level.
+! The ME/RRKM has been solved with the Mesmer software
+! the expression below is valid for 600-2500 K
+ch3chco(+m)<=>c2h4+co(+m)              1.809E+10     0.929   78030.6
+LOW / 1.002E+54    -9.989   87553.3 /
+TROE / 0.5000  1358.6  1358.6  7737.4 /
+
+! Present work
+! Energies of the reactants, products an transition states calculated at the G3//MP2/aug-cc-pVDZ
+! level of theory while the vibration frequencies and the torsional PES were at the MP2/aug-cc-pVDZ level.
+! The ME/RRKM has been solved with the Mesmer software
+! the expression below is valid for 600-2500 K
+ch3chco+h<=>c2h3cho+h                  1.210E+22    -2.226   19607.3
+plog /   0.001   9.061E+13    -0.144    8028.1 /
+plog /   0.010   8.310E+17    -1.218   11811.3 /
+plog /   0.010   2.940E+21    -2.148   16152.3 /
+plog /   1.000   1.210E+22    -2.226   19607.3 /
+plog /  10.000   5.447E+17    -0.907   20684.2 /
+plog /  50.000   1.013E+10     1.305   18357.6 /
+plog / 100.000   3.560E+05     2.559   16481.8 /
+
+! Present work
+! Energies of the reactants, products an transition states calculated at the G3//MP2/aug-cc-pVDZ
+! level of theory while the vibration frequencies and the torsional PES were at the MP2/aug-cc-pVDZ level.
+! The ME/RRKM has been solved with the Mesmer software
+! the expression below is valid for 600-2500 K
+ch3chco+h<=>c2h5+co                    3.092E+08     1.303    1834.7
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+! METHYL VINYL KETONE c2h3coch3
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+! MethylVinyl Ketone unimolecular decomposition reactions
+! Rate constants calculated by solving the ME/RRKM equations with the MESMER software
+! The association ILT approach has been adopted. The rate constants of the association steps are provided as well as the 
+! G3//M06-2X/aug-cc-pVDZ ZPE corrected 0K energies. The vibrations frequencies and the torsional PES
+! of each single species (reactant and products) were calculated at the M06-2X/aug-cc-pVDZ level.
+! The energy tranfer model adopted is <Edown> = 200 * (T/300)^0.85 1/cm
+! The association rate constants adopted are as follow:
+! (1) c2h3co + ch3 = c2h3coch3:    1.632E+14 * T^-0.377 * exp(37.6/T)
+!    the rate constant calculated by Saxena et al. (Proceedings of the Combustion Institute (2009),
+!    Vol. 32, pp. 123–130) for the reaction ch3co+ch3 has been adopted as it
+! (2) c2h3 + ch2co = c2h3coch3:    2.120E+14 * T^-0.401 * exp(95.3/T)
+!    the rate constant calculated by Saxena has been corrected to account for the change between methyl and vinyl
+!    k(c2h3+ch2co) = k(ch3+ch3co) * k(ch3+c2h5) / k (ch3+ch3)
+!    the rate constants for methyl-methyl and methyl-ethyl recombination were adopted from Klippenstein et al.
+!    (Physical Chemistry Chemical Physics (2006), Vol. 8, pp. 1133–1141)
+! (3) h + c2h3coch2 = c2h5coch3:  5.833E+13 * T^0.176 * exp(63/T)
+!    the rate constant is assumed to be the same as the one for the reaction h + c3h5-a = c3h6
+!    Harding et al., Journal of Physical Chemistry A (2007) Vol. 111, pp. 3789-3801
+
+c2h3coch3(+m)<=>ch3co+c2h3(+m)         2.576E+22    -1.732   92775.2
+LOW / 4.308E+63   -12.945  101635.8 /
+TROE / 0.2482  5701.5  36.0  10539.3 /
+h2/2.00/ h2o/6.00/ co/1.50/ co2/2.00/ ch4/2.00/ c2h6/3.00/
+
+c2h3coch3(+m)<=>c2h3co+ch3(+m)         9.766E+20    -1.176   84070.1
+LOW / 2.338E+73   -15.321   93700.1 /
+TROE / 0.3173  926.7  39.5  6631.0 /
+h2/2.00/ h2o/6.00/ co/1.50/ co2/2.00/ ch4/2.00/ c2h6/3.00/
+
+c2h3coch3(+m)<=>c2h3coch2+h(+m)        3.516E+18    -0.854   99383.8
+LOW / 3.160E+39    -6.686   93378.5 /
+TROE / 0.3472  0.7  20.8  139.2 /
+h2/2.00/ h2o/6.00/ co/1.50/ co2/2.00/ ch4/2.00/ c2h6/3.00/
+
+
+! H abstraction reactions
+! Badra et al., 
+!c2h3coch3+oh<=>c2h3coch2+h2o           4.170E+13     0.000    4700.0 
+
+! Analogy with butanone+R=Rh+c2h5coch2
+c2h3coch3+ho2<=>c2h3coch2+h2o2         1.674E-02     4.320   16400.0
+c2h3coch3+o<=>c2h3coch2+oh             5.000E+12     0.000    5962.0
+c2h3coch3+h<=>c2h3coch2+h2             1.205E+07     2.225     6937.8
+c2h3coch3+ch3<=>c2h3coch2+ch4          2.036E+01     3.441    9356.1
+c2h3coch3+c2h3=c2h3coch2+c2h4          6.150E+10     0.000    4278.0
+c2h3coch3+oh<=>c2h3coch2+h2o       3.990E+02    3.080     -944.0
+
+! OH-radical addition-elimination reactions
+! Present work, Energies of the reactants, products an transition states calculated at the G3//MP2/aug-cc-pVDZ
+! level of theory while the vibration frequencies and the torsional PES were at the MP2/aug-cc-pVDZ level.
+! The ME/RRKM has been solved with the Mesmer software
+! the fits below are valid for 500-2500 K
+c2h3coch3+oh<=>ch3cho+ch3co            7.654E+11      0.204    1574.0
+plog /   0.010    4.740E+08      1.107    -738.0 /
+plog /   0.100    1.891E+09      0.937    -331.0 /
+plog /   1.000    7.654E+11      0.204    1574.0 /
+plog /  10.000    6.684E+17     -1.444    6375.0 /
+plog /  50.000    7.347E+22     -2.820   11081.0 /
+plog / 100.000    4.119E+24     -3.285   13062.0 /
+
+! H-radical addition-elimination reactions
+
+! Present work
+! Energies of the reactants, products an transition states calculated at the G3//MP2/aug-cc-pVDZ
+! level of theory while the vibration frequencies and the torsional PES were at the MP2/aug-cc-pVDZ level.
+! The ME/RRKM has been solved with the Mesmer software
+! the fits below are valid for 500-1800 K
+
+h+c2h3coch3<=>c2h4+ch3co               2.674E+15     -0.472    7481.0
+plog /   0.001    6.541E+10      0.830    4226.5 /
+plog /   0.010    6.541E+10      0.830    4228.3 /
+plog /   0.010    2.905E+11      0.646    4660.0 /
+plog /   1.000    2.674E+15     -0.472    7481.0 /
+plog /  10.000    1.260E+21     -2.026   12593.5 /
+plog /  25.000    3.333E+21     -2.099   14051.3 /
+plog /  50.000    2.806E+20     -1.750   14498.4 /
+plog / 100.000    1.031E+18     -1.013   14229.1 /
+
+h+c2h3coch3<=>ch3+ch3chco              4.060E+33      -5.289   25632.4
+plog /   0.001   4.689E+23      -2.778   11544.0  /
+plog /   0.010   6.211E+29      -4.467   16728.2  /
+plog /   0.010   5.650E+33      -5.488   21733.8  /
+plog /   1.000   4.060E+33      -5.289   25632.4  /
+plog /  10.000   4.943E+22      -2.012   23813.6  /
+plog /  25.000   3.065E+13       0.651   19878.3  /
+plog /  50.000   3.734E+06       2.633   16760.0  /
+plog / 100.000   1.149E+00       4.481   13699.2  /
+
+
+! CH3 addition-elimination reactions
+! Present work, Energies of the reactants, products an transition states calculated at the G3//MP2/aug-cc-pVDZ
+! level of theory while the vibration frequencies and the torsional PES were at the MP2/aug-cc-pVDZ level.
+! The ME/RRKM has been solved with the Mesmer software
+! the fits below are valid for 500-2500 K
+c2h3coch3+ch3<=>c3h6+ch3co             8.449E+12     -0.396   13232.0
+plog /   0.010    1.580E+08      0.924    9626.0 /
+plog /   0.100    1.355E+09      0.663   10317.0 /
+plog /   1.000    8.449E+12     -0.396   13232.0 /
+plog /  10.000    4.694E+20     -2.539   19711.0 /
+plog /  50.000    1.463E+25     -3.744   24625.0 /
+plog / 100.000    2.496E+25     -3.774   25904.0 /
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+! 3-OXO 1-BUTEN-4-YL RADICAL c2h3coch2
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+! Present work
+! Rate constants calculated by solving the ME/RRKM equations with the MESMER software
+! The association ILT approach has been adopted. The rate constants of the association steps are provided as well as the 
+! G3//M06-2X/aug-cc-pVDZ ZPE corrected 0K energies. The vibrations frequencies and the torsional PES
+! of each single species (reactant and products) were calculated at the M06-2X/aug-cc-pVDZ level.
+
+h+c2h3coch2<=>c2h3co+ch3                 3.188E+26     -3.329   11122.1
+plog /   0.001    2.874E+15     -0.333     669.4 /
+plog /   0.010    1.548E+17     -0.810    2077.5 /
+plog /   0.100    3.376E+21     -1.998    5867.6 /
+plog /   1.000    3.188E+26     -3.329   11122.1 /
+plog /  10.000    2.695E+28     -3.768   15586.8 /
+plog / 100.000    4.486E+29     -3.967   21521.7 /
+
+h+c2h3coch2<=>c2h3+ch3co                 3.188E+26     -3.329   11122.1
+plog /   0.001    2.146E+12      0.355    3320.0 /
+plog /   0.010    2.347E+12      0.346    3406.1 /
+plog /   0.100    2.294E+14     -0.197    5189.5 /
+plog /   1.000    5.900E+20     -1.937   11196.0 /
+plog /  10.000    3.142E+26     -3.442   18155.7 /
+plog / 100.000    5.327E+28     -3.921   24706.4 /
+
+
+! Present work
+! Energies of the reactants, products an transition states calculated at the G3//M06-2X/aug-cc-pVDZ
+! level of theory while the vibration frequencies and the torsional PES were at the M06-2X/aug-cc-pVDZ level.
+! The ME/RRKM has been solved with the Mesmer software
+c2h3coch2(+m)<=>ch2co+c2h3(+m)            4.868E+14    -0.078     48621.5
+LOW / 5.956E+32    -4.613     37873.3 /
+TROE / 0.0505  808.7  4029.9  6198.3 /
+h2/2.00/ h2o/6.00/ co/1.50/ co2/2.00/ ch4/2.00/ c2h6/3.00/
+
+! Assuming similar rate constant than c3h5-a+o<=>c2h3cho+h
+! Tsang, Journal of Physical and Chemical Reference Data (1991) Vol. 20, pp. 221-273
+c2h3coch2+o<=>c2h3co+ch2o              6.022E+13     0.000        0.0
+
+! Present work
+c2h3coch2+ho2<=>c2h3coch2o2h           1.661E+37       -8.642     3228.0
+PLOG /   0.001        3.328E+27       -5.677    15241.1 /
+PLOG /   0.010        2.206E+31       -6.360    20054.4 /
+PLOG /   0.100        1.130E+33       -7.974     1029.9 /
+PLOG /   1.000        1.661E+37       -8.642     3228.0 /
+PLOG /  10.000        2.132E+50      -11.983    11723.1 /
+PLOG /  50.000        3.195E+44       -9.896    11270.6 /
+PLOG / 100.000        7.567E+38       -8.106     9408.5 /
+
+! Present work
+c2h3coch2+ho2<=>c2h3coch2o+oh          7.770E+17       -1.520     2379.2
+PLOG /   0.001        3.107E+16       -1.154      980.9 /
+PLOG /   0.010        3.108E+16       -1.154      981.0 /
+PLOG /   0.100        3.540E+16       -1.170     1024.9 /
+PLOG /   1.000        6.672E+17       -1.522     2049.4 /
+PLOG /  10.000        1.575E+22       -2.716     5972.3 /
+PLOG /  50.000        3.635E+26       -3.890    10528.3 /
+PLOG / 100.000        3.182E+27       -4.123    12175.5 /
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+! HYDROPEROXYMETHYL VINYL KETONE c2h3coch2o2h
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+! Goldsmith et al.,  Journal of Physical Chemistry A (2012), Vol. 116, pp. 3325-3346
+c2h3coch2o2h<=>c2h3coch2o+oh           3.360E+46     -9.810   52468.5
+PLOG /   0.0100    1.490E+58    -13.900   54266.9 /
+PLOG /   0.1000    1.800E+54    -12.400   54193.8 /
+PLOG /   1.0000    3.360E+46     -9.810   52468.5 /
+PLOG /  10.0000    2.390E+36     -6.540   49429.0 /
+PLOG / 100.0000    1.280E+27     -3.610   46333.1 /
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+! HYDROPEROXYMETHYL ETHYL KETONE c2h5coch2o2h
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+c2h5coch2o2h<=>c2h5coch2+ho2           9.240E+71      -17.619    81796.0
+PLOG /   0.001        5.225E+45      -11.809    64746.5 /
+PLOG /   0.010        1.672E+39       -9.306    60857.8 /
+PLOG /   0.100        7.613E+67      -17.057    76458.3 /
+PLOG /   1.000        9.240E+71      -17.619    81796.0 /
+PLOG /  10.000        1.186E+66      -15.371    82345.0 /
+PLOG /  50.000        7.116E+61      -13.840    82721.6 /
+PLOG / 100.000        3.196E+54      -11.612    79556.9 /
+
+c2h5coch2o2h<=>c2h5coch2o+oh           2.538E+60      -13.834    61949.9
+PLOG /   0.001        9.911E+66      -16.800    58671.8 /
+PLOG /   0.010        8.959E+63      -15.532    59334.1 /
+PLOG /   0.100        8.970E+63      -15.186    61513.8 /
+PLOG /   1.000        2.538E+60      -13.834    61949.9 /
+PLOG /  10.000        4.561E+53      -11.605    60513.3 /
+PLOG /  50.000        2.698E+44       -8.793    56615.4 /
+PLOG / 100.000        1.802E+41       -7.826    55289.5 /
+
+c2h5coch2o2h<=>c2h5cocho+h2o           2.565E+45      -10.232    53421.2
+PLOG /   0.001        1.980E+58      -15.054    52393.4 /
+PLOG /   0.010        4.085E+48      -11.874    49672.0 /
+PLOG /   0.100        2.393E+48      -11.452    52129.7 /
+PLOG /   1.000        2.565E+45      -10.232    53421.2 /
+PLOG /  10.000        4.279E+41       -8.785    54652.9 /
+PLOG /  50.000        2.634E+31       -5.655    50510.0 /
+PLOG / 100.000        4.405E+26       -4.213    48355.1  /
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+! 3-HYDROPEROXYBUTANONE ch3choohcoch3
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+ch3choohcoch3<=>ch3chcoch3+ho2         4.441E+74      -18.475    80664.7
+PLOG /   0.001        3.280E+20       -4.581    51153.3 /
+PLOG /   0.010        3.366E+55      -14.274    67293.3 /
+PLOG /   0.100        1.233E+69      -17.600    74936.3 /
+PLOG /   1.000        2.221E+74      -18.475    80664.7 /
+PLOG /  10.000        2.606E+68      -16.163    81401.6 /
+PLOG /  50.000        1.768E+59      -13.174    79051.8 /
+PLOG / 100.000        9.280E+55      -12.099    78417.7 /
+
+ch3choohcoch3<=>ch3chococh3+oh         1.233E+60      -13.796    59633.2
+PLOG /   0.001        2.165E+48      -11.455    46215.9 /
+PLOG /   0.010        9.774E+53      -12.736    51253.4 /
+PLOG /   0.100        1.028E+59      -13.829    56400.4 /
+PLOG /   1.000        1.233E+60      -13.796    59633.2 /
+PLOG /  10.000        6.193E+55      -12.251    59787.4 /
+PLOG /  50.000        8.575E+48      -10.109    57357.4 /
+PLOG / 100.000        3.458E+45       -9.074    55923.8 /
+
+ch3choohcoch3<=>ch3cococh3+h2o         1.132E+54      -12.620    57493.0
+PLOG /   0.001        3.461E+45      -11.271    45103.6 /
+PLOG /   0.010        1.068E+50      -12.212    49715.1 /
+PLOG /   0.100        8.143E+53      -12.959    54462.1 /
+PLOG /   1.000        1.132E+54      -12.620    57493.0 /
+PLOG /  10.000        5.472E+47      -10.445    56943.0 /
+PLOG /  50.000        3.936E+39       -7.893    54154.1 /
+PLOG / 100.000        1.334E+35       -6.533    52244.8 /
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+! METHOXY ETHYL KETONE c2h5coch2o
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+! Present work
+! Energies of the reactants, products an transition states calculated at the G3//MP2/aug-cc-pVDZ
+! level of theory while the vibration frequencies and the torsional PES were at the MP2/aug-cc-pVDZ level.
+! TST with assymetric Eckart tunnelling correction
+! The loss of an H atom to produce the vinyl glyoxal is very slow compared to the loss of a formaldehyde group
+c2h5coch2o<=>c2h5co+ch2o               1.141E+13      0.099    1125.8
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+! ACETYL ETHOXY RADICAL ch3chococh3
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+! Present work
+! Energies of the reactants, products an transition states calculated at the G3//MP2/aug-cc-pVDZ
+! level of theory while the vibration frequencies and the torsional PES were at the MP2/aug-cc-pVDZ level.
+! TST with assymetric Eckart tunnelling correction
+! The loss of an H atom to produce the diacetyl is very slow compared to the loss of an acetyl group
+ch3chococh3<=>ch3cho+ch3co             8.675E+10     0.614    1017.2
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+! METHOXY VINYL KETONE c2h3coch2o
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+! Present work
+! Energies of the reactants, products an transition states calculated at the G3//MP2/aug-cc-pVDZ
+! level of theory while the vibration frequencies and the torsional PES were at the MP2/aug-cc-pVDZ level.
+! The ME/RRKM has been solved with the Mesmer software
+! The loss of an H atom to produce the vinyl glyoxal is very slow compared to the loss of a formaldehyde group
+c2h3coch2o(+m)<=>c2h3co+ch2o(+m)               2.059E+01      3.555    -487.4
+LOW / 3.795E+19     -1.304    5215.4 /
+TROE / 0.0031  153.7  1.6  968.8 /
+h2/2.00/ h2o/6.00/ co/1.50/ co2/2.00/ ch4/2.00/ c2h6/3.00/
+
+!!!!!!!!!!!!!!!!!!!!!!!!!
+! ETHYL GLYOXAL c2h5cocho
+!!!!!!!!!!!!!!!!!!!!!!!!!
+
+! H abstraction same as propanal
+
+c2h5cocho+h=>c2h5co+co+h2              1.200E+14     0.000    7000.0
+c2h5cocho+o=>c2h5co+co+oh              5.850E+12     0.000    1808.0
+c2h5cocho+oh=>c2h5co+co+h2o            2.350E+10     0.730   -1113.0
+c2h5cocho+ho2=>c2h5co+co+h2o2          3.100E+12     0.000   11920.0
+c2h5cocho+ch3=>c2h5co+co+ch4           1.700E+12     0.000    8440.0
+c2h5cocho+c2h5=>c2h5co+co+c2h6         1.700E+12     0.000    8440.0
+c2h5cocho+c2h3=>c2h5co+co+c2h4         1.700E+12     0.000    8440.0
+
+!!!!!!!!!!!!!!!!!!!!!!!!!
+! DIACETYL ch3cococh3
+!!!!!!!!!!!!!!!!!!!!!!!!!
+
+! Assuming similar rate constants as c2h5coch3+X<=>c2h5coch2+HX but scaled by a factor 2 to account for degeneracy
+ch3cococh3+oh=>ch3co+ch2co+h2o         7.980E+02    3.080     -944.0
+ch3cococh3+ho2=>ch3co+ch2co+h2o2       1.116E-02    4.320    13400.0
+ch3cococh3+h=>ch3co+ch2co+h2           2.410E+07    2.225     6937.8
+ch3cococh3+ch3=>ch3co+ch2co+ch4        4.072E+01    3.441     9356.1
+ch3cococh3+o=>ch3co+ch2co+oh           1.000E+13    0.000     5962.0
+ch3cococh3+o2=>ch3co+ch2co+ho2         4.100E+13    0.000    49150.0
+ch3cococh3+ch3o=>ch3co+ch2co+ch3oh     4.340E+11    0.000     4660.0
+ch3cococh3+ch3o2=>ch3co+ch2co+ch3o2h   6.020E+12    0.000    17580.0
+ch3cococh3+c2h3=>ch3co+ch2co+c2h4      1.230E+11    0.000     4278.0
+ch3cococh3+c2h5=>ch3co+ch2co+c2h6      1.000E+11    0.000    11600.0
+
+END

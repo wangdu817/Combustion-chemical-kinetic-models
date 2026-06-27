@@ -1,0 +1,287 @@
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!                      The oxidation of the novel lignocellulosic biofuel gamma-valerolactone in a low pressure flame                                     !!
+!!        Alena Sudholt(a), Rupali Tripathi(a), Daniel Mayer(a), Pierre-Alexandre Glaude(b), Frederique Battin-Leclerc(b), Heinz Pitsch(a)                 !!
+!!																																						   !!
+!!					(a) Institute for Combustion Technology, Templergraben 64, RWTH Aachen University, 52056 Aachen, Germany							   !!
+!!					(b) Laboratoire Reaction et Genie des Procedes, CNRS, Universite de Lorraine, 1 Rue Grandville, 54001 Nancy Cedex, France			   !!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!
+#SPECNAME      DUMMY     EPS/K     SIGMA     DUMMY     DUMMY     DUMMY
+N2                 0    97.530     3.621     0.000     0.000     0.000
+H2                 0    38.000     2.920     0.000     0.000     0.000
+AR                 0   136.500     3.330     0.000     0.000     0.000
+H                  0   145.000     2.050     0.000     0.000     0.000
+HE                 0    10.200     2.576     0.000     0.000     0.000
+O                  0    80.000     2.750     0.000     0.000     0.000
+O2                 0   107.400     3.458     0.000     0.000     0.000
+OH                 0    80.000     2.750     0.000     0.000     0.000
+HO2                0   107.400     3.458     0.000     0.000     0.000
+H2O                0   572.400     2.605     0.000     0.000     0.000
+H2O2               0   107.400     3.458     0.000     0.000     0.000
+C                  0    71.400     3.298     0.000     0.000     0.000
+CO                 0    98.100     3.650     0.000     0.000     0.000
+CH                 0    80.000     2.750     0.000     0.000     0.000
+CH3                0   144.000     3.800     0.000     0.000     0.000
+CH2O               0   498.000     3.590     0.000     0.000     0.000
+HCO                0   498.000     3.590     0.000     0.000     0.000
+T-CH2              0   144.000     3.800     0.000     0.000     0.000
+S-CH2              0   144.000     3.800     0.000     0.000     0.000
+CH3OH              0   481.800     3.626     0.000     0.000     0.000
+C2H2               0   209.000     4.100     0.000     0.000     0.000
+C2H                0   209.000     4.100     0.000     0.000     0.000
+CO2                0   244.000     3.763     0.000     0.000     0.000
+C2H4               0   280.800     3.971     0.000     0.000     0.000
+C2H3               0   209.000     4.100     0.000     0.000     0.000
+CH3O               0   417.000     3.690     0.000     0.000     0.000
+CH4                0   141.400     3.746     0.000     0.000     0.000
+C2H5               0   252.300     4.302     0.000     0.000     0.000
+CH3O2              0   481.800     3.626     0.000     0.000     0.000
+HCCO               0   150.000     2.500     0.000     0.000     0.000
+CH2CO              0   436.000     3.970     0.000     0.000     0.000
+CH3CHO             0   436.000     3.970     0.000     0.000     0.000
+CH2OH              0   417.000     3.690     0.000     0.000     0.000
+OCHO               0   338.005     4.334     0.000     0.000     0.000
+HOCHO              0   342.374     4.366     0.000     0.000     0.000
+CH3O2H             0   350.993     4.428     0.000     0.000     0.000
+HOCH2O             0   346.703     4.398     0.000     0.000     0.000
+O2CHO              0   403.204     4.792     0.000     0.000     0.000
+HO2CHO             0   407.054     4.818     0.000     0.000     0.000
+C3H2O              0   252.000     4.760     0.000     0.000     0.000
+C3H3               0   252.000     4.760     0.000     0.000     0.000
+H2C2               0   209.000     4.100     0.000     0.000     0.000
+N-C4H3             0   357.000     5.180     0.000     0.000     0.000
+HCCOH              0   436.000     3.970     0.000     0.000     0.000
+S-C3H5             0   266.800     4.982     0.000     0.000     0.000
+C4H4               0   357.000     5.180     0.000     0.000     0.000
+N-C4H5             0   357.000     5.180     0.000     0.000     0.000
+I-C4H5             0   357.000     5.180     0.000     0.000     0.000
+CH2CHO             0   436.000     3.970     0.000     0.000     0.000
+A-C3H5             0   266.800     4.982     0.000     0.000     0.000
+C4H6               0   357.000     5.180     0.000     0.000     0.000
+C2H3CHO            0   428.800     4.958     0.000     0.000     0.000
+C2H4O1-2           0   333.779     4.304     0.000     0.000     0.000
+C2H5O              0   470.600     4.410     0.000     0.000     0.000
+N-C3H7             0   266.800     4.982     0.000     0.000     0.000
+C4H10              0   391.983     4.716     0.000     0.000     0.000
+C2H6               0   252.300     4.302     0.000     0.000     0.000
+C2O                0   232.400     3.828     0.000     0.000     0.000
+C2H3O1-2           0   329.328     4.271     0.000     0.000     0.000
+CH3CO              0   329.328     4.271     0.000     0.000     0.000
+C2H4OH             0   470.600     4.410     0.000     0.000     0.000
+CH3CHOH            0   470.600     4.410     0.000     0.000     0.000
+CH3OCH2            0   338.188     4.336     0.000     0.000     0.000
+C2H5OH             0   470.600     4.410     0.000     0.000     0.000
+CH3OCH3            0   342.555     4.368     0.000     0.000     0.000
+CH3CO2             0   395.586     4.740     0.000     0.000     0.000
+CH3OCO             0   395.586     4.740     0.000     0.000     0.000
+C2H4O2H            0   403.365     4.793     0.000     0.000     0.000
+C2H5O2             0   403.365     4.793     0.000     0.000     0.000
+C2H5O2H            0   407.213     4.819     0.000     0.000     0.000
+CH3CO3             0   454.613     5.131     0.000     0.000     0.000
+CH3CO3H            0   458.145     5.153     0.000     0.000     0.000
+O2C2H4OH           0   461.657     5.176     0.000     0.000     0.000
+C3H2               0   209.000     4.100     0.000     0.000     0.000
+C4H2               0   357.000     5.180     0.000     0.000     0.000
+I-C4H3             0   357.000     5.180     0.000     0.000     0.000
+P-C3H4             0   252.000     4.760     0.000     0.000     0.000
+A-C3H4             0   252.000     4.760     0.000     0.000     0.000
+T-C3H5             0   266.800     4.982     0.000     0.000     0.000
+C3H5O              0   411.000     4.820     0.000     0.000     0.000
+C3H6               0   266.800     4.982     0.000     0.000     0.000
+I-C3H7             0   329.514     4.272     0.000     0.000     0.000
+C3H8               0   266.800     4.982     0.000     0.000     0.000
+I-C3H7O            0   395.749     4.741     0.000     0.000     0.000
+N-C3H7O            0   395.749     4.741     0.000     0.000     0.000
+C2H3CO             0   379.854     4.632     0.000     0.000     0.000
+CH3CHCO            0   383.872     4.660     0.000     0.000     0.000
+C2H5CO             0   387.860     4.687     0.000     0.000     0.000
+CH2CCH2OH           0   387.860     4.687     0.000     0.000     0.000
+CH2CH2CHO           0   387.860     4.687     0.000     0.000     0.000
+CH3COCH2           0   387.860     4.687     0.000     0.000     0.000
+C2H5CHO            0   391.819     4.715     0.000     0.000     0.000
+C3H6O1-2           0   391.819     4.715     0.000     0.000     0.000
+C3H6O1-3           0   391.819     4.715     0.000     0.000     0.000
+C3H6OH             0   395.749     4.741     0.000     0.000     0.000
+CH3COCH2O           0   447.639     5.086     0.000     0.000     0.000
+A-C3H5OOH           0   451.210     5.109     0.000     0.000     0.000
+C3H6OOH1-2           0   454.761     5.132     0.000     0.000     0.000
+C3H6OOH1-3           0   454.761     5.132     0.000     0.000     0.000
+C3H6OOH2-1           0   454.761     5.132     0.000     0.000     0.000
+I-C3H7O2           0   454.761     5.132     0.000     0.000     0.000
+N-C3H7O2           0   454.761     5.132     0.000     0.000     0.000
+N-C3H7O2H           0   458.292     5.154     0.000     0.000     0.000
+CH3COCH2O2           0   502.115     5.429     0.000     0.000     0.000
+CH3COCH2O2H           0   505.403     5.449     0.000     0.000     0.000
+C3KET12            0   505.403     5.449     0.000     0.000     0.000
+C3KET13            0   505.403     5.449     0.000     0.000     0.000
+HOC3H6O2           0   508.675     5.469     0.000     0.000     0.000
+C3H52-1J3OOH           0   558.732     5.769     0.000     0.000     0.000
+C3H6OOH1-3O2           0   558.732     5.769     0.000     0.000     0.000
+C3H6OOH1-2O2           0   558.732     5.769     0.000     0.000     0.000
+C4H                0   357.000     5.180     0.000     0.000     0.000
+C6H2               0   495.300     5.680     0.000     0.000     0.000
+C8H2               0   495.300     5.680     0.000     0.000     0.000
+A1-C6H6            0   464.800     5.290     0.000     0.000     0.000
+C4H71-1            0   380.022     4.633     0.000     0.000     0.000
+C4H71-2            0   380.022     4.633     0.000     0.000     0.000
+C4H71-3            0   380.022     4.633     0.000     0.000     0.000
+C4H8-1             0   384.039     4.661     0.000     0.000     0.000
+C4H8-2             0   384.039     4.661     0.000     0.000     0.000
+C4H7O              0   440.584     5.040     0.000     0.000     0.000
+C4H71-4            0   380.022     4.633     0.000     0.000     0.000
+C6H12-1            0   485.857     5.328     0.000     0.000     0.000
+C4H8O1-2           0   444.197     5.063     0.000     0.000     0.000
+P-C4H9             0   388.026     4.689     0.000     0.000     0.000
+N-C7H16            0   537.597     5.644     0.000     0.000     0.000
+P-C4H9O            0   447.788     5.087     0.000     0.000     0.000
+S-C4H9             0   388.026     4.689     0.000     0.000     0.000
+A-C3H5CHO           0   436.950     5.016     0.000     0.000     0.000
+C2H3COCH3           0   436.950     5.016     0.000     0.000     0.000
+C2H5CHCO           0   436.950     5.016     0.000     0.000     0.000
+C2H5COCH2           0   440.584     5.040     0.000     0.000     0.000
+C2H5COCH3           0   444.197     5.063     0.000     0.000     0.000
+C3H6CHO-1           0   440.584     5.040     0.000     0.000     0.000
+C3H6CHO-2           0   440.584     5.040     0.000     0.000     0.000
+C3H6CHO-3           0   440.584     5.040     0.000     0.000     0.000
+CH2CH2COCH3           0   440.584     5.040     0.000     0.000     0.000
+CH3CHCOCH3           0   440.584     5.040     0.000     0.000     0.000
+N-C3H7CO           0   440.584     5.040     0.000     0.000     0.000
+C4H8O1-3           0   444.197     5.063     0.000     0.000     0.000
+N-C3H7CHO           0   444.197     5.063     0.000     0.000     0.000
+P-C4H8OH           0   447.788     5.087     0.000     0.000     0.000
+C4H8OH-1O2           0   552.735     5.734     0.000     0.000     0.000
+S-C4H8OH           0   447.788     5.087     0.000     0.000     0.000
+C4H8OH-2O2           0   552.735     5.734     0.000     0.000     0.000
+C4H8OOH1-2           0   502.252     5.430     0.000     0.000     0.000
+C4H8OOH1-3           0   502.252     5.430     0.000     0.000     0.000
+P-C4H9O2           0   502.252     5.430     0.000     0.000     0.000
+P-C4H9O2H           0   505.540     5.450     0.000     0.000     0.000
+NC4KET13           0   549.655     5.716     0.000     0.000     0.000
+C4H8OOH1-3O2           0   600.078     6.009     0.000     0.000     0.000
+C5H81-3            0   429.770     4.969     0.000     0.000     0.000
+C5H81-4            0   429.770     4.969     0.000     0.000     0.000
+C5H91-3            0   433.447     4.993     0.000     0.000     0.000
+C5H9O1-3           0   489.084     5.348     0.000     0.000     0.000
+C5H10-2            0   437.102     5.017     0.000     0.000     0.000
+C5H91-4            0   433.447     4.993     0.000     0.000     0.000
+C5H10-1            0   437.102     5.017     0.000     0.000     0.000
+C5H91-5            0   433.447     4.993     0.000     0.000     0.000
+C5H92-4            0   433.447     4.993     0.000     0.000     0.000
+C5H92-5            0   433.447     4.993     0.000     0.000     0.000
+C6H12-2            0   485.857     5.328     0.000     0.000     0.000
+C5H11-2            0   440.735     5.041     0.000     0.000     0.000
+C5H11-1            0   440.735     5.041     0.000     0.000     0.000
+C5H11O-1           0   495.769     5.390     0.000     0.000     0.000
+P-C2H4COC2H3           0   482.331     5.306     0.000     0.000     0.000
+C2H5COC2H3           0   485.716     5.327     0.000     0.000     0.000
+C2H5COC2H4P           0   489.084     5.348     0.000     0.000     0.000
+C2H5COC2H5           0   492.434     5.369     0.000     0.000     0.000
+C3H6COCH3-1           0   489.084     5.348     0.000     0.000     0.000
+C3H6COCH3-2           0   489.084     5.348     0.000     0.000     0.000
+C4H8CHO-1           0   489.084     5.348     0.000     0.000     0.000
+C4H8CHO-2           0   489.084     5.348     0.000     0.000     0.000
+C4H8CHO-3           0   489.084     5.348     0.000     0.000     0.000
+C4H8CHO-4           0   489.084     5.348     0.000     0.000     0.000
+N-C3H7COCH2           0   489.084     5.348     0.000     0.000     0.000
+N-C3H7COCH3           0   492.434     5.369     0.000     0.000     0.000
+N-C4H9CO           0   489.084     5.348     0.000     0.000     0.000
+C5H10O1-3           0   492.434     5.369     0.000     0.000     0.000
+C5H10O1-4           0   492.434     5.369     0.000     0.000     0.000
+N-C4H9CHO           0   492.434     5.369     0.000     0.000     0.000
+C5H10OH-1           0   495.769     5.390     0.000     0.000     0.000
+C5H10OOH1-2           0   546.691     5.698     0.000     0.000     0.000
+C5H10OOH1-3           0   546.691     5.698     0.000     0.000     0.000
+C5H10OOH1-4           0   546.691     5.698     0.000     0.000     0.000
+C5H11O2-1           0   546.691     5.698     0.000     0.000     0.000
+C5H11O2H-1           0   549.783     5.717     0.000     0.000     0.000
+NC5KET13           0   591.463     5.959     0.000     0.000     0.000
+O2C5H10OH-1           0   594.385     5.976     0.000     0.000     0.000
+C5H10OOH1-3O2           0   639.455     6.230     0.000     0.000     0.000
+C6H101-3           0   479.072     5.286     0.000     0.000     0.000
+C6H101OOH4-3           0   582.757     5.909     0.000     0.000     0.000
+C6H111-3           0   482.473     5.307     0.000     0.000     0.000
+C6H101-4           0   479.072     5.286     0.000     0.000     0.000
+C6H101-5           0   479.072     5.286     0.000     0.000     0.000
+C6H111-5           0   482.473     5.307     0.000     0.000     0.000
+C6H11O1-3           0   534.323     5.625     0.000     0.000     0.000
+C6H112O2-1           0   582.757     5.909     0.000     0.000     0.000
+C6H111O2-3           0   582.757     5.909     0.000     0.000     0.000
+C6H111-6           0   482.473     5.307     0.000     0.000     0.000
+C6H111-4           0   482.473     5.307     0.000     0.000     0.000
+C6H111O2-4           0   582.757     5.909     0.000     0.000     0.000
+C6H111O2H-4           0   585.710     5.926     0.000     0.000     0.000
+C6H111O2-5           0   582.757     5.909     0.000     0.000     0.000
+C6H111O2-6           0   582.757     5.909     0.000     0.000     0.000
+C6H12OOH1-2           0   588.653     5.943     0.000     0.000     0.000
+C6H12OH-1           0   540.597     5.662     0.000     0.000     0.000
+C6H12-3            0   485.857     5.328     0.000     0.000     0.000
+C6H13-1            0   489.224     5.349     0.000     0.000     0.000
+C6H13O-1           0   540.597     5.662     0.000     0.000     0.000
+C6H13-2            0   489.224     5.349     0.000     0.000     0.000
+C6H13-3            0   489.224     5.349     0.000     0.000     0.000
+VTHF               0   531.165     5.606     0.000     0.000     0.000
+NC3H7COC2H4P           0   534.323     5.625     0.000     0.000     0.000
+C6H12O1-3           0   537.467     5.643     0.000     0.000     0.000
+C6H12O1-4           0   537.467     5.643     0.000     0.000     0.000
+O2C6H12OH-1           0   634.020     6.200     0.000     0.000     0.000
+C6H101OOH3-5           0   582.757     5.909     0.000     0.000     0.000
+MVOX               0   531.165     5.606     0.000     0.000     0.000
+C6H101OOH5-3           0   582.757     5.909     0.000     0.000     0.000
+C6H101OOH6-3           0   582.757     5.909     0.000     0.000     0.000
+C6H12OOH1-3           0   588.653     5.943     0.000     0.000     0.000
+C6H12OOH1-4           0   588.653     5.943     0.000     0.000     0.000
+C6H13O2-1           0   588.653     5.943     0.000     0.000     0.000
+NC6KET13           0   631.232     6.184     0.000     0.000     0.000
+C6H12OOH1-3O2           0   677.149     6.436     0.000     0.000     0.000
+CH3CHCOCH3                   2   440.584     5.040     0.000     0.000     0.000
+CH3CHCOCH3         2   440.584     5.040     0.000     0.000     0.000    !FLAMEMASTER
+A1-C6H6            2   464.8       5.29      0.00     10.32      1.000
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!GVL!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+GVL                2   420.347     5.984     0.000     0.000     1.000 ! LJ PARAMETERS ESTIMATED BY RMG: TC= 643.755K PC=  44.922BAR VC= 284.500CM3/MOL TB= 423.850K	(KETONE_OCENTERED, KETONE_RING, CSRINGH2R2, CSRINGH2R2, CSRINGHR3, CSH3R, ETHER_RING)
+GVLR-2             2   416.462     5.910     0.000     0.000     1.000 ! LJ PARAMETERS ESTIMATED BY RMG: TC= 643.755K PC=  46.913BAR VC= 284.500CM3/MOL TB= 423.850K	(KETONE_OCENTERED, KETONE_RING, CSRINGH2R2, CSRINGH2R2, CSRINGHR3, CSH3R, ETHER_RING)
+GVLR-3             2   416.462     5.910     0.000     0.000     1.000 ! LJ PARAMETERS ESTIMATED BY RMG: TC= 643.755K PC=  46.913BAR VC= 284.500CM3/MOL TB= 423.850K	(KETONE_OCENTERED, KETONE_RING, CSRINGH2R2, CSRINGH2R2, CSRINGHR3, CSH3R, ETHER_RING)
+GVLR-4             2   416.462     5.910     0.000     0.000     1.000 ! LJ PARAMETERS ESTIMATED BY RMG: TC= 643.755K PC=  46.913BAR VC= 284.500CM3/MOL TB= 423.850K	(KETONE_OCENTERED, KETONE_RING, CSRINGH2R2, CSRINGH2R2, CSRINGHR3, CSH3R, ETHER_RING)
+GVLR-5             2   416.462     5.910     0.000     0.000     1.000 ! LJ PARAMETERS ESTIMATED BY RMG: TC= 643.755K PC=  46.913BAR VC= 284.500CM3/MOL TB= 423.850K	(KETONE_OCENTERED, KETONE_RING, CSRINGH2R2, CSRINGH2R2, CSRINGHR3, CSH3R, ETHER_RING)
+C*CCCC(*O)OH       2   349.716     5.969     0.000     0.000     1.000 ! LJ PARAMETERS ESTIMATED BY RMG: TC= 542.356K PC=  38.435BAR VC= 293.500CM3/MOL TB= 363.650K	(KETONE_OCENTERED, KETONE_CCENTERED, CSH2R2, CSH2R2, CDHR2, CDH2R, ACID_OCENTERED1)
+O*CY(CCO)          2   376.558     4.964     0.000     0.000     1.000 ! LJ PARAMETERS ESTIMATED BY RMG: TC= 559.290K PC=  67.076BAR VC= 133.500CM3/MOL TB= 351.340K	(KETONE_OCENTERED, KETONE_RING, CSRINGH2R2, ETHER_RING)
+CJC(*O)OH          2   324.854     4.958     0.000     0.000     1.000 ! LJ PARAMETERS ESTIMATED BY RMG: TC= 472.368K PC=  56.110BAR VC= 144.500CM3/MOL TB= 298.330K	(ACID_OCENTERED1, KETONE_CCENTERED, CSH3R, KETONE_OCENTERED)
+CJ(*O)OH           2   278.022     4.860     0.000     0.000     1.000 ! LJ PARAMETERS ESTIMATED BY RMG: TC= 534.365K PC=  80.292BAR VC= 127.500CM3/MOL TB= 363.120K	(ALDEHYDE_OCENTERED, ALDEHYDE_CCENTERED, ALCOHOL)
+O*CY(COCJCC)       2   411.637     5.499     0.000     0.000     1.000 ! LJ PARAMETERS ESTIMATED BY RMG: TC= 628.742K PC=  56.447BAR VC= 229.500CM3/MOL TB= 405.640K	(KETONE_OCENTERED, KETONE_RING, CSRINGH2R2, CSRINGH2R2, CSRINGH2R2, ETHER_RING)
+O*C*CCC(C)OJ       2   274.313     5.656     0.000     0.000     1.000 ! LJ PARAMETERS ESTIMATED BY RMG: TC= 564.188K PC=  56.110BAR VC= 325.500CM3/MOL TB= 399.690K	(OD, CDDR2, CDHR2, CSH2R2, CSHR3, CSH3R, ALCOHOL)
+C*CC(*O)OCJC       2   355.474     5.923     0.000     0.000     1.000 ! LJ PARAMETERS ESTIMATED BY RMG: TC= 546.412K PC=  39.407BAR VC= 302.500CM3/MOL TB= 364.350K	(CSH3R, CSH2R2, ESTER_OCENTERED1, KETONE_CCENTERED, CDHR2, CDH2R, KETONE_OCENTERED)
+CC*CCC(*O)OJ       2   357.421     5.915     0.000     0.000     1.000 ! LJ PARAMETERS ESTIMATED BY RMG: TC= 555.549K PC=  40.518BAR VC= 292.500CM3/MOL TB= 371.130K	(CSH3R, CDHR2, CDHR2, CSH2R2, KETONE_CCENTERED, ACID_OCENTERED1, KETONE_OCENTERED)
+C*CC(C)OC*JO       2   346.641     5.962     0.000     0.000     1.000 ! LJ PARAMETERS ESTIMATED BY RMG: TC= 562.454K PC=  41.144BAR VC= 325.500CM3/MOL TB= 381.120K	(CDH2R, CDHR2, CSHR3, ETHER, ALDEHYDE_CCENTERED, ALDEHYDE_OCENTERED, CSH3R)
+CC(*O)CCC*JO       2   346.094     6.112     0.000     0.000     1.000 ! LJ PARAMETERS ESTIMATED BY RMG: TC= 602.509K PC=  42.775BAR VC= 338.500CM3/MOL TB= 416.330K	(CSH3R, KETONE_CCENTERED, CSH2R2, CSH2R2, ALDEHYDE_CCENTERED, ALDEHYDE_OCENTERED, KETONE_OCENTERED)
+C*C(C)OC(*O)CJ     2   363.845     5.904     0.000     0.000     1.000 ! LJ PARAMETERS ESTIMATED BY RMG: TC= 550.096K PC=  39.655BAR VC= 303.500CM3/MOL TB= 364.230K	(CSH3R, KETONE_CCENTERED, ESTER_OCENTERED1, CDR3, CDH2R, CSH3R, KETONE_OCENTERED)
+C*CCCC(*O)OJ       2   346.521     5.901     0.000     0.000     1.000 ! LJ PARAMETERS ESTIMATED BY RMG: TC= 542.356K PC=  40.007BAR VC= 293.500CM3/MOL TB= 363.650K	(CDH2R, CDHR2, CSH2R2, CSH2R2, KETONE_CCENTERED, ACID_OCENTERED1, KETONE_OCENTERED)
+C*COC(*O)CCJ       2   355.474     5.923     0.000     0.000     1.000 ! LJ PARAMETERS ESTIMATED BY RMG: TC= 546.412K PC=  39.407BAR VC= 302.500CM3/MOL TB= 364.350K	(CSH3R, CSH2R2, KETONE_CCENTERED, ESTER_OCENTERED1, CDHR2, CDH2R, KETONE_OCENTERED)
+O*CY(COC*CC)       2   416.774     5.481     0.000     0.000     1.000 ! LJ PARAMETERS ESTIMATED BY RMG: TC= 630.367K PC=  56.788BAR VC= 215.500CM3/MOL TB= 404.800K	(KETONE_OCENTERED, KETONE_RING, CSRINGH2R2, CDRINGHR2, CDRINGHR2, ETHER_RING)
+O*CY(COC(C)C*C)    2   421.596     5.892     0.000     0.000     1.000 ! LJ PARAMETERS ESTIMATED BY RMG: TC= 645.301K PC=  47.171BAR VC= 270.500CM3/MOL TB= 423.010K	(KETONE_OCENTERED, KETONE_RING, CDRINGHR2, CDRINGHR2, CSRINGHR3, CSH3R, ETHER_RING)
+O*CY(COC*(C)CC)    2   421.817     5.899     0.000     0.000     1.000 ! LJ PARAMETERS ESTIMATED BY RMG: TC= 656.898K PC=  48.360BAR VC= 271.500CM3/MOL TB= 432.660K	(KETONE_OCENTERED, KETONE_RING, CSRINGH2R2, CDRINGHR2, CDRINGR3, CSH3R, ETHER_RING)
+O*CY(COCJ(C)C*C)   2   417.666     5.816     0.000     0.000     1.000 ! LJ PARAMETERS ESTIMATED BY RMG: TC= 645.301K PC=  49.315BAR VC= 270.500CM3/MOL TB= 423.010K	(KETONE_OCENTERED, KETONE_RING, CDRINGHR2, CDRINGHR2, CSRINGHR3, CSH3R, ETHER_RING)
+O*CY(COC*(C)CCJ)   2   417.666     5.816     0.000     0.000     1.000 ! LJ PARAMETERS ESTIMATED BY RMG: TC= 645.301K PC=  49.315BAR VC= 270.500CM3/MOL TB= 423.010K	(KETONE_OCENTERED, KETONE_RING, CDRINGHR2, CDRINGHR2, CSRINGHR3, CSH3R, ETHER_RING)
+O*CY(COC*CCJ)      2   412.808     5.404     0.000     0.000     1.000 ! LJ PARAMETERS ESTIMATED BY RMG: TC= 630.367K PC=  59.629BAR VC= 215.500CM3/MOL TB= 404.800K	(KETONE_OCENTERED, KETONE_RING, CDRINGHR2, CDRINGHR2, CSRINGH2R2, ETHER_RING)
+gvlr-2(3oh)   2   348.061     6.328     0.000     0.000     1.000 ! LJ PARAMETERS ESTIMATED BY RMG: TC= 716.878K PC=  50.948BAR VC= 302.500CM3/MOL TB= 511.360K	(KETONE_OCENTERED, KETONE_RING, CSRINGH2R2, CSRINGHR3, CSRINGHR3, CSH3R, ETHER_RING, ALCOHOL)
+gvlr-4(3oh)   2   348.061     6.328     0.000     0.000     1.000 ! LJ PARAMETERS ESTIMATED BY RMG: TC= 716.878K PC=  50.948BAR VC= 302.500CM3/MOL TB= 511.360K	(KETONE_OCENTERED, KETONE_RING, CSRINGH2R2, CSRINGHR3, CSRINGHR3, CSH3R, ETHER_RING, ALCOHOL)
+
+O*CY(COCJC(OH)C)   2   343.886     5.881     0.000     0.000     1.000 ! LJ PARAMETERS ESTIMATED BY RMG: TC= 701.931K PC=  61.805BAR VC= 247.500CM3/MOL TB= 493.150K	(KETONE_OCENTERED, KETONE_RING, CSRINGH2R2, CSRINGHR3, CSRINGH2R2, ETHER_RING, ALCOHOL)
+O*CJC*CC(*O)C      2   362.326     5.988     0.000     0.000     1.000 ! LJ PARAMETERS ESTIMATED BY RMG: TC= 616.249K PC=  45.839BAR VC= 318.500CM3/MOL TB= 420.490K	(ALDEHYDE_OCENTERED, ALDEHYDE_CCENTERED, CDHR2, CDHR2, KETONE_CCENTERED, CSH3R, KETONE_OCENTERED)
+O*C*CC*C(C)OJ      2   362.326     5.988     0.000     0.000     1.000 ! LJ PARAMETERS ESTIMATED BY RMG: TC= 616.249K PC=  45.839BAR VC= 318.500CM3/MOL TB= 420.490K	(ALDEHYDE_OCENTERED, ALDEHYDE_CCENTERED, CDHR2, CDHR2, KETONE_CCENTERED, CSH3R, KETONE_OCENTERED)
+O*C*CC*COJ         2   347.662     5.580     0.000     0.000     1.000 ! LJ PARAMETERS ESTIMATED BY RMG: TC= 584.171K PC=  53.279BAR VC= 273.500CM3/MOL TB= 392.400K	(ALDEHYDE_OCENTERED, ALDEHYDE_CCENTERED, CDHR2, CDHR2, ALDEHYDE_CCENTERED, ALDEHYDE_OCENTERED)
+HOCY(CJOC(C)CC)    2   333.823     6.064     0.000     0.000     1.000 ! LJ PARAMETERS ESTIMATED BY RMG: TC= 658.579K PC=  46.026BAR VC= 347.500CM3/MOL TB= 497.720K	(ALCOHOL, CSH2R2, CSH2R2, CSH2R2, CSHR3, CSH3R, ALCOHOL)
+CCJCCC(*O)OH       2   341.093     6.023     0.000     0.000     1.000 ! LJ PARAMETERS ESTIMATED BY RMG: TC= 541.929K PC=  37.963BAR VC= 312.500CM3/MOL TB= 366.970K	(ACID_OCENTERED1, KETONE_CCENTERED, CSH2R2, CSH2R2, CSH2R2, CSH3R, KETONE_OCENTERED)
+C2JCOC(*C)OH       2   308.129     6.246     0.000     0.000     1.000 ! LJ PARAMETERS ESTIMATED BY RMG: TC= 596.378K PC=  42.386BAR VC= 328.500CM3/MOL TB= 424.520K	(CDH2R, CDR3, ETHER, CSHR3, CSH3R, CSH3R, ALCOHOL)
+JOCY(COC(C)CC)     2   333.823     6.064     0.000     0.000     1.000 ! LJ PARAMETERS ESTIMATED BY RMG: TC= 658.579K PC=  46.026BAR VC= 347.500CM3/MOL TB= 497.720K	(ALCOHOL, CSH2R2, CSH2R2, CSH2R2, CSHR3, CSH3R, ALCOHOL)
+OJC(C)CCCHO        2   292.811     6.358     0.000     0.000     1.000 ! LJ PARAMETERS ESTIMATED BY RMG: TC= 626.067K PC=  44.922BAR VC= 345.500CM3/MOL TB= 454.200K	(ALDEHYDE_OCENTERED, ALDEHYDE_CCENTERED, CSH2R2, CSH2R2, CSHR3, CSH3R, ALCOHOL)
+CJCC(C)OCHO        2   341.067     6.087     0.000     0.000     1.000 ! LJ PARAMETERS ESTIMATED BY RMG: TC= 561.971K PC=  39.014BAR VC= 344.500CM3/MOL TB= 384.440K	(ALDEHYDE_OCENTERED, ALDEHYDE_CCENTERED, ETHER, CSHR3, CSH2R2, CSH3R, CSH3R)
+C*CCCJC(*O)OH      2   346.521     5.901     0.000     0.000     1.000 ! LJ PARAMETERS ESTIMATED BY RMG: TC= 542.356K PC=  40.007BAR VC= 293.500CM3/MOL TB= 363.650K	(ACID_OCENTERED1, KETONE_CCENTERED, CSH2R2, CSH2R2, CDHR2, CDH2R, KETONE_OCENTERED)
+C*CCJCC(*O)OH      2   346.521     5.901     0.000     0.000     1.000 ! LJ PARAMETERS ESTIMATED BY RMG: TC= 542.356K PC=  40.007BAR VC= 293.500CM3/MOL TB= 363.650K	(ACID_OCENTERED1, KETONE_CCENTERED, CSH2R2, CSH2R2, CDHR2, CDH2R, KETONE_OCENTERED)
+C*COC(*O)CJ        2   351.062     5.569     0.000     0.000     1.000 ! LJ PARAMETERS ESTIMATED BY RMG: TC= 523.881K PC=  42.775BAR VC= 246.500CM3/MOL TB= 341.470K	(CSH3R, KETONE_CCENTERED, ESTER_OCENTERED1, CDHR2, CDH2R, KETONE_OCENTERED)
+HCOHCO             2   328.866     5.048     0.000     0.000     1.000 ! LJ PARAMETERS ESTIMATED BY RMG: TC= 525.759K PC=  62.789BAR VC= 181.500CM3/MOL TB= 342.480K	(ALDEHYDE_CCENTERED, ALDEHYDE_CCENTERED, ALDEHYDE_OCENTERED, ALDEHYDE_OCENTERED)
+
+
+
+
+
