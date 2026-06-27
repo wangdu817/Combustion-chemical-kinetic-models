@@ -1,0 +1,2537 @@
+
+!****************************************************************************************!
+!                                  CHEMISTRY INPUT FILE                                  !
+!****************************************************************************************!
+
+ELEMENTS
+
+C H N O AR HE KR E
+
+END
+
+SPECIES
+
+! C0 species
+
+H              H2             O              O2             OH
+H2O            N2             HO2            H2O2           AR
+HE
+
+! C1 species
+
+CO             CO2            CH2O           HCO            
+HOCHO          OCHO           
+HOCH2O         CH3OH          CH2OH          CH3O
+CH3O2H         CH3O2          CH4            CH3            CH2
+CH2(S)         C              CH             HOCO           HCOH
+
+! C2 SPECIES
+
+C2H6           C2H5           C2H4           C2H3           C2H2
+C2H            CH3CHO         CH3CO          CH2CHO         CH2CO
+HCCO           H2CC           C2O
+HCCOH          CH3CO3H        CH3CO3         CH3CO2
+C2H5OH         C2H5O          CH2CH2OH       CH3CHOH        O2C2H4OH
+C2H5O2H        C2H5O2         C2H4O2H        C2H4O1-2       C2H3O1-2
+CH2CHOH
+
+
+! METHYL FORMATE SPECIES
+
+CH3OCHO        CH2OCHO        CH3OCO         
+
+! ETHYL FORMATE SPECIES
+
+C2H5OCHO       C2H5OCO        CH2CH2OCHO   CH3CHOCHO
+
+OH* CH* 
+KR
+
+! NOX Subset from Dayma et al.
+
+!NO             NO2            N              NH             N2O   
+!NH2            HNO            HNO2           NH3            HONO  
+!HONO2          CH3ONO         CH3ONO2        H2CNO2         H2CN  
+!CH3NO          CH3NO2         H2NO           HCN            
+
+C3H6O3
+
+!Plasma species
+E	AR*	AR(+)		O3  O(D) O2(A)	O2(B) 
+O2+ 	O2-	 O- 	O+ 
+CH3(+)  C2H4(+)	C2H3(+)	C2H2(+)  C2
+
+
+END
+
+REACTIONS
+
+C3H6O3=>CH2O+CH2O+CH2O                     3.580E+12    0.000  36942.0
+
+
+!              H2/O2 mechanism of Burke et al. IJCK  (2011)
+!
+!*********************************************************************************
+
+!======================
+!H2-O2 Chain Reactions
+!======================
+
+! Hong et al., Proceeding of the Combustion Institute (2011) Vol. 33, pp. 309-316
+H+O2<=>O+OH             1.040E+14     0.000      15286.0
+
+! Baulch et al., Journal of Physical Chemical Reference Data (1992) Vol.21, pp. 411-429
+O+H2<=>H+OH             3.818E+12     0.000       7948.0
+   DUPLICATE
+O+H2<=>H+OH             8.792E+14     0.000      19170.0
+   DUPLICATE
+
+! Michael and Sutherland, Journal of Physical Chemistry (1988) Vol. 92, pp. 3853 (1988)
+H2+OH<=>H2O+H           2.160E+08     1.510       3430.0
+
+! Baulch et al., Journal of Physical Chemical Reference Data (1992) Vol.21, pp. 411
+OH+OH<=>O+H2O           3.340E+04     2.420      -1930.0
+
+!=============================
+! H2-O2 Dissociation Reactions
+!=============================
+
+! Tsang and Hampson, Journal of Physical Chemical Reference Data (1986) Vol. 15, pp. 1087
+H2+M<=>H+H+M            4.577E+19    -1.400     104380.0
+   H2/2.5/ H2O/12/ CO/1.9/ CO2/3.8/ AR/0.0/ HE/0.0/
+
+! Tsang and Hampson, Journal of Physical Chemical Reference Data (1986) Vol. 15, pp. 1087
+H2+AR<=>H+H+AR          5.840E+18    -1.100     104380.0
+H2+HE<=>H+H+HE          5.840E+18    -1.100     104380.0
+
+! Tsang and Hampson, Journal of Physical Chemical Reference Data (1986) Vol. 15, pp. 1087
+O+O+M<=>O2+M            6.165E+15    -0.500          0.0
+   H2/2.5/ H2O/12/ CO/1.9/ CO2/3.8/ AR/0.0/ HE/0.0/
+
+! Tsang and Hampson, Journal of Physical Chemical Reference Data (1986) Vol. 15, pp. 1087
+O+O+AR<=>O2+AR          1.886E+13     0.000      -1788.0
+O+O+HE<=>O2+HE          1.886E+13     0.000      -1788.0
+
+! Tsang and Hampson, Journal of Physical Chemical Reference Data (1986) Vol. 15, pp. 1087
+O+H+M<=>OH+M            4.714E+18    -1.000          0.0
+   H2/2.5/ H2O/12/ AR/0.75/ HE/0.75/ CO/1.9/ CO2/3.8/
+
+! Srinivasan and Michael, International Journal of Chemical Kinetic (2006) Vol. 38
+! Rate constant is for Argon, with efficiencies from Michael et al., Journal of Physical Chemistry A (2002) Vol. 106, pp. 5297-5313
+H2O+M<=>H+OH+M          6.064E+27    -3.322     120790.0
+   H2/3.0/  H2O/0.0/ HE/1.10/ N2/2.00/ O2/1.5/
+! Efficiencies for CO and CO2 taken from Li et al., International Journal of Chemical Kinetic (2004) Vol. 36, pp. 566-575
+   CO/1.9/ CO2/3.8/
+
+! Srinivasan and Michael, International Journal of Chemical Kinetic (2006) Vol. 38
+H2O+H2O<=>H+OH+H2O      1.006E+26    -2.440     120180.0
+
+!=================================
+! Formation and Consumption of HO2
+!=================================
+
+! High-pressure limit from Troe, Proceeding of the Combustion Institute (2000) Vol. 28, pp.1463-1469
+! Low-pressure  limit from Michael et al., Journal of Physical Chemistry A (2002) Vol. 106, pp. 5297-5313
+! Centering factors from Fernandes et al., Physical Chemistry and Chemical Physics (2008), Vol. 10, pp.4313-4321
+!=================================================================================
+! MAIN BATH GAS IS N2 (Comment this reaction otherwise)
+!
+H+O2(+M)<=>HO2(+M)      4.651E+12     0.440          0.0
+                  LOW / 6.366E+20    -1.720        524.8 /
+   TROE / 0.500  1.00E-30  1.00E+30 /
+   H2/2.0/ H2O/14/ O2/0.78/ CO/1.9/ CO2/3.8/ AR/0.67/ HE/0.8/
+!=================================================================================
+! MAIN BATH GAS IS AR OR HE (Comment this reaction otherwise)
+!
+!H+O2(+M)<=>HO2(+M)      4.651E+12     0.440          0.0
+!                  LOW / 9.042E+19    -1.500        492.2 /
+!   TROE / 0.500  1.00E-30  1.00E+30 /
+!    H2/3.0/ H2O/21/ O2/1.1/ CO/2.7/ CO2/5.4/ HE/1.2/ N2/1.5/
+!=================================================================================
+
+! Michael et al., Proceeding of the Combustion Institute (2000) Vol. 28, pp.1471
+! Scaled by 0.75 (3.660E+06 * 0.75 = 2.750E+06)
+HO2+H<=>H2+O2           2.750E+06     2.090      -1451.0
+
+! Mueller et al., International Journal of Chemical Kinetic (1999) Vol. 31, pp.113
+HO2+H<=>OH+OH           7.079E+13     0.000        295.0
+
+! Fernandez-Ramos and Varandas, Journal of Physical Chemistry A (2002) Vol. 106, pp. 4077-4083
+! Scaled by 0.60
+HO2+O<=>O2+OH           2.850E+10     1.000       -723.93
+
+! Keyser, Journal of Physical Chemistry (1988) Vol. 92, pp.1193
+HO2+OH<=>H2O+O2         2.890E+13     0.000       -497.0
+
+
+!=====================================
+!Formation and Consumption of H2O2
+!=====================================
+
+! Hippler et al., Journal of Physical Chemistry (1990) Vol. 93, pp.1755
+HO2+HO2<=>H2O2+O2       4.200E+14     0.000      11982.0
+   DUPLICATE
+HO2+HO2<=>H2O2+O2       1.300E+11     0.000      -1629.3
+   DUPLICATE
+
+! Troe, Combustion and Flame (2011) Vol.158, pp. 594-601
+! Rate constant is for Argon
+H2O2(+M)<=>OH+OH(+M)    2.000E+12     0.900      48749.0
+                  LOW / 2.490E+24    -2.300      48749.0/
+   TROE / 0.430 1.00E-30 1.00E+30/
+   H2O/7.5/ CO2/1.6/ N2/1.5/  O2/1.2/ HE/0.65/ H2O2/7.7/
+! Efficiencies for H2 and CO taken from Li et al., International Journal of Chemical Kinetic (2004) Vol. 36, pp. 566-575
+   H2/3.7/ CO/2.8/
+
+! Tsang and Hampson, Journal of Physical Chemical Reference Data (1986) Vol. 15, pp. 1087
+H2O2+H<=>H2O+OH         2.410E+13     0.000       3970.0
+H2O2+H<=>HO2+H2         4.820E+13     0.000       7950.0
+H2O2+O<=>OH+HO2         9.550E+06     2.000       3970.0
+
+! Hong et al., Journal of Physical Chemistry A (2010) Vol. 114, pp. 5718–5727
+H2O2+OH<=>HO2+H2O       1.740E+12     0.000        318.0
+   DUPLICATE
+H2O2+OH<=>HO2+H2O       7.590E+13     0.000       7270.0
+   DUPLICATE
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+! CARBON MONOXYDE CO REACTION SET
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+! High-pressure limit from Troe, Journal of Physical Chemistry (1975) Vol. 83, pp.114
+! Low-pressure limit: Personnal fitting on the low pressure data from Westmoreland et al., AIChE Journal (1986), Vol. 32, pp. 1971
+! Chaperon efficiencies from USC-mech II 
+CO+O(+M)<=>CO2(+M)      1.800E+10     0.000       2384.0
+                  LOW / 4.436E+23    -2.637       4081.9 /
+H2/2.0/ O2/1.0/ H2O/12.0/ CH4/2.0/ CO/1.75/ CO2/3.6/ C2H6/3.0/ AR/0.7/ HE/0.7/
+
+! Tsang and Hampson, Journal of Physical Chemical Reference Data (1986) Vol. 15, pp. 1087
+CO+O2<=>CO2+O           2.530E+12     0.000      47693.0
+
+! You et al., Journal of Physical Chemistry A (2007) Vol. 111, pp.4031-1042
+CO+HO2<=>CO2+OH         1.570E+05     2.180      17940.0
+
+! Joshi and Wang, International Journal of Chemical Kinetics (2006) Vol. 38, pp. 57-73
+! The rate used is the low pressure limit value.
+CO+OH<=>CO2+H           7.046E+04     2.053      -276.2
+DUPLICATE
+CO+OH<=>CO2+H           5.757E+12    -0.664       331.9
+DUPLICATE
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+! FORMYL RADICAL HCO REACTION SET
+! From Healy et al., 
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+! Xueliang calculations, level of theory
+! The efficiency Coefficient of Ar and He are from Xueliang's calulations
+HCO(+M)<=>H+CO(+M)      9.920E+16    -1.020      19895.2
+                  LOW / 1.120E+22    -2.340      19243.8 /
+                 TROE / 0.847  2733.4  64.5  3468.9 /
+H2/2.00/ H2O/12.0/ CO/2.60/ CO2/3.00/
+AR/0.60/ CH4/3.00/ C2H6/4.50/ N2/1.00/ HE/0.80/ CH3OH /4.50/
+
+!!!!!! Klippenstein et al., Personnal communication, High level calculation
+!!!!!HCO+O2<=>CO+HO2         7.829E+10     0.521       -520.6
+
+! Hsu et al., Journal of Chemical Physics (1996), Vol. 105, pp. 2346-2352
+HCO+O2<=>CO+HO2         1.204E+10     0.807       -727.0
+
+! Friedrichs et al, Physical Chemistry and Chemical Physics (2002), Vol. 4, pp.5778-5788
+HCO+H<=>CO+H2           1.100E+14     0.000          0.0
+
+! Tsang and Hampson, Journal of Physical Chemical Reference Data (1986) Vol. 15, pp. 1087
+HCO+O<=>CO+OH           3.020E+13     0.000          0.0
+
+! Tsang and Hampson, Journal of Physical Chemical Reference Data (1986) Vol. 15, pp. 1087
+HCO+O<=>CO2+H           3.000E+13     0.000          0.0
+
+! Tsang and Hampson, Journal of Physical Chemical Reference Data (1986) Vol. 15, pp. 1087
+HCO+OH<=>CO+H2O         3.020E+13     0.000          0.0
+
+! Tsang and Hampson, Journal of Physical Chemical Reference Data (1986) Vol. 15, pp. 1087
+! Branching ratio of 1:1 applied
+HCO+HO2=>CO2+H+OH       1.500E+13     0.000          0.0
+HCO+HO2<=>CO+H2O2       1.500E+13     0.000          0.0
+
+! Baulch et al., Journal of Physical Chemical Reference Data (2005) Vol. 34, pp. 757-1397
+! Forgeteg et al. (International Journal of Chemical Kinetics (1979) Vol. 11, pp. 219-) suggested a branching ratio k1/k2 of ~2
+HCO+HCO<=>CH2O+CO       2.000E+13     0.000          0.0
+HCO+HCO=>H2+CO+CO       1.000E+13     0.000          0.0
+
+! Healy et al.
+H+CO2+M<=>OCHO+M        7.500E+13     0.000      29000.0
+AR/0.7/ H2/2.0/ H2O/6.0/ CH4/2.0/ CO/2.0/ CO2/3.0/ C2H6/3.0/
+CH3OCHO/3.0/ CH3OH/3.0/ KR/0.70/
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+! FORMALDEHYDE CH2O REACTION SET
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+! Vasudevan et al., Proceedings of the Combustion Institute (2007) Vol. 31, pp. 175-183
+CH2O+O2<=>HCO+HO2       5.080E+14     0.000      46297.0
+
+! The high pressure limit is from Troe, Journal of Physical Chemistry A (2005) Vol. 109, pp. 8320-8328
+! The low pressure limit is from Troe, Journal of Physical Chemistry A (2007) Vol. 111, pp. 3862-3867
+! The rate constants published by Troe are for Argon as a bath gas.
+! The pre-exponential factor has been scaled by 1.15 in order to set Nitrogen as the bath gas.
+! The Collision efficicency are taken From Li et al., Int. J. Chem. Kin. (2007) Vol. 37, pp. 109-136
+CH2O(+M)<=>CO+H2(+M)    4.255E+13     0.000      71976.4
+LOW / 5.055E+38   -6.100      93995.0 /
+H2/2.50/ H2O/12.0/ AR/0.87/ CO/1.90/ CO2/3.80/
+CH4/2.00/ C2H6/3.00/ KR/0.70/
+
+! The high pressure limit is from Troe, Journal of Physical Chemistry A (2005) Vol. 109, pp. 8320-8328
+! The low pressure limit is from Troe, Journal of Physical Chemistry A (2007) Vol. 111, pp. 3862-3867
+! The rate constants published by Troe are for Argon as a bath gas.
+! The pre-exponential factor has been scaled by 1.15 in order to set Nitrogen as the bath gas.
+! The Collision efficicency are taken From Li et al., Int. J. Chem. Kin. (2007) Vol. 37, pp. 109-136
+CH2O(+M)<=>HCO+H(+M)    9.195E+15     0.000      87734.0
+LOW / 1.454E+36   -5.500      93995.0 /
+H2/2.50/ H2O/12.0/ AR/0.87/ CO/1.90/ CO2/3.80/
+CH4/2.00/ C2H6/3.00/ KR/0.70/
+
+! Vasudevan et al., International Journal of Chemical Kinetic (2005) Vol. 37, pp. 98-
+CH2O+OH<=>HCO+H2O       7.82E+07     1.63    -1055. ! Vasudevan et al., Int. J. Chem. Kinet.,37: 98 (2005)
+
+! Irdam et al., International Journal of Chemical Kinetic (1993) Vol. 25, pp. 285-303
+! Friedrichs et al. (International Journal of Chemical Kinetic (2002) Vol.34, pp. 374-) confirmed this number
+CH2O+H<=>HCO+H2         5.741E+07     1.900       2742.0
+
+! Baulch et al., Journal of Physical Chemical Reference Data (1992) Vol.21, pp. 411-429
+CH2O+O<=>HCO+OH         4.155E+11     0.570       2762.2
+
+! Baulch et al., Journal of Physical Chemical Reference Data (2005) Vol. 34, pp. 757-1397
+CH2O+CH3<=>HCO+CH4      3.190E+01     3.360       4312.0
+
+! Baulch et al., Journal of Physical Chemical Reference Data (2005) Vol. 34, pp. 757-1397
+CH2O+HO2<=>HCO+H2O2     4.095E+04     2.500      10214.0
+
+! Xu et al., International Journal of Chemical Kinetic (2006) Vol. 38, pp. 322-326
+CH2O+OH<=>HOCH2O            6.308E+06    1.630    4284.0
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+! HCOH RADICAL REACTION SET
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+! Estimation
+HCOH+OH=>CO2+H2+H           3.00E+13     0.000       0.0
+HCOH+H<=>HCO+H2             3.00E+13     0.000       0.0
+HCOH+H<=>CH2O+H             3.00E+13     0.000       0.0
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+! METHOXY RADICAL CH3O REACTION SET
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+! The rate constant has been calculated by Stephen Klippenstein
+! Troe fitting valid between 400 and 2000 K, 0.001 and 100 atm
+! The Chaperon efficiency for Argon is derived from fitting of the Master-Equation results
+CH3O(+M)<=>H+CH2O(+M)                  1.320E+16   -0.588    26772.1
+LOW  / 1.326E+25   -2.981    22465.4 /
+TROE / 0.1698 1.00E-09  807456.9  7029.4 /
+H2/2.00/ H2O/6.00/ CO/1.50/ CO2/2.00/ CH4/2.00/
+AR/0.663/ C2H6/3.00/ N2/1.00/ KR/0.70/
+
+! Wantuck et al., Journal of Physical Chemistry (1987) Vol. 91, pp. 4653-4655
+CH3O+O2<=>CH2O+HO2      9.033E+13     0.000      11978.8
+  DUPLICATE
+CH3O+O2<=>CH2O+HO2      2.168E+10     0.000       1748.7
+  DUPLICATE
+
+! Xu et al., Molecular Physics (2007) Vol. 105, pp. 2763-2776
+CH3O+H<=>CH2O+H2        3.500E+08     1.601       -708.6
+Duplicate
+CH3O+H<=>CH2O+H2        3.320E+03     2.316      -1815.2
+Duplicate
+
+! Xu et al., Molecular Physics (2007) Vol. 105, pp. 2763-2776
+CH3O+H<=>CH2(S)+H2O     3.280E+12     0.088       -152.6
+
+! Mousavipour and Homayoon, Journal of Physical Chemistry A (2011) Vol. 115, pp. 3291–3300
+! There are three channels producing the set of products CH2O + H2O2
+! The first rate constant is the sum of the two first channels (involving the intermediate product)
+CH3O+HO2<=>CH2O+H2O2    1.420E+04     1.506       6295.3
+Duplicate
+CH3O+HO2<=>CH2O+H2O2    7.566E-23    10.670      25357.9
+Duplicate
+
+! Baulch et al., Journal of Physical Chemical Reference Data (2005) Vol. 34, pp. 757-1397
+CH3O+O<=>CH2O+OH                 3.764E+12     0.000          0.0
+
+! Tsang and Hampson, Journal of Physical Chemical Reference Data (1986) Vol. 15, pp. 1087
+CH3O+OH<=>CH2O+H2O               1.810E+13     0.000          0.0
+
+! Tsang and Hampson, Journal of Physical Chemical Reference Data (1986) Vol. 15, pp. 1087
+CH3O+CO<=>CH3+CO2                1.570E+13     0.000      11804.0
+
+! Tsang, Journal of Physical Chemical Reference Data (1987) Vol. 16, pp. 471-508
+CH3O+CH3O<=>CH3OH+CH2O           6.000E+13    0.000        0.0
+
+! Tsang, Journal of Physical Chemical Reference Data (1987) Vol. 16, pp. 471-508
+! rate similar as the rate of the reaction CH3O+CH3CO<=>CH3CHO+CH2O
+CH3O+HCO<=>CH2O+CH2O             6.030E+12    0.000        0.0
+
+! Tsang, Journal of Physical Chemical Reference Data (1987) Vol. 16, pp. 471-508
+CH3O+HCO<=>CH3OH+CO              9.040E+13    0.000        0.0
+
+! Tsang and Hampson, Journal of Physical Chemical Reference Data (1986) Vol. 15, pp. 1087
+CH3O+CH2<=>CH2O+CH3              1.810E+13    0.000        0.0
+
+! Tsang and Hampson, Journal of Physical Chemical Reference Data (1986) Vol. 15, pp. 1087
+CH3O+CH3<=>CH2O+CH4              2.410E+13    0.000        0.0
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+! HYDROXYMETHYL RADICAL CH2OH REACTION SET
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+! This study
+
+! The rate constant has been calculated by Stephen Klippenstein
+! Troe fitting valid between 400 and 2000 K, 0.001 and 100 atm
+! The Chaperon efficiency for Argon is derived from fitting of the Master-Equation results
+CH2OH(+M)<=>H+CH2O(+M)                 1.211E-02    4.680    32592.0
+LOW  / 1.924E+29   -4.037    33697.4 /
+TROE / 0.1680 1.0E-09  3619.5  10985.0 /
+H2/2.0/ H2O/6.0/ CO/1.5/ CO2/2.0/ CH4/2.0/ AR/0.665/ C2H6/3.0/ N2/1.0/
+KR/0.70/ CH3OH/3.0/
+
+! The rate constant has been calculated by Stephen Klippenstein
+! Troe fitting valid between 300 and 2000 K, 0.001 and 100 atm
+! The rate constant below is for Nitrogen as the bath gas
+CH2OH<=>CH3O                           3.797E+22   -4.681    35559.6
+PLOG /    0.001       1.158E+18   -4.592    36016.8 /
+PLOG /    0.010       3.810E+19   -4.628    35229.3 /
+PLOG /    0.100       2.870E+21   -4.771    35111.7 /
+PLOG /    1.000       3.797E+22   -4.681    35559.6 /
+PLOG /    5.000       9.756E+22   -4.499    36133.6 /
+PLOG /   10.000       1.449E+23   -4.416    36465.8 /
+PLOG /   50.000       2.935E+23   -4.199    37365.2 /
+PLOG /  100.000       2.423E+23   -4.046    37725.5 /
+
+
+! Shocker et al., Journal of Physical Chemistry A (2007) Vol. 111, pp. 6622–6627
+! This rate is a personnal fitting. I used the low temperature (250-550 K)rate constants determined 
+! by Shocker et al. (Journal of Physical Chemistry A (2007) Vol. 111, pp. 6622–6627),
+! In the high temperature range (550-2500 K), the rate constant of the HCO+O2<=>CO+HO2 reaction (Hsu and Mebel)
+! have been scaled by a factor of 1.3 (this factor was chosen to have continuity between the two sets at 550 K). Finally, a non-Ahrenius fitting was performed.
+CH2OH+O2<=>CH2O+HO2     8.130E+09     0.890       -866.1
+
+! Seetula et al., Chemical Physics Letters (1994) Vol. 224, pp. 533-538
+! Temperature range is 300-508 K
+CH2OH+O<=>CH2O+OH       6.564E+13     0.000       -693.2
+
+! Xu et al., Molecular Physics (2007) Vol. 105, pp. 2763-2776
+CH2OH+H<=>CH2O+H2       3.810E+06     1.870       134.0
+Duplicate
+
+! Xu et al., Molecular Physics (2007) Vol. 105, pp. 2763-2776
+! Chemically activated route
+CH2OH+H<=>CH2O+H2       6.840E+03     2.281     -1394.9
+Duplicate
+
+! Xu et al., Molecular Physics (2007) Vol. 105, pp. 2763-2776
+CH2OH+H<=>CH2(S)+H2O    9.020E+09     0.870      -785.9
+
+! Xu et al., Molecular Physics (2007) Vol. 105, pp. 2763-2776
+CH2OH+H<=>CH3O+H        2.460E+07     1.595      7194.1
+
+! Mousavipour and Homayoon, Journal of Physical Chemistry A (2011) Vol. 115, pp. 3291–3300
+! There are two channels producing the set of products CH2O + H2O2
+! The present rate constant is the sum of the two channels
+CH2OH+HO2<=>CH2O+H2O2      1.222E+12      0.257       -689.4
+
+! Friedrichs et al., Int. J. Chem. Kin. (2004) Vol. 36, pp. 157-169
+CH2OH+HCO<=>CH2O+CH2O   1.500E+13     0.000         0.0
+CH2OH+HCO<=>CH3OH+CO    1.200E+13     0.000         0.0
+
+! Tsang, Journal of Physical Chemical Reference Data (1987) Vol. 16, pp. 471-508
+CH2OH+CH3O<=>CH2O+CH3OH 2.400E+13     0.000         0.0
+
+! Tsang, Journal of Physical Chemical Reference Data (1987) Vol. 16, pp. 471-508
+CH2OH+OH<=>H2O+CH2O     2.40E+13      0.000         0.0
+
+! Baulch et al., Journal of Physical Chemical Reference Data (2005) Vol. 34, pp. 757-1397
+CH2OH+CH2OH<=>CH2O+CH3OH 9.033E+12    0.000         0.0
+
+! Mousavipour and Homayoon, Journal of Physical Chemistry A (2011) Vol. 115, pp. 3291–3300
+CH2OH+HO2<=>HOCHO+H2O     3.600E+12   0.120   454.1
+
+! Tsang, Journal of Physical Chemical Reference Data (1987) Vol. 16, pp. 471-508
+CH2OH+CH2<=>OH+C2H4       2.410E+13     0.000         0.0
+
+! Tsang and Hampson, Journal of Physical Chemical Reference Data (1986) Vol. 15, pp. 1087
+! Scaled by 10
+CH2OH+CH2<=>CH2O+CH3              1.210E+13     0.000          0.0
+
+! Tsang and Hampson, Journal of Physical Chemical Reference Data (1986) Vol. 15, pp. 1087
+CH2OH+CH3<=>CH2O+CH4              2.410E+12     0.000          0.0
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+! METHANOL CH3OH REACTION SET
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+! Jasper et al., Journal of Physical Chemistry A (2007) Vol. 111, pp. 3932-3950
+! The Troe expression of Jasper has been fitted to follow the Troe format used in Chemkin
+! The low pressure limit has been scaled by 1.42=1/0.70 (2.652E+52 x 1.42 = 3.766E+52) to set N2 as the bath gas
+! The efficiency coefficients are taken from Li et al., 
+
+! Jasper Paper
+CH3OH(+M)<=>CH3+OH(+M)                            2.084E+18    -0.615   92549.9
+LOW/ 3.789E+52   -9.547  105313.1 /
+TROE/ 0.250  956.7  4213.7  9443.3 /
+AR/0.70/ H2/2.00/ H2O/6.00/ CH4/2.00/ CO/1.50/ CO2/2.00/ C2H6/3.00/
+CH3OH/3.0/ KR/0.70/
+
+! Jasper Paper
+CH3OH(+M)<=>CH2(S)+H2O(+M)                        5.246E+18    -1.135   91160.8
+LOW/ 2.308E+50    -9.145  99105.9 /
+TROE/  0.539  1538.8  3.4  13918.0 /
+AR/0.70/ H2/2.00/ H2O/6.00/ CH4/2.00/ CO/1.50/ CO2/2.00/ C2H6/3.00/
+CH3OH/3.0/ KR/0.70/
+
+! Jasper Paper
+! The present fitting is valid for pressures between 100 and 1000000 torr
+! and temperatures between 750 and 3000 K
+CH3OH(+M)<=>CH2O+H2(+M)                           1.660E+12     0.199   89678.5
+LOW/ 6.190E+25    -2.750  84971.1 /
+TROE/  0.014  737.2  740.2  206499.5 /
+AR/0.70/ H2/2.00/ H2O/6.00/ CH4/2.00/ CO/1.50/ CO2/2.00/ C2H6/3.00/
+CH3OH/3.0/ KR/0.70/
+
+! Jasper Paper
+! The present fitting is valid for pressures above 100 torr
+! and temperatures between 750 and 3000 K
+CH3OH(+M)<=>HCOH+H2(+M)                           2.917E+07     1.950   85035.0
+LOW/ 7.786E+37    -5.994  86236.9 /
+TROE/  0.686  1718.3  153.9  499615.0 /
+AR/0.70/ H2/2.00/ H2O/6.00/ CH4/2.00/ CO/1.50/ CO2/2.00/ C2H6/3.00/
+CH3OH/3.0/ KR/0.70/
+
+! Jasper paper, Bath gas is Argon
+! The present fitting is valid betweem 750 and 3000 K
+CH3OH<=>CH2OH+H                        4.089E+44   -9.428   107414.2 ! 1 atmosphere rate constant
+PLOG /     0.000132      3.110E+34   -7.944   111085.7 /
+PLOG /     0.001320      1.110E+37   -8.323   109174.3 /
+PLOG /     0.013200      6.733E+38   -8.510   107101.1 /
+PLOG /     0.132000      4.959E+41   -8.969   105978.8 /
+PLOG /     1.320000      4.086E+44   -9.382   107251.7 /
+PLOG /    13.200000      4.080E+45   -9.263   109268.3 /
+PLOG /   132.000000      7.717E+43   -8.419   110568.1 /
+PLOG / 13200.000000      1.638E+29   -3.838   105074.8 /
+
+
+! Jasper paper, Bath gas is Argon
+! The present fitting is valid betweem 750 and 3000 K
+CH3OH<=>CH3O+H                         3.068E+34   -7.332   116789.8 ! 1 atmosphere rate constant
+PLOG /     0.000132      9.241E+28   -7.012   134030.3 /
+PLOG /     0.001320      9.218E+28   -6.689   130040.2 /
+PLOG /     0.013200      2.179E+30   -6.772   127194.7 /
+PLOG /     0.132000      3.517E+31   -6.819   121849.3 /
+PLOG /     1.320000      3.053E+34   -7.292   115732.5 /
+PLOG /    13.200000      2.060E+39   -8.158   114301.0 /
+PLOG /   132.000000      3.311E+42   -8.531   117206.4 /
+PLOG / 13200.000000      5.484E+39   -6.946   123154.3 /
+
+!!CH3OH(+M)<=>CH2OH+H(+M)                  6.399E+17    -0.449  100121.8
+!!LOW/ 7.858E+27    -3.403  89940.3 /
+!!AR/0.70/ H2/2.00/ H2O/6.00/ CH4/2.00/ CO/1.50/ CO2/2.00/ C2H6/3.00/
+!!CH3OH/3.0/ KR/0.70/
+!!
+!!CH3OH(+M)<=>CH3O+H(+M)                   4.202E+15    -0.052  106890.2
+!!LOW/ 1.257E+29    -4.346 116810.6 /
+!!AR/0.70/ H2/2.00/ H2O/6.00/ CH4/2.00/ CO/1.50/ CO2/2.00/ C2H6/3.00/
+!!CH3OH/3.0/ KR/0.70/
+
+
+! Moses et al. (Klippenstein), The Astrophysical Journal (2011) Vol. 737, Paper 15.
+! QCISD(T)/CBS//QCISD(T)/cc-pVTZ calculations were performed with the spin-restricted formalism
+CH3OH+H<=>CH2OH+H2               6.564E+04    2.728     4451.3 
+CH3OH+H<=>CH3O+H2                4.107E+04    2.658     9226.6
+
+! Lu et al., Journal of Chemical Physics (2005) Vol. 122, Paper No. 244314
+! The overall rate constant was determined to be 1.650E+06 x T^2.25 x exp(-2980.8/RT)
+! The branching ratio k(CH2OH)/ktotal was set to 0.99 at 300K, 0.95 at 1000K, and 0.90 at 2000K, and a 3-parameter fitting was applied.
+CH3OH+O<=>CH2OH+OH                3.332E+06    2.146     3050.3
+CH3OH+O<=>CH3O+OH                 4.322E+02    3.050     3528.5
+
+
+! Srinivasan et al., Journal of Physical Chemistry A (2007) Vol. 111, pp. 3951-3958
+! The branching ratios is assumed to be temperature independent and set to be 85/15 CH2OH/CH3O
+CH3OH+OH<=>CH2OH+H2O             1.504E+08    1.440      113.0
+CH3OH+OH<=>CH3O+H2O              2.783E+07    1.440      113.0
+
+! Skodje et al., Journal of Physical Chemistry A (2010) Vol. 114, pp. 8286-8301
+CH3OH+O2<=>CH2OH+HO2             3.580E+05    2.270    42736.0
+
+! The reaction of methanol with the hydroperoxy radical to generate the hydroxymethyl radical is the most sensitive reaction
+! in the methanol subset at the temperatures typically used in flow reactors.
+! Li et al. estimated a rate of 3.98 x 1E+13 x EXP(-19400/RT) by fitting the flow reactor data.
+! Altarawneh et al. ( Journal of Computational Chemistry A (2011) Vol. 32, pp. ) computed
+! a rate of 3.26 x 1E+13 x EXP(-18282/RT), while Skodje et al (Journnal of  Physical Chemistry A (2010) Vol. 114, pp. 8286-8301)
+! published a rate equal to 2.28 x 1E-05 x T^5.06 x EXP(-10214/RT).
+! The rate constant proposed by Skodje et al. is much smaller than the Li et al. rate
+! Rate constants calculated by Alecu and Truhlar are herein adopted. They are of intermediate value between those of Li et al. and Skodje et al.
+! They have been fitted in a double non-Arrenius expression between 150 and 3000 K.
+! Alecu and Truhlar, Journal of Physical Chemistry A (2011) Vol. 115, pp. 14599-14611
+CH3OH+HO2<=>CH3O+H2O2            2.368E+02    3.204    20558.3
+duplicate
+CH3OH+HO2<=>CH3O+H2O2            1.210E-02    4.157    16677.5
+duplicate
+
+CH3OH+HO2<=>CH2OH+H2O2           2.404E-01    4.086    12842.3
+duplicate
+CH3OH+HO2<=>CH2OH+H2O2           6.977E-10    6.172     7030.3
+duplicate
+
+! Alecu and Truhlar, Journal of Physical Chemistry A (2011) Vol. 115, pp. 14599-14611
+! Rate constants calculated by Alecu and Truhlar are herein adopted.
+! They have been fitted in a double non-Arrenius expression between 150 and 3000 K.
+CH3OH+CH3<=>CH2OH+CH4            7.490E+00    3.493     7808.5
+duplicate
+CH3OH+CH3<=>CH2OH+CH4            2.079E-12    6.622     1603.2
+duplicate
+
+CH3OH+CH3<=>CH3O+CH4             6.475E+03    2.338     8761.0
+duplicate
+CH3OH+CH3<=>CH3O+CH4             8.513E-09    5.089     2844.2
+duplicate
+
+! Tsang, Journal of Physical Chemical Reference Data (1987) Vol. 16, pp. 471-508
+CH3OH+CH2<=>CH3+CH3O             1.443E+01    3.100     6935.0
+CH3OH+CH2<=>CH3+CH2OH            3.192E+01    3.200     7174.0
+
+! Johnson et al., Physical Chemistry Chemical Physics (2000) Vol. 2, pp. 2549-2553
+! Assuming a branching ratio k(CH2OH)/k equal to 95%
+CH3OH+CH<=>CH2+CH3O              4.522E+17   -1.930        0.0
+CH3OH+CH<=>CH2+CH2OH             8.592E+18   -1.930        0.0
+
+! Tsang, Journal of Physical Chemical Reference Data (1987) Vol. 16, pp. 471-508
+CH3OH+CH3O<=>CH2OH+CH3OH         3.010E+11    0.000     4074.1
+
+! Tsang, Journal of Physical Chemical Reference Data (1987) Vol. 16, pp. 471-508
+CH3OH+HCO<=>CH2OH+CH2O           9.690E+03    2.900    13116.0
+
+! Estimated to be 10% of the CH3OH+HCO<=>CH2OH+CH2O channel
+CH3OH+HCO<=>CH3O+CH2O            9.690E+02    2.900    13116.0
+
+! Moses et al. (Klippenstein), The Astrophysical Journal (2011) Vol. 737, Paper 15.
+! QCISD(T)/CBS//QCISD(T)/cc-pVTZ calculations were performed with the spin-restricted formalism
+CH3OH+H<=>CH3+H2O                2.957E+05    2.485    20627.0 
+
+! Estimation
+CH3OH+CH2(S)<=>C2H4+H2O             1.000E+13    0.000        0.0
+CH3OH+CH2(S)<=>CH3+CH2OH            1.000E+14    0.000        0.0
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+! FORMIC ACID HOCHO REACTION SET
+! LI ET AL. , HEALY ET AL.
+! 
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+! Veyret et al., Int, J. Chem. Kin. (1984) Vol. 16, pp. 1599-1608
+HOCH2O<=>HOCHO+H            1.000E+14    0.000   14900.0
+
+! The decomposition reactions of Formic Acid HOCHO have been treated with a Quantum RRK treatment.
+
+! High Pressure Limit: Chang et al., J. Phys. Chem. A (2007) Vol. 111, pp. 6789-6797
+HOCHO(+M)<=>CO+H2O(+M)      7.490E+14    0.000   68710.0
+LOW / 7.509E+35   -5.141   75378.6 /
+TROE / 0.658  3.9995E+06  18.20  6.2394E+10 /
+AR/0.7/ H2/2.0/ H2O/6.0/ CH4/2.0/ CO/2.0/ CO2/3.0/ C2H6/3.0/
+CH3OCHO/3.0/ CH3OH/3.0/ KR/0.70/
+
+! High Pressure Limit: Chang et al., J. Phys. Chem. A (2007) Vol. 111, pp. 6789-6797
+HOCHO(+M)<=>CO2+H2(+M)      4.460E+13    0.000   68240.0
+LOW / 3.794E+36   -5.599   73824.6 /
+TROE / 0.832  6.3888E+07  15.60  5.1116E+10 /
+AR/0.7/ H2/2.0/ H2O/6.0/ CH4/2.0/ CO/2.0/ CO2/3.0/ C2H6/3.0/
+CH3OCHO/3.0/ CH3OH/3.0/ KR/0.70/
+
+
+! High pressure limit of the reverse rate constant is taken equal to that of CH3+OH=CH3OH (Jasper 2007)
+HOCHO(+M)<=>OH+HCO(+M)    3.567E+17  -0.028  109028.2
+! REV / 6.300E+13  -0.020 -33.2 /
+LOW / 7.283E+27  -2.760  113470.0 /
+AR/0.7/ H2/2.0/ H2O/6.0/ CH4/2.0/ CO/2.0/ CO2/3.0/ C2H6/3.0/
+CH3OCHO/3.0/ CH3OH/3.0/ KR/0.70/
+
+
+HOCHO(+M)<=>H+OCHO(+M)    6.887E+11  1.336  111370.0
+! REV / 1.000E+14   0.000   0.0 /
+LOW / 4.450E+21  -1.300  115140.0 /
+AR/0.7/ H2/2.0/ H2O/6.0/ CH4/2.0/ CO/2.0/ CO2/3.0/ C2H6/3.0/
+CH3OCHO/3.0/ CH3OH/3.0/ KR/0.70/
+
+HOCHO(+M)<=>H+HOCO(+M)    2.070E+13  0.767  109028.2
+! REV / 1.000E+14   0.000   0.0 /
+LOW / 3.827E+22  -1.550  101790.0 /
+AR/0.7/ H2/2.0/ H2O/6.0/ CH4/2.0/ CO/2.0/ CO2/3.0/ C2H6/3.0/
+CH3OCHO/3.0/ CH3OH/3.0/ KR/0.70/
+
+! Galano et al., J. Phys. Chem. A (2002) Vol. 106, pp. 9520-9528
+HOCHO+OH<=>H2O+OCHO                 1.370E+10   0.000  -1562.0
+HOCHO+OH<=>H2O+HOCO                 5.932E+11   0.000   2059.0
+
+! Healy et al.
+HOCHO+HO2<=>OCHO+H2O2               2.549E+12   0.040  34470.0
+HOCHO+HO2<=>HOCO+H2O2               1.000E+12   0.000  11920.0
+
+! Healy et al.
+HOCHO+O<=>HOCO+OH                   1.770E+18  -1.900   2975.0
+
+! Healy et al.
+HOCHO+H<=>OCHO+H2                   4.240E+06   2.100   4868.0
+HOCHO+H<=>HOCO+H2                   6.030E+13  -0.350   2988.0
+
+! Healy et al.
+HOCHO+CH3<=>HOCO+CH4                3.900E-07   5.800   2200.0
+
+
+! Healy et al.
+HOCHO+HCO<=>CH2O+OCHO               8.584E+11   0.040  26750.0
+HOCHO+O2<=>OCHO+HO2                 4.101E+12  -0.308  59880.0
+
+
+! Golden et al., J. Phys. Chem. A (1998) Vol. 102, pp. 8598-8606
+! Troe factor adapted from the paper to the Chemkin format
+HOCO(+M)<=>OH+CO(+M)                1.186E+14   0.132  36463.0
+LOW / 1.371E+25  -2.396  37483.0 /
+TROE / 0.500  1120.4  1120.4  1720.3 /
+AR/0.7/ H2/2.0/ H2O/6.0/ CH4/2.0/ CO/2.0/ CO2/3.0/ C2H6/3.0/
+CH3OCHO/3.0/ CH3OH/3.0/ KR/0.70/
+
+! Golden et al., J. Phys. Chem. A (1998) Vol. 102, pp. 8598-8606
+! Troe factor adapted from the paper to the Chemkin format
+HOCO(+M)<=>H+CO2(+M)                8.222E+11   0.413  35338.4
+LOW / 5.957E+26  -3.148  37019.6 /
+TROE / 0.445  819.8  822.8  5290.4 /
+AR/0.7/ H2/2.0/ H2O/6.0/ CH4/2.0/ CO/2.0/ CO2/3.0/ C2H6/3.0/
+CH3OCHO/3.0/ CH3OH/3.0/ KR/0.70/
+
+! Yu et al., Journal of Chemical Physics (2007) Vol. 127, Paper 094302
+! The paper include a table listing the rate constant for  five temperature in the range 200 - 1000 K.
+! The expression below is a personnal fitting.
+HOCO+O<=>CO2+OH                     5.688E+11  0.394  -255.7
+
+! Yu et al., Journal of Physical Chemistry A (2005) Vol. 109, pp. 5230-5236
+! The authors calculated the rate for five temparatures in the range 250-850 K,
+! and they derived a non-Arrhenius expression k(T) = (4.553 x 10^12 + 9.544 * 10^6 * T^2) * EXP(45.0/T)
+! I have fitted this expression in a classical modified Arrhenius expression.
+HOCO+OH<=>H2O+CO2                   2.909E+08  1.501  -840.7
+
+! Yu and Muckerman, Journal of Physical Chemistry A (2006) Vol. 110, pp. 5312-5316
+! The authors calculated the rate for nine temparatures in the range 200-800 K.
+! The expression below is a personnal fitting.
+HOCO+O2<=>HO2+CO2                   1.097E+10  0.873   127.8
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+! METHANE CH4 REACTION SET
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+CH3+H(+M)<=>CH4(+M)     2.120E+14     0.020        66.1
+                  LOW / 4.260E+35    -5.420      4315.0 /
+TROE / 0.728   2.52  2248.0  123000.0 /
+H2/3.0/ H2O/9.0/ CO/2.30/ CO2/4.0/ AR/1.0/ CH4/3.0/
+C2H6/4.0/ N2/1.50/ HE/1.0/ CH3OH/6.0/ CH3OCHO/6.0/ O2/1.5/
+
+!! Jasper et al. 2011
+!! Rate constant is for Argon
+!CH3+H(+M)<=>CH4(+M)     6.930E+13     0.180         0.0
+!                  LOW / 3.790E+39    -6.564      6744.0 /
+!TROE / 0.700  456.1  10063.0  1.100E+10 /
+!H2/4.00/ H2O/9.00/ CO/1.40/ CO2/4.00/ AR/1.00/ CH4/4.00/
+!C2H6/4.50/ N2/1.40/ HE/2.00/ CH3OH/6.00/
+
+  
+! Sutherland et al., International Journal of Chemical Kinetics (2001) Vol. 33, pp. 669-684
+! Valid between 348 and 1950 K
+CH4+H<=>CH3+H2          4.083E+03     3.156      8755.6
+
+! Srinivasan et al., Journal of Physical Chemistry A (2005) Vol. 109, pp. 1857-1863
+CH4+OH<=>CH3+H2O        1.000E+06     2.180      2446.0
+
+! Baulch et al., Journal of Physical Chemical Reference Data (2005) Vol. 34, pp. 757-1397
+CH4+O<=>CH3+OH          4.396E+05     2.500      6577.6
+
+! Aguilera-Iparraguirre., Journal of Physical Chemistry A (2008) Vol. 112, pp. 7047-7054
+CH4+HO2<=>CH3+H2O2      1.120E+01     3.740     21009.7
+
+! Bohland et al., Berichte der Bunsengesellschaft für Physikalische Chemie (1985) Vol. 89, pp. 1110-1116
+CH4+CH2<=>CH3+CH3       2.460E+06     2.000      8270.0
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+! METHYL RADICAL CH3 REACTION SET
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+! Jasper et al., Journal of Physical Chemistry A (2007) Vol. 111, pp. 3932-3950
+CH3+OH<=>CH2(S)+H2O          4.283E+15       -0.860     1887.5
+PLOG /    0.001316     1.132E+14       -0.458     -496.2 /
+PLOG /    0.013158     2.234E+14       -0.538     -220.4 /
+PLOG /    0.131579     1.160E+15       -0.727      600.5 /
+PLOG /    1.315789     4.283E+15       -0.860     1887.5 /
+PLOG /   13.157895     4.385E+14       -0.539     2931.7 /
+PLOG /  131.578947     6.091E+10        0.596     2922.8 /
+
+CH3+OH<=>H2+CH2O            3.555E+12       -0.532     2042.3
+PLOG /    0.001316     3.887E+09        0.254    -1220.7 /
+PLOG /    0.013158     1.988E+10        0.060     -624.4 /
+PLOG /    0.131579     2.815E+11       -0.250      498.3 /
+PLOG /    1.315789     3.555E+12       -0.532     2042.3 /
+PLOG /   13.157895     2.192E+12       -0.432     3415.4 /
+PLOG /  131.578947     2.360E+09        0.453     3791.0 /
+
+CH3+OH<=>H+CH2OH            1.006E+10        0.942     3295.0
+PLOG /    0.001316     8.442E+09        0.963     3230.4 /
+PLOG /    0.013158     8.442E+09        0.963     3230.4 /
+PLOG /    0.131579     1.006E+10        0.942     3295.0 /
+PLOG /    1.315789     5.601E+10        0.740     3971.0 /
+PLOG /   13.157895     5.531E+11        0.486     5443.5 /
+PLOG /  131.578947     2.525E+10        0.909     6402.1 /
+
+CH3+OH<=>H+CH3O             7.926E+08        1.065    11859.0
+PLOG /    0.001316     7.893E+08        1.065    11858.5 /
+PLOG /    0.013158     7.893E+08        1.065    11858.5 /
+PLOG /    0.131579     7.893E+08        1.065    11858.5 /
+PLOG /    1.315789     7.926E+08        1.065    11859.0 /
+PLOG /   13.157895     1.029E+11        1.034    11969.8/
+PLOG /  131.578947     3.073E+11        0.922    12980.5 /
+
+CH3+OH<=>H2+HCOH            6.533E+11        0.112      931.9
+PLOG /    0.001316     1.210E+09        0.830    -2322.5 /
+PLOG /    0.013158     6.397E+09        0.633    -1700.9 /
+PLOG /    0.131579     8.000E+10        0.340     -564.6 /
+PLOG /    1.315789     6.533E+11        0.112      931.9 /
+PLOG /   13.157895     2.064E+11        0.295     2199.8 /
+PLOG /  131.578947     9.402E+07        1.286     2423.8 /
+
+
+! Jasper et al., Journal of Physical Chemistry A (2007) Vol. 111, pp. 3932-3950
+CH3+OH<=>CH2+H2O        4.293E+04     2.568      3998.2
+
+! Jasper et al., Proceeding of the Combustion Institute (2007) Vol. 32, pp. 279-286
+CH3+HO2<=>CH3O+OH       1.000E+12     0.269      -687.5
+
+! Jasper et al., Proceeding of the Combustion Institute (2007) Vol. 32, pp. 279-286
+CH3+HO2<=>CH4+O2        1.155E+05     2.228     -3022.5
+
+! Baulch et al., Journal of Physical Chemical Reference Data (2005) Vol. 34, pp. 757-1397
+CH3+O<=>CH2O+H          6.745E+13     0.000         0.0
+
+! Baulch et al., Journal of Physical Chemical Reference Data (2005) Vol. 34, pp. 757-1397
+CH3+O=>CO+H2+H          1.686E+13     0.000         0.0
+
+! Srinivasan et al., Journal of Physical Chemistry A (2005) Vol. 109, pp. 7902-7914
+CH3+O2<=>CH3O+O         7.546E+12     0.000     28320.0
+
+! Srinivasan et al., Journal of Physical Chemistry A (2007) Vol. 111, pp. 11589-11591
+CH3+O2<=>CH2O+OH        6.383E+11     0.000     13594.0
+
+! Harding et al., Physical Chemistry Chemical Physics (2007) Vol. 9, pp. 4055-4070
+HCO+CH3<=>CH4+CO        6.310E+16    -1.230        500.0
+
+! Miller and Bowman, Progress in Energy and Combustion Sciences (1989) Vol. 15, pp. 287-338
+CH3+CH<=>H+C2H3         3.000E+13     0.000          0.0
+
+! GRI-Mech 3.0 http://www.me.berkeley.edu/gri_mech/
+CH3+CH2(S)<=>H+C2H4     1.200E+13     0.000       -570.0
+
+! Jasper et al., Journal of Physical Chemistry A (2007) Vol. 111, pp. 8699-8707
+CH3+CH2<=>H+C2H4        1.200E+15    -0.343        153.1
+
+! Lim and Michael, Symposium International on Combustion, 1994, Vol. 25, pp. 713-719
+! Nitrogen set as the bath gas
+! Efficiencies taken from GRI-Mech 3.0 http://www.me.berkeley.edu/gri_mech/
+CH3+M=>CH2+H+M          4.030E+15     0.000      84468.0
+H2/2.0/ H2O/6.0/ CH4/3.0/ CO/1.5/ CO2/2.0/ C2H6/3.0/
+AR/0.7/ HE/0.70/ KR/0.70/ CH3OH/3.0/ CH3OCHO/3.0/
+
+! Lim and Michael, Symposium International on Combustion, 1994, Vol. 25, pp. 713-719
+! Nitrogen set as the bath gas
+! Efficiencies taken from GRI-Mech 3.0 http://www.me.berkeley.edu/gri_mech/
+CH3+M=>CH+H2+M         3.569E+15     0.000      81046.0
+H2/2.0/ H2O/6.0/ CH4/3.0/ CO/1.5/ CO2/2.0/ C2H6/3.0/
+AR/0.7/ HE/0.70/ KR/0.70/ CH3OH/3.0/ CH3OCHO/3.0/
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+! METHYLPEROXY RADICAL CH3O2 REACTION SET
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+! Fernandez et al., Journal of Physical Chemistry A (2006) Vol. 110, pp. 4442-4449
+CH3+O2(+M)<=>CH3O2(+M)  7.812E+09     0.900         0.0
+                  LOW / 6.850E+24    -3.000         0.0 / 
+TROE / 0.6000 1000.0 70.0 1700.0 /
+H2/2.0/ H2O/6.0/ CH4/3.0/ CO/1.5/ CO2/2.0/ C2H6/3.0/
+AR/0.7/ HE/0.70/ KR/0.70/ CH3OH/3.0/ CH3OCHO/3.0/
+
+! Tsang and Hampson, Journal of Physical Chemical Reference Data (1986) Vol. 15, pp. 1087
+CH3O2+CH2O<=>CH3O2H+HCO 1.990E+12     0.000     11660.0
+
+! Tsang and Hampson, Journal of Physical Chemical Reference Data (1986) Vol. 15, pp. 1087
+CH4+CH3O2<=>CH3+CH3O2H       1.810E+11     0.000     18480.0
+
+! Tsang, Journal of Physical Chemical Reference Data (1987) Vol. 16, pp. 471-508
+CH3OH+CH3O2<=>CH2OH+CH3O2H   1.810E+12     0.000     13710.0
+
+! Keiffer et al., Journal of the Chemical Society, Faraday Transactions 2: Molecular and Chemical Physics (1988) Vol. 84, pp. 505-514
+CH3O2+CH3<=>CH3O+CH3O        5.080E+12     0.000     -1411.0
+
+! Lightfoot et al., Atmospheric Environment Part A (1992) Vol. 26, pp. 1805-1961
+CH3O2+HO2<=>CH3O2H+O2        2.470E+11     0.000     -1570.0
+
+! Baulch et al., Journal of Physical Chemical Reference Data (2005) Vol. 34, pp. 757-1397
+CH3O2+CH3O2=>CH2O+CH3OH+O2   5.118E+09    -0.105     -2544.5
+
+! Baulch et al., Journal of Physical Chemical Reference Data (2005) Vol. 34, pp. 757-1397
+CH3O2+CH3O2=>O2+CH3O+CH3O    1.257E+11    -0.097      -316.0
+
+! Tsang and Hampson, Journal of Physical Chemical Reference Data (1986) Vol. 15, pp. 1087
+CH3O2+H<=>CH3O+OH            9.600E+13     0.000         0.0
+
+! Tsang and Hampson, Journal of Physical Chemical Reference Data (1986) Vol. 15, pp. 1087
+CH3O2+O<=>CH3O+O2            3.600E+13     0.000         0.0
+
+! Tsang and Hampson, Journal of Physical Chemical Reference Data (1986) Vol. 15, pp. 1087
+CH3O2+OH<=>CH3OH+O2          6.000E+13     0.000         0.0
+
+! Lightfoot et al., Journal of the Chemical Society, Faraday Transactions (1991) Vol. 87, pp. 3213-3220
+CH3O2H<=>CH3O+OH             6.310E+14     0.000     42300.0
+
+! Tsang and Hampson, Journal of Physical Chemical Reference Data (1986) Vol. 15, pp. 1087
+H2+CH3O2<=>H+CH3O2H          1.500E+14     0.000     26030.0
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+! METHYLIDENE RADICALS CH2(S)/CH2 REACTION SET
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+! Triplet methylene
+
+! Kiefer and Kumaran, Journal of Physical Chemistry (1993) Vol. 97, pp. 414-420
+CH2+M=>C+H2+M                1.148E+14     0.000      55820.0
+H2/2.0/ H2O/6.0/ CH4/2.0/ CO/1.5/ CO2/2.0/ C2H6/3.0/ AR/0.7/  KR/0.70/ 
+
+! Lee et al., Journal of Physical Chemistry A (2012) Vol. 116, pp. 9245-9256
+! The overall rate constant is 1.650E+13 x EXP(-874/T)
+! Complex system with few experimental measurements
+! The branching ratio between all the different channels is not well established.
+! Blitz et al. (Z. Phys. Chem. (2011) Vol. 225, pp. 957–967) determined the following
+! branching ratios at 298 K : CO+OH+H 32%, CO2+H+H 23%, CO2+H2 21%, CH2O+O 18%, CO+H2O 6%
+! whereas Lee et al. determined at T about 1935 K the following
+! branching ratios: CO+OH+H and CO2+H+H 58%, O+CH2O 23%, CO2+H2 and CO+H2O 19%
+! Temperature dependence was derived from those two temperatures and applied to the overall rate constant.
+CH2+O2<=>CO+OH+H             5.673E+12     0.000       1779.2
+CH2+O2<=>CO2+H+H             3.991E+12     0.000       1766.6
+CH2+O2<=>CO2+H2              3.968E+12     0.000       1908.4
+CH2+O2<=>CH2O+O              2.328E+12     0.000       1501.3
+CH2+O2<=>CO+H2O              6.130E+11     0.000       1453.0
+
+! Baulch et al., Journal of Physical Chemical Reference Data (2005) Vol. 34, pp. 757-1397
+CH2+O=>CO+H+H                1.228E+14     0.000       536.5
+CH2+O<=>CO+H2                8.190E+13     0.000       536.5
+
+! Jasper et al., Journal of Physical Chemistry A (2007) Vol. 111, pp. 8699-8707
+CH2+OH<=>CH+H2O              8.630E+05     2.019      6776.0
+CH2+OH<=>CH2O+H              2.860E+13     0.123      -162.0
+
+! Lu et al.,  Journal of Physical Chemistry A (2010) Vol. 114, pp. 5493-5502
+CH2+H2<=>H+CH3               4.408E+05     2.300      7350.7
+
+! Tsang and Hampson, Journal of Physical Chemical Reference Data (1986) Vol. 15, pp. 1087
+CH2+HO2<=>OH+CH2O            2.000E+13     0.000         0.0
+
+! Wang et al., Theoretical Chemistry AcCOunts (2006) Vol. 115, pp. 205-211
+CH2+CH2O<=>CH3+HCO           7.407E-02     4.210      1623.9
+
+! Braun et al., Journal of Chemical Physics (1981) Vol. 56, pp. 355-
+CH2+CH<=>H+C2H2              4.000E+13     0.000         0.0
+
+! Jasper et al., Journal of Physical Chemistry A (2007) Vol. 111, pp. 8699-8707
+! The overall rate constant is 8.867E+13 x T^0.002 x EXP(-4.5/T)
+! The branching ratio between the two channels was caluclated as C2H2+2H/C2H2+H2 4/1
+CH2+CH2<=>C2H2+2H                        7.094E+13     0.002       8.9
+CH2+CH2<=>C2H2+H2                        1.773E+13     0.002       8.9
+
+! Tsang and Hampson, Journal of Physical Chemical Reference Data (1986) Vol. 15, pp. 1087
+CH2+CO2<=>CH2O+CO            2.350E+10     0.000         0.0
+
+! Ahren Jasper, Stephen J. Klippenstein and Laurence B. Harding
+! Rate constant calculated from theory at the XXXX level
+! Personnal communication
+CH2+H<=>CH+H2                1.205E+14     0.000         0.0
+
+! Singlet methylene
+
+! Baulch et al., Journal of Physical Chemical Reference Data (2005) Vol. 34, pp. 757-1397
+CH2(S)+HE<=>CH2+HE           6.624E+12     0.000       775.1
+CH2(S)+AR<=>CH2+AR           1.807E+10     0.930         0.0
+CH2(S)+N2<=>CH2+N2           1.204E+13     0.000       471.0
+CH2(S)+H2<=>CH2+H2           6.022E+12     0.000         0.0
+CH2(S)+O2<=>CH2+O2           3.131E+13     0.000         0.0
+CH2(S)+H2O<=>CH2+H2O         1.506E+13     0.000      -431.2
+CH2(S)+CO2<=>CH2+CO2         1.325E+13     0.000         0.0
+CH2(S)+CH4<=>CH2+CH4         1.867E+12     0.000      -496.8
+CH2(S)+C2H2<=>CH2+C2H2       6.624E+15    -0.900         0.0
+CH2(S)+C2H4<=>CH2+C2H4       1.144E+13     0.000      -556.4
+
+CH2(S)+M<=>CH2+M             1.200E+13     0.000         0.0
+HE/0.0/ AR/0.0/ N2/0.0/ H2/0.0/ O2/0.0/ H2O/0.0/ CO2/0.0/ CH4/0.0/
+C2H2/0.0/ C2H4/0.0/ CO/0.0/
+
+! GRI-Mech 3.0 http://www.me.berkeley.edu/gri_mech/
+CH2(S)+CO<=>CH2+CO           9.000E+12     0.000         0.0
+
+! GRI-Mech 3.0 http://www.me.berkeley.edu/gri_mech/
+CH2(S)+O2=>CO+OH+H           2.800E+13     0.000         0.0
+CH2(S)+O2=>CO+H2O            1.200E+13     0.000         0.0
+
+! Gannon et al., Journal of Physical Chemistry A (2008) Vol. 112, pp. 9575-9583
+CH2(S)+H2<=>CH3+H            6.311E+13     0.000         0.0
+
+! Baulch et al., Journal of Physical Chemical Reference Data (2005) Vol. 34, pp. 757-1397
+CH4+CH2(S)<=>CH3+CH3         1.867E+13     0.000      -496.8
+
+! Tsang and Hampson, Journal of Physical Chemical Reference Data (1986) Vol. 15, pp. 1087
+CH2(S)+H<=>CH+H2             3.000E+13     0.000         0.0
+
+! Tsang and Hampson, Journal of Physical Chemical Reference Data (1986) Vol. 15, pp. 1087
+CH2(S)+O<=>HCO+H             1.505E+13     0.000         0.0
+CH2(S)+O<=>CO+H2             1.505E+13     0.000         0.0
+
+! Tsang and Hampson, Journal of Physical Chemical Reference Data (1986) Vol. 15, pp. 1087
+CH2(S)+OH<=>CH2O+H           3.010E+13     0.000         0.0
+
+! Tsang and Hampson, Journal of Physical Chemical Reference Data (1986) Vol. 15, pp. 1087
+CH2(S)+HO2<=>CH2O+OH         3.010E+13     0.000         0.0
+
+! Tsang and Hampson, Journal of Physical Chemical Reference Data (1986) Vol. 15, pp. 1087
+CH2(S)+H2O2<=>CH3O+OH        3.010E+13     0.000         0.0
+
+! Tsang and Hampson, Journal of Physical Chemical Reference Data (1986) Vol. 15, pp. 1087
+CH2(S)+CO2<=>CH2O+CO         3.000E+12     0.000         0.0
+
+! GRI-Mech 3.0 http://www.me.berkeley.edu/gri_mech/
+CH2(S)+H2O<=>CH2O+H2         6.820E+10     0.250      -935.0
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!! METHYLIDINE RADICAL CH REACTION SET
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+! Baulch et al., Journal of Physical Chemical Reference Data (2005) Vol. 34, pp. 757-1397
+CH+H<=>C+H2                  1.200E+14     0.000         0.0
+
+! Baulch et al., Journal of Physical Chemical Reference Data (2005) Vol. 34, pp. 757-1397
+CH+O<=>CO+H                  3.974E+13     0.000         0.0
+
+! GRI-Mech 3.0 http://www.me.berkeley.edu/gri_mech/
+CH+OH<=>HCO+H                3.000E+13     0.000         0.0
+
+! Baulch et al., Journal of Physical Chemical Reference Data (2005) Vol. 34, pp. 757-1397
+CH+H2O<=>H+CH2O              4.577E+16    -1.420         0.0
+
+! Baulch et al., Journal of Physical Chemical Reference Data (2005) Vol. 34, pp. 757-1397
+CH+CO2<=>HCO+CO              6.383E+07     1.510      -715.4
+
+! Baulch et al., Journal of Physical Chemical Reference Data (2005) Vol. 34, pp. 757-1397
+CH+CH2O<=>H+CH2CO            9.635E+13     0.000      -516.7
+
+! Huang et al. (Journal of Physical Chemistry A (2002) Vol. 106, pp. 5490-5497) calculated the PES of the CH+O2 reactions. However, they only find the CO+OH and CO2+H channels.
+! Rohrig et al. reported an overall experimental rate constant of 1.00 x 10^14 cm^3.mol^-1.K^-1 for T btween 2200-2600K
+! Berman et al. (Symposium International on Combustion (1982) Vol. 19, pp. 73-) reported a rate of 3.25 x 10^13 cm^3.mol^-1.K^-1 for T between 300-700K
+! Taatjes (Journal of Physical Chemistry (1996) Vol. 100, pp. 17840-) reported a rate of 3.37 x 10^14 x T^-0.48 cm^3.mol^-1.K^-1 for T between 20-300K
+! I performed a fit on all these data point, and obtained the overall expression 3.3 x 10^10 x T^1.008 x EXP(489.9/RT) cm^3.mol^-1.K^-1
+! The branching ratio are taken for the ReCOmmendations of Baulch et al. (the CO+H+O path is included in the CO+OH channel)
+CH+O2<=>CO2+H                9.900E+09      1.008      -489.9
+CH+O2<=>CO+OH                6.600E+09      1.008      -489.9
+CH+O2<=>HCO+O                6.600E+09      1.008      -489.9
+CH+O2<=>CO+O+H               9.900E+09      1.008      -489.9
+
+! Baulch et al., Journal of Physical Chemical Reference Data (2005) Vol. 34, pp. 757-1397
+! Low pressure limit scaled by 1.40 to set N2 as the main bath gas
+CH+CO(+M)<=>HCCO(+M)       3.794E+00     2.500         0.0
+LOW / 1.463E+15    -0.400  0.0 /
+TROE / 0.600  10.0  1.0E+07  1.0E+06 / 
+H2/2.0/ H2O/6.0/ CH4/2.0/ CO/1.5/ CO2/2.0/ C2H6/3.0/ AR/0.7/  KR/0.70/ 
+
+  
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+! CARBON ATOM C REACTION SET
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+! GRI-Mech 3.0 http://www.me.berkeley.edu/gri_mech/
+C+OH<=>CO+H                  5.000E+13     0.000         0.0
+
+! Baulch et al., Journal of Physical Chemical Reference Data (2005) Vol. 34, pp. 757-1397
+C+O2<=>CO+O                  6.624E+13     0.000       635.9
+
+!****************************************************************************************!
+!*                                                                                      *!
+!*                                        C2 SPECIES                                    *!
+!*                                                                                      *!
+!****************************************************************************************!
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+! ETHANE C2H6 REACTION SET
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+! Kiefer, Santhanam, Srinivasan, Tranter, Klippenstein, Oehlschlaeger, Proc. Combust. Inst. 30, 1129 (2005)
+! X. Yang, A. W. Jasper, J. H. Kiefer and R. S. Tranter, J. Phys. Chem. A 113, 8318 (2009).
+! The newer paper has lower-T (1200-1500 K) experimental data than the older paper (> 1500 K).
+! The ME parameters (alpha) obtained in the first study were re-optimized in the 2nd study to fit data from both papers.
+! The low pressure limit has been scaled by 1.42 to set N2 as the bath gas (3.741E+50 x 1.42 = 5.312E+50)
+CH3+CH3(+M)<=>C2H6(+M)       8.878E+16    -1.160       774.5
+                       LOW / 5.312E+50    -9.930      7389.0 / 
+TROE / 0.7548  158.0  32828.0  46564.0 /
+AR/0.7/ H2/2.0/ H2O/6.0/ CH4/2.0/ CO/1.5/ CO2/2.0/
+C2H6/3.0/ CH3OCHO/3.0/ CH3OH/3.0/ KR/0.70/
+
+! GRI-Mech 3.0 http://www.me.berkeley.edu/gri_mech/
+C2H5+H(+M)<=>C2H6(+M)        5.210E+17    -0.990      1580.0
+                       LOW / 1.990E+41    -7.080      6685.0 / 
+TROE / 0.8422  125.0  2219.0  6882.0 / 
+!AR/0.7/ H2/2.0/ H2O/6.0/ CH4/2.0/ CO/1.5/ CO2/2.0/ C2H6/3.0/ CH3OCHO/3.0/ CH3OH/3.0/ KR/0.70/
+AR/0.7/ H2/2.0/ H2O/6.0/ CH4/2.0/ CO/1.5/ CO2/2.0/ C2H6/3.0/ CH3OH/3.0/ KR/0.70/
+
+! Bryukov et al., Journal of Physical Chemistry A (2001) Vol. 105, pp. 6900-6909
+C2H6+H<=>C2H5+H2             2.680E+07     1.980      6325.2
+
+! Huynh et al., Combustion and Flame (2008) Vol. 152, pp. 177-185
+C2H6+O<=>C2H5+OH             3.168E+01     3.800      3131.8
+
+! Krasnoperov And Michael, Journal of Physical Chemistry A (2004) Vol. 108, pp. 5643-5648
+C2H6+OH<=>C2H5+H2O           1.614E+06     2.224       741.2
+
+! Tsang and Hampson, Journal of Physical Chemical Reference Data (1986) Vol. 15, pp. 1087
+C2H6+O2<=>C2H5+HO2           4.040E+13     0.000     50875.0
+
+! Tsang and Hampson, Journal of Physical Chemical Reference Data (1986) Vol. 15, pp. 1087
+C2H6+CH3<=>C2H5+CH4          5.506E-01     4.000      8287.0
+
+! Carstensen and Dean, Proceeding of the Combustion Institute (2005) Vol. 30, pp. 995-1003
+C2H6+HO2<=>C2H5+H2O2         2.610E+01     3.370     15900.0
+
+! Carstensen and Dean, Proceeding of the Combustion Institute (2005) Vol. 30, pp. 995-1003
+C2H6+CH3O2<=>C2H5+CH3O2H     1.940E+01     3.640     17100.0
+
+! Tsang and Hampson, Journal of Physical Chemical Reference Data (1986) Vol. 15, pp. 1087
+C2H6+CH3O<=>C2H5+CH3OH       2.410E+11     0.000      7094.0
+
+! Activation energy: Berman and Lin, Chemical Physics (1983), Vol. 82, pp. 435-42
+! Preexponentil factor: Galland et al., Journal of Physical Chemistry A (2003) Vol. 107, pp. 5419-5426
+C2H6+CH<=>C2H4+CH3           6.185E+13     0.000      -262.3
+
+! Davidson et al., Int. J. Chem. Kinet. 1995, 27 (12), 1179-1196.
+CH2(S)+C2H6<=>CH3+C2H5       4.000E+13     0.000      -550.0
+
+! Tsang and Hampson, Journal of Physical Chemical Reference Data (1986) Vol. 15, pp. 1087
+C2H6+HCO<=>CH2O+C2H5         4.700E+04     2.720    18235.0
+
+! Tsang and Hampson, Journal of Physical Chemical Reference Data (1986) Vol. 15, pp. 1087
+C2H6+CH2OH<=>CH3OH+C2H5      1.990E+02     3.000    13976.0
+
+! Ceursters, et al Phys. Chem. Chem. Phys., 2001, 3, 3070-3074  
+C2H6+C2H<=>C2H2+C2H5         7.200E+11     0.540     -358.0
+
+! Tsang and Hampson, Journal of Physical Chemical Reference Data (1986) Vol. 15, pp. 1087
+C2H6+C2H3<=>C2H4+C2H5        6.010E+02     3.300    10502.0
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+! ETHYL RADICAL C2H5 REACTION SET
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+! Lim, et al., Proceeding of the Combustion Institute (1994) Vol. 25, pp. 713-
+CH3+CH3<=>H+C2H5                       5.390E+13     0.000    16055.0
+
+! Miller and Klippenstein,  Physical Chemistry Chemical Physics (2004), Vol. 6,pp. 1192-1202
+! Fc modified to adopt Troe formalism
+! Low pressure limit scaled by 1.43 to set Nitrogen as the bath gas (COnsidering a efficency ratio of 1.0/0.7 N2/He)
+C2H4+H(+M)<=>C2H5(+M)                  1.367E+09     1.463    1355.0
+LOW / 2.896E39  -6.642   5769.0 /
+TROE/ 0.752  19999.5  359.2  1947400.0 /
+AR/0.7/ H2/2.0/ H2O/6.0/ CH4/2.0/ CO/1.0/ CO2/3.0/ C2H6/3.0/ CH3OCHO/3.0/ CH3OH/3.0/ KR/0.70/
+C2H2/2.5/ O2/2.0/
+
+
+! Hack et al., Proceeding of the Combustion Institute (2002) Vol. 29, pp. 1247-1255
+! The recommended overall rate is 1.04 x 10^14 cm^3.mol^-1.s^-1
+! The branching ratio is somehow uncertain
+C2H5+O<=>CH3+CH2O            3.200E+13     0.000        0.0
+C2H5+O<=>H+CH3CHO            4.400E+13     0.000        0.0
+C2H5+O<=>OH+C2H4             2.400E+13     0.000        0.0
+
+! Tsang and Hampson, Journal of Physical Chemical Reference Data (1986) Vol. 15, pp. 1087
+C2H5+OH<=>C2H4+H2O           2.409E+13     0.000        0.0
+
+! Tsang and Hampson, Journal of Physical Chemical Reference Data (1986) Vol. 15, pp. 1087
+C2H5+H<=>C2H4+H2             2.000E+12     0.000        0.0
+
+! Estimation
+! Similar to CH3+HO2<=>CH3O+OH
+C2H5+HO2<=>C2H5O+OH          1.000E+13     0.000        0.0 
+
+! Estimation
+C2H5+OH<=>CH3+CH2OH          3.000E+13     0.000        0.0
+
+!  Dobis et al., J. Am. Chem. Soc. 115:8798(1993)
+C2H5+HO2<=>C2H4+H2O2         2.010E+12     0.000        0.0 
+
+! Tsang and Hampson, Journal of Physical Chemical Reference Data (1986) Vol. 15, pp. 1087
+CH3+C2H5<=>CH4+C2H4          6.000E+12     0.000        0.0
+
+! Estimation
+C2H5+C2H3<=>C2H4+C2H4        1.000E+13     0.000        0.0
+C2H5+CH2OH<=>C2H4+CH3OH      1.000E+13     0.000        0.0
+C2H5+CH2OH<=>C2H6+CH2O       1.000E+13     0.000        0.0
+C2H5+CH3O<=>C2H6+CH2O        1.000E+13     0.000        0.0
+
+! Tsang and Hampson, Journal of Physical Chemical Reference Data (1986) Vol. 15, pp. 1087
+C2H5+CH2<=>C2H4+CH3          1.810E+13     0.000        0.0
+
+! Tsang and Hampson, Journal of Physical Chemical Reference Data (1986) Vol. 15, pp. 1087
+C2H5+CH2(S)<=>C2H4+CH3       9.000E+12     0.000        0.0
+
+! Miller et al.,  Proceeding of the Combustion Institute (2000) Vol. 28, pp. 1479-1486
+C2H5+O2<=>C2H4+HO2           1.921E+07     1.020    -2035.0
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+! ETHOXY RADICAL C2H5O REACTION SET
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+! Xu et al. ChemPhysChem (2009) Vol. 10, pp. 972-982
+! The rate constants proposed in the paer have strange activation energies.
+! The present Troe fitting is a fit on the PLOG format between 0.5 and 100 atm.
+! The low pressure limit has been scaled by 1.42 to set N2 as the bath gas: 1.42 x 7.307E-22 = 1.038E-21
+C2H5O(+M)<=>CH3+CH2O(+M)     1.533E+07    -1.121    21612.4
+LOW / 1.038E-21    10.618    -9021.5 /
+TROE / 0.531  39.8  812.0  7378.3 /
+AR/0.70/ HE/0.70/ H2/2.00/ H2O/6.00/ CH4/2.00/ CO/1.50/ CO2/2.00/ C2H6/3.00/
+CH3OH/3.0/ C2H5OH /3.00/ KR/0.70/
+
+! Xu et al. ChemPhysChem (2009) Vol. 10, pp. 972-982
+! The rate constants proposed in the paer have strange activation energies.
+! The present Troe fitting is a fit on the PLOG format between 0.01 and 100 atm.
+! The low pressure limit has been scaled by 1.42 to set N2 as the bath gas: 1.42 x 4.428E-23 = 1.038E-21
+C2H5O(+M)<=>CH3CHO+H(+M)     2.074E+13    -0.306    19098.8
+LOW / 6.288E-23    11.057    -8127.0 /
+TROE / 0.7550  16.7  535.4  7178.6 /
+AR/0.70/ HE/0.70/ H2/2.00/ H2O/6.00/ CH4/2.00/ CO/1.50/ CO2/2.00/ C2H6/3.00/
+CH3OH/3.0/ C2H5OH /3.00/ KR/0.70/
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+! ETHYL HYDROPEROXYDE/ETHYL PEROXY RADICAL C2H5O2H/C2H5O2 REACTION SET
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+! Miller and Klippenstein, International Journal of Chemical Kinetics (2001) Vol. 33, pp. 654-
+C2H5+O2(+M)<=>C2H5O2(+M)               2.020E+10     0.980     -63.6 
+LOW/ 8.490E+29    -4.290     220.0 /
+TROE/ 0.1030  601.0  1.0E-10 /
+H2/2.0/ H2O/6.0/ CH4/2.0/ CO/1.5/ CO2/2.0/ C2H6/3.0/ AR/0.7/ 
+
+H2+C2H5O2<=>H+C2H5O2H              1.500E+14     0.000    26030.0
+C2H5O2+CH2O<=>C2H5O2H+HCO          1.990E+12     0.000    11660.0
+CH4+C2H5O2<=>CH3+C2H5O2H           1.810E+11     0.000    18480.0
+CH3OH+C2H5O2<=>CH2OH+C2H5O2H       1.810E+12     0.000    13710.0
+C2H5O2+HO2<=>C2H5O2H+O2            1.750E+10     0.000    -3275.0
+C2H6+C2H5O2<=>C2H5+C2H5O2H         8.600E+00     3.760    17200.0
+C2H5O2H<=>C2H5O+OH                 6.310E+14     0.000    42300.0
+C2H5O2<=>C2H4O2H                   2.276E+39    -8.479    45170.0
+C2H5O2<=>CH3CHO+OH                 2.520E+41   -10.200    43710.0
+C2H5O2<=>C2H4+HO2                  1.815E+38    -8.450    37890.0
+C2H5O2<=>C2H4O1-2+OH               4.000E+43   -10.460    45580.0
+
+C2H4O2H<=>C2H4O1-2+OH              8.848E+30    -6.080    20660.0
+C2H4O2H<=>C2H4+HO2                 3.980E+34    -7.250    23250.0
+C2H4O2H<=>CH3CHO+OH                1.188E+34    -9.020    29210.0
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+! OXIRANE C2H4O1-2 REACTION SET
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+C2H4O1-2<=>CH3+HCO                 3.630E+13     0.000    57200.0
+C2H4O1-2<=>CH3CHO                  7.407E+12     0.000    53800.0
+C2H4O1-2+OH<=>C2H3O1-2+H2O         1.780E+13     0.000     3610.0
+C2H4O1-2+H<=>C2H3O1-2+H2           8.000E+13     0.000     9680.0
+C2H4O1-2+HO2<=>C2H3O1-2+H2O2       1.130E+13     0.000    30430.0
+C2H4O1-2+CH3O2<=>C2H3O1-2+CH3O2H   1.130E+13     0.000    30430.0
+C2H4O1-2+C2H5O2<=>C2H3O1-2+C2H5O2H 1.130E+13     0.000    30430.0
+C2H4O1-2+CH3<=>C2H3O1-2+CH4        1.070E+12     0.000    11830.0
+C2H4O1-2+CH3O<=>C2H3O1-2+CH3OH     1.200E+11     0.000     6750.0
+
+C2H3O1-2<=>CH3CO                   8.500E+14     0.000    14000.0
+C2H3O1-2<=>CH2CHO                  1.000E+14     0.000    14000.0
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+! ACETALDEHYDE CH3CHO REACTION SET
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+! Sivaramakrishnan et al., Journal of Physical Chemistry A (2010) Vol. 114, pp. 755-764
+! Low presure limit scaled by 1.42 = 1/0.70 (1.144E+59 x 1.42 = 1.634E+59) to set N2 as the bath gas
+CH3CHO(+M)<=>CH3+HCO(+M)               2.720E+22    -1.740   86355.0  
+LOW / 1.634E+59   -11.300   95912.0 /
+TROE / 0.6840  2706.0  399.1 6540.0 /
+H2/2.0/ H2O/6.0/ CO/1.0/ CO2/2.0/ AR/0.7/ C2H2/3.0/ O2/2.0/ KR /0.7/
+
+! Reference, still under evaluation
+! Calculated RRKM
+CH2CHO+H(+M)<=>CH3CHO(+M)              1.000E+14     0.000       0.0
+LOW / 5.200E+39    -7.297    4700.0 /  
+TROE / 0.5500  8900.0  4350.0  7244.0 /
+H2/2/ H2O/6/ CH4/2/ CO/1.5/ CO2/2/ C2H6/3/ C2H2/3.00/ C2H4/3.00/ 
+
+! Sivaramakrishnan et al., Journal of Physical Chemistry A (2010) Vol. 114, pp. 755-764
+CH3CHO+H<=>CH2CHO+H2                   2.722E+03     3.100    5206.5
+CH3CHO+H<=>CH3CO+H2                    1.313E+05     2.580    1220.1
+
+! Estimation (rate is higher than OH+C2H6 at low T, but about 60% OH+C2H6 at high T)
+CH3CHO+OH<=>CH3CO+H2O                  6.000E+13     0.000    3000.0
+
+! Baulch et al., Journal of Physical Chemical Reference Data (2005) Vol. 34, pp. 757-1397
+CH3CHO+HO2<=>CH3CO+H2O2                4.095E+04     2.500   10204.0
+
+! Yasunaga et al., International Journal of Chemical Kinetics (2008) Vol. 40, pp. 73-
+CH3CHO+HO2<=>CH2CHO+H2O2               3.000E+12     0.000   11923.0
+
+! Baulch et al., Journal of Physical Chemical Reference Data (2005) Vol. 34, pp. 757-1397
+CH3CHO+O<=>CH3CO+OH                    5.841E+12     0.000    1808.4
+
+! Baulch et al., Journal of Physical Chemical Reference Data (2005) Vol. 34, pp. 757-1397
+CH3CHO+O2<=>CH3CO+HO2                  1.204E+05     2.500   37558.0
+
+! Baulch et al., Journal of Physical Chemical Reference Data (2005) Vol. 34, pp. 757-1397
+CH3CHO+CH3<=>CH3CO+CH4                 3.493E-08     6.210    1629.5
+
+! Bohland et al., Berichte der Bunsengesellschaft für Physikalische Chemie (1985) Vol. 89, pp. 1110-1116
+CH3CHO+CH2<=>CH2CHO+CH3                1.660E+12     0.000    3517.0
+
+! Estimation
+CH3CHO+CH<=>CH2CO+CH3                  6.000E+13     0.000       0.0
+CH3CHO+CH<=>C2H4+HCO                   2.000E+13     0.000       0.0
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+! ACETYL RADICAL CH3CO REACTION SET
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+! Senosiain et al., Journal of Physical Chemistry A (2006) Vol. 110, pp. 5772-5781
+CH3CO<=>CH3+CO                       6.450E+18    -2.520   16438.0
+PLOG /   0.010     6.880E+14    -1.970   14586.0 /
+PLOG /   0.025     2.400E+15    -2.000   14807.0 /
+PLOG /   0.100     1.960E+16    -2.090   15198.0 /
+PLOG /   1.000     6.450E+18    -2.520   16438.0 /
+PLOG /  10.000     8.180E+19    -2.550   17265.0 /
+PLOG / 100.000     1.260E+20    -2.320   18014.0 /   
+
+! Tsang and Hampson, Journal of Physical Chemical Reference Data (1986) Vol. 15, pp. 1087
+CH3CO+H<=>CH3+HCO                    9.635E+13     0.000       0.0
+
+! Estimation
+CH3CO+O<=>CH2CO+OH                   1.000E+13     0.000       0.0
+
+! Bartels et al.,Symposium  International on Combustion (1991) Vol. 23, pp. 131-138
+! Scaled by a factor 2
+! Original rate is 1.2E+14 mol.cm^-3.s^-1 at 298 K, but this reaction is radical-radical reaction, the rate will decrease to two thirds at higher temp
+CH3CO+O<=>CH3+CO2                    6.000E+13     0.000       0.0
+
+! Tsang and Hampson, Journal of Physical Chemical Reference Data (1986) Vol. 15, pp. 1087
+CH3CO+OH<=>CH2CO+H2O                 1.204E+13     0.000       0.0
+
+! Tsang and Hampson, Journal of Physical Chemical Reference Data (1986) Vol. 15, pp. 1087
+CH3CO+OH<=>CH3+CO+OH                 3.011E+13     0.000       0.0
+
+! Estimation
+CH3CO+CH2<=>CH2CO+CH3                1.810E+13     0.000       0.0
+
+CH3CO2+M<=>CH3+CO2+M 4.400E+15 0.000 1.050E+04
+REV/ 4.548E+08 1.378 1.752E+04 /
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+! CH2CHO RADICAL CH3CO REACTION SET
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+! Senosiain et al., Journal of Physical Chemistry A (2006) Vol. 110, pp. 5772-5781
+CH2CHO<=>H+CH2CO                     1.320E+34    -6.570   49460.0
+PLOG /    0.010       2.390E+25    -4.800   43429.0 /
+PLOG /    0.025       2.480E+27    -5.230   44309.0 /
+PLOG /    0.100       2.370E+30    -5.860   46120.0 /
+PLOG /    1.000       1.320E+34    -6.570   49460.0 /
+PLOG /   10.000       3.460E+36    -6.920   52986.0 /
+PLOG /  100.000       1.180E+36    -6.480   55178.0 /   
+
+! Senosiain et al., Journal of Physical Chemistry A (2006) Vol. 110, pp. 5772-5781
+CH2CHO<=>CH3+CO                      6.510E+34    -6.870   47197.0
+PLOG /    0.010       1.160E+30    -6.070   41337.0 /
+PLOG /    0.025       1.540E+31    -6.270   42483.0 /
+PLOG /    0.100       6.370E+32    -6.570   44288.0 /
+PLOG /    1.000       6.510E+34    -6.870   47197.0 /
+PLOG /   10.000       2.150E+35    -6.760   49554.0 /
+PLOG /  100.000       2.230E+33    -5.970   50454.0 /   
+
+
+! Estimation
+CH2CHO+H<=>CH3+HCO                   4.990E+13     0.000       0.0
+CH2CHO+H<=>CH2CO+H2                  2.000E+13     0.000       0.0
+
+! Estimation
+CH2CHO+O<=>CH2O+HCO                  5.000E+13     0.000       0.0
+
+! GRI-Mech 3.0 http://www.me.berkeley.edu/gri_mech/
+CH2CHO+OH<=>H2O+CH2CO                1.200E+13     0.000       0.0
+CH2CHO+OH<=>HCO+CH2OH                3.010E+13     0.000       0.0
+
+! Lee et al., Journal of Physical Chemistry A (2003) Vol. 107, pp. 3778-
+CH2CHO+O2<=>CH2CO+HO2                1.880E+05     2.370   23728.0
+CH2CHO+O2<=>CO+CH2O+OH               2.680E+17    -1.840    6530.0
+
+! From Curran
+!CH2CHO+O2<=>CH2O+CO+OH 8.950E+13 -0.600 1.012E+04
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+! KETENE CH2CO REACTION SET
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+! GRI-Mech 3.0 http://www.me.berkeley.edu/gri_mech/
+CH2+CO(+M)=CH2CO(+M)                 8.100E+11     0.500    4510.0
+LOW / 2.690E+33    -5.110    7095.0 /
+TROE/ 0.5907  275.0  1226.00  5185.00 /
+H2/2.0/ H2O/6.0/ CH4/2.0/ CO/1.5/ CO2/2.0/ C2H6/3.0/ AR/0.7/
+
+! Senosiain et al., Journal of Physical Chemistry A (2006) Vol. 110, pp. 5772-
+CH2CO+H<=>CH3+CO                     1.500E+09     1.450    2780.0
+
+! GRI-Mech 3.0 http://www.me.berkeley.edu/gri_mech/
+CH2CO+H<=>HCCO+H2                    5.000E+13     0.000    8000.0
+
+! Baulch et al., Journal of Physical Chemical Reference Data (2005) Vol. 34, pp. 757-1397
+CH2CO+O<=>CH2+CO2                    1.084E+12     0.000    1351.3
+CH2CO+O<=>CH2O+CO                    3.613E+11     0.000    1351.3
+CH2CO+O<=>HCO+HCO                    3.613E+11     0.000    1351.3
+
+! GRI-Mech 3.0 http://www.me.berkeley.edu/gri_mech/
+CH2CO+O<=>HCCO+OH                    1.000E+13     0.000    8000.0
+
+! Baulch et al., Journal of Physical Chemical Reference Data (2005) Vol. 34, pp. 757-1397
+! Baoshan Wang has calculated the PES
+CH2CO+OH<=>CH3+CO2                   6.745E+11     0.000   -1013.0
+CH2CO+OH<=>CH2OH+CO                  1.012E+12     0.000   -1013.0
+
+! GRI-Mech 3.0 http://www.me.berkeley.edu/gri_mech/
+CH2CO+OH<=>HCCO+H2O                  7.500E+12     0.000    2000.0
+
+CH2(S)+CH2CO<=>C2H4+CO 1.600E+14 0.000 0.000E+00
+REV/ 3.750E+14 0.217 1.034E+05 /
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+! HCCO REACTION SET
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+! Klippenstein et al., Proceedings of the Combustion Institute (2002) Vol. 29, pp. 1209-
+HCCO+O2=>CO2+CO+H                    4.780E+12    -0.140    1150.0
+HCCO+O2=>CO+CO+OH                    1.910E+11    -0.020    1023.0
+HCCO+O2=>O+CO+HCO                    2.180E+02     2.690    3541.0
+
+! Miller and Melius, Combustion and Flame (1992) Vol. 91, pp. 21-
+HCCO+OH<=>C2O+H2O                    3.000E+13     0.000      0.0
+HCCO+CH<=>C2H2+CO                    5.000E+13     0.000      0.0
+HCCO+CH2<=>C2H3+CO                   3.000E+13     0.000      0.0
+HCCO+HCCO=>C2H2+CO+CO                1.000E+13     0.000      0.0
+
+! Baulch et al., Journal of Physical Chemical Reference Data (2005) Vol. 34, pp. 757-1397
+HCCO+O=>H+CO+CO                      7.038E+13     0.000   -223.4
+HCCO+O<=>CH+CO2                      2.951E+13     0.000   1112.8
+
+! Baulch et al., Journal of Physical Chemical Reference Data (2005) Vol. 34, pp. 757-1397
+HCCO+H<=>CH2(S)+CO                   1.218E+14     0.000      0.0
+HCCO+H<=>CH2+CO                      1.060E+13     0.000      0.0
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+! C2O REACTION SET
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+! Miller and Melius, Combustion and Flame (1992) Vol. 91, pp. 21-
+C2O+H<=>CH+CO                        5.000E+13     0.000      0.0
+C2O+O<=>CO+CO                        5.000E+13     0.000      0.0
+C2O+OH=>CO+CO+H                      2.000E+13     0.000      0.0
+C2O+O2=>CO+CO+O                      2.000E+13     0.000      0.0
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+! ETHYLENE C2H4 REACTION SET
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+! GRI-Mech 3.0 http://www.me.berkeley.edu/gri_mech/
+C2H3+H(+M)<=>C2H4(+M)                6.080E+12     0.270    280.0
+LOW / 1.400E+30 -3.860 3320.0 / 
+TROE / 0.7820  207.5  2663.0  6095.0 /
+H2/2.00/ H2O/6.00/ AR/0.70/ CO/1.50/ CO2/2.0/ CH4/2.00/ C2H6/3.00/
+
+! GRI-Mech 3.0 http://www.me.berkeley.edu/gri_mech/
+C2H4(+M)<=>C2H2+H2(+M)               8.000E+12     0.440  88770.0
+LOW / 1.580E+51    -9.310  97800.0 / 
+TROE / 0.7345  180.0  1035.0  5417.0 /
+H2/2.0/ H2O/6.0/ CH4/2.0/ CO/1.5/ CO2/2.0/ C2H6/3.0/
+AR/0.7/ HE/0.70/ KR/0.70/ CH3OH/3.0/ CH3OCHO/3.0/
+
+
+! Baulch et al., Journal of Physical Chemical Reference Data (2005) Vol. 34, pp. 757-1397
+C2H4+H<=>C2H3+H2                     2.349E+02     3.620  11267.4
+
+! Nguyen, et al., Journal of Physical Chemistry A (2005) Vol. 109, pp. 7489-7499
+! The overall rate is 1.018E+08 x T^1.66 x EXP(-657.8/RT).
+! The temperature dependent branching ratios of the six channels are given in Table 7 of the paper.
+! The present rates are a fit on the temperature dependent rate constants for each channel.
+C2H4+O<=>H+CH2CHO                    1.417E+09     1.105    880.1
+C2H4+O<=>CH2+CH2O                    9.547E+05     2.121   1233.8
+C2H4+O<=>CH3+HCO                     3.696E+08     1.368    875.8
+C2H4+O<=>CH3CO+H                     3.134E+04     2.325    384.9
+C2H4+O<=>CH2CO+H2                    4.032E+04     2.282    341.4
+C2H4+O<=>CH4+CO                      1.275E+05     2.108    449.7
+
+! Senosiain et al., Journal of Physical Chemistry A (2006) Vol. 110, pp. 6960-6970
+C2H4+OH<=>C2H3+H2O                   1.310E-01     4.200   -860.0
+
+! Tsang and Hampson, Journal of Physical Chemical Reference Data (1986) Vol. 15, pp. 1087
+C2H4+CH3<=>C2H3+CH4                  6.624E+00     3.700   9498.8
+
+! Tsang and Hampson, Journal of Physical Chemical Reference Data (1986) Vol. 15, pp. 1087
+C2H4+O2<=>C2H3+HO2                   4.215E+13     0.000  57628.8
+
+
+! From Curran
+C2H4+CH3O<=>C2H3+CH3OH               1.200E+11     0.000   6750.0
+C2H4+CH3O2<=>C2H3+CH3O2H             2.230E+12     0.000  17190.0
+C2H4+C2H5O2<=>C2H3+C2H5O2H           2.230E+12     0.000  17190.0
+C2H4+CH3CO3<=>C2H3+CH3CO3H           1.130E+13     0.000  30430.0
+C2H4+CH3O2<=>C2H4O1-2+CH3O           2.820E+12     0.000  17110.0
+C2H4+C2H5O2<=>C2H4O1-2+C2H5O         2.820E+12     0.000  17110.0
+
+! Baulch et al., Journal of Physical Chemical Reference Data (2005) Vol. 34, pp. 757-1397
+C2H4+HO2<=>C2H4O1-2+OH               3.794E+12     0.000  17864.9
+
+! Tsang and Hampson, Journal of Physical Chemical Reference Data (1986) Vol. 15, pp. 1087
+C2H4+HO2<=>CH3CHO+OH                 6.022E+09     0.000   7948.8
+
+
+! Senosiain et al., Journal of Physical Chemistry A (2006) Vol. 110, pp. 6960-6970
+! Bath gas is N2
+C2H4+OH<=>CH3+CH2O                   1.776E+05     1.680   2060.7
+PLOG /   0.010     5.348E+00     2.920  -1732.8 / 
+PLOG /   0.025     3.186E+01     2.710  -1172.4 /
+PLOG /   0.100     5.552E+02     2.360    180.8 / 
+PLOG /   1.000     1.776E+05     1.680   2060.7 / 
+PLOG /  10.000     2.373E+09     0.560   6007.3 / 
+PLOG / 100.000     2.758E+13     0.500  11456.2 /  
+
+! Senosiain et al., Journal of Physical Chemistry A (2006) Vol. 110, pp. 6960-6970
+! Bath gas is N2
+C2H4+OH<=>CH3CHO+H                   2.379E-02     3.910   1722.9
+PLOG /   0.010     2.373E-07     5.300  -2050.8 /
+PLOG /   0.025     8.732E-05     4.570   -618.0 /
+PLOG /   0.100     4.029E-01     3.540   1881.9 /
+PLOG /   1.000     2.379E-02     3.910   1722.9 /
+PLOG /  10.000     8.250E+08     1.010  10508.3 /
+PLOG / 100.000     6.805E+09     0.810  13868.7 /
+
+! Senosiain et al., Journal of Physical Chemistry A (2006) Vol. 110, pp. 6960-6970
+! Bath gas is N2
+C2H4+OH<=>CH2CHOH+H                  3.192E+05     2.190   5256.1
+PLOG /   0.010     1.036E+04     2.600   4121.5 /
+PLOG /   0.025     1.072E+04     2.600   4129.4 /
+PLOG /   0.100     1.524E+04     2.560   4238.7 /
+PLOG /   1.000     3.192E+05     2.190   5256.1 /
+PLOG /  10.000     1.939E+08     1.430   7829.6 /
+PLOG / 100.000     8.551E+10     0.750  11492.0 /
+
+! The rate below are the sum of the two non-Arrehnius expression given in the paper
+! Actually, CH2CH2OH should not be only the only product, but all the three C2H5O isomers
+!
+C2H4+OH<=>CH2CH2OH                   3.765E+36    -7.803   7024.5
+PLOG /   0.010     6.105E+43   -10.624   7959.5 /
+PLOG /   0.025     3.593E+37    -8.642   5236.9 /
+PLOG /   0.100     2.459E+35    -7.786   4979.0 /
+PLOG /   1.000     3.765E+36    -7.803   7024.5 /
+PLOG /  10.000     1.351E+34    -6.740   7889.2 /
+PLOG / 100.000     1.050E+27    -4.391   6253.7 /
+
+! Baulch et al., Journal of Physical Chemical Reference Data (2005) Vol. 34, pp. 757-1397
+CH4+CH<=>H+C2H4         1.325E+16    -0.940        57.6
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+! VINYL RADICAL C2H3 REACTION SET
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+! Miller and Klippenstein, Physical Chemistry Chemical Physics (2004), Vol. 6, pp. 1192-1202
+! The Centering factor is not expressed in the standard format. A fitting in the Chemkin format has been applied and is valid between 300 and 1600K.
+C2H2+H(+M)<=>C2H3(+M)                1.710E+10     1.266   2709.0
+LOW / 6.346E+31    -4.664   3780.0 /
+TROE /  0.7718  3655354.5  7.56  6551.5 /
+HE/1.00/ AR/1.00/ H/0.50/ CO/0.00/ CO2/0.00/ N2/0.00/
+H2O/0.00/ C2H6/0.00/ C2H4/0.00/
+C2H2/0.00/ CH4/0.00/ O2/1.00/ H2/0.00/ OH/0.00/ KR /1.00/ 
+DUPLICATE
+
+C2H2+H(+M)<=>C2H3(+M)                1.710E+10     1.266   2709.0
+LOW / 2.690E+30    -4.147   3969.0 /
+TROE /  0.7718  3655354.5  7.56  6551.5 /
+HE/0.00/ AR/0.00/ H/0.00/ CO/1.50/ CO2/2.00/ N2/0.00/
+H2O/6.00/ C2H6/3.00/ C2H4/3.00/
+C2H2/2.50/ CH4/3.00/ O2/1.00/ H2/1.00/ OH/2.00/ KR /0.00/ 
+DUPLICATE
+
+! Miller and Klippenstein, Personnal COmmunication
+! Extremely sensitive reactions!!!
+C2H3+O2<=>HCO+CH2O                   3.130E+14    -0.653    268.7
+C2H3+O2=>H+CO+CH2O                   2.190E+14    -0.653    268.7
+C2H3+O2<=>CH2CHO+O                   7.520E+08     0.965   -137.4
+
+! Harding et al., Proceedings of the Combustion Institute (2005) Vol. 30, pp. 985
+! The rate constant of the abstraction channel is estimated to be 10% of the adition channel
+C2H3+O<=>CH2CO+H                     1.030E+13     0.205    -848.5
+C2H3+O<=>OH+C2H2                     1.030E+12     0.205    -848.5
+
+! Baulch et al., Journal of Physical Chemical Reference Data (2005) Vol. 34, pp. 757-1397
+C2H3+H<=>C2H2+H2                     4.215E+13     0.000      0.0
+
+! Tsang and Hampson, Journal of Physical Chemical Reference Data (1986) Vol. 15, pp. 1087
+C2H3+OH<=>C2H2+H2O                   3.011E+13     0.000      0.0
+
+! Tsang and Hampson, Journal of Physical Chemical Reference Data (1986) Vol. 15, pp. 1087
+C2H3+OH<=>CH2CHO+H                   3.011E+13     0.000      0.0
+
+! Wang et al., USC-Mech II,  http://ignis.usc.edu/USC_Mech_II.htm, May 2007.
+C2H3+HO2<=>CH2CHO+OH                 1.000E+13     0.000      0.0
+
+! Tsang and Hampson, Journal of Physical Chemical Reference Data (1986) Vol. 15, pp. 1087
+C2H3+CH2O<=>C2H4+HCO                 5.420E+03     2.810   5862.2
+
+! Tsang and Hampson, Journal of Physical Chemical Reference Data (1986) Vol. 15, pp. 1087
+C2H3+HCO<=>C2H4+CO                   9.033E+13     0.000      0.0
+
+! Tsang and Hampson, Journal of Physical Chemical Reference Data (1986) Vol. 15, pp. 1087
+C2H3+CH3<=>C2H2+CH4                  9.635E+11     0.000      0.0
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+! ACETYLENE C2H2 REACTION SET
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+! GRI-Mech 3.0 http://www.me.berkeley.edu/gri_mech/
+C2H+H(+M)<=>C2H2(+M)                 1.000E+17     0.000      0.0
+LOW / 3.750E+33    -4.800   1900.0 / 
+TROE / 0.6460  132.0 1315.0  5566.0 /
+H2/2.00/ H2O/6.00/ AR/0.70/ CO/1.50/ CO2/2.00/ CH4/2.00/ C2H6/3.00/
+
+! Tsang and Hampson, Journal of Physical Chemical Reference Data (1986) Vol. 15, pp. 1087
+C2H2+O2<=>C2H+HO2                    1.204E+13     0.000  74520.0
+
+! Baulch et al., Journal of Physical Chemical Reference Data (2005) Vol. 34, pp. 757-1397
+O+C2H2<=>C2H+OH 4.600E+19 -1.400 2.895E+04
+REV/ 3.023E+15 -0.604 -1.782E+03 /
+
+! Baulch et al., Journal of Physical Chemical Reference Data (2005) Vol. 34, pp. 757-1397
+C2H2+O<=>CH2+CO                      2.349E+08     1.400   2205.8
+C2H2+O<=>HCCO+H                      9.394E+08     1.400   2205.8
+
+! Senosiain et al., Journal of Physical Chemistry A (2005) Vol. 109, pp. 6045-6055
+C2H2+OH<=>C2H+H2O                    2.632E+06     2.140  17062.1
+
+! Tsang and Hampson, Journal of Physical Chemical Reference Data (1986) Vol. 15, pp. 1087
+C2H2+HO2<=>CH2CO+OH                  6.022E+09     0.000   7948.8
+
+! Tsang and Hampson, Journal of Physical Chemical Reference Data (1986) Vol. 15, pp. 1087
+C2H2+CO<=>C2H+HCO                    4.818E+14     0.000 106712.6
+
+! Senosiain et al., Journal of Physical Chemistry A (2005) Vol. 109, pp. 6045-6055
+C2H2+OH<=>H+HCCOH                    2.415E+06     2.000  12714.1
+PLOG /   0.010   2.800E+05     2.280  12420.0 /
+PLOG /   0.025   7.467E+05     2.160  12549.2 /
+PLOG /   0.100   1.776E+06     2.040  12670.4 /
+PLOG /   1.000   2.415E+06     2.000  12714.1 /
+PLOG /  10.000   3.210E+06     1.970  12811.5 /
+PLOG / 100.000   7.347E+06     1.890  13604.4 /
+
+C2H2+OH<=>CH2CO+H                    7.528E+06     1.550   2106.4
+PLOG /   0.010   1.578E+03     2.560   -844.6 /
+PLOG /   0.025   1.518E+04     2.280   -292.1 /
+PLOG /   0.100   3.017E+05     1.920    598.1 /
+PLOG /   1.000   7.528E+06     1.550   2106.4 /
+PLOG /  10.000   5.101E+06     1.650   3400.1 /
+PLOG / 100.000   1.457E+04     2.450   4477.2 /
+
+C2H2+OH<=>CH3+CO                     1.277E+09     0.730   2579.4
+PLOG /   0.010   4.757E+05     1.680   -329.9 /
+PLOG /   0.025   4.372E+06     1.400    226.5 /
+PLOG /   0.100   7.648E+07     1.050   1114.8 /
+PLOG /   1.000   1.277E+09     0.730   2579.4 /
+PLOG /  10.000   4.312E+08     0.920   3735.9 /
+PLOG / 100.000   8.250E+05     1.770   4697.7 /
+
+! GRI-Mech 3.0 http://www.me.berkeley.edu/gri_mech/
+H+HCCOH<=>H+CH2CO                    1.000E+13     0.000      0.0
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+! H2CC  REACTION SET
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+! Laskin and Wang, Chemical Physics Letters (1999) Vol. 303, pp. 43-49
+! The rate constant is for Argon
+! Wang et al., USC-Mech II,  http://ignis.usc.edu/USC_Mech_II.htm, May 2007.
+C2H2(+M)<=>H2CC(+M)                  8.000E+14    -0.520  50750.0
+LOW / 2.450E+15    -0.640  49700.0 /
+H2/2.00/ H2O/6.00/ CH4/2.00/ CO/1.50/ CO2/2.00/ C2H6/3.00/ C2H2/2.50/ C2H4/2.50/
+
+
+! Laskin and Wang, Chemical Physics Letters (1999) Vol. 303, pp. 43-49
+! The rate constant is for Argon
+! Wang et al., USC-Mech II,  http://ignis.usc.edu/USC_Mech_II.htm, May 2007.
+H2CC+O2<=>CH2+CO2                    1.000E+13     0.000      0.0
+H2CC+H<=>C2H2+H                      1.000E+14     0.000      0.0
+H2CC+OH<=>CH2CO+H                    2.000E+13     0.000      0.0
+H2CC+O<=>CH2+CO                      1.000E+14     0.000      0.0
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+! C2H  REACTION SET
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+! Devriendt et al., Journal of Physical Chemistry A (1997) Vol. 101, pp. 2546-2551
+C2H+O<=>CH+CO                        1.349E+13     0.000     457.1
+
+! Tsang and Hampson, Journal of Physical Chemical Reference Data (1986) Vol. 15, pp. 1087
+C2H+OH<=>H+HCCO                      2.000E+13     0.000      0.0
+
+! Baulch et al., Journal of Physical Chemical Reference Data (2005) Vol. 34, pp. 757-1397
+C2H+O2<=>HCO+CO                      1.626E+14    -0.350      0.0
+
+! Baulch et al., Journal of Physical Chemical Reference Data (2005) Vol. 34, pp. 757-1397
+C2H+H2<=>H+C2H2                      2.108E+06     2.320    882.3
+
+! Baulch et al., Journal of Physical Chemical Reference Data (2005) Vol. 34, pp. 757-1397
+C2H+HO2<=>HCCO+OH                    1.806E+13     0.000      0.0
+
+! Baulch et al., Journal of Physical Chemical Reference Data (2005) Vol. 34, pp. 757-1397
+C2H+CH4<=>CH3+C2H2                   2.168E+10     0.940    651.8
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+! ETHANOL C2H5OH REACTION SET
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+! Sivaramakrishnan et al., Journal of Physical Chemistry A (2010) Vol. 114, pp. 9425-9439
+C2H5OH<=>C2H4+H2O                    5.230E+43    -8.900  81514.9
+PLOG /   0.001   3.410E+59   -14.220  83681.0 /
+PLOG /   0.010   2.620E+57   -13.290  85270.8 /
+PLOG /   0.100   1.650E+52   -11.520  87454.1 /
+PLOG /   1.000   5.230E+43    -8.900  81514.9 /
+PLOG /  10.000   4.590E+32    -5.600  76070.0 /
+PLOG / 100.000   3.840E+20    -2.060  69472.5 /
+
+C2H5OH<=>CH3+CH2OH                   5.550E+64   -14.470 107110.1
+PLOG /   0.001   1.200E+54   -12.940 100015.8 /
+PLOG /   0.010   5.180E+59   -13.980  99916.4 /
+PLOG /   0.100   1.620E+66   -15.300 105401.1 /
+PLOG /   1.000   5.550E+64   -14.470 107110.1 /
+PLOG /  10.000   1.550E+58   -12.290 105778.7 /
+PLOG / 100.000   1.780E+47    -8.960 101069.0 /
+
+C2H5OH<=>C2H5+OH                     1.460E+65   -14.890 112356.3
+PLOG /   0.001   8.100E+46   -11.330 111064.6 /
+PLOG /   0.010   1.820E+56   -13.490 107249.2 /
+PLOG /   0.100   4.650E+63   -14.990 109633.8 /
+PLOG /   1.000   1.460E+65   -14.890 112356.3 /
+PLOG /  10.000   2.790E+61   -13.400 113091.6 /
+PLOG / 100.000   6.170E+51   -10.340 109951.8 /
+
+
+C2H5OH(+M)<=>CH3CHO+H2(+M) 7.240E+11 0.095 9.101E+04
+LOW / 4.4600E+87 -1.9420E+01 1.1558E+05 / 
+TROE / 9.0000E-01 9.0000E+02 1.1000E+03 3.5000E+03 /
+H2/2.0/ H2O/6.0/ CH4/2.0/ CO/1.5/ CO2/2.0/ C2H6/3.0/
+AR/0.7/ HE/0.70/ KR/0.70/ CH3OH/3.0/ CH3OCHO/3.0/
+
+C2H5OH+O2<=>CH2CH2OH+HO2 2.000E+13 0.000 5.280E+04
+REV/ 2.192E+10 0.278 4.430E+02 /
+C2H5OH+O2<=>CH3CHOH+HO2 1.500E+13 0.000 5.015E+04
+REV/ 1.946E+11 0.089 4.879E+03 /
+
+! Sivaramakrishnan et al., Journal of Physical Chemistry A (2010) Vol. 114, pp. 9425-9439
+C2H5OH+OH<=>CH2CH2OH+H2O             5.697E+00     3.380  -2394.6
+C2H5OH+OH<=>CH3CHOH+H2O              7.166E+04     2.540  -1534.1
+C2H5OH+OH<=>C2H5O+H2O                5.805E-03     4.280  -3561.1
+
+! Park et al., Journal of Chemical Physics (2003) Vol. 118, pp. 9990-9996
+! The rate constant for the C2H5O channel is the fit on the whole temperature range
+C2H5OH+H<=>CH2CH2OH+H2               1.880E+03     3.200   7151.9
+C2H5OH+H<=>CH3CHOH+H2                1.790E+05     2.530   3420.0
+C2H5OH+H<=>C2H5O+H2                  1.143E-03     4.113   4698.4
+
+! Park et al., Journal of Chemical Physics (2004) Vol. 120, pp. 6593-6599
+C2H5OH+CH3<=>CH2CH2OH+CH4            3.300E+02     3.300  12290.8
+C2H5OH+CH3<=>CH3CHOH+CH4             1.993E+01     3.370   7634.8
+C2H5OH+CH3<=>C2H5O+CH4               2.035E+00     3.570   7722.3
+
+! Wu et al., Journal of Physical Chemistry A (2007) Vol. 111, pp. 6693-6703
+C2H5OH+O<=>CH2CH2OH+OH               9.695E+02     3.230   4658.0
+C2H5OH+O<=>CH3CHOH+OH                1.451E+05     2.470    876.4
+C2H5OH+O<=>C2H5O+OH                  1.463E-03     4.730   1726.9
+
+! Marinov, International Journal on Chemical Kinetics (1999) Vol. 31, pp. 183-220
+C2H5OH+HO2<=>CH2CH2OH+H2O2           2.379E+04     2.550  16490.0
+C2H5OH+HO2<=>CH3CHOH+H2O2            6.000E+12     0.000  16000.0
+C2H5OH+HO2<=>C2H5O+H2O2              2.500E+12     0.000  24000.0
+
+! Marinov, International Journal on Chemical Kinetics (1999) Vol. 31, pp. 183-220
+! Same as ethanol + HO2
+C2H5OH+CH3O2<=>CH2CH2OH+CH3O2H       1.230E+04     2.550  15750.0
+C2H5OH+CH3O2<=>CH3CHOH+CH3O2H        8.200E+03     2.550  10750.0
+C2H5OH+CH3O2<=>C2H5O+CH3O2H          2.500E+12     0.000  24000.0
+
+
+C2H5OH+C2H5<=>CH2CH2OH+C2H6 5.000E+10 0.000 1.340E+04
+C2H5OH+C2H5<=>CH3CHOH+C2H6 5.000E+10 0.000 1.040E+04
+
+! Xu et al. ChemPhysChem (2009) Vol. 10, pp. 972-982
+! The rate constants proposed in the paer have strange activation energies.
+! The present Troe fitting is a fit on the PLOG format between 0.5 and 100 atm.
+! The low pressure limit has been scaled by 1.42 to set N2 as the bath gas: 1.42 x 1.380E+15 = 1.038E-21
+CH3CHOH(+M)<=>CH3CHO+H(+M)           2.765E-07     5.729    22669.9
+LOW / 1.960E+15     0.156    25152.5 /
+TROE / 0.105  707.7  784.1  17757.0 /
+AR/0.70/ HE/0.70/ H2/2.00/ H2O/6.00/ CH4/2.00/ CO/1.50/ CO2/2.00/ C2H6/3.00/
+CH3OH/3.0/ C2H5OH /3.00/ KR/0.70/
+
+!CH3CHOH+M<=>CH3CHO+H+M 1.000E+14 0.000 2.500E+04
+!REV/ 2.742E+12 0.462 -4.700E+02 /
+CH3CHOH+O2<=>CH3CHO+HO2 3.810E+06 2.000 1.641E+03
+REV/ 2.190E+05 2.390 2.504E+04 /
+
+! From Curran
+O2C2H4OH<=>CH2CH2OH+O2 3.900E+16 -1.000 3.000E+04
+REV/ 1.200E+11 0.000 -1.100E+03 /
+O2C2H4OH=>OH+CH2O+CH2O 3.125E+09 0.000 1.890E+04
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!VINYL ALCOHOL C2H3OH REACTION SET
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+! From Johnson et al., Energy and Fuels (2009) Vol. 23, pp. 5886-5898
+C2H3+OH<=>CH2CHOH                    2.410E+13     0.000      0.0
+CH2CHO+H<=>CH2CHOH                   2.400E+13     0.000  12510.0
+
+CH2CHOH+O2<=>CH2CHO+HO2              5.310E+11     0.210  39830.0
+CH2CHOH+H<=>CH2CHO+H2                9.810E+02     3.370   3537.0
+CH2CHOH+O<=>CH2CHO+OH                1.875E+06     1.900   -860.0
+CH2CHOH+OH<=>CH2CHO+H2O              3.330E+09     1.100    540.5
+CH2CHOH+CH3<=>CH2CHO+CH4             2.030E-08     5.900   1052.0
+CH2CHOH+HO2<=>CH2CHO+H2O2            3.400E+03     2.500   8922.0
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+! METHYl FORMATE SUBSET
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+! CONCERTED ELIMINATION REACTIONS
+! PRODUCING TWO MOLECULAR SPECIES
+
+! Fitting valid between 600 and 2000 K, 0.1 and 100 atm, chi-ecart of 0.238
+! The low pressure limit has been scaled by 1.42 to set N2 as the bath gas (7.982E+37 x 1.42 = 1.140E+38)
+!CH3OCHO(+M)<=>CH3OH+CO(+M)             1.153E+09     1.576     63861.2
+!         LOW         /                 1.140E+38    -5.660     62102.8 /
+CH3OCHO(+M)<=>CH3OH+CO(+M)             1.153E+09     1.576     62861.2
+         LOW         /                 1.140E+38    -5.660     61102.8 /
+TROE/ 0.372  935.2  935.1  159646 /
+AR/0.70/ HE/2.20/ H2/2.30/ CO/1.00/ CH4/2.30/
+CH3OCHO/2.30/ H2O/6.00/ KR/0.70/
+
+! Fitting valid between 300 and 2000 K, 0.1 and 100 atm, chi-ecart of 0.236
+CH3OCHO(+M)<=>CH4+CO2(+M)              1.160E+00     4.050     70187.5
+         LOW         /                 1.557E+40    -6.820     79075.7 /
+TROE/ 0.351  2173.2  2180.9  146864 /
+AR/0.70/ HE/2.20/ H2/2.30/ CO/1.00/ CH4/2.30/
+CH3OCHO/2.30/ H2O/6.00/ KR/0.70/
+
+! Fitting valid between 300 and 2000 K, 0.1 and 100 atm, chi-ecart of 0.191
+CH3OCHO(+M)<=>CH2O+CH2O(+M)            2.986E+06     2.044     73389.5
+         LOW         /                 5.752E+43    -7.956     81478.6 /
+TROE/ 0.946  2000.2  1989.5  376752 /
+AR/0.70/ HE/2.20/ H2/2.30/ CO/1.00/ CH4/2.30/
+CH3OCHO/2.30/ H2O/6.00/ KR/0.70/
+
+! Fitting valid between 300 and 2000 K, 0.1 and 100 atm, chi-ecart of 0.191
+CH3OCHO(+M)<=>CH3+HOCO(+M)             1.871E+05     2.433     70849.6
+         LOW         /                 2.845E+34    -5.267     70795.8 /
+TROE/ 0.159  1646.9  1647.4  138988 /
+AR/0.70/ HE/2.20/ H2/2.30/ CO/1.00/ CH4/2.30/
+CH3OCHO/2.30/ H2O/6.00/ KR/0.70/
+
+! Fitting valid between 300 and 2000 K, 0.5 and 100 atm, chi-ecart of 2.649
+CH3OCHO(+M)<=>CH3+OCHO(+M)             1.346E+22    -1.509     91520.4
+         LOW         /                 2.496E+41    -6.472     93044.2 /
+TROE/ 0.683  19999.9  71.4  726.1 /
+AR/0.70/ HE/2.20/ H2/2.30/ CO/1.00/ CH4/2.30/
+CH3OCHO/2.30/ H2O/6.00/ KR/0.70/
+
+! FUEL DECOMPOSITION REACTIONS
+! PRODUCING TWO RADICALS
+
+! Fitting valid between 300 and 2000 K, 0.1 and 100 atm, chi-ecart of 5.281
+! The following rate constant is for Argon as the bath gas
+CH3OCHO<=>CH3O+HCO                     6.324E+41    -8.361    106245.5
+PLOG /   0.10     8.045E+27    -4.723    104329.5 /
+PLOG /   0.50     7.261E+38    -7.660    105518.8 /
+PLOG /   1.00     6.324E+41    -8.361    106245.5 /
+PLOG /   2.00     1.068E+43    -8.551    106682.9 /
+PLOG /   5.00     9.071E+42    -8.314    106983.1 /
+PLOG /  10.00     6.309E+41    -7.827    106900.8 /
+PLOG /  20.00     9.341E+39    -7.160    106574.2 /
+PLOG / 100.00     4.786E+34    -5.371    105299.8 /
+
+! REACTIONS OF H atoms WITH THE CH2OCHO radical
+CH2OCHO+H<=>CH3OCHO                    1.902E+12    -1.026      4265.9
+PLOG /   0.1   2.520E-17     7.534      3116.0 /
+PLOG /   0.5   3.856E+03     1.551      3919.7 /
+PLOG /   1.0   1.902E+12    -1.026      4265.9 /
+PLOG /   2.5   5.899E+23    -4.432      4723.5 /
+PLOG /   5.0   2.910E+32    -7.009      5069.6 /
+PLOG /  20.0   2.630E+42    -9.501      8993.9 /
+PLOG / 100.0   1.000E+46   -10.050     12223.4 /
+
+! The rate constant has been estimated from the reverse (recombination) rate constant.
+! The reverse rate constant is taken equal to that of iC3H7+H. (USC Mech II)
+CH3OCHO(+M)<=>CH3OCO+H(+M)             1.662E+29    -4.164    105458.9
+         LOW        /                  4.957E+60   -12.416    107924.1 /
+TROE / 0.093  756.9  79987.5  4334.1 /
+AR/0.70/ HE/2.20/ H2/2.30/ CO/1.00/ CH4/2.30/
+CH3OCHO/2.30/ H2O/6.00/ KR/0.70/
+
+! These reactions are slightly pressure dependent.
+! Therefore, we herein assumed that they are pressure independent and the following
+! expressions are the best fit on the entire range of temperature
+! (300-2000 K) and pressure (0.1-100 atm)
+H+CH2OCHO<=>CH3OH+CO                   1.216E+18    -1.360      1347.7
+H+CH2OCHO<=>CH4+CO2                    3.840E+12    -0.026       581.3
+H+CH2OCHO<=>CH2O+CH2O                  9.600E+11    -0.045       282.1
+H+CH2OCHO<=>CH3+HOCO                   1.253E+14    -0.590       963.5
+H+CH2OCHO<=>CH3O+HCO                   2.414E+12     0.477      2004.6
+H+CH2OCHO<=>CH3+OCHO                   1.936E+14    -0.071       920.3
+
+
+! H ABSTRACTION REACTIONS
+
+
+! The rate constant is taken equal to half of the rate constant of the C2H6+O2<=>C2H5+HO2
+! reaction since the enthalpy of these two reactions are very similar : 51.3 kcal/mol and 51.6 kcal/mol at 298 K
+CH3OCHO+O2<=>CH2OCHO+HO2               2.020E+13     0.000     50875.0
+
+! The rate constant is taken equal to half of the rate constant of the C3H8+O2<=>iC3H7+HO2
+! reaction since the enthalpy of these two reactions are very similar : 49.3 kcal/mol and 49.5 kcal/mol at 298 K
+CH3OCHO+O2<=>CH3OCO+HO2                1.985E+13     0.000     47695.4
+
+! This study, calculation by Ting Tan
+! Geometries, frequencies & zero point energy COrrections are obtained at B3LYP/cc-pVTZ
+! Single point energy is calculated using CCSD(T) at basis sets cc-pVnZ (n=3 &4),
+! then extrapolated to the complete basis set limit. 
+! The rate constants are calculated using VARIFLEX at temperature (600 - 2000 K),
+! and then fitted with a Modified Arrhenius Equation. 
+CH3OCHO+H<=>CH2OCHO+H2                 7.110E+06     2.189      8635.6
+CH3OCHO+H<=>CH3OCO+H2                  1.643E+07     1.984      8110.9
+
+! This study, calculation by Ting Tan
+! Geometries, frequencies & zero point energy corrections are obtained at B3LYP/cc-pVTZ
+! Single point energy is calculated using CCSD(T) at basis sets cc-pVnZ (n=3 &4),
+! then extrapolated to the complete basis set limit. 
+! The rate constants are calculated using VARIFLEX at temperature (600 - 2000 K),
+! and then fitted with a Modified Arrhenius Equation.
+! The total rate constant is in good agreement with the measurements of Lam et al. (Journal of Physical Chemistry A (2013) Vol. , pp. ) 
+CH3OCHO+OH<=>CH2OCHO+H2O               2.284E+03     2.931      -172.5
+CH3OCHO+OH<=>CH3OCO+H2O                5.947E+06     1.875       863.4
+
+! This study, calculation by Ting Tan
+! Geometries, frequencies & zero point energy COrrections are obtained at B3LYP/cc-pVTZ
+! Single point energy is calculated using CCSD(T) at basis sets cc-pVnZ (n=3 &4),
+! then extrapolated to the complete basis set limit. 
+! The rate constants are calculated using VARIFLEX at temperature (600 - 2000 K),
+! and then fitted with a Modified Arrhenius Equation.
+CH3OCHO+HO2<=>CH2OCHO+H2O2             7.801E+02     3.149     16737.5
+CH3OCHO+HO2<=>CH3OCO+H2O2              5.431E+04     2.471     17080.1
+
+! This study, calculation by Ting Tan
+! Geometries, frequencies & zero point energy COrrections are obtained at B3LYP/cc-pVTZ
+! Single point energy is calculated using CCSD(T) at basis sets cc-pVnZ (n=3 &4),
+! then extrapolated to the complete basis set limit. 
+! The rate constants are calculated using VARIFLEX at temperature (600 - 2000 K),
+! and then fitted with a Modified Arrhenius Equation.
+CH3OCHO+CH3<=>CH2OCHO+CH4              3.569E+00     3.597     10498.1
+CH3OCHO+CH3<=>CH3OCO+CH4               9.382E+01     3.262      8845.7
+
+
+! Tan et al., Journal of Physocal Chemistry A (2012) Vol. 116, pp. 8431-8443
+CH3OCHO+O<=>CH2OCHO+OH                 1.480E+00     4.120      6730.0
+CH3OCHO+O<=>CH3OCO+OH                  1.960E+03     3.220      7070.0
+
+
+! Estimation, similar as methyl formate + HO2
+CH3OCHO+CH3O2<=>CH2OCHO+CH3O2H         7.801E+02     3.149     16737.5
+CH3OCHO+CH3O2<=>CH3OCO+CH3O2H          5.431E+04     2.471     17080.1
+
+! Estimation, similar as methyl formate + HO2
+CH3OCHO+OCHO<=>CH2OCHO+HOCHO           7.801E+02     3.149     16737.5
+CH3OCHO+OCHO<=>CH3OCO+HOCHO            5.431E+04     2.471     17080.1
+
+CH3OCHO+CH3O<=>CH2OCHO+CH3OH           4.590E+09     0.450      4823.6
+CH3OCHO+CH3O<=>CH3OCO+CH3OH            5.270E+09     0.830      2912.4
+
+CH3OCHO+HCO<=>CH2OCHO+CH2O             1.025E+05     2.500     18430.0
+CH3OCHO+HCO<=>CH3OCO+CH2O              5.400E+06     1.900     17010.0
+
+CH3OCHO+C2H5<=>CH2OCHO+C2H6            1.000E+11     0.000     10400.0
+CH3OCHO+C2H5<=>CH3OCO+C2H6             1.000E+11     0.000     10400.0
+
+CH3OCHO+C2H3<=>CH2OCHO+C2H4            1.000E+11     0.000     10400.0
+CH3OCHO+C2H3<=>CH3OCO+C2H4             1.000E+11     0.000     10400.0
+
+
+CH3OCO+CH3OCHO<=>CH3OCHO+CH2OCHO       1.000E+11     0.000     10400.0
+
+! Methyl Formate Radical reactions
+
+! Tan, Carter, and Klippenstein
+! Personnal Communication
+
+! Valid between 300 and 2000 K, 0.1 and 100 atm
+! Chi-ecart of 0.152
+! The low pressure limit has been scaled by 1.42 to set N2 as the bath gas (2.264E+14 x 1.42 = 3.215E+14)
+CH3OCO(+M)<=>CH3+CO2(+M)               3.559E+12     0.306     13500.5
+         LOW        /                  3.215E+14     0.225      7220.5 /
+TROE / 0.217  94.0  2363.1  4091.5 /
+AR/0.70/ HE/2.20/ H2/2.30/ CO/1.00/ CH4/2.30/
+CH3OCHO/2.30/ H2O/6.00/ KR/0.70/
+
+! Valid between 300 and 2000 K, 0.1 and 100 atm
+! Cannot get a good Troe fitting
+! Minor Channel
+CH3OCO<=>CH3O+CO                       4.744E+05     0.789     21991.2
+PLOG /   0.010   2.243E+10    -1.168  29864.6 /
+PLOG /   0.100   7.306E+02     1.406  24453.5 /
+PLOG /   1.000   4.744E+05     0.789  21991.2 /
+PLOG /   5.000   2.740E+11    -0.759  21410.0 /
+PLOG /  20.000   1.998E+16    -1.949  21757.1 /
+PLOG /  50.000   2.124E+20    -2.966  22820.4 /
+PLOG / 100.000   3.284E+22    -3.466  23612.7 /
+
+! Valid between 300 and 2000 K, 0.1 and 100 atm
+! Chi-ecart of 0.152
+! The low pressure limit has been scaled by 1.42 to set N2 as the bath gas (3.688E+30 x 1.42 = 5.237E+30)
+CH2OCHO(+M)<=>CH2O+HCO(+M)             3.683E+03     3.093     27638.7
+         LOW        /                  5.237E+30    -4.192     28490.1 /
+TROE / 0.012  633.8  628.2  5541.6 /
+AR/0.70/ HE/2.20/ H2/2.30/ CO/1.00/ CH4/2.30/ CH3OCHO/2.30/ H2O/6.00/ KR/0.70/
+
+! Valid between 300 and 2000 K, 0.1 and 100 atm
+! Chi-ecart of 5.748
+! The low pressure limit has been scaled by 1.42 to set N2 as the bath gas (8.000E+25 x 1.42 = 1.136E+26)
+CH2OCHO(+M)<=>CH3OCO(+M)               4.584E-15     8.497     27345.1
+         LOW        /                  1.136E+26    -3.529     32710.8 /
+TROE / 0.290  498.7  78603414.8  28615373326.5 /
+AR/0.70/ HE/2.20/ H2/2.30/ CO/1.00/ CH4/2.30/
+CH3OCHO/2.30/ H2O/6.00/ KR/0.70/
+
+! ETHYL FORMATE
+
+! Unimolecular initiations reactions
+
+C2H5OCHO(+M)<=>CH3+CH2OCHO(+M)                     2.223E+25  -2.577  93600.8
+LOW / 2.443E+46  -7.750  96568.3 /
+TROE / 0.812  4106.5  4098.7  9389.5 /
+AR/0.70/ HE/2.20/ H2/2.30/ CO/1.00/ CH4/2.30/
+CH3OCHO/2.30/ H2O/6.00/ KR/0.70/
+
+C2H5OCHO(+M)<=>OCHO+C2H5(+M)                       4.084E+25  -2.511  93901.9
+LOW / 2.167E+46  -7.597  96691.9 /
+TROE / 0.943  4083.7  4113.4  10093.0 /
+AR/0.70/ HE/2.20/ H2/2.30/ CO/1.00/ CH4/2.30/
+CH3OCHO/2.30/ H2O/6.00/ KR/0.70/
+
+C2H5OCHO(+M)<=>HCO+C2H5O(+M)                       5.532E+22  -1.611 101680.0
+LOW / 9.491E+42  -6.638  104573.8 /
+TROE / 0.155  3826.5  3872.3  8947.5 /
+AR/0.70/ HE/2.20/ H2/2.30/ CO/1.00/ CH4/2.30/
+CH3OCHO/2.30/ H2O/6.00/ KR/0.70/
+
+C2H5OCHO(+M)<=>HOCHO+C2H4(+M)                      1.602E+13   0.007  50339.1
+LOW / 2.543E+38  -6.122  43055.2 /
+TROE / 0.050  1037.4  136.9  3198.9 /
+AR/0.70/ HE/2.20/ H2/2.30/ CO/1.00/ CH4/2.30/
+CH3OCHO/2.30/ H2O/6.00/ KR/0.70/
+
+C2H5OCHO(+M)<=>CH2CH2OCHO+H(+M)                    2.403E+16  -0.072 101364.1
+LOW / 1.472E+37  -5.258  104567.9 /
+TROE / 0.115  3836.2  3844.5  9404.1 /
+AR/0.70/ HE/2.20/ H2/2.30/ CO/1.00/ CH4/2.30/
+CH3OCHO/2.30/ H2O/6.00/ KR/0.70/
+
+C2H5OCHO(+M)<=>CH3CHOCHO+H(+M)                     1.665E+16  -0.115  99729.1
+LOW / 3.988E+36  -5.171  102525.3 /
+TROE / 0.497  3629.3  3628.4  7900.5 /
+AR/0.70/ HE/2.20/ H2/2.30/ CO/1.00/ CH4/2.30/
+CH3OCHO/2.30/ H2O/6.00/ KR/0.70/
+
+C2H5OCHO(+M)<=>C2H5OCO+H(+M)                       2.337E+18  -0.717  99371.0
+LOW / 6.391E+38  -5.776  102283.9 /
+TROE / 0.077  3932.3  3923.6  9344.5 /
+AR/0.70/ HE/2.20/ H2/2.30/ CO/1.00/ CH4/2.30/
+CH3OCHO/2.30/ H2O/6.00/ KR/0.70/
+
+
+! H abstraction reactions
+
+C2H5OCHO+O2<=>HO2+CH2CH2OCHO               3.000E+13     0.000     52290.0
+C2H5OCHO+O2<=>HO2+CH3CHOCHO                2.000E+13     0.000     48200.0
+
+C2H5OCHO+OH<=>H2O+CH2CH2OCHO               5.280E+09     0.970      1586.0
+C2H5OCHO+OH<=>H2O+CH3CHOCHO                1.146E+11     0.510        63.0
+C2H5OCHO+OH<=>C2H5OCO+H2O                  4.588E+07     1.606      1098.3 ! Same as for methyl formate
+
+C2H5OCHO+H<=>H2+CH2CH2OCHO                 6.660E+05     2.540      6756.0
+C2H5OCHO+H<=>H2+CH3CHOCHO                  1.202E+06     2.400      2583.0
+C2H5OCHO+H<=>C2H5OCO+H2                    2.750E+07     1.935      7882.7 ! Same as for methyl formate
+
+C2H5OCHO+O<=>OH+CH2CH2OCHO                 9.810E+05     2.430      4750.0
+C2H5OCHO+O<=>OH+CH3CHOCHO                  7.660E+05     2.410      1140.0
+C2H5OCHO+O<=>C2H5OCO+OH                    2.451E+05     2.470      4047.8
+
+C2H5OCHO+HO2<=>H2O2+CH2CH2OCHO             2.022E+04     2.550     16490.0
+C2H5OCHO+HO2<=>H2O2+CH3CHOCHO              6.137E+03     2.550     10530.0
+C2H5OCHO+HO2<=>C2H5OCO+H2O2                1.566E+05     2.180     16544.4
+
+C2H5OCHO+CH3<=>CH4+CH2CH2OCHO              4.530E-01     3.650      7154.0
+C2H5OCHO+CH3<=>CH4+CH3CHOCHO               1.203E-09     6.360       893.0
+C2H5OCHO+CH3<=>C2H5OCO+CH4                 9.212E-02     3.690      6052.6
+
+C2H5OCHO+C2H5<=>C2H6+CH2CH2OCHO            5.010E+10     0.000     13400.0
+C2H5OCHO+C2H5<=>C2H6+CH3CHOCHO             2.000E+11     0.000      7900.0
+C2H5OCHO+C2H5<=>C2H5OCO+C2H6               1.000E+11     0.000     10400.0
+
+C2H5OCHO+C2H3<=>C2H4+CH2CH2OCHO            5.010E+11     0.000     18000.0
+C2H5OCHO+C2H3<=>C2H4+CH3CHOCHO             4.000E+11     0.000     14300.0
+C2H5OCHO+C2H3<=>C2H5OCO+C2H4               1.000E+11     0.000     10400.0
+
+C2H5OCHO+CH3O<=>CH3OH+CH2CH2OCHO           2.169E+11     0.000      6458.0
+C2H5OCHO+CH3O<=>CH3OH+CH3CHOCHO            4.580E+10     0.000      2873.0
+C2H5OCHO+CH3O<=>C2H5OCO+CH3OH              5.270E+09     0.830      2912.4
+
+C2H5OCHO+CH3O2<=>CH3O2H+CH2CH2OCHO         2.022E+04     2.550     16490.0
+C2H5OCHO+CH3O2<=>CH3O2H+CH3CHOCHO          6.137E+03     2.550     10530.0
+C2H5OCHO+CH3O2<=>C2H5OCO+CH3O2H            1.566E+05     2.180     16544.4
+
+
+! Beta-scission reactions
+
+CH2CH2OCHO<=>C2H4+OCHO                     2.157E+11    0.636  30712.0                    
+REV / 1.320E+04    2.480   6130.0 /
+CH3CHOCHO<=>CH3CHO+HCO                     3.265E+24   -2.916  42093.7                 
+REV / 2.000E+12    0.000  24000.0 /
+C2H5OCO<=>C2H5+CO2                         1.222E+16   -0.526  14822.5
+REV / 4.760E+07    1.540  34700.0 /
+C2H5OCO<=>C2H5O+CO                         2.347E+14    0.254  20097.7
+REV / 1.550E+06    2.020   5730.0 /
+
+! Isomerization reactions
+CH3CHOCHO<=>C2H5OCO                        2.620E+11   -0.030  38178.0 ! same as CH2OCHO<=>CH3OCO
+REV / 1.944E+09    0.756  35035.0 /
+
+!!!!!!!!!!!!!!!!!!!
+! Excited OH Subset
+!!!!!!!!!!!!!!!!!!!
+
+! Hall and Peteren, International Journal of Chemical Kinetics (2006) Vol. 38, pp. 714-724
+CH+O2<=>CO+OH*          3.240E+14     -0.400    4150.0
+
+! Smith et al., Combustion and Flame (2002) Vol. 131, pp. 59–69
+OH*<=>OH+HV             1.450E+06      0.000       0.0
+
+! Kathrotia et al., Combustion and Flame (2010) Vol. 157, pp. 1261-1273
+H+O+M<=>OH*+M           1.500E+013     0.000    5975.0
+H2/ 1.00/ H2O/ 6.50/ O2/ 0.40/ N2/ 0.40/ AR/ 0.35/
+
+! Tamura et al., Combustion and Flame (1998) Vol. 114, pp. 502-514
+OH*+N2<=>OH+N2          1.077E+11      0.500   -1240.0
+OH*+O2<=>OH+O2          2.105E+12      0.500    -482.9
+OH*+H2O<=>OH+H2O        5.926E+12      0.500    -862.4
+OH*+H2<=>OH+H2          2.948E+12      0.500    -445.1
+OH*+CO2<=>OH+CO2        2.756E+12      0.500    -969.8
+OH*+CO<=>OH+CO          3.230E+12      0.500    -788.9
+OH*+CH4<=>OH+CH4        3.358E+12      0.500    -635.9
+OH*+H<=>OH+H            1.310E+13      0.500    -166.9
+OH*+OH<=>OH+OH          6.010E+12      0.500    -763.1
+
+! Paul et al., Journal of Chemical Physics (1995) Vol. 102, pp. 8378–8384
+OH*+AR<=>OH+AR          1.630E+012     0.000    4117.0
+
+! Hidaka et al., Journal of Physical Chemistry (1982) Vol. 86, pp. 1429-1436
+OH*+O<=>OH+O            1.500E+12      0.500       0.0
+
+!!!!!!!!!!!!!!!!!!!
+! Excited CH Subset
+!!!!!!!!!!!!!!!!!!!
+
+! Hall and Petersen, AIAA Paper 2005-318
+C2H+O<=>CH*+CO          5.200E+11   0.000   2600.0
+C+H+M<=>CH*+M           3.630E+13   0.000      0.0
+
+! Carl et al., Journal of Physical Chemistry A (2003), Vol. 107, pp. 11001-11007.
+C2H+O2<=>CH*+CO2        6.023E-04   4.400   -2285.1
+
+! Becker et al., Chemical Physics Letter (1980) Vol. 71, pp. 242-
+CH*<=>CH+HV             1.860E+06   0.000      0.0
+
+! Tamura et al., Combustion and Flame (1998) Vol. 114, pp. 502-514
+CH*+H2<=>CH+H2          1.467E+14   0.000   1363.2
+CH*+H<=>CH+H            2.008E+14   0.000   1363.2
+CH*+H2O<=>CH+H2O        5.298E+13   0.000      0.0
+CH*+O2<=>CH+O2          2.484E+06   2.140  -1722.9
+CH*+OH<=>CH+OH          7.133E+13   0.000   1363.2
+CH*+CH4<=>CH+CH4        1.727E+13   0.000    166.9
+CH*+CO<=>CH+CO          2.442E+12   0.500      0.0
+CH*+CO2<=>CH+CO2        2.396E-01   4.300  -1697.1
+CH*+N2<=>CH+N2          3.027E+02   3.400   -381.5
+
+! Hwang et al., Progress. Aeronaut. Astronaut. (1984) Vol. 95, pp. 198 -
+CH*+M<=>CH+M            4.000E+10   0.500      0.0
+
+END
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+! NOX SUBSET from Dayma et al.
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+N2+M<=>N+N+M                                    1.89E+18   -0.8   224950.0
+H2O/16.25/ CO/1.875/ CO2/3.75/ CH4/16.25/ H2/2.5/
+
+N+O+M<=>NO+M                                    7.60E+14   -0.1    -1770.0
+H2O/16.25/ CO/1.875/ CO2/3.75/ CH4/16.25/ H2/2.5/
+
+! Micheaula nd Lim, J. POhys. Chem. 
+N2+O<=>N+NO                                     1.00E+14    0.0    75490.0
+
+NO+HO2<=>NO2+OH                                 2.10E+12    0.0     -480.0
+
+NO+OH(+M)<=>HONO(+M)                            1.99E+12   -0.1     -721.0
+LOW / 5.080E+23 -2.510 -68.0 /
+TROE / 0.380  9000.0  0.10E-14  1.00E+15 /
+
+NO+H+M<=>HNO+M                                  3.00E+20   -1.8        0.0
+H2O/4.10/ H2/1.25/
+
+NO2+M<=>NO+O+M                                    1.10E+16    0.0    66000.0
+H2O/16.25/ CO/1.875/ CO2/3.75/ CH4/16.25/ H2/2.5/
+
+NO2+H<=>NO+OH                                   1.31E+14    0.0      362.0
+NO2+O<=>NO+O2                                   1.00E+13    0.0      600.0
+NO2+H2<=>HONO+H                                 7.33E+11    0.0    28800.0
+NO2+HO2<=>HONO+O2                               3.15E+08    1.2     5000.0
+NO2+NO2=>NO+NO+O2                               2.00E+12    0.0    26825.0
+
+NO2+OH(+M)<=>HONO2(+M)                          2.41E+13    0.0        0.0
+LOW / 6.420E+32 -5.490  2352.0 /
+TROE / 0.525  1.00E-15  1.00E-15  1.00E+15 /
+
+NO2+NO<=>N2O+O2                                 1.00E+12    0.0    60000.0
+
+HONO+O<=>NO2+OH                                 1.20E+13    0.0     5960.0
+HONO+OH<=>NO2+H2O                               1.30E+10    1.0      135.0
+HONO+NH2<=>NO2+NH3                              7.11E+01    3.0    -4941.0
+HONO+NH<=>NH2+NO2                               1.00E+13    0.0        0.0
+HONO+HONO=>NO+NO2+H2O                           3.49E-01    3.6    12140.0
+
+HNO2+H<=>NO2+H2                                 2.40E+08    1.5     5087.0
+HNO2+O<=>NO2+OH                                 1.70E+08    1.5     3020.0
+HNO2+OH<=>NO2+H2O                               1.20E+06    2.0     -596.0
+HNO2<=>HONO                                     1.30E+29   -5.5    52814.0
+
+HNO+O<=>NO+OH                                   1.00E+13    0.0        0.0
+HNO+H<=>NO+H2                                   4.40E+11    0.7      650.0
+HNO+OH<=>NO+H2O                                 3.60E+13    0.0        0.0
+HNO+HO2<=>NO+H2O2                               4.00E+12    0.0        0.0
+HNO+N<=>NO+NH                                   1.00E+13    0.0     1990.0
+HNO+NO<=>N2O+OH                                 2.00E+12    0.0    26000.0
+HNO+NO2<=>NO+HONO                               4.42E+04    2.6     4060.0
+HNO+HNO<=>N2O+H2O                               3.95E+12    0.0     5000.0
+HNO+NH2<=>NO+NH3                                2.00E+13    0.0     1000.0
+
+NH+OH<=>HNO+H                                   2.00E+13    0.0        0.0
+
+N2O+H<=>NH+NO                                   6.70E+22   -2.2    37155.0
+
+CH2OH+HNO<=>CH3OH+NO                            3.16E+13    0.0        0.0
+CH2OH+NO<=>CH2O+HNO                             3.90E+14   -0.7        0.0
+CH2OH+NO2<=>CH2O+HONO                           1.86E+13    0.0     2285.0
+
+CH3O+NO<=>CH2O+HNO                              1.30E+14   -0.7        0.0
+CH3O+NO2<=>CH2O+HONO                            6.02E+12    0.0     2285.0
+
+CH2O+NO<=>HCO+HNO                               1.02E+13    0.0    40740.0
+CH2O+NO2<=>HCO+HONO                             7.35E+09    0.0    12850.0
+
+HCO+NO<=>CO+HNO                                 7.20E+13   -0.4        0.0
+HCO+NO2<=>CO+HONO                               1.24E+23   -3.3     2355.0
+HCO+NO2=>H+CO2+NO                               2.52E+16   -0.8     1930.0
+
+CO+NO2<=>NO+CO2                                 9.04E+13    0.0    33780.0
+
+CH3O+NO(+M)<=>CH3ONO(+M)                        6.62E+14   -0.6        0.0
+LOW / 1.280E+28 -3.800  0.0 /
+
+CH3O+NO2(+M)<=>CH3ONO2(+M)                      1.20E+13    0.0        0.0
+LOW / 1.400E+30 -4.500  0.0 /
+
+CH3+NO<=>HCN+H2O                                1.50E-01    3.5     3950.0
+
+CH3+NO<=>H2CN+OH                                1.50E-01    3.5     3950.0
+
+CH3+NO2<=>CH3O+NO                               1.28E+13   -0.2        0.0
+
+CH4+NO2<=>HONO+CH3                              1.20E+13    0.0     3000.0
+
+CH3+NO(+M)<=>CH3NO(+M)                          2.20E+11    0.6        0.0
+LOW / 2.060E+27 -3.500  0.0 /
+
+CH3O+HNO<=>CH3OH+NO                             3.16E+13    0.0        0.0
+
+CH3O+HONO<=>CH3OH+NO2                           8.10E+05    1.9     5504.0
+
+CH3NO2(+M)<=>CH3+NO2(+M)                        1.78E+16    0.0    59000.0
+LOW / 1.260E+17  0.000  42000.0 /
+TROE / 0.183  1.00E-30  1.00E+30 /
+
+CH3NO2+O2<=>H2CNO2+HO2                          2.00E+13    0.0    57000.0
+
+CH3NO2<=>CH3ONO                                 2.90E+14    0.0    67000.0
+
+CH3NO2+O<=>H2CNO2+OH                            1.51E+13    0.0     5350.0
+
+CH3NO2+H<=>H2CNO2+H2                            7.50E+12    0.0    10000.0
+
+CH3NO2+H<=>HONO+CH3                             3.27E+12    0.0     3730.0
+
+CH3NO2+H<=>CH3NO+OH                             1.40E+12    0.0     3730.0
+
+CH3NO2+OH<=>H2CNO2+H2O                          1.49E+13    0.0     5740.0
+
+CH3NO2+OH<=>CH3OH+NO2                           2.00E+10    0.0    -1000.0
+
+CH3NO2+HO2<=>H2CNO2+H2O2                        1.50E+11    0.0    15000.0
+
+CH3NO2+CH2(S)<=>H2CNO2+CH3                      1.20E+14    0.0        0.0
+
+CH3NO2+CH2<=>H2CNO2+CH3                         6.50E+12    0.0     7900.0
+
+CH3NO2+CH3<=>H2CNO2+CH4                         7.08E+11    0.0    11140.0
+
+CH3NO2+CH3O<=>H2CNO2+CH3OH                      3.00E+11    0.0     7000.0
+
+H2CNO2<=>CH2O+NO                                1.00E+13    0.0    36000.0
+
+H2CNO2+O<=>CH2O+NO2                             5.00E+13    0.0        0.0
+
+H2CNO2+H<=>CH3+NO2                              5.00E+13    0.0        0.0
+
+H2CNO2+OH<=>CH2OH+NO2                           1.00E+13    0.0        0.0
+
+H2CNO2+OH<=>CH2O+HONO                           1.00E+13    0.0        0.0
+
+H2CNO2+HONO<=>CH3NO2+NO2                        1.00E+12    0.0        0.0
+
+H2NO+NO<=>HNO+HNO                               2.00E+07    2.0    13000.0
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!plasma quenching reaction!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+! O2/CH4/Ar plasma reactions from 
+
+! Kossyi et al., Plasma Sources Science and Technology 1 (1992) 207
+! Kosarev et al., Combust. Flame 154 (2008) 569-586
+! M. Uddi, N. Jiang, E. Mintusov, I.V. Adamovich, W.R. Lempert, Proc. Combust. Inst. 32 (2009) 929–936.
+
+O	+	O3	=	O2	+	O2								1.20443E+13		0	4570.569543
+O	+	O	+	O2	=	O2	+	O2						8.88522E+16	-0.63	0
+O	+	O2	+	O2	=	O3	+	O2						3.12252E+17	-1.25	0
+O2(A)	+	O3	=	O2	+	O2	+	O(D)				5.84148E+11		0	3107.987289
+O2(A)	+	O2	=	O2	+	O2							13850.92499		0.8	0
+O2(A)	+	O	=	O2	+	O							420947676.9		0	0
+O2(B)	+	O3	=	O	+	O2	+	O2					1.07796E+13		0	0
+O2(B)	+	O2	=	O2(A)	+	O2						258.9520759		2.4	478.9161999
+O2(B)	+	O	=	O2(A)	+	O						48177130400		0	0
+O2(B)	+	O	=	O2	+	O(D)						2.04151E+13		0	8348.24463
+O2(c)	+	O2	=	O2(B)	+	O2(B)					1.74642E+11		0	0
+O2(c)	+	O	=	O2(B)	+	O(D)					5.41993E+12		0	0
+O(D)	+	O2	=	O	+	O2(B)						1.92709E+13		0	-133.142678
+O(D)	+	O2	=	O	+	O2							3.85417E+12		0	-133.142678
+O(D)	+	O3	=	O2	+	O	+	O					7.22657E+13		0	0
+O(D)	+	O3	=	O2	+	O2							7.22657E+13		0	0
+O3	+	Ar	=	O2	+	O	+	Ar						2.48112E+14		0	22726.87884
+O3	+	O2	=	O2	+	O	+	O2						1.54167E+14		0	23064.92214
+O3	+	O	=	O2	+	O	+	O						2.48112E+15		0	22726.87884
+O3	+	O3	=	O2	+	O	+	O3						4.40219E+14		0	23064.92214
+O2	+	O	+	Ar	=	O3	+	Ar						4.31568E+12	0	-2087.716935
+O2	+	O	+	O2	=	O3	+	O2						3.26396E+19	-2.1	0
+O2	+	O	+	O	=	O3	+	O						2.28114E+15	-0.5	-1391.857658
+O2	+	O	+	O3	=	O3	+	O3						1.67187E+15	-0.5	-1391.857658
+O2	+	Ar	=	O	+	O	+	Ar						1.49951E+18		-1	118068.5621
+O2	+	O2	=	O	+	O	+	O2						9.81609E+24		-2.5	118068.5621
+O2	+	O	=	O	+	O	+	O						3.49886E+25		-1	118068.5621
+O2	+	O3	=	O	+	O	+	O3						1.19841E+19		-1	118068.5621
+O2	+	H2O	=	O	+	O	+	H2O						1.19841E+19		-1	118068.5621
+O	+	O	+	Ar	=	O2	+	Ar						1.89309E+13	0	-1789.51708
+O	+	O	+	O2	=	O2	+	O2						1.50142E+16	-0.4	0
+O	+	O	+	O	=	O2	+	O						5.33113E+16	-0.4	0
+O	+	O	+	O3	=	O2	+	O3						1.30196E+14	0	-1789.51708
+O2	+	O2	=	O3	+	O								1.19841E+13		0	100411.9154
+O3	+	O	=	O2	+	O2								4.82374E+12		0	4095.985448
+O3	+	H	=	OH	+	O2								6.86524E+12		0	868.8851421
+O2	+	OH	=	H	+	O3								44021852.9		1.4	78738.85089
+OH	+	O3	=	HO2	+	O2								9.5752E+11		0	1988.356727
+HO2	+	O3	=	OH	+	O2	+	O2						1.66211E+11		-0.3	1988.356727
+Ar*	+	O2	=	Ar	+	O	+	O						1.20443E+14		0	0
+Ar(+)	+	O2	=	Ar	+	O2+							6.02214E+13		0	0
+Ar*	+	CH4	=	Ar	+	CH2	+	H	+	H				1.98731E+14		0	0
+Ar*	+	CH4	=	Ar	+	CH	+	H2	+	H				3.49284E+13		0	0
+Ar*	+	CH4	=	Ar	+	CH3	+	H						3.49284E+13		0	0
+Ar*	+	CH4	=	Ar	+	CH2	+	H2						3.49284E+13		0	0
+O(D)	+	He	=	He	+	O							60221413000		0	0
+O(D)	+	Ar	=	Ar	+	O							60221413000		0	0
+O2+	+	E	=	O	+	O								3.60726E+19		-1	0
+Ar(+)	+	CH4	=	Ar	+	CH3+	+	H				3.91439E+14		0	0
+O2(A)	+	Ar	=	O	+	O	+	Ar					5.40186E+18		-1	95401.69678
+O2(B)	+	Ar	=	O	+	O	+	Ar					5.40186E+18		-1	80312.85568
+O2(A)	+	H	=	OH	+	O							1.10205E+14		0	6335.206827
+O2(B)	+	H	=	OH	+	O							1.10205E+14		0	3219.270721
+O2(A)	+	H2	=	H	+	HO2							2.10173E+13		0	36198.91078
+O2(B)	+	H2	=	H	+	HO2							2.10173E+13		0	22868.74535
+O2(A)	+	OH	=	O	+	HO2							1.30078E+13		0	34044.78148
+O2(B)	+	OH	=	O	+	HO2							1.30078E+13		0	20092.62115
+O2(A)	+	CH4	=	CH3	+	HO2							7.5879E+13		0	58680.15131
+O2(B)	+	CH4	=	CH3	+	HO2							7.5879E+13		0	32315.91387
+O2(A)	+	CH3	=	CH2O	+	OH						6.62436E+11		0	10875.96831
+O2(B)	+	CH3	=	CH2O	+	OH						6.62436E+11		0	9375.629175
+O2(A)	+	CH3	=	CH3O	+	O						2.10775E+13		0	14373.44761
+O2(B)	+	CH3	=	CH3O	+	O						2.10775E+13		0	7261.24396
+O2(A)	+	CH2	=	CH2O	+	O						39987018232		0	0
+O2(B)	+	CH2	=	CH2O	+	O						39987018232		0	0
+O2(A)	+	CH	=	CO	+	OH							1.40316E+11		0.67	23226.44209
+O2(B)	+	CH	=	CO	+	OH							1.40316E+11		0.67	21783.73188
+HCO	+	O	=	CH	+	O2(A)							1.40316E+13		0	97104.73074
+HCO	+	O	=	CH	+	O2(b)							1.40316E+13		0	112193.5718
+O2(A)	+	CO	=	CO2	+	O							3.16162E+11		0	28707.15114
+O2(B)	+	CO	=	CO2	+	O							3.16162E+11		0	24237.929
+CO	+	HO2	=	HCO	+	O2(A)							8.91277E+12		0	54976.00278
+CO	+	HO2	=	HCO	+	O2(b)							8.91277E+12		0	70064.84388
+O2(A)	+	CH2O	=	HO2	+	HCO						3.63135E+15		0	25833.65394
+O2(B)	+	CH2O	=	HO2	+	HCO						3.63135E+15		0	14764.92683
+O2(A)	+	CH3O	=	CH2O	+	HO2					66243554300		0	1500.339132
+O2(B)	+	CH3O	=	CH2O	+	HO2					66243554300		0	1162.514427
+O2(A)	+	C2H5	=	C2H4	+	HO2					8.431E+11		0	1712.969976
+O2(B)	+	C2H5	=	C2H4	+	HO2					8.431E+11		0	1226.10496
+O2(A)	+	C2H6	=	C2H5	+	HO2					4.02881E+13		0	28230.22214
+O2(B)	+	C2H6	=	C2H5	+	HO2					4.02881E+13		0	13147.34265
+O2(A)	+	C2H4	=	C2H3	+	HO2					4.02881E+13		0	34992.67786
+O2(B)	+	C2H4	=	C2H3	+	HO2					4.02881E+13		0	19903.83676
+O2(A)	+	C2H3	=	C2H2	+	HO2					1.19841E+11		0	0
+O2(B)	+	C2H3	=	C2H2	+	HO2					1.19841E+11		0	0
+O2(A)	+	C2H2	=	C2H	+	HO2						1.19841E+11		0	51883.91313
+O2(B)	+	C2H2	=	C2H	+	HO2						1.19841E+11		0	36795.07202
+O2(A)	+	C2H2	=	HCO	+	HCO						3.9987E+12		0	23101.24823
+O2(B)	+	C2H2	=	HCO	+	HCO						3.9987E+12		0	20144.28846
+O2(A)	+	C2H	=	CO	+	HCO							9.99675E+12		0	6051.036634
+O2(B)	+	C2H	=	CO	+	HCO							9.99675E+12		0	5540.325167
+O2(A)	+	CH2OH	=	CH2O	+	HO2					9.99675E+11		0	4071.781301
+O2(B)	+	CH2OH	=	CH2O	+	HO2					9.99675E+11		0	3159.654597
+O2	+	O2	+	E	=	O2-	+	O2						1.52318E+21	-1	0
+O	+	O2	+	E	=	O-	+	O2						3.62299E+21	0	0
+O	+	O2	+	E	=	O	+	O2-						3.62299E+21	0	0
+O3	+	E	=	O	+	O2-								6.02214E+14		0	0
+O3	+	E	=	O-	+	O2								6.02214E+12		0	0
+O2-	+	O2	=	O2	+	O2	+	E						1312826.803		0	0
+O2-	+	O2(A)	=	O2	+	O2	+	E					1.20443E+14		0	0
+O2-	+	O2(B)	=	O2	+	O2	+	E					2.16797E+14		0	0
+O-	+	O2(A)	=	O3	+	E							1.80664E+14		0	0
+O-	+	O2(B)	=	O	+	O2	+	E					4.15528E+14		0	0
+O2-	+	O	=	O3	+	E								3011070650		0	0
+O+	+	O2-	=	O2	+	O								1.20443E+17		0	0
+O+	+	O-	=	O	+	O								1.20443E+17		0	0
+O2+	+	O2-	=	O2	+	O2								1.20443E+17		0	0
+O2+	+	O-	=	O2	+	O								1.20443E+17		0	0
+
+! Excited argon reactions from Velazco, Kolts, & Setser, The Journal of Chemical Physics 69 (1978) 4357.
+Ar*	+	C2H4	=	Ar	+	C2H2	+	H2				2.58303E+13		0	0
+Ar*	+	C2H4	=	Ar	+	C2H2	+	H	+	H		1.16175E+14		0	0
+Ar*	+	C2H4	=	Ar	+	C2H3	+	H				8.33211E+13		0	0
+Ar*	+	C2H4	=	Ar	+	C	+	CH4					1.28379E+14		0	0
+
+! Argon ion charge exchange from Tsuji et al., J. Chem. Phys. 98 (1993) 2011.
+Ar(+)	+	C2H4	=	Ar	+	C2H3+	+	H			5.03451E+14		0	0
+Ar(+)	+	C2H4	=	Ar	+	C2H2+	+	H	+	H	1.32487E+14		0	0
+Ar(+)	+	C2H4	=	Ar	+	C2H4+					2.64974E+13		0	0
+
+C2	+	H2	=	C2H	+	H								400171.2894		2.4	1000.676521
+C2	+	O2	=	CO	+	CO								5.00199E+13		0	0
+C2	+	OH	=	C2O	+	H								5.00199E+13		0	0
+
+! Electron recombination reactions from J. B. A. Mitchell, Phys. Rep. 186 (1990) 215. 
+E	+	C2H2+	=	C2H	+	H							1.40814E+18		-0.5	0
+E	+	C2H2+	=	C2	+	H2							5.63255E+16		-0.5	0
+E	+	C2H2+	=	C2	+	H	+	H					8.44883E+17		-0.5	0
+E	+	C2H2+	=	CH2	+	C							1.40814E+17		-0.5	0
+E	+	C2H2+	=	CH	+	CH							3.66116E+17		-0.5	0
+E	+	C2H3+	=	C2H2	+	H						1.3612E+18		-0.5	0
+E	+	C2H3+	=	C2H	+	H2							2.81628E+17		-0.5	0
+E	+	C2H3+	=	C2H	+	H	+	H					2.76934E+18		-0.5	0
+E	+	C2H3+	=	C2	+	H2	+	H					1.12651E+17		-0.5	0
+E	+	C2H3+	=	CH2	+	CH							1.40814E+17		-0.5	0
+E	+	C2H4+	=	C2H3	+	H						4.71398E+16		-0.5	0
+E	+	C2H4+	=	C2H2	+	H	+	H				1.94844E+17		-0.5	0
+E	+	C2H4+	=	C2H2	+	H2						1.88559E+16		-0.5	0
+E	+	C2H4+	=	C2H	+	H	+	H2					3.14265E+16		-0.5	0
+E	+	C2H4+	=	CH2	+	CH2							1.25706E+16		-0.5	0
+E	+	C2H4+	=	CH3	+	CH							6.2853E+15		-0.5	0
+END
+
+!===============================================================================
+            Electron collision reactions
+!-------------------------------------------------------------------------------
+Cross sections used are from:
+- Itikawa database, www.lxcat.net, retrieved on March 31, 2014.
+- Hayashi database, www.lxcat.net, retrieved on March 31, 2014.
+- R. K. Janev and D. Reiter, Phys Plasmas 11 (2004) 780-829.
+
+To model the discharge process, these electron collision reactions were considered.
+Reaction rates can be computed using BOLSIG+ as a function of E/N.
+Collisions of O2 with electrons contributing 4.5 eV are considered dissociative
+
+O2       + E       = O        + O        + E                                 
+O2       + E       = O        + O(D)     + E                                 
+O2       + E       = O2(A)    + E                                            
+O2       + E       = O2(B)    + E                                                                                                                   
+O2       + E       = O2+      + E        + E                                 
+O2       + E       = O        + O+       + E      + E                      
+O2       + E       = O        + O-                                                                     
+C2H4     + E       = C2H3     + H        + E                                 
+C2H4     + E       = C2H2     + H2       + E                                 
+C2H4     + E       = C2H2     + H        + H      + E                      
+C2H4     + E       = C2H      + H2       + H      + E    
+C2H4 	 + E 	   = C2H4(+)  + E	     + E 
+C2H4 	 + E 	   = C2H3(+)  + H		 + E	  + E 
+C2H4 	 + E 	   = C2H2(+)  + H 		 + H	  + E	+ E
+C2H4 	 + E 	   = C2H2(+)  + H2		 + E	  + E                                     
+Ar       + E       = Ar*      + E                                                                                      
+Ar       + E       = Ar(+)    + E        + E                                 
+                             

@@ -30,10 +30,10 @@ Sébastien Thion, Casimir Togbé, Zeynep Serinyel, Guillaume Dayma, Philippe Dag
 
 ### Mechanism 1
 
-- Status: ok
+- Status: cantera_failed
 - Species count: 328
 - Reaction count: 2447
-- Message: cantera conversion ok
+- Message: InputError: Ignoring redundant thermo data for species 'c2h3ocho' starting on line 999 of therm.dat. Ignoring redundant thermo data for species 'c3h5ocho' starting on line 1003 of therm.dat. Ignoring redundant thermo data for species 'c2h3oco' starting on line 1075 of therm.dat. Ignoring redundant thermo data for species 'c3h5oco' starting on line 1079 of therm.dat. Ignoring redundant thermo data for species 'ch2ch2ocho' starting on line 1091 of therm.dat. Suppressed 73 additional warnings about redundant thermo data. Run ck2yaml again with the '--verbose' option to see all warnings. Unparsable lines while reading thermo data in therm.dat starting on line 407: """ ! """ Lines could not be parsed as a NASA7 entry. Unparsable lines while reading thermo data in therm.dat starting on line 1504 ... [truncated; see _processing logs]
 - Method: cantera
 - Cantera YAML: mechanism.yaml
 - Standard chem.inp: chem.inp

@@ -47,4 +47,3 @@ not available
 ## Processing Notes
 
 - extracted S1540748916300220_mmc1.zip
-- extracted supplementary material.docx

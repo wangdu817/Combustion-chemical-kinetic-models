@@ -31,11 +31,11 @@ Shimpei Yamada, Daisuke Shimokuri, Shenqyang Shy, Tomoaki Yatsufusa, Yuta Shinji
 ### Mechanism 1
 
 - Status: cantera_failed
-- Species count: not parsed
-- Reaction count: not parsed
-- Message: missing cantera result json
+- Species count: 669
+- Reaction count: 2763
+- Message: InputError: No thermo data found for species 'tC4H9' No thermo data found for species 'iC4H8' No thermo data found for species 'tC4H9OO' No thermo data found for species 'tC4H9O' No thermo data found for species 'iC4H7a' No thermo data found for species 'iC3H7' No thermo data found for species 'iC3H6vCHO' No thermo data found for species 'C6H14COa' No thermo data found for species 'CH3COCH3' No thermo data found for species 'C4H8OOHti' No thermo data found for species 'tC4H9OOH' No thermo data found for species 'iC3H7OO' No thermo data found for species 'iC3H7O' No thermo data found for species 'iC2H6CCO' No thermo data found for species 'C6H13vCOb' No thermo data found for species 'C4H8cyOit' No thermo data found for species 'HOOC4H8OOti' No thermo data found for species 'C3H6OOHba' No th ... [truncated; see _processing logs]
 - Method: cantera
-- Cantera YAML: not available
+- Cantera YAML: mechanism.yaml
 - Standard chem.inp: chem.inp
 - Standard therm.dat: therm.dat
 - Standard tran.dat: tran.dat
@@ -43,21 +43,21 @@ Shimpei Yamada, Daisuke Shimokuri, Shenqyang Shy, Tomoaki Yatsufusa, Yuta Shinji
 ### Mechanism 2
 
 - Status: cantera_failed
-- Species count: not parsed
-- Reaction count: not parsed
-- Message: InputError: Error while reading reaction in chem.inp starting on line 594: """ C3H6+H=aC3H5+H2 5.000e+12 0.000 1100.0 rev / 3.795e+11 0.150 16638.4 / ! ---------- """ Unparsable line: 'Added reactions for SL improvement'. Error while reading reaction in chem.inp starting on line 605: """ C3H6+CH3=aC3H5+CH4 1.400e+11 0.000 8800.0 rev / 1.441e+14 -0.660 26464.1 / ! ---------- """ Unparsable line: 'Added reactions for SL improvement'. Error while reading reaction in chem.inp starting on line 692: """ iC4H8+H=iC4H7a+H2 5.000e+12 0.000 1100.0 rev / 1.898e+11 0.149 16637.7 / ! ---------- """ Unparsable line: 'Added reactions for SL improvement'. Error while reading reaction in chem.inp starting on line 703: """ iC4H8+CH3=iC4H7a+CH4 1.400e+11 0.000 8800.0 rev / 7.206e+13 -0.660 26463.4 / ! ------ ... [truncated; see _processing logs]
+- Species count: 669
+- Reaction count: 2763
+- Message: InputError: No thermo data found for species 'C9H19f' No thermo data found for species 'C9H19g' No thermo data found for species 'C9H19h' No thermo data found for species 'iC3H7' No thermo data found for species 'iC4H9' No thermo data found for species 'iC4H8' No thermo data found for species 'C8H16e' No thermo data found for species 'C9H19OOf' No thermo data found for species 'C9H19Of' No thermo data found for species 'C9H19OOg' No thermo data found for species 'C9H19Og' No thermo data found for species 'C9H19OOh' No thermo data found for species 'C9H19Oh' No thermo data found for species 'iC3H7OO' No thermo data found for species 'iC3H7O' No thermo data found for species 'iC4H9OO' No thermo data found for species 'iC4H9O' No thermo data found for species 'iC4H7a' No thermo data found for ... [truncated; see _processing logs]
 - Method: cantera
-- Cantera YAML: not available
+- Cantera YAML: mechanism.yaml
 - Standard chem.inp: chem.inp
 - Standard therm.dat: therm.dat
 - Standard tran.dat: tran.dat
 
 ### Mechanism 3
 
-- Status: ok
+- Status: cantera_failed
 - Species count: 669
 - Reaction count: 2763
-- Message: cantera conversion ok
+- Message: InputError: Error while reading reaction in chem.inp starting on line 594: """ C3H6+H=aC3H5+H2 5.000e+12 0.000 1100.0 rev / 3.795e+11 0.150 16638.4 / ! ---------- """ Unparsable line: 'Added reactions for SL improvement'. Error while reading reaction in chem.inp starting on line 605: """ C3H6+CH3=aC3H5+CH4 1.400e+11 0.000 8800.0 rev / 1.441e+14 -0.660 26464.1 / ! ---------- """ Unparsable line: 'Added reactions for SL improvement'. Error while reading reaction in chem.inp starting on line 692: """ iC4H8+H=iC4H7a+H2 5.000e+12 0.000 1100.0 rev / 1.898e+11 0.149 16637.7 / ! ---------- """ Unparsable line: 'Added reactions for SL improvement'. Error while reading reaction in chem.inp starting on line 703: """ iC4H8+CH3=iC4H7a+CH4 1.400e+11 0.000 8800.0 rev / 7.206e+13 -0.660 26463.4 / ! ------ ... [truncated; see _processing logs]
 - Method: cantera
 - Cantera YAML: mechanism.yaml
 - Standard chem.inp: chem.inp

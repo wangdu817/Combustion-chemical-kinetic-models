@@ -1,0 +1,1225 @@
+!Reaction Mechanism
+!Title:    Experimental and Kinetic Modeling Study of Tetralin Pyrolysis at Low Pressure
+!Authors:  Yuyang Li, Lidong Zhang, Zhandong Wang, Lili Ye, Jianghuai Cai, Zhanjun Cheng, Fei Qi
+!Address1: State Key Laboratory of Fire Science, University of Science and Technology of China, Hefei, Anhui 230026, P. R. China
+!Address2: National Synchrotron Radiation Laboratory, University of Science and Technology of China, Hefei, Anhui 230029, P. R. China
+!
+ELEMENTS
+H  C  O  AR
+END
+SPECIES
+!
+!=====C0
+CS          H           H2          H2O         CO          CO2         AR                                              
+!=====C1                                                                            
+C           CH          CH2         CH2*        CH3         CH4                     
+!=====C2                                                                            
+C2H         C2H2        H2CC        C2H3        C2H4        C2H5        C2H6        
+!=====C3                                                                            
+C3H2        C3H3        pC3H4       aC3H4       aC3H5       CH3CCH2     CH3CHCH
+C3H6        nC3H7                                           
+!=====C4                                                                            
+C4H         C4H2        nC4H3       iC4H3       C4H4        C4H5-2      nC4H5       
+iC4H5       C4H6        C4H612      C4H6-2              
+!=====C5                                                                            
+C5H2        C5H3        cC5H4       C5H4        C5H5        lC5H5       C5H6        
+lC5H7                  
+!=====C6                                                                            
+C6H         C6H2        C6H3        o-C6H4      l-C6H4      A1-         nC6H5       
+A1          fulvene     C5H4CH3                                                                              
+!=====C7                                                                            
+C7H5        C7H6        A1CH        C6H4CH3     A1CH2       A1CH3                                       
+!=====C8                                                                            
+C8H         C8H2        C6H3C2H     A1C2H-      A1CC        A1C2H       A1cC2H2     
+A1CHCH      A1CCH2      C6H4C2H3    A1C2H3      o-C8H8      C6H4C2H4    A1CHCH3     
+A1CH2CH2    o-C8H9      A1C2H5      o-C8H10               
+!=====C9                                                                            
+C9H7        C9H8        A1C3H2      CH2A1C2H3   C9H9-1      CH3A1C2H3   C9H10                                                                   
+!=====C10                                                                           
+C10H        C10H2       A2T1        A2T2        A1(C2H)2    C2H2A1C2H   A2-1        
+A2-2        A2          C2H2A1C2H3  C6H4C4H5    H2A2-1      H2A2-2      H2A2        
+H2A223      C9H7CH3     A1(C2H3)2   H4A2-1      H4A2-2      C9H8CH3     C2H4A1C2H3  
+CH2A1C3H5   H4A2        CH3A1C3H5       
+!=====C11                                                                           
+C11H8       A2CH2-1     A2CH3-1                                         
+!=====C12                                                                           
+A2C2HB*     A2C2HA*     A2C2HA      A2C2HB      A2R5-       A2R5        BIPHEN      
+A2C2H2      P2-         P2          P2-H                                                        
+!=====C13                                                                           
+C13H9       p-C13H9     C13H10      p-C13H10    BENZYLBJ    C13H12                                          
+!=====C14                                                                           
+A2R5R5      A2(C2H)2    A3-1        A3-4        A3          C14H12      C14H14                                                                  
+!=====C15                                                                           
+A3CH2       A3CH3                                                       
+!=====C16                                                                           
+A3C2H       A3C2H2      A4-         A4          FLTHN                               
+!=====C18                                                                           
+CHRYSEN     C18H12                                                                  
+
+REACTIONS
+!==============================================                               ==============================================
+!============================================== USC  mech V2.0(C1-C3 SubMech) ==============================================
+!==============================================                               ==============================================
+! ---- Optimized H2/O2 mechanism ----
+ H+H+M=H2+M                                    1.780E+18  -1.000       0.0      !GRI3.0 *1.78
+                                         H2/0.0/ H2O/0.0/ CO2/0.0/ AR/0.63/       !HE/0.63/
+ H+H+H2=H2+H2                                  9.000E+16  -0.600       0.0      !GRI3.0
+! ---- End of Optimized H2/O2 mechanism ----
+!                                                                             
+! Reactions of CH                                                             
+!                                                                             
+ CH+H=C+H2                                     1.100E+14   0.000       0.0      !GRI
+ CH+H2=CH2+H                                   1.107E+08   1.790    1670.0      !GRI
+!
+! Reactions of CH2(triplet)
+!
+ CH2+H(+M)=CH3(+M)                             2.500E+16  -0.800       0.0      !GRI
+                                         LOW / 3.200E+27  -3.140    1230.0/
+                                         TROE/ 0.6800 78.00 1995.0  5590.0/
+               H2/2.0/ H2O/6.0/ CH4/2.0/ CO/1.5/ CO2/2.0/ C2H6/3.0/ AR/0.7/
+ CH2+H2=H+CH3                                  5.000E+05   2.000    7230.0      !GRI
+ CH2+C=C2H+H                                   5.000E+13   0.000       0.0      !GRI
+ CH2+CH=C2H2+H                                 4.000E+13   0.000       0.0      !GRI  
+ CH2+CH2=C2H2+H2                               3.200E+13   0.000       0.0      !GRI
+!
+! Reactions of CH2(singlet)
+!
+ CH2*+AR=CH2+AR                                9.000E+12   0.000     600.0      !GRI
+ CH2*+H=CH+H2                                  3.000E+13   0.000       0.0      !GRI
+ CH2*+H2=CH3+H                                 7.000E+13   0.000       0.0      !GRI
+!
+! Reactions of CH3
+!
+ CH3+H(+M)=CH4(+M)                             1.270E+16  -0.630     383.0      !GRI
+                                         LOW / 2.477E+33  -4.760    2440.0/
+                                         TROE/ 0.7830 74.00 2941.00 6964.0/
+               H2/2.0/ H2O/6.0/ CH4/2.0/ CO/1.5/ CO2/2.0/ C2H6/3.0/ AR/0.7/
+ CH3+C=C2H2+H                                  5.000E+13   0.000       0.00     !GRI
+ CH3+CH=C2H3+H                                 3.000E+13   0.000       0.00     !GRI
+ CH3+CH2=C2H4+H                                4.000E+13   0.000       0.00     !GRI
+ CH3+CH2*=C2H4+H                               1.200E+13   0.000    -570.00     !GRI
+ CH3+CH3(+M)=C2H6(+M)                          2.120E+16  -0.970     620.00     !GRI
+                                         LOW / 1.770E+50  -9.670    6220.0/  
+                                         TROE/ 0.5325 151.0 1038.00 4970.0/
+               H2/2.0/ H2O/6.0/ CH4/2.0/ CO/1.5/ CO2/2.0/ C2H6/3.0/ AR/0.7/
+ CH3+CH3=H+C2H5                                4.990E+12   0.100   10600.00     !GRI
+ CH3+C2H=C3H3+H                                2.41E+13    0.0         0.0      !1986 Tsang&Hampson
+!                                                                            
+! Reactions of CH4                                                           
+!                                                                            
+ CH4+H=CH3+H2                                  6.600E+08   1.620   10840.0      !GRI
+ CH4+CH=C2H4+H                                 6.000E+13   0.000       0.0      !GRI
+ CH4+CH2=CH3+CH3                               2.460E+06   2.000    8270.0      !GRI
+ CH4+CH2*=CH3+CH3                              1.600E+13   0.000    -570.0      !GRI
+ CH4+C2H=C2H2+CH3                              1.810E+12   0.0       500.0      !1986 Tsang&Hampson
+!
+! Reactions of C2H2
+!
+ C2H2(+M)=H2CC(+M)                             8.000E+14  -0.520   50750.0      !1999 Laskin&Wang
+                                         LOW / 2.450E+15  -0.640   49700.0/
+   H2/2.0/ H2O/6.0/ CH4/2.0/ CO/1.5/ CO2/2.0/ C2H6/3.0/ C2H2/2.5/ C2H4/2.5/ 
+ C2H3(+M)=C2H2+H(+M)                           3.860E+08   1.620   37048.2      !1996 Knyazev&Slagle
+                                         LOW / 2.565E+27  -3.400   35798.72/
+                                         TROE/ 1.9816 5383.7 4.2932 -0.0795/
+ H2/2.0/ H2O/6.0/ CH4/2.0/ CO/1.5/ CO2/2.0/ C2H6/3.0/ AR/0.7/ C2H2/3.0/ C2H4/3.0/
+ C2H2+CH2=C3H3+H                               1.200E+13   0.000    6620.0      !1988 Bohland et al.; 1988 Frank et al.
+ C2H2+CH2*=C3H3+H                              2.000E+13   0.000       0.0      !1997 Wang&Frenklach
+ C2H2+C2H(+M)=nC4H3(+M)                        8.300E+10   0.899    -363.0      !1992 Wang
+                                         LOW / 1.240E+31  -4.718    1871.0/
+                                         TROE/ 1.0  100.0  5613.0  13387.0/
+   H2/2.0/ H2O/6.0/ CH4/2.0/ CO/1.5/ CO2/2.0/ C2H6/3.0/ C2H2/2.5/ C2H4/2.5/  
+ C2H2+C2H(+M)=iC4H3(+M)                        8.300E+10   0.899    -363.0      !1992 Wang
+                                         LOW / 1.240E+31  -4.718    1871.0/
+                                         TROE/ 1.0  100.0  5613.0  13387.0/
+   H2/2.0/ H2O/6.0/ CH4/2.0/ CO/1.5/ CO2/2.0/ C2H6/3.0/ C2H2/2.5/ C2H4/2.5/ 
+!                                                                               
+ C2H2+CH3=pC3H4+H                              4.50E+06    1.86    11600.0      !1999 Davis et al. RRKM 
+  plog /  0.100                                4.50E+06    1.86    11600.0/     !
+  plog /  1.000                                2.56E+09    1.10    13644.0/     !
+  plog /  2.000                                2.07E+10    0.85    14415.0/     !
+  plog /  5.000                                2.51E+11    0.56    15453.0/     !
+  plog / 10.000                                1.10E+12    0.39    16200.0/     !
+  plog /100.000                                2.10E+12    0.37    18100.0/     ! 
+!                                                                               
+ C2H2+CH3=aC3H4+H                              2.40E+09    0.91    20700.0      !1999 Davis et al. RRKM
+  plog /  0.100                                2.40E+09    0.91    20700.0/     !
+  plog /  1.000                                5.14E+09    0.86    22153.0/     !
+  plog /  2.000                                1.33E+10    0.75    22811.0/     !
+  plog /  5.000                                9.20E+10    0.54    23950.0/     !
+  plog / 10.000                                5.10E+11    0.35    25000.0/     !
+  plog /100.000                                7.30E+12    0.11    28500.0/     !
+!                                                                               
+ C2H2+CH3=CH3CCH2                              6.80E+20   -4.16    18000.0      !1999 Davis et al. RRKM
+  plog /  0.100                                6.80E+20   -4.16    18000.0/     !
+  plog /  1.000                                4.99E+22   -4.39    18850.0/     !
+  plog /  2.000                                6.00E+23   -4.60    19571.0/     !
+  plog /  5.000                                7.31E+25   -5.06    21150.0/     !
+  plog / 10.000                                9.30E+27   -5.55    22900.0/     !
+  plog /100.000                                3.80E+36   -7.58    31300.0/     !
+!                                                                               
+ C2H2+CH3=CH3CHCH                              1.40E+32   -7.14    10000.0      !1999 Davis et al. RRKM
+  plog /  0.100                                1.40E+32   -7.14    10000.0/     !
+  plog /  1.000                                3.20E+35   -7.76    13300.0/     !
+  plog / 10.000                                2.40E+38   -8.21    17100.0/     !
+  plog /100.000                                1.40E+39   -8.06    20200.0/     !
+!                                                                               
+ C2H2+CH3=aC3H5                                8.20E+53   -13.32   33200.0      !1999 Davis et al. RRKM
+  plog /  0.100                                8.20E+53   -13.32   33200.0/     !
+  plog /  1.000                                2.68E+53   -12.82   35730.0/     !
+  plog /  2.000                                3.64E+52   -12.46   36127.0/     !
+  plog /  5.000                                1.04E+51   -11.89   36476.0/     !
+  plog / 10.000                                4.40E+49   -11.40   36700.0/     !
+  plog /100.000                                3.80E+44    -9.63   37600.0/     !
+!                                                                               
+! Reactions of Vinylidene                                                       
+!                                                                               
+ H2CC+H=C2H2+H                                 1.000E+14   0.000       0.0      !USC Mech II Est.
+ H2CC+C2H2(+M)=C4H4(+M)                        3.500E+05   2.055   -2400.0      !1999 Laskin&Wang
+                                         LOW / 1.400E+60 -12.599    7417.0/
+                                         TROE/ 0.980  56.0   580.0  4164.0/
+   H2/2.0/ H2O/6.0/ CH4/2.0/ CO/1.5/ CO2/2.0/ C2H6/3.0/ C2H2/3.0/ C2H4/3.0/
+ H2CC+C2H4=C4H6                                1.00E+12    0.0         0.0      !USC Mech II Est.
+!
+! Reactions of C2H3 
+!
+ C2H3+H(+M)=C2H4(+M)                           6.080E+12   0.270     280.0      !GRI1.2
+                                         LOW / 1.400E+30  -3.860    3320.0/
+                                         TROE/ 0.782 207.50 2663.00 6095.0/
+ H2/2.0/ H2O/6.0/ CH4/2.0/ CO/1.5/ CO2/2.0/ C2H6/3.0/ AR/0.7/ C2H2/3.0/ C2H4/3.0/
+ C2H3+H=C2H2+H2                                9.000E+13   0.000       0.0      !1986 Tsang&Hampson
+ C2H3+H=H2CC+H2                                6.000E+13   0.000       0.0      !USC Mech II Est.
+ C2H3+CH3=C2H2+CH4                             3.920E+11   0.000       0.0      !1986 Tsang&Hampson
+ C2H3+CH3(+M)=C3H6(+M)                         2.500E+13   0.000       0.0      !1986 Tsang&Hampson
+                                         LOW / 4.270E+58 -11.940    9769.8/     
+                                         TROE/ 0.175 1340.6 60000. 10139.8/     
+      H2/2/ H2O/6/ CH4/2/ CO/1.5/ CO2/2/ C2H6/3/ AR/0.7/C2H2/3.0/ C2H4/3.0/     
+ C2H3+CH3=aC3H5+H                              1.500E+24  -2.830   18618.0      !1986 Tsang&Hampson 
+!
+ C2H3+C2H2=C4H4+H                              7.20E+13   -0.48     6100.0      !1997 Wang&Frenklach RRKM
+  plog /  0.013                                7.20E+13   -0.48     6100.0/     !
+  plog /  0.026                                5.00E+14   -0.71     6700.0/     !
+  plog /  0.118                                4.60E+16   -1.25     8400.0/     !
+  plog /  1.000                                2.00E+18   -1.68    10600.0/     !
+  plog / 10.000                                4.90E+16   -1.13    11800.0/     !
+!                                                                               
+ C2H3+C2H2=nC4H5                               1.10E+31   -7.14     5600.0      !1997 Wang&Frenklach RRKM
+  plog /  0.013                                1.10E+31   -7.14     5600.0/     !
+  plog /  0.026                                1.10E+32   -7.33     6200.0/     !
+  plog /  0.118                                2.40E+31   -6.95     5600.0/     !
+  plog /  1.000                                9.30E+38   -8.76    12000.0/     !
+  plog / 10.000                                8.10E+37   -8.09    13400.0/     !
+!                                                                               
+ C2H3+C2H2=iC4H5                               5.00E+34   -8.42     7900.0      !1997 Wang&Frenklach RRKM
+  plog /  0.013                                5.00E+34   -8.42     7900.0/     !
+  plog /  0.026                                2.10E+36   -8.78     9100.0/     !
+  plog /  0.118                                1.00E+37   -8.77     9800.0/     !
+  plog /  1.000                                1.60E+46  -10.98    18600.0/     !
+  plog / 10.000                                5.10E+53  -12.64    28800.0/     !
+!                                                                               
+ C2H3+C2H3=C4H6                                5.00E+57  -13.82    17629.0      !1997 Wang&Frenklach RRKM
+  plog /  0.026                                5.00E+57  -13.82    17629.0/     !
+  plog /  0.118                                1.50E+52  -11.97    16056.0/     !
+  plog /  1.000                                1.50E+42   -8.84    12483.0/     !
+!                                                                                               
+ C2H3+C2H3=iC4H5+H                             1.50E+30   -4.95    12958.0      !1997 Wang&Frenklach RRKM
+  plog /  0.026                                1.50E+30   -4.95    12958.0/     !
+  plog /  0.118                                7.20E+28   -4.49    14273.0/     !
+  plog /  1.000                                1.20E+22   -2.44    13654.0/     !
+!                                                                                               
+ C2H3+C2H3=nC4H5+H                             1.10E+24   -3.28    12395.0      !1997 Wang&Frenklach RRKM
+  plog /  0.026                                1.10E+24   -3.28    12395.0/     !
+  plog /  0.118                                4.60E+24   -3.38    14650.0/     !
+  plog /  1.000                                2.40E+20   -2.04    15361.0/     !
+!
+ C2H3+C2H3=C2H2+C2H4                           9.600E+11   0.00        0.0      !NIST Database
+!                                              
+! Reactions of C2H4                            
+!                                              
+ C2H4(+M)=H2+H2CC(+M)                          8.000E+12   0.440   88770.0      !GRI###
+                                         LOW / 7.000E+50  -9.310   99860.0/
+                                         TROE/ 0.7345 180.0 1035.00 5417.0/
+               H2/2.0/ H2O/6.0/ CH4/2.0/ CO/1.5/ CO2/2.0/ C2H6/3.0/ AR/0.7/
+ C2H4+H(+M)=C2H5(+M)                           1.367E+09   1.463    1355.0      !2004 Miller&Klippenstein
+                                         LOW / 2.027E+39  -6.642    5769.0/
+                                         TROE/-0.569  299.0  9147.0 -152.4/
+               H2/2.0/ H2O/6.0/ CH4/2.0/ CO/1.5/ CO2/2.0/ C2H6/3.0/ AR/0.7/
+ H+C2H4=C2H3+H2                                1.325E+06   2.530    12240.0     !GRI3.0
+ C2H4+CH=aC3H4+H                               3.000E+13   0.000        0.0     !USC Mech II Est.
+ C2H4+CH=pC3H4+H                               3.000E+13   0.000        0.0     !USC Mech II Est.
+ C2H4+CH2=aC3H5+H                              2.000E+13   0.000     6000.0     !USC Mech II Est.
+ C2H4+CH2*=H2CC+CH4                            5.000E+13   0.000        0.0     !USC Mech II Est.
+ C2H4+CH2*=aC3H5+H                             5.000E+13   0.000        0.0     !USC Mech II Est.
+ C2H4+CH3=C2H3+CH4                             2.270E+05   2.000     9200.0     !GRI
+ C2H4+CH3=nC3H7                                3.300E+11   0.00      7700.0     !KP
+ C2H4+C2H=C4H4+H                               1.200E+13   0.000        0.0     !1986 Tsang&Hampson
+!                                                                             
+! Reactions of C2H5                                                           
+!                                                                             
+ C2H5+H(+M)=C2H6(+M)                           5.210E+17  -0.990     1580.0     !GRI
+                                         LOW / 1.990E+41  -7.080     6685.0/
+                                         TROE/ 0.8422  125.0  2219.0 6882.0/
+                H2/2.0/ H2O/6.0/ CH4/2.0/ CO/1.5/ CO2/2.0/ C2H6/3.0/ AR/0.7/
+ C2H5+H=C2H4+H2                                2.000E+12   0.000       0.0      !GRI
+ C2H5+C2H3=aC3H5+CH3                           8.00E+25   -3.46    11775.0      !1986 Tsang&Hampson RRKM
+  plog /  0.100                                8.00E+25   -3.46    11775.0/     !
+  plog /  1.000                                3.90E+32   -5.22    19747.0/     !
+  plog / 10.000                                3.90E+29   -4.24    22311.0/     !
+!                                                                            
+! Reactions of C2H6                                                          
+!                                                                            
+ C2H6+H=C2H5+H2                                1.15E+08    1.900    7530.0      !GRI
+ C2H6+CH2*=C2H5+CH3                            4.00E+13    0.000    -550.0      !GRI
+ C2H6+CH3=C2H5+CH4                             6.14E+06    1.740   10450.0      !GRI
+!
+! Reactions of C3H2
+!
+ C2H2+CH=C3H2+H                                3.00E+13    0.0         0.0
+ C3H2+CH=C4H2+H                                5.00E+13    0.0         0.0
+ C3H2+CH2=nC4H3+H                              5.00E+13    0.0         0.0
+ C3H2+CH3=C4H4+H                               2.00E+12    0.0         0.0      !USC Mech II /5
+!
+! Reactions of C3H3
+!
+ C3H3+CH=iC4H3+H                               5.00E+13    0.0         0.0      !USC Mech II Est.
+ C3H3+CH2=C4H4+H                               5.00E+13    0.0         0.0      !1992 Miller&Melius
+ C3H3+CH3(+M)=C4H612(+M)                       1.50E+12    0.0         0.0      !1997 Wang&Frenklach
+                                         LOW / 2.60E+57  -11.94     9770.0/
+                                         TROE/ 0.175 1340.6 60000.0 9769.8/
+               H2/2.0/ H2O/6.0/ CH4/2.0/ CO/1.5/ CO2/2.0/ C2H6/3.0/ AR/0.7/
+!
+! Reactions of aC3H4
+!
+ aC3H4+H=C3H3+H2                               1.30E+06    2.0      5500.0      !1999 Davis et al.
+!                                                                               
+ aC3H4+H=CH3CHCH                               1.10E+30   -6.52    15200.0      !1999 Davis et al. RRKM
+  plog /  0.100                                1.10E+30   -6.52    15200.0/     !
+  plog /  1.000                                5.40E+29   -6.09    16300.0/     !
+  plog / 10.000                                2.60E+31   -6.23    18700.0/     !
+  plog /100.000                                3.20E+31   -5.88    21500.0/     !
+!                                                                               
+ aC3H4+H=CH3CCH2                               9.20E+38   -8.65     7000.0      !1999 Davis et al. RRKM
+  plog /  0.100                                9.20E+38   -8.65     7000.0/     !
+  plog /  1.000                                9.46E+42   -9.43    11190.0/     !
+  plog /  2.000                                8.47E+43   -9.59    12462.0/     !
+  plog /  5.000                                6.98E+44   -9.70    14032.0/     !
+  plog / 10.000                                1.50E+45   -9.69    15100.0/     !
+  plog /100.000                                1.80E+43   -8.78    16800.0/     !
+!                                                                               
+ aC3H4+H=aC3H5                                 9.60E+61  -14.67    26000.0      !1999 Davis et al. RRKM
+  plog /  0.100                                9.60E+61  -14.67    26000.0/     !
+  plog /  1.000                                1.52E+59  -13.54    26949.0/     !
+  plog /  2.000                                3.78E+57  -12.98    26785.0/     !
+  plog /  5.000                                7.34E+54  -12.09    26187.0/     !
+  plog / 10.000                                2.40E+52  -11.30    25400.0/     !
+  plog /100.000                                6.90E+41   -8.06    21300.0/     !
+!                                                                               
+ aC3H4+CH3=C3H3+CH4                            1.30E+12    0.0      7700.0      !1987 Wu&Kern 
+ aC3H4+C2H=C2H2+C3H3                           1.00E+13    0.0         0.0      !1997 Wang&Frenklach
+!                                            
+! Reactions of pC3H4                         
+!                                            
+ pC3H4=aC3H4                                   6.40E+61  -14.59    88200.0      !1999 Davis et al. RRKM
+  plog /  0.100                                6.40E+61  -14.59    88200.0/     !
+  plog /  0.400                                5.81E+62  -14.63    91211.0/     !
+  plog /  1.000                                5.15E+60  -13.93    91117.0/     !
+  plog /  2.000                                7.64E+59  -13.59    91817.0/     !
+  plog /  5.000                                3.12E+58  -13.07    92680.0/     !
+  plog / 10.000                                1.90E+57  -12.62    93300.0/     !
+  plog /100.000                                1.40E+52  -10.86    95400.0/     !
+!                                                                               
+ pC3H4+H=aC3H4+H                               2.30E+15   -0.26     7600.0      !1999 Davis et al. RRKM
+  plog /  0.100                                2.30E+15   -0.26     7600.0/     !
+  plog /  1.000                                6.27E+17   -0.91    10079.0/     !
+  plog /  2.000                                1.50E+18   -1.00    10756.0/     !
+  plog /  5.000                                1.93E+18   -1.01    11523.0/     !
+  plog / 10.000                                3.10E+22   -2.18    14800.0/     !
+  plog /100.000                                6.40E+27   -3.58    21200.0/     !
+!                                                                               
+ pC3H4+H=CH3CCH2                               4.60E+44  -10.21    10200.0      !1999 Davis et al. RRKM
+  plog /  0.100                                4.60E+44  -10.21    10200.0/     !
+  plog /  1.000                                1.66E+47  -10.58    13690.0/     !
+  plog /  2.000                                5.04E+47  -10.61    14707.0/     !
+  plog /  5.000                                9.62E+47  -10.55    15910.0/     !
+  plog / 10.000                                7.00E+47  -10.40    16600.0/     !
+  plog /100.000                                3.20E+44   -9.11    17400.0/     !
+!                                                                               
+ pC3H4+H=CH3CHCH                               1.00E+25  -5.00      1800.0      !1999 Davis et al. RRKM
+  plog /  0.100                                1.00E+25  -5.00      1800.0/     !
+  plog /  1.000                                5.50E+28  -5.74      4300.0/     !
+  plog / 10.000                                1.00E+34  -6.88      8900.0/     !
+  plog /100.000                                9.70E+37  -7.63     13800.0/     !
+!                                                                               
+ pC3H4+H=aC3H5                                 1.10E+60  -14.56    28100.0      !1999 Davis et al. RRKM
+  plog /  0.100                                1.10E+60  -14.56    28100.0/     !
+  plog /  1.000                                4.91E+60  -14.37    31644.0/     !
+  plog /  2.000                                3.04E+60  -14.19    32642.0/     !
+  plog /  5.000                                9.02E+59  -13.89    33953.0/     !
+  plog / 10.000                                2.20E+59  -13.61    34900.0/     !
+  plog /100.000                                1.60E+55  -12.07    37500.0/     !
+!                                                                               
+ pC3H4+H=C3H3+H2                               1.30E+06    2.0      5500.0      !1997 Wang&Frenklach
+ pC3H4+C3H3=aC3H4+C3H3                         6.14E+06    1.74    10450.0      !USC Mech II Est.
+ pC3H4+C2H=C2H2+C3H3                           1.00E+13    0.0         0.0      !USC Mech II Est.
+ pC3H4+CH3=C3H3+CH4                            1.80E+12    0.0      7700.0      !1987 Wu&Kern
+!==============================================                       ==============================================
+!============================================== End of USC  mech V2.0 ==============================================
+!==============================================                       ==============================================
+!
+! Reactions of CnH2
+!
+ C2H+H(+M)=C2H2(+M)                            1.00E+17   -1.0         0.0      !GRI3.0
+                                         LOW / 3.750E+33  -4.8      1900.0/
+                                         TROE/ 0.6464 132.0 1315.00 5566.0/
+ C4H+H(+M)=C4H2(+M)                            1.00E+17   -1.0         0.0      !GRI3.0 C2H+H(+M)=C2H2(+M) 
+                                         LOW / 3.750E+33  -4.8      1900.0/
+                                         TROE/ 0.6464 132.0 1315.00 5566.0/
+ C6H+H(+M)=C6H2(+M)                            1.00E+17   -1.0         0.0      !GRI3.0 C2H+H(+M)=C2H2(+M) 
+                                         LOW / 3.750E+33  -4.8      1900.0/
+                                         TROE/ 0.6464 132.0 1315.00 5566.0/
+ C8H+H(+M)=C8H2(+M)                            1.00E+17   -1.0         0.0      !GRI3.0 C2H+H(+M)=C2H2(+M) 
+                                         LOW / 3.750E+33  -4.8      1900.0/
+                                         TROE/ 0.6464 132.0 1315.00 5566.0/
+ C10H+H(+M)=C10H2(+M)                          1.00E+17   -1.0         0.0      !GRI3.0 C2H+H(+M)=C2H2(+M)
+                                         LOW / 3.750E+33  -4.8      1900.0/
+                                         TROE/ 0.6464 132.0 1315.00 5566.0/
+ C4H2=>4CS+H2                                  1.10E+03    0.0         0.0      !2012 Li et al.(Tetralin) Est.
+ C2H2=>2CS+H2                                  1.10E+03    0.0         0.0      !2012 Li et al.(Tetralin) Est.
+ C3H2+C3H2=C6H2+H2                             4.00E+11    0.0         0.0      !2012 Li et al.(Tetralin) Est.
+ C6H3+H=C6H2+H2                                3.00E+13    0.0         0.0      !1997 Wang&Frenklach
+ C5H2+CH=C6H2+H                                5.00E+13    0.0         0.0      !2000 Appel et al. Est.
+ C5H3+CH=C6H2+H+H                              5.00E+13    0.0         0.0      !2000 Appel et al. Est.
+ C2H+H2=H+C2H2                                 4.90E+05    2.500     560.0      !GRI3.0
+ C4H+H2=H+C4H2                                 4.90E+05    2.500     560.0      !GRI3.0 C2H+H2=H+C2H2 in 2010 Li(Ph.D. Thesis)
+ C6H+H2=H+C6H2                                 4.90E+05    2.500     560.0      !GRI3.0 C2H+H2=H+C2H2 in 2010 Li(Ph.D. Thesis)
+ C8H+H2=H+C8H2                                 4.90E+05    2.500     560.0      !GRI3.0 C2H+H2=H+C2H2 in 2010 Li(Ph.D. Thesis)
+ C10H+H2=H+C10H2                               4.90E+05    2.500     560.0      !GRI3.0 C2H+H2=H+C2H2 in 2010 Li(Ph.D. Thesis)
+ C2H2+C2H2=C4H4                                3.00E+13    0.0     44455.0      !1988 Kiefer et al. /2 for falloff effect
+ C2H+C2H=C4H2                                  5.00E+13    0.0         0.0      !2010 Zhang et al.(Toluene) Est.
+ C4H2+C2H=C6H2+H                               7.80E+13    0.0         0.0      !2000 Appel et al. C2H2+C2H=C4H2+H *0.8 in 2010 Li(Ph.D. Thesis)
+ C2H2+C4H=C6H2+H                               7.80E+13    0.0         0.0      !2000 Appel et al. C2H2+C2H=C4H2+H *0.8 in 2010 Li(Ph.D. Thesis)
+ C4H2+H=C2H2+C2H                               5.00E+13    0.0         0.0      !2011 Li et al.(Toluene) Est.
+ C4H+C2H=C6H+H                                 3.60E+13    0.0         0.0      !2000 Appel et al. C2H2+C2H=C4H2+H *3/8 in 2010 Li(Ph.D. Thesis)
+ C4H+C2H=C6H2                                  5.00E+13    0.0         0.0      !2010 Zhang et al.(Toluene) C2H+C2H=C4H2 in 2010 Li(Ph.D. Thesis)
+ C6H2+C2H=C8H2+H                               6.40E+13    0.0         0.0      !2000 Appel et al. C2H2+C2H=C4H2+H *2/3 in 2010 Li(Ph.D. Thesis)
+ C4H2+C4H=C8H2+H                               6.40E+13    0.0         0.0      !2000 Appel et al. C2H2+C2H=C4H2+H *2/3 in 2010 Li(Ph.D. Thesis)
+ C2H2+C6H=C8H2+H                               6.40E+13    0.0         0.0      !2000 Appel et al. C2H2+C2H=C4H2+H *2/3 in 2010 Li(Ph.D. Thesis)                               
+ C6H+C2H=C8H+H                                 9.60E+13    0.0         0.0      !2000 Appel et al. C2H2+C2H=C4H2+H in 2010 Li(Ph.D. Thesis)
+ C4H+C4H=C8H+H                                 9.60E+13    0.0         0.0      !2000 Appel et al. C2H2+C2H=C4H2+H in 2010 Li(Ph.D. Thesis)
+ C6H+C2H=C8H2                                  5.00E+13    0.0         0.0      !2010 Zhang et al.(Toluene) C2H+C2H=C4H2 in 2010 Li(Ph.D. Thesis)
+ C4H+C4H=C8H2                                  5.00E+13    0.0         0.0      !2010 Zhang et al.(Toluene) C2H+C2H=C4H2 in 2010 Li(Ph.D. Thesis)
+ C8H2+C2H=C10H2+H                              6.40E+13    0.0         0.0      !2000 Appel et al. C2H2+C2H=C4H2+H *2/3 in 2010 Li(Ph.D. Thesis)
+ C6H2+C4H=C10H2+H                              6.40E+13    0.0         0.0      !2000 Appel et al. C2H2+C2H=C4H2+H *2/3 in 2010 Li(Ph.D. Thesis)
+ C4H2+C6H=C10H2+H                              6.40E+13    0.0         0.0      !2000 Appel et al. C2H2+C2H=C4H2+H *2/3 in 2010 Li(Ph.D. Thesis)
+ C2H2+C8H=C10H2+H                              6.40E+13    0.0         0.0      !2000 Appel et al. C2H2+C2H=C4H2+H *2/3 in 2010 Li(Ph.D. Thesis)
+ C8H+C2H=C10H+H                                9.60E+13    0.0         0.0      !2000 Appel et al. C2H2+C2H=C4H2+H in 2010 Li(Ph.D. Thesis)
+ C6H+C4H=C10H+H                                9.60E+13    0.0         0.0      !2000 Appel et al. C2H2+C2H=C4H2+H in 2010 Li(Ph.D. Thesis)
+ C8H+C2H=C10H2                                 5.00E+13    0.0         0.0      !2010 Zhang et al.(Toluene) C2H+C2H=C4H2 in 2010 Li(Ph.D. Thesis)
+ C6H+C4H=C10H2                                 5.00E+13    0.0         0.0      !2010 Zhang et al.(Toluene) C2H+C2H=C4H2 in 2010 Li(Ph.D. Thesis)
+!
+! Reactions of C3H3
+!
+ C3H2+H=C3H3                                   1.00E+13    0.0         0.0      !USC Mech II Est.
+ C3H3+H=C3H2+H2                                5.00E+13    0.0      1000.0      !USC Mech II Est.
+ C3H3+H=pC3H4                                  3.00E+12    0.0         0.0      !USC Mech II Est.
+ C3H3+H=aC3H4                                  5.00E+11    0.0         0.0      !USC Mech II Est.
+!
+! Reactions of C3H6
+!
+ aC3H5+H(+M)=C3H6(+M)                          2.00E+14    0.0         0.0      !1991 Tsang
+                                         LOW / 1.33E+60  -12.00     5967.8/
+                                         TROE/ 0.020 1096.6  1096.6 6859.5/
+                         H2/2/ H2O/6/ CH4/2/ CO/1.5/ CO2/2/ C2H6/3/ AR/0.7/
+ aC3H5+H=aC3H4+H2                              1.80E+13    0.0         0.0      !1991 Tsang 
+ C3H6+H=aC3H5+H2                               1.73E+05    2.5      2490.0      !1991 Tsang
+!                                                                
+! Reactions of C4H3 and C4H4
+!                
+ C4H2+H=iC4H3                                  4.30E+45  -10.2     13250.0      !1997 Wang&Frenklach RRKM 20Torr
+ nC4H3+H=iC4H3+H                               2.40E+11    0.8      2410.0      !1997 Wang&Frenklach RRKM 20Torr
+ nC4H3+H=C2H2+H2CC                             1.60E+19   -1.6      2220.0      !1997 Wang&Frenklach RRKM 20Torr
+ nC4H3+H=C4H4                                  1.10E+42   -9.7      7000.0      !1997 Wang&Frenklach RRKM 20Torr         
+ nC4H3+H=C4H2+H2                               3.00E+13    0.0         0.0      !USC Mech II                        
+ iC4H3+H=C2H2+H2CC                             2.40E+19   -1.6      2800.0      !USC Mech II                       
+ iC4H3+H=C4H4                                  4.20E+44  -10.3      7890.0      !USC Mech II                       
+ iC4H3+H=C4H2+H2                               6.00E+13    0.0         0.0      !USC Mech II                       
+ C4H4+H=nC4H3+H2                               6.65E+05    2.5     12240.0      !USC Mech II                       
+ C4H4+H=iC4H3+H2                               3.33E+05    2.5      9240.0      !USC Mech II                       
+!                                                                
+! Reactions of C4H5 and C4H6
+!                
+ C4H5-2=iC4H5                                  1.50E+67  -16.9     59100.0      !USC Mech II            
+ C4H6-2=H+C4H5-2                               5.00E+15    0.0     87300.0      !                         
+ C4H4+H=nC4H5                                  1.30E+51  -11.92    16500.96     !2009 Blanquart et al.
+ nC4H5+H=iC4H5+H                               1.00E+36   -6.3     17486.0      !1997 Wang&Frenklach RRKM 20Torr 
+ nC4H5+H=C4H4+H2                               1.50E+13    0.0         0.0      !1997 Wang&Frenklach  
+ C4H6+H=nC4H5+H2                               1.33E+06    2.5     12240.0      !USC Mech II Est.
+ nC4H5+H=C4H6                                  1.00E+13    0.0         0.0      !2011 Li et al.(Toluene) Est.
+ iC4H5+H=C4H6                                  1.00E+13    0.0         0.0      !2011 Li et al.(Toluene) Est.
+ C3H3+CH3=C4H612                               3.00E+13    0.0         0.0      !1987 Wu&Kern *3 
+ C3H3+CH3=C4H6-2                               3.00E+13    0.0         0.0      !1987 Wu&Kern *3 
+!
+! Reactions of C5H2, C5H3 and C5H4
+!
+ C4H2+CH2*=C5H3+H                              1.30E+13    0.0         0.0      !1992 Miller&Melius         
+ C4H2+CH2=C5H3+H                               3.00E+13    0.0         0.0      !1992 Miller&Melius         
+ C4H2+CH=C5H2+H                                1.00E+14    0.0         0.0      !1992 Miller&Melius         
+ C5H3+H=C5H2+H2                                6.03E+13    0.0     15103.0      !1992 Baulch et al. CH3+H=CH2+H2 in 2002 Richter&Howard     
+ cC5H4=C5H4                                    1.00E+13    0.0      6000.0      !2002 Richter&Howard Est.
+ C4H2+CH3=C5H4+H                               2.40E+09    0.91    20700.0      !1999 Davis et al. C2H2+CH3=aC3H4+H in 2010 Li(Ph.D. Thesis)
+ C4H+CH4=C5H4+H                                2.40E+09    0.91    20700.0      !1999 Davis et al. C2H2+CH3=aC3H4+H in 2010 Li(Ph.D. Thesis)
+ aC3H4+C2H=C5H4+H                              9.60E+13    0.0         0.0      !2000 Appel et al. C2H2+C2H=C4H2+H in 2010 Li(Ph.D. Thesis)
+ C5H3+H=C5H4                                   1.00E+14    0.0         0.0      !2000 Alzueta et al. Est. /2
+ C5H4+H=C5H3+H2                                1.00E+13    0.0         0.0      !2011 Li et al.(Toluene) Est.
+!
+! Reactions of C5H5 and C5H6
+!
+ C5H5(+M)=C2H2+C3H3(+M)                        1.00E+45   -8.4     47500.0      !2009 Detilleux&Vandooren taken from 1998 Kern et al.
+                                         LOW / 6.31E+13    0.075   62300.0/    
+ C2H3+C3H3=lC5H5+H                             1.00E+13    0.0         0.0      !2011 Li et al.(Toluene) Est.
+ C4H5-2+C2H4=C5H6+CH3                          5.00E+14    0.0     25000.0      !USC Mech II Est.
+ aC3H5+C2H2=lC5H7                              8.38E+30   -6.2     12824.0      !1990 Dean
+ C5H6+H=C2H2+aC3H5                             7.74E+41   -7.7     32890.0      !2012 Li et al.(Tetralin) Est.
+ C5H6+H=lC5H7                                  8.27E+126  -32.3    82348.0      !2002 Moskaleva&Lin
+ aC3H5+C2H3=lC5H7+H                            1.00E+13    0.0         0.0      !USC Mech II Est.
+ C5H6+H=C5H5+H2                                3.00E+14    0.0      6640.0      !2001 Bacskay&Mackie
+ C5H6=C5H5+H                                   1.25E+15    0.0     82000.0      !2001 Bacskay&Mackie /2
+ C5H6+C2H3=C5H5+C2H4                           6.00E+12    0.0         0.0      !2001 Bacskay&Mackie                
+ C5H6+CH3=C5H5+CH4                             5.00E+11    0.0      5000.0      !2001 Bacskay&Mackie
+ C5H5+H=cC5H4+H2                               3.23E+07    2.095   15842.0      !1997 Mebel et al. C6H6+H in 2002 Richter&Howard     
+ C5H5+CH3=cC5H4+CH4                            2.00E+12    0.0     15060.0      !1989 Zhang et al. A1+CH3=A1-+CH4 in 2002 Richter&Howard   
+ lC5H5+H=C5H4+H2                               1.81E+12    0.0         0.0      !1986 Tsang&Hampson C2H5+H in 2002 Richter&Howard      
+ lC5H5+CH3=C5H4+CH4                            1.95E+13   -0.50        0.0      !1986 Tsang&Hampson C2H5+CH3 in 2002 Richter&Howard     
+ C5H5=lC5H5                                    1.64E+96  -23.50   137409.0      !2000 Moskaleva&Lin RRKM 100Torr
+!
+! Reactions of C6H4
+!
+ o-C6H4=C4H2+C2H2                              6.50E+13    0.0     83000.0      !2007 Xu et al. /10 for falloff effect
+ l-C6H4+H=o-C6H4+H                             2.20E+47  -10.0     24000.0      !1997 Wang&Frenklach RRKM 20Torr
+ l-C6H4+H=C6H3+H2                              1.33E+06    2.5      9240.0      !USC Mech II
+ C3H2+C3H2=l-C6H4                              3.00E+11    0.0         0.0      !1987 Wu&Kern C3H3+C3H3=A1
+ C4H2+C2H2=l-C6H4                              4.47E+11    0.0     30010.0      !1986 Chanmugathas&Heicklen C4H4+C2H2=A1 in 2002 Richter&Howard
+ nC4H3+C2H2=l-C6H4+H                           3.70E+16   -1.2     11100.0      !1997 Wang&Frenklach RRKM 20Torr
+ C4H4+C2H=l-C6H4+H                             1.20E+13    0.0         0.0      !USC Mech II 
+ C6H3+H=l-C6H4                                 4.20E+44  -10.3      7890.0      !1997 Wang&Frenklach RRKM 20Torr
+ C5H3+CH2=l-C6H4+H                             5.00E+13    0.0         0.0      !2000 Appel et al. Est.
+ C4H2+C2H=C6H3                                 4.50E+37   -7.7      7100.0      !1997 Wang&Frenklach RRKM 20Torr
+ C6H2+H=C6H3                                   4.30E+45  -10.2     13250.0      !1997 Wang&Frenklach RRKM 20Torr
+ C6H3+H=C4H2+C2H2                              2.40E+19   -1.6      2800.0      !1997 Wang&Frenklach RRKM 20Torr
+!                                                                               
+! Reactions of A1-
+!                                     
+ A1-=o-C6H4+H                                  3.00E+13    0.0     72923.0      !2005 Baulch et al.
+ nC4H3+C2H2=A1-                                2.30E+68  -17.6     24400.0      !1997 Wang&Frenklach RRKM 20Torr
+ A1-+H=o-C6H4+H2                               4.40E-13    7.831    9261.0      !2001 Mebel et al. RRKM 100Torr
+ nC6H5=A1-                                     1.66E+11    0.0     16350.0      !1987 Dewar et al.
+ l-C6H4+H=A1-                                  3.60E+77  -20.1     28100.0      !1997 Wang&Frenklach RRKM 20Torr
+!                                                                               
+! Reactions of A1
+!                                      
+ A1+H=A1-+H2                                   1.81E+09    1.8     16354.0      !1997 Mebel et al. *3
+ A1-+H(+M)=A1(+M)                              1.00E+14    0.0         0.0      !1997 Wang&Frenklach RRKM      
+                                         LOW / 6.6E+75   -16.30     7000.0/     
+                                         TROE/ 1.0   0.1   584.9    6113.0/     
+                       H2/2.0/ H2O/6.0/ CH4/2.0/ CO/1.5/ CO2/2.0/ C2H6/3.0/     
+ A1-+CH4=A1+CH3                                3.89E-03    4.6      5256.0      !1999 Tokmakov et al.
+ A1-+C2H6=A1+C2H5                              2.10E+11    0.0      4443.0      !2001 Park et al.
+ C5H6+A1-=C5H5+A1                              3.10E+11    0.0      5500.0      !2001 Bacskay&Mackie
+ nC4H3+C2H3=A1                                 2.87E+14    0.0       817.0      !2006 Sivaramakrishnan et al.
+ aC3H4+C3H3=A1+H                               2.20E+11    0.0      2000.0      !2002 D'Anna et al.
+ iC4H5+C2H2=A1+H                               3.00E+11    0.0     14900.0      !2002 D'Anna et al.
+ C4H4+C2H3=A1+H                                1.90E+12    0.0      2510.0      !1997 Lindstedt&Skevis
+ pC3H4+C3H3=A1+H                               2.20E+11    0.0      2000.0      !1987 Wu&Kern
+ C4H4+C2H2=A1                                  4.47E+11    0.0     30010.0      !1986 Chanmugathas&Heicklen 
+ nC4H5+C2H2=A1+H                               2.10E+15   -1.1      4800.0      !1997 Wang&Frenklach RRKM 20Torr
+ nC4H5+C2H3=A1+H2                              1.84E-13    7.1     -3611.0      !1989 Westmoreland et al.
+ C4H5-2+C2H2=A1+H                              5.00E+14    0.0     25000.0      !USC Mech II
+ C3H3+C3H3=A1-+H                               2.02E+33   -6.0     15940.0      !2009 Hansen et al.
+ C3H3+C3H3=fulvene                             7.25E+65  -16.0     25035.0      !2009 Hansen et al.
+ DUPLICATE                                                                      
+ C3H3+C3H3=fulvene                             4.19E+39   -9.0      6098.0      !2009 Hansen et al.
+ DUPLICATE                                                                      
+ C3H3+C3H3=A1                                  1.64E+66  -15.9     27529.0      !2009 Hansen et al.
+ DUPLICATE                                                                      
+ C3H3+C3H3=A1                                  1.20E+35   -7.4      5058.0      !2009 Hansen et al.
+ DUPLICATE                                                                      
+ fulvene=A1                                    5.62E+81  -19.4    121500.0      !2009 Hansen et al.
+ fulvene+H=A1+H                                3.00E+12    0.5      2000.0      !2009 Hansen et al.     
+ fulvene=A1-+H                                 2.57E+97  -23.2    153470.0      !2009 Hansen et al.
+ C3H3+aC3H5=fulvene+2H                         3.26E+29   -5.4      3390.0      !2009 Hansen et al.
+ aC3H4+C3H2=A1                                 7.40E+12   -0.7       920.0      !2002 D'Anna et al.
+ pC3H4+C3H2=A1                                 1.40E+13   -0.8      1030.0      !2002 D'Anna et al.
+ fulvene+H=C5H4CH3                             1.00E+14    0.0         0.0      !2010 Li(Ph.D. Thesis) Est.
+!
+! Reactions of C7H5, C7H6 and A1CH2
+! 
+ A1CH2=C7H6+H                                  2.15E+55  -12.38   101400.0      !2009 da Silva et al.(C7H7)
+  plog /  0.001                                2.15E+55  -12.38   101400.0/      
+  plog /  0.010                                1.67E+50  -10.65   101540.0/      
+  plog /  0.100                                1.25E+43   -8.394   99970.0/      
+  plog /  1.000                                5.93E+35   -6.099   97720.0/      
+  plog / 10.000                                1.04E+30   -4.297   95850.0/      
+ A1CH2+H=C7H6+H2                               8.00E+13    0.0         0.0      !2010 Zhang et al.(Toluene) Est. *1.6
+ A1CH2+H=A1-+CH3                               4.50E+58  -11.9     51860.0      !2007 Klippenstein et al.
+ C7H6=cC5H4+C2H2                               1.26E+130 -32.19   173970.0      !2011 Polino&Cavalotti RRKM
+  plog /  0.100                                1.26E+130 -32.19   173970.0/
+  plog /  1.000                                9.77E+100 -23.86   154210.0/
+  plog / 10.000                                1.32E+61  -12.81   120500.0/
+ C7H6=C7H5+H                                   1.02E+116 -28.46   157860.0      !2011 Polino&Cavalotti RRKM
+  plog /  0.100                                1.02E+116 -28.46   157860.0/
+  plog /  1.000                                4.90E+66  -14.64   119550.0/
+  plog / 10.000                                1.17E+27   -3.54    89150.0/        
+ C7H6+H=C5H5+C2H2                              6.00E+13    0.0         0.0      !2009 Detilleux&Vandooren /5
+ C7H6+CH3=C7H5+CH4                             1.87E+04    2.724    6008.0      !2009 da Silva et al.(C7H6) 
+ C7H6+H=C7H5+H2                                1.90E+08    1.847    4965.0      !2009 da Silva et al.(C7H6)
+ C7H5(+M)=C4H2+C3H3(+M)                        3.00E+12   -0.075   62300.0      !1998 Kern et al. C5H5(+M)=C3H3+C2H2(+M) in 2011 Li et al.(Toluene)
+                                         LOW / 1.00E+45    8.4     47500.0/     
+ C7H5(+M)=C2H2+C5H3(+M)                        2.00E+11   -0.075   62300.0      !1998 Kern et al. C5H5(+M)=C3H3+C2H2(+M) in 2011 Li et al.(Toluene)
+                                         LOW / 1.00E+45    8.4     47500.0/
+ C6H4CH3=o-C6H4+CH3                            3.00E+13    0.0     72923.0      !2005 Baulch et al. A1-=o-C6H4+H in 2010 Li(Ph.D. Thesis)
+ C6H4CH3+H=o-C6H4+CH4                          1.00E+13    0.0         0.0      !2010 Li(Ph.D. Thesis) Est.
+ A1CH+H=A1CH2                                  1.00E+13    0.0         0.0      !2002 Howard&Richter Est.     
+ A1CH2+H=A1CH+H2                               6.03E+13    0.0     15103.0      !1992 Baulch et al. CH3+H=HCH(T)+H2 in 2002 Howard&Richter
+!                                    
+! Reactions of A1CH3
+!
+ A1-+CH3(+M)=A1CH3(+M)                         2.33E+14   -0.283    -191.0      !2007 Klippenstein et al.
+                                         LOW / 6.73E+83  -19.22    14980.0/             
+                                         TROE/ 0.0075   1   -1000    50000/
+ A1CH2+H(+M)=A1CH3(+M)                         7.22E+13    0.062     -44.0      !2007 Klippenstein et al.
+                                         LOW / 3.02E+136 -33.35    55560.0/                        
+                                         TROE/ 0.5    600     900     5500/                        
+ A1CH3+H=A1CH2+H2                              6.47E+00    3.98     3394.0      !2006 Oehlschlaeger et al.   
+ A1CH3+H=A1+CH3                                5.78E+13    0.0      8095.0      !2005 Baulch et al.(Preferred value)
+ A1CH3+H=A1-+CH4                               6.00E-01    5.0     30000.0      !2010 Zhang et al.(Toluene) Est.
+ A1CH3+H=C6H4CH3+H2                            6.00E+08    1.0     16800.0      !2005 Bounaceur et al.
+ C6H4CH3+H(+M)=A1CH3(+M)                       1.00E+14    0.0         0.0      !1997 Wang&Frenklach A1-+H(+M)=A1(+M)     
+                                         LOW / 6.6E+75   -16.30     7000.0/     
+                                         TROE/ 1.0   0.1   584.9    6113.0/     
+                       H2/2.0/ H2O/6.0/ CH4/2.0/ CO/1.5/ CO2/2.0/ C2H6/3.0/     
+ C6H4CH3+H=A1CH2+H                             1.00E+13    0.0         0.0      !1992 Miller&Melius 
+!
+! Reactions of C8H4 and C8H5
+!
+ A1CC+H=A1C2H-+H                               2.30E+15   -0.26     7600.0      !1999 Davis et al. pC3H4+H=aC3H4+H 0.1atm
+ A1CC=A1C2H-                                   6.40E+61  -14.59    88200.0      !1999 Davis et al. pC3H4=aC3H4 0.1atm
+ A1C2H-=C6H3C2H+H                              3.00E+13    0.0     72923.0      !2005 Baulch et al. A1-=o-C6H4+H
+ C6H3+C2H2=A1C2H-                              2.30E+68  -17.65    24400.0      !1994 Wang&Frenklach nC4H3+C2H2=A1-
+ A1C2H-+H=C6H3C2H+H2                           4.40E-13    7.831    9261.0      !2001 Mebel et al. A1-+H=o-C6H4+H2  
+ nC4H3+C4H2=A1C2H-                             2.30E+68  -17.65    24400.0      !1994 Wang&Frenklach nC4H3+C2H2=A1-
+ C6H3C2H=C6H2+C2H2                             6.50E+13    0.0     83000.0      !2007 Xu et al. o-C6H4=C4H2+C2H2 /10 for falloff effect
+ C6H3C2H=C4H2+C4H2                             6.50E+13    0.0     83000.0      !2007 Xu et al. o-C6H4=C4H2+C2H2 /10 for falloff effect
+!
+! Reactions of A1C2H
+!
+ A1C2H-+H(+M)=A1C2H(+M)                        1.00E+14    0.0         0.0      !1997 Wang&Frenklach A1-+H(+M)=A1(+M) in 1997 Wang&Frenklach
+                                         LOW / 6.60E+75  -16.30     7000.0/   
+                                         TROE/ 1.0   0.1    584.9   6113.0/   
+                       H2/2.0/ H2O/6.0/ CH4/2.0/ CO/1.5/ CO2/2.0/ C2H6/3.0/   
+ A1CC+H(+M)=A1C2H(+M)                          2.41E+13    0.062     -44.0      !2007 Kliphenstein et al. A1CH2+H=A1CH3 /3 
+                                         LOW / 1.01E+136 -33.35    55560.0/            
+                                         TROE/ 2.545 2.156  453.23  4551.5/
+ A1-+C2H(+M)=A1C2H(+M)                         2.33E+14   -0.283    -191.0      !2007 Kliphenstein et al. A1-+CH3=A1CH3
+                                         LOW / 6.73E+83  -19.22    14980.0/             
+                                         TROE/ 0.5918 320.14 1858.22 5394.9928/
+ A1C2H=A1cC2H2                                 6.40E+61  -14.59    88200.0      !1999 Davis et al. pC3H4=aC3H4 0.1atm
+ A1C2H+H=A1cC2H2+H                             2.30E+15   -0.26     7600.0      !1999 Davis et al. pC3H4+H=aC3H4+H 0.1atm            
+ A1+C2H=A1C2H+H                                5.00E+13    0.0         0.0      !1997 Wang&Frenklach
+ A1C2H+H=A1CC+H2                               2.50E+14    0.0     16000.0      !1985 Kiefer et al. A1+H=A1-+H2 in 1997 Wang&Frenklach
+ A1C2H+H=A1C2H-+H2                             5.00E+14    0.0      9000.0      !2012 Li et al.(Tetralin) Est.
+ A1-+C2H2=A1C2H+H                              1.13E+27   -4.0     17100.0      !1994 Wang&Frenklach RRKM 20Torr *1.5          
+ A1-+C4H4=A1C2H+C2H3                           3.20E+11    0.0      1350.0      !1988 Harris et al.
+ nC4H5+C4H2=A1C2H+H                            3.16E+11    0.0      1800.0      !1984 Cole et al.
+!
+! Reactions of A1C2H2
+!
+ A1-+C2H3=A1CCH2+H                             1.80E+31   -4.63    31652.0      !1997 Wang&Frenklach RRKM 20Torr
+ A1-+C2H3=A1CHCH+H                             1.50E+32   -4.91    35504.0      !1997 Wang&Frenklach RRKM 20Torr
+ A1CHCH+H=A1CCH2+H                             2.30E+37   -6.00    35164.0      !1997 Wang&Frenklach RRKM 20Torr
+ A1-+C2H2=A1CHCH                               7.70E+40   -9.2     13400.0      !1994 Wang&Frenklach RRKM 20Torr
+ A1C2H+H=A1CHCH                                1.00E+54  -12.8     17185.0      !1994 Wang&Frenklach
+ A1C2H+H=A1CCH2                                1.00E+54  -12.8     17185.0      !1994 Wang&Frenklach A1C2H+H=A1CHCH in 1997 Wang&Frenklach
+ A1CHCH+H=A1C2H+H2                             1.50E+13    0.0         0.0      !GRI C2H3+H=C2H2+H2 /2 in 1997 Wang&Frenklach
+ A1CCH2+H=A1C2H+H2                             3.00E+13    0.0         0.0      !GRI C2H3+H=C2H2+H2 in 1997 Wang&Frenklach
+ A1CHCH=C6H4C2H3                               6.40E+61  -14.59    88200.0      !1999 Davis et al. pC3H4=aC3H4 0.1atm in 2012 Li et al.(Tetralin)
+ A1CHCH+H=C6H4C2H3+H                           2.30E+37   -6.00    35164.0      !1997 Wang&Frenklach A1CHCH+H=A1CCH2+H in 2012 Li et al.(Tetralin)
+ C6H4C2H3=o-C6H4+C2H3                          7.00E+18   -3.05    47923.0      !2012 Li et al.(Tetralin) Est.
+!
+! Reactions of A1C2H3
+!
+ C6H4C2H3+H=A1C2H3                             8.02E+19   -2.0      1968.0      !2001 Mebel et al. A1-+H=A1 in 2012 Li et al.(Tetralin)
+ A1+C2H3=A1C2H3+H                              7.90E+11    0.0      6400.0      !1989 Fahr&Stein
+ A1-+C2H4=A1C2H3+H                             5.02E+12    0.0      6190.0      !1989 Fahr&Stein *2 in 1997 Wang&Frenklach
+ A1-+C2H3=A1C2H3                               1.90E+48  -10.52    17489.0      !1997 Wang&Frenklach RRKM 20Torr
+ C5H5+C3H3=A1C2H3                              1.64E+66  -15.9     27529.0      !2009 Slavinskaya&Frank
+ A1C2H3=A1CCH2+H                               6.00E+46   -9.07   118323.0      !1997 Wang&Frenklach RRKM 20Torr *5
+ A1C2H3+H=A1CCH2+H2                            3.33E+05    2.53     9240.0      !1997 Wang&Frenklach C4H6+H=iC4H5+H2 /2 in 1997 Wang&Frenklach       
+ A1C2H3=A1CHCH+H                               9.50E+54  -11.39   130224.0      !1997 Wang&Frenklach RRKM 20Torr *5
+ A1C2H3+H=A1CHCH+H2                            6.65E+05    2.53    12240.0      !GRI C2H4+H=C2H3+H2 in 1997 Wang&Frenklach          
+!
+! Reactions of A1C2H4
+!
+ A1-+C2H4=A1CH2CH2                             1.00E+40   -9.2     13400.0      !1994 Wang&Frenklach  A1-+C2H2=A1CHCH  /7.7 in 2011 Li et al.(Toluene)
+ A1CHCH3=A1CH2CH2                              6.40E+61  -14.59    88200.0      !1999 Davis et al. pC3H4=aC3H4 0.1atm in 2011 Li et al.(Toluene)
+ A1CH2CH2+H=A1CHCH3+H                          2.30E+37   -6.00    35164.0      !1997 Wang&Frenklach A1CHCH+H=A1CCH2+H in 2011 Li et al.(Toluene)
+ A1CHCH3=A1C2H3+H                              3.16E+14    0.00    50669.0      !2010 Li(Ph.D. Thesis) Est.
+ A1CHCH3+H=A1C2H3+H2                           2.00E+12    0.0         0.0      !GRI3.0 C2H5+H=C2H4+H2 in 2011 Li et al.(Toluene) 
+ A1CH2CH2+H=A1C2H3+H2                          2.00E+12    0.0         0.0      !GRI3.0 C2H5+H=C2H4+H2 in 2011 Li et al.(Toluene) 
+ C4H4+C4H4=A1C2H3                              0.75E+14    0.0     38000.0      !1984 Lundgard&Heicklen /2
+ C6H4C2H4+H=A1CH2CH2                           3.00E+13    0.0         0.0      !2011 Li et al.(Toluene) Est.
+ C6H4C2H4=o-C6H4+C2H4                          6.50E+13    0.0     83000.0      !2007 Xu et al. o-C6H4=C4H2+C2H2 /10 for falloff effect
+!
+! Reactions of A1C2H5
+! 
+ A1-+C2H5(+M)=A1C2H5(+M)                       2.33E+14   -0.283    -191.0      !2007 Kliphenstein A1-+CH3(+M)=A1CH3(+M) in 2011 Li et al.(Toluene)
+                                         LOW / 6.73E+83  -19.22    14980.0/             
+                                         TROE/ 0.5918 320.14 1858.22 5394.9928/
+ A1CHCH3+H(+M)=A1C2H5(+M)                      7.22E+13    0.062     -44.0      !2007 Kliphenstein A1CH2+H(+M)=A1CH3(+M) in 2011 Li et al.(Toluene)
+                                         LOW / 3.02E+136 -33.35    55560.0/            
+                                         TROE/ 2.545  2.156  453.23 4551.5/
+ A1CH2CH2+H(+M)=A1C2H5(+M)                     5.21E+17   -0.990    1580.0      !GRI3.0 C2H5+H(+M)=C2H6(+M) in 2011 Li et al.(Toluene)
+                                         LOW / 1.99E+41   -7.080    6685.0/
+                                         TROE/ 0.8422 125.0 2219.00 6882.0/
+               H2/2.0/ H2O/6.0/ CH4/2.0/ CO/1.5/ CO2/2.0/ C2H6/3.0/ AR/0.7/
+ A1C2H5+H=A1CHCH3+H2                           3.31E+07    2.0      5345.3      !2005 Baulch et al.
+ A1C2H5+H=A1CH2CH2+H2                          7.22E+08    1.50     7412.0      !2005 Baulch et al.
+ A1CH2+CH3=A1C2H5                              5.95E+12    0.0       221.0      !1990 Brand et al. *0.5
+ A1C2H5+H=A1+C2H5                              1.78E+13    0.0      8087.0      !2005 Baulch et al. *0.3
+!                                                                                 
+! Reactions of o-C8H9 and o-C8H10                                                 
+!                                                                                 
+ o-C8H9=C5H6+C3H3                              1.20E+13    0.0     69950.0      !2008 Gail et al. /10 for falloff effect
+ o-C8H10+H=o-C8H9+H2                           3.47E+00    3.98     3394.0      !2006 Oehlschlaeger et al. A1CH3+H=A1CH2+H2 *0.536 in 2010 Li(Ph.D. Thesis)
+ C6H4CH3+CH3=o-C8H10                           1.00E+14    0.0         0.0      !2012 Li et al.(Tetralin) Est.         
+ o-C8H10+H=A1CH3+CH3                           0.90E+14    0.0      8090.0      !2008 Gail et al. /2   
+ o-C8H10+CH3=o-C8H9+CH4                        1.77E+12    0.0      8754.0      !2008 Gail et al.
+ o-C8H10=>o-C8H9+H                             2.00E+15    0.0     90344.16     !2000 da Costa et al. 1.5~4.0 bar /5 for falloff effect
+ o-C8H9+H=>o-C8H10                             7.90E+13    0.0         0.0      !2000 da Costa et al. 1.5~4.0 bar
+ o-C8H9+H=A1CH2+CH3                            4.50E+58  -11.9     51860.0      !2007 Klippenstein et al. A1CH2+H=A1-+CH3 in 2010 Li(Ph.D. Thesis) 
+ o-C8H9+H=o-C8H8+H2                            1.00E+14    0.0      8365.0      !2002 Fernandes et al. /4
+ o-C8H8+H=C6H4C2H4+H                           2.30E+15   -0.26     7600.0      !1999 Davis et al. pC3H4+H=aC3H4+H 0.1atm in 2010 Li(Ph.D. Thesis) 
+ o-C8H9=o-C8H8+H                               2.00E+14    0.0     67300.0      !2009 da Silva et al.(xylyls) /8 for falloff effect
+ o-C8H9=C7H6+CH3                               1.00E+15    0.0     75500.0      !2009 da Silva et al.(xylyls) 4.00E+15/4
+ o-C8H9=C5H4CH3+C2H2                           6.02E+13    0.0     70000.0      !2008 Gail et al.
+ o-C8H9=A1C2H3+H                               3.00E+13    0.0     61500.0      !2010 Li(Ph.D. Thesis) Est.
+ o-C8H9+C2H2=H2A2+H                            2.10E+15   -1.1      6000.0      !1997 Wang&Frenklach C6H4C2H3+C2H2=A2+H in 2010 Li(Ph.D. Thesis)   
+ C5H5+C3H3=o-C8H8                              3.28E+64  -15.9     27529.0      !2009 Slavinskaya&Frank C5H5+C3H3=A1C2H3 /50 in 2012 Li et al.(Tetralin)
+!                                                                                 
+! Reactions of C9H7 and C9H8                                                      
+!                                                                                 
+ C7H6+C2H2=C9H8                                1.44E+292 -78.2    245010.0      !2009 da Silva&Bozzelli    
+ C7H6+C2H2=C9H7+H                              9.70E-42   16.7     37520.0      !2009 da Silva&Bozzelli    
+ A1CH2+C2H2=C9H8+H                             3.16E+04    2.5     11061.2      !2009 Blanquart et al.
+ A1-+aC3H4=C9H8+H                              6.36E+04    2.522    3168.0      !2003 Kaiser et al.
+ A1-+pC3H4=C9H8+H                              1.11E+06    2.074    3074.0      !2003 Kaiser et al.
+ A1-+C3H3=C9H8                                 1.50E+75  -17.8     39600.0      !2002 Richter&Howard A1-+C4H3=A2 in 2011 Li et al.(Toluene)  
+ A1+C3H3=C9H8+H                                6.26E+09    2.61    56500.0      !2010 Zhang et al.(Toluene) Est.
+ C9H8=C9H7+H                                   6.30E+67  -15.2    116371.9      !2009 Blanquart et al. *0.275 for fall-off effect
+ C9H8+H=C9H7+H2                                2.80E+13    0.0      2258.6      !2009 Blanquart et al.
+ C9H8+CH3<=>C9H7+CH4                           1.80E-01    4.0       456.5      !2009 Blanquart et al.
+!
+! Reactions of C9H9-1 and C9H10
+!
+ C9H9-1+H(+M)=C9H10(+M)                        2.40E+13    0.0         0.0      !JetSurf v2.0 /2 
+                                         LOW / 8.50E+57  -12.08    11263.7/                
+                                         TROE/ 0.649 1213.1 1213.1 13369.7/                 
+                         H2/2/ H2O/6/ CH4/2/ CO/1.5/ CO2/2/ C2H6/3/ AR/0.7/                                                                                 
+ C9H9-1(+M)=C9H8+H(+M)                         1.17E+11    0.69    33947.9      !JetSurF v2.0 cC6H11(+M)=cC6H10+H(+M) in 2012 Li et al.(Tetralin) /2
+                                       LOW  /  1.50E-40   17.33     -602.7/                                                 
+                                       TROE / -19.22  230.0  28.0  50000.0/                                                      
+                         H2/2/ H2O/6/ CH4/2/ CO/1.5/ CO2/2/ C2H6/3/ AR/0.7/                                                
+ C9H9-1(+M)=CH2A1C2H3(+M)                      3.02E+12    0.07    27982.9      !JetSurF v2.0 cC6H11(+M)=PXC6H11(+M) in 2012 Li et al.(Tetralin) /2                        
+                                         LOW / 2.55E-33   15.29     -602.6/                                                 
+                                         TROE/-25.11 225.0  28.0   50000.0/                                                   
+                         H2/2/ H2O/6/ CH4/2/ CO/1.5/ CO2/2/ C2H6/3/ AR/0.7/                                          
+ CH3A1C2H3=CH2A1C2H3+H                         5.66E+64  -13.99   120613.0      !2010 Zhang et al.(Toluene) A1CH3=A1CH2+H *2 in 2012 Li et al.(Tetralin) 
+ CH3A1C2H3+H=CH2A1C2H3+H2                      6.47E+00    3.98     3394.0      !2006 Oehlschlaeger A1CH3+H=A1CH2+H2 in 2012 Li et al.(Tetralin)
+ CH3A1C2H3=C6H4C2H3+CH3                        3.60E+86  -20.61   144292.0      !2012 Li et al.(Tetralin) Est.
+ C9H10=C6H4C2H3+CH3                            5.40E+86  -20.61   144292.0      !2012 Li et al.(Tetralin) Est.
+ CH2A1C2H3+H=C6H4C2H3+CH3                      4.50E+57  -11.9     51860.0      !2007 Klippenstein et al. A1CH2+H=A1-+CH3 /10 in 2012 Li et al.(Tetralin)
+ CH3A1C2H3+H=A1C2H3+CH3                        1.56E+13    0.0      5796.0      !2005 Baulch et al. A1CH3+H=A1+CH3 in 2012 Li et al.(Tetralin)
+ A1CH3+C2H3=CH3A1C2H3+H                        7.18E+11    0.0      6400.0      !1997 Wang&Frenklach A1+C2H3=A1C2H3+H in 2012 Li et al.(Tetralin)
+ C6H4CH3+C2H4=CH3A1C2H3+H                      2.51E+12    0.0      6190.0      !1997 Wang&Frenklach A1-+C2H4=A1C2H3+H in 2012 Li et al.(Tetralin)
+ C6H4CH3+C2H3=CH3A1C2H3                        1.90E+48  -10.52    17489.0      !1997 Wang&Frenklach A1-+C2H3=A1C2H3 in 2012 Li et al.(Tetralin)
+!
+! Reactions of C10H6
+!
+ A2T2+H=A1-+C4H2                               2.06E+08    1.4     -3410.0      !2009 Cavallotti et al. C7H6+H=C5H5+C2H2 in 2011 Li et al.(Toluene) 
+ A2T1+H=A1-+C4H2                               2.06E+08    1.4     -3410.0      !2009 Cavallotti et al. C7H6+H=C5H5+C2H2 in 2011 Li et al.(Toluene)
+ A2T2+H=A1+C4H                                 3.00E+12    0.0         0.0      !2010 Li(Ph.D. Thesis) Est.
+ A2T1+H=A1+C4H                                 1.00E+12    0.0         0.0      !2010 Li(Ph.D. Thesis) Est.
+ o-C6H4+C4H2=A2T2                              3.00E+11    0.0     30010.0      !2002 Richter&Howard C4H4+C2H2=A1 in 2010 Zhang et al.(Toluene)
+ A1-+nC4H3=A2T2+H2                             1.51E+75  -17.8     39600.0      !2002 Richter&Howard A1-+C4H3=A2 in 2010 Zhang et al.(Toluene)
+ o-C6H4+nC4H3=A2T2+H                           1.51E+75  -17.8     39600.0      !2002 Richter&Howard A1-+C4H3=A2 in 2010 Zhang et al.(Toluene)
+ A1CC+C2H=A2T2                                 1.00E+13    0.0         0.0      !2010 Li(Ph.D. Thesis) Est.
+ A1C2H-+C2H=A2T2                               1.00E+13    0.0         0.0      !2010 Li(Ph.D. Thesis) Est.
+ A1CC+C2H=A1(C2H)2                             5.00E+13    0.0         0.0      !2010 Zhang et al.(Toluene) Est.
+ A1CC+C2H2=A2T2+H                              2.30E+58  -12.9     44600.0      !1994 Wang&Frenklach RRKM 20Torr
+ A1(C2H)2+H=A2T2+H                             3.90E+74  -16.9     53700.0      !1994 Wang&Frenklach RRKM 20Torr
+ A2-1=A2T2+H                                   3.00E+13    0.0     72923.0      !2005 Baulch et al. A1-=o-C6H4+H in 2012 Li et al.(Tetralin)
+ A1C2H+C2H=A1(C2H)2+H                          5.00E+13    0.0         0.0      !1997 Wang&Frenklach
+ A1C2H-+C2H=A1(C2H)2                           5.00E+13    0.0         0.0      !1997 Wang&Frenklach A1C2H+C2H=A1(C2H)2+H in 2010 Li(Ph.D. Thesis)
+!
+! Reactions of A2-, A2 and A2O
+!
+ A2-1+H(+M)=A2(+M)                             1.00E+14    0.0         0.0      !1997 Wang&Frenklach
+                                         LOW / 3.80E+127 -31.434   18676.0/
+                                         TROE/ 0.200  122.8  478.4  5411.9/
+                       H2/2.0/ H2O/6.0/ CH4/2.0/ CO/1.5/ CO2/2.0/ C2H6/3.0/
+ A2-2+H(+M)=A2(+M)                             1.00E+14    0.0         0.0      !1997 Wang&Frenklach
+                                         LOW / 9.50E+129 -32.132   18782.0/
+                                         TROE/ 0.870  492.7  117.9  5652.0/
+                       H2/2.0/ H2O/6.0/ CH4/2.0/ CO/1.5/ CO2/2.0/ C2H6/3.0/
+ C5H5+C5H5=A2+2H                               6.39E+29   -4.03    35205.54     !2009 Blanquart et al. 
+ A1-+C4H2=A2-1                                 1.00E+13    0.0         0.0      !2010 Li(Ph.D. Thesis) Est.
+ A1-+C4H4=A2+H                                 1.26E+04    2.61     1434.0      !2009 Blanquart et al.
+ A1+nC4H3=A2+H                                 4.00E+13    0.0     15976.0      !2011 Li et al.(Toluene) Est.
+ C6H4C2H3+C2H2=A2+H                            2.10E+15   -1.1      6000.0      !1997 Wang&Frenklach RRKM 20Torr
+ A1CHCH+C2H2=A2+H                              2.10E+15   -1.1      4800.0      !1994 Wang&Frenklach n-C4H5+C2H2=A1+H in 1997 Wang&Frenklach
+ A1C2H+C2H3=A2+H                               2.10E+12    0.0         0.0      !2010 Li(Ph.D. Thesis) Est.
+ A1C2H3+C2H=A2+H                               1.00E+13    0.0         0.0      !2010 Li(Ph.D. Thesis) Est.
+ A1CHCH+C2H=A2                                 1.00E+13    0.0         0.0      !2010 Li(Ph.D. Thesis) Est.
+ A1CC+C2H2=A2-1                                5.20E+72  -18.1     33900.0      !1994 Wang&Frenklach RRKM 20Torr
+ A1CC+C2H2=A1(C2H)2+H                          5.50E+32   -5.5     27600.0      !1994 Wang&Frenklach RRKM 20Torr
+ A1CC+C2H2=C2H2A1C2H                           3.90E+48  -11.3     27200.0      !2000 Appel et al. RRKM 20Torr
+ A1(C2H)2+H=C2H2A1C2H                          3.00E+48  -10.9     20500.0      !2000 Appel et al. RRKM 20Torr
+ A1(C2H)2+H=A2-1                               2.00E+82  -20.2     36900.0      !1994 Wang&Frenklach RRKM 20Torr
+ A2+H=A2-1+H2                                  1.00E+15    0.0     16000.0      !1985 Kiefer et al. A1+H=A1-+H2 in 1997 Wang&Frenklach *4
+ A2+H=A2-2+H2                                  1.00E+15    0.0     16000.0      !1985 Kiefer et al. A1+H=A1-+H2 in 1997 Wang&Frenklach *4
+ A2-1+H=A2-2+H                                 8.80E+58  -11.7     60974.0      !1997 Wang&Frenklach RRKM 20Torr
+ A1CH2+C3H3=A2+2H                              3.00E+11    0.0         0.0      !2001 D'Anna et al.
+ A1-+nC4H3=A2                                  1.51E+75  -17.9     39600.0      !2002 Richter&Howard QRRK-HR 20Torr
+ A1-+nC4H3=A2-2+H                              1.84E+72  -16.1     57630.0      !2002 Richter&Howard QRRK-HR 20Torr
+ A1-+nC4H3=A2-1+H                              1.84E+72  -16.1     57630.0      !2002 Richter&Howard QRRK-HR 20Torr
+! 
+! Reactions of H2A2- and H2A2
+!
+ H2A2=H2A2-1+H                                 1.21E+15    0.0     84300.0      !2002 Poutsma /5 for falloff effect
+ H2A2=H2A2-2+H                                 1.21E+15    0.0     80000.0      !2002 Poutsma /5 for falloff effect
+ H2A2=>A1CH2+C3H3                              3.30E+11   -0.55    50500.0      !2012 Li et al.(Tetralin) Est.
+ H2A2+H=A1CH3+C3H3                             1.90E+12    0.0         0.0      !2012 Li et al.(Tetralin) Est.
+ H2A223=H2A2-2+H                               2.41E+15    0.0     80000.0      !2012 Li et al.(Tetralin) H2A2=H2A2-2+H /2.5
+ H2A223=o-C8H8+C2H2                            2.00E+13    0.0     75500.0      !2012 Li et al.(Tetralin) Est.
+ H2A223=o-C6H4+C4H6                            5.00E+01    4.85   105500.0      !2012 Li et al.(Tetralin) Est. 
+ H2A2+H=H2A2-1+H2                              3.31E+07    2.0      5345.3      !2005 Baulch et al. A1C2H5+H=A1CHCH3+H2 in 2012 Li et al.(Tetralin)  
+ H2A2+H=H2A2-2+H2                              3.31E+07    2.0      1045.3      !2012 Li et al.(Tetralin) H2A2+H=H2A2-1+H2 -4k Ea
+ H2A223+H=H2A2-2+H2                            6.62E+07    2.0      1045.3      !2012 Li et al.(Tetralin) H2A2+H=H2A2-2+H2 *2
+ H2A2-1=A2+H                                   2.42E+28   -5.830   23946.8      !2012 Li et al.(Tetralin) RRKM 30Torr
+ H2A2-2=A2+H                                   2.42E+28   -5.830   23946.8      !2012 Li et al.(Tetralin) H2A2-1=A2+H
+ H2A2-2=>A1+iC4H3                              1.00E+119 -32.3     80500.0      !2012 Li et al.(Tetralin) Est.
+ H2A2-1=C2H2A1C2H3                             2.45E+63  -15.753   57933.4      !2012 Li et al.(Tetralin) H4A2-1=C2H4A1C2H3
+ C6H4C2H3+C2H3=C2H2A1C2H3+H                    1.50E+32   -4.91    35504.0      !1997 Wang&Frenklach A1-+C2H3=A1CHCH+H in 2012 Li et al.(Tetralin)
+ C6H4C2H3+C2H2=C2H2A1C2H3                      7.70E+40   -9.2     13400.0      !1994 Wang&Frenklach A1-+C2H2=A1CHCH in 2012 Li et al.(Tetralin)
+ H2A2-2=C6H4C4H5                               3.00E+13    0.0     50550.0      !2010 Pousse et al. SAXcC6H9=PXC6H9-13 in 2012 Li et al.(Tetralin)
+ C6H4C4H5=o-C6H4+iC4H5                         3.00E+13    0.0     50550.0      !2012 Li et al.(Tetralin) Est.
+!
+! Reactions of H4A2-, C9H7CH3, and C9H8CH3
+!
+ H4A2-1=H2A2+H                                 5.83E+25   -5.579   24712.2      !2012 Li et al.(Tetralin) H4A2-2=H2A223+H /10
+ H4A2-2=H2A2+H                                 5.83E+26   -5.579   25922.2      !2012 Li et al.(Tetralin) H4A2-2=H2A223+H +1.21 kcal/mol
+ H4A2-2=H2A223+H                               5.83E+26   -5.579   24712.2      !2012 Li et al.(Tetralin) RRKM 30Torr                 
+ H4A2-1=H4A2-2                                 1.60E+66  -16.908   61919.9      !2012 Li et al.(Tetralin) RRKM 30Torr
+ H4A2-1=A1C2H3+C2H3                            3.00E+114 -31.3     80500.0      !2012 Li et al.(Tetralin) Est.
+ H4A2-2=CH2A1C3H5                              5.16E+25   -5.082	 22327.5      !2012 Li et al.(Tetralin) RRKM 30Torr
+ CH2A1C3H5=o-C8H8+C2H3                         2.16E+88  -20.61   131492.0      !2012 Li et al.(Tetralin) Est.
+ CH2A1C3H5+H=o-C8H8+C2H4                       3.20E+22	  -2.39    11180.0      !JetSurF v2.0 C4H81+H=C2H4+C2H5 *2 in 2012 Li et al.(Tetralin)
+ C9H8CH3=CH2A1C3H5                             6.35E+12    0.15    58710.0      !2012 Li et al.(Tetralin) Est.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     
+ H4A2-2+H=C9H9-1+CH3                           1.10E+32   -5.04    16760.0      !JetSurF v2.0 iC4H9+H=iC3H7+CH3 in 2012 Li et al.(Tetralin)    
+ C9H8+CH3(+M)=C9H8CH3(+M)                      9.60E+10    0.00     8003.6      !JetSurF v2.0 C3H6+CH3(+M)=iC4H9(+M) /2 in 2012 Li et al.(Tetralin)
+                                         LOW / 1.30E+28   -4.27     2431.1/
+                                         TROE/ 0.565 60000.0  534.2 3007.2/
+                         H2/2/ H2O/6/ CH4/2/ CO/1.5/ CO2/2/ C2H6/3/ AR/0.7/
+ C9H8CH3+H=C9H7CH3+H2                          1.00E+13    0.00        0.0      !2012 Li et al.(Tetralin) Est.
+ C9H8CH3=C9H7CH3+H                             2.72E+26   -5.579   24712.2      !2012 Li et al.(Tetralin) Est.
+ C9H7+CH3=C9H7CH3                              1.19E+13    0.0       221.0      !1990 Brand et al. A1CH2+CH3=A1C2H5 in 2012 Li et al.(Tetralin)
+ C9H7CH3+H=C9H8+CH3                            7.80E+13    0.0      5796.0      !2005 Baulch et al. A1CH3+H=A1+CH3 *5 in 2012 Li et al.(Tetralin)
+ H4A2-1=C2H4A1C2H3                             8.17E+62  -15.753   57933.4      !2012 Li et al.(Tetralin) RRKM 30Torr 
+ C6H4C2H3+C2H5=C2H4A1C2H3+H                    1.50E+32   -4.91    35504.0      !1997 Wang&Frenklach A1-+C2H3=A1CHCH+H in 2012 Li et al.(Tetralin)
+ C6H4C2H3+C2H4=C2H4A1C2H3                      7.70E+40   -9.2     13400.0      !1994 Wang&Frenklach A1-+C2H2=A1CHCH in 2012 Li et al.(Tetralin)
+ C2H4A1C2H3=A1(C2H3)2+H                        3.16E+13    0.0     50669.0      !1988 Mueller-Markgraf&Troe A1C2H4=A1C2H3+H in 2012 Li et al.(Tetralin)
+ C2H4A1C2H3+H=A1(C2H3)2+H2                     2.00E+12    0.0         0.0      !GRI3.0 C2H5+H=C2H4+H2 in 2012 Li et al.(Tetralin)
+ A1C2H3+C2H3=A1(C2H3)2+H                       1.44E+12    0.0      6400.0      !1997 Wang&Frenklach A1+C2H3=A1C2H3+H *2 in 2012 Li et al.(Tetralin)
+ C6H4C2H3+C2H4=A1(C2H3)2+H                     5.10E+12    0.0      6190.0      !1997 Wang&Frenklach A1-+C2H4=A1C2H3+H *2 in 2012 Li et al.(Tetralin)
+ C6H4C2H3+C2H3=A1(C2H3)2                       3.80E+48   -10.52   17489.0      !1997 Wang&Frenklach A1-+C2H3=A1C2H3 *2 in 2012 Li et al.(Tetralin)
+!
+! Reactions of H4A2
+!
+ H4A2=H4A2-1+H                                 3.24E+116 -28.775  151649.4      !2012 Li et al.(Tetralin) RRKM 30Torr               
+ H4A2=H4A2-2+H                                 3.24E+116 -28.775  164149.4      !2012 Li et al.(Tetralin) RRKM 30Torr              
+ H4A2=o-C8H8+C2H4                              9.00E+15    0.0     90700.0      !2012 Li et al.(Tetralin) Est.
+ H4A2=CH3A1C3H5                                4.00E+15    0.0     81100.0      !2012 Li et al.(Tetralin) Est.
+ H4A2+H=H4A2-1+H2                              5.87E+07	   1.836    1364.9      !2012 Li et al.(Tetralin) Cal.
+ H4A2+CH3=H4A2-1+CH4                           5.40E+12    0.0      9540.0      !2012 Li et al.(Tetralin) H4A2+CH3=H4A2-2+CH4
+ H4A2+C2H3=H4A2-1+C2H4                         5.40E+12    0.0      9540.0      !2012 Li et al.(Tetralin) H4A2+CH3=H4A2-2+CH4  
+ H4A2+H=H4A2-2+H2                              4.21E+07    1.914    4011.6      !2012 Li et al.(Tetralin) Cal.
+ H4A2+CH3=H4A2-2+CH4                           5.40E+12    0.0      9540.0      !1998 Voisin et al. cC6H12+CH3=cC6H11+CH4 *4 in 2012 Li et al.(Tetralin) 
+ H4A2+C2H3=H4A2-2+C2H4                         5.40E+12    0.0      9540.0      !2012 Li et al.(Tetralin) H4A2+CH3=H4A2-2+CH4   
+ CH3A1C3H5=CH2A1C3H5+H                         5.66E+64  -13.99   120613.0      !2010 Zhang et al.(Toluene) A1CH3=A1CH2+H *2 in 2012 Li et al.(Tetralin)
+ CH3A1C3H5=o-C8H9+C2H3                         1.08E+88  -20.61   133092.0      !2010 Zhang et al.(Toluene) A1CH3=A1-+CH3 /2 -11.2k Ea in 2012 Li et al.(Tetralin)
+ CH3A1C3H5=C6H4CH3+aC3H5                       1.08E+88  -20.61   131492.0      !2010 Zhang et al.(Toluene) A1CH3=A1-+CH3 /2 -12.8k Ea in 2012 Li et al.(Tetralin) 
+ CH3A1C3H5+H=CH2A1C3H5+H2                      6.47E+00    3.98     3394.0      !2006 Oehlschlaeger et al. A1CH3+H=A1CH2+H2 in 2012 Li et al.(Tetralin) 
+ CH3A1C3H5+H=o-C8H9+C2H4                       8.80E+16   -1.05     6461.0      !1991 Tsang RRKM 0.1atm C3H6+H=C2H4+CH3 in 2012 Li et al.(Tetralin)
+ CH3A1C3H5+H=A1CH3+aC3H5                       5.80E+13    0.0      8100.0      !2009 Pousse et al. A1CH2CHCH2+H=A1+aC3H5 in 2012 Li et al.(Tetralin)  
+ CH3A1C3H5+H=C6H4CH3+C3H6                      1.32E+13    0.0      1560.0      !2009 Pousse et al. A1CH2CHCH2+H=A1-+C3H6 in 2012 Li et al.(Tetralin)  
+!
+! Reactions of C11 species
+!
+ A2CH3-1=A2CH2-1+H                             5.66E+64  -13.99   116313.0      !2010 Zhang et al.(Toluene) A1CH3=A1CH2+H *2 -4.3k Ea for A2CH3-1&-2 in 2012 Li et al.(Tetralin)
+ A2CH3-1=A2-1+CH3                              4.32E+87  -20.61   146092.0      !2012 Li et al.(Tetralin) Est.
+ A2CH3-1=A2-2+CH3                              4.32E+87  -20.61   146092.0      !2012 Li et al.(Tetralin) Est.
+ A2CH3-1+H=A2CH2-1+H2                         12.94E+00    3.98     3394.0      !2006 Oehlschlaeger et al. A1CH3+H=A1CH2+H2 *2 for A2CH3-1&-2 in 2012 Li et al.(Tetralin)
+ A2CH3-1+H=A2+CH3                              3.12E+13    0.0      5796.0      !2005 Baulch et al. A1CH3+H=A1+CH3 *2 for A2CH3-1&-2 in 2012 Li et al.(Tetralin)  
+ A2CH3-1+H=A2-1+CH4                            6.00E-01    5.0     30000.0      !2010 Zhang et al.(Toluene) A1CH3+H=A1-+CH4 Est.
+ A2CH3-1+H=A2-2+CH4                            6.00E-01    5.0     30000.0      !2010 Zhang et al.(Toluene) A1CH3+H=A1-+CH4 Est.
+ A2CH2-1=C11H8+H                               2.74E+10    0.0     63080.0      !2009 da Silva et al.(C7H7)
+  plog /  0.001                                2.74E+10    0.0     63080.0/
+  plog /  0.010                                6.75E+11    0.0     68910.0/
+  plog /  0.100                                1.20E+13    0.0     74500.0/
+  plog /  1.000                                1.16E+14    0.0     79070.0/
+  plog / 10.000                                5.06E+14    0.0     82130.0/
+ A2CH2-1+H=C11H8+H2                            1.00E+14    0.0         0.0      !2010 Zhang et al.(Toluene) A1CH2+H=C7H6+H2 *2 in 2012 Li et al.(Tetralin)
+ A2CH2-1+H=A2-1+CH3                            4.50E+58  -11.9     51860.0      !2007 Klippenstein et al. A1CH2+H=A1-+CH3 in 2012 Li et al.(Tetralin)
+ A2CH2-1=C9H7+C2H2                             6.00E+13    0.0     70000.0      
+ C11H8+H=C9H7+C2H2                             6.00E+13    0.0         0.0      !2009 Detilleux&Vandooren C7H6+H=>C5H5+C2H2 /5 in 2012 Li et al.(Tetralin)
+ C9H8+C2H=C11H8+H                              1.00E+13    0.0         0.0      !2011 Li et al.(Toluene) Est.
+!
+! Reactions of C12H8
+!
+ A2C2HB*+H(+M)=A2C2HB(+M)                      1.00E+14    0.0         0.0      !1997 Wang&Frenklach A2-1+H(+M)=A2(+M) in 1997 Wang&Frenklach
+                                         LOW / 3.80E+127 -31.434   18676.0/
+                                         TROE/ 0.200  122.8  478.4  5411.9/
+                       H2/2.0/ H2O/6.0/ CH4/2.0/ CO/1.5/ CO2/2.0/ C2H6/3.0/
+ A2C2HA*+H(+M)=A2C2HA(+M)                      1.00E+14    0.0         0.0      !1997 Wang&Frenklach A2-2+H(+M)=A2(+M) in 1997 Wang&Frenklach
+                                         LOW / 9.50E+129 -32.132   18782.0/
+                                         TROE/ 0.870  492.7  117.9  5652.0/
+                       H2/2.0/ H2O/6.0/ CH4/2.0/ CO/1.5/ CO2/2.0/ C2H6/3.0/
+ A2R5-+H(+M)=A2R5(+M)                          1.00E+14    0.0         0.0      !1997 Wang&Frenklach A1-+H(+M)=A1(+M) in 2000 Appel et al.
+                                         LOW / 6.60E+75  -16.30     7000.0/
+                                         TROE/ 1.0   0.1   584.9    6113.0/
+                       H2/2.0/ H2O/6.0/ CH4/2.0/ CO/1.5/ CO2/2.0/ C2H6/3.0/
+ C9H7+C3H3=A2R5+H2                             1.50E+11    0.0         0.0      !2001 D'Anna et al. A1CH2+C3H3=A2+2H /2 in 2012 Li et al.(Tetralin)
+ C9H7+C3H2=A2R5+H                              1.00E+11    0.0         0.0      !2012 Li et al.(Tetralin) Est.
+ A2+C2H=A2C2HA+H                               5.00E+13    0.0         0.0      !1997 Wang&Frenklach
+ A2+C2H=A2C2HB+H                               5.00E+13    0.0         0.0      !1997 Wang&Frenklach
+ A2-1+C2H2=A2C2H2                              4.50E+39   -8.7     14300.0      !1994 Wang&Frenklach RRKM 20Torr
+ A2-1+C2H2=A2C2HA+H                            1.40E+22   -2.6     17400.0      !1994 Wang&Frenklach RRKM 20Torr
+ A2-1+C2H2=A2R5+H                              8.20E+30   -5.4     16900.0      !1994 Wang&Frenklach RRKM 20Torr
+ A2C2HA+H=A2C2H2                               1.90E+50  -11.6     16200.0      !1994 Wang&Frenklach RRKM 20Torr
+ A2C2HA+H=A2R5+H                               1.90E+38   -7.4     18200.0      !1994 Wang&Frenklach RRKM 20Torr
+ A2C2H2=A2R5+H                                 2.10E+50  -12.05    37800.0      !1994 Wang&Frenklach RRKM 20Torr
+ A2C2H2+H=A2C2HA+H2                            1.50E+13    0.0         0.0      !1997 Wang&Frenklach
+ A2C2HA+H=A2C2HA*+H2                           2.50E+14    0.0     16000.0      !1985 Kiefer et al. A1+H=A1-+H2 in 1997 Wang&Frenklach
+ A2C2HB+H=A2C2HB*+H2                           2.50E+14    0.0     16000.0      !1985 Kiefer et al. A1+H=A1-+H2 in 1997 Wang&Frenklach
+ A2R5+H=A2R5-+H2                               2.50E+14    0.0     16000.0      !1985 Kiefer et al. A1+H=A1-+H2 in 2000 Appel et al.
+!
+! Reactions of C12H10
+!
+ P2-+H=BIPHEN+H2                               6.02E+12    0.0         0.0      !1997 Mebel et al. C6H7+H=C6H6+H2 in 2011 Li et al.(Toluene)
+ A1-+A1-=BIPHEN+H2                             1.00E+13    0.0         0.0      !2011 Li et al.(Toluene) Est.
+ A1-+C3H3=A1C3H2+H                             3.00E+12    0.0         0.0      !1998 D'Anna&Violi
+ A1C3H2+C3H3=P2-+H                             3.00E+12    0.0         0.0      !1998 D'Anna&Violi
+ A1-+A1-=P2                                    4.17E+13    0.000     112.33     !2009 Blanquart et al. *3
+ A1+A1-=P2+H                                   1.00E+13    0.000       0.0      !2012 Li et al.(Tetralin) Est.
+ A1+A1-=P2-H                                   8.10E+36   -8.6      9125.0      !1997 Wang&Frenklach RRKM 20Torr
+ P2-H=P2+H                                     6.10E+42  -10.1     27460.0      !1997 Wang&Frenklach RRKM 20Torr
+ A1-+A1-=P2-+H                                 7.00E+23   -2.3     38540.0      !1997 Wang&Frenklach RRKM 20Torr
+ P2=P2-+H                                      9.00E+37   -6.6    119580.0      !1997 Wang&Frenklach RRKM 20Torr
+ P2+H=P2-+H2                                   2.50E+14    0.0     16000.0      !1985 Kiefer et al. A1+H=A1-+H2 in 1997 Wang&Frenklach
+!
+! Reactions of C13 species
+!
+ A1-+A1CH2=C13H12                              1.20E+13    0.0       220.0      !2002 Richter&Howard
+ A1+A1CH2=>C13H12+H                            1.91E+12    0.000    2167.78     !2009 Blanquart et al. A1+A1-=P2+H *2 in 2012 Li et al.(Tetralin)
+ A1CH3+A1-=>C13H12+H                           1.91E+12    0.000    2167.78     !2009 Blanquart et al. A1+A1-=P2+H *2 in 2012 Li et al.(Tetralin)
+ C13H12+H=BENZYLBJ+H2                          3.23E+09    2.095   15842.0      !2002 Richter&Howard A1+H=A1-+H2 *100 in 2010 Zhang et al.(Toluene)
+ BENZYLBJ+H=C13H12                             1.00E+13    0.0         0.0      !2010 Zhang et al.(Toluene) Est.
+ C13H10+H=BENZYLBJ                             3.20E+51  -12.6     13500.0      !2000 Appel et al. A1+H=c-C6H7 in 2010 Zhang et al.(Toluene)
+ BENZYLBJ+H=C13H10+H2                          1.00E+13    0.0         0.0      !2010 Zhang et al.(Toluene) Est.
+ C13H10=C13H9+H                                6.30E+67  -15.2    116371.9      !2009 Blanquart et al. C9H8=C9H7+H *0.275 for fall-off effect in 2012 Li et al.(Tetralin)
+ C13H10+H=C13H9+H2                             2.80E+13    0.0      2258.6      !2009 Blanquart et al. C9H8+H=C9H7+H2 in 2012 Li et al.(Tetralin)
+ C9H7+C4H4=C13H10+H                            3.00E+11    0.0         0.0      !2001 D'Anna et al. A1CH2+C3H3=A2+2H in 2012 Li et al.(Tetralin)
+ C9H7+iC4H3=C13H10                             4.00E+13    0.0      7500.0      !2012 Li et al.(Tetralin) Est.
+ A2-1+C3H3=p-C13H10                            3.00E+74  -17.8     39600.0      !2002 Richter&Howard A1-+C4H3=A2 /5 in 2012 Li et al.(Tetralin)
+ A2+C3H3=p-C13H10+H                            6.26E+09    2.61    56500.0      !2010 Zhang et al.(Toluene) A1+C3H3=C9H8+H in 2012 Li et al.(Tetralin)
+ p-C13H10=p-C13H9+H                            6.30E+67  -15.2    116371.9      !2009 Blanquart et al. C9H8=C9H7+H *0.275 for fall-off effect in 2012 Li et al.(Tetralin)
+ p-C13H10+H=p-C13H9+H2                         2.80E+13    0.0      2258.6      !2009 Blanquart et al. C9H8+H=C9H7+H2 in 2012 Li et al.(Tetralin)
+ A2-1+C3H2=p-C13H9                             1.50E+75  -17.8     39600.0      !2002 Richter&Howard A1-+C4H3=A2 in 2012 Li et al.(Tetralin)
+!
+! Reactions of C14 species
+!
+ A3-1+H(+M)=A3(+M)                             1.00E+14    0.0         0.0      !1997 Wang&Frenklach RRKM
+                                         LOW / 4.00E+148 -37.505   20551.0/
+                                         TROE/ 1.000  536.3  144.9  5632.8/
+                       H2/2.0/ H2O/6.0/ CH4/2.0/ CO/1.5/ CO2/2.0/ C2H6/3.0/
+ A3-4+H(+M)=A3(+M)                             1.00E+14    0.0         0.0      !1997 Wang&Frenklach RRKM
+                                         LOW / 2.10E+139 -34.803   18378.0/
+                                         TROE/ 0.001  171.4  171.4  4992.8/
+                       H2/2.0/ H2O/6.0/ CH4/2.0/ CO/1.5/ CO2/2.0/ C2H6/3.0/
+ A2C2HB*+C2H2=A3-1                             5.20E+72  -18.1     33900.0      !1994 Wang&Frenklach A1CC+C2H2=A2-1 in 1997 Wang&Frenklach
+ A2C2HB*+C2H2=A2(C2H)2+H                       5.50E+32   -5.5     27600.0      !1994 Wang&Frenklach A1CC+C2H2=A1(C2H)2+H in 1997 Wang&Frenklach
+ A2(C2H)2+H=A3-1                               2.00E+82  -20.2     36900.0      !1994 Wang&Frenklach A1(C2H)2+H=A2-1 in 1997 Wang&Frenklach
+ A2C2HA*+C2H2=A3-4                             5.20E+72  -18.1     33900.0      !1994 Wang&Frenklach A1CC+C2H2=A2-1 in 1997 Wang&Frenklach
+ A2C2HA*+C2H2=A2(C2H)2+H                       5.50E+32   -5.5     27600.0      !1994 Wang&Frenklach A1CC+C2H2=A1(C2H)2+H in 1997 Wang&Frenklach
+ A2(C2H)2+H=A3-4                               2.00E+82  -20.2     36900.0      !1994 Wang&Frenklach A1(C2H)2+H=A2-1 in 1997 Wang&Frenklach
+ A2C2HA+C2H=A2(C2H)2+H                         5.00E+13    0.0         0.0      !1997 Wang&Frenklach
+ A2C2HB+C2H=A2(C2H)2+H                         5.00E+13    0.0         0.0      !1997 Wang&Frenklach
+ A3+H=A3-1+H2                                  2.50E+14    0.0     16000.0      !1985 Kiefer et al. A1+H=A1-+H2 in 1997 Wang&Frenklach
+ A3+H=A3-4+H2                                  2.50E+14    0.0     16000.0      !1985 Kiefer et al. A1+H=A1-+H2 in 1997 Wang&Frenklach
+ A3-1+H=A3-4+H                                 1.70E+72  -15.2     77175.0      !1997 Wang&Frenklach RRKM 20Torr
+ C9H7+C5H5=A3+H2                               3.00E+74  -17.8     39600.0      !2002 Richter&Howard A1-+C4H3=A2 /5 in 2012 Li et al.(Tetralin)
+ A2+nC4H3=>A3+H                                4.00E+13    0.0     15976.0      !2011 Li et al.(Toluene) A1+nC4H3=A2+H in 2012 Li et al.(Tetralin)
+ A2-1+nC4H3=>A3                                1.50E+75  -17.8     39600.0      !2002 Richter&Howard A1-+C4H3=A2 in 2012 Li et al.(Tetralin)
+ A2-2+nC4H3=>A3                                1.50E+75  -17.8     39600.0      !2002 Richter&Howard A1-+C4H3=A2 in 2012 Li et al.(Tetralin)
+ A2-1+C4H4=A3+H                                3.30E+33   -5.7     25500.0      !1994 Wang&Frenklach A1-+C2H2=A1C2H+H 1atm in 2010 Zhang et al.(Toluene)
+ A2-2+C4H4=A3+H                                3.30E+33   -5.7     25500.0      !1994 Wang&Frenklach A1-+C2H2=A1C2H+H 1atm in 2010 Zhang et al.(Toluene)
+ A2R5-+C2H2=A3-4                               2.00E+13    0.0     55000.0      !2010 Zhang et al.(Toluene) Est.
+ A1CC+A1=A3+H                                  5.60E+12   -0.074    7550.0      !1997 Wang&Frenklach A1-+A1=P2+H 20Torr
+ A1-+A1C2H=A3+H                                1.00E+13    0.0      2430.0      !2007 Nam et al.
+ A1CH2+A1CH2=C14H14                            5.01E+12    0.0       454.0      !1990 Hippler et al.-2
+ C14H14=C14H12+H2                              2.00E+15    0.0     84700.0      !2010 Li(Ph.D. Thesis) Est.
+ C14H12=A3+H2                                  5.00E+14    0.0     84700.0      !2010 Li(Ph.D. Thesis) Est.
+ A1CC+A1-=A3                                   5.00E+12    0.0      6000.0      !2011 Li et al.(Toluene) Est.
+ A1C2H-+A1-=A3                                 5.00E+12    0.0      6000.0      !2011 Li et al.(Toluene) Est.
+ A1C2H-+A1=A3+H                                1.00E+13    0.0      6000.0      !2012 Li et al.(Tetralin) Est.
+ A1C2H3+A1-=C14H12+H                           1.00E+12    0.0         0.0      !2010 Li(Ph.D. Thesis) Est.
+ P2-+C2H2=A3+H                                 4.60E+06    2.0      7300.0      !1997 Wang&Frenklach
+ P2+C2H=A3+H                                   1.00E+13    0.0         0.0      !2011 Li et al.(Toluene) Est.
+!
+! Reactions of C15 and C16 species
+!
+ P2+C3H3=A3CH3+H                               3.00E+13    0.0     16000.0      !2011 Li et al.(Toluene) Est.       
+ A3CH2+H=A3CH3                                 1.00E+14    0.0         0.0      !1996 Marinov et al.
+ A3CH3+H=A3CH2+H2                              3.98E+02    3.44     3120.0      !2002 Richter&Howard
+ A3CH3+H=A3+CH3                                5.78E+13    0.0      8090.0      !2002 Richter&Howard
+ A2T2+A1-=FLTHN+H                              5.00E+12    0.0         0.0      !2011 Li et al.(Toluene) Est.
+ A2-1+A1-=FLTHN+H+H                            1.39E+13    0.0       111.0      !1997 Park&Lin A1-+A1-=P2 in 2002 Richter&Howard
+ A2-1+A1=FLTHN+H+H2                            8.51E+11    0.0      3986.0      !1999 Park et al. A1-+A1=P2+H in 2002 Richter&Howard
+ A2+A1-=FLTHN+H+H2                             8.51E+11    0.0      3986.0      !1999 Park et al. A1-+A1=P2+H in 2002 Richter&Howard
+ A2T2+o-C6H4=FLTHN                             6.50E+39   -7.56    27260.0      !2002 Richter&Howard QRRK-HR 20Torr
+ A2T1+o-C6H4=FLTHN                             6.50E+39   -7.56    27260.0      !2002 Richter&Howard QRRK-HR 20Torr
+ A3+C2H=A3C2H+H                                5.00E+13    0.0         0.0      !1997 Wang&Frenklach
+ A3-4+C2H2=A3C2H2                              6.70E+45  -10.6     21200.0      !1994 Wang&Frenklach RRKM 20Torr
+ A3-4+C2H2=A3C2H+H                             8.00E+17   -1.2     22600.0      !1994 Wang&Frenklach RRKM 20Torr
+ A3-4+C2H2=A4+H                                4.00E+23   -3.2     14400.0      !1994 Wang&Frenklach RRKM 20Torr
+ p-C13H9+C3H3=A4+H2                            1.50E+75  -17.8     39600.0      !2002 Richter&Howard A1-+C4H3=A2 in 2012 Li et al.(Tetralin)
+ p-C13H9+C3H2=A4+H                             1.50E+75  -17.8     39600.0      !2002 Richter&Howard A1-+C4H3=A2 in 2012 Li et al.(Tetralin)
+ p-C13H10+C3H2=A4+H2                           1.50E+12    1.8     56500.0      !2010 Zhang et al.(Toluene) A1+C3H3=C9H8+H in 2012 Li et al.(Tetralin)
+ A1C2H-+A1C2H=A4+H                             1.10E+23   -2.9     15890.0      !1994 Wang&Frenklach A1-+A1=P2+H 1atm in 2012 Li et al.(Tetralin)
+ A1C2H-+A1C2H-=A4                              5.00E+12    0.0      6000.0      !2011 Li et al.(Toluene) A1C2H-+A1-=A3 in 2012 Li et al.(Tetralin)
+ A3C2H+H=A3C2H2                                5.20E+47  -11.1     14700.0      !1994 Wang&Frenklach RRKM 20Torr
+ A3C2H+H=A4+H                                  6.80E+26   -4.1      9500.0      !1994 Wang&Frenklach RRKM 20Torr
+ A3C2H2=A4+H                                   7.30E+48  -11.9     28100.0      !1994 Wang&Frenklach RRKM 20Torr
+ A4+H=A4-+H2                                   2.50E+14    0.0     16000.0      !1985 Kiefer et al. A1+H=A1-+H2 in 1997 Wang&Frenklach
+ A4-+H=A4                                      1.00E+14    0.0         0.0      !1985 Kiefer et al. A1+H=A1-+H2 in 1997 Wang&Frenklach
+ A3+C2H=A4+H                                   1.00E+13    0.0         0.0      !1997 Wang&Frenklach
+ A2R5-+C2H2=A2R5R5+H                           8.20E+30   -5.4     16900.0      !1994 Wang&Frenklach A2-1+C2H2=A2R5+H in 2010 Zhang et al.(Toluene)
+ A2R5+C2H=A2R5R5+H                             8.20E+30   -5.4     16900.0      !1994 Wang&Frenklach A2-1+C2H2=A2R5+H in 2010 Zhang et al.(Toluene)
+!                                             
+! Reactions of C18 species
+!               
+ P2-+A1-=C18H12+H2                             1.00E+13    0.0         0.0      !2011 Li et al.(Toluene) Est.
+ C9H7+C9H7=CHRYSEN+2H                          6.39E+29   -4.03    35205.54     !2009 Blanquart et al. C5H5+C5H5=A2+2H in 2011 Li et al.(Toluene)
+ CHRYSEN=18CS+6H2                              5.00E+03    0.0         0.0      !2012 Li et al.(Tetralin) Est.
+!
+END
+===============================================================================
+  Notes
+-------------------------------------------------------------------------------
+1. Comment styles
+1) cited from journal article:
+   !Year Authors* [Analogous reaction] [Supplemental information (e.g. pressure, calculated or estimated value (Cal./Est.), calculation method, 
+    etc.)] [in the first literature which used the same analogous reaction] 
+   * one author (Author's surname(AS)); two authors (AS1&AS2); three and more authors (First AS et al.)
+2) cited from online model:
+   !Year Model name (e.g. GRI3.0) [Analogous reaction] [Supplemental information]
+3) calculated or estimated in this work:
+   !Year Cal. [Supplemental information]
+   !Year Est. [Analogous reaction] [Supplemental information]
+2. Expressions of rate constants of ressure-dependent reactions
+1) Use Troe parameters
+2) Use plog parameters(If low-version Chemkin does not support plog mode, please change to pressure mode)
+   For example
+ C2H5+C2H3=aC3H5+CH3                           8.00E+25   -3.46    11775.0      !1986 Tsang&Hampson RRKM
+  plog /  0.100                                8.00E+25   -3.46    11775.0/     !
+  plog /  1.000                                3.90E+32   -5.22    19747.0/     !
+  plog / 10.000                                3.90E+29   -4.24    22311.0/     !
+  can be modified as:
+ C2H5+C2H3=aC3H5+CH3                           8.00E+25   -3.46    11775.0      !1986 Tsang&Hampson RRKM 0.1 atm
+!C2H5+C2H3=aC3H5+CH3                           3.90E+32   -5.22    19747.0/     !1986 Tsang&Hampson RRKM 1.0 atm
+!C2H5+C2H3=aC3H5+CH3                           3.90E+29   -4.24    22311.0/     !1986 Tsang&Hampson RRKM 10.0 atm
+===============================================================================
+  References
+-------------------------------------------------------------------------------
+GRI                           M. Frenklach, H. Wang, M. Goldenberg, G.P. Smith, D.M. Golden, C.T. Bowman, R.K. Hanson, W.C. Gardiner,
+                              V. Lissiansky, GRI-Mech: An Optimized Chemical Reaction Mechanism for Methane Combustion (version GRI-Mech 1.2),
+                              GRI Report No. GRI-95/0058, Gas Research Institute, Chicago, 1995.
+GRI##                         Reaction products were modified from the GRI-mech1.2 mechanism, see reference 1997 Wang&Frenklach for detales
+GRI###                        Reaction products were modified from the GRI-mech1.2.
+GRI3.0                        G.P. Smith, D.M. Golden, M. Frenklach, N.W. Moriarty, B. Eiteneer, M. Goldenberg, C.T. Bowman, R.K. Hanson,
+                              S. Song, W.C. Gardiner, V.V. Lissianski, Z.W. Qin, http://www.me.berkeley.edu/gri_mech/ (1999).
+JetSurf v2.0                  H. Wang, E. Dames, B. Sirjean, D.A. Sheen, R. Tangko, A. Violi, J.Y.W. Lai, F.N. Egolfopoulos, D.F. Davidson, 
+                              R.K. Hanson, C.T. Bowman, C.K. Law, W. Tsang, N.P. Cernansky, D.L. Miller, R.P. Lindstedt, JetSurF version 2.0 
+                              (2010) http://melchior.usc.edu/JetSurF/JetSurF2.0.
+NIST Database                 J.A. Manion, R.E. Huie, R.D. Levin, D.R. Burgess Jr., V.L. Orkin, W. Tsang, W.S. McGivern, J.W. Hudgens,
+                              V.D. Knyazev, D.B. Atkinson, E. Chai, A.M. Tereza, C.-Y. Lin, T.C. Allison, W.G. Mallard, F. Westley, J.T. Herron,
+                              R.F. Hampson, D.H. Frizzell, NIST Chemical Kinetics Database, NIST Standard Reference Database 17, Version 7.0,
+                              National Institute of Standards and Technology, Gaithersburg, Maryland (2008) http://kinetics.nist.gov/.
+USC Mech II                   H. Wang, X. You, A.V. Joshi, S.G. Davis, A. Laskin, F. Egolfopoulos, C.K. Law, USC Mech Version II (2007) 
+                              http://ignis.usc.edu/USC_Mech_II.htm.
+1967 Lambert et al.           R.M. Lambert, M.I. Christie, J.W. Linnett, Chem. Commun. (1967) 388-389.
+1968 Porter&Steinfeld         G. Porter, J.I. Steinfeld, J. Chem. Soc. A (1968) 877-878.
+1970 Clark&Price              W.D. Clark, S.J. Price, Can. J. Chem. 48 (1970) 1059-1064.
+1971 Solly&Benson             R.K. Solly, S.W. Benson, J. Am. Chem. Soc. 93 (1971) 2127-2131.
+1978 Bogan&Hand               D.J. Bogan, C.W. Hand, J. Phys. Chem. 82 (1978) 2067-2073.
+1978 Tsang                    W. Tsang, Int. J. Chem. Kinet. 10 (1978) 599-617.
+1982 Miller et al.            J.A. Miller, R.E. Mitchell, M.D. Smooke, R.J. Kee, Proc. Combust. Inst. 19 (1982) 181-196.
+1983 Homann&Wellmann          K.H. Homann, C. Wellmann, Ber. Bunsen-Ges. Phys. Chem. 87 (1983) 609-616.
+1983 Lifshitz&Benhamou        A. Lifshitz, H. Benhamou, J. Phys. Chem. 87 (1983) 1782-1787.
+1984 Baldwin et al.           R.R. Baldwin, A. Keen, R.W. Walker, J. Chem. Soc., Faraday Trans. 1 80 (1984) 435-456.
+1984 Brezinsky et al.         K. Brezinsky, T.A. Litzinger, I. Glassman, Int. J. Chem. Kinet. 16 (1984) 1053-1074.
+1985 Kiefer et al.            J.H. Kiefer, L.J. Mizerka, M.R. Patel, H.C. Wei, J. Phys. Chem. 89 (1985) 2013-2019.
+1985 Madronich&Felder         S. Madronich, W. Felder, J. Phys. Chem. 89 (1985) 3556-3561.
+1986 Chanmugathas&Heicklen    C. Chanmugathas, J. Heicklen, Int. J. Chem. Kinet. 18 (1986) 701-718.
+1986 Grela&Colussi            M.A. Grela, A.J. Colussi, J. Phys. Chem. 90 (1986) 434-437.
+1986 Robaugh&Stein            D.A. Robaugh, S.E. Stein, J. Am. Chem. Soc. 108 (1986) 3224-3229.
+1986 Tsang&Hampson            W. Tsang, R.F. Hampson, J. Phys. Chem. Ref. Data 15 (1986) 1087-1279.
+1987 Dewar et al.             M.J.S. Dewar, W.C. Gardiner, M. Frenklach, I. Oref, J. Am. Chem. Soc. 109 (1987) 4456-4457.
+1987 Mahmud et al.            K. Mahmud, P. Marshall, A. Fontijn, J. Phys. Chem. 91 (1987) 1568-1573.
+1987 Wu&Kern                  C.H. Wu, R.D. Kern, J. Phys. Chem. 91 (1987) 6291-6296.
+1988 Bohland et al.           T. Bohland, F. Temps, H.G. Wagner, Proc. Combust. Inst. 21 (1988) 841-850.
+1988 Frank et al.             P. Frank, K.A. Bhaskaran, T. Just, Proc. Combust. Inst. 21 (1988) 885-893.
+1988 Harris et al.            S.J. Harris, A.M. Weiner, R.J. Blint, Combust. Flame 72 (1988) 91-109.
+1988 He et al.                Y.Z. He, W.G. Mallard, W. Tsang, J. Phys. Chem. 92 (1988) 2196-2201.
+1988 Kiefer et al.            J.H. Kiefer, K.I. Mitchell, R.D. Kern, J.N. Yong, J. Phys. Chem. 92 (1988) 677-685.
+1988 Liu et al.               A.D. Liu, W.A. Mulac, C.D. Jonah, J. Phys. Chem. 92 (1988) 131-134.
+1988 Liu et al.-1             A.D. Liu, W.A. Mulac, C.D. Jonah, J. Phys. Chem. 92 (1988) 3828-3833.
+1988 Mueller-Markgraf&Troe    W. Mueller-Markgraf, J. Troe, J. Phys. Chem. 92 (1988) 4914-4922.
+1988 Slagle&Gutman            I.R. Slagle, D. Gutman, Proc. Combust. Inst. 21 (1988) 875-883.
+1988 Zellner et al.           R. Zellner, F. Ewig, R. Paschke, G. Wagner, J. Phys. Chem. 92 (1988) 4184-4190.
+1989 Fahr&Stein               A. Fahr, S.E. Stein, Proc. Combust. Inst. 22 (1989) 1023-1029.
+1989 Miller&Bowman            J.A. Miller, C.T. Bowman, Prog. Energy Combust. Sci. 15 (1989) 287-338.
+1989 Westmoreland et al.      P.R. Westmoreland, A.M. Dean, J.B. Howard, J.P. Longwell, J. Phys. Chem. 93 (1989) 8171-8180.
+1989 Zhang et al.             H.X. Zhang, S.I. Ahonkhai, M.H. Back, Can. J. Chem. 67 (1989) 1541-1549.
+1990 Bozzelli&Dean            J.W. Bozzelli, A.M. Dean, J. Phys. Chem. 94 (1990) 3313-3317.
+1990 Brand et al.             U. Brand, H. Hippler, L. Lindemann, J. Troe, J. Phys. Chem. 94 (1990) 6305-6316.
+1990 Dean                     A.M. Dean, J. Phys. Chem. 94 (1990) 1432-1439.
+1990 Hippler et al.-1         H. Hippler, J. Troe, J. Willner, J. Chem. Phys. 93 (1990) 1755-1760.
+1990 Hippler et al.-2         H. Hippler, C. Reihs, J. Troe, Z. Phys. Chem. Neue. Fol. 167 (1990) 1-16.
+1990 Hoffmann et al.          A. Hoffmann, M. Klatt, H.G. Wagner, Z. Phys. Chem. Neue. Fol. 168 (1990) 1-12.
+1990 Knispel et al.           R. Knispel, R. Koch, M. Siese, C. Zetzsch, Ber. Bunsen-Ges. Phys. Chem. 94 (1990) 1375-1379.
+1991 Hippler et al.           H. Hippler, C. Reihs, J. Troe, Proc. Combust. Inst. 23 (1991) 37-43.
+1991 Tsang                    W. Tsang, J. Phys. Chem. Ref. Data 20 (1991) 221-273.
+1992 Baulch et al.            D.L. Baulch, C.J. Cobos, R.A. Cox, C. Esser, P. Frank, T. Just, J.A. Kerr, M.J. Pilling, J. Troe, R.W. Walker, 
+                              J. Warnatz, J. Phys. Chem. Ref. Data 21 (1992) 411-734.
+1992 Emdee et al.             J.L. Emdee, K. Brezinsky, I. Glassman, J. Phys. Chem. 96 (1992) 2151-2161.
+1992 Miller&Melius            J.A. Miller, C.F. Melius, Combust. Flame 91 (1992) 21-39.
+1992 Slagle et al.            I.R. Slagle, ¨¢. Bencsura, S.-B. Xing, D. Gutman, Proc. Combust. Inst. 24 (1992) 653-660.
+1992 Wang                     H. Wang, Ph.D. Thesis, The Pennsylvania State University, University Park, PA, 1992.
+1993 Adusei&Fontijn           G.Y. Adusei, A. Fontijn, J. Phys. Chem. 97 (1993) 1406-1408.
+1994 Colket&Seery             M.B. Colket, D.J. Seery, Proc. Combust. Inst. 25 (1994) 883-891.
+1994 Eichholtz et al.         M. Eichholtz, A. Schneider, D.V. Stucken, J.T. Vollmer, H.G.G. Wagner, Proc. Combust. Inst. 25 (1994) 859-866.
+1994 Frank et al.             P. Frank, J. Herzler, T. Just, C. Wahl, Proc. Combust. Inst. 25 (1994) 833-840.
+1994 Lindstedt&Skevis         R.P. Lindstedt, G. Skevis, Combust. Flame 99 (1994) 551-561.
+1994 Wang&Frenklach           H. Wang, M. Frenklach, J. Phys. Chem. 98 (1994) 11465-11489.
+1995 Hippler et al.           H. Hippler, H. Neunaber, J. Troe, J. Chem. Phys. 103 (1995) 3510-3516.
+1995 Zhang&McKinnon           H.Y. Zhang, J.T. McKinnon, Combust. Sci. Technol. 107 (1995) 261-300.
+1996 Adusei et al.            G.Y. Adusei, A.S. Blue, A. Fontijn, J. Phys. Chem. 100 (1996) 16921-16924.(total rate constant for pC3H4+O 
+                              was taken from the reference 96ADU/BLU, the products and the branching ratio were taken from the reference 
+                              1998 Davis et al.)
+1996 Heckmann et al.          E. Heckmann, H. Hippler, J. Troe, Proc. Combust. Inst. 26 (1996) 543-550.
+1996 Hidaka et al.            Y. Hidaka, T. Higashihara, N. Ninomiya, H. Masaoka, T. Nakamura, H. Kawano, Int. J. Chem. Kinet. 28 (1996) 137-151.
+1996 Hsu et al.               C.C. Hsu, A.M. Mebel, M.C. Lin, J. Chem. Phys. 105 (1996) 2346-2352.
+1996 Knyazev et al.           V.D. Knyazev, A. Bencsura, S.I. Stoliarov, I.R. Slagle, J. Phys. Chem. 100 (1996) 11346-11354.
+1996 Knyazev&Slagle           V.D. Knyazev, I.R. Slagle, J. Phys. Chem. 100 (1996) 16899-16911.
+1996 Marinov et al.           N.M. Marinov, W.J. Pitz, C.K. Westbrook, M.J. Castaldi, S.M. Senkan, Combust. Sci. Technol. 116 (1996) 211-287.
+1996 Mebel et al.             A.M. Mebel, E.W.G. Diau, M.C. Lin, K. Morokuma, J. Am. Chem. Soc. 118 (1996) 9759-9771.
+1996 Wurmel et al.            J. Wurmel, M. McGuinness, J.M. Simmie, J. Chem. Soc., Faraday Trans. 92 (1996) 715-721.
+1997 Madden et al.            L.K. Madden, L.V. Moskaleva, S. Kristyan, M.C. Lin, J. Phys. Chem. A 101 (1997) 6790-6797.
+1997 Marinov et al.           N.M. Marinov, M.J. Castaldi, C.F. Melius, W. Tsang, Combust. Sci. Technol. 128 (1997) 295-342.
+1997 Mebel et al.             A.M. Mebel, M.C. Lin, T. Yu, K. Morokuma, J. Phys. Chem. A 101 (1997) 3189-3196.
+1997 Lindstedt&Skevis         R.P. Lindstedt, G. Skevis, Combust. Sci. Technol. 125 (1997) 73-137.
+1997 Park&Lin                 J. Park, M.C. Lin, J. Phys. Chem. A 101 (1997) 14-18.
+1997 Roy et al.               K. Roy, C. Horn, P. Frank, V.G. Slutsky, T. Just, Proc. Combust. Inst. 27 (1998) 329-336.
+1997 Wang&Frenklach           H. Wang, M. Frenklach, Combust. Flame 110 (1997) 173-221.
+1998 D'Anna&Violi             A. D'Anna, A. Violi, Proc. Combust. Inst. 27 (1998) 425-433.
+1998 Davis et al.             S.G. Davis, C.K. Law, H. Wang, Proc. Combust. Inst. 27 (1998) 305-312.
+1998 Horn et al.              C. Horn, K. Roy, P. Frank, T. Just, Proc. Combust. Inst. 27 (1998) 321-328.
+1998 Kern et al.              R.D. Kern, Q. Zhang, J. Yao, B.S. Jursic, R.S. Tranter, M.A. Greybill, J.H. Kiefer, Proc. Combust. Inst. 27 (1998) 143-150.
+1998 Voisin et al.            D. Voisin, A. Marchal, M. Reuillon, J.C. Boettner, M. Cathonnet, Combust. Sci. Technol. 138 (1998) 137-158.
+1998 Zhong&Bozzelli           X. Zhong, J.W. Bozzelli, J. Phys. Chem. A 102 (1998) 3537-3555.
+1999 Davis et al.             S.G. Davis, C.K. Law, H. Wang, J. Phys. Chem. A 103 (1999) 5889-5899.
+1999 Laskin&Wang              A. Laskin, H. Wang, Chem. Phys. Lett. 303 (1999) 43-49.
+1999 Mueller et al.           M.A. Mueller, T.J. Kim, R.A. Yetter, F.L. Dryer, Int. J. Chem. Kinet. 31 (1999) 113-125.
+1999 Park et al.              J. Park, S. Burova, A.S. Rodgers, M.C. Lin, J. Phys. Chem. A 103 (1999) 9036-9041.
+1999 Tokmakov et al.          I.V. Tokmakov, J. Park, S. Gheyas, M.C. Lin, J. Phys. Chem. A 103 (1999) 3636-3645.
+2000 Alzueta et al.           M.U. Alzueta, P. Glarborg, K. Dam-Johansen, Int. J. Chem. Kinet. 32 (2000) 498-522.
+2000 Appel et al.             J. Appel, H. Bockhorn, M. Frenklach, Combust. Flame 121 (2000) 122-136.
+2000 Bounaceur et al.         R. Bounaceur, G. Scacchi, P.-M. Marquaire, F. Domin¨¦, Ind. Eng. Chem. Res. 39 (2000) 4152-4165.
+2000 da Costa et al.          I. da Costa, R.A. Eng, A. Gebert, H. Hippler, Proc. Combust. Inst. 28 (2000) 1537-1543.
+2000 Lifshitz et al.          A. Lifshitz, A. Suslensky, C. Tamburu, Proc. Combust. Inst. 28 (2000) 1733-1739.
+2000 Michael et al.           J.V. Michael, J.W. Sutherland, L.B. Harding, A.F. Wagner, Proc. Combust. Inst. 28 (2000) 1471-1478.
+2000 Moskaleva&Lin            L.V. Moskaleva, M.C. Lin, J. Comput. Chem. 21 (2000) 415-425.
+2000 Troe                     J. Troe, Proc. Combust. Inst. 28 (2000) 1463-1469.
+2001 Bacskay&Mackie           G.B. Bacskay, J.C. Mackie, Phys. Chem. Chem. Phys. 3 (2001) 2467-2473.
+2001 D'Anna et al.            A. D'Anna, A. D'Alessio, J. Kent, Combust. Flame 125 (2001) 1196-1206.
+2001 Mebel et al.             A.M. Mebel, M.C. Lin, D. Chakraborty, J. Park, S.H. Lin, Y.T. Lee, J. Chem. Phys. 114 (2001) 8421-8435.
+2001 Park et al.              J. Park, S. Gheyas, M.C. Lin, Int. J. Chem. Kinet. 33 (2001) 64-69.
+2001 Roy et al.               K. Roy, M. Braun-Unkhoff, P. Frank, T. Just, Int. J. Chem. Kinet. 33 (2001) 821-833.
+2002 Dagaut et al.            P. Dagaut, G. Pengloan, A. Ristori, Phys. Chem. Chem. Phys. 4 (2002) 1846-1854.
+2002 D'Anna et al.            A. D'Anna, A. D'Alessio, J. Kent, Combust. Sci. Technol. 174 (2002) 279-294.  
+2002 Fernandes et al.         R.X. Fernandes, A. Gebert, H. Hippler, Proc. Combust. Inst. 29 (2002) 1337-1343.
+2002 Friedrichs et al.        G. Friedrichs, D.F. Davidson, R.K. Hanson, Int. J. Chem. Kinet. 34 (2002) 374-386.
+2002 Knyazev&Slagle           V.D. Knyazev, I.R. Slagle, J. Phys. Chem. A 106 (2002) 5613-5617.
+2002 Moskaleva&Lin            L.V. Moskaleva, M.C. Lin, Proc. Combust. Inst. 29 (2002) 1319-1327.
+2002 Poutsma                  M.L. Poutsma, Energy & Fuels 16 (2002) 964-996.
+2002 Richter&Howard           H. Richter, J.B. Howard, Phys. Chem. Chem. Phys. 4 (2002) 2038-2055.
+2003 Kaiser et al.            R.I. Kaiser, L. Vereecken, J. Peeters, H.F. Bettinger, P.V. Schleyer, H.F. Schaefer, Astron. Astrophys. 406 
+                              (2003) 385-391.
+2003 Miller&Klippenstein      J.A. Miller, S.J. Klippenstein, J. Phys. Chem. A 107 (2003) 7783-7799.
+2004 Miller&Klippenstein      J.A. Miller, S.J. Klippenstein, Phys. Chem. Chem. Phys. 6 (2004) 1192-1202.
+2005 Baulch et al.            D.L. Baulch, C.T. Bowman, C.J. Cobos, R.A. Cox, T. Just, J.A. Kerr, M.J. Pilling, D. Stocker, J. Troe, W. Tsang, 
+                              R.W. Walker, J. Warnatz, J. Phys. Chem. Ref. Data 34 (2005) 757-1397.
+2005 Bounaceur et al.         R. Bounaceur, I. Da Costa, R. Fournet, F. Billaud, F. Battin-Leclerc, Int. J. Chem. Kinet. 37 (2005) 25-49.
+2005 Gail&Dagaut              S. Gail, P. Dagaut, Combust. Flame 141 (2005) 281-297.
+2005 Senosiain et al.         J.P. Senosiain, S.J. Klippenstein, J.A. Miller, J. Phys. Chem. A 109 (2005) 6045-6055.
+2006 Joshi&Wang               A.V. Joshi, H. Wang, Int. J. Chem. Kinet. 38 (2006) 57-73.
+2006 Oehlschlaeger et al.     M.A. Oehlschlaeger, D.F. Davidson, R.K. Hanson, J. Phys. Chem. A 110 (2006) 9867-9873.
+2006 Seta et al.              T. Seta, M. Nakajima, A. Miyoshi, J. Phys. Chem. A 110 (2006) 5081-5090.
+2006 Sivaramakrishnan et al.  R. Sivaramakrishnan, K. Brezinsky, H. Vasudevan, R.S. Tranter, Combust. Sci. Technol. 178 (2006) 285-305.
+2007 Coppens et al.           F.H.V. Coppens, J. De Ruyck, A.A. Konnov, Combust. Flame 149 (2007) 409-417.
+2007 Gail&Dagaut              S. Gail, P. Dagaut, Combust. Sci. Technol. 179 (2007) 813-844.
+2007 Gueniche et al.          H.A. Gueniche, P.A. Glaude, R. Fournet, F. Battin-Leclerc, Combust. Flame 151 (2007) 245-261.
+2007 Klippenstein et al.      S.J. Klippenstein, L.B. Harding, Y. Georgievskii, Proc. Combust. Inst. 31 (2007) 221-229.
+2007 Nam et al.               G. Nam, I.V. Tokmakov, J. Park, M.C. Lin, Proc. Combust. Inst. 31 (2007) 249-256.
+2007 Oehlschlaeger et al.     M.A. Oehlschlaeger, D.F. Davidson, R.K. Hanson, Proc. Combust. Inst. 31 (2007) 211-219.
+2007 Silke et al.             E.J. Silke, W.J. Pitz, C.K. Westbrook, M. Ribaucour, J. Phys. Chem. A 111 (2007) 3761-3775.
+2007 Xu et al.                C. Xu, M. Braun-Unkhoff, C. Naumann, P. Frank, Proc. Combust. Inst. 31 (2007) 231-239.
+2007 You et al.               X.Q. You, H. Wang, E. Goos, C.J. Sung, S.J. Klippenstein, J. Phys. Chem. A 111 (2007) 4031-4042.
+2008 Andrae et al.            J.C.G. Andrae, T. Brinck, G.T. Kalghatgi, Combust. Flame 155 (2008) 696-712.
+2008 Gail et al.              S. Gail, P. Dagaut, G. Black, J.M. Simmie, Combust. Sci. Technol. 180 (2008) 1748-1771.
+2008 Sirjean et al.           B. Sirjean, P.A. Glaude, M.F. Ruiz-Lopez, R. Fournet, J. Phys. Chem. A 112 (2008) 11598-11610.
+2009 Blanquart et al.         G. Blanquart, P. Pepiot-Desjardins, H. Pitsch, Combust. Flame 156 (2009) 588-607.
+2009 Cavallotti et al.        C. Cavallotti, M. Derudi, R. Rota, Proc. Combust. Inst. 32 (2009) 115-121.
+2009 da Silva et al.(C7H6)    G. da Silva, J.W. Bozzelli, J. Phys. Chem. A 113 (2009) 12045-12048.
+2009 da Silva et al.(C7H7)    G. da Silva, J.A. Cole, J.W. Bozzelli, J. Phys. Chem. A 113 (2009) 6111-6120.
+2009 da Silva et al.(xylyls)  G. da Silva, E.E. Moore, J.W. Bozzelli, J. Phys. Chem. A 113 (2009) 10264-10278.
+2009 da Silva&Bozzelli        G. da Silva, J.W. Bozzelli, J. Phys. Chem. A 113 (2009) 8971-8978.
+2009 Detilleux&Vandooren      V. Detilleux, J. Vandooren, J. Phys. Chem. A 113 (2009) 10913-10922.
+2009 Hansen et al.            N. Hansen, J.A. Miller, P.R. Westmoreland, T. Kasper, K. Kohse-Hoinghaus, J. Wang, T.A. Cool, Combust. Flame 156 
+                              (2009) 2153-2164.
+2009 Kiefer et al.            J.H. Kiefer, K.S. Gupte, L.B. Harding, S.J. Klippenstein, J. Phys. Chem. A 113 (2009) 13570-13583.
+2009 Pousse et al.            E. Pousse, P.A. Glaude, R. Fournet, F. Battin-Leclerc, Combust. Flame 156 (2009) 954-974.
+2009 Slavinskaya&Frank        N.A. Slavinskaya, P. Frank, Combust. Flame 156 (2009) 1705-1722.
+2010 Li(Ph.D. Thesis)         Y.Y. Li, Ph.D. Thesis, University of Science and Technology of China, Hefei, China, 2010.
+2010 Pousse et al.            E. Pousse, Z.Y. Tian, P.A. Glaude, R. Fournet, F. Battin-Leclerc, Combust. Flame 157 (2010) 1236-1260.
+2010 Taatjes et al.           C.A. Taatjes, D.L. Osborn, T.M. Selby, G. Meloni, A.J. Trevitt, E. Epifanovsky, A.I. Krylov, B. Sirjean, E. Dames, 
+                              H. Wang, J. Phys. Chem. A 114 (2010) 3355-3370.
+2010 Zhang et al.(Toluene)    L.D. Zhang, J.H. Cai, T.C. Zhang, F. Qi, Combust. Flame 157 (2010) 1686-1697.
+2011 Li et al.(Toluene)       Y.Y. Li, J.H. Cai, L.D. Zhang, T. Yuan, K.W. Zhang, F. Qi, Proc. Combust. Inst. 33 (2011) 593-600.         
+2011 Polino&Cavalotti         D. Polino, C. Cavallotti, J. Phys. Chem. A 115 (2011) 10281-10289.
+2012 Li et al.(Tetralin)      Y.Y. Li, L.D. Zhang, Z.D. Wang, L.L. Ye, J.H. Cai, Z.J. Cheng, F. Qi, Proc. Combust. Inst. 34 (2012) accepted.
+2012 Wang et al.              Z.D. Wang, Z.J. Cheng, W.H. Yuan, J.H. Cai, L.D. Zhang, F. Qi, J. Wang, Combust. Flame (2012) accepted.
+!===============================================================================
+  References without clear literature sources
+!-------------------------------------------------------------------------------
+1986 Tor and Mar              Not clear.
+KP                            Not mentioned in USC Mech II.

@@ -49,4 +49,3 @@ not available
 - extracted S154074892030314X_mmc2.zip
 - extracted S154074892030314X_mmc3.zip
 - extracted S154074892030314X_mmc4.zip
-- extracted SMM#2-Experimental data.xlsx

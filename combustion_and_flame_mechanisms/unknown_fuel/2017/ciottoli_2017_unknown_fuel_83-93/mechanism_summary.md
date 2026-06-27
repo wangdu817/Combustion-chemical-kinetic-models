@@ -33,7 +33,7 @@ Pietro P. Ciottoli, Riccardo Malpica Galassi, Pasquale E. Lapenna, G. Leccese, D
 - Status: cantera_failed
 - Species count: not parsed
 - Reaction count: not parsed
-- Message: InputError: No thermo data found for species 'H' No thermo data found for species 'H2' No thermo data found for species 'OH' No thermo data found for species 'O' No thermo data found for species 'O2' No thermo data found for species 'H2O' No thermo data found for species 'HCO' No thermo data found for species 'CO' No thermo data found for species 'CO2' No thermo data found for species 'CH3' No thermo data found for species 'CH4' No thermo data found for species 'HO2' No thermo data found for species 'CH2O' No thermo data found for species 'C2H4' No thermo data found for species 'CH2' No thermo data found for species 'C2H2' No thermo data found for species 'C2H3' No thermo data found for species 'C2H' No thermo data found for species 'HCCO' No thermo data found for species 'CH2CO' No thermo ... [truncated; see _processing logs]
+- Message: missing cantera result json
 - Method: cantera
 - Cantera YAML: mechanism.yaml
 - Standard chem.inp: chem.inp
@@ -45,7 +45,7 @@ Pietro P. Ciottoli, Riccardo Malpica Galassi, Pasquale E. Lapenna, G. Leccese, D
 - Status: cantera_failed
 - Species count: not parsed
 - Reaction count: not parsed
-- Message: missing cantera result json
+- Message: InputError: No thermo data found for species 'H' No thermo data found for species 'H2' No thermo data found for species 'OH' No thermo data found for species 'O' No thermo data found for species 'O2' No thermo data found for species 'H2O' No thermo data found for species 'HCO' No thermo data found for species 'CO' No thermo data found for species 'CO2' No thermo data found for species 'CH3' No thermo data found for species 'CH4' No thermo data found for species 'HO2' No thermo data found for species 'CH2O' No thermo data found for species 'C2H4' No thermo data found for species 'CH2' No thermo data found for species 'C2H2' No thermo data found for species 'C2H3' No thermo data found for species 'HCCO' No thermo data found for species 'CH2CO' No thermo data found for species 'C4H6' No therm ... [truncated; see _processing logs]
 - Method: cantera
 - Cantera YAML: mechanism.yaml
 - Standard chem.inp: chem.inp
@@ -69,7 +69,7 @@ Pietro P. Ciottoli, Riccardo Malpica Galassi, Pasquale E. Lapenna, G. Leccese, D
 - Status: cantera_failed
 - Species count: not parsed
 - Reaction count: not parsed
-- Message: InputError: No thermo data found for species 'H' No thermo data found for species 'H2' No thermo data found for species 'OH' No thermo data found for species 'O' No thermo data found for species 'O2' No thermo data found for species 'H2O' No thermo data found for species 'HCO' No thermo data found for species 'CO' No thermo data found for species 'CO2' No thermo data found for species 'CH3' No thermo data found for species 'CH4' No thermo data found for species 'HO2' No thermo data found for species 'CH2O' No thermo data found for species 'C2H4' No thermo data found for species 'CH2' No thermo data found for species 'C2H2' No thermo data found for species 'C2H3' No thermo data found for species 'C2H' No thermo data found for species 'HCCO' No thermo data found for species 'CH2CO' No thermo ... [truncated; see _processing logs]
+- Message: missing cantera result json
 - Method: cantera
 - Cantera YAML: mechanism.yaml
 - Standard chem.inp: chem.inp
@@ -81,7 +81,7 @@ Pietro P. Ciottoli, Riccardo Malpica Galassi, Pasquale E. Lapenna, G. Leccese, D
 - Status: cantera_failed
 - Species count: not parsed
 - Reaction count: not parsed
-- Message: InputError: No thermo data found for species 'H' No thermo data found for species 'H2' No thermo data found for species 'OH' No thermo data found for species 'O' No thermo data found for species 'O2' No thermo data found for species 'H2O' No thermo data found for species 'HCO' No thermo data found for species 'CO' No thermo data found for species 'CO2' No thermo data found for species 'CH3' No thermo data found for species 'CH4' No thermo data found for species 'HO2' No thermo data found for species 'CH2O' No thermo data found for species 'C2H4' No thermo data found for species 'CH2' No thermo data found for species 'C2H2' No thermo data found for species 'C2H3' No thermo data found for species 'C2H' No thermo data found for species 'HCCO' No thermo data found for species 'CH2CO' No thermo ... [truncated; see _processing logs]
+- Message: missing cantera result json
 - Method: cantera
 - Cantera YAML: mechanism.yaml
 - Standard chem.inp: chem.inp
@@ -93,7 +93,7 @@ Pietro P. Ciottoli, Riccardo Malpica Galassi, Pasquale E. Lapenna, G. Leccese, D
 - Status: cantera_failed
 - Species count: not parsed
 - Reaction count: not parsed
-- Message: missing cantera result json
+- Message: InputError: No thermo data found for species 'H' No thermo data found for species 'H2' No thermo data found for species 'OH' No thermo data found for species 'O' No thermo data found for species 'O2' No thermo data found for species 'H2O' No thermo data found for species 'HCO' No thermo data found for species 'CO' No thermo data found for species 'CO2' No thermo data found for species 'CH3' No thermo data found for species 'CH4' No thermo data found for species 'HO2' No thermo data found for species 'CH2O' No thermo data found for species 'C2H4' No thermo data found for species 'CH2' No thermo data found for species 'C2H2' No thermo data found for species 'C2H3' No thermo data found for species 'C2H' No thermo data found for species 'HCCO' No thermo data found for species 'CH2CO' No thermo ... [truncated; see _processing logs]
 - Method: cantera
 - Cantera YAML: mechanism.yaml
 - Standard chem.inp: chem.inp
@@ -105,7 +105,7 @@ Pietro P. Ciottoli, Riccardo Malpica Galassi, Pasquale E. Lapenna, G. Leccese, D
 - Status: cantera_failed
 - Species count: not parsed
 - Reaction count: not parsed
-- Message: CanteraError: ******************************************************************************* InputFileError thrown by setupPhase: Error on line 16 of /home/icaurs/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/unknown_fuel/2017/ciottoli_2017_unknown_fuel_83-93/mechanism.yaml: Could not parse elements declaration of type 'vector<AnyValue>' | Line | | 11 | units: {length: cm, time: s, quantity: mol, activation-energy: cal/mol} | 12 | | 13 | phases: | 14 | - name: gas | 15 | thermo: ideal-gas > 16 > elements: [] ^ | 17 | species: [] | 18 | transport: mixture-averaged | 19 | state: {T: 300.0, P: 1 atm} *******************************************************************************
+- Message: InputError: No thermo data found for species 'OH' No thermo data found for species 'H' No thermo data found for species 'O2' No thermo data found for species 'O' No thermo data found for species 'H2' No thermo data found for species 'HCO' No thermo data found for species 'CO' No thermo data found for species 'H2O' No thermo data found for species 'CO2' No thermo data found for species 'HO2' No thermo data found for species 'CH2O' No thermo data found for species 'C2H4' No thermo data found for species 'CH2' No thermo data found for species 'C2H2' No thermo data found for species 'C2H3' No thermo data found for species 'C2H' No thermo data found for species 'HCCO' No thermo data found for species 'CH2CO' No thermo data found for species 'C3H6' No thermo data found for species 'C4H6' No ther ... [truncated; see _processing logs]
 - Method: cantera
 - Cantera YAML: mechanism.yaml
 - Standard chem.inp: chem.inp
@@ -117,7 +117,7 @@ Pietro P. Ciottoli, Riccardo Malpica Galassi, Pasquale E. Lapenna, G. Leccese, D
 - Status: cantera_failed
 - Species count: not parsed
 - Reaction count: not parsed
-- Message: CanteraError: ******************************************************************************* InputFileError thrown by setupPhase: Error on line 16 of /home/icaurs/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/unknown_fuel/2017/ciottoli_2017_unknown_fuel_83-93/mechanism.yaml: Could not parse elements declaration of type 'vector<AnyValue>' | Line | | 11 | units: {length: cm, time: s, quantity: mol, activation-energy: cal/mol} | 12 | | 13 | phases: | 14 | - name: gas | 15 | thermo: ideal-gas > 16 > elements: [] ^ | 17 | species: [] | 18 | transport: mixture-averaged | 19 | state: {T: 300.0, P: 1 atm} *******************************************************************************
+- Message: InputError: No thermo data found for species 'H' No thermo data found for species 'H2' No thermo data found for species 'OH' No thermo data found for species 'O' No thermo data found for species 'O2' No thermo data found for species 'H2O' No thermo data found for species 'HCO' No thermo data found for species 'CO' No thermo data found for species 'CO2' No thermo data found for species 'CH3' No thermo data found for species 'CH4' No thermo data found for species 'HO2' No thermo data found for species 'CH2O' No thermo data found for species 'C2H4' No thermo data found for species 'CH2' No thermo data found for species 'C2H2' No thermo data found for species 'C2H3' No thermo data found for species 'C2H' No thermo data found for species 'HCCO' No thermo data found for species 'CH2CO' No thermo ... [truncated; see _processing logs]
 - Method: cantera
 - Cantera YAML: mechanism.yaml
 - Standard chem.inp: chem.inp
@@ -129,7 +129,7 @@ Pietro P. Ciottoli, Riccardo Malpica Galassi, Pasquale E. Lapenna, G. Leccese, D
 - Status: cantera_failed
 - Species count: not parsed
 - Reaction count: not parsed
-- Message: InputError: No thermo data found for species 'H' No thermo data found for species 'H2' No thermo data found for species 'OH' No thermo data found for species 'O' No thermo data found for species 'O2' No thermo data found for species 'H2O' No thermo data found for species 'HCO' No thermo data found for species 'CO' No thermo data found for species 'CO2' No thermo data found for species 'CH3' No thermo data found for species 'CH4' No thermo data found for species 'HO2' No thermo data found for species 'CH2O' No thermo data found for species 'C2H4' No thermo data found for species 'CH2' No thermo data found for species 'C2H2' No thermo data found for species 'C2H3' No thermo data found for species 'C2H' No thermo data found for species 'HCCO' No thermo data found for species 'CH2CO' No thermo ... [truncated; see _processing logs]
+- Message: missing cantera result json
 - Method: cantera
 - Cantera YAML: mechanism.yaml
 - Standard chem.inp: chem.inp
@@ -165,7 +165,7 @@ Pietro P. Ciottoli, Riccardo Malpica Galassi, Pasquale E. Lapenna, G. Leccese, D
 - Status: cantera_failed
 - Species count: not parsed
 - Reaction count: not parsed
-- Message: InputError: No thermo data found for species 'H' No thermo data found for species 'H2' No thermo data found for species 'OH' No thermo data found for species 'O' No thermo data found for species 'O2' No thermo data found for species 'H2O' No thermo data found for species 'HCO' No thermo data found for species 'CO' No thermo data found for species 'CO2' No thermo data found for species 'CH3' No thermo data found for species 'CH4' No thermo data found for species 'HO2' No thermo data found for species 'CH2O' No thermo data found for species 'C2H4' No thermo data found for species 'CH2' No thermo data found for species 'C2H2' No thermo data found for species 'C2H3' No thermo data found for species 'C2H' No thermo data found for species 'HCCO' No thermo data found for species 'CH2CO' No thermo ... [truncated; see _processing logs]
+- Message: missing cantera result json
 - Method: cantera
 - Cantera YAML: mechanism.yaml
 - Standard chem.inp: chem.inp
@@ -177,7 +177,7 @@ Pietro P. Ciottoli, Riccardo Malpica Galassi, Pasquale E. Lapenna, G. Leccese, D
 - Status: cantera_failed
 - Species count: not parsed
 - Reaction count: not parsed
-- Message: InputError: No thermo data found for species 'H' No thermo data found for species 'H2' No thermo data found for species 'OH' No thermo data found for species 'O' No thermo data found for species 'O2' No thermo data found for species 'H2O' No thermo data found for species 'HCO' No thermo data found for species 'CO' No thermo data found for species 'CO2' No thermo data found for species 'CH3' No thermo data found for species 'CH4' No thermo data found for species 'HO2' No thermo data found for species 'CH2O' No thermo data found for species 'C2H4' No thermo data found for species 'CH2' No thermo data found for species 'C2H2' No thermo data found for species 'C2H3' No thermo data found for species 'C2H' No thermo data found for species 'HCCO' No thermo data found for species 'CH2CO' No thermo ... [truncated; see _processing logs]
+- Message: InputError: No thermo data found for species 'H' No thermo data found for species 'H2' No thermo data found for species 'OH' No thermo data found for species 'O' No thermo data found for species 'O2' No thermo data found for species 'H2O' No thermo data found for species 'HCO' No thermo data found for species 'CO' No thermo data found for species 'CO2' No thermo data found for species 'CH3' No thermo data found for species 'CH4' No thermo data found for species 'HO2' No thermo data found for species 'CH2O' No thermo data found for species 'C2H4' No thermo data found for species 'C2H5' No thermo data found for species 'CH2' No thermo data found for species 'C2H2' No thermo data found for species 'C2H3' No thermo data found for species 'C2H' No thermo data found for species 'HCCO' No thermo ... [truncated; see _processing logs]
 - Method: cantera
 - Cantera YAML: mechanism.yaml
 - Standard chem.inp: chem.inp

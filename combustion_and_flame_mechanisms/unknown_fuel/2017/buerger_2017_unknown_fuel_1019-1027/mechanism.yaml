@@ -80,7 +80,7 @@ description: |-
 generator: ck2yaml
 input-files: [chem.inp, therm.dat]
 cantera-version: 3.2.0
-date: Sat, 27 Jun 2026 21:45:46 +0800
+date: Sat, 27 Jun 2026 22:15:22 +0800
 
 units: {length: cm, time: s, quantity: mol, activation-energy: cal/mol}
 
@@ -216,20 +216,16 @@ phases:
       SC3H5CHO, SC3H5CO, CH2CH2CHO, IC4H10, IC4H9, TC4H9, IC4H8, IC4H7,
     TC4H9O2, IC4H9O2, TC4H8O2H-I, IC4H8O2H-I, IC4H8O2H-T, IC4H8O, 
       CC4H8O, IC4H9O, TC4H9O, IC4H9O2H, TC4H9O2H, IC4H7O, IC4H8OH, 
-      IO2C4H8OH, IC3H7CHO, TC3H6CHO, IC3H7CO, IC3H6CHO, TC4H8OOH-IO2
-species:
-- name: C12H28O4TI
-  composition: {C: 12, H: 28, O: 4, Ti: 1}
-  thermo:
-    model: NASA7
-    temperature-ranges: [200.0, 1000.0, 4000.0]
-    data:
-    - [16.6726758, 0.0831701463, 1.02450511e-04, -1.89555751e-07, 
-        8.08777798e-11, -1.90594806e+05, -19.5088204]
-    - [29.0787845, 0.100154075, -4.40147471e-05, 9.12441166e-09, 
-        -7.27162266e-13, -1.96107706e+05, -94.8386768]
-    note: 9:03:55 (GMT)
-  n
+      IO2C4H8OH, IC3H7CHO, TC3H6CHO, IC3H7CO, IC3H6CHO, TC4H8OOH-IO2, 
+      IC4H8OOH-IO2, IC4H8OOH-TO2, IC4KETII, IC4KETIT, IC4H7OH, IC4H6OH,
+    IC3H5CHO, IC3H5CO, TC3H6OCHO, IC3H6CO, IC4H7OOH, TC3H6OHCHO, 
+      TC3H6OH, IC3H5OH, TC3H6O2CHO, TC3H6O2HCO, IC3H5O2HCHO, CH2CCH2OH,
+    TC4H8CHO, O2C4H8CHO, O2HC4H8CO, C3H5OH, TIC4H7Q2-I, IIC4H7Q2-T, 
+      IIC4H7Q2-I, CH2O2H, NC3H7OH, C2H3OH, C3H6OH-3, C3H6OH-2, 
+      C3H6OH-1, IC3H7OH, IC3H6OH]
+  kinetics: gas
+  state: {T: 300.0, P: 1 atm}
+
 species:
 - name: C12H28O4TI
   composition: {C: 12, H: 28, O: 4, Ti: 1}

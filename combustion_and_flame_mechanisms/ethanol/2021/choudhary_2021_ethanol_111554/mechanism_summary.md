@@ -48,4 +48,3 @@ The rate constants of two unimolecular decomposition channels of ethanol, C2H5OH
 
 - extracted S0010218021002972_mmc2.zip
 - extracted S0010218021002972_mmc1.docx
-- extracted mmc1.docx

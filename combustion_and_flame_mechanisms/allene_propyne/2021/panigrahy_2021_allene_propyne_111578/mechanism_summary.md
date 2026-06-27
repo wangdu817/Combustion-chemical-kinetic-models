@@ -49,4 +49,3 @@ Allene and propyne are important intermediates in the pyrolysis and oxidation of
 - extracted S0010218021003217_mmc1.docx
 - extracted S0010218021003217_mmc2.zip
 - extracted S0010218021003217_mmc3.zip
-- extracted NUIGMech_Glossary.xlsx

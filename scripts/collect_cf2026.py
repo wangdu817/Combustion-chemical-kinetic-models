@@ -2221,6 +2221,9 @@ def process(force: bool = False, year: str | None = None) -> None:
         folder = record_folder(record)
         archive_folder = processing_folder(record)
         existing_row = previous_rows.get(article_id(record))
+        # Skip records whose mechanism folder was moved to _non_mechanism_candidates
+        if not folder.exists() and archive_folder.exists():
+            continue
         metadata_changed = seed_processing_state_from_index(record, existing_row) or metadata_changed
         skipped_row = reusable_existing_row(record, existing_row, folder, force)
         if skipped_row is not None:

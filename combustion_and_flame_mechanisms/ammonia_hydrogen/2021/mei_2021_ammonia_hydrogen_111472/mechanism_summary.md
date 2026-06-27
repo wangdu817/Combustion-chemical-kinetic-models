@@ -47,4 +47,3 @@ The low combustion intensity of ammonia (NH3) raises great research needs of com
 ## Processing Notes
 
 - extracted S0010218021002157_mmc2.zip
-- extracted SMM#2-Experimental data.xlsx
