@@ -15,7 +15,7 @@ Meirong Zeng, Wenhao Yuan, Yizun Wang, Weixing Zhou, Lidong Zhang, Fei Qi, et al
 - Paper PDF link: 
 - Fuel type: n_decane
 - Plasma-related mechanism: no
-- Validation reactor/type from abstract: not clear from abstract
+- Validation reactor/type from abstract: shock tube, jet-stirred reactor, flow reactor, laminar flame speed, burner/flame structure, counterflow flame, stirred reactor
 
 ## Mechanism Files
 
@@ -42,7 +42,7 @@ Meirong Zeng, Wenhao Yuan, Yizun Wang, Weixing Zhou, Lidong Zhang, Fei Qi, et al
 
 ## Abstract
 
-not available
+The pyrolysis of n-decane was investigated in a flow reactor at 5, 30, 150 and 760Torr, and the oxidation of n-decane at equivalence ratios of 0.7, 1.0 and 1.8 was studied in laminar premixed flames at 30Torr. In both experiments, synchrotron vacuum ultraviolet photoionization mass spectrometry (SVUV-PIMS) was used to identify combustion species and measure their mole fraction profiles. A new detailed kinetic model of n-decane with 234 species and 1452 reactions was developed for applications in intermediate and high temperature regions, and was validated against the experimental results in the present work. The model was also validated against previous experimental data on n-decane combustion, including species profiles in pyrolysis and oxidation in high pressure shock tube and atmospheric pressure flow reactor, jet stirred reactor oxidation, atmospheric pressure laminar premixed flame, counterflow diffusion flame and global combustion parameters such as laminar flame speeds and ignition delay times. In general, the performance of the present model in reproducing these experimental data is reasonably good. Sensitivity analysis and rate of production analysis were conducted to understand the decomposition processes of n-decane.
 
 ## Processing Notes
 

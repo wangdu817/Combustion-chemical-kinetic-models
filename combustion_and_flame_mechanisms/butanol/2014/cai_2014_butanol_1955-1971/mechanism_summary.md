@@ -15,7 +15,7 @@ Jianghuai Cai, Wenhao Yuan, Lili Ye, Zhanjun Cheng, Yizun Wang, Weile Dong, et a
 - Paper PDF link: 
 - Fuel type: butanol
 - Plasma-related mechanism: no
-- Validation reactor/type from abstract: not clear from abstract
+- Validation reactor/type from abstract: shock tube, jet-stirred reactor, flow reactor, burner/flame structure, stirred reactor
 
 ## Mechanism Files
 
@@ -42,7 +42,7 @@ Jianghuai Cai, Wenhao Yuan, Lili Ye, Zhanjun Cheng, Yizun Wang, Weile Dong, et a
 
 ## Abstract
 
-not available
+i-Butanol (iC4H9OH) pyrolysis has been studied in a flow reactor with synchrotron vacuum ultraviolet photoionization mass spectrometry combined with molecular-beam sampling technique. The pyrolysis species were identified and their mole fractions were determined. Three pressures of 30, 150 and 760Torr were selected to study the pressure effect of i-butanol chemistry. A detailed kinetic model consisting of 186 species and 1294 reactions was developed to simulate i-butanol high temperature chemistry. To enhance the accuracy, the model was further validated by the species profiles in shock tube pyrolysis, laminar premixed flames, oxidation data from jet-stirred reactor, ignition delay times, and flame speeds. Good agreement between the predicted and measured results was obtained.
 
 ## Processing Notes
 

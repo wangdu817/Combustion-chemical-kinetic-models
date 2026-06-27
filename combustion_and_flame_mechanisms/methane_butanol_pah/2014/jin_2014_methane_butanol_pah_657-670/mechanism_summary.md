@@ -42,7 +42,7 @@ Hanfeng Jin, Alberto Cuoci, Alessio Frassoldati, Tiziano Faravelli, Yizun Wang, 
 
 ## Abstract
 
-not available
+In order to understand the interactions between butanol and hydrocarbon fuels in the PAH formation, experimental and kinetic modeling investigations were combined to study methane laminar coflow diffusion flames doped with two inlet mole fractions of n-butanol (1.95% and 3.90%) in this work. Mole fractions of flame species along the flame centerline were measured using synchrotron VUV photoionization mass spectrometry. A detailed kinetic model of n-butanol combustion, extended from a recent published n-butanol model, was provided in this work to reproduce the fuel decomposition and the formation of benzene and PAHs in the investigated flames. Numerical simulations were performed with laminarSMOKE code, a CFD code specifically conceived to handle large kinetic mechanisms. The simulation results were able to follow the observed effects of n-butanol addition from the experimental results. In particular, unsaturated hydrocarbons, especially C6–C16 aromatics, were predicted satisfactorily. The reaction flux analysis revealed that benzene precursors, especially C3 radicals, increase significantly with increasing inlet mole fraction of n-butanol. This enhances the formation of phenyl and benzyl radicals, which are important PAH precursors. Reactions of benzyl, phenyl radicals and benzene with C2–C3 species are the major formation pathways for indene and naphthalene. And PAHs with more carbon atoms are dominantly formed from naphthyl and indenyl radicals.
 
 ## Processing Notes
 

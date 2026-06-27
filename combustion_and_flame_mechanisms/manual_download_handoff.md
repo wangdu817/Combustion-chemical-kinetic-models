@@ -38,7 +38,7 @@ Items below need user-side ScienceDirect/Elsevier download or review.
 - URL: https://www.sciencedirect.com/science/article/pii/S0010218013004239
 - PDF link from issue page: 
 - Reason: automated Chrome PDF access reached ScienceDirect CAPTCHA or no exact PDF link was exposed
-- Target folder: /home/icaurs/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/unknown_fuel/2014/dames_2014_unknown_fuel_1135-1145
+- Target folder: /home/icaurs/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/hydrogen/2014/dames_2014_hydrogen_1135-1145
 
 ## Cantera conversion failed: Experimental and kinetic modeling study of i-butanol pyrolysis and combustion
 
@@ -56,7 +56,7 @@ Items below need user-side ScienceDirect/Elsevier download or review.
 - URL: https://www.sciencedirect.com/science/article/pii/S0010218013003544
 - PDF link from issue page: 
 - Reason: automated Chrome PDF access reached ScienceDirect CAPTCHA or no exact PDF link was exposed
-- Target folder: /home/icaurs/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/unknown_fuel/2014/wagnon_2014_unknown_fuel_898-907
+- Target folder: /home/icaurs/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/n_heptane_iso_octane_n_octane_butanol/2014/wagnon_2014_n_heptane_iso_octane_n_octane_butanol_898-907
 
 ## Cantera conversion failed: An experimental and modeling study of propene oxidation. Part 1: Speciation measurements in jet-stirred and flow reactors
 

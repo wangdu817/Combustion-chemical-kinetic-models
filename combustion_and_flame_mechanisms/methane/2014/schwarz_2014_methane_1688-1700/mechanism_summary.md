@@ -42,7 +42,7 @@ Heiner Schwarz, Michael Geske, C. Franklin Goldsmith, Robert Schlögl, Raimund H
 
 ## Abstract
 
-not available
+A versatile flow-reactor design is presented that permits multi-species profile measurements under industrially relevant temperatures and pressures. The reactor combines a capillary sampling technique with a novel fiber-optic Laser-Induced Fluorescence (LIF) method. The gas sampling provides quantitative analysis of stable species by means of gas chromatography (i.e. CH 4 , O 2 , CO , CO 2 , H 2 O , H 2 , C 2 H 6 , C 2 H 4 ), and the fiber-optic probe enables in situ detection of transient LIF-active species, demonstrated here for C H 2 O. A thorough analysis of the LIF correction terms for the temperature-dependent Boltzmann fraction and collisional quenching are presented. The laminar flow reactor is modeled by solving the two-dimensional Navier–Stokes equations in conjunction with a detailed kinetic mechanism. Experimental and simulated profiles are compared. The experimental profiles provide much needed data for the continued validation of the kinetic mechanism with respect to C 1 and C 2 chemistry; additionally, the results provide mechanistic insight into the reaction network of fuel-rich gas-phase methane oxidation, thus allowing optimization of the industrial process.
 
 ## Processing Notes
 

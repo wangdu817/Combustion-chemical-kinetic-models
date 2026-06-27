@@ -1,0 +1,1710 @@
+!   High T 3-Pentanone Mechanism
+!   Enoch E. Dames, King-Yiu Lam, David F. Davidson, Ronald K. Hanson
+!   This version of JetSurF has been stripped off all reactions not relevant
+!   to 3-pentanone pyrolysis and oxidation
+!   Question and comments: edames@princeton.edu
+!   For uncertainty factors relating to reactions in the core mechanims, see:
+!   Sheen, David A., Claudette M. Rosado-Reyes, and Wing Tsang. 
+!   Proc. Combust. Inst. 2012, 34 (1) 527-536. Uncertainty factors for 3-pent reactions
+!   are reported as comments besides correponding rate parameters
+!
+!****************************************************************************
+!
+!   JetSurF  version 2.0 (interim) - September 2010
+!
+!   H. Wang, E. Dames, B. Sirjean, D. A. Sheen, R. Tangko, A. Violi, J. Y. W. Lai, 
+!   F. N. Egolfopoulos,  D. F. Davidson, R. K. Hanson, C. T. Bowman, C. K. Law, 
+!   W. Tsang, N. P. Cernansky, D. L. Miller, R. P. Lindstedt, 
+!   A high-temperature chemical kinetic model of n-alkane (up to n-dodecane),
+!   cyclohexane, and methyl-, ethyl-, n-propyl and n-butyl-cyclohexane oxidation 
+!   at high temperatures, JetSurF version 2.0, September 19, 2010 
+!   (http://melchior.usc.edu/JetSurF/JetSurF2.0).
+!
+!   Question and comments: haiw@usc.edu; avioli@umich.edu
+!
+!****************************************************************************!
+!
+!   This file is for simulations at or around 1 atm pressure.
+!   For elevated or reduced-pressure simulations, please search through the 
+!   file.  Comment/uncomment rate expressions at pressures closest to your 
+!   application.  You can locate reactions with pressure-specific rate 
+!   coefficients by searching using the word "atm".
+!
+!****************************************************************************
+!
+!   Changes from version 1.1 (Hai Wang, USC)
+!
+!   (1) Use USC Mech II - unoptimized as the base, foundation model
+!   (2) The rate of HO2 + OH = H2O + O2 now from Baulch 1992, based on Michael's 2006 and 
+!       Hanson's 2010 studies.
+!   (3) The rate of C2H4(+M) = H2CC+H2(+M) from PIL/DAV 2010, though a Master Eqaution 
+!       calculation is needed at a later time.
+!   (4) The global low-T chemistry of n-dodecane is tuned to give better NTC results.
+!   (5) Hydrogen abstraction reactions by H, O, CH3 modified are from Violi and Lai of UM.
+!   (6) The rate coefficients of C3H8+HO2 was re-evaluated from Baldwin's 2002 value
+!       with the T exponents set to 2.65 for nC3H7 and 2.77 for iC3H7.
+!   (7) Added low temperature chemistry for cyclohexane based on 
+!       Fernandes, Zador, Jusinski, Miller, Taatjes, PCCP, 2009
+!   (8) Propagated the cyclohexane low-T chemistry to alkylated cyclohexanes
+!   (9) Initiation by carbene reactions added, with cyclo->aklene reactions based on
+!       a singlet carbene mechanism
+!   (10) Eliminated some dead ends and unused species
+!   (11) The low temperature chemistry of alkylated cyclohexanes remains to weak.
+!
+!****************************************************************************
+!
+! JetSurF version 1.1 - A Jet Surrogate Fuel Model - September 2009
+!
+! B. Sirjean, E. Dames, D. A. Sheen, F. N. Egolfopoulos, H. Wang, 
+! D. F. Davidson, R. K. Hanson, H. Pitsch, C. T. Bowman, C. K. Law, 
+! W. Tsang, N. P. Cernansky, D. L. Miller, A. Violi, R. P. Lindstedt,       
+! A high-temperature chemical kinetic model of n-alkane, cyclohexane, and methyl-
+! ethyl-, n-propyl and n-butyl-cyclohexane oxidation at high temperatures,
+! JetSurF version 1.1, September 15, 2009 (http://melchior.usc.edu/JetSurF/JetSurF1.1).
+!
+! Interim work-in-progress version - for discussion and evaluation only.
+!
+! Questions and comments: haiw@usc.edu and sirjean@usc.edu 
+!
+!****************************************************************************
+!
+! JetSurF1.1 is an extension to JetSurF 1.0
+!
+! JetSurF version 1.0 - A Jet Surrogate Fuel Model - September 2009
+!
+! B. Sirjean, E. Dames, D. A. Sheen, X.-Q. You, C. Sung, A. T. Holley, 
+! F. N. Egolfopoulos, H. Wang, S. S. Vasu, D. F. Davidson, R. K. Hanson,
+! C. T. Bowman, A. Kelley, C. K. Law, W. Tsang, N. P. Cernansky, D. L. Miller, 
+! A. Violi, R. P. Lindstedt, A high-temperature chemical kinetic model of 
+! n-alkane oxidation, JetSurF version 1.0, September 15, 2009, 
+! (http://melchior.usc.edu/JetSurF1.0).
+!
+!
+!Model description: A high-temperature kinetic model (194 species, 1459 reactions) is  
+!proposed for the combustion of normal alkanes up to n-dodecane. The base model of H2  
+!/CO/C1-C4 combustion is the USC-Mech II (111 species, 784 reactions). 631 reactions   
+!along with 64 species are added into the base model to describe high-temperature   
+!reaction kinetics of normal alkanes (CnH2n+2, 5<=n<=12).Additionally, a 4-species, 
+!12-step lumped, low-temperature n-dodecane oxidation model is appended to capture 
+!some of the low- to intermediate-temperature chemistry.
+!
+!Reference: Xiaoqing You, Fokion Egolfopoulos, Hai Wang, "Detailed and simplified kinetic 
+!models of  of n-dodecane oxidation : the role of fuel cracking in aliphatic hydrocarbon 
+!combustion," Proceedings of the Combustion Instituite, doi:10.1016/j.proci.2008.06.041 
+!(2009).
+!
+!****************************************************************************
+!
+! Use USC Mech II-opt-C2H4 as the foundation model
+! Sheen, D. A., You, X., Wang, H., L? T. "Spectral uncertainty quantification, p
+! propagation and optimization of a detailed kinetic model for ethylene combustion," 
+! Proceedings of the Combustion Institute, 32, 535-542 (2009).  
+!
+!****************************************************************************
+!                           July 2009
+!
+!   Butylcyclohexane, Methylcyclohexane and Cyclohexane models added
+! 
+!   Baptiste Sirjean
+!
+!****************************************************************************
+!
+! Baptiste Sirjean:
+! - C-H beta-scission of alkyl radicals (5<C<12) removed 
+! - 1,4, 1,5 and 1,6 H-shift rate constants updated and added  
+! - 1,2 and 1,3 H-shift (through 3 and 4 member ring) removed
+! - Rate constants of C-C bond beta-scission of alkyl radicals updated
+! - kinetic parameters of H-abstractions by OH and H from alkanes (C5 to C12) updated 
+! - Pressure dependence of H-shift and beta-scission reactions rate constants added
+! - decomposition pathways of 1-alkenes added
+! Enoch Dames:
+! - H abstraction reactions (by H, O, OH, O2, HO2, CH3) for NC5H12, NC6H14, NC7H16, 
+!   NC8H18, NC9H20, NC10H22, NC11H24 leading to relevant SnX radical product species.
+! - Made relevant changes to NC12H24 H-abstraction reactions (multiplying rate constants 
+!   by 2 to account for path deneracy where needed). Also corrected 
+!   NC12H26+CH3 = PXC12H25+CH4 rate constant, as it was 2x too large.  
+!
+!                              July 2008
+!
+!****************************************************************************
+!
+! Added reactions for n-pentane, n-hexane, n-heptane, n-octane, n-nonane,
+! n-decane, n-undecane, n-dodecane.
+!
+! Xiaoqing You  (06/2007-12/2007) 
+!
+!****************************************************************************
+!
+! USC Mech ver 2.0
+! Release date: May 2007
+!
+! The reaction model includes the high-temperature chemistry of
+! H2/CO/C1-C4 compounds.
+!
+! How to cite:
+! Hai Wang, Xiaoqing You, Ameya V. Joshi, Scott G. Davis, Alexander Laskin, 
+! Fokion Egolfopoulos, and Chung K. Law,  USC Mech Version II. 
+! High-Temperature Combustion Reaction Model of H2/CO/C1-C4 Compounds. 
+! http://ignis.usc.edu/USC_Mech_II.htm, May 2007. 
+!
+!****************************************************************************
+! CO+OH, OH+HO2 and CO+HO2 Updated May 2007 by Xiaoqing You.
+!***************************************************************************
+! Last updated April 2005 for H2/CO Chemistry by Ameya Joshi
+!****************************************************************************
+!          Revised H2/CO high temperature Combustion Mechanism
+!
+!              Scott Davis, Ameya Joshi, and Hai Wang
+!Department of Mechanical Engineering, University of Delaware, Neark, DE 19716
+! 
+!                                 January 2003
+!
+!****************************************************************************
+!
+! Added the mechanism of n-butane combustion
+! Added the mechanism of benzene and toluene combustion
+!
+! Ameya Joshi and Hai Wang, October 2001
+!
+!****************************************************************************
+!          A Detailed Kinetic Model of 1,3-Butadiene Combustion
+!
+!                     Alexander Laskin and Hai Wang
+!Department of Mechanical Engineering, University of Delaware, Neark, DE 19716
+!
+!                          Chung K. Law 
+!Department of Mechanical and Aerospace Engineering, Princeton University
+!    
+!                                 June 1999
+!
+!****************************************************************************
+!
+! Reference sources can be found at the end of the file.
+!
+!============================================================================  
+ELEMENTS
+O  H  C  N  AR 
+END
+SPECIES
+!
+ AR  N2 
+!
+ H         O         OH        HO2       H2        H2O       H2O2      O2
+ 
+!
+ C         CH        CH2       CH2*      CH3       CH4        
+ HCO       CH2O      CH3O      CH2OH     CH3OH     CO        CO2       C2O
+!
+ C2H       C2H2      H2CC      C2H3      C2H4      C2H5      C2H6
+ HCCO      HCCOH     CH2CO     CH3CO     CH2CHO    CH2OCH    CH3CHO    CH2OCH2 
+!
+ C3H3      pC3H4     aC3H4     cC3H4     aC3H5     CH3CCH2   CH3CHCH
+ C3H6      nC3H7     iC3H7     C3H8
+ CH2CHCO   C2H3CHO   CH3CHOCH2 CH3CH2CHO CH3COCH3
+!
+ C4H2      nC4H3     iC4H3     C4H4      nC4H5     iC4H5    C4H5-2    !c-C4H5
+ C4H6      C4H612    C4H6-2    C4H7      iC4H7     C4H81    iC4H8     
+!
+ H2C4O     C4H4O     CH2CHCHCHO          CH3CHCHCO           C2H3CHOCH2
+ C4H6O23   CH3CHCHCHO                    C4H6O25
+!
+ C5H5      C5H6 lC5H7     
+ C6H2      C6H3      l-C6H4    o-C6H4    C6H5     C6H6!
+ C6H5CH2   C6H5CH3
+! 3-pentanone relevant species
+ C2H5COC2H5     C2H5COC2H4S     C2H5COC2H4P     C2H5COC2H3
+ PC2H4COC2H3    SC2H4COC2H3     C2H5COC2H2      C2H5COCH2
+ C2H3COC2H3     C2H3COCH2       CH3CHCO         C2H5CO          C2H3CO
+!
+!
+!CH2         - triplet methylene
+!CH2*        - singlet methylene
+!H2CC        - vinylidene
+!aC3H5       - allyl
+!CH3CCH2     - CH3-*C=CH2
+!CH3CHCH     - CH3-CH=CH*
+!nC3H7       - CH3-CH2-CH2*
+!iC3H7       - CH3-*CH-CH3
+!CH2OCH      - CH2OCH* radical of ethylene oxide
+!nC4H3       - *CH=CH-CCH
+!iC4H3       - CH2C*-CCH
+!nC4H5       - *CH=CH-CH=CH2
+!iC4H5       - CH2=C*-CH=CH2
+!iC4H7       - 2-methylpropen-3-yl       H2C=C(CH3)(CH2)   
+!C4H10       - n-butane                  CH3CH2CH2CH3
+!iC4H10      - i-butane                  CH(CH3)3   
+!pC4H9       - 1-butyl                   CH3CH2CH2CH2
+!sC4H9       - 2-butyl                   CH3CH2CHCH3
+!tC4H9       - t-butyl                   C(CH3)3
+!iC4H9       - i-butyl                   CH2CH(CH3)2
+!C4H81       - 1-butene                  CH3CH2CHCH2
+!C4H82       - 2-butene                  CH3CHCHCH3
+!iC4H8       - i-butene                  H2C=C(CH3)2    
+!C4H5-2      - CH3-CC-*CH2
+!C4H7        - *CH2-CH2-CH=CH2
+!CH2CHCO     - CH2=CH-*CO
+!C5H5        - cyclopentadienyl        
+!CH2CHCHCHO  - *CH2-CH=CH-CHO           
+!CH3CHCHCO   - CH3-CH=CH-*CO
+!C6H3        - *CH=CH-CC-CCH
+!C6H5        - phenyl
+!C5H5O       - cyclopentadienyloxy radical
+!C5H4OH      - cyclopentadienolyl radical
+!C6H5CH2     - benzyl
+!C6H5O       - phenoxy radical
+!CH2OCH2     - ethylene oxide
+!C4H6        - 1,3-butadiene                  
+!C4H612      - 1,2-butadiene
+!C4H6-2      - 2-butyne
+!C4H81       - 1-butene  
+!C2H3CHO     - acrolein
+!CH3CHOCH2   - propylene oxide
+!CH3COCH3    - acetone
+!C5H6        - cyclopentadiene
+!H2C4O       - CH2=C=C=C=O
+!C4H4O       - furan
+!C2H3CHOCH2  - ethenyloxirane
+!C4H6O23     - 2,3-dihydrofuran
+!CH3CHCHCHO  - crotonaldehyde
+!C4H6O25     - 2,5-dihydrofuran
+!l-C6H4      - CH2=CH-CC-CCH
+!o-C6H4      - benzyne
+!C6H6        - benzene
+!C5H4O       - 2,4-cyclopentadiene, 1-one
+!C6H5CH3     - toluene
+!C6H5OH      - phenol
+!C6H5C2H     - phenylacetylene
+!C6H5C2H3    - styrene
+!C10H8       - naphthalene 
+!C5H5CH3     - methylcyclopentadiene
+!C5H4CH2     - fulvene
+!NC12H26     - n-dodecane
+!PXC12H25    - 1-dodecyl
+!SXC12H25    - 2-dodecyl
+!S2XC12H25   - 3-dodecyl
+!S3XC12H25   - 4-dodecyl
+!S4XC12H25   - 5-dodecyl
+!S5XC12H25   - 6-dodecyl
+!C12H24      - 1-dodecene
+!PXC12H23    - 1-dodecen-12-yl
+!NC11H24     - n-undecane
+!PXC11H23    - 1-undecyl
+!SXC11H23    - 2-undecyl
+!S2XC11H23   - 3-undecyl
+!S3XC11H23   - 4-undecyl
+!S4XC11H23   - 5-undecyl
+!S5XC11H23   - 6-undecyl
+!C11H22      - 1-undecene
+!PXC11H21    - 1-undecen-11-yl
+!NC10H22     - n-decane
+!PXC10H21    - 1-decyl
+!SXC10H21    - 2-decyl
+!S2XC10H21   - 3-decyl
+!S3XC10H21   - 4-decyl                     
+!S4XC10H21   - 5-decyl
+!C10H20      - 1-decene
+!PXC10H19    - 1-decen-10-yl
+!NC9H20      - n-nonane
+!PXC9H19     - 1-nonyl
+!SXC9H19     - 2-nonyl
+!S2XC9H19    - 3-nonyl
+!S3XC9H19    - 4-nonyl               
+!S4XC9H19    - 5-nonyl
+!C9H18       - 1-nonene
+!PXC9H17     - 1-nonen-9-yl
+!NC8H18      - n-octane
+!PXC8H17     - 1-octyl
+!SXC8H17     - 2-octyl
+!S2XC8H17    - 3-octyl
+!S3XC8H17    - 4-octyl
+!C8H16       - 1-octene
+!PXC8H15     - 1-octen-8-yl
+!NC7H16      - n-heptane
+!PXC7H15     - 1-heptyl
+!SXC7H15     - 2-heptyl
+!S2XC7H15    - 3-heptyl
+!S3XC7H15    - 4-heptyl
+!C7H14       - 1-heptene
+!PXC7H13     - 1-hepten-7-yl
+!NC6H14      - n-hexane
+!PXC6H13     - 1-hexyl
+!SXC6H13     - 2-hexyl
+!S2XC6H13    - 3-hexyl
+!C6H12       - 1-hexene
+!PXC6H11     - 1-hexen-6-yl
+!SXC6H11     - 1-hexen-5-yl
+!S2XC6H11    - 1-hexen-4-yl
+!SAXC6H11    - 1-hexen-3-yl
+!SAX4-2C6H11 - 4-hexen-3-yl
+!cC6H11      - cyclohexyl
+!cC6H10      - cyclohexene
+!C6H10-13    - 1,3-hexadiene
+!PXCH2cC5H9    - cyclopentylcarbinyl
+!CH2cC5H8     - methylenecyclopentane
+!PXCH2-4-1C5H9    - ch2=ch-ch2-ch(-ch2*)-ch3
+!CH3cC5H83   - 1-methyl-cyclopent-3-yl
+!NC5H12      - n-pentane
+!PXC5H11     - 1-pentyl
+!SXC5H11     - 2-pentyl
+!S2XC5H11    - 3-pentyl
+!C5H10       - 1-pentene
+!PXC5H9      - 1-penten-5-yl
+!SXC5H9      - 1-penten-4-yl
+!SAXC5H9     - 1-penten-3-yl
+!C5H8-13     - 1,3-pentadiene
+!C5H8-14     - 1,4-pentadiene
+!cC5H9       - cyclopentyl
+!cC5H8       - cyclopentene
+!PXCH2-3-1C4H7    - ch3-ch(-ch2*)-ch=ch2
+!PC12H25O2   - nC12peroxy radicals  C12H25O2
+!P12OOHX2    - nC12hydroperoxyalkyl radicals  C12H25O2
+!SOO12OOH    - nC12hydroperoxyalkylperoxy radicals  C12H25O4   
+!OC12OOH     - nC12ketohydroperoxydes C12H24O3
+END
+!
+REACTIONS
+!changes/updates from uscmech II
+! H+O2 = O+OH                                  2.644E+16  -0.6707 17041.00 !GRI3.0 * 1.00
+ H+O2=O+OH                               1.04E+14        0       15310           !F=1.15 HDB11
+!
+ O+H2 = H+OH                                  4.589E+04   2.700   6260.00 !GRI3.0 * 1.19
+ OH+H2 = H+H2O                                1.734E+08   1.510   3430.00 !GRI3.0 * 0.80
+ OH+OH = O+H2O                                3.973E+04   2.400  -2110.00 !GRI3.0 * 1.11
+ H+H+M = H2+M                                 1.780E+18  -1.000      0.00 !GRI3.0 * 1.78
+                                         H2/0.0/ H2O/0.0/ CO2/0.0/ AR/0.63/ 
+                                                                  !HE/0.63/
+ H+H+H2 = H2+H2                               9.000E+16  -0.600      0.00 !GRI3.0
+ H+H+H2O = H2+H2O                             5.624E+19  -1.250      0.00 !GRI3.0 * 0.94
+ H+H+CO2 = H2+CO2                             5.500E+20  -2.000      0.00 !GRI3.0
+ H+OH+M = H2O+M                               4.400E+22  -2.000      0.00 !GRI3.0 * 2.00
+                               H2/2.0/ H2O/6.30/ CO/1.75/ CO2/3.6/  AR/0.38/ 
+                                                                   !HE/0.38/
+ O+H+M = OH+M                                 9.428E+18  -1.000      0.00  !86TSA/HAM * 2.00
+                                H2/2.0/ H2O/12.0/ CO/1.75/ CO2/3.6/  AR/0.7/ 
+!                                                                    HE/0.7/
+ O+O+M = O2+M                                 1.200E+17  -1.000      0.00 !GRI3.0
+                              H2/2.4/ H2O/15.4/  CO/1.75/ CO2/3.6/  AR/0.83/ 
+!                                                                   HE/0.83/
+ H+O2(+M) = HO2(+M)                           5.116E+12   0.440     0.00 !00 TROE - Based on M=N2 * 1.10
+                                        LOW / 6.328E+19  -1.400     0.00 /
+                                        TROE/ 0.5  1E-30  1E+30            /
+                            O2/0.85/  H2O/11.89/ CO/1.09/ CO2/2.18/ AR/0.40/ 
+!                                                                   HE/0.46/ 
+ HO2+H=H2+O2                             3.68E+06        2.087    -1455          !F=2    MSH00
+!H2+O2 = HO2+H                                5.916E+05   2.433  53502.00 !00MIC/SUT * 0.80
+ OH+OH(+M) = H2O2(+M)                         1.110E+14  -0.370      0.00 !88ZEL/EWI * 1.50
+                                      LOW  /  2.010E+17  -0.584  -2293.00 /!Fit 88ZEL/EWI and 92BAU/COB
+                                      TROE / 0.7346   94.  1756.00  5182.0 /!H2O=6xN2 88ZEL/EWI
+                                 H2/2.0/ H2O/6.00/ CO/1.75/ CO2/3.6/ AR/0.7/ 
+!                                                                    HE/0.7/
+!
+!
+! Reactions of HO2
+!
+ HO2+H = O+H2O                                3.970E+12    0.000   671.00 !GRI3.0
+ HO2+H = OH+OH                                7.485E+13    0.000   295.00 !99MUE/KIM * 1.06
+ HO2+O = OH+O2                                4.000E+13    0.000     0.00 !GRI3.0 * 2.00
+ HO2+HO2 = O2+H2O2                            1.300E+11    0.000 -1630.00 !90HIP/TRO
+  DUPLICATE
+ HO2+HO2 = O2+H2O2                            3.658E+14    0.000 12000.00 !90HIP/TRO * 0.87
+  DUPLICATE
+! HO2+OH = H2O+O2                              2.890E+13    0.000  -500.00 ! Baulch et al. 1992
+HO2+OH=H2O+O2                           7.00E+12        0        -1093          !F=1.6  HLS12
+        DUPLICATE
+HO2+OH=H2O+O2                           4.50E+14        0        10930          !F=1.35 HLS12
+        DUPLICATE
+!OH+HO2=H2O+O2                                1.41E+18    -1.760    60.0 ! Wang07 
+! Duplicate
+!OH+HO2=H2O+O2                                1.12E+85   -22.300 26900.0 ! Wang07
+! Duplicate
+!OH+HO2=H2O+O2                                5.37E+70   -16.720 32900.0 ! Wang07
+! Duplicate
+!OH+HO2=H2O+O2                                2.51E+12     2.000 40000.0 ! Wang07
+! Duplicate
+!OH+HO2=H2O+O2                                1.00E+136   -40.00 34800.0 ! Wang07
+! Duplicate
+! 
+! Reactions of H2O2
+!   
+ H2O2+H = HO2+H2                              6.050E+06    2.000   5200.00 !GRI3.0 * 0.50
+ H2O2+H = OH+H2O                              2.410E+13    0.000   3970.00 !86TSA/HAM
+ H2O2+O = OH+HO2                              9.630E+06    2.000   3970.00 !86TSA/HAM
+ H2O2+OH = HO2+H2O                            2.000E+12    0.000    427.00 !95HIP/NEU
+  DUPLICATE
+ H2O2+OH = HO2+H2O                            2.670E+41   -7.000  37600.00 !Refit95HIP/NEU
+  DUPLICATE                                                !2.2E14 MAX K
+! 
+! Reactions of CO/CO2
+!
+ CO+O(+M)=CO2(+M)                             1.362E+10    0.000   2384.00 !99MUE/KIM * 0.76
+                                        LOW / 1.173E+24   -2.79    4191.   / 
+                                   H2/2.0/ H2O/12/ CO/1.75/ CO2/3.6/ AR/0.7/ 
+!                                                                    HE/0.7/   
+! CO+OH = CO2+H    2.12E12 0 5226!woolridge et al
+ CO+OH = CO2+H                                7.046E+04    2.053  -355.67  !06JOS/WANG
+   DUPLICATE
+ CO+OH = CO2+H                                5.757E+12   -0.664   331.83  !06JOS/WANG
+   DUPLICATE
+ CO+O2 = CO2+O                                1.119E+12    0.000  47700.00 !86TSA/HAM * 0.44
+ CO+HO2 = CO2+OH                              1.570E+05    2.180  17942.61 !07YOU/WANG
+! 
+! Reactions of HCO
+!
+!HCO+H=H2+CO                             9.03E+13        0            0          !F=2.5  BBC05
+ HCO+H = CO+H2                                1.200E+14    0.000      0.00 !02FRI/DAV * 1.00
+ HCO+O = CO+OH                                3.000E+13    0.000      0.00 !GRI3.0
+ HCO+O = CO2+H                                3.000E+13    0.000      0.00 !GRI3.0
+! HCO+OH = CO+H2O                              3.020E+13    0.000      0.00 !86TSA/HAM
+ HCO+OH=H2O+CO                           1.08E+14        0            0          !F=2.0  BBC0
+HCO+M=H+CO+M                            4.80E+17       -1.2      17734          !F=1.7  FHD02
+        CO/1.5/ CO2/2./ H2O/12./ CH4/2./
+        CH2O/2.5/ C2H6/3./ CH3OH/3./                                            !GRIMech 3 base efficiencies (opt. H2O=8)
+!HCO+M = CO+H+M                               1.870E+17   -1.000  17000.00 !02FRI/DAV * 2.00
+!                                              H2/2.0/ H2O/0.0/ CO/1.75/ CO2/3.6/
+ HCO+H2O = CO+H+H2O                           2.244E+18   -1.000  17000.00 !12xM * 2.00
+ HCO+O2=HO2+CO                           7.83E+10        0.521     -521          !F=2.0  Kl11
+! HCO+O2 = CO+HO2                              1.204E+10    0.807   -727.00 !96HSU/MEB
+! ---- End of Optimized H2/O2 mechanism ----
+!
+!
+! Reactions of CO/CO2 (See the H2/CO model above for additional reactions)
+!
+CO+H2(+M) = CH2O(+M)                          4.300E+07    1.500  79600.00  !GRI
+                                      LOW  /  5.070E+27   -3.420  84350.00  /
+                                      TROE/  0.9320  197.00  1540.00 10300. /
+                 H2/2.0/ H2O/6.0/ CH4/2.0/ CO/1.5/ CO2/2.0/ C2H6/3.0/ AR/0.7/
+!
+! Reactions of C
+!
+ C+OH = CO+H                                  5.000E+13    0.000      0.00  !GRI
+ C+O2 = CO+O                                  5.800E+13    0.000    576.00  !GRI
+!
+! Reactions of CH
+!
+ CH+H = C+H2                                  1.100E+14    0.000      0.00  !GRI
+ CH+O = CO+H                                  5.700E+13    0.000      0.00  !GRI
+ CH+OH = HCO+H                                3.000E+13    0.000      0.00  !GRI
+ CH+H2 = CH2+H                                1.107E+08    1.790   1670.00  !GRI
+ CH+H2O = CH2O+H                              5.710E+12    0.000   -755.00  !GRI
+ CH+O2 = HCO+O                                3.300E+13    0.000      0.00  !GRI
+ CH+CO(+M) = HCCO(+M)                         5.000E+13    0.000      0.00  !GRI
+                                      LOW  /  2.690E+28   -3.740   1936.00  /
+                                      TROE/  0.5757  237.00  1652.0  5069.0 /
+                 H2/2.0/ H2O/6.0/ CH4/2.0/ CO/1.5/ CO2/2.0/ C2H6/3.0/ AR/0.7/
+ CH+CO2 = HCO+CO                              3.400E+12    0.000    690.00  !GRI
+!
+! Reactions of HCO (See the H2/CO model above for additional reactions)
+!
+ HCO+H(+M) = CH2O(+M)                         1.090E+12    0.480   -260.00  !GRI
+                                      LOW  /  1.350E+24   -2.570   1425.00  /
+                                      TROE/  0.7824  271.0  2755.00  6570.0 /
+                H2/2.0/ H2O/6.0/ CH4/2.0/ CO/1.5/ CO2/2.0/ C2H6/3.0/ AR/0.7 /
+!
+! Reactions of CH2(triplet)
+!
+ CH2+H(+M) = CH3(+M)                          2.500E+16   -0.800      0.00  !GRI
+                                      LOW  /  3.200E+27   -3.140   1230.00  /
+                                      TROE/  0.6800   78.00  1995.0  5590.0 /
+                 H2/2.0/ H2O/6.0/ CH4/2.0/ CO/1.5/ CO2/2.0/ C2H6/3.0/ AR/0.7/
+ CH2+O = HCO+H                                8.000E+13    0.000      0.00  !GRI
+ CH2+OH = CH2O+H                              2.000E+13    0.000      0.00  !GRI
+ CH2+OH = CH+H2O                              1.130E+07    2.000   3000.00  !GRI
+ CH2+H2 = H+CH3                               5.000E+05    2.000   7230.00  !GRI
+CH2+O2=OH+H+CO                         2.31E+12        0         1000          !F=2    BKP11
+CH2+O2=2H+CO2                          1.66E+12        0         1000          !F=2    BKP11
+CH2+O2=O+CH2O                           1.30E+12        0         1000          !F=2    BKP11
+CH2+O2=H2+CO2                           1.51E+12        0         1000          !F=2    BKP11
+CH2+O2=H2O+CO                           4.30E+11        0         1000          !F=2    BKP11
+!CH2+O2=>OH+H+CO                         2.79E+12        0         1000          !F=2    BTW92 rate and Blitz (BKP11 ZPC225:957) branch
+!CH2+O2=>2H+CO2                          2.01E+12        0         1000          !F=2    BTW92 rate and Blitz (BKP11 ZPC225:957) branch
+!CH2+O2=O+CH2O                           1.57E+12        0         1000          !F=2    BTW92 rate and Blitz (BKP11 ZPC225:957) branch
+!CH2+O2=H2+CO2                           1.83E+12        0         1000          !F=2    BTW92 rate and Blitz (BKP11 ZPC225:957) branch
+!CH2+O2=H2O+CO                           5.20E+11        0         1000          !F=2    BTW92 rate and Blitz (BKP11 ZPC225:957) branch
+!CH2+O2 = HCO+OH                              1.060E+13    0.000   1500.00  !GRI##
+! CH2+O2 = CO2+H+H                             2.640E+12    0.000   1500.00  !GRI##
+ CH2+HO2 = CH2O+OH                            2.000E+13    0.000      0.00  !GRI
+ CH2+C = C2H+H                                5.000E+13    0.000      0.00  !GRI
+ CH2+CO(+M) = CH2CO(+M)                       8.100E+11    0.500   4510.00  !GRI
+                                      LOW  /  2.690E+33   -5.110   7095.00  /
+                                      TROE/ 0.5907  275.0  1226.00  5185.00 /
+                 H2/2.0/ H2O/6.0/ CH4/2.0/ CO/1.5/ CO2/2.0/ C2H6/3.0/ AR/0.7/
+ CH2+CH = C2H2+H                              4.000E+13    0.000      0.00  !GRI  
+ CH2+CH2 = C2H2+H2                            3.200E+13    0.000      0.00  !GRI
+!
+! Reactions of CH2(singlet)
+!
+ CH2*+N2 = CH2+N2                             1.500E+13    0.000    600.00  !GRI
+ CH2*+AR = CH2+AR                             9.000E+12    0.000    600.00  !GRI
+ CH2*+H = CH+H2                               3.000E+13    0.000      0.00  !GRI
+ CH2*+O = CO+H2                               1.500E+13    0.000      0.00  !GRI
+ CH2*+O = HCO+H                               1.500E+13    0.000      0.00  !GRI
+ CH2*+OH = CH2O+H                             3.000E+13    0.000      0.00  !GRI
+ CH2*+H2 = CH3+H                              7.000E+13    0.000      0.00  !GRI
+ CH2*+O2 = H+OH+CO                            2.800E+13    0.000      0.00  !GRI
+ CH2*+O2 = CO+H2O                             1.200E+13    0.000      0.00  !GRI
+ CH2*+H2O(+M)=CH3OH(+M)                2.94E+12        0.053    -1897          !F=3    JKHR07
+        LOW                            /1.68E+41       -7.192     5777./
+        TROE/   0.992   943     47310   47110./
+        CO/1.5/ CO2/2./ H2O/6./ CH4/2./
+        CH2O/2.5/ C2H6/3./ CH3OH/3./                                            !generic 
+! CH2*+H2O(+M) = CH3OH(+M)                     2.000E+13    0.000      0.00  !GRI
+!                                      LOW  /  2.700E+38   -6.300   3100.00  /
+!                                      TROE/  0.1507  134.00  2383.0  7265.0 /
+!                         H2/2.0/ H2O/6.0/ CH4/2.0/ CO/1.5/ CO2/2.0/ C2H6/3.0/
+ CH2*+H2O = CH2+H2O                           3.000E+13    0.000      0.00  !GRI
+ CH2*+CO = CH2+CO                             9.000E+12    0.000      0.00  !GRI
+ CH2*+CO2 = CH2+CO2                           7.000E+12    0.000      0.00  !GRI
+ CH2*+CO2 = CH2O+CO                           1.400E+13    0.000      0.00  !GRI
+!
+! Reactions of CH2O
+!
+ CH2O+H(+M) = CH2OH(+M)                       5.400E+11    0.454   3600.00  !GRI
+                                     LOW  /   1.270E+32   -4.820   6530.00  /
+                                     TROE/  0.7187  103.00  1291.00  4160.0 /
+                         H2/2.0/ H2O/6.0/ CH4/2.0/ CO/1.5/ CO2/2.0/ C2H6/3.0/
+ CH2O+H(+M) = CH3O(+M)                        5.400E+11    0.454   2600.00  !GRI
+                                      LOW  /  2.200E+30   -4.800   5560.00  /
+                                      TROE/  0.7580   94.00  1555.0 4200.00 /
+                         H2/2.0/ H2O/6.0/ CH4/2.0/ CO/1.5/ CO2/2.0/ C2H6/3.0/
+ CH2O+H = HCO+H2                              2.300E+10    1.050   3275.00  !GRI
+ CH2O+O = HCO+OH                              3.900E+13    0.000   3540.00  !GRI
+ CH2O+OH = HCO+H2O                            3.430E+09    1.180   -447.00  !GRI
+ CH2O+O2 = HCO+HO2                            1.000E+14    0.000  40000.00  !GRI
+ CH2O+HO2 = HCO+H2O2                          1.000E+12    0.000   8000.00  !GRI
+ CH2O+CH = CH2CO+H                            9.460E+13    0.000   -515.00  !GRI
+!
+! Reactions of CH3
+!
+ CH3+H(+M) = CH4(+M)                          1.270E+16   -0.630    383.00  !GRI
+                                     LOW  /   2.477E+33   -4.760   2440.00  /
+                                     TROE/  0.7830   74.00  2941.00  6964.0 /
+                 H2/2.0/ H2O/6.0/ CH4/2.0/ CO/1.5/ CO2/2.0/ C2H6/3.0/ AR/0.7/
+ CH3+O = CH2O+H                               8.430E+13    0.000      0.00  !GRI
+! CH3+OH(+M) = CH3OH(+M)                       6.300E+13    0.000      0.00  !GRI
+!                                      LOW  /  2.700E+38   -6.300   3100.00  /
+!                                      TROE/  0.2105   83.5 5398.00  8370.0  /
+!                         H2/2.0/ H2O/6.0/ CH4/2.0/ CO/1.5/ CO2/2.0/ C2H6/3.0/
+! CH3+OH = CH2+H2O                             5.600E+07    1.600   5420.00  !GRI
+! CH3+OH = CH2*+H2O                            2.501E+13    0.000      0.00  !GRI
+ CH3+OH(+M)=CH3OH(+M)                    6.21E+13       -0.018      -33          !F=2    JKHR07
+        LOW     /7.24E+36       -6      3226./
+        TROE/.1855      156     1675    4530./
+        CO/1.5/ CO2/2./ H2O/6./ CH4/2./
+        CH2O/2.5/ C2H6/3./ CH3OH/3./                                            !generic GRIMech efficiencies
+ CH3+OH=CH2+H2O                          4.29E+04        2.57      3998          !F=2    JKHR07
+ CH3+OH=CH2*+H2O                       1.08E+16       -0.91       546          !F=3    BBC05
+ CH3+O2 = O+CH3O                              3.083E+13    0.000  28800.00  !GRI
+ CH3+O2 = OH+CH2O                             3.600E+10    0.000   8940.00  !GRI 
+ CH3+HO2 = CH4+O2                             1.000E+12    0.000      0.00  !GRI
+ CH3+HO2 = CH3O+OH                            1.340E+13    0.000      0.00  !GRI
+ CH3+H2O2 = CH4+HO2                           2.450E+04    2.470   5180.00  !GRI
+ CH3+C = C2H2+H                               5.000E+13    0.000      0.00  !GRI
+ CH3+CH = C2H3+H                              3.000E+13    0.000      0.00  !GRI
+ CH3+HCO = CH4+CO                             8.480E+12    0.000      0.00  !GRI
+ CH3+CH2O = CH4+HCO                           3.320E+03    2.810   5860.00  !GRI
+ CH3+CH2 = C2H4+H                             4.000E+13    0.000      0.00  !GRI
+ CH3+CH2* = C2H4+H                            1.200E+13    0.000   -570.00  !GRI
+! CH3+CH3(+M) = C2H6(+M)                       2.120E+16   -0.970    620.00  !GRI
+!                                      LOW  /  1.770E+50   -9.670   6220.00  /
+!                                      TROE/  0.5325  151.0  1038.00  4970.0 /
+!                 H2/2.0/ H2O/6.0/ CH4/2.0/ CO/1.5/ CO2/2.0/ C2H6/3.0/ AR/0.7/
+! CH3+CH3 = H+C2H5                             4.990E+12    0.100  10600.00  !GRI
+ CH3+HCCO = C2H4+CO                           5.00E+13     0.0        0.0   !Estimated
+ CH3+C2H = C3H3+H                             2.41E+13     0.0        0.0   !86TSA/HAM
+!
+! Reactions of CH3O
+!
+ CH3O+H(+M) = CH3OH(+M)                       5.000E+13    0.000      0.00  !GRI
+                                      LOW  /  8.600E+28   -4.000   3025.00  /
+                                      TROE/  0.8902  144.0  2838.00 45569.0 /
+                         H2/2.0/ H2O/6.0/ CH4/2.0/ CO/1.5/ CO2/2.0/ C2H6/3.0/
+ CH3O+H = CH2OH+H                             3.400E+06    1.600      0.00  !GRI
+ CH3O+H = CH2O+H2                             2.000E+13    0.000      0.00  !GRI
+ CH3O+H = CH3+OH                              3.200E+13    0.000      0.00  !GRI
+ CH3O+H = CH2*+H2O                            1.600E+13    0.000      0.00  !GRI
+ CH3O+O = CH2O+OH                             1.000E+13    0.000      0.00  !GRI
+ CH3O+OH = CH2O+H2O                           5.000E+12    0.000      0.00  !GRI
+ CH3O+O2 = CH2O+HO2                           4.280E-13    7.600  -3530.00  !GRI
+!
+! Reactions of CH2OH
+!
+ CH2OH+H(+M) = CH3OH(+M)                      1.800E+13    0.000     0.00   !GRI
+                                      LOW  /  3.000E+31   -4.800  3300.00   /
+                                      TROE/  0.7679  338.00  1812.0 5081.0  /
+    H2/2.0/ H2O/6.0/ CH4/2.0/ CO/1.5/ CO2/2.0/ C2H6/3.0/
+ CH2OH+H = CH2O+H2                            2.000E+13    0.000     0.00   !GRI
+ CH2OH+H = CH3+OH                             1.200E+13    0.000     0.00   !GRI
+ CH2OH+H = CH2*+H2O                           6.000E+12    0.000     0.00   !GRI
+ CH2OH+O = CH2O+OH                            1.000E+13    0.000     0.00   !GRI
+ CH2OH+OH = CH2O+H2O                          5.000E+12    0.000     0.00   !GRI
+ CH2OH+O2 = CH2O+HO2                          1.800E+13    0.000   900.00   !GRI
+!
+! Reactions of CH4
+!
+ CH4+H = CH3+H2                               6.600E+08    1.620 10840.00   !GRI
+ CH4+O = CH3+OH                               1.020E+09    1.500  8600.00   !GRI
+! CH4+OH=CH3+H2O                          1.00E+06        2.182     2446          !F=1.2  SSS05
+ CH4+OH = CH3+H2O                             1.000E+08    1.600  3120.00   !GRI
+ CH4+CH = C2H4+H                              6.000E+13    0.000     0.00   !GRI
+ CH4+CH2 = CH3+CH3                            2.460E+06    2.000  8270.00   !GRI
+ CH4+CH2* = CH3+CH3                           1.600E+13    0.000  -570.00   !GRI
+ CH4+C2H = C2H2+CH3                           1.810E+12    0.0     500.0    !86TSA/HAM
+!
+! Reactions of CH3OH
+!
+ CH3OH+H = CH2OH+H2                           1.700E+07    2.100  4870.00   !GRI
+ CH3OH+H = CH3O+H2                            4.200E+06    2.100  4870.00   !GRI
+ CH3OH+O = CH2OH+OH                           3.880E+05    2.500  3100.00   !GRI
+ CH3OH+O = CH3O+OH                            1.300E+05    2.500  5000.00   !GRI
+ CH3OH+OH = CH2OH+H2O                         1.440E+06    2.000  -840.00   !GRI
+ CH3OH+OH = CH3O+H2O                          6.300E+06    2.000  1500.00   !GRI
+ CH3OH+CH3 = CH2OH+CH4                        3.000E+07    1.500  9940.00   !GRI
+ CH3OH+CH3 = CH3O+CH4                         1.000E+07    1.500  9940.00   !GRI
+!
+! Reactions of C2H
+!
+ C2H+H(+M) = C2H2(+M)                         1.000E+17   -1.000     0.00   !GRI
+                                      LOW  /  3.750E+33   -4.800  1900.00   /
+                                      TROE/  0.6464  132.00  1315.00 5566.0 /
+                 H2/2.0/ H2O/6.0/ CH4/2.0/ CO/1.5/ CO2/2.0/ C2H6/3.0/ AR/0.7/
+ C2H+O = CH+CO                                5.000E+13    0.000     0.00   !GRI
+ C2H+OH = H+HCCO                              2.000E+13    0.000     0.00   !GRI
+ C2H+O2 = HCO+CO                              5.000E+13    0.000  1500.00   !GRI
+ C2H+H2 = H+C2H2                              4.900E+05    2.500   560.00   !GRI
+!
+! Reactions of C2O
+!
+ C2O+H = CH+CO                                5.000E+13    0.000     0.00   !92MIL/MEL
+ C2O+O = CO+CO                                5.000E+13    0.000     0.00   !92MIL/MEL 
+ C2O+OH = CO+CO+H                             2.000E+13    0.000     0.00   !92MIL/MEL
+ C2O+O2 = CO+CO+O                             2.000E+13    0.000     0.00   !92MIL/MEL
+!
+! Reactions of HCCO
+!
+ HCCO+H = CH2*+CO                             1.000E+14    0.000     0.00   !GRI
+ HCCO+O = H+CO+CO                             1.000E+14    0.000     0.00   !GRI
+ HCCO+O2 = OH+2CO                             1.600E+12    0.000   854.00   !GRI
+ HCCO+CH = C2H2+CO                            5.000E+13    0.000     0.00   !GRI
+ HCCO+CH2 = C2H3+CO                           3.000E+13    0.000     0.00   !GRI
+ HCCO+HCCO = C2H2+CO+CO                       1.000E+13    0.000     0.00   !GRI
+ HCCO+OH = C2O+H2O                            3.000E+13    0.000     0.00   !92MIL/MEL
+!
+! Reactions of C2H2
+!
+ C2H2 (+M) = H2CC (+M)                        8.000E+14   -0.520  50750.00  !99LAS/WAN
+                                      LOW /   2.450E+15   -0.640  49700.00  /
+      H2/2.0/ H2O/6.0/ CH4/2.0/ CO/1.5/ CO2/2.0/ C2H6/3.0/C2H2/2.5/ C2H4/2.5/ 
+ C2H2+H(+M)=C2H3(+M)                     5.54E+08        1.64      2096          !F=2    BBC05
+        LOW                            /3.63E+27       -3.38       847./
+        TROE/.215       10.7    1043    2341./
+        AR/.7/ CO/1.5/ CO2/2./ H2O/6./
+        CH4/2./ CH2O/2.5/ C2H6/3./ CH3OH/3./                                    !generic efficiencies
+!C2H3 (+M) = C2H2+H (+M)                      3.860E+08    1.620  37048.2   !96KNY/SLA
+!                                      LOW  /  2.565E+27   -3.400  35798.72  /
+!                                      TROE/  1.9816  5383.7  4.2932 -0.0795 /
+!      H2/2.0/ H2O/6.0/ CH4/2.0/ CO/1.5/ CO2/2.0/ C2H6/3.0/ AR/0.7/ C2H2/3.00/ 
+                                                                   C2H4/3.00/
+ C2H2+O = C2H+OH                              4.600E+19   -1.410  28950.00  !GRI
+ C2H2+O = CH2+CO                              4.080E+06    2.000   1900.00  !GRI (0.2 branching ratio)
+ C2H2+O = HCCO + H                            1.632E+07    2.000   1900.00  !GRI (0.8 branching ratio)
+ C2H2+OH = CH2CO+H                            2.180E-04    4.500  -1000.00  !GRI
+ C2H2+OH = HCCOH+H                            5.040E+05    2.300  13500.00  !GRI
+ C2H2+OH = C2H+H2O                            3.370E+07    2.000  14000.00  !GRI
+ C2H2+OH = CH3+CO                             4.830E-04    4.000  -2000.00  !GRI
+ C2H2+HCO = C2H3+CO                           1.000E+07    2.000   6000.00  !Estimated
+ C2H2+CH2 = C3H3+H                            1.200E+13    0.000   6620.00  !88BOH/TEM; 86FRA/BHA
+ C2H2+CH2* = C3H3+H                           2.000E+13    0.000      0.00  !97WAN/FRE
+ C2H2+C2H = C4H2+H                            9.600E+13    0.000      0.00  !91SHI/MIC, 92KOS/FUK, 93FAR/MOR
+ C2H2+C2H (+M) = nC4H3 (+M)                   8.300E+10    0.899   -363.00  !92WAN
+                                       LOW   /1.240E+31   -4.718   1871.00  /
+                                       TROE  /1.0 100. 5613. 13387.         /
+                         H2/2.0/ H2O/6.0/ CH4/2.0/ CO/1.5/ CO2/2.0/ C2H6/3.0/ 
+                                                          C2H2/2.5/ C2H4/2.5/  
+ C2H2+C2H (+M) = iC4H3 (+M)                   8.300E+10    0.899    -363.00 !92WAN
+                                       LOW   /1.240E+31   -4.718    1871.00 /
+                                       TROE   /1.0 100. 5613. 13387.        /
+                         H2/2.0/ H2O/6.0/ CH4/2.0/ CO/1.5/ CO2/2.0/ C2H6/3.0/ 
+                                                          C2H2/2.5/ C2H4/2.5/ 
+ C2H2+HCCO = C3H3+CO                          1.00E+11     0.000    3000.00 !89MIL/BOW; 83HOM/WEL
+!
+!C2H2+CH3 = pC3H4+H                           4.50E+06     1.86    11600.0  !99DAV/LAW RRKM 0.1 atm 
+ C2H2+CH3 = pC3H4+H                           2.56E+09     1.10    13644.0  !99DAV/LAW RRKM 1 atm 
+!C2H2+CH3 = pC3H4+H                           2.07E+10     0.85    14415.0  !99DAV/LAW RRKM 2 atm
+!C2H2+CH3 = pC3H4+H                           2.51E+11     0.56    15453.0  !99DAV/LAW RRKM 5 atm
+!C2H2+CH3 = pC3H4+H                           1.10E+12     0.39    16200.0  !99DAV/LAW RRKM 10 atm
+!C2H2+CH3 = pC3H4+H                           2.10E+12     0.37    18100.0  !99DAV/LAW RRKM 100 atm
+!
+!C2H2+CH3 = aC3H4+H                           2.40E+09     0.91    20700.0  !99DAV/LAW RRKM 0.1 atm
+ C2H2+CH3 = aC3H4+H                           5.14E+09     0.86    22153.0  !99DAV/LAW RRKM 1 atm
+!C2H2+CH3 = aC3H4+H                           1.33E+10     0.75    22811.0  !99DAV/LAW RRKM 2 atm
+!C2H2+CH3 = aC3H4+H                           9.20E+10     0.54    23950.0  !99DAV/LAW RRKM 5 atm
+!C2H2+CH3 = aC3H4+H                           5.10E+11     0.35    25000.0  !99DAV/LAW RRKM 10 atm
+!C2H2+CH3 = aC3H4+H                           7.30E+12     0.11    28500.0  !99DAV/LAW RRKM 100 atm
+!
+!C2H2+CH3 = CH3CCH2                           6.80E+20    -4.16    18000.0  !99DAV/LAW RRKM 0.1 atm
+ C2H2+CH3 = CH3CCH2                           4.99E+22    -4.39    18850.0  !99DAV/LAW RRKM 1 atm
+!C2H2+CH3 = CH3CCH2                           6.00E+23    -4.60    19571.0  !99DAV/LAW RRKM 2 atm
+!C2H2+CH3 = CH3CCH2                           7.31E+25    -5.06    21150.0  !99DAV/LAW RRKM 5 atm
+!C2H2+CH3 = CH3CCH2                           9.30E+27    -5.55    22900.0  !99DAV/LAW RRKM 10 atm
+!C2H2+CH3 = CH3CCH2                           3.80E+36    -7.58    31300.0  !99DAV/LAW RRKM 100 atm
+!
+!C2H2+CH3 = CH3CHCH                           1.40E+32    -7.14    10000.0  !99DAV/LAW RRKM 0.1 atm
+ C2H2+CH3 = CH3CHCH                           3.20E+35    -7.76    13300.0  !99DAV/LAW RRKM 1 atm
+!C2H2+CH3 = CH3CHCH                           2.40E+38    -8.21    17100.0  !99DAV/LAW RRKM 10 atm
+!C2H2+CH3 = CH3CHCH                           1.40E+39    -8.06    20200.0  !99DAV/LAW RRKM 100 atm
+!
+!C2H2+CH3 = aC3H5                             8.20E+53    -13.32   33200.0  !99DAV/LAW RRKM 0.1 atm
+ C2H2+CH3 = aC3H5                             2.68E+53    -12.82   35730.0  !99DAV/LAW RRKM 1 atm
+!C2H2+CH3 = aC3H5                             3.64E+52    -12.46   36127.0  !99DAV/LAW RRKM 2 atm
+!C2H2+CH3 = aC3H5                             1.04E+51    -11.89   36476.0  !99DAV/LAW RRKM 5 atm
+!C2H2+CH3 = aC3H5                             4.40E+49    -11.40   36700.0  !99DAV/LAW RRKM 10 atm
+!C2H2+CH3 = aC3H5                             3.80E+44     -9.63   37600.0  !99DAV/LAW RRKM 100 atm
+!
+! Reactions of Vinylidene
+!
+ H2CC+H = C2H2+H                              1.000E+14    0.000       0.00 !Estimated
+ H2CC+OH = CH2CO+H                            2.000E+13    0.000       0.00 !Estimated
+ H2CC+O2 = HCO+HCO                            1.000E+13    0.000       0.00 !99LAS/WAN
+ H2CC+C2H2 (+M) = C4H4 (+M)                   3.500E+05    2.055   -2400.00 !99LAS/WAN
+                                         LOW /1.400E+60  -12.599    7417.00 /
+                                         TROE /0.980 56.0 580.0 4164.0      /
+                         H2/2.0/ H2O/6.0/ CH4/2.0/ CO/1.5/ CO2/2.0/ C2H6/3.0/  
+                                                        C2H2/3.00/ C2H4/3.00/
+ H2CC+C2H4 = C4H6                             1.00E+12     0.0         0.0  !Estimated
+!
+! Reactions of CH2CO/HCCOH
+!
+ CH2CO+H (+M) = CH2CHO (+M)                   3.300E+14   -0.060    8500.00 !calculated RRKM
+                                     LOW     /3.800E+41   -7.640   11900.00 /
+                                     TROE    /0.337 1707. 3200. 4131.       /
+     H2/2/ H2O/6/ CH4/2/ CO/1.5/ CO2/2/ C2H6/3/ AR/0.7/ C2H2/3.00/ C2H4/3.00/
+ CH2CO+H = HCCO+H2                            5.000E+13    0.000    8000.00 !GRI
+ CH2CO+H = CH3+CO                             1.500E+09    1.430    2690.00 !calculated RRKM
+ CH2CO+O = HCCO+OH                            1.000E+13    0.000    8000.00 !GRI
+ CH2CO+O = CH2+CO2                            1.750E+12    0.000    1350.00 !GRI
+ CH2CO+OH = HCCO+H2O                          7.500E+12    0.000    2000.00 !GRI
+ HCCOH+H = CH2CO+H                            1.000E+13    0.000       0.00 !GRI
+!
+! Reactions of C2H3 
+!
+ C2H3+H(+M) = C2H4(+M)                        6.080E+12    0.270     280.00 !GRI1.2
+                                      LOW  /  1.400E+30   -3.860    3320.00 /
+                                     TROE/  0.7820  207.50  2663.00  6095.00/
+                 H2/2.0/ H2O/6.0/ CH4/2.0/ CO/1.5/ CO2/2.0/ C2H6/3.0/ AR/0.7/ 
+                                                        C2H2/3.00/ C2H4/3.00/
+! C2H3+H=H2+C2H2                          1.21E+12        0            0          !F=5 
+ C2H3+H = C2H2+H2                             9.000E+13    0.000       0.00 !86TSA/HAM
+ C2H3+H = H2CC+H2                             6.000E+13    0.000       0.00 !Estimated
+ C2H3+O = CH2CO+H                             4.800E+13    0.000       0.00 !86TSA/HAM
+ C2H3+O = CH3+CO                              4.800E+13    0.000       0.00 !86TSA/HAM
+ C2H3+OH = C2H2+H2O                           3.011E+13    0.000       0.00 !86TSA/HAM
+!C2H3+O2=HCO+CH2O             6.50E+15      -1.04        827.  !F=2   1atm 96MDL, LRA09 fit
+!C2H3+O2=CH2CHO+O             1.48E+10       0.656       848.  !F=3   1atm 96MDL, LRA09 fit
+!C2H3+O2=C2H2+HO2             3.69E+03       2.4        1778.  !F=3   1atm 96MDL, LRA09 fit
+ C2H3+O2 = C2H2+HO2                           1.340E+06    1.610    -383.40 !96MEB/DIA
+ C2H3+O2 = CH2CHO+O                           3.000E+11    0.290      11.00 !96MEB/DIA
+ C2H3+O2 = HCO+CH2O                           4.600E+16   -1.390    1010.00 !96MEB/DIA
+ C2H3+HO2 = CH2CHO+OH                         1.000E+13    0.000       0.00 !Estimated
+ C2H3+H2O2 = C2H4+HO2                         1.210E+10    0.000    -596.00 !86TSA/HAM
+ C2H3+HCO = C2H4+CO                           9.033E+13    0.000       0.00 !86TSA/HAM
+ C2H3+HCO = C2H3CHO                           1.800E+13    0.00        0.0  !86TSA/HAM
+ C2H3+CH3 = C2H2+CH4                          3.920E+11    0.000       0.00 !86TSA/HAM
+ C2H3+CH3 (+M) = C3H6(+M)                     2.500E+13    0.000       0.00 !86TSA/HAM
+                                       LOW  / 4.270E+58  -11.940    9769.80 /
+                                       TROE / 0.175  1340.6 60000.0 10139.8 /
+      H2/2/ H2O/6/ CH4/2/ CO/1.5/ CO2/2/ C2H6/3/ AR/0.7/C2H2/3.00/ C2H4/3.00/
+ C2H3+CH3 = aC3H5+H                           1.500E+24   -2.830    18618.0 !86TSA/HAM 
+!
+!C2H3 + C2H2 = C4H4 + H                       7.20E+13     -0.48    6100.   !   0.013 atm RRKM WAN/FRE
+!C2H3 + C2H2 = C4H4 + H                       5.00E+14     -0.71    6700.   !   0.026 atm RRKM WAN/FRE
+!C2H3 + C2H2 = C4H4 + H                       4.60E+16     -1.25    8400.   !   0.118 atm RRKM WAN/FRE
+ C2H3 + C2H2 = C4H4 + H                       2.00E+18     -1.68   10600.   !  1 atm RRKM WAN/FRE
+!C2H3 + C2H2 = C4H4 + H                       4.90E+16     -1.13   11800.   ! 10 atm RRKM WAN/FRE
+!
+!C2H3 + C2H2 = nC4H5                          1.10E+31     -7.14    5600.   !   0.013 atm RRKM WAN/FRE
+!C2H3 + C2H2 = nC4H5                          1.10E+32     -7.33    6200.   !   0.026 atm RRKM WAN/FRE
+!C2H3 + C2H2 = nC4H5                          2.40E+31     -6.95    5600.   !   0.118 atm RRKM WAN/FRE
+ C2H3 + C2H2 = nC4H5                          9.30E+38     -8.76   12000.   !  1 atm RRKM WAN/FRE
+!C2H3 + C2H2 = nC4H5                          8.10E+37     -8.09   13400.   ! 10 atm RRKM WAN/FRE
+!
+!C2H3 + C2H2 = iC4H5                          5.00E+34     -8.42    7900.   !   0.013 atm RRKM WAN/FRE
+!C2H3 + C2H2 = iC4H5                          2.10E+36     -8.78    9100.   !   0.026 atm RRKM WAN/FRE
+!C2H3 + C2H2 = iC4H5                          1.00E+37     -8.77    9800.   !   0.118 atm RRKM WAN/FRE
+ C2H3 + C2H2 = iC4H5                          1.60E+46    -10.98   18600.   !  1 atm RRKM WAN/FRE
+!C2H3 + C2H2 = iC4H5                          5.10E+53    -12.64   28800.   ! 10 atm RRKM WAN/FRE
+!
+!C2H3 + C2H3 = C4H6                           7.00E+57    -13.82   17629.   ! RRKM 0.026 atm  WAN/FRE
+!C2H3 + C2H3 = C4H6                           1.50E+52    -11.97   16056.   ! RRKM 0.118 atm  WAN/FRE
+ C2H3 + C2H3 = C4H6                           1.50E+42     -8.84   12483.   ! RRKM 1 atm WAN/FRE
+!
+!C2H3 + C2H3 = iC4H5 + H                      1.50E+30     -4.95   12958.   ! RRKM 0.026 atm  WAN/FRE
+!C2H3 + C2H3 = iC4H5 + H                      7.20E+28     -4.49   14273.   ! RRKM 0.118 atm  WAN/FRE
+ C2H3 + C2H3 = iC4H5 + H                      1.20E+22     -2.44   13654.   ! RRKM 1 atm WAN/FRE
+!
+!C2H3 + C2H3 = nC4H5 + H                      1.10E+24     -3.28   12395.   ! RRKM 0.026 atm  WAN/FRE
+!C2H3 + C2H3 = nC4H5 + H                      4.60E+24     -3.38   14650.   ! RRKM 0.118 atm  WAN/FRE
+ C2H3 + C2H3 = nC4H5 + H                      2.40E+20     -2.04   15361.   ! RRKM 1 atm WAN/FRE
+!
+ C2H3+C2H3 = C2H2+C2H4                        9.600E+11    0.00         0.  !NIST DB
+!
+! Reactions of CH2CHO
+!
+!CH2CHO = CH3+CO                              2.340E+43  -10.099   45600.00 !RRKM 0.026 atm
+!CH2CHO = CH3+CO                              7.200E+42   -9.521   47000.00 !RRKM 0.5 atm
+ CH2CHO = CH3+CO                              7.800E+41   -9.147   46900.00 !RRKM 1 atm
+!CH2CHO = CH3+CO                              1.200E+37   -7.456   46100.00 !RRKM 10 atm
+!
+ CH2CHO+H (+M) = CH3CHO (+M)                  1.000E+14    0.000       0.00 !Calculated RRKM
+                                     LOW     /5.200E+39   -7.297    4700.00 /  
+                                     TROE    /0.55 8900. 4350. 7244.        /
+             H2/2/ H2O/6/ CH4/2/ CO/1.5/ CO2/2/ C2H6/3/ C2H2/3.00/ C2H4/3.00/
+ CH2CHO+H = CH3CO+H                           5.000E+12    0.000       0.00 !Estimated 
+ CH2CHO+H = CH3+HCO                           9.000E+13    0.000       0.00 !Estimated
+ CH2CHO+H = CH2CO+H2                          2.000E+13    0.000    4000.00 !82MIL/MIT
+ CH2CHO+O = CH2CO+OH                          2.000E+13    0.000    4000.00 !82MIL/MIT
+ CH2CHO+OH = CH2CO+H2O                        1.000E+13    0.000    2000.00 !82MIL/MIT
+ CH2CHO+O2 = CH2CO+HO2                        1.400E+11    0.000       0.00 !92BAU/COB
+ CH2CHO+O2 = CH2O+CO+OH                       1.800E+10    0.000       0.00 !92BAU/COB 
+! 
+! Reactions of CH3CO 
+!
+ CH3+CO (+M) = CH3CO (+M)                     4.850E+07    1.650    6150.00 !kinf, RRKM
+                                     LOW     /7.800E+30   -5.395    8600.00 /         
+                                     TROE    /0.258 598. 21002. 1773.       /
+     H2/2/ H2O/6/ CH4/2/ CO/1.5/ CO2/2/ C2H6/3/ AR/0.7/ C2H2/3.00/ C2H4/3.00/
+ CH3CO+H (+M) = CH3CHO (+M)                   9.600E+13    0.000      0.00  !86TSA/HAM
+                                     LOW     /3.850E+44   -8.569    5500.00 /  
+                                     TROE    /1.0000 2900. 2900. 5132.      /
+             H2/2/ H2O/6/ CH4/2/ CO/1.5/ CO2/2/ C2H6/3/ C2H2/3.00/ C2H4/3.00/
+ CH3CO+H = CH3+HCO                            9.600E+13    0.000      0.00  !86TSA/HAM
+ CH3CO+O = CH2CO+OH                           3.900E+13    0.000      0.00  !92BAU/COB
+ CH3CO+O = CH3+CO2                            1.500E+14    0.000      0.00  !86TSA/HAM; 92BAU/COB
+ CH3CO+OH = CH2CO+H2O                         1.200E+13    0.000      0.00  !86TSA/HAM
+ CH3CO+OH = CH3+CO+OH                         3.000E+13    0.000      0.00  !86TSA/HAM
+ CH3CO+HO2 = CH3+CO2+OH                       3.000E+13    0.000      0.00  !86TSA/HAM
+ CH3CO+H2O2 = CH3CHO+HO2                      1.800E+11    0.000   8226.00  !86TSA/HAM
+!
+! Reactions of CH3CHO
+!
+ CH3 + HCO (+M) = CH3CHO (+M)                 1.800E+13    0.000       0.00 !  TS1, RRKM
+                                      LOW  /  2.200E+48   -9.588    5100.00 /
+                                      TROE /  0.6173 13.076 2078. 5093.     /
+                         H2/2.0/ H2O/6.0/ CH4/2.0/ CO/1.5/ CO2/2.0/ C2H6/3.0/
+                                                        C2H2/3.00/ C2H4/3.00/  
+ CH3CHO+H = CH3CO+H2                          4.100E+09    1.160    2400.00 !92BAU/COB
+ CH3CHO+H = CH4+HCO                           5.000E+10    0.0        00.00 !67LAM/CHR
+ CH3CHO+O = CH3CO+OH                          5.800E+12    0.000    1800.00 !92BAU/COB
+ CH3CHO+OH = CH3CO+H2O                        2.350E+10    0.730   -1110.00 !92BAU/COB
+ CH3CHO+CH3 = CH3CO+CH4                       2.000E-06    5.600    2460.00 !92BAU/COB
+ CH3CHO+HCO = CO+HCO+CH4                      8.000E+12    0.000   10400.00 !NIST DB 
+ CH3CHO+O2 = CH3CO+HO2                        3.000E+13    0.000   39100.00 !92BAU/COB
+!
+! Reactions of CH2OCH2 (ethylene oxide)
+!
+ CH2OCH2 = CH3+HCO                            3.630E+13    0.000   57200.00 !83LIF/BEN
+ CH2OCH2 = CH3CHO                             7.260E+13    0.000   57200.00 !83LIF/BEN
+ CH2OCH2 = CH4+CO                             1.210E+13    0.000   57200.00 !83LIF/BEN
+ CH2OCH2+H = CH2OCH+H2                        2.000E+13    0.000    8300.00 !83LIF/BEN
+ CH2OCH2+H = C2H3+H2O                         5.000E+09    0.000    5000.00 !83LIF/BEN
+ CH2OCH2+H = C2H4+OH                          9.510E+10    0.000    5000.00 !83LIF/BEN
+ CH2OCH2+O = CH2OCH+OH                        1.910E+12    0.000    5250.00 !78BOG/HAN
+ CH2OCH2+OH = CH2OCH+H2O                      1.780E+13    0.000    3610.00 !84BOL/KEE
+ CH2OCH2+CH3 = CH2OCH+CH4                     1.070E+12    0.000   11830.00 !84BOL/KEE
+!
+! Reactions of CH2OCH 
+!
+ CH2OCH+M = CH3+CO+M                          3.160E+14    0.000   12000.00 !84BOL/KEE
+ CH2OCH+M = CH2CHO+M                          5.000E+09    0.000       0.00 !96WUR/McG
+ CH2OCH+M = CH2CO+H+M                         3.000E+13    0.000    8000.00 !83LIF/BEN
+!
+! Reactions of C2H4
+!
+!C2H4(+M) = H2+H2CC(+M)                       8.000E+12    0.440 88770.00   !GRI###
+!                                     LOW  /  7.000E+50   -9.310 99860.00   /
+!                                     TROE / 0.7345  180.0  1035.00  5417.0 /
+ C2H4+M = H2+H2CC+M                           7.860E+14    0.000 54245.0    !10PIL/DAV
+                 H2/2.0/ H2O/6.0/ CH4/2.0/ CO/1.5/ CO2/2.0/ C2H6/3.0/ AR/0.7/
+! moved to 3pent submech
+! C2H4+H(+M) = C2H5(+M)                        1.367E+09    1.463   1355.00  !04-MIL-KLI
+!                                      LOW  /  2.027E+39   -6.642   5769.00  /
+!                                      TROE / -0.569  299.0  9147.0  -152.40 /!note: last two param have wrong sign!
+!                 H2/2.0/ H2O/6.0/ CH4/2.0/ CO/1.5/ CO2/2.0/ C2H6/3.0/ AR/0.7/
+ C2H4+H = C2H3+H2                             5.070E+07    1.900  12950.00  !96KNY/BEN
+C2H4+O=CH3+HCO                          8.13E+06        1.88       183          !F=2    BBC05
+C2H4+O=H+CH2CHO                         3.70E+09        0.907      839          !F=2    NVH05
+C2H4+O=CH2+CH2O                         1.40E+04        2.62       459          !F=2    NVH05
+! C2H4+O = C2H3+OH                             1.510E+07    1.900   3740.00  !87MAH/MAR
+! C2H4+O = CH3+HCO                             1.920E+07    1.830    220.00  !87MAH/MAR
+! C2H4+O = CH2+CH2O                            3.840E+05    1.830    220.00  !87MAH/MAR
+C2H4+OH=C2H3+H2O                        2.23E+04        2.745     2216          !F=2    VHD10
+C2H4+OH=CH2O+CH3                        1.78E+05        1.68      2060          !F=?    SKM06
+C2H4+OH=H+CH3CHO                        2.38E-02        3.91      1723          !F=?    SKM06
+    DUPLICATE
+C2H4+OH=H+CH3CHO                        3.19E+05        2.19      5256          !F=?    SKM06, C2H3OH prod. assm. fast isom. to CH3CHO
+    DUPLICATE
+! C2H4+OH = C2H3+H2O                           3.600E+06    2.000   2500.00  !88LIU/MUL1
+ C2H4+HCO = C2H5+CO                           1.000E+07    2.000   8000.00  !Estimated
+ C2H4+CH = aC3H4+H                            3.000E+13    0.000      0.00  !Estimated
+ C2H4+CH = pC3H4+H                            3.000E+13    0.000      0.00  !Estimated
+ C2H4+CH2 = aC3H5+H                           2.000E+13    0.000   6000.00  !Estimated
+ C2H4+CH2* = H2CC+CH4                         5.000E+13    0.000      0.00  !Estimated
+ C2H4+CH2* = aC3H5+H                          5.000E+13    0.000      0.00  !Estimated
+ C2H4+CH3 = C2H3+CH4                          2.270E+05    2.000   9200.00  !GRI
+ C2H4+CH3 = nC3H7                             3.300E+11    0.00    7700.0   !KP
+ C2H4+C2H = C4H4+H                            1.200E+13    0.000      0.00  !86TSA/HAM
+ C2H4+O2 = C2H3+HO2                           4.220E+13    0.000  60800.00  !86TSA/HAM
+!
+!C2H4+C2H3 = C4H7                             1.21E+05     2.33    3680.0   !97WAN/FRE RRKM kinf
+!C2H4+C2H3 = C4H7                             1.23E+35    -7.76    9930.0   !97WAN/FRE RRKM 0.1 atm
+ C2H4+C2H3 = C4H7                             7.93E+38    -8.47   14220.0   !97WAN/FRE RRKM 1 atm
+!C2H4+C2H3 = C4H7                             2.99E+36    -7.40   15480.0   !97WAN/FRE RRKM 10 atm
+!
+ C2H4+HO2 = CH2OCH2+OH                        2.820E+12    0.000  17100.00  !92BAU/COB
+!
+! Reactions of C2H5
+!
+ C2H5+H(+M) = C2H6(+M)                        5.210E+17   -0.990  1580.00   !GRI
+                                       LOW  / 1.990E+41   -7.080  6685.00   /
+                                       TROE / 0.8422  125.0  2219.00 6882.0 /
+                 H2/2.0/ H2O/6.0/ CH4/2.0/ CO/1.5/ CO2/2.0/ C2H6/3.0/ AR/0.7/
+ C2H5+H = C2H4+H2                             2.000E+12    0.000     0.00   !GRI
+ C2H5+O = CH3+CH2O                            1.604E+13    0.000     0.00   !86TSA/HAM
+ C2H5+O = CH3CHO+H                            8.020E+13    0.000     0.00   !86TSA/HAM
+ C2H5+O2 = C2H4+HO2                           2.000E+10    0.000     0.00   !90BOZ/DEA
+ C2H5+HO2 = C2H6+O2                           3.000E+11    0.000     0.00   !86TSA/HAM
+ C2H5+HO2 = C2H4+H2O2                         3.000E+11    0.000     0.00   !86TSA/HAM
+ C2H5+HO2 = CH3+CH2O+OH                       2.400E+13    0.000     0.00   !86TSA/HAM
+ C2H5+H2O2 = C2H6+HO2                         8.700E+09    0.000   974.00   !86TSA/HAM
+ C2H5+CH3(+M) = C3H8(+M)                      4.90E+14  -0.50        0.0    !88TSA
+                                       LOW  / 6.80E+61 -13.42     6000.0    /
+                                       TROE / 1.000  1000.0  1433.9  5328.8 /
+                           H2/2/ H2O/6/ CH4/2/ CO/1.5/ CO2/2/ C2H6/3/ AR/0.7/
+ C2H5+C2H3(+M) = C4H81(+M)                    1.50E+13   0.00        0.0    !86TSA/HAM 
+                                       LOW  / 1.55E+56 -11.79     8984.5    /
+                                       TROE / 0.198 2277.9 60000.0 5723.2   /
+                           H2/2/ H2O/6/ CH4/2/ CO/1.5/ CO2/2/ C2H6/3/ AR/0.7/
+!C2H5+C2H3 = aC3H5+CH3                        8.00E+25  -3.46    11775.0    !86TSA/HAM RRKM 0.1 atm
+ C2H5+C2H3 = aC3H5+CH3                        3.90E+32  -5.22    19747.0    !86TSA/HAM RRKM 1 atm
+!C2H5+C2H3 = aC3H5+CH3                        3.90E+29  -4.24    22311.0    !86TSA/HAM RRKM 10 atm
+!
+! Reactions of C2H6
+!
+ C2H6+H = C2H5+H2                             1.15E+08    1.900   7530.00   !GRI
+ C2H6+O = C2H5+OH                             8.98E+07    1.920   5690.00   !GRI
+ C2H6+OH = C2H5+H2O                           3.54E+06    2.120    870.00   !GRI
+ C2H6+CH2* = C2H5+CH3                         4.00E+13    0.000   -550.00   !GRI
+ C2H6+CH3 = C2H5+CH4                          6.14E+06    1.740  10450.00   !GRI
+!
+!
+! Reactions of C3H2
+!
+!C2H2 + CH = C3H2 + H                         3.00E+13    0.0        0.
+!C3H2 + O = C2H2 + CO                         6.80E+13    0.0        0.
+!C3H2 + OH = HCO + C2H2                       6.80E+13    0.0        0.
+!C3H2 + O2 = HCCO + H + CO                    2.00E+12    0.0     1000.
+!C3H2 + CH = C4H2 + H                         5.00E+13    0.0        0.
+!C3H2 + CH2 = nC4H3 + H                       5.00E+13    0.0        0.
+!C3H2 + CH3 = C4H4 + H                        5.00E+12    0.0        0.
+!C3H2 + HCCO = nC4H3 + CO                     1.00E+13    0.0        0.
+!C3H2 + H = C3H3	                      1.00E+13    0.0        0.
+!C3H3 + H = C3H2 + H2                         5.00E+13    0.0     1000.
+!C3H3 + OH = C3H2 + H2O                       2.00E+13    0.0        0.
+!C4H2 + O = C3H2 + CO                         2.70E+13    0.0     1720.
+!C6H3 + O2 => CO + C3H2 + HCCO                5.00E+11    0.0        0.
+
+! Reactions of C3H3
+!
+ C3H3+H = pC3H4                               1.50E+13    0.0        0.0    !Estimated
+ C3H3+H = aC3H4                               2.50E+12    0.0        0.0    !Estimated
+ C3H3+O = CH2O+C2H                            2.00E+13    0.0        0.0    !89MIL/BOW
+ C3H3+O2 = CH2CO+HCO                          3.00E+10    0.0     2868.0    !88SLA/GUT
+ C3H3+HO2 = OH+CO+C2H3                        8.00E+11    0.0        0.0    !Estimated
+ C3H3+HO2 = aC3H4+O2                          3.00E+11    0.0        0.0    !99DAV/LAW 
+ C3H3+HO2 = pC3H4+O2                          2.50E+12    0.0        0.0    !99DAV/LAW 
+ C3H3+HCO = aC3H4+CO                          2.50E+13    0.0        0.0    !Estimated
+ C3H3+HCO = pC3H4+CO                          2.50E+13    0.0        0.0    !Estimated
+ C3H3+HCCO = C4H4+CO                          2.50E+13    0.0        0.0    !Estimated
+ C3H3+CH = iC4H3+H                            5.00E+13    0.0        0.0    !Estimated
+ C3H3+CH2 = C4H4+H                            5.00E+13    0.0        0.0    !92MIL/MEL
+ C3H3+CH3 (+M) = C4H612 (+M)                  1.50E+12    0.0        0.0    !97WAN/FRE
+                                         LOW /2.60E+57 -11.94     9770.0    /
+                                         TROE /0.175 1340.6 60000.0 9769.8  /
+                 H2/2.0/ H2O/6.0/ CH4/2.0/ CO/1.5/ CO2/2.0/ C2H6/3.0/ AR/0.7/
+ C3H3+C2H2 = C5H5                             6.870E+55 -12.5    42025.0    !99MOS/LIN
+ C3H3+C3H3 => C6H5+H                          5.000E+12   0.0        0.0    !97WAN/FRE
+ C3H3+C3H3 => C6H6                            2.000E+12   0.0        0.0    !97WAN/FRE
+ C3H3+C4H4 = C6H5CH2                          6.53E+5    1.28    -4611.0    !97JON/BAC
+ C3H3+C4H6 = C6H5CH3+H                        6.53E+5    1.28    -4611.0    != C3H3+C4H4
+!
+! Reactions of aC3H4
+!
+ aC3H4+H = C3H3+H2                            1.30E+06    2.0     5500.0    !99DAV/LAW
+!
+!aC3H4+H = CH3CHCH                            1.10E+30   -6.52   15200.0    !99DAV/LAW RRKM 0.1 atm
+ aC3H4+H = CH3CHCH                            5.40E+29   -6.09   16300.0    !99DAV/LAW RRKM 1 atm
+!aC3H4+H = CH3CHCH                            2.60E+31   -6.23   18700.0    !99DAV/LAW RRKM 10 atm
+!aC3H4+H = CH3CHCH                            3.20E+31   -5.88   21500.0    !99DAV/LAW RRKM 100 atm
+!
+!aC3H4+H = CH3CCH2                            9.20E+38   -8.65    7000.0    !99DAV/LAW RRKM 0.1 atm
+ aC3H4+H = CH3CCH2                            9.46E+42   -9.43   11190.0    !99DAV/LAW RRKM 1 atm
+!aC3H4+H = CH3CCH2                            8.47E+43   -9.59   12462.0    !99DAV/LAW RRKM 2 atm
+!aC3H4+H = CH3CCH2                            6.98E+44   -9.70   14032.0    !99DAV/LAW RRKM 5 atm
+!aC3H4+H = CH3CCH2                            1.50E+45   -9.69   15100.0    !99DAV/LAW RRKM 10 atm
+!aC3H4+H = CH3CCH2                            1.80E+43   -8.78   16800.0    !99DAV/LAW RRKM 100 atm
+!
+!aC3H4+H = aC3H5                              9.60E+61  -14.67   26000.0    !99DAV/LAW RRKM 0.1 atm
+ aC3H4+H = aC3H5                              1.52E+59  -13.54   26949.0    !99DAV/LAW RRKM 1 atm
+!aC3H4+H = aC3H5                              3.78E+57  -12.98   26785.0    !99DAV/LAW RRKM 2 atm
+!aC3H4+H = aC3H5                              7.34E+54  -12.09   26187.0    !99DAV/LAW RRKM 5 atm
+!aC3H4+H = aC3H5                              2.40E+52  -11.30   25400.0    !99DAV/LAW RRKM 10 atm
+!aC3H4+H = aC3H5                              6.90E+41   -8.06   21300.0    !99DAV/LAW RRKM 100 atm
+!
+ aC3H4+O = C2H4+CO                            2.00E+07    1.8     1000.0    !98DAV/LAW
+ aC3H4+OH = C3H3+H2O                          5.30E+06    2.0     2000.0    !97WAN/FRE
+ aC3H4+CH3 = C3H3+CH4                         1.30E+12   0.00     7700.0    !87WU/KER 
+ aC3H4+CH3 = iC4H7                            2.00E+11   0.00     7500.0    ! PW P    
+ aC3H4+C2H = C2H2+C3H3                        1.00E+13    0.0        0.0    !97WAN/FRE
+!
+! Reactions of pC3H4
+!
+!pC3H4 = cC3H4                                1.73E+12   0.31    60015.0    !99DAV/LAW RRKM kinf
+!pC3H4 = cC3H4                                3.40E+46 -10.97    68900.0    !99DAV/LAW RRKM 0.1 atm
+!pC3H4 = cC3H4                                2.84E+45 -10.45    69284.0    !99DAV/LAW RRKM 0.4 atm
+ pC3H4 = cC3H4                                1.20E+44  -9.92    69250.0    !99DAV/LAW RRKM 1 atm
+!pC3H4 = cC3H4                                5.47E+42  -9.43    69089.0    !99DAV/LAW RRKM 2 atm
+!pC3H4 = cC3H4                                3.92E+40  -8.69    68706.0    !99DAV/LAW RRKM 5 atm
+!pC3H4 = cC3H4                                5.30E+38  -8.06    68300.0    !99DAV/LAW RRKM 10 atm
+!pC3H4 = cC3H4                                2.80E+31  -5.69    66400.0    !99DAV/LAW RRKM 100 atm
+!
+!pC3H4 = aC3H4                                6.40E+61 -14.59    88200.0    !99DAV/LAW RRKM 0.1 atm 
+!pC3H4 = aC3H4                                5.81E+62 -14.63    91211.0    !99DAV/LAW RRKM 0.4 atm 
+ pC3H4 = aC3H4                                5.15E+60 -13.93    91117.0    !99DAV/LAW RRKM 1 atm 
+!pC3H4 = aC3H4                                7.64E+59 -13.59    91817.0    !99DAV/LAW RRKM 2 atm 
+!pC3H4 = aC3H4                                3.12E+58 -13.07    92680.0    !99DAV/LAW RRKM 5 atm 
+!pC3H4 = aC3H4                                1.90E+57 -12.62    93300.0    !99DAV/LAW RRKM 10 atm 
+!pC3H4 = aC3H4                                1.40E+52 -10.86    95400.0    !99DAV/LAW RRKM 100 atm 
+!
+!pC3H4+H = aC3H4+H                            2.30E+15  -0.26     7600.0    !99DAV/LAW RRKM 0.1 atm
+ pC3H4+H = aC3H4+H                            6.27E+17  -0.91    10079.0    !99DAV/LAW RRKM 1 atm
+!pC3H4+H = aC3H4+H                            1.50E+18  -1.00    10756.0    !99DAV/LAW RRKM 2 atm
+!pC3H4+H = aC3H4+H                            1.93E+18  -1.01    11523.0    !99DAV/LAW RRKM 5 atm
+!pC3H4+H = aC3H4+H                            3.10E+22  -2.18    14800.0    !99DAV/LAW RRKM 10 atm
+!pC3H4+H = aC3H4+H                            6.40E+27  -3.58    21200.0    !99DAV/LAW RRKM 100 atm
+!
+!pC3H4+H = CH3CCH2                            4.60E+44 -10.21    10200.0    !99DAV/LAW RRKM 0.1 atm
+ pC3H4+H = CH3CCH2                            1.66E+47 -10.58    13690.0    !99DAV/LAW RRKM 1 atm
+!pC3H4+H = CH3CCH2                            5.04E+47 -10.61    14707.0    !99DAV/LAW RRKM 2 atm
+!pC3H4+H = CH3CCH2                            9.62E+47 -10.55    15910.0    !99DAV/LAW RRKM 5 atm
+!pC3H4+H = CH3CCH2                            7.00E+47 -10.40    16600.0    !99DAV/LAW RRKM 10 atm
+!pC3H4+H = CH3CCH2                            3.20E+44  -9.11    17400.0    !99DAV/LAW RRKM 100 atm
+!
+!pC3H4+H = CH3CHCH                            1.00E+25 -5.00      1800.0    !99DAV/LAW RRKM 0.1 atm
+ pC3H4+H = CH3CHCH                            5.50E+28 -5.74      4300.0    !99DAV/LAW RRKM 1 atm
+!pC3H4+H = CH3CHCH                            1.00E+34 -6.88      8900.0    !99DAV/LAW RRKM 10 atm
+!pC3H4+H = CH3CHCH                            9.70E+37 -7.63     13800.0    !99DAV/LAW RRKM 100 atm
+!
+!pC3H4+H = aC3H5                              1.10E+60 -14.56    28100.0    !99DAV/LAW RRKM 0.1 atm
+ pC3H4+H = aC3H5                              4.91E+60 -14.37    31644.0    !99DAV/LAW RRKM 1 atm
+!pC3H4+H = aC3H5                              3.04E+60 -14.19    32642.0    !99DAV/LAW RRKM 2 atm
+!pC3H4+H = aC3H5                              9.02E+59 -13.89    33953.0    !99DAV/LAW RRKM 5 atm
+!pC3H4+H = aC3H5                              2.20E+59 -13.61    34900.0    !99DAV/LAW RRKM 10 atm
+!pC3H4+H = aC3H5                              1.60E+55 -12.07    37500.0    !99DAV/LAW RRKM 100 atm
+!
+ pC3H4+H = C3H3+H2                            1.30E+06   2.0      5500.0    !97WAN/FRE
+ pC3H4+C3H3 = aC3H4+C3H3                      6.14E+06   1.74    10450.     !Estimated
+ pC3H4+O = HCCO+CH3                           0.73E+13   0.0      2250.0    !96ADU/BLU#
+ pC3H4+O = C2H4+CO                            1.00E+13   0.0      2250.0    !96ADU/BLU#
+ pC3H4+OH = C3H3+H2O                          1.00E+06   2.0       100.0    !98DAV/LAW 
+ pC3H4+C2H = C2H2+C3H3                        1.00E+13   0.0         0.0    !Estimated
+ pC3H4+CH3 = C3H3+CH4                         1.80E+12   0.0      7700.0    !87WU/KER
+!
+! Reactions of cC3H4
+!
+!cC3H4 = aC3H4                                1.98E+12   0.56    42240.0    !99DAV/LAW RRKM kinf
+!cC3H4 = aC3H4                                2.30E+39  -8.81    47800.0    !99DAV/LAW RRKM 0.1 atm
+!cC3H4 = aC3H4                                7.59E+40  -9.07    48831.0    !99DAV/LAW RRKM 0.4 atm
+ cC3H4 = aC3H4                                4.89E+41  -9.17    49594.0    !99DAV/LAW RRKM 1 atm
+!cC3H4 = aC3H4                                8.81E+41  -9.15    50073.0    !99DAV/LAW RRKM 2 atm
+!cC3H4 = aC3H4                                4.33E+41  -8.93    50475.0    !99DAV/LAW RRKM 5 atm
+!cC3H4 = aC3H4                                7.20E+40  -8.60    50600.0    !99DAV/LAW RRKM 10 atm
+!cC3H4 = aC3H4                                1.60E+35  -6.64    49500.0    !99DAV/LAW RRKM 100 atm
+!
+! Reactions of allyl
+!
+ aC3H5+H(+M) = C3H6(+M)                       2.00E+14   0.00        0.0    !91TSA
+                                       LOW  / 1.33E+60 -12.00   5967.8      /
+                                       TROE / 0.020  1096.6  1096.6  6859.5 /
+                           H2/2/ H2O/6/ CH4/2/ CO/1.5/ CO2/2/ C2H6/3/ AR/0.7/
+!
+ aC3H5+H = aC3H4+H2                           1.80E+13   0.00        0.0    !91TSA 
+ aC3H5+O = C2H3CHO+H                          6.00E+13   0.00        0.0    !91TSA 
+!
+!aC3H5+OH = C2H3CHO+H+H                       5.30E+37  -6.71    29306.0    !91TSA RRKM 0.1 atm
+ aC3H5+OH = C2H3CHO+H+H                       4.20E+32  -5.16    30126.0    !91TSA RRKM 1 atm
+!aC3H5+OH = C2H3CHO+H+H                       1.60E+20  -1.56    26330.0    !91TSA RRKM 10 atm
+!
+ aC3H5+OH = aC3H4+H2O                         6.00E+12   0.00        0.0    !91TSA
+!
+ aC3H5+O2 = aC3H4+HO2                         4.99E+15  -1.40    22428.0    !93BOZ/DEA RRKM 1 atm
+!aC3H5+O2 = aC3H4+HO2                         2.18E+21  -2.85    30755.0    !93BOZ/DEA RRKM 10 atm
+!
+ aC3H5+O2 = CH3CO+CH2O                        1.19E+15  -1.01    20128.0    !93BOZ/DEA RRKM 1 atm
+!aC3H5+O2 = CH3CO+CH2O                        7.14E+15  -1.21    21046.0    !93BOZ/DEA RRKM 10 atm
+!
+ aC3H5+O2 = C2H3CHO+OH                        1.82E+13  -0.41    22859.0    !93BOZ/DEA RRKM 1 atm
+!aC3H5+O2 = C2H3CHO+OH                        2.47E+13  -0.45    23017.0    !93BOZ/DEA RRKM 10 atm
+!
+ aC3H5+HO2 = C3H6+O2                          2.66E+12   0.00        0.0    !92BAU/COB 
+ aC3H5+HO2 = OH+C2H3+CH2O                     6.60E+12   0.00        0.0    !92BAU/COB
+ aC3H5+HCO = C3H6+CO                          6.00E+13   0.00        0.0    !91TSA
+!
+ aC3H5+CH3(+M) = C4H81(+M)                    1.00E+14  -0.32     -262.3    !91TSA
+                                       LOW  / 3.91E+60 -12.81     6250.0    /
+                                       TROE / 0.104  1606.0 60000.0  6118.4 /
+                           H2/2/ H2O/6/ CH4/2/ CO/1.5/ CO2/2/ C2H6/3/ AR/0.7/
+ aC3H5+CH3 = aC3H4+CH4                        3.00E+12  -0.32     -131.0    !91TSA !
+!aC3H5 = CH3CCH2                              3.90E+59 -15.42    75400.0    !99DAV/LAW RRKM 0.1 atm
+ aC3H5 = CH3CCH2                              7.06E+56 -14.08    75868.0    !99DAV/LAW RRKM 1 atm
+!aC3H5 = CH3CCH2                              4.80E+55 -13.59    75949.0    !99DAV/LAW RRKM 2 atm
+!aC3H5 = CH3CCH2                              4.86E+53 -12.81    75883.0    !99DAV/LAW RRKM 5 atm
+!aC3H5 = CH3CCH2                              6.40E+51 -12.12    75700.0    !99DAV/LAW RRKM 10 atm
+!aC3H5 = CH3CCH2                              2.80E+43  -9.27    74000.0    !99DAV/LAW RRKM 100 atm
+!
+!aC3H5 = CH3CHCH                              1.30E+55 -14.53    73800.0    !99DAV/LAW RRKM 0.1 atm
+ aC3H5 = CH3CHCH                              5.00E+51 -13.02    73300.0    !99DAV/LAW RRKM 1 atm
+!aC3H5 = CH3CHCH                              9.70E+48 -11.73    73700.0    !99DAV/LAW RRKM 10 atm
+!aC3H5 = CH3CHCH                              4.86E+44 -9.84     73400.0    !99DAV/LAW RRKM 100 atm
+!
+!aC3H5+C2H2 = C5H6+H                          3.97E+14  0.00  0  24892.0    !91TSA
+ aC3H5+C2H2 = lC5H7                           8.38E+30 -6.242    12824.0    !90DEAN
+!
+! Reactions of CH3CCH2 
+!
+!CH3CCH2 = CH3CHCH                            1.60E+44 -12.16    52200.0    !99DAV/LAW RRKM 0.1 atm
+ CH3CCH2 = CH3CHCH                            1.50E+48 -12.71    53900.0    !99DAV/LAW RRKM 1 atm
+!CH3CCH2 = CH3CHCH                            5.10E+52 -13.37    57200.0    !99DAV/LAW RRKM 10 atm
+!CH3CCH2 = CH3CHCH                            5.80E+51 -12.43    59200.0    !99DAV/LAW RRKM 100 atm
+!
+ CH3CCH2+H = pC3H4+H2                         3.34E+12   0.00        0.0    !99DAV/LAW 
+ CH3CCH2+O = CH3+CH2CO                        6.00E+13   0.00        0.0    !Estimated
+ CH3CCH2+OH = CH3+CH2CO+H                     5.00E+12   0.00        0.0    !Estimated
+ CH3CCH2+O2 = CH3CO+CH2O                      1.00E+11   0.00        0.0    !99DAV/LAW 
+ CH3CCH2+HO2 = CH3+CH2CO+OH                   2.00E+13   0.00        0.0    !Estimated
+ CH3CCH2+HCO = C3H6+CO                        9.00E+13   0.00        0.0    !Estimated
+ CH3CCH2+CH3 = pC3H4+CH4                      1.00E+11   0.00        0.0    !99DAV/LAW 
+ CH3CCH2+CH3 = iC4H8                          2.00E+13   0.00        0.0    ! PW P   
+!
+! Reactions of CH3CHCH 
+!
+ CH3CHCH+H = pC3H4+H2                         3.34E+12   0.00        0.0    ! = CH3CCH2+H 
+ CH3CHCH+O = C2H4+HCO                         6.00E+13   0.00        0.0    !Estimated
+ CH3CHCH+OH = C2H4+HCO+H                      5.00E+12   0.00        0.0    !Estimated
+ CH3CHCH+O2 = CH3CHO+HCO                      1.00E+11   0.00        0.0    != CH3CCH2+O2
+ CH3CHCH+HO2 = C2H4+HCO+OH                    2.00E+13   0.00        0.0    != CH3CCH2+HO2
+ CH3CHCH+HCO = C3H6+CO                        9.00E+13   0.00        0.0    != CH3CCH2+HCO
+ CH3CHCH+CH3 = pC3H4+CH4                      1.00E+11   0.00        0.0    != CH3CCH2+CH3
+!
+! Reactions of C3H6
+!
+ C3H6+H(+M) = nC3H7(+M)                       1.33E+13   0.00     3260.7    !91TSA
+                                       LOW  / 6.26E+38  -6.66     7000.0    /
+                                       TROE / 1.000  1000.0  1310.0 48097.0 /
+                           H2/2/ H2O/6/ CH4/2/ CO/1.5/ CO2/2/ C2H6/3/ AR/0.7/
+ C3H6+H(+M) = iC3H7(+M)                       1.33E+13   0.00     1559.8    !91TSA
+                                       LOW  / 8.70E+42  -7.50     4721.8    /
+                                       TROE / 1.000  1000.0   645.4  6844.3 /
+                           H2/2/ H2O/6/ CH4/2/ CO/1.5/ CO2/2/ C2H6/3/ AR/0.7/
+!
+!C3H6+H = C2H4+CH3                            8.80E+16  -1.05     6461.0    !91TSA RRKM 0.1 atm
+ C3H6+H = C2H4+CH3                            8.00E+21  -2.39    11180.0    !91TSA RRKM 1 atm
+!C3H6+H = C2H4+CH3                            3.30E+24  -3.04    15610.0    !91TSA RRKM 10 atm
+!
+ C3H6+H = aC3H5+H2                            1.73E+05   2.50     2490.0    !91TSA 
+ C3H6+H = CH3CCH2+H2                          4.00E+05   2.50     9790.0    !91TSA 
+ C3H6+H = CH3CHCH+H2                          8.04E+05   2.50    12283.0    !91TSA 
+ C3H6+O = CH2CO+CH3+H                         0.80E+08   1.65      327.0    !91TSA 
+ C3H6+O = C2H3CHO+H+H                         0.40E+08   1.65      327.0    !91TSA  
+ C3H6+O = C2H5+HCO                            3.50E+07   1.65     -972.0    !91TSA 
+ C3H6+O = aC3H5+OH                            1.80E+11   0.70     5880.0    !91TSA 
+ C3H6+O = CH3CCH2+OH                          6.00E+10   0.70     7630.0    !91TSA 
+ C3H6+O = CH3CHCH+OH                          1.21E+11   0.70     8960.0    !91TSA 
+ C3H6+OH = aC3H5+H2O                          3.10E+06   2.00     -298.0    !91TSA 
+ C3H6+OH = CH3CCH2+H2O                        1.10E+06   2.00     1450.0    !91TSA 
+ C3H6+OH = CH3CHCH+H2O                        2.14E+06   2.00     2778.0    !91TSA 
+ C3H6+HO2 = aC3H5+H2O2                        7.13E+03   2.77    14913.0    !10HW EVAL = C3H8+HO2
+ C3H6+CH3 = aC3H5+CH4                         2.20E+00   3.50     5675.0    !91TSA 
+ C3H6+CH3 = CH3CCH2+CH4                       8.40E-01   3.50    11660.0    !91TSA 
+ C3H6+CH3 = CH3CHCH+CH4                       1.35E+00   3.50    12848.0    !91TSA 
+ C3H6+C2H3 = C4H6+CH3                         7.23E+11   0.0      5000.0    !91TSA 
+ C3H6+HO2 = CH3CHOCH2+OH                      1.09E+12   0.00    14200.00   !85BAL/HIS
+!
+! Reactions of C2H3CHO 
+!
+ C2H3CHO+H = C2H4+HCO                         1.08E+11   0.454    5820.00   != C2H4+H 
+ C2H3CHO+O = C2H3+OH+CO                       3.00E+13   0.00     3540.00   != CH2O+O
+ C2H3CHO+O = CH2O+CH2CO                       1.90E+07   1.80      220.00   != C2H4+O
+ C2H3CHO+OH = C2H3+H2O+CO                     3.43E+09   1.18     -447.00   != CH2O+OH
+ C2H3CHO+CH3 = CH2CHCO+CH4                    2.00E+13   0.000   11000.00   !Estimated
+ C2H3CHO+C2H3 = C4H6+HCO                      2.80E+21  -2.440   14720.00   != C2H4+C2H3
+!
+! Reactions of CH2CHCO 
+!
+ CH2CHCO = C2H3+CO                            1.00E+14   0.000   27000.00   !Estimated
+ CH2CHCO+H = C2H3CHO                          1.00E+14   0.000      00.00   !Estimated
+!
+! Reactions of CH3CHOCH2 
+!
+ CH3CHOCH2 = CH3CH2CHO                        1.840E+14  0.000   58500.00   !77FLO
+ CH3CHOCH2 = C2H5+HCO                         2.450E+13  0.000   58500.00   !94LIF/TAM
+ CH3CHOCH2 = CH3+CH2CHO                       2.450E+13  0.000   58800.00   !94LIF/TAM
+ CH3CHOCH2 = CH3COCH3                         1.010E+14  0.000   59900.00   !77FLO
+ CH3CHOCH2 = CH3+CH3CO                        4.540E+13  0.000   59900.00   !94LIF/TAM
+!
+! Reactions of iC3H7
+!
+ iC3H7+H(+M) = C3H8(+M)                       2.40E+13   0.00        0.0    !88TSA
+                                       LOW  / 1.70E+58 -12.08    11263.7    /
+                                       TROE / 0.649  1213.1  1213.1 13369.7 /
+                           H2/2/ H2O/6/ CH4/2/ CO/1.5/ CO2/2/ C2H6/3/ AR/0.7/
+!iC3H7+H = CH3+C2H5                           5.90E+23  -2.81    10009.0    !88TSA RRKM 0.1 atm
+ iC3H7+H = CH3+C2H5                           1.40E+28  -3.94    15916.0    !88TSA RRKM 1 atm
+!iC3H7+H = CH3+C2H5                           4.00E+24  -2.83    17542.0    !88TSA RRKM 10 atm
+!
+ iC3H7+H = C3H6+H2                            3.20E+12   0.00        0.0    !88TSA
+ iC3H7+O = CH3CHO+CH3                         9.60E+13   0.00        0.0    !88TSA
+ iC3H7+OH = C3H6+H2O                          2.40E+13   0.00        0.0    !88TSA
+ iC3H7+O2 = C3H6+HO2                          1.30E+11   0.00        0.0    !88TSA 
+ iC3H7+HO2 = CH3CHO+CH3+OH                    2.40E+13   0.00        0.0    !88TSA 
+ iC3H7+HCO = C3H8+CO                          1.20E+14   0.00        0.0    !88TSA
+ iC3H7+CH3 = CH4 + C3H6                       2.20E+14  -0.68        0.0    !88TSA
+!
+! Reactions of nC3H7
+!
+ nC3H7+H(+M) = C3H8(+M)                       3.60E+13   0.00        0.0    !88TSA
+                                       LOW  / 3.01E+48  -9.32     5833.6    /
+                                       TROE / 0.498  1314.0  1314.0 50000.0 /
+                           H2/2/ H2O/6/ CH4/2/ CO/1.5/ CO2/2/ C2H6/3/ AR/0.7/
+!nC3H7+H = C2H5+CH3                           3.40E+18  -1.33     5386.0    !88TSA RRKM 0.1 atm
+ nC3H7+H = C2H5+CH3                           3.70E+24  -2.92    12505.0    !88TSA RRKM 1 atm
+!nC3H7+H = C2H5+CH3                           3.10E+27  -3.59    19059.0    !88TSA RRKM 10 atm
+!
+ nC3H7+H = C3H6+H2                            1.80E+12   0.00       0.0     !88TSA 
+ nC3H7+O = C2H5+CH2O                          9.60E+13   0.00       0.0     !88TSA
+ nC3H7+OH = C3H6+H2O                          2.40E+13   0.00       0.0     !88TSA
+ nC3H7+O2 = C3H6+HO2                          9.00E+10   0.00       0.0     !88TSA
+ nC3H7+HO2 = C2H5+OH+CH2O                     2.40E+13   0.00       0.0     !88TSA
+ nC3H7+HCO = C3H8+CO                          6.00E+13   0.00       0.0     !88TSA
+ nC3H7+CH3 = CH4+C3H6                         1.10E+13   0.00       0.0     !88TSA
+!
+! Reactions of C3H8
+!
+ C3H8+H = H2+nC3H7                            1.30E+06   2.54    6756.0     !88TSA 
+ C3H8+H = H2+iC3H7                            1.30E+06   2.40    4471.0     !88TSA 
+ C3H8+O = nC3H7+OH                            1.90E+05   2.68    3716.0     !88TSA 
+ C3H8+O = iC3H7+OH                            4.76E+04   2.71    2106.0     !88TSA 
+ C3H8+OH = nC3H7+H2O                          1.40E+03   2.66     527.0     !88TSA 
+ C3H8+OH = iC3H7+H2O                          2.70E+04   2.39     393.0     !88TSA 
+ C3H8+O2 = nC3H7+HO2                          4.00E+13   0.00   50930.0     !88TSA 
+ C3H8+O2 = iC3H7+HO2                          4.00E+13   0.00   47590.0     !88TSA 
+ C3H8+HO2 = nC3H7+H2O2                        6.11E+04   2.65   17496.0     !10HW Eval.
+ C3H8+HO2 = iC3H7+H2O2                        7.13E+03   2.77   14913.0     !10HW Eval.
+ C3H8+CH3 = CH4+nC3H7                         9.03E-01   3.65    7153.0     !88TSA 
+ C3H8+CH3 = CH4+iC3H7                         1.51E+00   3.46    5480.0     !88TSA 
+!
+! Reactions of C4H2
+!
+!C4H2 + H = nC4H3                             1.70E+49 -11.67   12804.0     !   0.026 atm RRKM WAN/FRE
+!C4H2 + H = nC4H3                             3.30E+50 -11.80   15010.0     !   0.118 atm RRKM WAN/FRE
+ C4H2 + H = nC4H3                             1.10E+42  -8.72   15300.0     !  1 atm RRKM WAN/FRE
+!
+!C4H2 + H = iC4H3                             4.30E+45 -10.15   13250.0     !   0.026 atm RRKM WAN/FRE
+!C4H2 + H = iC4H3                             2.60E+46 -10.15   15500.0     !   0.118 atm RRKM WAN/FRE
+ C4H2 + H = iC4H3                             1.10E+30  -4.92   10800.0     !  1 atm RRKM WAN/FRE
+!
+ C4H2+OH = H2C4O+H                            6.60E+12    0.0    -410.      !84PER
+ C4H2+C2H = C6H2+H                            9.60E+13    0.0       0.      != C2H2 + C2H
+!
+!C4H2 + C2H = C6H3                            1.10E+30   -6.30   2790.0     !   0.026 atm RRKM WAN/FRE
+!C4H2 + C2H = C6H3                            1.30E+30   -6.12   2510.0     !   0.118 atm RRKM WAN/FRE
+ C4H2 + C2H = C6H3                            4.50E+37   -7.68   7100.0     !  1 atm RRKM WAN/FRE
+!
+! Reactions of H2C4O
+!
+ H2C4O+H = C2H2+HCCO                          5.00E+13    0.0    3000.      !92MIL/MEL
+ H2C4O+OH = CH2CO+HCCO                        1.00E+07    2.0    2000.      !92MIL/MEL
+!
+! Reactions of nC4H3
+!
+!nC4H3 = iC4H3                                3.70E+61  -15.81  54890.0     !   0.026 atm RRKM WAN/FRE
+!nC4H3 = iC4H3                                1.00E+51  -12.45  51000.0     !   0.118 atm RRKM WAN/FRE
+ nC4H3 = iC4H3                                4.10E+43   -9.49  53000.0     !  1 atm RRKM WAN/FRE
+!
+!nC4H3 + H = iC4H3 + H                        2.40E+11    0.79   2410.0     !   0.026 atm RRKM WAN/FRE
+!nC4H3 + H = iC4H3 + H                        9.20E+11    0.63   2990.0     !   0.118 atm RRKM WAN/FRE
+ nC4H3 + H = iC4H3 + H                        2.50E+20   -1.67  10800.0     !  1 atm RRKM WAN/FRE
+!
+!nC4H3 + H = C2H2 + H2CC                      1.60E+19   -1.60   2220.0     !   0.026 atm RRKM WAN/FRE
+!nC4H3 + H = C2H2 + H2CC                      1.30E+20   -1.85   2960.0     !   0.118 atm RRKM WAN/FRE
+ nC4H3 + H = C2H2 + H2CC                      6.30E+25   -3.34  10014.0     !  1 atm RRKM WAN/FRE
+!  
+!nC4H3 + H = C4H4                             1.10E+42   -9.65   7000.0     !   0.026 atm RRKM WAN/FRE
+!nC4H3 + H = C4H4                             1.10E+42   -9.65   7000.0     !   0.118 atm RRKM WAN/FRE
+ nC4H3 + H = C4H4                             2.00E+47  -10.26  13070.0     !  1 atm RRKM WAN/FRE
+!
+ nC4H3+H = C4H2+H2                            3.00E+13    0.00      0.      != 0.5*C2H3+H
+ nC4H3+OH = C4H2+H2O                          2.00E+12    0.00      0.      != 0.5*C2H3+OH
+!
+!nC4H3 + C2H2 = l-C6H4 + H                    1.40E+15   -0.81  10000.      !   0.013 atm RRKM WAN/FRE
+!nC4H3 + C2H2 = l-C6H4 + H                    3.70E+16   -1.21  11100.      !   0.026 atm RRKM WAN/FRE
+!nC4H3 + C2H2 = l-C6H4 + H                    1.80E+19   -1.95  13200.      !   0.118 atm RRKM WAN/FRE
+ nC4H3 + C2H2 = l-C6H4 + H                    2.50E+14   -0.56  10600.      !  1 atm RRKM WAN/FRE
+!nC4H3 + C2H2 = l-C6H4 + H                    1.20E+17   -1.28  13700.      ! 10 atm RRKM WAN/FRE
+! 
+!nC4H3 + C2H2 = C6H5                          1.40E+67  -17.42  23000.      !   0.013 atm RRKM WAN/FRE
+!nC4H3 + C2H2 = C6H5                          2.30E+68  -17.65  24400.      !   0.026 atm RRKM WAN/FRE
+!nC4H3 + C2H2 = C6H5                          9.80E+68  -17.58  26500.      !   0.118 atm RRKM WAN/FRE
+ nC4H3 + C2H2 = C6H5                          9.60E+70  -17.77  31300.      !  1 atm RRKM WAN/FRE
+!nC4H3 + C2H2 = C6H5                          1.90E+63  -15.25  30600.      ! 10 atm RRKM WAN/FRE
+!
+!nC4H3 + C2H2 = o-C6H4 + H                    9.20E+33   -6.57  15900.      !   0.013 atm RRKM WAN/FRE
+!nC4H3 + C2H2 = o-C6H4 + H                    1.90E+36   -7.21  17900.      !   0.026 atm RRKM WAN/FRE
+!nC4H3 + C2H2 = o-C6H4 + H                    3.50E+41   -8.63  23000.      !   0.118 atm RRKM WAN/FRE
+ nC4H3 + C2H2 = o-C6H4 + H                    6.90E+46  -10.01  30100.      !  1 atm RRKM WAN/FRE
+!nC4H3 + C2H2 = o-C6H4 + H                    3.10E+49  -10.59  37700.      ! 10 atm RRKM WAN/FRE
+!
+! Reactions of iC4H3
+!
+!iC4H3 + H = C2H2 + H2CC                      2.40E+19   -1.60   2800.0     !   0.026 atm RRKM WAN/FRE
+!iC4H3 + H = C2H2 + H2CC                      3.70E+22   -2.50   5140.0     !   0.118 atm RRKM WAN/FRE
+ iC4H3 + H = C2H2 + H2CC                      2.80E+23   -2.55  10780.0     !  1 atm RRKM WAN/FRE
+!  
+!iC4H3 + H = C4H4                             4.20E+44  -10.27   7890.0     !   0.026 atm RRKM WAN/FRE
+!iC4H3 + H = C4H4                             5.30E+46  -10.68   9270.0     !   0.118 atm RRKM WAN/FRE
+ iC4H3 + H = C4H4                             3.40E+43   -9.01  12120.0     !  1 atm RRKM WAN/FRE
+!   
+ iC4H3+H = C4H2+H2                            6.00E+13    0.00      0.      != C2H3+H
+ iC4H3+OH = C4H2+H2O                          4.00E+12    0.00      0.      != C2H3+OH
+ iC4H3+O2 = HCCO+CH2CO                        7.86E+16   -1.80      0.      !89SLA/BER
+!
+! Reactions of C4H4
+!
+!
+!C4H4 + H = nC4H5                             1.20E+51  -12.57    12300.    !   0.013 atm RRKM WAN/FRE
+!C4H4 + H = nC4H5                             4.20E+50  -12.34    12500.    !   0.026 atm RRKM WAN/FRE
+!C4H4 + H = nC4H5                             1.10E+50  -11.94    13400.    !   0.118 atm RRKM WAN/FRE
+ C4H4 + H = nC4H5                             1.30E+51  -11.92    16500.    !  1 atm RRKM WAN/FRE
+!C4H4 + H = nC4H5                             6.20E+45  -10.08    15800.    ! 10 atm RRKM WAN/FRE
+! 
+!C4H4 + H = iC4H5                             6.10E+53  -13.19    14200.    !   0.013 atm RRKM WAN/FRE
+!C4H4 + H = iC4H5                             9.60E+52  -12.85    14300.    !   0.026 atm RRKM WAN/FRE
+!C4H4 + H = iC4H5                             2.10E+52  -12.44    15500.    !   0.118 atm RRKM WAN/FRE
+ C4H4 + H = iC4H5                             4.90E+51  -11.92    17700.    !  1 atm RRKM WAN/FRE
+!C4H4 + H = iC4H5                             1.50E+48  -10.58    18800.    ! 10 atm RRKM WAN/FRE
+!
+ C4H4+H = nC4H3+H2                            6.65E+05    2.53   12240.     !97WAN/FRE
+ C4H4+H = iC4H3+H2                            3.33E+05    2.53    9240.     !97WAN/FRE
+ C4H4+OH = nC4H3+H2O                          3.10E+07    2.0     3430.     !97WAN/FRE
+ C4H4+OH = iC4H3+H2O                          1.55E+07    2.0      430.     !97WAN/FRE
+ C4H4+O = C3H3+HCO                            6.00E+08    1.45    -860.     != C4H6+O
+ C4H4+C2H = l-C6H4+H                          1.20E+13    0.0        0.     != C2H+C2H4
+!
+! Reactions of nC4H5
+!
+!nC4H5 = iC4H5                                2.40E+60 -16.08     47500.    !   0.013 atm RRKM WAN/FRE
+!nC4H5 = iC4H5                                1.30E+62 -16.38     49600.    !   0.026 atm RRKM WAN/FRE
+!nC4H5 = iC4H5                                4.90E+66 -17.26     55400.    !   0.118 atm RRKM WAN/FRE
+ nC4H5 = iC4H5                                1.50E+67 -16.89     59100.    !  1 atm RRKM WAN/FRE
+!nC4H5 = iC4H5                                2.00E+60 -14.46     58600.    ! 10 atm RRKM WAN/FRE
+!
+!nC4H5 + H = iC4H5 + H                        1.00E+36  -6.26     17486.    ! RRKM 0.026 atm  WAN/FRE
+!nC4H5 + H = iC4H5 + H                        1.00E+34  -5.61     18476.    ! RRKM 0.118 atm  WAN/FRE
+ nC4H5 + H = iC4H5 + H                        3.10E+26  -3.35     17423.    ! RRKM 1 atm WAN/FRE
+!
+ nC4H5+H = C4H4+H2                            1.50E+13   0.00         0.    !97WAN/FRE
+ nC4H5+OH = C4H4+H2O                          2.00E+12   0.00         0.    !97WAN/FRE
+ nC4H5+HCO = C4H6+CO                          5.00E+12   0.0          0.    !97WAN/FRE
+ nC4H5+HO2 = C2H3+CH2CO+OH                    6.60E+12   0.0          0.    !97WAN/FRE
+ nC4H5+H2O2 = C4H6+HO2                        1.21E+10   0.0       -596.    !97WAN/FRE
+ nC4H5+HO2 = C4H6+O2                          6.00E+11   0.0          0.    !Estimated
+ nC4H5+O2 = CH2CHCHCHO+O                      3.00E+11   0.29        11.    != C2H3+O2=>CH2CHO+O
+ nC4H5+O2 = HCO+C2H3CHO                       9.20E+16  -1.39      1010.    != C2H3+O2=>HCO+CH2O
+!
+!nC4H5 + C2H2 = C6H6 + H                      2.10E+15     -1.07    4800.  !   0.013 atm RRKM WAN/FRE
+!nC4H5 + C2H2 = C6H6 + H                      2.10E+15     -1.07    4800.  !   0.026 atm RRKM WAN/FRE
+!nC4H5 + C2H2 = C6H6 + H                      2.10E+15     -1.07    4800.  !   0.118 atm RRKM WAN/FRE
+ nC4H5 + C2H2 = C6H6 + H                      1.60E+16     -1.33    5400.  !  1 atm RRKM WAN/FRE
+!nC4H5 + C2H2 = C6H6 + H                      1.60E+18     -1.88    7400.  ! 10 atm RRKM WAN/FRE
+!
+ nC4H5+C2H3 = C6H6+H2                         1.84E-13   7.07     -3611.    !89WES/DEA
+!nC4H5+C4H4 =C6H5C2H3+H                       3.16E+11   0.0        600.    !84COL/BIT
+!
+! Reactions of iC4H5
+!
+ iC4H5+H = C4H4+H2                            3.0E+13    0.00         0.    !97WAN/FRE
+ iC4H5+H = C3H3+CH3                           2.00E+13   0.0       2000.    !Estimated
+ iC4H5+OH = C4H4+H2O                          4.0E+12    0.00         0.    !97WAN/FRE
+ iC4H5+HCO = C4H6+CO                          5.00E+12   0.0          0.    !97WAN/FRE
+ iC4H5+HO2 = C4H6+O2                          6.000E+11  0.00         0.    !Estimated
+ iC4H5+HO2 = C2H3+CH2CO+OH                    6.60E+12   0.0          0.    !97WAN/FRE
+ iC4H5+H2O2 = C4H6+HO2                        1.21E+10   0.000     -596.    !97WAN/FRE
+ iC4H5+O2 = CH2CO+CH2CHO                      2.16E+10   0.00      2500.    != C4H5-2+O2
+!iC4H5+C4H4 =C6H5C2H3+H                       5.000E+14  0.0      25000.    !Estimated
+!
+! Reactions of C4H5-2
+!
+ C4H5-2 = iC4H5                               1.5E+67  -16.89     59100.    != nC4H5=>iC4H5
+ iC4H5+H = C4H5-2+H                           3.1E+26   -3.35     17423.    != nC4H5+H=>iC4H5+H
+ C4H5-2+HO2 = OH+C2H2+CH3CO                   8.00E+11   0.0          0.    !Estimated
+ C4H5-2+O2 = CH3CO+CH2CO                      2.16E+10   0.00      2500.    !92SLA/BEN
+ C4H5-2+C2H2 = C6H6+H                         5.00E+14   0.00     25000.    !Estimated
+ C4H5-2+C2H4 = C5H6+CH3                       5.00E+14   0.000    25000.    !Estimated
+!
+! Reactions of 1,3-C4H6
+!
+!C4H6 = iC4H5 + H                             8.20E+51 -10.92    118409.    ! RRKM 0.026 atm  WAN/FRE
+!C4H6 = iC4H5 + H                             3.30E+45  -8.95    115934.    ! RRKM 0.118 atm  WAN/FRE
+ C4H6 = iC4H5 + H                             5.70E+36  -6.27    112353.    ! RRKM 1 atm WAN/FRE
+!
+!C4H6 = nC4H5 + H                             3.50E+61 -13.87    129677.    ! RRKM 0.026 atm  WAN/FRE
+!C4H6 = nC4H5 + H                             8.50E+54 -11.78    127472.    ! RRKM 0.118 atm  WAN/FRE
+ C4H6 = nC4H5 + H                             5.30E+44  -8.62    123608.    ! RRKM 1 atm WAN/FRE
+!
+ C4H6 = C4H4+H2                               2.50E+15   0.0      94700.    !96HID/HIG
+ C4H6+H = nC4H5+H2                            1.33E+06   2.53     12240.    != C2H4+H
+ C4H6+H = iC4H5+H2                            6.65E+05   2.53      9240.    !Estimated
+!
+!C2H4 + C2H3 = C4H6 + H                       7.40E+14  -0.66    8420.0     !   0.026 atm RRKM WAN/FRE
+!C2H4 + C2H3 = C4H6 + H                       1.90E+17  -1.32   10600.0     !   0.118 atm RRKM WAN/FRE
+ C4H6+H = C2H4+C2H3                           1.46E+30  -4.34     21647.    !97WAN/FRE 1 atm
+!C4H6+H = C2H4+C2H3                           5.45E+30  -4.51     21877.    !97WAN/FRE 10 atm
+!
+ C4H6+H = pC3H4+CH3                           2.00E+12   0.0       7000.    !Estimated
+ C4H6+H = aC3H4+CH3                           2.00E+12   0.0       7000.    !Estimated
+ C4H6+O = nC4H5+OH                            0.75E+07   1.90      3740.    != C2h4+O
+ C4H6+O = iC4H5+OH                            0.75E+07   1.90      3740.    != C2h4+O
+ C4H6+O = CH3CHCHCO+H                         1.5E+08    1.45      -860.    !93ADU/FON#
+ C4H6+O = CH2CHCHCHO+H                        4.5E+08    1.45      -860.    !93ADU/FON#
+ C4H6+OH = nC4H5+H2O                          6.20E+06   2.0       3430.    !88LIU/MUL
+ C4H6+OH = iC4H5+H2O                          3.10E+06   2.0        430.    !Estimated
+ C4H6+HO2 = C4H6O25+OH                        1.20E+12   0.0      14000.    !Estimated
+ C4H6+HO2 = C2H3CHOCH2+OH                     4.80E+12   0.0      14000.    !Estimated
+ C4H6+CH3 = nC4H5+CH4                         2.00E+14   0.0      22800.    !96HID/HIG
+ C4H6+CH3 = iC4H5+CH4                         1.00E+14   0.0      19800.    !96HID/HIG
+ C4H6+C2H3 = nC4H5+C2H4                       5.00E+13   0.0      22800.    !96HID/HIG
+ C4H6+C2H3 = iC4H5+C2H4                       2.50E+13   0.0      19800.    !96HID/HIG
+ C4H6+C3H3 = nC4H5+aC3H4                      1.00E+13   0.0      22500.    !96HID/HIG
+ C4H6+C3H3 = iC4H5+aC3H4                      0.50E+13   0.0      19500.    !96HID/HIG
+ C4H6+aC3H5 = nC4H5+C3H6                      1.00E+13   0.0      22500.    !Estimated
+ C4H6+aC3H5 = iC4H5+C3H6                      0.50E+13   0.0      19500.    !Estimated
+ C4H6+C2H3 = C6H6+H2+H                        5.62E+11   0.0       3240.    !95LEU/LIN
+!
+! Reactions of 1,2-C4H6
+!
+ C4H612 = iC4H5+H                             4.20E+15   0.0      92600.    !95LEU/LIN
+ C4H612+H = C4H6+H                            2.00E+13   0.0       4000.    !Estimated
+ C4H612+H = iC4H5+H2                          1.70E+05   2.5       2490.    != C3H6+H
+ C4H612+H = aC3H4+CH3                         2.00E+13   0.0       2000.    !97WAN/FRE
+ C4H612+H = pC3H4+CH3                         2.00E+13   0.0       2000.    !97WAN/FRE
+ C4H612+CH3 = iC4H5+CH4                       7.00E+13   0.0      18500.    !88KER/SIN
+ C4H612+O = CH2CO+C2H4                        1.20E+08   1.65       327.    != C3H6+O
+ C4H612+O = iC4H5+OH                          1.80E+11   0.70      5880.    != C3H6+O
+ C4H612+OH = iC4H5+H2O                        3.10E+06   2.00      -298.    != C3H6+OH
+ C4H612 = C4H6                                3.00E+13   0.0      65000.    !96HID/HIG
+!
+! Reactions of C4H6-2
+!
+ C4H6-2 = C4H6                                3.00E+13   0.000    65000.    !96HID/HIG
+ C4H6-2 = C4H612                              3.00E+13   0.000    67000.    !96HID/HIG
+ C4H6-2+H = C4H612+H                          2.00E+13   0.0       4000.    !Estimated
+ C4H6-2+H = C4H5-2+H2                         3.40E+05   2.5       2490.    != C3H6+H 
+ C4H6-2+H = CH3+pC3H4                         2.60E+5    2.500     1000.    !96HID/HIG
+ C4H6-2 = H+C4H5-2                            5.00E+15   0.000    87300.    !96HID/HIG
+ C4H6-2+CH3 = C4H5-2+CH4                      1.40E+14   0.0      18500.    !Estimated
+!
+! Reactions of C4H6O isomers
+!
+ C2H3CHOCH2 = C4H6O23                         2.00E+14   0.0      50600.    !76CRA/LUT
+ C4H6O23 = CH3CHCHCHO                         1.95E+13   0.0      49400.    !89LIF/BID
+ C4H6O23 = C2H4+CH2CO                         5.75E+15   0.0      69300.    !89LIF/BID
+ C4H6O23 = C2H2+CH2OCH2                       1.00E+16   0.0      75800.    !89LIF/BID
+ C4H6O25 = C4H4O+H2                           5.30E+12   0.0      48500.    !86LIF/BID1
+!
+! Reactions of C4H4O
+!
+ C4H4O = CO+pC3H4                             1.78E+15   0.0      77500.    !86LIF/BID2
+ C4H4O = C2H2+CH2CO                           5.01E+14   0.0      77500.    !86LIF/BID2
+!
+! Reactions of CH3CHCHCHO
+! 
+ CH3CHCHCHO = C3H6+CO                         3.90E+14    0.0      69000.   != HCCCHO=>C2H2+CO
+ CH3CHCHCHO+H = CH2CHCHCHO+H2                 1.70E+5     2.5       2490.   != C3H6+H=>aC3H5+H2
+ CH3CHCHCHO+H = CH3CHCHCO+H2                  1.00E+5     2.5       2490.   !Estimated
+ CH3CHCHCHO+H = CH3+C2H3CHO                   4.00E+21   -2.390    11180.   != C3H6+H=>C2H4+CH3
+ CH3CHCHCHO+H = C3H6+HCO                      4.00E+21   -2.390    11180.   != C3H6+H=>C2H4+CH3
+ CH3CHCHCHO+CH3 = CH2CHCHCHO+CH4              2.10E+00    3.50      5675.   != C3H6+CH3=>aC3H5+CH4
+ CH3CHCHCHO+CH3 = CH3CHCHCO+CH4               1.10E+00    3.50      5675.   !Estimated
+ CH3CHCHCHO+C2H3 = CH2CHCHCHO+C2H4            2.21E+00    3.50      4682.   !=C3H6+C2H3=>aC3H5+C2H4
+ CH3CHCHCHO+C2H3 = CH3CHCHCO+C2H4             1.11E+00    3.50      4682.   !Estimated
+!
+! Reactions of CH3CHCHCO
+! 
+ CH3CHCHCO = CH3CHCH+CO                       1.00E+14    0.0      30000.   !Estimated
+ CH3CHCHCO+H = CH3CHCHCHO                     1.00E+14    0.0         00.   !Estimated
+!
+! Reactions of CH2CHCHCHO
+! 
+ CH2CHCHCHO = aC3H5+CO                        1.00E+14    0.0      25000.   !Estimated
+ CH2CHCHCHO+H = CH3CHCHCHO                    1.00E+14    0.0         00.   !Estimated
+!
+! Reactions of C4H7
+!
+ C4H7 = C4H6+H                                2.48E+53 -12.30     52000.0   !97WAN/FRE 1 atm
+!C4H7 = C4H6+H                                1.85E+48 -10.50     51770.0   !97WAN/FRE 10 atm
+!
+ C4H7+H(+M) = C4H81(+M)                       3.60E+13   0.00         0.0   != nC3H7+H
+                                       LOW  / 3.01E+48  -9.32      5833.6   /
+                                       TROE / 0.498  1314.0  1314.0 50000.0 /
+                           H2/2/ H2O/6/ CH4/2/ CO/1.5/ CO2/2/ C2H6/3/ AR/0.7/
+ C4H7+H = CH3+aC3H5                           2.00E+21  -2.00     11000.0   !Estimated
+ C4H7+H = C4H6+H2                             1.80E+12   0.00         0.0   != nC3H7+H
+ C4H7+O2 = C4H6+HO2                           1.00E+11   0.00         0.0   !Estimated
+ C4H7+HO2 = CH2O+OH+aC3H5                     2.40E+13   0.00         0.0   != nC3H7+HO2
+ C4H7+HCO = C4H81+CO                          6.00E+13   0.00         0.0   != nC3H7+HCO
+ C4H7+CH3 = C4H6+CH4                          1.10E+13   0.00         0.0   != nC3H7+CH3
+!
+! Reaction of iC4H7 2-methylpropen-3-yl  
+!
+ iC4H7+H(+M) = iC4H8(+M)                      2.00E+14   0.00         0.0   ! =(aC3H5+H) TS5 600cm-1
+                                       LOW  / 1.33E+60 -12.00      5967.8   /
+                                       TROE / 0.020  1096.6  1096.6  6859.5 /
+                           H2/2/ H2O/6/ CH4/2/ CO/1.5/ CO2/2/ C2H6/3/ AR/0.7/
+!iC4H7+H = CH3CCH2+CH3                        2.20E+51  -9.98     37730.0   ! =(aC3H5+H) TS5 0.1 atm
+ iC4H7+H = CH3CCH2+CH3                        2.60E+45  -8.19     37890.0   ! =(aC3H5+H) TS5 1 atm
+!iC4H7+H = CH3CCH2+CH3                        3.40E+32  -4.46     33760.0   ! =(aC3H5+H) TS5 10 atm
+!
+ iC4H7+O = CH2O+CH3CCH2                       9.00E+13   0.00         0.0   ! Estimated
+ iC4H7+HO2 = CH3CCH2+CH2O+OH                  4.00E+12   0.00         0.0   ! Estimated              
+!
+!
+ CH3COCH3+H = H2+CH2CO+CH3                    1.30E+06   2.54      6756.0   ! =C3H8+H
+ CH3COCH3+O = OH+CH2CO+CH3                    1.90E+05   2.68      3716.0   ! =C3H8+O
+ CH3COCH3+OH = H2O+CH2CO+CH3                  3.20E+07   1.80       934.0   ! =C3H8+OH
+ CH3+CH3CO = CH3COCH3                         4.00E+15  -0.80         0.0   ! TS1 kinf
+!
+!--------------------------------------------------------------------------------------
+! C2H5 C.A. reactions pertinent to 3-pent mech:
+ CH3+CH3(+M) = C2H6(+M)                       2.120E+16   -0.970    620.00  !GRI
+                                      LOW  /  1.770E+50   -9.670   6220.00  /
+                                      TROE/  0.5325  151.0  1038.00  4970.0 /
+                 H2/2.0/ H2O/6.0/ CH4/2.0/ CO/1.5/ CO2/2.0/ C2H6/3.0/ AR/0.7/
+ CH3+CH3 = H+C2H5                             5.00E+12    0.100  10600.00  !GRI
+ C2H4+H(+M) = C2H5(+M)                        0.804E+09    1.463   1355.00  !04-MIL-KLI red. 40%
+                                      LOW  /  1.19E+39   -6.642   5769.00  /
+                                      TROE / -0.569  299.0  -9147.0  152.40 /
+                 H2/2.0/ H2O/6.0/ CH4/2.0/ CO/1.5/ CO2/2.0/ C2H6/3.0/ AR/0.7/
+!--------------------------------------------------------------------------------------
+! Reactions of 3-pentanone (diethyl ketone) 
+!
+ C2H5COC2H5(+M)=C2H5+C2H5CO(+M)			   5.69E+19	-0.73	81910       	!SCB1, kinf,klow A X3.2		
+   LOW / 5.16E+104 -2.4670E+01 1.0531E+05 /
+   TROE/ 9.00E-01 1.00E+10 5.00E+02 5000000000 /		
+ H2/2/ H2O/6/ CH4/2/ CO/1.5/ CO2/2/ C2H6/3/ AR/0.7/ C2H2/3.00/ C2H4/3.00/						
+ C2H5COC2H5(+M)=CH3+C2H5COCH2(+M)                   2.553E+22   -1.44   86781 		!krev of ac3h5+ch3, kinf 91TSA, kinf,klow A X3.2
+   LOW / 3.121E+107	-2.55E+01	105280 /					!
+   TROE/ 6.20E-01 1.50E+03 1.20E+02 5000000000 /		
+ H2/2/ H2O/6/ CH4/2/ CO/1.5/ CO2/2/ C2H6/3/ AR/0.7/ C2H2/3.00/ C2H4/3.00/						
+ C2H5COC2H4P=C2H5COC2H4S	                    6.87E+05	1.59	17898		!F=3, Est based on Sirjean et al 2012 (5ps, 1-3 shift in hexyl radical)
+ C2H5+CH3CHCO=C2H5COC2H4S                           3.30E+02    2.733   13952		!est, HV08 C2H5+CH2CO rec, F=3
+ C2H5COC2H4S(+M)=C2H5COC2H3+H(+M)                   4.70E+08   1.32    44697.6 		!est from SAXC4H7 JetSurf 08/TSAwip, F = 3
+                                       LOW  / 4.60E-37  15.37   -603.1      /
+                           H2/2/ H2O/6/ CH4/2/ CO/1.5/ CO2/2/ C2H6/3/
+ C2H5COC2H4P=C2H5COC2H3+H                           2.48E+53 -12.30     52000.0         !F=3 est from C4H7 = C4H6+H, 97WAN/FRE 1 atm
+ C2H5CO+C2H4=C2H5COC2H4P 	                    1.00E+11	0	8.72E+03	!F=3 SCB10
+ C2H5COCH2=CH2CO+C2H5	                            1.00E+14	0	3.50E+04	!F=3 SCB10
+ C2H5COC2H5+O<=>C2H5COC2H4P+OH	                    1.96E+06	2.43	4.75E+03	!F=2 SCB10		
+ C2H5COC2H5+O<=>C2H5COC2H4S+OH	                    2.89E+11	0.23	2.97E+03	!F=3 SCB10		
+! C2H5COC2H5+OH=C2H5COC2H4P+H2O                     1.06E+10    0.97    1.59E+03        !F=2 SCB10
+ C2H5COC2H5+OH=C2H5COC2H4S+H2O	                    1.10E+03	3.12	-1.18E+03	!F=3 SCB10, online mech		
+! C2H5COC2H5+OH=C2H5COC2H4S+H2O                      5.20E+03    2.77    -1.23E+03       !F=3 SCB10, reported in paper
+ C2H5COC2H5+HO2=C2H5COC2H4P+H2O2	            2.72E+01	3.59	1.72E+04	!F=2 SCB10		
+ C2H5COC2H5+HO2=C2H5COC2H4S+H2O2	            6.88E+12	0.05	1.79E+04	!F=3 SCB10		
+ C2H5COC2H5+CH3<=>C2H5COC2H4P+CH4	            9.06E-01	3.65	7.15E+03	!F=2 SCB10, online A,paper = 3.06e0		
+ C2H5COC2H5+CH3<=>C2H5COC2H4S+CH4	            1.70E+01	3.28	5.27E+03	!F=3 SCB10		
+ C2H5COC2H5+O2=C2H5COC2H4P+HO2	                    6.00E+13	0	5.23E+04	!F=2 SCB10		
+ C2H5COC2H5+O2=C2H5COC2H4S+HO2	                    4.04E+13	0	4.59E+04	!F=3 SCB10		
+ C2H5COC2H5+H=C2H5COC2H4P+H2                       9.980E+05    2.54    6.76E+03        !F=2 SCB10x.75
+ C2H5COC2H5+H=C2H5COC2H4S+H2                       1.433E+06    2.29    2.88E+03        !F=3 SCB10x.75
+! C2H5COC2H5+H=C2H5COC2H4P+H2	                    1.33E+06	2.54	6.76E+03	!F=2 SCB10		
+! C2H5COC2H5+H=C2H5COC2H4S+H2	                    1.91E+06	2.29	2.88E+03	!F=3 SCB10		
+ C2H5COC2H5+C2H3=C2H5COC2H4P+C2H4	            1.00E+12	0	1.04E+04	!F=2 SCB10		
+ C2H5COC2H5+C2H3=C2H5COC2H4S+C2H4	            6.00E+11	0	5.60E+03	!F=3 SCB10		
+ C2H5COC2H5+C2H5=C2H5COC2H4P+C2H6	            1.00E+11	0	1.34E+04	!F=2 SCB10		
+ C2H5COC2H5+C2H5=C2H5COC2H4S+C2H6	            6.00E+10	0	8.60E+03	!F=3 SCB10		
+ C2H5COC2H5+CH3O=C2H5COC2H4P+CH3OH	            4.34E+11	0	6.46E+03	!F=2 SCB10		
+ C2H5COC2H5+CH3O=C2H5COC2H4S+CH3OH	            1.15E+12	0	4.57E+03	!F=3 SCB10		
+!
+!Reactions of C2H5COC2H3						
+!
+ PC2H4COC2H3+H(+M)=C2H5COC2H3(+M)		    3.60E+13	0	0.00E+00	!F=3 Est from nC3H7+H(+M) from 88TSA (I expect smaller A-factor due to resonance of C2H5COC2H4S)		
+   LOW  / 3.01E+48  -9.32     5833.6    /						
+   TROE / 0.498  1314.0  1314.0 50000.0 /						
+   H2/2/ H2O/6/ CH4/2/ CO/1.5/ CO2/2/ C2H6/3/ AR/0.7/						
+ C2H3COCH2+CH3(+M) =C2H5COC2H3(+M)                    1.00E+14  -0.32     -262.3    !F=3,est C2H5COC2H5 which is Est, ch3+ac3h5=C4H81, 91TSA
+                                       LOW  / 3.91E+60 -12.81     6250.0    /       !SCB10
+                                       TROE / 0.104  1606.0 60000.0  6118.4 /       !SCB10
+                           H2/2/ H2O/6/ CH4/2/ CO/1.5/ CO2/2/ C2H6/3/ AR/0.7/
+ PC2H4COC2H3=C2H3COC2H3+H                           2.48E+53 -12.30     52000.0         !est from C4H7 = C4H6+H, 97WAN/FRE 1 atm
+ C2H3CO+C2H4=PC2H4COC2H3			    1.00E+11	0	8.72E+03	!F=3, est C2H5CO+C2H4=C2H5COC2H4P 		
+ C2H3CO(+M)=C2H3+CO(+M)                             2.10E+13    0       14603.25048     !F=5, est from C2H5CO decomp
+   LOW     /4.37E+15    0       1.05E+04 /
+   TROE    / 0.6173 13.076 2078. 5093    / 						!estimated from CH3CHO 
+   H2/2/ H2O/6/ CH4/2/ CO/1.5/ CO2/2/ C2H6/3/ AR/0.7/ C2H2/3.00/ C2H4/3.00/
+ C2H3+CH2CO=C2H3COCH2				    1.80E+13	0	0		!F=5,C2H3+HCO, 86TSA/HAM		
+ SC2H4COC2H3(+M)=C2H3COC2H3+H(+M)                   4.70E+08   1.32    44697.6          !F=3, est from SAXC4H7 JetSurf 08/TSAwip
+                                   LOW  / 4.60E-37  15.37   -603.1      /
+                           H2/2/ H2O/6/ CH4/2/ CO/1.5/ CO2/2/ C2H6/3/
+ C2H3+CH3CHCO=SC2H4COC2H3                           3.30E+02    2.733   13952           !F=3,est, HV08 C2H5+CH2CO rec
+ C2H3COC2H3+H=C2H3CO+C2H2+H2                        9.04E+16   -0.49    37738.04        !F=3,Est, C2H5COC2H3+H=C2H5COC2H2+H2 and fast decomp based of rev of C2H5CO+C2H2=C2H5COC2H2 
+ C2H5+C2H3CO=C2H5COC2H3				    3.13E+14   -0.5	0.00E+00	!F=3 SCB10
+ C2H5CO+C2H3=C2H5COC2H3                             3.13E+14   -0.5     0.00E+00        !F=3 SCB10
+ C2H5CO+C2H2=C2H5COC2H2				    1.00E+13	0       1.50E+04	!F=3,EST
+ C2H5COC2H3=CH3+C2H3COCH2			    1.52E+24	-2.61	8.41E+04	!F=3 SCB10		
+ C2H5COC2H3+H=PC2H4COC2H3+H2			    4.00E+06	2.54	6.76E+03	!F=2 SCB10		
+ C2H5COC2H3+H=SC2H4COC2H3+H2			    9.57E+05	2.29	2.88E+03	!F=3 SCB10		
+ C2H5COC2H3+H=C2H5COC2H2+H2			    1.54E+06	2.53	1.22E+04	!F=2 SCB10		
+ C2H5COC2H3+OH=C2H5COC2H2+H2O			    1.01E+13	0	5.96E+03	!F=2 SCB10		
+ C2H5COC2H3+CH3=PC2H4COC2H3+CH4			    4.53E-01	3.65	7.15E+03	!F=2 SCB10		
+ C2H5COC2H3+CH3=SC2H4COC2H3+CH4			    8.52E+00	3.28	5.27E+03	!F=3 SCB10		
+ C2H5COC2H3+CH3=C2H5COC2H2+CH4			    5.55E-01	3.7	9.50E+03	!F=2 SCB10		
+ C2H5COC2H3+HO2=C2H5COC2H2+H2O2			    5.65E+14	0	3.04E+04	!F=2 SCB10		
+ C2H5COC2H3+CH3O=PC2H4COC2H3+CH3OH		    2.17E+11	0	6.46E+03	!F=2 SCB10		
+ C2H5COC2H3+CH3O=SC2H4COC2H3+CH3OH		    5.76E+11	0	4.57E+03	!F=2 SCB10		
+ C2H5COC2H3+CH3O=C2H5COC2H2+CH3OH		    2.24E+10	0	6.75E+03	!F=2 SCB10		
+ C2H5COC2H3+O=PC2H4COC2H3+OH			    9.81E+05	2.43	4.75E+03	!F=2 SCB10		
+ C2H5COC2H3+O=SC2H4COC2H3+OH			    1.44E+11	0.23	2.97E+03	!F=3 SCB10		
+ C2H5COC2H3+O=C2H5COC2H2+OH			    7.55E+06	1.91	3.74E+03	!F=2 SCB10		
+ C2H5COC2H3+O2=PC2H4COC2H3+HO2			    1.80E+14	0	5.23E+04	!F=2 SCB10		
+ C2H5COC2H3+O2=SC2H4COC2H3+HO2			    2.02E+13	0	4.59E+04	!F=3 SCB10		
+ C2H5COC2H3+O2=C2H5COC2H2+HO2			    2.00E+13	0	6.15E+04	!F=2 SCB10		
+!
+!Reactions of C2H5CO (very fast decomp to CO+ethyl)	
+!
+ C2H5CO(+M)=C2H5+CO(+M)                             2.10E+13    0       14603.25048     !F=3, kinf and klow(Arr fit) from KL67
+   LOW     /4.37E+15    0       1.05E+04 /
+   TROE    /0.337 1707. 3200. 4131.      / 						!estimated from ketene + H 
+   H2/2/ H2O/6/ CH4/2/ CO/1.5/ CO2/2/ C2H6/3/ AR/0.7/ C2H2/3.00/ C2H4/3.00/						
+!
+!Reactions of Methyl Ketene						
+!
+ CH3+HCCO(+M)=CH3CHCO(+M)			    8.10E+11	0.50	4510.00		!F=5 est, CH2CO=CH2+CO, GRI
+   LOW  /  2.690E+33   -5.110   7095.00  /						
+   TROE/ 0.5907  275.0  1226.00  5185.00 /						
+   H2/2.0/ H2O/6.0/ CH4/2.0/ CO/1.5/ CO2/2.0/ C2H6/3.0/ AR/0.7/						
+ CH3CHCO+H=C2H5+CO				    4.40E+12	0	1.46E+03	!F=3, SCB10
+ CH3CHCO+OH<=>C2H5+CO2				    1.73E+12	0      -1.01E+03	!F=3, SCB10		
+ CH3CHCO+CH3=iC3H7+CO                               4.40E12     0       1.46E+03        !F=4,est CH3CHCO+H
+!SC2H4OH+M<=>CH3CHO+H+M 		   	    1.00E+14   0.00 	2.500E+04	!F=3, SCB10
+ CH3CHCO+OH=CH3CHO+H+CO				    1.00E+14   0.00    2.500E+04        !F=5, SCB10 lumped(sc2h4oh decomp bottleneck but fast for high T)
+ CH2CO + CH3 = HCCO + CH4			    5.00E+12 	0 	15000 		!F=10, est
+!
+ END

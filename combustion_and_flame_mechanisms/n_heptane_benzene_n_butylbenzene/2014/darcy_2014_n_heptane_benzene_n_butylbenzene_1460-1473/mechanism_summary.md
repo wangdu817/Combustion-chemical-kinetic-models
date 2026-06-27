@@ -15,7 +15,7 @@ Daniel Darcy, Hisashi Nakamura, Colin J. Tobin, Marco Mehl, Wayne K. Metcalfe, W
 - Paper PDF link: 
 - Fuel type: n_heptane_benzene_n_butylbenzene
 - Plasma-related mechanism: no
-- Validation reactor/type from abstract: not clear from abstract
+- Validation reactor/type from abstract: shock tube, rapid compression machine
 
 ## Mechanism Files
 
@@ -42,7 +42,7 @@ Daniel Darcy, Hisashi Nakamura, Colin J. Tobin, Marco Mehl, Wayne K. Metcalfe, W
 
 ## Abstract
 
-not available
+This paper presents experimental data for the oxidation of two surrogates for the large alkylbenzene class of compounds contained in diesel fuels, namely n-decylbenzene. A 57:43molar% mixture of n-propylbenzene:n-heptane in air (21% O 2 , 79% N 2 ) was used in addition to a 64:36molar% mixture of n-butylbenzene:36% n-heptane in air. These mixtures were designed to contain a similar carbon/hydrogen ratio, molecular weight and aromatic/alkane ratio when compared to n-decylbenzene. Nominal equivalence ratios of 0.3, 0.5, 1.0 and 2.0 were used. Ignition times were measured at 1atm in the shock tube and at pressures of 10, 30 and 50atm in both the shock tube and in the rapid compression machine. The temperature range studied was from approximately 650–1700K. The effects of reflected shock pressure and equivalence ratio on ignition delay time were determined and common trends highlighted. It was noted that both mixtures showed similar reactivity throughout the temperature range studied. A reaction mechanism published previously was used to simulate this data. Overall the reaction mechanism captures the experimental data reasonably successfully with a variation of approximately a factor of 2 for mixtures at 10atm and fuel-rich and stoichiometric conditions.
 
 ## Processing Notes
 

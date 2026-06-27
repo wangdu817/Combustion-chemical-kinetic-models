@@ -15,7 +15,7 @@ Zhandong Wang, Lili Ye, Wenhao Yuan, Lidong Zhang, Yizun Wang, Zhanjun Cheng, et
 - Paper PDF link: 
 - Fuel type: cyclohexane_ethylcyclohexane
 - Plasma-related mechanism: no
-- Validation reactor/type from abstract: not clear from abstract
+- Validation reactor/type from abstract: laminar flame speed, burner/flame structure
 
 ## Mechanism Files
 
@@ -42,7 +42,7 @@ Zhandong Wang, Lili Ye, Wenhao Yuan, Lidong Zhang, Yizun Wang, Zhanjun Cheng, et
 
 ## Abstract
 
-not available
+Methylcyclohexane is the simplest alkylated cyclohexane, and has been broadly used as the representative cycloalkane component in fuel surrogates. Understanding its combustion chemistry is crucial for developing kinetic models of larger cycloalkanes and practical fuels. In this work, the synchrotron vacuum ultraviolet photoionization mass spectrometry combined with molecular-beam sampling was used to investigate the species formed during the pyrolysis of methylcyclohexane and in premixed flame of methylcyclohexane. A number of pyrolysis and flame intermediates were identified and quantified, especially including radicals (e.g. CH3, C3H3, C3H5 and C5H5) and cyclic C6- and C7-intermediates (benzene, 1,3-cyclohexadiene, cyclohexene, toluene, C7H10 and C7H12, etc.). In particular, the observation of cyclic C6- and C7-intermediates provides important experimental evidence to clarify the special formation channels of toluene and benzene which were observed with high concentrations in both pyrolysis and flame of methylcyclohexane. Furthermore, the rate constants of H-abstraction of methylcyclohexane via H attack, and the isomerization and decomposition of the formed cyclic C7H13 radicals were calculated in this work. A kinetic model of methylcyclohexane combustion with 249 species and 1570 reactions was developed including a new sub-mechanism of MCH. The rate of production and sensitivity analysis were carried out to elucidate methylcyclohexane consumption, and toluene and benzene formation under various pyrolytic and flame conditions. Furthermore, the present kinetic model was also validated by experimental data from literatures on speciation in premixed flames, ignition delays and laminar flame speeds.
 
 ## Processing Notes
 

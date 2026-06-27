@@ -15,7 +15,7 @@ D. Darcy, H. Nakamura, C.J. Tobin, M. Mehl, W.K. Metcalfe, W.J. Pitz, et al.. A 
 - Paper PDF link: 
 - Fuel type: benzene_n_propylbenzene
 - Plasma-related mechanism: no
-- Validation reactor/type from abstract: rapid compression machine
+- Validation reactor/type from abstract: shock tube, rapid compression machine
 
 ## Mechanism Files
 
@@ -42,7 +42,7 @@ D. Darcy, H. Nakamura, C.J. Tobin, M. Mehl, W.K. Metcalfe, W.J. Pitz, et al.. A 
 
 ## Abstract
 
-not available
+This study presents new ignition delay data measured in a rapid compression machine over a wide range temperature, pressure and fuel/air ratio. This data is an extension of that measured previously (D. Darcy, C.J. Tobin, K. Yasunaga, J.M. Simmie, J. Würmel, T. Niass, O. Mathieu, S.S. Ahmed, C.K. Westbrook, H.J. Curran, Combust. Flame, 159 (2012) 2219–2232.) for the oxidation of n-propylbenzene in a high-pressure shock tube. The data was obtained for equivalence ratios of 0.29, 0.48, 0.96, and 1.92, at compressed gas pressures of 10, 30 and 50atm, and over the temperature range of 650–1000K. Experimental data was also obtained at 50atm for all equivalence ratios in our new heated high-pressure shock tube and this is also presented here. Comparisons between the data obtained in both the rapid compression machine and the shock tube facilities showed excellent agreement. A previously published chemical kinetic mechanism has been improved and a low-temperature reaction mechanism has been added to simulate ignition delay times at the lower temperature conditions of this study by adding the appropriate species and reactions including alkyl-peroxyl and hydroperoxy-alkyl radical chemistry. Special attention was given to R O ̇ 2 isomerizations and H O ̇ 2 elimination reactions involving the secondary benzylic site on n-propylbenzene to obtain good agreement with the present experimental results. In general, good agreement was obtained between the model and experiments and consistent trends were observed and these are discussed.
 
 ## Processing Notes
 

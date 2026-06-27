@@ -15,7 +15,7 @@ Sinéad M. Burke, Wayne Metcalfe, Olivier Herbinet, Frédérique Battin-Leclerc,
 - Paper PDF link: 
 - Fuel type: propene
 - Plasma-related mechanism: possible
-- Validation reactor/type from abstract: flow reactor
+- Validation reactor/type from abstract: jet-stirred reactor, flow reactor
 
 ## Mechanism Files
 
@@ -42,7 +42,7 @@ Sinéad M. Burke, Wayne Metcalfe, Olivier Herbinet, Frédérique Battin-Leclerc,
 
 ## Abstract
 
-not available
+Propene is a significant component of Liquefied Petroleum Gas (LPG) and an intermediate in the combustion of higher order hydrocarbons. To better understand the combustion characteristics of propene, this study and its companion paper present new experimental data from jet-stirred (JSR) and flow reactors (Part I) and ignition delay time and flame speed experiments (Part II). Species profiles from JSR experiments are presented and were obtained at near-atmospheric pressure over a temperature range of 800–1100K and for equivalence ratios from φ =0.64 to 2.19. The new JSR data were obtained at lower dilution levels and temperatures than previously published. Also reported are species profiles from two high-pressure flow reactor facilities: the Princeton Variable Pressure Flow Reactor (VPFR) and the High Pressure Laminar Flow Reactor (HPLFR). The VPFR experiments were conducted at pressures of 6–12.5atm, in the temperature range 843–1020K and at equivalence ratios of 0.7–1.3. The HPLFR experiments were conducted at 15atm, at a temperature of 800K and at equivalence ratios of 0.35–1.25. The flow reactor data is at higher pressures and lower temperatures than existing data in the literature. A detailed chemical kinetic mechanism has been simultaneously developed to describe the combustion of propene under the experimental conditions described above. Important reactions highlighted via flux and sensitivity analyses include: hydrogen atom abstraction from propene by molecular oxygen, hydroxyl, and hydroperoxyl radicals; allyl–allyl radical recombination; the reaction between allyl and hydroperoxyl radicals; and the reactions of 1- and 2-propenyl radicals with molecular oxygen. The current mechanism accurately predicts the combustion characteristics of propene across the range of experimental conditions presented in this study, from jet-stirred and flow reactors and for ignition delay times and flame speed measurements presented in Part II. In comparison to a previous mechanism, AramcoMech 1.3, the current mechanism results in much improved performance, which highlights the importance of the new experimental data in constraining the important reactions.
 
 ## Processing Notes
 

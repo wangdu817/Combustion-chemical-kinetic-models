@@ -15,7 +15,7 @@ Liming Cai, Alena Sudholt, Dong Joon Lee, Fokion N. Egolfopoulos, Heinz Pitsch, 
 - Paper PDF link: 
 - Fuel type: biofuel
 - Plasma-related mechanism: no
-- Validation reactor/type from abstract: flow reactor
+- Validation reactor/type from abstract: flow reactor, laminar flame speed
 
 ## Mechanism Files
 
@@ -42,7 +42,7 @@ Liming Cai, Alena Sudholt, Dong Joon Lee, Fokion N. Egolfopoulos, Heinz Pitsch, 
 
 ## Abstract
 
-not available
+The combustion characteristics of promising alternative fuels have been studied extensively in the recent years. Nevertheless, the pyrolysis and oxidation kinetics for many oxygenated fuels are not well characterized compared to those of hydrocarbons. In the present investigation, the first chemical kinetic study of a long-chain linear symmetric ether, di-n-butyl ether (DBE), is presented and a detailed reaction model is developed. DBE has been identified recently as a candidate biofuel produced from lignocellulosic biomass. The model includes both high temperature and low temperature reaction pathways with reaction rates generated using appropriate rate rules. In addition, experimental studies on fundamental combustion characteristics, such as ignition delay times and laminar flame speeds have been performed. A laminar flow reactor was used to determine the ignition delay times of lean and stoichiometric DBE/air mixtures. The laminar flame speeds of DBE/air mixtures were measured in the stagnation flame configuration for a wide rage of equivalence ratios at atmospheric pressure and an unburned reactant temperature of 373K. All experimental data were modeled using the present kinetic model. The agreement between measured and computed results is satisfactory, and the model was used to elucidate the oxidation pathways of DBE. The dissociation of keto-hydroperoxides, leading to radical chain branching was found to dominate the ignition of DBE in the low temperature regime. The results of the present numerical and experimental study of the oxidation of di-n-butyl ether provide a good basis for further investigation of long chain linear and branched ethers.
 
 ## Processing Notes
 
