@@ -15,7 +15,7 @@ Zhenyu Tian, Tao Yuan, René Fournet, Pierre-Alexandre Glaude, Baptiste Sirjean,
 - Paper PDF link: 
 - Fuel type: furan
 - Plasma-related mechanism: no
-- Validation reactor/type from abstract: not clear from abstract
+- Validation reactor/type from abstract: shock tube, burner/flame structure
 
 ## Mechanism Files
 
@@ -42,7 +42,7 @@ Zhenyu Tian, Tao Yuan, René Fournet, Pierre-Alexandre Glaude, Baptiste Sirjean,
 
 ## Abstract
 
-not available
+The detailed chemical structures of three low-pressure (35Torr) premixed laminar furan/oxygen/argon flames with equivalence ratios of 1.4, 1.8 and 2.2 have been investigated by using tunable synchrotron vacuum ultraviolet (VUV) photoionization and molecular-beam mass spectrometry. About 40 combustion species including hydrocarbons and oxygenated intermediates have been identified by measurements of photoionization efficiency spectra. Mole fraction profiles of the flame species including reactants, intermediates and products have been determined by scanning burner position with some selected photon energies near ionization thresholds. Flame temperatures have been measured by a Pt–6%Rh/Pt–30%Rh thermocouple. A new mechanism involving 206 species and 1368 reactions has been proposed whose predictions are in reasonable agreement with measured species profiles for the three investigated flames. Rate-of-production and sensitivity analyses have been performed to track the key reaction paths governing furan consumption for different equivalence ratios. Both experimental and modeling results indicate that few aromatics could be formed in these flames. Furthermore, the current model has been validated against previous pyrolysis results of the literature obtained behind shock waves and the agreement is reasonable as well.
 
 ## Processing Notes
 

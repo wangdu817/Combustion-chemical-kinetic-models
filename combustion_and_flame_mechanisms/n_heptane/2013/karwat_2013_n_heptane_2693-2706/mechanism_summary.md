@@ -42,7 +42,7 @@ Darshan M.A. Karwat, Scott W. Wagnon, Margaret S. Wooldridge, Charles K. Westbro
 
 ## Abstract
 
-not available
+Although there have been many ignition studies of n-heptane—a primary reference fuel—few studies have provided detailed insights into the low-temperature chemistry of n-heptane through direct measurements of intermediate species formed during ignition. Such measurements provide understanding of reaction pathways that form toxic air pollutants and greenhouse gas emissions while also providing key metrics essential to the development of chemical kinetic mechanisms. This paper presents new ignition and speciation data taken at high pressure (9atm), low temperatures (660–710K), and a dilution of inert gases-to-molecular oxygen of 5.64 (mole basis). The detailed time-histories of 17 species, including large alkenes, aldehydes, carbon monoxide, and n-heptane were quantified using gas chromatography. A detailed chemical kinetic mechanism developed previously for oxidation of n-heptane reproduced experimentally observed ignition delay times reasonably well, but predicted levels of some important intermediate chemical species that were significantly different from measured values. Results from recent theoretical studies of low temperature hydrocarbon oxidation reaction rates were used to upgrade the chemical kinetic mechanism for n-heptane, leading to much better agreement between experimental and computed intermediate species concentrations. The implications of these results to many other hydrocarbon fuel oxidation mechanisms in the literature are discussed.
 
 ## Processing Notes
 

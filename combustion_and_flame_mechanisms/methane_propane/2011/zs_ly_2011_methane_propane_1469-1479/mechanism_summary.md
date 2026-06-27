@@ -31,9 +31,9 @@ I.Gy. Zsély, T. Nagy, J.M. Simmie, H.J. Curran. Reduction of a detailed kinetic
 ### Mechanism 1
 
 - Status: cantera_failed
-- Species count: 230
-- Reaction count: 4978
-- Message: CanteraError: ******************************************************************************* CanteraError thrown by Kinetics::checkDuplicates: Error on lines 2573 and 8007 of /home/icaurs/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/methane_propane/2011/zs_ly_2011_methane_propane_1469-1479/mechanism.yaml: Undeclared duplicate reactions detected: Reaction 1: H + O2 => O + OH Reaction 2490: H + O2 => O + OH | Line | | 2568 | - [9.10784249, 5.27260434e-03, -1.88170543e-06, 3.00561364e-10, | 2569 | -1.77865959e-14, 3774.40183, -21.1741044] | 2570 | note: 1/14/ 5 THERM | 2571 | | 2572 | reactions: > 2573 > - equation: H + O2 => O + OH # Reaction 1 ^ | 2574 | rate-constant: {A: 3.547e+15, b: -0.406, Ea: 1.66e+04} | 2575 | - equation: O + OH => H + O2 # Reaction 2 | 2576 | ... [truncated; see _processing logs]
+- Species count: 51
+- Reaction count: 552
+- Message: CanteraError: ******************************************************************************* CanteraError thrown by Kinetics::checkDuplicates: Error on lines 576 and 1299 of /home/icaurs/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/methane_propane/2011/zs_ly_2011_methane_propane_1469-1479/mechanism.yaml: Undeclared duplicate reactions detected: Reaction 1: H + O2 => O + OH Reaction 277: H + O2 => O + OH | Line | | 571 | - [11.3456574, 0.0180843428, -6.17276514e-06, 9.56925815e-10, | 572 | -5.54586212e-14, -5886.5945, -36.4627206] | 573 | note: '062904' | 574 | | 575 | reactions: > 576 > - equation: H + O2 => O + OH # Reaction 1 ^ | 577 | rate-constant: {A: 3.547e+15, b: -0.406, Ea: 1.66e+04} | 578 | - equation: O + OH => H + O2 # Reaction 2 | 579 | rate-constant: {A: ... [truncated; see _processing logs]
 - Method: cantera
 - Cantera YAML: mechanism.yaml
 - Standard chem.inp: chem.inp
@@ -44,8 +44,8 @@ I.Gy. Zsély, T. Nagy, J.M. Simmie, H.J. Curran. Reduction of a detailed kinetic
 
 - Status: cantera_failed
 - Species count: 51
-- Reaction count: 914
-- Message: CanteraError: ******************************************************************************* CanteraError thrown by Kinetics::checkDuplicates: Error on lines 576 and 1666 of /home/icaurs/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/methane_propane/2011/zs_ly_2011_methane_propane_1469-1479/mechanism.yaml: Undeclared duplicate reactions detected: Reaction 1: H + O2 => O + OH Reaction 458: H + O2 => O + OH | Line | | 571 | - [11.3456574, 0.0180843428, -6.17276514e-06, 9.56925815e-10, | 572 | -5.54586212e-14, -5886.5945, -36.4627206] | 573 | note: '062904' | 574 | | 575 | reactions: > 576 > - equation: H + O2 => O + OH # Reaction 1 ^ | 577 | rate-constant: {A: 3.547e+15, b: -0.406, Ea: 1.66e+04} | 578 | - equation: O + OH => H + O2 # Reaction 2 | 579 | rate-constant: {A: ... [truncated; see _processing logs]
+- Reaction count: 552
+- Message: CanteraError: ******************************************************************************* CanteraError thrown by Kinetics::checkDuplicates: Error on lines 576 and 1299 of /home/icaurs/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/methane_propane/2011/zs_ly_2011_methane_propane_1469-1479/mechanism.yaml: Undeclared duplicate reactions detected: Reaction 1: H + O2 => O + OH Reaction 277: H + O2 => O + OH | Line | | 571 | - [11.3456574, 0.0180843428, -6.17276514e-06, 9.56925815e-10, | 572 | -5.54586212e-14, -5886.5945, -36.4627206] | 573 | note: '062904' | 574 | | 575 | reactions: > 576 > - equation: H + O2 => O + OH # Reaction 1 ^ | 577 | rate-constant: {A: 3.547e+15, b: -0.406, Ea: 1.66e+04} | 578 | - equation: O + OH => H + O2 # Reaction 2 | 579 | rate-constant: {A: ... [truncated; see _processing logs]
 - Method: cantera
 - Cantera YAML: mechanism.yaml
 - Standard chem.inp: chem.inp
@@ -66,7 +66,7 @@ I.Gy. Zsély, T. Nagy, J.M. Simmie, H.J. Curran. Reduction of a detailed kinetic
 
 ## Abstract
 
-not available
+Natural gas is the primary fuel for industrial gas turbines, which provide about one quarter of the world’s primary energy supply. Beside methane it also contains larger hydrocarbons in small, varying ratios. This variation is expected to rise due to the increasing usage of non-traditional gas sources. Fuel composition has a large impact on auto-ignition delay time, which is a fundamental parameter for the optimal design and operation of gas turbines. For the oxidation of such mixtures, Curran, Petersen and co-workers recently developed a detailed reaction mechanism (NUIG NGM), which reproduces the ignition delays over a wide range of conditions. However, due to its large size: 229 species and 1359 reactions, it cannot be used in computational fluid dynamics simulations, which is an important fundamental tool in the development of gas turbines. A mechanism reduction case study of the NUIG NGM is presented using the recently developed simulation error minimization methods (SEM). A new version of the SEM program package is also proposed, which allows the reduction of mechanisms for a wider range of combustion phenomena. Combinational strategies have been introduced in the SEM connectivity method to enhance the reduction procedure and a hierarchical reduction procedure is proposed for multi-scenario problems. Ignition of lean and stoichiometric mixtures containing 90% methane and 10% propane as fuel were investigated for 22 conditions relevant to gas turbines, covering temperature and pressure ranges of 877–1465K and 7–40atm, respectively. The smallest reduced mechanism developed contains 50 species and 186 reactions. It can reproduce ignition delays with 3.1% maximum error and reproduces pressure rise precisely (error∼10−3%). The mechanism can be simulated 62 times faster than the full mechanism. Robustness analysis showed that it is reliably applicable over a much wider range of conditions compared to that for which it was developed.
 
 ## Processing Notes
 

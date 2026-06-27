@@ -15,7 +15,7 @@ Kai Moshammer, Stijn Vranckx, Harish K. Chakravarty, Prajakta Parab, Ravi X. Fer
 - Paper PDF link: 
 - Fuel type: furan_tetrahydrofuran
 - Plasma-related mechanism: no
-- Validation reactor/type from abstract: not clear from abstract
+- Validation reactor/type from abstract: burner/flame structure
 
 ## Mechanism Files
 
@@ -42,7 +42,7 @@ Kai Moshammer, Stijn Vranckx, Harish K. Chakravarty, Prajakta Parab, Ravi X. Fer
 
 ## Abstract
 
-not available
+Clean combustion processes are of paramount importance in the transition of the energy system towards increased sustainability. In an attempt to partially replace conventional fossil fuels, bio-derived oxygenates attract rising attention as alternative transportation fuels. Among this class of fuels, cyclic structures that can be derived from cellulosic biomass are particularly interesting. Here we present a study of premixed, laminar low-pressure flames of 2-methyltetrahydrofuran (2-MTHF) with an equivalence ratio of ϕ =1.7 at 40mbar. Time-of-flight molecular-beam mass spectrometry (MBMS) with electron ionization (EI) was used to analyze and quantify mole fraction profiles of reactants, products, and most intermediate species including radicals involved in the combustion process. As a valuable complement, MBMS using single-photon ionization (PI) by vacuum ultraviolet radiation permitted isomer identification as well as independent concentration information under similar flame conditions. A detailed combustion model for 2-MTHF was developed, and the flame structure and species information were examined in conjunction with these experiments.
 
 ## Processing Notes
 

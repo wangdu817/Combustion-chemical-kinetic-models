@@ -15,7 +15,7 @@ Zekai Hong, David F. Davidson, Ronald K. Hanson. An improved H2/O2 mechanism bas
 - Paper PDF link: 
 - Fuel type: hydrogen
 - Plasma-related mechanism: no
-- Validation reactor/type from abstract: shock tube
+- Validation reactor/type from abstract: shock tube, flow reactor, laminar flame speed, burner/flame structure
 
 ## Mechanism Files
 
@@ -42,7 +42,7 @@ Zekai Hong, David F. Davidson, Ronald K. Hanson. An improved H2/O2 mechanism bas
 
 ## Abstract
 
-not available
+An updated H2/O2 reaction mechanism is presented that incorporates recent reaction rate determinations in shock tubes from our laboratory. These experiments used UV and IR laser absorption to monitor species time-histories and have resulted in improved high-temperature rate constants for the following reactions: H + O 2 = OH + O H 2 O 2 ( + M ) = 2 OH ( + M ) OH + H 2 O 2 = HO 2 + H 2 O O 2 + H 2 O = OH + HO 2 The updated mechanism also takes advantage of the results of other recent rate coefficient studies, and incorporates the most current thermochemical data for OH and HO2. The mechanism is tested (and its performance compared to that of other H2/O2 mechanisms) against recently reported OH and H2O concentration time-histories in various H2/O2 systems, such as H2 oxidation, H2O2 decomposition, and shock-heated H2O/O2 mixtures. In addition, the mechanism is validated against a wide range of standard H2/O2 kinetic targets, including ignition delay times, flow reactor species time-histories, laminar flame speeds, and burner-stabilized flame structures. This validation indicates that the updated mechanism should perform reliably over a range of reactant concentrations, stoichiometries, pressures, and temperatures from 950 to greater than 3000K.
 
 ## Processing Notes
 

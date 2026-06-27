@@ -42,7 +42,7 @@ S.M. Sarathy, C. Yeung, C.K. Westbrook, W.J. Pitz, M. Mehl, M.J. Thomson. An exp
 
 ## Abstract
 
-not available
+Fischer–Tropsch (FT) fuels derived from biomass syngas are renewable fuels that can replace conventional petroleum fuels in jet engine and diesel engine applications. FT fuels typically contain a high concentration of lightly methylated iso-alkanes, whereas petroleum derived jet and diesel fuels contain large fractions of n-alkanes, cycloalkanes, and aromatics plus some lightly methylated iso-alkanes. In order to better understand the combustion characteristics of FT and petroleum fuels, this study presents new experimental data for 2-methylheptane and n-octane in an opposed-flow diffusion flame. The high temperature oxidation of 2-methylheptane and n-octane has been modeled using an extended transport database and a reaction mechanism consisting of 3401 reactions involving 714 species. The proposed model shows good qualitative and quantitative agreement with the experimental data. The measured and predicted concentrations of 1-alkenes and ethylene are higher in the n-octane flame, while the concentrations of iso-alkenes (especially iso-butene) and propene are higher in the 2-methylheptane flame. The proposed chemical kinetic model is used to delineate the reactions pathways leading to these observed differences in product species concentrations. An uncertainty analysis was conducted to assess experimental and modeling uncertainties. The results indicate that the simulations are sensitive to the transport parameters used to calculate fuel diffusion.
 
 ## Processing Notes
 

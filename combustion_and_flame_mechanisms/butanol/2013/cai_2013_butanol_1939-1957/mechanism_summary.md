@@ -15,7 +15,7 @@ Jianghuai Cai, Wenhao Yuan, Lili Ye, Zhanjun Cheng, Yizun Wang, Lidong Zhang, et
 - Paper PDF link: 
 - Fuel type: butanol
 - Plasma-related mechanism: no
-- Validation reactor/type from abstract: not clear from abstract
+- Validation reactor/type from abstract: shock tube, jet-stirred reactor, flow reactor, laminar flame speed, burner/flame structure, stirred reactor
 
 ## Mechanism Files
 
@@ -42,7 +42,7 @@ Jianghuai Cai, Wenhao Yuan, Lili Ye, Zhanjun Cheng, Yizun Wang, Lidong Zhang, et
 
 ## Abstract
 
-not available
+2-Butanol (sC4H9OH) pyrolysis has been studied in a flow reactor with the synchrotron vacuum ultraviolet photoionization mass spectrometry combined with the molecular-beam sampling technique. The pyrolysis species were identified and their mole fractions were determined. Four pressures of 5, 30, 150 and 760Torr were selected to study the pressure dependence of 2-butanol pyrolysis chemistry. The temperature- and pressure-dependent rate constants of unimolecular reactions of 2-butanol were calculated with the RRKM/Master Equation method. With the help of theoretical calculations, a detailed kinetic model consisting of 160 species and 1038 reactions was developed to simulate the 2-butanol pyrolysis. It is concluded that the mole fractions of pyrolysis species are very sensitive to the 2-butanol unimolecular reaction rates. To enhance the accuracy, the model is further validated by the species profiles in shock tube pyrolysis, a rich laminar premixed flame, oxidation data from jet-stirred reactor, ignition delay times, and laminar flame speed. Good agreements between the predicted and measured results were obtained.
 
 ## Processing Notes
 

@@ -1,7 +1,7 @@
 generator: ck2yaml
-input-files: [1.inp, 2.dat, 3.dat]
-cantera-version: 3.0.0
-date: Fri, 14 Nov 2025 12:27:35 +0800
+input-files: [chem.inp, therm.dat, tran.dat]
+cantera-version: 3.2.0
+date: Sat, 27 Jun 2026 16:05:41 +0800
 
 units: {length: cm, time: s, quantity: mol, activation-energy: cal/mol}
 
@@ -9,17 +9,15 @@ phases:
 - name: gas
   thermo: ideal-gas
   elements: [O, H, N, He, Ar, C]
-  species: [H, H2, O, O2, OH, HO2, H2O, H2O2, AR, HE, CO, CO2, CH2, CH2(S),
-    CH3, CH4, HCO, CH2O, CH2OH, CH3O, CH3O2, CH3OH, CH3O2H, CH3CHO, C2H2,
-    C2H3, C2H4, C2H5, C2H6, CH2CHO, CH3CO, HCCO, HCN, H2CN, HNCO, CH3NH2,
-    CH3NO2, N, N2, NH, NH2, NH3, NNH, N2H2, N2H3, NO, NO2, N2O, HNO, HNO2,
-    HONO, H2NN, H2NO]
+  species: [H, H2, O, O2, OH, HO2, H2O, H2O2, AR, HE, CO, CO2, CH2, 
+      CH2(S), CH3, CH4, HCO, CH2O, CH2OH, CH3O, CH3O2, CH3OH, CH3O2H, 
+      CH3CHO, C2H2, C2H3, C2H4, C2H5, C2H6, CH2CHO, CH3CO, HCCO, HCN, 
+      H2CN, HNCO, CH3NH2, CH3NO2, N, N2, NH, NH2, NH3, NNH, N2H2, N2H3,
+    NO, NO2, N2O, HNO, HNO2, HONO, H2NN, H2NO]
   kinetics: gas
   transport: mixture-averaged
   state: {T: 300.0, P: 1 atm}
 
-species:
-- name: H
 species:
 - name: H
   composition: {H: 1}

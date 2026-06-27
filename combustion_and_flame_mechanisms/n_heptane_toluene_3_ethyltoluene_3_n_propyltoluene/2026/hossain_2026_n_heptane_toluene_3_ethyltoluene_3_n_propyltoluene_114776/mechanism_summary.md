@@ -30,10 +30,10 @@ S. Hossain, M. Abdulrahman, P.T. Lynch, Eric K. Mayhew, K. Brezinsky. Understand
 
 ### Mechanism 1
 
-- Status: cantera_failed
-- Species count: 1734
-- Reaction count: 20413
-- Message: CanteraError: ******************************************************************************* InputFileError thrown by AnyMap::fromYamlFile: Error on line 49343 of /home/icaurs/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/n_heptane_toluene_3_ethyltoluene_3_n_propyltoluene/2026/hossain_2026_n_heptane_toluene_3_ethyltoluene_3_n_propyltoluene_114776/mechanism.yaml: end of map not found | Line | | 49338 | - { P: 3.000 atm, A: 3.90e+38, b: -7.051, Ea: 1.0778e+05 } | 49339 | - { P: 10.000 atm, A: 3.24e+35, b: -6.070, Ea: 1.0680e+05 } | 49340 | - { P: 30.000 atm, A: 1.62e+32, b: -5.051, Ea: 1.0551e+05 } | 49341 | - { P: 100.000 atm, A: 2.11e+28, b: -3.873, Ea: 1.0379e+05 } | 49342 | - equation: CH2C => C2H2 # Reaction 18262 (SJ Klippenstein and Raghu Sivaramakrishnan) > 4934 ... [truncated; see _processing logs]
+- Status: ok
+- Species count: 647
+- Reaction count: 18629
+- Message: cantera conversion ok
 - Method: cantera
 - Cantera YAML: mechanism.yaml
 - Standard chem.inp: chem.inp
@@ -43,9 +43,9 @@ S. Hossain, M. Abdulrahman, P.T. Lynch, Eric K. Mayhew, K. Brezinsky. Understand
 ### Mechanism 2
 
 - Status: cantera_failed
-- Species count: 1734
-- Reaction count: 20413
-- Message: CanteraError: ******************************************************************************* InputFileError thrown by AnyMap::fromYamlFile: Error on line 49343 of /home/icaurs/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/n_heptane_toluene_3_ethyltoluene_3_n_propyltoluene/2026/hossain_2026_n_heptane_toluene_3_ethyltoluene_3_n_propyltoluene_114776/mechanism.yaml: end of map not found | Line | | 49338 | - { P: 3.000 atm, A: 3.90e+38, b: -7.051, Ea: 1.0778e+05 } | 49339 | - { P: 10.000 atm, A: 3.24e+35, b: -6.070, Ea: 1.0680e+05 } | 49340 | - { P: 30.000 atm, A: 1.62e+32, b: -5.051, Ea: 1.0551e+05 } | 49341 | - { P: 100.000 atm, A: 2.11e+28, b: -3.873, Ea: 1.0379e+05 } | 49342 | - equation: CH2C => C2H2 # Reaction 18262 (SJ Klippenstein and Raghu Sivaramakrishnan) > 4934 ... [truncated; see _processing logs]
+- Species count: 647
+- Reaction count: 18629
+- Message: CanteraError: ******************************************************************************* InputFileError thrown by AnyMap::fromYamlFile: Error on line 0 of /home/icaurs/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/n_heptane_toluene_3_ethyltoluene_3_n_propyltoluene/2026/hossain_2026_n_heptane_toluene_3_ethyltoluene_3_n_propyltoluene_114776/mechanism.yaml: bad conversion | Line | *******************************************************************************
 - Method: cantera
 - Cantera YAML: mechanism.yaml
 - Standard chem.inp: chem.inp

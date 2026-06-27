@@ -30,10 +30,10 @@ Aboli Pingle, Sudarshan Kumar, Neeraj Kumbhakarna. Unravelling the combustion ki
 
 ### Mechanism 1
 
-- Status: ok
+- Status: cantera_failed
 - Species count: 102
 - Reaction count: 118
-- Message: cantera conversion ok
+- Message: InputError: Error while reading reaction in chem.inp starting on line 7: """ C6H5NHCH3=C6H5NCH3+H 4.4929810E15 0.3 6.4287762E4 """ Unexpected token 'C6H5NHCH3' in reaction expression 'C6H5NHCH3=C6H5NCH3+H'. May be due to undeclared species 'C6H5NHCH3'. Error while reading reaction in chem.inp starting on line 8: """ C6H5NHCH3=C6H4NHCH3+H 1.4747340E15 0.2 6.5159894E4 """ Unexpected token 'C6H5NHCH3' in reaction expression 'C6H5NHCH3=C6H4NHCH3+H'. May be due to undeclared species 'C6H5NHCH3'. Error while reading reaction in chem.inp starting on line 9: """ C6H5NHCH3=C6H4NHCH2+H2 3.017458E19 -1.2 6.477075E4 """ Unexpected token 'C6H5NHCH3' in reaction expression 'C6H5NHCH3=C6H4NHCH2+H2'. May be due to undeclared species 'C6H5NHCH3'. Error while reading reaction in chem.inp starting on line 10 ... [truncated; see _processing logs]
 - Method: cantera
 - Cantera YAML: mechanism.yaml
 - Standard chem.inp: chem.inp
