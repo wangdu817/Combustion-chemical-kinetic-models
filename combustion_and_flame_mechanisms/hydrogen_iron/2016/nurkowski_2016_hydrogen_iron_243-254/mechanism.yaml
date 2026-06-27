@@ -1,0 +1,2974 @@
+description: |2-
+   Skeletal version of the TEOS oxidation mechanism in oxygen-hydrogen flames. (Mechanism size: 70 Species 457 Reactions).
+   Mechanism obtained via 3-stage reduction method performed on the detialed TEOS mechanism.
+
+   References:
+   1. Marinov 1999  : N. M. Marinov; A detailed chemical kinetic model for high temperature ethanol oxidation.; International Journal of Chemical Kinetics, 31(3):183220, 1999
+   2. Nurkowski 2015: D. Nurkowski, S. J. Klippenstein, Y. Georgievskii, M. Verdicchio, A. W. Jasper, J. Akroyd, S. Mosbach, and M. Kraft; Ab initio Variational Transition State Theory
+                      and Master Equation Study of the Reaction (OH)3SiOCH2+CH3 <=>( OH)3SiOC2H5.;, Zeitschrift fr Physikalische Chemie, 334:118, 2015.
+   3. Park 2002     : J. Park, R. S. Zhu, and M. C. Lin; Thermal decomposition of ethanol. i. ab initio molecular orbital/Rice-Ramsperger-Kassel-Marcus prediction of rate constant and
+                      product branching ratios.; Journal of Chemical Physics, 117, 2002
+   4. Rao 2011      : H. B. Rao, X. Y. Zeng, H. He, and Z. R. Li; Theoretical investigations on removal reactions of ethenol by H atom.; Journal of Physical Chemistry, 115:16021608, 2011
+   5. Coltrin 2000  : M. E. Coltrin, P. Ho, H. K. Moffat, and R. J. Buss; Chemical kinetics in chemical vapor deposition: growth of silicon dioxide from tetraethoxysilane (TEOS).; Thin
+                      Solid Films, 365(2):251263, 2000
+  --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+   Thermodynamic properties for silica and hydrocarbon species.
+
+  ELEM
+  SI O C H AR
+  END
+
+  SPECIES
+   Silica species, *nr marks newly added species 
+  1    SI(OC2H5)4                          C8H20O4SI     
+  2    SI(OCH2)(OC2H5)3                    C7H17O4SI     
+  3    SI(O)(OC2H5)3                       C6H15O4SI     
+  4    SI(OH)(OC2H5)3                      C6H16O4SI     
+  5    SI(OC2H4)(OC2H5)3                   C8H19O4SI     
+  6    SI(OCHCH3)(OC2H5)3                  C8H19O4SI_2   
+  7    SI(OCH=CH2)(OC2H5)3                 C8H18O4SI     
+  8    SI(OC2H5)2(O=)                      C4H10O3SI 	*1    
+  9    SI(OH)(OCH2)(OC2H5)2                C5H13O4SI     
+  10   SI(OCH2)(OCH=CH2)(OC2H5)2           C7H15O4SI     
+  11   SI(OCH2)(OC2H5)(O=)                 C3H7O3SI   	*2   
+  12   SI(OCH3)(OC2H5)3                    C7H18O4SI     
+  13   SI(O)(OH)(OC2H5)2                   C4H11O4SI     
+  14   SI(O)(OCH=CH2)(OC2H5)2              C6H13O4SI     
+  15   SI(O)(OC2H5)(O=)                    C2H5O3SI    	*3  
+  16   SI(OH)2(OC2H5)2                     C4H12O4SI     
+  17   SI(OH)(OC2H4)(OC2H5)2               C6H15O4SI_2   
+  18   SI(OH)(OCHCH3)(OC2H5)2              C6H15O4SI_3   
+  19   SI(OH)(OCH=CH2)(OC2H5)2             C6H14O4SI     
+  20   SI(OH)(OC2H5)(O=)                   C2H6O3SI     	*4 
+  21   SI(OC2H4)(OCH=CH2)(OC2H5)2          C8H17O4SI     
+  22   SI(OC2H4)(OC2H5)(O=)                C4H9O3SI      *5
+  23   SI(OCHCH3)(OCH=CH2)(OC2H5)2         C8H17O4SI_2   
+  24   SI(OCHCH3)(OC2H5)(O=)               C4H9O3SI_2    *6
+  25   SI(OCH=CH2)2(OC2H5)2                C8H16O4SI     
+  26   SI(OCH=CH2)(OC2H5)(O=)              C4H8O3SI      *7
+  27   SI(O=)2                             O2SI          *8
+  28   SI(OH)2(OCH2)(OC2H5)                C3H9O4SI      
+  29   SI(OH)(OCH2)(OCH=CH2)(OC2H5)        C5H11O4SI     
+  30   SI(OH)(OCH2)(O=)                    CH3O3SI       *9
+  31   SI(OCH2)(OCH=CH2)2(OC2H5)           C7H13O4SI     
+  32   SI(OCH2)(OCH=CH2)(O=)               C3H5O3SI      *10
+  33   SI(OCH2)(OCH3)(OC2H5)2              C6H15O4SI_4   
+  34   SI(O)(OCH3)(OC2H5)2                 C5H13O4SI_2   
+  35   SI(OH)(OCH3)(OC2H5)2                C5H14O4SI     
+  36   SI(OCH3)(OC2H4)(OC2H5)2             C7H17O4SI_2   
+  37   SI(OCH3)(OCHCH3)(OC2H5)2            C7H17O4SI_3   
+  38   SI(OCH3)(OCH=CH2)(OC2H5)2           C7H16O4SI     
+  39   SI(OCH3)(OC2H5)(O=)                 C3H8O3SI      *11
+  40   SI(O)(OH)2(OC2H5)                   C2H7O4SI      
+  41   SI(O)(OH)(OCH=CH2)(OC2H5)           C4H9O4SI      
+  42   SI(O)(OH)(O=)                       HO3SI         *12
+  43   SI(O)(OCH=CH2)2(OC2H5)              C6H11O4SI     
+  44   SI(O)(OCH=CH2)(O=)                  C2H3O3SI      *13
+  45   SI(OH)3(OC2H5)                      C2H8O4SI      
+  46   SI(OH)2(OC2H4)(OC2H5)               C4H11O4SI_2   
+  47   SI(OH)2(OCHCH3)(OC2H5)              C4H11O4SI_3   
+  48   SI(OH)2(OCH=CH2)(OC2H5)             C4H10O4SI     
+  49   SI(OH)2(O=)                         H2O3SI        *14
+  50   SI(OH)(OC2H4)(OCH=CH2)(OC2H5)       C6H13O4SI_2   
+  51   SI(OH)(OC2H4)(O=)                   C2H5O3SI_2    *15
+  52   SI(OH)(OCHCH3)(OCH=CH2)(OC2H5)      C6H13O4SI_3   
+  53   SI(OH)(OCHCH3)(O=)                  C2H5O3SI_3    *16
+  54   SI(OH)(OCH=CH2)2(OC2H5)             C6H12O4SI     
+  55   SI(OH)(OCH=CH2)(O=)                 C2H4O3SI      *17
+  56   SI(OC2H4)(OCH=CH2)2(OC2H5)          C8H15O4SI     
+  57   SI(OC2H4)(OCH=CH2)(O=)              C4H7O3SI      *18
+  58   SI(OCHCH3)(OCH=CH2)2(OC2H5)         C8H15O4SI_2   
+  59   SI(OCHCH3)(OCH=CH2)(O=)             C4H7O3SI_2    *19
+  60   SI(OCH=CH2)3(OC2H5)                 C8H14O4SI     
+  61   SI(OCH=CH2)2(O=)                    C4H6O3SI      *20
+  62   SI(OH)3(OCH2)                       CH5O4SI       
+  63   SI(OH)2(OCH2)(OCH=CH2)              C3H7O4SI      
+  64   SI(OH)(OCH2)(OCH=CH2)2              C5H9O4SI      
+  65   SI(OCH2)(OCH=CH2)3                  C7H11O4SI     
+  66   SI(OH)(OCH2)(OCH3)(OC2H5)           C4H11O4SI_4   
+  67   SI(OCH2)(OCH3)(OCH=CH2)(OC2H5)      C6H13O4SI_4   
+  68   SI(OCH2)(OCH3)(O=)                  C2H5O3SI_4    *21
+  69   SI(OCH3)2(OC2H5)2                   C6H16O4SI_2   
+  70   SI(O)(OH)(OCH3)(OC2H5)              C3H9O4SI_2    
+  71   SI(O)(OCH3)(OCH=CH2)(OC2H5)         C5H11O4SI_2   
+  72   SI(O)(OCH3)(O=)                     CH3O3SI_2     *22
+  73   SI(OH)2(OCH3)(OC2H5)                C3H10O4SI     
+  74   SI(OH)(OCH3)(OC2H4)(OC2H5)          C5H13O4SI_3   
+  75   SI(OH)(OCH3)(OCHCH3)(OC2H5)         C5H13O4SI_4   
+  76   SI(OH)(OCH3)(OCH=CH2)(OC2H5)        C5H12O4SI     
+  77   SI(OH)(OCH3)(O=)                    CH4O3SI       *23
+  78   SI(OCH3)(OC2H4)(OCH=CH2)(OC2H5)     C7H15O4SI_2   
+  79   SI(OCH3)(OC2H4)(O=)                 C3H7O3SI_2    *24
+  80   SI(OCH3)(OCHCH3)(OCH=CH2)(OC2H5)    C7H15O4SI_3   
+  81   SI(OCH3)(OCHCH3)(O=)                C3H7O3SI_3    *25
+  82   SI(OCH3)(OCH=CH2)2(OC2H5)           C7H14O4SI     
+  83   SI(OCH3)(OCH=CH2)(O=)               C3H6O3SI      *26
+  84   SI(O)(OH)3                          H3O4SI        
+  85   SI(O)(OH)2(OCH=CH2)                 C2H5O4SI      
+  86   SI(O)(OH)(OCH=CH2)2                 C4H7O4SI      
+  87   SI(O)(OCH=CH2)3                     C6H9O4SI      
+  88   SI(OH)4                             H4O4SI        
+  89   SI(OH)3(OC2H4)                      C2H7O4SI_2    
+  90   SI(OH)3(OCHCH3)                     C2H7O4SI_3    
+  91   SI(OH)3(OCH=CH2)                    C2H6O4SI      
+  92   SI(OH)2(OC2H4)(OCH=CH2)             C4H9O4SI_2    
+  93   SI(OH)2(OCHCH3)(OCH=CH2)            C4H9O4SI_3    
+  94   SI(OH)2(OCH=CH2)2                   C4H8O4SI      
+  95   SI(OH)(OC2H4)(OCH=CH2)2             C6H11O4SI_2   
+  96   SI(OH)(OCHCH3)(OCH=CH2)2            C6H11O4SI_3   
+  97   SI(OH)(OCH=CH2)3                    C6H10O4SI     
+  98   SI(OC2H4)(OCH=CH2)3                 C8H13O4SI     
+  99   SI(OCHCH3)(OCH=CH2)3                C8H13O4SI_2   
+  100  SI(OCH=CH2)4                        C8H12O4SI     
+  101  SI(OH)2(OCH2)(OCH3)                 C2H7O4SI_4    
+  102  SI(OH)(OCH2)(OCH3)(OCH=CH2)         C4H9O4SI_4    
+  103  SI(OCH2)(OCH3)(OCH=CH2)2            C6H11O4SI_4   
+  104  SI(OCH2)(OCH3)2(OC2H5)              C5H13O4SI_5   
+  105  SI(O)(OCH3)2(OC2H5)                 C4H11O4SI_5   
+  106  SI(OH)(OCH3)2(OC2H5)                C4H12O4SI_2   
+  107  SI(OCH3)2(OC2H4)(OC2H5)             C6H15O4SI_5   
+  108  SI(OCH3)2(OCHCH3)(OC2H5)            C6H15O4SI_6   
+  109  SI(OCH3)2(OCH=CH2)(OC2H5)           C6H14O4SI_2   
+  110  SI(OCH3)2(O=)                       C2H6O3SI_2    *27
+  111  SI(O)(OH)2(OCH3)                    CH5O4SI_2     
+  112  SI(O)(OH)(OCH3)(OCH=CH2)            C3H7O4SI_2    
+  113  SI(O)(OCH3)(OCH=CH2)2               C5H9O4SI_2    
+  114  SI(OH)3(OCH3)                       CH6O4SI       
+  115  SI(OH)2(OCH3)(OC2H4)                C3H9O4SI_3    
+  116  SI(OH)2(OCH3)(OCHCH3)               C3H9O4SI_4    
+  117  SI(OH)2(OCH3)(OCH=CH2)              C3H8O4SI      
+  118  SI(OH)(OCH3)(OC2H4)(OCH=CH2)        C5H11O4SI_3   
+  119  SI(OH)(OCH3)(OCHCH3)(OCH=CH2)       C5H11O4SI_4   
+  120  SI(OH)(OCH3)(OCH=CH2)2              C5H10O4SI     
+  121  SI(OCH3)(OC2H4)(OCH=CH2)2           C7H13O4SI_2   
+  122  SI(OCH3)(OCHCH3)(OCH=CH2)2          C7H13O4SI_3   
+  123  SI(OCH3)(OCH=CH2)3                  C7H12O4SI     
+  124  SI(OH)(OCH2)(OCH3)2                 C3H9O4SI_5    
+  125  SI(OCH2)(OCH3)2(OCH=CH2)            C5H11O4SI_5   
+  126  SI(OCH3)3(OC2H5)                    C5H14O4SI_2   
+  127  SI(O)(OH)(OCH3)2                    C2H7O4SI_5    
+  128  SI(O)(OCH3)2(OCH=CH2)               C4H9O4SI_5    
+  129  SI(OH)2(OCH3)2                      C2H8O4SI_2    
+  130  SI(OH)(OCH3)2(OC2H4)                C4H11O4SI_6   
+  131  SI(OH)(OCH3)2(OCHCH3)               C4H11O4SI_7   
+  132  SI(OH)(OCH3)2(OCH=CH2)              C4H10O4SI_2   
+  133  SI(OCH3)2(OC2H4)(OCH=CH2)           C6H13O4SI_5   
+  134  SI(OCH3)2(OCHCH3)(OCH=CH2)          C6H13O4SI_6   
+  135  SI(OCH3)2(OCH=CH2)2                 C6H12O4SI_2   
+  136  SI(OCH2)(OCH3)3                     C4H11O4SI_8   
+  137  SI(O)(OCH3)3                        C3H9O4SI_6    
+  138  SI(OH)(OCH3)3                       C3H10O4SI_2   
+  139  SI(OCH3)3(OC2H4)                    C5H13O4SI_6   
+  140  SI(OCH3)3(OCHCH3)                   C5H13O4SI_7   
+  141  SI(OCH3)3(OCH=CH2)                  C5H12O4SI_2   
+  142  SI(OCH3)4                           C4H12O4SI_3   
+
+   Plus hydrocarbons and argon
+  END
+
+generator: ck2yaml
+input-files: [chem.inp, therm.dat]
+cantera-version: 3.2.0
+date: Sat, 27 Jun 2026 11:25:08 +0800
+
+units: {length: cm, time: s, quantity: mol, activation-energy: cal/mol}
+
+phases:
+- name: gas
+  thermo: ideal-gas
+  elements: [Ar, C, H, N, O, Si]
+  species: [C8H20O4SI, C7H17O4SI, C6H15O4SI, C6H16O4SI, C8H19O4SI, 
+      C8H19O4SI_2, C8H18O4SI, C5H13O4SI, C7H15O4SI, C7H18O4SI, 
+      C4H11O4SI, C6H13O4SI, C4H12O4SI, C6H15O4SI_2, C6H15O4SI_3, 
+      C8H17O4SI, C3H9O4SI, C5H11O4SI, C6H15O4SI_4, C5H13O4SI_2, 
+      C5H14O4SI, C7H17O4SI_2, C2H7O4SI, C2H8O4SI, C4H11O4SI_2, 
+      C4H11O4SI_3, CH5O4SI, C4H11O4SI_4, C3H9O4SI_2, C3H10O4SI, H3O4SI,
+    H4O4SI, C2H7O4SI_2, C2H7O4SI_3, C2H6O4SI, C2H7O4SI_4, CH5O4SI_2, 
+      CH6O4SI, N2, H2, H, H2O, CH4, CH3, CH2, CH2O, HCO, CO2, CO, O2, 
+      O, OH, HO2, H2O2, C2H, HCCO, C2H2, C2H3, C2H4, C2H5, C2H5OH, AR, 
+      C2H6, CH2(S), CH2CO, CH2HCO, C3H6, C2H4OH, CH3CH2O, HOC2H4O2]
+  kinetics: gas
+  state: {T: 300.0, P: 1 atm}
+
+elements:
+- symbol: Ar
+  atomic-weight: 39.948
+- symbol: C
+  atomic-weight: 12.011
+- symbol: H
+  atomic-weight: 1.0079
+- symbol: N
+  atomic-weight: 14.0067
+- symbol: O
+  atomic-weight: 15.9994
+- symbol: Si
+  atomic-weight: 28.085
+
+species:
+- name: C8H20O4SI
+  composition: {Si: 1, O: 4, C: 8, H: 20}
+  thermo:
+    model: NASA7
+    temperature-ranges: [200.0, 1000.0, 4000.0]
+    data:
+    - [12.9255859, 0.0433147092, 1.27839981e-04, -1.87983335e-07, 
+        7.48173998e-11, -1.66002814e+05, -14.5084752]
+    - [18.6694754, 0.0816263022, -3.63995045e-05, 7.63170023e-09, 
+        -6.13632758e-13, -1.69967408e+05, -56.7224471]
+    note: '181114'
+  note: '1    SI(OC2H5)4     '
+- name: C7H17O4SI
+  composition: {Si: 1, O: 4, C: 7, H: 17}
+  thermo:
+    model: NASA7
+    temperature-ranges: [200.0, 1000.0, 4000.0]
+    data:
+    - [11.73927, 0.0503025561, 7.87540998e-05, -1.3220393e-07, 
+        5.4340993e-11, -1.40087645e+05, -11.6634979]
+    - [19.1039066, 0.0683809516, -3.04017347e-05, 6.36048401e-09, 
+        -5.10618043e-13, -1.43772352e+05, -58.5106652]
+    note: '181114'
+  note: 2    SI(OCH2)(OC2H5)3
+- name: C6H15O4SI
+  composition: {Si: 1, O: 4, C: 6, H: 15}
+  thermo:
+    model: NASA7
+    temperature-ranges: [200.0, 1000.0, 4000.0]
+    data:
+    - [10.5286362, 0.0416198339, 8.10917357e-05, -1.29739955e-07, 
+        5.28164699e-11, -1.28601035e+05, -5.62791308]
+    - [16.8682097, 0.0616458003, -2.750178e-05, 5.76846791e-09, 
+        -4.63977054e-13, -1.31972195e+05, -46.9967748]
+    note: '181114'
+  note: '3    SI(O)(OC2H5)3  '
+- name: C6H16O4SI
+  composition: {Si: 1, O: 4, C: 6, H: 16}
+  thermo:
+    model: NASA7
+    temperature-ranges: [200.0, 1000.0, 4000.0]
+    data:
+    - [9.80739887, 0.0499701054, 6.94689371e-05, -1.21644327e-07, 
+        5.06629405e-11, -1.6678184e+05, -5.62200383]
+    - [17.6905166, 0.0631644709, -2.79535434e-05, 5.83075962e-09, 
+        -4.67149178e-13, -1.70426087e+05, -54.2669187]
+    note: '181114'
+  note: '4    SI(OH)(OC2H5)3 '
+- name: C8H19O4SI
+  composition: {Si: 1, O: 4, C: 8, H: 19}
+  thermo:
+    model: NASA7
+    temperature-ranges: [200.0, 1000.0, 4000.0]
+    data:
+    - [12.6687663, 0.0525997183, 9.75936923e-05, -1.57922137e-07, 
+        6.45155572e-11, -1.40570677e+05, -13.0587612]
+    - [20.5065655, 0.0764227187, -3.40279661e-05, 7.12688137e-09, 
+        -5.72601974e-13, -1.44684988e+05, -63.9543468]
+    note: '181114'
+  note: 5    SI(OC2H4)(OC2H5)3
+- name: C8H19O4SI_2
+  composition: {Si: 1, O: 4, C: 8, H: 19}
+  thermo:
+    model: NASA7
+    temperature-ranges: [200.0, 1000.0, 4000.0]
+    data:
+    - [13.1747541, 0.0486659159, 1.04840608e-04, -1.63293763e-07, 
+        6.59454932e-11, -1.45756457e+05, -15.2344018]
+    - [20.0316326, 0.077000193, -3.43108203e-05, 7.18988206e-09, 
+        -5.77878796e-13, -1.497074e+05, -61.5535588]
+    note: '181114'
+  note: 6    SI(OCHCH3)(OC2H5)3
+- name: C8H18O4SI
+  composition: {Si: 1, O: 4, C: 8, H: 18}
+  thermo:
+    model: NASA7
+    temperature-ranges: [200.0, 1000.0, 4000.0]
+    data:
+    - [11.1658407, 0.0542675383, 9.14496455e-05, -1.52467967e-07, 
+        6.28446242e-11, -1.53025314e+05, -7.93141858]
+    - [19.8911326, 0.0739708177, -3.29520604e-05, 6.90478141e-09, 
+        -5.5498921e-13, -1.5729242e+05, -62.9774453]
+    note: '181114'
+  note: 7    SI(OCH=CH2)(OC2H5)3
+- name: C5H13O4SI
+  composition: {Si: 1, O: 4, C: 5, H: 13}
+  thermo:
+    model: NASA7
+    temperature-ranges: [200.0, 1000.0, 4000.0]
+    data:
+    - [8.61208247, 0.0570060414, 2.03158597e-05, -6.58215025e-08, 
+        3.01756395e-11, -1.39402028e+05, -2.81827796]
+    - [18.1280453, 0.0499238745, -2.19604369e-05, 4.56090409e-09, 
+        -3.64266363e-13, -1.42769294e+05, -56.156549]
+    note: '181114'
+  note: 8    SI(OH)(OCH2)(OC2H5)2
+- name: C7H15O4SI
+  composition: {Si: 1, O: 4, C: 7, H: 15}
+  thermo:
+    model: NASA7
+    temperature-ranges: [200.0, 1000.0, 4000.0]
+    data:
+    - [10.0130439, 0.0610269263, 4.292776e-05, -9.72544443e-08, 
+        4.25702112e-11, -1.26314422e+05, -5.28545626]
+    - [20.3273485, 0.0607344738, -2.69618334e-05, 5.63568507e-09, 
+        -4.52176908e-13, -1.30299664e+05, -64.8359208]
+    note: '181114'
+  note: 9    SI(OCH2)(OCH=CH2)(OC2H5)2
+- name: C7H18O4SI
+  composition: {Si: 1, O: 4, C: 7, H: 18}
+  thermo:
+    model: NASA7
+    temperature-ranges: [200.0, 1000.0, 4000.0]
+    data:
+    - [13.0522652, 0.0355766211, 1.20636195e-04, -1.73181308e-07, 
+        6.83995218e-11, -1.6154184e+05, -16.5230456]
+    - [17.4025745, 0.0735518146, -3.27929393e-05, 6.87453381e-09, 
+        -5.52688471e-13, -1.64954815e+05, -50.6130851]
+    note: '181114'
+  note: 10   SI(OCH3)(OC2H5)3
+- name: C4H11O4SI
+  composition: {Si: 1, O: 4, C: 4, H: 11}
+  thermo:
+    model: NASA7
+    temperature-ranges: [200.0, 1000.0, 4000.0]
+    data:
+    - [7.61692439, 0.0472134445, 2.48967575e-05, -6.53621217e-08, 
+        2.93159768e-11, -1.29623455e+05, 1.05754871]
+    - [15.896214, 0.0432026293, -1.90719938e-05, 3.97205373e-09, 
+        -3.17921864e-13, -1.32644727e+05, -45.8399905]
+    note: '181114'
+  note: 11   SI(O)(OH)(OC2H5)2
+- name: C6H13O4SI
+  composition: {Si: 1, O: 4, C: 6, H: 13}
+  thermo:
+    model: NASA7
+    temperature-ranges: [200.0, 1000.0, 4000.0]
+    data:
+    - [8.64627414, 0.0537129806, 4.21178789e-05, -9.172366e-08, 
+        3.99570105e-11, -1.14624199e+05, -0.516772053]
+    - [18.1802773, 0.0539395627, -2.40457622e-05, 5.0418946e-09, 
+        -4.05488436e-13, -1.18331675e+05, -55.6824664]
+    note: '181114'
+  note: 12   SI(O)(OCH=CH2)(OC2H5)2
+- name: C4H12O4SI
+  composition: {Si: 1, O: 4, C: 4, H: 12}
+  thermo:
+    model: NASA7
+    temperature-ranges: [200.0, 1000.0, 4000.0]
+    data:
+    - [6.63828463, 0.056786698, 1.09003663e-05, -5.51935687e-08, 
+        2.64850553e-11, -1.65496038e+05, 3.4215107]
+    - [16.6995837, 0.0447269028, -1.95220632e-05, 4.03339719e-09, 
+        -3.20984765e-13, -1.68829009e+05, -51.8477206]
+    note: '181114'
+  note: 13   SI(OH)2(OC2H5)2
+- name: C6H15O4SI_2
+  composition: {Si: 1, O: 4, C: 6, H: 15}
+  thermo:
+    model: NASA7
+    temperature-ranges: [200.0, 1000.0, 4000.0]
+    data:
+    - [9.5090852, 0.0594337851, 3.88899565e-05, -9.12904782e-08, 
+        4.02633737e-11, -1.40217923e+05, -4.07877055]
+    - [19.5195131, 0.0579742558, -2.55895165e-05, 5.32774702e-09, 
+        -4.2627714e-13, -1.4401784e+05, -61.5607602]
+    note: '181114'
+  note: '14   SI(OH)(OC2H4)(OC2H5)2 '
+- name: C6H15O4SI_3
+  composition: {Si: 1, O: 4, C: 6, H: 15}
+  thermo:
+    model: NASA7
+    temperature-ranges: [200.0, 1000.0, 4000.0]
+    data:
+    - [10.0791086, 0.0552324325, 4.66223427e-05, -9.70706757e-08, 
+        4.18237452e-11, -1.44003171e+05, -6.55786277]
+    - [19.0552201, 0.0585412282, -2.58678252e-05, 5.38980907e-09, 
+        -4.31479016e-13, -1.47630369e+05, -59.2144493]
+    note: '181114'
+  note: '15   SI(OH)(OCHCH3)(OC2H5)2 '
+- name: C8H17O4SI
+  composition: {Si: 1, O: 4, C: 8, H: 17}
+  thermo:
+    model: NASA7
+    temperature-ranges: [200.0, 1000.0, 4000.0]
+    data:
+    - [10.8854446, 0.0636396731, 6.10583579e-05, -1.22288409e-07, 
+        5.25051845e-11, -1.2980035e+05, -6.53991078]
+    - [21.7220599, 0.0687768863, -3.05858643e-05, 6.40124012e-09, 
+        -5.14070458e-13, -1.34220631e+05, -70.3505404]
+    note: '181114'
+  note: 16   SI(OC2H4)(OCH=CH2)(OC2H5)2
+- name: C3H9O4SI
+  composition: {Si: 1, O: 4, C: 3, H: 9}
+  thermo:
+    model: NASA7
+    temperature-ranges: [200.0, 1000.0, 4000.0]
+    data:
+    - [5.47741703, 0.0637628201, -3.82362043e-05, 6.78124347e-10, 
+        5.96558092e-12, -1.38426457e+05, 5.99587651]
+    - [17.1527126, 0.0314763135, -1.35265214e-05, 2.76333696e-09, 
+        -2.18103482e-13, -1.41477996e+05, -53.8709971]
+    note: '181114'
+  note: 17   SI(OH)2(OCH2)(OC2H5)
+- name: C5H11O4SI
+  composition: {Si: 1, O: 4, C: 5, H: 11}
+  thermo:
+    model: NASA7
+    temperature-ranges: [200.0, 1000.0, 4000.0]
+    data:
+    - [6.91423307, 0.0676022763, -1.52400697e-05, -3.11183433e-08, 
+        1.84869819e-11, -1.24137194e+05, 3.44495343]
+    - [19.3571993, 0.0422821716, -1.85260858e-05, 3.83778362e-09, 
+        -3.05990378e-13, -1.27802332e+05, -62.4970661]
+    note: '181114'
+  note: '18   SI(OH)(OCH2)(OCH=CH2)(OC2H5) '
+- name: C6H15O4SI_4
+  composition: {Si: 1, O: 4, C: 6, H: 15}
+  thermo:
+    model: NASA7
+    temperature-ranges: [200.0, 1000.0, 4000.0]
+    data:
+    - [11.8823212, 0.0424654551, 7.17805876e-05, -1.17631325e-07, 
+        4.8005538e-11, -1.36001573e+05, -13.7729319]
+    - [17.8391494, 0.0603040746, -2.67940795e-05, 5.60308831e-09, 
+        -4.49655417e-13, -1.39133158e+05, -52.4356998]
+    note: '181114'
+  note: 19   SI(OCH2)(OCH3)(OC2H5)2
+- name: C5H13O4SI_2
+  composition: {Si: 1, O: 4, C: 5, H: 13}
+  thermo:
+    model: NASA7
+    temperature-ranges: [200.0, 1000.0, 4000.0]
+    data:
+    - [10.7912928, 0.0330560541, 7.56969943e-05, -1.16645215e-07, 
+        4.69873628e-11, -1.25931337e+05, -8.63073939]
+    - [15.5961538, 0.0535826577, -2.39021817e-05, 5.01304972e-09, 
+        -4.03190219e-13, -1.28732346e+05, -41.2521842]
+    note: '181114'
+  note: 20   SI(O)(OCH3)(OC2H5)2
+- name: C5H14O4SI
+  composition: {Si: 1, O: 4, C: 5, H: 14}
+  thermo:
+    model: NASA7
+    temperature-ranges: [200.0, 1000.0, 4000.0]
+    data:
+    - [9.92744718, 0.0422764674, 6.21827791e-05, -1.06777389e-07, 
+        4.42260807e-11, -1.63283824e+05, -7.61741663]
+    - [16.4273836, 0.0550863595, -2.43454709e-05, 5.07329503e-09, 
+        -4.06182037e-13, -1.66378271e+05, -48.1871098]
+    note: '181114'
+  note: 21   SI(OH)(OCH3)(OC2H5)2
+- name: C7H17O4SI_2
+  composition: {Si: 1, O: 4, C: 7, H: 17}
+  thermo:
+    model: NASA7
+    temperature-ranges: [200.0, 1000.0, 4000.0]
+    data:
+    - [12.7928683, 0.0448669984, 9.03877238e-05, -1.43123598e-07, 
+        5.81001738e-11, -1.37119811e+05, -15.1186419]
+    - [19.2389703, 0.0683486009, -3.04214609e-05, 6.36971268e-09, 
+        -5.11656681e-13, -1.40682967e+05, -57.8999037]
+    note: '181114'
+  note: 22   SI(OCH3)(OC2H4)(OC2H5)2
+- name: C2H7O4SI
+  composition: {Si: 1, O: 4, C: 2, H: 7}
+  thermo:
+    model: NASA7
+    temperature-ranges: [200.0, 1000.0, 4000.0]
+    data:
+    - [4.14553321, 0.0556467636, -3.68317375e-05, 3.86442152e-09, 
+        4.22529068e-12, -1.28068955e+05, 10.3972457]
+    - [14.917436, 0.024784468, -1.06596326e-05, 2.18030448e-09, 
+        -1.72304372e-13, -1.30831599e+05, -44.5743746]
+    note: '181114'
+  note: '23   SI(O)(OH)2(OC2H5) '
+- name: C2H8O4SI
+  composition: {Si: 1, O: 4, C: 2, H: 8}
+  thermo:
+    model: NASA7
+    temperature-ranges: [200.0, 1000.0, 4000.0]
+    data:
+    - [3.50398642, 0.0634689847, -4.7393395e-05, 1.09973278e-08, 
+        2.39811074e-12, -1.64751675e+05, 12.3830429]
+    - [15.7226072, 0.0262790674, -1.10874748e-05, 2.23561559e-09, 
+        -1.74800775e-13, -1.67770625e+05, -49.4183293]
+    note: '181114'
+  note: '24   SI(OH)3(OC2H5)  '
+- name: C4H11O4SI_2
+  composition: {Si: 1, O: 4, C: 4, H: 11}
+  thermo:
+    model: NASA7
+    temperature-ranges: [200.0, 1000.0, 4000.0]
+    data:
+    - [6.28854587, 0.0664956021, -2.01573451e-05, -2.4411047e-08, 
+        1.59415285e-11, -1.40309393e+05, 5.08499883]
+    - [18.5223642, 0.0395475145, -1.71642399e-05, 3.53189161e-09, 
+        -2.80246e-13, -1.43805538e+05, -59.2290439]
+    note: '181114'
+  note: 25   SI(OH)2(OC2H4)(OC2H5)
+- name: C4H11O4SI_3
+  composition: {Si: 1, O: 4, C: 4, H: 11}
+  thermo:
+    model: NASA7
+    temperature-ranges: [200.0, 1000.0, 4000.0]
+    data:
+    - [6.53357218, 0.0631777958, -1.32180378e-05, -3.00619412e-08, 
+        1.75950309e-11, -1.44611846e+05, 3.71993343]
+    - [17.9885053, 0.0402140723, -1.74963155e-05, 3.60672478e-09, 
+        -2.8656702e-13, -1.4799707e+05, -57.0562775]
+    note: '181114'
+  note: 26   SI(OH)2(OCHCH3)(OC2H5)
+- name: CH5O4SI
+  composition: {Si: 1, O: 4, C: 1, H: 5}
+  thermo:
+    model: NASA7
+    temperature-ranges: [200.0, 1000.0, 4000.0]
+    data:
+    - [2.4320715, 0.0701081647, -9.59242961e-05, 6.63579631e-08, 
+        -1.79573418e-11, -1.37604856e+05, 14.5676406]
+    - [16.1981039, 0.013012588, -5.08712611e-06, 9.64879474e-10, 
+        -7.18840713e-14, -1.40330811e+05, -51.5211555]
+    note: '181114'
+  note: '27   SI(OH)3(OCH2)  '
+- name: C4H11O4SI_4
+  composition: {Si: 1, O: 4, C: 4, H: 11}
+  thermo:
+    model: NASA7
+    temperature-ranges: [200.0, 1000.0, 4000.0]
+    data:
+    - [8.73016356, 0.0493012433, 1.30754066e-05, -5.10082485e-08, 
+        2.37594496e-11, -1.34658534e+05, -4.91022254]
+    - [16.8631072, 0.0418480756, -1.83535651e-05, 3.80372062e-09, 
+        -3.03323733e-13, -1.37476613e+05, -50.1772245]
+    note: '181114'
+  note: 28   SI(OH)(OCH2)(OCH3)(OC2H5)
+- name: C3H9O4SI_2
+  composition: {Si: 1, O: 4, C: 3, H: 9}
+  thermo:
+    model: NASA7
+    temperature-ranges: [200.0, 1000.0, 4000.0]
+    data:
+    - [7.75663615, 0.0393824624, 1.79371502e-05, -5.08222224e-08, 
+        2.2996761e-11, -1.24251607e+05, -1.07050376]
+    - [14.6331417, 0.0351232308, -1.54630021e-05, 3.21434981e-09, 
+        -2.56933e-13, -1.26721124e+05, -39.8101641]
+    note: '181114'
+  note: 29   SI(O)(OH)(OCH3)(OC2H5)
+- name: C3H10O4SI
+  composition: {Si: 1, O: 4, C: 3, H: 10}
+  thermo:
+    model: NASA7
+    temperature-ranges: [200.0, 1000.0, 4000.0]
+    data:
+    - [6.73295994, 0.0492211854, 3.35979202e-06, -4.00978579e-08, 
+        1.99713517e-11, -1.6022785e+05, 1.43748054]
+    - [15.4348691, 0.0366523219, -1.59161769e-05, 3.27648461e-09, 
+        -2.60067587e-13, -1.63014901e+05, -45.8655236]
+    note: '181114'
+  note: '30   SI(OH)2(OCH3)(OC2H5) '
+- name: H3O4SI
+  composition: {Si: 1, O: 4, H: 3}
+  thermo:
+    model: NASA7
+    temperature-ranges: [200.0, 1000.0, 4000.0]
+    data:
+    - [1.38282342, 0.0600999199, -9.06594235e-05, 6.62142126e-08, 
+        -1.86393672e-11, -1.23836007e+05, 18.4573944]
+    - [13.8504167, 6.47562518e-03, -2.30047967e-06, 4.00256876e-10, 
+        -2.76539167e-14, -1.26213129e+05, -40.9352168]
+    note: '181114'
+  note: '31   SI(O)(OH)3    '
+- name: H4O4SI
+  composition: {Si: 1, O: 4, H: 4}
+  thermo:
+    model: NASA7
+    temperature-ranges: [200.0, 1000.0, 4000.0]
+    data:
+    - [0.298614695, 0.0704478372, -1.06179621e-04, 7.75754579e-08, 
+        -2.18063394e-11, -1.6237798e+05, 21.6700885]
+    - [14.7371185, 7.85317135e-03, -2.66675445e-06, 4.41348854e-10, 
+        -2.89347451e-14, -1.65095192e+05, -46.9616291]
+    note: '181114'
+  note: 32   SI(OH)4
+- name: C2H7O4SI_2
+  composition: {Si: 1, O: 4, C: 2, H: 7}
+  thermo:
+    model: NASA7
+    temperature-ranges: [200.0, 1000.0, 4000.0]
+    data:
+    - [3.32869962, 0.0723329579, -7.67654014e-05, 4.02542063e-08, 
+        -7.63001324e-12, -1.38690718e+05, 14.1014731]
+    - [17.5642879, 0.0210767537, -8.71829142e-06, 1.73154301e-09, 
+        -1.33844026e-13, -1.41847863e+05, -56.0338747]
+    note: '181114'
+  note: '33   SI(OH)3(OC2H4)  '
+- name: C2H7O4SI_3
+  composition: {Si: 1, O: 4, C: 2, H: 7}
+  thermo:
+    model: NASA7
+    temperature-ranges: [200.0, 1000.0, 4000.0]
+    data:
+    - [3.47001052, 0.0695502835, -7.09268775e-05, 3.56278096e-08, 
+        -6.33075336e-12, -1.41561379e+05, 12.2938831]
+    - [17.0216578, 0.0217615186, -9.0614386e-06, 1.80914999e-09, 
+        -1.40415039e-13, -1.44622729e+05, -54.7353859]
+    note: '181114'
+  note: 34   SI(OH)3(OCHCH3)
+- name: C2H6O4SI
+  composition: {Si: 1, O: 4, C: 2, H: 6}
+  thermo:
+    model: NASA7
+    temperature-ranges: [200.0, 1000.0, 4000.0]
+    data:
+    - [1.74924477, 0.0743970399, -8.36868766e-05, 4.64304128e-08, 
+        -9.55408113e-12, -1.49200597e+05, 18.7682116]
+    - [16.9445776, 0.0186592984, -7.66745375e-06, 1.51617782e-09, 
+        -1.16860398e-13, -1.52524366e+05, -55.8557564]
+    note: '181114'
+  note: 35   SI(OH)3(OCH=CH2)
+- name: C2H7O4SI_4
+  composition: {Si: 1, O: 4, C: 2, H: 7}
+  thermo:
+    model: NASA7
+    temperature-ranges: [200.0, 1000.0, 4000.0]
+    data:
+    - [5.62083782, 0.0559424844, -4.52285562e-05, 1.52481043e-08, 
+        -3.62958344e-13, -1.33373239e+05, 3.85807936]
+    - [15.895265, 0.0233921935, -9.91576767e-06, 2.00531275e-09, 
+        -1.57091625e-13, -1.35873022e+05, -47.8582297]
+    note: '181114'
+  note: 36   SI(OH)2(OCH2)(OCH3)
+- name: CH5O4SI_2
+  composition: {Si: 1, O: 4, C: 1, H: 5}
+  thermo:
+    model: NASA7
+    temperature-ranges: [200.0, 1000.0, 4000.0]
+    data:
+    - [4.81482753, 0.0450833678, -3.8389996e-05, 1.36381488e-08, 
+        -5.25756046e-13, -1.23197997e+05, 7.04004044]
+    - [13.6602107, 0.0166952657, -7.04483907e-06, 1.42113626e-09, 
+        -1.11181564e-13, -1.25325428e+05, -37.3768874]
+    note: '181114'
+  note: 37   SI(O)(OH)2(OCH3)
+- name: CH6O4SI
+  composition: {Si: 1, O: 4, C: 1, H: 6}
+  thermo:
+    model: NASA7
+    temperature-ranges: [200.0, 1000.0, 4000.0]
+    data:
+    - [3.61608379, 0.0558226202, -5.47485185e-05, 2.5901526e-08, 
+        -4.04416807e-12, -1.59374776e+05, 10.3488836]
+    - [14.4648842, 0.0181963008, -7.47767401e-06, 1.47784494e-09, 
+        -1.13812513e-13, -1.61846575e+05, -43.4418015]
+    note: '181114'
+  note: '38   SI(OH)3(OCH3)     '
+- name: N2
+  composition: {N: 2}
+  thermo:
+    model: NASA7
+    temperature-ranges: [300.0, 1000.0, 5000.0]
+    data:
+    - [3.298677, 1.40824e-03, -3.963222e-06, 5.641515e-09, 
+        -2.444855e-12, -1020.9, 3.950372]
+    - [2.92664, 1.487977e-03, -5.684761e-07, 1.009704e-10, 
+        -6.753351e-15, -922.7977, 5.980528]
+    note: '121286'
+  note: '39'
+- name: H2
+  composition: {H: 2}
+  thermo:
+    model: NASA7
+    temperature-ranges: [300.0, 1000.0, 5000.0]
+    data:
+    - [3.298124, 8.249442e-04, -8.143015e-07, -9.475434e-11, 
+        4.134872e-13, -1012.521, -3.294094]
+    - [2.991423, 7.000644e-04, -5.633829e-08, -9.231578e-12, 
+        1.582752e-15, -835.034, -1.35511]
+    note: |-
+      121286
+      ------------------------------------------------------------------------------
+       Thermodynamic properties of hydrocarbons
+  note: '40'
+- name: H
+  composition: {H: 1}
+  thermo:
+    model: NASA7
+    temperature-ranges: [300.0, 5000.0]
+    data:
+    - [2.5, 0.0, 0.0, 0.0, 0.0, 2.547163e+04, -0.4601176]
+    note: '120186'
+  note: '41'
+- name: H2O
+  composition: {H: 2, O: 1}
+  thermo:
+    model: NASA7
+    temperature-ranges: [300.0, 1000.0, 5000.0]
+    data:
+    - [3.386842, 3.474982e-03, -6.354696e-06, 6.968581e-09, 
+        -2.506588e-12, -3.020811e+04, 2.590233]
+    - [2.672146, 3.056293e-03, -8.73026e-07, 1.200996e-10, 
+        -6.391618e-15, -2.989921e+04, 6.862817]
+    note: '20387'
+  note: '42'
+- name: CH4
+  composition: {H: 4, C: 1}
+  thermo:
+    model: NASA7
+    temperature-ranges: [300.0, 1000.0, 5000.0]
+    data:
+    - [0.7787415, 0.01747668, -2.783409e-05, 3.049708e-08, 
+        -1.223931e-11, -9825.229, 13.72219]
+    - [1.683479, 0.01023724, -3.875129e-06, 6.785585e-10, 
+        -4.503423e-14, -1.008079e+04, 9.623395]
+    note: '121286'
+  note: '43'
+- name: CH3
+  composition: {H: 3, C: 1}
+  thermo:
+    model: NASA7
+    temperature-ranges: [300.0, 1000.0, 5000.0]
+    data:
+    - [2.430443, 0.0111241, -1.68022e-05, 1.621829e-08, -5.864953e-12, 
+        1.642378e+04, 6.789794]
+    - [2.844052, 6.137974e-03, -2.230345e-06, 3.785161e-10, 
+        -2.452159e-14, 1.643781e+04, 5.452697]
+    note: '121286'
+  note: '44'
+- name: CH2
+  composition: {H: 2, C: 1}
+  thermo:
+    model: NASA7
+    temperature-ranges: [300.0, 1350.0, 5000.0]
+    data:
+    - [3.49623989, 2.20258645e-03, -4.23828799e-07, 1.36484706e-11, 
+        4.31937372e-15, 4.59192771e+04, 2.94964354]
+    - [3.44310466, 2.32638011e-03, -5.33147998e-07, 5.74043968e-11, 
+        -2.42694849e-15, 4.59375743e+04, 3.23484714]
+    note: LLNL94
+  note: '45'
+- name: CH2O
+  composition: {H: 2, O: 1, C: 1}
+  thermo:
+    model: NASA7
+    temperature-ranges: [300.0, 1000.0, 5000.0]
+    data:
+    - [1.652731, 0.01263144, -1.888168e-05, 2.050031e-08, 
+        -8.413237e-12, -1.48654e+04, 13.78482]
+    - [2.995606, 6.681321e-03, -2.628955e-06, 4.737153e-10, 
+        -3.212517e-14, -1.532037e+04, 6.912572]
+    note: '121286'
+  note: '46'
+- name: HCO
+  composition: {H: 1, O: 1, C: 1}
+  thermo:
+    model: NASA7
+    temperature-ranges: [300.0, 1000.0, 5000.0]
+    data:
+    - [2.89833, 6.199147e-03, -9.623084e-06, 1.089825e-08, 
+        -4.574885e-12, 4159.922, 8.983614]
+    - [3.557271, 3.345573e-03, -1.335006e-06, 2.470573e-10, 
+        -1.713851e-14, 3916.324, 5.552299]
+    note: '121286'
+  note: '47'
+- name: CO2
+  composition: {O: 2, C: 1}
+  thermo:
+    model: NASA7
+    temperature-ranges: [300.0, 1000.0, 5000.0]
+    data:
+    - [2.275725, 9.922072e-03, -1.040911e-05, 6.866687e-09, 
+        -2.11728e-12, -4.837314e+04, 10.18849]
+    - [4.453623, 3.140169e-03, -1.278411e-06, 2.393997e-10, 
+        -1.669033e-14, -4.896696e+04, -0.9553959]
+    note: '121286'
+  note: '48'
+- name: CO
+  composition: {O: 1, C: 1}
+  thermo:
+    model: NASA7
+    temperature-ranges: [300.0, 1000.0, 5000.0]
+    data:
+    - [3.262452, 1.511941e-03, -3.881755e-06, 5.581944e-09, 
+        -2.474951e-12, -1.431054e+04, 4.848897]
+    - [3.025078, 1.442689e-03, -5.630828e-07, 1.018581e-10, 
+        -6.910952e-15, -1.426835e+04, 6.108218]
+    note: '121286'
+  note: '49'
+- name: O2
+  composition: {O: 2}
+  thermo:
+    model: NASA7
+    temperature-ranges: [300.0, 1000.0, 5000.0]
+    data:
+    - [3.212936, 1.127486e-03, -5.75615e-07, 1.313877e-09, 
+        -8.768554e-13, -1005.249, 6.034738]
+    - [3.697578, 6.135197e-04, -1.258842e-07, 1.775281e-11, 
+        -1.136435e-15, -1233.93, 3.189166]
+    note: '121386'
+  note: '50'
+- name: O
+  composition: {O: 1}
+  thermo:
+    model: NASA7
+    temperature-ranges: [300.0, 1000.0, 5000.0]
+    data:
+    - [2.946429, -1.638166e-03, 2.421032e-06, -1.602843e-09, 
+        3.890696e-13, 2.914764e+04, 2.963995]
+    - [2.54206, -2.755062e-05, -3.102803e-09, 4.551067e-12, 
+        -4.368052e-16, 2.92308e+04, 4.920308]
+    note: '120186'
+  note: '51'
+- name: OH
+  composition: {H: 1, O: 1}
+  thermo:
+    model: NASA7
+    temperature-ranges: [300.0, 1000.0, 5000.0]
+    data:
+    - [3.637266, 1.85091e-04, -1.676165e-06, 2.387203e-09, 
+        -8.431442e-13, 3606.782, 1.35886]
+    - [2.88273, 1.013974e-03, -2.276877e-07, 2.174684e-11, 
+        -5.126305e-16, 3886.888, 5.595712]
+    note: '121286'
+  note: '52'
+- name: HO2
+  composition: {H: 1, O: 2}
+  thermo:
+    model: NASA7
+    temperature-ranges: [300.0, 1000.0, 5000.0]
+    data:
+    - [2.979963, 4.996697e-03, -3.790997e-06, 2.354192e-09, 
+        -8.089024e-13, 176.2274, 9.222724]
+    - [4.072191, 2.131296e-03, -5.308145e-07, 6.112269e-11, 
+        -2.841165e-15, -157.9727, 3.476029]
+    note: '20387'
+  note: '53'
+- name: H2O2
+  composition: {H: 2, O: 2}
+  thermo:
+    model: NASA7
+    temperature-ranges: [300.0, 1000.0, 5000.0]
+    data:
+    - [3.388754, 6.569226e-03, -1.485013e-07, -4.625806e-09, 
+        2.471515e-12, -1.766315e+04, 6.785363]
+    - [4.573167, 4.336136e-03, -1.474689e-06, 2.348904e-10, 
+        -1.431654e-14, -1.800696e+04, 0.501137]
+    note: '120186'
+  note: '54'
+- name: C2H
+  composition: {H: 1, C: 2}
+  thermo:
+    model: NASA7
+    temperature-ranges: [300.0, 1000.0, 4000.0]
+    data:
+    - [2.737704, 8.048446e-03, -9.24431e-06, 6.525259e-09, 
+        -1.93958e-12, 6.683813e+04, 7.30022]
+    - [3.986367, 3.143123e-03, -1.267243e-06, 2.924363e-10, 
+        -2.71632e-14, 6.655884e+04, 1.191063]
+    note: '81193'
+  note: '55'
+- name: HCCO
+  composition: {H: 1, O: 1, C: 2}
+  thermo:
+    model: NASA7
+    temperature-ranges: [300.0, 1000.0, 4000.0]
+    data:
+    - [5.047965, 4.453478e-03, 2.268283e-07, -1.482095e-09, 
+        2.250742e-13, 1.965892e+04, 0.4818439]
+    - [6.758073, 2.0004e-03, -2.027607e-07, -1.041132e-10, 
+        1.965165e-14, 1.901513e+04, -9.071262]
+    note: '32387'
+  note: '56'
+- name: C2H2
+  composition: {H: 2, C: 2}
+  thermo:
+    model: NASA7
+    temperature-ranges: [300.0, 1000.0, 5000.0]
+    data:
+    - [2.013562, 0.01519045, -1.616319e-05, 9.078992e-09, 
+        -1.912746e-12, 2.612444e+04, 8.805378]
+    - [4.43677, 5.376039e-03, -1.912817e-06, 3.286379e-10, 
+        -2.15671e-14, 2.566766e+04, -2.800338]
+    note: '121386'
+  note: '57'
+- name: C2H3
+  composition: {H: 3, C: 2}
+  thermo:
+    model: NASA7
+    temperature-ranges: [300.0, 1671.0, 5000.0]
+    data:
+    - [2.73925942, 7.03011591e-03, 2.36647299e-06, -3.59569737e-09, 
+        8.91756491e-13, 3.42868979e+04, 10.1531535]
+    - [3.96047713, 7.99426013e-03, -2.85608087e-06, 4.58350813e-10, 
+        -2.7257014e-14, 3.35153544e+04, 2.25663414]
+    note: MAR94
+  note: '58'
+- name: C2H4
+  composition: {H: 4, C: 2}
+  thermo:
+    model: NASA7
+    temperature-ranges: [300.0, 1000.0, 5000.0]
+    data:
+    - [-0.861488, 0.02796163, -3.388677e-05, 2.785152e-08, 
+        -9.737879e-12, 5573.046, 24.21149]
+    - [3.528419, 0.01148518, -4.418385e-06, 7.844601e-10, 
+        -5.266848e-14, 4428.289, 2.230389]
+    note: '121286'
+  note: '59'
+- name: C2H5
+  composition: {H: 5, C: 2}
+  thermo:
+    model: NASA7
+    temperature-ranges: [300.0, 1375.0, 5000.0]
+    data:
+    - [1.47374852, 0.0163606611, -4.32896826e-06, -1.17270665e-09, 
+        5.72325883e-13, 1.33326992e+04, 16.6349852]
+    - [5.60116091, 0.0106977081, -3.6350478e-06, 5.61816654e-10, 
+        -3.24914714e-14, 1.14539845e+04, -7.02252408]
+    note: JPC93
+  note: '60'
+- name: C2H5OH
+  composition: {H: 6, O: 1, C: 2}
+  thermo:
+    model: NASA7
+    temperature-ranges: [300.0, 1000.0, 5000.0]
+    data:
+    - [4.8586957, -3.7401726e-03, 6.9555378e-05, -8.8654796e-08, 
+        3.5168835e-11, -2.9996132e+04, 4.8018545]
+    - [6.5624365, 0.015204222, -5.3896795e-06, 8.6225011e-10, 
+        -5.1289787e-14, -3.1525621e+04, -9.4730202]
+    note: BUR94
+  note: '61'
+- name: AR
+  composition: {Ar: 1}
+  thermo:
+    model: NASA7
+    temperature-ranges: [300.0, 5000.0]
+    data:
+    - [2.5, 0.0, 0.0, 0.0, 0.0, -745.375, 4.366001]
+    note: '120186'
+  note: '62'
+- name: C2H6
+  composition: {H: 6, C: 2}
+  thermo:
+    model: NASA7
+    temperature-ranges: [300.0, 1000.0, 4000.0]
+    data:
+    - [1.462539, 0.01549467, 5.780507e-06, -1.257832e-08, 4.586267e-12,
+      -1.123918e+04, 14.43229]
+    - [4.825938, 0.01384043, -4.557259e-06, 6.724967e-10, 
+        -3.598161e-14, -1.271779e+04, -5.239507]
+    note: '121686'
+  note: '63'
+- name: CH2(S)
+  composition: {H: 2, C: 1}
+  thermo:
+    model: NASA7
+    temperature-ranges: [300.0, 1359.0, 5000.0]
+    data:
+    - [3.32340701, 2.28062579e-03, -2.48156016e-07, -1.02065386e-10, 
+        2.48826619e-14, 5.04954469e+04, 3.09401497]
+    - [3.0962718, 2.80839185e-03, -7.13614526e-07, 8.42136298e-11, 
+        -3.84640828e-15, 5.05739697e+04, 4.31392269]
+    note: ADJNBR
+  note: '64'
+- name: CH2CO
+  composition: {H: 2, O: 1, C: 2}
+  thermo:
+    model: NASA7
+    temperature-ranges: [300.0, 1000.0, 5000.0]
+    data:
+    - [2.974971, 0.01211871, -2.345046e-06, -6.466685e-09, 
+        3.905649e-12, -7632.637, 8.673553]
+    - [6.038817, 5.80484e-03, -1.920954e-06, 2.794485e-10, 
+        -1.458868e-14, -8583.402, -7.657581]
+    note: '121686'
+  note: '65'
+- name: CH2HCO
+  composition: {H: 3, O: 1, C: 2}
+  thermo:
+    model: NASA7
+    temperature-ranges: [300.0, 1000.0, 5000.0]
+    data:
+    - [3.409062, 0.01073857, 1.891492e-06, -7.158583e-09, 2.867385e-12,
+      1521.477, 9.55829]
+    - [5.97567, 8.130591e-03, -2.743624e-06, 4.070304e-10, 
+        -2.176017e-14, 490.3218, -5.045251]
+    note: '110393'
+  note: '66'
+- name: C3H6
+  composition: {H: 6, C: 3}
+  thermo:
+    model: NASA7
+    temperature-ranges: [300.0, 1000.0, 5000.0]
+    data:
+    - [1.493307, 0.02092518, 4.486794e-06, -1.668912e-08, 7.158146e-12,
+      1074.826, 16.14534]
+    - [6.732257, 0.01490834, -4.949899e-06, 7.212022e-10, 
+        -3.766204e-14, -923.5703, -13.31335]
+    note: '120186'
+  note: '67'
+- name: C2H4OH
+  composition: {H: 5, O: 1, C: 2}
+  thermo:
+    model: NASA7
+    temperature-ranges: [300.0, 1405.0, 5000.0]
+    data:
+    - [0.776157606, 0.0291002514, -2.13980569e-05, 8.16833894e-09, 
+        -1.255916e-12, -5468.08396, 22.1060185]
+    - [8.75544496, 9.49453147e-03, -3.08803575e-06, 4.63537621e-10, 
+        -2.62730044e-14, -8096.02047, -20.3271929]
+    note: MAR96
+  note: '68'
+- name: CH3CH2O
+  composition: {H: 5, O: 1, C: 2}
+  thermo:
+    model: NASA7
+    temperature-ranges: [300.0, 1405.0, 5000.0]
+    data:
+    - [-0.271296378, 0.0298839812, -1.97090548e-05, 6.37339893e-09, 
+        -7.77965054e-13, -3163.97196, 24.7706003]
+    - [8.31182392, 0.0103426319, -3.39186089e-06, 5.12212617e-10, 
+        -2.91601713e-14, -6130.97954, -21.3985581]
+    note: MAR96
+  note: '69'
+- name: HOC2H4O2
+  composition: {H: 5, O: 3, C: 2}
+  thermo:
+    model: NASA7
+    temperature-ranges: [300.0, 1395.0, 5000.0]
+    data:
+    - [3.58811609, 0.0299414161, -2.35156549e-05, 1.12635525e-08, 
+        -2.28663686e-12, -2.17409435e+04, 14.2166729]
+    - [9.22339915, 0.0141346358, -4.75283025e-06, 7.28795964e-10, 
+        -4.18969629e-14, -2.35984031e+04, -15.3847386]
+  note: '70'
+
+reactions:
+- equation: C8H20O4SI <=> C7H17O4SI + CH3  # Reaction 1
+  rate-constant: {A: 5.404e+24, b: -2.114, Ea: 9.1934e+04}
+  note: |2
+     SI(OC2H5)4
+    Nurkowski 2015 based on EOS       # 1  
+- equation: C8H20O4SI <=> C6H15O4SI + C2H5  # Reaction 2
+  rate-constant: {A: 5.0e+23, b: -1.54, Ea: 9.6005e+04}
+  note: |
+    Marinov 1999                      # 2       
+- equation: C8H20O4SI <=> C6H16O4SI + C2H4  # Reaction 3
+  rate-constant: {A: 4.832e+11, b: 0.824, Ea: 6.32212e+04}
+  note: |
+    This work TEOS k1a                # 3       
+- equation: C8H20O4SI + OH <=> C8H19O4SI + H2O  # Reaction 4
+  rate-constant: {A: 6.96e+11, b: 0.27, Ea: 600.0}
+  note: |
+    Marinov 1999                      # 4       
+- equation: C8H20O4SI + OH <=> C8H19O4SI_2 + H2O  # Reaction 5
+  rate-constant: {A: 1.856e+12, b: 0.15, Ea: 0.0}
+  note: |
+    Marinov 1999                      # 5       
+- equation: C8H20O4SI + H <=> C8H19O4SI + H2  # Reaction 6
+  rate-constant: {A: 4.92e+07, b: 1.8, Ea: 5098.0}
+  note: |
+    Marinov 1999                      # 6       
+- equation: C8H20O4SI + H <=> C8H19O4SI_2 + H2  # Reaction 7
+  rate-constant: {A: 1.032e+08, b: 1.65, Ea: 2827.0}
+  note: |
+    Marinov 1999                      # 7       
+- equation: C8H20O4SI + O <=> C8H19O4SI + OH  # Reaction 8
+  rate-constant: {A: 3.764e+08, b: 1.7, Ea: 5459.0}
+  note: |
+    Marinov 1999                      # 8       
+- equation: C8H20O4SI + O <=> C8H19O4SI_2 + OH  # Reaction 9
+  rate-constant: {A: 7.52e+07, b: 1.85, Ea: 1824.0}
+  note: |
+    Marinov 1999                      # 9       
+- equation: C8H20O4SI + CH3 <=> C8H19O4SI + CH4  # Reaction 10
+  rate-constant: {A: 876.0, b: 3.18, Ea: 9622.0}
+  note: |
+    Marinov 1999                      # 10      
+- equation: C8H20O4SI + CH3 <=> C8H19O4SI_2 + CH4  # Reaction 11
+  rate-constant: {A: 2912.0, b: 2.99, Ea: 7948.0}
+  note: |
+    Marinov 1999                      # 11      
+- equation: C8H20O4SI + HO2 <=> C8H19O4SI + H2O2  # Reaction 12
+  rate-constant: {A: 4.92e+04, b: 2.55, Ea: 1.575e+04}
+  note: |
+    Marinov 1999                      # 12      
+- equation: C8H20O4SI + HO2 <=> C8H19O4SI_2 + H2O2  # Reaction 13
+  rate-constant: {A: 3.28e+04, b: 2.55, Ea: 1.075e+04}
+  note: |
+    Marinov 1999                      # 13      
+- equation: C8H20O4SI <=> C8H18O4SI + H2  # Reaction 14
+  rate-constant: {A: 2.248e+14, b: 0.0, Ea: 1.076147e+05}
+  note: |
+    Park 2002                         # 14      
+- equation: C8H20O4SI + H2O <=> C6H16O4SI + C2H5OH  # Reaction 15
+  rate-constant: {A: 4.0e+11, b: 0.0, Ea: 2.5e+04}
+  note: |
+    Coltrin 2000                      # 15      
+- equation: C7H17O4SI + H <=> C6H15O4SI + CH3  # Reaction 16
+  rate-constant: {A: 1.0e+13, b: 0.0, Ea: 0.0}
+  note: |
+    SI(OCH2)(OC2H5)3
+    Marinov 1999                      # 16      
+- equation: C7H17O4SI <=> C5H13O4SI + C2H4  # Reaction 17
+  rate-constant: {A: 5.244e+11, b: 0.823, Ea: 6.35985e+04}
+  note: |
+    This work based on TREOS          # 17      
+- equation: C7H17O4SI + H2O <=> C5H13O4SI + C2H5OH  # Reaction 18
+  rate-constant: {A: 3.0e+11, b: 0.0, Ea: 2.5e+04}
+  note: |
+    Coltrin 2000                      # 19      
+- equation: C6H15O4SI + H2 <=> C6H16O4SI + H  # Reaction 19
+  rate-constant: {A: 2.14e+08, b: 1.52, Ea: 3449.0}
+  note: |
+    SI(O)(OC2H5)3
+    Marinov 1999                      # 20      
+- equation: C6H15O4SI + HO2 <=> C6H16O4SI + O2  # Reaction 20
+  rate-constant: {A: 2.13e+28, b: -4.827, Ea: 3500.0}
+  note: |
+    Marinov 1999                      # 21      
+- equation: C6H15O4SI + H <=> C6H16O4SI  # Reaction 21
+  rate-constant: {A: 2.21e+22, b: -2.0, Ea: 0.0}
+  note: |
+    Marinov 1999                      # 22      
+- equation: C6H15O4SI + H2O2 <=> C6H16O4SI + HO2  # Reaction 22
+  rate-constant: {A: 2.4, b: 4.042, Ea: -2162.0}
+  note: |
+    Marinov 1999                      # 23      
+- equation: C6H15O4SI + CH4 <=> C6H16O4SI + CH3  # Reaction 23
+  rate-constant: {A: 4.19e+06, b: 2.0, Ea: 2547.0}
+  note: |
+    Marinov 1999                      # 24      
+- equation: C6H15O4SI + CH3 <=> C6H16O4SI + CH2(S)  # Reaction 24
+  rate-constant: {A: 2.0e+13, b: 0.0, Ea: 550.0}
+  note: |
+    Marinov 1999                      # 25      
+- equation: C6H15O4SI + CH3 <=> C6H16O4SI + CH2  # Reaction 25
+  rate-constant: {A: 3.0e+06, b: 2.0, Ea: 2500.0}
+  note: |
+    Marinov 1999                      # 26      
+- equation: C6H15O4SI + CH3 <=> C7H18O4SI  # Reaction 26
+  rate-constant: {A: 8.7e+13, b: 0.1, Ea: 0.0}
+  note: |
+    Marinov 1999                      # 27      
+- equation: C6H15O4SI + CH2O <=> C6H16O4SI + HCO  # Reaction 27
+  rate-constant: {A: 3.43e+09, b: 1.18, Ea: -447.0}
+  note: |
+    Marinov 1999                      # 34      
+- equation: C6H15O4SI + HCO <=> C6H16O4SI + CO  # Reaction 28
+  rate-constant: {A: 1.0e+14, b: 0.0, Ea: 0.0}
+  note: |
+    Marinov 1999                      # 35      
+- equation: C6H15O4SI + C2H5OH <=> C6H16O4SI + C2H4OH  # Reaction 29
+  rate-constant: {A: 1.74e+11, b: 0.27, Ea: 600.0}
+  note: |
+    Marinov 1999                      # 36      
+- equation: C6H15O4SI + C2H5OH <=> C6H16O4SI + CH3CH2O  # Reaction 30
+  rate-constant: {A: 7.46e+11, b: 0.3, Ea: 1634.0}
+  note: |
+    Marinov 1999                      # 38      
+- equation: C6H15O4SI + CH2HCO <=> C6H16O4SI + CH2CO  # Reaction 31
+  rate-constant: {A: 3.0e+13, b: 0.0, Ea: 0.0}
+  note: |
+    Marinov 1999                      # 43      
+- equation: C6H15O4SI + C2H6 <=> C6H16O4SI + C2H5  # Reaction 32
+  rate-constant: {A: 7.23e+06, b: 2.0, Ea: 864.0}
+  note: |
+    Marinov 1999                      # 44      
+- equation: C6H15O4SI + C2H5 <=> C6H16O4SI + C2H4  # Reaction 33
+  rate-constant: {A: 4.0e+13, b: 0.0, Ea: 0.0}
+  note: |
+    Marinov 1999                      # 45      
+- equation: C6H15O4SI + C2H4 <=> C8H19O4SI  # Reaction 34
+  rate-constant: {A: 1.29e+12, b: 0.0, Ea: -817.0}
+  note: |
+    Marinov 1999                      # 46      
+- equation: C6H15O4SI + C2H4 <=> C6H16O4SI + C2H3  # Reaction 35
+  rate-constant: {A: 2.02e+13, b: 0.0, Ea: 5936.0}
+  note: |
+    Marinov 1999                      # 47      
+- equation: C6H15O4SI + C2H3 <=> C6H16O4SI + C2H2  # Reaction 36
+  rate-constant: {A: 2.0e+13, b: 0.0, Ea: 0.0}
+  note: |
+    Marinov 1999                      # 48      
+- equation: C6H15O4SI + C2H2 <=> C6H16O4SI + C2H  # Reaction 37
+  rate-constant: {A: 3.37e+07, b: 2.0, Ea: 1.4e+04}
+  note: |
+    Marinov 1999                      # 49      
+- equation: C6H15O4SI + CH2CO <=> C6H16O4SI + HCCO  # Reaction 38
+  rate-constant: {A: 1.0e+13, b: 0.0, Ea: 2000.0}
+  note: |
+    Marinov 1999                      # 50      
+- equation: C6H15O4SI <=> C4H11O4SI + C2H4  # Reaction 39
+  rate-constant: {A: 5.244e+11, b: 0.823, Ea: 6.35985e+04}
+  note: |
+    This work based on TREOS          # 65      
+- equation: C6H16O4SI <=> C5H13O4SI + CH3  # Reaction 40
+  rate-constant: {A: 4.053e+24, b: -2.114, Ea: 9.1934e+04}
+  note: |
+    SI(OH)(OC2H5)3 
+    Nurkowski 2015 based on EOS       # 68      
+- equation: C6H16O4SI <=> C4H11O4SI + C2H5  # Reaction 41
+  rate-constant: {A: 3.75e+23, b: -1.54, Ea: 9.6005e+04}
+  note: |
+    Marinov 1999                      # 69      
+- equation: C6H16O4SI <=> C4H12O4SI + C2H4  # Reaction 42
+  rate-constant: {A: 5.244e+11, b: 0.823, Ea: 6.15985e+04}
+  note: |
+    This work TREOS k1b -2kcal/mol    # 70     
+- equation: C6H16O4SI + OH <=> C6H15O4SI_2 + H2O  # Reaction 43
+  rate-constant: {A: 5.22e+11, b: 0.27, Ea: 600.0}
+  note: |
+    Marinov 1999                      # 71      
+- equation: C6H16O4SI + OH <=> C6H15O4SI_3 + H2O  # Reaction 44
+  rate-constant: {A: 1.392e+12, b: 0.15, Ea: 0.0}
+  note: |
+    Marinov 1999                      # 72      
+- equation: C6H16O4SI + H <=> C6H15O4SI_2 + H2  # Reaction 45
+  rate-constant: {A: 3.69e+07, b: 1.8, Ea: 5098.0}
+  note: |
+    Marinov 1999                      # 73      
+- equation: C6H16O4SI + H <=> C6H15O4SI_3 + H2  # Reaction 46
+  rate-constant: {A: 7.74e+07, b: 1.65, Ea: 2827.0}
+  note: |
+    Marinov 1999                      # 74      
+- equation: C6H16O4SI + O <=> C6H15O4SI_2 + OH  # Reaction 47
+  rate-constant: {A: 2.823e+08, b: 1.7, Ea: 5459.0}
+  note: |
+    Marinov 1999                      # 75      
+- equation: C6H16O4SI + O <=> C6H15O4SI_3 + OH  # Reaction 48
+  rate-constant: {A: 5.64e+07, b: 1.85, Ea: 1824.0}
+  note: |
+    Marinov 1999                      # 76      
+- equation: C6H16O4SI + CH3 <=> C6H15O4SI_2 + CH4  # Reaction 49
+  rate-constant: {A: 657.0, b: 3.18, Ea: 9622.0}
+  note: |
+    Marinov 1999                      # 77      
+- equation: C6H16O4SI + CH3 <=> C6H15O4SI_3 + CH4  # Reaction 50
+  rate-constant: {A: 2184.0, b: 2.99, Ea: 7948.0}
+  note: |
+    Marinov 1999                      # 78      
+- equation: C6H16O4SI + HO2 <=> C6H15O4SI_2 + H2O2  # Reaction 51
+  rate-constant: {A: 3.69e+04, b: 2.55, Ea: 1.575e+04}
+  note: |
+    Marinov 1999                      # 79      
+- equation: C6H16O4SI + HO2 <=> C6H15O4SI_3 + H2O2  # Reaction 52
+  rate-constant: {A: 2.46e+04, b: 2.55, Ea: 1.075e+04}
+  note: |
+    Marinov 1999                      # 80      
+- equation: C6H16O4SI + H2O <=> C4H12O4SI + C2H5OH  # Reaction 53
+  rate-constant: {A: 3.0e+11, b: 0.0, Ea: 2.5e+04}
+  note: |
+    Coltrin 2000                      # 82      
+- equation: C8H19O4SI + CH3 <=> C6H16O4SI + C3H6  # Reaction 54
+  rate-constant: {A: 2.0e+13, b: 0.0, Ea: 0.0}
+  note: |
+    SI(OC2H4)(OC2H5)3
+    Marinov 1999                      # 83      
+- equation: C8H19O4SI + H <=> C7H17O4SI + CH3  # Reaction 55
+  rate-constant: {A: 3.0e+13, b: 0.0, Ea: 0.0}
+  note: |
+    Marinov 1999                      # 84      
+- equation: C8H19O4SI + H <=> C6H16O4SI + C2H4  # Reaction 56
+  rate-constant: {A: 3.0e+13, b: 0.0, Ea: 0.0}
+  note: |
+    Marinov 1999                      # 85      
+- equation: C8H19O4SI <=> C6H15O4SI_2 + C2H4  # Reaction 57
+  rate-constant: {A: 5.244e+11, b: 0.823, Ea: 6.35985e+04}
+  note: |
+    This work based on TREOS          # 86      
+- equation: C8H19O4SI_2 + CH3 <=> C6H16O4SI + C3H6  # Reaction 58
+  rate-constant: {A: 2.0e+13, b: 0.0, Ea: 0.0}
+  note: |
+    SI(OCHCH3)(OC2H5)3
+    Marinov 1999                      # 89      
+- equation: C8H19O4SI_2 + H <=> C7H17O4SI + CH3  # Reaction 59
+  rate-constant: {A: 3.0e+13, b: 0.0, Ea: 0.0}
+  note: |
+    Marinov 1999                      # 90      
+- equation: C8H19O4SI_2 + H <=> C6H16O4SI + C2H4  # Reaction 60
+  rate-constant: {A: 3.0e+13, b: 0.0, Ea: 0.0}
+  note: |
+    Marinov 1999                      # 91      
+- equation: C8H19O4SI_2 <=> C6H15O4SI_3 + C2H4  # Reaction 61
+  rate-constant: {A: 5.244e+11, b: 0.823, Ea: 6.35985e+04}
+  note: |
+    This work based on TREOS          # 92      
+- equation: C8H19O4SI_2 + H2O <=> C6H15O4SI_3 + C2H5OH  # Reaction 62
+  rate-constant: {A: 3.0e+11, b: 0.0, Ea: 2.5e+04}
+  note: |
+    Coltrin 2000                      # 94      
+- equation: C8H18O4SI <=> C7H15O4SI + CH3  # Reaction 63
+  rate-constant: {A: 4.053e+24, b: -2.114, Ea: 9.1934e+04}
+  note: |
+    SI(OCH=CH2)(OC2H5)3
+    Nurkowski 2015 based on EOS       # 97      
+- equation: C8H18O4SI <=> C6H13O4SI + C2H5  # Reaction 64
+  rate-constant: {A: 3.75e+23, b: -1.54, Ea: 9.6005e+04}
+  note: |
+    Marinov 1999                      # 98      
+- equation: C5H13O4SI + H <=> C4H11O4SI + CH3  # Reaction 65
+  rate-constant: {A: 1.0e+13, b: 0.0, Ea: 0.0}
+  note: |
+    SI(OH)(OCH2)(OC2H5)2
+    Marinov 1999                      # 112     
+- equation: C5H13O4SI <=> C3H9O4SI + C2H4  # Reaction 66
+  rate-constant: {A: 4.134e+11, b: 0.81, Ea: 6.45187e+04}
+  note: |
+    This work based on DEOS           # 113     
+- equation: C5H13O4SI + H2O <=> C3H9O4SI + C2H5OH  # Reaction 67
+  rate-constant: {A: 2.0e+11, b: 0.0, Ea: 2.5e+04}
+  note: |
+    Coltrin 2000                      # 115     
+- equation: C7H15O4SI <=> C5H11O4SI + C2H4  # Reaction 68
+  rate-constant: {A: 4.134e+11, b: 0.81, Ea: 6.45187e+04}
+  note: |
+    SI(OCH2)(OCH=CH2)(OC2H5)2
+    This work based on DEOS           # 117     
+- equation: C7H18O4SI <=> C6H16O4SI + CH2(S)  # Reaction 69
+  rate-constant: {A: 2.84e+10, b: 1.0, Ea: 8.3871e+04}
+  note: |
+    SI(OCH3)(OC2H5)3
+    Marinov 1999                      # 120     
+- equation: C7H18O4SI + OH <=> C7H17O4SI + H2O  # Reaction 70
+  rate-constant: {A: 2.61e+05, b: 2.182, Ea: -1344.0}
+  note: |
+    Marinov 1999                      # 121     
+- equation: C7H18O4SI + O <=> C7H17O4SI + OH  # Reaction 71
+  rate-constant: {A: 3.88e+05, b: 2.5, Ea: 3080.0}
+  note: |
+    Marinov 1999                      # 122     
+- equation: C7H18O4SI + H <=> C7H17O4SI + H2  # Reaction 72
+  rate-constant: {A: 1.7e+07, b: 2.1, Ea: 4868.0}
+  note: |
+    Marinov 1999                      # 123     
+- equation: C7H18O4SI + CH3 <=> C7H17O4SI + CH4  # Reaction 73
+  rate-constant: {A: 31.9, b: 3.17, Ea: 7171.0}
+  note: |
+    Marinov 1999                      # 124     
+- equation: C7H18O4SI + HO2 <=> C7H17O4SI + H2O2  # Reaction 74
+  rate-constant: {A: 9.64e+10, b: 0.0, Ea: 1.2578e+04}
+  note: |
+    Marinov 1999                      # 125     
+- equation: C7H18O4SI <=> C6H15O4SI_4 + CH3  # Reaction 75
+  rate-constant: {A: 4.053e+24, b: -2.114, Ea: 9.1934e+04}
+  note: |
+    Nurkowski 2015 based on EOS       # 126     
+- equation: C7H18O4SI <=> C5H13O4SI_2 + C2H5  # Reaction 76
+  rate-constant: {A: 3.75e+23, b: -1.54, Ea: 9.6005e+04}
+  note: |
+    Marinov 1999                      # 127     
+- equation: C7H18O4SI <=> C5H14O4SI + C2H4  # Reaction 77
+  rate-constant: {A: 5.244e+11, b: 0.823, Ea: 6.35985e+04}
+  note: |
+    This work based on TREOS          # 128     
+- equation: C7H18O4SI + OH <=> C7H17O4SI_2 + H2O  # Reaction 78
+  rate-constant: {A: 5.22e+11, b: 0.27, Ea: 600.0}
+  note: |
+    Marinov 1999                      # 129     
+- equation: C7H18O4SI + H <=> C7H17O4SI_2 + H2  # Reaction 79
+  rate-constant: {A: 3.69e+07, b: 1.8, Ea: 5098.0}
+  note: |
+    Marinov 1999                      # 131     
+- equation: C7H18O4SI + O <=> C7H17O4SI_2 + OH  # Reaction 80
+  rate-constant: {A: 2.823e+08, b: 1.7, Ea: 5459.0}
+  note: |
+    Marinov 1999                      # 133     
+- equation: C7H18O4SI + CH3 <=> C7H17O4SI_2 + CH4  # Reaction 81
+  rate-constant: {A: 657.0, b: 3.18, Ea: 9622.0}
+  note: |
+    Marinov 1999                      # 135     
+- equation: C7H18O4SI + HO2 <=> C7H17O4SI_2 + H2O2  # Reaction 82
+  rate-constant: {A: 3.69e+04, b: 2.55, Ea: 1.575e+04}
+  note: |
+    Marinov 1999                      # 137     
+- equation: C7H18O4SI + H2O <=> C5H14O4SI + C2H5OH  # Reaction 83
+  rate-constant: {A: 3.0e+11, b: 0.0, Ea: 2.5e+04}
+  note: |
+    Coltrin 2000                      # 140     
+- equation: C4H11O4SI + H2 <=> C4H12O4SI + H  # Reaction 84
+  rate-constant: {A: 2.14e+08, b: 1.52, Ea: 3449.0}
+  note: |
+    SI(O)(OH)(OC2H5)2
+    Marinov 1999                      # 141     
+- equation: C4H11O4SI + HO2 <=> C4H12O4SI + O2  # Reaction 85
+  rate-constant: {A: 2.13e+28, b: -4.827, Ea: 3500.0}
+  note: |
+    Marinov 1999                      # 142     
+- equation: C4H11O4SI + H <=> C4H12O4SI  # Reaction 86
+  rate-constant: {A: 2.21e+22, b: -2.0, Ea: 0.0}
+  note: |
+    Marinov 1999                      # 143     
+- equation: C4H11O4SI + H2O2 <=> C4H12O4SI + HO2  # Reaction 87
+  rate-constant: {A: 2.4, b: 4.042, Ea: -2162.0}
+  note: |
+    Marinov 1999                      # 144     
+- equation: C4H11O4SI + CH4 <=> C4H12O4SI + CH3  # Reaction 88
+  rate-constant: {A: 4.19e+06, b: 2.0, Ea: 2547.0}
+  note: |
+    Marinov 1999                      # 145     
+- equation: C4H11O4SI + CH3 <=> C4H12O4SI + CH2(S)  # Reaction 89
+  rate-constant: {A: 2.0e+13, b: 0.0, Ea: 550.0}
+  note: |
+    Marinov 1999                      # 146     
+- equation: C4H11O4SI + CH3 <=> C4H12O4SI + CH2  # Reaction 90
+  rate-constant: {A: 3.0e+06, b: 2.0, Ea: 2500.0}
+  note: |
+    Marinov 1999                      # 147     
+- equation: C4H11O4SI + CH3 <=> C5H14O4SI  # Reaction 91
+  rate-constant: {A: 8.7e+13, b: 0.1, Ea: 0.0}
+  note: |
+    Marinov 1999                      # 148     
+- equation: C4H11O4SI + CH2O <=> C4H12O4SI + HCO  # Reaction 92
+  rate-constant: {A: 3.43e+09, b: 1.18, Ea: -447.0}
+  note: |
+    Marinov 1999                      # 155     
+- equation: C4H11O4SI + HCO <=> C4H12O4SI + CO  # Reaction 93
+  rate-constant: {A: 1.0e+14, b: 0.0, Ea: 0.0}
+  note: |
+    Marinov 1999                      # 156     
+- equation: C4H11O4SI + C2H5OH <=> C4H12O4SI + C2H4OH  # Reaction 94
+  rate-constant: {A: 1.74e+11, b: 0.27, Ea: 600.0}
+  note: |
+    Marinov 1999                      # 157     
+- equation: C4H11O4SI + C2H5OH <=> C4H12O4SI + CH3CH2O  # Reaction 95
+  rate-constant: {A: 7.46e+11, b: 0.3, Ea: 1634.0}
+  note: |
+    Marinov 1999                      # 159     
+- equation: C4H11O4SI + CH2HCO <=> C4H12O4SI + CH2CO  # Reaction 96
+  rate-constant: {A: 3.0e+13, b: 0.0, Ea: 0.0}
+  note: |
+    Marinov 1999                      # 164     
+- equation: C4H11O4SI + C2H6 <=> C4H12O4SI + C2H5  # Reaction 97
+  rate-constant: {A: 7.23e+06, b: 2.0, Ea: 864.0}
+  note: |
+    Marinov 1999                      # 165     
+- equation: C4H11O4SI + C2H5 <=> C4H12O4SI + C2H4  # Reaction 98
+  rate-constant: {A: 4.0e+13, b: 0.0, Ea: 0.0}
+  note: |
+    Marinov 1999                      # 166     
+- equation: C4H11O4SI + C2H4 <=> C6H15O4SI_2  # Reaction 99
+  rate-constant: {A: 1.29e+12, b: 0.0, Ea: -817.0}
+  note: |
+    Marinov 1999                      # 167     
+- equation: C4H11O4SI + C2H4 <=> C4H12O4SI + C2H3  # Reaction 100
+  rate-constant: {A: 2.02e+13, b: 0.0, Ea: 5936.0}
+  note: |
+    Marinov 1999                      # 168     
+- equation: C4H11O4SI + C2H3 <=> C4H12O4SI + C2H2  # Reaction 101
+  rate-constant: {A: 2.0e+13, b: 0.0, Ea: 0.0}
+  note: |
+    Marinov 1999                      # 169     
+- equation: C4H11O4SI + C2H2 <=> C4H12O4SI + C2H  # Reaction 102
+  rate-constant: {A: 3.37e+07, b: 2.0, Ea: 1.4e+04}
+  note: |
+    Marinov 1999                      # 170     
+- equation: C4H11O4SI + CH2CO <=> C4H12O4SI + HCCO  # Reaction 103
+  rate-constant: {A: 1.0e+13, b: 0.0, Ea: 2000.0}
+  note: |
+    Marinov 1999                      # 171     
+- equation: C4H11O4SI <=> C2H7O4SI + C2H4  # Reaction 104
+  rate-constant: {A: 4.134e+11, b: 0.81, Ea: 6.45187e+04}
+  note: |
+    This work based on DEOS           # 186     
+- equation: C6H13O4SI + C2H4 <=> C8H17O4SI  # Reaction 105
+  rate-constant: {A: 1.29e+12, b: 0.0, Ea: -817.0}
+  note: |
+    SI(O)(OCH=CH2)(OC2H5)2
+    Marinov 1999                      # 215     
+- equation: C4H12O4SI <=> C3H9O4SI + CH3  # Reaction 106
+  rate-constant: {A: 2.702e+24, b: -2.114, Ea: 9.1934e+04}
+  note: |
+    SI(OH)2(OC2H5)2
+    Nurkowski 2015 based on EOS       # 237     
+- equation: C4H12O4SI <=> C2H7O4SI + C2H5  # Reaction 107
+  rate-constant: {A: 2.5e+23, b: -1.54, Ea: 9.6005e+04}
+  note: |
+    Marinov 1999                      # 238     
+- equation: C4H12O4SI <=> C2H8O4SI + C2H4  # Reaction 108
+  rate-constant: {A: 4.134e+11, b: 0.81, Ea: 6.25187e+04}
+  note: |
+    This work DEOS k1c -2kcal/mol     # 239    
+- equation: C4H12O4SI + OH <=> C4H11O4SI_2 + H2O  # Reaction 109
+  rate-constant: {A: 3.48e+11, b: 0.27, Ea: 600.0}
+  note: |
+    Marinov 1999                      # 240     
+- equation: C4H12O4SI + OH <=> C4H11O4SI_3 + H2O  # Reaction 110
+  rate-constant: {A: 9.28e+11, b: 0.15, Ea: 0.0}
+  note: |
+    Marinov 1999                      # 241     
+- equation: C4H12O4SI + H <=> C4H11O4SI_2 + H2  # Reaction 111
+  rate-constant: {A: 2.46e+07, b: 1.8, Ea: 5098.0}
+  note: |
+    Marinov 1999                      # 242     
+- equation: C4H12O4SI + H <=> C4H11O4SI_3 + H2  # Reaction 112
+  rate-constant: {A: 5.16e+07, b: 1.65, Ea: 2827.0}
+  note: |
+    Marinov 1999                      # 243     
+- equation: C4H12O4SI + O <=> C4H11O4SI_2 + OH  # Reaction 113
+  rate-constant: {A: 1.882e+08, b: 1.7, Ea: 5459.0}
+  note: |
+    Marinov 1999                      # 244     
+- equation: C4H12O4SI + O <=> C4H11O4SI_3 + OH  # Reaction 114
+  rate-constant: {A: 3.76e+07, b: 1.85, Ea: 1824.0}
+  note: |
+    Marinov 1999                      # 245     
+- equation: C4H12O4SI + CH3 <=> C4H11O4SI_2 + CH4  # Reaction 115
+  rate-constant: {A: 438.0, b: 3.18, Ea: 9622.0}
+  note: |
+    Marinov 1999                      # 246     
+- equation: C4H12O4SI + CH3 <=> C4H11O4SI_3 + CH4  # Reaction 116
+  rate-constant: {A: 1456.0, b: 2.99, Ea: 7948.0}
+  note: |
+    Marinov 1999                      # 247     
+- equation: C4H12O4SI + HO2 <=> C4H11O4SI_2 + H2O2  # Reaction 117
+  rate-constant: {A: 2.46e+04, b: 2.55, Ea: 1.575e+04}
+  note: |
+    Marinov 1999                      # 248     
+- equation: C4H12O4SI + HO2 <=> C4H11O4SI_3 + H2O2  # Reaction 118
+  rate-constant: {A: 1.64e+04, b: 2.55, Ea: 1.075e+04}
+  note: |
+    Marinov 1999                      # 249     
+- equation: C4H12O4SI + H2O <=> C2H8O4SI + C2H5OH  # Reaction 119
+  rate-constant: {A: 2.0e+11, b: 0.0, Ea: 2.5e+04}
+  note: |
+    Coltrin 2000                      # 251     
+- equation: C6H15O4SI_2 + CH3 <=> C4H12O4SI + C3H6  # Reaction 120
+  rate-constant: {A: 2.0e+13, b: 0.0, Ea: 0.0}
+  note: |
+    SI(OH)(OC2H4)(OC2H5)2
+    Marinov 1999                      # 252     
+- equation: C6H15O4SI_2 + H <=> C5H13O4SI + CH3  # Reaction 121
+  rate-constant: {A: 3.0e+13, b: 0.0, Ea: 0.0}
+  note: |
+    Marinov 1999                      # 253     
+- equation: C6H15O4SI_2 + H <=> C4H12O4SI + C2H4  # Reaction 122
+  rate-constant: {A: 3.0e+13, b: 0.0, Ea: 0.0}
+  note: |
+    Marinov 1999                      # 254     
+- equation: C6H15O4SI_2 <=> C4H11O4SI_2 + C2H4  # Reaction 123
+  rate-constant: {A: 4.134e+11, b: 0.81, Ea: 6.45187e+04}
+  note: |
+    This work based on DEOS           # 255     
+- equation: C6H15O4SI_3 + CH3 <=> C4H12O4SI + C3H6  # Reaction 124
+  rate-constant: {A: 2.0e+13, b: 0.0, Ea: 0.0}
+  note: |
+    SI(OH)(OCHCH3)(OC2H5)2
+    Marinov 1999                      # 258     
+- equation: C6H15O4SI_3 + H <=> C5H13O4SI + CH3  # Reaction 125
+  rate-constant: {A: 3.0e+13, b: 0.0, Ea: 0.0}
+  note: |
+    Marinov 1999                      # 259     
+- equation: C6H15O4SI_3 + H <=> C4H12O4SI + C2H4  # Reaction 126
+  rate-constant: {A: 3.0e+13, b: 0.0, Ea: 0.0}
+  note: |
+    Marinov 1999                      # 260     
+- equation: C6H15O4SI_3 <=> C4H11O4SI_3 + C2H4  # Reaction 127
+  rate-constant: {A: 4.134e+11, b: 0.81, Ea: 6.45187e+04}
+  note: |
+    This work based on DEOS           # 261     
+- equation: C6H15O4SI_3 + H2O <=> C4H11O4SI_3 + C2H5OH  # Reaction 128
+  rate-constant: {A: 2.0e+11, b: 0.0, Ea: 2.5e+04}
+  note: |
+    Coltrin 2000                      # 263     
+- equation: C3H9O4SI + H <=> C2H7O4SI + CH3  # Reaction 129
+  rate-constant: {A: 1.0e+13, b: 0.0, Ea: 0.0}
+  note: |
+    SI(OH)2(OCH2)(OC2H5)
+    Marinov 1999                      # 310     
+- equation: C3H9O4SI <=> CH5O4SI + C2H4  # Reaction 130
+  rate-constant: {A: 2.527e+07, b: 1.875, Ea: 6.15417e+04}
+  note: |
+    This work based on EOS            # 311     
+- equation: C3H9O4SI + H2O <=> CH5O4SI + C2H5OH  # Reaction 131
+  rate-constant: {A: 1.0e+11, b: 0.0, Ea: 2.5e+04}
+  note: |
+    Coltrin 2000                      # 313     
+- equation: C6H15O4SI_4 + H <=> C5H13O4SI_2 + CH3  # Reaction 132
+  rate-constant: {A: 1.0e+13, b: 0.0, Ea: 0.0}
+  note: |
+    SI(OCH2)(OCH3)(OC2H5)2
+    Marinov 1999                      # 322     
+- equation: C6H15O4SI_4 <=> C5H13O4SI + CH2(S)  # Reaction 133
+  rate-constant: {A: 2.84e+10, b: 1.0, Ea: 8.3871e+04}
+  note: |
+    Marinov 1999                      # 323     
+- equation: C6H15O4SI_4 <=> C4H11O4SI_4 + C2H4  # Reaction 134
+  rate-constant: {A: 4.134e+11, b: 0.81, Ea: 6.45187e+04}
+  note: |
+    This work based on DEOS           # 324     
+- equation: C6H15O4SI_4 + H2O <=> C4H11O4SI_4 + C2H5OH  # Reaction 135
+  rate-constant: {A: 2.0e+11, b: 0.0, Ea: 2.5e+04}
+  note: |
+    Coltrin 2000                      # 326     
+- equation: C5H13O4SI_2 + H2 <=> C5H14O4SI + H  # Reaction 136
+  rate-constant: {A: 2.14e+08, b: 1.52, Ea: 3449.0}
+  note: |
+    SI(O)(OCH3)(OC2H5)2
+    Marinov 1999                      # 327     
+- equation: C5H13O4SI_2 + HO2 <=> C5H14O4SI + O2  # Reaction 137
+  rate-constant: {A: 2.13e+28, b: -4.827, Ea: 3500.0}
+  note: |
+    Marinov 1999                      # 328     
+- equation: C5H13O4SI_2 + H <=> C5H14O4SI  # Reaction 138
+  rate-constant: {A: 2.21e+22, b: -2.0, Ea: 0.0}
+  note: |
+    Marinov 1999                      # 329     
+- equation: C5H13O4SI_2 + H2O2 <=> C5H14O4SI + HO2  # Reaction 139
+  rate-constant: {A: 2.4, b: 4.042, Ea: -2162.0}
+  note: |
+    Marinov 1999                      # 330     
+- equation: C5H13O4SI_2 + CH4 <=> C5H14O4SI + CH3  # Reaction 140
+  rate-constant: {A: 4.19e+06, b: 2.0, Ea: 2547.0}
+  note: |
+    Marinov 1999                      # 331     
+- equation: C5H13O4SI_2 + CH3 <=> C5H14O4SI + CH2(S)  # Reaction 141
+  rate-constant: {A: 2.0e+13, b: 0.0, Ea: 550.0}
+  note: |
+    Marinov 1999                      # 332     
+- equation: C5H13O4SI_2 + CH3 <=> C5H14O4SI + CH2  # Reaction 142
+  rate-constant: {A: 3.0e+06, b: 2.0, Ea: 2500.0}
+  note: |
+    Marinov 1999                      # 333     
+- equation: C5H13O4SI_2 + CH2O <=> C5H14O4SI + HCO  # Reaction 143
+  rate-constant: {A: 3.43e+09, b: 1.18, Ea: -447.0}
+  note: |
+    Marinov 1999                      # 341     
+- equation: C5H13O4SI_2 + HCO <=> C5H14O4SI + CO  # Reaction 144
+  rate-constant: {A: 1.0e+14, b: 0.0, Ea: 0.0}
+  note: |
+    Marinov 1999                      # 342     
+- equation: C5H13O4SI_2 + C2H5OH <=> C5H14O4SI + C2H4OH  # Reaction 145
+  rate-constant: {A: 1.74e+11, b: 0.27, Ea: 600.0}
+  note: |
+    Marinov 1999                      # 343     
+- equation: C5H13O4SI_2 + C2H5OH <=> C5H14O4SI + CH3CH2O  # Reaction 146
+  rate-constant: {A: 7.46e+11, b: 0.3, Ea: 1634.0}
+  note: |
+    Marinov 1999                      # 345     
+- equation: C5H13O4SI_2 + CH2HCO <=> C5H14O4SI + CH2CO  # Reaction 147
+  rate-constant: {A: 3.0e+13, b: 0.0, Ea: 0.0}
+  note: |
+    Marinov 1999                      # 350     
+- equation: C5H13O4SI_2 + C2H6 <=> C5H14O4SI + C2H5  # Reaction 148
+  rate-constant: {A: 7.23e+06, b: 2.0, Ea: 864.0}
+  note: |
+    Marinov 1999                      # 351     
+- equation: C5H13O4SI_2 + C2H5 <=> C5H14O4SI + C2H4  # Reaction 149
+  rate-constant: {A: 4.0e+13, b: 0.0, Ea: 0.0}
+  note: |
+    Marinov 1999                      # 352     
+- equation: C5H13O4SI_2 + C2H4 <=> C7H17O4SI_2  # Reaction 150
+  rate-constant: {A: 1.29e+12, b: 0.0, Ea: -817.0}
+  note: |
+    Marinov 1999                      # 353     
+- equation: C5H13O4SI_2 + C2H4 <=> C5H14O4SI + C2H3  # Reaction 151
+  rate-constant: {A: 2.02e+13, b: 0.0, Ea: 5936.0}
+  note: |
+    Marinov 1999                      # 354     
+- equation: C5H13O4SI_2 + C2H3 <=> C5H14O4SI + C2H2  # Reaction 152
+  rate-constant: {A: 2.0e+13, b: 0.0, Ea: 0.0}
+  note: |
+    Marinov 1999                      # 355     
+- equation: C5H13O4SI_2 + C2H2 <=> C5H14O4SI + C2H  # Reaction 153
+  rate-constant: {A: 3.37e+07, b: 2.0, Ea: 1.4e+04}
+  note: |
+    Marinov 1999                      # 356     
+- equation: C5H13O4SI_2 + CH2CO <=> C5H14O4SI + HCCO  # Reaction 154
+  rate-constant: {A: 1.0e+13, b: 0.0, Ea: 2000.0}
+  note: |
+    Marinov 1999                      # 357     
+- equation: C5H13O4SI_2 <=> C3H9O4SI_2 + C2H4  # Reaction 155
+  rate-constant: {A: 4.134e+11, b: 0.81, Ea: 6.45187e+04}
+  note: |
+    This work based on DEOS           # 373     
+- equation: C5H14O4SI <=> C4H12O4SI + CH2(S)  # Reaction 156
+  rate-constant: {A: 2.84e+10, b: 1.0, Ea: 8.3871e+04}
+  note: |
+    SI(OH)(OCH3)(OC2H5)2
+    Marinov 1999                      # 376     
+- equation: C5H14O4SI + OH <=> C5H13O4SI + H2O  # Reaction 157
+  rate-constant: {A: 2.61e+05, b: 2.182, Ea: -1344.0}
+  note: |
+    Marinov 1999                      # 377     
+- equation: C5H14O4SI + O <=> C5H13O4SI + OH  # Reaction 158
+  rate-constant: {A: 3.88e+05, b: 2.5, Ea: 3080.0}
+  note: |
+    Marinov 1999                      # 378     
+- equation: C5H14O4SI + H <=> C5H13O4SI + H2  # Reaction 159
+  rate-constant: {A: 1.7e+07, b: 2.1, Ea: 4868.0}
+  note: |
+    Marinov 1999                      # 379     
+- equation: C5H14O4SI + CH3 <=> C5H13O4SI + CH4  # Reaction 160
+  rate-constant: {A: 31.9, b: 3.17, Ea: 7171.0}
+  note: |
+    Marinov 1999                      # 380     
+- equation: C5H14O4SI + HO2 <=> C5H13O4SI + H2O2  # Reaction 161
+  rate-constant: {A: 9.64e+10, b: 0.0, Ea: 1.2578e+04}
+  note: |
+    Marinov 1999                      # 381     
+- equation: C5H14O4SI <=> C4H11O4SI_4 + CH3  # Reaction 162
+  rate-constant: {A: 2.702e+24, b: -2.114, Ea: 9.1934e+04}
+  note: |
+    Nurkowski 2015 based on EOS       # 382     
+- equation: C5H14O4SI <=> C3H9O4SI_2 + C2H5  # Reaction 163
+  rate-constant: {A: 2.5e+23, b: -1.54, Ea: 9.6005e+04}
+  note: |
+    Marinov 1999                      # 383     
+- equation: C5H14O4SI <=> C3H10O4SI + C2H4  # Reaction 164
+  rate-constant: {A: 4.134e+11, b: 0.81, Ea: 6.45187e+04}
+  note: |
+    This work based on DEOS           # 384     
+- equation: C5H14O4SI + H2O <=> C3H10O4SI + C2H5OH  # Reaction 165
+  rate-constant: {A: 2.0e+11, b: 0.0, Ea: 2.5e+04}
+  note: |
+    Coltrin 2000                      # 396     
+- equation: C7H17O4SI_2 + CH3 <=> C5H14O4SI + C3H6  # Reaction 166
+  rate-constant: {A: 2.0e+13, b: 0.0, Ea: 0.0}
+  note: |
+    SI(OCH3)(OC2H4)(OC2H5)2
+    Marinov 1999                      # 398     
+- equation: C7H17O4SI_2 + H <=> C6H15O4SI_4 + CH3  # Reaction 167
+  rate-constant: {A: 3.0e+13, b: 0.0, Ea: 0.0}
+  note: |
+    Marinov 1999                      # 399     
+- equation: C7H17O4SI_2 + H <=> C5H14O4SI + C2H4  # Reaction 168
+  rate-constant: {A: 3.0e+13, b: 0.0, Ea: 0.0}
+  note: |
+    Marinov 1999                      # 400     
+- equation: C2H7O4SI + H2 <=> C2H8O4SI + H  # Reaction 169
+  rate-constant: {A: 2.14e+08, b: 1.52, Ea: 3449.0}
+  note: |
+    SI(O)(OH)2(OC2H5) 
+    Marinov 1999                      # 434     
+- equation: C2H7O4SI + HO2 <=> C2H8O4SI + O2  # Reaction 170
+  rate-constant: {A: 2.13e+28, b: -4.827, Ea: 3500.0}
+  note: |
+    Marinov 1999                      # 435     
+- equation: C2H7O4SI + H <=> C2H8O4SI  # Reaction 171
+  rate-constant: {A: 2.21e+22, b: -2.0, Ea: 0.0}
+  note: |
+    Marinov 1999                      # 436     
+- equation: C2H7O4SI + H2O2 <=> C2H8O4SI + HO2  # Reaction 172
+  rate-constant: {A: 2.4, b: 4.042, Ea: -2162.0}
+  note: |
+    Marinov 1999                      # 437     
+- equation: C2H7O4SI + CH4 <=> C2H8O4SI + CH3  # Reaction 173
+  rate-constant: {A: 4.19e+06, b: 2.0, Ea: 2547.0}
+  note: |
+    Marinov 1999                      # 438     
+- equation: C2H7O4SI + CH3 <=> C2H8O4SI + CH2(S)  # Reaction 174
+  rate-constant: {A: 2.0e+13, b: 0.0, Ea: 550.0}
+  note: |
+    Marinov 1999                      # 439     
+- equation: C2H7O4SI + CH3 <=> C2H8O4SI + CH2  # Reaction 175
+  rate-constant: {A: 3.0e+06, b: 2.0, Ea: 2500.0}
+  note: |
+    Marinov 1999                      # 440     
+- equation: C2H7O4SI + CH3 <=> C3H10O4SI  # Reaction 176
+  rate-constant: {A: 8.7e+13, b: 0.1, Ea: 0.0}
+  note: |
+    Marinov 1999                      # 441     
+- equation: C2H7O4SI + CH2O <=> C2H8O4SI + HCO  # Reaction 177
+  rate-constant: {A: 3.43e+09, b: 1.18, Ea: -447.0}
+  note: |
+    Marinov 1999                      # 448     
+- equation: C2H7O4SI + HCO <=> C2H8O4SI + CO  # Reaction 178
+  rate-constant: {A: 1.0e+14, b: 0.0, Ea: 0.0}
+  note: |
+    Marinov 1999                      # 449     
+- equation: C2H7O4SI + C2H5OH <=> C2H8O4SI + C2H4OH  # Reaction 179
+  rate-constant: {A: 1.74e+11, b: 0.27, Ea: 600.0}
+  note: |
+    Marinov 1999                      # 450     
+- equation: C2H7O4SI + C2H5OH <=> C2H8O4SI + CH3CH2O  # Reaction 180
+  rate-constant: {A: 7.46e+11, b: 0.3, Ea: 1634.0}
+  note: |
+    Marinov 1999                      # 452     
+- equation: C2H7O4SI + CH2HCO <=> C2H8O4SI + CH2CO  # Reaction 181
+  rate-constant: {A: 3.0e+13, b: 0.0, Ea: 0.0}
+  note: |
+    Marinov 1999                      # 457     
+- equation: C2H7O4SI + C2H6 <=> C2H8O4SI + C2H5  # Reaction 182
+  rate-constant: {A: 7.23e+06, b: 2.0, Ea: 864.0}
+  note: |
+    Marinov 1999                      # 458     
+- equation: C2H7O4SI + C2H5 <=> C2H8O4SI + C2H4  # Reaction 183
+  rate-constant: {A: 4.0e+13, b: 0.0, Ea: 0.0}
+  note: |
+    Marinov 1999                      # 459     
+- equation: C2H7O4SI + C2H4 <=> C4H11O4SI_2  # Reaction 184
+  rate-constant: {A: 1.29e+12, b: 0.0, Ea: -817.0}
+  note: |
+    Marinov 1999                      # 460     
+- equation: C2H7O4SI + C2H4 <=> C2H8O4SI + C2H3  # Reaction 185
+  rate-constant: {A: 2.02e+13, b: 0.0, Ea: 5936.0}
+  note: |
+    Marinov 1999                      # 461     
+- equation: C2H7O4SI + C2H3 <=> C2H8O4SI + C2H2  # Reaction 186
+  rate-constant: {A: 2.0e+13, b: 0.0, Ea: 0.0}
+  note: |
+    Marinov 1999                      # 462     
+- equation: C2H7O4SI + C2H2 <=> C2H8O4SI + C2H  # Reaction 187
+  rate-constant: {A: 3.37e+07, b: 2.0, Ea: 1.4e+04}
+  note: |
+    Marinov 1999                      # 463     
+- equation: C2H7O4SI + CH2CO <=> C2H8O4SI + HCCO  # Reaction 188
+  rate-constant: {A: 1.0e+13, b: 0.0, Ea: 2000.0}
+  note: |
+    Marinov 1999                      # 464     
+- equation: C2H7O4SI <=> H3O4SI + C2H4  # Reaction 189
+  rate-constant: {A: 2.527e+07, b: 1.875, Ea: 6.15417e+04}
+  note: |
+    This work based on EOS            # 479     
+- equation: C2H8O4SI <=> CH5O4SI + CH3  # Reaction 190
+  rate-constant: {A: 1.351e+24, b: -2.114, Ea: 9.1934e+04}
+  note: |
+    SI(OH)3(OC2H5)
+    Nurkowski 2015 EOS k2d            # 578     
+- equation: C2H8O4SI <=> H3O4SI + C2H5  # Reaction 191
+  rate-constant: {A: 1.25e+23, b: -1.54, Ea: 9.6005e+04}
+  note: |
+    Marinov 1999                      # 579     
+- equation: C2H8O4SI <=> H4O4SI + C2H4  # Reaction 192
+  rate-constant: {A: 2.527e+07, b: 1.875, Ea: 6.15417e+04}
+  note: |
+    Nurkowski 2015 EOS k1d            # 580     
+- equation: C2H8O4SI + OH <=> C2H7O4SI_2 + H2O  # Reaction 193
+  rate-constant: {A: 1.74e+11, b: 0.27, Ea: 600.0}
+  note: |
+    Marinov 1999                      # 581     
+- equation: C2H8O4SI + OH <=> C2H7O4SI_3 + H2O  # Reaction 194
+  rate-constant: {A: 4.64e+11, b: 0.15, Ea: 0.0}
+  note: |
+    Marinov 1999                      # 582     
+- equation: C2H8O4SI + H <=> C2H7O4SI_2 + H2  # Reaction 195
+  rate-constant: {A: 1.23e+07, b: 1.8, Ea: 5098.0}
+  note: |
+    Marinov 1999                      # 583     
+- equation: C2H8O4SI + H <=> C2H7O4SI_3 + H2  # Reaction 196
+  rate-constant: {A: 2.58e+07, b: 1.65, Ea: 2827.0}
+  note: |
+    Marinov 1999                      # 584     
+- equation: C2H8O4SI + O <=> C2H7O4SI_2 + OH  # Reaction 197
+  rate-constant: {A: 9.41e+07, b: 1.7, Ea: 5459.0}
+  note: |
+    Marinov 1999.                             # 
+- equation: C2H8O4SI + O <=> C2H7O4SI_3 + OH  # Reaction 198
+  rate-constant: {A: 1.88e+07, b: 1.85, Ea: 1824.0}
+  note: |
+    Marinov 1999                      # 586     
+- equation: C2H8O4SI + CH3 <=> C2H7O4SI_2 + CH4  # Reaction 199
+  rate-constant: {A: 219.0, b: 3.18, Ea: 9622.0}
+  note: |
+    Marinov 1999                      # 587     
+- equation: C2H8O4SI + CH3 <=> C2H7O4SI_3 + CH4  # Reaction 200
+  rate-constant: {A: 728.0, b: 2.99, Ea: 7948.0}
+  note: |
+    Marinov 1999                      # 588     
+- equation: C2H8O4SI + HO2 <=> C2H7O4SI_2 + H2O2  # Reaction 201
+  rate-constant: {A: 1.23e+04, b: 2.55, Ea: 1.575e+04}
+  note: |
+    Marinov 1999                      # 589     
+- equation: C2H8O4SI + HO2 <=> C2H7O4SI_3 + H2O2  # Reaction 202
+  rate-constant: {A: 8200.0, b: 2.55, Ea: 1.075e+04}
+  note: |
+    Marinov 1999                      # 590     
+- equation: C2H8O4SI <=> C2H6O4SI + H2  # Reaction 203
+  rate-constant: {A: 5.62e+13, b: 0.0, Ea: 1.076147e+05}
+  note: |
+    Park 2002                         # 591     
+- equation: C2H8O4SI + H2O <=> H4O4SI + C2H5OH  # Reaction 204
+  rate-constant: {A: 1.0e+11, b: 0.0, Ea: 2.5e+04}
+  note: |
+    Coltrin 2000                      # 592     
+- equation: C4H11O4SI_2 + CH3 <=> C2H8O4SI + C3H6  # Reaction 205
+  rate-constant: {A: 2.0e+13, b: 0.0, Ea: 0.0}
+  note: |
+    SI(OH)2(OC2H4)(OC2H5)
+    Marinov 1999                      # 593     
+- equation: C4H11O4SI_2 + H <=> C3H9O4SI + CH3  # Reaction 206
+  rate-constant: {A: 3.0e+13, b: 0.0, Ea: 0.0}
+  note: |
+    Marinov 1999                      # 594     
+- equation: C4H11O4SI_2 + H <=> C2H8O4SI + C2H4  # Reaction 207
+  rate-constant: {A: 3.0e+13, b: 0.0, Ea: 0.0}
+  note: |
+    Marinov 1999                      # 595     
+- equation: C4H11O4SI_2 <=> C2H7O4SI_2 + C2H4  # Reaction 208
+  rate-constant: {A: 2.527e+07, b: 1.875, Ea: 6.15417e+04}
+  note: |
+    This work based on EOS            # 596     
+- equation: C4H11O4SI_3 + CH3 <=> C2H8O4SI + C3H6  # Reaction 209
+  rate-constant: {A: 2.0e+13, b: 0.0, Ea: 0.0}
+  note: |
+    SI(OH)2(OCHCH3)(OC2H5)
+    Marinov 1999                      # 599     
+- equation: C4H11O4SI_3 + H <=> C3H9O4SI + CH3  # Reaction 210
+  rate-constant: {A: 3.0e+13, b: 0.0, Ea: 0.0}
+  note: |
+    Marinov 1999                      # 600     
+- equation: C4H11O4SI_3 + H <=> C2H8O4SI + C2H4  # Reaction 211
+  rate-constant: {A: 3.0e+13, b: 0.0, Ea: 0.0}
+  note: |
+    Marinov 1999                      # 601     
+- equation: C4H11O4SI_3 <=> C2H7O4SI_3 + C2H4  # Reaction 212
+  rate-constant: {A: 2.527e+07, b: 1.875, Ea: 6.15417e+04}
+  note: |
+    This work based on EOS            # 602     
+- equation: C4H11O4SI_3 + H2O <=> C2H7O4SI_3 + C2H5OH  # Reaction 213
+  rate-constant: {A: 1.0e+11, b: 0.0, Ea: 2.5e+04}
+  note: |
+    Coltrin 2000                      # 604     
+- equation: CH5O4SI + H <=> H3O4SI + CH3  # Reaction 214
+  rate-constant: {A: 1.0e+13, b: 0.0, Ea: 0.0}
+  note: |
+    SI(OH)3(OCH2)  
+    Marinov 1999                      # 680     
+- equation: C4H11O4SI_4 + H <=> C3H9O4SI_2 + CH3  # Reaction 215
+  rate-constant: {A: 1.0e+13, b: 0.0, Ea: 0.0}
+  note: |
+    SI(OH)(OCH2)(OCH3)(OC2H5)
+    Marinov 1999                      # 684     
+- equation: C4H11O4SI_4 <=> C3H9O4SI + CH2(S)  # Reaction 216
+  rate-constant: {A: 2.84e+10, b: 1.0, Ea: 8.3871e+04}
+  note: |
+    Marinov 1999                      # 685     
+- equation: C4H11O4SI_4 <=> C2H7O4SI_4 + C2H4  # Reaction 217
+  rate-constant: {A: 2.527e+07, b: 1.875, Ea: 6.15417e+04}
+  note: |
+    This work based on EOS            # 686     
+- equation: C4H11O4SI_4 + H2O <=> C2H7O4SI_4 + C2H5OH  # Reaction 218
+  rate-constant: {A: 1.0e+11, b: 0.0, Ea: 2.5e+04}
+  note: |
+    Coltrin 2000                      # 688     
+- equation: C3H9O4SI_2 + H2 <=> C3H10O4SI + H  # Reaction 219
+  rate-constant: {A: 2.14e+08, b: 1.52, Ea: 3449.0}
+  note: |
+    SI(O)(OH)(OCH3)(OC2H5)
+    Marinov 1999                      # 715     
+- equation: C3H9O4SI_2 + HO2 <=> C3H10O4SI + O2  # Reaction 220
+  rate-constant: {A: 2.13e+28, b: -4.827, Ea: 3500.0}
+  note: |
+    Marinov 1999                      # 716     
+- equation: C3H9O4SI_2 + H <=> C3H10O4SI  # Reaction 221
+  rate-constant: {A: 2.21e+22, b: -2.0, Ea: 0.0}
+  note: |
+    Marinov 1999                      # 717     
+- equation: C3H9O4SI_2 + H2O2 <=> C3H10O4SI + HO2  # Reaction 222
+  rate-constant: {A: 2.4, b: 4.042, Ea: -2162.0}
+  note: |
+    Marinov 1999                      # 718     
+- equation: C3H9O4SI_2 + CH4 <=> C3H10O4SI + CH3  # Reaction 223
+  rate-constant: {A: 4.19e+06, b: 2.0, Ea: 2547.0}
+  note: |
+    Marinov 1999                      # 719     
+- equation: C3H9O4SI_2 + CH3 <=> C3H10O4SI + CH2(S)  # Reaction 224
+  rate-constant: {A: 2.0e+13, b: 0.0, Ea: 550.0}
+  note: |
+    Marinov 1999                      # 720     
+- equation: C3H9O4SI_2 + CH3 <=> C3H10O4SI + CH2  # Reaction 225
+  rate-constant: {A: 3.0e+06, b: 2.0, Ea: 2500.0}
+  note: |
+    Marinov 1999                      # 721     
+- equation: C3H9O4SI_2 + CH2O <=> C3H10O4SI + HCO  # Reaction 226
+  rate-constant: {A: 3.43e+09, b: 1.18, Ea: -447.0}
+  note: |
+    Marinov 1999                      # 729     
+- equation: C3H9O4SI_2 + HCO <=> C3H10O4SI + CO  # Reaction 227
+  rate-constant: {A: 1.0e+14, b: 0.0, Ea: 0.0}
+  note: |
+    Marinov 1999                      # 730     
+- equation: C3H9O4SI_2 + C2H5OH <=> C3H10O4SI + C2H4OH  # Reaction 228
+  rate-constant: {A: 1.74e+11, b: 0.27, Ea: 600.0}
+  note: |
+    Marinov 1999                      # 731     
+- equation: C3H9O4SI_2 + C2H5OH <=> C3H10O4SI + CH3CH2O  # Reaction 229
+  rate-constant: {A: 7.46e+11, b: 0.3, Ea: 1634.0}
+  note: |
+    Marinov 1999                      # 733     
+- equation: C3H9O4SI_2 + CH2HCO <=> C3H10O4SI + CH2CO  # Reaction 230
+  rate-constant: {A: 3.0e+13, b: 0.0, Ea: 0.0}
+  note: |
+    Marinov 1999                      # 738     
+- equation: C3H9O4SI_2 + C2H6 <=> C3H10O4SI + C2H5  # Reaction 231
+  rate-constant: {A: 7.23e+06, b: 2.0, Ea: 864.0}
+  note: |
+    Marinov 1999                      # 739     
+- equation: C3H9O4SI_2 + C2H5 <=> C3H10O4SI + C2H4  # Reaction 232
+  rate-constant: {A: 4.0e+13, b: 0.0, Ea: 0.0}
+  note: |
+    Marinov 1999                      # 740     
+- equation: C3H9O4SI_2 + C2H4 <=> C3H10O4SI + C2H3  # Reaction 233
+  rate-constant: {A: 2.02e+13, b: 0.0, Ea: 5936.0}
+  note: |
+    Marinov 1999                      # 742     
+- equation: C3H9O4SI_2 + C2H3 <=> C3H10O4SI + C2H2  # Reaction 234
+  rate-constant: {A: 2.0e+13, b: 0.0, Ea: 0.0}
+  note: |
+    Marinov 1999                      # 743     
+- equation: C3H9O4SI_2 + C2H2 <=> C3H10O4SI + C2H  # Reaction 235
+  rate-constant: {A: 3.37e+07, b: 2.0, Ea: 1.4e+04}
+  note: |
+    Marinov 1999                      # 744     
+- equation: C3H9O4SI_2 + CH2CO <=> C3H10O4SI + HCCO  # Reaction 236
+  rate-constant: {A: 1.0e+13, b: 0.0, Ea: 2000.0}
+  note: |
+    Marinov 1999                      # 745     
+- equation: C3H9O4SI_2 <=> CH5O4SI_2 + C2H4  # Reaction 237
+  rate-constant: {A: 2.527e+07, b: 1.875, Ea: 6.15417e+04}
+  note: |
+    This work based on EOS            # 761     
+- equation: C3H10O4SI <=> C2H8O4SI + CH2(S)  # Reaction 238
+  rate-constant: {A: 2.84e+10, b: 1.0, Ea: 8.3871e+04}
+  note: |
+    SI(OH)2(OCH3)(OC2H5) 
+    Marinov 1999                      # 813     
+- equation: C3H10O4SI + OH <=> C3H9O4SI + H2O  # Reaction 239
+  rate-constant: {A: 2.61e+05, b: 2.182, Ea: -1344.0}
+  note: |
+    Marinov 1999                      # 814     
+- equation: C3H10O4SI + O <=> C3H9O4SI + OH  # Reaction 240
+  rate-constant: {A: 3.88e+05, b: 2.5, Ea: 3080.0}
+  note: |
+    Marinov 1999                      # 815     
+- equation: C3H10O4SI + H <=> C3H9O4SI + H2  # Reaction 241
+  rate-constant: {A: 1.7e+07, b: 2.1, Ea: 4868.0}
+  note: |
+    Marinov 1999                      # 816     
+- equation: C3H10O4SI + CH3 <=> C3H9O4SI + CH4  # Reaction 242
+  rate-constant: {A: 31.9, b: 3.17, Ea: 7171.0}
+  note: |
+    Marinov 1999                      # 817     
+- equation: C3H10O4SI + HO2 <=> C3H9O4SI + H2O2  # Reaction 243
+  rate-constant: {A: 9.64e+10, b: 0.0, Ea: 1.2578e+04}
+  note: |
+    Marinov 1999                      # 818     
+- equation: C3H10O4SI <=> C2H7O4SI_4 + CH3  # Reaction 244
+  rate-constant: {A: 1.351e+24, b: -2.114, Ea: 9.1934e+04}
+  note: |
+    Nurkowski 2015 based on EOS       # 819     
+- equation: C3H10O4SI <=> CH5O4SI_2 + C2H5  # Reaction 245
+  rate-constant: {A: 1.25e+23, b: -1.54, Ea: 9.6005e+04}
+  note: |
+    Marinov 1999                      # 820     
+- equation: C3H10O4SI <=> CH6O4SI + C2H4  # Reaction 246
+  rate-constant: {A: 2.527e+07, b: 1.875, Ea: 6.15417e+04}
+  note: |
+    This work based on EOS            # 821     
+- equation: C3H10O4SI + H2O <=> CH6O4SI + C2H5OH  # Reaction 247
+  rate-constant: {A: 1.0e+11, b: 0.0, Ea: 2.5e+04}
+  note: |
+    Coltrin 2000                      # 833     
+- equation: H3O4SI + H2 <=> H4O4SI + H  # Reaction 248
+  rate-constant: {A: 2.14e+08, b: 1.52, Ea: 3449.0}
+  note: |
+    SI(O)(OH)3
+    Marinov 1999                      # 908     
+- equation: H3O4SI + HO2 <=> H4O4SI + O2  # Reaction 249
+  rate-constant: {A: 2.13e+28, b: -4.827, Ea: 3500.0}
+  note: |
+    Marinov 1999                      # 909     
+- equation: H3O4SI + H <=> H4O4SI  # Reaction 250
+  rate-constant: {A: 2.21e+22, b: -2.0, Ea: 0.0}
+  note: |
+    Marinov 1999                      # 910     
+- equation: H3O4SI + H2O2 <=> H4O4SI + HO2  # Reaction 251
+  rate-constant: {A: 2.4, b: 4.042, Ea: -2162.0}
+  note: |
+    Marinov 1999                      # 911     
+- equation: H3O4SI + CH4 <=> H4O4SI + CH3  # Reaction 252
+  rate-constant: {A: 4.19e+06, b: 2.0, Ea: 2547.0}
+  note: |
+    Marinov 1999                      # 912     
+- equation: H3O4SI + CH3 <=> H4O4SI + CH2(S)  # Reaction 253
+  rate-constant: {A: 2.0e+13, b: 0.0, Ea: 550.0}
+  note: |
+    Marinov 1999                      # 913     
+- equation: H3O4SI + CH3 <=> H4O4SI + CH2  # Reaction 254
+  rate-constant: {A: 3.0e+06, b: 2.0, Ea: 2500.0}
+  note: |
+    Marinov 1999                      # 914     
+- equation: H3O4SI + CH3 <=> CH6O4SI  # Reaction 255
+  rate-constant: {A: 8.7e+13, b: 0.1, Ea: 0.0}
+  note: |
+    Marinov 1999                      # 915     
+- equation: H3O4SI + CH2O <=> H4O4SI + HCO  # Reaction 256
+  rate-constant: {A: 3.43e+09, b: 1.18, Ea: -447.0}
+  note: |
+    Marinov 1999                      # 922     
+- equation: H3O4SI + HCO <=> H4O4SI + CO  # Reaction 257
+  rate-constant: {A: 1.0e+14, b: 0.0, Ea: 0.0}
+  note: |
+    Marinov 1999                      # 923     
+- equation: H3O4SI + C2H5OH <=> H4O4SI + C2H4OH  # Reaction 258
+  rate-constant: {A: 1.74e+11, b: 0.27, Ea: 600.0}
+  note: |
+    Marinov 1999                      # 924     
+- equation: H3O4SI + C2H5OH <=> H4O4SI + CH3CH2O  # Reaction 259
+  rate-constant: {A: 7.46e+11, b: 0.3, Ea: 1634.0}
+  note: |
+    Marinov 1999                      # 926     
+- equation: H3O4SI + CH2HCO <=> H4O4SI + CH2CO  # Reaction 260
+  rate-constant: {A: 3.0e+13, b: 0.0, Ea: 0.0}
+  note: |
+    Marinov 1999                      # 931     
+- equation: H3O4SI + C2H6 <=> H4O4SI + C2H5  # Reaction 261
+  rate-constant: {A: 7.23e+06, b: 2.0, Ea: 864.0}
+  note: |
+    Marinov 1999                      # 932     
+- equation: H3O4SI + C2H5 <=> H4O4SI + C2H4  # Reaction 262
+  rate-constant: {A: 4.0e+13, b: 0.0, Ea: 0.0}
+  note: |
+    Marinov 1999                      # 933     
+- equation: H3O4SI + C2H4 <=> C2H7O4SI_2  # Reaction 263
+  rate-constant: {A: 1.29e+12, b: 0.0, Ea: -817.0}
+  note: |
+    Marinov 1999                      # 934     
+- equation: H3O4SI + C2H4 <=> H4O4SI + C2H3  # Reaction 264
+  rate-constant: {A: 2.02e+13, b: 0.0, Ea: 5936.0}
+  note: |
+    Marinov 1999                      # 935     
+- equation: H3O4SI + C2H3 <=> H4O4SI + C2H2  # Reaction 265
+  rate-constant: {A: 2.0e+13, b: 0.0, Ea: 0.0}
+  note: |
+    Marinov 1999                      # 936     
+- equation: H3O4SI + C2H2 <=> H4O4SI + C2H  # Reaction 266
+  rate-constant: {A: 3.37e+07, b: 2.0, Ea: 1.4e+04}
+  note: |
+    Marinov 1999                      # 937     
+- equation: H3O4SI + CH2CO <=> H4O4SI + HCCO  # Reaction 267
+  rate-constant: {A: 1.0e+13, b: 0.0, Ea: 2000.0}
+  note: |
+    Marinov 1999                      # 938     
+- equation: C2H7O4SI_2 + CH3 <=> H4O4SI + C3H6  # Reaction 268
+  rate-constant: {A: 2.0e+13, b: 0.0, Ea: 0.0}
+  note: |
+    SI(OH)3(OC2H4)
+    Marinov 1999                      # 1088    
+- equation: C2H7O4SI_2 + H <=> CH5O4SI + CH3  # Reaction 269
+  rate-constant: {A: 3.0e+13, b: 0.0, Ea: 0.0}
+  note: |
+    Marinov 1999                      # 1089    
+- equation: C2H7O4SI_2 + H <=> H4O4SI + C2H4  # Reaction 270
+  rate-constant: {A: 3.0e+13, b: 0.0, Ea: 0.0}
+  note: |
+    Marinov 1999                      # 1090    
+- equation: C2H7O4SI_3 + CH3 <=> H4O4SI + C3H6  # Reaction 271
+  rate-constant: {A: 2.0e+13, b: 0.0, Ea: 0.0}
+  note: |
+    SI(OH)3(OCHCH3)
+    Marinov 1999                      # 1091    
+- equation: C2H7O4SI_3 + H <=> CH5O4SI + CH3  # Reaction 272
+  rate-constant: {A: 3.0e+13, b: 0.0, Ea: 0.0}
+  note: |
+    Marinov 1999                      # 1092    
+- equation: C2H7O4SI_3 + H <=> H4O4SI + C2H4  # Reaction 273
+  rate-constant: {A: 3.0e+13, b: 0.0, Ea: 0.0}
+  note: |
+    Marinov 1999                      # 1093    
+- equation: C2H7O4SI_4 + H <=> CH5O4SI_2 + CH3  # Reaction 274
+  rate-constant: {A: 1.0e+13, b: 0.0, Ea: 0.0}
+  note: |
+    SI(OH)2(OCH2)(OCH3)
+    Marinov 1999                      # 1120    
+- equation: C2H7O4SI_4 <=> CH5O4SI + CH2(S)  # Reaction 275
+  rate-constant: {A: 2.84e+10, b: 1.0, Ea: 8.3871e+04}
+  note: |
+    Marinov 1999                      # 1121    
+- equation: CH5O4SI_2 + H2 <=> CH6O4SI + H  # Reaction 276
+  rate-constant: {A: 2.14e+08, b: 1.52, Ea: 3449.0}
+  note: |
+    SI(O)(OH)2(OCH3)
+    Marinov 1999                      # 1238    
+- equation: CH5O4SI_2 + HO2 <=> CH6O4SI + O2  # Reaction 277
+  rate-constant: {A: 2.13e+28, b: -4.827, Ea: 3500.0}
+  note: |
+    Marinov 1999                      # 1239    
+- equation: CH5O4SI_2 + H <=> CH6O4SI  # Reaction 278
+  rate-constant: {A: 2.21e+22, b: -2.0, Ea: 0.0}
+  note: |
+    Marinov 1999                      # 1240    
+- equation: CH5O4SI_2 + H2O2 <=> CH6O4SI + HO2  # Reaction 279
+  rate-constant: {A: 2.4, b: 4.042, Ea: -2162.0}
+  note: |
+    Marinov 1999                      # 1241    
+- equation: CH5O4SI_2 + CH4 <=> CH6O4SI + CH3  # Reaction 280
+  rate-constant: {A: 4.19e+06, b: 2.0, Ea: 2547.0}
+  note: |
+    Marinov 1999                      # 1242    
+- equation: CH5O4SI_2 + CH3 <=> CH6O4SI + CH2(S)  # Reaction 281
+  rate-constant: {A: 2.0e+13, b: 0.0, Ea: 550.0}
+  note: |
+    Marinov 1999                      # 1243    
+- equation: CH5O4SI_2 + CH3 <=> CH6O4SI + CH2  # Reaction 282
+  rate-constant: {A: 3.0e+06, b: 2.0, Ea: 2500.0}
+  note: |
+    Marinov 1999                      # 1244    
+- equation: CH5O4SI_2 + CH2O <=> CH6O4SI + HCO  # Reaction 283
+  rate-constant: {A: 3.43e+09, b: 1.18, Ea: -447.0}
+  note: |
+    Marinov 1999                      # 1252    
+- equation: CH5O4SI_2 + HCO <=> CH6O4SI + CO  # Reaction 284
+  rate-constant: {A: 1.0e+14, b: 0.0, Ea: 0.0}
+  note: |
+    Marinov 1999                      # 1253    
+- equation: CH5O4SI_2 + C2H5OH <=> CH6O4SI + C2H4OH  # Reaction 285
+  rate-constant: {A: 1.74e+11, b: 0.27, Ea: 600.0}
+  note: |
+    Marinov 1999                      # 1254    
+- equation: CH5O4SI_2 + C2H5OH <=> CH6O4SI + CH3CH2O  # Reaction 286
+  rate-constant: {A: 7.46e+11, b: 0.3, Ea: 1634.0}
+  note: |
+    Marinov 1999                      # 1256    
+- equation: CH5O4SI_2 + CH2HCO <=> CH6O4SI + CH2CO  # Reaction 287
+  rate-constant: {A: 3.0e+13, b: 0.0, Ea: 0.0}
+  note: |
+    Marinov 1999                      # 1261    
+- equation: CH5O4SI_2 + C2H6 <=> CH6O4SI + C2H5  # Reaction 288
+  rate-constant: {A: 7.23e+06, b: 2.0, Ea: 864.0}
+  note: |
+    Marinov 1999                      # 1262    
+- equation: CH5O4SI_2 + C2H5 <=> CH6O4SI + C2H4  # Reaction 289
+  rate-constant: {A: 4.0e+13, b: 0.0, Ea: 0.0}
+  note: |
+    Marinov 1999                      # 1263    
+- equation: CH5O4SI_2 + C2H4 <=> CH6O4SI + C2H3  # Reaction 290
+  rate-constant: {A: 2.02e+13, b: 0.0, Ea: 5936.0}
+  note: |
+    Marinov 1999                      # 1265    
+- equation: CH5O4SI_2 + C2H3 <=> CH6O4SI + C2H2  # Reaction 291
+  rate-constant: {A: 2.0e+13, b: 0.0, Ea: 0.0}
+  note: |
+    Marinov 1999                      # 1266    
+- equation: CH5O4SI_2 + C2H2 <=> CH6O4SI + C2H  # Reaction 292
+  rate-constant: {A: 3.37e+07, b: 2.0, Ea: 1.4e+04}
+  note: |
+    Marinov 1999                      # 1267    
+- equation: CH5O4SI_2 + CH2CO <=> CH6O4SI + HCCO  # Reaction 293
+  rate-constant: {A: 1.0e+13, b: 0.0, Ea: 2000.0}
+  note: |
+    Marinov 1999                      # 1268    
+- equation: CH5O4SI_2 <=> H3O4SI + CH2(S)  # Reaction 294
+  rate-constant: {A: 2.84e+10, b: 1.0, Ea: 8.3871e+04}
+  note: |
+    Marinov 1999                      # 1283    
+- equation: CH6O4SI <=> H4O4SI + CH2(S)  # Reaction 295
+  rate-constant: {A: 2.84e+10, b: 1.0, Ea: 8.3871e+04}
+  note: |
+    SI(OH)3(OCH3) 
+    Marinov 1999                      # 1376    
+- equation: CH6O4SI + OH <=> CH5O4SI + H2O  # Reaction 296
+  rate-constant: {A: 2.61e+05, b: 2.182, Ea: -1344.0}
+  note: |
+    Marinov 1999                      # 1377    
+- equation: CH6O4SI + O <=> CH5O4SI + OH  # Reaction 297
+  rate-constant: {A: 3.88e+05, b: 2.5, Ea: 3080.0}
+  note: |
+    Marinov 1999                      # 1378    
+- equation: CH6O4SI + H <=> CH5O4SI + H2  # Reaction 298
+  rate-constant: {A: 1.7e+07, b: 2.1, Ea: 4868.0}
+  note: |
+    Marinov 1999                      # 1379    
+- equation: CH6O4SI + CH3 <=> CH5O4SI + CH4  # Reaction 299
+  rate-constant: {A: 31.9, b: 3.17, Ea: 7171.0}
+  note: |
+    Marinov 1999                      # 1380    
+- equation: CH6O4SI + HO2 <=> CH5O4SI + H2O2  # Reaction 300
+  rate-constant: {A: 9.64e+10, b: 0.0, Ea: 1.2578e+04}
+  note: |
+    Marinov 1999                      # 1381    
+- equation: H2 + OH <=> H + H2O  # Reaction 301
+  rate-constant: {A: 2.14e+08, b: 1.52, Ea: 3449.0}
+  note: |2
+     Reactions for ethanol oxidation mechanism taken from Marinov 1999
+    1. Marinov 1995A
+- equation: O + OH <=> H + O2  # Reaction 302
+  rate-constant: {A: 2.02e+14, b: -0.4, Ea: 0.0}
+  note: |
+    2. Marinov 1995A
+- equation: H2 + O <=> H + OH  # Reaction 303
+  rate-constant: {A: 5.06e+04, b: 2.67, Ea: 6290.0}
+  note: |
+    3. Marinov 1995A
+- equation: H + O2 (+M) <=> HO2 (+M)  # Reaction 304
+  duplicate: true
+  type: falloff
+  low-P-rate-constant: {A: 1.05e+19, b: -1.257, Ea: 0.0}
+  high-P-rate-constant: {A: 4.52e+13, b: 0.0, Ea: 0.0}
+  efficiencies: {N2: 0.0, H2: 0.0, H2O: 0.0, CH4: 10.0, CO2: 3.8, CO: 
+      1.9}
+  note: |
+    4. Marinov 1995A
+- equation: H + O2 (+M) <=> HO2 (+M)  # Reaction 305
+  duplicate: true
+  type: falloff
+  low-P-rate-constant: {A: 2.03e+20, b: -1.59, Ea: 0.0}
+  high-P-rate-constant: {A: 4.52e+13, b: 0.0, Ea: 0.0}
+  note: |
+    4a. Marinov 1995A  
+- equation: H + O2 (+M) <=> HO2 (+M)  # Reaction 306
+  duplicate: true
+  type: falloff
+  low-P-rate-constant: {A: 1.52e+19, b: -1.133, Ea: 0.0}
+  high-P-rate-constant: {A: 4.52e+13, b: 0.0, Ea: 0.0}
+  note: |
+    4b. Marinov 1995A
+- equation: H + O2 (+M) <=> HO2 (+M)  # Reaction 307
+  duplicate: true
+  type: falloff
+  low-P-rate-constant: {A: 2.1e+23, b: -2.437, Ea: 0.0}
+  high-P-rate-constant: {A: 4.52e+13, b: 0.0, Ea: 0.0}
+  note: |
+    4c. Marinov 1995A
+- equation: OH + HO2 <=> H2O + O2  # Reaction 308
+  rate-constant: {A: 2.13e+28, b: -4.827, Ea: 3500.0}
+  note: |
+    5. Marinov HiPPLEr 1995
+- equation: H + HO2 <=> 2 OH  # Reaction 309
+  rate-constant: {A: 1.5e+14, b: 0.0, Ea: 1000.0}
+  note: |
+    6. Marinov 1995A  
+- equation: H + HO2 <=> H2 + O2  # Reaction 310
+  rate-constant: {A: 6.63e+13, b: 0.0, Ea: 2126.0}
+  note: |
+    7. Tsang   1986x
+- equation: H + HO2 <=> H2O + O  # Reaction 311
+  rate-constant: {A: 3.01e+13, b: 0.0, Ea: 1721.0}
+  note: |
+    8. Marinov 1995A
+- equation: O + HO2 <=> O2 + OH  # Reaction 312
+  rate-constant: {A: 3.25e+13, b: 0.0, Ea: 0.0}
+  note: |
+    9. Marinov 1995A
+- equation: 2 OH <=> H2O + O  # Reaction 313
+  rate-constant: {A: 3.57e+04, b: 2.4, Ea: -2112.0}
+  note: |
+    10. Marinov 1995A
+- equation: 2 H + M <=> H2 + M  # Reaction 314
+  type: three-body
+  rate-constant: {A: 1.0e+18, b: -1.0, Ea: 0.0}
+  efficiencies: {H2: 0.0, H2O: 0.0}
+  note: |
+    11. Marinov 1995A
+- equation: H2 + 2 H <=> 2 H2  # Reaction 315
+  rate-constant: {A: 9.2e+16, b: -0.6, Ea: 0.0}
+  note: |
+    11a. Marinov 1995A					
+- equation: 2 H + H2O <=> H2 + H2O  # Reaction 316
+  rate-constant: {A: 6.0e+19, b: -1.25, Ea: 0.0}
+  note: |
+    11b. Marinov 1995A
+- equation: H + OH + M <=> H2O + M  # Reaction 317
+  type: three-body
+  rate-constant: {A: 2.21e+22, b: -2.0, Ea: 0.0}
+  efficiencies: {H2O: 6.4}
+  note: |
+    12. Marinov 1995A
+- equation: H + O + M <=> OH + M  # Reaction 318
+  type: three-body
+  rate-constant: {A: 4.71e+18, b: -1.0, Ea: 0.0}
+  efficiencies: {H2O: 6.4}
+  note: |
+    13. Marinov 1995A
+- equation: 2 O + M <=> O2 + M  # Reaction 319
+  type: three-body
+  rate-constant: {A: 1.89e+13, b: 0.0, Ea: -1788.0}
+  note: |
+    14. Marinov 1995A
+- equation: 2 HO2 <=> O2 + H2O2  # Reaction 320
+  rate-constant: {A: 4.2e+14, b: 0.0, Ea: 1.1982e+04}
+  note: |
+    15. Marinov 1995A
+- equation: 2 OH (+M) <=> H2O2 (+M)  # Reaction 321
+  type: falloff
+  low-P-rate-constant: {A: 3.04e+30, b: -4.63, Ea: 2049.0}
+  high-P-rate-constant: {A: 1.24e+14, b: -0.37, Ea: 0.0}
+  Troe: {A: 0.47, T3: 100.0, T1: 2000.0, T2: 1.0e+15}
+  note: |
+    16. Marinov 1995A
+- equation: H + H2O2 <=> H2 + HO2  # Reaction 322
+  rate-constant: {A: 1.98e+06, b: 2.0, Ea: 2435.0}
+  note: |
+    17. Marinov 1995A
+- equation: H + H2O2 <=> H2O + OH  # Reaction 323
+  rate-constant: {A: 3.07e+13, b: 0.0, Ea: 4217.0}
+  note: |
+    18. Marinov 1995A
+- equation: O + H2O2 <=> OH + HO2  # Reaction 324
+  rate-constant: {A: 9.55e+06, b: 2.0, Ea: 3970.0}
+  note: |
+    19. Marinov 1995A
+- equation: OH + H2O2 <=> H2O + HO2  # Reaction 325
+  rate-constant: {A: 2.4, b: 4.042, Ea: -2162.0}
+  note: |
+    20. Marinov 1995A
+- equation: 2 CH3 (+M) <=> C2H6 (+M)  # Reaction 326
+  type: falloff
+  low-P-rate-constant: {A: 1.14e+36, b: -5.246, Ea: 1705.0}
+  high-P-rate-constant: {A: 9.22e+16, b: -1.174, Ea: 636.0}
+  Troe: {A: 0.405, T3: 1120.0, T1: 69.6, T2: 1.0e+15}
+  efficiencies: {H2: 2.0, H2O: 5.0, CO2: 3.0, CO: 2.0}
+  note: |
+    21.WALtEr  1990 Marinov
+- equation: H + CH3 (+M) <=> CH4 (+M)  # Reaction 327
+  type: falloff
+  low-P-rate-constant: {A: 3.31e+30, b: -4.0, Ea: 2108.0}
+  high-P-rate-constant: {A: 2.14e+15, b: -0.4, Ea: 0.0}
+  Troe: {A: 0.0, T3: 1.0e-15, T1: 1.0e-15, T2: 40.0}
+  efficiencies: {H2: 2.0, H2O: 5.0, CO2: 3.0, CO: 2.0}
+  note: |
+    22. Tsang 1986 Marinov
+- equation: H + CH4 <=> H2 + CH3  # Reaction 328
+  rate-constant: {A: 2.2e+04, b: 3.0, Ea: 8750.0}
+  note: |
+    23. MiLLEr 1992
+- equation: CH4 + OH <=> H2O + CH3  # Reaction 329
+  rate-constant: {A: 4.19e+06, b: 2.0, Ea: 2547.0}
+  note: |
+    24. Marinov 1995
+- equation: CH4 + O <=> CH3 + OH  # Reaction 330
+  rate-constant: {A: 6.92e+08, b: 1.56, Ea: 8485.0}
+  note: |
+    25. Marinov 1995
+- equation: CH4 + HO2 <=> CH3 + H2O2  # Reaction 331
+  rate-constant: {A: 1.12e+13, b: 0.0, Ea: 2.464e+04}
+  note: |
+    26. Marinov 1995
+- equation: CH3 + HO2 <=> CH4 + O2  # Reaction 332
+  rate-constant: {A: 3.0e+12, b: 0.0, Ea: 0.0}
+  note: |
+    28. Marinov 1995
+- equation: CH3 + O <=> H + CH2O  # Reaction 333
+  rate-constant: {A: 8.0e+13, b: 0.0, Ea: 0.0}
+  note: |
+    29. Marinov 1995
+- equation: CH3 + O2 <=> CH2O + OH  # Reaction 334
+  rate-constant: {A: 2.51e+11, b: 0.0, Ea: 1.464e+04}
+  note: |
+    31. Marinov 1995 
+- equation: CH3 + OH <=> H2O + CH2(S)  # Reaction 335
+  rate-constant: {A: 2.0e+13, b: 0.0, Ea: 550.0}
+  note: |
+    34. PiLLiNg 1997
+- equation: CH3 + OH <=> H2O + CH2  # Reaction 336
+  rate-constant: {A: 3.0e+06, b: 2.0, Ea: 2500.0}
+  note: |
+    35. Marinov 1996
+- equation: H + CH3 <=> H2 + CH2  # Reaction 337
+  rate-constant: {A: 9.0e+13, b: 0.0, Ea: 1.51e+04}
+  note: |
+    37. MiLLEr 1992
+- equation: CH3 + M <=> H + CH2 + M  # Reaction 338
+  type: three-body
+  rate-constant: {A: 1.9e+16, b: 0.0, Ea: 9.1411e+04}
+  note: |
+    39. MARkuS 1992
+- equation: CH2 + OH <=> H + CH2O  # Reaction 339
+  rate-constant: {A: 2.5e+13, b: 0.0, Ea: 0.0}
+  note: |
+    71. MiLLEr 1992
+- equation: CH2 + CO2 <=> CH2O + CO  # Reaction 340
+  rate-constant: {A: 1.1e+11, b: 0.0, Ea: 1000.0}
+  note: |
+    72. MiLLEr 1992
+- equation: CH2 + O <=> 2 H + CO  # Reaction 341
+  rate-constant: {A: 5.0e+13, b: 0.0, Ea: 0.0}
+  note: |
+    73. MiLLEr 1992  
+- equation: CH2 + O <=> H2 + CO  # Reaction 342
+  rate-constant: {A: 3.0e+13, b: 0.0, Ea: 0.0}
+  note: |
+    74. MiLLEr 1992  
+- equation: CH2 + O2 <=> CH2O + O  # Reaction 343
+  rate-constant: {A: 3.29e+21, b: -3.3, Ea: 2868.0}
+  note: |
+    75. Marinov 1996
+- equation: CH2 + O2 <=> 2 H + CO2  # Reaction 344
+  rate-constant: {A: 3.29e+21, b: -3.3, Ea: 2868.0}
+  note: |
+    76. Marinov 1996
+- equation: CH2 + O2 <=> H2 + CO2  # Reaction 345
+  rate-constant: {A: 1.01e+21, b: -3.3, Ea: 1508.0}
+  note: |
+    77. Marinov 1996
+- equation: CH2 + O2 <=> H2O + CO  # Reaction 346
+  rate-constant: {A: 7.28e+19, b: -2.54, Ea: 1809.0}
+  note: |
+    78. Marinov 1996
+- equation: CH2 + O2 <=> HCO + OH  # Reaction 347
+  rate-constant: {A: 1.29e+20, b: -3.3, Ea: 284.0}
+  note: |
+    79. Marinov 1996
+- equation: CH3 + CH2 <=> H + C2H4  # Reaction 348
+  rate-constant: {A: 4.0e+13, b: 0.0, Ea: 0.0}
+  note: |
+    80. MiLLEr 1992
+- equation: 2 CH2 <=> 2 H + C2H2  # Reaction 349
+  rate-constant: {A: 4.0e+13, b: 0.0, Ea: 0.0}
+  note: |
+    81. MiLLEr 1992
+- equation: CH2 + HCCO <=> CO + C2H3  # Reaction 350
+  rate-constant: {A: 3.0e+13, b: 0.0, Ea: 0.0}
+  note: |
+    82. MiLLEr 1992
+- equation: CH2(S) + M <=> CH2 + M  # Reaction 351
+  type: three-body
+  rate-constant: {A: 1.0e+13, b: 0.0, Ea: 0.0}
+  efficiencies: {H: 12.0, H2O: 3.0, C2H2: 4.0}
+  note: |
+    84. MiLLEr 1992
+- equation: CH4 + CH2(S) <=> 2 CH3  # Reaction 352
+  rate-constant: {A: 4.0e+13, b: 0.0, Ea: 0.0}
+  note: |
+    85. MiLLEr 1992 
+- equation: C2H6 + CH2(S) <=> CH3 + C2H5  # Reaction 353
+  rate-constant: {A: 1.2e+14, b: 0.0, Ea: 0.0}
+  note: |
+    86. MiLLEr 1992
+- equation: O2 + CH2(S) <=> H + CO + OH  # Reaction 354
+  rate-constant: {A: 7.0e+13, b: 0.0, Ea: 0.0}
+  note: |
+    87. MiLLEr 1992
+- equation: H2 + CH2(S) <=> H + CH3  # Reaction 355
+  rate-constant: {A: 7.0e+13, b: 0.0, Ea: 0.0}
+  note: |
+    88. MiLLEr 1992
+- equation: O + CH2(S) <=> 2 H + CO  # Reaction 356
+  rate-constant: {A: 3.0e+13, b: 0.0, Ea: 0.0}
+  note: |
+    91. MiLLEr 1992 
+- equation: OH + CH2(S) <=> H + CH2O  # Reaction 357
+  rate-constant: {A: 3.0e+13, b: 0.0, Ea: 0.0}
+  note: |
+    92. MiLLEr 1992 
+- equation: CO2 + CH2(S) <=> CH2O + CO  # Reaction 358
+  rate-constant: {A: 3.0e+12, b: 0.0, Ea: 0.0}
+  note: |
+    94. MiLLEr 1992
+- equation: CH3 + CH2(S) <=> H + C2H4  # Reaction 359
+  rate-constant: {A: 2.0e+13, b: 0.0, Ea: 0.0}
+  note: |
+    95. MiLLEr 1992
+- equation: CH2(S) + CH2CO <=> CO + C2H4  # Reaction 360
+  rate-constant: {A: 1.6e+14, b: 0.0, Ea: 0.0}
+  note: |
+    96. MiLLEr 1992   
+- equation: CH2O + OH <=> H2O + HCO  # Reaction 361
+  rate-constant: {A: 3.43e+09, b: 1.18, Ea: -447.0}
+  note: |
+    107. Tsang  1986
+- equation: H + CH2O <=> H2 + HCO  # Reaction 362
+  rate-constant: {A: 2.19e+08, b: 1.77, Ea: 3000.0}
+  note: |
+    108. MiLLEr 1992
+- equation: CH2O + M <=> H + HCO + M  # Reaction 363
+  type: three-body
+  rate-constant: {A: 3.31e+16, b: 0.0, Ea: 8.1e+04}
+  note: |
+    109. MiLLEr 1992
+- equation: CH2O + O <=> HCO + OH  # Reaction 364
+  rate-constant: {A: 1.8e+13, b: 0.0, Ea: 3080.0}
+  note: |
+    110. MiLLEr 1992
+- equation: HCO + O2 <=> CO + HO2  # Reaction 365
+  rate-constant: {A: 7.58e+12, b: 0.0, Ea: 410.0}
+  note: |
+    111. TiMONEN 1988
+- equation: HCO + M <=> H + CO + M  # Reaction 366
+  type: three-body
+  rate-constant: {A: 1.86e+17, b: -1.0, Ea: 1.7e+04}
+  efficiencies: {H2: 1.87, H2O: 5.0, CH4: 2.81, CO2: 3.0, CO: 1.87}
+  note: |
+    112. TiMONEN 1987
+- equation: HCO + OH <=> H2O + CO  # Reaction 367
+  rate-constant: {A: 1.0e+14, b: 0.0, Ea: 0.0}
+  note: |
+    113. MiLLEr 1992
+- equation: H + HCO <=> H2 + CO  # Reaction 368
+  rate-constant: {A: 1.19e+13, b: 0.25, Ea: 0.0}
+  note: |
+    114. MiLLEr 1992
+- equation: HCO + O <=> CO + OH  # Reaction 369
+  rate-constant: {A: 3.0e+13, b: 0.0, Ea: 0.0}
+  note: |
+    115. MiLLEr 1992
+- equation: HCO + O <=> H + CO2  # Reaction 370
+  rate-constant: {A: 3.0e+13, b: 0.0, Ea: 0.0}
+  note: |
+    116. MiLLEr 1992
+- equation: CO + OH <=> H + CO2  # Reaction 371
+  rate-constant: {A: 9420.0, b: 2.25, Ea: -2351.0}
+  note: |
+    126. Marinov 1996
+- equation: CO + O + M <=> CO2 + M  # Reaction 372
+  type: three-body
+  rate-constant: {A: 6.17e+14, b: 0.0, Ea: 3000.0}
+  note: |
+    127. MiLLEr 1992
+- equation: CO + O2 <=> CO2 + O  # Reaction 373
+  rate-constant: {A: 2.53e+12, b: 0.0, Ea: 4.7688e+04}
+  note: |
+    128. MiLLEr 1992
+- equation: CO + HO2 <=> CO2 + OH  # Reaction 374
+  rate-constant: {A: 5.8e+13, b: 0.0, Ea: 2.2934e+04}
+  note: |
+    129. MiLLEr 1992
+- equation: C2H5OH (+M) <=> OH + C2H5 (+M)  # Reaction 375
+  type: falloff
+  low-P-rate-constant: {A: 3.252e+85, b: -18.81, Ea: 1.1493e+05}
+  high-P-rate-constant: {A: 1.25e+23, b: -1.54, Ea: 9.6005e+04}
+  Troe: {A: 0.5, T3: 300.0, T1: 900.0, T2: 5000.0}
+  efficiencies: {H2: 2.0, H2O: 5.0, CO2: 3.0, CO: 2.0}
+  note: |
+    131. Marinov 1998
+- equation: C2H5OH (+M) <=> H2O + C2H4 (+M)  # Reaction 376
+  type: falloff
+  low-P-rate-constant: {A: 2.57e+83, b: -18.85, Ea: 8.6452e+04}
+  high-P-rate-constant: {A: 2.79e+13, b: 0.09, Ea: 6.6136e+04}
+  Troe: {A: 0.7, T3: 350.0, T1: 800.0, T2: 3800.0}
+  efficiencies: {H2O: 5.0}
+  note: |
+    132. Marinov 1998
+- equation: OH + C2H5OH <=> H2O + C2H4OH  # Reaction 377
+  rate-constant: {A: 1.74e+11, b: 0.27, Ea: 600.0}
+  note: |
+    134. Marinov 1998
+- equation: OH + C2H5OH <=> H2O + CH3CH2O  # Reaction 378
+  rate-constant: {A: 7.46e+11, b: 0.3, Ea: 1634.0}
+  note: |
+    136. Marinov 1998
+- equation: H + C2H5OH <=> H2 + C2H4OH  # Reaction 379
+  rate-constant: {A: 1.23e+07, b: 1.8, Ea: 5098.0}
+  note: |
+    137. Marinov 1998
+- equation: H + C2H5OH <=> H2 + CH3CH2O  # Reaction 380
+  rate-constant: {A: 1.5e+07, b: 1.6, Ea: 3038.0}
+  note: |
+    139. Marinov 1998
+- equation: O + C2H5OH <=> OH + C2H4OH  # Reaction 381
+  rate-constant: {A: 9.41e+07, b: 1.7, Ea: 5459.0}
+  note: |
+    140. Marinov 1998
+- equation: O + C2H5OH <=> OH + CH3CH2O  # Reaction 382
+  rate-constant: {A: 1.58e+07, b: 2.0, Ea: 4448.0}
+  note: |
+    142. Marinov 1998
+- equation: CH3 + C2H5OH <=> CH4 + C2H4OH  # Reaction 383
+  rate-constant: {A: 219.0, b: 3.18, Ea: 9622.0}
+  note: |
+    143. Marinov 1998
+- equation: CH3 + C2H5OH <=> CH4 + CH3CH2O  # Reaction 384
+  rate-constant: {A: 145.0, b: 2.99, Ea: 7649.0}
+  note: |
+    145. Marinov 1998
+- equation: HO2 + C2H5OH <=> H2O2 + C2H4OH  # Reaction 385
+  rate-constant: {A: 1.23e+04, b: 2.55, Ea: 1.575e+04}
+  note: |
+    146. Marinov 1998
+- equation: HO2 + C2H5OH <=> H2O2 + CH3CH2O  # Reaction 386
+  rate-constant: {A: 2.5e+12, b: 0.0, Ea: 2.4e+04}
+  note: |
+    148. Marinov 1998
+- equation: CH3CH2O + M <=> CH3 + CH2O + M  # Reaction 387
+  type: three-body
+  rate-constant: {A: 1.35e+38, b: -6.96, Ea: 2.38e+04}
+  note: |
+    150. Marinov 1998
+- equation: CO + CH3CH2O <=> CO2 + C2H5  # Reaction 388
+  rate-constant: {A: 468.0, b: 3.16, Ea: 5380.0}
+  note: |
+    151. Marinov 1998
+- equation: H + CH3CH2O <=> H2O + C2H4  # Reaction 389
+  rate-constant: {A: 3.0e+13, b: 0.0, Ea: 0.0}
+  note: |
+    154. Marinov 1998
+- equation: H + CH2HCO <=> CH3 + HCO  # Reaction 390
+  rate-constant: {A: 5.0e+13, b: 0.0, Ea: 0.0}
+  note: |
+    176. Marinov 1998
+- equation: H + CH2HCO <=> H2 + CH2CO  # Reaction 391
+  rate-constant: {A: 2.0e+13, b: 0.0, Ea: 0.0}
+  note: |
+    177. Marinov 1998
+- equation: O + CH2HCO <=> CH2O + HCO  # Reaction 392
+  rate-constant: {A: 1.0e+14, b: 0.0, Ea: 0.0}
+  note: |
+    178. Marinov 1996
+- equation: OH + CH2HCO <=> H2O + CH2CO  # Reaction 393
+  rate-constant: {A: 3.0e+13, b: 0.0, Ea: 0.0}
+  note: |
+    179. Marinov 1996
+- equation: O2 + CH2HCO <=> CH2O + CO + OH  # Reaction 394
+  rate-constant: {A: 3.0e+10, b: 0.0, Ea: 0.0}
+  note: |
+    180. Marinov 1996
+- equation: CH3 + CH2HCO <=> H + CO + C2H5  # Reaction 395
+  rate-constant: {A: 4.9e+14, b: -0.5, Ea: 0.0}
+  note: |
+    181. Marinov 1996
+- equation: HO2 + CH2HCO <=> CH2O + HCO + OH  # Reaction 396
+  rate-constant: {A: 7.0e+12, b: 0.0, Ea: 0.0}
+  note: |
+    182. Marinov 1996
+- equation: CH2HCO <=> CH3 + CO  # Reaction 397
+  rate-constant: {A: 1.17e+43, b: -9.83, Ea: 4.3756e+04}
+  note: |
+    184. Marinov 1998
+- equation: CH2HCO <=> H + CH2CO  # Reaction 398
+  rate-constant: {A: 1.81e+43, b: -9.61, Ea: 4.5868e+04}
+  note: |
+    185. Marinov 1998
+- equation: CH3 + C2H6 <=> CH4 + C2H5  # Reaction 399
+  rate-constant: {A: 0.55, b: 4.0, Ea: 8300.0}
+  note: |
+    186. MiLLEr 1992
+- equation: H + C2H6 <=> H2 + C2H5  # Reaction 400
+  rate-constant: {A: 540.0, b: 3.5, Ea: 5210.0}
+  note: |
+    187. MiLLEr 1992
+- equation: O + C2H6 <=> OH + C2H5  # Reaction 401
+  rate-constant: {A: 3.0e+07, b: 2.0, Ea: 5115.0}
+  note: |
+    188. MiLLEr 1992
+- equation: OH + C2H6 <=> H2O + C2H5  # Reaction 402
+  rate-constant: {A: 7.23e+06, b: 2.0, Ea: 864.0}
+  note: |
+    189. BAuLCH 1992
+- equation: H + C2H5 <=> H2 + C2H4  # Reaction 403
+  rate-constant: {A: 1.25e+14, b: 0.0, Ea: 8000.0}
+  note: |
+    190. Marinov 1995
+- equation: H + C2H5 <=> 2 CH3  # Reaction 404
+  rate-constant: {A: 3.0e+13, b: 0.0, Ea: 0.0}
+  note: |
+    191. WARNAtz 1984
+- equation: H + C2H5 <=> C2H6  # Reaction 405
+  rate-constant: {A: 3.0e+13, b: 0.0, Ea: 0.0}
+  note: |
+    192. Marinov 1998
+- equation: OH + C2H5 <=> H2O + C2H4  # Reaction 406
+  rate-constant: {A: 4.0e+13, b: 0.0, Ea: 0.0}
+  note: |
+    193. Marinov 1995
+- equation: O + C2H5 <=> CH3 + CH2O  # Reaction 407
+  rate-constant: {A: 1.0e+14, b: 0.0, Ea: 0.0}
+  note: |
+    194. HErrON 1988
+- equation: HO2 + C2H5 <=> O2 + C2H6  # Reaction 408
+  rate-constant: {A: 3.0e+12, b: 0.0, Ea: 0.0}
+  note: |
+    195. Marinov 1998
+- equation: HO2 + C2H5 <=> OH + CH3CH2O  # Reaction 409
+  rate-constant: {A: 3.0e+13, b: 0.0, Ea: 0.0}
+  note: |
+    196. Tsang 1986
+- equation: O2 + C2H5 <=> HO2 + C2H4  # Reaction 410
+  rate-constant: {A: 2.89e+28, b: -5.4, Ea: 7585.0}
+  note: |
+    197. Marinov 1998
+- equation: OH + C2H4 <=> C2H4OH  # Reaction 411
+  rate-constant: {A: 1.29e+12, b: 0.0, Ea: -817.0}
+  note: |
+    199. AtkiNSON 1986
+- equation: O2 + C2H4OH <=> HOC2H4O2  # Reaction 412
+  rate-constant: {A: 1.0e+12, b: 0.0, Ea: -1100.0}
+  note: |
+    200. Marinov 1998
+- equation: HOC2H4O2 <=> 2 CH2O + OH  # Reaction 413
+  rate-constant: {A: 6.0e+10, b: 0.0, Ea: 2.45e+04}
+  note: |
+    201. Marinov 1998
+- equation: H + C2H4 <=> H2 + C2H3  # Reaction 414
+  rate-constant: {A: 3.36e-07, b: 6.0, Ea: 1692.0}
+  note: |
+    202. DAgAut 1990
+- equation: OH + C2H4 <=> H2O + C2H3  # Reaction 415
+  rate-constant: {A: 2.02e+13, b: 0.0, Ea: 5936.0}
+  note: |
+    203. MiLLEr 1992
+- equation: O + C2H4 <=> CH3 + HCO  # Reaction 416
+  rate-constant: {A: 1.02e+07, b: 1.88, Ea: 179.0}
+  note: |
+    204. BAuLCH 1994
+- equation: O + C2H4 <=> H + CH2HCO  # Reaction 417
+  rate-constant: {A: 3.39e+06, b: 1.88, Ea: 179.0}
+  note: |
+    205. BAuLCH 1994
+- equation: CH3 + C2H4 <=> CH4 + C2H3  # Reaction 418
+  rate-constant: {A: 6.62, b: 3.7, Ea: 9500.0}
+  note: |
+    206. Marinov 1995
+- equation: H + C2H4 (+M) <=> C2H5 (+M)  # Reaction 419
+  type: falloff
+  low-P-rate-constant: {A: 1.112e+34, b: -5.0, Ea: 4448.0}
+  high-P-rate-constant: {A: 1.08e+12, b: 0.454, Ea: 1822.0}
+  Troe: {A: 1.0, T3: 1.0e-15, T1: 95.0, T2: 200.0}
+  efficiencies: {H2: 2.0, H2O: 5.0, CO2: 3.0, CO: 2.0}
+  note: |
+    207. FENg  1993
+- equation: C2H4 (+M) <=> H2 + C2H2 (+M)  # Reaction 420
+  type: falloff
+  low-P-rate-constant: {A: 1.5e+15, b: 0.0, Ea: 5.5443e+04}
+  high-P-rate-constant: {A: 1.8e+14, b: 0.0, Ea: 8.7e+04}
+  note: |
+    208. Marinov 1997
+- equation: H + C2H3 (+M) <=> C2H4 (+M)  # Reaction 421
+  type: falloff
+  low-P-rate-constant: {A: 9.8e+29, b: -3.86, Ea: 3320.0}
+  high-P-rate-constant: {A: 6.1e+12, b: 0.27, Ea: 280.0}
+  Troe: {A: 0.782, T3: 208.0, T1: 2663.0, T2: 6095.0}
+  efficiencies: {H2O: 5.0}
+  note: |
+    209. GRI-MECH2.11
+- equation: H + C2H3 <=> H2 + C2H2  # Reaction 422
+  rate-constant: {A: 9.0e+13, b: 0.0, Ea: 0.0}
+  note: |
+    210. Tsang 1986
+- equation: O + C2H3 <=> H + CH2CO  # Reaction 423
+  rate-constant: {A: 3.0e+13, b: 0.0, Ea: 0.0}
+  note: |
+    211. MiLLEr 1992
+- equation: O2 + C2H3 <=> CH2O + HCO  # Reaction 424
+  rate-constant: {A: 1.7e+29, b: -5.312, Ea: 6500.0}
+  note: |
+    212. Marinov 1997
+- equation: O2 + C2H3 <=> O + CH2HCO  # Reaction 425
+  rate-constant: {A: 5.5e+14, b: -0.611, Ea: 5260.0}
+  note: |
+    213. Marinov 1997
+- equation: O2 + C2H3 <=> HO2 + C2H2  # Reaction 426
+  rate-constant: {A: 2.12e-06, b: 6.0, Ea: 9484.0}
+  note: |
+    214. CfM/NMM 1996
+- equation: OH + C2H3 <=> H2O + C2H2  # Reaction 427
+  rate-constant: {A: 2.0e+13, b: 0.0, Ea: 0.0}
+  note: |
+    215. MiLLEr 1992
+- equation: C2H + C2H3 <=> 2 C2H2  # Reaction 428
+  rate-constant: {A: 3.0e+13, b: 0.0, Ea: 0.0}
+  note: |
+    216. MiLLEr 1992
+- equation: CH3 + C2H3 <=> C3H6  # Reaction 429
+  rate-constant: {A: 4.46e+56, b: -13.0, Ea: 1.3865e+04}
+  note: |
+    219. Marinov 1996
+- equation: CH3 + C2H3 <=> CH4 + C2H2  # Reaction 430
+  rate-constant: {A: 2.0e+13, b: 0.0, Ea: 0.0}
+  note: |
+    220. FAHr  1991
+- equation: OH + C2H2 <=> H2O + C2H  # Reaction 431
+  rate-constant: {A: 3.37e+07, b: 2.0, Ea: 1.4e+04}
+  note: |
+    221. MiLLEr 1992
+- equation: OH + C2H2 <=> H + CH2CO  # Reaction 432
+  rate-constant: {A: 2.18e-04, b: 4.5, Ea: -1000.0}
+  note: |
+    223. MiLLEr 1992
+- equation: OH + C2H2 <=> CH3 + CO  # Reaction 433
+  rate-constant: {A: 4.83e-04, b: 4.0, Ea: -2000.0}
+  note: |
+    224. MiLLEr 1992
+- equation: O + C2H2 <=> CH2 + CO  # Reaction 434
+  rate-constant: {A: 6.12e+06, b: 2.0, Ea: 1900.0}
+  note: |
+    226. Marinov 1996
+- equation: O + C2H2 <=> H + HCCO  # Reaction 435
+  rate-constant: {A: 1.43e+07, b: 2.0, Ea: 1900.0}
+  note: |
+    227. Marinov 1996
+- equation: O + C2H2 <=> OH + C2H  # Reaction 436
+  rate-constant: {A: 3.16e+15, b: -0.6, Ea: 1.5e+04}
+  note: |
+    228. MiLLEr 1992
+- equation: CH3 + C2H2 <=> CH4 + C2H  # Reaction 437
+  rate-constant: {A: 1.81e+11, b: 0.0, Ea: 1.7289e+04}
+  note: |
+    229. Tsang  1986
+- equation: O2 + C2H2 <=> OH + HCCO  # Reaction 438
+  rate-constant: {A: 4.0e+07, b: 1.5, Ea: 3.01e+04}
+  note: |
+    230. Marinov 1997
+- equation: C2H2 + M <=> H + C2H + M  # Reaction 439
+  type: three-body
+  rate-constant: {A: 4.2e+16, b: 0.0, Ea: 1.07e+05}
+  note: |
+    231. MiLLEr 1992
+- equation: H + C2H2 (+M) <=> C2H3 (+M)  # Reaction 440
+  type: falloff
+  low-P-rate-constant: {A: 2.25e+40, b: -7.269, Ea: 6577.0}
+  high-P-rate-constant: {A: 3.11e+11, b: 0.58, Ea: 2589.0}
+  Troe: {A: 1.0, T3: 1.0e-15, T1: 675.0, T2: 1.0e+15}
+  efficiencies: {H2: 2.0, H2O: 5.0, CO2: 3.0, CO: 2.0}
+  note: |
+    232. KNyAzEv 1995
+- equation: O + CH2CO <=> CH2 + CO2  # Reaction 441
+  rate-constant: {A: 1.75e+12, b: 0.0, Ea: 1350.0}
+  note: |
+    242. Marinov 1995
+- equation: H + CH2CO <=> CH3 + CO  # Reaction 442
+  rate-constant: {A: 2.71e+04, b: 2.75, Ea: 714.0}
+  note: |
+    243. Marinov 1996
+- equation: H + CH2CO <=> H2 + HCCO  # Reaction 443
+  rate-constant: {A: 2.0e+14, b: 0.0, Ea: 8000.0}
+  note: |
+    244. Marinov 1996
+- equation: O + CH2CO <=> OH + HCCO  # Reaction 444
+  rate-constant: {A: 1.0e+13, b: 0.0, Ea: 8000.0}
+  note: |
+    245. MiLLEr 1992
+- equation: OH + CH2CO <=> H2O + HCCO  # Reaction 445
+  rate-constant: {A: 1.0e+13, b: 0.0, Ea: 2000.0}
+  note: |
+    246. Marinov 1996
+- equation: CH2CO (+M) <=> CH2 + CO (+M)  # Reaction 446
+  type: falloff
+  low-P-rate-constant: {A: 3.6e+15, b: 0.0, Ea: 5.927e+04}
+  high-P-rate-constant: {A: 3.0e+14, b: 0.0, Ea: 7.098e+04}
+  note: |
+    248. MiLLEr 1992
+- equation: H2 + C2H <=> H + C2H2  # Reaction 447
+  rate-constant: {A: 4.09e+05, b: 2.39, Ea: 864.3}
+  note: |
+    249. MiLLEr 1992
+- equation: OH + C2H <=> H + HCCO  # Reaction 448
+  rate-constant: {A: 2.0e+13, b: 0.0, Ea: 0.0}
+  note: |
+    251. MiLLEr 1992
+- equation: O2 + C2H <=> H + 2 CO  # Reaction 449
+  rate-constant: {A: 9.04e+12, b: 0.0, Ea: -457.0}
+  note: |
+    252. MiLLEr 1992
+- equation: H + HCCO <=> CO + CH2(S)  # Reaction 450
+  rate-constant: {A: 1.0e+14, b: 0.0, Ea: 0.0}
+  note: |
+    254. MiLLEr 1992
+- equation: O + HCCO <=> H + 2 CO  # Reaction 451
+  rate-constant: {A: 8.0e+13, b: 0.0, Ea: 0.0}
+  note: |
+    255. PEEtErS 1995
+- equation: O2 + HCCO <=> HCO + CO + O  # Reaction 452
+  rate-constant: {A: 2.5e+08, b: 1.0, Ea: 0.0}
+  note: |
+    257. Marinov 1997
+- equation: O2 + HCCO <=> HCO + CO2  # Reaction 453
+  rate-constant: {A: 2.4e+11, b: 0.0, Ea: -854.0}
+  note: |
+    258. Marinov 1997
+- equation: 2 HCCO <=> 2 CO + C2H2  # Reaction 454
+  rate-constant: {A: 1.0e+13, b: 0.0, Ea: 0.0}
+  note: |
+    260. Marinov 1997
+- equation: C3H6 <=> CH4 + C2H2  # Reaction 455
+  rate-constant: {A: 2.5e+12, b: 0.0, Ea: 7.0e+04}
+  note: |
+    293. HidAkA 1992
+- equation: O + C3H6 <=> HCO + C2H5  # Reaction 456
+  rate-constant: {A: 1.58e+07, b: 1.76, Ea: -1216.0}
+  note: |
+    300. Tsang 1991
+- equation: H + C3H6 <=> CH3 + C2H4  # Reaction 457
+  rate-constant: {A: 7.23e+12, b: 0.0, Ea: 1302.0}
+  note: |
+    304. Tsang 1991

@@ -1,0 +1,110 @@
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!This is the supplimentary material to the paper. It includes the ozone sub-mechanism used in the modelling in this paper.
+!
+!Title: Kinetic studies of ozone assisted low temperature oxidation of dimethyl ether in a flow reactor using molecular-beam mass spectrometry
+!
+!Hao Zhao*, Xueliang Yang, Yiguang Ju
+!Department of Mechanical and Aerospace Engineering, Princeton University, Princeton, NJ !08544, USA
+
+!* Corresponding author.  Tel: +1-9178682096 
+!Email addresses: haozhao@princeton.edu
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!
+!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!              
+!                     ----- Princeton Ozone sub-mechanism -----
+!
+!  Xueliang Yang, Hao Zhao, Yiguang Ju; Princeton University, 2016.
+!
+!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+ELEMENTS
+C H O N AR HE
+END
+
+SPECIES
+
+O2           O             AR            O3            HE 
+H2           O2(SING)      H             OH            HO2 
+H2O          H2O2          CO            CO2           HCO
+CH3          CH3O
+
+END
+
+REACTIONS
+
+!*********************************************************************************
+!              		O3 mechanism-HPMECH							     			 !
+!																				 !
+!*********************************************************************************
+!!The following reactiosn are from 
+!!Luther, K.; Oum, K.; Troe, J. Phys. Chem. Chem. Phys. 2005,7,2764-2770.
+!! and
+!!Atkinson, R.; Baulch, D.L.; Cox, R.A.; Crowley, J.N.; Hampson, R.F.; Hynes, R.G.; Jenkin, M.E.; Rossi, M.J.; Troe, J.
+!!Evaluated kinetic and photochemical data for atmospheric chemistry: Volume I - gas phase reactions of Ox, HOx, NOx and SOx species
+!!Atmos. Chem. Phys.  4(2004) 1461 - 1738
+!O2+O+AR=O3+AR  			4.29E+17 	-1.50 	0.
+!duplicate
+!O2+O+AR=O3+AR  			5.10E+21 	-3.20 	0.
+!duplicate  	
+!O2+O+HE=O3+HE  			5.16E+17 	-1.50 	0.
+!duplicate
+!O2+O+HE=O3+HE  			6.12E+21 	-3.20 	0.
+!duplicate  	
+!!put HE efficiency 20% higher than AR, it is usually true for most of reactions
+!O2+O+M=O3+M 			6.53E+17 	-1.50 	0.  
+!   H2/2.0/ O2/0.95/ O3/2.5/ O/4.0/ AR/0.0/ HE/0.0/
+!duplicate 
+!O2+O+M=O3+M 			1.33E+22 	-3.30 	0.  
+!   H2/2.0/ O2/1.07/ O3/2.5/ O/4.0/ AR/0.0/ HE/0.0/
+!duplicate 
+
+O3(+M)=O2+O(+M)			1.37E+15	-0.67	25990
+LOW	/2.275E+28	-4.37	27297/
+Troe	/0.6417	3.91E-04	8680.74	6060.75/
+AR/1.0/ HE/1.2/ N2/1.5/ H2/3.0/	O2/1.50/ O3/3.75/ O/6.0/
+!!O3+O is taken from
+!!Atkinson, R.; Baulch, D.L.; Cox, R.A.; Crowley, J.N.; Hampson, R.F.; Hynes, R.G.; Jenkin, M.E.; Rossi, M.J.; Troe, J.
+!!Evaluated kinetic and photochemical data for atmospheric chemistry: Volume I - gas phase reactions of Ox, HOx, NOx and SOx species
+!!Atmos. Chem. Phys.  4(2004) 1461 - 1738
+O3+O=O2+O2	 			4.82E+12 	0.00 	4094.	
+!! O3+O=O2(SING)+O2 is from
+!!Vasiljeva, A. N.; Klopovskiy, K. S.; Kovalev, A. S.; Lopaev, D. V.; Mankelevich, Y. A.; Popov, N. A.; Rakhimov, A. T.; Rakhimova, T. V.
+!!J. Phys. D: Appl. Phys.2004,37, 2455-2468.
+!! it is an estimate
+O3+O=O2(SING)+O2	 	1.44E+11 	0.00 	4094.	
+!! O3+H=O2+OH is taken from
+!!DeMore, W.B.; Sander, S.P.; Golden, D.M.; Hampson, R.F.; Kurylo, M.J.; Howard, C.J.; Ravishankara, A.R.; Kolb, C.E.; Molina, M.J.
+!!Chemical kinetics and photochemical data for use in stratospheric modeling. Evaluation number 12
+!!JPL Publication 97-4  1997 1-266
+O3+H=O2+OH 				8.43E+13 	0.00 	934		
+!! O3+H=O+HO2 is taken from 
+!!C.J. Howard, B.J. Finlayson-Pitts J. Chem. Phys., 72 (6) (1980), pp. 3842–3843
+O3+H=O+HO2				4.52E+11 	0.00	0.		
+!! O3+OH=O2+HO2 is from
+!!A. Mansergas, J.M. Anglada  ChemPhysChem, 8 (2007), pp. 1534–1539
+O3+OH=O2+HO2			1.85E+11 	0.00	 831	
+!!O3+H2O=O2+H2O2 is from
+!! S. Hatakeyama, M.T. Leu J. Phys. Chem., 93 (1989), pp. 5784–5789
+O3+H2O=O2+H2O2			6.62E+01 	0.00	 0		
+!! O3+HO2=OH+O2+O2 is from
+!!DeMore, W.B.; Sander, S.P.; Golden, D.M.; Hampson, R.F.; Kurylo, M.J.; Howard, C.J.; Ravishankara, A.R.; Kolb, C.E.; Molina, M.J.
+!!Chemical kinetics and photochemical data for use in stratospheric modeling. Evaluation number 12
+!!JPL Publication 97-4  1997 1-266
+O3+HO2=OH+O2+O2			6.62E+09 	0.00 	994		
+!! the following two are from
+!!R. Atkinson, D.L. Baulch, R.A. Cox, J.N. Crowley, R.F. Hampson, R.G. Hynes, M.E. Jenkin, M.J. Rossi, J. Troe
+!! Atmos. Chem. Phys., 4 (2004), pp. 1461–1738
+!O3+NO=O2+NO2			8.43E+11 	0.00 	2603	
+
+O3+CO<=>O2+CO2			6.02E+02  0.00      0.00
+O3+HCO<=>O2+H+CO2		5.00E+11  0.00      0.00
+
+!!O3+CH3=CH3O+O2 is from
+!!J. Albaladejo, E. Jimenez, A. Notario, B. Cabanas, E. Martinez
+!!J. Phys. Chem. A, 106 (2002), pp. 2512–2519
+O3+CH3=CH3O+O2			5.83E+10 	0.00	 0		
+
+
+END

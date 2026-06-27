@@ -42,7 +42,7 @@ Mohammad Aghsaee, Steffen H. Dürrstein, Jürgen Herzler, Heidi Böhm, Mustapha 
 
 ## Abstract
 
-not available
+The effect of molecular hydrogen on the formation of molecular carbonaceous species important for soot formation is studied through a combination of shock-tube experiments with high-repetition-rate time-of-flight mass spectrometry and detailed chemistry modeling. The experiment allows to simultaneously measure the concentration–time profiles for various species with a time resolution of 10μs. Concentration histories of reactants and polyacetylene intermediates (C2 x H2, x =1–4) are measured during the pyrolysis of acetylene with and without H2 added to the gas mixture for a wide range of conditions. In the 1760–2565K temperature range, reasonable agreement between the experiment and the model predictions for C2H2, C4H2, C6H2, and C8H2 is achieved. H2 addition leads to the depletion of important building blocks for particle formation, namely of polyacetylenes due to an enhanced consumption of important radicals by H2, which are required for the fast build-up of carbonaceous material.
 
 ## Processing Notes
 

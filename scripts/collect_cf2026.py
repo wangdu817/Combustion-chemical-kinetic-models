@@ -1366,7 +1366,7 @@ def url_head(url: str) -> tuple[int, str, int]:
         method="HEAD",
         headers={"User-Agent": "Mozilla/5.0"},
     )
-    with urllib.request.urlopen(req, timeout=8) as response:
+    with urllib.request.urlopen(req, timeout=3) as response:
         length = response.headers.get("content-length") or "0"
         return response.status, response.headers.get("content-type") or "", int(length)
 
@@ -1375,7 +1375,7 @@ def url_download(url: str, dest: Path) -> None:
     req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
     tmp = dest.with_suffix(dest.suffix + ".part")
     try:
-        with urllib.request.urlopen(req, timeout=30) as response, tmp.open("wb") as out:
+        with urllib.request.urlopen(req, timeout=15) as response, tmp.open("wb") as out:
             shutil.copyfileobj(response, out)
         tmp.replace(dest)
     except Exception:
@@ -1385,7 +1385,7 @@ def url_download(url: str, dest: Path) -> None:
         if not curl:
             raise
         completed = subprocess.run(
-            [curl, "-L", "--fail", "--max-time", "90", "-A", "Mozilla/5.0", "-o", str(tmp), url],
+            [curl, "-L", "--fail", "--max-time", "30", "-A", "Mozilla/5.0", "-o", str(tmp), url],
             capture_output=True,
             text=True,
             timeout=100,
@@ -1416,7 +1416,6 @@ def probe_supplements(max_mmc: int = 12, year: str | None = None, force: bool = 
         if found and not force:
             record["supplementProbeStatus"] = "complete"
             record.setdefault("supplementProbeMethod", "recorded-links")
-            write_metadata(records)
             continue
         original_error_count = len(record.get("probeErrors") or [])
         changed = False

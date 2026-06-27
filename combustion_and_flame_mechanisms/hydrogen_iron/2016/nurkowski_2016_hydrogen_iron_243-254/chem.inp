@@ -1,0 +1,697 @@
+! Skeletal version of the TEOS oxidation mechanism in oxygen-hydrogen flames. (Mechanism size: 70 Species 457 Reactions).
+! Mechanism obtained via 3-stage reduction method performed on the detialed TEOS mechanism.
+!
+! References:
+! 1. Marinov 1999  : N. M. Marinov; A detailed chemical kinetic model for high temperature ethanol oxidation.; International Journal of Chemical Kinetics, 31(3):183–220, 1999
+! 2. Nurkowski 2015: D. Nurkowski, S. J. Klippenstein, Y. Georgievskii, M. Verdicchio, A. W. Jasper, J. Akroyd, S. Mosbach, and M. Kraft; Ab initio Variational Transition State Theory
+!                    and Master Equation Study of the Reaction (OH)3SiOCH2+CH3 <=>( OH)3SiOC2H5.;, Zeitschrift für Physikalische Chemie, 334:1–18, 2015.
+! 3. Park 2002     : J. Park, R. S. Zhu, and M. C. Lin; Thermal decomposition of ethanol. i. ab initio molecular orbital/Rice-Ramsperger-Kassel-Marcus prediction of rate constant and
+!                    product branching ratios.; Journal of Chemical Physics, 117, 2002
+! 4. Rao 2011      : H. B. Rao, X. Y. Zeng, H. He, and Z. R. Li; Theoretical investigations on removal reactions of ethenol by H atom.; Journal of Physical Chemistry, 115:1602–1608, 2011
+! 5. Coltrin 2000  : M. E. Coltrin, P. Ho, H. K. Moffat, and R. J. Buss; Chemical kinetics in chemical vapor deposition: growth of silicon dioxide from tetraethoxysilane (TEOS).; Thin
+!                    Solid Films, 365(2):251–263, 2000
+!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+!
+ELEMENTS
+  AR     /39.948/
+  C      /12.011/
+  H      /1.0079/
+  N      /14.0067/
+  O      /15.9994/
+  SI     /28.085/
+END
+
+SPECIES
+! Silica species
+  C8H20O4SI        !1    SI(OC2H5)4     
+  C7H17O4SI        !2    SI(OCH2)(OC2H5)3
+  C6H15O4SI        !3    SI(O)(OC2H5)3  
+  C6H16O4SI        !4    SI(OH)(OC2H5)3 
+  C8H19O4SI        !5    SI(OC2H4)(OC2H5)3
+  C8H19O4SI_2      !6    SI(OCHCH3)(OC2H5)3
+  C8H18O4SI        !7    SI(OCH=CH2)(OC2H5)3
+  C5H13O4SI        !8    SI(OH)(OCH2)(OC2H5)2
+  C7H15O4SI        !9    SI(OCH2)(OCH=CH2)(OC2H5)2
+  C7H18O4SI        !10   SI(OCH3)(OC2H5)3
+  C4H11O4SI        !11   SI(O)(OH)(OC2H5)2
+  C6H13O4SI        !12   SI(O)(OCH=CH2)(OC2H5)2
+  C4H12O4SI        !13   SI(OH)2(OC2H5)2
+  C6H15O4SI_2      !14   SI(OH)(OC2H4)(OC2H5)2 
+  C6H15O4SI_3      !15   SI(OH)(OCHCH3)(OC2H5)2 
+  C8H17O4SI        !16   SI(OC2H4)(OCH=CH2)(OC2H5)2
+  C3H9O4SI         !17   SI(OH)2(OCH2)(OC2H5)
+  C5H11O4SI        !18   SI(OH)(OCH2)(OCH=CH2)(OC2H5) 
+  C6H15O4SI_4      !19   SI(OCH2)(OCH3)(OC2H5)2
+  C5H13O4SI_2      !20   SI(O)(OCH3)(OC2H5)2
+  C5H14O4SI        !21   SI(OH)(OCH3)(OC2H5)2
+  C7H17O4SI_2      !22   SI(OCH3)(OC2H4)(OC2H5)2
+  C2H7O4SI         !23   SI(O)(OH)2(OC2H5) 
+  C2H8O4SI         !24   SI(OH)3(OC2H5)  
+  C4H11O4SI_2      !25   SI(OH)2(OC2H4)(OC2H5)
+  C4H11O4SI_3      !26   SI(OH)2(OCHCH3)(OC2H5)
+  CH5O4SI          !27   SI(OH)3(OCH2)  
+  C4H11O4SI_4      !28   SI(OH)(OCH2)(OCH3)(OC2H5)
+  C3H9O4SI_2       !29   SI(O)(OH)(OCH3)(OC2H5)
+  C3H10O4SI        !30   SI(OH)2(OCH3)(OC2H5) 
+  H3O4SI           !31   SI(O)(OH)3    
+  H4O4SI           !32   SI(OH)4
+  C2H7O4SI_2       !33   SI(OH)3(OC2H4)  
+  C2H7O4SI_3       !34   SI(OH)3(OCHCH3)
+  C2H6O4SI         !35   SI(OH)3(OCH=CH2)
+  C2H7O4SI_4       !36   SI(OH)2(OCH2)(OCH3)
+  CH5O4SI_2        !37   SI(O)(OH)2(OCH3)
+  CH6O4SI          !38   SI(OH)3(OCH3)     
+
+! Hydrocarbon species  
+  N2               !39
+  H2               !40
+  H                !41
+  H2O              !42
+  CH4              !43
+  CH3              !44
+  CH2              !45
+  CH2O             !46
+  HCO              !47
+  CO2              !48
+  CO               !49
+  O2               !50
+  O                !51
+  OH               !52
+  HO2              !53
+  H2O2             !54
+  C2H              !55
+  HCCO             !56
+  C2H2             !57
+  C2H3             !58
+  C2H4             !59
+  C2H5             !60
+  C2H5OH           !61
+  AR               !62
+  C2H6             !63
+  CH2(S)           !64
+  CH2CO            !65
+  CH2HCO           !66
+  C3H6             !67
+  C2H4OH           !68
+  CH3CH2O          !69
+  HOC2H4O2         !70
+END
+
+!Reactions numbers are according to the full mechanism.
+REACTIONS
+! SI(OC2H5)4
+C8H20O4SI                                      <=> C7H17O4SI                           + CH3             5.404e+024    -2.114      91934.00             !Nurkowski 2015 based on EOS       # 1  
+C8H20O4SI                                      <=> C6H15O4SI                           + C2H5            5e+023        -1.540      96005.00             !Marinov 1999                      # 2       
+C8H20O4SI                                      <=> C6H16O4SI                           + C2H4            4.832e+011    0.824       63221.20             !This work TEOS k1a                # 3       
+C8H20O4SI                           + OH       <=> C8H19O4SI                           + H2O             6.96e+011     0.270       600.00               !Marinov 1999                      # 4       
+C8H20O4SI                           + OH       <=> C8H19O4SI_2                         + H2O             1.856e+012    0.150       0.00                 !Marinov 1999                      # 5       
+C8H20O4SI                           + H        <=> C8H19O4SI                           + H2              4.92e+007     1.800       5098.00              !Marinov 1999                      # 6       
+C8H20O4SI                           + H        <=> C8H19O4SI_2                         + H2              1.032e+008    1.650       2827.00              !Marinov 1999                      # 7       
+C8H20O4SI                           + O        <=> C8H19O4SI                           + OH              3.764e+008    1.700       5459.00              !Marinov 1999                      # 8       
+C8H20O4SI                           + O        <=> C8H19O4SI_2                         + OH              7.52e+007     1.850       1824.00              !Marinov 1999                      # 9       
+C8H20O4SI                           + CH3      <=> C8H19O4SI                           + CH4             876           3.180       9622.00              !Marinov 1999                      # 10      
+C8H20O4SI                           + CH3      <=> C8H19O4SI_2                         + CH4             2912          2.990       7948.00              !Marinov 1999                      # 11      
+C8H20O4SI                           + HO2      <=> C8H19O4SI                           + H2O2            4.92e+004     2.550       15750.00             !Marinov 1999                      # 12      
+C8H20O4SI                           + HO2      <=> C8H19O4SI_2                         + H2O2            3.28e+004     2.550       10750.00             !Marinov 1999                      # 13      
+C8H20O4SI                                      <=> C8H18O4SI                           + H2              2.248e+014    0.000       107614.70            !Park 2002                         # 14      
+C8H20O4SI                           + H2O      <=> C6H16O4SI                           + C2H5OH          4e+011        0.000       25000.00             !Coltrin 2000                      # 15      
+
+!SI(OCH2)(OC2H5)3
+C7H17O4SI                           + H        <=> C6H15O4SI                           + CH3             1e+013        0.000       0.00                 !Marinov 1999                      # 16      
+C7H17O4SI                                      <=> C5H13O4SI                           + C2H4            5.244e+011    0.823       63598.50             !This work based on TREOS          # 17      
+C7H17O4SI                           + H2O      <=> C5H13O4SI                           + C2H5OH          3e+011        0.000       25000.00             !Coltrin 2000                      # 19      
+
+!SI(O)(OC2H5)3
+C6H15O4SI                           + H2       <=> C6H16O4SI                           + H               2.14e+008     1.520       3449.00              !Marinov 1999                      # 20      
+C6H15O4SI                           + HO2      <=> C6H16O4SI                           + O2              2.13e+028     -4.827      3500.00              !Marinov 1999                      # 21      
+C6H15O4SI                           + H        <=> C6H16O4SI                                             2.21e+022     -2.000      0.00                 !Marinov 1999                      # 22      
+C6H15O4SI                           + H2O2     <=> C6H16O4SI                           + HO2             2.4           4.042       -2162.00             !Marinov 1999                      # 23      
+C6H15O4SI                           + CH4      <=> C6H16O4SI                           + CH3             4.19e+006     2.000       2547.00              !Marinov 1999                      # 24      
+C6H15O4SI                           + CH3      <=> C6H16O4SI                           + CH2(S)          2e+013        0.000       550.00               !Marinov 1999                      # 25      
+C6H15O4SI                           + CH3      <=> C6H16O4SI                           + CH2             3e+006        2.000       2500.00              !Marinov 1999                      # 26      
+C6H15O4SI                           + CH3      <=> C7H18O4SI                                             8.7e+013      0.100       0.00                 !Marinov 1999                      # 27      
+C6H15O4SI                           + CH2O     <=> C6H16O4SI                           + HCO             3.43e+009     1.180       -447.00              !Marinov 1999                      # 34      
+C6H15O4SI                           + HCO      <=> C6H16O4SI                           + CO              1e+014        0.000       0.00                 !Marinov 1999                      # 35      
+C6H15O4SI                           + C2H5OH   <=> C6H16O4SI                           + C2H4OH          1.74e+011     0.270       600.00               !Marinov 1999                      # 36      
+C6H15O4SI                           + C2H5OH   <=> C6H16O4SI                           + CH3CH2O         7.46e+011     0.300       1634.00              !Marinov 1999                      # 38      
+C6H15O4SI                           + CH2HCO   <=> C6H16O4SI                           + CH2CO           3e+013        0.000       0.00                 !Marinov 1999                      # 43      
+C6H15O4SI                           + C2H6     <=> C6H16O4SI                           + C2H5            7.23e+006     2.000       864.00               !Marinov 1999                      # 44      
+C6H15O4SI                           + C2H5     <=> C6H16O4SI                           + C2H4            4e+013        0.000       0.00                 !Marinov 1999                      # 45      
+C6H15O4SI                           + C2H4     <=> C8H19O4SI                                             1.29e+012     0.000       -817.00              !Marinov 1999                      # 46      
+C6H15O4SI                           + C2H4     <=> C6H16O4SI                           + C2H3            2.02e+013     0.000       5936.00              !Marinov 1999                      # 47      
+C6H15O4SI                           + C2H3     <=> C6H16O4SI                           + C2H2            2e+013        0.000       0.00                 !Marinov 1999                      # 48      
+C6H15O4SI                           + C2H2     <=> C6H16O4SI                           + C2H             3.37e+007     2.000       14000.00             !Marinov 1999                      # 49      
+C6H15O4SI                           + CH2CO    <=> C6H16O4SI                           + HCCO            1e+013        0.000       2000.00              !Marinov 1999                      # 50      
+C6H15O4SI                                      <=> C4H11O4SI                           + C2H4            5.244e+011    0.823       63598.50             !This work based on TREOS          # 65      
+
+!SI(OH)(OC2H5)3 
+C6H16O4SI                                      <=> C5H13O4SI                           + CH3             4.053e+024    -2.114      91934.00             !Nurkowski 2015 based on EOS       # 68      
+C6H16O4SI                                      <=> C4H11O4SI                           + C2H5            3.75e+023     -1.540      96005.00             !Marinov 1999                      # 69      
+C6H16O4SI                                      <=> C4H12O4SI                           + C2H4            5.244e+011    0.823       61598.50             !This work TREOS k1b -2kcal/mol    # 70     
+C6H16O4SI                           + OH       <=> C6H15O4SI_2                         + H2O             5.22e+011     0.270       600.00               !Marinov 1999                      # 71      
+C6H16O4SI                           + OH       <=> C6H15O4SI_3                         + H2O             1.392e+012    0.150       0.00                 !Marinov 1999                      # 72      
+C6H16O4SI                           + H        <=> C6H15O4SI_2                         + H2              3.69e+007     1.800       5098.00              !Marinov 1999                      # 73      
+C6H16O4SI                           + H        <=> C6H15O4SI_3                         + H2              7.74e+007     1.650       2827.00              !Marinov 1999                      # 74      
+C6H16O4SI                           + O        <=> C6H15O4SI_2                         + OH              2.823e+008    1.700       5459.00              !Marinov 1999                      # 75      
+C6H16O4SI                           + O        <=> C6H15O4SI_3                         + OH              5.64e+007     1.850       1824.00              !Marinov 1999                      # 76      
+C6H16O4SI                           + CH3      <=> C6H15O4SI_2                         + CH4             657           3.180       9622.00              !Marinov 1999                      # 77      
+C6H16O4SI                           + CH3      <=> C6H15O4SI_3                         + CH4             2184          2.990       7948.00              !Marinov 1999                      # 78      
+C6H16O4SI                           + HO2      <=> C6H15O4SI_2                         + H2O2            3.69e+004     2.550       15750.00             !Marinov 1999                      # 79      
+C6H16O4SI                           + HO2      <=> C6H15O4SI_3                         + H2O2            2.46e+004     2.550       10750.00             !Marinov 1999                      # 80      
+C6H16O4SI                           + H2O      <=> C4H12O4SI                           + C2H5OH          3e+011        0.000       25000.00             !Coltrin 2000                      # 82      
+
+!SI(OC2H4)(OC2H5)3
+C8H19O4SI                           + CH3      <=> C6H16O4SI                           + C3H6            2e+013        0.000       0.00                 !Marinov 1999                      # 83      
+C8H19O4SI                           + H        <=> C7H17O4SI                           + CH3             3e+013        0.000       0.00                 !Marinov 1999                      # 84      
+C8H19O4SI                           + H        <=> C6H16O4SI                           + C2H4            3e+013        0.000       0.00                 !Marinov 1999                      # 85      
+C8H19O4SI                                      <=> C6H15O4SI_2                         + C2H4            5.244e+011    0.823       63598.50             !This work based on TREOS          # 86      
+
+!SI(OCHCH3)(OC2H5)3
+C8H19O4SI_2                         + CH3      <=> C6H16O4SI                           + C3H6            2e+013        0.000       0.00                 !Marinov 1999                      # 89      
+C8H19O4SI_2                         + H        <=> C7H17O4SI                           + CH3             3e+013        0.000       0.00                 !Marinov 1999                      # 90      
+C8H19O4SI_2                         + H        <=> C6H16O4SI                           + C2H4            3e+013        0.000       0.00                 !Marinov 1999                      # 91      
+C8H19O4SI_2                                    <=> C6H15O4SI_3                         + C2H4            5.244e+011    0.823       63598.50             !This work based on TREOS          # 92      
+C8H19O4SI_2                         + H2O      <=> C6H15O4SI_3                         + C2H5OH          3e+011        0.000       25000.00             !Coltrin 2000                      # 94      
+
+!SI(OCH=CH2)(OC2H5)3
+C8H18O4SI                                      <=> C7H15O4SI                           + CH3             4.053e+024    -2.114      91934.00             !Nurkowski 2015 based on EOS       # 97      
+C8H18O4SI                                      <=> C6H13O4SI                           + C2H5            3.75e+023     -1.540      96005.00             !Marinov 1999                      # 98      
+
+!SI(OH)(OCH2)(OC2H5)2
+C5H13O4SI                           + H        <=> C4H11O4SI                           + CH3             1e+013        0.000       0.00                 !Marinov 1999                      # 112     
+C5H13O4SI                                      <=> C3H9O4SI                            + C2H4            4.134e+011    0.810       64518.70             !This work based on DEOS           # 113     
+C5H13O4SI                           + H2O      <=> C3H9O4SI                            + C2H5OH          2e+011        0.000       25000.00             !Coltrin 2000                      # 115     
+
+!SI(OCH2)(OCH=CH2)(OC2H5)2
+C7H15O4SI                                      <=> C5H11O4SI                           + C2H4            4.134e+011    0.810       64518.70             !This work based on DEOS           # 117     
+
+!SI(OCH3)(OC2H5)3
+C7H18O4SI                                      <=> C6H16O4SI                           + CH2(S)          2.84e+010     1.000       83871.00             !Marinov 1999                      # 120     
+C7H18O4SI                           + OH       <=> C7H17O4SI                           + H2O             2.61e+005     2.182       -1344.00             !Marinov 1999                      # 121     
+C7H18O4SI                           + O        <=> C7H17O4SI                           + OH              3.88e+005     2.500       3080.00              !Marinov 1999                      # 122     
+C7H18O4SI                           + H        <=> C7H17O4SI                           + H2              1.7e+007      2.100       4868.00              !Marinov 1999                      # 123     
+C7H18O4SI                           + CH3      <=> C7H17O4SI                           + CH4             31.9          3.170       7171.00              !Marinov 1999                      # 124     
+C7H18O4SI                           + HO2      <=> C7H17O4SI                           + H2O2            9.64e+010     0.000       12578.00             !Marinov 1999                      # 125     
+C7H18O4SI                                      <=> C6H15O4SI_4                         + CH3             4.053e+024    -2.114      91934.00             !Nurkowski 2015 based on EOS       # 126     
+C7H18O4SI                                      <=> C5H13O4SI_2                         + C2H5            3.75e+023     -1.540      96005.00             !Marinov 1999                      # 127     
+C7H18O4SI                                      <=> C5H14O4SI                           + C2H4            5.244e+011    0.823       63598.50             !This work based on TREOS          # 128     
+C7H18O4SI                           + OH       <=> C7H17O4SI_2                         + H2O             5.22e+011     0.270       600.00               !Marinov 1999                      # 129     
+C7H18O4SI                           + H        <=> C7H17O4SI_2                         + H2              3.69e+007     1.800       5098.00              !Marinov 1999                      # 131     
+C7H18O4SI                           + O        <=> C7H17O4SI_2                         + OH              2.823e+008    1.700       5459.00              !Marinov 1999                      # 133     
+C7H18O4SI                           + CH3      <=> C7H17O4SI_2                         + CH4             657           3.180       9622.00              !Marinov 1999                      # 135     
+C7H18O4SI                           + HO2      <=> C7H17O4SI_2                         + H2O2            3.69e+004     2.550       15750.00             !Marinov 1999                      # 137     
+C7H18O4SI                           + H2O      <=> C5H14O4SI                           + C2H5OH          3e+011        0.000       25000.00             !Coltrin 2000                      # 140     
+
+!SI(O)(OH)(OC2H5)2
+C4H11O4SI                           + H2       <=> C4H12O4SI                           + H               2.14e+008     1.520       3449.00              !Marinov 1999                      # 141     
+C4H11O4SI                           + HO2      <=> C4H12O4SI                           + O2              2.13e+028     -4.827      3500.00              !Marinov 1999                      # 142     
+C4H11O4SI                           + H        <=> C4H12O4SI                                             2.21e+022     -2.000      0.00                 !Marinov 1999                      # 143     
+C4H11O4SI                           + H2O2     <=> C4H12O4SI                           + HO2             2.4           4.042       -2162.00             !Marinov 1999                      # 144     
+C4H11O4SI                           + CH4      <=> C4H12O4SI                           + CH3             4.19e+006     2.000       2547.00              !Marinov 1999                      # 145     
+C4H11O4SI                           + CH3      <=> C4H12O4SI                           + CH2(S)          2e+013        0.000       550.00               !Marinov 1999                      # 146     
+C4H11O4SI                           + CH3      <=> C4H12O4SI                           + CH2             3e+006        2.000       2500.00              !Marinov 1999                      # 147     
+C4H11O4SI                           + CH3      <=> C5H14O4SI                                             8.7e+013      0.100       0.00                 !Marinov 1999                      # 148     
+C4H11O4SI                           + CH2O     <=> C4H12O4SI                           + HCO             3.43e+009     1.180       -447.00              !Marinov 1999                      # 155     
+C4H11O4SI                           + HCO      <=> C4H12O4SI                           + CO              1e+014        0.000       0.00                 !Marinov 1999                      # 156     
+C4H11O4SI                           + C2H5OH   <=> C4H12O4SI                           + C2H4OH          1.74e+011     0.270       600.00               !Marinov 1999                      # 157     
+C4H11O4SI                           + C2H5OH   <=> C4H12O4SI                           + CH3CH2O         7.46e+011     0.300       1634.00              !Marinov 1999                      # 159     
+C4H11O4SI                           + CH2HCO   <=> C4H12O4SI                           + CH2CO           3e+013        0.000       0.00                 !Marinov 1999                      # 164     
+C4H11O4SI                           + C2H6     <=> C4H12O4SI                           + C2H5            7.23e+006     2.000       864.00               !Marinov 1999                      # 165     
+C4H11O4SI                           + C2H5     <=> C4H12O4SI                           + C2H4            4e+013        0.000       0.00                 !Marinov 1999                      # 166     
+C4H11O4SI                           + C2H4     <=> C6H15O4SI_2                                           1.29e+012     0.000       -817.00              !Marinov 1999                      # 167     
+C4H11O4SI                           + C2H4     <=> C4H12O4SI                           + C2H3            2.02e+013     0.000       5936.00              !Marinov 1999                      # 168     
+C4H11O4SI                           + C2H3     <=> C4H12O4SI                           + C2H2            2e+013        0.000       0.00                 !Marinov 1999                      # 169     
+C4H11O4SI                           + C2H2     <=> C4H12O4SI                           + C2H             3.37e+007     2.000       14000.00             !Marinov 1999                      # 170     
+C4H11O4SI                           + CH2CO    <=> C4H12O4SI                           + HCCO            1e+013        0.000       2000.00              !Marinov 1999                      # 171     
+C4H11O4SI                                      <=> C2H7O4SI                            + C2H4            4.134e+011    0.810       64518.70             !This work based on DEOS           # 186     
+
+!SI(O)(OCH=CH2)(OC2H5)2
+C6H13O4SI                           + C2H4     <=> C8H17O4SI                                             1.29e+012     0.000       -817.00              !Marinov 1999                      # 215     
+
+!SI(OH)2(OC2H5)2
+C4H12O4SI                                      <=> C3H9O4SI                            + CH3             2.702e+024    -2.114      91934.00             !Nurkowski 2015 based on EOS       # 237     
+C4H12O4SI                                      <=> C2H7O4SI                            + C2H5            2.5e+023      -1.540      96005.00             !Marinov 1999                      # 238     
+C4H12O4SI                                      <=> C2H8O4SI                            + C2H4            4.134e+011    0.810       62518.70             !This work DEOS k1c -2kcal/mol     # 239    
+C4H12O4SI                           + OH       <=> C4H11O4SI_2                         + H2O             3.48e+011     0.270       600.00               !Marinov 1999                      # 240     
+C4H12O4SI                           + OH       <=> C4H11O4SI_3                         + H2O             9.28e+011     0.150       0.00                 !Marinov 1999                      # 241     
+C4H12O4SI                           + H        <=> C4H11O4SI_2                         + H2              2.46e+007     1.800       5098.00              !Marinov 1999                      # 242     
+C4H12O4SI                           + H        <=> C4H11O4SI_3                         + H2              5.16e+007     1.650       2827.00              !Marinov 1999                      # 243     
+C4H12O4SI                           + O        <=> C4H11O4SI_2                         + OH              1.882e+008    1.700       5459.00              !Marinov 1999                      # 244     
+C4H12O4SI                           + O        <=> C4H11O4SI_3                         + OH              3.76e+007     1.850       1824.00              !Marinov 1999                      # 245     
+C4H12O4SI                           + CH3      <=> C4H11O4SI_2                         + CH4             438           3.180       9622.00              !Marinov 1999                      # 246     
+C4H12O4SI                           + CH3      <=> C4H11O4SI_3                         + CH4             1456          2.990       7948.00              !Marinov 1999                      # 247     
+C4H12O4SI                           + HO2      <=> C4H11O4SI_2                         + H2O2            2.46e+004     2.550       15750.00             !Marinov 1999                      # 248     
+C4H12O4SI                           + HO2      <=> C4H11O4SI_3                         + H2O2            1.64e+004     2.550       10750.00             !Marinov 1999                      # 249     
+C4H12O4SI                           + H2O      <=> C2H8O4SI                            + C2H5OH          2e+011        0.000       25000.00             !Coltrin 2000                      # 251     
+
+!SI(OH)(OC2H4)(OC2H5)2
+C6H15O4SI_2                         + CH3      <=> C4H12O4SI                           + C3H6            2e+013        0.000       0.00                 !Marinov 1999                      # 252     
+C6H15O4SI_2                         + H        <=> C5H13O4SI                           + CH3             3e+013        0.000       0.00                 !Marinov 1999                      # 253     
+C6H15O4SI_2                         + H        <=> C4H12O4SI                           + C2H4            3e+013        0.000       0.00                 !Marinov 1999                      # 254     
+C6H15O4SI_2                                    <=> C4H11O4SI_2                         + C2H4            4.134e+011    0.810       64518.70             !This work based on DEOS           # 255     
+
+!SI(OH)(OCHCH3)(OC2H5)2
+C6H15O4SI_3                         + CH3      <=> C4H12O4SI                           + C3H6            2e+013        0.000       0.00                 !Marinov 1999                      # 258     
+C6H15O4SI_3                         + H        <=> C5H13O4SI                           + CH3             3e+013        0.000       0.00                 !Marinov 1999                      # 259     
+C6H15O4SI_3                         + H        <=> C4H12O4SI                           + C2H4            3e+013        0.000       0.00                 !Marinov 1999                      # 260     
+C6H15O4SI_3                                    <=> C4H11O4SI_3                         + C2H4            4.134e+011    0.810       64518.70             !This work based on DEOS           # 261     
+C6H15O4SI_3                         + H2O      <=> C4H11O4SI_3                         + C2H5OH          2e+011        0.000       25000.00             !Coltrin 2000                      # 263     
+
+!SI(OH)2(OCH2)(OC2H5)
+C3H9O4SI                            + H        <=> C2H7O4SI                            + CH3             1e+013        0.000       0.00                 !Marinov 1999                      # 310     
+C3H9O4SI                                       <=> CH5O4SI                             + C2H4            2.527e+007    1.875       61541.70             !This work based on EOS            # 311     
+C3H9O4SI                            + H2O      <=> CH5O4SI                             + C2H5OH          1e+011        0.000       25000.00             !Coltrin 2000                      # 313     
+
+!SI(OCH2)(OCH3)(OC2H5)2
+C6H15O4SI_4                         + H        <=> C5H13O4SI_2                         + CH3             1e+013        0.000       0.00                 !Marinov 1999                      # 322     
+C6H15O4SI_4                                    <=> C5H13O4SI                           + CH2(S)          2.84e+010     1.000       83871.00             !Marinov 1999                      # 323     
+C6H15O4SI_4                                    <=> C4H11O4SI_4                         + C2H4            4.134e+011    0.810       64518.70             !This work based on DEOS           # 324     
+C6H15O4SI_4                         + H2O      <=> C4H11O4SI_4                         + C2H5OH          2e+011        0.000       25000.00             !Coltrin 2000                      # 326     
+
+!SI(O)(OCH3)(OC2H5)2
+C5H13O4SI_2                         + H2       <=> C5H14O4SI                           + H               2.14e+008     1.520       3449.00              !Marinov 1999                      # 327     
+C5H13O4SI_2                         + HO2      <=> C5H14O4SI                           + O2              2.13e+028     -4.827      3500.00              !Marinov 1999                      # 328     
+C5H13O4SI_2                         + H        <=> C5H14O4SI                                             2.21e+022     -2.000      0.00                 !Marinov 1999                      # 329     
+C5H13O4SI_2                         + H2O2     <=> C5H14O4SI                           + HO2             2.4           4.042       -2162.00             !Marinov 1999                      # 330     
+C5H13O4SI_2                         + CH4      <=> C5H14O4SI                           + CH3             4.19e+006     2.000       2547.00              !Marinov 1999                      # 331     
+C5H13O4SI_2                         + CH3      <=> C5H14O4SI                           + CH2(S)          2e+013        0.000       550.00               !Marinov 1999                      # 332     
+C5H13O4SI_2                         + CH3      <=> C5H14O4SI                           + CH2             3e+006        2.000       2500.00              !Marinov 1999                      # 333     
+C5H13O4SI_2                         + CH2O     <=> C5H14O4SI                           + HCO             3.43e+009     1.180       -447.00              !Marinov 1999                      # 341     
+C5H13O4SI_2                         + HCO      <=> C5H14O4SI                           + CO              1e+014        0.000       0.00                 !Marinov 1999                      # 342     
+C5H13O4SI_2                         + C2H5OH   <=> C5H14O4SI                           + C2H4OH          1.74e+011     0.270       600.00               !Marinov 1999                      # 343     
+C5H13O4SI_2                         + C2H5OH   <=> C5H14O4SI                           + CH3CH2O         7.46e+011     0.300       1634.00              !Marinov 1999                      # 345     
+C5H13O4SI_2                         + CH2HCO   <=> C5H14O4SI                           + CH2CO           3e+013        0.000       0.00                 !Marinov 1999                      # 350     
+C5H13O4SI_2                         + C2H6     <=> C5H14O4SI                           + C2H5            7.23e+006     2.000       864.00               !Marinov 1999                      # 351     
+C5H13O4SI_2                         + C2H5     <=> C5H14O4SI                           + C2H4            4e+013        0.000       0.00                 !Marinov 1999                      # 352     
+C5H13O4SI_2                         + C2H4     <=> C7H17O4SI_2                                           1.29e+012     0.000       -817.00              !Marinov 1999                      # 353     
+C5H13O4SI_2                         + C2H4     <=> C5H14O4SI                           + C2H3            2.02e+013     0.000       5936.00              !Marinov 1999                      # 354     
+C5H13O4SI_2                         + C2H3     <=> C5H14O4SI                           + C2H2            2e+013        0.000       0.00                 !Marinov 1999                      # 355     
+C5H13O4SI_2                         + C2H2     <=> C5H14O4SI                           + C2H             3.37e+007     2.000       14000.00             !Marinov 1999                      # 356     
+C5H13O4SI_2                         + CH2CO    <=> C5H14O4SI                           + HCCO            1e+013        0.000       2000.00              !Marinov 1999                      # 357     
+C5H13O4SI_2                                    <=> C3H9O4SI_2                          + C2H4            4.134e+011    0.810       64518.70             !This work based on DEOS           # 373     
+
+!SI(OH)(OCH3)(OC2H5)2
+C5H14O4SI                                      <=> C4H12O4SI                           + CH2(S)          2.84e+010     1.000       83871.00             !Marinov 1999                      # 376     
+C5H14O4SI                           + OH       <=> C5H13O4SI                           + H2O             2.61e+005     2.182       -1344.00             !Marinov 1999                      # 377     
+C5H14O4SI                           + O        <=> C5H13O4SI                           + OH              3.88e+005     2.500       3080.00              !Marinov 1999                      # 378     
+C5H14O4SI                           + H        <=> C5H13O4SI                           + H2              1.7e+007      2.100       4868.00              !Marinov 1999                      # 379     
+C5H14O4SI                           + CH3      <=> C5H13O4SI                           + CH4             31.9          3.170       7171.00              !Marinov 1999                      # 380     
+C5H14O4SI                           + HO2      <=> C5H13O4SI                           + H2O2            9.64e+010     0.000       12578.00             !Marinov 1999                      # 381     
+C5H14O4SI                                      <=> C4H11O4SI_4                         + CH3             2.702e+024    -2.114      91934.00             !Nurkowski 2015 based on EOS       # 382     
+C5H14O4SI                                      <=> C3H9O4SI_2                          + C2H5            2.5e+023      -1.540      96005.00             !Marinov 1999                      # 383     
+C5H14O4SI                                      <=> C3H10O4SI                           + C2H4            4.134e+011    0.810       64518.70             !This work based on DEOS           # 384     
+C5H14O4SI                           + H2O      <=> C3H10O4SI                           + C2H5OH          2e+011        0.000       25000.00             !Coltrin 2000                      # 396     
+
+!SI(OCH3)(OC2H4)(OC2H5)2
+C7H17O4SI_2                         + CH3      <=> C5H14O4SI                           + C3H6            2e+013        0.000       0.00                 !Marinov 1999                      # 398     
+C7H17O4SI_2                         + H        <=> C6H15O4SI_4                         + CH3             3e+013        0.000       0.00                 !Marinov 1999                      # 399     
+C7H17O4SI_2                         + H        <=> C5H14O4SI                           + C2H4            3e+013        0.000       0.00                 !Marinov 1999                      # 400     
+
+!SI(O)(OH)2(OC2H5) 
+C2H7O4SI                            + H2       <=> C2H8O4SI                            + H               2.14e+008     1.520       3449.00              !Marinov 1999                      # 434     
+C2H7O4SI                            + HO2      <=> C2H8O4SI                            + O2              2.13e+028     -4.827      3500.00              !Marinov 1999                      # 435     
+C2H7O4SI                            + H        <=> C2H8O4SI                                              2.21e+022     -2.000      0.00                 !Marinov 1999                      # 436     
+C2H7O4SI                            + H2O2     <=> C2H8O4SI                            + HO2             2.4           4.042       -2162.00             !Marinov 1999                      # 437     
+C2H7O4SI                            + CH4      <=> C2H8O4SI                            + CH3             4.19e+006     2.000       2547.00              !Marinov 1999                      # 438     
+C2H7O4SI                            + CH3      <=> C2H8O4SI                            + CH2(S)          2e+013        0.000       550.00               !Marinov 1999                      # 439     
+C2H7O4SI                            + CH3      <=> C2H8O4SI                            + CH2             3e+006        2.000       2500.00              !Marinov 1999                      # 440     
+C2H7O4SI                            + CH3      <=> C3H10O4SI                                             8.7e+013      0.100       0.00                 !Marinov 1999                      # 441     
+C2H7O4SI                            + CH2O     <=> C2H8O4SI                            + HCO             3.43e+009     1.180       -447.00              !Marinov 1999                      # 448     
+C2H7O4SI                            + HCO      <=> C2H8O4SI                            + CO              1e+014        0.000       0.00                 !Marinov 1999                      # 449     
+C2H7O4SI                            + C2H5OH   <=> C2H8O4SI                            + C2H4OH          1.74e+011     0.270       600.00               !Marinov 1999                      # 450     
+C2H7O4SI                            + C2H5OH   <=> C2H8O4SI                            + CH3CH2O         7.46e+011     0.300       1634.00              !Marinov 1999                      # 452     
+C2H7O4SI                            + CH2HCO   <=> C2H8O4SI                            + CH2CO           3e+013        0.000       0.00                 !Marinov 1999                      # 457     
+C2H7O4SI                            + C2H6     <=> C2H8O4SI                            + C2H5            7.23e+006     2.000       864.00               !Marinov 1999                      # 458     
+C2H7O4SI                            + C2H5     <=> C2H8O4SI                            + C2H4            4e+013        0.000       0.00                 !Marinov 1999                      # 459     
+C2H7O4SI                            + C2H4     <=> C4H11O4SI_2                                           1.29e+012     0.000       -817.00              !Marinov 1999                      # 460     
+C2H7O4SI                            + C2H4     <=> C2H8O4SI                            + C2H3            2.02e+013     0.000       5936.00              !Marinov 1999                      # 461     
+C2H7O4SI                            + C2H3     <=> C2H8O4SI                            + C2H2            2e+013        0.000       0.00                 !Marinov 1999                      # 462     
+C2H7O4SI                            + C2H2     <=> C2H8O4SI                            + C2H             3.37e+007     2.000       14000.00             !Marinov 1999                      # 463     
+C2H7O4SI                            + CH2CO    <=> C2H8O4SI                            + HCCO            1e+013        0.000       2000.00              !Marinov 1999                      # 464     
+C2H7O4SI                                       <=> H3O4SI                              + C2H4            2.527e+007    1.875       61541.70             !This work based on EOS            # 479     
+
+!SI(OH)3(OC2H5)
+C2H8O4SI                                       <=> CH5O4SI                             + CH3             1.351e+024    -2.114      91934.00             !Nurkowski 2015 EOS k2d            # 578     
+C2H8O4SI                                       <=> H3O4SI                              + C2H5            1.25e+023     -1.540      96005.00             !Marinov 1999                      # 579     
+C2H8O4SI                                       <=> H4O4SI                              + C2H4            2.527e+007    1.875       61541.70             !Nurkowski 2015 EOS k1d            # 580     
+C2H8O4SI                            + OH       <=> C2H7O4SI_2                          + H2O             1.74e+011     0.270       600.00               !Marinov 1999                      # 581     
+C2H8O4SI                            + OH       <=> C2H7O4SI_3                          + H2O             4.64e+011     0.150       0.00                 !Marinov 1999                      # 582     
+C2H8O4SI                            + H        <=> C2H7O4SI_2                          + H2              1.23e+007     1.800       5098.00              !Marinov 1999                      # 583     
+C2H8O4SI                            + H        <=> C2H7O4SI_3                          + H2              2.58e+007     1.650       2827.00              !Marinov 1999                      # 584     
+C2H8O4SI                            + O        <=> C2H7O4SI_2                          + OH              9.41e+007     1.700       5459.00              !Marinov 1999.                             # 
+C2H8O4SI                            + O        <=> C2H7O4SI_3                          + OH              1.88e+007     1.850       1824.00              !Marinov 1999                      # 586     
+C2H8O4SI                            + CH3      <=> C2H7O4SI_2                          + CH4             219           3.180       9622.00              !Marinov 1999                      # 587     
+C2H8O4SI                            + CH3      <=> C2H7O4SI_3                          + CH4             728           2.990       7948.00              !Marinov 1999                      # 588     
+C2H8O4SI                            + HO2      <=> C2H7O4SI_2                          + H2O2            1.23e+004     2.550       15750.00             !Marinov 1999                      # 589     
+C2H8O4SI                            + HO2      <=> C2H7O4SI_3                          + H2O2            8200          2.550       10750.00             !Marinov 1999                      # 590     
+C2H8O4SI                                       <=> C2H6O4SI                            + H2              5.62e+013     0.000       107614.70            !Park 2002                         # 591     
+C2H8O4SI                            + H2O      <=> H4O4SI                              + C2H5OH          1e+011        0.000       25000.00             !Coltrin 2000                      # 592     
+
+!SI(OH)2(OC2H4)(OC2H5)
+C4H11O4SI_2                         + CH3      <=> C2H8O4SI                            + C3H6            2e+013        0.000       0.00                 !Marinov 1999                      # 593     
+C4H11O4SI_2                         + H        <=> C3H9O4SI                            + CH3             3e+013        0.000       0.00                 !Marinov 1999                      # 594     
+C4H11O4SI_2                         + H        <=> C2H8O4SI                            + C2H4            3e+013        0.000       0.00                 !Marinov 1999                      # 595     
+C4H11O4SI_2                                    <=> C2H7O4SI_2                          + C2H4            2.527e+007    1.875       61541.70             !This work based on EOS            # 596     
+
+!SI(OH)2(OCHCH3)(OC2H5)
+C4H11O4SI_3                         + CH3      <=> C2H8O4SI                            + C3H6            2e+013        0.000       0.00                 !Marinov 1999                      # 599     
+C4H11O4SI_3                         + H        <=> C3H9O4SI                            + CH3             3e+013        0.000       0.00                 !Marinov 1999                      # 600     
+C4H11O4SI_3                         + H        <=> C2H8O4SI                            + C2H4            3e+013        0.000       0.00                 !Marinov 1999                      # 601     
+C4H11O4SI_3                                    <=> C2H7O4SI_3                          + C2H4            2.527e+007    1.875       61541.70             !This work based on EOS            # 602     
+C4H11O4SI_3                         + H2O      <=> C2H7O4SI_3                          + C2H5OH          1e+011        0.000       25000.00             !Coltrin 2000                      # 604     
+
+!SI(OH)3(OCH2)  
+CH5O4SI                             + H        <=> H3O4SI                              + CH3             1e+013        0.000       0.00                 !Marinov 1999                      # 680     
+
+!SI(OH)(OCH2)(OCH3)(OC2H5)
+C4H11O4SI_4                         + H        <=> C3H9O4SI_2                          + CH3             1e+013        0.000       0.00                 !Marinov 1999                      # 684     
+C4H11O4SI_4                                    <=> C3H9O4SI                            + CH2(S)          2.84e+010     1.000       83871.00             !Marinov 1999                      # 685     
+C4H11O4SI_4                                    <=> C2H7O4SI_4                          + C2H4            2.527e+007    1.875       61541.70             !This work based on EOS            # 686     
+C4H11O4SI_4                         + H2O      <=> C2H7O4SI_4                          + C2H5OH          1e+011        0.000       25000.00             !Coltrin 2000                      # 688     
+
+!SI(O)(OH)(OCH3)(OC2H5)
+C3H9O4SI_2                          + H2       <=> C3H10O4SI                           + H               2.14e+008     1.520       3449.00              !Marinov 1999                      # 715     
+C3H9O4SI_2                          + HO2      <=> C3H10O4SI                           + O2              2.13e+028     -4.827      3500.00              !Marinov 1999                      # 716     
+C3H9O4SI_2                          + H        <=> C3H10O4SI                                             2.21e+022     -2.000      0.00                 !Marinov 1999                      # 717     
+C3H9O4SI_2                          + H2O2     <=> C3H10O4SI                           + HO2             2.4           4.042       -2162.00             !Marinov 1999                      # 718     
+C3H9O4SI_2                          + CH4      <=> C3H10O4SI                           + CH3             4.19e+006     2.000       2547.00              !Marinov 1999                      # 719     
+C3H9O4SI_2                          + CH3      <=> C3H10O4SI                           + CH2(S)          2e+013        0.000       550.00               !Marinov 1999                      # 720     
+C3H9O4SI_2                          + CH3      <=> C3H10O4SI                           + CH2             3e+006        2.000       2500.00              !Marinov 1999                      # 721     
+C3H9O4SI_2                          + CH2O     <=> C3H10O4SI                           + HCO             3.43e+009     1.180       -447.00              !Marinov 1999                      # 729     
+C3H9O4SI_2                          + HCO      <=> C3H10O4SI                           + CO              1e+014        0.000       0.00                 !Marinov 1999                      # 730     
+C3H9O4SI_2                          + C2H5OH   <=> C3H10O4SI                           + C2H4OH          1.74e+011     0.270       600.00               !Marinov 1999                      # 731     
+C3H9O4SI_2                          + C2H5OH   <=> C3H10O4SI                           + CH3CH2O         7.46e+011     0.300       1634.00              !Marinov 1999                      # 733     
+C3H9O4SI_2                          + CH2HCO   <=> C3H10O4SI                           + CH2CO           3e+013        0.000       0.00                 !Marinov 1999                      # 738     
+C3H9O4SI_2                          + C2H6     <=> C3H10O4SI                           + C2H5            7.23e+006     2.000       864.00               !Marinov 1999                      # 739     
+C3H9O4SI_2                          + C2H5     <=> C3H10O4SI                           + C2H4            4e+013        0.000       0.00                 !Marinov 1999                      # 740     
+C3H9O4SI_2                          + C2H4     <=> C3H10O4SI                           + C2H3            2.02e+013     0.000       5936.00              !Marinov 1999                      # 742     
+C3H9O4SI_2                          + C2H3     <=> C3H10O4SI                           + C2H2            2e+013        0.000       0.00                 !Marinov 1999                      # 743     
+C3H9O4SI_2                          + C2H2     <=> C3H10O4SI                           + C2H             3.37e+007     2.000       14000.00             !Marinov 1999                      # 744     
+C3H9O4SI_2                          + CH2CO    <=> C3H10O4SI                           + HCCO            1e+013        0.000       2000.00              !Marinov 1999                      # 745     
+C3H9O4SI_2                                     <=> CH5O4SI_2                           + C2H4            2.527e+007    1.875       61541.70             !This work based on EOS            # 761     
+
+!SI(OH)2(OCH3)(OC2H5) 
+C3H10O4SI                                      <=> C2H8O4SI                            + CH2(S)          2.84e+010     1.000       83871.00             !Marinov 1999                      # 813     
+C3H10O4SI                           + OH       <=> C3H9O4SI                            + H2O             2.61e+005     2.182       -1344.00             !Marinov 1999                      # 814     
+C3H10O4SI                           + O        <=> C3H9O4SI                            + OH              3.88e+005     2.500       3080.00              !Marinov 1999                      # 815     
+C3H10O4SI                           + H        <=> C3H9O4SI                            + H2              1.7e+007      2.100       4868.00              !Marinov 1999                      # 816     
+C3H10O4SI                           + CH3      <=> C3H9O4SI                            + CH4             31.9          3.170       7171.00              !Marinov 1999                      # 817     
+C3H10O4SI                           + HO2      <=> C3H9O4SI                            + H2O2            9.64e+010     0.000       12578.00             !Marinov 1999                      # 818     
+C3H10O4SI                                      <=> C2H7O4SI_4                          + CH3             1.351e+024    -2.114      91934.00             !Nurkowski 2015 based on EOS       # 819     
+C3H10O4SI                                      <=> CH5O4SI_2                           + C2H5            1.25e+023     -1.540      96005.00             !Marinov 1999                      # 820     
+C3H10O4SI                                      <=> CH6O4SI                             + C2H4            2.527e+007    1.875       61541.70             !This work based on EOS            # 821     
+C3H10O4SI                           + H2O      <=> CH6O4SI                             + C2H5OH          1e+011        0.000       25000.00             !Coltrin 2000                      # 833     
+
+!SI(O)(OH)3
+H3O4SI                              + H2       <=> H4O4SI                              + H               2.14e+008     1.520       3449.00              !Marinov 1999                      # 908     
+H3O4SI                              + HO2      <=> H4O4SI                              + O2              2.13e+028     -4.827      3500.00              !Marinov 1999                      # 909     
+H3O4SI                              + H        <=> H4O4SI                                                2.21e+022     -2.000      0.00                 !Marinov 1999                      # 910     
+H3O4SI                              + H2O2     <=> H4O4SI                              + HO2             2.4           4.042       -2162.00             !Marinov 1999                      # 911     
+H3O4SI                              + CH4      <=> H4O4SI                              + CH3             4.19e+006     2.000       2547.00              !Marinov 1999                      # 912     
+H3O4SI                              + CH3      <=> H4O4SI                              + CH2(S)          2e+013        0.000       550.00               !Marinov 1999                      # 913     
+H3O4SI                              + CH3      <=> H4O4SI                              + CH2             3e+006        2.000       2500.00              !Marinov 1999                      # 914     
+H3O4SI                              + CH3      <=> CH6O4SI                                               8.7e+013      0.100       0.00                 !Marinov 1999                      # 915     
+H3O4SI                              + CH2O     <=> H4O4SI                              + HCO             3.43e+009     1.180       -447.00              !Marinov 1999                      # 922     
+H3O4SI                              + HCO      <=> H4O4SI                              + CO              1e+014        0.000       0.00                 !Marinov 1999                      # 923     
+H3O4SI                              + C2H5OH   <=> H4O4SI                              + C2H4OH          1.74e+011     0.270       600.00               !Marinov 1999                      # 924     
+H3O4SI                              + C2H5OH   <=> H4O4SI                              + CH3CH2O         7.46e+011     0.300       1634.00              !Marinov 1999                      # 926     
+H3O4SI                              + CH2HCO   <=> H4O4SI                              + CH2CO           3e+013        0.000       0.00                 !Marinov 1999                      # 931     
+H3O4SI                              + C2H6     <=> H4O4SI                              + C2H5            7.23e+006     2.000       864.00               !Marinov 1999                      # 932     
+H3O4SI                              + C2H5     <=> H4O4SI                              + C2H4            4e+013        0.000       0.00                 !Marinov 1999                      # 933     
+H3O4SI                              + C2H4     <=> C2H7O4SI_2                                            1.29e+012     0.000       -817.00              !Marinov 1999                      # 934     
+H3O4SI                              + C2H4     <=> H4O4SI                              + C2H3            2.02e+013     0.000       5936.00              !Marinov 1999                      # 935     
+H3O4SI                              + C2H3     <=> H4O4SI                              + C2H2            2e+013        0.000       0.00                 !Marinov 1999                      # 936     
+H3O4SI                              + C2H2     <=> H4O4SI                              + C2H             3.37e+007     2.000       14000.00             !Marinov 1999                      # 937     
+H3O4SI                              + CH2CO    <=> H4O4SI                              + HCCO            1e+013        0.000       2000.00              !Marinov 1999                      # 938     
+
+!SI(OH)3(OC2H4)
+C2H7O4SI_2                          + CH3      <=> H4O4SI                              + C3H6            2e+013        0.000       0.00                 !Marinov 1999                      # 1088    
+C2H7O4SI_2                          + H        <=> CH5O4SI                             + CH3             3e+013        0.000       0.00                 !Marinov 1999                      # 1089    
+C2H7O4SI_2                          + H        <=> H4O4SI                              + C2H4            3e+013        0.000       0.00                 !Marinov 1999                      # 1090    
+
+!SI(OH)3(OCHCH3)
+C2H7O4SI_3                          + CH3      <=> H4O4SI                              + C3H6            2e+013        0.000       0.00                 !Marinov 1999                      # 1091    
+C2H7O4SI_3                          + H        <=> CH5O4SI                             + CH3             3e+013        0.000       0.00                 !Marinov 1999                      # 1092    
+C2H7O4SI_3                          + H        <=> H4O4SI                              + C2H4            3e+013        0.000       0.00                 !Marinov 1999                      # 1093    
+
+!SI(OH)2(OCH2)(OCH3)
+C2H7O4SI_4                          + H        <=> CH5O4SI_2                           + CH3             1e+013        0.000       0.00                 !Marinov 1999                      # 1120    
+C2H7O4SI_4                                     <=> CH5O4SI                             + CH2(S)          2.84e+010     1.000       83871.00             !Marinov 1999                      # 1121    
+
+!SI(O)(OH)2(OCH3)
+CH5O4SI_2                           + H2       <=> CH6O4SI                             + H               2.14e+008     1.520       3449.00              !Marinov 1999                      # 1238    
+CH5O4SI_2                           + HO2      <=> CH6O4SI                             + O2              2.13e+028     -4.827      3500.00              !Marinov 1999                      # 1239    
+CH5O4SI_2                           + H        <=> CH6O4SI                                               2.21e+022     -2.000      0.00                 !Marinov 1999                      # 1240    
+CH5O4SI_2                           + H2O2     <=> CH6O4SI                             + HO2             2.4           4.042       -2162.00             !Marinov 1999                      # 1241    
+CH5O4SI_2                           + CH4      <=> CH6O4SI                             + CH3             4.19e+006     2.000       2547.00              !Marinov 1999                      # 1242    
+CH5O4SI_2                           + CH3      <=> CH6O4SI                             + CH2(S)          2e+013        0.000       550.00               !Marinov 1999                      # 1243    
+CH5O4SI_2                           + CH3      <=> CH6O4SI                             + CH2             3e+006        2.000       2500.00              !Marinov 1999                      # 1244    
+CH5O4SI_2                           + CH2O     <=> CH6O4SI                             + HCO             3.43e+009     1.180       -447.00              !Marinov 1999                      # 1252    
+CH5O4SI_2                           + HCO      <=> CH6O4SI                             + CO              1e+014        0.000       0.00                 !Marinov 1999                      # 1253    
+CH5O4SI_2                           + C2H5OH   <=> CH6O4SI                             + C2H4OH          1.74e+011     0.270       600.00               !Marinov 1999                      # 1254    
+CH5O4SI_2                           + C2H5OH   <=> CH6O4SI                             + CH3CH2O         7.46e+011     0.300       1634.00              !Marinov 1999                      # 1256    
+CH5O4SI_2                           + CH2HCO   <=> CH6O4SI                             + CH2CO           3e+013        0.000       0.00                 !Marinov 1999                      # 1261    
+CH5O4SI_2                           + C2H6     <=> CH6O4SI                             + C2H5            7.23e+006     2.000       864.00               !Marinov 1999                      # 1262    
+CH5O4SI_2                           + C2H5     <=> CH6O4SI                             + C2H4            4e+013        0.000       0.00                 !Marinov 1999                      # 1263    
+CH5O4SI_2                           + C2H4     <=> CH6O4SI                             + C2H3            2.02e+013     0.000       5936.00              !Marinov 1999                      # 1265    
+CH5O4SI_2                           + C2H3     <=> CH6O4SI                             + C2H2            2e+013        0.000       0.00                 !Marinov 1999                      # 1266    
+CH5O4SI_2                           + C2H2     <=> CH6O4SI                             + C2H             3.37e+007     2.000       14000.00             !Marinov 1999                      # 1267    
+CH5O4SI_2                           + CH2CO    <=> CH6O4SI                             + HCCO            1e+013        0.000       2000.00              !Marinov 1999                      # 1268    
+CH5O4SI_2                                      <=> H3O4SI                              + CH2(S)          2.84e+010     1.000       83871.00             !Marinov 1999                      # 1283    
+
+!SI(OH)3(OCH3) 
+CH6O4SI                                        <=> H4O4SI                              + CH2(S)          2.84e+010     1.000       83871.00             !Marinov 1999                      # 1376    
+CH6O4SI                             + OH       <=> CH5O4SI                             + H2O             2.61e+005     2.182       -1344.00             !Marinov 1999                      # 1377    
+CH6O4SI                             + O        <=> CH5O4SI                             + OH              3.88e+005     2.500       3080.00              !Marinov 1999                      # 1378    
+CH6O4SI                             + H        <=> CH5O4SI                             + H2              1.7e+007      2.100       4868.00              !Marinov 1999                      # 1379    
+CH6O4SI                             + CH3      <=> CH5O4SI                             + CH4             31.9          3.170       7171.00              !Marinov 1999                      # 1380    
+CH6O4SI                             + HO2      <=> CH5O4SI                             + H2O2            9.64e+010     0.000       12578.00             !Marinov 1999                      # 1381    
+!
+!
+!
+! Reactions for ethanol oxidation mechanism taken from Marinov 1999
+!
+H2 + OH <=> H + H2O                           2.14E+08  1.52  3449.0		    !1. Marinov 1995A
+O + OH <=> H + O2                             2.02E+14  -0.4     0.0		    !2. Marinov 1995A
+H2 + O <=> H + OH                             5.06E+04  2.67  6290.0		    !3. Marinov 1995A
+H + O2 (+ M) <=> HO2 (+ M)                    4.52E+13  0.0      0.0            !4. Marinov 1995A
+  DUP
+  N2     /0/
+  H2     /0/
+  H2O    /0/
+  CH4    /10/
+  CO2    /3.8/
+  CO     /1.9/
+  LOW    /1.05E+0019 -1.257 0/
+H + O2 (+ M) <=> HO2 (+ M)                    4.52E+0013 0 0                    !4a. Marinov 1995A  
+  DUP                                                                         
+  LOW    /2.03E+0020 -1.59 0/                                                 
+H + O2 (+ M) <=> HO2 (+ M)                    4.52E+0013 0 0                    !4b. Marinov 1995A
+  DUP                                                                         
+  LOW    /1.52E+0019 -1.133 0/                                                
+H + O2 (+ M) <=> HO2 (+ M)                    4.52E+0013 0 0                    !4c. Marinov 1995A
+  DUP
+  LOW    /2.1E+0023 -2.437 0/
+OH + HO2 <=> H2O + O2                         2.13E+28 -4.827 3500.0			!5. Marinov HiPPLEr 1995
+H + HO2 <=> 2 OH                              1.50E+14  0.0   1000.0            !6. Marinov 1995A  
+H + HO2 <=> H2 + O2                           6.63E+13  0.0   2126.0            !7. Tsang   1986x
+H + HO2 <=> H2O + O                           3.01E+13  0.0   1721.0            !8. Marinov 1995A
+O + HO2 <=> O2 + OH                           3.25E+13  0.0      0.0            !9. Marinov 1995A
+2 OH <=> H2O + O                              3.57E+04  2.4  -2112.0            !10. Marinov 1995A
+2 H + M <=> H2 + M                            1.00E+18 -1.0     0.0  			!11. Marinov 1995A
+  H2     /0/
+  H2O    /0/
+H2 + 2 H <=> 2 H2                             9.2E+0016 -0.6 0					!11a. Marinov 1995A					
+2 H + H2O <=> H2 + H2O                        6E+0019 -1.25 0                   !11b. Marinov 1995A
+H + OH + M <=> H2O + M                        2.21E+0022 -2 0					!12. Marinov 1995A
+  H2O    /6.4/
+H + O + M <=> OH + M                          4.71E+0018 -1 0					!13. Marinov 1995A
+  H2O    /6.4/
+2 O + M <=> O2 + M                            1.89E+13  0.0  -1788.0			!14. Marinov 1995A
+2 HO2 <=> O2 + H2O2                           4.20E+14  0.0  11982.0			!15. Marinov 1995A
+2 OH (+ M) <=> H2O2 (+ M)                     1.24E+0014 -0.37 0				!16. Marinov 1995A
+  LOW /  3.04E+30   -4.63   2049.0 / 
+  TROE   /0.47 100 2000 1E+0015/
+H + H2O2 <=> H2 + HO2                         1.98E+06  2.0     2435.0 		    !17. Marinov 1995A
+H + H2O2 <=> H2O + OH                         3.07E+13  0.0     4217.0          !18. Marinov 1995A
+O + H2O2 <=> OH + HO2                         9.55E+06  2.0     3970.0          !19. Marinov 1995A
+OH + H2O2 <=> H2O + HO2                       2.40E+00 4.042    -2162.0         !20. Marinov 1995A
+2 CH3 (+ M) <=> C2H6 (+ M)                    9.22E+16 -1.174     636.0		    !21.WALtEr  1990 Marinov
+  H2     /2/
+  H2O    /5/
+  CO2    /3/
+  CO     /2/
+  LOW   /1.14E+36 -5.246 1705.0/
+  TROE   /0.405 1120 69.6 1E+0015/
+H + CH3 (+ M) <=> CH4 (+ M)                   2.14E+0015 -0.4 0					!22. Tsang 1986 Marinov
+  H2     /2/
+  H2O    /5/
+  CO2    /3/
+  CO     /2/
+  LOW   /3.31E+30   -4.0  2108.0/
+  TROE   /0 1E-0015 1E-0015 40/
+H + CH4 <=> H2 + CH3                          2.20E+04 3.0   8750.0  		    !23. MiLLEr 1992
+CH4 + OH <=> H2O + CH3                        4.19E+06 2.0   2547.0             !24. Marinov 1995
+CH4 + O <=> CH3 + OH                          6.92E+08 1.56  8485.0             !25. Marinov 1995
+CH4 + HO2 <=> CH3 + H2O2                      1.12E+13 0.0   24640.0            !26. Marinov 1995
+CH3 + HO2 <=> CH4 + O2                        3E+0012 0 0                       !28. Marinov 1995
+CH3 + O <=> H + CH2O                          8E+0013 0 0                       !29. Marinov 1995
+CH3 + O2 <=> CH2O + OH                        2.51E+11 0.0   14640.0            !31. Marinov 1995 
+CH3 + OH <=> H2O + CH2(S)                     2.00E+13 0.0    550.0             !34. PiLLiNg 1997
+CH3 + OH <=> H2O + CH2                        3.00E+06 2.0   2500.0             !35. Marinov 1996
+H + CH3 <=> H2 + CH2                          9.00E+13 0.0   15100.0            !37. MiLLEr 1992
+CH3 + M <=> H + CH2 + M                       1.90E+16 0.0   91411.0            !39. MARkuS 1992
+CH2 + OH <=> H + CH2O                         2.50E+13  0.0      0.0            !71. MiLLEr 1992
+CH2 + CO2 <=> CH2O + CO                       1.10E+11  0.0   1000.0            !72. MiLLEr 1992
+CH2 + O <=> 2 H + CO                          5.00E+13  0.0      0.0            !73. MiLLEr 1992  
+CH2 + O <=> H2 + CO                           3.00E+13  0.0      0.0            !74. MiLLEr 1992  
+CH2 + O2 <=> CH2O + O                         3.29E+21 -3.3   2868.0            !75. Marinov 1996
+CH2 + O2 <=> 2 H + CO2                        3.29E+21 -3.3   2868.0            !76. Marinov 1996
+CH2 + O2 <=> H2 + CO2                         1.01E+21 -3.3   1508.0            !77. Marinov 1996
+CH2 + O2 <=> H2O + CO                         7.28E+19 -2.54  1809.0            !78. Marinov 1996
+CH2 + O2 <=> HCO + OH                         1.29E+20 -3.3    284.0            !79. Marinov 1996
+CH3 + CH2 <=> H + C2H4                        4.00E+13  0.0      0.0            !80. MiLLEr 1992
+2 CH2 <=> 2 H + C2H2                          4.00E+13  0.0      0.0            !81. MiLLEr 1992
+CH2 + HCCO <=> CO + C2H3                      3.00E+13  0.0      0.0            !82. MiLLEr 1992
+CH2(S) + M <=> CH2 + M                        1E+0013 0 0                       !84. MiLLEr 1992
+  H      /12/
+  H2O    /3/
+  C2H2   /4/
+CH4 + CH2(S) <=> 2 CH3                        4E+0013 0 0                        !85. MiLLEr 1992 
+C2H6 + CH2(S) <=> CH3 + C2H5                  1.2E+0014 0 0                      !86. MiLLEr 1992
+O2 + CH2(S) <=> H + CO + OH                   7E+0013 0 0                        !87. MiLLEr 1992
+H2 + CH2(S) <=> H + CH3                       7E+0013 0 0                        !88. MiLLEr 1992
+O + CH2(S) <=> 2 H + CO                       3E+0013 0 0                        !91. MiLLEr 1992 
+OH + CH2(S) <=> H + CH2O                      3E+0013 0 0                        !92. MiLLEr 1992 
+CO2 + CH2(S) <=> CH2O + CO                    3E+0012 0 0                        !94. MiLLEr 1992
+CH3 + CH2(S) <=> H + C2H4                     2E+0013 0 0                        !95. MiLLEr 1992
+CH2(S) + CH2CO <=> CO + C2H4                  1.6E+0014 0 0                      !96. MiLLEr 1992   
+CH2O + OH <=> H2O + HCO                       3.43E+09  1.18  -447.0             !107. Tsang  1986
+H + CH2O <=> H2 + HCO                         2.19E+08  1.77  3000.0             !108. MiLLEr 1992
+CH2O + M <=> H + HCO + M                      3.31E+16  0.0   81000.0            !109. MiLLEr 1992
+CH2O + O <=> HCO + OH                         1.80E+13  0.0   3080.0             !110. MiLLEr 1992
+HCO + O2 <=> CO + HO2                         7.58E+12  0.0    410.0             !111. TiMONEN 1988
+HCO + M <=> H + CO + M                        1.86E+17  -1.0 17000.0             !112. TiMONEN 1987
+  H2     /1.87/
+  H2O    /5/
+  CH4    /2.81/
+  CO2    /3/
+  CO     /1.87/
+HCO + OH <=> H2O + CO                         1E+0014 0 0                        !113. MiLLEr 1992
+H + HCO <=> H2 + CO                           1.19E+0013 0.25 0                  !114. MiLLEr 1992
+HCO + O <=> CO + OH                           3E+0013 0 0                        !115. MiLLEr 1992
+HCO + O <=> H + CO2                           3E+0013 0 0                        !116. MiLLEr 1992
+CO + OH <=> H + CO2                           9.42E+03  2.25 -2351.0             !126. Marinov 1996
+CO + O + M <=> CO2 + M                        6.17E+14  0.0   3000.0             !127. MiLLEr 1992
+CO + O2 <=> CO2 + O                           2.53E+12  0.0  47688.0             !128. MiLLEr 1992
+CO + HO2 <=> CO2 + OH                         5.80E+13  0.0  22934.0             !129. MiLLEr 1992
+C2H5OH (+ M) <=> OH + C2H5 (+ M)              1.25E+23 -1.54 96005.0             !131. Marinov 1998
+  H2     /2/
+  H2O    /5/
+  CO2    /3/
+  CO     /2/
+  LOW    /3.252E+0085 -18.81 114930./
+  TROE   /0.5 300 900 5000/
+C2H5OH (+ M) <=> H2O + C2H4 (+ M)             2.79E+13 0.09  66136.0             !132. Marinov 1998
+  H2O    /5/
+  LOW    /2.57E+0083 -18.85 86452./
+  TROE   /0.7 350 800 3800/
+OH + C2H5OH <=> H2O + C2H4OH                  1.74E+11   0.27    600.0           !134. Marinov 1998
+OH + C2H5OH <=> H2O + CH3CH2O                 7.46E+11   0.30   1634.0           !136. Marinov 1998
+H + C2H5OH <=> H2 + C2H4OH                    1.23E+7    1.8    5098.0           !137. Marinov 1998
+H + C2H5OH <=> H2 + CH3CH2O                   1.50E+7    1.60   3038.0           !139. Marinov 1998
+O + C2H5OH <=> OH + C2H4OH                    9.41E+7    1.70   5459.0           !140. Marinov 1998
+O + C2H5OH <=> OH + CH3CH2O                   1.58E+7    2.00   4448.0           !142. Marinov 1998
+CH3 + C2H5OH <=> CH4 + C2H4OH                 2.19E+2    3.18   9622.0           !143. Marinov 1998
+CH3 + C2H5OH <=> CH4 + CH3CH2O                1.45E+2    2.99   7649.0           !145. Marinov 1998
+HO2 + C2H5OH <=> H2O2 + C2H4OH                1.23E+4    2.55  15750.0           !146. Marinov 1998
+HO2 + C2H5OH <=> H2O2 + CH3CH2O               2.50E+12   0.0   24000.0           !148. Marinov 1998
+CH3CH2O + M <=> CH3 + CH2O + M                1.35E+38  -6.96  23800.0           !150. Marinov 1998
+CO + CH3CH2O <=> CO2 + C2H5                   4.68E+2    3.16   5380.0           !151. Marinov 1998
+H + CH3CH2O <=> H2O + C2H4                    3E+0013 0 0                        !154. Marinov 1998
+H + CH2HCO <=> CH3 + HCO                      5E+0013 0 0                        !176. Marinov 1998
+H + CH2HCO <=> H2 + CH2CO                     2E+0013 0 0                        !177. Marinov 1998
+O + CH2HCO <=> CH2O + HCO                     1E+0014 0 0                        !178. Marinov 1996
+OH + CH2HCO <=> H2O + CH2CO                   3E+0013 0 0                        !179. Marinov 1996
+O2 + CH2HCO <=> CH2O + CO + OH                3E+0010 0 0                        !180. Marinov 1996
+CH3 + CH2HCO <=> H + CO + C2H5                4.9E+0014 -0.5 0                   !181. Marinov 1996
+HO2 + CH2HCO <=> CH2O + HCO + OH              7E+0012 0 0                        !182. Marinov 1996
+CH2HCO <=> CH3 + CO                           1.17E+43  -9.83  43756.0           !184. Marinov 1998
+CH2HCO <=> H + CH2CO                          1.81E+43  -9.61  45868.0           !185. Marinov 1998
+CH3 + C2H6 <=> CH4 + C2H5                     5.50E-01  4.0   8300.0             !186. MiLLEr 1992
+H + C2H6 <=> H2 + C2H5                        5.40E+02  3.5   5210.0             !187. MiLLEr 1992
+O + C2H6 <=> OH + C2H5                        3.00E+07  2.0   5115.0             !188. MiLLEr 1992
+OH + C2H6 <=> H2O + C2H5                      7.23E+06  2.0    864.0             !189. BAuLCH 1992
+H + C2H5 <=> H2 + C2H4                        1.25E+14  0.0   8000.0             !190. Marinov 1995
+H + C2H5 <=> 2 CH3                            3.00E+13  0.0      0.0             !191. WARNAtz 1984
+H + C2H5 <=> C2H6                             3.00E+13  0.0      0.0             !192. Marinov 1998
+OH + C2H5 <=> H2O + C2H4                      4.00E+13  0.0      0.0             !193. Marinov 1995
+O + C2H5 <=> CH3 + CH2O                       1.00E+14  0.0      0.0             !194. HErrON 1988
+HO2 + C2H5 <=> O2 + C2H6                      3.00E+12  0.0      0.0             !195. Marinov 1998
+HO2 + C2H5 <=> OH + CH3CH2O                   3.00E+13  0.0      0.0             !196. Tsang 1986
+O2 + C2H5 <=> HO2 + C2H4                      2.89E+28  -5.4  7585.0             !197. Marinov 1998
+OH + C2H4 <=> C2H4OH                          1.29E+12  0.0    -817.0            !199. AtkiNSON 1986
+O2 + C2H4OH <=> HOC2H4O2                      1.00E+12  0.0   -1100.0            !200. Marinov 1998
+HOC2H4O2 <=> 2 CH2O + OH                      6.00E+10  0.0   24500.0            !201. Marinov 1998
+H + C2H4 <=> H2 + C2H3                        3.36E-07  6.0   1692.0             !202. DAgAut 1990
+OH + C2H4 <=> H2O + C2H3                      2.02E+13  0.0   5936.0             !203. MiLLEr 1992
+O + C2H4 <=> CH3 + HCO                        1.02E+07  1.88   179.0             !204. BAuLCH 1994
+O + C2H4 <=> H + CH2HCO                       3.39E+06  1.88   179.0             !205. BAuLCH 1994
+CH3 + C2H4 <=> CH4 + C2H3                     6.62E+00  3.7   9500.0             !206. Marinov 1995
+H + C2H4 (+ M) <=> C2H5 (+ M)                 1.08E+12  0.454 1822.0             !207. FENg  1993
+  H2     /2/
+  H2O    /5/
+  CO2    /3/
+  CO     /2/
+  LOW    /1.112E+0034 -5 4448.0/
+  TROE   /1 1E-0015 95 200/
+C2H4 (+ M) <=> H2 + C2H2 (+ M)                1.8E14  0.0  87000.                !208. Marinov 1997
+  LOW    /1.5E+0015 0 55443./
+H + C2H3 (+ M) <=> C2H4 (+ M)                 6.1E12 0.27 280.                   !209. GRI-MECH2.11
+  H2O    /5/
+  LOW    /9.8E+0029 -3.86 3320./
+  TROE   /0.782 208 2663 6095/
+H + C2H3 <=> H2 + C2H2                        9E+0013 0 0                        !210. Tsang 1986
+O + C2H3 <=> H + CH2CO                        3E+0013 0 0                        !211. MiLLEr 1992
+O2 + C2H3 <=> CH2O + HCO                      1.70E+29  -5.312 6500.0            !212. Marinov 1997
+O2 + C2H3 <=> O + CH2HCO                      5.50E+14  -0.611 5260.0            !213. Marinov 1997
+O2 + C2H3 <=> HO2 + C2H2                      2.12E-06  6.0   9484.0             !214. CfM/NMM 1996
+OH + C2H3 <=> H2O + C2H2                      2.00E+13  0.0      0.0             !215. MiLLEr 1992
+C2H + C2H3 <=> 2 C2H2                         3.00E+13  0.0      0.0             !216. MiLLEr 1992
+CH3 + C2H3 <=> C3H6                           4.46E+56 -13.0 13865.0             !219. Marinov 1996
+CH3 + C2H3 <=> CH4 + C2H2                     2E+0013 0 0                        !220. FAHr  1991
+OH + C2H2 <=> H2O + C2H                       3.37E+07  2.0  14000.0             !221. MiLLEr 1992
+OH + C2H2 <=> H + CH2CO                       2.18E-04  4.5  -1000.0             !223. MiLLEr 1992
+OH + C2H2 <=> CH3 + CO                        4.83E-04  4.0  -2000.0             !224. MiLLEr 1992
+O + C2H2 <=> CH2 + CO                         6.12E+06  2.0   1900.0             !226. Marinov 1996
+O + C2H2 <=> H + HCCO                         1.43E+07  2.0   1900.0             !227. Marinov 1996
+O + C2H2 <=> OH + C2H                         3.16E+15 -0.6   15000.0            !228. MiLLEr 1992
+CH3 + C2H2 <=> CH4 + C2H                      1.81E+11  0.0   17289.0            !229. Tsang  1986
+O2 + C2H2 <=> OH + HCCO                       4.00E+07  1.5   30100.0            !230. Marinov 1997
+C2H2 + M <=> H + C2H + M                      4.20E+16  0.0  107000.0            !231. MiLLEr 1992
+H + C2H2 (+ M) <=> C2H3 (+ M)                 3.11E+11  0.58   2589.0            !232. KNyAzEv 1995
+  H2     /2/
+  H2O    /5/
+  CO2    /3/
+  CO     /2/
+  LOW    /2.25E+0040 -7.269 6577.0/
+  TROE   /1 1E-0015 675 1E+0015/
+O + CH2CO <=> CH2 + CO2                       1.75E+12  0.0    1350.0            !242. Marinov 1995
+H + CH2CO <=> CH3 + CO                        2.71E+4   2.75    714.0            !243. Marinov 1996
+H + CH2CO <=> H2 + HCCO                       2.00E+14  0.0    8000.0            !244. Marinov 1996
+O + CH2CO <=> OH + HCCO                       1.00E+13  0.0    8000.0            !245. MiLLEr 1992
+OH + CH2CO <=> H2O + HCCO                     1.00E+13  0.0    2000.0            !246. Marinov 1996
+CH2CO (+ M) <=> CH2 + CO (+ M)                3.00E+14  0.0   70980.0            !248. MiLLEr 1992
+  LOW    /3.6E+0015 0 59270.0 /
+H2 + C2H <=> H + C2H2                         4.09E+05  2.39    864.3            !249. MiLLEr 1992
+OH + C2H <=> H + HCCO                         2E+0013 0 0                        !251. MiLLEr 1992
+O2 + C2H <=> H + 2 CO                         9.04E+12  0.0    -457.0            !252. MiLLEr 1992
+H + HCCO <=> CO + CH2(S)                      1E+0014 0 0                        !254. MiLLEr 1992
+O + HCCO <=> H + 2 CO                         8E+0013 0 0                        !255. PEEtErS 1995
+O2 + HCCO <=> HCO + CO + O                    2.5E+0008 1 0                      !257. Marinov 1997
+O2 + HCCO <=> HCO + CO2                       2.40E+11  0.0    -854.0            !258. Marinov 1997
+2 HCCO <=> 2 CO + C2H2                        1E+0013 0 0                        !260. Marinov 1997
+C3H6 <=> CH4 + C2H2                           2.50E+12   0.0   70000.0           !293. HidAkA 1992
+O + C3H6 <=> HCO + C2H5                       1.58E+07   1.76  -1216.0           !300. Tsang 1991
+H + C3H6 <=> CH3 + C2H4                       7.23E+12   0.0    1302.0           !304. Tsang 1991
+END

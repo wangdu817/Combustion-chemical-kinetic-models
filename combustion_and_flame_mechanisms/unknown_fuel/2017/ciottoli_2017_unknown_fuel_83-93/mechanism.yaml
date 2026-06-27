@@ -1,0 +1,21 @@
+description: |-
+  Curran, H. J., Pitz, W. J., and Westbrook, C. K., 2002
+  UCRL-WEB-204236
+  Review and release date: May 19, 2004.
+
+generator: ck2yaml
+input-files: [chem.inp, therm.dat]
+cantera-version: 3.2.0
+date: Sat, 27 Jun 2026 11:14:56 +0800
+
+units: {length: cm, time: s, quantity: mol, activation-energy: cal/mol}
+
+phases:
+- name: gas
+  thermo: ideal-gas
+  elements: []
+  species: []
+  transport: mixture-averaged
+  state: {T: 300.0, P: 1 atm}
+
+species: []
