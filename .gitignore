@@ -38,6 +38,7 @@ combustion_and_flame_mechanisms/_raw/**
 
 combustion_and_flame_mechanisms/_processing_archive/**
 combustion_and_flame_mechanisms/**/_processing/**
+combustion_and_flame_mechanisms/_non_mechanism_candidates/**
 
 # API keys (never commit real keys)
 api_keys.json
