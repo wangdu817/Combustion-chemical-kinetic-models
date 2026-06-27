@@ -1,0 +1,36 @@
+=== START 2026 at Fri Jun 26 20:07:21 CST 2026 ===
+=== 2026: PROBE (parallel 8 threads) ===
+PROBE done
+=== 2026: DOWNLOAD ===
+PROCESS done
+=== 2026: ABSTRACTS ===
+ERROR: No API keys. Set ELSEVIER_API_KEY env var or api_keys.json
+ABSTRACTS done
+=== 2026: FINAL ===
+FINAL done
+=== 2026 RESULT ===
+summaries: 43, inc=0, fail=43, pdfs=0
+=== COMMIT & PUSH ===
+[master 3b80990] Complete 2026 mechanism collection (parallel mode)
+ 3 files changed, 491 insertions(+), 489 deletions(-)
+To github.com:wangdu817/Combustion-chemical-kinetic-models.git
+   19dd7a2..3b80990  master -> master
+PUSH done
+=== DONE at Fri Jun 26 20:10:09 CST 2026 ===
+DOWNLOAD done
+=== 2026: PROCESS ===
+PROCESS done
+=== 2026: ABSTRACTS ===
+ERROR: No API keys. Set ELSEVIER_API_KEY env var or api_keys.json
+ABSTRACTS done
+=== 2026: FINAL ===
+FINAL done
+=== 2026 RESULT ===
+summaries: 43, inc=0, fail=43, pdfs=0
+=== COMMIT & PUSH ===
+[master a5f2d80] Complete 2026 mechanism collection (parallel mode)
+ 2 files changed, 592 insertions(+), 591 deletions(-)
+To github.com:wangdu817/Combustion-chemical-kinetic-models.git
+   3b80990..a5f2d80  master -> master
+PUSH done
+=== DONE at Fri Jun 26 20:13:58 CST 2026 ===
