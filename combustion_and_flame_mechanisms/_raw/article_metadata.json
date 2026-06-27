@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 [
   {
     "articleNumber": "114528",
@@ -347102,3 +347103,6 @@
     "processingSkipReason": "reused existing terminal processing state from collection_index.csv"
   }
 ]
+=======
+[]
+>>>>>>> 7f51a609695cf88995680b3d875641e3ec5c07fd

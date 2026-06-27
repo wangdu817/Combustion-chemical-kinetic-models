@@ -1,0 +1,291 @@
+#       This kinetic mechanism was used for the results presented in the accompanying paper
+#		"Laminar Flame Speed Modification by Nanosecond Repetitively Pulsed
+#		Discharges. Part I: Numerical Model" by C. A. Pavan and C. Guerra-Garcia
+#		Please cite the accompanying paper if you make use of this file in your own work.
+#
+#		Details on primary references and energy calculations can be found in
+#		appendix B of the accompanying paper.
+#		
+#       Last updated by C. Pavan 2022-12-16
+#
+ELEMENTS
+e N O
+C H
+END
+
+#==================================================================================================================================
+
+BOLSIG
+N2 O2
+CH4 CO2
+H2O
+END
+
+#==================================================================================================================================
+
+SPECIES
+
+# NITROGEN
+N2
+N2(A) N2(B) N2(a`) N2(C)
+N2(v1) N2(v2) N2(v3) N2(v4) N2(v5) N2(v6) N2(v7) N2(v8)
+N2^+
+
+# OXYGEN:
+O2
+O2^+
+O
+
+# CARBON-CONTAINING
+CH4 CH4^+ CH3 CH2 CH
+CO2 CO2^+
+CO
+
+# OTHER
+H2O H2O^+
+H H2
+OH
+E
+
+END
+
+#==================================================================================================================================
+
+REACTIONS
+
+#--------------------------------------------------------------------------------
+#
+# excitation of electronic levels by electron impact [Bolsig+]
+#
+#--------------------------------------------------------------------------------
+
+e + N2 => e + N2(A) + @A                                !   BOLSIG N2 -> @R
+    @R = N2(A3,v0-4)  N2(A3,v5-9)  N2(A3,v10-)
+    @A = 0.0_eV 0.93_eV 1.63_eV
+
+e + N2 => e + N2(B) + @A                                !   BOLSIG N2 -> @R
+    @R = N2(B3)  N2(W3)  N2(B'3)
+    @A = 0.0_eV 0.01_eV 0.81_eV
+
+e + N2 => e + N2(a`) + @A                               !   BOLSIG N2 -> @R
+    @R = N2(a'1)  N2(a1)  N2(w1)
+    @A = 0.0_eV 0.15_eV 0.49_eV
+
+e + N2 => e + N2(C) + @A                                !   BOLSIG N2 -> @R
+    @R = N2(C3)  N2(E3)
+    @A = 0.0_eV 0.84_eV
+
+e + O2 => e + O + O + @A                                !   BOLSIG O2 -> @R
+    @A = 0.834_eV 3.234_eV 4.804_eV
+    @R = O2(6.0eV)  O2(8.4eV)  O2(9.97eV)
+
+CH4 + e => CH3 + H + e + 3.344_eV                       ! BOLSIG    CH4 -> CH4*(7.9eV)
+
+#--------------------------------------------------------------------------------
+#
+# ionization by electron impact [Bolsig+]
+#
+#--------------------------------------------------------------------------------
+e + N2     => e + e + N2^+                         !   BOLSIG N2     -> N2^+
+e + O2     => e + e + O2^+                         !   BOLSIG O2     -> O2^+
+e + CH4    => e + e + CH4^+                        !   BOLSIG CH4    -> CH4^+
+e + H2O    => e + e + H2O^+                        !   BOLSIG H2O    -> H2O^+
+e + CO2    => e + e + CO2^+                        !   BOLSIG CO2    -> CO2^+
+
+#--------------------------------------------------------------------------------
+#
+# instant-quenching reactions to achieve energy conservation
+#
+#--------------------------------------------------------------------------------
+
+# rotational
+# omitted because assume R-T equilibrium
+# e + N2 => e + N2                          !   BOLSIG N2 -> N2(rot)
+
+# vibrational 1-4
+e + N2 => e + @A                                    !   BOLSIG N2 -> @R
+    @R = N2(v1res) N2(v1) N2(v2) N2(v3) N2(v4)
+    @A = N2(v1) N2(v1) N2(v2) N2(v3) N2(v4)
+                
+# vibrational 5-8
+e + N2 => e + @A                              !   BOLSIG N2 -> @R
+    @R = N2(v5) N2(v6) N2(v7) N2(v8)
+    @A = N2(v5) N2(v6) N2(v7) N2(v8)
+
+# highly excited N2
+e + N2 => e + N2 + 12.25_eV                         ! BOLSIG N2 -> N2(12.25eV) 
+e + N2 => e + N2 + 13.0_eV                          ! BOLSIG N2 -> N2(13.0eV)                    
+
+
+# oxygen rotation
+# omitted because assume R-T equilibrium
+# e + O2 => e + O2                                  !   BOLSIG O2 -> O2(rot)
+
+# oxygen vibration 1-4
+e + O2 => e + O2 + @A                               !   BOLSIG O2 -> @R
+    @R = O2(v1) O2(v1res) O2(v2) O2(v2res) O2(v3) O2(v4)
+    @A = 0.19_eV 0.19_eV 0.38_eV 0.38_eV 0.57_eV 0.75_eV
+
+# oxygen excitation
+e + O2 => e + O2 + @A                               !   BOLSIG O2 -> @R
+    @R = O2(a1) O2(b1) O2(4.5eV)
+    @A = 0.977_eV 1.627_eV 4.5_eV
+
+# methane excitation -> assume immediate quenching
+# causes some problems at Te=Tgas because of non-negligible X-sect for low E state
+# (same problem as the rotational excitation)
+e + CH4 => e + CH4 + @A                             ! BOLSIG CH4 -> @R
+    @R = CH4*(0.159eV) CH4*(0.37eV)
+    @A = 0.159_eV 0.37_eV
+
+#--------------------------------------------------------------------------------
+#
+# vibrational-translational relaxation [Capitelli2000, page 105]
+# v1->v0 for N2, H2O, O from Capitelli
+# v1->v0 for O2 from starikovsky2013
+# v1->v0 for CH4 from popov2011
+# all higher rates from Capitelli2000 ladder operators
+# ignore ladder up operators for now
+#
+#--------------------------------------------------------------------------------
+
+$ double precision, parameter :: energy_vibN2 = 0.290d0*11605.0d0, energy_vibO2 = 0.190d0*11605.0d0 ! K
+$ double precision :: QvibN2, kVT10_N2, kVT10_O2, kVT10_H2O, kVT10_O, kVT10_CH4 ! cm3.s-1
+$ QvibN2     = exp( - energy_vibN2 / Tgas )
+$ kVT10_N2 = 7.80d-12 * Tgas * exp( - 218.0 / Tgas**(1.0/3.0) + 690.0 / Tgas ) / ( 1.0 - QvibN2 )
+$ kVT10_O2 = kVT10_N2
+$ kVT10_H2O = 2.50d-12 * Tgas * exp( - 21.18 / Tgas**(1.0/3.0))
+$ kVT10_O = 1.20d-13 * exp(-27.6 * Tgas**(-1.0/3.0))
+$ kVT10_CH4 = 5.366d-15 * Tgas*exp(-44.5d0/Tgas**(1.0/3.0)) / (1.0d0 - exp(-3400.0d0 / Tgas))
+
+# ladder down operators
+@A + N2 => @B + N2 + 0.290_eV                                 !   kVT10_N2 * @R
+    @A = N2(v1) N2(v2) N2(v3) N2(v4) N2(v5) N2(v6) N2(v7) N2(v8)
+    @B = N2     N2(v1) N2(v2) N2(v3) N2(v4) N2(v5) N2(v6) N2(v7)
+    @R = 1.0d0  2.0d0  3.0d0  4.0d0  5.0d0  6.0d0  7.0d0  8.0d0
+
+@A + O2 => @B + O2 + 0.290_eV                                 !   kVT10_O2 * @R
+    @A = N2(v1) N2(v2) N2(v3) N2(v4) N2(v5) N2(v6) N2(v7) N2(v8)
+    @B = N2     N2(v1) N2(v2) N2(v3) N2(v4) N2(v5) N2(v6) N2(v7)
+    @R = 1.0d0  2.0d0  3.0d0  4.0d0  5.0d0  6.0d0  7.0d0  8.0d0
+
+@A + H2O => @B + H2O + 0.290_eV                                 !   kVT10_H2O * @R
+    @A = N2(v1) N2(v2) N2(v3) N2(v4) N2(v5) N2(v6) N2(v7) N2(v8)
+    @B = N2     N2(v1) N2(v2) N2(v3) N2(v4) N2(v5) N2(v6) N2(v7)
+    @R = 1.0d0  2.0d0  3.0d0  4.0d0  5.0d0  6.0d0  7.0d0  8.0d0
+
+@A + O => @B + O + 0.290_eV                                 !   kVT10_O * @R
+    @A = N2(v1) N2(v2) N2(v3) N2(v4) N2(v5) N2(v6) N2(v7) N2(v8)
+    @B = N2     N2(v1) N2(v2) N2(v3) N2(v4) N2(v5) N2(v6) N2(v7)
+    @R = 1.0d0  2.0d0  3.0d0  4.0d0  5.0d0  6.0d0  7.0d0  8.0d0
+
+@A + CH4 => @B + CH4 + 0.290_eV                                 !   kVT10_CH4 * @R
+    @A = N2(v1) N2(v2) N2(v3) N2(v4) N2(v5) N2(v6) N2(v7) N2(v8)
+    @B = N2     N2(v1) N2(v2) N2(v3) N2(v4) N2(v5) N2(v6) N2(v7)
+    @R = 1.0d0  2.0d0  3.0d0  4.0d0  5.0d0  6.0d0  7.0d0  8.0d0
+    
+#--------------------------------------------------------------------------------
+#
+# three body electron-ion recombination 
+# all reates from [Capitelli2000, page 140] "rate depends weakly on ion type"
+# 
+#--------------------------------------------------------------------------------
+
+e + @A + e => @B + e + @C                          !   1.0d-19 * (300.0d0/Te)**4.5
+    @A = N2^+ O2^+ H2O^+ CO2^+ CH4^+
+    @B = N2 O2 H2O CO2 CH4
+    @C = 15.6_eV 12.06_eV 13.76_eV 13.7_eV 12.9_eV
+
+e + @A + ANY_NEUTRAL => @B + ANY_NEUTRAL +@C       !   6.0d-27 * (300.0d0/Te)**1.5
+    @A = N2^+ O2^+ CO2^+ H2O^+ CH4^+
+    @B = N2 O2 CO2 H2O CH4
+    @C = 15.6_eV 12.06_eV 13.76_eV 13.7_eV 12.9_eV
+
+#--------------------------------------------------------------------------------
+#
+# dissociative recombination
+# 
+#--------------------------------------------------------------------------------
+
+# Kossyi 1992, eqn 40
+e + O2^+ => O + O + 6.894_eV                        ! 2.0d-7 * (300.0d0/Te)**0.63
+
+# Thomas 2013. Multiplied total rate by yield %. Top 4 pathways considered
+e + CH4^+ => CH3 + H + 8.344_eV                     ! 2.1d-7 * (300.0d0/Te)**0.66
+e + CH4^+ => CH2 + 2H + 3.540_eV                    ! 6.0d-7 * (300.0d0/Te)**0.66
+e + CH4^+ => CH2 + H2 + 8.060_eV                    ! 7.0d-8 * (300.0d0/Te)**0.66
+e + CH4^+ => CH + H2 + H + 3.675_eV                 ! 2.7d-8 * (300.0d0/Te)**0.66
+
+# Rosen 2000 assuming Maxwellian
+e + H2O^+ => OH + H + 8.858_eV                      ! 1.3d-7 * (300.0d0/Te)**0.35
+e + H2O^+ => O + H2 + 8.67_eV                       ! 5.7d-8 * (300.0d0/Te)**0.35
+e + H2O^+ => O + H + H + 4.15_eV                    ! 4.5d-7 * (300.0d0/Te)**0.35
+
+# Seiersen 2003 assuming dominant mechanism (87%) is only pathway
+e + CO2^+ => O + CO + 8.184_eV                      ! 6.5d-7 * (300.0d0/Te)**0.8
+
+#--------------------------------------------------------------------------------
+#
+# optical transitions and predissociation [Capitelli2000, table 9.1]
+#
+#--------------------------------------------------------------------------------
+
+# assume that the energy from these is radiated outside the system
+N2(B)  => N2(A)                                  !   1.5d5                                
+N2(C)  => N2(B)                                  !   3.0d7
+
+#--------------------------------------------------------------------------------
+#
+# quenching and excitation of N2 [Capitelli2000, table 9.3 unless noted otherwise]
+#
+#--------------------------------------------------------------------------------
+# Kossyi eqn 100
+N2(A) + O2 => N2 + O + O + 1.004_eV                !   2.5d-12 
+N2(B) + O2 => N2 + O + O + 2.184_eV                !   3.0d-10
+N2(a`) + O2 => N2 + O + O + 3.234_eV               !   2.8d-11
+N2(C) + O2 => N2 + O + O  + 5.864_eV               !   3.0d-10
+N2(A) + O => N2 + O + 6.17_eV                      !   2.1d-11
+
+N2(A) + N2 => N2 + N2 + 6.17_eV                    !   3.0d-16
+N2(B) + N2 => N2 + N2 + 8.16_eV                    !   2.0d-12
+N2(B) + N2 => N2(A) + N2 + 1.99_eV                 !   3.0d-11
+N2(a`) + N2 => N2(B) + N2 + 0.24_eV                !   1.9d-13
+N2(C) + N2 => N2(a`) + N2 + 2.63_eV                !   1.0d-11
+
+N2(A) + N2(A) => N2(B) + N2 + 4.18_eV              !   3.0d-10
+N2(A) + N2(A) => N2(C) + N2 + 3.94_eV              !   1.5d-10
+
+# all the methane reactions have their own sources. products assumed
+# from Bak for now
+N2(A) + CH4 => CH3 + H + N2 + 1.6137_eV            !   3.3d-15 
+# Piper 1992
+N2(B) + CH4 => CH3 + H + N2 + 2.7937_eV            !   3.0d-10 
+# Marinelli 1989
+N2(a`) + CH4 => CH3 + H + N2 + 3.8437_eV           !   5.2d-10 
+# from Bak for now
+N2(C) + CH4 => CH3 + H + N2 + 6.4737_eV            !   5.0d-10 
+
+#--------------------------------------------------------------------------------
+#
+# Charge Exchange - all from Capitelli2000 (pg 179) unless noted otherwise
+#
+#
+#--------------------------------------------------------------------------------
+
+N2^+ + O2 => O2^+ + N2 + 3.54_eV                   ! 6.0d-11 * (300.0d0/Tgas)**0.05
+N2^+ + H2O => H2O^+ + N2 + 1.84_eV                 ! 2.3d-9
+H2O^+ + O2 => O2^+ + H2O + 1.70_eV                 ! 4.3d-10
+# Silva 2020
+CO2^+ + O2 => O2^+ + CO2 + 1.64_eV                 ! 5.3d-11 
+
+#--------------------------------------------------------------------------------
+#
+# Others
+#
+#--------------------------------------------------------------------------------
+
+END
+
+#=====================================================================================================================================#
+# END FILE                                                                                                                            #
+#=====================================================================================================================================#
