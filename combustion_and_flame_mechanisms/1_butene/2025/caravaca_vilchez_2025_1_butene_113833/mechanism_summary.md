@@ -22,7 +22,7 @@ Jesus Caravaca-Vilchez, Jiaxin Liu, Pengzhi Wang, Yuki Murakami, ... Karl Alexan
 - Standard mechanism file: chem.inp
 - Standard thermodynamic file: therm.dat
 - Standard transport file: not available
-- Original mechanism source files: _processing/extracted/s001021802400542x_mmc4/NUIGMech1.3_C4_mod__Commented.cti, _processing/extracted/s001021802400542x_mmc6/NUIGMech1.3_C4_mod.inp
+- Original mechanism source files: _processing/extracted/s001021802400542x_mmc6/NUIGMech1.3_C4_mod.inp, _processing/extracted/s001021802400542x_mmc4/NUIGMech1.3_C4_mod__Commented.cti
 - Original thermodynamic source files: _processing/extracted/s001021802400542x_mmc5/NUIGMech1.3_C4_mod.dat, _processing/extracted/s001021802400542x_mmc4/NUIGMech1.3_C4_mod__Commented.cti
 - Original transport source files: not found
 
@@ -58,9 +58,11 @@ Alkene chemistry plays a crucial role in the autoignition and oxidation of large
 
 ## Processing Notes
 
-- extracted S001021802400542X_mmc6.zip
-- extracted S001021802400542X_mmc5.zip
 - extracted S001021802400542X_mmc4.zip
-- extracted S001021802400542X_mmc2.xlsx
-- extracted S001021802400542X_mmc3.docx
+- extracted S001021802400542X_mmc5.zip
 - extracted S001021802400542X_mmc1.zip
+- extracted S001021802400542X_mmc2.xlsx
+- extracted S001021802400542X_mmc6.zip
+- extracted S001021802400542X_mmc3.docx
+- unsupported archive without 7z: Chromatographs.7z
+- unsupported archive without 7z: ._Chromatographs.7z

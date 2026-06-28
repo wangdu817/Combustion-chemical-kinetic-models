@@ -22,18 +22,18 @@ Rishav Choudhary, Pujan Biswas, Vivek Boddapati, Hai Wang, Ronald K. Hanson. LT-
 - Standard mechanism file: chem.inp
 - Standard thermodynamic file: therm.dat
 - Standard transport file: not available
-- Original mechanism source files: _processing/extracted/s0010218024005613_mmc1/mmc3.yaml, _processing/extracted/s0010218024005613_mmc1/mmc1.cti, _processing/extracted/s0010218024005613_mmc1/mmc2.inp
-- Original thermodynamic source files: _processing/extracted/s0010218024005613_mmc1/mmc4.dat, _processing/extracted/s0010218024005613_mmc1/mmc3.yaml, _processing/extracted/s0010218024005613_mmc1/mmc1.cti
+- Original mechanism source files: _processing/extracted/s0010218024005613_mmc1/mmc2.inp, _processing/extracted/s0010218024005613_mmc1/mmc1.cti, _processing/extracted/s0010218024005613_mmc1/mmc3.yaml
+- Original thermodynamic source files: _processing/extracted/s0010218024005613_mmc1/mmc4.dat, _processing/extracted/s0010218024005613_mmc1/mmc1.cti, _processing/extracted/s0010218024005613_mmc1/mmc3.yaml
 - Original transport source files: not found
 
 ## Cantera Preprocessing Results
 
 ### Mechanism 1
 
-- Status: cantera_failed
+- Status: ok
 - Species count: 138
 - Reaction count: 895
-- Message: CanteraError: ******************************************************************************* CanteraError thrown by newSolution: The CTI and XML formats are no longer supported. *******************************************************************************
+- Message: cantera conversion ok
 - Method: cantera
 - Cantera YAML: mechanism.yaml
 - Standard chem.inp: chem.inp
@@ -45,7 +45,7 @@ Rishav Choudhary, Pujan Biswas, Vivek Boddapati, Hai Wang, Ronald K. Hanson. LT-
 - Status: cantera_failed
 - Species count: 138
 - Reaction count: 895
-- Message: CanteraError: ******************************************************************************* CanteraError thrown by addReactions: ******************************************************************************* InputFileError thrown by Reaction::checkBalance: Error on line 1600 of /home/ubuntu/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/unknown_fuel/2025/choudhary_2025_unknown_fuel_113852/mechanism.yaml: The following reaction is unbalanced: GSC7H14OOHO2 => 0.0741833 C2H4 + 0.0968092 C3H6 + 0.0109643 C4H81 + 0.0931942 C6H5CH3 + 0.00349031 C6H6 + 0.0503571 CH2CO + 0.503571 CH2O + 2.44154 CH3 + 0.239196 CH3CHO + 0.214018 CH3COCH3 + 1.34286 CO + GSC7H14OOHO2 + 0.5 H + 0.225 HO2 + 1.2 OH + 0.0837307 iC4H8 Element Reactants Products C 7 14.000000296000001 H 15 30.00000124 ... [truncated; see _processing logs]
+- Message: IndexError: index 1 is out of bounds for axis 0 with size 1
 - Method: cantera
 - Cantera YAML: mechanism.yaml
 - Standard chem.inp: chem.inp
@@ -54,10 +54,10 @@ Rishav Choudhary, Pujan Biswas, Vivek Boddapati, Hai Wang, Ronald K. Hanson. LT-
 
 ### Mechanism 3
 
-- Status: ok
+- Status: cantera_failed
 - Species count: 138
 - Reaction count: 895
-- Message: cantera conversion ok
+- Message: IndexError: index 1 is out of bounds for axis 0 with size 1
 - Method: cantera
 - Cantera YAML: mechanism.yaml
 - Standard chem.inp: chem.inp
@@ -71,3 +71,4 @@ The diversity of reactivities, intermediates, and pathways associated with the l
 ## Processing Notes
 
 - extracted S0010218024005613_mmc1.zip
+- extracted mmc5.docx

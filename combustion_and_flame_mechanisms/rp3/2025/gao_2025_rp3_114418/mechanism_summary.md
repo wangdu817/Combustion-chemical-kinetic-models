@@ -46,6 +46,6 @@ Experimental and modeling studies were conducted on the oxidation of a three-com
 
 ## Processing Notes
 
-- extracted S0010218025004559_mmc3.zip
-- extracted S0010218025004559_mmc4.xlsx
 - extracted S0010218025004559_mmc2.zip
+- extracted S0010218025004559_mmc4.xlsx
+- extracted S0010218025004559_mmc3.zip

@@ -47,9 +47,9 @@ Norbornane has been reported in recent years as a diesel additive that can impro
 ## Processing Notes
 
 - extracted S001021802500077X_mmc4.zip
+- extracted S001021802500077X_mmc1.docx
+- extracted S001021802500077X_mmc3.xlsx
 - extracted S001021802500077X_mmc7.zip
 - extracted S001021802500077X_mmc6.zip
-- extracted S001021802500077X_mmc3.xlsx
-- extracted S001021802500077X_mmc1.docx
-- extracted S001021802500077X_mmc2.docx
 - extracted S001021802500077X_mmc5.zip
+- extracted S001021802500077X_mmc2.docx

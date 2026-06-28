@@ -22,7 +22,7 @@ Jesus Caravaca-Vilchez, Jiaxin Liu, Pengzhi Wang, Yuki Murakami, ... Karl Alexan
 - Standard mechanism file: chem.inp
 - Standard thermodynamic file: therm.dat
 - Standard transport file: not available
-- Original mechanism source files: _processing/extracted/s0010218024005704_mmc5/NUIGMech1.3_C4_mod__Commented.cti, _processing/extracted/s0010218024005704_mmc7/NUIGMech1.3_C4_mod.inp
+- Original mechanism source files: _processing/extracted/s0010218024005704_mmc7/NUIGMech1.3_C4_mod.inp, _processing/extracted/s0010218024005704_mmc5/NUIGMech1.3_C4_mod__Commented.cti
 - Original thermodynamic source files: _processing/extracted/s0010218024005704_mmc5/NUIGMech1.3_C4_mod__Commented.cti, _processing/extracted/s0010218024005704_mmc6/NUIGMech1.3_C4_mod.dat
 - Original transport source files: not found
 
@@ -58,10 +58,12 @@ Studying the oxidation of n-butane, a major component of LNG, is critical to imp
 
 ## Processing Notes
 
-- extracted S0010218024005704_mmc2.zip
-- extracted S0010218024005704_mmc3.xlsx
-- extracted S0010218024005704_mmc5.zip
-- extracted S0010218024005704_mmc6.zip
-- extracted S0010218024005704_mmc4.docx
 - extracted S0010218024005704_mmc1.zip
+- extracted S0010218024005704_mmc6.zip
 - extracted S0010218024005704_mmc7.zip
+- extracted S0010218024005704_mmc3.xlsx
+- extracted S0010218024005704_mmc4.docx
+- extracted S0010218024005704_mmc2.zip
+- extracted S0010218024005704_mmc5.zip
+- unsupported archive without 7z: ChromatographsGC1.7z
+- unsupported archive without 7z: ChromatographsGC2.7z

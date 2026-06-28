@@ -33,7 +33,7 @@ Ling-Nan Wu, Zi-Cheng Wei, Wang Li, Kai-Ru Jin, ... Zhen-Yu Tian. Experimental a
 - Status: cantera_failed
 - Species count: 233
 - Reaction count: 3150
-- Message: CanteraError: ******************************************************************************* CanteraError thrown by Kinetics::checkDuplicates: Error on lines 2732 and 9703 of /home/ubuntu/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/ammonia_pyridine_coal/2025/wu_2025_ammonia_pyridine_coal_114211/mechanism.yaml: Undeclared duplicate reactions detected: Reaction 1: C5H5N + NH2 <=> C5H4N + NH3 Reaction 1576: C5H5N + NH2 <=> C5H4N + NH3 | Line | | 2727 | note: |- | 2728 | T.8.03 | 2729 | Burcat/Goos 2017 | 2730 | | 2731 | reactions: > 2732 > - equation: C5H5N + NH2 <=> C5H4N + NH3 # Reaction 1 ^ | 2733 | rate-constant: {A: 0.0488, b: 4.3749, Ea: 5503.5} | 2734 | note: | | 2735 | ********* PYRIDINE SUBSET ************ ... | 9698 | T.Kathrotia 2011 | 9699 | - equation: OH* ... [truncated; see _processing logs]
+- Message: CanteraError: ******************************************************************************* CanteraError thrown by Kinetics::checkDuplicates: Error on lines 2732 and 9703 of /home/icaurs/Combustion-chemical-kinetic-models/combustion_and_flame_mechanisms/ammonia_pyridine_coal/2025/wu_2025_ammonia_pyridine_coal_114211/mechanism.yaml: Undeclared duplicate reactions detected: Reaction 1: C5H5N + NH2 <=> C5H4N + NH3 Reaction 1576: C5H5N + NH2 <=> C5H4N + NH3 | Line | | 2727 | note: |- | 2728 | T.8.03 | 2729 | Burcat/Goos 2017 | 2730 | | 2731 | reactions: > 2732 > - equation: C5H5N + NH2 <=> C5H4N + NH3 # Reaction 1 ^ | 2733 | rate-constant: {A: 0.0488, b: 4.3749, Ea: 5503.5} | 2734 | note: | | 2735 | ********* PYRIDINE SUBSET ************ ... | 9698 | T.Kathrotia 2011 | 9699 | - equation: OH* ... [truncated; see _processing logs]
 - Method: cantera
 - Cantera YAML: mechanism.yaml
 - Standard chem.inp: chem.inp
@@ -46,5 +46,5 @@ The co-oxidation of pyridine and ammonia was studied as a model compound to inve
 
 ## Processing Notes
 
-- extracted S0010218025002494_mmc2.zip
 - extracted S0010218025002494_mmc1.docx
+- extracted S0010218025002494_mmc2.zip

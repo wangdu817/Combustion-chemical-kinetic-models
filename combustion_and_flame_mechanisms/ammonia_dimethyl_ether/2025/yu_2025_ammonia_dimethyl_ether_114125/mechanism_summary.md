@@ -46,8 +46,8 @@ Since both can be obtained from renewable sources, ammonia and dimethyl ether (D
 
 ## Processing Notes
 
-- extracted S0010218025001634_mmc3.zip
-- extracted S0010218025001634_mmc4.zip
 - extracted S0010218025001634_mmc5.zip
-- extracted S0010218025001634_mmc2.docx
+- extracted S0010218025001634_mmc4.zip
 - extracted S0010218025001634_mmc1.xlsx
+- extracted S0010218025001634_mmc3.zip
+- extracted S0010218025001634_mmc2.docx

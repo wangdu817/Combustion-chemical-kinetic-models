@@ -46,7 +46,7 @@ Butane is the simplest alkane with isomers of linear and branched structures. Th
 
 ## Processing Notes
 
-- extracted S001021802500094X_mmc1.zip
-- extracted S001021802500094X_mmc3.docx
 - extracted S001021802500094X_mmc2.zip
+- extracted S001021802500094X_mmc3.docx
+- extracted S001021802500094X_mmc1.zip
 - extracted S001021802500094X_mmc4.xlsx

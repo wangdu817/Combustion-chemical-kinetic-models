@@ -1,0 +1,459 @@
+# Aric Rousso, Xingqian Mao, Qi Chen, Yiguang Ju. Kinetic Studies and Mechanism Development of Plasma Assisted Pentane Combustion, Proc. Combust. Inst. 37, 2019.
+# Plasma kinetics calculated in ZDPlasKin.
+# The species names are corresponded to CHEMKIN as the format is different.  
+
+ELEMENTS
+C H N O AR HE KR E
+END
+
+SPECIES
+  
+# C0 species
+H              H2             O              O2             OH
+H2O            N2             HO2            H2O2           AR
+HE
+# C1 species
+CO             CO2            CH2O           HCO            
+HOCHO          OCHO           
+HOCH2O         CH3OH          CH2OH          CH3O
+CH3O2H         CH3O2          CH4            CH3            CH2
+CH2(S)         C              CH             HOCO           HCOH
+# C2 SPECIES
+C2H6           C2H5           C2H4           C2H3           C2H2
+C2H            CH3CHO         CH3CO          CH2CHO         CH2CO
+HCCO           H2CC           C2O
+HCCOH          CH3CO3H        CH3CO3         CH3CO2
+C2H5OH         C2H5O          CH2CH2OH       CH3CHOH        O2C2H4OH
+C2H5O2H        C2H5O2         C2H4O2H        C2H4O(12)      C2H3O(12)
+CH2CHOH
+# METHYL FORMATE SPECIES
+CH3OCHO        CH2OCHO        CH3OCO         
+# ETHYL FORMATE SPECIES
+C2H5OCHO       C2H5OCO        CH2CH2OCHO   CH3CHOCHO
+OH* CH* 
+KR
+
+C3H8 C3H7(I)
+C3H7(N) C3H7O2H(N) C3H7O2(N) C3H7O2(I) C3H7O(N)
+C3H7O(I) C3H6OOH(12) C3H6OOH(13) C3H6OOH(21) C3H6OOHO2(13)
+C3H6O3(K13) C3H6O(12) C3H6O(13) C3H6 C3H6(C) C3H5(A)
+C3H5(S) C3H5(T) C3H5O CH2CHOCH2 CH3CHCHO
+CH3CHCO C3H5OOH(A) C3H6OH(21) C3H5OH(I) C3H5OH
+CH2CCH2OH C3H4(P) C3H4(A) C3H3 C3H3O
+C2H5CHO C2H5CO CH2CH2CHO C2H3CHO C2H3CO
+CH3COCH3 CH3COCH2 CH3COCH2O2 CH3COCH2O C3H6O3(K21)
+C4H9H C4H9(P) C4H9(S) C4H9O(P) C4H9O(S)
+C4H9O2(P) C4H9O2(S) C4H9O2H(P) C4H9O2H(S) C4H8OOH(12)
+C4H8OOH(13) C4H8OOH(14) C4H8OOH(23) C4H8OOH(24) C4H8O(12)
+C4H8O(13) C4H8O(14) C4H8O(23) C4H8OOHO2(13) C4H8OOHO2(14)
+C4H8OOHO2(24) C4H7OOH(124) C4H7OOH(215) C4H7OOOH(124) C4H7OOH(21)
+C4H8O3(K13) C4H8O3(K24) C4H9H(I) C4H9(I) C4H9(T)
+C4H8O(I) C3H7CHO(I) C3H6CHO(I) C3H5CHO(I) C4H7OH(SI)
+C4H9O2(I) C4H9O2(T) C4H8O2H(II) C4H8O2H(IT) C4H8O2H(TI)
+C4H8(I) C4H7(I) C4H7O(I) C4H7OH(I) C4H6OH(I)
+C3H6OH(T) C4H8(1) C4H8(2) C4H7(11) C4H7(12)
+C4H7(13) C4H7(14) C4H7(22) C4H7O(1) C4H8OH(P2)
+C4H8OH(S1) C4H7OH(11) C4H6OH(421) C4H6OH(311) C4H6OH(313)
+C4H5OH(13) C4H7OOH(14) C4H7O2(14) C4H6OOH4(13) C4H8OH(P1)
+C4H7O(14) C4H7O2(22) C4H7O2(11) C4H7O2(12) C4H6
+C4H6(12) C4H6(2) C4H5(I) C4H5(N) C4H5(2)
+C4H4 C4H3(I) C4H3(N) C4H2 C4H6O(25)
+C2H3CHOCH2 C4H4O C4H6O23 CH2CHCHCHO H2C4O
+C3H7CHO(N) C3H7CO(N) C3H6CHO(2) C3H6CHO(3) C3H5CHO(S)
+C3H5CO(S) C2H5COCH3 C2H5COCH2 CH2CH2COCH3 CH3CHCOCH3
+C2H3COCH3 CH3CHOOCOCH3 CH2CHOOHCOCH3 C2H5CHCO C5H12(N)
+C5H11(1) C5H11(2) C5H11(3) C5H11O2H(1) C5H11O2H(2)
+C5H11O2H(3) C5H11O2(1) C5H11O2(2) C5H11O2(3) C5H11O(1)
+C5H11O(2) C5H11O(3) C5H9HOOH(12) C5H9HOOH(13) C5H9HOOH(14)
+C5H9HOOH(15) C5H9HOOH(21) C5H9HOOH(23) C5H9HOOH(24) C5H9HOOH(25)
+C5H9HOOH(31) C5H9HOOH(32) C5H9HO(12) C5H9HO(13) C5H9HO(14)
+C5H9HO(15) C5H9HO(23) C5H9HO(24) C5H9HOOHO2(13) C5H9HOOHO2(14)
+C5H9HOOHO2(15) C5H9HOOHO2(24) C5H9HOOHO2(25) C5H9HOOHO2(31) C5H9OOH(124)
+C5H9OOH(135) C5H9OOH(213) C5H9OOH(214) C5H9OOH(215) C5H9OOH(235)
+C5H9OOH(314) C5H9OOH(315) C5H9OOH(14) C5H9OOH(15) C5H9OOH(21)
+C5H9OOH(24) C5H9OOH(25) C5H9OOOH(123) C5H9OOOH(124) C5H9OOOH(125)
+C5H9OOOH(135) C5H9OOOH(231) C5H9OOOH(235) C5H9OO(125) C5H9HO3(K13)
+C5H9HO3(K14) C5H9HO3(K24) C5H9HO3(K25) C5H9HO3(K31) C5H9O2(K13)
+C5H9O2(K14) C5H9O2(K24) C5H9O2(K25) C5H9O2(K31) C5H8O2(N24)
+C5H12(I) C5H11(A) C5H11(B) C5H11(C) C5H11(D)
+C5H9H(1) C5H9H(2) C5H8(13) C5H9(13) C5H9(14)
+C5H9(15) C5H9(24) C5H9(25) C5H9O(13) C5H9O(24)
+C5H9H(B) C5H9H(C) C5H9(CA) C5H9(CB) C5H9H(A)
+C5H9(AA2) C5H9(AC) C5H9(AD) C5H8(M) C5H7(MJ)
+C4H8CHOO2(P1) C4H8CHOO2(P2) C4H8CHOO2(P3) C4H8CHOO2(P4) C4H7CHO(2)
+C4H7CHO(3) C4H7CHO(4) C3H7COCH3(N) C2H5COC2H5 CH2CH2CH2COCH3
+C5H11OH(N) C5H9HOH(11) C5H9HOH(12) C5H9HOH(13) C5H9HOH(14)
+C5H9HOH(15) C5H9HOHO2(1) C5H9HOHO2(2) C5H9HOHO2(3) C5H9HOHO2(4)
+C5H9HOHO2(5) C5H9OH(11) C5H9OH(12) C5H9OH(13) C5H9OH(14)
+C6H9H(15) C6H9(A) C6H6 C6H6(F) C6H5
+C6H5OO C6H5OH C6H5O C6H4O2(O) C5H6
+C5H5 C5H5(CCJ) C5H7 C5H7(CVC) C5H7(CCJ)
+C5H5OH C5H5O C5H4OH C5H4O C5H3O
+C5H5O(CCV) C5H5O(CJV) C3H3O(CCV) C4H9CHO(P) C4H8CHO(P1)
+C4H8CHO(P2) C4H8CHO(P3) C4H8CHO(P4) C4H9CO(P)
+
+# Plasma species
+O2(A1) O2(B1) O2* O(1D) O(1S) O3
+HE*
+C5H12^+ C5H11^+ O2^+ HE^+ E   
+
+END
+
+BOLSIG
+C5H12(N) O2 HE
+END 
+
+
+REACTIONS
+
+# electron impact reaction. 
+E + C5H12(N) => E + C5H11(1) + H     !  BOLSIG  C5H12(N) -> C5H11(1) + H
+E + C5H12(N) => E + C5H11(2) + H     !  BOLSIG  C5H12(N) -> C5H11(2) + H
+E + C5H12(N) => E + C5H11(3) + H     !  BOLSIG  C5H12(N) -> C5H11(3) + H
+E + C5H12(N) => E + C4H9(P) + CH3    !  BOLSIG  C5H12(N) -> C4H9 + CH3
+E + C5H12(N) => E + C3H7(N) + C2H5   !  BOLSIG  C5H12(N) -> C3H7 + C2H5
+E + C5H12(N) => E + C5H9H(1) + 2H       !  BOLSIG  C5H12(N) -> C5H10(1) + 2H
+E + C5H12(N) => E + C5H9H(2) + 2H       !  BOLSIG  C5H12(N) -> C5H10(2) + 2H
+E + C5H12(N) => E + H + C3H7(N) + C2H4  !  BOLSIG  C5H12(N) -> H + C3H7 + C2H4
+E + C5H12(N) => E + H + C4H8(1) + CH3   !  BOLSIG  C5H12(N) -> H + C4H8(1) + CH3
+E + C5H12(N) => E + H + C2H5 + C3H6(C)  !  BOLSIG  C5H12(N) -> H + C2H5 + C3H6(C)
+E + C5H12(N) => E + H + C2H5 + C3H6     !  BOLSIG  C5H12(N) -> H + C2H5 + C3H6
+E + C5H12(N) => E + CH3 + C2H4 + C2H5   !  BOLSIG  C5H12(N) -> CH3 + C2H4 + C2H5
+E + C5H12(N) => E + 2CH3 + C3H6(C)      !  BOLSIG  C5H12(N) -> 2CH3 + C3H6(C)
+E + C5H12(N) => E + C4H9(P) + H + CH2   !  BOLSIG  C5H12(N) -> C4H9 + H + CH2
+E + C5H12(N) => E + C3H7(N) + CH2 + CH3 !  BOLSIG  C5H12(N) -> C3H7 + CH2 + CH3 
+E + C5H12(N) => E + 2C2H5 + CH2         !  BOLSIG  C5H12(N) -> 2C2H5 + CH2
+E + C5H12(N) => E + C2H3 + 2H + C3H7(N) !  BOLSIG  C5H12(N) -> C2H3 + 2H + C3H7
+E + C5H12(N) => E + C2H3 + H + CH3 + C2H5   !  BOLSIG  C5H12(N) -> C2H3 + H + CH3 + C2H5
+E + C5H12(N) => E + C2H2 + 3H + C3H7(N) ! BOLSIG  C5H12(N) -> C2H2 + 3H + C3H7
+E + C5H12(N) => E + C2H2 + 2H + CH3 + C2H5   !  BOLSIG  C5H12(N) -> C2H2 + 2H + CH3 + C2H5
+E + C5H12(N) => E + E + C5H12^+      !  BOLSIG  C5H12(N) -> C5H12^+
+
+# Phelps database, www.lxcat.net.
+E + O2 => E + @B                     !  BOLSIG  O2 -> @R
+    @B = O2(A1)  O2(B1)  O2*
+    @R = O2(A1)  O2(B1)  O2*
+E + O2 => E + O + O                  !  BOLSIG  O2 -> O2(6.0eV)
+E + O2 => E + O + O(1D)              !  BOLSIG  O2 -> O2(8.4eV)
+E + O2 => E + O + O(1S)              !  BOLSIG  O2 -> O2(9.97eV)     
+E + O2 => E + E + O2^+               !  BOLSIG  O2 -> O2^+      
+
+# Phelps database, www.lxcat.net.
+E + HE => E + HE*                    !  BOLSIG  HE -> HE*
+E + HE => E + E + HE^+               !  BOLSIG  HE -> HE^+
+
+# I.N. Kosarev, N.L. Aleksandrov, et al, Combust. Flame 156 (1) (2009) 221-233.
+E + C5H12^+ => C5H9H(1) + H + H      !  7.4d-7*(300.0d0/Te)**0.5
+E + C5H12^+ => C5H9H(2) + H + H      !  7.4d-7*(300.0d0/Te)**0.5
+E + C5H11^+ => C5H9(13) + H + H      !  7.4d-7*(300.0d0/Te)**0.5
+E + C5H11^+ => C5H9(14) + H + H      !  7.4d-7*(300.0d0/Te)**0.5
+E + C5H11^+ => C5H9(15) + H + H      !  7.4d-7*(300.0d0/Te)**0.5
+E + C5H11^+ => C5H9(24) + H + H      !  7.4d-7*(300.0d0/Te)**0.5
+E + C5H11^+ => C5H9(25) + H + H      !  7.4d-7*(300.0d0/Te)**0.5
+
+# M. Capitelli, et al, Plasma Kinetics in Atmospheric Gases, Springer-Verlag, Berlin, Heidelberg, New York.
+E + O2^+ => O  + @B                  !  2.7d-7*(300.0d0/Te)**0.7*@R
+    @B = O       O(1D)     O(1S)   
+    @R = 0.55d0  0.40d0    0.05d0
+O2(A1) => O2                         !  2.6d-4
+O2(B1) => O2(A1)                     !  1.5d-3
+O2(B1) => O2                         !  8.5d-2
+O2* => O2                            !  11.0d0
+# A. Starikovskiy, N. Aleksandrov, Mechanism of Plasma-Assisted Ignition for H2 and C1-C5 Hydrocarbons, 55th AIAA Aerospace Sciences Meeting, 2017. 
+O(1D) => O                           !  7.0d-3
+O(1S) => O                           !  1.25d0
+
+# K.H.Becker, et al. Chem. Phys. Lett. 8 (1971) 259-262.
+O2(A1) + CH4 => O2 + CH4                      !  1.4d-18
+# S.W. Mayer, et al. J. Phys. Chem. 72 (1968) 2628-2631.
+O2(A1) + CH4 => CH3 + HO2                     !  6.14d-12*exp(-1.79d4/Tgas)
+# A. Hicks et al, J. Phys. D: Appl. Phys. 38 (20) (2005) 3812-3824.	
+O2(A1) + O + O2 => O2 + O + O2                !  1.0d-32
+O2(A1) + O + HE => O2 + O + HE                !  6.3d-33
+# M. Capitelli, et al, Plasma Kinetics in Atmospheric Gases, Springer-Verlag, Berlin, Heidelberg, New York.
+O2(A1) + O => O2 + O                          !  7.0d-16
+O2(A1) + O2 => O2 + O2                        !  3.8d-18*exp(-205.0d0/Tgas)
+O2(A1) + O3 => O2 + O2 + O(1D)                !  5.2d-11*exp(-2840.0d0/Tgas)
+O2(A1) + O2(A1) => O2 + O2(B1)                !  7.0d-28*Tgas**3.8*exp(700.0d0/Tgas)
+# J.K. Lefkowitz, et al, Proc. Combust. Inst. 35 (3) (2015) 3505-3512. 
+O2(A1) + H => OH + O                          !  1.83d-10*exp(-3188.0d0/Tgas)
+O2(A1) + H2 => H + HO2                        !  3.49d-11*exp(-18126.0d0/Tgas)  
+O2(A1) + OH => O + HO2                        !  2.16d-11*exp(-17132.0d0/Tgas)
+O2(A1) + CO => CO2 + O                        !  5.25d-13*exp(-14446.0d0/Tgas)
+# D.S. Stafford, et al, J. Appl. Phys. 96 (5) (2004) 2451-2465.
+O2(A1) + HE => O2 + HE                        !  8.0d-21 * (Tgas/300.0d0)**0.5
+# N. Tsolas, R.A. Yetter, I.V. Adamovich, Combust. Flame 176 (2017) 462-478.
+H + HO2 => H2 + O2(A1)                        !  2.72d-16*Tgas**1.63d0*exp(-7690.0d0/Tgas)
+O2(A1) + ANY_NEUTRAL => O2 + ANY_NEUTRAL      !  3.0d-18*exp(-200.0d0/Tgas)
+O2(A1) + H2 => OH + OH                        !  2.8d-9*exp(-17900.0d0/Tgas)
+O2(A1) + H + ANY_NEUTRAL => HO2 + ANY_NEUTRAL !  2.73d-38*Tgas**2.03d0*exp(-1690.0d0/Tgas)
+O2(A1) + H2O => O2 + H2O                      !  5.0d-18
+O2(A1) + H2O => OH + HO2                      !  3.4d-10*exp(-28200.d0/Tgas)
+O2(A1) + CO2 => O2 + CO2                      !  2.0d-20
+O2(A1) + CH3 => CH3O2                         !  2.76d-7/Tgas**2.71d0*exp(-4330.d0/Tgas)
+O2(A1) + CH3 => CH2O + OH                     !  5.76d-17*Tgas**1.63d0*exp(-3470.0d0/Tgas)
+O2(A1) + CH3 => CH3O + O                      !  1.7d-20*Tgas**2.68d0*exp(-3350.0d0/Tgas)
+O2(A1) + CH2O => HO2 + HCO                    !  1.66d-10*exp(-11600.0d0/Tgas)
+# A. Starikovskiy, N. Aleksandrov, Mechanism of Plasma-Assisted Ignition for H2 and C1-C5 Hydrocarbons, 55th AIAA Aerospace Sciences Meeting, 2017.
+O2(A1) + C2H4 => C2H4 + O2                    !  5.46d-10*exp(-5850.0d0/Tgas)	
+O2(A1) + C2H4 => C2H3 + HO2                   !  7.01d-11*exp(-17620.0d0/Tgas)	           
+O2(A1) + C2H2 => C2H2 + O2                    !  5.46d-10*exp(-5850.0d0/Tgas)	
+O2(A1) + C2H2 => C2H + HO2                    !  7.01d-11*exp(-17620.0d0/Tgas)	
+O2(A1) + C2H6 => C2H6 + O2                    !  5.46d-10*exp(-5850.0d0/Tgas)	
+O2(A1) + C2H6 => C2H5 + HO2                   !  7.01d-11*exp(-17620.0d0/Tgas)
+O2(A1) + C3H8 => C3H8 + O2                    !  5.46d-10*exp(-5850.0d0/Tgas)	
+O2(A1) + C3H8 => C3H7(I) + HO2                !  7.01d-11*exp(-17620.0d0/Tgas)		
+O2(A1) + C3H8 => C3H7(N) + HO2                !  7.01d-11*exp(-17620.0d0/Tgas)
+O2(A1) + C4H9H => C4H9H + O2                  !  5.46d-10*exp(-5850.0d0/Tgas)	
+O2(A1) + C4H9H => C4H9(P) + HO2               !  7.01d-11*exp(-17620.0d0/Tgas)		
+O2(A1) + C4H9H => C4H9(S) + HO2               !  7.01d-11*exp(-17620.0d0/Tgas)
+O2(A1) + C5H12(N) => C5H12(N) + O2            !  5.46d-10*exp(-5850.0d0/Tgas)	
+O2(A1) + C5H12(N) => C5H11(1) + HO2           !  7.01d-11*exp(-17620.0d0/Tgas)		
+O2(A1) + C5H12(N) => C5H11(2) + HO2           !  7.01d-11*exp(-17620.0d0/Tgas)
+O2(A1) + C5H12(N) => C5H11(3) + HO2           !  7.01d-11*exp(-17620.0d0/Tgas)
+
+# M. Capitelli, et al, Plasma Kinetics in Atmospheric Gases, Springer-Verlag, Berlin, Heidelberg, New York.
+O2(B1) + O => O2(A1) + O                      !  8.1d-14
+O2(B1) + O => O2 + O(1D)                      !  3.4d-11*(300.0d0/Tgas)**0.1*exp(-4200.0d0/Tgas)
+O2(B1) + O2 => O2(A1) + O2                    !  4.3d-22*Tgas**2.4*exp(-281.0d0/Tgas)
+O2(B1) + O3 => O2 + O2 + O                    !  2.2d-11
+# J.K. Lefkowitz, et al, Proc. Combust. Inst. 35 (3) (2015) 3505-3512.  
+O2(B1) + H => OH + O                          !  1.83d-10*exp(-1620.0d0/Tgas)    
+O2(B1) + H2 => H + HO2                        !  3.49d-11*exp(-11508.0d0/Tgas)      
+O2(B1) + OH => O + HO2                        !  2.16d-11*exp(-10111.0d0/Tgas)
+O2(B1) + CO => CO2 + O                        !  5.25d-13*exp(-12197.0d0/Tgas)
+# D.S. Stafford, et al, J. Appl. Phys. 96 (5) (2004) 2451-2465.
+O2(B1) + HE => O2(A1) + HE                    !  1.0d-17 * (Tgas/300.0d0)**0.5
+# E.J. Dunlea, et al, J. Phys. Chem. A 109 (2005) 3912-3920.
+O2(B1) + CH4 => O2(A1) + CH4                  !  1.08d-13
+# N. Tsolas, R.A. Yetter, I.V. Adamovich, Combust. Flame 176 (2017) 462-478.
+O2(B1) + O3 => O2(A1) + O3                    !  2.2d-11
+O2(B1) + H => O2(A1) + H                      !  7.2d-14*Tgas**0.5d0
+O2(B1) + O2(B1) => O2(A1) + O2                !  3.6d-17*Tgas**0.5d0
+O2(B1) + O3 => O2(A1) + O2 + O                !  1.0d-14
+O2(B1) + O => O2 + O                          !  8.0d-15*Tgas**0.5d0
+O2(B1) + O3 => O2 + O3                        !  2.2d-11
+O2(B1) + H => OH + O(1D)                      !  4.38d-10/Tgas**0.03d0*exp(-16200.0d0/Tgas)
+O2(B1) + H2 => O2(A1) + H2                    !  1.00d-12
+O2(B1) + H2O => OH + HO2                      !  3.4d-9*exp(-27400.0d0/Tgas)
+O2(B1) + CH4 => CH3 + HO2                     !  3.69d-10*exp(-20000.0d0/Tgas)
+# A. Starikovskiy, N. Aleksandrov, Mechanism of Plasma-Assisted Ignition for H2 and C1-C5 Hydrocarbons, 55th AIAA Aerospace Sciences Meeting, 2017.
+O2(B1) + C2H4 => C2H4 + O2                    !  5.46d-10*exp(-5850.0d0/Tgas)	
+O2(B1) + C2H4 => C2H3 + HO2                   !  7.01d-11*exp(-10000.0d0/Tgas)	    
+O2(B1) + C2H2 => C2H2 + O2                    !  5.46d-10*exp(-5850.0d0/Tgas)	
+O2(B1) + C2H2 => C2H + HO2                    !  7.01d-11*exp(-10000.0d0/Tgas)	
+O2(B1) + C2H6 => C2H6 + O2                    !  5.46d-10*exp(-5850.0d0/Tgas)	
+O2(B1) + C2H6 => C2H5 + HO2                   !  7.01d-11*exp(-10000.0d0/Tgas)
+O2(B1) + C3H8 => C3H8 + O2                    !  5.46d-10*exp(-5850.0d0/Tgas)	
+O2(B1) + C3H8 => C3H7(I) + HO2                !  7.01d-11*exp(-10000.0d0/Tgas)		
+O2(B1) + C3H8 => C3H7(N) + HO2                !  7.01d-11*exp(-10000.0d0/Tgas)
+O2(B1) + C4H9H => C4H9H + O2                  !  5.46d-10*exp(-5850.0d0/Tgas)	
+O2(B1) + C4H9H => C4H9(P) + HO2               !  7.01d-11*exp(-10000.0d0/Tgas)		
+O2(B1) + C4H9H => C4H9(S) + HO2               !  7.01d-11*exp(-10000.0d0/Tgas)
+O2(B1) + C5H12(N) => C5H12(N) + O2            !  5.46d-10*exp(-5850.0d0/Tgas)	
+O2(B1) + C5H12(N) => C5H11(1) + HO2           !  7.01d-11*exp(-10000.0d0/Tgas)		
+O2(B1) + C5H12(N) => C5H11(2) + HO2           !  7.01d-11*exp(-10000.0d0/Tgas)
+O2(B1) + C5H12(N) => C5H11(3) + HO2           !  7.01d-11*exp(-10000.0d0/Tgas)
+O2(B1) + CO2 => O2 + CO2                      !  4.0d-18
+
+
+# I.N.Kosarev, N.L. Aleksandrov, et al, Combust. Flame 156 (1) (2009) 221-233.
+O2* + C5H12(N) => O2 + C5H11(1) + H          !  1.0d-10
+O2* + C5H12(N) => O2 + C5H11(2) + H          !  1.0d-10
+O2* + C5H12(N) => O2 + C5H11(3) + H          !  1.0d-10
+# N.L.Aleksandrov, et al. Plasma Phys. Rep+, 2009 (35) 867-882.
+O2* + O2 => O2(A1) + O2                      !  1.86d-13
+O2* + O2 => O2(B1) + O2                      !  8.1d-14
+O2* + O2 => O2 + O2                          !  2.3d-14
+O2* + O => O2 + O                            !  5.0d-12
+O2* + O => O2(A1) + O                        !  2.7d-12
+O2* + O => O2(B1) + O                        !  1.35d-12
+# M. Capitelli, et al, Plasma Kinetics in Atmospheric Gases, Springer-Verlag, Berlin, Heidelberg, New York.
+O2* + O2 => O2(B1) + O2(B1)                  !  3.0d-13
+# A. Hicks et al, J. Phys. D: Appl. Phys. 38 (20) (2005) 3812-3824.
+O2* + HE => O2(A1) + HE                      !  1.0d-13         
+O2* + HE => O2(B1) + HE                      !  9.0d-13 
+# A. Starikovskiy, N. Aleksandrov, Mechanism of Plasma-Assisted Ignition for H2 and C1-C5 Hydrocarbons, 55th AIAA Aerospace Sciences Meeting, 2017.
+O2* + H2 => H2 + O2                          !  7.9d-13
+O2* + H2 => H2 + O2(A1)                      !  8.3d-13
+O2* + H2O => H2O + O2 			     !  4.0d-12
+O2* + H2O => O + H2O2                        !  2.05d-12*Tgas**0.5       
+O2* + HO2 => HO2 + O2                        !  5.65d-18
+O2* + H2O2 => H2O2 + O2                      !  5.65d-18
+O2* + CH4 => O2 + CH4		             !  3.0d-15
+O2* + CH4 => CH3 + HO2                       !  6.14d-12
+O2* + C2H4 => C2H3 + H + O2	             !  1.0d-10         
+O2* + C2H2 => C2H + H + O2                   !  1.0d-10
+O2* + C2H6 => C2H5 + H + O2                  !  1.0d-10
+O2* + C3H8 => C3H7(I) + H + O2               !  1.0d-10
+O2* + C3H8 => C3H7(N) + H + O2               !  1.0d-10
+O2* + C4H9H => C4H9(P) + H + O2              !  1.0d-10
+O2* + C4H9H => C4H9(S) + H + O2              !  1.0d-10
+O2* + CO2 => CO2 + O2                        !  1.0d-14
+
+# M. Capitelli, et al, Plasma Kinetics in Atmospheric Gases, Springer-Verlag, Berlin, Heidelberg, New York.
+O(1D) + O => O + O                           !  8.0d-12
+O(1D) + O2 => O + O2                         !  6.4d-12*exp(67.0d0/Tgas)
+O(1D) + O2 => O + O2(A1)                     !  1.0d-12
+O(1D) + O2 => O + O2(B1)                     !  2.6d-11*exp(67.0d0/Tgas)
+O(1D) + O3 => O2 + O + O                     !  1.2d-10
+O(1D) + O3 => O2 + O2                        !  1.2d-10
+# W.B. DeMore, et al, Chemical Kinetics and Potochemical Data for Use in Stratospheric Modeling - Evaluation No. 12, JPL Publication 97-4, Jan. 1997.
+O(1D) + H2 => OH + H                         !  1.1d-10 
+# T.J.Dillon, et al, Atmos. Chem. Phys. 8 (2008) 1547-1557.
+O(1D) + C5H12(N) => C5H11(1) + OH            !  5.4d-10
+O(1D) + C5H12(N) => C5H11(2) + OH            !  5.4d-10
+O(1D) + C5H12(N) => C5H11(3) + OH            !  5.4d-10
+# N. Tsolas, R.A. Yetter, I.V. Adamovich, Combust. Flame 176 (2017) 462-478.
+O(1D) + CO => O + CO                         !  4.7d-11*exp(-62.4d0/Tgas)
+O(1D) + H2O2 => HO2 + OH                     !  5.2d-10
+O(1D) + H2O => OH + OH                       !  1.69d-10*exp(36.0d0/Tgas)
+O(1D) + CH2O => CO + H2O                     !  1.66d-10
+O(1D) + CH3OH => CH2OH + OH                  !  2.99d-10
+O(1D) + CH3OH => HOCHO + H + H               !  8.97d-11
+# D.S. Stafford, et al, J. Appl. Phys. 96 (5) (2004) 2451-2465.	
+O(1D) + HE => O + HE	                     !  1.0d-13
+# S.P. Sander et al, JPL Publication 02-25; Jet Propulsion Laboratory, California Institute of Technology: Pasadena, CA, 2006.
+O(1D) + CH4 => CH3 + OH                      ! 1.13d-10
+O(1D) + CH4 => CH2OH + H                     ! 3.00d-11
+O(1D) + CH4 => CH2O + H2                     ! 7.50d-12
+# A. Starikovskiy, N. Aleksandrov, Mechanism of Plasma-Assisted Ignition for H2 and C1-C5 Hydrocarbons, 55th AIAA Aerospace Sciences Meeting, 2017.
+O(1D) + H2 => H2 + O                         !  1.1d-10
+O(1D) + H2O => H2 + O2                       !  1.4d-12  
+O(1D) + H2O => H2O + O                       !  2.8d-10
+O(1D) + HO2 => OH + O2                       !  2.7d-11*exp(-224.0d0/Tgas)
+O(1D) + C2H2 => C2H + OH                     !  2.2d-10
+O(1D) + C2H4 => C2H3 + OH                    !  2.2d-10
+O(1D) + C2H6 => C2H5 + OH                    !  1.6d-10
+O(1D) + C2H6 => C2H5O + H                    !  1.6d-10
+O(1D) + C2H6 => CH2CH2OH + H                 !  1.6d-10
+O(1D) + C2H6 => CH3CHOH + H                  !  1.6d-10
+O(1D) + C2H6 => CH3 + CH3O                   !  1.6d-10
+O(1D) + C3H8 => C3H7(I) + OH                 !  2.2d-10
+O(1D) + C3H8 => C3H7(N) + OH                 !  2.2d-10
+O(1D) + C4H9H => C4H9(P) + OH                !  2.2d-10
+O(1D) + C4H9H => C4H9(S) + OH                !  2.2d-10
+O(1D) + CO2 => CO + O2                       !  2.0d-10
+O(1D) + CO2 => CO2 + O                       !  2.0d-10
+
+
+# M. Capitelli, et al, Plasma Kinetics in Atmospheric Gases, Springer-Verlag, Berlin, Heidelberg, New York.
+O(1S) + O => O(1D) + O                       !  5.0d-11*exp(-300.0d0/Tgas)
+O(1S) + O2 => O(1D) + O2                     !  1.3d-12*exp(-850.0d0/Tgas)
+O(1S) + O2 => O + O + O                      !  3.0d-12*exp(-850.0d0/Tgas)
+O(1S) + O2(A1) => O + O2*                    !  1.1d-10
+O(1S) + O2(A1) => O(1D) + O2(B1)             !  2.9d-11
+O(1S) + O2(A1) => O + O + O                  !  3.2d-11
+O(1S) + O3 => O2 + O2                        !  2.9d-10
+O(1S) + O3 => O2 + O + O(1D)                 !  2.9d-10
+# A. Starikovskiy, N. Aleksandrov, Mechanism of Plasma-Assisted Ignition for H2 and C1-C5 Hydrocarbons, 55th AIAA Aerospace Sciences Meeting, 2017.
+O(1S) + H2 => H2 + O                         !  1.0d-10
+O(1S) + H2 => H + OH                         !  1.0d-10
+O(1S) + H2O => H2O + O                       !  4.2d-10  
+O(1S) + H2O => H2O + O(1D)                   !  1.2d-10
+O(1S) + H2O => OH + OH                       !  2.5d-10
+O(1S) + CH4 => CH3 + OH                      !  2.2d-10
+O(1S) + CH4 => H2 + CH2O                     !  2.4d-11
+O(1S) + C2H2 => C2H + OH                     !  2.2d-10
+O(1S) + C2H4 => C2H3 + OH                    !  2.2d-10
+O(1S) + C2H6 => C2H5 + OH                    !  1.6d-10
+O(1S) + C2H6 => C2H5O + H                    !  1.6d-10
+O(1S) + C2H6 => CH2CH2OH + H                 !  1.6d-10
+O(1S) + C2H6 => CH3CHOH + H                  !  1.6d-10
+O(1S) + C2H6 => CH3 + CH3O                   !  1.6d-10
+O(1S) + C3H8 => C3H7(I) + OH                 !  2.2d-10
+O(1S) + C3H8 => C3H7(N) + OH                 !  2.2d-10
+O(1S) + C4H9H => C4H9(P) + OH                !  2.2d-10
+O(1S) + C4H9H => C4H9(S) + OH                !  2.2d-10
+O(1S) + CO2 => CO + O2                       !  2.0d-10
+O(1S) + CO2 => CO2 + O                       !  2.0d-10
+# Estimated.
+O(1S) + C5H12(N) => C5H11(1) + OH            !  5.4d-10
+O(1S) + C5H12(N) => C5H11(2) + OH            !  5.4d-10
+O(1S) + C5H12(N) => C5H11(3) + OH            !  5.4d-10
+
+# M. Capitelli, et al, Plasma Kinetics in Atmospheric Gases, Springer-Verlag, Berlin, Heidelberg, New York.
+O + O3 => O2 + O2(A1)                        !  1.0d-11 * exp(-2300.0d0/Tgas)
+# A.N. Vasiljeva, et al. J. Phys. D: Appl. Phys. 37 (2004) 2455-2468.
+O3 + O => O2 + O2(B1)                        !  8.0d-14*exp(-2060.0d0/Tgas)
+# W.B. DeMore, et al, Chemical Kinetics and Potochemical Data for Use in Stratospheric Modeling - Evaluation No. 12, JPL Publication 97-4, Jan. 1997.
+O3 + H => O2 + OH                            !  1.4d-10*exp(-470.0d0/Tgas)
+O3 + HO2 => OH + O2 + O2                     !  1.1d-14*exp(-500.0d0/Tgas)
+# C.J. Howard, B.J. Finlayson-Pitts, J. Chem. Phys. 72 (1980) 3842-3843.
+O3 + H => O + HO2                            !  7.5d-13
+# A. Mansergas, J.M. Anglada, Chem. Phys. Chem. 8 (2007) 1534-1539.
+O3 + OH => O2 + HO2                          !  3.07d-13*exp(-418.0d0/Tgas)
+# S. Hatakeyama, M.T. Leu, J. Phys. Chem. 93 (1989) 5784-5789.
+O3 + H2O => O2 + H2O2                        !  1.1d-22
+# J. Albaladejo, et al, J. Phys. Chem. A 106 (2002) 2512-2519.
+O3 + CH3 => CH3O + O2                        !  9.68d-14
+# I. Glassman, R.A. Yetter, Combustion 4th Ed., Academic Press-Elesvier Inc. San Diego, CA, 2008.
+O3 + CO => O2 + CO2                          !  1.00d-21
+# W.K. Metcalfe, et al, Intl. J. Chemical Kinetics 45 (2013) 638-675.
+O3 + HCO => O2 + H + CO2                     !  8.3d-13
+
+# Estimated from I.N. Kosarev, N.L. Aleksandrov, et al, Combust. Flame 156 (1) (2009) 221-233.
+HE* + C5H12(N) => HE + C5H9H(1) + H + H      !  1.0d-9
+HE* + C5H12(N) => HE + C5H9H(2) + H + H      !  1.0d-9
+# D.S. Stafford, et al, J. Appl. Phys. 96 (5) (2004) 2451-2465.
+HE* + HE* => HE + HE^+ + E                   !  1.0d-9*(Tgas/300.0d0)**0.5
+HE* + O2 => O2^+ + HE + E		     !  2.54d-10*(Tgas/300.0d0)**0.5
+HE* + O3 => O2^+ + O + HE + E	             !  2.54d-10*(Tgas/300.0d0)**0.5
+HE* + O2(A1) => O2^+ + HE + E                !  2.54d-10*(Tgas/300.0d0)**0.5                
+# Estimated from A. Starikovskiy, N. Aleksandrov, Mechanism of Plasma-Assisted Ignition for H2 and C1-C5 Hydrocarbons, 55th AIAA Aerospace Sciences Meeting, 2017.
+HE* + C4H9H => HE + C4H8(1) + H + H          !  9.0d-10
+HE* + C4H9H => HE + C4H8(2) + H + H          !  9.0d-10
+HE* + C3H8 => HE + C3H6 + H + H              !  8.0d-10
+HE* + C2H4 => HE + C2H2 + H + H              !  7.0d-10
+HE* + C2H2 => HE + C2H + H                   !  7.0d-10
+HE* + C2H6 => HE + C2H4 + H + H              !  7.0d-10
+HE* + CH4 => HE + CH2 + H + H                !  3.3d-10
+HE* + CH4 => HE + CH + H + H2                !  5.8d-11
+HE* + CH4 => HE + CH3 + H                    !  5.8d-11
+HE* + CH4 => HE + CH2 + H2                   !  5.8d-10
+HE* + CO2 => HE + CO + O(1S)                 !  5.9d-10
+HE* + CO2 => HE + CO + O                     !  5.9d-10
+HE* + H2O => HE + H + OH                     !  4.0d-10
+HE* + O2 => HE + O + O(1S)                   !  1.6d-10
+HE* + O2 => HE + O + O(1D)                   !  1.7d-10
+
+# D.S. Stafford, et al, J. Appl. Phys. 96 (5) (2004) 2451-2465.
+E + HE^+ => HE*                         !  6.76d-13*Te**-0.5
+E + E + HE^+ => HE* + E                 !  5.12d-27*Te**-4.5
+HE^+ + O2 => O2^+ + HE 	    	        !  3.30d-11*(Tgas/300.0d0)**0.5
+HE^+ + O2(B1) => O2^+ + HE       	!  3.30d-11*(Tgas/300.0d0)**0.5
+
+# A. Starikovskiy, N. Aleksandrov, Mechanism of Plasma-Assisted Ignition for H2 and C1-C5 Hydrocarbons, 55th AIAA Aerospace Sciences Meeting, 2017.
+O2^+ + C5H12(N) => O2 + C5H12^+         !  3.00d-10
+# Estimated from I.N. Kosarev, N.L. Aleksandrov, et al, Combust. Flame 156 (1) (2009) 221-233.
+HE^+ + C5H12(N) => HE + C5H11^+ + H     !  1.1d-9
+
+# D.S. Stafford, et al, J. Appl. Phys. 96 (5) (2004) 2451-2465.
+O + O + HE => O2(A1) + HE               !  9.88d-35
+O + O2 + HE => O3 + HE                  !  3.40d-34*(Tgas/300.0d0)**-1.2
+
+# M. Capitelli, et al, Plasma Kinetics in Atmospheric Gases, Springer-Verlag, Berlin, Heidelberg, New York.
+O2  + @M => O + O + @M                  !  6.1d-9*(1.0d0-exp(-2240.0d0/Tgas))*exp(-59380.0d0/Tgas)*@R
+    @M = O2     O    
+    @R = 5.9d0  21.d0 
+O3  + @M => O2 + O + @M                 !  6.6d-10*exp(-11600.0d0/Tgas)*@R
+    @M = O2      O
+    @R = 0.38d0  6.3d0*exp(170.0d0/Tgas)
+O + O + @M => O2 + @M                   !  4.0d-33*(300.0d0/Tgas)**0.41*@R
+    @M = O2     O      
+    @R = 1.0d0  3.6d0  
+O + O2 + @M => O3 + @M                  !  7.6d-34*(300.0d0/Tgas)**1.9
+    @M = O2 
+O + O2 + @M => O3 + @M                  !  min(3.9d-33*(300.0d0/Tgas)**1.9,1.1d-34*exp(1060.0d0/Tgas))
+    @M = O	
+
+END
+
+
+
+
+
+
+
+
+                             

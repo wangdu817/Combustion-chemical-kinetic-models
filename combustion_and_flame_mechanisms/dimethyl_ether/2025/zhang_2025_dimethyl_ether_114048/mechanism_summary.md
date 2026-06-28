@@ -46,6 +46,6 @@ Aiming to provide stronger constraints on the detailed kinetic models of dimethy
 
 ## Processing Notes
 
-- extracted S0010218025000860_mmc3.docx
 - extracted S0010218025000860_mmc2.zip
+- extracted S0010218025000860_mmc3.docx
 - extracted S0010218025000860_mmc1.zip
